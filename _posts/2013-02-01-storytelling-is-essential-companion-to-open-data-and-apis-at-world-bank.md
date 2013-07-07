@@ -20,4 +20,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The
 <p>
      If you look at the home page of the World Bank data site today, there is a link to the blog post, "<a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries">What does data tell us about debt of high income and developing countries?</a>" This is a great example of not just providing a dataset, but actually telling the story around the data, while providing tools that let you interact with the data, making everything a very hands on experience--increasing the chances users will make an emotional connection with the data.
 </p>
+<p>
+     <a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/world-bank/World-Bank-Exernal-Debt-to-GDP-Ratio.png"  width="350" align="right" /></a>
+</p>
+<p>
+     According to the blog post, the World Bank maintains two quarterly databases of information on external and public sector debt of many countries. The blog post narrates what the statistical data from the <a href="http://worldbank.org/qeds">Quarterly External Debt Statistics</a> (QEDS) and the <a href="http://worldbank.org/qpsd">Public Sector Debt Statistics</a> (PSD) databases tell us about trends in debt levels of some high income and developing countries, while also providing us with links to the data sets and JavaScript charts (using <a href="http://www.tableausoftware.com">Tableau Software</a>) we can play with, making the story an interactive, hands-on experience.
+</p>
+<p>
+     This is <a title="Hacker Storytelling" href="http://hackerstorytelling.com">Hacker Storytelling</a>. It isn't just data. It isn't just an API. There is a story, giving the data context and meaning. There are tools to help me play with the data, understand its value, with a link to the raw data for when I'm ready to get down to business.
+</p>
+<p>
+     I strongly believe that Hacker Storytelling is the solution to the boring data coming out of government, non-profit organizations and even in the private sector. Hacker Storytelling is related to data journalism, but goes further, empowering anyone to publish a dataset and tell the story around it. Not just journalists or programmers.
+</p>
+<p>
+     We need more open source tools that allow anyone to gather, curate and publish data, while also being able to wrap it in a story and bundle with interactive visualizations and tools that encourage exploration, remixing and sharing of these important stories that have the potential to solve real problems we face every day around the globe.
+</p>
 
