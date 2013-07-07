@@ -1,6 +1,6 @@
 ---
 layout: post
-title: #APIStrat Videos Laura Merling 3 Things You Need to Turn Your Enterprise Into A Platform
+title: APIStrat Videos Laura Merling 3 Things You Need to Turn Your Enterprise Into A Platform
 url: http://apievangelist.com2013/04/08/apistrat-videos-laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform/
 source: http://apievangelist.com2013/04/08/apistrat-videos-laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform/
 domain: apievangelist.com2013
