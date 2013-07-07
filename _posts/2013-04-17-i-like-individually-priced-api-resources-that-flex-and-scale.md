@@ -6,23 +6,23 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/person-building-blocks.jpg"  width="250" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/person-building-blocks.jpg  width=250 align=right />
 </p>
 <p>
-     On a regular basis I review my API consumption to evaluate how I’m using various APIs, and what I’m paying for them. <a href="http://apievangelist.com/2012/08/02/the-apis-that-i-depend-on-for-my-business/">I depend on around 20 APIs to make API Evangelist work</a>, and I need to make sure I’m using them to their fullest potential while also being mindful of budget.
+     On a regular basis I review my API consumption to evaluate how I’m using various APIs, and what I’m paying for them. <a href=http://apievangelist.com/2012/08/02/the-apis-that-i-depend-on-for-my-business/>I depend on around 20 APIs to make API Evangelist work</a>, and I need to make sure I’m using them to their fullest potential while also being mindful of budget.
 </p>
 <p>
      As a part of my regular review, I am looking at the differences in pricing between three key services:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <strong><a href="http://www.fullcontact.com/developer/">FullContact API</a> -</strong> I use FullContact for all my company and individual contact intelligence. I go through phases of light or heavy use depending on research projects I have going on. Full Contact provides me with per API call rates depending on the endpoint and call volume, and they limit me between four packages Trying It out (Free), Getting Started ($19/month), Gaining Traction ($99/month) and Rolling ($499/month)
+          <strong><a href=http://www.fullcontact.com/developer/>FullContact API</a> -</strong> I use FullContact for all my company and individual contact intelligence. I go through phases of light or heavy use depending on research projects I have going on. Full Contact provides me with per API call rates depending on the endpoint and call volume, and they limit me between four packages Trying It out (Free), Getting Started ($19/month), Gaining Traction ($99/month) and Rolling ($499/month)
      </li>
      <li>
-          <strong><a href="http://www.alchemyapi.com/">Alchemy API</a> -</strong> I use Alchemy API to primarily pull text content from blog posts, so I can use it internally for indexing. With Alchemy I get access to three packages Free, Small Business ($250.00) and Basic ($800.00)
+          <strong><a href=http://www.alchemyapi.com/>Alchemy API</a> -</strong> I use Alchemy API to primarily pull text content from blog posts, so I can use it internally for indexing. With Alchemy I get access to three packages Free, Small Business ($250.00) and Basic ($800.00)
      </li>
      <li>
-          <strong><a href="http://aws.amazon.com/">AWS APIs</a> -</strong> I use AWS for all my computer, storage, database and DNS API services. With AWS I pay by the resource, bandwidth transfer and storage and the other parts and pieces or specific actions in cloud computing. There are no packages, just modular API resources I use and get billed for.
+          <strong><a href=http://aws.amazon.com/>AWS APIs</a> -</strong> I use AWS for all my computer, storage, database and DNS API services. With AWS I pay by the resource, bandwidth transfer and storage and the other parts and pieces or specific actions in cloud computing. There are no packages, just modular API resources I use and get billed for.
      </li>
 </ul>
 <p>

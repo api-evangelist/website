@@ -6,46 +6,46 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/git
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://github.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png"  width="100" align="right" /></a>
+     <a href=http://github.com><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png  width=100 align=right /></a>
 </p>
 <p>
-     I have been using <a href="http://github.com">Github</a> to manage my code for a couple years now, but in the last year I'm using Github more often for a variety of projects that don't always have code involved--examples ranging from <a href="http://kinlane.github.io/talks/">hosting slide decks for my talks</a> to repositories for my <a href="/trends/">API research projects</a>.
+     I have been using <a href=http://github.com>Github</a> to manage my code for a couple years now, but in the last year I'm using Github more often for a variety of projects that don't always have code involved--examples ranging from <a href=http://kinlane.github.io/talks/>hosting slide decks for my talks</a> to repositories for my <a href=/trends/>API research projects</a>.
 </p>
 <p>
      In the last couple months I've noticed I'm not the only one using Github to organize projects, check out of a few of these examples:
 </p>
-<table cellspacing="3" cellpadding="3" width="90%">
+<table cellspacing=3 cellpadding=3 width=90%>
      <tbody>
           <tr>
-               <td width="160" align="center">
-                    <a href="http://project-open-data.github.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/github/white-house-open-government-initiative.png"  width="150" /></a>
+               <td width=160 align=center>
+                    <a href=http://project-open-data.github.io/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/github/white-house-open-government-initiative.png  width=150 /></a>
                </td>
                <td>
-                    <strong><a href="http://project-open-data.github.io/" target="_blank">White House Open Data Project</a></strong> - Using Github to publish and solicit participation around the open data policy for all federal agencies
+                    <strong><a href=http://project-open-data.github.io/ target=_blank>White House Open Data Project</a></strong> - Using Github to publish and solicit participation around the open data policy for all federal agencies
                </td>
           </tr>
           <tr>
-               <td width="160" align="center">
-                    <a href="http://kinlane.github.io/hack-weekends-guide/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/github/hackathon-guide-screenshot.png"  width="150" /></a>
+               <td width=160 align=center>
+                    <a href=http://kinlane.github.io/hack-weekends-guide/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/github/hackathon-guide-screenshot.png  width=150 /></a>
                </td>
                <td>
-                    <strong><a href="http://kinlane.github.io/hack-weekends-guide/" target="_blank">Hackathon Guide</a></strong> - How to throw a hackathon guide, complete with an event website template that runs as Github page
+                    <strong><a href=http://kinlane.github.io/hack-weekends-guide/ target=_blank>Hackathon Guide</a></strong> - How to throw a hackathon guide, complete with an event website template that runs as Github page
                </td>
           </tr>
           <tr>
-               <td width="160" align="center">
-                    <a href="https://github.com/twitter/innovators-patent-agreement" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/github/innovators-patent-agreement.png"  width="150" /></a>
+               <td width=160 align=center>
+                    <a href=https://github.com/twitter/innovators-patent-agreement target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/github/innovators-patent-agreement.png  width=150 /></a>
                </td>
                <td>
-                    <strong><a href="https://github.com/twitter/innovators-patent-agreement" target="_blank">Innovators Patent Agreement</a></strong> - A new way to do patent assignment that keeps control in the hands of engineers and designers, put forth by Twitter.
+                    <strong><a href=https://github.com/twitter/innovators-patent-agreement target=_blank>Innovators Patent Agreement</a></strong> - A new way to do patent assignment that keeps control in the hands of engineers and designers, put forth by Twitter.
                </td>
           </tr>
           <tr>
-               <td width="160" align="center">
-                    <a href="https://github.com/bundestag/gesetze" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/github/german-federal-law-on-github.png"  width="150" /></a>
+               <td width=160 align=center>
+                    <a href=https://github.com/bundestag/gesetze target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/github/german-federal-law-on-github.png  width=150 /></a>
                </td>
                <td>
-                    <strong><a href="https://github.com/bundestag/gesetze" target="_blank">Germany for Laws</a></strong> - A repository containing all German federal laws and regulations in Markdown format
+                    <strong><a href=https://github.com/bundestag/gesetze target=_blank>Germany for Laws</a></strong> - A repository containing all German federal laws and regulations in Markdown format
                </td>
           </tr>
      </tbody>

@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cod
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://www.codecademy.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy-logo.png"  width="200" align="right" /></a>
+     <a href=http://www.codecademy.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy-logo.png  width=200 align=right /></a>
 </p>
 <p>
      As I do with many of my stories, I’ve been stewing on the news that online education platform Codecademy started offering API programming lessons for popular APIs like Twilio and NPR back in January. While at first glance this seems like an important evolution in API education, I wanted to really think through all the details of API on-boarding before I passed judgement.
@@ -36,7 +36,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cod
      Beyond SEO, you will deprive new users of the additional benefits provided by your API ecosystem, like direct and community support. On Codecademy you won’t be there to answer their questions along the way, and they won’t be able to access the knowledge and wisdom of your existing developer community--an essential aspect of taking your API from just an area, to a community and ultimately an ecosystem.
 </p>
 <p>
-     <a href="http://www.codecademy.com/tracks/apis" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy-api-page.png"  width="550" /></a>
+     <a href=http://www.codecademy.com/tracks/apis target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy-api-page.png  width=550 /></a>
 </p>
 <p>
      My objective on API Evangelist is to help API owners be successful in their API initiatives by understand the best practices to deploying and managing their APIs. I think Codecademy is a very cool platform and if you have the resources it is something you should add to your toolbox. But if your API team resources are short (as they are in most), you need to rely on many of the existing building blocks you have and build meaningful education material for your API that users can find and put to use within your API area, where you can make sure and support them in real-time.

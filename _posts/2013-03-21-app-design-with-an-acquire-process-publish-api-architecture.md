@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sea
 ---
 {% include JB/setup %}
 <p>
-     <a title="Seabourne" href="http://seabourneinc.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/seabourne-inc/seabourne-logo-2013.png"  width="200" align="right" /></a>
+     <a title=Seabourne href=http://seabourneinc.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/seabourne-inc/seabourne-logo-2013.png  width=200 align=right /></a>
 </p>
 <p>
      I'm tracking on a new wave of application frameworks and API centric architecture patterns, that are not just helping deliver the next wave of web &amp; mobile apps, but also bridging, aggregating and providing interoperability and transformations between APIs platforms.
 </p>
 <p>
-     One company I've been watching closely is <a title="Seabourne" href="http://seabourneinc.com/">Seabourne</a>. The Seabourne team has an approach to application development that follows a very interesting set of principles:
+     One company I've been watching closely is <a title=Seabourne href=http://seabourneinc.com/>Seabourne</a>. The Seabourne team has an approach to application development that follows a very interesting set of principles:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Information Flows Instead of Pipelines -</strong> Information operates in ‘flows’ where inputs and outputs are flexible and happen at any point. Flows are fluid and flexible, unlike structured, point-to-point pipelines
      </li>
@@ -32,18 +32,18 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sea
      </li>
 </ul>
 <p>
-     I think that pretty much describes the challenges we face building web and mobile apps today, and Seabourne's approach isn’t just about building apps, it is about organizing resources from multiple providers to build the best app you can. To see it in action you have to check out the project they just implemented using their approach called <a href="http://govinfo.io/">GovInfo</a>.
+     I think that pretty much describes the challenges we face building web and mobile apps today, and Seabourne's approach isn’t just about building apps, it is about organizing resources from multiple providers to build the best app you can. To see it in action you have to check out the project they just implemented using their approach called <a href=http://govinfo.io/>GovInfo</a>.
 </p>
 <p>
      Using GovInfo, anyone can sign up to receive alerts from more than 100 different federal agency websites. GovInfo gets its information from a large number of sources ranging from RSS, APIs or scraped from HTML sources. Once acquired, the framework de-dupes, cleanses and normalizes the data as needed, then makes available for publishing or pushing out via email, SMS or other means.
 </p>
 <p>
-     <a title="Seabourne" href="http://seabourneinc.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/seabourne-inc/govinfo_diagram.png"  width="550" /></a>
+     <a title=Seabourne href=http://seabourneinc.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/seabourne-inc/govinfo_diagram.png  width=550 /></a>
 </p>
 <p>
-     The Seabourne approach is not just <a href="http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/">rethinking extract, transform and load (ETL)</a>, but also makes your app platform centered around acquire, process and publish, in a way that improves flexibility, centralizes processing rules for all incoming information and reduces the amount of time it takes to add new sources of data, all while providing scalability, in a very granular way.
+     The Seabourne approach is not just <a href=http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/>rethinking extract, transform and load (ETL)</a>, but also makes your app platform centered around acquire, process and publish, in a way that improves flexibility, centralizes processing rules for all incoming information and reduces the amount of time it takes to add new sources of data, all while providing scalability, in a very granular way.
 </p>
 <p>
-     I’ve been watching Seabourne evolve and constantly refine their approach to distributed application design ranging from their <a href="http://blog.programmableweb.com/2011/04/06/everything-should-be-an-api-says-fcc/">deployment of the FCC web site</a>, to the <a title="launching of MyFCC" href="/2011/12/20/the-fcc-lanches-api-curation-platform-called-myfcc/">launching of MyFCC</a>, and now the next iteration of their platform driving GovInfo. I’ll keep following what they are doing with their <a href="http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/">AP2 approach</a> and watch the <a href="http://seabourneinc.com/wp-content/uploads/2013/case-studies/Seabourne-Information-Management.pdf">tools</a> and best practices that are a result of their innovative approach to application development using APIs.
+     I’ve been watching Seabourne evolve and constantly refine their approach to distributed application design ranging from their <a href=http://blog.programmableweb.com/2011/04/06/everything-should-be-an-api-says-fcc/>deployment of the FCC web site</a>, to the <a title=launching of MyFCC href=/2011/12/20/the-fcc-lanches-api-curation-platform-called-myfcc/>launching of MyFCC</a>, and now the next iteration of their platform driving GovInfo. I’ll keep following what they are doing with their <a href=http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/>AP2 approach</a> and watch the <a href=http://seabourneinc.com/wp-content/uploads/2013/case-studies/Seabourne-Information-Management.pdf>tools</a> and best practices that are a result of their innovative approach to application development using APIs.
 </p>
 

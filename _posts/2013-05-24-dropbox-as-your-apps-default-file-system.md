@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/far
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://fargo.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/dave-winer/fargo-small-picture.png"  width="125" align="right" /></a>
+     <a href=http://fargo.io/><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/dave-winer/fargo-small-picture.png  width=125 align=right /></a>
 </p>
 <p>
      Cloud storage of documents is becoming commonplace. Individuals, companies, government and non-government organizations have increasingly seen the potential of storing files in the cloud using services like Amazon S3, Dropbox and Box.
@@ -15,10 +15,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/far
      As a web or mobile application developer, it is becoming more common to provide integration, syncing or even direct usage of popular cloud storage services like Dropbox as the application's storage system.
 </p>
 <p>
-     This last week I started playing with Dave Winer's (<a href="/admin/blog/davewiner">@davewiner</a>) simple idea outliner, notepad, todo list and project organizer--<a href="http://fargo.io/">Fargo</a>.
+     This last week I started playing with Dave Winer's (<a href=/admin/blog/davewiner>@davewiner</a>) simple idea outliner, notepad, todo list and project organizer--<a href=http://fargo.io/>Fargo</a>.
 </p>
 <p>
-     What caught my attention is Dave's use of Dropbox as the central storage for the app. It reminds me of another application I use called <a href="http://prose.io/">Prose.io</a>, which uses Github as the central storage system for the app.
+     What caught my attention is Dave's use of Dropbox as the central storage for the app. It reminds me of another application I use called <a href=http://prose.io/>Prose.io</a>, which uses Github as the central storage system for the app.
 </p>
 <p>
      I really dig this approach to delivering, dead-simple, meaningful apps like Fargo, that don't re-invent the wheel and focus on delivering value on top of the existing tools and platforms we already use.
@@ -27,10 +27,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/far
      I asked Dave what his thoughts are on this approach, in which he simply replied:
 </p>
 <div>
-     <blockquote >
+     <blockquote class=twitter-tweet c2>
           <p>
-               @<a href="https://twitter.com/kinlane">kinlane</a> -- works like a dream
-          </p>— Dave Winer ☮ (@davewiner) <a href="https://twitter.com/davewiner/status/337027957333827584">May 22, 2013</a>
+               @<a href=https://twitter.com/kinlane>kinlane</a> -- works like a dream
+          </p>— Dave Winer ☮ (@davewiner) <a href=https://twitter.com/davewiner/status/337027957333827584>May 22, 2013</a>
      </blockquote>
 </div>
 <p>

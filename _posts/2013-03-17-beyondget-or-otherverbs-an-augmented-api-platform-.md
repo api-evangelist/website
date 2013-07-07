@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aug
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-post.png"  width="300" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-post.png  width=300 align=right />
 </p>
 <p>
      I have a idea for a new API platform. Since I do not have any startup aspirations, I prefer setting my ideas free, for anyone to use, instead of acting on them myself.
@@ -15,10 +15,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aug
      This idea is an evolution from an earlier one, which I had while working with the CityGrid API, called “augmented places”.  While at CityGrid I constantly had people asking if they could submit data back to the API. Stating they had a better list of pizza places in Brooklyn or vegan restaurants in Santa Cruz. I had to always turn these folks away, and one morning I sketched out “augmented places”. It would be a service where anyone could submit their own meta data about a place, either adding an entirely new place, updating an existing one, or even remove a listing. It would provide an external service that could augment all places APIs, not just CityGrid.
 </p>
 <p>
-     Fast forward to the other night, I did some data journalism for my girlfriend Audrey (<a href="https://twitter.com/audreywatters">@audreywatters</a>), which included <a href="/2013/03/16/using-the-crunchbase-api/">pulling data from the Crunchbase API</a>. I pulled 3000 education startups from around the world, then after delivering to her in a JSON object and Google Spreadsheet, I immediately used the script to pull any API related startup, for my own needs. I quickly compared a handful of results with my existing API database and in many cases, I have much better information on some of these companies than CrunchBase. Yet I have no way to submit this data back to CrunchBase, to correct or add to what they have.
+     Fast forward to the other night, I did some data journalism for my girlfriend Audrey (<a href=https://twitter.com/audreywatters>@audreywatters</a>), which included <a href=/2013/03/16/using-the-crunchbase-api/>pulling data from the Crunchbase API</a>. I pulled 3000 education startups from around the world, then after delivering to her in a JSON object and Google Spreadsheet, I immediately used the script to pull any API related startup, for my own needs. I quickly compared a handful of results with my existing API database and in many cases, I have much better information on some of these companies than CrunchBase. Yet I have no way to submit this data back to CrunchBase, to correct or add to what they have.
 </p>
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-put.png"  width="300" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-put.png  width=300 align=right />
 </p>
 <p>
      This is common in the open API space. Most data APIs only allow you to /GET. Allowing for the other verbs /POST, /PUT, and /DELETE, usually require not just more resources to deploy and manage, but also a certain mindset that is open to receiving information from your API consumers, which could range from internal and partner users, to the general public. Some places I’ve worked, are just scared shitless of repercussions of doing something like this.
@@ -30,7 +30,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aug
      Developers could use a primary API resource as well as the augmented version of the API if they choose. You would have to add some sort of trusted user layer, so developers could only show data submitted by trusted sources.  Seems like some sort of Git layer for versioning would be needed as well.
 </p>
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-delete.png"  width="330" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-delete.png  width=330 align=right />
 </p>
 <p>
      API owners could also choose to use an augmented layer as a sort of crowdsource queue for their API. The API owner could decide which users they trust and what data was relevant enough to let back in. It could act as a DMZ for your API.

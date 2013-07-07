@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/moz
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://openbadges.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mozilla-open-badges/mozilla-open-badges.png"  width="250" align="right" /></a>
+     <a href=http://openbadges.org/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/mozilla-open-badges/mozilla-open-badges.png  width=250 align=right /></a>
 </p>
 <p>
-     Last week <a href="http://openbadges.tumblr.com/post/45364274104/introducing-open-badges-1-0">Mozilla launched their new Open Badges platform</a>, as an open standard to recognize and verify learning. I immediately started thinking about how it could be applied to APIs for incentivizing developer participation and success.
+     Last week <a href=http://openbadges.tumblr.com/post/45364274104/introducing-open-badges-1-0>Mozilla launched their new Open Badges platform</a>, as an open standard to recognize and verify learning. I immediately started thinking about how it could be applied to APIs for incentivizing developer participation and success.
 </p>
 <p>
      I’ve come across other badge programs, but Mozilla is the first open approach I’ve seen, providing free software and an open technical standard, that any organization can use to create, issue and verify digital badges.
@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/moz
 <p>
      Some examples badge-worthy milestones might be:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Achieve X amount of API calls
      </li>
      <li>Published application to showcase
@@ -38,12 +38,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/moz
      It would take a bit of planning to developer the right approach to badging for each API, as goals would be different for each provider. But, providing badges could provide an incentive for developers to work towards meaningful goals you have tied to important KPIs for your API strategy, While also providing an easy way to track your most knowledgable and potentially trusted developers.
 </p>
 <p>
-     <a href="http://openbadges.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mozilla-open-badges/mozilla-open-badges-diagram.jpg"  width="500" /></a>
+     <a href=http://openbadges.org/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/mozilla-open-badges/mozilla-open-badges-diagram.jpg  width=500 /></a>
 </p>
 <p>
      If API providers start issuing sensible and consistent badges for API knowledge it would also provide additional ways to measure the size and overall health of the API developer community. I could envision badges that would serve specific business sectors or even around city, state and federal government APIs and civic efforts.
 </p>
 <p>
-     I will add Mozilla Open Badges to my list of <a href="/buildingblocks/">API building blocks</a> and explore other ideas about how an API provider can establish badge programs to incentivize and reward healthy API developer activity.
+     I will add Mozilla Open Badges to my list of <a href=/buildingblocks/>API building blocks</a> and explore other ideas about how an API provider can establish badge programs to incentivize and reward healthy API developer activity.
 </p>
 

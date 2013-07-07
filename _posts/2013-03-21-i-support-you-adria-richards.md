@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-adria-richards.png"  width="300" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-adria-richards.png  width=300 align=right />
 </p>
 <p>
      Way to go brogrammers.  You made sure a bright light in evangelism was partially dimmed tday.  Really? With all the shaming that goes on targeted at women, you don't have balls to take a little shaming when you arer being a sexist pig?   C'mon...ummm have some balls?
 </p>
 <p>
-     As I've <a href="http://kinlane.com/2012/12/30/sexism-in-the-tech-space/">said it before, us guys are going to have to eat shit with a side of humble pie for many years</a> to come to balance this whole sexism thing out.  Let's own it.
+     As I've <a href=http://kinlane.com/2012/12/30/sexism-in-the-tech-space/>said it before, us guys are going to have to eat shit with a side of humble pie for many years</a> to come to balance this whole sexism thing out.  Let's own it.
 </p>
 <p>
      All it would have taken is a humble apology from those gentleman in response to the Tweet, then some healthy discussion about why what they said was wrong, and move on kids.  

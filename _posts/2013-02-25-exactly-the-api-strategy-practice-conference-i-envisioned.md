@@ -6,19 +6,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-steve-kin-open.jpg"  width="300" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-steve-kin-open.jpg  width=300 align=right />
 </p>
 <p>
-     Its the Monday morning after the <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice Conference</a>. The conference went off without a hitch, and was exactly the conference I envisioned when 3Scale first contacted me seven months ago about the idea of putting on the event.  In July of 2012 Steve Willmott the CEO and founder of 3Scale sent me an email stating:
+     Its the Monday morning after the <a href=http://www.apistrategyconference.com/>API Strategy &amp; Practice Conference</a>. The conference went off without a hitch, and was exactly the conference I envisioned when 3Scale first contacted me seven months ago about the idea of putting on the event.  In July of 2012 Steve Willmott the CEO and founder of 3Scale sent me an email stating:
 </p>
 <blockquote>
-     ..we're thinking of finally getting round to organizing an API focused event (conference) which tries to help spread knowledge about API, promote good practice and broaden the API tent beyond what it is today. The aim would be an event which combined both "business and practice" - meaning one element which tackles critical topics such as business models, strategy, success stories etc. and another which is about "what can be done with APIs" and "how to make it happen technically".
+     ..we're thinking of finally getting round to organizing an API focused event (conference) which tries to help spread knowledge about API, promote good practice and broaden the API tent beyond what it is today. The aim would be an event which combined both business and practice - meaning one element which tackles critical topics such as business models, strategy, success stories etc. and another which is about what can be done with APIs and how to make it happen technically.
 </blockquote>
 <p>
      Closing with:
 </p>
 <blockquote>
-     The final important thing is we'd like it to be a very open event - with a range of supporters, speakers and attendees and - while vendors might sponsor - it wouldn't be a "vendor" event.
+     The final important thing is we'd like it to be a very open event - with a range of supporters, speakers and attendees and - while vendors might sponsor - it wouldn't be a vendor event.
 </blockquote>
 <p>
      To which I responded with:
@@ -33,12 +33,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      As many of you know the original conference was scheduled for November 1st and 2nd in New York, City. But due to hurricane Sandy, we had to postpone the conference and we ended up rescheduling it for last Thursday and Friday, February 21st and 22nd at the same venue--the Westin Grand Central in NYC.
 </p>
 <p>
-     In the end, the conference ended up with about 350 registered (<strong>SOLD OUT</strong>),with about what appears to be about 275-325 floating around each day, coming and going listening to <a title="talks from over 70 companies in the API space" href="/2013/02/12/companies-that-are-speaking-at-api-strategy-practice/">talks from over 70 companies in the API space</a>. It was exactly the mix of folks I had hoped to see--ranging from marketing, advertising, business and developers who were new to APIs, to the moderately skilled players who were looking to polish their skills as well as being a who’s who of API experts across the industry.
+     In the end, the conference ended up with about 350 registered (<strong>SOLD OUT</strong>),with about what appears to be about 275-325 floating around each day, coming and going listening to <a title=talks from over 70 companies in the API space href=/2013/02/12/companies-that-are-speaking-at-api-strategy-practice/>talks from over 70 companies in the API space</a>. It was exactly the mix of folks I had hoped to see--ranging from marketing, advertising, business and developers who were new to APIs, to the moderately skilled players who were looking to polish their skills as well as being a who’s who of API experts across the industry.
 </p>
 <p>
      I did not get to attend as many of the sessions as I wished, and due to event coordination I wasn’t always present main stage to hear complete talks. But on Monday morning here is what’s fresh in my mind:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Laura Merling</strong> - Its great to see Laura’s approach to helping organize AT&amp;T’s API strategy. I look forward to closely following not just her strategy, but understand her tactical considerations for helping the telco giant successful navigate the API space.
      </li>
@@ -55,10 +55,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
           <strong>Steve Klabnik</strong> - Everyone needs to be exposed to Steve’s extremely clear perspective of not just open APIs, but open software development. His talks are never about product or companies, they are more a philosophical vision that is rooted in a healthy understanding of developers, development communities and how it dovetails into society, business and politics.
      </li>
      <li>
-          <a href="http://3scale.net" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/3scale-logo.jpg"  width="250" align="right" /></a>
+          <a href=http://3scale.net target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/3scale-logo.jpg  width=250 align=right /></a>
      </li>
      <li>
-          <strong>Backend as a Service Panel</strong> - I had so much fun on this panel. I cannot wait to see the video. The banter back and forth between lya Sukhar (<a href="https://twitter.com/ilyasu">@ilyasu</a>) of <a href="http://www.parse.com/" target="_blank">Parse</a>, Morgan Bickle (<a href="https://twitter.com/morganbickle">@morganbickle</a>) of <a href="http://www.kinvey.com/" target="_blank">Kinvey</a>, Marc Weil (<a href="https://twitter.com/marcweil">@marcweil</a>) of <a href="https://cloudmine.me/" target="_blank">Cloudmine</a>, Miko Matasumura (<a href="https://twitter.com/mikojava">@mikojava</a>) of <a href="http://kii.com/" target="_blank">Kii</a>, Ty Amell (<a href="https://twitter.com/tyamell">@tyamell</a>) of <a href="https://www.stackmob.com/" target="_blank">StackMob</a> James Tamplin (<a href="https://twitter.com/jamestamplin">@jamestamplin</a>) of <a href="https://www.firebase.com/" target="_blank">Firebase</a> was priceless. At times, it felt like reality TV show. There will definitely be more discussion about this panel.
+          <strong>Backend as a Service Panel</strong> - I had so much fun on this panel. I cannot wait to see the video. The banter back and forth between lya Sukhar (<a href=https://twitter.com/ilyasu>@ilyasu</a>) of <a href=http://www.parse.com/ target=_blank>Parse</a>, Morgan Bickle (<a href=https://twitter.com/morganbickle>@morganbickle</a>) of <a href=http://www.kinvey.com/ target=_blank>Kinvey</a>, Marc Weil (<a href=https://twitter.com/marcweil>@marcweil</a>) of <a href=https://cloudmine.me/ target=_blank>Cloudmine</a>, Miko Matasumura (<a href=https://twitter.com/mikojava>@mikojava</a>) of <a href=http://kii.com/ target=_blank>Kii</a>, Ty Amell (<a href=https://twitter.com/tyamell>@tyamell</a>) of <a href=https://www.stackmob.com/ target=_blank>StackMob</a> James Tamplin (<a href=https://twitter.com/jamestamplin>@jamestamplin</a>) of <a href=https://www.firebase.com/ target=_blank>Firebase</a> was priceless. At times, it felt like reality TV show. There will definitely be more discussion about this panel.
      </li>
      <li>
           <strong>Jeff Meisel</strong> - I’m captivated by the potential of National Instrument’s Labview Tools API program. His talk walked us through the potential from a platform that can provide any physically engineered object with an API. Jeff’s talk left my mind spinning with visions around the future of APIs.
@@ -79,7 +79,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
           <strong>Gray Brooks</strong> - APIs and the Federal Government is a piece of the API pie I’m uber passionate about. I thoroughly enjoy my regular discussions with the Senior API Strategist and the GSA and his talk delivered the mandate I feel is needed right now, not just for city, county, state and federal government to get on board with APIs, but also that us citizens become accountable for making this work as well!
      </li>
      <li>
-          <strong>APIs, Platforms and Ecosystem</strong> - We closed up the conference with a panel made up of Tyler Stalder (<a href="https://twitter.com/tylerstalder">@tylerstalder</a>) of <a title="Singly" href="http://www.singly.com/" target="_blank">Singly</a>, Seth Blank (<a href="https://twitter.com/AntiFreeze">@AntiFreeze</a>) of<a title="YourTrove" href="https://www.yourtrove.com/">YourTrove</a>, Asif Rahman (<a href="https://twitter.com/asifrahman">@asifrahman</a>) of <a title="NewsCred" href="http://newscred.com/">Newscred</a>, Orian Marx (<a href="http://alpha.app.net/orian">@orian</a>) of<a title="App.net" href="https://join.app.net/">App.net</a>, Travis Wallis (<a href="https://twitter.com/traviswallis" target="_blank">@traviswallis</a>) of <a title="PeopleBrowsr" href="http://peoplebrowsr.com/" target="_blank">PeopleBrowsr</a>. This panel closed up the event, leaving exactly the right tone with the audience I wanted. Focusing at the heart of what makes APIs work, the relationship between platform, developers and users and what it takes to make it work in this new API driven world.
+          <strong>APIs, Platforms and Ecosystem</strong> - We closed up the conference with a panel made up of Tyler Stalder (<a href=https://twitter.com/tylerstalder>@tylerstalder</a>) of <a title=Singly href=http://www.singly.com/ target=_blank>Singly</a>, Seth Blank (<a href=https://twitter.com/AntiFreeze>@AntiFreeze</a>) of<a title=YourTrove href=https://www.yourtrove.com/>YourTrove</a>, Asif Rahman (<a href=https://twitter.com/asifrahman>@asifrahman</a>) of <a title=NewsCred href=http://newscred.com/>Newscred</a>, Orian Marx (<a href=http://alpha.app.net/orian>@orian</a>) of<a title=App.net href=https://join.app.net/>App.net</a>, Travis Wallis (<a href=https://twitter.com/traviswallis target=_blank>@traviswallis</a>) of <a title=PeopleBrowsr href=http://peoplebrowsr.com/ target=_blank>PeopleBrowsr</a>. This panel closed up the event, leaving exactly the right tone with the audience I wanted. Focusing at the heart of what makes APIs work, the relationship between platform, developers and users and what it takes to make it work in this new API driven world.
      </li>
 </ul>
 <p>
@@ -89,19 +89,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      Beyond the keynotes, panels and sessions and moving into the networking opportunity that was APIStrat. I met so many people that I know online, but have never met in person, my head is still swimming. Every couple hours I had to walk outside and get some air, so I could keep up with the conversations. It makes me remember how important these events are to re-enforcing our existing relationships. Online will never fully replace offline relationships, just augment them in new ways...or maybe offline augments online?  Who knows!
 </p>
 <p>
-     Next, I have to throw in a comment about the beer during the drinks reception. Did you notice the IPA amongst the beer choices? Nice work <a title="Ping Identity" href="https://www.pingidentity.com/">Ping Identity</a> and the 3Scale team. It is the little things that make these events successful.
+     Next, I have to throw in a comment about the beer during the drinks reception. Did you notice the IPA amongst the beer choices? Nice work <a title=Ping Identity href=https://www.pingidentity.com/>Ping Identity</a> and the 3Scale team. It is the little things that make these events successful.
 </p>
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/augusto-marietta-mashape-apistrat.jpg"  width="200" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/augusto-marietta-mashape-apistrat.jpg  width=200 align=right />
 </p>
 <p>
      Ok. I know there was more, but I will be writing stories from now until the next API Strategy &amp; Practice in October or November (more to come), and this post is pretty long as it is.
 </p>
 <p>
-     Anyways, I want to thank all the <a href="http://www.apistrategyconference.com/sponsors.php">sponsors of API Strategy &amp; Practice</a> for making the conversation possible, and make sure the 3Scale team knows how thankful I am for what they did. They took all the risk, while putting up with me and my shit, to make exactly the event I envisioned when we started all of this.  It wouldn't have been possible without <a title="3Scale" href="http://3scale.net">3Scale</a>.
+     Anyways, I want to thank all the <a href=http://www.apistrategyconference.com/sponsors.php>sponsors of API Strategy &amp; Practice</a> for making the conversation possible, and make sure the 3Scale team knows how thankful I am for what they did. They took all the risk, while putting up with me and my shit, to make exactly the event I envisioned when we started all of this.  It wouldn't have been possible without <a title=3Scale href=http://3scale.net>3Scale</a>.
 </p>
 <p>
-     I wanted to leave you with wise words from Augusto Marietti (<a href="https://twitter.com/sinzone">@sinzone)</a> the CEO of <a title="Mashape" href="http://mashape.com/">Mashape</a>.  I snapped this picture exactly at the moment Augusto said:<strong> DON'T FUCK THIS UP!!</strong> 
+     I wanted to leave you with wise words from Augusto Marietti (<a href=https://twitter.com/sinzone>@sinzone)</a> the CEO of <a title=Mashape href=http://mashape.com/>Mashape</a>.  I snapped this picture exactly at the moment Augusto said:<strong> DON'T FUCK THIS UP!!</strong> 
 </p>
 <p>
      I agree with Augusto. It is way too important.  Let's make sure and keep these conversations going, so we do it right!  

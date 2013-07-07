@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/aws/aws-ecommerce-reference-architecture.png"  width="300" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/aws/aws-ecommerce-reference-architecture.png  width=300 align=right />
 </p>
 <p>
-     I was checking out the <a href="http://aws.typepad.com/aws/2013/02/three-new-aws-reference-architectures-for-e-commerce.html">updates to the AWS Reference Architecture</a>, where they provide blueprints for how you can use AWS. In this version AWS provides an e-commerce architecture reference--providing a system overview, a detailed architectural diagram, and a list of the AWS services used in the architectural approach.
+     I was checking out the <a href=http://aws.typepad.com/aws/2013/02/three-new-aws-reference-architectures-for-e-commerce.html>updates to the AWS Reference Architecture</a>, where they provide blueprints for how you can use AWS. In this version AWS provides an e-commerce architecture reference--providing a system overview, a detailed architectural diagram, and a list of the AWS services used in the architectural approach.
 </p>
 <p>
      The AWS e-commerce architecture reference provides three separate areas:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Web Frontend</strong> - This is a reference architecture for the web frontend of an e-commerce site. It makes use of Route 53, CloudFront, Elastic Beanstalk, S3, ElastiCache, DynamoDB and CloudSearch
      </li>
@@ -26,9 +26,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
      </li>
 </ul>
 <p>
-     Beyond providing the <a href="http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_ecommerce_webfrontend_14.pdf">detailed reference card</a>, AWS provides more information on a <a href="http://aws.amazon.com/aws-training/architect/">three-day course in AWS Architecture Training</a> that will be held in numerous U.S. cities this spring.
+     Beyond providing the <a href=http://media.amazonwebservices.com/architecturecenter/AWS_ac_ra_ecommerce_webfrontend_14.pdf>detailed reference card</a>, AWS provides more information on a <a href=http://aws.amazon.com/aws-training/architect/>three-day course in AWS Architecture Training</a> that will be held in numerous U.S. cities this spring.
 </p>
 <p>
-     I will add API architecture references as a <a href="/">building block for API owners</a> to consider when planning and managing an API. If you can provide clear blueprints for developers to follow, you can increase the chances developers will be successful with integration of an API into their application or systems.
+     I will add API architecture references as a <a href=/>building block for API owners</a> to consider when planning and managing an API. If you can provide clear blueprints for developers to follow, you can increase the chances developers will be successful with integration of an API into their application or systems.
 </p>
 

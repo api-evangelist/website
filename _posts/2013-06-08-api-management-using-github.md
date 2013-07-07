@@ -6,50 +6,50 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 ---
 {% include JB/setup %}
 <p>
-     There are plenty of tools and services you can use to manage your API and its developer community. But there is no platform that provides as much benefit and versatility as <a title="Github" href="http://github.com">Github</a>.
+     There are plenty of tools and services you can use to manage your API and its developer community. But there is no platform that provides as much benefit and versatility as <a title=Github href=http://github.com>Github</a>.
 </p>
 <p>
      Github is a social coding platform that developers have grown to love and respect. With a high level of adoption by developers, and the versatility of the features available on Github, API providers have developed many innovative ways to use the platform to manage an API.
 </p>
 <p>
-     <a title="Github" href="http://github.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg"  width="200" align="right" /></a>
+     <a title=Github href=http://github.com><img src=https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg  width=200 align=right /></a>
 </p>
 <p>
      I have documented eleven approaches to using Github for API management to date:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://apievangelist.com/2012/10/22/open-source-your-api-with-github/">Design and Code</a>
+          <a href=http://apievangelist.com/2012/10/22/open-source-your-api-with-github/>Design and Code</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/10/24/version-control-your-api-documentation-with-github/">Documentation</a>
+          <a href=http://apievangelist.com/2012/10/24/version-control-your-api-documentation-with-github/>Documentation</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/10/25/sdk-management-for-your-api-with-github/">Software development kits (SDK)</a>
+          <a href=http://apievangelist.com/2012/10/25/sdk-management-for-your-api-with-github/>Software development kits (SDK)</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/10/28/api-code-samples-via-gist/">Code Samples (Gists)</a>
+          <a href=http://apievangelist.com/2012/10/28/api-code-samples-via-gist/>Code Samples (Gists)</a>
      </li>
      <li>
-          <a href="/2012/10/29/api-developer-login-using-github/">Developer Authentication</a>
+          <a href=/2012/10/29/api-developer-login-using-github/>Developer Authentication</a>
      </li>
      <li>
-          <a href="/2012/11/03/api-developer-profiling-using-github/">Developer Profiling</a>
+          <a href=/2012/11/03/api-developer-profiling-using-github/>Developer Profiling</a>
      </li>
      <li>
-          <a href="/2012/11/07/publish-your-api-presentations-and-guides-to-github/">Presentations and Guides</a>
+          <a href=/2012/11/07/publish-your-api-presentations-and-guides-to-github/>Presentations and Guides</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/09/23/api-issue-management-with-github/">Issue Management</a>
+          <a href=http://apievangelist.com/2012/09/23/api-issue-management-with-github/>Issue Management</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/11/12/communicate-your-api-roadmap-with-github/">Roadmaps</a>
+          <a href=http://apievangelist.com/2012/11/12/communicate-your-api-roadmap-with-github/>Roadmaps</a>
      </li>
      <li>
-          <a href="/2012/03/21/using-github-for-your-hackathon/">Hackathons</a>
+          <a href=/2012/03/21/using-github-for-your-hackathon/>Hackathons</a>
      </li>
      <li>
-          <a href="http://apievangelist.com/2012/11/29/managing-api-terms-of-service-privacy-and-branding-with-github/">Terms of Service, Privacy, and Branding</a>
+          <a href=http://apievangelist.com/2012/11/29/managing-api-terms-of-service-privacy-and-branding-with-github/>Terms of Service, Privacy, and Branding</a>
      </li>
 </ul>
 <p>

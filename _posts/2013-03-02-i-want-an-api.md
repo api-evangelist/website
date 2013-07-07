@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 ---
 {% include JB/setup %}
 <p>
-     <a title="I Want An API" href="http://iwantanapi.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-i-want-api.png"  width="325" align="right" /></a>
+     <a title=I Want An API href=http://iwantanapi.apievangelist.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-i-want-api.png  width=325 align=right /></a>
 </p>
 <p>
      I feel we have done a good job explaining what is an API, why people need APIs, and providing services to manage APIs, but we are falling short on delivering information, tools and services for deploying APIs.
@@ -35,7 +35,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <p>
      When it comes to API deployment I would put users into two distinct groups:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Technical</strong> - You have skills and resources to architect, design, develop and deploy infrastructure, code to meet your API needs
      </li>
@@ -52,13 +52,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <p>
      You have some technical resources and the know how (or willingness to learn), and you want an API. Ideally there would be open source tools available for you to download and implement:
 </p>
-<ul >
+<ul class=mainlist>
      <li>CSV to API 
      </li>
      <li>Database to API
      </li>
      <li>Developer Portal 
-          <ul >
+          <ul class=mainlist>
                <li>Docs 
                </li>
                <li>Code 
@@ -85,7 +85,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
      Non-Technical
 </h2>
 <p>
-     You do not have the technical resources or time to implement your own API Strategy. You need a dead simple, software as a service implementation. You can see examples of this with the latest breed of API service providers, <a href="http://emergentone.com">Emergent One</a>, <a title="API Spark" href="http://apispark.com/">API Spark</a>, and <a href="https://apiengine.io/">API Engine</a>.
+     You do not have the technical resources or time to implement your own API Strategy. You need a dead simple, software as a service implementation. You can see examples of this with the latest breed of API service providers, <a href=http://emergentone.com>Emergent One</a>, <a title=API Spark href=http://apispark.com/>API Spark</a>, and <a href=https://apiengine.io/>API Engine</a>.
 </p>
 <p>
      We are just seeing this new breed of API service providers rise to meet the demand of not just API management, but now also API deployment. Making API deployment accessible to anyone, not just developers or companies with necessary resources. This will make the benefits of APIs accessible to the everyday problem owners, who often are restricted by IT bottlenecks or entire lack of IT resources.
@@ -94,6 +94,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
      Making data and content from a spreadsheet or existing database, machine readable by default or deployed as an API, allowing for more sophisticated interactions, should be as easy as deploying Wordpress for your blog. You should be able to go to a service provider and get exactly the hosting, deployment and management options you desire, or you should be able to download and install on your own infrastructure, giving you the control you desire over storage, hosting and access.
 </p>
 <p>
-     I’m adding a new project area to API Evangelist called <a title="I Want An API" href="http://iwantanapi.apievangelist.com/" target="_blank">I Want An API</a>, where I’ll be working to help define this space, and bring together other people to assist in developing the resources and tools we will all need to easily launch an API.
+     I’m adding a new project area to API Evangelist called <a title=I Want An API href=http://iwantanapi.apievangelist.com/ target=_blank>I Want An API</a>, where I’ll be working to help define this space, and bring together other people to assist in developing the resources and tools we will all need to easily launch an API.
 </p>
 

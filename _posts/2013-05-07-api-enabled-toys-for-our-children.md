@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fis
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://www.fisher-price.com/en_US/products/69586" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fisher-price/fisher-price-internet-enabled-device.png"  width="250" align="right" /></a>
+     <a href=http://www.fisher-price.com/en_US/products/69586 target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/fisher-price/fisher-price-internet-enabled-device.png  width=250 align=right /></a>
 </p>
 <p>
-     When it comes to the Internet of Things, APIs have a bright future. I tend to focus on the greater good when showcasing APIs, but occasionally I get tripped up by the market potential of APIs. I came across the <a href="http://gadgetwise.blogs.nytimes.com/2013/05/01/baby-toys-get-an-app-extension/">Baby Toys Get an App Extension</a> post in the New York Times this week, and I can't think of a more lucrative market for API interaction via a smart phone, than a baby or toddler's toys.
+     When it comes to the Internet of Things, APIs have a bright future. I tend to focus on the greater good when showcasing APIs, but occasionally I get tripped up by the market potential of APIs. I came across the <a href=http://gadgetwise.blogs.nytimes.com/2013/05/01/baby-toys-get-an-app-extension/>Baby Toys Get an App Extension</a> post in the New York Times this week, and I can't think of a more lucrative market for API interaction via a smart phone, than a baby or toddler's toys.
 </p>
 <p>
      First, can you image every mom or dad in America with access to their kids toys via their iPhone. Talk about an emotional connection. You have a real-time chord that is attached to a parents heart string. So if you are at work, missing your child that is at home, in day care, or even when you are at home with them, you have the opportunity to interact with your child via their crib, playstation or other toy? I'm not even going to start profiling the toys and the opportunity here.

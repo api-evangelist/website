@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png"  width="250" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png  width=250 align=right />
 </p>
 <p>
      As the API universe expands, I'm trying my best to stay in tune with where its going and try to help people understand the space, whether you are a newbie or API veteran--I want you to find what you are looking for at API Evangelist.
 </p>
 <p>
-     To support the fast moving space, as well as my ADHD working style, I've broken up API Evangelist into individual projects. Each project runs using my <a title="Hacker Storytelling" href="http://hackerstorytelling.com">Hacker Storytelling</a> format, which in short means each projects lives as a Githb repository, allowing me to publish the research, data, short form and long form content to an open source repository that anyone can browse, fork and download.
+     To support the fast moving space, as well as my ADHD working style, I've broken up API Evangelist into individual projects. Each project runs using my <a title=Hacker Storytelling href=http://hackerstorytelling.com>Hacker Storytelling</a> format, which in short means each projects lives as a Githb repository, allowing me to publish the research, data, short form and long form content to an open source repository that anyone can browse, fork and download.
 </p>
 <p>
      To help you (and me) see the entire API Evangelist network, i wanted to publish an outline of all 37 projects I'm curently working on:
@@ -20,29 +20,29 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      API 101
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="/index.php">API 101</a>
+          <a href=/index.php>API 101</a>
      </li>
      <li>
-          <a href="/2013/06/17/updated-api-history-white-paper/">History of APIs</a>
+          <a href=/2013/06/17/updated-api-history-white-paper/>History of APIs</a>
      </li>
      <li>
-          <a href="/2013/06/08/api-management-using-github/">API Management Using Github</a>
+          <a href=/2013/06/08/api-management-using-github/>API Management Using Github</a>
      </li>
 </ul>
 <h3>
-     Provide APIs (<a href="/provide/">Landing Page</a>)
+     Provide APIs (<a href=/provide/>Landing Page</a>)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://design.apievangelist.com/" target="_blank">Design</a>
+          <a href=http://design.apievangelist.com/ target=_blank>Design</a>
      </li>
      <li>
-          <a href="http://deployment.apievangelist.com/" target="_blank">Deployment</a>
+          <a href=http://deployment.apievangelist.com/ target=_blank>Deployment</a>
      </li>
      <li>
-          <a href="http://management.apievangelist.com/" target="_blank">Management</a>
+          <a href=http://management.apievangelist.com/ target=_blank>Management</a>
      </li>
      <li>Evangelism *
      </li>
@@ -54,102 +54,102 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
      </li>
 </ul>
 <h3>
-     Consume APIs (<a href="/consume/">Landing Page</a>)
+     Consume APIs (<a href=/consume/>Landing Page</a>)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://discovery.apievangelist.com/" target="_blank">Discovery</a>
+          <a href=http://discovery.apievangelist.com/ target=_blank>Discovery</a>
      </li>
      <li>
-          <a href="http://integration.apievangelist.com/" target="_blank">Integration</a>
+          <a href=http://integration.apievangelist.com/ target=_blank>Integration</a>
      </li>
      <li>Operations *
      </li>
      <li>
-          <a href="http://theapistack.com/" target="_blank">The API Stack</a>
+          <a href=http://theapistack.com/ target=_blank>The API Stack</a>
      </li>
      <li>
-          <a href="http://baas.apievangelist.com/" target="_blank">Backend as a Service (BaaS)</a>
+          <a href=http://baas.apievangelist.com/ target=_blank>Backend as a Service (BaaS)</a>
      </li>
 </ul>
 <h3>
      Resource Stack (NEW)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>Payments *
      </li>
      <li>Social *
      </li>
 </ul>
 <h3>
-     Trends (<a href="/trends/">Landing Page</a>)
+     Trends (<a href=/trends/>Landing Page</a>)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://aggregation.apievangelist.com/" target="_blank">Aggregation</a>
+          <a href=http://aggregation.apievangelist.com/ target=_blank>Aggregation</a>
      </li>
      <li>
-          <a href="http://reciprocity.apievangelist.com/" target="_blank">Reciprocity</a>
+          <a href=http://reciprocity.apievangelist.com/ target=_blank>Reciprocity</a>
      </li>
      <li>
-          <a href="http://realtime.apievangelist.com/" target="_blank">Real Time</a>
+          <a href=http://realtime.apievangelist.com/ target=_blank>Real Time</a>
      </li>
      <li>
-          <a href="http://spa.apievangelist.com/" target="_blank">Single Page Applications</a>
+          <a href=http://spa.apievangelist.com/ target=_blank>Single Page Applications</a>
      </li>
      <li>
-          <a href="http://voice.apievangelist.com/" target="_blank">Voice</a>
+          <a href=http://voice.apievangelist.com/ target=_blank>Voice</a>
      </li>
 </ul>
 <h3>
-     Opportunities (<a href="/opportunities/">Landing Page</a>)
+     Opportunities (<a href=/opportunities/>Landing Page</a>)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://3d-printing.apievangelist.com/" target="_blank">3D Printing</a>
+          <a href=http://3d-printing.apievangelist.com/ target=_blank>3D Printing</a>
      </li>
      <li>
-          <a href="http://home.apievangelist.com/" target="_blank">Home</a>
+          <a href=http://home.apievangelist.com/ target=_blank>Home</a>
      </li>
      <li>
-          <a href="http://buildings.apievangelist.com/" target="_blank">Buildings</a>
+          <a href=http://buildings.apievangelist.com/ target=_blank>Buildings</a>
      </li>
      <li>
-          <a title="Automobiles" href="http://automobile.apievangelist.com/" target="_blank">Automobiles</a>
+          <a title=Automobiles href=http://automobile.apievangelist.com/ target=_blank>Automobiles</a>
      </li>
      <li>
-          <a href="http://quantified-self.apievangelist.com/" target="_blank">Quantified Self</a>
+          <a href=http://quantified-self.apievangelist.com/ target=_blank>Quantified Self</a>
      </li>
 </ul>
 <h3>
-     Priorities (<a href="/priorities/">Landing Page</a>)
+     Priorities (<a href=/priorities/>Landing Page</a>)
 </h3>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://federal-government.apievangelist.com/" target="_blank">Federal Government</a>
+          <a href=http://federal-government.apievangelist.com/ target=_blank>Federal Government</a>
      </li>
      <li>State Government *
      </li>
      <li>
-          <a href="http://city-government.apievangelist.com/" target="_blank">City Government</a>
+          <a href=http://city-government.apievangelist.com/ target=_blank>City Government</a>
      </li>
      <li>
-          <a href="http://education.apievangelist.com/" target="_blank">Education</a>
+          <a href=http://education.apievangelist.com/ target=_blank>Education</a>
      </li>
      <li>
-          <a href="http://healthcare.apievangelist.com/" target="_blank">Healthcare</a>
+          <a href=http://healthcare.apievangelist.com/ target=_blank>Healthcare</a>
      </li>
      <li>
-          <a href="http://university.apievangelist.com/" target="_blank">University</a>
+          <a href=http://university.apievangelist.com/ target=_blank>University</a>
      </li>
      <li>
-          <a title="Libraries" href="http://libraries.apievangelist.com/" target="_blank">Libraries</a>
+          <a title=Libraries href=http://libraries.apievangelist.com/ target=_blank>Libraries</a>
      </li>
 </ul>
 <h3>
      Data
 </h3>
-<ul >
+<ul class=mainlist>
      <li>Analyze *
      </li>
      <li>Archive *
@@ -164,12 +164,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
      My goal with this new format that I've rolled out over the last six months, is to give me specific project areas to do research within, each week. Some projects will get love an attention, while others will simmer in the background--moving everything forward in small chunks.
 </p>
 <p>
-     All of these projects are accessible via landing pages on <a title="API Evangelist" href="http://www.apievangelist.com">API Evangelist</a>, which I will be keeping as the main portal for the business of APIs.  You can also find my work on the politics of APIs at <a href="http://apivoice.com">API Voice</a>, and you can keep up with my weekly monitoring via <a href="http://theapistack.com">The API Stack</a>, which is the seed for all of these projects.
+     All of these projects are accessible via landing pages on <a title=API Evangelist href=http://www.apievangelist.com>API Evangelist</a>, which I will be keeping as the main portal for the business of APIs.  You can also find my work on the politics of APIs at <a href=http://apivoice.com>API Voice</a>, and you can keep up with my weekly monitoring via <a href=http://theapistack.com>The API Stack</a>, which is the seed for all of these projects.
 </p>
 <p>
      Each project is meant to produce the following output:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Blog Posts</strong> - Stories and analysis from each area of the API space
      </li>
@@ -190,7 +190,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
      </li>
 </ul>
 <p>
-     The research for some of these projects is funded by my partner network, while much of it is done on my own steam. If you are interested in making sure specific projects happen, please <a href="mailto:info@apievangelist.com">feel free to reach out and get involved</a>.
+     The research for some of these projects is funded by my partner network, while much of it is done on my own steam. If you are interested in making sure specific projects happen, please <a href=mailto:info@apievangelist.com>feel free to reach out and get involved</a>.
 </p>
 <p>
      I will be adding projects in the future, and you may see some of the existing projects stagnate from time to time, when I run out of time, or it might be possible the space is not producing new work. Based upon page views, funding, time and other variables projects will rise to the top.
@@ -201,5 +201,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <p>
       
 </p>
-<ul ></ul>
+<ul class=mainlist></ul>
 

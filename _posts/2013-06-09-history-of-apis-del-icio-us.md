@@ -6,24 +6,24 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/del
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/delicious/delicious-logo.jpg"  width="200" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/delicious/delicious-logo.jpg  width=200 align=right />
 </p>
 <p>
-     <a href="https://delicious.com/">del.icio.us</a> is a social bookmarking service for storing, sharing and discovering web bookmarks to web pages, that was founded by Jousha Schachter in 2003.
+     <a href=https://delicious.com/>del.icio.us</a> is a social bookmarking service for storing, sharing and discovering web bookmarks to web pages, that was founded by Jousha Schachter in 2003.
 </p>
 <p>
      Del.icio.us implemented a very simple tagging system which allowed users to easily tag their web bookmarks in a meaningful way, but also established a kind of folksonomy across all users of the platform. Which proved to be a pretty powerful way for cataloging and sharing web links.
 </p>
-<table align="right">
+<table align=right>
      <tbody>
           <tr>
-               <td align="center">
-                    <a href="http://www.flickr.com/photos/joshu/765796263/in/set-72157600740166824/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/delicious/delicious-original-screenshot.jpg"  width="335" align="right" /></a>
+               <td align=center>
+                    <a href=http://www.flickr.com/photos/joshu/765796263/in/set-72157600740166824/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/delicious/delicious-original-screenshot.jpg  width=335 align=right /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a href="http://www.flickr.com/photos/joshu/765796263/in/set-72157600740166824/" target="_blank">Photo Credit</a>
+               <td align=center>
+                    <a href=http://www.flickr.com/photos/joshu/765796263/in/set-72157600740166824/ target=_blank>Photo Credit</a>
                </td>
           </tr>
      </tbody>

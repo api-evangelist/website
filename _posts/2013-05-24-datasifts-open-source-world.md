@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dat
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://datasift.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/datasift/datasift-logo.png"  width="225" align="right" /></a>
+     <a href=http://datasift.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/datasift/datasift-logo.png  width=225 align=right /></a>
 </p>
 <p>
      I'm increasingly finding a company's approach to using Github, a vital signal of the health of a company, their team, and the products and services they are delivering.
 </p>
 <p>
-     An example of this is with social data platform, <a href="http://datasift.github.io/">DataSift's new open source area</a>. DataSift has thrown up a Github page which re-enforces the company's commitment to consuming and producing open source software, as well as a list of important, Github driven signals:
+     An example of this is with social data platform, <a href=http://datasift.github.io/>DataSift's new open source area</a>. DataSift has thrown up a Github page which re-enforces the company's commitment to consuming and producing open source software, as well as a list of important, Github driven signals:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Latest Updates</strong> - The latest repository updates acorss all of DataSift's repositories
      </li>
@@ -29,10 +29,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dat
      </li>
 </ul>
 <p>
-     I think DataSift approach is a very meaningful demonstration in the potential of being "open".  As a company, DataSift provides access to valuable social signals, that any company can access via their interface and API, allowing them to develop insight and intelligence. If you look closely at their approach to deploying their Github hosted, open source site, it provides four very critical signals. API client libraries, open source code projects, job openings and updates across the company's Github profile.
+     I think DataSift approach is a very meaningful demonstration in the potential of being open.  As a company, DataSift provides access to valuable social signals, that any company can access via their interface and API, allowing them to develop insight and intelligence. If you look closely at their approach to deploying their Github hosted, open source site, it provides four very critical signals. API client libraries, open source code projects, job openings and updates across the company's Github profile.
 </p>
 <p>
-     <a href="http://datasift.github.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/datasift/datasift-open-source.png"  width="550" /></a>
+     <a href=http://datasift.github.io/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/datasift/datasift-open-source.png  width=550 /></a>
 </p>
 <p>
      Think about it. The number of platforms supported for an API, the number of public open source code projects and the number and type of job postings for a company are pretty significant signals regarding the health of a company these days.  These can be pretty difficult areas to fake, and in many cases will quickly show the activity, growth and stability of a company.

@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-stack/API-Stack-Colored.png"  width="250" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-stack/API-Stack-Colored.png  width=250 align=right />
 </p>
 <p>
-     I've been organizing much of my research around APIs into groupings that I call "stacks". The term allows me to loosely bundle common API resources into meaningful "stacks" for my readers to learn about.
+     I've been organizing much of my research around APIs into groupings that I call stacks. The term allows me to loosely bundle common API resources into meaningful stacks for my readers to learn about.
 </p>
 <p>
      I'm adding a new project to my list of 30+ stacks, that is intended to bring together the most commonly used API resources, into a single, meaningful stack of resources any web or mobile developer can quickly put to use.
@@ -17,9 +17,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
 <p>
      So far I have compiled the following APIs in 29 separate groups:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Compute
-          <ul >
+          <ul class=mainlist>
                <li>Amazon EC2
                </li>
                <li>Google AppEngine
@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Storage
-          <ul >
+          <ul class=mainlist>
                <li>Amazon S3
                </li>
                <li>Dropbox
@@ -39,7 +39,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Database
-          <ul >
+          <ul class=mainlist>
                <li>Amazon RDS
                </li>
                <li>Amazon SimpleDB
@@ -47,7 +47,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>DNS
-          <ul >
+          <ul class=mainlist>
                <li>Amazon Route 53
                </li>
                <li>Rackspace Cloud DNS
@@ -59,7 +59,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Email
-          <ul >
+          <ul class=mainlist>
                <li>SendGrid
                </li>
                <li>Amazon SES
@@ -69,7 +69,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>SMS
-          <ul >
+          <ul class=mainlist>
                <li>Twilio
                </li>
                <li>AT&amp;T SMS
@@ -77,7 +77,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>MMS
-          <ul >
+          <ul class=mainlist>
                <li>Mogreet
                </li>
                <li>AT&amp;T SMS
@@ -85,7 +85,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Push Notifications
-          <ul >
+          <ul class=mainlist>
                <li>Urban Airship
                </li>
                <li>AT&amp;T SMS
@@ -93,7 +93,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Chat
-          <ul >
+          <ul class=mainlist>
                <li>Skype
                </li>
                <li>Facebook Chat
@@ -103,7 +103,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Social
-          <ul >
+          <ul class=mainlist>
                <li>Twitter
                </li>
                <li>Facebook
@@ -115,7 +115,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Location
-          <ul >
+          <ul class=mainlist>
                <li>Google Directions
                </li>
                <li>Google Distance Matrix
@@ -129,7 +129,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Photos
-          <ul >
+          <ul class=mainlist>
                <li>Flickr
                </li>
                <li>Facebook
@@ -139,7 +139,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Documents
-          <ul >
+          <ul class=mainlist>
                <li>Box
                </li>
                <li>Google Drive
@@ -147,7 +147,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Videos
-          <ul >
+          <ul class=mainlist>
                <li>YouTube
                </li>
                <li>Flickr
@@ -163,7 +163,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Audio
-          <ul >
+          <ul class=mainlist>
                <li>SoundCloud
                </li>
                <li>Mixcloud
@@ -171,7 +171,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Music
-          <ul >
+          <ul class=mainlist>
                <li>Echo Nest
                </li>
                <li>Rdio
@@ -181,13 +181,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Notes
-          <ul >
+          <ul class=mainlist>
                <li>Evernote
                </li>
           </ul>
      </li>
      <li>Bookmarks
-          <ul >
+          <ul class=mainlist>
                <li>Delicious
                </li>
                <li>Pinboard
@@ -195,7 +195,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Blog
-          <ul >
+          <ul class=mainlist>
                <li>Wordpress
                </li>
                <li>Blogger
@@ -205,7 +205,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Content
-          <ul >
+          <ul class=mainlist>
                <li>ConvertAPI
                </li>
                <li>AlchemyAPI
@@ -213,7 +213,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Contacts
-          <ul >
+          <ul class=mainlist>
                <li>Google
                </li>
                <li>Facebook
@@ -225,7 +225,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Businesses / Places
-          <ul >
+          <ul class=mainlist>
                <li>Factual
                </li>
                <li>Google Places
@@ -233,7 +233,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Checkins
-          <ul >
+          <ul class=mainlist>
                <li>Foursquare
                </li>
                <li>Facebook
@@ -241,13 +241,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Calendar
-          <ul >
+          <ul class=mainlist>
                <li>Google
                </li>
           </ul>
      </li>
      <li>Payments
-          <ul >
+          <ul class=mainlist>
                <li>Dwolla
                </li>
                <li>Stripe
@@ -261,7 +261,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Analytics
-          <ul >
+          <ul class=mainlist>
                <li>Google
                </li>
                <li>Mixpanel
@@ -269,7 +269,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Advertising
-          <ul >
+          <ul class=mainlist>
                <li>Adsense
                </li>
                <li>Adwords
@@ -287,7 +287,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>Real-time
-          <ul >
+          <ul class=mainlist>
                <li>Google Real-time
                </li>
                <li>Firebase
@@ -297,7 +297,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
           </ul>
      </li>
      <li>URL Shortener
-          <ul >
+          <ul class=mainlist>
                <li>Bit.ly
                </li>
                <li>Google URL Shortener

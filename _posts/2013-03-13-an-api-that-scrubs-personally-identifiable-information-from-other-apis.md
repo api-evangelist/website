@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/personally-identifable-information.png"  width="275" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/personally-identifable-information.png  width=275 align=right />
 </p>
 <p>
      One of the best aspects of being the API Evangelist, is I get to hang out with smart folks, doing gaming changing things across all business sectors. Last week I was able to make it to the API Social, an event held in Berkeley by a group of API savvy faculty members. This is my third one, and the group is up to some very interesting things.
@@ -24,7 +24,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
      The solution:
 </p>
 <blockquote>
-     Wrapping untrusted applications in a "Proxied Facade Service" framework that passes anonymous tickets through the “untrusted” application to underlying services that can independently extract the necessary personal information provides a secure way of allowing an application to retrieve a Web User’s Business data (e.g. their current course enrollments) WITHOUT exposing any identifying information about the user to the untrusted application.
+     Wrapping untrusted applications in a Proxied Facade Service framework that passes anonymous tickets through the “untrusted” application to underlying services that can independently extract the necessary personal information provides a secure way of allowing an application to retrieve a Web User’s Business data (e.g. their current course enrollments) WITHOUT exposing any identifying information about the user to the untrusted application.
 </blockquote>
 <p>
      I find their problem and solution fascinating, I also think it is something that could have huge potential. When data leaves any school, healthcare provider, financial services or government office, the presence of sensitive data is always a concern. More data will be leaving these trusted systems, for use in not just apps, but also for analysis and visualizations, and the need to scrub personally identifiable information will only grow.

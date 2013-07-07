@@ -6,32 +6,32 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pri
 ---
 {% include JB/setup %}
 <p>
-     I spend a lot of time on API Evangelist getting excited about APIs. Going on three years doing this, I'm getting a little more hardened in my view on what is "good" in the API space. Along with that evolution, I'm getting my priorities in order.
+     I spend a lot of time on API Evangelist getting excited about APIs. Going on three years doing this, I'm getting a little more hardened in my view on what is good in the API space. Along with that evolution, I'm getting my priorities in order.
 </p>
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/priorities.png"  width="150" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/priorities.png  width=150 align=right />
 </p>
 <p>
      While I may get excited about cloud computing APIs or quantified self APIs, there are other areas I think are straight up priorities--ones that we can't ignore. To support this I'm launching several research projects into areas I have labeled as API priorities:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <a title="Federal Government" href="http://federal-government.apievangelist.com" target="_blank">Federal Government</a>
+          <a title=Federal Government href=http://federal-government.apievangelist.com target=_blank>Federal Government</a>
      </li>
      <li>
-          <a title="City Government APIs" href="http://city-government.apievangelist.com" target="_blank">City Government</a>
+          <a title=City Government APIs href=http://city-government.apievangelist.com target=_blank>City Government</a>
      </li>
      <li>
-          <a title="Education APIs" href="http://education.apievangelist.com" target="_blank">Education</a>
+          <a title=Education APIs href=http://education.apievangelist.com target=_blank>Education</a>
      </li>
      <li>
-          <a title="Library APIs" href="http://healthcare.apievangelist.com" target="_blank">Healthcare</a>
+          <a title=Library APIs href=http://healthcare.apievangelist.com target=_blank>Healthcare</a>
      </li>
      <li>
-          <a title="Library APIs" href="http://libraries.apievangelist.com" target="_blank">Libraries</a>
+          <a title=Library APIs href=http://libraries.apievangelist.com target=_blank>Libraries</a>
      </li>
      <li>
-          <a title="University APis" href="http://university.apievangelist.com/" target="_blank">Universities</a>
+          <a title=University APis href=http://university.apievangelist.com/ target=_blank>Universities</a>
      </li>
 </ul>
 <p>

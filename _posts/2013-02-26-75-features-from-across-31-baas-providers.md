@@ -6,61 +6,61 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
 ---
 {% include JB/setup %}
 <p>
-     I’m currently tracking on <a href="/trends/baas.php">31 backend as a service providers</a>, in an effort to better understand how this new breed of platforms are helping developers build web and mobile apps. After looking at all the BaaS providers, there are 13 clear leaders:
+     I’m currently tracking on <a href=/trends/baas.php>31 backend as a service providers</a>, in an effort to better understand how this new breed of platforms are helping developers build web and mobile apps. After looking at all the BaaS providers, there are 13 clear leaders:
 </p>
-<table cellspacing="3" cellpadding="2" align="center">
+<table cellspacing=3 cellpadding=2 align=center>
      <tbody>
           <tr>
-               <td align="center">
-                    <a title="Appcelerator" href="/serviceproviders/appcelerator.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/appcelerator-logo.png"  width="180" /></a>
+               <td align=center>
+                    <a title=Appcelerator href=/serviceproviders/appcelerator.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/appcelerator-logo.png  width=180 /></a>
                </td>
-               <td align="center">
-                    <a title="Flurry" href="/serviceproviders/flurry.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/flurry-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Urban Airship" href="/serviceproviders/urban_airship.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/urban-airship-logo.png"  width="130" /></a>
-               </td>
-               <td align="center">
-                    <a title="Kii" href="/serviceproviders/kii.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Kii-Logo.png"  width="130" /></a>
+               <td align=center>
+                    <a title=Flurry href=/serviceproviders/flurry.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/flurry-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="StackMob" href="/serviceproviders/stackmob.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/stackmob-logo.png"  width="175" /></a>
+               <td align=center>
+                    <a title=Urban Airship href=/serviceproviders/urban_airship.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/urban-airship-logo.png  width=130 /></a>
                </td>
-               <td align="center">
-                    <a title="Parse" href="/serviceproviders/parse.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Parse-Logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Geoloqi" href="/serviceproviders/geoloqi.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Geoloqi-logo.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="Kinvey" href="/serviceproviders/kinvey.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kinvey-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Kii href=/serviceproviders/kii.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Kii-Logo.png  width=130 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Buddy" href="/serviceproviders/buddy.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/buddy-platform.png"  width="160" /></a>
+               <td align=center>
+                    <a title=StackMob href=/serviceproviders/stackmob.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/stackmob-logo.png  width=175 /></a>
                </td>
-               <td align="center">
-                    <a title="Sencha.io" href="/serviceproviders/sencha.io.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sencha-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Quickblox" href="/serviceproviders/quickblox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/quickblox-logo.png"  width="120" /></a>
-               </td>
-               <td align="center">
-                    <a title="FeedBurner" href="/serviceproviders/feedburner.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FeedHenry-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Parse href=/serviceproviders/parse.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Parse-Logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Cloudmine" href="/serviceproviders/cloudmine.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudmine-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Geoloqi href=/serviceproviders/geoloqi.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Geoloqi-logo.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=Kinvey href=/serviceproviders/kinvey.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kinvey-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Buddy href=/serviceproviders/buddy.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/buddy-platform.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=Sencha.io href=/serviceproviders/sencha.io.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sencha-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Quickblox href=/serviceproviders/quickblox.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/quickblox-logo.png  width=120 /></a>
+               </td>
+               <td align=center>
+                    <a title=FeedBurner href=/serviceproviders/feedburner.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FeedHenry-Logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Cloudmine href=/serviceproviders/cloudmine.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudmine-logo.png  width=160 /></a>
                </td>
           </tr>
      </tbody>
@@ -68,78 +68,78 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
 <p>
      Then there are another 18 other players, trying to play catch up in a space that is working hard to define itself in 2013:
 </p>
-<table cellspacing="3" cellpadding="2" align="center">
+<table cellspacing=3 cellpadding=2 align=center>
      <tbody>
           <tr>
-               <td align="center">
-                    <a title="AnyPresence" href="/serviceproviders/anypresence.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/anypresence-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=AnyPresence href=/serviceproviders/anypresence.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/anypresence-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="API O MAT" href="/serviceproviders/api_o_mat.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/api-o-mat-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="App42" href="/serviceproviders/app42.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/app42-logo.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="Appacitive" href="/serviceproviders/appacitive.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Appacitive.png"  width="160" /></a>
+               <td align=center>
+                    <a title=API O MAT href=/serviceproviders/api_o_mat.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/api-o-mat-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Applicasa" href="/serviceproviders/applicasa.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/applicasa-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=App42 href=/serviceproviders/app42.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/app42-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="BaaSBox" href="/serviceproviders/baasbox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baasbox-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Baobab" href="/serviceproviders/baobab.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baobab-logo.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="CloudyRec" href="/serviceproviders/cloudyrec.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/CloudyRec-logo-2.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Appacitive href=/serviceproviders/appacitive.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Appacitive.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="FatFractal" href="/serviceproviders/fatfractal.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FatFractal-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Applicasa href=/serviceproviders/applicasa.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/applicasa-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="Kumulos" href="/serviceproviders/kumulos.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kumulos-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="LeanEngine" href="/serviceproviders/leanengine.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/LeanEngine-Logo.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="mobDB" href="/serviceproviders/mobdb.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mod-DB-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=BaaSBox href=/serviceproviders/baasbox.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baasbox-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Mobeelizer" href="/serviceproviders/mobeelizer.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mobeelizer-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Baobab href=/serviceproviders/baobab.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baobab-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="OPENi" href="/serviceproviders/openi.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openi-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="OpenKit" href="/serviceproviders/openkit.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/open-kit-logo-larger.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="OpenMobster" href="/serviceproviders/openmobster.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openmobster-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=CloudyRec href=/serviceproviders/cloudyrec.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/CloudyRec-logo-2.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Proxomo" href="/serviceproviders/proxomo.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Proxomo-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=FatFractal href=/serviceproviders/fatfractal.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FatFractal-Logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="ScottyApp" href="/serviceproviders/scottyapp.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Scotty-App-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Kumulos href=/serviceproviders/kumulos.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kumulos-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=LeanEngine href=/serviceproviders/leanengine.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/LeanEngine-Logo.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=mobDB href=/serviceproviders/mobdb.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mod-DB-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Mobeelizer href=/serviceproviders/mobeelizer.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mobeelizer-Logo.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=OPENi href=/serviceproviders/openi.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openi-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=OpenKit href=/serviceproviders/openkit.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/open-kit-logo-larger.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=OpenMobster href=/serviceproviders/openmobster.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openmobster-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Proxomo href=/serviceproviders/proxomo.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Proxomo-Logo.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=ScottyApp href=/serviceproviders/scottyapp.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Scotty-App-Logo.png  width=160 /></a>
                </td>
           </tr>
      </tbody>
@@ -154,7 +154,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>User Management</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>User
           </li>
           <li>User Roles
@@ -168,7 +168,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Data</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Table
           </li>
           <li>Relational
@@ -193,7 +193,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>File Management</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Storage
           </li>
           <li>Sync
@@ -202,7 +202,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Image &amp; Photo Management</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Storage
           </li>
           <li>Gallery &amp; Collections
@@ -216,7 +216,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Programmatic Interfaces</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Web Service Connectors
           </li>
           <li>REST API
@@ -229,7 +229,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Commerce</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Product Catalog
           </li>
           <li>Shopping Cart
@@ -238,7 +238,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Virtual Commerce</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>In-App Purchases
           </li>
           <li>Custom Virtual Store 
@@ -253,7 +253,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Other Monetization</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Promotions
           </li>
           <li>Subscriptions
@@ -266,7 +266,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Ranking</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Recomendations
           </li>
           <li>Reviews
@@ -282,7 +282,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Communication</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>SMS
           </li>
           <li>Email
@@ -311,7 +311,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Geo</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Spatial
           </li>
           <li>Location
@@ -324,7 +324,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Gaming</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Players
           </li>
           <li>Ranking
@@ -339,7 +339,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>3rd Party Integration</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Twitter
           </li>
           <li>Facebook
@@ -399,7 +399,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Availability</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Performance
           </li>
           <li>Scaling
@@ -410,7 +410,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Deployment</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>On-Premise
           </li>
           <li>Virtual Private Cloud
@@ -421,7 +421,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Environment</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Sandbox
           </li>
           <li>Production
@@ -430,7 +430,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Utility</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Logging
           </li>
           <li>Backups
@@ -449,7 +449,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Mobile Devices</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>iOS
           </li>
           <li>Android
@@ -462,14 +462,14 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Reader Devices</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Kindle
           </li>
      </ul>
      <p>
           <strong>Mobile Platforms</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>PhoneGap
           </li>
           <li>Trigger.io
@@ -480,21 +480,21 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>App Frameworks</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>ql.io
           </li>
      </ul>
      <p>
           <strong>Automation</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Temboo
           </li>
      </ul>
      <p>
           <strong>Languages</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>JavaScript
           </li>
           <li>Java
@@ -514,7 +514,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Support</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>Phone
           </li>
           <li>Web
@@ -532,7 +532,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Pricing</strong>
      </p>
-     <ul >
+     <ul class=mainlist>
           <li>API Calls
           </li>
           <li>Push Notification
@@ -559,7 +559,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      </p>
 </blockquote>
 <p>
-     You can <a href="http://kinlane.github.com/backend-as-a-service/">view all 75 features at the BaaS Github Repository</a> I setup. Let me know any that you feel are missing, and I’ll consider adding.
+     You can <a href=http://kinlane.github.com/backend-as-a-service/>view all 75 features at the BaaS Github Repository</a> I setup. Let me know any that you feel are missing, and I’ll consider adding.
 </p>
 <p>
      Next up, I will add the features into my BaaS tracking database and publish a breakdown of providers, with the features they offer. Letting people search and filter, and also open up to each BaaS provider to comment and submit additional features they offer.

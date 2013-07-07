@@ -6,12 +6,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/any
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://www.anypresence.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/anypresense_logo_New.png"  width="250" align="right" /></a>
+     <a href=http://www.anypresence.com/ target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/anypresense_logo_New.png  width=250 align=right /></a>
 </p>
 <p>
-     I'm adding some new BaaS features I found in a recent press release from BaaS provider <a title="AnyPresence" href="http://www.anypresence.com/">AnyPresence</a> titled, "<a href="http://www.anypresence.com/press-release/AnyPresence_Launches_4th-Generation_Mobile_Backend_as_a_Service_Platform.php">AnyPresence Launches 4th-Generation Mobile Backend-as-a-Service Platform with Unparalleled Enterprise Capabilities</a>", to my list of BaaS features.  As I'm processing them I notice they are some pretty significant features:
+     I'm adding some new BaaS features I found in a recent press release from BaaS provider <a title=AnyPresence href=http://www.anypresence.com/>AnyPresence</a> titled, <a href=http://www.anypresence.com/press-release/AnyPresence_Launches_4th-Generation_Mobile_Backend_as_a_Service_Platform.php>AnyPresence Launches 4th-Generation Mobile Backend-as-a-Service Platform with Unparalleled Enterprise Capabilities</a>, to my list of BaaS features.  As I'm processing them I notice they are some pretty significant features:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Application Cloning - </strong>For organizations looking to build multiple apps that have common core functionality with only minor variations, this powerful feature allows them to create a copy of an existing app along with all data source, object, and user interface definitions, saving significant development effort.
      </li>

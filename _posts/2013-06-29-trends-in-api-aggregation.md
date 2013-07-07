@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/agg
 ---
 {% include JB/setup %}
 <p>
-     One trend in API usage I'm closely watching is the <a title="API Aggregation" href="http://aggregation.apievangelist.com">aggregation of APIs by a new wave of startups</a>. As the world adopts more cloud services, the need to aggregate content across multiple APIs is growing.
+     One trend in API usage I'm closely watching is the <a title=API Aggregation href=http://aggregation.apievangelist.com>aggregation of APIs by a new wave of startups</a>. As the world adopts more cloud services, the need to aggregate content across multiple APIs is growing.
 </p>
 <p>
-     I'm currently tracking on <a title="API Aggregation" href="http://aggregation.apievangelist.com">15 API aggregators</a>, who focus on bringing together data and content in 10 areas:
+     I'm currently tracking on <a title=API Aggregation href=http://aggregation.apievangelist.com>15 API aggregators</a>, who focus on bringing together data and content in 10 areas:
 </p>
 <p>
-     <a title="API Aggregation" href="http://aggregation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png"  width="250" align="right" /></a>
+     <a title=API Aggregation href=http://aggregation.apievangelist.com><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png  width=250 align=right /></a>
 </p>
-<ul >
+<ul class=mainlist>
      <li>Analytics
      </li>
      <li>Cloud Computing

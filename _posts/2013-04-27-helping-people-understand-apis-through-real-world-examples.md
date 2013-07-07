@@ -6,22 +6,22 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/com
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://www.cfnnet.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/commercial-fueling-network/commercial-fueling-network.jpg"  width="170" align="right" /></a>
+     <a href=http://www.cfnnet.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/commercial-fueling-network/commercial-fueling-network.jpg  width=170 align=right /></a>
 </p>
 <p>
      I'm always looking for easy, dead simple approaches to explaining APIs to people. Having real world examples, that folks can relate with, go along way in helping people wrap their heads around the very abstract concepts that are APIs.
 </p>
 <p>
-     While going for a walk today I was thinking back when I use to build technology for my parents trucking company, when one of the fuel expenses was for <a href="http://www.cfnnet.com/" target="_blank">Commercial Fueling Network</a> (CFN), which is a self-service commercial fueling station.
+     While going for a walk today I was thinking back when I use to build technology for my parents trucking company, when one of the fuel expenses was for <a href=http://www.cfnnet.com/ target=_blank>Commercial Fueling Network</a> (CFN), which is a self-service commercial fueling station.
 </p>
 <p>
-     Whether your a long haul trucker or local contractor, you can use CFN to get at an essential resource for your business, whatever the application. Any business can apply and join CFN, get a "key" to access fuel resources in a self-service way.
+     Whether your a long haul trucker or local contractor, you can use CFN to get at an essential resource for your business, whatever the application. Any business can apply and join CFN, get a key to access fuel resources in a self-service way.
 </p>
 <p>
-     APIs are the same approach to selling any "virtual" online resource, as CFN is to selling a "physical" fuel resource. CFN doesn't just put free gas alongside the road for anyone to take. They have a portal where you know to go to get your resources, providing you with a key to access the fuel resources you need. CFN then bills you for the usage of their resource. You can be sure CFN has extensive data on how much fuel they sell and who it was sold to.
+     APIs are the same approach to selling any virtual online resource, as CFN is to selling a physical fuel resource. CFN doesn't just put free gas alongside the road for anyone to take. They have a portal where you know to go to get your resources, providing you with a key to access the fuel resources you need. CFN then bills you for the usage of their resource. You can be sure CFN has extensive data on how much fuel they sell and who it was sold to.
 </p>
 <p>
-     With virtual resources, whether you are a iPhone developer or website developer you can use APIs to get at essential resources you will need for your business, whatever the type of applications you are developing.  Any developer can apply to use an API, and get a "key" to access the resources in a self-service way.
+     With virtual resources, whether you are a iPhone developer or website developer you can use APIs to get at essential resources you will need for your business, whatever the type of applications you are developing.  Any developer can apply to use an API, and get a key to access the resources in a self-service way.
 </p>
 <p>
      The best part about the online approach is you can turn ANYTHING into a resource. Your resource can be data in a database, specialized code you've developed or interact with anything in the physical world.

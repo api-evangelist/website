@@ -6,35 +6,35 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ama
 ---
 {% include JB/setup %}
 <p>
-     <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-logo.png"  width="140" align="right" /></a>
+     <a title=Amazon Mobile Ads API href=https://developer.amazon.com/sdk/mobileads.html target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-logo.png  width=140 align=right /></a>
 </p>
 <p>
-     It was interesting to see Amazon step up in the advertising game with the beta release of the <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank">Amazon Mobile Ads API</a> this week. I wouldn’t want Amazon getting into my space, when it comes to any API resource, especially advertising. On the other hand, one can say that the space needs disruption with the dominance of Google with their multiple offerings:
+     It was interesting to see Amazon step up in the advertising game with the beta release of the <a title=Amazon Mobile Ads API href=https://developer.amazon.com/sdk/mobileads.html target=_blank>Amazon Mobile Ads API</a> this week. I wouldn’t want Amazon getting into my space, when it comes to any API resource, especially advertising. On the other hand, one can say that the space needs disruption with the dominance of Google with their multiple offerings:
 </p>
 <p>
-     <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-dollar-sign-cloud.png"  width="100" align="right" /></a>
+     <a title=Amazon Mobile Ads API href=https://developer.amazon.com/sdk/mobileads.html target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-dollar-sign-cloud.png  width=100 align=right /></a>
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://www.google.com/ads/mobile/" target="_blank">Google Mobile</a>
+          <a href=http://www.google.com/ads/mobile/ target=_blank>Google Mobile</a>
      </li>
      <li>
-          <a href="https://developers.google.com/advertise/adwords" target="_blank">Google Adwords</a>
+          <a href=https://developers.google.com/advertise/adwords target=_blank>Google Adwords</a>
      </li>
      <li>
-          <a href="https://developers.google.com/advertise/dfa" target="_blank">DoubleClick</a>
+          <a href=https://developers.google.com/advertise/dfa target=_blank>DoubleClick</a>
      </li>
      <li>
-          <a href="https://developers.google.com/advertise/adexchange" target="_blank">DoubleClick Ad Exchange</a>
+          <a href=https://developers.google.com/advertise/adexchange target=_blank>DoubleClick Ad Exchange</a>
      </li>
      <li>
-          <a href="http://www.google.com/ads/admob/">AdMob</a>
+          <a href=http://www.google.com/ads/admob/>AdMob</a>
      </li>
      <li>
-          <a href="https://developers.google.com/adwords/api/" target="_blank">Adwords</a>
+          <a href=https://developers.google.com/adwords/api/ target=_blank>Adwords</a>
      </li>
      <li>
-          <a href="https://developers.google.com/youtube/creating_monetizable_applications" target="_blank">Youtube</a>
+          <a href=https://developers.google.com/youtube/creating_monetizable_applications target=_blank>Youtube</a>
      </li>
 </ul>
 <p>
@@ -44,24 +44,24 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ama
      Another layer that will add to the competititiveness with advertising APIs is the fact that all three social media and networking giants have their own advertising APIs now as well:
 </p>
 <p>
-     <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-people-devices.png"  width="300" align="right" /></a>
+     <a title=Amazon Mobile Ads API href=https://developer.amazon.com/sdk/mobileads.html target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-people-devices.png  width=300 align=right /></a>
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <a href="http://developers.facebook.com/docs/reference/ads-api/" target="_blank">Facebook</a>
+          <a href=http://developers.facebook.com/docs/reference/ads-api/ target=_blank>Facebook</a>
      </li>
      <li>
-          <a href="https://dev.twitter.com/programs/ads-api" target="_blank">Twitter</a>
+          <a href=https://dev.twitter.com/programs/ads-api target=_blank>Twitter</a>
      </li>
      <li>
-          <a href="http://developer.linkedin.com/blog/linkedin-ads-unveils-new-api-program" target="_blank">LinkedIn</a>
+          <a href=http://developer.linkedin.com/blog/linkedin-ads-unveils-new-api-program target=_blank>LinkedIn</a>
      </li>
 </ul>
 <p>
      With Google and Amazon both having devices in the game (Android and Kindle), it will be interesting how they partner with Facebook, Twitter or Linkedin for the social layer, and where all of this leaves Apple.
 </p>
 <p>
-     Let’s not forget about the me too category with <a href="http://advertise.bingads.microsoft.com/en-us/search-advertising/bingads-api" target="_blank">Bing Advertising APIs</a> and <a href="http://advertisingcentral.yahoo.com/api/overview" target="_blank">Yahoo Advertising Central</a>, or the potentially over <a href="http://blog.programmableweb.com/2012/02/21/112-advertising-apis-google-adsense-google-adwords-and-feedburner/" target="_blank">100 other advertising APIs available via ProgrammableWeb</a>.
+     Let’s not forget about the me too category with <a href=http://advertise.bingads.microsoft.com/en-us/search-advertising/bingads-api target=_blank>Bing Advertising APIs</a> and <a href=http://advertisingcentral.yahoo.com/api/overview target=_blank>Yahoo Advertising Central</a>, or the potentially over <a href=http://blog.programmableweb.com/2012/02/21/112-advertising-apis-google-adsense-google-adwords-and-feedburner/ target=_blank>100 other advertising APIs available via ProgrammableWeb</a>.
 </p>
 <p>
      Any way you look at it, 2013 will prove to be a very competitive landscape when it comes to web and mobile advertising, with so many heavyweight contenders with their own devices and API driven advertising platforms. I think an advertising API roundup is in order, in the near future.

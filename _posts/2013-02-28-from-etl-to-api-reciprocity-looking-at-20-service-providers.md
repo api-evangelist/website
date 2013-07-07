@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 ---
 {% include JB/setup %}
 <p>
-     <a href="http://apievangelist.com/trends/reciprocity.php"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/reciprocity-trends.png"  width="300" align="right" /></a>
+     <a href=http://apievangelist.com/trends/reciprocity.php><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/reciprocity-trends.png  width=300 align=right /></a>
 </p>
 <p>
-     I spent time this week looking at 20, of what I’m calling <a href="/trends/reciprocity.php">API reciprocity providers</a>, who are providing a new generation of what is historically known as ETL in the enterprise, to connect, transfer, transform and push data and content between the cloud services we are increasingly growing dependent on.
+     I spent time this week looking at 20, of what I’m calling <a href=/trends/reciprocity.php>API reciprocity providers</a>, who are providing a new generation of what is historically known as ETL in the enterprise, to connect, transfer, transform and push data and content between the cloud services we are increasingly growing dependent on.
 </p>
 <p>
      With more and more of our lives existing in the cloud and via mobile devices, the need to migrate data and content between services will only grow more urgent. While ETL has all the necessary tools to accomplish the job, the cloud democratized IT resources, and the same will occur to ETL, making these tools accessible by the masses.
@@ -17,19 +17,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      There are quite a few ETL solutions, but I feel there are 3 solutions that are starting to make a migration towards an easier to understand and implement vision of ETL:
 </p>
-<table cellspacing="5" cellpadding="5" width="100%">
+<table cellspacing=5 cellpadding=5 width=100%>
      <tbody>
           <tr>
-               <td align="center">
-                    <a title="CloverETL" href="/serviceproviders/cloveretl.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=CloverETL href=/serviceproviders/cloveretl.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="SnapLogic" href="/serviceproviders/snaplogic.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=SnapLogic href=/serviceproviders/snaplogic.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Talend" href="/serviceproviders/talend.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Talend href=/serviceproviders/talend.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png  width=160 /></a>
                </td>
                <td>
                      
@@ -40,46 +40,46 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      These providers are more robust, and provide much of the classic ETL tools the enterprise is used to, but also have the new emphasis on API driven services. But there are 10 new service providers I’m calling reciprocity platforms, that demonstrate the potential with offering very simple tasks, triggers and actions that can provide interaction between two or more API services:
 </p>
-<table cellspacing="5" cellpadding="5" width="100%">
+<table cellspacing=5 cellpadding=5 width=100%>
      <tbody>
           <tr>
-               <td align="center">
-                    <a title="If This Then That (IFTTT)" href="/serviceproviders/if_this_then_that_(ifttt).php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg"  width="160" /></a>
+               <td align=center>
+                    <a title=If This Then That (IFTTT) href=/serviceproviders/if_this_then_that_(ifttt).php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="Factor.io" href="/serviceproviders/factor.io.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/factor-io-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Zapier" href="/serviceproviders/zapier.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="Temboo" href="/serviceproviders/temboo.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Temboo-Logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Factor.io href=/serviceproviders/factor.io.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/factor-io-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="Foxweave" href="/serviceproviders/foxweave.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Zapier href=/serviceproviders/zapier.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="Elastic.io" href="/serviceproviders/elastic.io.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="Rules.io" href="/serviceproviders/rules.io.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg"  width="200" /></a>
-               </td>
-               <td align="center">
-                    <a title="itDuzzit" href="/serviceproviders/itduzzit.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png"  width="110" /></a>
+               <td align=center>
+                    <a title=Temboo href=/serviceproviders/temboo.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Temboo-Logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="WeWiredWeb" href="/serviceproviders/wewiredweb.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/We-Wired-Web-Logo.png"  width="200" /></a>
+               <td align=center>
+                    <a title=Foxweave href=/serviceproviders/foxweave.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="RITC" href="/serviceproviders/ritc.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Ritc-logo.png"  width="120" /></a>
+               <td align=center>
+                    <a title=Elastic.io href=/serviceproviders/elastic.io.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=Rules.io href=/serviceproviders/rules.io.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg  width=200 /></a>
+               </td>
+               <td align=center>
+                    <a title=itDuzzit href=/serviceproviders/itduzzit.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png  width=110 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=WeWiredWeb href=/serviceproviders/wewiredweb.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/We-Wired-Web-Logo.png  width=200 /></a>
+               </td>
+               <td align=center>
+                    <a title=RITC href=/serviceproviders/ritc.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Ritc-logo.png  width=120 /></a>
                </td>
           </tr>
      </tbody>
@@ -87,7 +87,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      I consider reciprocity an evolution of ETL, because of three significant approaches:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
           <strong>Simplicity</strong> - Simple, meaningful connections with transfer and tranformations that are meaningful to end users, not just a wide array of ETL building blocks an IT architect has to implement
      </li>
@@ -99,35 +99,35 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
      </li>
 </ul>
 <p>
-     This new generation of ETL providers began the migration online with <a title="Yahoo Pipes" href="http://pipes.yahoo.com/">Yahoo Pipes</a>. Which resonated with the alpha developers looking to harvest, migrate, merge, mashup and push data from RSS, XML, JSON and other popular API sources--except Yahoo lacked the simplicity necessary for wider audience appeal.
+     This new generation of ETL providers began the migration online with <a title=Yahoo Pipes href=http://pipes.yahoo.com/>Yahoo Pipes</a>. Which resonated with the alpha developers looking to harvest, migrate, merge, mashup and push data from RSS, XML, JSON and other popular API sources--except Yahoo lacked the simplicity necessary for wider audience appeal.
 </p>
 <p>
      While I feel the 10 reciprocity providers isted above represent this new wave, there are six others incumbents trying to solve the same problem:
 </p>
-<table cellspacing="5" cellpadding="5" width="100%">
+<table cellspacing=5 cellpadding=5 width=100%>
      <tbody>
           <tr>
-               <td align="center">
-                    <a title="AutomateIt" href="/serviceproviders/automateit.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=AutomateIt href=/serviceproviders/automateit.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="Cloudwork" href="/serviceproviders/cloudwork.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png"  width="160" /></a>
-               </td>
-          </tr>
-          <tr>
-               <td align="center">
-                    <a title="MashableLogic" href="/serviceproviders/mashablelogic.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg"  width="160" /></a>
-               </td>
-               <td align="center">
-                    <a title="Pentaho - Kettle" href="/serviceproviders/pentaho_-_kettle.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Cloudwork href=/serviceproviders/cloudwork.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png  width=160 /></a>
                </td>
           </tr>
           <tr>
-               <td align="center">
-                    <a title="SortMyBox" href="/serviceproviders/sortmybox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=MashableLogic href=/serviceproviders/mashablelogic.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg  width=160 /></a>
                </td>
-               <td align="center">
-                    <a title="Wappwolf" href="/serviceproviders/wappwolf.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png"  width="160" /></a>
+               <td align=center>
+                    <a title=Pentaho - Kettle href=/serviceproviders/pentaho_-_kettle.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png  width=160 /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align=center>
+                    <a title=SortMyBox href=/serviceproviders/sortmybox.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png  width=160 /></a>
+               </td>
+               <td align=center>
+                    <a title=Wappwolf href=/serviceproviders/wappwolf.php target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png  width=160 /></a>
                </td>
           </tr>
      </tbody>
@@ -147,7 +147,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Triggers and actions represent the emotional connections that are the underpinnings of ETL’s evolution into a more meaningful, reciprocation of value that is emerging in the clouds. These new providers are connecting to the classic lineup of ETL interfaces to get things done:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Databases
      </li>
      <li>Files
@@ -163,7 +163,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      All of these actions, tasks, formulas, jobs or other types of process require the ability to plan, execute and audit the processes, with providers offering:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Scheduling
      </li>
      <li>History / Logging
@@ -174,7 +174,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With data being the lifeblood of much of these efforts, of course we will see “big data” specific tools as well:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Synchronization
      </li>
      <li>Data Quality
@@ -187,7 +187,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      While many reciprocity providers are offering interoperability between two specific services, moving data and resource from point a to b, others are bringing in classic ETL transformations:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Reformat
      </li>
      <li>Aggregate
@@ -212,7 +212,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      After the trigger and before the action, there is also an opportunity for other things to happen, with providers offering:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Push
      </li>
      <li>Events
@@ -221,7 +221,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      During trigger, action or transformation there are plenty of opportunities for custom scripting and transofrmations, with several approaches to custom programming:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Custom Scripts
      </li>
      <li>JavaScript
@@ -237,7 +237,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With the migration of critical resources, many of the leading providers are offering tools for testing the process before live execution:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Test
      </li>
      <li>Debugger
@@ -250,7 +250,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With any number of tasks or jobs in motion, users will need to understand whether the whole apparatus is working, with platforms offering tools for:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Performance
      </li>
      <li>Monitoring
@@ -267,7 +267,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Even though reciprocity providers focus on the migration of resources in this new API driven, cloud-based world, several of them still offer dual solutions for deploying solutions in both environments:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Cloud
      </li>
      <li>On-Premise
@@ -279,7 +279,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Many of this new breed of providers are in beta and pricing  isn’t available. A handful have begun to apply cloud based pricing models, but most are still trying to understand the value of this new service and what market will bear. So far I’m seeing pricing based upon:
 </p>
-<ul >
+<ul class=mainlist>
      <li>Seat
      </li>
      <li>Assembly

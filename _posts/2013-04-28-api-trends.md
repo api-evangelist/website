@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tre
 ---
 {% include JB/setup %}
 <p>
-     <a href="/trends/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/trends.jpg"  width="250" align="right" /></a>
+     <a href=/trends/><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/trends.jpg  width=250 align=right /></a>
 </p>
 <p>
      I study the API space. I want to understand how we got where we are at, and try to understand where we are going with our usage of APIs. To do this I monitor the best of the existing and new APis, using the blogosphere, Twitter, LinkedIn, Github and the open web looking for examples of how people are using APIs in different ways.
@@ -20,18 +20,18 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tre
 <p>
      I have done this with four main areas I've seen trending in 2013:
 </p>
-<ul >
+<ul class=mainlist>
      <li>
-          <a title="Aggregation" href="http://aggregation.apievangelist.com/" target="_blank">Aggregation</a>
+          <a title=Aggregation href=http://aggregation.apievangelist.com/ target=_blank>Aggregation</a>
      </li>
      <li>
-          <a title="Aggregation" href="http://baas.apievangelist.com/" target="_blank">Backend as a Service</a>
+          <a title=Aggregation href=http://baas.apievangelist.com/ target=_blank>Backend as a Service</a>
      </li>
      <li>
-          <a title="Aggregation" href="http://reciprocity.apievangelist.com/" target="_blank">Reciprocity</a>
+          <a title=Aggregation href=http://reciprocity.apievangelist.com/ target=_blank>Reciprocity</a>
      </li>
      <li>
-          <a title="Aggregation" href="http://realtime.apievangelist.com/" target="_blank">Realtime</a>
+          <a title=Aggregation href=http://realtime.apievangelist.com/ target=_blank>Realtime</a>
      </li>
 </ul>
 <p>

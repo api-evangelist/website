@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
 ---
 {% include JB/setup %}
 <p>
-     <img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-pricing.png"  width="325" align="right" />
+     <img src=https://s3.amazonaws.com/kinlane-productions/amazon/aws-pricing.png  width=325 align=right />
 </p>
 <p>
      I get a lot of inquiries from API owners about how they should price their API access in a way that will make sense to developers, but also help them generate revenue from their valuable API resources.
@@ -21,10 +21,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
      Dear Amazon S3 Customer,
 </p>
 <p>
-     We are excited to announce that we are reducing <a href="http://www.amazon.com/gp/r.html?R=2SXVU4T3VRUWB&amp;C=J2HG6JVZ1C5L&amp;H=PVA7GS7QEGLCGOTDJIF9KXXMGHEA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fs3%2Fpricing%3Fref_%3Dpe_12300_29052180_8" target="_blank">Amazon S3 request prices</a> in all nine of our regions. We are lowering the prices for GET requests by 60% and the prices for PUT, LIST, COPY, and POST requests by 50%. For example, in the US Standard Region, we are reducing the price of every 1,000 PUT requests from $0.01 to $0.005 and the price of every 10,000 GET requests from $0.01 to $0.004.
+     We are excited to announce that we are reducing <a href=http://www.amazon.com/gp/r.html?R=2SXVU4T3VRUWB&amp;C=J2HG6JVZ1C5L&amp;H=PVA7GS7QEGLCGOTDJIF9KXXMGHEA&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fs3%2Fpricing%3Fref_%3Dpe_12300_29052180_8 target=_blank>Amazon S3 request prices</a> in all nine of our regions. We are lowering the prices for GET requests by 60% and the prices for PUT, LIST, COPY, and POST requests by 50%. For example, in the US Standard Region, we are reducing the price of every 1,000 PUT requests from $0.01 to $0.005 and the price of every 10,000 GET requests from $0.01 to $0.004.
 </p>
 <p>
-     We are happy to pass along these savings to you as we continue to drive down our costs. The new lower prices for all regions can be found on the <a href="http://www.amazon.com/gp/r.html?R=2SXVU4T3VRUWB&amp;C=J2HG6JVZ1C5L&amp;H=PXMXBBGNPMWR1VAGFSTZAJIJ7Y8A&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fs3%2Fpricing%3Fref_%3Dpe_12300_29052180_7" target="_blank">Amazon S3 pricing page</a>. New prices are effective April 1st and will be applied to your bill for all requests on or after this date.
+     We are happy to pass along these savings to you as we continue to drive down our costs. The new lower prices for all regions can be found on the <a href=http://www.amazon.com/gp/r.html?R=2SXVU4T3VRUWB&amp;C=J2HG6JVZ1C5L&amp;H=PXMXBBGNPMWR1VAGFSTZAJIJ7Y8A&amp;T=C&amp;U=http%3A%2F%2Faws.amazon.com%2Fs3%2Fpricing%3Fref_%3Dpe_12300_29052180_7 target=_blank>Amazon S3 pricing page</a>. New prices are effective April 1st and will be applied to your bill for all requests on or after this date.
 </p>
 <p>
      Sincerely,<br />
