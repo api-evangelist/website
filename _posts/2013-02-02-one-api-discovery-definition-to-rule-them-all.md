@@ -39,7 +39,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dis
      It will up to PaaS, BaaS or other 3rd party platform providers to assemble resource stacks that are meaningful to their community. They will do the legwork to find best of breed API resources, which will be made easier if API providers provider JSON or XML definitions of their API resources, but not a requirement.
 </p>
 <p>
-     I believe that similar to website sitemaps, API discovery will have wider definitions that some follow, with successful vendor specific implementations as well, but ultimately it will remain largely imperfect and some API providers will do well, and others will implement poorly.  The markets will decide! (<em>cringe</em>)
+     I believe that similar to website sitemaps, API discovery will have wider definitions that some follow, with successful vendor specific implementations as well, but ultimately it will remain largely imperfect and some API providers will do well, and others will implement poorly.  The markets will decide! (cringe)
 </p>
 <p>
      My object is to help the average API provider hear stories of other successful approaches, and identify the benefits, in hopes that they will implement something, anything!  Allowing us to take baby steps forward in API discovery, not defining one definition to rule them all and nobody giving a shit, and we don't move forward at all.

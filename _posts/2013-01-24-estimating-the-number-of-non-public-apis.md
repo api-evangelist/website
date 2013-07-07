@@ -9,7 +9,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDK
      <a title="SDK Bridge" href="http://sdkbridge.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/sdk-bridge/SDKBridge-logo.gif"  width="200" align="right" /></a>
 </p>
 <p>
-     <em>This post comes from the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge</a> newsletter.  I find so much value from what Peter and Jonathan do over at SDK Bridge, I always have to post their newsletter here and share with all of you.</em>
+     This post comes from the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge</a> newsletter.  I find so much value from what Peter and Jonathan do over at SDK Bridge, I always have to post their newsletter here and share with all of you.
 </p>
 <p>
      ProgrammableWeb is known for publishing the number of public APIs in its directory, and they regularly present an impressive <a href="http://sdkbridge.createsend1.com/t/r-l-utikkyk-hdhyyhjli-j/" target="_blank">graph</a> that shows how this number has increased exponentially over time. However, not all APIs are public, and ProgrammableWeb is not able to obtain information on how many non-public APIs exist.

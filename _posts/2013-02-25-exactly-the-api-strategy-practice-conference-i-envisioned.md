@@ -12,19 +12,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      Its the Monday morning after the <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice Conference</a>. The conference went off without a hitch, and was exactly the conference I envisioned when 3Scale first contacted me seven months ago about the idea of putting on the event.  In July of 2012 Steve Willmott the CEO and founder of 3Scale sent me an email stating:
 </p>
 <blockquote>
-     <em>..we're thinking of finally getting round to organizing an API focused event (conference) which tries to help spread knowledge about API, promote good practice and broaden the API tent beyond what it is today. The aim would be an event which combined both "business and practice" - meaning one element which tackles critical topics such as business models, strategy, success stories etc. and another which is about "what can be done with APIs" and "how to make it happen technically".</em>
+     ..we're thinking of finally getting round to organizing an API focused event (conference) which tries to help spread knowledge about API, promote good practice and broaden the API tent beyond what it is today. The aim would be an event which combined both "business and practice" - meaning one element which tackles critical topics such as business models, strategy, success stories etc. and another which is about "what can be done with APIs" and "how to make it happen technically".
 </blockquote>
 <p>
      Closing with:
 </p>
 <blockquote>
-     <em>The final important thing is we'd like it to be a very open event - with a range of supporters, speakers and attendees and - while vendors might sponsor - it wouldn't be a "vendor" event.</em>
+     The final important thing is we'd like it to be a very open event - with a range of supporters, speakers and attendees and - while vendors might sponsor - it wouldn't be a "vendor" event.
 </blockquote>
 <p>
      To which I responded with:
 </p>
 <blockquote>
-     <em>Sounds like a great idea to me. I'm in, and willing to help in any way I can.</em>
+     Sounds like a great idea to me. I'm in, and willing to help in any way I can.
 </blockquote>
 <p>
      Of course I would be in. I’ve wanted this type of conference to occur for a while now, and what better way to make sure it happens right, than doing it yourself! It was an amazing opportunity for me--there was no ignoring it.

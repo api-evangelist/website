@@ -12,7 +12,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fre
      I had a question from an API owner land in my inbox. It is regarding the amount of attention and resources that should be spent on on-boarding new customers. Directly from the email:
 </p>
 <blockquote>
-     <em>How would you suggest companies place a quantifiable value on free API users? I know that it is very important to have a lot of people use your API so that they can make great things with your API and also give people a chance to really understand the value of what the API offers, but do you have any thoughts on how companies should decide how much to spend on an API conversion (AdWords, Hackathons, etc.)</em>
+     How would you suggest companies place a quantifiable value on free API users? I know that it is very important to have a lot of people use your API so that they can make great things with your API and also give people a chance to really understand the value of what the API offers, but do you have any thoughts on how companies should decide how much to spend on an API conversion (AdWords, Hackathons, etc.)
 </blockquote>
 <p>
      Let's first address the freemium part of the question. It is my opinion that every API should have a freemium layer. But only as one part of a well planned developer incentive ladder. This freemium tier is the top layer of your funnel. It will provide a way for people to test drive your API, understand what it does and the value it can deliver in their world.

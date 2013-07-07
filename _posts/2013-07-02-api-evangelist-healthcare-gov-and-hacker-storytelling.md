@@ -64,7 +64,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
      The really powerful thing about all of this, is this can run anywhere. You can run the <a href="http://www.allthingsdistributed.com/2011/08/Jekyll-amazon-s3.html">same configuration of site on Amazon S3</a>, Dropbox, or anywhere you can setup hosting. This isn't just something for alpha geeks, look closer at the Amazon S3 example, that is the CTO of Amazon running his blog using this approach.
 </p>
 <p>
-     <strong><em>So why am I doing this?</em></strong> There are so many reason, and to help me wrap my head further around them, I thought I would take a crack at listing as many as I could.
+     <strong>So why am I doing this?</strong> There are so many reason, and to help me wrap my head further around them, I thought I would take a crack at listing as many as I could.
 </p>
 <p>
      <strong>Decoupling</strong><br />

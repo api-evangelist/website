@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API
 ---
 {% include JB/setup %}
 <p>
-     <em>After looking back at 2012, I wanted a January 1, 2013 blog post for my blogs. My first blog post of 2012 was my tour schedule for January, 2012. While it was a pretty busy time for evangelizing and hackathons, I wanted something a little deeper. I’m not sure what, but I will play with the format year to year, until I find what I’m looking for.</em>
+     After looking back at 2012, I wanted a January 1, 2013 blog post for my blogs. My first blog post of 2012 was my tour schedule for January, 2012. While it was a pretty busy time for evangelizing and hackathons, I wanted something a little deeper. I’m not sure what, but I will play with the format year to year, until I find what I’m looking for.
 </p>
 <p>
-     <em>Every year I rewrite my bio, based upon where I am in my life. I’ve been doing this since 2009. This year I will write inaugural blog posts along with my bio reworking, and post to each of my active blogs. We’ll see if it resonates again in 12 months, and I do it again in 2014.</em>
+     Every year I rewrite my bio, based upon where I am in my life. I’ve been doing this since 2009. This year I will write inaugural blog posts along with my bio reworking, and post to each of my active blogs. We’ll see if it resonates again in 12 months, and I do it again in 2014.
 </p>
 <hr />
 <p>

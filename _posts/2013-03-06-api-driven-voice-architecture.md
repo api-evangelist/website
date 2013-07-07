@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/zyp
      Zypr fits in with my vision of where APIs are going, because Zypr is doing the same thing as aggregation, automation and other trending service providers, but the end goal is this use case is voice. In Zyprs own words:
 </p>
 <blockquote>
-     <em>Zypr aggregates proprietary 3rd party APIs, categorizes their functions, and then presents those functions through a single, normalized API. By aggregating and normalizing 3rd party APIs, Zypr creates a stable access point for devices and apps to access those services without concern for service and API changes.</em>
+     Zypr aggregates proprietary 3rd party APIs, categorizes their functions, and then presents those functions through a single, normalized API. By aggregating and normalizing 3rd party APIs, Zypr creates a stable access point for devices and apps to access those services without concern for service and API changes.
 </blockquote>
 <p>
      That sounds exactly like what <a title="Singly" href="http://singly.com">Singly</a> is doing, but with voice as the vehicle for making valuable API resources avilable on apps running via mobile phones, tablets and in our cars and homes. I really like the Zypr graphic. I will have to create a similar version to articulate some the API trends I’m seeing.

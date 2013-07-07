@@ -26,7 +26,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/con
      </li>
 </ul>
 <p>
-     Other than those three <em>"simple areas"</em>, Twitter delivers a damn good API. I find it very hard to criticize what they do, except for the fact that having suffocating rate limits, and shutting off access for integrations you view as competitive, can well, be a pretty quick downer.
+     Other than those three "simple areas", Twitter delivers a damn good API. I find it very hard to criticize what they do, except for the fact that having suffocating rate limits, and shutting off access for integrations you view as competitive, can well, be a pretty quick downer.
 </p>
 <p>
      An example of Twitter in action is with their recent post about <a href="https://dev.twitter.com/blog/symbols-entities-tweets">Symbols entities for Tweets</a>. I love this idea, I’m working through thoughts that are similar, when it comes to <a href="/2013/01/16/markup-apis-and-api-scripting-platforms/">markup APIs or what I’m calling dictionary APIs</a>. I think that a dictionary, symbol or other lookup functionality around an API is cool and has a lot of potential...right up until the point you realize they are have been <a href="http://apivoice.com/2012/07/30/why-isnt-the-ftc-looking-into-twitters-increasingly-anti-competitive-practices/">sharecropping a lot of this innovation from the Twitter Ecosystem</a>.

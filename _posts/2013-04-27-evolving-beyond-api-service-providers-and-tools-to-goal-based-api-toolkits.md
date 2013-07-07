@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uni
      Each portion of API Evangelist will run using what I call my <a title="Hacker Storytelling" href="http://hackerstorytelling.com" target="_blank">Hacker Storytelling</a> format, where I use Github Page, Jekyll along with a variety of JSON driven widgets that tell a story around a specific topic.
 </p>
 <p>
-     The first story group I’m tackling is redefining two of my main sections which I had called <em>“service provider”</em> and <em>“tools”</em>. My original intent was to find resources people could use to deploy APIs, and if it was an online service I put it in service providers and if you could download and install, it went under tools.
+     The first story group I’m tackling is redefining two of my main sections which I had called “service provider” and “tools”. My original intent was to find resources people could use to deploy APIs, and if it was an online service I put it in service providers and if you could download and install, it went under tools.
 </p>
 <p>
      I’m abandoning this approach and dismantling these sections and breaking them into goal oriented stories:

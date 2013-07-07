@@ -18,7 +18,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
      To help stimulate this conversation I wanted to break down the word, governance.  In the context of IT, governance is:
 </p>
 <p>
-     <em>a concept used for activities related to exercising control over services in a service-oriented architecture (SOA). The definitions of SOA governance agree in its purpose of exercising control, but differ in the responsibilities it should have. Some narrow definitions focus on imposing policies and monitoring services, while other definitions use a broader business-oriented perspective</em>
+     a concept used for activities related to exercising control over services in a service-oriented architecture (SOA). The definitions of SOA governance agree in its purpose of exercising control, but differ in the responsibilities it should have. Some narrow definitions focus on imposing policies and monitoring services, while other definitions use a broader business-oriented perspective
 </p>
 <p>
      With general definitions being:

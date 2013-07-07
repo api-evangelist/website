@@ -30,7 +30,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/net
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/netflix/daniel-jacobson-netflix.JPG"  width="250" align="right" />
 </p>
 <p>
-     To shed light on this, I sat down with Daniel Jacobson (<a href="https://fr.twitter.com/daniel_jacobson">@daniel_jacobson</a>), Director of Engineering for APIs at Netflix and asked him, <strong><em>“Why does Netflix share so many stories about their operations?”</em></strong>
+     To shed light on this, I sat down with Daniel Jacobson (<a href="https://fr.twitter.com/daniel_jacobson">@daniel_jacobson</a>), Director of Engineering for APIs at Netflix and asked him, <strong>“Why does Netflix share so many stories about their operations?”</strong>
 </p>
 <p>
      It is very similar to why I tell stories on API Evangelist.  Daniel asys it can be very positive to think about things, anticipating that you will share publicly, forcing you to see things in a different light. That process can be very healthy, even without considering the after-effects of publicly sharing.

@@ -38,7 +38,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      All federal agency were directed to develop a digital strategy around open data and mobile, then publish it at their website in HTML, XML and JSON. So I got to work quantifying this. I wanted to understand which agencies had done this successfully. To begin I needed a list of federal agencies, which I was able to pull from the <a href="http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml" target="_blank">Federal Agency Directory API</a>. Now I had a database of each agency name, abbreviation code and URL. Next I wrote a script that "pinged" each agencies URL and looked for http://[agencyname].gov/digitalstrategy.html, http://[agencyname].gov/digitalstrategy.xml and http://[agencyname].gov/digitalstrategy.json. I ran this script each night to see who had published their strategy.
 </p>
 <p>
-     Coming up on a year after the release of <a href="http://www.whitehouse.gov/the-press-office/2012/05/23/presidential-memorandum-building-21st-century-digital-government">Memorandum on Building a 21st Century Digital Government</a>, we have 0 "agencies" that have published a digital strategy:
+     Coming up on a year after the release of <a href="http://www.whitehouse.gov/the-press-office/2012/05/23/presidential-memorandum-building-21st-century-digital-government">Memorandum on Building a 21st Century Digital Government</a>, we have <span >0 "agencies" that have published a digital strategy:
 </p>
 <table >
      <tbody>
@@ -64,7 +64,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </tbody>
 </table>
 <p>
-     Across these 0 agencies, there are 0 published datasets to support 2.2, which was to make high-value data and content in at least two existing major customer-facing systems available through web APIs, apply metadata tagging and publish a plan to transition additional high-value systems:
+     Across these <span >0 agencies, there are <span >0 published datasets to support 2.2, which was to make high-value data and content in at least two existing major customer-facing systems available through web APIs, apply metadata tagging and publish a plan to transition additional high-value systems:
 </p>
 <table >
      <tbody>
@@ -90,7 +90,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </tbody>
 </table>
 <p>
-     Across these 0 agencies, there are 0 published services in support 7.2, which was intended to optimize at least two existing priority customer-facing services for mobile use and publish a plan for improving additional existing services:
+     Across these <span >0 agencies, there are <span >0 published services in support 7.2, which was intended to optimize at least two existing priority customer-facing services for mobile use and publish a plan for improving additional existing services:
 </p>
 <table >
      <tbody>
@@ -169,7 +169,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      And most importantly, some sort of framework is necessary to give agencies a structure to work within, and a toolkit to direct them. This is the Open Data Policy, and brings us to the <a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/2013/m-13-13.pdf">Open Data Executive Order and the accompanying Open Data Policy</a> released by the Office of Management and Budget and Office of Science and Technology Policy which:
 </p>
 <p>
-     <em>require(s) that, going forward, newly generated government data shall be made freely available in open, machine-readable formats, while appropriately safeguarding privacy, confidentiality, and security. This requirement will help the Federal government achieve the goal of making troves of previously inaccessible or unmanageable data easily available to entrepreneurs, innovators, researchers, and others who can use those data to generate new products and services, build businesses, and create jobs.</em>
+     require(s) that, going forward, newly generated government data shall be made freely available in open, machine-readable formats, while appropriately safeguarding privacy, confidentiality, and security. This requirement will help the Federal government achieve the goal of making troves of previously inaccessible or unmanageable data easily available to entrepreneurs, innovators, researchers, and others who can use those data to generate new products and services, build businesses, and create jobs.
 </p>
 <p>
      This kind of language is music to my ears. Understanding how our government works is one thing. Understand how to do it programmatically. Well, that is a whole other ball game. If we can move our government forward and develop a true path forward, to make everything our government produces machine readable by default. I'm on board.  Let's get to work!

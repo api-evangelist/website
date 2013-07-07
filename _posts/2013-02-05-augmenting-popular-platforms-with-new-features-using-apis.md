@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
      This is a very interesting approach to externally developing features for another platform or service. I think Parse says it well:
 </p>
 <blockquote>
-     <em>Even the hottest new apps, however, aren’t perfect and that’s where clever innovators can fill in the gaps with a great idea. Parse-powered instaDM is one such innovation.</em>
+     Even the hottest new apps, however, aren’t perfect and that’s where clever innovators can fill in the gaps with a great idea. Parse-powered instaDM is one such innovation.
 </blockquote>
 <p>
      On one hand, this approach is a gamble. All Instagram has to do is copy what you've done, put it in the roadmap, and your done.  Finished.

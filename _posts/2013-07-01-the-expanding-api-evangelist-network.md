@@ -158,7 +158,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
      </li>
 </ul>
 <p>
-     <strong><em>* Projects that are still in progress of being setup</em></strong>
+     <strong>* Projects that are still in progress of being setup</strong>
 </p>
 <p>
      My goal with this new format that I've rolled out over the last six months, is to give me specific project areas to do research within, each week. Some projects will get love an attention, while others will simmer in the background--moving everything forward in small chunks.

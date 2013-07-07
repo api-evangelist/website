@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
      Although I spent most of the week in Washington DC, Tuesday night I flew out to Park City, UT and shared the stage Wednesday morning for a keynote with Audrey at <a title="InstructureCon" href="http://www.instructure.com/instructurecon">InstructureCon</a>, put on by the LMS platform <a title="LMS by Instructure" href="http://www.instructure.com/">Instructure</a>.
 </p>
 <p>
-     Audrey and I delivered a talk on education, the LMS and data portability. Audrey opened up and closed out the talk, you can read <a href="http://hackeducation.com/2013/06/19/the-lms-as-portal-instructurecon/">her perspective on Hack Education</a>, but I wanted to make sure and provide the overview of my section, as described by Audrey as <em>[Kin spoke here about the history of APIs and what APIs do.]</em>
+     Audrey and I delivered a talk on education, the LMS and data portability. Audrey opened up and closed out the talk, you can read <a href="http://hackeducation.com/2013/06/19/the-lms-as-portal-instructurecon/">her perspective on Hack Education</a>, but I wanted to make sure and provide the overview of my section, as described by Audrey as [Kin spoke here about the history of APIs and what APIs do.]
 </p>
 <p>
      To help understand how mainstream Internet technology has influenced the LMS and education portal history Audrey has laid out, I wanted to bring the history of the web API to the table, helping people understand what APIs do:

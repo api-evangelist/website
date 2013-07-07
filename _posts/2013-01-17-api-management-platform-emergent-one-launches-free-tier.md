@@ -27,7 +27,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/eme
      Emergent One one is responding to user requests for a cheaper tier that support entry level API users, which will allow them to tweak their API strategies before spending money. This is something I think is mandatory for all API service providers, something <a href="http://3scale.net/">3Scale</a> were the first movers on, and we have seen <a href="http://apigee.com/about/pricing">Apigee</a> implement recently, as well as <a href="/serviceproviders/layer_7_technologies.php" target="_blank">Layer7</a> with their <a href="http://www.apify.co/" target="_blank">Apify</a>.
 </p>
 <p>
-     I notice that in the email announcement of the 100% free tier, it encourages me to build new APIs at no cost, <strong><em>“until launch”</em></strong>. I hope Emergent One will agree that a entry level pricing tier is not critical for users to get to know Emergent One, but essential for educating the masses about the value of APIs--allowing them to experiment. So le'ts please make sure it isn’t only until launch.
+     I notice that in the email announcement of the 100% free tier, it encourages me to build new APIs at no cost, <strong>“until launch”</strong>. I hope Emergent One will agree that a entry level pricing tier is not critical for users to get to know Emergent One, but essential for educating the masses about the value of APIs--allowing them to experiment. So le'ts please make sure it isn’t only until launch.
 </p>
 <p>
      I’m setting up some APIs, directly from one of my Amazon RDS instances.   I'll let you know when ready.

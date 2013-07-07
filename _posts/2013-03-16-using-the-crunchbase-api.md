@@ -30,13 +30,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
      For each returned result from the /search endpoint, I would take the company name and perform a company search on the /entity endpoint. However each call to the endpoint would yield a 301, redirecting me to another URL. So the search for:
 </p>
 <blockquote>
-     <em>http://api.crunchbase.com/v/1/company/Noodle+Education.js?api_key=[key]</em>
+     http://api.crunchbase.com/v/1/company/Noodle+Education.js?api_key=[key]
 </blockquote>
 <p>
      Get a 301 returned, with the following redirect URL:
 </p>
 <blockquote>
-     <em>http://ec2-107-21-104-179.compute-1.amazonaws.com/v/1/company/noodle-education.js</em>
+     http://ec2-107-21-104-179.compute-1.amazonaws.com/v/1/company/noodle-education.js
 </blockquote>
 <p>
      So for each /entity endpoint I would have to make two separate cURL calls to get a single record for a company. An approach that is guarantee to get CrunchBase into the API billionaires club (as chatty APIs do), or at the very least generate a nice bill with their API management provider.

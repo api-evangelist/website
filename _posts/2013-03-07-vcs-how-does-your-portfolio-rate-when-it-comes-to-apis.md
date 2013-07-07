@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oxf
      I have a couple VC’s I talk to on a regular basis, but I have a growing number of new ones who are investing more and more in technology companies and need to get a grip on this API world. As a Terry Kearns from Oxford Strategic Advisors, LLC, put it yesterday:
 </p>
 <blockquote>
-     <em>"I wanna let you know I appreciate all the work you've done here. For a guy who is not a tech guy. You really help me out with a lot, your articles and information help me get my arms around this whole API world"</em>
+     "I wanna let you know I appreciate all the work you've done here. For a guy who is not a tech guy. You really help me out with a lot, your articles and information help me get my arms around this whole API world"
 </blockquote>
 <p>
      That is my mission. This is what I do. Nobody pays me to educate people like this about the APIs space, but it is so critical that the folks who are investing in the next generation of healthcare, education, manufacturing and other business sectors, understand APIs, at least at a basic level.

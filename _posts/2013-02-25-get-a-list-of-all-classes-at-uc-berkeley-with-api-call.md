@@ -15,13 +15,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ber
      Using the UC Berkeley API, you can get a list of all departments:
 </p>
 <blockquote>
-     <em>_curl -v -X GET "https://apis-dev.berkeley.edu/cxf/asws/department?departmentCode=a&amp;app_id=309fe68e&amp;app_key=51b9d67dc4f0501eed763822a641b17b"_</em>
+     _curl -v -X GET "https://apis-dev.berkeley.edu/cxf/asws/department?departmentCode=a&amp;app_id=309fe68e&amp;app_key=51b9d67dc4f0501eed763822a641b17b"_
 </blockquote>
 <p>
      Then with the proper department code you can pull a list of classes:
 </p>
 <blockquote>
-     <em>_curl -v -X GET "https://apis-dev.berkeley.edu/cxf/asws/classoffering?departmentCode=ARCH&amp;app_id=your-id&amp;app_key=your-key"_</em>
+     _curl -v -X GET "https://apis-dev.berkeley.edu/cxf/asws/classoffering?departmentCode=ARCH&amp;app_id=your-id&amp;app_key=your-key"_
 </blockquote>
 <p>
      With the proper keys, anyone can easily pull relevant UC Berkeley department and class data to use in website or app, or even populate a Google Spreadsheet for other purposes.

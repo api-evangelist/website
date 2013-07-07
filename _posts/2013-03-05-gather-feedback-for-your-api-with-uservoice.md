@@ -18,7 +18,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/imp
      This post is about their usage of feedback, helpdesk, and knowledge base management tool <a title="UserVoice" href="https://www.uservoice.com/">UserVoice</a>, which is a service I always recommend to API owners looking to support different aspects of their API community.
 </p>
 <p>
-     ImpactStory simply has a “<em>BETA - Send us Your Feedback</em>” image in the top right corner of their site. When you click on the logo, you are presented with a simple UserVoice form for submitting your ideas of where you think ImpactStory should take their platform.
+     ImpactStory simply has a “BETA - Send us Your Feedback” image in the top right corner of their site. When you click on the logo, you are presented with a simple UserVoice form for submitting your ideas of where you think ImpactStory should take their platform.
 </p>
 <p>
      <a href="http://impactstory.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/analytics/impactstory/impactstory-beta-feedback-form.png"  width="300" align="right" /></a>

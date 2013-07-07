@@ -15,19 +15,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      There are several layers to the convSteersation, the part I’m focusing on is about how BaaS providers are structuring their pricing, in which Sarah Perez writes:
 </p>
 <blockquote>
-     <em>StackMob is now making API calls free. This latter news will impact the competitive landscape, which includes startups like Parse, Kinvey and others, all of which have traditionally charged developers as API calls increase alongside an app’s popularity.</em>
+     StackMob is now making API calls free. This latter news will impact the competitive landscape, which includes startups like Parse, Kinvey and others, all of which have traditionally charged developers as API calls increase alongside an app’s popularity.
 </blockquote>
 <p>
      Making the argument that:
 </p>
 <blockquote>
-     <em>Today, developers have to have an understanding of how many API calls they make, and if an app becomes really successful, developers are penalized for that with increased pricing.</em>
+     Today, developers have to have an understanding of how many API calls they make, and if an app becomes really successful, developers are penalized for that with increased pricing.
 </blockquote>
 <p>
      Sarah quotes StackMob CEO Ty Amell, saying that:
 </p>
 <blockquote>
-     <em>“this isn’t really all that fair, explaining that it doesn’t matter to StackMob how many API calls the app makes – the cost to them doesn’t really go up. “It doesn’t matter to us whether someone’s making a million API calls or 20 million API calls – the cost is fairly manageable on our parts. So we felt like this was a blocker to innovation on the developer’s side,” he explains. “And we feel like API calls are starting to become a commodity, where it’s really how can you provide value beyond that?”</em>
+     “this isn’t really all that fair, explaining that it doesn’t matter to StackMob how many API calls the app makes – the cost to them doesn’t really go up. “It doesn’t matter to us whether someone’s making a million API calls or 20 million API calls – the cost is fairly manageable on our parts. So we felt like this was a blocker to innovation on the developer’s side,” he explains. “And we feel like API calls are starting to become a commodity, where it’s really how can you provide value beyond that?”
 </blockquote>
 <p>
      The conversation immediately begins on Twitter, with:

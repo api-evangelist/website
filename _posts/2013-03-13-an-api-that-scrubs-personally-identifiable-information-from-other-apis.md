@@ -18,13 +18,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
      The problem:
 </p>
 <blockquote>
-     <em>UCB Developers are creating Web Services that provide access to sensitive data (e.g. grades, transcripts, current enrollments) but only trusted applications are typically allowed to access these Web Services to prevent misuse of the sensitive data. Expanding access to these services, while preserving the confidentiality of the data, could provide student and third party developers with opportunities to create new applications that provide UCB students with enhanced services.</em>
+     UCB Developers are creating Web Services that provide access to sensitive data (e.g. grades, transcripts, current enrollments) but only trusted applications are typically allowed to access these Web Services to prevent misuse of the sensitive data. Expanding access to these services, while preserving the confidentiality of the data, could provide student and third party developers with opportunities to create new applications that provide UCB students with enhanced services.
 </blockquote>
 <p>
      The solution:
 </p>
 <blockquote>
-     <em>Wrapping untrusted applications in a "Proxied Facade Service" framework that passes anonymous tickets through the “untrusted” application to underlying services that can independently extract the necessary personal information provides a secure way of allowing an application to retrieve a Web User’s Business data (e.g. their current course enrollments) WITHOUT exposing any identifying information about the user to the untrusted application.</em>
+     Wrapping untrusted applications in a "Proxied Facade Service" framework that passes anonymous tickets through the “untrusted” application to underlying services that can independently extract the necessary personal information provides a secure way of allowing an application to retrieve a Web User’s Business data (e.g. their current course enrollments) WITHOUT exposing any identifying information about the user to the untrusted application.
 </blockquote>
 <p>
      I find their problem and solution fascinating, I also think it is something that could have huge potential. When data leaves any school, healthcare provider, financial services or government office, the presence of sensitive data is always a concern. More data will be leaving these trusted systems, for use in not just apps, but also for analysis and visualizations, and the need to scrub personally identifiable information will only grow.

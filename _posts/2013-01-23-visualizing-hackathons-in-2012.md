@@ -15,7 +15,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hac
      For those that are new to the hackathon space, these events are not intended to perform illegal activities around computer networks.
 </p>
 <p>
-     <strong><em>Software developers widely see hacking as a quick and dirty programmatic solution to a problem.</em></strong>
+     <strong>Software developers widely see hacking as a quick and dirty programmatic solution to a problem.</strong>
 </p>
 <p>
      Hackathons are NOT about gaining access to other networks, which is a definition widely publicized by the media and hollywood. Among the developer community, it is meant to be a positive term that drives innovation among developers.

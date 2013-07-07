@@ -18,7 +18,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      To provide a quick primer for the portion of my audience that aren’t OAuth geeks:
 </p>
 <blockquote>
-     <em><a href="http://en.wikipedia.org/wiki/OAuth">OAuth is an open standard for authorization that provides a method for clients to access server resources on behalf of a resource owner</a></em>
+     <a href="http://en.wikipedia.org/wiki/OAuth">OAuth is an open standard for authorization that provides a method for clients to access server resources on behalf of a resource owner</a>
 </blockquote>
 <p>
      Ok, what does that mean? Think Twitter. Twitter is server. You are the owner of your tweet resources. When you authenticate anywhere using your Twitter ID, that website or app uses OAuth to get access to your tweets, via the Twitter platform. If you login to your Twitter account, click on settings and select apps from the left menu--these are apps and sites that have requested OAuth access your Twitter resources.
@@ -42,7 +42,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      In my opinion all three legs of OAuth are equally important, with an emphasis on the end-user. It is their resource right? Or is it? The only thing standing between healthy OAuth conversations and relationships is the platforms terms of use and privacy policies.
 </p>
 <p>
-     The entire panel at APIStrat agreed that we need more education for end-users about OAuth. Now that we have OAuth 2.0 settled (in some minds), we need to get down to business <em>educating all three legs</em> around the process of OAuth and its best practices, empowering all three parties to be aware, and participate in ongoing conversations about how we are producing, storing, sharing, selling, licensing and consuming resources via APIs.
+     The entire panel at APIStrat agreed that we need more education for end-users about OAuth. Now that we have OAuth 2.0 settled (in some minds), we need to get down to business educating all three legs around the process of OAuth and its best practices, empowering all three parties to be aware, and participate in ongoing conversations about how we are producing, storing, sharing, selling, licensing and consuming resources via APIs.
 </p>
 <p>
      We need to make sure API platform conversations have all three legs represented. The success of any platform will depend on a healthy balance between a platform, developers and the end-users--with oAuth 2.0 being the best model we have to make this happen to date.

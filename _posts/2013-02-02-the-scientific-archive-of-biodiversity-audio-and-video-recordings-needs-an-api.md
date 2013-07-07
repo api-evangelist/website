@@ -12,7 +12,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The
      I was listening to <a href="http://www.npr.org/2013/02/02/170849125/did-you-hear-that-i-think-it-was-the-sound-of-a-walrus" target="_blank">Did You Hear That? I Think It Was The Sound Of A Walrus</a>, on NPR this morning. It is about the <a href="http://macaulaylibrary.org/" target="_blank">Macaulay Library</a>, which is:
 </p>
 <blockquote>
-     <em>...the world's largest and oldest scientific archive of biodiversity audio and video recordings. Our mission is to collect and preserve recordings of each species' behavior and natural history, to facilitate the ability of others to collect and preserve such recordings, and to actively promote the use of these recordings for diverse purposes spanning scientific research, education, conservation, and the arts.</em>
+     ...the world's largest and oldest scientific archive of biodiversity audio and video recordings. Our mission is to collect and preserve recordings of each species' behavior and natural history, to facilitate the ability of others to collect and preserve such recordings, and to actively promote the use of these recordings for diverse purposes spanning scientific research, education, conservation, and the arts.
 </blockquote>
 <p>
      The library's collection has a total of more than 7,000 hours of sounds, the result of an 80-year collaboration between the scientific community and the library's volunteer collaborators. An amazing resource!

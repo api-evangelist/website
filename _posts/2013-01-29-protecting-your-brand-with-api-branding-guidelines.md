@@ -21,7 +21,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pow
      Active Network starts with a great explanation of why they provide <a title="branding guidelines" href="http://developer.active.com/branding_guidelines">branding guidelines</a>:
 </p>
 <p>
-     <em>At ACTIVE Network, we want you to be able to create fantastic applications with the ACTIVE Network APIs. At the same time, we don't want users to get confused about who is responsible for the data they are accessing, so we have some brand guidelines.</em>
+     At ACTIVE Network, we want you to be able to create fantastic applications with the ACTIVE Network APIs. At the same time, we don't want users to get confused about who is responsible for the data they are accessing, so we have some brand guidelines.
 </p>
 <p>
      Next Active Network explains to developers why branding guidelines are important to their own users:

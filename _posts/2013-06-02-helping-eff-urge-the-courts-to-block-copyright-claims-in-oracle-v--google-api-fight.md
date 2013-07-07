@@ -15,57 +15,57 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
      Here is a summarized version of the arguement:
 </p>
 <blockquote>
-     <em>As computer scientists, amici have relied on the open nature of APIs and the programs built on them to create and operate new software. Amici depend on APIs remaining open to sustain wide spreads compatibility standards used by startups and incumbents alike. Reversing the District Court would dangerously undermine the settled expectations of computer scientists who rely on the open nature of APis.</em>
+     As computer scientists, amici have relied on the open nature of APIs and the programs built on them to create and operate new software. Amici depend on APIs remaining open to sustain wide spreads compatibility standards used by startups and incumbents alike. Reversing the District Court would dangerously undermine the settled expectations of computer scientists who rely on the open nature of APis.
      <ol>
           <li>
-               <em>Uncopyrightable interfaces were essential to the development of modern computers and the Internet</em>
+               Uncopyrightable interfaces were essential to the development of modern computers and the Internet
                <ol>
                     <li>
-                         <em>The BIOS of the Original IBM-Compatible PC</em>
+                         The BIOS of the Original IBM-Compatible PC
                     </li>
                     <li>
-                         <em>Major modern operating system reimplement the ground break UNIX API</em>
+                         Major modern operating system reimplement the ground break UNIX API
                     </li>
                     <li>
-                         <em>The C programming language became universal because of its uncopyrightable interface</em>
+                         The C programming language became universal because of its uncopyrightable interface
                     </li>
                     <li>
-                         <em>Computers rely on the uncopyrightable nature of APIs and network protocols to communicate over the Internet</em>
+                         Computers rely on the uncopyrightable nature of APIs and network protocols to communicate over the Internet
                     </li>
                     <li>
-                         <em>The uncopyrightable nature of APIs for the industry standards for cloud computing</em>
+                         The uncopyrightable nature of APIs for the industry standards for cloud computing
                     </li>
                </ol>
           </li>
           <li>
-               <em>Uncopyrightable interfaces spur the creation of software that otherwise would not be written</em>
+               Uncopyrightable interfaces spur the creation of software that otherwise would not be written
                <ol>
                     <li>
-                         <em>Uncopyrightable interfaces allow software that makes different systems compatible<br /></em>
+                         Uncopyrightable interfaces allow software that makes different systems compatible<br />
                     </li>
                     <li>
-                         <em>Uncopyrightable interfaces help programmers develop completely new capabilities for software</em>
+                         Uncopyrightable interfaces help programmers develop completely new capabilities for software
                     </li>
                </ol>
           </li>
           <li>
-               <em>Copyright in interfaces would creat an "orphan software" problem</em>
+               Copyright in interfaces would creat an "orphan software" problem
                <ol>
                     <li>
-                         <em>Uncopyrightable interfaces protect both developers and users<br /></em>
+                         Uncopyrightable interfaces protect both developers and users<br />
                     </li>
                     <li>
-                         <em>The orphan software problem disproportionately affects the public sector</em>
+                         The orphan software problem disproportionately affects the public sector
                     </li>
                </ol>
           </li>
      </ol>
 </blockquote>
 <blockquote>
-     <em>Conclusion:</em>
+     Conclusion:
 </blockquote>
 <blockquote>
-     <em>The freedom to reimplement and extend existing aPIs has undoubtedly led to robust software and hardware industries, but also to an explosion of technological advances that do more than merely increase companies' bottom line. They open the world for the sharing of information, increased communication, and technological advances that could never have been contemplated.</em>
+     The freedom to reimplement and extend existing aPIs has undoubtedly led to robust software and hardware industries, but also to an explosion of technological advances that do more than merely increase companies' bottom line. They open the world for the sharing of information, increased communication, and technological advances that could never have been contemplated.
 </blockquote>
 <p>
      You can read the <a href="https://www.eff.org/document/amicus-brief-computer-scientists">full brief that was filed over at EFF</a>. Keeping APIs open, and free from copyright is something I am passionate about and feel very strongly that it is critical to a healthy, vibrant online economy.
