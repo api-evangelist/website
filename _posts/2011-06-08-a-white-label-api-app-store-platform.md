@@ -1,0 +1,87 @@
+---
+layout: post
+title: A White Label API App Store Platform
+url: http://apievangelist.com2011/06/08/a-white-label-api-appstore-platform/
+source: http://apievangelist.com2011/06/08/a-white-label-api-appstore-platform/
+domain: apievangelist.com2011
+image: 
+---
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/app-showcase/Appstores.png"  align="right" />The goal of any API evangelist is to encourage its community to build mobile and web applications around their API.
+When you and your community have several web apps, mobile apps, plugins or other tools you are proud of, showcase them.
+Whether you call it a showcase, directory, gallery or store...having an area that highlights the applications built upon your API is critical to continued API adoption and success.
+Application showcases do several things:<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/app-showcase/SimpleGeo-app-showcase.png"  width="250" align="right" />
+<ul>
+     <li>Show developers love by showcasing their work and giving them the exposure the need
+     </li>
+     <li>Emphasize the work of your partners and the value they add to your platform
+     </li>
+     <li>Highlight the best apps your company has developed internally
+     </li>
+     <li>Show, not only do people use your API, they have delivered actual applications
+     </li>
+     <li>Demonstrates your API is easy to use and has value
+     </li>
+</ul>There are two ways to deploy an app store for your API. 1) build it yourself or 2) use a private label App Store solution like <a title="appstores.com" href="http://www.appstores.com"></a><a title="AppStores.com" href="http://appstores.com/">AppStores.com</a>. I can speak from experience, your time is better spent evangelizing, and not building your own app store.
+<a title="AppStores.com" href="http://appstores.com/">AppStores.com</a> provides a white-label / private-label solution for deploying an app store for your API. Here is a little of what AppStores.com bring to the table.
+They help with developer acquisition:
+<ul>
+     <li>
+          <strong>Self Service App Submission</strong> - Enable developers to submit apps on their own, using a process you control
+     </li>
+     <li>
+          <strong>Developer Dashboard</strong> - Developers are provided with a dashboard to monitor approval status, manage and update their own apps
+     </li>
+     <li>
+          <strong>App Marketing</strong> - Developers will get the exposure they need being featured in your ecosystem
+     </li>
+</ul>They provide a complete set of management tools:
+<ul>
+     <li>
+          <strong>Approval Process</strong> - Accept, reject or request changes to developers apps using approval dashboard
+     </li>
+     <li>
+          <strong>Customizable UI</strong> - Complete control over the design of your AppShowcase
+     </li>
+     <li>
+          <strong>ContentManagementSystem (CMS)</strong> - Add custom pages to your AppShowcase
+     </li>
+</ul>They encourage application discovery:<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/app-showcase/IndexTank-App-Gallery.png"  width="250" align="right" />
+<ul>
+     <li>
+          <strong>App Categorization</strong> - Create categories to organize applications and feature the very best
+     </li>
+     <li>
+          <strong>App Details -</strong> Provide descriptions, editorial reviews and ratings. Include screenshots and video tutorials on each app
+     </li>
+     <li>
+          <strong>Mobile Ready</strong> - HTML5 app store allows app discovery on a variety devices
+     </li>
+</ul>AppStores.com is a ready-to-go, App Store as a Service for your API. Their goal is to save you money, reduce time to market, and be your team specializing in delivering your app showcase.
+They are fairly new, but already have a couple of high profile deployments:
+<ul>
+     <li>
+          <a title="IndexTank App Gallery" href="http://apps.indextank.com/">IndexTank App Gallery</a>
+     </li>
+     <li>
+          <a title="SimpleGeo App Showcase" href="http://apps.simplegeo.com/">SimpleGeo App Showcase</a>
+     </li>
+     <li>
+          <a title="EventBrite App Store" href="http://eventbrite.appstores.com/">EventBrite App Store</a>
+     </li>
+</ul>An <a title="application showcase n ann innovative building block" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=180">application showcase is an innovative building block</a> to showcase developers and partners, while also bringing attention to your API and the value it can deliver.
+When deploying your application store, I highly recommend checking out <a title="AppStore.com" href="http://AppStores.com">AppStore.com</a>, tell them API Evangelist sent you.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.programmableweb.com/2011/06/01/should-we-be-limiting-developers-api-usage/">Should We Be Limiting Developers API Usage?</a> (programmableweb.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/03/api-basics-for-retail-companies-from-best-buy/">API Basics for Retail Companies from Best Buy</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/27/with-seevl-music-discovery-the-website-is-the-api/">With Seevl Music Discovery, the Website is the API</a> (apievangelist.com)
+     </li>
+</ul>
+

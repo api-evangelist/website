@@ -1,0 +1,42 @@
+---
+layout: post
+title: Stack Oververflow API Review
+url: http://apievangelist.com2011/01/20/stack-oververflow-api-review/
+source: http://apievangelist.com2011/01/20/stack-oververflow-api-review/
+domain: apievangelist.com2011
+image: 
+---
+{% include JB/setup %}<a href="http://stackoverflow.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/stack-overflow/stackoverflow-logo-250.png"  width="250" align="right" /></a><a href="http://stackapps.com" target="_blank">StackApps</a> is an API for the family of Q&amp;A websites using the Stack Exchange engine including <a href="http://stackoverflow.com/" target="_blank">Stack Overflow</a>, <a href="http://serverfault.com/" target="_blank">Server Fault</a> and <a href="http://superuser.com/" target="_blank">Super User</a>.
+StackApps provides a RESTFul API using a basic application key authentication. The API provides access to Stack Apps user data as well as questions, answers and comments.
+No code samples or language packs are provided, they provide a link to the <a href="http://stackapps.com/questions/3/sample-application-worlds-worst-stackoverflow-clone" target="_blank">World's Worst Stack Overflow Clone</a> which is a sample application written in C and a hello world URL example.
+<strong>Building Blocks</strong>
+<strong>Technology</strong>
+<ul>
+     <li>RESTful API
+     </li>
+</ul><strong>Documentation / Tools</strong>
+<ul>
+     <li>Documentation
+     </li>
+     <li>API Explorer
+     </li>
+</ul><strong>Support</strong>
+<ul>
+     <li>Blog
+     </li>
+     <li>FAQ
+     </li>
+     <li>Forum
+     </li>
+</ul><strong>Developer</strong>
+<ul>
+     <li>Account Info
+     </li>
+     <li>App Key
+     </li>
+</ul><strong>Community</strong>
+<ul>
+     <li>Forum
+     </li>
+</ul>
+
