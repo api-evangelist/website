@@ -17,9 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The
 <p>
      If you look through the <a href="http://data.worldbank.org/">World Bank data catalog</a>, and spend time looking through their blog, you see a symbiotic relationship between their open data, APIs and the stories they tell on the blog. This approach is similar to what I'm calling <a title="Hacker Storytelling" href="http://hackerstorytelling.com">Hacker Storytelling</a>, the only difference is I am hosting all my stories on Github as individual repositories.
 </p>
-<p>
-     If you look at the home page of the World Bank data site today, there is a link to the blog post, "<a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries">What does data tell us about debt of high income and developing countries?</a>" This is a great example of not just providing a dataset, but actually telling the story around the data, while providing tools that let you interact with the data, making everything a very hands on experience--increasing the chances users will make an emotional connection with the data.
-</p>
+
 
 
 
