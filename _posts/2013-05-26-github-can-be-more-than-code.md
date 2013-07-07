@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Github Can Be More Than Code'
-url: http://apievangelist.com2013/05/26/github-can-be-more-than-code/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png
+url: 'http://apievangelist.com2013/05/26/github-can-be-more-than-code/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png'
 ---
 {% include JB/setup %}
 <p>

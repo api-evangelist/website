@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Salesforce Adds Sandbox Templates'
-url: http://apievangelist.com2013/05/24/salesforce-adds-sandbox-templates/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/developer-force-logo.png
+url: 'http://apievangelist.com2013/05/24/salesforce-adds-sandbox-templates/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/developer-force-logo.png'
 ---
 {% include JB/setup %}
 <p>

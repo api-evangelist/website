@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'In The End API Providers Will Only Sell Bandwidth'
-url: http://apievangelist.com2013/06/06/in-the-end-api-providers-will-only-sell-bandwidth/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png
+url: 'http://apievangelist.com2013/06/06/in-the-end-api-providers-will-only-sell-bandwidth/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png'
 ---
 {% include JB/setup %}
 <p>

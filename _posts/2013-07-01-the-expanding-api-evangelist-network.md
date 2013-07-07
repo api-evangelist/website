@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'The Expanding API Evangelist Network'
-url: http://apievangelist.com2013/07/01/the-expanding-api-evangelist-network/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_InApiWeTrust-1000.png
+url: 'http://apievangelist.com2013/07/01/the-expanding-api-evangelist-network/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_InApiWeTrust-1000.png'
 ---
 {% include JB/setup %}
 <p>

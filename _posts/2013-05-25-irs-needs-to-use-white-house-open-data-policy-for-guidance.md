@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'IRS Needs To Use White House Open Data Policy For Guidance'
-url: http://apievangelist.com2013/05/25/irs-needs-to-use-white-house-open-data-policy-for-guidance/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/open-knowledge-foundation-logo.jpg
+url: 'http://apievangelist.com2013/05/25/irs-needs-to-use-white-house-open-data-policy-for-guidance/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/open-knowledge-foundation-logo.jpg'
 ---
 {% include JB/setup %}
 <p>

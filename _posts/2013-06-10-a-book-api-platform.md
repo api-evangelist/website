@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'A Book API Platform'
-url: http://apievangelist.com2013/06/10/a-book-api-platform/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-epub-logo.jpg
+url: 'http://apievangelist.com2013/06/10/a-book-api-platform/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-epub-logo.jpg'
 ---
 {% include JB/setup %}
 <p>

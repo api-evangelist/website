@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'The Build Up To APIStrat in October'
-url: http://apievangelist.com2013/06/05/the-build-up-to-apistrat-in-october/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apistrat-sf-1.png
+url: 'http://apievangelist.com2013/06/05/the-build-up-to-apistrat-in-october/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apistrat-sf-1.png'
 ---
 {% include JB/setup %}
 <p>

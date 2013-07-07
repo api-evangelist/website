@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Box Opens Up Revenue Sharing For API Developers'
-url: http://apievangelist.com2013/06/10/box-opens-up-revenue-sharing-for-its-developers/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/box-logo.png
+url: 'http://apievangelist.com2013/06/10/box-opens-up-revenue-sharing-for-its-developers/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/box-logo.png'
 ---
 {% include JB/setup %}
 <p>

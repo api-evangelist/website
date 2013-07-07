@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Webhook as a Service'
-url: http://apievangelist.com2013/06/27/webhooks-as-a-service/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/webscript-io-logo.png
+url: 'http://apievangelist.com2013/06/27/webhooks-as-a-service/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/webscript-io-logo.png'
 ---
 {% include JB/setup %}
 <p>

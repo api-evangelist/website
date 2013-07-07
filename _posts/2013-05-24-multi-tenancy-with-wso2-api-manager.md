@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Multi Tenancy with WSO2 API Manager'
-url: http://apievangelist.com2013/05/24/multi-tenancy-with-wso2-api-manager/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wso2-multi-tenancy.png
+url: 'http://apievangelist.com2013/05/24/multi-tenancy-with-wso2-api-manager/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wso2-multi-tenancy.png'
 ---
 {% include JB/setup %}
 <p>

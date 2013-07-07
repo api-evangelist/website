@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'API Evangelist Goes to Washington'
-url: http://apievangelist.com2013/06/24/api-evangelist-goes-to-washington/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/PresidentialInnovationFellows.jpeg
+url: 'http://apievangelist.com2013/06/24/api-evangelist-goes-to-washington/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/PresidentialInnovationFellows.jpeg'
 ---
 {% include JB/setup %}
 <p>

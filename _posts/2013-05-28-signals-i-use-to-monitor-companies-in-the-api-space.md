@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Signals I Use To Monitor Companies In The API Space'
-url: http://apievangelist.com2013/05/28/signals-i-use-to-monitor-companies-in-the-api-space/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-stack-logo.png
+url: 'http://apievangelist.com2013/05/28/signals-i-use-to-monitor-companies-in-the-api-space/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-stack-logo.png'
 ---
 {% include JB/setup %}
 <p>

@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'API Evangelist Healthcare gov and Hacker Storytelling'
-url: http://apievangelist.com2013/07/02/api-evangelist,-healthcare.gov-and-hacker-storytelling/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-github.jpg
+url: 'http://apievangelist.com2013/07/02/api-evangelist,-healthcare.gov-and-hacker-storytelling/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-github.jpg'
 ---
 {% include JB/setup %}
 <p>

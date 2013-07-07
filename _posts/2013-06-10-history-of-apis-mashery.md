@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'History of APIs Mashery'
-url: http://apievangelist.com2013/06/10/history-of-apis-mashery/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mashery-old-logo.png
+url: 'http://apievangelist.com2013/06/10/history-of-apis-mashery/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mashery-old-logo.png'
 ---
 {% include JB/setup %}
 <p>

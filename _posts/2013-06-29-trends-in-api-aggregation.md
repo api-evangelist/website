@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Trends in API Aggregation'
-url: http://apievangelist.com2013/06/29/trends-in-api-aggregation/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aggregation-trend.png
+url: 'http://apievangelist.com2013/06/29/trends-in-api-aggregation/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aggregation-trend.png'
 ---
 {% include JB/setup %}
 <p>

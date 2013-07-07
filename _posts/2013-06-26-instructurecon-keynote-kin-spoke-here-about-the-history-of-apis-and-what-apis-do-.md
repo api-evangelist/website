@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'InstructureCon Keynote [Kin spoke here about the history of APIs and what APIs do ]'
-url: http://apievangelist.com2013/06/26/instructurecon-keynote-kin-spoke-here-about-the-history-of-apis-and-what-apis-do/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/instructurecon-keynote-utah.jpg
+url: 'http://apievangelist.com2013/06/26/instructurecon-keynote-kin-spoke-here-about-the-history-of-apis-and-what-apis-do/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/instructurecon-keynote-utah.jpg'
 ---
 {% include JB/setup %}
 <p>

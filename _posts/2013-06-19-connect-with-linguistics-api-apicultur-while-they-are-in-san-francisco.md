@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Connect With Linguistics API Apicultur While They Are In San Francisco'
-url: http://apievangelist.com2013/06/19/connect-with-linguistics-api-apicultur-while-they-are-in-san-francisco/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png
+url: 'http://apievangelist.com2013/06/19/connect-with-linguistics-api-apicultur-while-they-are-in-san-francisco/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png'
 ---
 {% include JB/setup %}
 <p>

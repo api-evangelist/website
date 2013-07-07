@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'Updated API History White Paper'
-url: http://apievangelist.com2013/06/17/updated-api-history-white-paper/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-white-papers-history-of-apis.png
+url: 'http://apievangelist.com2013/06/17/updated-api-history-white-paper/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-white-papers-history-of-apis.png'
 ---
 {% include JB/setup %}
 <p>

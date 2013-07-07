@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'API Management Using APiphany'
-url: http://apievangelist.com2013/05/27/apiphany-api-management/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apiphany-logo-blue-300.png
+url: 'http://apievangelist.com2013/05/27/apiphany-api-management/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apiphany-logo-blue-300.png'
 ---
 {% include JB/setup %}
 <p>

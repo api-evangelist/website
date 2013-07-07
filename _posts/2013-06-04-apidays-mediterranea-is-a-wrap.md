@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'APIdays Mediterranea Is A Wrap'
-url: http://apievangelist.com2013/06/04/apidays-mediterranea-is-a-wrap/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-editerranea-logo.png
+url: 'http://apievangelist.com2013/06/04/apidays-mediterranea-is-a-wrap/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-editerranea-logo.png'
 ---
 {% include JB/setup %}
 <p>

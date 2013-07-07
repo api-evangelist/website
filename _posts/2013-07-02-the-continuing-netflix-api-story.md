@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 'The Continuing Netflix API Story'
-url: http://apievangelist.com2013/07/02/the-continuing-netflix-api-story/
-image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/netflix-square.png
+url: 'http://apievangelist.com2013/07/02/the-continuing-netflix-api-story/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/netflix-square.png'
 ---
 {% include JB/setup %}
 <p>
