@@ -6,6 +6,165 @@ source: http://apievangelist.com2013/03/01/api-deployment-as-a-service/
 domain: apievangelist.com2013
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-api-service-providers.png
 ---
-{% include JB/setup %}<p>APIs are all the rage, anyone should be able launch an API from CSV, Microsoft Excel, Google Spreadsheet or the common databases such as MySQL, PostGres, Amazon RDS, Microsoft SQL Server.Right?I’ve been watching API service providers evolve for the last three years, helping companies be successful in managing their APIs.But when you actually going through the list of service providers, looking for someone to help you deploy an API, there are very few options out of the box.The list of API Players coming from the enterprise: These enterprise players assume you will have existing infrastructure to publish web services, files and other message systems that they can connect with, to deploy your new APIs that you will manage.</p>
-<center><p><a href="http://apievangelist.com2013/03/01/api-deployment-as-a-service/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-api-service-providers.png"  width="300" align="right" />
+</p>
+<p>
+     APIs are all the rage, anyone should be able launch an API from CSV, Microsoft Excel, Google Spreadsheet or the common databases such as MySQL, PostGres, Amazon RDS, Microsoft SQL Server. Right?
+</p>
+<p>
+     I’ve been watching <a href="/serviceproviders/">API service providers</a> evolve for the last three years, helping companies be successful in managing their APIs. But when you actually going through the list of service providers, looking for someone to help you deploy an API, there are very few options out of the box.
+</p>
+<p>
+     The list of API Players coming from the enterprise:
+</p>
+<table cellspacing="5" cellpadding="5">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a href="http://www.soa.com/atmosphere"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/atmosphere-logo-1.png"  width="150" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://www.layer7tech.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/layer7-logo.png"  width="150" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://software.intel.com/en-us/articles/REST-Web-Services-API-Security/"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/sponsors/Intel-IESG-Logo.png"  width="190" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://www.vordel.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/vordel/vordel_logo_100x50.jpg"  width="150" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     These enterprise players assume you will have existing infrastructure to publish web services, files and other message systems that they can connect with, to deploy your new APIs that you will manage.
+</p>
+<p>
+     The most recent generation of API service providers:
+</p>
+<table cellspacing="5" cellpadding="5">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a href="http://www.3scale.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg"  width="190" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://apigee.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/apigee-logo.gif"  width="125" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://mashery.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashery-logo.png"  width="100" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://apiphany.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/APIphany-Logo.png"  width="150" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     Are pretty much the same. While they may provide how to <a href="/2013/02/03/deploy-and-manage-api-on-amazon-web-services-aws/">guides for deploying APIs on AWS</a>, like 3Scale, the deployment of API endpoint is still your responsiblity. You need to have existing infrastructure that will do it, or find the REST framework of your choice--both requiring you have the appropriate talent and resources.
+</p>
+<p>
+     Next up you can, deploy one of the open source API solutions, to proxy and manage your APIs:
+</p>
+<table cellspacing="5" cellpadding="5">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a href="http://www.alcatel-lucent.com/open-api-platform/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/alcatel-lucent-logo.jpg"  width="150" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://wso2.com/products/api-manager"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/wso2-logo.jpeg"  width="100" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://apiaxle.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiaxle-logo.png"  width="150" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     But again, you need the resources and know how to implement, and they are generally management tools, so you still need to “launch” your own API endpoint.
+</p>
+<p>
+     When you start looking at the next generation of API service providers like <a href="http://apiary.io/">Apiary.io</a>, you can really maximize the design, planning, documentation and deployment cycle, but you still need to code up your actual API.
+</p>
+<p>
+     After Apiary.io we start to get to the service providers who can deliver on my vision of APIs for the masses:
+</p>
+<table cellspacing="5" cellpadding="5">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a href="http://www.emergentone.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/emergent-one-logo.png"  width="105" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://apispark.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/APISpark-Logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://www.apifydoc.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/apify-logo.png"  width="100" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="https://apiengine.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/api-engine-logo.png"  width="150" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     It seems like we are getting closer, albeit its not as easy as I think it should be. We need a variety of service providers and open source solutions in this space, so there are numerous, dead simple cloud options for API deployment.
+</p>
+<p>
+     Emergent One definitely was a pleasant surprise in my quest. Their tool needs a little polish, but for deploying an API from a database like MySQL, Postgres or Amazon RDS, those guys nailed it. It is the tool that I will be recommending when people ask me how to launch an API from their database. (story to come)
+</p>
+<p>
+     I'd like to see the Emergent One approach to a dead simple cloud service for going from Microsoft Excel, CSV and Google Spreadsheet. Maybe there is, and I’m missing it. Something like CKAN as a Service. I think there is some more research to be done on this. Of the 3 data API providers I used to showcase:
+</p>
+<table cellspacing="5" cellpadding="5">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a href="http://kasabi.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Kasabi-Logo.png"  width="130" align="right" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://www.socrata.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/socrata_logo.jpg"  width="150" align="right" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a href="http://www.infochimps.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/infochimps/infochimps-logo.jpg"  width="100" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     Only <a href="http://www.socrata.com/">Socrata</a> is still deliving in this space, bringing open data to municipal, state, and federal government. Kasabi closed down and InfoChimps is focusing on the enterprise big data. I don’t think there is big VC money in the data API space, but it seems like there is still opportunity.
+</p>
+<p>
+     It seems backwards to me, but it seems from 2005-2010 we needed to define and prove there was API opportunity, and in 2011 and 2012 we defined the API management space, so in 2013 are we needing to better define the API deployment portion of our industry?
+</p>
+<p>
+     I will use Emergent One, APISpark, API Engine and Apify more, and do individual stories on them. Then circle back around and see how I feel.
+</p>
 

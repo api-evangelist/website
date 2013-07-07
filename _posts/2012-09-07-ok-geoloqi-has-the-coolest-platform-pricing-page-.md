@@ -6,6 +6,22 @@ source: http://apievangelist.com2012/09/07/ok,-geoloqi-has-the-coolest-platform-
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Geoloqi-Pricing.png
 ---
-{% include JB/setup %}<p>Many providers dont offer a clear pricing page for their services, sticking to old school concepts of software sales where they can change and adjust pricing, depending on who they are talking to.Have an easy to find and understand pricing page for an API or platform is one of the most critical aspects of a successful API.  Today, one of the developers at Singly, pointed out the way cool pricing page for Geoloqi: It doesnt get much cooler than that! I want to sign up for the Pterodactyl level, and I dont even need that amount of usage.  Nice work Geoloqi!</p>
-<center><p><a href="http://apievangelist.com2012/09/07/ok,-geoloqi-has-the-coolest-platform-pricing-page-/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     Many providers don't offer a clear pricing page for their services, sticking to old school concepts of software sales where they can change and adjust pricing, depending on who they are talking to.
+</p>
+<p>
+     Have an <a title="easy to find and understand pricing page for an API" href="/buildingblocks/pricing.php">easy to find and understand pricing page for an API</a> or platform is one of the most critical aspects of a successful API. 
+</p>
+<p>
+     Today, one of the developers at <a href="https://www.singly.com">Singly</a>, pointed out the way <a href="http://geoloqi.com/pricing" target="_blank">cool pricing page for Geoloqi</a>:
+</p>
+<p>
+     <a href="http://geoloqi.com/pricing" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/geoloqi/Geoloqi-Pricing.png"  width="550" /></a>
+</p>
+<p>
+     It doesn't get much cooler than that!  I want to sign up for the Pterodactyl level, and I don't even need that amount of usage. 
+</p>
+<p>
+     Nice work <a href="http://geoloqi.com" target="_blank">Geoloqi</a>!
+</p>
 

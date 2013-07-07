@@ -6,6 +6,11 @@ source: http://apievangelist.com2011/04/04/3taps-data-api-speaks-my-language/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>All of us programmers have a preferred programming language.It is the language that we identify with and prefer to build projects in.When it comes to delivering an API area, one of the most important building blocks for getting programmers up and running are language libraries.Data API provider 3Taps shows how to deliver their API code libraries, in just one click.As soon as I click on Developers off the main menu, I get all the top languages front and center.</p>
-<center><p><a href="http://apievangelist.com2011/04/04/3taps-data-api-speaks-my-language/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}All of us programmers have a preferred programming language. It is the language that we identify with and prefer to build projects in.
+When it comes to delivering an API area, one of the most important <a title="building blocks" href="http://www.apievangelist.com/ecosystem-building-blocks.php">building blocks</a> for getting programmers up and running are <a title="code language libraries" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=125">language libraries</a>.
+Data API provider <a title="3Taps shows how to deliver their API code libraries" href="http://3taps.com/developers">3Taps shows how to deliver their API code libraries</a>, in just one click.
+<a title="3Tap Code Libraries" href="http://3taps.com/developers"><img src="http://kinlane-productions.s3.amazonaws.com/3taps-Languages.png"  width="600" align="center" /></a>
+As soon as I click on "Developers" off the main menu, I get all the top languages front and center.
+I can immediately click on my language of choice, fork or download the repository from <a title="Github" href="http://github.com">Github</a> and get to work.
+<a title="3Taps" href="http://www.readwriteweb.com/archives/3taps_wants_to_democratize_the_exchange_of_data.php">3Taps</a> demonstrates how to deliver API code libraries in a way that will really speak to developers.
 

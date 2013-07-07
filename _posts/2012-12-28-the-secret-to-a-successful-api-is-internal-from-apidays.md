@@ -6,6 +6,16 @@ source: http://apievangelist.com2012/12/28/the-secret-to-a-successful-api-is-int
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-logo.png
 ---
-{% include JB/setup %}<p>Here is a video of one of my talks from API Days in Paris, France where I walked the internal side of APIs.This talk is derived from my post, the secret to amazons success is internal and stories Ive written on Netflixs success with internal APIs.The presentation for this talk is available in my talks section at The Secret to a Successful ApI is Internal.You can find another video from API Days by me called Business Models For Your API as Startup from API Days, in a nearlier post.</p>
-<center><p><a href="http://apievangelist.com2012/12/28/the-secret-to-a-successful-api-is-internal-from-apidays/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     Here is a video of one of my talks from <a title="API Days" href="http://apidays.io/">API Days in Paris</a>, France where I walked the internal side of APIs. This talk is derived from my post, <a title="the secret to amazons success is internal" href="http://apievangelist.com/2011/06/10/lessons-in-api-deployment-from-netflix/">the secret to amazons success is internal</a> and stories I've written on <a title="Netflix's success with internal APIs" href="http://apievangelist.com/2011/06/10/lessons-in-api-deployment-from-netflix/">Netflix's success with internal APIs</a>.
+</p>
+<p>
+     The presentation for this talk is available in my talks section at <a href="/talks/apidays/internal-apis">The Secret to a Successful ApI is Internal</a>.
+</p>
+<p>
+     <iframe src="http://www.youtube.com/embed/u-ionULluaI" width="560" height="315"></iframe>
+</p>
+<p>
+     You can find another video from API Days by me called <a href="/2012/12/20/business-models-for-your-api-as-startup-from-api-days/">Business Models For Your API as Startup from API Days</a>, in a nearlier post.
+</p>
 

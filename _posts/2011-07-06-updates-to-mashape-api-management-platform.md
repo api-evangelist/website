@@ -6,6 +6,17 @@ source: http://apievangelist.com2011/07/06/updates-to-mashape-api-management-pla
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Mashapereleased a few enhancements to their API management platform.Inbox - Mashape redesigned their inbox and messaging system.Developers can contact you from your API detail page, and the inbox provides interface for managing developers and your conversations.API Wizard - The API setup and management wizard is no longer a step by step wizard.It now gives you five options in a left hand navigation, leaving the room for more options to be added in the future.</p>
-<center><p><a href="http://apievangelist.com2011/07/06/updates-to-mashape-api-management-platform/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape/mashape-manage-your-APIs.png"  width="300" align="right" />Mashape<a title="released a few new enhancements" href="http://blog.mashape.com/introducing-some-new-things-inbox-new-wizard">released a few enhancements</a> to their API management platform.
+<ul>
+     <li>
+          <strong>Inbox</strong> - Mashape redesigned their inbox and messaging system. Developers can contact you from your API detail page, and the inbox provides interface for managing developers and your conversations.
+     </li>
+     <li>
+          <strong>API Wizard</strong> - The API setup and management wizard is no longer a step by step wizard. It now gives you five options in a left hand navigation, leaving the room for more options to be added in the future.
+     </li>
+     <li>
+          <strong>Private APIs</strong> - You can now deploy a private API with Mashape, only inviting the developers you want to have access.
+     </li>
+</ul>Some small changes, but prettyimportantchanges for API owners and developers who use <a title="Mashape" href="http://blog.apievangelist.com/2011/03/04/mashape-api-service-provider/">Mashape</a>.
+I would say the ability to deploy a private API is the most significant, as more people realize the value of APIs, and deploy them for partners, not the general public.
 

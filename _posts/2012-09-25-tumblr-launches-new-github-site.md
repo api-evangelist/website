@@ -6,6 +6,28 @@ source: http://apievangelist.com2012/09/25/tumblr-launches-new-github-site/
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tumblr-black-logo.png
 ---
-{% include JB/setup %}<p>The Tumblr engineering team has been hard at work on a new Github page, showcasing the open source projects theyve released.  Tumblr has also added a coming soon section, highlighting open source projects they are planning on releasing in the near future.Whats interesting is they have also included select presentations from conferences and events Tumblr has presented at.  The Github implementation by Tumblr is pretty unique, and to go even further, Tumblr has also open sourced their whole approach to deploying it on Github.Tumblrs use of Github is worth showcasing.</p>
-<center><p><a href="http://apievangelist.com2012/09/25/tumblr-launches-new-github-site/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/tumblr/tumblr-black-logo.png"  width="175" align="right" />
+</p>
+<p>
+     The Tumblr engineering team has been hard at work on a new Github page, showcasing the <a href="http://tumblr.github.com/code">open source projects they've released</a>.  
+</p>
+<p>
+     Tumblr has also added a <a href="http://tumblr.github.com/coming-soon">coming soon section,</a> highlighting open source projects they are planning on releasing in the near future.
+</p>
+<p>
+     What's interesting is they have also included <a href="http://tumblr.github.com/presentations">select presentations from conferences and events Tumblr has presented at</a>. 
+</p>
+<p>
+     The <a href="http://tumblr.github.com/">Github implementation by Tumblr</a> is pretty unique, and to go even further, Tumblr has also <a href="https://github.com/tumblr/tumblr.github.com">open sourced their whole approach to deploying it on Github</a>.
+</p>
+<p>
+     <a title="Github" href="https://github.com/"><img src="https://s3.amazonaws.com/kinlane-productions/github/github-logo.png"  width="150" align="right" /></a>
+</p>
+<p>
+     Tumblr's use of Github is worth showcasing.  I think it's an innovative approach that other API owners could follow to showcase the open source project they are working on, as well as valuable event presentations.
+</p>
+<p>
+     I'm really impressed with the number of innovative uses of <a title="Github" href="https://github.com/">Github</a> I'm seeing lately.
+</p>
 

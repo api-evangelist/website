@@ -6,6 +6,8 @@ source: http://apievangelist.com2011/01/28/history-of-apis-facebook-development-
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>On August 15th 2006, Facebook launched its long-awaited development platform and API.Version 1.0 of the Facebook Development Platform allowed developers access to Facebook friends, photos, events, and profile information for Facebook.The API used a Restful protocol and responses were in an XML format.Almost immediately, developers began to build social applications, games, and mashups with the new development tools.</p>
-<center><p><a href="http://apievangelist.com2011/01/28/history-of-apis-facebook-development-platform/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}On August 15th 2006, <a href="http://blog.facebook.com/blog.php?post=2207512130" target="_blank">Facebook launched its long-awaited development platform</a> and API. <img src="http://kinlane-productions.s3.amazonaws.com/facebook/Facebook-Developer.png"  width="250" align="right" /> Version 1.0 of the <a href="http://developers.facebook.com/" target="_blank">Facebook Development Platform</a> allowed developers access to Facebook friends, photos, events, and profile information for <a href="http://www.facebook.com" target="_blank">Facebook</a>.
+The <a href="http://www.apievangelist.com/">API</a> used a <a href="http://www.kinlane.com/">Restful</a> protocol and responses were in an <a href="http://www.apievangelist.com/definition-xml.php">XML</a> format.
+Almost immediately, developers began to build social applications, games, and mashups with the new development tools.
+The Facebook Development Platform gave Facebook an edge over then popular competitor <a href="http://www.myspace.com">MySpace</a>, and established itself as the top social gaming platform with games like <a href="http://www.farmville.com/" target="_blank">Farmville</a>.
 

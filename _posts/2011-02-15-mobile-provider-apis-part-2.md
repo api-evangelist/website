@@ -6,6 +6,223 @@ source: http://apievangelist.com2011/02/15/mobile-provider-apis-part-2/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>The other day I noticed three new APIs that were launched by mobile providers.Just two days after I wrote that up, I saw the announcement of several more APIs from mobileproviders.Here are seven more mobile providers that are delivering APIs: Deutsche Telekom Developer Garden provides community, documentation, code, applications and much more around their APIs: Send SMS API - Send short messages to mobile or landline.Send MMS API - Send multimedia short message service (MMS) Conference Call API - Establish voice connections with multiple participants.Voice Call API - Establish voice connections between two user.</p>
-<center><p><a href="http://apievangelist.com2011/02/15/mobile-provider-apis-part-2/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}The other day I noticed three new <a href="http://blog.apievangelist.com/2011/02/10/mobile-provider-apis/" target="_blank">APIs that were launched by mobile providers</a>.
+Just two days after I wrote that up, I saw the announcement of several more APIs from mobileproviders.
+Here are seven more mobile providers that are delivering APIs:
+<strong><a href="http://www.developergarden.com/startseite" target="_blank">Deutsche Telekom Developer Garden</a></strong> provides community, documentation, code, applications and much more around their APIs:<a href="http://www.developergarden.com/startseite" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-api-deutsche-telekom-developer-garden.png"  width="300" align="right" /></a>
+<ul>
+     <li>
+          <strong>Send <a class="zem_slink" title="SMS" rel="wikipedia" href="http://en.wikipedia.org/wiki/SMS">SMS</a> API</strong> - Send short messages to mobile or landline.
+     </li>
+     <li>
+          <strong>Send MMS API -</strong> Send multimedia short message service (MMS)
+     </li>
+     <li>
+          <strong>Conference Call API -</strong> Establish voice connections with multiple participants.
+     </li>
+     <li>
+          <strong>Voice Call API -</strong> Establish voice connections between two user.
+     </li>
+     <li>
+          <strong><a class="zem_slink" title="IP address" rel="wikipedia" href="http://en.wikipedia.org/wiki/IP_address">IP Location</a> API -</strong> Locate Internet users with their IP addresses.
+     </li>
+</ul><a href="https://labs.ericsson.com/apis/" target="_blank"><strong>Ericsson Lab</strong>s</a> provides a developer community around their impressive set of APIS:<a href="https://labs.ericsson.com/apis/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-apis-ericsson.png"  width="175" align="right" /></a>
+<ul>
+     <li>
+          <strong>3D Landscape API -</strong> 3D Landscape API for integration o realistic 3D MAPS.
+     </li>
+     <li>
+          <strong>Async Voice API -</strong> Enables voice communication using small voice snippets, recorded in the browser, delivered in near real-time to all participants in a conversation.
+     </li>
+     <li>
+          <strong>CAPTCHA API -</strong> Provides a challenge-response test to stop a computer accessing a website or application.
+     </li>
+     <li>
+          <strong>Cluster Constructor API -</strong> Allows the creation of services that can distinguish complex patterns and make intelligent decisions.
+     </li>
+     <li>
+          <strong>Converting Media API -</strong> Makes media files adapt in size, codec and format to suit almost any device.
+     </li>
+     <li>
+          <strong>EventSource API -</strong> Provides access to use HTML5 server sent events in any current web browser.
+     </li>
+     <li>
+          <strong>Face Detector API -</strong> Enables applications to locate faces in images taken by mobile devices.
+     </li>
+     <li>
+          <strong>Group Voice Mixer API -</strong> Allows group voice and chat services with ad-hoc voice chat room or conference.
+     </li>
+     <li>
+          <strong>Mobile Identification API -</strong> Allows mobile identification so application personalized content for individual users.
+     </li>
+     <li>
+          <strong>Mobile Location API -</strong> Allows use a mobile phone user's current CELL-ID to obtain their geographical location.
+     </li>
+     <li>
+          <strong>Mobile Maps API -</strong> Provides mobile mapping services.
+     </li>
+     <li>
+          <strong>Mobile Network Lookup API -</strong> Provides application personalization by delivering them in the users' native languages or through localized advertisements.
+     </li>
+     <li>
+          <strong>Mobile Push API -</strong> Allows applications to push content directly to one or more mobile phones.
+     </li>
+     <li>
+          <strong>Mobile Web Security Bootstrap API -</strong> Provides services to establish SHARED SECRET KEYS between an application server and a mobile web client. The key can be used to secure mobile applications require authentication, data confidentiality and integrity, and single sign on.
+     </li>
+     <li>
+          <strong>Network Probe API</strong> - Provides services measure certain characteristics of network IP connectivity, firewalls and <a class="zem_slink" title="Network address translation" rel="wikipedia" href="http://en.wikipedia.org/wiki/Network_address_translation">Network Address Translators</a>.
+     </li>
+     <li>
+          <strong>OAuth2 Framework API -</strong> Service enabling authentication and authorization allowing developer to securely access web services using OAuth2.
+     </li>
+     <li>
+          <strong>Sensor Networking Application Platform API</strong> - Services for reading, storing and manipulating sensor descriptions and data for integrating the virtual internet world with the physical world.
+     </li>
+     <li>
+          <strong>SMS API -</strong> Provides SMS sending and receiving services for applications.
+     </li>
+     <li>
+          <strong>Streaming Media API</strong> - Stream media to mobile devices.
+     </li>
+     <li>
+          <strong>Tag Tool API</strong> - Provides tag-based services forNear Field Communication, and create NFC and RFID TAGS according to NFC Forum specifications; list all created and deployed tags and see what they contain; and keep track of the position of a tag.
+     </li>
+     <li>
+          <strong>Text to Speech API -</strong> Develop web and mobile applications with the text-to-speech enabler to provide services that can speak aloud. The API consists of a simple web interface as well as an Android SDK wrapping the REST API for translating text to audio data in the requested format.
+     </li>
+     <li>
+          <strong>Web Background Service API -</strong> Enables web applications to run partly in the background, even when the browser is not running.
+     </li>
+     <li>
+          <strong>Web Connectivity API -</strong> Connect and send messages between webapplications, pages and servers, using a unified addressing and messaging system.
+     </li>
+     <li>
+          <strong>Web Device Connectivity API -</strong> Provides connectivity between end users' devices and web applications.
+     </li>
+     <li>
+          <strong>Web Location API -</strong> Provides location data from a mobile phone using the positioning systems of mobile operators.
+     </li>
+     <li>
+          <strong>Web Maps API -</strong> Provides dynamic maps for application integration.
+     </li>
+</ul><strong><a href="http://www.orangepartner.com">France Telecom's Orange</a></strong> provides tools, widgets, documentation and resources for build applications around their APIs:<a href="http://www.orangepartner.com"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-apis-france-telecom-orange.png"  width="350" align="right" /></a>
+<ul>
+     <li>
+          <strong>Multimedia Conference API -</strong> For organizing and managing web and audio conferences.
+     </li>
+     <li>
+          <strong>Location API -</strong> Allows applications to get geographic coordinates of a given Orange France mobile phone or a fleet.
+     </li>
+     <li>
+          <strong>SMS Internet API</strong> - Allows applications to inform, alert, collect information or broadcast instructions remotely.
+     </li>
+     <li>
+          <strong>Click-To-Call API -</strong> Establishes phone calls between two numbers from a web application.
+     </li>
+     <li>
+          <strong>Machine-to-Machine Communications API -</strong> Connectivity service for managing and monitoring scattered or inaccessible machines, optimize and automate industrial processes of deployment and production.
+     </li>
+     <li>
+          <strong>Authentication API -</strong> Provides access to user personal account APIs.
+     </li>
+     <li>
+          <strong>Calendar API -</strong> Provides access and updating to the calendar of an Orange France customer.
+     </li>
+     <li>
+          <strong>Contacts API -</strong> Allows applications to access and update the Orange address book of an Orange France customer.
+     </li>
+     <li>
+          <strong>Content API -</strong> Allows applications access to Orange France customers virtual data storage.
+     </li>
+     <li>
+          <strong>Favorites API -</strong> Enables adding of new links to the favourites of an Orange France customer.
+     </li>
+     <li>
+          <strong>Messages API -</strong> Provides access to information about the messages received (email and web SMS) of an Orange France customer.
+     </li>
+     <li>
+          <strong>Photos API -</strong> Enables applications to access and update the photo albums of an Orange France customer.
+     </li>
+     <li>
+          <strong>Profile API -</strong> Provides access to profile information of an Orange France customer.
+     </li>
+     <li>
+          <strong>RichProfile API -</strong> Provides access to more profile information of an Orange France customer.
+     </li>
+     <li>
+          <strong>Payline API -</strong> Allows developers to implement electronic payments for their applications.
+     </li>
+</ul><a href="http://six.sg/homepage" target="_blank"><strong>Singtel Innovation Exchange</strong></a> provides news, resources and tools for developing and marketing applications built around their APIs:<a href="http://six.sg/homepage" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-apis-singtel.png"  width="300" align="right" /></a>
+<ul>
+     <li>
+          <strong>Network Delivery Platform API -</strong> Services for sending SMS, MMS, Querying Phone Type, and <a class="zem_slink" title="Wireless Application Protocol" rel="wikipedia" href="http://en.wikipedia.org/wiki/Wireless_Application_Protocol">WAP Push</a>.
+     </li>
+     <li>
+          <strong>SaaS Deliver Platform API -</strong> Provides single sign on (SS) and user management services to <a class="zem_slink" title="Singapore Telecommunications" rel="homepage" href="http://www.singtel.com/">SingTel</a> SaaS customers on myBusiness.
+     </li>
+     <li>
+          <strong>InSing Business Search API -</strong> Provides access to Singtel's 150,000 Singapore geocoded, business listing.
+     </li>
+</ul><a href="http://www.telenorfusion.no/" target="_blank"><strong>Telenor</strong></a> provides a think it, make it sell it framework around their four APIs:<a href="http://www.telenorfusion.no/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-apis-telenor.png"  width="250" align="right" /></a>
+<ul>
+     <li>
+          <strong>Communication API -</strong> Makes it possible to integrate call or messaging functionality in applications.
+     </li>
+     <li>
+          <strong>Customer Info API -</strong> Makes it possible to integrate customer information from Telenors network into third party applications.
+     </li>
+     <li>
+          <strong>Payment API -</strong> Makes Telenors value chain for billing accessible to partners and service providers, who deliver services to Telenor subscribers, to bill their customers via Telenor.
+     </li>
+     <li>
+          <strong>Machine-to-Machine Communications API -</strong> Provides integrated connectivity solutions into machines, devices and vehicles of different kinds.
+     </li>
+</ul><a href="http://developer.vodafone.com/" target="_blank"><strong>Vodafone Developer</strong></a> provides Android development tools and widgets for developing, and resources for publishing and distributing apps. They also provide three web services:<a href="http://developer.vodafone.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-api-vodafone.png"  width="225" align="right" /></a>
+<ul>
+     <li>
+          <strong>Address Book API</strong> - Enables widgets to interact with the phone's on-board address book and calendar, and create new address book and calendar entries, search for and read existing entries, export entries as VCards, and respond to calendar alerts.
+     </li>
+     <li>
+          <strong>Audio API</strong> - Enables widgets to play many common types of audio files, and provides a basic player interface that allows play, pause, resume, and stop functions as well as repeat playing of local and remote files.
+     </li>
+     <li>
+          <strong>Accelerometer API -</strong> Provides access to the device's accelerometer, which determines the position and movement of the device.
+     </li>
+</ul>Ribbit is a little different then the others, it uses a Software as a Service(SaaS) model to deliver services.
+<strong><a href="http://developer.ribbit.com/" target="_blank">Ribbit</a></strong> provides a SaaS platform around its telephony APIs:<a href="http://developer.ribbit.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mobile-telecom-providers/mobile-apis-ribbit.gif"  width="250" align="right" /></a>
+<ul>
+     <li>
+          <strong>Calls API -</strong> Make and receive calls, click-to-call, and call bridging.
+     </li>
+     <li>
+          <strong>Media API -</strong> Dual-Tone Multi-Frequency (DTMF), .WAV and .MP3 file manager.
+     </li>
+     <li>
+          <strong>Message API -</strong> SMS, Transcribing Voice-to-Text, Audio Recording and event notifications.
+     </li>
+     <li>
+          <strong>Device API -</strong> Services for registering devices getting phone numbers, land lines, and call forwarding.
+     </li>
+     <li>
+          <strong>Access API -</strong> User authentication services.
+     </li>
+     <li>
+          <strong>Contact API -</strong> Services for creating contact lists, adding, editing and tagging contacts.
+     </li>
+</ul>Mobile providers seem to have recognized the value of APIs to their business, and are providing a wide variety of mobile APIs for developers and partners to use.
+<h6 class="zemanta-related-title c3">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/02/10/mobile-provider-apis/">Mobile Provider APIs</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.intomobile.com/2011/02/14/orange-france-scanbuy-flashcode/">Orange France, Scanbuy team-up on Flashcode mobile barcode service</a> (intomobile.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/02/12/api-status-dashboard-with-pingdom/">API Status Dashboard with Pingdom</a> (apievangelist.com)
+     </li>
+</ul>
 

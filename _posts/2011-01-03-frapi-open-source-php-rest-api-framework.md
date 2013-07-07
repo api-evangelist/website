@@ -6,6 +6,9 @@ source: http://apievangelist.com2011/01/03/frapi-open-source-php-rest-api-framew
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>FRAPI is an open source RESTful API framework developed in PHP.It can be used as the backbone of your RESTful web service.FRAPI allows you to instantly have a REST framework for handling all the backbone operations of your API and immediately start working on functionality.It generates PHP code for the API framework and allows you to customize and add your business logic.FRAPI can connect to multiple data sources and automatically generates JSON, XML, PHP, and plain text versions of your data.</p>
-<center><p><a href="http://apievangelist.com2011/01/03/frapi-open-source-php-rest-api-framework/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/FRAPI-REST-API.jpg"  align="right" />FRAPI is an <a href="http://getfrapi.com/" target="_blank">open source RESTful API framework</a> developed in PHP. It can be used as the backbone of your RESTful web service.
+FRAPI allows you to instantly have a REST framework for handling all the backbone operations of your API and immediately start working on functionality.
+It generates PHP code for the API framework and allows you to customize and add your business logic.
+FRAPI can connect to multiple data sources and automatically generates <a href="http://www.apievangelist.com/definition-json.php">JSON</a>, <a href="http://www.apievangelist.com/definition-xml.php">XML</a>, PHP, and plain text versions of your data.
+You can download or fork <a href="https://github.com/frapi/frapi/wiki/" target="_blank">FRAPI at github</a>.
 

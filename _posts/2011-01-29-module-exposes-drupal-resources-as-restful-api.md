@@ -6,6 +6,19 @@ source: http://apievangelist.com2011/01/29/360/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>A new Drupal module makes use of the Drupal Entity API and then takes information about the entity and delivers it as a Restful Web Service.Features are: RESTful compliant Support for all Drupal entity types Provides create, read, update and delete (CRUD) operations Service endpoints are automatically generated for each entity JSON response format You can download the module on Github, but it is also synchronized to the Drupal.org CVS.This module allows Drupal owners to immediately deliver a RESTful API from their existing Drupal site and can also be used by developers looking to quickly deliver an API can build it using the Drupal platform.</p>
-<center><p><a href="http://apievangelist.com2011/01/29/360/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}A <a href="http://drupal.org/project/restws" target="_blank">new Drupal module</a> makes use of the <a href="http://drupal.org/project/entity" target="_blank">Drupal Entity API</a> and then takes information about the entity and delivers it as a <a href="http://www.kinlane.com/">Restful</a> <a href="http://www.apievangelist.com/">Web Service</a>.
+Features are:<a href="http://drupal.org"></a><img src="http://kinlane-productions.s3.amazonaws.com/drupal-logo.jpg"  width="200" align="right" />
+<ul>
+     <li>RESTful compliant
+     </li>
+     <li>Support for all Drupal entity types
+     </li>
+     <li>Provides create, read, update and delete (CRUD) operations
+     </li>
+     <li>Service endpoints are automatically generated for each entity
+     </li>
+     <li>JSON response format
+     </li>
+</ul>You can <a href="http://github.com/klausi/restws">download the module on Github</a>, but it is also synchronized to the <a href="http://drupal.org/node/36662" target="_blank">Drupal.org CVS</a>.
+This module allows Drupal owners to immediately deliver a RESTful API from their existing Drupal site and can also be used by developers looking to quickly deliver an API can build it using the Drupal platform.
 

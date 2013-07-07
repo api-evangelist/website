@@ -6,6 +6,68 @@ source: http://apievangelist.com2011/02/12/sunlight-congress-api-developer-revie
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Sunlight Labs has released an API that will help address the Sunlight Foundations mission - making information about government more open and transparent.The Sunlight Congress API provides an interface for developers to pull Members of Congresss information, including name, party, location, email addresses, website information, and much more.The Sunlight Congress API is a RESTful API that returns JSON or XML, and uses an application key for authentication.The URL looks like: http://services.sunlightlabs.</p>
-<center><p><a href="http://apievangelist.com2011/02/12/sunlight-congress-api-developer-review/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://sunlightfoundation.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/sunlight-labs/sunlight-lab-congress.png"  width="250" align="right" /></a><a href="http%3C/strong%3E%20-%20//sunlightlabs.com/blog/2011/the-real-time-congress-api/" target="_blank">Sunlight Labs has released an API</a> that will help address the <a href="http://sunlightfoundation.com/" target="_blank">Sunlight Foundation's</a> mission - making information about government more open and transparent.
+The <a href="http%3C/strong%3E%20-%20//services.sunlightlabs.com/docs/Sunlight_Congress_API/" target="_blank">Sunlight Congress API</a> provides an interface for developers to pull Members of Congress's information, including name, party, location, email addresses, website information, and much more.
+The <a href="http%3C/strong%3E%20-%20//services.sunlightlabs.com/docs/Sunlight_Congress_API/" target="_blank">Sunlight Congress API</a> is a RESTful API that returns JSON or XML, and uses an application key for authentication.
+The URL looks like:
+<ul>
+     <li>
+          <a href="http%3C/strong%3E%20-%20//services.sunlightlabs.com/api/api.method.format?apikey=YOUR_API_KEY&amp;params">http://services.sunlightlabs.com/api/api.method.format?apikey=YOUR_API_KEY&amp;params</a>
+     </li>
+</ul>The Sunlight Congress API provides the following methods:
+<strong>Legislator</strong>
+<ul>
+     <li>
+          <strong>legislators.get</strong> - get all information on a single legislator
+     </li>
+     <li>
+          <strong>legislators.getList</strong> - get information on all legislators meeting certain requirements
+     </li>
+     <li>
+          <strong>legislators.search</strong> - fuzzy name search against legislators
+     </li>
+     <li>
+          <strong>legislators.allForZip</strong> - get information on all legislators that represent some portion of a given zip code (typically 2 senators + 1 or more representatives)
+     </li>
+     <li>
+          <strong>legislators.allForLatLong</strong> - get information on all legislators that represent a given latitude/longitude
+     </li>
+</ul><img src="http://kinlane-productions.s3.amazonaws.com/sunlight-labs/sunlight-labs-112th-congress.jpg"  width="250" align="right" /> <strong>District</strong>
+<ul>
+     <li>
+          <strong>districts.getDistrictsFromZip</strong> - get district(s) that a given zip code falls within
+     </li>
+     <li>
+          <strong>districts.getZipsFromDistrict</strong> - get zip codes that fall within a given district
+     </li>
+     <li>
+          <strong>districts.getDistrictFromLatLong</strong> - get district that contains a location identified by a latitude/longitude
+     </li>
+</ul><strong>Committee</strong>
+<ul>
+     <li>
+          <strong>committees.getList</strong> - get list of committees matching certain criteria
+     </li>
+     <li>
+          <strong>committees.get</strong> - get details on a committee including its subcommittees and members
+     </li>
+     <li>
+          <strong>committees.allForLegislator</strong> - get all committees that a given legislators serves on
+     </li>
+</ul>Sunlight Labs provides official code libraries in <a href="http://github.com/sunlightlabs/python-sunlightapi/" target="_blank">Python</a> and <a href="http://sunlight.rubyforge.org/" target="_blank">Ruby</a> and gives links to other PHP and Java code libraries.
+In addition to using the API, you can also <a href="http://github.com/sunlightlabs/apidata/raw/master/legislators/legislators.csv" target="_blank">download a full dump of all the congressional data</a>, as well as photos of the <a class="zem_slink" title="112th United States Congress" rel="wikipedia" href="http://en.wikipedia.org/wiki/112th_United_States_Congress">112th Congress</a>.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.readwriteweb.com/hack/2011/02/sunlight-foundation-releases-real-time-api.php">Sunlight Foundation Releases Real Time Congress API</a> (readwriteweb.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.programmableweb.com/2010/12/16/sunlight-labs-needs-your-help-to-keep-the-fires-burning/">Sunlight Labs Needs Your Help to Keep the Fires Burning</a> (programmableweb.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/02/10/history-of-apis-birth-through-social/">History of APIs - Birth through Social</a> (apievangelist.com)
+     </li>
+</ul>
 

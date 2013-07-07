@@ -6,6 +6,10 @@ source: http://apievangelist.com2011/02/15/sweet-sound-of-apis-contest/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Twilio is having a new developer contest called Sweet Sound of APIs.Mission: Create something cool using your favorite music API and Twilio.Prize: Amazon Kindle 3G and $100 in Twilio Credit Deadline: 11:59 PM PT on 2/20/2011 They have asubmission form, when your ready.Each week Twilio is announcing a new contest, to encourage developers to try Twilio for different use cases, industries, and integrations.</p>
-<center><p><a href="http://apievangelist.com2011/02/15/sweet-sound-of-apis-contest/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://blog.twilio.com/2011/02/new-developer-contest-the-sweet-sound-of-apis.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/music-note.png"  width="175" align="right" /></a><a href="http://www.twilio.com" target="_blank">Twilio</a> is having a new developer contest called <a href="http://blog.twilio.com/2011/02/new-developer-contest-the-sweet-sound-of-apis.html" target="_blank">Sweet Sound of APIs</a>.
+<strong>Mission:</strong> Create something cool using your favorite music API and Twilio.
+<strong>Prize:</strong> <a href="http://www.amazon.com/Kindle-Wireless-Reader-3G-Wifi-Graphite/dp/B002FQJT3Q/ref=amb_link_353646102_3?pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=hero-quick-promo&amp;pf_rd_r=1XH08N7D4HTQ3B4WBAKV&amp;pf_rd_t=201&amp;pf_rd_p=1277318242&amp;pf_rd_i=B003DZ165W" target="_self">Amazon Kindle 3G</a> and $100 in Twilio Credit
+<strong>Deadline:</strong> 11:59 PM PT on 2/20/2011
+They have a<a href="http://contests.twilio.com/submit-your-twilio-project.html" target="_blank">submission form</a>, when your ready.
+Each week Twilio is announcing a new contest, to encourage developers to try Twilio for different use cases, industries, and integrations.
 

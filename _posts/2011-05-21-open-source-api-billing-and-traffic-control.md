@@ -6,6 +6,24 @@ source: http://apievangelist.com2011/05/21/open-source-api-billing-and-traffic-c
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>I was writing a story for ProgrammableWeb tonight on the enhancements Google made recently to its API console.I hadnt properly covered the API Console, API Explorer here on API Evangelist, so I took the time, played with more, and wrote up overviews for each.I noticed something while reviewing Googles recent efforts to organize their family of 88 APIs, and make it easier to discover, integrate, and manage for developers.Google is taking a similar approach to managing their APIs, as Apigee, Mashery, and 3Scale does for other API providers.Apigee, Mashery, and 3Scale provide a wealth of knowledge when it comes to API deployment that very few companies can touch.</p>
-<center><p><a href="http://apievangelist.com2011/05/21/open-source-api-billing-and-traffic-control/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/google/Google-APIs-Console-1.png"  width="350" align="right" />I was writing a story for <a title="ProgrammableWeb" href="http://www.programmableweb.com">ProgrammableWeb</a> tonight on the enhancements Google made recently to its API console.
+I hadn't properly covered the <a title="API Console" href="https://code.google.com/apis/console/">API Console</a>, <a title="API Explorer" href="http://code.google.com/apis/explorer/">API Explorer</a> here on <a title="API Evangelist" href="http://www.apievangelist.com">API Evangelist</a>, so I took the time, played with more, and wrote up overviews for each.
+I noticed something while reviewing Google's recent efforts to organize their family of <a title="88 APIs" href="http://www.programmableweb.com/apis/directory/1?company=Google">88 APIs</a>, and make it easier to discover, integrate, and manage for developers.
+Google is taking a similar approach to managing their APIs, as <a title="Apigee" href="http://www.apigee.com">Apigee</a>, <a title="Mashery" href="http://www.mashery.com">Mashery</a>, and <a title="3Scale" href="http://www.3Scale.net">3Scale</a> does for other API providers.
+<a title="Apigee" href="http://blog.apievangelist.com/2010/10/10/apigee-api-services/">Apigee</a>, <a title="Mashery" href="http://blog.apievangelist.com/2010/10/10/mashery-api-services/">Mashery</a>, and <a title="3Scale" href="http://blog.apievangelist.com/2010/10/10/3scale-api-services/">3Scale</a> provide a wealth of knowledge when it comes to API deployment that very few companies can touch.
+Beyond expertise, they provide a set of <a title="common building blocks every API should offer" href="http://blog.apievangelist.com/2011/03/07/api-area-common-building-blocks/">common building blocks every API should offer</a>. These are tools like forums and blogs you can find elsewhere, but these API service providers deliver in a neat bundle ready to go for your API.
+But the real value they bring to the table, that you can't really find anywhere else is:
+<ul>
+     <li>API Billing
+     </li>
+     <li>API Traffic Controls
+     </li>
+     <li>API Metrics &amp; Analytics
+     </li>
+</ul>And Apigee has one other piece that Mashery and 3Scale do not. They have an <a title="API Explorer" href="http://apigee.com/about/products_togo.html">API Explorer</a>.
+<a title="Google provides an API explorer" href="http://blog.apievangelist.com/2011/05/21/google-apis-explorer/">Google provides an API Explorer</a>, and they have open sourced the code, and <a title="made it available at Google Code" href="http://code.google.com/p/google-apis-explorer/">made it available at Google Code</a>.
+Next the <a title="Google API Console" href="http://blog.apievangelist.com/2011/05/21/google-apis-console/">Google API Console</a> delivers billing and traffic controls, if this set of tools were made open source, this would be huge for the API community.
+I've been a big proponent of the need for <a title="open source building blocks" href="http://blog.apievangelist.com/2011/04/04/open-building-blocks-for-an-api/">open source API building blocks</a>. I say this not to devalue what Apigee, Mashery, and 3Scale bring to the table. Their stuff rocks. However there are many other API owners out there who aren't ready for a service like theirs, or can't afford, and a set of open source building blocks is needed.
+That leaves metrics and analytics. I think an open source set of API analytics would be the biggest benefit to the industry. Some APIs don't need billing tools, but everyone needs to measure and control traffic. I have talked about the need for an <a title="open source set of aPI metrics and analytics" href="http://blog.apievangelist.com/2011/03/31/api-metrics-and-analytics/">open source set of API metrics and analytics</a> before.
+So I guess I'm saying to Google, Please open source your API Console, like you did the API explorer. It will benefit the community a great deal, we will deal with API analytics next.
 

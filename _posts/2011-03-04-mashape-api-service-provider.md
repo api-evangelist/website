@@ -6,6 +6,48 @@ source: http://apievangelist.com2011/03/04/mashape-api-service-provider/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Mashape provides tools that enable developers to quickly deliver and consume APIs and offers a marketplace for listing APIs to buy and sell.For developers looking to publish any resource as an API, Mashape provides: PHP and soon Ruby frameworks for extending your software Tools for testing your API Code for generation of custom errors Components for user management Standardized API code language libraries For developers looking to consume an API, Mashape provides standardized API libraries in the following languages: JavaScript / JSON PHP Ruby Obj-C Java Python Mashape provides other informational resources about APIs, including an explanation of why a library approach is good, background on REST, and ideas on what is possible with the platform.Once your API is ready for prime time Mashape provides a marketplace for listing your API, letting developers to easily discover and begin hacking with your API.Related articles The END of the DUE DILIGENCE during Seed Investments - Mashapes Voice (mashape.com) If You Build It (an API), They Will Come (apievangelist.</p>
-<center><p><a href="http://apievangelist.com2011/03/04/mashape-api-service-provider/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/mashape-logo.png"  align="right" /><a title="Mashape" href="http://www.mashape.com/">Mashape</a> provides tools that enable developers to quickly deliver and consume <a href="http://www.apievangelist.com">APIs</a> and offers a marketplace for listing APIs to buy and sell.
+For developers looking to publish any resource as an API, Mashape provides:
+<ul>
+     <li>
+          <a class="zem_slink" title="PHP" rel="homepage" href="http://www.mashape.com/guide/">PHP</a> and soon Ruby frameworks for extending your software
+     </li>
+     <li>Tools for testing your API
+     </li>
+     <li>Code for generation of custom errors
+     </li>
+     <li>Components for user management
+     </li>
+     <li>Standardized API code language libraries
+     </li>
+</ul>For developers looking to consume an API, Mashape provides standardized API libraries in the following languages:
+<ul>
+     <li>JavaScript / <a class="zem_slink" title="JSON" rel="homepage" href="http://json.org">JSON</a>
+     </li>
+     <li>PHP
+     </li>
+     <li>Ruby
+     </li>
+     <li>Obj-C
+     </li>
+     <li>Java
+     </li>
+     <li>Python
+     </li>
+</ul>Mashape provides other informational resources about APIs, including an explanation of why a library approach is good, background on <a href="http://blog.apievangelist.com/2011/01/30/api-technology-rest/">REST</a>, and ideas on what is possible with the platform.
+Once your API is ready for prime time Mashape provides a <a title="Mashape Marketplace" href="http://www.mashape.com/explore/index">marketplace for listing your API</a>, letting developers to easily discover and begin hacking with your API.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.mashape.com/the-end-of-due-diligence-during-seed-investme">The END of the DUE DILIGENCE during Seed Investments - Mashape's Voice</a> (mashape.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/02/28/if-you-build-it-they-will-come/">If You Build It (an API), They Will Come</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.readwriteweb.com/hack/2011/03/building-an-e-commerce-app-mad.php?sms_ss=hackernews&amp;at_xt=4d6d09ac29c16e43%252C0">Building an E-Commerce App Made Easy With Tinypay.me's New API</a> (readwriteweb.com)
+     </li>
+</ul>
 

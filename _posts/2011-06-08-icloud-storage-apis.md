@@ -6,6 +6,31 @@ source: http://apievangelist.com2011/06/08/icloud-storage-apis/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>iCloud storage APIs allow IOS application developers to store documents and other data to a central location so userscan view or edit from any device without having to sync or transfer files.There are two ways that applications can take advantage of iCloud storage: Document Storage - Enabling storage and sharing of information in document form.Key-Value Data Storage - Enabling storage and sharing small amounts of data.Most applications will use iCloud document storage to share documents, which is a feature that users think of when they think of cloud storage.Users care about whether photos, videos, and documents are accessible across devices while the key-value data store is not something a user would never see.</p>
-<center><p><a href="http://apievangelist.com2011/06/08/icloud-storage-apis/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/apple/iCloud-Steel.jpg"  width="150" align="right" /><a title="iCloud" href="http://www.apple.com/icloud/">iCloud</a> storage APIs allow IOS application developers to store documents and other data to a central location so userscan view or edit from any device without having to sync or transfer files.
+There are two ways that applications can take advantage of iCloud storage:
+<ul>
+     <li>Document Storage - Enabling storage and sharing of information in document form.
+     </li>
+     <li>Key-Value Data Storage - Enabling storage and sharing small amounts of data.
+     </li>
+</ul>Most applications will use iCloud document storage to share documents, which is a feature that users think of when they think of cloud storage. Users care about whether photos, videos, and documents are accessible across devices while the key-value data store is not something a user would never see.
+Key-value storage will be used for small amounts of data such as storing application state, settings, and other important information that delivers a better user experience. Although not as apparent to the end-user, key-value storage will be just as important as document storage.
+<img class="aligncenter c1" src="http://kinlane-productions.s3.amazonaws.com/apple/iCloud-Storage-APIs.png"  width="550" align="center" />
+All iCloud storage is managed centrally by the iCloud service, which handles coordination of documents and key-value stores. The iCloud service handles storage searches, change notifications, version control, conflicts, and security for applications that integrate with a user's iCloud storage account.
+Neither document storage or key-value storage in the cloud are anything new. But when it is implemented as part of the IOS platform, it becomes much bigger. Apple is solving everyday problems users face when using their smart phones, by storing data centrally in the cloud.
+ICloud APIs will enable developers to build rich applications on the IOS platform, and continue to grow IOS market share.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/06/apple-icloud-api/">Apple iCloud API</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.kinlane.com/2011/06/icloud-storage-apis/">iCloud Storage APIs</a> (kinlane.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.kinlane.com/2011/06/documents-in-the-cloud-with-apple-icloud/">Documents in the Cloud with Apple iCloud</a> (kinlane.com)
+     </li>
+</ul>
 

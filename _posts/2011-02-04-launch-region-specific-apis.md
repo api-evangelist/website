@@ -6,6 +6,28 @@ source: http://apievangelist.com2011/02/04/launch-region-specific-apis/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>With the increase growth in API usage in 2010, and expected growth in 2011, the need for high availability APIs will increase.One way to localize usage and increase API performance is to deploy region specific APIs.There are several ways to do this including global cloud load balancing, but a more cost effective tool is Amazon EC2 Availability Zones.Using Amazon EC2 you could deploy region specific servers in the following regions: United States - West Coast United States - East Coast European Union (EU) Asia Pacific Using 4 separate servers I can create separate regional APIs sub-domains: api.uswest.</p>
-<center><p><a href="http://apievangelist.com2011/02/04/launch-region-specific-apis/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}With the <a href="http://blog.programmableweb.com/2011/01/03/api-growth-doubles-in-2010-social-and-mobile-are-trends/" target="_blank">increase growth in API usage in 2010</a>, and expected growth in 2011, the need for high availability <a href="http://www.apievangelist.com/">APIs</a> will increase. <img src="http://kinlane-productions.s3.amazonaws.com/global-regional-api.jpg"  width="250" align="right" /> One way to localize usage and increase API performance is to deploy region specific APIs.
+There are several ways to do this including <a href="http://www.kinlane.com/2010/07/zeus-cloud-software/" target="_blank">global cloud load balancing</a>, but a more cost effective tool is <a href="http://www.kinlane.com/category/amazon/amazon-ec2/" target="_blank">Amazon EC2</a> Availability Zones.
+Using <a href="http://www.kinlane.com/category/amazon/amazon-ec2/">Amazon EC2</a> you could deploy region specific servers in the following regions:
+<ul>
+     <li>United States - West Coast
+     </li>
+     <li>United States - East Coast
+     </li>
+     <li>European Union (EU)
+     </li>
+     <li>Asia Pacific
+     </li>
+</ul>Using 4 separate servers I can create separate regional APIs sub-domains:
+<ul>
+     <li>api.uswest.apievangelist.com
+     </li>
+     <li>api.useast.apievangelist.com
+     </li>
+     <li>api.eu.apievangelist.com
+     </li>
+     <li>api.asia.apievangelist.com
+     </li>
+</ul>If API usage grows in one region or another, regional Amazon EC2 servers can be deployed into necessary Amazon Availability Zones.
+Something to consider when trying to scale your API and deliver high quality service on a budget.
 

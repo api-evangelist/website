@@ -6,6 +6,6 @@ source: http://apievangelist.com2011/01/24/youtube-javascript-player-api-for-ifr
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>The YT.Player is used to control the player, defined by script loaded from http://www.youtube.com/player_api.Here is the Youtube Player API documentation.</p>
-<center><p><a href="http://apievangelist.com2011/01/24/youtube-javascript-player-api-for-iframe-embeds/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}The YT.Player is used to control the player, defined by script loaded from <a href="http://www.youtube.com/player_api" target="_blank">http://www.youtube.com/player_api.</a>
+Here is the <a href="http://code.google.com/apis/youtube/iframe_api_reference.html" target="_blank">Youtube Player API documentation</a>.
 

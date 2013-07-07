@@ -6,6 +6,29 @@ source: http://apievangelist.com2010/10/06/flickr-api-review/
 domain: apievangelist.com2010
 image: 
 ---
-{% include JB/setup %}<p>The Flickr provides a way for new tools to be built and for Flickr content to be uploaded or shared.Flickr offers a solid API with very traditional building blocks: API Overview Account Manager App Manager API / SDK Kits Email Listserve Recently Flickr evolved its API area (App Garden) and took a more ecosystem approach by creating code.flickr.com by bringing together several old and new building blocks: Dashboard Forums (3 separate forums: API Forum, Hacking Uploadr, and Yahoo Forum) Developer Feature Developer Blog Jobs Listing (For Flickr, not for ecoystem) Flickrs API is a solid example of a simple, yet successful RESTful approach to an API.A very early mover in building an API, Flickrs offerings may be missing many of the more sophisticated API building blocks we are seeing with the new generation of APIs.</p>
-<center><p><a href="http://apievangelist.com2010/10/06/flickr-api-review/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}The <a href="http://code.flickr.com%3EAPI%3C/a%3E%20for%20the%20online%20photo%20and%20video%20sharing%20service%20%3Ca%20href=">Flickr</a> provides a way for new tools to be built and for Flickr content to be uploaded or shared. <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Flickr-Code-Screenshot.PNG"  width="375" align="right" /> Flickr offers a solid API with very traditional building blocks:
+<ul>
+     <li>API Overview
+     </li>
+     <li>Account Manager
+     </li>
+     <li>App Manager
+     </li>
+     <li>API / SDK Kits
+     </li>
+     <li>Email Listserve
+     </li>
+</ul>Recently Flickr evolved its API area (App Garden) and took a more ecosystem approach by creating <a href="code.flickr.com">code.flickr.com</a> by bringing together several old and new building blocks:
+<ul>
+     <li>Dashboard
+     </li>
+     <li>Forums (3 separate forums: API Forum, Hacking Uploadr, and Yahoo Forum)
+     </li>
+     <li>Developer Feature
+     </li>
+     <li>Developer Blog
+     </li>
+     <li>Jobs Listing (For Flickr, not for ecoystem)
+     </li>
+</ul>Flickr's API is a solid example of a simple, yet successful RESTful approach to an API. A very early mover in building an API, Flickr's offerings may be missing many of the more sophisticated API building blocks we are seeing with the new generation of APIs. Nevertheless, you can't argue with success. I believe Flickr's dead simple approach to solving one problem -- photo sharing -- has helped the company deliver a successful API even without a robust API ecosystem.
 

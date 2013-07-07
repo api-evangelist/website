@@ -6,6 +6,58 @@ source: http://apievangelist.com2011/04/06/allow-api-users-to-embed-content-with
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Now the content consumer can take returned information about the Flickr image and display on web page using JavaScript, PHP or other language.This is just a simple example of using oEmbed to display a Flickr image, much more is possible with oEmbed.Some oEmbed providers include: YouTube Flickr Viddler Qik Revision3 Hulu Vimeo oohEmbed Poll Everywhere My Opera Embedly There are several language libraries for deploying oEmbed APIs: PHP: php-oembed PHP: Services_oEmbed Perl: Web-oEmbed Ruby: oembed_links Python oEmbed Django: djangoembed oEmbed APIs, bundled with simple, configurable JavaScript widgets give API users a simple way to embed and syndicate content to other web sites.Even for non-developers.</p>
-<center><p><a href="http://apievangelist.com2011/04/06/allow-api-users-to-embed-content-with-oembed/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}
+Now the content "consumer" can take returned information about the Flickr image and display on web page using JavaScript, PHP or other language.
+This is just a simple example of using oEmbed to display a Flickr image, much more is possible with <a title="oEmbed" href="http://woorkup.com/2010/01/16/emerging-techniques-every-web-developer-should-know/">oEmbed</a>.
+Some oEmbed providers include:<img src="http://kinlane-productions.s3.amazonaws.com/oembed/oEmbed.jpg"  align="right" />
+<ul>
+     <li>
+          <a title="Youtube" href="http://www.youtube.com/">YouTube</a>
+     </li>
+     <li>
+          <a title="Flickr" href="http://www.flickr.com/">Flickr</a>
+     </li>
+     <li>
+          <a title="Viddler" href="http://www.viddler.com/">Viddler</a>
+     </li>
+     <li>
+          <a title="Qik" href="http://qik.com/">Qik</a>
+     </li>
+     <li>
+          <a title="Revision3" href="http://revision3.com/">Revision3</a>
+     </li>
+     <li>
+          <a title="Hulu" href="http://www.hulu.com/">Hulu</a>
+     </li>
+     <li>
+          <a title="Vimeo" href="http://vimeo.com/">Vimeo</a>
+     </li>
+     <li>
+          <a title="oohEmbed" href="http://oohembed.com/">oohEmbed</a>
+     </li>
+     <li>
+          <a title="Poll Everywhere" href="http://www.polleverywhere.com/">Poll Everywhere</a>
+     </li>
+     <li>
+          <a title="My Opera" href="http://my.opera.com/">My Opera</a>
+     </li>
+     <li>
+          <a title="Embedly" href="http://api.embed.ly">Embedly</a>
+     </li>
+</ul>There are several language libraries for deploying oEmbed APIs:
+<ul>
+     <li>PHP: <a title="php-oembed" href="http://code.google.com/p/php-oembed/">php-oembed</a>
+     </li>
+     <li>PHP: <a title="Services-oEmbed" href="http://pear.php.net/package/Services_oEmbed">Services_oEmbed</a>
+     </li>
+     <li>Perl: <a title="Web-oEmbed" href="http://search.cpan.org/~miyagawa/Web-oEmbed/">Web-oEmbed</a>
+     </li>
+     <li>Ruby: <a title="oembed_links" href="http://github.com/netshade/oembed_links">oembed_links</a>
+     </li>
+     <li>Python <a title="oEmbed" href="http://code.google.com/p/python-oembed/">oEmbed</a>
+     </li>
+     <li>Django: <a title="djangoembed" href="http://github.com/worldcompany/djangoembed">djangoembed</a>
+     </li>
+</ul>oEmbed APIs, bundled with simple, configurable JavaScript widgets give API users a simple way to embed and syndicate content to other web sites.
+Even for non-developers.
 

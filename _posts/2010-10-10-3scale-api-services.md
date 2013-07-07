@@ -6,6 +6,28 @@ source: http://apievangelist.com2010/10/10/3scale-api-services/
 domain: apievangelist.com2010
 image: 
 ---
-{% include JB/setup %}<p>3Scale provides plug-and-play as well as enterprise level API management services.3Scale is similar to 3Scale connect is a starter platform with a freemium model for delivering your API.You can deploy at no cost, and pay-as-you-go based upon the volume of calls made on your API.This model is well suited to those who are not sure of their API business model or target audience -- or are just looking to test the waters.3Scale Enterprise offers unlimited scaling in the clouds and greater control over your API as your demand grows.</p>
-<center><p><a href="http://apievangelist.com2010/10/10/3scale-api-services/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/3Scale-Logo.jpg"  width="250" align="right" /><a href="http://www.3scale.com">3Scale</a> provides plug-and-play as well as enterprise level API management services. 3Scale is similar to <a href="http://www.3scale.com">3Scale</a> connect is a starter platform with a freemium model for delivering your API. You can deploy at no cost, and pay-as-you-go based upon the volume of calls made on your API. This model is well suited to those who are not sure of their API business model or target audience -- or are just looking to test the waters.
+3Scale Enterprise offers unlimited scaling in the clouds and greater control over your API as your demand grows. 3Scale also provides higher levels of support for its enterprise level customers.
+3Scale breaks their services down into:
+<ul>
+     <li>
+          <strong>API Management</strong>
+     </li>
+     <li>
+          <strong>API Monitoring &amp; Statistics</strong>
+     </li>
+     <li>
+          <strong>Developer Community Portal</strong>
+     </li>
+     <li>
+          <strong>Billing &amp; Payments</strong>
+     </li>
+     <li>
+          <strong>API Access Provisioning</strong>
+     </li>
+     <li>
+          <strong>High Quality Customer Support &amp; SLA</strong>
+     </li>
+</ul>3Scale also delivers with its own API to access their management platform, allowing you to seamlessly integrate their platform into your internal systems.
+3Scale provides tutorials, white papers and other resources to assist you in planning, deploying and managing your API and community.
 

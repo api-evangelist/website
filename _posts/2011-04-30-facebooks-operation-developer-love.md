@@ -6,6 +6,17 @@ source: http://apievangelist.com2011/04/30/facebooks-operation-developer-love/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Facebook has been accused of not caring about, or communicating with its developers, an image that can be hard to shake.Recently they made a huge effort in turning this around, with a campaign called Operation Developer Love.Each week they recap whats happened within the development community and provide some other nuggets of information: Code Samples Forum Activity Bugzilla Activity This week they also provided an overview of how they are improving their documentation.They also provide some insight into some developer site latency, and how theyve move the site to some new servers and show a graph of significantly improved performance.Operation Developer Love is a great example of actively trying to engage your API developer community.</p>
-<center><p><a href="http://apievangelist.com2011/04/30/facebooks-operation-developer-love/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/facebook/facebook-operation-developer-love.png"  width="125" align="right" />Facebook has been accused of <a title="Facebook Doesn't Care About Its Developers" href="http://www.coreymcmahon.com/facebook/development/5-reasons-developers-hate-the-facebook-platform.html">not caring about, or communicating</a> with its developers, an image that can be hard to shake.
+Recently they made a huge effort in turning this around, with a campaign called <a title="Operation Developer Love" href="http://developers.facebook.com/blog/post/495">Operation Developer Love</a>.
+Each week they recap whats happened within the development community and provide some other nuggets of information:
+<ul>
+     <li>Code Samples
+     </li>
+     <li>Forum Activity
+     </li>
+     <li>Bugzilla Activity
+     </li>
+</ul>This week they also provided an overview of how they are improving their documentation.
+They also provide some insight into some developer site latency, and how they've move the site to some new servers and show a graph of significantly improved performance. <img src="http://kinlane-productions.s3.amazonaws.com/facebook/Facebook-Developer-Site-Latecy.png"  width="600" align="center" /> Operation Developer Love is a great example of actively trying to engage your API developer community.
+I'm impressed by Facebooks efforts to open up and engage.
 

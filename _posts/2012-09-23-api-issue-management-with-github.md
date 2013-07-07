@@ -6,6 +6,22 @@ source: http://apievangelist.com2012/09/23/api-issue-management-with-github/
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Issue-Management-Github.png
 ---
-{% include JB/setup %}<p>Github should be the center of your API operations, with the most obvious use being for SDK repositories, but Github offers a lot of other valuable tools that you can use to help manage your API platform.One great use of Github is as an API issue management tool. The Github issue management system allows you to easily accept issue reports from your API community and apply labels to organize them into appropriate categories.To setup Github Issue Management for your API, just create a new repository, but you wont actually being pushing any code, you will just be using it as a container for running issue management. Think of it as repository for your API itself.</p>
-<center><p><a href="http://apievangelist.com2012/09/23/api-issue-management-with-github/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <a title="Github" href="http://www.github.com">Github</a> should be the center of your API operations, with the most obvious use being for SDK repositories, but Github offers a lot of other valuable tools that you can use to help manage your API platform.
+</p>
+<p>
+     One great use of Github is as an <a title="API issue management" href="/buildingblocks/ticket_system.php">API issue management</a> tool.  The Github issue management system allows you to easily accept issue reports from your API community and apply labels to organize them into appropriate categories.
+</p>
+<p>
+     <a href="https://github.com/Singly/API/issues" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/github/Issue-Management-Github.png"  width="525" /></a>
+</p>
+<p>
+     To setup Github Issue Management for your API, just create a new repository, but you won't actually being pushing any code, you will just be using it as a container for running issue management.  Think of it as repository for your API itself.
+</p>
+<p>
+     Once setup, you can link the issue management page directly from your API area, allowing users to actively submit issues, comment and potentialy be part of the API product development cycle.
+</p>
+<p>
+     Along with API Issue Management with Github, you can link issues with the milestones portion of Github, providing deeper roadmap integration, but I will cover that in a separate post.
+</p>
 

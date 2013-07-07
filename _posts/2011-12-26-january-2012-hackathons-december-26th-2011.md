@@ -6,6 +6,332 @@ source: http://apievangelist.com2011/12/26/january-2012-hackathons-december-26th
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Here is the latest update of the hackathons Im tracking on for January.You can view these on the events page and I have a Google Calendar you can subscribe to.I added 13 new hackathons, doubling the number of hackathons in January to 26!Designing &amp; Developing for Mobile Workshop 01/07/2012 San FranciscoUnited States NYC BigApps 3.0 Developer Day 01/07/2012 New YorkUnited States AT&amp;T Mobile App Hackathon Las Vegas 01/08/2012 Las VegasUnited States PDX Weekly Hackathon 01/12/2012 PortlandUnited States Northern Kentucky Startup Weekend 01/13 01/13/2012 Highland HeightsUnited States Seattle Startup Weekend 1/12 01/13/2012 SeattleUnited States West Michigan Startup Weekend 1/12 01/13/2012 Grand RapidsUnited States Arduino Camp &amp; Robot Hackathon 01/14/2012 New YorkUnited States Facebook Mobile Hack - New York 01/18/2012 New YorkUnited States CodeChix Presents: Mobile/Web Graphic Design for Engineers (Women only) 01/18/2012 Mountain ViewUnited States Hackathon for Social Good 01/19/2012 New YorkUnited States Wikipedia - San Francisco Hackathon January 2012 01/20/2012 San FranciscoUnited States Haskell Hackathon 01/20/2012 CambridgeUnited States Facebook Mobile Hack - Boston 01/20/2012 BostonUnited States CityCampHNL Hackathon 01/20/2012 HonoluluUnited States Startup Weekend Ann Arbor 01/20/2012 Ann ArborUnited States Jacksonville Startup Weekend 01/20/2012 JacksonvilleUnited States Startup Weekend SLO 01/20/2012 San Luis ObispoUnited States Cleanweb Hackathon NYC 01/21/2012 New YorkUnited States the Muther Michigan Hackathon and Dev Con 01/27/2012 DetroitUnited States SpinKick - Kickstarting Mobile Apps for Your Business!</p>
-<center><p><a href="http://apievangelist.com2011/12/26/january-2012-hackathons-december-26th,-2011/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     Here is the latest update of the hackathons I'm tracking on for January. You can view these on the events page and I have a <a title="Hackathons Google Calendar" href="http://blog.apievangelist.com/events_hackathon_calendar.php">Google Calendar</a> you can subscribe to.
+</p>
+<p>
+     I added 13 new hackathons, doubling the number of <a title="hackathons" href="http://blog.apievangelist.com/events/index.php">hackathons</a> in January to 26!
+</p>
+<table border="1" cellspacing="5" cellpadding="5" width="90%" align="center">
+     <tbody>
+          <tr>
+               <td width="60%">
+                    <a href="http://blog.apievangelist.com/events/designing__developing_for_mobile_workshop.php">Designing &amp; Developing for Mobile Workshop</a>
+               </td>
+               <td width="20%">
+                    <strong>01/07/2012</strong>
+               </td>
+               <td width="20%">
+                    <a href="http://blog.apievangelist.com/events/designing__developing_for_mobile_workshop.php">San Francisco<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/nyc_bigapps_30_developer_day.php">NYC BigApps 3.0 Developer Day</a>
+               </td>
+               <td>
+                    <strong>01/07/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/nyc_bigapps_30_developer_day.php">New York<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/att_mobile_app_hackathon_las_vegas.php">AT&amp;T Mobile App Hackathon Las Vegas</a>
+               </td>
+               <td>
+                    <strong>01/08/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/att_mobile_app_hackathon_las_vegas.php">Las Vegas<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/pdx_weekly_hackathon.php">PDX Weekly Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/12/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/pdx_weekly_hackathon.php">Portland<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/northern_kentucky_startup_weekend_0113.php">Northern Kentucky Startup Weekend 01/13</a>
+               </td>
+               <td>
+                    <strong>01/13/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/northern_kentucky_startup_weekend_0113.php">Highland Heights<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/seattle_startup_weekend_112.php">Seattle Startup Weekend 1/12</a>
+               </td>
+               <td>
+                    <strong>01/13/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/seattle_startup_weekend_112.php">Seattle<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/west_michigan_startup_weekend_112.php">West Michigan Startup Weekend 1/12</a>
+               </td>
+               <td>
+                    <strong>01/13/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/west_michigan_startup_weekend_112.php">Grand Rapids<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/arduino_camp__robot_hackathon.php">Arduino Camp &amp; Robot Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/14/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/arduino_camp__robot_hackathon.php">New York<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/facebook_mobile_hack__new_york.php">Facebook Mobile Hack - New York</a>
+               </td>
+               <td>
+                    <strong>01/18/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/facebook_mobile_hack__new_york.php">New York<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/codechix_presents_mobileweb_graphic_design_for_engineers_women_only.php">CodeChix Presents: Mobile/Web Graphic Design for Engineers (Women only)</a>
+               </td>
+               <td>
+                    <strong>01/18/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/codechix_presents_mobileweb_graphic_design_for_engineers_women_only.php">Mountain View<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/hackathon_for_social_good.php">Hackathon for Social Good</a>
+               </td>
+               <td>
+                    <strong>01/19/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/hackathon_for_social_good.php">New York<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/wikipedia__san_francisco_hackathon_january_2012.php">Wikipedia - San Francisco Hackathon January 2012</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/wikipedia__san_francisco_hackathon_january_2012.php">San Francisco<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/haskell_hackathon.php">Haskell Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/haskell_hackathon.php">Cambridge<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/facebook_mobile_hack__boston.php">Facebook Mobile Hack - Boston</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/facebook_mobile_hack__boston.php">Boston<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/citycamphnl_hackathon.php">CityCampHNL Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/citycamphnl_hackathon.php">Honolulu<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/startup_weekend_ann_arbor.php">Startup Weekend Ann Arbor</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/startup_weekend_ann_arbor.php">Ann Arbor<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/jacksonville_startup_weekend.php">Jacksonville Startup Weekend</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/jacksonville_startup_weekend.php">Jacksonville<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/startup_weekend_slo.php">Startup Weekend SLO</a>
+               </td>
+               <td>
+                    <strong>01/20/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/startup_weekend_slo.php">San Luis Obispo<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/cleanweb_hackathon_nyc.php">Cleanweb Hackathon NYC</a>
+               </td>
+               <td>
+                    <strong>01/21/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/cleanweb_hackathon_nyc.php">New York<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/the_muther_michigan_hackathon_and_dev_con.php">the Muther Michigan Hackathon and Dev Con</a>
+               </td>
+               <td>
+                    <strong>01/27/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/the_muther_michigan_hackathon_and_dev_con.php">Detroit<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/spinkick__kickstarting_mobile_apps_for_your_business.php">SpinKick - Kickstarting Mobile Apps for Your Business!</a>
+               </td>
+               <td>
+                    <strong>01/27/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/spinkick__kickstarting_mobile_apps_for_your_business.php">Seattle<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/san_jose_startup_weekend_112.php">San Jose Startup Weekend 1/12</a>
+               </td>
+               <td>
+                    <strong>01/27/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/san_jose_startup_weekend_112.php">Santa Clara<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/st_louis_startup_weekend__january_2729_2012.php">St. Louis Startup Weekend - January 27-29, 2012</a>
+               </td>
+               <td>
+                    <strong>01/27/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/st_louis_startup_weekend__january_2729_2012.php">Saint Louis<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/html5_mobile_apps_hackathon.php">HTML5 Mobile Apps Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/28/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/html5_mobile_apps_hackathon.php">Boston<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/kinect_for_developers.php">Kinect for Developers</a>
+               </td>
+               <td>
+                    <strong>01/28/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/kinect_for_developers.php">Plano<br />
+                    United States</a>
+               </td>
+          </tr>
+          <tr>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/digital_meets_physical_a_hardware_hackathon.php">Digital meets Physical: A Hardware Hackathon</a>
+               </td>
+               <td>
+                    <strong>01/28/2012</strong>
+               </td>
+               <td>
+                    <a href="http://blog.apievangelist.com/events/digital_meets_physical_a_hardware_hackathon.php">Providence<br />
+                    United States</a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     I try to record as much information about event as I can, including Twitter handle and email when its available, so you can contact them.
+</p>
+<p>
+     If you know of any hackathons I'm not tracking on, <a title="Contact me" href="http://blog.apievangelist.com/contact.php">let me know.</a> I'd like to keep the <a title="hackathon event calendar" href="http://blog.apievangelist.com/events/">hackathon events calendar</a> up to date with all the events going on around the globe.
+</p>
 

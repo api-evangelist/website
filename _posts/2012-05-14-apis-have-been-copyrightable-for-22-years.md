@@ -6,6 +6,25 @@ source: http://apievangelist.com2012/05/14/apis-have-been-copyrightable-for-22-y
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-legal.jpg
 ---
-{% include JB/setup %}<p>I attended a great webinar put on by the folks at Apigee last week, where they discussed APIs &amp; Copyright.A very timely discussion with the recent API copyright decision in the EU, and from the ongoing Oracle vs.Google case.As I process all discussions around API copyright, I’m going to publish relevant pieces here at API Voice, for everyone else to process along with me.One interesting piece of the Apigee discussion is that APIs have been copyrightable for the last 22 years--specifically referencing the JOHNSON CONTROLS, INC.</p>
-<center><p><a href="http://apievangelist.com2012/05/14/apis-have-been-copyrightable-for-22-years/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-legal.jpg"  width="250" align="right" />
+</p>
+<p>
+     I attended a great webinar put on by the folks at <a title="Apigee" href="/serviceproviders/apigee.php">Apigee</a> last week, where they discussed <a title="APIs &amp; Copyright" href="http://www.slideshare.net/apigee/apis-copyrights">APIs &amp; Copyright</a>. A very timely discussion with the recent API copyright decision in the EU, and from the ongoing <a title="Oracle vs. Google" href="http://apivoice.com/2012/05/07/us-precedent-for-api-copyright-hinges-on-oracle-v-google/">Oracle vs. Google case</a>.
+</p>
+<p>
+     As I process all discussions around API copyright, I’m going to publish relevant pieces here at <a title="API Voice" href="http://apivoice.com/">API Voice</a>, for everyone else to process along with me. One interesting piece of the Apigee discussion is that APIs have been copyrightable for the last 22 years--specifically referencing the <a href="http://www.leagle.com/xmlResult.aspx?xmldoc=19892059886F2d1173_11869.xml&amp;docbase=CSLWAR2-1986-2006">JOHNSON CONTROLS, INC. v. PHOENIX CONTROL SYSTEMS, INC.</a> from October 3rd, 1989. On <a href="http://www.leagle.com/xmlResult.aspx?page=3&amp;xmldoc=19892059886F2d1173_11869.xml&amp;docbase=CSLWAR2-1986-2006&amp;SizeDisp=7">page three</a>, it states:
+</p>
+<blockquote>
+     <em>"A computer program is made up of several different components, including the source and object code, the structure, sequence and/or organization of the program, the user interface, and the function, or purpose, of the program. Whether a particular component of a program is protected by a copyright depends on whether it qualifies as an "expression" of an idea, rather than the idea itself."</em>
+</blockquote>
+<p>
+     Beyond Johnson Controls, Inc v. Phoenix Control Systems, it appears there is further precedent to apply copyright to APIs. The filing also references:
+</p>
+<blockquote>
+     <em>See Harper &amp; Row Publishers, Inc. v. Nation Enters.,<a href="http://www.leagle.com/xmlcontentlinks.aspx?gfile=471%20U.S.%20539">471 U.S. 539</a>, 547, 105 S.Ct. 2218, 2223, 85 L.Ed.2d 588 (1985); Data East USA, Inc. v. Epyx, Inc.,<a href="http://www.leagle.com/xmlcontentlinks.aspx?gfile=862%20F.2d%20204">862 F.2d 204</a>, 207-08 (9th Cir.1988); 17 U.S.C. § 102(b).</em>
+</blockquote>
+<p>
+     I think the questions API owners and developers should be asking themselves is not, whether or not they might have to think about API copyright protection in the future, but that it is something they should be discussing now, when it comes to their other legal API building blocks like <a title="terms of use" href="/buildingblocks/terms_of_use__conditions.php">terms of use</a>, <a title="privacy" href="/buildingblocks/privacy.php">privacy</a> and <a title="branding" href="/buildingblocks/branding.php">branding</a>.
+</p>
 

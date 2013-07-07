@@ -6,6 +6,20 @@ source: http://apievangelist.com2011/09/12/mashery-business-of-apis-conference-2
 domain: apievangelist.com2011
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mashery-logo.png
 ---
-{% include JB/setup %}<p>Mashery has announced the 2011 Business of APIs event series in October. The Business of APIs Conference discusses winning strategies for API businesses, how to grow a successful developer program, and what the future holds for the business of APIs.There are events in three cities October 4th, 2011 - Mashery Business of APIs / San Francisco October 19th, 2011 - Mashery Business of APIs / New York City October 25th, 2011: - Mashery Business of APIs / London You can can register for the events by visiting apiconference.com. Early bird pricing is $199 and ends September 15th, with regular price at $295.</p>
-<center><p><a href="http://apievangelist.com2011/09/12/mashery-business-of-apis-conference-2011/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <a title="Mashery" href="http://www.mashery.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashery-logo.png"  width="150" align="right" /></a><a title="Mashery" href="http://www.mashery.com">Mashery</a> has announced the 2011 Business of APIs event series in October.  <a title="The Business of APIs Conference" href="http://apiconference.com/">The Business of APIs Conference</a> discusses winning strategies for API businesses, how to grow a successful developer program, and what the future holds for the business of APIs.<br />
+     <br />
+     There are events in three cities
+</p>
+<ul>
+     <li>October 4th, 2011 - <a title="Mashery Business of APIs / San Francisco" href="http://www.eventbrite.com/event/1825463009?ref=ebtn" target="_blank">Mashery Business of APIs / San Francisco</a>
+     </li>
+     <li>October 19th, 2011 - <a title="Mashery Business of APIs / New York City" href="http://www.eventbrite.com/event/2025693905?ref=ebtn">Mashery Business of APIs / New York City</a>
+     </li>
+     <li>October 25th, 2011: - <a title="Mashery Business of APIs / London" href="http://www.eventbrite.com/event/2025746061?ref=ebtn" target="_blank">Mashery Business of APIs / London</a>
+     </li>
+</ul>
+<p>
+     You can can register for the events by visiting <a title="apiconference.com" href="http://www.apiconference.com">apiconference.com</a>.  Early bird pricing is $199 and ends September 15th, with regular price at $295.00
+</p>
 

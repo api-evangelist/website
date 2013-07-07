@@ -6,6 +6,62 @@ source: http://apievangelist.com2011/06/18/1775/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Genability have assembled a database of electricity pricing information from over 3500 electricity providers throughout North America.TheGenability API is RESTful with JSON responses, and application keys for authentication.Documentation &amp; Tools Overview of the API Pricing Reference &amp; Documentaton Terms of Use / Conditions Support &amp; Management Blog w/ RSS Feeds Dashboard LinkedIn Twitter Community Forum Developer Account Info Registration Related articles Etsy API Review (apievangelist.com) Factual API Review (apievangelist.com) Hunch API Review (apievangelist.</p>
-<center><p><a href="http://apievangelist.com2011/06/18/1775/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a title="Genability" href="http://genability.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/genability/genability-logo.jpg"  width="250" align="right" /></a><a title="Genability" href="http://genability.com/">Genability</a> have assembled a database of electricity pricing information from over 3500 electricity providers throughout North America.
+The<a title="Genability API" href="https://developer.genability.com/">Genability API</a> is RESTful with JSON responses, and application keys for authentication.
+<strong>Documentation &amp; Tools</strong>
+<ul>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=117" target="_blank">Overview of the API</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=191" target="_blank">Pricing</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=120" target="_blank">Reference &amp; Documentaton</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=150" target="_blank">Terms of Use / Conditions</a>
+     </li>
+</ul><strong>Support &amp; Management</strong>
+<ul>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=123" target="_blank">Blog w/ RSS Feeds</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=116" target="_blank">Dashboard</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=158" target="_blank">LinkedIn</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=159" target="_blank">Twitter</a>
+     </li>
+</ul><strong>Community</strong>
+<ul>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=131" target="_blank">Forum</a>
+     </li>
+</ul><strong>Developer</strong>
+<ul>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=199" target="_blank">Account Info</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=198" target="_blank">Registration</a>
+     </li>
+</ul>
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/11/etsy-api-review/">Etsy API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/factual-api-review/">Factual API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://apievangelist.wordpress.com/2011/06/13/hunch-api-review/">Hunch API Review</a> (apievangelist.wordpress.com)
+     </li>
+</ul>
 

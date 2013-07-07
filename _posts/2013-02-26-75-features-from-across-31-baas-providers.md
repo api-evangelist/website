@@ -6,6 +6,563 @@ source: http://apievangelist.com2013/02/26/75-features-from-across-31-baas-provi
 domain: apievangelist.com2013
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baas-trends.png
 ---
-{% include JB/setup %}<p>I’m currently tracking on 31 backend as a service providers, in an effort to better understand how this new breed of platforms are helping developers build web and mobile apps.After looking at all the BaaS providers, there are 13 clear leaders: Then there are another 18 other players, trying to play catch up in a space that is working hard to define itself in 2013: My goal is to better understand what features are offered across these 31 BaaS providers.To accomplish this, I spent no more than an hour per provider looking through their sites and playing with their products to get at least a basic understanding of their offerings.When looking for features I tried to standardize the best I could, but it is difficult when there are different approaches to the deployment of resources on each platform.I found about 75 distinct features being offered across the 31 BaaS providers.</p>
-<center><p><a href="http://apievangelist.com2013/02/26/75-features-from-across-31-baas-providers/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     I’m currently tracking on <a href="/trends/baas.php">31 backend as a service providers</a>, in an effort to better understand how this new breed of platforms are helping developers build web and mobile apps. After looking at all the BaaS providers, there are 13 clear leaders:
+</p>
+<table cellspacing="3" cellpadding="2" align="center">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a title="Appcelerator" href="/serviceproviders/appcelerator.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/appcelerator-logo.png"  width="180" /></a>
+               </td>
+               <td align="center">
+                    <a title="Flurry" href="/serviceproviders/flurry.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/flurry-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Urban Airship" href="/serviceproviders/urban_airship.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/urban-airship-logo.png"  width="130" /></a>
+               </td>
+               <td align="center">
+                    <a title="Kii" href="/serviceproviders/kii.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Kii-Logo.png"  width="130" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="StackMob" href="/serviceproviders/stackmob.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/stackmob-logo.png"  width="175" /></a>
+               </td>
+               <td align="center">
+                    <a title="Parse" href="/serviceproviders/parse.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Parse-Logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Geoloqi" href="/serviceproviders/geoloqi.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Geoloqi-logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="Kinvey" href="/serviceproviders/kinvey.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kinvey-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Buddy" href="/serviceproviders/buddy.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/buddy-platform.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="Sencha.io" href="/serviceproviders/sencha.io.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sencha-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Quickblox" href="/serviceproviders/quickblox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/quickblox-logo.png"  width="120" /></a>
+               </td>
+               <td align="center">
+                    <a title="FeedBurner" href="/serviceproviders/feedburner.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FeedHenry-Logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Cloudmine" href="/serviceproviders/cloudmine.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudmine-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     Then there are another 18 other players, trying to play catch up in a space that is working hard to define itself in 2013:
+</p>
+<table cellspacing="3" cellpadding="2" align="center">
+     <tbody>
+          <tr>
+               <td align="center">
+                    <a title="AnyPresence" href="/serviceproviders/anypresence.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/anypresence-logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="API O MAT" href="/serviceproviders/api_o_mat.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/api-o-mat-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="App42" href="/serviceproviders/app42.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/app42-logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="Appacitive" href="/serviceproviders/appacitive.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Appacitive.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Applicasa" href="/serviceproviders/applicasa.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/applicasa-logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="BaaSBox" href="/serviceproviders/baasbox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baasbox-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Baobab" href="/serviceproviders/baobab.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/baobab-logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="CloudyRec" href="/serviceproviders/cloudyrec.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/CloudyRec-logo-2.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="FatFractal" href="/serviceproviders/fatfractal.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/FatFractal-Logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="Kumulos" href="/serviceproviders/kumulos.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/kumulos-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="LeanEngine" href="/serviceproviders/leanengine.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/LeanEngine-Logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="mobDB" href="/serviceproviders/mobdb.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mod-DB-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Mobeelizer" href="/serviceproviders/mobeelizer.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Mobeelizer-Logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="OPENi" href="/serviceproviders/openi.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openi-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="OpenKit" href="/serviceproviders/openkit.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/open-kit-logo-larger.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="OpenMobster" href="/serviceproviders/openmobster.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openmobster-logo.png"  width="160" /></a>
+               </td>
+          </tr>
+          <tr>
+               <td align="center">
+                    <a title="Proxomo" href="/serviceproviders/proxomo.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Proxomo-Logo.png"  width="160" /></a>
+               </td>
+               <td align="center">
+                    <a title="ScottyApp" href="/serviceproviders/scottyapp.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Scotty-App-Logo.png"  width="160" /></a>
+               </td>
+          </tr>
+     </tbody>
+</table>
+<p>
+     My goal is to better understand what features are offered across these 31 BaaS providers. To accomplish this, I spent no more than an hour per provider looking through their sites and playing with their products to get at least a basic understanding of their offerings.
+</p>
+<p>
+     When looking for features I tried to standardize the best I could, but it is difficult when there are different approaches to the deployment of resources on each platform. I found about 75 distinct features being offered across the 31 BaaS providers. I’m sure there are other features, and vital details missing, but I wanted to start somewhere. Here is what I found, organized as best I could:
+</p>
+<blockquote>
+     <p>
+          <strong>User Management</strong>
+     </p>
+     <ul>
+          <li>User
+          </li>
+          <li>User Roles
+          </li>
+          <li>LDAP
+          </li>
+     </ul>
+     <p>
+          <strong>Content Management System (CMS)</strong>
+     </p>
+     <p>
+          <strong>Data</strong>
+     </p>
+     <ul>
+          <li>Table
+          </li>
+          <li>Relational
+          </li>
+          <li>Key Value
+          </li>
+          <li>Browser
+          </li>
+          <li>MySQL Connector
+          </li>
+          <li>PostGres Connector
+          </li>
+          <li>Oracle Connector
+          </li>
+          <li>Caching
+          </li>
+          <li>XML
+          </li>
+          <li>CSV
+          </li>
+     </ul>
+     <p>
+          <strong>File Management</strong>
+     </p>
+     <ul>
+          <li>Storage
+          </li>
+          <li>Sync
+          </li>
+     </ul>
+     <p>
+          <strong>Image &amp; Photo Management</strong>
+     </p>
+     <ul>
+          <li>Storage
+          </li>
+          <li>Gallery &amp; Collections
+          </li>
+          <li>Processing
+          </li>
+     </ul>
+     <p>
+          <strong>Custom Code / Objects</strong>
+     </p>
+     <p>
+          <strong>Programmatic Interfaces</strong>
+     </p>
+     <ul>
+          <li>Web Service Connectors
+          </li>
+          <li>REST API
+          </li>
+          <li>Custom REST API
+          </li>
+          <li>Query
+          </li>
+     </ul>
+     <p>
+          <strong>Commerce</strong>
+     </p>
+     <ul>
+          <li>Product Catalog
+          </li>
+          <li>Shopping Cart
+          </li>
+     </ul>
+     <p>
+          <strong>Virtual Commerce</strong>
+     </p>
+     <ul>
+          <li>In-App Purchases
+          </li>
+          <li>Custom Virtual Store 
+          </li>
+          <li>Virtual Goods Management 
+          </li>
+          <li>Currency Maintenance 
+          </li>
+          <li>Virtual Economy Regulation
+          </li>
+     </ul>
+     <p>
+          <strong>Other Monetization</strong>
+     </p>
+     <ul>
+          <li>Promotions
+          </li>
+          <li>Subscriptions
+          </li>
+          <li>Billing
+          </li>
+          <li>Passbook
+          </li>
+     </ul>
+     <p>
+          <strong>Ranking</strong>
+     </p>
+     <ul>
+          <li>Recomendations
+          </li>
+          <li>Reviews
+          </li>
+          <li>Ratings
+          </li>
+          <li>Likes
+          </li>
+     </ul>
+     <p>
+          <strong>Advertising</strong>
+     </p>
+     <p>
+          <strong>Communication</strong>
+     </p>
+     <ul>
+          <li>SMS
+          </li>
+          <li>Email
+          </li>
+          <li>Email Templates
+          </li>
+          <li>Push Notification
+          </li>
+          <li>Interactive Voice Response (IVR)
+          </li>
+          <li>Messaging System
+          </li>
+     </ul>
+     <p>
+          <strong>Calendar Events</strong>
+     </p>
+     <p>
+          <strong>Posts</strong>
+     </p>
+     <p>
+          <strong>Friends</strong>
+     </p>
+     <p>
+          <strong>Shared Links</strong>
+     </p>
+     <p>
+          <strong>Geo</strong>
+     </p>
+     <ul>
+          <li>Spatial
+          </li>
+          <li>Location
+          </li>
+          <li>Check-In
+          </li>
+          <li>Places
+          </li>
+     </ul>
+     <p>
+          <strong>Gaming</strong>
+     </p>
+     <ul>
+          <li>Players
+          </li>
+          <li>Ranking
+          </li>
+          <li>Scores
+          </li>
+          <li>Boards
+          </li>
+          <li>State
+          </li>
+     </ul>
+     <p>
+          <strong>3rd Party Integration</strong>
+     </p>
+     <ul>
+          <li>Twitter
+          </li>
+          <li>Facebook
+          </li>
+          <li>Dropbox
+          </li>
+          <li>Fitbit
+          </li>
+          <li>Foursquare
+          </li>
+          <li>Github
+          </li>
+          <li>Instagram
+          </li>
+          <li>LinkedIn
+          </li>
+          <li>Meetup
+          </li>
+          <li>Tumblr
+          </li>
+          <li>Withings
+          </li>
+          <li>Wordpress
+          </li>
+          <li>Yammer
+          </li>
+          <li>Twilio
+          </li>
+          <li>Underscore
+          </li>
+          <li>SendGrid
+          </li>
+          <li>Moment
+          </li>
+          <li>Mandrill
+          </li>
+          <li>Mailgun
+          </li>
+          <li>CrowdFlower
+          </li>
+          <li>Google Places
+          </li>
+          <li>Google Apps
+          </li>
+          <li>Salesforce
+          </li>
+          <li>SAP
+          </li>
+          <li>Siebel
+          </li>
+          <li>Wordpress
+          </li>
+     </ul>
+     <p>
+          <strong>SSL</strong>
+     </p>
+     <p>
+          <strong>Availability</strong>
+     </p>
+     <ul>
+          <li>Performance
+          </li>
+          <li>Scaling
+          </li>
+          <li>Load Balance
+          </li>
+     </ul>
+     <p>
+          <strong>Deployment</strong>
+     </p>
+     <ul>
+          <li>On-Premise
+          </li>
+          <li>Virtual Private Cloud
+          </li>
+          <li>Public Cloud
+          </li>
+     </ul>
+     <p>
+          <strong>Environment</strong>
+     </p>
+     <ul>
+          <li>Sandbox
+          </li>
+          <li>Production
+          </li>
+     </ul>
+     <p>
+          <strong>Utility</strong>
+     </p>
+     <ul>
+          <li>Logging
+          </li>
+          <li>Backups
+          </li>
+          <li>Clients
+          </li>
+          <li>Jobs
+          </li>
+     </ul>
+     <p>
+          <strong>Analytics</strong>
+     </p>
+     <p>
+          These BaaS providers support a wide variety of mobile devices, platforms, frameworks in multiple languages:
+     </p>
+     <p>
+          <strong>Mobile Devices</strong>
+     </p>
+     <ul>
+          <li>iOS
+          </li>
+          <li>Android
+          </li>
+          <li>Windows
+          </li>
+          <li>Blackberry
+          </li>
+     </ul>
+     <p>
+          <strong>Reader Devices</strong>
+     </p>
+     <ul>
+          <li>Kindle
+          </li>
+     </ul>
+     <p>
+          <strong>Mobile Platforms</strong>
+     </p>
+     <ul>
+          <li>PhoneGap
+          </li>
+          <li>Trigger.io
+          </li>
+          <li>Titanium
+          </li>
+     </ul>
+     <p>
+          <strong>App Frameworks</strong>
+     </p>
+     <ul>
+          <li>ql.io
+          </li>
+     </ul>
+     <p>
+          <strong>Automation</strong>
+     </p>
+     <ul>
+          <li>Temboo
+          </li>
+     </ul>
+     <p>
+          <strong>Languages</strong>
+     </p>
+     <ul>
+          <li>JavaScript
+          </li>
+          <li>Java
+          </li>
+          <li>C
+          </li>
+          <li>PHP
+          </li>
+          <li>Python
+          </li>
+          <li>Ruby
+          </li>
+     </ul>
+     <p>
+          There were many different ways the BaaS platforms provided support to its developers:
+     </p>
+     <p>
+          <strong>Support</strong>
+     </p>
+     <ul>
+          <li>Phone
+          </li>
+          <li>Web
+          </li>
+          <li>Chat
+          </li>
+          <li>Dedicated Account
+          </li>
+          <li>Dedicated Tech
+          </li>
+     </ul>
+     <p>
+          I found 10 different ways that BaaS providers delivered pricing:
+     </p>
+     <p>
+          <strong>Pricing</strong>
+     </p>
+     <ul>
+          <li>API Calls
+          </li>
+          <li>Push Notification
+          </li>
+          <li>Bandwidth
+          </li>
+          <li>Storage
+          </li>
+          <li>Active Users
+          </li>
+          <li>Analitics
+          </li>
+          <li>Support
+          </li>
+          <li>App
+          </li>
+          <li>Synchronization
+          </li>
+          <li>Features
+          </li>
+     </ul>
+     <p>
+          <strong>Marketplace</strong>
+     </p>
+</blockquote>
+<p>
+     You can <a href="http://kinlane.github.com/backend-as-a-service/">view all 75 features at the BaaS Github Repository</a> I setup. Let me know any that you feel are missing, and I’ll consider adding.
+</p>
+<p>
+     Next up, I will add the features into my BaaS tracking database and publish a breakdown of providers, with the features they offer. Letting people search and filter, and also open up to each BaaS provider to comment and submit additional features they offer.
+</p>
 

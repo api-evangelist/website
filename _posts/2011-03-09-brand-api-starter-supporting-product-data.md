@@ -6,6 +6,12 @@ source: http://apievangelist.com2011/03/09/brand-api-starter-supporting-product-
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>I have been thinking aboutAdam Kleinbergs recents post,Why Every Brand Needs an Open API for Developers andDigging deeper on Brand APIs.Hes right.The pace ofAPI development skyrocketed in 2010, and will continue in 2011.Brands that dont have an API will be left behind.I suggested companies get their feet wet in the API space by starting with a basic RESTful API that servers up data about their products.</p>
-<center><p><a href="http://apievangelist.com2011/03/09/brand-api-starter-supporting-product-data/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/brand-clothing.jpg"  width="275" align="right" />I have been thinking about<a title="Adam Kleinberg" href="http://www.linkedin.com/in/adamkleinberg">Adam Kleinbergs</a> recents post,<a title="Why Every Brand Needs an Open API for Developers" href="http://mashable.com/2011/01/04/brand-open-api-developers/">Why Every Brand Needs an Open API for Developers</a> and<a title="Digging Deeper on Brand APIs" href="http://www.tractionco.com/blog/63-digging-deeper-on-brand-apis">Digging deeper on Brand APIs</a>.
+He's right. The pace of<a title="API Development Skyrocketed in 2010" href="http://blog.programmableweb.com/2011/03/08/3000-web-apis/">API development skyrocketed in 2010</a>, and will continue in 2011.
+Brands that don't have an API will be left behind.
+I suggested companies get their feet wet in the API space by starting with a basic <a href="http://blog.apievangelist.com/2011/01/30/api-technology-rest/">RESTful</a> API that servers up data about their products.
+With a functioning API and API area, a company can think about whats next? More product data of course!
+There has to be more information about your products that you can make available? Product documents, videos, reviews, testimonials, case studies and other news or information. What information do you provide on your web site?
+Provide any supporting product data you think might provide benefit to developers and their application users.
+The more information about your products you can provide, the more resources potential partners and developers will have to build rich web and mobile applications.
 

@@ -6,6 +6,37 @@ source: http://apievangelist.com2012/11/28/peoplebrowsr-wins-temporary-injunctio
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-access.png
 ---
-{% include JB/setup %}<p>Social analytics provider PeopleBrowsr has won a temporary injunction against Twitter today, with a complaint filed in San Francisco Superior Court.It reads: PeopleBrowsr seeks a preliminary and permanent injunction to prevent Twitter from destroying its business, interfering with PeopleBrowsr’s contractual and prospective business relations, and restraining competition in markets using Twitter data.The complaint was filed in response to a trheat from Twitter to cut off PeopleBrowsr’s access to its Firehose by November 30, 201  PeopleBrowsr has had access to the full Twitter full firehose for over four years.According to the complaint: PeopleBrowsr’s products require the full Firehose feed.A mere sample of Twitter data is insufficient for PeopleBrowsr to provide the products its users expect.</p>
-<center><p><a href="http://apievangelist.com2012/11/28/peoplebrowsr-wins-temporary-injunction-to-keep-twitter-from-shutting-off-firehose/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/twitter/twitter-access.png"  width="175" align="right" />
+</p>
+<p>
+     Social analytics provider <a title="PeopleBrowsr" href="http://www.peoplebrowsr.com/">PeopleBrowsr</a> has won a temporary injunction against Twitter today, with a complaint filed in San Francisco Superior Court. It reads:
+</p>
+<p>
+     <em>PeopleBrowsr seeks a preliminary and permanent injunction to prevent Twitter from destroying its business, interfering with PeopleBrowsr’s contractual and prospective business relations, and restraining competition in markets using Twitter data.</em>
+</p>
+<p>
+     The complaint was filed in response to a trheat from Twitter to cut off PeopleBrowsr’s access to its Firehose by November 30, 201  PeopleBrowsr has had access to the full Twitter full firehose for over four years. According to the complaint:
+</p>
+<p>
+     <em>PeopleBrowsr’s products require the full Firehose feed. A mere sample of Twitter data is insufficient for PeopleBrowsr to provide the products its users expect. Though there are some data analytics companies that can provide certain limited types of Twitter data analysis based on sampling, PeopleBrowsr competes in a separate “Twitter Big Data Analytics” market, in which a few, highly sophisticated players analyze massive amounts of Twitter data to provide deeper insights.</em>
+</p>
+<p>
+     Twitter’s decision to terminate PeopleBrowsr’s firehose follows a <a href="http://apivoice.com/2012/06/29/twitter-continues-to-restrict-access-to-our-tweets/">pattern of it consistently cutting off partner and developer access to the platforms and its data</a>. In doing so Twitter has sought more control in their effort to monetize the social networking platform and provide <a href="http://apivoice.com/2012/07/22/investment-in-twitter/">investors with a return on their investment of almost 1.4B dollars</a>.
+</p>
+<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/peoplebrowsr/PeopleBrowsr-logo.png"  width="300" align="right" />
+</p>
+<p>
+     PeopleBrowsr states that it has “invested millions of dollars and years of work in building a business based on the Firehose”. It says it did so in rlying on Twitter’s representations that it would maintain an “open ecosystem” and allow other companies to use of its data. Through agreements with Twitter PeopleBrowsr felt it could compete without fear that Twitter would cut off access to its data in order to influence which businesses succeed or to usurp business opportunities for itself.
+</p>
+<p>
+     <a href="http://twitter.apivoice.com/">Twitter has consistently described</a> the Firehose as a part of this open ecosystem that it would make available to “everyone in the system”, and this open approach was a key component of Twitter’s business strategy. 
+</p>
+<p>
+     The injunction PeopleBrowsr received today will keep their firehose access open until January, when further hearings on the case will be held. Until now, all the outcy regarding Twitter’s restriction of access to the platform have been vocal, but without any legal action. The filing by PeopleBrowsr shows the situation has truly become serious and will move discussion about Twitter access from the tech blogosphere and hacker news into the U.S legal system.
+</p>
+<p>
+     <em>Disclosure: API Evangelist has provided API strategy services to PeopleBrowsr.</em>
+</p>
 

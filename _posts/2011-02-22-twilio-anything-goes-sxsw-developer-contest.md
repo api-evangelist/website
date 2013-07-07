@@ -6,6 +6,14 @@ source: http://apievangelist.com2011/02/22/twilio-anything-goes-sxsw-developer-c
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>The cloud communications platform Twilio has a new API developer contest this week.As usual they are looking for someone to build a killer app that uses the Twilio voice and SMS API.This round they are looking for more, but first lets set the stage with the prizes: A guaranteed seat on either the Cleveland, or Miami SXSW Startup Bus A ticket to SXSW Interactive, valued at $750 In addition to building a killer app, they are looking for someone to tweet, blog, record video, and generally represent Twilio on the bus.Entries must be submitted by 11:59pm PT on Sunday February 27th.</p>
-<center><p><a href="http://apievangelist.com2011/02/22/twilio-anything-goes-sxsw-developer-contest/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://www.twilio.com"><img src="http://kinlane-productions.s3.amazonaws.com/Twilio.PNG"  width="250" align="right" /></a>The cloud communications platform <a href="http://blog.twilio.com/2011/02/anything-goes-developers-on-a-bus.html" target="_blank">Twilio has a new API developer contest this week</a>.
+As usual they are looking for someone to build a killer app that uses the Twilio voice and SMS API.
+This round they are looking for more, but first lets set the stage with the prizes:
+<ul>
+     <li>A guaranteed seat on either the Cleveland, or Miami SXSW Startup Bus
+     </li>
+     <li>A ticket to <a href="http://sxsw.com/interactive" target="_blank">SXSW Interactive</a>, valued at $750
+     </li>
+</ul>In addition to building a killer app, they are looking for someone to tweet, blog, record video, and generally represent Twilio on the bus.
+Entries must be <a href="http://contests.twilio.com/submit-your-twilio-project.html" target="_blank">submitted</a> by 11:59pm PT on Sunday February 27th.
 

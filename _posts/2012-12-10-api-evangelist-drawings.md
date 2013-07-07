@@ -6,6 +6,13 @@ source: http://apievangelist.com2012/12/10/api-evangelist-drawings/
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-drawing.jpg
 ---
-{% include JB/setup %}<p>While I was in Paris speaking at API Days last week, a drawing of me was circulated on Twitter. I was a little speachless when I saw them on Twitter. I am always looking for new graphics to use in API Evangelist. I worked for hours to come up with the logo I have, so I was stoked to see someone create something so cool, in the moment.Thanks @bybent, art director @fabernovel for the drawing.</p>
-<center><p><a href="http://apievangelist.com2012/12/10/api-evangelist-drawings/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     While I was in Paris speaking at <a title="API Days" href="http://apidays.io" target="_blank">API Days</a> last week, a drawing of me was circulated on Twitter.  I was a little speachless when I saw them on Twitter.  I am always looking for new graphics to use in API Evangelist.  I worked for hours to come up with the logo I have, so I was stoked to see someone create something so cool, in the moment.
+</p>
+<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/kin-lane-drawing.jpg"  width="500" />
+</p>
+<p>
+     Thanks <a href="https://twitter.com/bybent" target="_blank">@bybent</a>, art director @<a href="https://twitter.com/fabernovel" target="_blank">fabernovel</a> for the drawing. I appreciate the work!
+</p>
 

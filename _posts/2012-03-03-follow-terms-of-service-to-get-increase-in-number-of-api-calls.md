@@ -6,6 +6,27 @@ source: http://apievangelist.com2012/03/03/follow-terms-of-service-to-get-increa
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/foursquare_logo.png
 ---
-{% include JB/setup %}<p>I am going through the Foursquare API, and found their section about how to get an increase in the number of calls you can make against the Foursquare API interesting: If your application runs into any of our rate limits and you think you could use more, write us at api@foursquare.com.Wellneed your OAuth consumer id, an explanation about why you need an increased cap, and information about the following  Usage: A description of the endpoints youre calling and how youre using the data retrieved.We use this to make sure youre abiding by our Platform Policies and Terms of Service.Sample requests are generally helpful.</p>
-<center><p><a href="http://apievangelist.com2012/03/03/follow-terms-of-service-to-get-increase-in-number-of-api-calls/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <a title="Foursquare API" href="https://developer.foursquare.com"><img src="http://kinlane-productions.s3.amazonaws.com/foursquare/foursquare_logo.png"  width="250" align="right" /></a>
+</p>
+<p>
+     I am going through the <a title="Foursquare API" href="https://developer.foursquare.com">Foursquare API</a>, and found their section about how to get an increase in the number of calls you can make against the Foursquare API interesting:
+</p>
+<p>
+     <em>If your application runs into any of our rate limits and you think you could use more, write us at api@foursquare.com. We'llneed your OAuth consumer id, an explanation about why you need an increased cap, and information about the following</em> 
+</p>
+<ul>
+     <li>
+          <em><strong>Usage</strong>: A description of the endpoints you're calling and how you're using the data retrieved. We use this to make sure you're abiding by our <a href="https://foursquare.com/legal/api/platformpolicy">Platform Policies</a> and <a href="https://foursquare.com/legal/terms">Terms of Service</a>. Sample requests are generally helpful.</em>
+     </li>
+     <li>
+          <em><strong>Attribution</strong>: Screenshots of your application so we can confirm you're <a href="https://developer.foursquare.com/overview/attribution.html">attributing</a> foursquare correctly.</em>
+     </li>
+     <li>
+          <em><strong>Caching</strong>: Cache venue details where appropriate to avoid making spurious requests to our servers. See theRetention section of our <a href="https://foursquare.com/legal/api/platformpolicy">Platform Policies</a> for more details.</em>
+     </li>
+</ul>
+<p>
+     I like the idea of rewarding developers with the ability to make more calls against your API, when they adhere to your terms of service and benefit your operations.
+</p>
 

@@ -6,6 +6,68 @@ source: http://apievangelist.com2011/06/17/factual-api-review/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Factual is an open data platform and community, with a goal to maximize data accuracy, transparency, and availability.They provide a marketplace of evolving data on thousands of topics.Factual provides a RESTful API that returns JSON response, using an application key for authentication.Factual provides full data sets for download, Ruby Gem and IPhone SDK for development.Documentation &amp; Tools Code Libraries Pricing Privacy Reference &amp; Documentaton Terms of Use / Conditions Support &amp; Management Blog w/ RSS Feeds Dashboard FAQ Twitter Community Forum Developer Account Info App Manager Registration Related articles 3Taps API Review (apievangelist.</p>
-<center><p><a href="http://apievangelist.com2011/06/17/factual-api-review/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://www.factual.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/factual/factual-logo.png"  align="right" /></a><a href="http://www.factual.com/">Factual</a> is an open data platform and community, with a goal to maximize data accuracy, transparency, and availability. They provide a marketplace of evolving data on thousands of topics.
+Factual provides a RESTful API that returns JSON response, using an application key for authentication. Factual provides full data sets for download, Ruby Gem and IPhone SDK for development.
+<strong>Documentation &amp; Tools</strong>
+<ul>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=125" target="_blank">Code Libraries</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=191" target="_blank">Pricing</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=165" target="_blank">Privacy</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=120" target="_blank">Reference &amp; Documentaton</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=150" target="_blank">Terms of Use / Conditions</a>
+     </li>
+</ul><strong>Support &amp; Management</strong>
+<ul>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=123" target="_blank">Blog w/ RSS Feeds</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=116" target="_blank">Dashboard</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=132" target="_blank">FAQ</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=159" target="_blank">Twitter</a>
+     </li>
+</ul><strong>Community</strong>
+<ul>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=131" target="_blank">Forum</a>
+     </li>
+</ul><strong>Developer</strong>
+<ul>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=199" target="_blank">Account Info</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=169" target="_blank">App Manager</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=198" target="_blank">Registration</a>
+     </li>
+</ul>
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/30/3taps-api-review/">3Taps API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/11/etsy-api-review/">Etsy API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/13/hunch-api-review/">Hunch API Review</a> (apievangelist.com)
+     </li>
+</ul>
 

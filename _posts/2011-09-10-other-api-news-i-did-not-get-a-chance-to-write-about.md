@@ -6,6 +6,33 @@ source: http://apievangelist.com2011/09/10/other-api-news-i-did-not-get-a-chance
 domain: apievangelist.com2011
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-e-commerce.jpg
 ---
-{% include JB/setup %}<p>Here are a couple news stories from the week that I didnt get a chance to write about.Google APIs Client Library for PHP - Google launches a new set of PHP Client LIbraries that work across multiple Google APIs including Buzz, Books, Latitude, Page Speed, Tasks and URL Shortener.Breaking Down E-Commerce APIs- An amazing breakdown of E-Commerce APIs by Marc Mezzecca,, founder of NextGen Shopping, over at ProgrammableWeb.Madison Transit API Homebrew - A great story about hacking together an API for the Madison Transit, by scraping their website site and abstracting an interface that developers can really use.  Google+ API Not Close …Unless You’re “Trusted”, Then It’s Ready - Techcrunch let us know that their is a Google+ API, and if you happen to be what Google considers a “Trusted Tester”, you could be getting access to the API much sooner.</p>
-<center><p><a href="http://apievangelist.com2011/09/10/other-api-news-i-did-not-get-a-chance-to-write-about/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="http://blog.programmableweb.com/wp-content/ecommerce01.jpg"  width="200" align="right" />
+</p>
+<p>
+     Here are a couple news stories from the week that I didn't get a chance to write about.
+</p>
+<ul>
+     <li>
+          <strong><a title="Google APIs Client Library for PHP" href="http://googlecode.blogspot.com/2011/09/google-apis-client-library-for-php-beta.html">Google APIs Client Library for PHP</a></strong> - Google launches a new set of PHP Client LIbraries that work across multiple Google APIs including Buzz, Books, Latitude, Page Speed, Tasks and URL Shortener.
+     </li>
+     <li>
+          <strong><a title="Breaking Down E-Commerce APIs" href="http://blog.programmableweb.com/2011/09/09/breaking-down-e-commerce-apis/">Breaking Down E-Commerce APIs</a>-</strong> An amazing breakdown of E-Commerce APIs by Marc Mezzecca,, founder of NextGen Shopping, over at ProgrammableWeb.
+     </li>
+     <li>
+          <strong><a title="Madison Transit API Homebrew" href="http://www.gregtracy.com/56599543">Madison Transit API Homebrew</a></strong> - A great story about hacking together an API for the Madison Transit, by scraping their website site and abstracting an interface that developers can really use.  
+     </li>
+     <li>
+          <strong><a title="Google+ API Not Close …Unless You’re “Trusted”, Then It’s Ready" href="http://techcrunch.com/2011/09/08/google-plus-api/">Google+ API Not Close …Unless You’re “Trusted”, Then It’s Ready</a></strong> - Techcrunch let us know that their is a Google+ API, and if you happen to be what Google considers a “Trusted Tester”, you could be getting access to the API much sooner. 
+     </li>
+     <li>
+          <strong><a title="Infochimps Acquires Keepstream" href="http://blog.infochimps.com/2011/09/07/infochimps-acquires-keepstream/">Infochimps Acquires Keepstream</a></strong> -  Infochimps purchase of social media curation and analytics company, Keepstream.
+     </li>
+</ul>
+<p>
+     Wish I had more time in each day.
+</p>
+<p>
+     Image Credit: <a href="http://www.programmableweb.com/">ProgrammableWeb</a>
+</p>
 

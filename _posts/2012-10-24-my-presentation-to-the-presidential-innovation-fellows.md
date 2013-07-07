@@ -6,6 +6,42 @@ source: http://apievangelist.com2012/10/24/my-presentation-to-the-presidential-i
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/PresidentialInnovationFellows.jpeg
 ---
-{% include JB/setup %}<p>I spent two hours with a handful of the Presidential Innovation Fellows in Washington DC yesterday.They were some super savvy folks from a wide variety of agencies and backgrounds including education, energy and health.During my two hours with them I walked through several areas of the API industry, from my perspective, including: History of APIs API Planning &amp; Design API Development Business of APIs API Service Providers API Tools, Services, Platforms Politics of APIs API Evangelism What’s Next for APIs You can access my innovation fellows presentation off API Evangelist, I’ll leave it up permanently.It’s minus all my commentary and banter, but hopefully it will give you an idea of what I covered.If you’d like a custom presentation on it, let me know and I’ll see if I can find a slot to do a Google Hangout.</p>
-<center><p><a href="http://apievangelist.com2012/10/24/my-presentation-to-the-presidential-innovation-fellows/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/federal-government/innovation-fellows/PresidentialInnovationFellows.jpeg"  width="250" align="right" />
+</p>
+<p>
+     I spent two hours with a handful of the <a href="http://www.whitehouse.gov/innovationfellows">Presidential Innovation Fellows</a> in Washington DC yesterday. They were some super savvy folks from a wide variety of agencies and backgrounds including education, energy and health.
+</p>
+<p>
+     During my two hours with them I walked through several areas of the API industry, from my perspective, including:
+</p>
+<ul>
+     <li>History of APIs
+     </li>
+     <li>API Planning &amp; Design
+     </li>
+     <li>API Development
+     </li>
+     <li>Business of APIs
+     </li>
+     <li>API Service Providers
+     </li>
+     <li>API Tools, Services, Platforms
+     </li>
+     <li>Politics of APIs
+     </li>
+     <li>API Evangelism
+     </li>
+     <li>What’s Next for APIs
+     </li>
+</ul>
+<p>
+     You can access my <a href="/federal-digital-strategy/innovation-fellows/">innovation fellows presentation off API Evangelist</a>, I’ll leave it up permanently. It’s minus all my commentary and banter, but hopefully it will give you an idea of what I covered. If you’d like a custom presentation on it, let me know and I’ll see if I can find a slot to do a Google Hangout.
+</p>
+<p>
+     I had a blast talking to the Presidential Fellows, and I hope that I left them with some value that will help them be successful in their various initiatives. They are already halfway through their sprint, and have a lot of expectations put on them.
+</p>
+<p>
+     I will be following their progress closely and publish any stories I can on their progress.
+</p>
 

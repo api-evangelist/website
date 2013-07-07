@@ -6,6 +6,42 @@ source: http://apievangelist.com2010/10/12/yahoo-answers-api-review/
 domain: apievangelist.com2010
 image: 
 ---
-{% include JB/setup %}<p>Yahoo!Answers is a community-driven question-and-answer (Q&amp;A) site that allows users to both submit questions to be answered and answer questions asked by other users.The site gives members the chance to earn points as a way to encourage participation.The Yahoo!Answers API is a RESTful API using an appID for authentication.</p>
-<center><p><a href="http://apievangelist.com2010/10/12/yahoo-answers-api-review/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/yahoo-answers-logo.gif"  width="250" align="right" /><a href="http://answers.yahoo.com/">Yahoo! Answers</a> is a community-driven question-and-answer (Q&amp;A) site that allows users to both submit questions to be answered and answer questions asked by other users. The site gives members the chance to earn points as a way to encourage participation.
+The <a href="http://developer.yahoo.com/answers/">Yahoo! Answers API</a> is a RESTful API using an appID for authentication. It provides a read only API for querying questions individually, by search, category, or by user. Yahoo! provides 12 language kits including Java, PHP, and VB.Net.
+<strong>Building Blocks:</strong>
+<blockquote>
+     <strong>Technology</strong>
+     <ul>
+          <li>RESTful API
+          </li>
+     </ul><strong>Documentation / Tools</strong>
+     <ul>
+          <li>API Reference
+          </li>
+          <li>SDK / Code Libraries
+          </li>
+          <li>Getting Started
+          </li>
+          <li>Rate Limits
+          </li>
+          <li>Terms of Use
+          </li>
+     </ul><strong>Support / Management</strong>
+     <ul>
+          <li>Email List
+          </li>
+          <li>Help Section
+          </li>
+     </ul><strong>Community</strong>
+     <ul>
+          <li>Forum (Yahoo Groups)
+          </li>
+     </ul><strong>Developer</strong>
+     <ul>
+          <li>Registration
+          </li>
+          <li>Account Info
+          </li>
+     </ul>
+</blockquote>
 

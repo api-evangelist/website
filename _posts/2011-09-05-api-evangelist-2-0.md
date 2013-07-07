@@ -6,6 +6,42 @@ source: http://apievangelist.com2011/09/05/api-evangelist-2.0/
 domain: apievangelist.com2011
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-logo-400.png
 ---
-{% include JB/setup %}<p>Sorry about the flood of 25 API Evangelist posts. It was due to the fact I switched to a new blogging system today.I was out growing what I could do with Wordpress, and had too much data and other research I need to link together to show the bigger picture of whats going on with APIs.API Evangelist has always been a hybrid Wordpress blog and custom CMS system system I wrote. Over the last couple months I rewrote my CMS, and re-lauched with 7 new systems: Blog Industries APIs  Building Blocks Service Providers Tools Events These content systems each have their own database, and are linked together by a central tagging system, and I have established relationships between each of the databases as necessary.</p>
-<center><p><a href="http://apievangelist.com2011/09/05/api-evangelist-2.0/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png"  width="300" align="right" />Sorry about the flood of 25 API Evangelist posts.  It was due to the fact I switched to a new blogging system today.
+</p>
+<p>
+     I was out growing what I could do with Wordpress, and had too much data and other research I need to link together to show the bigger picture of whats going on with APIs.<br />
+     <br />
+     API Evangelist has always been a hybrid Wordpress blog and custom CMS system system I wrote.  Over the last couple months I rewrote my CMS, and re-lauched with 7 new systems:
+</p>
+<ul>
+     <li>
+          <strong><a title="Blog" href="http://www.apievangelist.com/blog/">Blog</a></strong>
+     </li>
+     <li>
+          <strong><a title="Industries" href="http://www.apievangelist.com/industries/">Industries</a></strong>
+     </li>
+     <li>
+          <strong><a title="APIs" href="http://www.apievangelist.com/apis/">APIs</a> </strong>
+     </li>
+     <li>
+          <strong><a title="Building Blocks" href="http://www.apievangelist.com/buildingblocks/">Building Blocks</a></strong>
+     </li>
+     <li>
+          <strong><a title="Service Providers" href="http://www.apievangelist.com/serviceproviders/">Service Providers</a></strong>
+     </li>
+     <li>
+          <strong><a title="Tools" href="http://www.apievangelist.com/tools/">Tools</a></strong>
+     </li>
+     <li>
+          <strong><a title="Events" href="http://www.apievangelist.com/events/">Events</a></strong>
+     </li>
+</ul>
+<p>
+     These content systems each have their own database, and are linked together by a central tagging system, and I have established relationships between each of the databases as necessary.<br />
+     <br />
+     v2.0 allows me to store data I gather from around the web in a more structured way,  one that allows me to identify patterns and trends easier and also opens up more opportunities for discovery here on the site.<br />
+     <br />
+     I have a whole bunch of APIs, tools, services etc. to put into the system, but I couldn't wait anymore and wanted to launch the new site.  If you see any problems, <a title="let me know" href="../../contact.php">let me know please</a>. 
+</p>
 

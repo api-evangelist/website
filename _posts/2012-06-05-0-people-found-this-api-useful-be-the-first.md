@@ -6,6 +6,16 @@ source: http://apievangelist.com2012/06/05/0-people-found-this-api-useful-be-the
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/koordinates-api.png
 ---
-{% include JB/setup %}<p>I just wrote a post on how the iContact Developer Area delivers, and now for an API area that doesnt quite deliver.Notice the text in the bottom corner, 0 people found this useful.- Be the first!Default wiki settings might now always be the way to go, when your trying to deliver a marketing message about your API!</p>
-<center><p><a href="http://apievangelist.com2012/06/05/0-people-found-this-api-useful-be-the-first/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     I just wrote a post on how the <a title="iContact Developer Area delivers" href="/2012/06/05/icontact-developers-area-landing-page-delivers/">iContact Developer Area delivers</a>, and now for an API area that doesn't quite deliver.
+</p>
+<p>
+     <a href="http://support.koordinates.com/entries/20182888" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/koordinates-api.png"  width="590" /></a>
+</p>
+<p>
+     Notice the text in the bottom corner, <strong>0 people found this useful. - Be the first!</strong>
+</p>
+<p>
+     Default wiki settings might now always be the way to go, when your trying to deliver a marketing message about your API!
+</p>
 

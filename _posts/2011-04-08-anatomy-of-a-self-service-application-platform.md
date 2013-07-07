@@ -6,6 +6,28 @@ source: http://apievangelist.com2011/04/08/anatomy-of-a-self-service-application
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>In addition to the growth in number of APIs, and the evolution ofBizDev 2.0, there is a rise in self-service application platforms accompanying APIs, within many cloud platforms.Platforms such as Google Apps and Box.net are adding these self-service application development environments within their API ecosystem.Each platform has its own approach to this type of self-service architecture, but there are many similar characteristics: Applications - Interface for defining new application characteristics.</p>
-<center><p><a href="http://apievangelist.com2011/04/08/anatomy-of-a-self-service-application-platforms/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}In addition to the <a title="Growth in Number of APIs" href="http://blog.apievangelist.com/2011/03/08/programmable-web-3000-apis-and-growing/">growth in number of APIs</a>, and the evolution of<a title="BizDev 2.0" href="http://blog.apievangelist.com/2010/10/07/biz-dev-2-0/">BizDev 2.0</a>, there is a rise in self-service application platforms accompanying APIs, within many cloud platforms.
+Platforms such as <a title="Google Apps" href="http://blog.apievangelist.com/2011/04/08/google-apps-marketplace/">Google Apps</a> and <a title="Box.net" href="http://blog.apievangelist.com/2011/04/08/box-net-openbox/">Box.net</a> are adding these self-service application development environments within their API ecosystem.
+Each platform has its own approach to this type of self-service architecture, but there are many similar characteristics:<img src="http://kinlane-productions.s3.amazonaws.com/self-service.jpg"  width="250" align="right" />
+<ul>
+     <li>
+          <strong>Applications</strong> - Interface for defining new application characteristics.
+     </li>
+     <li>
+          <strong>OpenID / OAuth / User Resource Access</strong> - Secure and granular access to users profile and resources.
+     </li>
+     <li>
+          <strong>Development Environment</strong> - Controlled, secure environment for developers to build applications in.
+     </li>
+     <li>
+          <strong>Application Branding</strong> - Branding of application and its profile on a platform.
+     </li>
+     <li>
+          <strong>Application Approval Process</strong> - Approval process for bringing applications live.
+     </li>
+     <li>
+          <strong>Marketplace Environment</strong> - Public or private marketplaces for developers to publish applications and platform users to browse / add applications.
+     </li>
+</ul><a title="Salesforce" href="http://www.salesforce.com">Salesforce</a> is building in-roads into the enterprise using this model, and <a title="Facebook" href="http://www.kinlane.com/category/facebook/">Facebook</a> has found success with social gaming using a similar approach.
+APis have opened up new business development opportunities, self-service application platforms takes this development to a new level.
 

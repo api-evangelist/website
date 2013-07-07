@@ -6,6 +6,23 @@ source: http://apievangelist.com2011/02/15/use-google-apps-apis-without-being-a-
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Google just released the Google Apps Shell Interface (GASI), a graphical user interface for working with Google Apps APIs.GASI allows Google Apps administrators to make certain API calls through a graphical user interface without having to write programs.The GASI library provides a list of available commands to get going, as well as allowing command line interface.You can download Google Apps Shell Interface (GASI) from Google Code.Googles move reflects another important step towards making APIs usable by non-programmers and further democratizing the power of the API.</p>
-<center><p><a href="http://apievangelist.com2011/02/15/use-google-apps-apis-without-being-a-programmer/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://google-opensource.blogspot.com/2011/02/use-google-apps-apis-without-writing.html" target="_blank"><img src="http://4.bp.blogspot.com/-VHUtwDjR_-o/TVnGFPWQWfI/AAAAAAAAABg/6A0r7HBToVY/s400/image00.png"  width="350" align="right" /></a>Google just <a href="http://google-opensource.blogspot.com/2011/02/use-google-apps-apis-without-writing.html" target="_blank">released the Google Apps Shell Interface</a> (GASI), a graphical user interface for working with <a href="http://code.google.com/googleapps/" target="_blank">Google Apps APIs</a>.
+GASI allows Google Apps administrators to make certain API calls through a graphical user interface without having to write programs.
+The GASI library provides a list of available commands to get going, as well as allowing <a class="zem_slink" title="Command-line interface" rel="wikipedia" href="http://en.wikipedia.org/wiki/Command-line_interface">command line interface</a>.
+You can <a href="http://code.google.com/p/google-apps-shell/" target="_blank">download Google Apps Shell Interface</a> (GASI) from Google Code.
+Google's move reflects another important step towards making APIs usable by non-programmers and further democratizing the power of the API.
+<h6 class="zemanta-related-title c1">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/02/10/history-of-apis-birth-through-social/">History of APIs - Birth through Social</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.programmableweb.com/2011/02/15/cadmus-offers-algorithmic-twitter-feed-curation/">Cadmus Offers Algorithmic Twitter Feed Curation</a> (programmableweb.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.engadget.com/2011/02/11/google-details-low-level-renderscript-api-for-honeycomb/?icid=zemanta">Google details low-level Renderscript API for Honeycomb</a> (engadget.com)
+     </li>
+</ul>
 

@@ -6,6 +6,15 @@ source: http://apievangelist.com2011/01/28/flattr-api-launch/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Flattr the social micro-payment site, made their API public today.The API comes in two flavors.Javascript API REST API Flattr provides application registration and authentication with oAuth.They also have a Flattr developers forum to support the community.</p>
-<center><p><a href="http://apievangelist.com2011/01/28/flattr-api-launch/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://flattr.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/flattr_logo.jpg"  width="150" align="right" /></a><a href="http://blog.flattr.net/2011/01/public-rest-api/" target="_blank">Flattr the social micro-payment site, made their API public today</a>.
+The API comes in two flavors.
+<ul>
+     <li>
+          <a href="http://flattr.com/support/integrate/js" target="_blank">Javascript API</a>
+     </li>
+     <li>
+          <a href="http://developers.flattr.net/" target="_blank">REST API</a>
+     </li>
+</ul>Flattr provides <a href="http://developers.flattr.net/doku.php/register_your_application" target="_blank">application registration</a> and <a href="http://developers.flattr.net/doku.php/about_oauth" target="_blank">authentication with oAuth</a>.
+They also have a <a href="http://forum.flattr.net/" target="_blank">Flattr developers forum</a> to support the community.
 

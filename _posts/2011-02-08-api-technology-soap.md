@@ -6,6 +6,22 @@ source: http://apievangelist.com2011/02/08/api-technology-soap/
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>SOAP, or Simple Object Access Protocol, is an XML-based protocol that allows applications to exchange information over the Internet using HTTP or RPC.SOAP uses Extensible Markup Language (XML) for its message format.The SOAP Messaging Framework consists of: Processing Model - Rules for processing a SOAP message Extensibility Model - SOAP features and SOAP modules Underlying Protocol Binding Framework - Rules for defining a binding to an underlying protocol that can be used for exchanging SOAP messages Message Construct - Structure of a SOAP message A SOAP message returning a users information might look like: SOAP was originally designed in 1998 as a Microsoft project and became a W3C Recommendation in June 2003.Even though SOAP has a long history with enterprise development, it has not seen the same adoption with the web 2.0 developer community, in no small part due to its complex and verbose nature.</p>
-<center><p><a href="http://apievangelist.com2011/02/08/api-technology-soap/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://oreilly.com/catalog/9780596000950"><img src="http://kinlane-productions.s3.amazonaws.com/SOAP.png"  width="250" align="right" /></a>SOAP, or <a class="zem_slink" title="SOAP" rel="wikipedia" href="http://en.wikipedia.org/wiki/SOAP">Simple Object Access Protocol</a>, is an XML-based protocol that allows applications to exchange information over the Internet using <a class="zem_slink" title="Hypertext Transfer Protocol" rel="wikipedia" href="http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a> or <a class="zem_slink" title="Remote procedure call" rel="wikipedia" href="http://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a>.
+SOAP uses Extensible Markup Language (XML) for its message format. The SOAP Messaging Framework consists of:
+<ul>
+     <li>
+          <strong>Processing Model</strong> - Rules for processing a SOAP message
+     </li>
+     <li>
+          <strong>Extensibility Model</strong> - SOAP features and SOAP modules
+     </li>
+     <li>
+          <strong>Underlying Protocol Binding Framework</strong> - Rules for defining a binding to an underlying protocol that can be used for exchanging SOAP messages
+     </li>
+     <li>
+          <strong>Message Construct</strong> - Structure of a SOAP message
+     </li>
+</ul>A SOAP message returning a users information might look like: SOAP was originally designed in 1998 as a Microsoft project and became a <a href="http://www.w3.org/TR/soap/" target="_blank">W3C Recommendation</a> in June 2003.
+Even though SOAP has a long history with enterprise development, it has not seen the same adoption with the web 2.0 developer community, in no small part due to its complex and verbose nature.
+SOAP is far from dead, but in the new generation of web-based APIs, RESTful interfaces returning JSON are fast replacing the bulky SOAP interfaces that returns XML.
 

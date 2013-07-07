@@ -6,6 +6,25 @@ source: http://apievangelist.com2012/05/15/developing-more-meaningful-api-metric
 domain: apievangelist.com2012
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-metrics.jpg
 ---
-{% include JB/setup %}<p>API metrics are an essential, but what should we measure?There are two metrics that seems to dominate discussions about success of the API industry: Number of New API Registration Number of Daily and Monthly API Calls Every API I’ve consulted with, use the same two metrics, if they have any at all.The tech blogosphere (driven by API service providers) have created a so call billionaires club, showcasing APIs that have over a billion API calls within a day or month.Investors are even using the number of API calls as a metric to consider the valuation of a company, and seen as a good indicator of the demand for a company’s services.I agree that new registrations and number of API calls are a start, but we should be able to identify many other metrics to truly measure the activity and success of an API and the sentiment of its API developer community.</p>
-<center><p><a href="http://apievangelist.com2012/05/15/developing-more-meaningful-api-metrics/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/metrics/api-metrics.jpg"  width="250" align="right" />
+</p>
+<p>
+     API metrics are an essential, but what should we measure? There are two metrics that seems to dominate discussions about success of the API industry:
+</p>
+<ul>
+     <li>Number of New API Registration
+     </li>
+     <li>Number of Daily and Monthly API Calls
+     </li>
+</ul>
+<p>
+     Every API I’ve consulted with, use the same two metrics, if they have any at all. The tech blogosphere (driven by <a title="API service proviers" href="http://apievangelist.com/serviceproviders/">API service providers</a>) have created a so call <a title="billionaires club" href="http://blog.programmableweb.com/2011/05/25/who-belongs-to-the-api-billionaires-club/">billionaires club</a>, showcasing APIs that have over a billion API calls within a day or month.
+</p>
+<p>
+     Investors are even using the number of API calls as a<a title="considered a metric you can use to consider the valuation of a company by investors" href="http://techcrunch.com/2012/01/03/kleiner-klout-30-million/"> metric to consider the valuation of a company</a>, and seen as a good indicator of the demand for a company’s services.
+</p>
+<p>
+     I agree that new registrations and number of API calls are a start, but we should be able to identify many other metrics to truly measure the activity and success of an API and the sentiment of it's API developer community.
+</p>
 

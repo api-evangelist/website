@@ -6,6 +6,8 @@ source: http://apievangelist.com2011/07/28/api-stack-audio-transcription-with-qu
 domain: apievangelist.com2011
 image: 
 ---
-{% include JB/setup %}<p>Quicktate provides an XML-RPC API audio transcription, using API keys for authentication.Using the Quicktate API, developers can transcribe.wav or.mp3 audio files into text.Quicktate API supports transcribing in English or Spanish.</p>
-<center><p><a href="http://apievangelist.com2011/07/28/api-stack-audio-transcription-with-quicktate-api/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+{% include JB/setup %}<a href="http://quicktate.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/quicktate/quicktate-logo.jpg"  width="200" align="right" /></a><a href="http://quicktate.com/" target="_blank">Quicktate</a> provides an XML-RPC API audio transcription, using API keys for authentication.
+Using the <a href="http://quicktate.com/quicktate/api.php">Quicktate API</a>, developers can transcribe .wav or .mp3 audio files into text. Quicktate API supports transcribing in English or Spanish.
+Quicktate API charges 1 1/4 cents per for general transcriptions, 1 1/2 cents for legal, and 2 cents per word for medical transcriptions.
+<a href="http://quicktate.com/quicktate/api.php">Quicktate API for audio transcription</a> is a perfect tool for the API Stack.
 
