@@ -6,19 +6,10 @@ source: http://apievangelist.com2012/11/02/discuss-the-api-strategy-practice-ses
 domain: apievangelist.com2012
 image: 
 ---
-{% include JB/setup %}<p>
-     <a href="http://www.apistrategyconference.com/"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-conference-logo.png"  width="200" align="right" /></a>
-</p>
-<p>
-     We are wasting no time getting the <a href="/">API Strategy &amp; Practice conference</a> back on track, after being put on hold because of hurricane Sandy. With the current status of New York City, it’s subways, airports, there is no way the event could have happened--we made the right decision to cancel.
-</p>
-<p>
-     We are currently discussing the best dates for rescheduling in January and February of 2013, and are hopeful that we will have date finalized next week.
-</p>
-<p>
-     While we are awaiting that process we figured we’d spend some time and discuss the session lineup for the conference. We are rather proud of the keynote, panel and session lineup we’ve pulled together, but we feel we can make it even better.
-</p>
-<p>
-     So we are going to hold a Google Hangout today at 11:30 AM PDT / 2:30 PM EDT, to discuss the API Strategy &amp; Practice session lineup and invite you to participate. If you’d like to be a participant in the hangout, email me at <a title="kinlane@gmail.com" href="mailto:kinlane@gmail.com">kinlane@gmail.com</a>and if you’d like to just watch the hangout, follow <a title="@apistrat" href="https://twitter.com/apistrat">@apistrat</a> and we’ll tweet out the Youtube link right before.
-</p>
+{% include JB/setup %}
+<p><a href="http://www.apistrategyconference.com/"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-conference-logo.png" alt="" width="200" align="right" /></a></p>
+<p>We are wasting no time getting the&nbsp;<a href="/">API Strategy &amp; Practice conference</a>&nbsp;back on track, after being put on hold because of hurricane Sandy. With the current status of New York City, it&rsquo;s subways, airports, there is no way the event could have happened--we made the right decision to cancel.</p>
+<p>We are currently discussing the best dates for rescheduling in January and February of 2013, and are hopeful that we will have date finalized next week.</p>
+<p>While we are awaiting that process we figured we&rsquo;d spend some time and discuss the session lineup for the conference. We are rather proud of the keynote, panel and session lineup we&rsquo;ve pulled together, but we feel we can make it even better.</p>
+<p>So we are going to hold a Google Hangout today at 11:30 AM PDT / 2:30 PM EDT, to discuss the API Strategy &amp; Practice session lineup and invite you to participate. If you&rsquo;d like to be a participant in the hangout, email me at&nbsp;<a title="kinlane@gmail.com" href="mailto:kinlane@gmail.com">kinlane@gmail.com</a>and if you&rsquo;d like to just watch the hangout, follow&nbsp;<a title="@apistrat" href="https://twitter.com/apistrat">@apistrat</a>&nbsp;and we&rsquo;ll tweet out the Youtube link right before.</p>
 

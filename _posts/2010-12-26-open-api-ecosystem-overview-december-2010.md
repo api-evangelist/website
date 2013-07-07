@@ -7,4 +7,8 @@ domain: apievangelist.com2010
 image: 
 ---
 {% include JB/setup %}
+</td>
+</tr>
+</tbody>
+</table>
 

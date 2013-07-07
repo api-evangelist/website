@@ -6,22 +6,11 @@ source: http://apievangelist.com2011/10/14/usa-today-announces-commercial-terms-
 domain: apievangelist.com2011
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/USA-Today-Logo.png
 ---
-{% include JB/setup %}<p>
-     <a title="USA Today" href="http://developer.usatoday.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/usatoday/USA-Today-Logo.png"  width="250" align="right" /></a>
-</p>
-<p>
-     <a title="USA Today" href="http://developer.usatoday.com/">USA Today</a> has announced that they now support the commercial access of articles, reviews and census data through their content APIs.
-</p>
-<p>
-     Any developer can request a key, and start making calls for free, with initial calls being restricted at a default rate. But as applications prove successful they are now willing to increase usage caps on a case-by-case basis. USA Today doesn’t describe what its commercial pricing will be, but they state in their <a title="Terms and Conditions" href="http://developer.usatoday.com/API_Terms_of_Use">terms and conditions</a>:
-</p>
-<blockquote>
-     If USAT decides to charge a fee for use of or access to the USAT APIs, such fees will be disclosed to you prior to USAT charging such fees to you.
-</blockquote>
-<p>
-     Every couple of months USA Today rolls out a new API or evolution in their business model, as they get more comfortable with their API. This latest move seems to seems to be centered around encouraging commercial of its census data, which the NY Times makes available for commercial use as well.
-</p>
-<p>
-     Its interesting to watch these media giants evolve their business models using APIs to make themselves more competitive.
-</p>
+{% include JB/setup %}
+<p><a title="USA Today" href="http://developer.usatoday.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/usatoday/USA-Today-Logo.png" alt="" width="250" align="right" /></a></p>
+<p><a title="USA Today" href="http://developer.usatoday.com/">USA Today</a> has announced that they now support the commercial access of articles, reviews and census data through their content APIs.</p>
+<p>Any developer can request a key, and start making calls for free, with initial calls being restricted at a default rate. But as applications prove successful they are now willing to increase usage caps on a case-by-case basis.   USA Today doesn&rsquo;t describe what its commercial pricing will be, but they state in their <a title="Terms and Conditions" href="http://developer.usatoday.com/API_Terms_of_Use">terms and conditions</a>:</p>
+<blockquote>If USAT decides to charge a fee for use of or access to the USAT APIs, such fees will be disclosed to you prior to USAT charging such fees to you.</blockquote>
+<p>Every couple of months USA Today rolls out a new API or evolution in their business model, as they get more comfortable with their API.  This latest move seems to seems to be centered around encouraging commercial of its census data, which the NY Times makes available for commercial use as well.</p>
+<p>Its interesting to watch these media giants evolve their business models using APIs to make themselves more competitive.</p>
 

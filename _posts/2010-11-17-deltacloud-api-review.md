@@ -6,24 +6,19 @@ source: http://apievangelist.com2010/11/17/deltacloud-review/
 domain: apievangelist.com2010
 image: 
 ---
-{% include JB/setup %}<img src="http://kinlane-productions.s3.amazonaws.com/cloud-computing/Deltacloud%20|%20Many%20Clouds.%20One%20API.%20No%20Problem..jpg"  align="right" /><a href="http://deltacloud.org">Deltacloud</a> provides aggregated access to multiple cloud computing platforms in a single web service. Deltacloud currently supports seven major cloud computing platforms including <a href="http://www.rackspacecloud.com/" target="_blank">Rackspace</a> and <a href="http://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a>.
-The Deltacloud API delivers a RESTful API using HTTP Authentication. The web service provides access to hardware profiles, realms, images, and instances. It provides a Ruby client, but no other language kits.
+{% include JB/setup %}
+<img style="padding: 10px;" src="http://kinlane-productions.s3.amazonaws.com/cloud-computing/Deltacloud | Many Clouds. One API. No Problem..jpg" alt="" align="right" /><a href="http://deltacloud.org">Deltacloud</a> provides aggregated access to multiple cloud computing platforms in a single web service.  Deltacloud currently supports seven major cloud computing platforms including <a href="http://www.rackspacecloud.com/" target="_blank">Rackspace</a> and <a href="http://aws.amazon.com/ec2/" target="_blank">Amazon EC2</a>.<p></p>
+The Deltacloud API delivers a RESTful API using HTTP Authentication.  The web service provides access to hardware profiles, realms, images, and instances.  It provides a Ruby client, but no other language kits.<p></p>
 Building Blocks:
-<ul>
-     <li>Overview
-     </li>
-     <li>Post-Install
-     </li>
-     <li>REST API
-     </li>
-     <li>Drivers
-     </li>
-     <li>Framework
-     </li>
-     <li>Ruby Client
-     </li>
-     <li>Image Builder
-     </li>
-</ul>The Deltacloud API is free and open source and is available under the LGPL and GPL and licenses.
+<ul class="mainlist">
+	<li>Overview</li>
+	<li>Post-Install</li>
+	<li>REST API</li>
+	<li>Drivers</li>
+	<li>Framework</li>
+	<li>Ruby Client</li>
+	<li>Image Builder</li>
+</ul>
+The Deltacloud API is free and open source and is available under the LGPL and GPL and licenses.<p></p>
 The Deltacloud API, along with its documentation, is available for download, and you can contribute and participate on the wiki.
 
