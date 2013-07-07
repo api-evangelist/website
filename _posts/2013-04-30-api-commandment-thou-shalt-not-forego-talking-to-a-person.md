@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Commandment: Thou Shalt Not Forego Talking to a Person
+title: API Commandment Thou Shalt Not Forego Talking to a Person
 url: http://apievangelist.com2013/04/30/api-commandment-thou-shalt-not-forego-talking-to-a-person/
 source: http://apievangelist.com2013/04/30/api-commandment-thou-shalt-not-forego-talking-to-a-person/
 domain: apievangelist.com2013
