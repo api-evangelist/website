@@ -18,7 +18,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      Day 1
 </h3>
 <p>
-     <strong>Keynote: <strong id="internal-source-marker_0.0019516758620738983">Laura Merling (<a href="https://twitter.com/magicmerl">@magicmerl</a>), VP Ecosystems and Solutions at AT&amp;T (<a href="/2013NYC/sessions/laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform.php" target="_blank">Slides</a>)</strong></strong>
+     <strong>Keynote: <strong >Laura Merling (<a href="https://twitter.com/magicmerl">@magicmerl</a>), VP Ecosystems and Solutions at AT&amp;T (<a href="/2013NYC/sessions/laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform.php" target="_blank">Slides</a>)</strong></strong>
 </p>
 <p>
      <strong>Track 1 - Music</strong>

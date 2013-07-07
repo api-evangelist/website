@@ -38,9 +38,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      All federal agency were directed to develop a digital strategy around open data and mobile, then publish it at their website in HTML, XML and JSON. So I got to work quantifying this. I wanted to understand which agencies had done this successfully. To begin I needed a list of federal agencies, which I was able to pull from the <a href="http://www.usa.gov/About/developer-resources/federal-agency-directory/index.shtml" target="_blank">Federal Agency Directory API</a>. Now I had a database of each agency name, abbreviation code and URL. Next I wrote a script that "pinged" each agencies URL and looked for http://[agencyname].gov/digitalstrategy.html, http://[agencyname].gov/digitalstrategy.xml and http://[agencyname].gov/digitalstrategy.json. I ran this script each night to see who had published their strategy.
 </p>
 <p>
-     Coming up on a year after the release of <a href="http://www.whitehouse.gov/the-press-office/2012/05/23/presidential-memorandum-building-21st-century-digital-government">Memorandum on Building a 21st Century Digital Government</a>, we have <span id="AgencyDigitalStrategyCount1">0 "agencies" that have published a digital strategy:
+     Coming up on a year after the release of <a href="http://www.whitehouse.gov/the-press-office/2012/05/23/presidential-memorandum-building-21st-century-digital-government">Memorandum on Building a 21st Century Digital Government</a>, we have <span >0 "agencies" that have published a digital strategy:
 </p>
-<table id="agencyListing">
+<table >
      <tbody>
           <tr>
                <td colspan="2">
@@ -64,9 +64,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </tbody>
 </table>
 <p>
-     Across these <span id="AgencyDigitalStrategyCount2">0 agencies, there are <span id="AgencyDigitalStrategy22Count">0 published datasets to support 2.2, which was to make high-value data and content in at least two existing major customer-facing systems available through web APIs, apply metadata tagging and publish a plan to transition additional high-value systems:
+     Across these <span >0 agencies, there are <span >0 published datasets to support 2.2, which was to make high-value data and content in at least two existing major customer-facing systems available through web APIs, apply metadata tagging and publish a plan to transition additional high-value systems:
 </p>
-<table id="agency21Listing">
+<table >
      <tbody>
           <tr>
                <td colspan="2">
@@ -90,9 +90,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </tbody>
 </table>
 <p>
-     Across these <span id="AgencyDigitalStrategyCount3">0 agencies, there are <span id="AgencyDigitalStrategy72Count">0 published services in support 7.2, which was intended to optimize at least two existing priority customer-facing services for mobile use and publish a plan for improving additional existing services:
+     Across these <span >0 agencies, there are <span >0 published services in support 7.2, which was intended to optimize at least two existing priority customer-facing services for mobile use and publish a plan for improving additional existing services:
 </p>
-<table id="agency71Listing">
+<table >
      <tbody>
           <tr>
                <td colspan="2">
