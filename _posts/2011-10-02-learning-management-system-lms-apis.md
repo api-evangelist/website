@@ -17,5 +17,28 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/lea
 <p>
      Here are the three LMS platforms that I've come across that have APIs:
 </p>
+<ul >
+     <li>
+          <a href="http://gls.agilix.com/Docs/Concept/Overview"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/BrainHoney-Logo.png"  width="150" align="right" /></a><a href="http://gls.agilix.com/Docs/Concept/Overview"><strong>BrainHoney</strong></a> – A learning management system providing course authoring, learning objective management, and gradebook management
+     </li>
+     <li>
+          <a href="http://apievangelist.com/apis/haiku_learning_system.php"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/haiku-logo.png"  width="150" align="right" /></a><a href="http://apievangelist.com/apis/haiku_learning_system.php"><strong>Haiku Learning System</strong></a> – Learning management system providing website design and development, listserve hosting, assignment dropboxes, and more for teachers to take classrooms online
+     </li>
+     <li>
+          <a href="http://help.litmos.com/developer-api/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/litmos-logo.png"  width="150" align="right" /></a><a href="http://help.litmos.com/developer-api/"><strong>Litmos</strong></a> – Litmos is a SCORM-certified, learning management system, that enables developers to connect their applications to the Litmos training engine, providing deeper integration of training data generated in Litmos with any other systems
+     </li>
+</ul>
+<p>
+     I find it pretty disturbing that only 3% of the learning management systems have APIs. APIs are essential not only to providing data portability for your customers, but can open up entirely new sales channels for an LMS provider.
+</p>
+<p>
+     A web API can enable other content systems and applications to incorporate your LMS into their application. An API will not give away your content or intellectual property, it will open it up and allow you to build new types of revenue channels with customers who might not have adopted your platform by itself, without seamless integration with their existing systems.
+</p>
+<p>
+     My <a title="research into the dcuation and learning management space" href="http://apievangelist.com/industries/education.php">research into the education and learning management</a> space is still in its infancy. If you know of any tools I should evaluate, please let me know. Whether its K-12, Higher Ed, or corporate learning, education is one space that dramatically benefit from the power of the API.
+</p>
+<p>
+     <strong>Update:</strong>  
+</p>
 
 
