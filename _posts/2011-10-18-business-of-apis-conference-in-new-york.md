@@ -9,7 +9,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Bus
      <a title="Business of APIs Conference" href="http://apiconference.com/"><img src="http://kinlane-productions.s3.amazonaws.com/events/Business-of-APIs-Conference-2011.png"  width="300" align="right" /></a>
 </p>
 <p>
-     I am getting ready for the <a title="Mashery" href="http://www.mashery.com">Mashery</a>, <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs (BAPI) Conference</a> in New York tomorrow.
+     I am getting ready for the <a title="Mashery" href="http://www.mashery.com">Mashery</a>, <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs Conference</a> in New York tomorrow.
 </p>
 <p>
      BAPI is in its 5th year of bringing together the big players in the API space, to talk about their companies API strategies, and their efforts to reinvent their businesses using APIs.
