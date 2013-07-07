@@ -1,0 +1,189 @@
+---
+layout: post
+title: APIStrat Slide Decks Added To Session Page
+url: http://apievangelist.com2013/03/12/apistrat-slide-decks-added-to-session-page/
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event-2-sold-out.png
+---
+{% include JB/setup %}<p>
+     <a href="http://www.apistrategyconference.com/"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-event-2-sold-out.png"  width="200" align="right" /></a>
+</p>
+<p>
+     I added the slide decks for the keynotes and sessions we have so far from <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> to the conference <a href="http://apistrategyconference.com/sessions.php">session page</a>. As soon as we get videos, I will be linking them on the session page as well.
+</p>
+<p>
+     Here is what we have for the two days of the conference.
+</p>
+<h3>
+     Day 1
+</h3>
+<p>
+     <strong>Keynote: <strong id="internal-source-marker_0.0019516758620738983">Laura Merling (<a href="https://twitter.com/magicmerl">@magicmerl</a>), VP Ecosystems and Solutions at AT&amp;T (<a href="/2013NYC/sessions/laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform.php" target="_blank">Slides</a>)</strong></strong>
+</p>
+<p>
+     <strong>Track 1 - Music</strong>
+</p>
+<ul>
+     <li>Paul Osman (<a href="http://twitter.com/paulosman">@paulosman</a>) of <a title="Soundcloud" href="http://soundcloud.com/">Soundcloud</a> (<a href="/2013NYC/sessions/paul-osman-building-soundcloud-on-the-soundcloud-api.php" target="_blank">Slides</a>)
+     </li>
+     <li>Evan Stein (<a href="https://twitter.com/steinevan">@SteinEvan</a>) of <a title="Decibel" href="http://decibel.net/">Decibel</a> (<a href="/2013NYC/sessions/evan-stein-creating-a-rich-api.php" target="_blank">Slides</a>)
+     </li>
+     <li>R. Kevin Nelson of <a href="http://www.rdio.com/">Rdio</a> (<a href="/2013NYC/sessions/r-kevin-nelson-rdio-api-the-future-of-music-apis.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 2 - Social</strong>
+</p>
+<ul>
+     <li>Tyler Singletary (<a href="http://www.twitter.com/harmophone/" target="_blank">@harmophone</a>) of <a title="Klout" href="http://klout.com/">Klout</a> (<a href="/2013NYC/sessions/tyler-singletary-platforming.php" target="_blank">Slides</a>)
+     </li>
+     <li>Tyler Stalder (<a href="https://twitter.com/tylerstalder">@tylerstalder</a>) of <a title="Singly" href="http://www.singly.com/" target="_blank">Singly</a> (<a href="/2013NYC/sessions/tyler-stalder-this-session-requires-a-valid-access-token.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 3 - API Design &amp; Creation</strong>
+</p>
+<ul>
+     <li>Jakub Nesetril (<a href="http://twitter.com/jakubnesetril/" target="_blank">@jakubnesetril</a>) of <a title="Apiary" href="http://apiary.io/">Apiary</a> (<a href="/2013NYC/sessions/jakub-nesetril-the-art-of-building-apis.php" target="_blank">Slides</a>)
+     </li>
+     <li>Tony Tam (<a href="http://twitter.com/fehguy/" target="_blank">@fehguy</a>) of <a title="Wordnik" href="http://www.wordnik.com/">Wordnik</a> /<a title="Swagger" href="http://swagger.wordnik.com/">Swagger</a> (<a href="/2013NYC/sessions/tony-tam-swagger-for-your-rest-api.php" target="_blank">Slides</a>)
+     </li>
+     <li>Kirsten Jones (<a href="https://twitter.com/synedra">@synedra</a>) of <a href="http://www.cisco.com/">Cisco</a> (<a href="/2013NYC/sessions/kirsten-jones-building-apis-for-developers.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 1 - Media</strong>
+</p>
+<ul>
+     <li>Jon Moore (<a href="http://twitter.com/jon_moore/" target="_blank">@jon_moore</a>) of <a title="Comcast" href="http://xfinity.comcast.net/">Comcast</a> (<a href="/2013NYC/sessions/jon-moore-hypermedia-apis-for-the-enterprise.php" target="_blank">Slides</a>)
+     </li>
+     <li>Anthony Cuellar (@<a href="https://twitter.com/Anthony_Connect">Anthony_Connect</a>) of <a title="Pearson" href="http://developer.pearson.com/">Pearson</a> (<a href="/2013NYC/sessions/anthony-cuellar-pearson.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 2 - Commerce</strong>
+</p>
+<ul>
+     <li>Matt Bishop (<a href="https://twitter.com/MattBishopL3">@MattBishopL3</a>) of <a title="Elastic Path" href="http://www.elasticpath.com/">Elastic Path</a> (<a href="/2013NYC/sessions/matt-bishop-apis-seek-ltrs.php" target="_blank">Slides</a>)
+     </li>
+     <li>Joe Rago (<a href="https://twitter.com/joerago">@joerago</a>) of <a href="http://www.walgreens.com/">Walgreens</a> (<a href="/2013NYC/sessions/joe-rago-putting-an-api-on-our-stores.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 3 - Automation</strong>
+</p>
+<ul>
+     <li>Nick Blanchard-Wright (<a href="https://twitter.com/pseudomammal">@pseudomammal</a>) of<a title="Temboo" href="https://www.temboo.com/">Temboo</a> (<a href="/2013NYC/sessions/nick-blanchard-wright-scaling-api-access.php" target="_blank">Slides</a>)
+     </li>
+     <li>Dave Goldberg (<a href="http://mce_host/admin/page/@davidgoldberg">@davidgoldberg</a>) of <a title="Ritc" href="http://getritc.com/">Ritc</a> (<a href="/2013NYC/sessions/dave-goldberg-api-automation-as-a-craft.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 1 - Travel</strong>
+</p>
+<ul>
+     <li>David White, SVP/GM of Data Services of<a href="http://www.flightstats.com/go/Home/home.do">FlightStats, Inc.</a> (<a href="/2013NYC/sessions/david-white-the-future-of-apis-in-travel.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 2 - Payments</strong>
+</p>
+<ul>
+     <li>Amber Feng (<a href="http://twitter.com/amfeng/" target="_blank">@amfeng</a>) of <a title="Stripe" href="https://stripe.com/">Stripe</a> (<a href="/2013NYC/sessions/amber-feng-building-stripes-api.php" target="_blank">Slides</a>)
+     </li>
+     <li>Michael Schonfeld (<a href="http://twitter.com/BaconSeason/" target="_blank">@BaconSeason</a>) of <a title="Dwolla" href="https://www.dwolla.com/">Dwolla</a>
+     </li>
+     <li>John Downey (<a href="https://twitter.com/jtdowney">@jtdowney</a>) of <a href="https://www.braintreepayments.com/">Braintree</a> (<a href="/2013NYC/sessions/john-downey-john-graham-mobile-future.php" target="_blank">Slides</a>)
+     </li>
+     <li>Praveen Alavilli (<a href="https://twitter.com/ppalavilli">@ppalavilli</a>) of <a title="Paypal" href="https://www.paypal.com/">Paypal</a> (<a href="/2013NYC/sessions/praveen-alavilli-providing-full-featured-payments-api-at-scale.php" target="_blank">Slides</a>)
+     </li>
+     <li>John Graham (<a href="https://twitter.com/JohnGraham262">@JohnGraham262</a>) of<a href="https://venmo.com/">Venmo</a> (<a href="https://www.dropbox.com/s/uif1i2c0mswlsda/Mobile-Future-API%20Strategy-Braintree-Venmo.pdf" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 3 - Security &amp; Scalability</strong>
+</p>
+<ul>
+     <li>Paul Madsen (<a href="https://twitter.com/pingidentity">@PingIdentity</a>) of  <a title="Ping Identitiy" href="https://www.pingidentity.com/">Ping Identity</a> (<a href="/2013NYC/sessions/paul-madsen-oauth-20-plays-well-with-others.php" target="_blank">Slides</a>)
+     </li>
+     <li>Travis Reeder (<a href="http://twitter.com/treeder/" target="_blank">@treeder</a>) of <a title="Iron.io" href="http://www.iron.io/">Iron.io</a> (<a href="https://docs.google.com/presentation/d/1TBj68czYmshN4ED16QXsIu0ms3PHk028s7lDVED9CcE/pub?start=false&amp;loop=false&amp;delayms=3000slide=id.p" target="_blank">Slides</a>)
+     </li>
+     <li>Andy Thurai (<a href="https://twitter.com/AndyThurai">@AndyThurai</a>) of <a title="Intel Security Gateways" href="http://blogs.intel.com/security-gateways/2011/09/13/essential_elements_of_api_mana/">Intel</a> (<a href="/2013NYC/sessions/andy-thurai-building-enterprise-grade-apis.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Keynote: Steve Klabnik(<a href="https://twitter.com/steveklabnik">@steveklabnik</a>) on "Why Open?" </strong>(<a href="/2013NYC/sessions/steve-klabnik-why-open.php" target="_blank">Slides</a>)
+</p>
+<h3>
+     Day 2
+</h3>
+<p>
+     <strong>Keynote: </strong>John Musser(<a href="https://twitter.com/johnmusser">@johnmusser</a>), Founder ProgrammableWeb (<a href="/2013NYC/sessions/john-musser-api-business-models.php" target="_blank">Slides</a>)
+</p>
+<p>
+     <strong><strong>Keynote: </strong>Daniel Jacobson(<a href="https://twitter.com/daniel_jacobson">@daniel_jacobson</a>), Director of API Engineering Netflix (<a href="/2013NYC/sessions/daniel-jacobson-the-structure-of-api-revolutions.php" target="_blank">Slides</a>)</strong>
+</p>
+<p>
+     <strong>Track 1 - Mobile</strong>
+</p>
+<ul>
+     <li>Andy Thurai (<a href="https://twitter.com/AndyThurai">@AndyThurai</a>) of <a title="Intel Security Gateways" href="http://blogs.intel.com/security-gateways/2011/09/13/essential_elements_of_api_mana/">Intel</a> (<a href="/2013NYC/sessions/andy-thurai-building-blocks-for-apis-mobile-ready.php" target="_blank">Slides</a>)
+     </li>
+     <li>Max Katz (<a href="http://twitter.com//" target="_blank">@maxkatz</a>) of <a title="Tiggzi" href="http://tiggzi.com/home">Tiggzi</a> (<a href="/2013NYC/sessions/max-katz-tiggzi-cloud-based-mobile-app-platform.php" target="_blank">Slides</a>)
+     </li>
+     <li>Marc Weil (<a href="http://twitter.com/marcweil/" target="_blank">@marcweil</a>) of <a title="Cloudmine" href="https://cloudmine.me/">Cloudmine</a> (<a href="/2013NYC/sessions/marc-weil-the-importance-of-reachability.php" target="_blank">Slides</a>)
+     </li>
+     <li>Miko Matasumura (<a href="http://twitter.com/mikojava/" target="_blank">@mikojava</a>) of <a title="Kii" href="http://www.kii.com/en/technology">Kii</a> (<a href="/2013NYC/sessions/miko-matsumura-we-help-apps-grow-into-global-business.php">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 3 - API Marketing and Promotion</strong>
+</p>
+<ul>
+     <li>Amit Jotwani (<a href="http://twitter.com/amit/" target="_blank">@amit</a>) of <a title="Mashery" href="http://www.mashery.com/">Mashery</a> (<a href="/2013NYC/sessions/amit-jotwani-unpacking-developer-experience.php" target="_blank">Slides</a>)
+     </li>
+     <li>Adam Duvander (<a href="https://twitter.com/adamd">@adamd</a>) of  <a title="ProgrammableWeb" href="http://www.programmableweb.com/">ProgrammableWeb</a> (<a href="/2013NYC/sessions/adam-duvander-make-your-api-irresistable.php" target="_blank">Slides</a>)
+     </li>
+     <li>Swift (<a href="http://twitter.com/SwiftAlphaOne/" target="_blank">@SwiftAlphaOne</a>) of <a title="SendGrid" href="http://sendgrid.com/">Sendgrid</a> (<a href="/2013NYC/sessions/swift-alpha-one-saving-hackathons.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 1 - Enterprise</strong>
+</p>
+<ul>
+     <li>Sumit Sharma (<a href="https://twitter.com/sumitcan">@sumitcan</a>) from<a href="http://mulesoft.com/">MuleSoft</a> (<a href="/2013NYC/sessions/sumit-sharma-enterprise-is-the-new-saas.php" target="_blank">Slides</a>)
+     </li>
+     <li>Bruno Pedro (@bpedro) CTO of <a href="https://cloudwork.com/" target="_blank">CloudWork </a>(<a href="http://www.slideshare.net/bpedro/bruno-pedrocloudwork" target="_blank">Slides</a>)
+     </li>
+     <li>Heather O’Sullivan of <a title="Target" href="http://www.target.com/" target="_blank">Target</a> (<a href="/2013NYC/sessions/heather-osullivan-logging-and-monitoring-apis.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 2 - Government</strong>
+</p>
+<ul>
+     <li>Mike Reich (<a href="http://twitter.com/therealreich/" target="_blank">@therealreich</a>) of <a title="Seabourne consulting" href="http://seabourneinc.com/">Seabourne</a> (<a href="/2013NYC/sessions/mike-reich-an-opportunity-for-gov-apis.php" target="_blank">Slides</a>)
+     </li>
+     <li>Chris Metcalf (<a href="http://twitter.com/chrismetcalf/" target="_blank">@chrismetcalf</a>) of <a title="Socrata" href="http://www.socrata.com/">Socrata</a> (<a href="/2013NYC/sessions/chris-metcalf-government-apis-open-innovation.php" target="_blank">Slides</a>)
+     </li>
+     <li>Gray Brooks of <a href="http://gsa.gov/">GSA</a> (<a href="/2013NYC/sessions/gray-brooks-apis-in-government.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong>Track 3 - API Lifecycle, Methodology and Architecture</strong>
+</p>
+<ul>
+     <li>Chris Haddad(<a href="http://twitter.com/cobiacomm/" target="_blank">@cobiacomm</a>) of <a title="WSO2 API Manager" href="http://wso2.com/products/api-manager/">WSO2</a> (<a href="/2013NYC/sessions/chris-haddad-adopt-an-api-product-mindset.php" target="_blank">Slides</a>)
+     </li>
+     <li>Pat Cappelaere (<a href="https://twitter.com/cappelaere">@cappelaere</a>) of <a title="Vightel" href="http://www.vightel.com/">Vightel Corporation</a> (<a href="/2013NYC/sessions/pat-cappelaere-is-it-api-time-for-a-new-strategy.php" target="_blank">Slides</a>)
+     </li>
+</ul>
+<p>
+     <strong><strong><strong>Keynote: </strong>John Sheehan<strong> (<a href="https://twitter.com/johnsheehan">@johnsheehan</a>)</strong>, <a title="IFTT" href="https://ifttt.com/">IFTTT</a> (<a href="/2013NYC/sessions/john-sheehan-apis-for-humans.php" target="_blank">Slides</a>)</strong></strong>
+</p>
+<p>
+     <strong><strong><strong><strong><strong>Keynote: </strong>Sanjiva Weerawarana (<a href="https://twitter.com/sanjiva">@sanjiva</a>) (<a href="/sanjiva-weerawarana-beyond-apis-creating-an-ecosystem-around-your-business.php" target="_blank">Slides</a>)</strong></strong></strong></strong>
+</p>
+<p>
+     <strong><strong><strong><strong><strong>Keynote: </strong>Gray Brooks, Senior API Strategist at the <a href="http://gsa.gov/">GSA</a> (<a href="https://www.dropbox.com/s/mbc6w9n6rdlnk61/APIStrategyConference-GrayBrooks-keynote.pdf" target="_blank">Slides</a>)</strong></strong></strong></strong>
+</p>
+
