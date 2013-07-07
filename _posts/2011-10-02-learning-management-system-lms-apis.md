@@ -45,7 +45,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/lea
 </p>
 <ul >
      <li>
-          <a href="https://confluence.sakaiproject.org/dosearchsite.action?queryString=api"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/sakainew_logo.png"  width="75" align="right" /></a><a title="Sakai" href="https://confluence.sakaiproject.org/dosearchsite.action?queryString=api"><strong>Sakai</strong></a> - The Sakai community develops open software to support teaching, learning and research.  The global community comes together to define needs of academic users, create software tools, share best practices and pool knowledge and resources in support of this goal.
+          HERE - The Sakai community develops open software to support teaching, learning and research.  The global community comes together to define needs of academic users, create software tools, share best practices and pool knowledge and resources in support of this goal.
      </li>
 </ul>
 
