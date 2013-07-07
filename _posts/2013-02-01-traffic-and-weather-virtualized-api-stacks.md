@@ -40,5 +40,4 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tra
 </p>
 <p>
      With that said, I fuck’n love that you guys are doing this! Makes me happy!  Thanks John and Steve!
-</p>
-
+</p>
