@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'History of APIs Twitter'
+url: 'http://apievangelist.com2011/01/26/history-of-apis-twitter/'
+image: ''
+---
+{% include JB/setup %}
+<a href="http://blog.twitter.com/2006/09/introducing-twitter-api.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/twitter/Twitter-Introducing-The-Twitter-API.png"  width="300" align="right" /></a>On September 20, 2006 <a href="http://blog.twitter.com/2006/09/introducing-twitter-api.html" target="_blank">Twitter introduced the Twitter API to the world</a>.
+Much like the <a href="http://blog.apievangelist.com/2011/01/26/history-of-apis-ebay/" target="_blank">release of the eBay API</a>, Twitter's API release was in response to the growing usage of Twitter by those scraping the site or creating <a href="http://www.kinlane.com/2010/09/rogue-api-development/" target="_blank">rogue APIs</a>.
+Twitter exposed the <a href="http://www.apievangelist.com/api-detail.php?API_ID=1831">Twitter API</a> via a <a href="http://www.kinlane.com/">Restful</a> interface using <a href="http://www.apievangelist.com/definition-json.php">JSON</a> and <a href="http://www.apievangelist.com/definition-xml.php">XML</a>.
+In the beginning, Twitter used Basic Auth for API authentication, resulting the now infamous <a href="http://twitter.com/!/SNFLabs/status/16426051477" target="_blank">Twitter OAuth Apocalypse</a> almost four years later, when Twitter forced all those using the API to switch to OAuth.
+In four short years Twitters API has become the center of countless desktop clients, <a href="http://www.kinlane.com/category/mobile/">mobile</a> applications, web apps, and businesses -- even by Twitter itself, in its IPhone, IPad, Android apps via its public website.
+
