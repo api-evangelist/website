@@ -1,0 +1,11 @@
+---
+layout: post
+title: API Craft Washington DC
+url: http://apievangelist.com2012/08/18/api-craft-washington-dc/
+source: http://apievangelist.com2012/08/18/api-craft-washington-dc/
+domain: apievangelist.com2012
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Craft-DC-August-2012.jpg
+---
+{% include JB/setup %}<p>Continuing my API Craft road show, I landed in Washington DC for the second week in August.As I planned my trip to the nations capital, I planted the seeds for an API Craft DC version.I chose a popular H Street watering hole, the Queen Vic to host the event, and in tune with API Craft PDX and API Craft SFO about 10-15 people showed up to drink beer and discuss APIs, DC Style.I was impressed with not just the energy for APIs in DC, but the startup buzz occurring in a city, many like to associate with slow moving government bureaucracy.API Craft DC brought out one API Service Provider APIphany, and an assortment of companies that contract for the government and several other private companies including API geeks from QVC.</p>
+<center><p><a href="http://apievangelist.com2012/08/18/api-craft-washington-dc/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

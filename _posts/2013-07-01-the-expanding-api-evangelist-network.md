@@ -1,0 +1,11 @@
+---
+layout: post
+title: The Expanding API Evangelist Network
+url: http://apievangelist.com2013/07/01/the-expanding-api-evangelist-network/
+source: http://apievangelist.com2013/07/01/the-expanding-api-evangelist-network/
+domain: apievangelist.com2013
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_InApiWeTrust-1000.png
+---
+{% include JB/setup %}<p>As the API universe expands, Im trying my best to stay in tune with where its going and try to help people understand the space, whether you are a newbie or API veteran--I want you to find what you are looking for at API Evangelist.To support the fast moving space, as well as my ADHD working style, Ive broken up API Evangelist into individual projects.Each project runs using my Hacker Storytelling format, which in short means each projects lives as a Githb repository, allowing me to publish the research, data, short form and long form content to an open source repository that anyone can browse, fork and download.To help you (and me) see the entire API Evangelist network, i wanted to publish an outline of all 37 projects Im curently working on: API 101 API 101 History of APIs API Management Using Github Provide APIs (Landing Page) Design Deployment Management Evangelism * Monetization * Security * Embeddable * Consume APIs (Landing Page) Discovery Integration Operations * The API Stack Backend as a Service (BaaS) Resource Stack (NEW) Payments * Social * Trends (Landing Page) Aggregation Reciprocity Real Time Single Page Applications Voice Opportunities (Landing Page) 3D Printing Home Buildings Automobiles Quantified Self Priorities (Landing Page) Federal Government State Government * City Government Education Healthcare University Libraries Data Analyze * Archive * Visualize * * Projects that are still in progress of being setup My goal with this new format that Ive rolled out over the last six months, is to give me specific project areas to do research within, each week.Some projects will get love an attention, while others will simmer in the background--moving everything forward in small chunks.</p>
+<center><p><a href="http://apievangelist.com2013/07/01/the-expanding-api-evangelist-network/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

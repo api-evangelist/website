@@ -1,0 +1,11 @@
+---
+layout: post
+title: January 2012 Hackathons December 26th 2011
+url: http://apievangelist.com2011/12/26/january-2012-hackathons-december-26th,-2011/
+source: http://apievangelist.com2011/12/26/january-2012-hackathons-december-26th,-2011/
+domain: apievangelist.com2011
+image: 
+---
+{% include JB/setup %}<p>Here is the latest update of the hackathons Im tracking on for January.You can view these on the events page and I have a Google Calendar you can subscribe to.I added 13 new hackathons, doubling the number of hackathons in January to 26!Designing &amp; Developing for Mobile Workshop 01/07/2012 San FranciscoUnited States NYC BigApps 3.0 Developer Day 01/07/2012 New YorkUnited States AT&amp;T Mobile App Hackathon Las Vegas 01/08/2012 Las VegasUnited States PDX Weekly Hackathon 01/12/2012 PortlandUnited States Northern Kentucky Startup Weekend 01/13 01/13/2012 Highland HeightsUnited States Seattle Startup Weekend 1/12 01/13/2012 SeattleUnited States West Michigan Startup Weekend 1/12 01/13/2012 Grand RapidsUnited States Arduino Camp &amp; Robot Hackathon 01/14/2012 New YorkUnited States Facebook Mobile Hack - New York 01/18/2012 New YorkUnited States CodeChix Presents: Mobile/Web Graphic Design for Engineers (Women only) 01/18/2012 Mountain ViewUnited States Hackathon for Social Good 01/19/2012 New YorkUnited States Wikipedia - San Francisco Hackathon January 2012 01/20/2012 San FranciscoUnited States Haskell Hackathon 01/20/2012 CambridgeUnited States Facebook Mobile Hack - Boston 01/20/2012 BostonUnited States CityCampHNL Hackathon 01/20/2012 HonoluluUnited States Startup Weekend Ann Arbor 01/20/2012 Ann ArborUnited States Jacksonville Startup Weekend 01/20/2012 JacksonvilleUnited States Startup Weekend SLO 01/20/2012 San Luis ObispoUnited States Cleanweb Hackathon NYC 01/21/2012 New YorkUnited States the Muther Michigan Hackathon and Dev Con 01/27/2012 DetroitUnited States SpinKick - Kickstarting Mobile Apps for Your Business!</p>
+<center><p><a href="http://apievangelist.com2011/12/26/january-2012-hackathons-december-26th,-2011/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

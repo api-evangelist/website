@@ -1,0 +1,11 @@
+---
+layout: post
+title: What Drives Me Crazy When Integrating With a New API
+url: http://apievangelist.com2012/09/08/what-drives-me-crazy-when-integrating-with-a-new-api/
+source: http://apievangelist.com2012/09/08/what-drives-me-crazy-when-integrating-with-a-new-api/
+domain: apievangelist.com2012
+image: 
+---
+{% include JB/setup %}<p>I was directed to an API question today, that needs to be asked constantly in the space: What’s your biggest web API pet peeve?What drives you crazy when integrating with a new API?— Wynn Netherland (@pengwynn) September 8, 2012 My response was: Reply to @pengwynn my top 4 R 1) incomplete or cumbersome docs 2) lack of code samples 3)senseless rate limiting 4) no self-service reg — Kin Lane (@kinlane) September 8, 2012 This is such a relevant topic I wanted to continue the conversation by listing the top 10 things that drive me crazy when integrating with a new API: Incomplete or Cumbersome Documentation - Definitely something that will keep you from a achieving a successful integration and make you walk away from an API Lacking Code Samples &amp; Libraries - The programming language i’m using could vary from project to project, and the code samples and libraries can make or break my successful integration Senseless Rate Limiting - Rate limits are an essential part of API management, but placing of rate limits unecessarily and without pressure release options, doesn’t make sense No Self-Service Registration - As a developer, I need instant gratification.I need to know if an API will work for me, and getting started immediately will make the difference between using and walking away Reliability - I’m depending on an API, if its not reliable, I can’t depend on for my application.There are many aspects of API management that goes into reliability--spend the time to understand what it takes Terms of Use - Nothing stops a great application idea more than restrict terms of use.</p>
+<center><p><a href="http://apievangelist.com2012/09/08/what-drives-me-crazy-when-integrating-with-a-new-api/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

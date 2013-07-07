@@ -1,0 +1,11 @@
+---
+layout: post
+title: The Resource Stack
+url: http://apievangelist.com2013/07/01/the-resource-stack/
+source: http://apievangelist.com2013/07/01/the-resource-stack/
+domain: apievangelist.com2013
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Stack-Colored.png
+---
+{% include JB/setup %}<p>Ive been organizing much of my research around APIs into groupings that I call stacks.The term allows me to loosely bundle common API resources into meaningful stacks for my readers to learn about.Im adding a new project to my list of 30+ stacks, that is intended to bring together the most commonly used API resources, into a single, meaningful stack of resources any web or mobile developer can quickly put to use.So far I have compiled the following APIs in 29 separate groups: Compute Amazon EC2 Google AppEngine Heroku Storage Amazon S3 Dropbox Rackspace Cloud Files Database Amazon RDS Amazon SimpleDB DNS Amazon Route 53 Rackspace Cloud DNS DNS Made Easy DNSimple Email SendGrid Amazon SES Rackspace Email SMS Twilio AT&amp;T SMS MMS Mogreet AT&amp;T SMS Push Notifications Urban Airship AT&amp;T SMS Chat Skype Facebook Chat Google Talk Social Twitter Facebook Google+ LinkedIn Location Google Directions Google Distance Matrix Google Geocoding Google Latitude Geoloqi Photos Flickr Facebook Instagram Documents Box Google Drive Videos YouTube Flickr Facebook Viddler Vimeo Instagram Audio SoundCloud Mixcloud Music Echo Nest Rdio Mixcloud Notes Evernote Bookmarks Delicious Pinboard Blog Wordpress Blogger Tumblr Content ConvertAPI AlchemyAPI Contacts Google Facebook LinkedIn FullContact Businesses / Places Factual Google Places Checkins Foursquare Facebook Calendar Google Payments Dwolla Stripe Braintree Paypal Google Payments Analytics Google Mixpanel Advertising Adsense Adwords Facebook Twitter AdMob MobClix InMobi Real-time Google Real-time Firebase Pusher URL Shortener Bit.ly Google URL Shortener This is just a start.</p>
+<center><p><a href="http://apievangelist.com2013/07/01/the-resource-stack/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

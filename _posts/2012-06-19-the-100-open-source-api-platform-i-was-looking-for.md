@@ -1,0 +1,11 @@
+---
+layout: post
+title: The 100 Open Source API Platform I Was Looking For
+url: http://apievangelist.com2012/06/19/the-100-open-source-api-platform-i-was-looking-for/
+source: http://apievangelist.com2012/06/19/the-100-open-source-api-platform-i-was-looking-for/
+domain: apievangelist.com2012
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/WSO2-API-Manager-Logo.png
+---
+{% include JB/setup %}<p>This is a much quicker follow-up to last week’s post, Where Is The Open Source API Platform, than I anticipated.I just finished a demo of WSO2 API Manager, a completely open-source API management platform.I got quite a few emails and DM’s from folks after that post, and while there are other open-source API offerings like API Axle and Cumula (which I will write about separately), I was looking for a full platform tool, and it appears WSO2 is what I was looking for.WSO2 API Manager is a simple, easy to understand API platform, but has all the hardened enterprise goodness many of you will be looking for when it comes to security, governance, policy enforcement, etc.The platform is broken into three main buckets: API Gateway - To secure, protect, manage, and scale API calls API Publisher - Enables API providers to easily publish their APIs, share documentation, provision API keys, and gather feedback on APIs features, quality and usage API Store - Provides a space for consumers to discover APIs functionality, test APIs online, subscribe to APIs, evaluate them and interact with API publishers They break the API users into what I think are important target segments: API Creator - The technical owner of an API API Publisher - The business owner of an API API Consumer - The developer or consumer of an API I really like this distinction, because it acknowledges that many APIs are not born out of technical departments, and allows for duel ownership of any API from the technical and business disciplines-- which is very important to the success of an API.</p>
+<center><p><a href="http://apievangelist.com2012/06/19/the-100-open-source-api-platform-i-was-looking-for/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

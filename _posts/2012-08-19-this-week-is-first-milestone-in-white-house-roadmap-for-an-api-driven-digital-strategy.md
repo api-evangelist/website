@@ -1,0 +1,11 @@
+---
+layout: post
+title: This Week Is First Milestone in White House Roadmap for an API Driven Digital Strategy
+url: http://apievangelist.com2012/08/19/this-week-is-first-milestone-in-white-house-roadmap-for-an-api-driven-digital-strategy/
+source: http://apievangelist.com2012/08/19/this-week-is-first-milestone-in-white-house-roadmap-for-an-api-driven-digital-strategy/
+domain: apievangelist.com2012
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/US_white_house_logo.png
+---
+{% include JB/setup %}<p>It will be 3 months since the White House CiO Steven VanRoekel released a federal API strategy, entitled Digital Government: Building a 21st Century Platform to Better Serve the American People, part of the Executive Order 13571, directing all federal departments and agencies to make open data, content and web APIs the new default.This Thursday, August 23rd 2012 will be the first major milestone for departments and agencies, where they should have met two goals: 2.1 - Engage with customers to identify at least two existing major customer-facing services that contain high-value data or content as first-move candidates to make compliant with new open data, content, and web API policy 7.1 - Engage with customers to identify at least two existing priority customer-facing services to optimize for mobile use I’ve been monitoring 246 departments and agencies and so far three have released drafts of their strategy: Department of Commerce Department of Education (ED) United States Agency for International Development (USAID) While the Department of Commerce and Department of Education have only published paragraphs discussing how they are engaging with users, the United States Agency for International Development (USAID) has identified three datasets for the web API portion and two optimized for mobile use.All three have published their digital strategy in HTML, XML and JSON formats, meeting the requirements of machine readable by default.</p>
+<center><p><a href="http://apievangelist.com2012/08/19/this-week-is-first-milestone-in-white-house-roadmap-for-an-api-driven-digital-strategy/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

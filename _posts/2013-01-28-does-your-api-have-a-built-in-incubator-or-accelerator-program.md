@@ -1,0 +1,11 @@
+---
+layout: post
+title: Does Your API Have a Built in Incubator or Accelerator Program
+url: http://apievangelist.com2013/01/28/does-your-api-have-a-built-in-incubator-or-accelerator-program/
+source: http://apievangelist.com2013/01/28/does-your-api-have-a-built-in-incubator-or-accelerator-program/
+domain: apievangelist.com2013
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Nike-Accelerator.png
+---
+{% include JB/setup %}<p>API ecosystems are all about research &amp; development, and an opportunity for incubating ideas and apps in a way that invites 3rd party developers and companies to develop innovative ways of using your company assets and resources.I’ve discussed incubation within an API ecosystem before, and how companies are not just identifying developer talent and the best apps, but actually investing in companies via their API.A new example of this in action is Nikes launch of their Nike+ Accelerator--a partnership with TechStars that will host 10 companies for a three-month, immersive, mentor-driven startup accelerator designed to spur development on the NikeFuel, the Nike+ FuelBand, and Nike+ Running API platform.The 10 partner companies will be given the following: $20,000 Access to the Nike+ APIs, Nike+ mobile SDKs, and Nike+ FuelBand Dev Kit (Beta) - you will be among the first in the world to receive this access A Nike+ FuelBand for each team member Tech support from experienced developers whove built companies, or built with Nike+ Application Programming Interfaces (APIs) Code and solution reviews during the program Mentor sessions with Nike executives and leaders in the start-up community Two Investor Demo Days: one at the Nike World Headquarters and one in Silicon Valley Real Access to Decision Makers Then, at the end of the Nike+ Accelerator, each team will present to Nike executives, mentors, angel investors, venture capitalists, and tech industry leaders.As an API publisher have you considered a built-in accelerator or incubation program within your API ecosystem?</p>
+<center><p><a href="http://apievangelist.com2013/01/28/does-your-api-have-a-built-in-incubator-or-accelerator-program/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+

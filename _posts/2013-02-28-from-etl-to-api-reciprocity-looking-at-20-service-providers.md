@@ -1,0 +1,11 @@
+---
+layout: post
+title: From ETL to API Reciprocity Looking at 20 Service Providers
+url: http://apievangelist.com2013/02/28/from-etl-to-api-reciprocity,-looking-at-20-service-providers/
+source: http://apievangelist.com2013/02/28/from-etl-to-api-reciprocity,-looking-at-20-service-providers/
+domain: apievangelist.com2013
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png
+---
+{% include JB/setup %}<p>I spent time this week looking at 20, of what I’m calling API reciprocity providers, who are providing a new generation of what is historically known as ETL in the enterprise, to connect, transfer, transform and push data and content between the cloud services we are increasingly growing dependent on.With more and more of our lives existing in the cloud and via mobile devices, the need to migrate data and content between services will only grow more urgent.While ETL has all the necessary tools to accomplish the job, the cloud democratized IT resources, and the same will occur to ETL, making these tools accessible by the masses.There are quite a few ETL solutions, but I feel there are 3 solutions that are starting to make a migration towards an easier to understand and implement vision of ETL:   These providers are more robust, and provide much of the classic ETL tools the enterprise is used to, but also have the new emphasis on API driven services.But there are 10 new service providers I’m calling reciprocity platforms, that demonstrate the potential with offering very simple tasks, triggers and actions that can provide interaction between two or more API services: I consider reciprocity an evolution of ETL, because of three significant approaches: Simplicity - Simple, meaningful connections with transfer and tranformations that are meaningful to end users, not just a wide array of ETL building blocks an IT architect has to implement API - Reciprocity platforms expose meaningful connections users have the cloud services they depend on.</p>
+<center><p><a href="http://apievangelist.com2013/02/28/from-etl-to-api-reciprocity,-looking-at-20-service-providers/" style='padding:25px; font-sze:18px; font-weight: bold;'>Read Full Story</a></p></center>
+
