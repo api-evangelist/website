@@ -23,8 +23,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The
 <p>
      <a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/world-bank/World-Bank-Exernal-Debt-to-GDP-Ratio.png"  width="350" align="right" /></a>
 </p>
-<p>
-     According to the blog post, the World Bank maintains two quarterly databases of information on external and public sector debt of many countries. The blog post narrates what the statistical data from the <a href="http://worldbank.org/qeds">Quarterly External Debt Statistics</a> (QEDS) and the <a href="http://worldbank.org/qpsd">Public Sector Debt Statistics</a> (PSD) databases tell us about trends in debt levels of some high income and developing countries, while also providing us with links to the data sets and JavaScript charts (using <a href="http://www.tableausoftware.com">Tableau Software</a>) we can play with, making the story an interactive, hands-on experience.
-</p>
 
 
