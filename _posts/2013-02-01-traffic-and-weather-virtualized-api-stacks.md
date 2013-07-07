@@ -29,5 +29,16 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tra
 <p>
      So SendGrid won't be commoditized on Heroku?  Twilio won't be commoditzed on Azure?
 </p>
-
+<p>
+     Google your favorite API by name and add partners with, you will see API providers do care about partnering and reselling themselves, which brings you very close to the commodities line when you resell at that level.  What I'm suggesting could just be interpreted as reverse partnering, where a 3rd party platform integrates the API, rather than API seeking partnership--which we see with Singly, IFTT and Zapier, they don't ask for permission from every API provider.
+</p>
+<p>
+     While I listened further, the rest of the conversation had nothing to do with my post. I blame my storytelling, as I’m always trying to perfect how i articulate my visions and obviously I didn’t clearly get my point across. Since it was my first exploratory post on this subject, I will keep trying, and trying. 
+</p>
+<p>
+     I also have to call them out a bit, cause I heard standard over and over in the podcast, about building blocks, API interfaces and API definitions. But if you look at my post I never even used the word standard or standardizing or anything. So I think you guys read something that wasn’t there, cause I am the last API guy who believes in standardizing in the web API space.
+</p>
+<p>
+     With that said, I fuck’n love that you guys are doing this! Makes me happy!  Thanks John and Steve!
+</p>
 
