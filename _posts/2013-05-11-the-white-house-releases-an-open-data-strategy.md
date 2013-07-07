@@ -356,4 +356,16 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
           <strong>Tax Incentives</strong> - I've spent probably 150 hours in the last year working on government open data work.  None of it was paid.  As someone who does not seek a career in government, but will continue supporting from the private sector, I would really enjoy some sort of tax incentive to do so for my business or self employment
      </li>
 </ul>
+<p>
+     While I'm always looking toward the future, I am extremeley satisfied with leadership coming out of Washington when it comes to APIs. I'm also happy with the progress that has come out of the Digital Strategy over the last year, and I think the Open Data Policy provides a healthy and logical next step for federal agencies to take.
+</p>
+<p>
+     The Open Data Policy does an excellent job of addressing the technical, business and politics of APIs. While APIs, open data formats and other technical building blocks create a nice base, the policy also considers healthy data life cycles, engagement, outreach and support that will be critical to each agencies success. The Open Data Policy also provides the necessary licensing, security and educational elements that will be necessary to properly deliver on what can be some of the very political aspects of open data and APIs in the wild.
+</p>
+<p>
+     The administration's pragmatic and balanced approach to open data in government will significantly increase the chance for individual agency success with open data and increase the chance they will truly be able to assimiliate the principles and practices set forth by the Open Data Policy into the agency operational fabric.  When each individual within an agency embraces this, information management in the federal government will no longer be a technical or IT solution--every government worker, private sector partner, NGO and citizen will be a gear in an efficient, well lubricated, interoperable government engine that truly serves its people.
+</p>
+<p>
+     P.S.  If you really read all of this post, I thank you.  This whole process starts with my need to truly understand all of this and actually write code against as much of what the federal government is doing with APIs. I learn a lot along the way, and hope I am able to move the conversation forward.
+</p>
 
