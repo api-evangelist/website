@@ -20,8 +20,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The
 <p>
      If you look at the home page of the World Bank data site today, there is a link to the blog post, "<a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries">What does data tell us about debt of high income and developing countries?</a>" This is a great example of not just providing a dataset, but actually telling the story around the data, while providing tools that let you interact with the data, making everything a very hands on experience--increasing the chances users will make an emotional connection with the data.
 </p>
-<p>
-     <a href="http://blogs.worldbank.org/opendata/what-does-data-tell-us-about-debt-of-high-income-and-developing-countries" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/world-bank/World-Bank-Exernal-Debt-to-GDP-Ratio.png"  width="350" align="right" /></a>
-</p>
+
 
 
