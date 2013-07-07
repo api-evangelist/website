@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
 <p>
      Google has opted to go with two levels of API access:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Basic</strong> - Basic access is provided by default and allows up to 10,000 operations per day
      </li>

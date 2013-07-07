@@ -23,7 +23,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      With general definitions being:
 </p>
-<ol class="mainlist">
+<ol >
      <li>the persons who make up a body for the purpose of administering something
      </li>
      <li>the act of governing; exercising authority
@@ -32,7 +32,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      I think the illness around the word, when it is applied to APIs becomes clear when you start looking at the synonyms:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Governance</strong> - administration, authority, bureaucracy, command, control, direction, domination, dominion, empire, execution, executive, guidance, influence, jurisdiction, law, ministry, patronage, political practice, politics, polity, power, powers-that-be, predominanc
      </li>
@@ -49,7 +49,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-bad.png"  width="400" align="right" />
 </p>
-<ul>
+<ul >
      <li>administration
      </li>
      <li>authority
@@ -87,7 +87,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-good.png"  width="400" align="right" />
 </p>
-<ul>
+<ul >
      <li>direction
      </li>
      <li>execution

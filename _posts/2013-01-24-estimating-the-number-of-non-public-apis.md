@@ -61,7 +61,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDK
 <p>
      Our data analysis indicates that roughly half of web APIs are not public. Two factors to consider:
 </p>
-<ul>
+<ul >
      <li>The sample size is still fairly small. As time goes on and we get a larger sample size, we will improve the accuracy.
      </li>
      <li>Companies may be less inclined to hire outside writers for non-public APIs than for public APIs. This means that our data could easily result in an underestimation of non-public APIs.

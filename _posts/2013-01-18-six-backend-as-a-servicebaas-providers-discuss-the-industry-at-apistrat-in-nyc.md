@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
 <p>
      Beyond the research, stories and analysis on BaaS, I just added a <a href="http://www.apistrategyconference.com/2013/01/18/new-panel-at-apistrat-backend-as-a-service/">BaaS panel at the API Strategy &amp; Practice Conference in New York City, February 21st and 22nd</a>. The panel will include six of the leading BaaS platforms:
 </p>
-<ul>
+<ul >
      <li>Marc Weil (<a href="https://twitter.com/marcweil">@marcweil</a>) of <a href="https://cloudmine.me/" target="_blank">Cloudmine</a>
      </li>
      <li>James Tamplin (<a href="https://twitter.com/jamestamplin">@jamestamplin</a>) of <a href="https://www.firebase.com/" target="_blank">Firebase</a>

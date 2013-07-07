@@ -9,7 +9,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      Eduardo Basterrechea (<a href="https://twitter.com/ebaste">@ebaste</a>) of <a href="http://www.apicultur.com/en/" target="_blank">Apicultur</a>, tweeted at me the other day, something I found very interesting, and is a question I will be asking myself on a regular basis:
 </p>
 <div>
-     <blockquote class="twitter-tweet">
+     <blockquote >
           <p>
                Maybe at the end the APIs providers will only sell bandwidth. The kings will be the designers &amp; front end developers. cc @<a href="https://twitter.com/kinlane">kinlane</a>
           </p>— Eduardo Basterrechea (@ebaste) <a href="https://twitter.com/ebaste/status/341664809101705216">June 3, 2013</a>

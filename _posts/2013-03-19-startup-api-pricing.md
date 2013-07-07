@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/imp
 <p>
      I thought they provide a very honest peak into how they are pricing their services.  First off, they admit that they are a young company, which is cool, but they also lay out some pretty interesting points around their business philosophy::
 </p>
-<ul>
+<ul >
      <li>We are a free service. We will always provide a free-to-use tool
      </li>
      <li>We will introduce premium features. Some of these you may have to pay for
@@ -36,5 +36,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/imp
 <p>
      My goal isn't to pick on <a href="http://import.io/">Import.io</a>, but along with the other items they outline, I think all API startups should be openly discussing everything listed above.
 </p>
-<ul></ul>
+<ul ></ul>
 

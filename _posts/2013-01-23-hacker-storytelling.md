@@ -23,7 +23,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag
 <p>
      The process is based upon dwhat I already do, but uses a new blend of:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Pages</strong> - HTML, CSS and text that frames a site, project or research
      </li>
@@ -43,7 +43,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag
 <p>
      I use these formats to tell stories across my blog, but in 2012 I learned some new techniques with existing and new technology that  I have discovered, and will be employing a series of technologies that help me better deliver stories:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://pages.github.com/" target="_blank"><strong>Github Pages</strong></a> - A quick, easy and lightweight way to host websites on Github allowing anyone to build site with HTML, CSS and Javascript.
      </li>
@@ -66,7 +66,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag
 <p>
      Currently I have four projects who live in this new format and are hosted entirely on Github:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://theapistack.com">The API Stack</a>
      </li>

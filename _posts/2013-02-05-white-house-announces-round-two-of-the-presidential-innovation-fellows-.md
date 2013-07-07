@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pre
 <p>
      The second round of the Presidential Innovation Fellows will tackle the following initiatives:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Disaster Response &amp; Recovery</strong> - Collaboratively building and “pre-positioning" needed tech tools ahead of future emergencies or natural disasters in order to mitigate economic damage and save lives
      </li>

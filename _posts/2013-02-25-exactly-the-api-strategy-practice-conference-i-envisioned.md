@@ -38,7 +38,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      I did not get to attend as many of the sessions as I wished, and due to event coordination I wasn’t always present main stage to hear complete talks. But on Monday morning here is what’s fresh in my mind:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Laura Merling</strong> - Its great to see Laura’s approach to helping organize AT&amp;T’s API strategy. I look forward to closely following not just her strategy, but understand her tactical considerations for helping the telco giant successful navigate the API space.
      </li>

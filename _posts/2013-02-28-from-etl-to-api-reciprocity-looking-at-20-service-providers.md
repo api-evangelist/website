@@ -87,7 +87,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      I consider reciprocity an evolution of ETL, because of three significant approaches:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Simplicity</strong> - Simple, meaningful connections with transfer and tranformations that are meaningful to end users, not just a wide array of ETL building blocks an IT architect has to implement
      </li>
@@ -147,7 +147,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Triggers and actions represent the emotional connections that are the underpinnings of ETL’s evolution into a more meaningful, reciprocation of value that is emerging in the clouds. These new providers are connecting to the classic lineup of ETL interfaces to get things done:
 </p>
-<ul>
+<ul >
      <li>Databases
      </li>
      <li>Files
@@ -163,7 +163,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      All of these actions, tasks, formulas, jobs or other types of process require the ability to plan, execute and audit the processes, with providers offering:
 </p>
-<ul>
+<ul >
      <li>Scheduling
      </li>
      <li>History / Logging
@@ -174,7 +174,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With data being the lifeblood of much of these efforts, of course we will see “big data” specific tools as well:
 </p>
-<ul>
+<ul >
      <li>Synchronization
      </li>
      <li>Data Quality
@@ -187,7 +187,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      While many reciprocity providers are offering interoperability between two specific services, moving data and resource from point a to b, others are bringing in classic ETL transformations:
 </p>
-<ul>
+<ul >
      <li>Reformat
      </li>
      <li>Aggregate
@@ -212,7 +212,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      After the trigger and before the action, there is also an opportunity for other things to happen, with providers offering:
 </p>
-<ul>
+<ul >
      <li>Push
      </li>
      <li>Events
@@ -221,7 +221,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      During trigger, action or transformation there are plenty of opportunities for custom scripting and transofrmations, with several approaches to custom programming:
 </p>
-<ul>
+<ul >
      <li>Custom Scripts
      </li>
      <li>JavaScript
@@ -237,7 +237,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With the migration of critical resources, many of the leading providers are offering tools for testing the process before live execution:
 </p>
-<ul>
+<ul >
      <li>Test
      </li>
      <li>Debugger
@@ -250,7 +250,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      With any number of tasks or jobs in motion, users will need to understand whether the whole apparatus is working, with platforms offering tools for:
 </p>
-<ul>
+<ul >
      <li>Performance
      </li>
      <li>Monitoring
@@ -267,7 +267,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Even though reciprocity providers focus on the migration of resources in this new API driven, cloud-based world, several of them still offer dual solutions for deploying solutions in both environments:
 </p>
-<ul>
+<ul >
      <li>Cloud
      </li>
      <li>On-Premise
@@ -279,7 +279,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      Many of this new breed of providers are in beta and pricing  isn’t available. A handful have begun to apply cloud based pricing models, but most are still trying to understand the value of this new service and what market will bear. So far I’m seeing pricing based upon:
 </p>
-<ul>
+<ul >
      <li>Seat
      </li>
      <li>Assembly

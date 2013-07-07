@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dat
 <p>
      An example of this is with social data platform, <a href="http://datasift.github.io/">DataSift's new open source area</a>. DataSift has thrown up a Github page which re-enforces the company's commitment to consuming and producing open source software, as well as a list of important, Github driven signals:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Latest Updates</strong> - The latest repository updates acorss all of DataSift's repositories
      </li>

@@ -11,7 +11,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ene
 <p>
      Each federal agency should have three things available online at their domain:
 </p>
-<ul>
+<ul >
      <li>agency.gov/digitalstrategy/
      </li>
      <li>agency.gov/data

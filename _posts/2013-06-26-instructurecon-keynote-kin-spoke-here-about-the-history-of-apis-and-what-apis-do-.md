@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      To help understand how mainstream Internet technology has influenced the LMS and education portal history Audrey has laid out, I wanted to bring the history of the web API to the table, helping people understand what APIs do:
 </p>
-<ul>
+<ul >
      <li>APIs allow computers to talk to each other, and applications to inter-operate
      </li>
      <li>Websites deliver HTML for humans to read, and APIs deliver JSON for other applications to use
@@ -32,7 +32,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      The early API pioneers were looking to enable commerce around their products, sales efforts and auctions using early web enabled APIs:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="History of Salesforce API" href="http://www.apievangelist.com/2011/01/28/history-of-apis-salesforce-com/">2000 - Salesforce</a></strong> - The CRM and sales management provider Salesforce was the first pioneer to begin using web APIs to start developing an ecosystem of integration providers, planting the seeds of what we'd later call Platform as a Service (PaaS)
      </li>
@@ -46,7 +46,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      After this wave of commerce APIs, a new approach to interacting, collaborating and building relationships on the web emerged, introducing a new flavor of API driven platforms:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="History of Flickr API" href="/2011/02/09/history-of-apis-flickr-api/">2004 - Flickr</a></strong> - The founders of Flickr identified APIs a potential new approach to handling business development. Allowing partners a self-service way to integrate with the photo sharing platforms, allowing Flickr to use the API as a filter to help establish which companies they should partner with
      </li>
@@ -63,7 +63,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      As the social API phase continue to evolve with the introduction of platforms from Facebook and Twitter, an earlier API pioneer Amazon <a href="/2012/01/12/the-secret-to-amazons-success-internal-apis/">put APIs to use in a way that would change the way would develop software forever</a>.
 </p>
-<ul>
+<ul >
      <li>
           <strong><a href="http://www.apievangelist.com/2011/03/12/history-of-apis-amazon-s3/">2006 - Amazon Web Services</a></strong> - After Amazon found success with its e-commerce APIs, the company adopted APIs internally, an approach that would eventually evolve into a new type of API driven service we now know as cloud computing. AWS started with basic resources like storage and compute, but would rapidly to evolve and deliver a suite of API resources for companies to use in building all types of applications
      </li>
@@ -71,7 +71,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      There was one more ingredient necessary, before APIs would open up web portals that were established in the early days of the world wide web. A new type of phone was being developed, one that was smarter than earlier feature phones. The new generation of smart phones, led by Apple and its iPhone would legitimize APIs as the preferred channel for delivering the distributed resources that developers of web and mobile apps would need.
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="History of Foursquare APIs" href="http://www.apievangelist.com/2011/03/11/history-of-apis-foursquare-api/">2009 - Foursquare</a></strong> - The location-based social networking website for mobile devices emerged on the landscape providing developers with a set of APIs that they would need to build the localized apps for smart phones. Foursquare has made applications locally aware, and allowing mobile users to discover and checking to the local world around them
      </li>
@@ -82,7 +82,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      While APIs provided essential ingredients for web and mobile applications development like commerce, social and cloud it is also providing some other essential elements that deliver value to end-users.
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="API Integration" href="http://integration.apievangelist.com">Integration</a></strong> - APIs allow for integration between the multiple platforms and services we have adopted as part of our online, digital worlds. Integration in an online world is critical aspect of user adoption and the future growth of any online platform
      </li>
@@ -96,7 +96,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 <p>
      As this new approach to developing platforms has evovled, one that challenges earlier portals and platforms like AOL, other patterns emerge that are identified as successful ingredients of all next generation platforms. These are elements that aren't necessarily technical, but are critical components that allow often very technical resources to be accessed and used in a safe and secure way.
 </p>
-<ul>
+<ul >
      <li>
           <strong>Visibility</strong> - APIs provide partners, developers and end-users who are key stakeholders in a platform or portal the visibility they need to be educated and informed, providing a healthy base for any online community
      </li>

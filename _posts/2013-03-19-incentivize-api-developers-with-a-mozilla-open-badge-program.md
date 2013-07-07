@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/moz
 <p>
      Some examples badge-worthy milestones might be:
 </p>
-<ul>
+<ul >
      <li>Achieve X amount of API calls
      </li>
      <li>Published application to showcase

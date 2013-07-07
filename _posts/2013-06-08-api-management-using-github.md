@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 <p>
      I have documented eleven approaches to using Github for API management to date:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://apievangelist.com/2012/10/22/open-source-your-api-with-github/">Design and Code</a>
      </li>

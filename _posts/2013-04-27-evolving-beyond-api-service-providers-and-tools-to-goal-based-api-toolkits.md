@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uni
 <p>
      I’m abandoning this approach and dismantling these sections and breaking them into goal oriented stories:
 </p>
-<ul>
+<ul >
      <li>
           <a title="API Design" href="http://design.apievangelist.com" target="_blank">Design</a>
      </li>

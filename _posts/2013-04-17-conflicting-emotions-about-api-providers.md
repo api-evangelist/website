@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/con
 <p>
      I’ll start with what I consider to be the 2nd most important API of all time (1 being AWS), Twitter. I love / hate Twitter. They really deliver on everything around their API except in regards to:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Rate Limits</strong> - Their rate limits suck!
      </li>

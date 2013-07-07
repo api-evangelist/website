@@ -21,13 +21,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw
      <tbody>
           <tr>
                <td>
-                    <ul>
+                    <ul >
                          <li>API Evangelist
                          </li>
                          <li>History of APIs
                          </li>
                          <li>API Management
-                              <ul>
+                              <ul >
                                    <li>What It Was
                                    </li>
                                    <li>Design
@@ -45,7 +45,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw
                               </ul>
                          </li>
                          <li>API Consumption
-                              <ul>
+                              <ul >
                                    <li>What It Was
                                    </li>
                                    <li>Discovery
@@ -63,7 +63,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw
                               </ul>
                          </li>
                          <li>API Trends
-                              <ul>
+                              <ul >
                                    <li>Aggregation
                                    </li>
                                    <li>BaaS
@@ -77,7 +77,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw
                               </ul>
                          </li>
                          <li>ProgrammableWeb
-                              <ul>
+                              <ul >
                                    <li>Web
                                    </li>
                                    <li>Mobile
@@ -87,7 +87,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw
                               </ul>
                          </li>
                          <li>ProgrammableWorld
-                              <ul>
+                              <ul >
                                    <li>Quantified-Self
                                    </li>
                                    <li>Automobile

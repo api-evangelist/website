@@ -38,7 +38,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ope
 <p>
      If you are going to be at <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> next week, make sure and watch my Backend as a Service Panel with:
 </p>
-<ul>
+<ul >
      <li>Ilya Sukhar (<a href="https://twitter.com/ilyasu">@ilyasu</a>) of <a href="http://www.parse.com/" target="_blank">Parse</a>
      </li>
      <li>Morgan Bickle (<a href="https://twitter.com/morganbickle">@morganbickle</a>) of <a href="http://www.kinvey.com/" target="_blank">Kinvey</a>

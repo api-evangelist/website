@@ -24,37 +24,37 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Sma
      <tbody>
           <tr>
                <td>
-                    <a class="logo" href="http://smartbear.com/products/open-source-tools/soapui" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/soapUI/SoapUI.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
+                    <a  href="http://smartbear.com/products/open-source-tools/soapui" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/soapUI/SoapUI.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
                </td>
                <td>
                     <p>
-                         <a class="blue-arrow" href="http://smartbear.com/products/open-source-tools/soapui" target="_blank"><strong>SoapUI</strong></a> is a free and open source <a href="http://www.soapui.org/" target="_blank">cross-platform Functional Testing solution</a>. With an easy-to-use graphical interface, SoapUI allows you to easily and rapidly create and execute automated functional, regression, compliance, and load tests.
+                         <a  href="http://smartbear.com/products/open-source-tools/soapui" target="_blank"><strong>SoapUI</strong></a> is a free and open source <a href="http://www.soapui.org/" target="_blank">cross-platform Functional Testing solution</a>. With an easy-to-use graphical interface, SoapUI allows you to easily and rapidly create and execute automated functional, regression, compliance, and load tests.
                     </p>
                </td>
           </tr>
           <tr>
                <td>
-                    <a class="logo" href="http://smartbear.com/products/open-source-tools/loadui" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/loadUI/LoadUI.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
+                    <a  href="http://smartbear.com/products/open-source-tools/loadui" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/loadUI/LoadUI.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
                </td>
                <td>
                     <p>
-                         <a class="blue-arrow" href="http://smartbear.com/products/open-source-tools/loadui" target="_blank"><strong>LoadUI</strong></a> is a free, open source, <a href="http://www.loadui.org/" target="_target">Web Services load testing solution</a>. With a visual, drag-and-drop interface, it allows you to create, configure and redistribute your load tests interactively and in real-time. LoadUI supports all the standard protocols and technologies.
+                         <a  href="http://smartbear.com/products/open-source-tools/loadui" target="_blank"><strong>LoadUI</strong></a> is a free, open source, <a href="http://www.loadui.org/" target="_target">Web Services load testing solution</a>. With a visual, drag-and-drop interface, it allows you to create, configure and redistribute your load tests interactively and in real-time. LoadUI supports all the standard protocols and technologies.
                     </p>
                </td>
           </tr>
           <tr>
                <td>
-                    <a class="logo" href="http://smartbear.com/products/free-tools/DejaClick" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/DejaClick/DejaClick.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
+                    <a  href="http://smartbear.com/products/free-tools/DejaClick" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/DejaClick/DejaClick.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
                </td>
                <td>
                     <p>
-                         <a class="blue-arrow" href="http://smartbear.com/products/free-tools/DejaClick" target="_blank"><strong>DéjàClick</strong></a> is an easy-to-use and powerful addition to your web browser for web macro recording that turns multi-step web interactions into one-click super-bookmarks. Markup and annotate web pages, run web performance tests, and share recordings. Leverage those scripts with <a href="http://smartbear.com/products/web-monitoring/website-monitoring">AlertSite</a> to measure, diagnose, notify and report on web performance and user experience from an end-user perspective.
+                         <a  href="http://smartbear.com/products/free-tools/DejaClick" target="_blank"><strong>DéjàClick</strong></a> is an easy-to-use and powerful addition to your web browser for web macro recording that turns multi-step web interactions into one-click super-bookmarks. Markup and annotate web pages, run web performance tests, and share recordings. Leverage those scripts with <a href="http://smartbear.com/products/web-monitoring/website-monitoring">AlertSite</a> to measure, diagnose, notify and report on web performance and user experience from an end-user perspective.
                     </p>
                </td>
           </tr>
           <tr>
                <td>
-                    <a class="logo" href="http://smartbear.com/products/free-tools/AlertSite-for-Magento" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/Alertsite/AlertSite.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
+                    <a  href="http://smartbear.com/products/free-tools/AlertSite-for-Magento" target="_blank"><img src="http://smartbear.com/SmartBear/media/images/Products/Alertsite/AlertSite.jpg?width=198&amp;height=64&amp;ext=.jpg&amp;maxsidesize=200"  /></a>
                </td>
                <td>
                     <p>

@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/net
 <p>
      I love and believe in APIs, but I’m not delusional enough to think they will work magically everywhere they are applied. However, even with the closing of the public Netflix API, I consider Netflix is an API success story. Look what they’ve done with their internal and partner APIs. They’ve managed to scale not just from the data center to the cloud, but globally and across 800+ devices--while also <a href="http://techblog.netflix.com/">sharing this knowledge and wisdom with the public</a> via their blog:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://techblog.netflix.com/2013/03/public-continuous-integration-builds.html">Public Continuous Integration Builds for our OSS Projects</a>
      </li>
@@ -64,7 +64,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/net
 <p>
      If that wasn't enough, they are also <a href="https://github.com/netflix">open sourcing much of the technology</a> behind their approach:
 </p>
-<ul>
+<ul >
      <li>
           <a href="https://github.com/Netflix/eureka">eureka</a> - AWS Service registry for resilient mid-tier load balancing and failover
      </li>

@@ -54,7 +54,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 <p>
      The focal point ofReclaimYourDomain is a simple, six step wizard that will walk any user through owning their own domain: 
 </p>
-<ol class="olist">
+<ol >
      <li>
           <strong>Claim Your Domain</strong> - Allow users to select, purchase and setup domain
      </li>
@@ -77,7 +77,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 <p>
      When done running the ReclaimYourDomain wizard, the service will purchase a top level domain, setup a basic profile site for the user and configure the resources (like a blog), chosen during the wizard. Right now the only resource ReclaimYourDomain will offer is a blog, but will deliver in other resource areas in the future. To start I'd like to see several definitions of what a blog is:
 </p>
-<ul>
+<ul >
      <li>Blog @ Local Server with Wordpress
      </li>
      <li>Blog @ AWS EC2 Linux + Amazon RDS + Linux with Wordpress
@@ -116,7 +116,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 <p>
      <a title="Sir Edmund Hilary - Mount Cook by Vanessa (EY), on Flickr" href="http://www.flickr.com/photos/vanchett/424399237/"><img src="http://farm1.staticflickr.com/174/424399237_b60c7e1732.jpg" alt="Sir Edmund Hilary - Mount Cook" width="225" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <strong>Resources</strong> - The ability to add different resources like a blog, and configure what application is used and where the blog is hosted within their domain
      </li>
@@ -127,7 +127,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 <p>
      ReclaimYourDomain is designed to educate users about all the services we depend on, while providing the knowledge and tools to incrementally take control over their:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Online Domain</strong>
      </li>

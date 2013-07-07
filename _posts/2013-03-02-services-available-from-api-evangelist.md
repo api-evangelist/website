@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Adhoc
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Hang Out</strong> (15 minutes free then $40 every 15 minute increment) - Google Hangouts are a great way to interact.  Let's talk.  The first 15 minutes are always free, then let's dive deeper into your goals, the industry and anything API related you want to know.
      </li>
@@ -34,7 +34,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Writing
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Blog Posts</strong> - I love writing relevant blog posts.  If the topic area adds value to the community, and helps your company be heard I'm happy to blog away.
      </li>
@@ -48,7 +48,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Consulting
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Deployment</strong> ($100.00 / hr) - Let me help you plan your API deplokyment.  I can help offer a valuable perspective to balance your team with a little outside perspective. 
      </li>
@@ -65,7 +65,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Research
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Subsidize Existin</strong>g - Do you want to help make sure one of my existing <a title="projects" href="http://kinlane.com/projects.php">projects</a> or <a title="research" href="http://kinlane.com/research.php">research</a> are successful?  <a href="http://kinlane.com/contact/">Contact Me</a> and find out how to get involved.
      </li>
@@ -76,10 +76,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Subscription
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Standard Montlhy </strong>- $1,500.00
-          <ul>
+          <ul >
                <li>
                     <strong>Writing</strong> ($500.00) - Access to all of my long form content.  White papers, research, etc.
                </li>
@@ -107,7 +107,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Speaking
 </h2>
-<ul>
+<ul >
      <li>
           <strong>Events</strong> (<a href="http://kinlane.com/contact/">Contact Me</a>) - Let me know if you'd like me to speak at your conference, meetup or hackathon.
      </li>

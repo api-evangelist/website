@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ama
 <p>
      <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-dollar-sign-cloud.png"  width="100" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://www.google.com/ads/mobile/" target="_blank">Google Mobile</a>
      </li>
@@ -46,7 +46,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ama
 <p>
      <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-people-devices.png"  width="300" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://developers.facebook.com/docs/reference/ads-api/" target="_blank">Facebook</a>
      </li>

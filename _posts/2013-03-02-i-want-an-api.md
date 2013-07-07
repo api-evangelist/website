@@ -35,7 +35,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <p>
      When it comes to API deployment I would put users into two distinct groups:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Technical</strong> - You have skills and resources to architect, design, develop and deploy infrastructure, code to meet your API needs
      </li>
@@ -52,13 +52,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <p>
      You have some technical resources and the know how (or willingness to learn), and you want an API. Ideally there would be open source tools available for you to download and implement:
 </p>
-<ul>
+<ul >
      <li>CSV to API 
      </li>
      <li>Database to API
      </li>
      <li>Developer Portal 
-          <ul>
+          <ul >
                <li>Docs 
                </li>
                <li>Code 

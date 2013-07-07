@@ -27,7 +27,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/far
      I asked Dave what his thoughts are on this approach, in which he simply replied:
 </p>
 <div>
-     <blockquote class="twitter-tweet c2">
+     <blockquote >
           <p>
                @<a href="https://twitter.com/kinlane">kinlane</a> -- works like a dream
           </p>— Dave Winer ☮ (@davewiner) <a href="https://twitter.com/davewiner/status/337027957333827584">May 22, 2013</a>

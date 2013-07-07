@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/jud
 <p>
      After looking through a couple hundred APIs, I wanted to share some things that stand out, and make me feel someone really doesn't give a shit when they hit publish on their API:
 </p>
-<ul>
+<ul >
      <li>Your entire developer area is a PDF
      </li>
      <li>Really long, incoherent URL for dev area

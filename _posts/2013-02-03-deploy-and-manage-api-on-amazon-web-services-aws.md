@@ -26,7 +26,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
 <p>
      The 3Scale, AWS walk-though provides details for:
 </p>
-<ul>
+<ul >
      <li>Creating and configuring EC2 Instance
      </li>
      <li>Preparing Instance for Deployment

@@ -11,7 +11,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      Using Apiphany I can manage my APIs, and launch a portal which allows me to hang all my APIs, then manage all aspects of their operations. Apiphany focuses on the three main components of API deployment &amp; consumption:
 </p>
-<ul>
+<ul >
      <li>
           <strong>APIs</strong> - API resources and their operations you've deployed and would like to hang and manage via your Apiphany portal
      </li>
@@ -60,7 +60,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      <strong>Analytics</strong><br />
      Apiphany has added a pretty robust suite of API analytics that allow you manage the most common aspects of API operations, in the following three areas:
 </p>
-<ul>
+<ul >
      <li>Usage - Calls and bandwidth
      </li>
      <li>Health - Status code, cache and API response time

@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Nik
 <p>
      The 10 partner companies will be given the following:
 </p>
-<ul>
+<ul >
      <li>$20,000
      </li>
      <li>Access to the Nike+ APIs, Nike+ mobile SDKs, and Nike+ FuelBand Dev Kit (Beta) - you will be among the first in the world to receive this access

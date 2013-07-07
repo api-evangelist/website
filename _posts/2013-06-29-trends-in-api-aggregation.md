@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/agg
 <p>
      <a title="API Aggregation" href="http://aggregation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png"  width="250" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>Analytics
      </li>
      <li>Cloud Computing

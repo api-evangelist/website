@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 <p>
      To manage my projects and tell my stories, I'm using a handful of building blocks:
 </p>
-<ul>
+<ul >
      <li>Blog Posts
      </li>
      <li>Static Pages
@@ -44,7 +44,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 <p>
      The best part about these building blocks is that they only use, lightweight, open protocols:
 </p>
-<ul>
+<ul >
      <li>HTML
      </li>
      <li>CSS

@@ -73,7 +73,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
 <p>
      Only Stackmob, Kinvey, Kii and Quickblox are represented in the <a href="http://branch.com/b/apicalls-successtax">conversation on Branch</a>. So I wanted to see how each of the 20 BaaS providers I’m tracking on, structure their pricing:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://www.apiomat.com/" target="_blank">APIOMAT</a> - Beta, can't find
      </li>

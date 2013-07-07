@@ -14,37 +14,37 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/too
 <p>
      I've added a number of open source tools to my database lately.  But I know there are many more out  there.  So I put out on the Twitterz that I was looking for anything that is missing. Here is what I got:
 </p>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> <a title="http://runscope.com/oauth_tool" href="http://t.co/Wwk1Tzus">runscope.com/oauth_tool</a>
      </p>— John Sheehan (@johnsheehan) <a href="https://twitter.com/johnsheehan/status/297837952980090881">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> <a title="https://github.com/devo-ps/carte" href="https://t.co/ByyitCE8">github.com/devo-ps/carte</a>
      </p>— John Sheehan (@johnsheehan) <a href="https://twitter.com/johnsheehan/status/297838071062331392">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> I/O docs. what all do you want it to cover? i’d put requestb.in, localtunnel, hurl.it, @<a href="https://twitter.com/postmanclient">postmanclient</a>...
      </p>— John Sheehan (@johnsheehan) <a href="https://twitter.com/johnsheehan/status/297839139041202176">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> <a title="http://httpbin.org" href="http://t.co/kLPvwHWm">httpbin.org</a>, <a title="http://foauth.org" href="http://t.co/XnKkB8rB">foauth.org</a> as well
      </p>— John Sheehan (@johnsheehan) <a href="https://twitter.com/johnsheehan/status/297839175711981568">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/johnsheehan">johnsheehan</a> @<a href="https://twitter.com/kinlane">kinlane</a> and <a title="http://j.mp/WenvTn" href="http://t.co/q4gdDwZx">j.mp/WenvTn</a>
      </p>— Phil Leggetter (@leggetter) <a href="https://twitter.com/leggetter/status/297840321310646272">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> Fiddler.Can't work with HTTP on Windows and not have fiddler installed.
      </p>— Darrel Miller (@darrel_miller) <a href="https://twitter.com/darrel_miller/status/297842539019513856">February 2, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet">
+<blockquote >
      <p>
           @<a href="https://twitter.com/kinlane">kinlane</a> @<a href="https://twitter.com/darrel_miller">darrel_miller</a> in that case, Charles Proxy too
      </p>— John Sheehan (@johnsheehan) <a href="https://twitter.com/johnsheehan/status/297847719693803521">February 2, 2013</a>

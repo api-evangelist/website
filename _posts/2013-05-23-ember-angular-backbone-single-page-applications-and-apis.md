@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sin
 <p>
      He talks about the evolution towards Single Page Web Applications (SPA). Which is the migration from static web pages and database driven web apps to dynamically driven HTML, CSS and JavaScript apps designed using popular JavaScript frameworks and libraries like:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a href="http://emberjs.com/">Ember.js</a></strong> - Ember.js is an open-source client-side JavaScript web application framework based on the model-view-controller (MVC) software architectural pattern. It allows developers to create scalable single-page applications[1] by incorporating common idioms and best practices into a framework that provides a rich object model, declarative two-way data binding, computed properties, automatically-updating templates powered by Handlebars.js, and a router for managing application state
      </li>
@@ -31,7 +31,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sin
 <p>
      The popularity of frameworks and libraries like Ember, Angular and Backbone, and the Single Page Application approach isn't something just developers are noticing. Some top platforms are seeing the potential, and providing code and toolkits for integrating using Ember, Angular and Backbone:
 </p>
-<ul>
+<ul >
      <li>At <strong><a href="http://crowdflower.com/">Crowdflower</a></strong> with <a href="http://blog.crowdflower.com/2013/04/ember-js-at-crowdflower/">Ember.js at CrowdFlower</a>
      </li>
      <li>At <strong><a href="https://www.firebase.com/">Firebase</a></strong> with <a href="https://www.firebase.com/blog/2013-03-29-firebase-bindings-for-angular.html">Firebase Bindings for Angular</a> and <a href="https://www.firebase.com/blog/2013-01-29-backfire-firebase-bindings-for-backbonejs.html">Firebase Bindings for Backbone.js</a>

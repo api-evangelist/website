@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 <p>
      I currently have 13 endpoints providing access to the core of my platform, in 8 key areas:
 </p>
-<ul>
+<ul >
      <li>
           <strong>APIs</strong> - Name, logo and description of the 2K APIs I'm activtely monitoring
      </li>

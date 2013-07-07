@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/was
 <p>
      It looks like a pretty sweet linup of people, gathering for API meetup:
 </p>
-<ul>
+<ul >
      <li>18:00 - 18:30 Food, drinks and networking
      </li>
      <li>18:30 - 18:40 Welcome and introductions

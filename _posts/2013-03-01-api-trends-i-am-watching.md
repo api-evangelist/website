@@ -25,7 +25,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/top
 <p>
      To change things up a little I moved a couple of the most important trends in APIs out of the <a title="trends" href="/trends/">trends section</a>, and put them on the right hand menu, making them accessible from any page. There are four trends I think are important to how APIs are being used right now:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Aggregation</strong> - Merging various APIs together into not just meaningful new stacks of resources, but entirely new resources, as a result of merging
      </li>
@@ -48,7 +48,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/top
 <p>
      In addition to these four trends, I’m looking at several other ways APIs are being used in new and potentially powerful ways:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Voice</strong> - With the ubiquitous nature of mobile devices, voice is the next generation of discovering and interacting with valuable API resources
      </li>

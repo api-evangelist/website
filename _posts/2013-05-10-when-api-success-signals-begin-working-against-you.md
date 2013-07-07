@@ -23,7 +23,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      RESTful Labs provides API analytics tools for developers. I'm pretty stoked anytime I find something like this, then I immediately look at the common signals:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Blog</strong> - Check! - Last blog posted 11 months ago
      </li>

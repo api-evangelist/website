@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pri
 <p>
      While I may get excited about cloud computing APIs or quantified self APIs, there are other areas I think are straight up priorities--ones that we can't ignore. To support this I'm launching several research projects into areas I have labeled as API priorities:
 </p>
-<ul>
+<ul >
      <li>
           <a title="Federal Government" href="http://federal-government.apievangelist.com" target="_blank">Federal Government</a>
      </li>

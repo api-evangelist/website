@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      I break the history of APIs into 5 phases:
 </p>
-<ul>
+<ul >
      <li>Commerce
      </li>
      <li>Social

@@ -154,7 +154,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>User Management</strong>
      </p>
-     <ul>
+     <ul >
           <li>User
           </li>
           <li>User Roles
@@ -168,7 +168,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Data</strong>
      </p>
-     <ul>
+     <ul >
           <li>Table
           </li>
           <li>Relational
@@ -193,7 +193,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>File Management</strong>
      </p>
-     <ul>
+     <ul >
           <li>Storage
           </li>
           <li>Sync
@@ -202,7 +202,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Image &amp; Photo Management</strong>
      </p>
-     <ul>
+     <ul >
           <li>Storage
           </li>
           <li>Gallery &amp; Collections
@@ -216,7 +216,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Programmatic Interfaces</strong>
      </p>
-     <ul>
+     <ul >
           <li>Web Service Connectors
           </li>
           <li>REST API
@@ -229,7 +229,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Commerce</strong>
      </p>
-     <ul>
+     <ul >
           <li>Product Catalog
           </li>
           <li>Shopping Cart
@@ -238,7 +238,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Virtual Commerce</strong>
      </p>
-     <ul>
+     <ul >
           <li>In-App Purchases
           </li>
           <li>Custom Virtual Store 
@@ -253,7 +253,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Other Monetization</strong>
      </p>
-     <ul>
+     <ul >
           <li>Promotions
           </li>
           <li>Subscriptions
@@ -266,7 +266,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Ranking</strong>
      </p>
-     <ul>
+     <ul >
           <li>Recomendations
           </li>
           <li>Reviews
@@ -282,7 +282,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Communication</strong>
      </p>
-     <ul>
+     <ul >
           <li>SMS
           </li>
           <li>Email
@@ -311,7 +311,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Geo</strong>
      </p>
-     <ul>
+     <ul >
           <li>Spatial
           </li>
           <li>Location
@@ -324,7 +324,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Gaming</strong>
      </p>
-     <ul>
+     <ul >
           <li>Players
           </li>
           <li>Ranking
@@ -339,7 +339,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>3rd Party Integration</strong>
      </p>
-     <ul>
+     <ul >
           <li>Twitter
           </li>
           <li>Facebook
@@ -399,7 +399,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Availability</strong>
      </p>
-     <ul>
+     <ul >
           <li>Performance
           </li>
           <li>Scaling
@@ -410,7 +410,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Deployment</strong>
      </p>
-     <ul>
+     <ul >
           <li>On-Premise
           </li>
           <li>Virtual Private Cloud
@@ -421,7 +421,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Environment</strong>
      </p>
-     <ul>
+     <ul >
           <li>Sandbox
           </li>
           <li>Production
@@ -430,7 +430,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Utility</strong>
      </p>
-     <ul>
+     <ul >
           <li>Logging
           </li>
           <li>Backups
@@ -449,7 +449,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Mobile Devices</strong>
      </p>
-     <ul>
+     <ul >
           <li>iOS
           </li>
           <li>Android
@@ -462,14 +462,14 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Reader Devices</strong>
      </p>
-     <ul>
+     <ul >
           <li>Kindle
           </li>
      </ul>
      <p>
           <strong>Mobile Platforms</strong>
      </p>
-     <ul>
+     <ul >
           <li>PhoneGap
           </li>
           <li>Trigger.io
@@ -480,21 +480,21 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>App Frameworks</strong>
      </p>
-     <ul>
+     <ul >
           <li>ql.io
           </li>
      </ul>
      <p>
           <strong>Automation</strong>
      </p>
-     <ul>
+     <ul >
           <li>Temboo
           </li>
      </ul>
      <p>
           <strong>Languages</strong>
      </p>
-     <ul>
+     <ul >
           <li>JavaScript
           </li>
           <li>Java
@@ -514,7 +514,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Support</strong>
      </p>
-     <ul>
+     <ul >
           <li>Phone
           </li>
           <li>Web
@@ -532,7 +532,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baa
      <p>
           <strong>Pricing</strong>
      </p>
-     <ul>
+     <ul >
           <li>API Calls
           </li>
           <li>Push Notification

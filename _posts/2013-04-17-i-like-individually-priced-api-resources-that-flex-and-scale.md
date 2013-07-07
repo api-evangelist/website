@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/per
 <p>
      As a part of my regular review, I am looking at the differences in pricing between three key services:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a href="http://www.fullcontact.com/developer/">FullContact API</a> -</strong> I use FullContact for all my company and individual contact intelligence. I go through phases of light or heavy use depending on research projects I have going on. Full Contact provides me with per API call rates depending on the endpoint and call volume, and they limit me between four packages Trying It out (Free), Getting Started ($19/month), Gaining Traction ($99/month) and Rolling ($499/month)
      </li>

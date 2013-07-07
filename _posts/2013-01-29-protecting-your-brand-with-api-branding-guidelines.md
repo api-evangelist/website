@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pow
 <p>
      <a href="http://developer.active.com/branding_guidelines" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/Active-Network/Active-Branding-Guidelines.png"  width="325" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>The ACTIVE brand holds credibility in the mind of the customer. It serves as a seal of approval giving customers the confidence to transact through a trusted source
      </li>
      <li>As a consumer utility, ACTIVE.com® captures and records registration activity providing people with a record of their personal registration history if they need it at a future date
@@ -40,7 +40,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pow
 <p>
      Active Network also provides details on how to properly use their companies name (which I followed in my story), what attribution is required, and a complete branding kit for download as a zip file--containing the following key assets:
 </p>
-<ul>
+<ul >
      <li>Branding Guidelines in PDF Format
      </li>
      <li>Icon Image

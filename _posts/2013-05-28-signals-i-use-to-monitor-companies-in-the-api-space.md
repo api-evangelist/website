@@ -20,10 +20,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      In addition to sharing my stack each week, I'd like to also share the criteria I use to determine my stack.  Currently I bundle my signals into three areas:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Internal</strong> - Signals within control of the companies I'm monitoring
-          <ul>
+          <ul >
                <li>Has a Blog
                </li>
                <li>Number of Blog Posts
@@ -42,7 +42,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      </li>
      <li>
           <strong>External</strong> - Signals from the public, outside of the companies control that I'm monitoring
-          <ul>
+          <ul >
                <li>Number of Twitter Followers
                </li>
                <li>Number of @Mentions for Twitter
@@ -63,7 +63,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      </li>
      <li>
           <strong>Analyst</strong> - Signals that are dependent on what I personally see and feel is important
-          <ul>
+          <ul >
                <li>Curated News
                </li>
                <li>Curated News I Write Notes About

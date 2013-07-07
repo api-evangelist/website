@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      Apicultur recently shared some of the thinking behind the <a href="https://store.apicultur.com/site/pages/prices.jag" target="_blank">current version of their platform pricing</a> where they structure the price depending on three factors:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Complexity of the API</strong> - Some APIs perform a very simple task (like removing commas from a text) while others deal with more complex task (like extracting if the opinion expressed in a particular text is positive or negative)--the "bigger" the API, the pricier it gets
      </li>

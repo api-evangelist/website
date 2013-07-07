@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed
 <p>
      Even with the massive challenge ahead, I will be supporting FedAPI 100%, and doing what I can to make sure their initiative is successful. To do so, I think they will have to get two other groups involved:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Other API Aggregate Providers</strong> - FedAPI needs to make sure and reach out to Singly, Temboo, Adigami and the other API aggregators and see what they can learn, share knowledge and wisdom. Aside from FedAPI, all these providers need to work together and not re-invent the wheel when it comes to Auth and API connectors
      </li>

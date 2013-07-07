@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/stu
 <p>
      Studio Sketchpad, while still a work in progress has many of the essential elements I feel should be part of any learn to code with API tool.
 </p>
-<ul>
+<ul >
      <li>
           <strong>Learn By Yourself</strong> - You can select lessons and learn online at your own pace
      </li>

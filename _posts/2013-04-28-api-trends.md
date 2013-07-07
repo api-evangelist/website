@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tre
 <p>
      I have done this with four main areas I've seen trending in 2013:
 </p>
-<ul>
+<ul >
      <li>
           <a title="Aggregation" href="http://aggregation.apievangelist.com/" target="_blank">Aggregation</a>
      </li>

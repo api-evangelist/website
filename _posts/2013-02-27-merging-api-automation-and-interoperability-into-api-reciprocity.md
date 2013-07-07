@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rec
 <p>
      I have settled on the word reciprocity. The dictionary defines reciprocity as:
 </p>
-<ul>
+<ul >
      <li>the quality or state of being reciprocal : mutual dependence, action, or influence
      </li>
      <li>a mutual exchange of privileges; specifically : a recognition by one of two countries or institutions of the validity of licenses or privileges granted by the other

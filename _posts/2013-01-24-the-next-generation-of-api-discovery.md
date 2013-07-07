@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag
 <p>
      In 2013 there are even more ways to find APIs, new approaches that are looking to define the next generation of API discovery and consumption. Currently I’m tracking on 4 API directories in addition to ProgrammableWeb:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="APihub" href="http://www.apihub.com/">APIhub</a></strong> - APIhub is the best way to publish, discover and consume APIs. Search our database or browse through our most popular APIs
      </li>

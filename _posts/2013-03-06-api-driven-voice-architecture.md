@@ -26,7 +26,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/zyp
 <p>
      I hope Zypr is just heads down, working hard on their platform. According to my API stack rank, there aren’t very many positive signals coming out of the platform:
 </p>
-<ul>
+<ul >
      <li>Last Blog Post - 09/28/2012
      </li>
      <li>Last Tweet - 01/30/2013

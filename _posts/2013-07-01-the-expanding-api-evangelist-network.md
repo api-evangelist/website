@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      API 101
 </h3>
-<ul>
+<ul >
      <li>
           <a href="/index.php">API 101</a>
      </li>
@@ -34,7 +34,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Provide APIs (<a href="/provide/">Landing Page</a>)
 </h3>
-<ul>
+<ul >
      <li>
           <a href="http://design.apievangelist.com/" target="_blank">Design</a>
      </li>
@@ -56,7 +56,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Consume APIs (<a href="/consume/">Landing Page</a>)
 </h3>
-<ul>
+<ul >
      <li>
           <a href="http://discovery.apievangelist.com/" target="_blank">Discovery</a>
      </li>
@@ -75,7 +75,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Resource Stack (NEW)
 </h3>
-<ul>
+<ul >
      <li>Payments *
      </li>
      <li>Social *
@@ -84,7 +84,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Trends (<a href="/trends/">Landing Page</a>)
 </h3>
-<ul>
+<ul >
      <li>
           <a href="http://aggregation.apievangelist.com/" target="_blank">Aggregation</a>
      </li>
@@ -104,7 +104,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Opportunities (<a href="/opportunities/">Landing Page</a>)
 </h3>
-<ul>
+<ul >
      <li>
           <a href="http://3d-printing.apievangelist.com/" target="_blank">3D Printing</a>
      </li>
@@ -124,7 +124,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Priorities (<a href="/priorities/">Landing Page</a>)
 </h3>
-<ul>
+<ul >
      <li>
           <a href="http://federal-government.apievangelist.com/" target="_blank">Federal Government</a>
      </li>
@@ -149,7 +149,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <h3>
      Data
 </h3>
-<ul>
+<ul >
      <li>Analyze *
      </li>
      <li>Archive *
@@ -169,7 +169,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <p>
      Each project is meant to produce the following output:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Blog Posts</strong> - Stories and analysis from each area of the API space
      </li>
@@ -201,5 +201,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_
 <p>
       
 </p>
-<ul></ul>
+<ul ></ul>
 

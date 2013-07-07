@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sea
 <p>
      One company I've been watching closely is <a title="Seabourne" href="http://seabourneinc.com/">Seabourne</a>. The Seabourne team has an approach to application development that follows a very interesting set of principles:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Information Flows Instead of Pipelines -</strong> Information operates in ‘flows’ where inputs and outputs are flexible and happen at any point. Flows are fluid and flexible, unlike structured, point-to-point pipelines
      </li>

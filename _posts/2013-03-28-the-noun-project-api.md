@@ -32,7 +32,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/the
 <p>
      <a title="The Noun Project" href="http://thenounproject.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/noun-project/the-noun-project-idea.png"  width="250" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <strong>Blog &amp; News Listings</strong> - Often times our blogging platforms have a way to upload an image to represent a post or story. The Noun Project could be used as visual cues for stories in certain categories or programmable determined by the text content of a story, dynamically pulled from the Noun Project API
      </li>
@@ -68,7 +68,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/the
 <p>
      <a title="The Noun Project" href="http://thenounproject.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/noun-project/the-noun-project-clicking-heels.jpg"  width="250" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <strong>Designers</strong> - Endpoint for icon designers, with access to their profile, collections and icons 
      </li>

@@ -11,7 +11,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      After just a couple months of REST and relaxation, the build up to API Strategy &amp; Practice SF is kicking into gear. We officially <a href="http://www.apistrategyconference.com//2013SF/2013/05/31/kicking-of-apistrat-in-san-francisco-october-23-25-2013/">launched the new site for San Francisco last week</a>, featuring the following speaker:
 </p>
-<ul>
+<ul >
      <li>Daniel Jacobson of Netflix
      </li>
      <li>David Weekly of Facebook
@@ -31,7 +31,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      <a href="http://www.apistrategyconference.com/2013SF/index.php"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-sf/apistrat-sf-2.png"  width="350" align="right" /></a>
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://3scale.net/" target="_blank">3scale</a>
      </li>

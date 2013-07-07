@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Bui
 <p>
      I have published <a href="http://federal-government.apievangelist.com/">all of my research around my APIs &amp; the Federal Government research at a permanent Github repository</a>. I will continue pushing all my research, curated stories and analysis there in real-time. I have also published a handful of JSON data sets I have generated as part of the research:
 </p>
-<ul>
+<ul >
      <li>
           <a href="https://github.com/kinlane/federal-government/blob/gh-pages/data/federal-agencies.json">Publish List of Federal Agencies</a>
      </li>

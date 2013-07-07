@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hun
 <p>
      To get everyone up to speed, four major things happened in the API space over the last two weeks:
 </p>
-<ul>
+<ul >
      <li>
           <a href="http://readwrite.com/2013/04/17/intel-acquires-mashery">Intel Buys Mashery</a>
      </li>

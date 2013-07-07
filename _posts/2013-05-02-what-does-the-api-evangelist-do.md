@@ -26,7 +26,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 <p>
      I generate The API Stack using my home grown ranking system which is based upon 3 types of signals: 
 </p>
-<ul>
+<ul >
      <li>
           <strong>Internal </strong> - Number of blog posts, tweets, github repos and other internal activity from the APIs themselves
      </li>
@@ -47,7 +47,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
                     <p>
                          <strong>API Service Providers</strong>
                     </p>
-                    <ul>
+                    <ul >
                          <li>
                               <a href="http://design.apievangelist.com/">Design</a>
                          </li>
@@ -66,7 +66,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
                     <p>
                          <strong>API Trends</strong>
                     </p>
-                    <ul>
+                    <ul >
                          <li>
                               <a href="http://aggregation.apievangelist.com/">Aggregation</a>
                          </li>
@@ -85,7 +85,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
                     <p>
                          <strong>API Priorities</strong>
                     </p>
-                    <ul>
+                    <ul >
                          <li>
                               <a href="http://federal-government.apievangelist.com/">Federal Government</a>
                          </li>
@@ -112,23 +112,23 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 <p>
      These areas will evolve and grow as my research continues and the space changes.  From all of this research I produce short form analysis (blog posts, project sites) and long form content (whitepapers, books).  To keep things simple I provide a single standard monthly subscription to partners wishing to access of all this for $1500.00 / month.
 </p>
-<ul>
-     <li class="li4">
+<ul >
+     <li >
           <strong>Writing </strong>- Access to all of my long form content.  White papers, research, etc.
      </li>
-     <li class="li4">
+     <li >
           <strong>Data</strong> - I generate a lot of data exhaust tracking, ranking and curating the API space.  I have JSON data available across all aspects of my work.
      </li>
-     <li class="li4">
+     <li >
           <strong>Logo</strong> - Placement of maximum 250px width logo on right hand menu of API Evangelist properties.
      </li>
-     <li class="li4">
+     <li >
           <strong>4 Consulting Hours</strong> - Four hours of conversation via phone, skype or hangout each month.
      </li>
-     <li class="li4">
+     <li >
           <strong>Keywords</strong> - Your company name plus one other keyword or key phrase of choice which will link to URL of your choice.
      </li>
-     <li class="li4">
+     <li >
           <strong>Weekly / Monthly Summary -</strong> I produce a weekly and monthly summary of the top APIs and industries, with curated news and my analysis from the API industry.
      </li>
 </ul>

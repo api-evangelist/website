@@ -8,27 +8,27 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/was
 <p>
      Audrey (<a href="https://twitter.com/blprnt">@audreywatters</a>) forwarded a very interesting series of tweets to me yesterday from software artist, writer, and educator Jer Thorp (<a href="https://twitter.com/blprnt" target="_blank">@blprnt</a>):
 </p>
-<blockquote class="twitter-tweet c1">
+<blockquote >
      <p>
           Has anyone written about APIs as art objects?
      </p>— blprnt (@blprnt) <a href="https://twitter.com/blprnt/status/313713240943247361">March 18, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet c1">
+<blockquote >
      <p>
           (We make APIs for almost every art project we build - in some ways the APIs themselves are the most interesting/poetic parts)
      </p>— blprnt (@blprnt) <a href="https://twitter.com/blprnt/status/313714968379940865">March 18, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet c1">
+<blockquote >
      <p>
           It feels to me the API could become a medium for artists in the same way that the algorists embraced the algorithm in the 70s.
      </p>— blprnt (@blprnt) <a href="https://twitter.com/blprnt/status/313716173973897216">March 18, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet c1">
+<blockquote >
      <p>
           The APIists. You heard it here first.
      </p>— blprnt (@blprnt) <a href="https://twitter.com/blprnt/status/313716358242238466">March 18, 2013</a>
 </blockquote>
-<blockquote class="twitter-tweet c1">
+<blockquote >
      <p>
           The API's ability to bridge platforms/devices/languages is almost inherently interventionist.
      </p>— blprnt (@blprnt) <a href="https://twitter.com/blprnt/status/313717301008535552">March 18, 2013</a>

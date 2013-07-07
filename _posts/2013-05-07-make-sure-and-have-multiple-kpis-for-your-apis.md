@@ -32,7 +32,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      After monitoring the API space for some time now, I'm looking for signals beyond what normal bloggers, analysts and pundits are following. In this hunt, Github is becoming an ever increasing gold mine of signals.  To help demonstrate, let's take a look at the signals the <a href="https://github.com/netflix">Netflix Github account</a> puts out.
 </p>
-<ul>
+<ul >
      <li>
           <strong><a href="https://github.com/Netflix/Priam">Priam</a></strong> - Co-Process for backup/recovery, Token Management, and Centralized Configuration management for Cassandra. (Last updated a day ago)
      </li>
@@ -88,5 +88,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      There is so much to learn from reading between the lines in the world of APIs.
 </p>
-<ul></ul>
+<ul ></ul>
 

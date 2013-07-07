@@ -21,7 +21,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      After that, things started heating up when I brought up a discussion about BaaS pricing, from an <a href="/2013/02/07/which-baas-pricing-model-is-better/">earlier online discussion about the mertits of user, feature or pricing base upon number of API calls</a>. The common approach is user or api based pricing, with Stackmob focused on feature based BaaS pricing.
 </p>
 <div>
-     <blockquote class="twitter-tweet">
+     <blockquote >
           <p>
                BaaS panel is actually really really interesting. Great line up. <a href="https://twitter.com/search/%23apistrat">apistrat</a>
           </p>— Ilya Bagrak (@ibagrak) <a href="https://twitter.com/ibagrak/status/304716332983791616">February 21, 2013</a>
@@ -31,7 +31,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      The conversation was definitely lead by Ty Amell of StackMob, with pointed rebuttals from Ilya Sukhar of Parse, with Miko Matasumura of Kii in between, being very diplomatic while also throwing some jabs of his own. Morgan Bickle of Kinvey, Marc Weil of Cloudmine and James Tamplin of Firebase held their own, but it things were definitely overshadowed by the discussion by Ty and Ilya.
 </p>
 <div>
-     <blockquote class="twitter-tweet c3">
+     <blockquote >
           <p>
                Super interesting trust issue: “[What happens if your BaaS gets acquired and pulls a Posterous?]” <a href="https://twitter.com/search/%23apistrat">apistrat</a>
           </p>— r. kevin nelson (@rknLA) <a href="https://twitter.com/rknLA/status/304721926847340544">February 21, 2013</a>

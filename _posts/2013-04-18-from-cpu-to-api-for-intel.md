@@ -11,7 +11,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Int
 <p>
      <a href="http://readwrite.com/2013/04/17/intel-acquires-mashery">Intel is reportedly buying API service provider Mashery for “a range of $120 million to $180 million”</a>, according to ReadWrite(Web). As I reflect on this, two main questions come to mind:
 </p>
-<ol class="mainlist">
+<ol >
      <li>Was it a smart acquisition for Intel, and worth their money?
      </li>
      <li>Is this a logical move for Intel since they are a chip maker?

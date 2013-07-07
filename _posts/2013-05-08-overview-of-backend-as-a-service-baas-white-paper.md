@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <p>
      The first of my white papers, using my new approach is finished. The new paper is called <a title="Overview Of The Backend as a Service (BaaS) Space" href="https://apps.facebook.com/marketpage/mu07n26dfwwupqoy6k0xj/item/MWP6Hfn" target="_blank">Overview Of The Backend as a Service (BaaS) Space</a>, and is the aggregation of all my research into the BaaS space. Here is a breakdown of the white paper:
 </p>
-<ul>
+<ul >
      <li>What is BaaS?
      </li>
      <li>How Does BaaS Differ From IaaS and PaaS?

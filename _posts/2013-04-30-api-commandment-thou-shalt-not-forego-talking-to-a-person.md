@@ -20,7 +20,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 <p>
      This commandment comes out of Johns unique experience which spans:
 </p>
-<ul>
+<ul >
      <li>Twilio - Experience managing large, successful developer ecosystem
      </li>
      <li>IFTTT - Experience being consumer of not just one, but many APIs

@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Bus
 <p>
      Its coming up on two years later, and I'm finally getting around to updating the Business of APIs. After a nice long walk on the strand with <a href="https://twitter.com/audreywatters">@audreywatters</a>, we have the outline for the next version:
 </p>
-<ul>
+<ul >
      <li>What is an API?
      </li>
      <li>What are APIs used for?

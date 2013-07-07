@@ -62,7 +62,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
 <p>
      Quick feedback for whoever takes the job, regarding some building blocks to focus on:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Endpoints</strong> - Establish more meaningful names for the existing endpoints, while establishing some new ones
      </li>

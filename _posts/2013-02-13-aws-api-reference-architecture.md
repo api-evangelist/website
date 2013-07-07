@@ -14,7 +14,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws
 <p>
      The AWS e-commerce architecture reference provides three separate areas:
 </p>
-<ul>
+<ul >
      <li>
           <strong>Web Frontend</strong> - This is a reference architecture for the web frontend of an e-commerce site. It makes use of Route 53, CloudFront, Elastic Beanstalk, S3, ElastiCache, DynamoDB and CloudSearch
      </li>

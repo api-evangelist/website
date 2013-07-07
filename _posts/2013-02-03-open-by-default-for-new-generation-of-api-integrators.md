@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pla
 <p>
      Some good examples of this are:
 </p>
-<ul>
+<ul >
      <li>
           <strong><a title="Singly" href="http://singly.com">Singly</a></strong> - Singly AppFabric empowers you to add social login, sharing and friend finding into your mobile and web applications, and <a href="https://github.com/Singly/hallway">Singly Hallway</a> is the open source version to help developers build amazing applications combining data from many sources easily, through one API.
      </li>

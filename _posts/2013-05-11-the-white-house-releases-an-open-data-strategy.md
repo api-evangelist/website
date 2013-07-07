@@ -124,7 +124,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>Energy (<a href="http://energy.gov" target="_blank">http://energy.gov</a>)</strong>
 </p>
-<ul>
+<ul >
      <li>Digital Strategy (HTML) - <a href="http://energy.gov/digitalstrategy.html" target="_blank">http://energy.gov/digitalstrategy.html</a>
      </li>
      <li>Digital Strategy (XML) - <a href="http://energy.gov/digitalstrategy.xml" target="_blank">http://energy.gov/digitalstrategy.xml</a>
@@ -135,7 +135,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>Commerce (<a href="http://www.commerce.gov" target="_blank">http://www.commerce.gov/</a>)</strong>
 </p>
-<ul>
+<ul >
      <li>Digital Strategy (HTML) - <a href="http://www.commerce.gov/digitalstrategy" target="_blank">http://www.commerce.gov/digitalstrategy</a>
      </li>
      <li>Digital Strategy (XML) - <a href="http://www.commerce.gov/digitalstrategy" target="_blank">http://energy.gov/digitalstrategy.xml</a>
@@ -155,7 +155,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      As we roll into May 2013, and approach the 1 year mark of the White House Digital Strategy, I can't help but embrace the new Open Data Policy with the same chaotic, bi-polar embrace I give the rest of the Digital Strategy and the overall public API space--with healthy balance of optimism, pragmatism and concern--then roll up my sleeves and get to work. During the last year of doing this, I've learned a lot about APIs and the Federal Government I would like to share:
 </p>
-<ul>
+<ul >
      <li>Web Literacy…is critical
      </li>
      <li>101 Materials..are essential
@@ -177,7 +177,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>What does the <a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/2013/m-13-13.pdf">Open Data Policy</a> deliver?</strong>
 </p>
-<ul>
+<ul >
      <li>
           <strong>Laying the Groundwork</strong> - Why is this important? The Open Data Policy makes the business case for why this is important. This is about making government more effecient and generating jobs and innovation amongst entrepreneurs
      </li>
@@ -215,7 +215,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>Why the Open Data Policy Make Me Happy?<br /></strong>The Open Data Policy makes me proud to be an American.  Really!  But beyond my joy for APIs, open data and passion for making government more efficient, I see some pretty specific aspects of the Open Data policy that make me happy.
 </p>
-<ul>
+<ul >
      <li>
           <strong>101 Materials</strong> - The open data lays the groundwork, provides the definitions, tools and resources that agencies will need to make it to the next level and find success with their agencies open data iniatives successful
      </li>
@@ -244,10 +244,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>What Around The Open Data Policy Conerns Me?<br /></strong>Immediately after the joy ride through the items that make me happy, I start stumbling over some serious concerns.  Things that will slow, trip up, or could make the Open Data Policy a non-starter.  These are just a handful of my immediate concerns. 
 </p>
-<ul>
+<ul >
      <li>
           <strong>Government</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Lack of Resources</strong> - Agencies won't be given enough resources to give meaningful attention to executing on the Open Data Policy and the desired results won't be achieved
                </li>
@@ -264,7 +264,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </li>
      <li>
           <strong>Corporations</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Exploitation</strong> - The private sector will step up and expoit government data and resources without recipricating value and sharing their data and augmented resources for the greater good
                </li>
@@ -275,7 +275,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </li>
      <li>
           <strong>Citizens</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Won't Step Up</strong> - Even with the effort of federal agencies, citizen hackers won't step up and do the work it will take to make agencies open data iniatives work and help clean up, refine and provide the feedback agencies will need
                </li>
@@ -288,10 +288,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
 <p>
      <strong>Why I am Optimistic About the Open Data Policy?<br /></strong>I think we can navigate many of the concerns I have around the Open Data Policy.  I know many of the people behind the government efforts, and I believe in these folks.  But I also believe in the power of what the private sector, leaving me very optimistic about what the Open Data Policy can achieve. 
 </p>
-<ul>
+<ul >
      <li>
           <strong>Government</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Starting Simple</strong> - The White House is starting simple.  They have started with the necessary education and evangelism needed to get agencies on board.  The Open Data Policy isn't technically overwhelming, it focuses on the basics and keeps things simple so agencies can absorb and put what they've learned to work
                </li>
@@ -305,7 +305,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </li>
      <li>
           <strong>Corporations</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Value of Open Data</strong> - The private sector understands the value of open data and will actively participate in open data iniatives from federal agencies.  The more data that is opened, the more the private sector will step up and use, contributing significantly to the data life cycle
                </li>
@@ -316,7 +316,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      </li>
      <li>
           <strong>Citizens</strong>
-          <ul>
+          <ul >
                <li>
                     <strong>Roll Up Sleeves and Get to Work</strong> - There are some seriously talented and passionate invidivuals involved with current government open data movements. As more agencies open up their data these hacker citizens will step up and provide some great code, data and feedback for government agencies.  The key is to make sure we continue to train the next generation of these talented, passsionate citizen hackers
                </li>
@@ -333,7 +333,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oba
      <strong>What I'd LIke to See!</strong><br />
      The pragmatist in me appreciates the simple and cautious approach of the federal government.  It will take years of baby steps before we can run with open data.  But to help me understand where we need to be, I tend to try and understand what the potential future of government and open data could look like.  So let me share a few items I'd like to see in the future of government open data.
 </p>
-<ul>
+<ul >
      <li>
           <strong>JSON by Default</strong> - I want every individual in government to speak JSON, just like they speak PDF or Excel.  Government workers need to natively generating and consuming JSON without hestiation or confusion
      </li>
