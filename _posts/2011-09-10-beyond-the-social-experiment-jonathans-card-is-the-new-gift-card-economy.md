@@ -17,14 +17,3 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sta
 <p>
      An image and your smart phone are essential technology in this experiment, but none of this would be possible without the <a href="https://www.starbucks.com/card" target="_blank">Starbucks Card program</a>. Starbucks allows anyone to purchase and add money to the balance of the card as long as you know the card number, and the site also allows you to see charges made against the card.
 </p>
-<p>
-     <a href="http://jonathanstark.com/card/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Jonathans-Card/jonathans-card-image.png"  width="200" align="right" /></a>The Starbucks Card is the central ingredient in this experiment, but Twitter also plays an important role. Jonathan uses Twitter as a central messaging channel, and ultimately an API for the Johnathan’s Card Experiment. He wrote a bot that scrapes the Starbucks site for the card balance and posts it to Twitter, whenever anything is charged to the Starbucks Card.
-</p>
-<p>
-     Twitter is also being used by the community participating in this “social experiment”. Twitter allows them to tweet at @jonathanscard adding to the Twitter data stream. Also, some innovative developer particpated by adding graphing apps on top of the @jonathanscard Twitter stream, that provided visualisations for the experiment.
-</p>
-<p>
-     Additionally, to provide easier access for developers, Jonathan whipped up a simple read only API providing insight into the experiment in the following ways:
-</p>
-
-
