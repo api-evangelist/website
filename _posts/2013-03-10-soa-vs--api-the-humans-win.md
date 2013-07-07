@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SOA vs  API The Humans Win
+title: 'SOA vs  API The Humans Win'
 url: http://apievangelist.com2013/03/10/soa-vs.-api--the-humans-win/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/human-cutout.jpg
 ---

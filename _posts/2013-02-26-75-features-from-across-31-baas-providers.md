@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 75 Features From Across 31 BaaS Providers
+title: '75 Features From Across 31 BaaS Providers'
 url: http://apievangelist.com2013/02/26/75-features-from-across-31-baas-providers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baas-trends.png
 ---

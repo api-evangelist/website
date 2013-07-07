@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Evangelist API
+title: 'API Evangelist API'
 url: http://apievangelist.com2013/03/20/api-evangelist-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-gartner-aadi.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Driven Voice Architecture
+title: 'API Driven Voice Architecture'
 url: http://apievangelist.com2013/03/06/api-driven-voice-architecture/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/zypr-logo.png
 ---

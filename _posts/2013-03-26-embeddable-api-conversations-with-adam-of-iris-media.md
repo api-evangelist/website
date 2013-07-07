@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Embeddable API Conversations with Adam of Iris Media
+title: 'Embeddable API Conversations with Adam of Iris Media'
 url: http://apievangelist.com2013/03/26/embeddable-api-conversations-with-adam-of-iris-media/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/iris-media-logo.jpeg
 ---

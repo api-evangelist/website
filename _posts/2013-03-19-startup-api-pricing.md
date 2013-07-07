@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Startup API Pricing
+title: 'Startup API Pricing'
 url: http://apievangelist.com2013/03/19/startup-api-pricing/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/import-io-logo.png
 ---

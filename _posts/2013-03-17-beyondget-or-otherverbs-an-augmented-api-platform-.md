@@ -1,6 +1,6 @@
 ---
 layout: post
-title: BeyondGET or OtherVerbs an Augmented API Platform 
+title: 'BeyondGET or OtherVerbs an Augmented API Platform '
 url: http://apievangelist.com2013/03/17/beyondget-or-otherverbs,-an-augmented-api-platform-/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/augmented-post.png
 ---

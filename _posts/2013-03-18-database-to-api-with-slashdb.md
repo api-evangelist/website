@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Database to API With SlashDB
+title: 'Database to API With SlashDB'
 url: http://apievangelist.com2013/03/18/database-to-api-with-slashdb/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/slashdb-logo.png
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Make Sure You Are At API Strategy Practice in February
+title: 'Make Sure You Are At API Strategy Practice in February'
 url: http://apievangelist.com2013/01/07/make-sure-you-are-at-api-strategy--practice-in-february/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-conference-logo.png
 ---

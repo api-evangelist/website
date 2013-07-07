@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Incentivize API Developers With A Mozilla Open Badge Program
+title: 'Incentivize API Developers With A Mozilla Open Badge Program'
 url: http://apievangelist.com2013/03/19/incentivize-api-developers-with-a-mozilla-open-badge-program/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mozilla-open-badges.png
 ---

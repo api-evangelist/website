@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Enabled Toys For Our Children
+title: 'API Enabled Toys For Our Children'
 url: http://apievangelist.com2013/05/07/api-enabled-toys-for-our-children/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fisher-price-internet-enabled-device.png
 ---

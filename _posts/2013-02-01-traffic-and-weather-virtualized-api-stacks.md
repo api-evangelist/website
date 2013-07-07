@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Traffic and Weather Virtualized API Stacks
+title: 'Traffic and Weather Virtualized API Stacks'
 url: http://apievangelist.com2013/02/01/traffic-and-weather-virtualized-api-stacks/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Traffic-and-Weather.png
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: After Last Couple of Weeks Its Clear There Is Big Opportunity In The API Space
+title: 'After Last Couple of Weeks Its Clear There Is Big Opportunity In The API Space'
 url: http://apievangelist.com2013/04/25/after-last-couple-of-weeks,-its-clear-there-is-big-opportunity-in-api-the-space/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hundred-dollar-bills.jpg
 ---

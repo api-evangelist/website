@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Real Time Notification Layer Within Your API
+title: 'Real Time Notification Layer Within Your API'
 url: http://apievangelist.com2013/03/15/real-time-notification-layer-within-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cisimple-plus-pusher.png
 ---

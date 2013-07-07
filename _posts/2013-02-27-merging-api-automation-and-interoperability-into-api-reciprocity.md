@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Merging API Automation and Interoperability Into API Reciprocity
+title: 'Merging API Automation and Interoperability Into API Reciprocity'
 url: http://apievangelist.com2013/02/27/merging-api-automation-and-interoperability-into-api-reciprocity/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png
 ---

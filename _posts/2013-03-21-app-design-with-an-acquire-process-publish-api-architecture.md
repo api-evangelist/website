@@ -1,6 +1,6 @@
 ---
 layout: post
-title: App Design With An Acquire Process Publish API Architecture
+title: 'App Design With An Acquire Process Publish API Architecture'
 url: http://apievangelist.com2013/03/21/app-design-with-apis-using-an-acquire-process-publish-ap2-architecture/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/seabourne-logo-2013.png
 ---

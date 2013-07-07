@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Braintree Launches JS Library to Help Developers With PCI
+title: 'Braintree Launches JS Library to Help Developers With PCI'
 url: http://apievangelist.com2013/03/16/braintree-launches-javascript-library-to-help-developers-with-pci/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/braintree-logo.png
 ---

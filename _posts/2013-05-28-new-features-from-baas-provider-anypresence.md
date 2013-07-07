@@ -1,6 +1,6 @@
 ---
 layout: post
-title: New Features From BaaS Provider AnyPresence
+title: 'New Features From BaaS Provider AnyPresence'
 url: http://apievangelist.com2013/05/28/new-features-from-baas-provider-anypresence/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/anypresense-logo.png
 ---

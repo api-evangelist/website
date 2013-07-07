@@ -1,6 +1,6 @@
 ---
 layout: post
-title: History of APIs del icio us
+title: 'History of APIs del icio us'
 url: http://apievangelist.com2013/06/09/history-of-apis-del-icio-us/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/delicious-logo.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: White House Announces Round Two of the Presidential Innovation Fellows 
+title: 'White House Announces Round Two of the Presidential Innovation Fellows '
 url: http://apievangelist.com2013/02/05/round-two-of-the-presidential-innovation-fellows-/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/presidential-innovation-fellows.jpeg
 ---

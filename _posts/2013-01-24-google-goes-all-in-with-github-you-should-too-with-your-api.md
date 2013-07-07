@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Google Goes All In With Github You Should Too With Your API
+title: 'Google Goes All In With Github You Should Too With Your API'
 url: http://apievangelist.com2013/01/24/google-goes-all-in-with-github-and-you-should-too-with-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-cloud-platform.png
 ---

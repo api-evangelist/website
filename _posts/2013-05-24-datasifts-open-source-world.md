@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DataSifts Open Source World
+title: 'DataSifts Open Source World'
 url: http://apievangelist.com2013/05/24/datasifts-open-source-world/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/datasift-logo.png
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I Am Speaking At The Dallas Forth Worth API Professionals Meetup May 14th
+title: 'I Am Speaking At The Dallas Forth Worth API Professionals Meetup May 14th'
 url: http://apievangelist.com2013/05/02/i-am-speaking-at-the-dallas-forth-worth-api-professionals-meetup-may-14th/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw-api-meetup-group.jpeg
 ---

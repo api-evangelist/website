@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Open By Default for New Generation of API Integrators
+title: 'Open By Default for New Generation of API Integrators'
 url: http://apievangelist.com2013/02/03/open-by-default-for-new-generation-of-api-integrators/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/platform-stability.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Judging an API At First Glance
+title: 'Judging an API At First Glance'
 url: http://apievangelist.com2013/03/05/judging-an-api-at-first-glance/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/judging-gavel.jpg
 ---

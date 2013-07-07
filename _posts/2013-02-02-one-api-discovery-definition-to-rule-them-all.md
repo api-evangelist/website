@@ -1,6 +1,6 @@
 ---
 layout: post
-title: One API Discovery Definition to Rule Them All
+title: 'One API Discovery Definition to Rule Them All'
 url: http://apievangelist.com2013/02/02/one-api-discovery-definition-to-rule-them-all/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/discovery-exploration.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Ember Angular Backbone Single Page Applications and APIs
+title: 'Ember Angular Backbone Single Page Applications and APIs'
 url: http://apievangelist.com2013/05/23/ember-angular-and-backbone-single-page-applications-and-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/single-page-web-applications.png
 ---

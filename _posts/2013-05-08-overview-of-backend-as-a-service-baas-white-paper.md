@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Overview Of Backend as a Service BaaS White Paper
+title: 'Overview Of Backend as a Service BaaS White Paper'
 url: http://apievangelist.com2013/05/08/overview-of-the-backend-as-a-service-baas-space-white-paper/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-black-baas-2.png
 ---

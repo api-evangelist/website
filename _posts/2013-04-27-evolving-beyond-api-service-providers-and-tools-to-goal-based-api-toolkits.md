@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Evolving Beyond API Service Providers and Tools to Goal Based API Toolkits
+title: 'Evolving Beyond API Service Providers and Tools to Goal Based API Toolkits'
 url: http://apievangelist.com2013/04/27/evolving-beyond-api-service-providers-and-api-tools-to-goal-based-api-toolkits/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/universe-expansion.png
 ---

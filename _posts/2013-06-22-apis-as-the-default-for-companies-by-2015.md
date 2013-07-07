@@ -1,6 +1,6 @@
 ---
 layout: post
-title: APIs As The Default for Companies by 2015
+title: 'APIs As The Default for Companies by 2015'
 url: http://apievangelist.com2013/06/22/apis-as-the-default-for-companies-by-2015/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-2015.jpg
 ---

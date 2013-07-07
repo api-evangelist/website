@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Digital Strategy 20 Federal Agencies 76 data API and 75 Mobile API Initiatives
+title: 'Digital Strategy 20 Federal Agencies 76 data API and 75 Mobile API Initiatives'
 url: http://apievangelist.com2013/01/19/digital-strategy-20-federal-agencies-76-data-api-75-mobile-api-initiatives/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/US_white_house_logo.png
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Imagine What Would Be Possible If Twitter Cards Were Open
+title: 'Imagine What Would Be Possible If Twitter Cards Were Open'
 url: http://apievangelist.com2013/04/09/imagine-what-would-be-possible-if-twitter-cards-were-open/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fist.png
 ---

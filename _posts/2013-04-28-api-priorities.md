@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Priorities
+title: 'API Priorities'
 url: http://apievangelist.com2013/04/28/api-priorities/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/priorities.png
 ---

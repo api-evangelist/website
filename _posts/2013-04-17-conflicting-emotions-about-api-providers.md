@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Conflicting Emotions About API Providers
+title: 'Conflicting Emotions About API Providers'
 url: http://apievangelist.com2013/04/17/conflicting-emotions-about-api-providers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/conflict-with-myself.png
 ---

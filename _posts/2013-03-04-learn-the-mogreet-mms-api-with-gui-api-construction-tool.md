@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Learn the Mogreet MMS API with GUI API Construction Tool
+title: 'Learn the Mogreet MMS API with GUI API Construction Tool'
 url: http://apievangelist.com2013/03/04/learn-the-mogreet-mms-api-with-gui-api-construction-tool/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mogreet-logo.jpg
 ---

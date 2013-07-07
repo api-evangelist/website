@@ -1,6 +1,6 @@
 ---
 layout: post
-title: APIs as Art
+title: 'APIs as Art'
 url: http://apievangelist.com2013/03/19/apis-as-art/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/washington-crossing-the-delaware-cropped.png
 ---

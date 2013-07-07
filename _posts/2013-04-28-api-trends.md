@@ -1,6 +1,6 @@
 ---
 layout: post
-title: API Trends
+title: 'API Trends'
 url: http://apievangelist.com2013/04/28/api-trends/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/trends.jpg
 ---

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What Is A Better Word For Governance When It Comes To APIs
+title: 'What Is A Better Word For Governance When It Comes To APIs'
 url: http://apievangelist.com2013/02/27/what-is-better-word-for-governance-when-it-comes-to-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/respect-my-authority.jpg
 ---
