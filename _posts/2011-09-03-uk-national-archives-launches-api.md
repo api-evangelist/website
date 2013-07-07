@@ -16,3 +16,5 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uk-
 <li>Piece - A piece can be a box, volume or file</li>
 <li>Item - A part of a piece. It can be a bundle, a single document, a sub-file, etc.</li>
 </ul>
+<p>Access is provided without restriction or charging for content, but costs $3.50 per document to retrieve the same records online through the website.</p>
+<p>Aleksandr Drozdov, architect for the National Archives, said they have been speaking with academic historians to help them find ways to use the API in their research, and they are very interested in access to the archives in a programmatic way.</p>
