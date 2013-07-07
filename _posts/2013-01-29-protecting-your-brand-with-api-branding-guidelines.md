@@ -4,7 +4,8 @@ title: Protecting Your Brand With API Branding Guidelines
 url: http://apievangelist.com2013/01/29/protecting-your-brand-with-api-branding-guidelines/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/power-by--drk.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://developer.active.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/Active-Network/power-by--drk.png"  align="right" /></a>
 </p>
 <p>

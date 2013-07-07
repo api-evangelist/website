@@ -4,7 +4,8 @@ title: The Noun Project API
 url: http://apievangelist.com2013/03/28/the-noun-project-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/the-noun-project.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="The Noun Project" href="http://thenounproject.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/noun-project/the-noun-project.png"  width="300" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: I Support You Adria Richards
 url: http://apievangelist.com2013/03/21/i-support-you-adria-richards/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-adria-richards.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-adria-richards.png"  width="300" align="right" />
 </p>
 <p>

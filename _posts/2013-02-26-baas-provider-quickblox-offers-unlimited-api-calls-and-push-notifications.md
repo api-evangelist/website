@@ -4,7 +4,8 @@ title: BaaS Provider Quickblox Offers Unlimited API Calls and Push Notifications
 url: http://apievangelist.com2013/02/26/baas-provider-quickblox-offers-unlimited-api-calls-and-push-notifications/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/quickblox-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="/serviceproviders/quickblox.php" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/mbaas-providers/quickblox-logo.png"  width="150" align="right" /></a>
 </p>
 <p>

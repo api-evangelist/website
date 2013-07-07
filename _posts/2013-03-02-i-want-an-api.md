@@ -4,7 +4,8 @@ title: I Want An API
 url: http://apievangelist.com2013/03/02/i-want-an-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-i-want-api.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="I Want An API" href="http://iwantanapi.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-i-want-api.png"  width="325" align="right" /></a>
 </p>
 <p>

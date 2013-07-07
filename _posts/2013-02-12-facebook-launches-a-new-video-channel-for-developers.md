@@ -4,7 +4,8 @@ title: Facebook Launches a New Video Channel for Developers
 url: http://apievangelist.com2013/02/12/facebook-launches-a-new-video-channel-for-developers-called-facebook-developers-live/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fb-devlive-blog-stacked.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/facebook/fb-devlive-blog-stacked.png"  width="300" align="right" />
 </p>
 <p>

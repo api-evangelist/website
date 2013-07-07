@@ -4,7 +4,8 @@ title: Are You Going To Be At API Days in San Francisco I Am
 url: http://apievangelist.com2013/06/17/are-you-going-to-be-at-api-days-in-san-francisco--i-am/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-san-francisco-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://sf.apidays.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-days-san-francisco/api-days-san-francisco-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

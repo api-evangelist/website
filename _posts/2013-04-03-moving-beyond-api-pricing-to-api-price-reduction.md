@@ -4,7 +4,8 @@ title: Moving Beyond API Pricing to API Price Reduction
 url: http://apievangelist.com2013/04/03/moving-beyond-api-pricing-to-api-price-reduction/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws-pricing.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-pricing.png"  width="325" align="right" />
 </p>
 <p>

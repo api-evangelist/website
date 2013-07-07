@@ -4,7 +4,8 @@ title: Lets Talk APIs In Scandinavia With Nordic APIs
 url: http://apievangelist.com2013/03/07/lets-talk-apis-in-scandinavia-with-nordic-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/nordic-apis-logo-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Nordic APIs" href="http://nordicapis.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/nordic-apis/nordic-apis-logo-2.png"  width="200" align="right" /></a>
 </p>
 <p>

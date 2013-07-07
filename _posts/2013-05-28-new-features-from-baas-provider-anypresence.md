@@ -4,7 +4,8 @@ title: New Features From BaaS Provider AnyPresence
 url: http://apievangelist.com2013/05/28/new-features-from-baas-provider-anypresence/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/anypresense-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.anypresence.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/anypresense_logo_New.png"  width="250" align="right" /></a>
 </p>
 <p>

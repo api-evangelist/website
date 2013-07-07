@@ -4,7 +4,8 @@ title: Twitters Developer Area is More Embeddable Than API
 url: http://apievangelist.com2013/05/08/twitters-developer-area-is-more-embeddable-than-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-homepage-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      Does anyone else notice the evolution of the <a href="https://dev.twitter.com/">Twitter developer area</a>? The site has taken a page from the LinkedIn playbook and become more about embeddable buttons, badges and widgets than about APIs.  
 </p>
 <p>

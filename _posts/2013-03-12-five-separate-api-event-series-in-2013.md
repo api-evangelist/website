@@ -4,7 +4,8 @@ title: Five Separate API Event Series In 2013
 url: http://apievangelist.com2013/03/12/five-separate-api-events-series-in-2013/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-api-conference.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/events/tag-cloud-api-conference.png"  width="250" align="right" />
 </p>
 <p>

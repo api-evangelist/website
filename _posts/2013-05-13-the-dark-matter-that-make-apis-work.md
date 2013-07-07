@@ -4,7 +4,8 @@ title: The Dark Matter That Make APIs Work
 url: http://apievangelist.com2013/05/13/the-dark-matter-that-make-apis-work/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dark-matter.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/dark-matter.jpeg" border="0" width="325" align="right" />
 </p>
 <p>

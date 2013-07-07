@@ -4,7 +4,8 @@ title: Open Source BaaS Project In The European Union
 url: http://apievangelist.com2013/02/12/open-source-baas-project-in-the-european-union/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/openi-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.openi-ict.eu/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

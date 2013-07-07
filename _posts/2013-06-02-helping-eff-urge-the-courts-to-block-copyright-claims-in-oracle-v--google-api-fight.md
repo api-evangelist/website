@@ -4,7 +4,8 @@ title: Helping EFF Urge The Courts to Block Copyright Claims in Oracle v  Google
 url: http://apievangelist.com2013/06/02/helping-eff-urge-the-courts-to-block-copyright-claims-in-oracle-v.-google-api-fight/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-v-oracle-brief.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://www.eff.org/press/releases/computer-scientists-urge-court-block-copyright-claims-oracle-v-google-api-fight"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/electronic-frontier-foundation/google-v-oracle-brief.png"  width="250" align="right" /></a>
 </p>
 <p>

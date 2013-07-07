@@ -4,7 +4,8 @@ title: Dropbox As Your Apps Default File System
 url: http://apievangelist.com2013/05/24/dropbox-as-your-apps-default-file-system/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fargo-small-picture.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://fargo.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/dave-winer/fargo-small-picture.png"  width="125" align="right" /></a>
 </p>
 <p>

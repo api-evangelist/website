@@ -4,7 +4,8 @@ title: API Trends I Am Watching
 url: http://apievangelist.com2013/03/01/api-trends-im-watching/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/top-tech-trends.jpg
 ---
-{% include JB/setup %}<table cellpadding="2" align="right">
+{% include JB/setup %}
+<table cellpadding="2" align="right">
      <tbody>
           <tr>
                <td>

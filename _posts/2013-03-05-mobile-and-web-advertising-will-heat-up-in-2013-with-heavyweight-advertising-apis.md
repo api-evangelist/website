@@ -4,7 +4,8 @@ title: Mobile and Web Advertising Will Heat Up in 2013 With Heavyweight Advertis
 url: http://apievangelist.com2013/03/05/mobile-and-web-advertising-will-heat-up-in-2013-with-heavyweight-advertising-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/amazon-mobile-app-distribution-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Amazon Mobile Ads API" href="https://developer.amazon.com/sdk/mobileads.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-mobile-app-distribution-logo.png"  width="140" align="right" /></a>
 </p>
 <p>

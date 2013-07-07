@@ -4,7 +4,8 @@ title: Using The Crunchbase API
 url: http://apievangelist.com2013/03/16/using-the-crunchbase-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/crunchbase-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://developer.crunchbase.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/crunchbase-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

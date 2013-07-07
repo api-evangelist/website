@@ -4,7 +4,8 @@ title: An MMS API For The Next Generation of Mobile Apps
 url: http://apievangelist.com2013/01/17/an-mms-api-for-the-next-generation-of-mobile-apps/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mogreet-logo.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://developer.mogreet.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mogreet/mogreet-logo.jpg"  width="125" align="right" /></a>
 </p>
 <p>

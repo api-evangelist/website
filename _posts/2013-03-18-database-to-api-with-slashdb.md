@@ -4,7 +4,8 @@ title: Database to API With SlashDB
 url: http://apievangelist.com2013/03/18/database-to-api-with-slashdb/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/slashdb-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.slashdb.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/slashdb/slashdb-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

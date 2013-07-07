@@ -4,7 +4,8 @@ title: BeyondGET or OtherVerbs an Augmented API Platform
 url: http://apievangelist.com2013/03/17/beyondget-or-otherverbs,-an-augmented-api-platform-/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/augmented-post.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-post.png"  width="300" align="right" />
 </p>
 <p>

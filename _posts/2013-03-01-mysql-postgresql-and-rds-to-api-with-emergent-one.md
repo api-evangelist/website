@@ -4,7 +4,8 @@ title: MySQL PostgreSQL and RDS to API With Emergent One
 url: http://apievangelist.com2013/03/01/mysql,-postgresql,-rds-to-api-with-emergent-one/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/emergent-one-logo-horizontal.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.emergentone.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/emergent-one/emergent-one-logo-horizontal.png"  align="right" /></a>
 </p>
 <p>

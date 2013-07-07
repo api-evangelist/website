@@ -4,7 +4,8 @@ title: Multi Tenancy with WSO2 API Manager
 url: http://apievangelist.com2013/05/24/multi-tenancy-with-wso2-api-manager/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wso2-multi-tenancy.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://wso2.org/library/articles/2013/05/multitenant-api-management-new-wso2-api-manager-140"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/wso2/wso2-multi-tenancy.png"  width="325" align="right" /></a>
 </p>
 <p>

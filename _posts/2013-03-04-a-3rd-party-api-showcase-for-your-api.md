@@ -4,7 +4,8 @@ title: A 3rd Party API Showcase for Your API
 url: http://apievangelist.com2013/03/04/a-3rd-party-api-showcase-for-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-counter-api-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Twitter Counter API" href="http://twittercounter.com/pages/api"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/twitter-counter-api-2.png"  width="200" align="right" /></a>
 </p>
 <p>

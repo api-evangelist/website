@@ -4,7 +4,8 @@ title: My Talk Tomorrow Night at the Dallas Forth Worth API Professionals Meetup
 url: http://apievangelist.com2013/05/13/my-talk-tomorrow-night-at-the-dallas-forth-worth-api-professionals-meetup/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw-api-meetup-group.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.meetup.com/DFW-API-Professionals/events/115600132/" title="DFW API Professional Meetup Group"><img src="https://s3.amazonaws.com/kinlane-productions/events/dfw-api-meetup-group/dfw-api-meetup-group.jpeg" border="0" width="200" align="right" /></a>
 </p>
 <p>

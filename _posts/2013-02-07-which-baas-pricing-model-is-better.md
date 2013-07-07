@@ -4,7 +4,8 @@ title: Which BaaS Pricing Model Is Better
 url: http://apievangelist.com2013/02/07/which-baas-pricing-model-is-better/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baas-trends.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/baas-trends.png"  width="225" align="right" />
 </p>
 <p>

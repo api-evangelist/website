@@ -4,7 +4,8 @@ title: API Education With Codecademy
 url: http://apievangelist.com2013/04/09/api-education-with-codecademy/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/codecademy-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.codecademy.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/codecademy/codecademy-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

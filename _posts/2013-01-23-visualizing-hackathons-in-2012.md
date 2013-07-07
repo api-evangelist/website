@@ -4,7 +4,8 @@ title: Visualizing Hackathons in 2012
 url: http://apievangelist.com2013/01/23/visualizing-hackathons-in-2012/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hackathon-home-1.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://blog.singly.com/2013/01/22/hackathons-a-launchpad-for-app-innovation/"><img src="http://hackweekends.com/images/hackathon-home-1.jpg"  width="250" align="right" /></a>
 </p>
 <p>

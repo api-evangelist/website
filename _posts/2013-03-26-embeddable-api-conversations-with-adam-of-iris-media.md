@@ -4,7 +4,8 @@ title: Embeddable API Conversations with Adam of Iris Media
 url: http://apievangelist.com2013/03/26/embeddable-api-conversations-with-adam-of-iris-media/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/iris-media-logo.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Iris Educational Media" href="https://www.irised.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/iris-media/iris-media-logo.jpeg"  width="200" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Helping People Understand APIs Through Real World Examples
 url: http://apievangelist.com2013/04/27/helping-people-understand-apis-through-real-world-examples/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/commercial-fueling-network.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.cfnnet.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/commercial-fueling-network/commercial-fueling-network.jpg"  width="170" align="right" /></a>
 </p>
 <p>

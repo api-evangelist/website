@@ -4,7 +4,8 @@ title: Which Of The Three OAuth Legs Is The Most Important
 url: http://apievangelist.com2013/02/26/which-of-the-three-oauth-legs-is-the-most-important/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apistrat-ecosystem-panel.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/pics/apistrat-ecosystem-panel.jpg"  width="300" align="right" />
 </p>
 <p>

@@ -4,7 +4,8 @@ title: From ETL to API Reciprocity Looking at 20 Service Providers
 url: http://apievangelist.com2013/02/28/from-etl-to-api-reciprocity,-looking-at-20-service-providers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://apievangelist.com/trends/reciprocity.php"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/reciprocity-trends.png"  width="300" align="right" /></a>
 </p>
 <p>

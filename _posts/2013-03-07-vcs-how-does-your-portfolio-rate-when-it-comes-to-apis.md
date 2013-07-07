@@ -4,7 +4,8 @@ title: VCS How Does Your Portfolio Rate When It Comes To APIs
 url: http://apievangelist.com2013/03/07/vcs,-how-does-your-portfolio-rate-when-it-comes-to-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/oxford-strategic-advisors-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/vc/oxford-strategic-advisors-logo.png"  width="200" align="right" />
 </p>
 <p>

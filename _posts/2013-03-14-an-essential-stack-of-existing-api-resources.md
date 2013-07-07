@@ -4,7 +4,8 @@ title: An Essential Stack of Existing API Resources
 url: http://apievangelist.com2013/03/14/an-essential-stack-of-existing-api-resources/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/stack-rocks.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/stack-rocks.jpg"  width="125" align="right" />
 </p>
 <p>

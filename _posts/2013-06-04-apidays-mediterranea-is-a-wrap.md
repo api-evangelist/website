@@ -4,7 +4,8 @@ title: APIdays Mediterranea Is A Wrap
 url: http://apievangelist.com2013/06/04/apidays-mediterranea-is-a-wrap/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-editerranea-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://mediterranea.apidays.io/"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-days-madrid/api-days-editerranea-logo.png"  width="175" align="right" /></a>
 </p>
 <p>

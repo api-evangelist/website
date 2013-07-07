@@ -4,7 +4,8 @@ title: WSO2 Now Has API Reporting With Google Analytics
 url: http://apievangelist.com2013/01/21/wso2-now-has-api-reporting-with-google-analytics/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wso2-logo-white-400X180.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="open source API management platform" href="http://wso2.com/products/api-manager"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/wso2/wso2-logo-white-400X180.png"  width="250" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Next Generation of API Driven Analytics and Visualizations
 url: http://apievangelist.com2013/03/04/next-generation-of-api-driven-analytics-and-visualizations/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-analytics.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-analytics/api-analytics.png"  width="250" align="right" />
 </p>
 <p>

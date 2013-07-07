@@ -4,7 +4,8 @@ title: An Open Source Code Catalog for your API
 url: http://apievangelist.com2013/05/24/open-source-code-catalog-for-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/digital-services-innovation-center.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://gsablogs.gsa.gov/dsic/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/federal-strategy/digital-services-innovation-center.png"  width="225" align="right" /></a>
 </p>
 <p>

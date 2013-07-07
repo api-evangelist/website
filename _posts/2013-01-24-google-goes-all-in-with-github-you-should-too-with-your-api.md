@@ -4,7 +4,8 @@ title: Google Goes All In With Github You Should Too With Your API
 url: http://apievangelist.com2013/01/24/google-goes-all-in-with-github-and-you-should-too-with-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-cloud-platform.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/google/google-cloud-platform.png"  width="175" align="right" />
 </p>
 <p>

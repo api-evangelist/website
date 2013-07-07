@@ -4,7 +4,8 @@ title: Netflix Storytelling And Why You Should Tell Stories of Your Platform
 url: http://apievangelist.com2013/01/10/netflix-storytelling-and-why-you-need-to-tell-the-stories-of-your-platform/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/netflix-square.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/netflix/netflix-square.png"  width="150" align="right" />
 </p>
 <p>

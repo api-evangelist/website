@@ -4,7 +4,8 @@ title: An API That Scrubs Personally Identifiable Information From Other APIs
 url: http://apievangelist.com2013/03/13/an-api-that-scrubs-personally-identifiable-information-from-other-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/personally-identifable-information.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/personally-identifable-information.png"  width="275" align="right" />
 </p>
 <p>

@@ -4,7 +4,8 @@ title: API Commandment Thou Shalt Not Forego Talking to a Person
 url: http://apievangelist.com2013/04/30/api-commandment-thou-shalt-not-forego-talking-to-a-person/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-in-api-we-trust-trimmed.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-in-api-we-trust-trimmed.png"  width="225" align="right" />
 </p>
 <p>

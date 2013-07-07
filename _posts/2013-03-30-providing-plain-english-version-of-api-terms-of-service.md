@@ -4,7 +4,8 @@ title: Providing Plain English Version Of API Terms of Service
 url: http://apievangelist.com2013/03/30/providing-plain-english-version-of-api-terms-of-service/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/heello-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://heello.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heello/heello-logo.png"  width="250" align="right" /></a>
 </p>
 <p>

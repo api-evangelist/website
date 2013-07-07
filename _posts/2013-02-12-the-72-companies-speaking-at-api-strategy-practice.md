@@ -4,7 +4,8 @@ title: The 72 Companies Speaking At API Strategy Practice
 url: http://apievangelist.com2013/02/12/companies-that-are-speaking-at-api-strategy-practice/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.apistrategyconference.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-event-2.png"  width="250" align="right" /></a>
 </p>
 <p>

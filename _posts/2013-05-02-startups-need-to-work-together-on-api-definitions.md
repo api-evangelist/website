@@ -4,7 +4,8 @@ title: Startups Need To Work Together on API Definitions
 url: http://apievangelist.com2013/05/02/startups-need-to-work-together-on-api-definitions/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/openi-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.openi-ict.eu/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-logo.png"  align="right" /></a>
 </p>
 <p>

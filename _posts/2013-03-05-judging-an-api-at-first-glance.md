@@ -4,7 +4,8 @@ title: Judging an API At First Glance
 url: http://apievangelist.com2013/03/05/judging-an-api-at-first-glance/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/judging-gavel.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/judging-gavel.jpg"  width="250" align="right" />
 </p>
 <p>

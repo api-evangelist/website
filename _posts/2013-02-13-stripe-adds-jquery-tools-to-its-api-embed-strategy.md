@@ -4,7 +4,8 @@ title: Stripe Adds Jquery Tools To Its API Embed Strategy
 url: http://apievangelist.com2013/02/13/stripe-adds-jquery-tools-to-its-api-embed-strategy/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/stripe-checkout-widget.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/stripe/stripe-checkout-widget.png"  width="200" align="right" />
 </p>
 <p>

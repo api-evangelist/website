@@ -4,7 +4,8 @@ title: Webhook as a Service
 url: http://apievangelist.com2013/06/27/webhooks-as-a-service/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/webscript-io-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://webscript.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/webscript/webscript-io-logo.png"  align="right" /></a>
 </p>
 <p>

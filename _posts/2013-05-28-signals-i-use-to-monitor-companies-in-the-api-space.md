@@ -4,7 +4,8 @@ title: Signals I Use To Monitor Companies In The API Space
 url: http://apievangelist.com2013/05/28/signals-i-use-to-monitor-companies-in-the-api-space/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-stack-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://theapistack.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-stack/api-stack-logo.png"  width="350" align="right" /></a>
 </p>
 <p>

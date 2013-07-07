@@ -4,7 +4,8 @@ title: DataSifts Open Source World
 url: http://apievangelist.com2013/05/24/datasifts-open-source-world/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/datasift-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://datasift.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/datasift/datasift-logo.png"  width="225" align="right" /></a>
 </p>
 <p>

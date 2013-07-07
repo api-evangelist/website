@@ -4,7 +4,8 @@ title: APIs as Art
 url: http://apievangelist.com2013/03/19/apis-as-art/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/washington-crossing-the-delaware-cropped.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      Audrey (<a href="https://twitter.com/blprnt">@audreywatters</a>) forwarded a very interesting series of tweets to me yesterday from software artist, writer, and educator Jer Thorp (<a href="https://twitter.com/blprnt" target="_blank">@blprnt</a>):
 </p>
 <blockquote class="twitter-tweet c1">

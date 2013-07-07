@@ -4,7 +4,8 @@ title: Bringing ETL to the Masses with APIs
 url: http://apievangelist.com2013/02/10/bringing-etl-to-the-masses-with-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Automation.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/Tag-Cloud-API-Automation.png"  width="325" align="right" />
 </p>
 <p>

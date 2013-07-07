@@ -4,7 +4,8 @@ title: I Am Speaking at NPR for the DC API User Group Next Thursday in Washingto
 url: http://apievangelist.com2013/01/24/i-am-speaking-at-npr-for-the-dc-api-user-group-next-thursday-in-washington-dc/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/washington-dc-api-users-group.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Washington DC API meetup" href="http://www.meetup.com/DC-Web-API-User-Group/events/97891662/"><img src="https://s3.amazonaws.com/kinlane-productions/events/washington-dc-api-meetup/washington-dc-api-users-group.jpeg"  width="200" align="right" /></a>
 </p>
 <p>

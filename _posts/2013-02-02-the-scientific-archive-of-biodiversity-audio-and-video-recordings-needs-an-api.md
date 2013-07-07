@@ -4,7 +4,8 @@ title: The Scientific Archive of Biodiversity Audio and Video Recordings Needs a
 url: http://apievangelist.com2013/02/02/the-scientific-archive-of-biodiversity-audio-and-video-recordings-needs-an-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/The-Cornell-Lab-of-Ornithology-Macauay-Library.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://macaulaylibrary.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/macaulay-library/The-Cornell-Lab-of-Ornithology-Macauay-Library.png"  width="225" align="right" /></a>
 </p>
 <p>

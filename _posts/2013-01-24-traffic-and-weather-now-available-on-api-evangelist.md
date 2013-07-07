@@ -4,7 +4,8 @@ title: Traffic and Weather Now Available on API Evangelist
 url: http://apievangelist.com2013/01/24/traffic-and-weather-available-on-api-evangelist/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Traffic-and-Weather.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://trafficandweather.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/traffic-and-weather/Traffic-and-Weather.png"  width="200" align="right" /></a>
 </p>
 <p>

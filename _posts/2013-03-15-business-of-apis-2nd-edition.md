@@ -4,7 +4,8 @@ title: Business of APIs 2nd Edition
 url: http://apievangelist.com2013/03/15/business-of-apis-2nd-edition/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Business-of-APIs-Front-Cover-Cropped.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.amazon.com/Business-APIs-1-Kin-Lane/dp/1461113881/ref=sr_1_5?s=books&amp;ie=UTF8&amp;qid=1304210432&amp;sr=1-5"><img src="http://kinlane-productions.s3.amazonaws.com/business-of-apis/Business-of-APIs-Front-Cover-Cropped.png"  width="200" align="right" /></a>
 </p>
 <p>

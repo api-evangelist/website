@@ -4,7 +4,8 @@ title: API Driven Voice Architecture
 url: http://apievangelist.com2013/03/06/api-driven-voice-architecture/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/zypr-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://www.zypr.net/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/zypr/zypr-logo.png"  width="250" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Public Library Operations Machine Readable By Default
 url: http://apievangelist.com2013/02/12/public-library-operations-machine-readable-by-default/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/city-of-palo-alto-logo.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://paloalto.opendata.junar.com/dashboards/8031/library/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/city/city-of-palo-alto-logo.jpg"  width="250" align="right" /></a>
 </p>
 <p>

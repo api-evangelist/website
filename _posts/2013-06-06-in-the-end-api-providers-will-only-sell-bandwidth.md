@@ -4,7 +4,8 @@ title: In The End API Providers Will Only Sell Bandwidth
 url: http://apievangelist.com2013/06/06/in-the-end-api-providers-will-only-sell-bandwidth/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      Eduardo Basterrechea (<a href="https://twitter.com/ebaste">@ebaste</a>) of <a href="http://www.apicultur.com/en/" target="_blank">Apicultur</a>, tweeted at me the other day, something I found very interesting, and is a question I will be asking myself on a regular basis:
 </p>
 <div>

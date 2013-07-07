@@ -4,7 +4,8 @@ title: Does Your API Have a Built in Incubator or Accelerator Program
 url: http://apievangelist.com2013/01/28/does-your-api-have-a-built-in-incubator-or-accelerator-program/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Nike-Accelerator.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://nikeaccelerator.com/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/nike/Nike-Accelerator.png"  width="150" align="right" /></a>
 </p>
 <p>

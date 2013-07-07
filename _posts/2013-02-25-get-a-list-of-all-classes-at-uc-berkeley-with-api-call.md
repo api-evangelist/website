@@ -4,7 +4,8 @@ title: Get A List Of All Classes At UC Berkeley With API Call
 url: http://apievangelist.com2013/02/25/get-a-list-of-all-classes-at-uc-berkeley-with-api-call/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/berkeley-api-central.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://developer.berkeley.edu/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/university/uc-berkeley/berkeley-api-central.png"  width="200" align="right" /></a>
 </p>
 <p>

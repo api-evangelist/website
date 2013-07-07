@@ -4,7 +4,8 @@ title: How Much Do You Spend Attracting and Supporting Freemium API Developers
 url: http://apievangelist.com2013/05/02/how-much-do-you-spend-attracting-and-supporting-freemium-api-developers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/freemium-customers.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/freemium-customers.jpg"  width="250" align="right" />
 </p>
 <p>

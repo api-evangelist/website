@@ -4,7 +4,8 @@ title: Six Backend as a ServiceBaaS Providers Discuss the Industry at APIStrat i
 url: http://apievangelist.com2013/01/18/six-of-the-top-backend-as-a-servicebaas-discussing-industry-at-apistrat-in-nyc/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baas-trends.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="/trends/baas.php"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/baas-trends.png"  width="150" align="right" /></a>
 </p>
 <p>

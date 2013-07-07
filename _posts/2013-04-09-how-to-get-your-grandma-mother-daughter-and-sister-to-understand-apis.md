@@ -4,7 +4,8 @@ title: How To Get Your Grandma Mother Daughter and Sister to Understand APIs
 url: http://apievangelist.com2013/04/09/how-to-get-your-grandma-mother-daughter-and-sister-to-understand-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/finger-pointing.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/finger-pointing.jpg"  width="150" align="right" />How To Get Your Grandma, Mother, Daughter and Sister to Understand APIs? You stop using gendered approaches when explaining what an API is. I’m not going to cite any of the past or recent examples of this (you know who you are). And I don’t care <em>"how you didn’t even mean to do this"</em>, when you wrote your API example. There really isn’t a line between sexism and ignorant sexism.
 </p>
 <p>

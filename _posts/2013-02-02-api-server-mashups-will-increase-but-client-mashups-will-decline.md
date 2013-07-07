@@ -4,7 +4,8 @@ title: API Server Mashups Will Increase But Client Mashups Will Decline
 url: http://apievangelist.com2013/02/02/api-server-mashups-will-increase-but-client-mashups-will-decline/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Mike-Amundsen.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://twitter.com/mamund" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mike-amundsen/Mike-Amundsen.jpg"  width="150" align="right" /></a>
 </p>
 <p>

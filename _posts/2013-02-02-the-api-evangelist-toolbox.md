@@ -4,7 +4,8 @@ title: The API Evangelist Toolbox
 url: http://apievangelist.com2013/02/02/the-api-evangelist-toolbox/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/toolbox.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-tools/toolbox.jpg"  width="175" align="right" />
 </p>
 <p>

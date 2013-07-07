@@ -4,7 +4,8 @@ title: API Management Platform Emergent One Launches Free Tier
 url: http://apievangelist.com2013/01/17/api-management-platform-emergent-one-launches-free-tier/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/emergent-one-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.emergentone.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/emergent-one-logo.png"  width="150" align="right" /></a>
 </p>
 <p>

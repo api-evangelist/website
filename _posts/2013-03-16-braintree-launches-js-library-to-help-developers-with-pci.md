@@ -4,7 +4,8 @@ title: Braintree Launches JS Library to Help Developers With PCI
 url: http://apievangelist.com2013/03/16/braintree-launches-javascript-library-to-help-developers-with-pci/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/braintree-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://www.braintreepayments.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/braintree/braintree-logo.png"  width="250" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: App net File API And The Opportunity for Private Label BaaS Resources
 url: http://apievangelist.com2013/01/29/app.net-file-api-and-the-opportunity-for-private-label-baas-resources/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/AppNet-Logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://join.app.net/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/AppNet/AppNet-Logo.png"  align="right" /></a>
 </p>
 <p>

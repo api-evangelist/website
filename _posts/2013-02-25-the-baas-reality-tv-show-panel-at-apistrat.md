@@ -4,7 +4,8 @@ title: The BaaS Reality TV Show Panel at APIStrat
 url: http://apievangelist.com2013/02/25/the-baas-reality-tv-show-panel-at-apistrat/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apistrat-baas-panel.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/pics/apistrat-baas-panel.jpg" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/pics/apistrat-baas-panel.jpg"  width="325" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: API Priorities
 url: http://apievangelist.com2013/04/28/api-priorities/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/priorities.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      I spend a lot of time on API Evangelist getting excited about APIs. Going on three years doing this, I'm getting a little more hardened in my view on what is "good" in the API space. Along with that evolution, I'm getting my priorities in order.
 </p>
 <p>

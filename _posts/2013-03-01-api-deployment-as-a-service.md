@@ -4,7 +4,8 @@ title: API Deployment as a Service
 url: http://apievangelist.com2013/03/01/api-deployment-as-a-service/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-api-service-providers.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-api-service-providers.png"  width="300" align="right" />
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Short Sighted Silicon Valley Limits Potential of Data Markets
 url: http://apievangelist.com2013/03/04/short-sighted-silicon-valley-limits-potential-of-data-markets/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/data-market-visualization.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/data-marketplaces/data-market-visualization.jpg"  width="250" align="right" />
 </p>
 <p>

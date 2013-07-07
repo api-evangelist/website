@@ -4,7 +4,8 @@ title: Estimating the Number of Non Public APIs
 url: http://apievangelist.com2013/01/24/estimating-the-number-of-non-public-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDKBridge-logo.gif
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="SDK Bridge" href="http://sdkbridge.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/sdk-bridge/SDKBridge-logo.gif"  width="200" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Real Time Notification Layer Within Your API
 url: http://apievangelist.com2013/03/15/real-time-notification-layer-within-your-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cisimple-plus-pusher.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/pusher/cisimple-plus-pusher.png"  width="250" align="right" />
 </p>
 <p>

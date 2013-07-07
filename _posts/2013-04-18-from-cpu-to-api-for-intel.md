@@ -4,7 +4,8 @@ title: From CPU to API for Intel
 url: http://apievangelist.com2013/04/18/from-cpu-to-api-for-intel/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Intel-logo.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://intel.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/intel/Intel-logo.jpg"  width="175" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Googles Embeddable Approach to the Civic Information API
 url: http://apievangelist.com2013/01/16/googles-embeddable-approach-to-the-civic-information-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Google-Voter-Information-Widget.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/google/Google-Voter-Information-Widget.png"  width="300" align="right" />
 </p>
 <p>

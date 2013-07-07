@@ -4,7 +4,8 @@ title: API Trends
 url: http://apievangelist.com2013/04/28/api-trends/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/trends.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="/trends/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/trends.jpg"  width="250" align="right" /></a>
 </p>
 <p>

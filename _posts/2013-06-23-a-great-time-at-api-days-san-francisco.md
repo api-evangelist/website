@@ -4,7 +4,8 @@ title: A Great Time At API Days San Francisco
 url: http://apievangelist.com2013/06/23/a-great-time-at-api-days-san-francisco/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://sf.apidays.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-days-san-francisco/api-days-san-francisco-logo.png"  width="150" align="right" /></a>
 </p>
 <p>

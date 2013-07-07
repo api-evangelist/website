@@ -4,7 +4,8 @@ title: History of APIs Mashery
 url: http://apievangelist.com2013/06/10/history-of-apis-mashery/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mashery-old-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://mashery.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mashery/mashery-old-logo.png"  width="90" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Heroku Status and Incident Report Site
 url: http://apievangelist.com2013/03/02/heroku-status-and-incident-report-site/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/heroku-status-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.heroku.com/" target="_blank">Heroku</a> was down for a little while today. I saw the status report and for some reason actually clicked through to the web page. I don’t actually use Heroku, so it doesn’t impact me directly, but I’m always curious.
 </p>
 <p>

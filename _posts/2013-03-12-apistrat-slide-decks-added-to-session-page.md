@@ -4,7 +4,8 @@ title: APIStrat Slide Decks Added To Session Page
 url: http://apievangelist.com2013/03/12/apistrat-slide-decks-added-to-session-page/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event-2-sold-out.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.apistrategyconference.com/"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-event-2-sold-out.png"  width="200" align="right" /></a>
 </p>
 <p>

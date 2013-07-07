@@ -4,7 +4,8 @@ title: Continue With My API Service As A Guest
 url: http://apievangelist.com2013/02/28/continue-with-my-api-service-as-a-guest/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/foxweave-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.foxweave.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/foxweave/foxweave-logo.png"  width="150" align="right" /></a>
 </p>
 <p>

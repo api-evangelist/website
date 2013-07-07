@@ -4,7 +4,8 @@ title: Google Launches Real Time API and JavaScript Library
 url: http://apievangelist.com2013/03/19/google-launches-real-time-api-and-javascript-library/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-real-time-api-playground.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://developers.google.com/drive/realtime/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/google-realtime/google-real-time-api-playground.png"  width="300" align="right" /></a>
 </p>
 <p>

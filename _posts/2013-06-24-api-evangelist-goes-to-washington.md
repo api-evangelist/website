@@ -4,7 +4,8 @@ title: API Evangelist Goes to Washington
 url: http://apievangelist.com2013/06/24/api-evangelist-goes-to-washington/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/PresidentialInnovationFellows.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="http://tech.co/wp-content/uploads/2012/08/PresidentialInnovationFellows.jpg"  width="250" align="right" />
 </p>
 <p>

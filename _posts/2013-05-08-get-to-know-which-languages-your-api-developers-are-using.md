@@ -4,7 +4,8 @@ title: Get To Know Which Languages Your API Developers Are Using
 url: http://apievangelist.com2013/05/08/getting-to-know-which-languages-your-api-developers-are-using/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/xero-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Xero Accounting Software" href="http://developer.xero.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/xero/xero-logo.png"  width="275" align="right" /></a>
 </p>
 <p>

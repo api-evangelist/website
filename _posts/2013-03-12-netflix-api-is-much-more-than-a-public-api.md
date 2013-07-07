@@ -4,7 +4,8 @@ title: Netflix API Is Much More Than A Public API
 url: http://apievangelist.com2013/03/12/netflix-api-is-much-more-than-a-public-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/netflix-square.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/netflix/netflix-square.png"  width="200" align="right" />
 </p>
 <p>

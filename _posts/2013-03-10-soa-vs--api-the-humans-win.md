@@ -4,7 +4,8 @@ title: SOA vs  API The Humans Win
 url: http://apievangelist.com2013/03/10/soa-vs.-api--the-humans-win/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/human-cutout.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/human-cutout.jpg"  width="250" align="right" />
 </p>
 <p>

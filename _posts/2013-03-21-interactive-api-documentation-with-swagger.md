@@ -4,7 +4,8 @@ title: Interactive API Documentation With Swagger
 url: http://apievangelist.com2013/03/21/interactive-api-documentation-with-swagger/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reverb-for-developers-swagger.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Swagger " href="https://developers.helloreverb.com/swagger/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger/reverb-for-developers-swagger.png"  width="225" align="right" /></a>
 </p>
 <p>

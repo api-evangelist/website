@@ -4,7 +4,8 @@ title: InstructureCon Keynote [Kin spoke here about the history of APIs and what
 url: http://apievangelist.com2013/06/26/instructurecon-keynote-kin-spoke-here-about-the-history-of-apis-and-what-apis-do/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/instructurecon-keynote-utah.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/events/instructurecon-2013/instructurecon-keynote-utah.jpg"  width="250" align="right" />
 </p>
 <p>

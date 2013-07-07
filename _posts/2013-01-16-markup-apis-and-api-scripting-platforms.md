@@ -4,7 +4,8 @@ title: Markup APIs and API Scripting Platforms
 url: http://apievangelist.com2013/01/16/markup-apis-and-api-scripting-platforms/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/markup-api.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/scripting-platforms/markup-api.png"  width="325" align="right" />
 </p>
 <p>

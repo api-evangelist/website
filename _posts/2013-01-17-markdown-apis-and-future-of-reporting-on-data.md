@@ -4,7 +4,8 @@ title: Markdown APIs and Future of Reporting on Data
 url: http://apievangelist.com2013/01/17/markdown-apis-and-future-of-reporting-on-data/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/markdown-icon.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/markdown-icon.png"  width="200" align="right" />
 </p>
 <p>

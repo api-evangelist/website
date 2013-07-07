@@ -4,7 +4,8 @@ title: Trends in API Aggregation
 url: http://apievangelist.com2013/06/29/trends-in-api-aggregation/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aggregation-trend.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      One trend in API usage I'm closely watching is the <a title="API Aggregation" href="http://aggregation.apievangelist.com">aggregation of APIs by a new wave of startups</a>. As the world adopts more cloud services, the need to aggregate content across multiple APIs is growing.
 </p>
 <p>

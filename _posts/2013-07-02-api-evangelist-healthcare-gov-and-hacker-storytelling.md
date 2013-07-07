@@ -4,7 +4,8 @@ title: API Evangelist Healthcare gov and Hacker Storytelling
 url: http://apievangelist.com2013/07/02/api-evangelist,-healthcare.gov-and-hacker-storytelling/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-github.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://github.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg"  width="225" align="right" /></a>
 </p>
 <p>

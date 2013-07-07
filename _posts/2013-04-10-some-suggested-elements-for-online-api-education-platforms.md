@@ -4,7 +4,8 @@ title: Some Suggested Elements for Online API Education Platforms
 url: http://apievangelist.com2013/04/10/some-suggested-elements-for-online-api-education-platforms/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/studeio-sketchpad-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Studio Sketchpad" href="http://studio.sketchpad.cc/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/studio-sketchpad/studeio-sketchpad-logo.png"  width="250" align="right" /></a>
 </p>
 <p>

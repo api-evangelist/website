@@ -4,7 +4,8 @@ title: Pinboard API Tax Proposal
 url: http://apievangelist.com2013/03/15/pinboard-api-tax-proposal/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pinboard-icon.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://pinboard.in" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/pinboard/pinboard_in_blue.png"  width="200" align="right" /></a>
 </p>
 <p>

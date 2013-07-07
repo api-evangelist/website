@@ -4,7 +4,8 @@ title: When API Success Signals Begin Working Against You
 url: http://apievangelist.com2013/05/10/when-api-success-signals-begin-working-against-you/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/restful-labs-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.restful-labs.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/restful-labs/restful-labs-logo.png"  width="275" align="right" /></a>
 </p>
 <p>

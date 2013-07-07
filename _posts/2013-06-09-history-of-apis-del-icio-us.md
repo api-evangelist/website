@@ -4,7 +4,8 @@ title: History of APIs del icio us
 url: http://apievangelist.com2013/06/09/history-of-apis-del-icio-us/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/delicious-logo.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/delicious/delicious-logo.jpg"  width="200" align="right" />
 </p>
 <p>

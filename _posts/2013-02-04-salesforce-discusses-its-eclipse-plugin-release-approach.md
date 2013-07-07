@@ -4,7 +4,8 @@ title: Salesforce Discusses Its Eclipse Plugin Release Approach
 url: http://apievangelist.com2013/02/04/salesforce-discusses-its-eclipse-plugin-release-approach/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/eclipse-ide-logo.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.eclipse.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/eclipse/eclipse-ide-logo.jpeg"  width="200" align="right" /></a>
 </p>
 <p>

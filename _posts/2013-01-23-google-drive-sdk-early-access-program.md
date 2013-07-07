@@ -4,7 +4,8 @@ title: Google Drive SDK Early Access Program
 url: http://apievangelist.com2013/01/23/google-drive-sdk-early-access-program/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Google-Drive-SDK-Early-Access-Program.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://developers.google.com/drive/earlyaccess" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/google/Google-Drive-SDK-Early-Access-Program.png"  width="250" align="right" /></a>
 </p>
 <p>

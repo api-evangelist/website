@@ -4,7 +4,8 @@ title: Have You Taken A Look At ATT APis Lately
 url: http://apievangelist.com2013/04/28/have-you-taken-a-look-at-att-apis-lately/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/att-developer-program-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://developer.att.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/att-developer-program-logo.png"  align="right" /></a>
 </p>
 <p>

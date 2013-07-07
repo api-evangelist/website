@@ -4,7 +4,8 @@ title: The Next Generation of API Discovery
 url: http://apievangelist.com2013/01/24/the-next-generation-of-api-discovery/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Discovery.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/Tag-Cloud-API-Discovery.png"  width="325" align="right" />
 </p>
 <p>

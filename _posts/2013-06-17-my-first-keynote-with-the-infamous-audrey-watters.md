@@ -4,7 +4,8 @@ title: My First Keynote With The Infamous Audrey Watters
 url: http://apievangelist.com2013/06/17/my-first-keynote-with-the-infamous-audrey-watters/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/audrey-kin-paris.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/audrey-kin-paris.jpg"  width="250" align="right" />
 </p>
 <p>

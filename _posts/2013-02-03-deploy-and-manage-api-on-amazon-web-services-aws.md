@@ -4,7 +4,8 @@ title: Deploy and Manage API on Amazon Web Services AWS
 url: http://apievangelist.com2013/02/03/deploy-and-manage-api-on-amazon-web-services-aws/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://aws.amazon.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/AWS_LOGO_CMYK.jpg"  width="175" align="right" /></a>
 </p>
 <p>

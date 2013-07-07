@@ -4,7 +4,8 @@ title: Github Can Be More Than Code
 url: http://apievangelist.com2013/05/26/github-can-be-more-than-code/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://github.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png"  width="100" align="right" /></a>
 </p>
 <p>

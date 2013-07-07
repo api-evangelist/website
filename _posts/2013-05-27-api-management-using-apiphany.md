@@ -4,7 +4,8 @@ title: API Management Using APiphany
 url: http://apievangelist.com2013/05/27/apiphany-api-management/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apiphany-logo-blue-300.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-logo-blue.png"  width="250" align="right" /></a>I'm working my way through all the <a title="API management" href="http://management.apievangelist.com">API management providers</a>, making sure I'm up to speed on what service each provider is offering these days. As part of this work I've been playing with the <a title="API Management" href="http://apiphany.com" target="_blank">Apiphany</a> platform, using a demo site the Apiphany team was so kind to setup for me.
 </p>
 <p>

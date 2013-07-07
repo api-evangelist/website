@@ -4,7 +4,8 @@ title: API Management Using Github
 url: http://apievangelist.com2013/06/08/api-management-using-github/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-github.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      There are plenty of tools and services you can use to manage your API and its developer community. But there is no platform that provides as much benefit and versatility as <a title="Github" href="http://github.com">Github</a>.
 </p>
 <p>

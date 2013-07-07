@@ -4,7 +4,8 @@ title: What Does The API Evangelist Do
 url: http://apievangelist.com2013/05/02/what-does-the-api-evangelist-do/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-in-api-we-trust.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-in-api-we-trust.png"  width="250" align="right" />
 </p>
 <p>

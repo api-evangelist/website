@@ -4,7 +4,8 @@ title: API Badges Logos and Stickers
 url: http://apievangelist.com2013/03/15/api-badges-logos-and-stickers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/punchfork-vertical.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://punchfork.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/punchfork/punchfork-vertical.png"  width="150" align="right" /></a>
 </p>
 <p>

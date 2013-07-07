@@ -4,7 +4,8 @@ title: Quick Demonstration Showing The Benefits of The White House Digital Strat
 url: http://apievangelist.com2013/05/25/quick-demonstration-of-benefits-of-white-house-digital-strategy/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/energy-developer.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      I wanted to share a quick visualization of the beneifts of <a title="Barack Obamas Presidential directive that every Federal Government agency should have an API" href="http://blog.apievangelist.com/2012/06/01/barak-obama-directs-all-federal-agencies-to-have-an-api/">Barack Obama's Presidential directive that every Federal Government agency should have an API</a>, following <a href="http://www.gpo.gov/fdsys/pkg/FR-2011-05-02/pdf/2011-10732.pdf">Executive Order 13571</a>, and part of the Whitehouse CIO's strategy, entitled "<a title="Digital Government: Building a 21st Century Platform to Better Serve the American People" href="http://www.whitehouse.gov/sites/default/files/omb/egov/digital-government/digital-government-strategy.pdf">Digital Government: Building a 21st Century Platform to Better Serve the American People</a>" and the potential of the recent <a href="http://www.whitehouse.gov/sites/default/files/omb/memoranda/2013/m-13-13.pdf">Open Data Executive Order and accompanying Open Data Policy</a>.
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Exactly the API Strategy Practice Conference I Envisioned
 url: http://apievangelist.com2013/02/25/exactly-the-api-strategy-and-practice-conference-i-envisioned/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-steve-kin-open.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-practice-steve-kin-open.jpg"  width="300" align="right" />
 </p>
 <p>

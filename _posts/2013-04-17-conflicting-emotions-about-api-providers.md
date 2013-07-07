@@ -4,7 +4,8 @@ title: Conflicting Emotions About API Providers
 url: http://apievangelist.com2013/04/17/conflicting-emotions-about-api-providers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/conflict-with-myself.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/conflict-with-myself.png"  width="250" align="right" />
 </p>
 <p>

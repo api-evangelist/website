@@ -4,7 +4,8 @@ title: Parse Is Successful By Truly Solving Problems for Mobile Developers
 url: http://apievangelist.com2013/05/01/parse-is-successful-by-truly-solving-problems-for-mobile-developers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/parse-cloud.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://parse.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/parse-cloud.png"  width="250" align="right" /></a>
 </p>
 <p>

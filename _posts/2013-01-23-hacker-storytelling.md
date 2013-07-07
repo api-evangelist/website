@@ -4,7 +4,8 @@ title: Hacker Storytelling
 url: http://apievangelist.com2013/01/23/hacker-storytelling/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hacker-Storytelling.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://hackerstorytelling.com"><img src="https://s3.amazonaws.com/kinlane-productions/hacker-storytelling/Tag-Cloud-Hacker-Storytelling.png"  width="325" align="right" /></a>
 </p>
 <p>

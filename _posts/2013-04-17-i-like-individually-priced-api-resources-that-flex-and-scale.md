@@ -4,7 +4,8 @@ title: I Like Individually Priced API Resources That Flex and Scale
 url: http://apievangelist.com2013/04/17/i-like-individually-priced-api-resources-that-flex-and-scale/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/person-building-blocks.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/person-building-blocks.jpg"  width="250" align="right" />
 </p>
 <p>

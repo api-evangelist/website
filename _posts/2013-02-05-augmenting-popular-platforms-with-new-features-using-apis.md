@@ -4,7 +4,8 @@ title: Augmenting Popular Platforms With New Features Using APIs
 url: http://apievangelist.com2013/02/05/augmenting-popular-platforms-with-new-features-using-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/instaDM-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://insta.dm/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/instagram/instaDM-logo.png"  align="right" /></a>
 </p>
 <p>

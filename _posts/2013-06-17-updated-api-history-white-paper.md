@@ -4,7 +4,8 @@ title: Updated API History White Paper
 url: http://apievangelist.com2013/06/17/updated-api-history-white-paper/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-white-papers-history-of-apis.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://bit.ly/19dMjBe" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/whitepapers/api-evangelist-white-papers-history-of-apis.png"  width="300" align="right" /></a>
 </p>
 <p>

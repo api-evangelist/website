@@ -4,7 +4,8 @@ title: Startup API Pricing
 url: http://apievangelist.com2013/03/19/startup-api-pricing/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/import-io-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Import.io" href="http://import.io"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/import-io/import-io-logo.png"  align="right" /></a>
 </p>
 <p>

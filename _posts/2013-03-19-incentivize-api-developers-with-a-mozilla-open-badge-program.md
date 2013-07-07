@@ -4,7 +4,8 @@ title: Incentivize API Developers With A Mozilla Open Badge Program
 url: http://apievangelist.com2013/03/19/incentivize-api-developers-with-a-mozilla-open-badge-program/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mozilla-open-badges.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://openbadges.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mozilla-open-badges/mozilla-open-badges.png"  width="250" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Make Sure And Have Multiple KPIs For Your APIs
 url: http://apievangelist.com2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-billionaires-club.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://blog.programmableweb.com/2011/05/25/who-belongs-to-the-api-billionaires-club/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/programmableweb/api-billionaires-club.png"  width="325" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Overview Of Backend as a Service BaaS White Paper
 url: http://apievangelist.com2013/05/08/overview-of-the-backend-as-a-service-baas-space-white-paper/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-black-baas-2.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Overview Of The Backend as a Service (BaaS) Space" href="https://apps.facebook.com/marketpage/mu07n26dfwwupqoy6k0xj/item/MWP6Hfn" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/tag-cloud-black-baas-2.png"  width="325" align="right" /></a>
 </p>
 <p>

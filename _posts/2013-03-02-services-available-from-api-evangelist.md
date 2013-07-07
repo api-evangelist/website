@@ -4,7 +4,8 @@ title: Services Available From API Evangelist
 url: http://apievangelist.com2013/03/02/my-api-evangelist-services/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-api-evangelist-services.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-api-evangelist-services.png"  width="300" align="right" />
 </p>
 <p>

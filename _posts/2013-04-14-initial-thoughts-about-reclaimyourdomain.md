@@ -4,7 +4,8 @@ title: Initial Thoughts About ReclaimYourDomain
 url: http://apievangelist.com2013/04/14/reclaim-your-domain/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/person-spider-web.jpg
 ---
-{% include JB/setup %}<table cellpadding="5" width="280" align="right">
+{% include JB/setup %}
+<table cellpadding="5" width="280" align="right">
      <tbody>
           <tr>
                <td align="center">

@@ -4,7 +4,8 @@ title: API Providers Guide API Design
 url: http://apievangelist.com2013/06/13/api-providers-guide-to-api-design/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-api-providers-guide-api-design-white-paper.png
 ---
-{% include JB/setup %}<table width="250" align="right">
+{% include JB/setup %}
+<table width="250" align="right">
      <tbody>
           <tr>
                <td align="center">

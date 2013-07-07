@@ -4,7 +4,8 @@ title: API Pricing On Complexity Speed and Support At Apicultur
 url: http://apievangelist.com2013/03/04/api-pricing-on-api-complexity-speed-and-support-at-apicultur/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apicultur-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/apicultur/apicultur-logo.png"  width="200" align="right" />
 </p>
 <p>

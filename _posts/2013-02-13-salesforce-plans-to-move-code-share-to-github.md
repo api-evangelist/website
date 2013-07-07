@@ -4,7 +4,8 @@ title: Salesforce Plans to Move Code Share to Github
 url: http://apievangelist.com2013/02/13/salesforce-plans-to-move-code-share-to-github/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/salesforce-code-share.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="code share" href="http://developer.force.com/codeshare/apex/resultspage?l=mru&amp;title=All%20Projects"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/salesforce/salesforce-code-share.png"  width="250" align="right" /></a>
 </p>
 <p>

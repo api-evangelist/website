@@ -4,7 +4,8 @@ title: Work On The Next Version Of The Crocodoc API
 url: http://apievangelist.com2013/03/12/work-on-the-next-version-of-the-crocodoc-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/crocodoc-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a title="Crocodoc" href="https://crocodoc.com/about/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/crocodoc/crocodoc-logo.png"  width="250" align="right" /></a>
 </p>
 <p>

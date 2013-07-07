@@ -4,7 +4,8 @@ title: A Book API Platform
 url: http://apievangelist.com2013/06/10/a-book-api-platform/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-epub-logo.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.gutenberg.org/ebooks/42901" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/books/creatures-from-the-dark-cover.jpg"  width="150" align="right" /></a>
 </p>
 <p>

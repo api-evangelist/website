@@ -4,7 +4,8 @@ title: NASA Challenges Devs to Create Space Object Tracking API
 url: http://apievangelist.com2013/03/25/skymorph-imagery-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/nasa-skymorph.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://spaceappschallenge.org/challenge/skymorph-imagery-api/"><img src="https://s3.amazonaws.com/kinlane-productions/nasa/nasa-skymorph.jpg"  width="275" align="right" /></a>
 </p>
 <p>

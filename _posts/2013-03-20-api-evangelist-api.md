@@ -4,7 +4,8 @@ title: API Evangelist API
 url: http://apievangelist.com2013/03/20/api-evangelist-api/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-gartner-aadi.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-gartner-aadi.jpg"  width="250" align="right" />
 </p>
 <p>

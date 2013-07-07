@@ -4,7 +4,8 @@ title: Have You Checked Out Webshell Lately
 url: http://apievangelist.com2013/05/29/have-you-checked-out-webshell-lately/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/webshell-logo.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://webshell.io/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/webshell/webshell-logo.jpg"  width="250" align="right" /></a>
 </p>
 <p>

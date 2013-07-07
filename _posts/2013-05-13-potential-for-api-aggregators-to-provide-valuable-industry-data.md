@@ -4,7 +4,8 @@ title: Potential for API Aggregators to Provide Valuable Industry Data
 url: http://apievangelist.com2013/05/13/potential-for-api-aggregators-to-provide-valuable-industry-data/
 image: https://s3.amazonaws.com/kinlane-productions/api-evangelist/spreedly/spreedly-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://spreedly.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/spreedly/spreedly-logo.png" border="0" width="225" align="right" /></a>
 </p>
 <p>

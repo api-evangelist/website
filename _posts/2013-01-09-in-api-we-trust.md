@@ -4,7 +4,8 @@ title: In API We Trust
 url: http://apievangelist.com2013/01/09/in-api-we-trust/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KL_InApiWeTrust-1000.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      If you've met me in person, you know I always wear my logo on my t-shirt.  I'm not a graphic designer, and when I needed a logo for <a href="http://apievangelist.com">API Evangelist</a>, I just wrapped the words in JSON and called it good.  It has stuck.  
 </p>
 <p>

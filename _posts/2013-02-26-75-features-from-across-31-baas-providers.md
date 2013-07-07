@@ -4,7 +4,8 @@ title: 75 Features From Across 31 BaaS Providers
 url: http://apievangelist.com2013/02/26/75-features-from-across-31-baas-providers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/baas-trends.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      I’m currently tracking on <a href="/trends/baas.php">31 backend as a service providers</a>, in an effort to better understand how this new breed of platforms are helping developers build web and mobile apps. After looking at all the BaaS providers, there are 13 clear leaders:
 </p>
 <table cellspacing="3" cellpadding="2" align="center">

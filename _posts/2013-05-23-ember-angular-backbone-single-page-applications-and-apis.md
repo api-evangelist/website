@@ -4,7 +4,8 @@ title: Ember Angular Backbone Single Page Applications and APIs
 url: http://apievangelist.com2013/05/23/ember-angular-and-backbone-single-page-applications-and-apis/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/single-page-web-applications.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.slideshare.net/3scale/the-api-and-appification-of-the-web" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/single-page-applications/single-page-web-applications.png"  width="325" align="right" /></a>
 </p>
 <p>

@@ -4,7 +4,8 @@ title: Gather Feedback For Your API With UserVoice
 url: http://apievangelist.com2013/03/05/gather-feedback-for-your-api-with-uservoice/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/impactstory-logo.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://impactstory.org/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/analytics/impactstory/impactstory-logo.png"  width="200" align="right" /></a>
 </p>
 <p>

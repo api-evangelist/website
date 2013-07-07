@@ -4,7 +4,8 @@ title: Google Adjusts Adwords API Access Tiers
 url: http://apievangelist.com2013/02/04/google-adjusts-adwords-api-access-tiers/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-adwords-300x125.jpeg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="https://developers.google.com/adwords/api/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/google-adwords/google-adwords-300x125.jpeg"  width="225" align="right" /></a>
 </p>
 <p>

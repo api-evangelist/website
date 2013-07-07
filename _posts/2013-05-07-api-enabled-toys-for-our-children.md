@@ -4,7 +4,8 @@ title: API Enabled Toys For Our Children
 url: http://apievangelist.com2013/05/07/api-enabled-toys-for-our-children/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fisher-price-internet-enabled-device.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.fisher-price.com/en_US/products/69586" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fisher-price/fisher-price-internet-enabled-device.png"  width="250" align="right" /></a>
 </p>
 <p>

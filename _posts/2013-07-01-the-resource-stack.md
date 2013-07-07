@@ -4,7 +4,8 @@ title: The Resource Stack
 url: http://apievangelist.com2013/07/01/the-resource-stack/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Stack-Colored.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-stack/API-Stack-Colored.png"  width="250" align="right" />
 </p>
 <p>

@@ -4,7 +4,8 @@ title: One API Discovery Definition to Rule Them All
 url: http://apievangelist.com2013/02/02/one-api-discovery-definition-to-rule-them-all/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/discovery-exploration.jpg
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/discovery/discovery-exploration.jpg"  width="275" align="right" />
 </p>
 <p>

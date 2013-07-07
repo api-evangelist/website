@@ -4,7 +4,8 @@ title: APIStrat Videos Laura Merling 3 Things You Need to Turn Your Enterprise I
 url: http://apievangelist.com2013/04/08/apistrat-videos-laura-merling-3-things-you-need-to-turn-your-enterprise-into-a-platform/
 image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/laura-merling-apistrat.png
 ---
-{% include JB/setup %}<p>
+{% include JB/setup %}
+<p>
      <a href="http://www.infoq.com/presentations/Enterprise-Platform" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/speakers/laura-merling-apistrat.png"  width="250" align="right" /></a>
 </p>
 <p>
