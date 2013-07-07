@@ -37,15 +37,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/lea
 <p>
      My <a title="research into the dcuation and learning management space" href="http://apievangelist.com/industries/education.php">research into the education and learning management</a> space is still in its infancy. If you know of any tools I should evaluate, please let me know. Whether its K-12, Higher Ed, or corporate learning, education is one space that dramatically benefit from the power of the API.
 </p>
-<p>
-     <strong>Update:</strong>  
-</p>
-<p>
-     Thanks <a title="@bibliotechy" href="http://twitter.com/!/bibliotechy">@bibliotechy</a> for recommending Sakai.  They seem to have some very robust set APIs, as well as widget and UI tools.  A little tough to find, you have to search to find.  I would recommend a more organized developer API ecosystem Sakai.  
-</p>
-<ul >
-     <li>
-          <a href="https://confluence.sakaiproject.org/dosearchsite.action?queryString=api"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/sakainew_logo.png"  width="75" align="right" /></a><strong><a title="Sakai" href="https://confluence.sakaiproject.org/dosearchsite.action?queryString=api">Sakai</a></strong> - The Sakai community develops open software to support teaching, learning and research.  The global community comes together to define needs of academic users, create software tools, share best practices and pool knowledge and resources in support of this goal.
-     </li>
+
 </ul>
 
