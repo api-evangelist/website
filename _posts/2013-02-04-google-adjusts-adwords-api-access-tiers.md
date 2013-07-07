@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
 ---
 {% include JB/setup %}
 <p>
-     <a href=https://developers.google.com/adwords/api/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/google-adwords/google-adwords-300x125.jpeg  width=225 align=right /></a>
+     <a href="https://developers.google.com/adwords/api/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/google-adwords/google-adwords-300x125.jpeg"  width="225" align="right" /></a>
 </p>
 <p>
-     <a href=http://googleadsdeveloper.blogspot.com/2013/01/new-simplified-adwords-api-pricing.html target=_blank>Google is adjusting their pricing model for the Adwords API</a>, acknowledging that having a free usage tier is important.  Making the API easier to access, while also ensuring a certain QOS.
+     <a href="http://googleadsdeveloper.blogspot.com/2013/01/new-simplified-adwords-api-pricing.html" target="_blank">Google is adjusting their pricing model for the Adwords API</a>, acknowledging that having a free usage tier is important.  Making the API easier to access, while also ensuring a certain QOS.
 </p>
 <p>
      Google has opted to go with two levels of API access:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Basic</strong> - Basic access is provided by default and allows up to 10,000 operations per day
      </li>
@@ -23,7 +23,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
      </li>
 </ul>
 <p>
-     With both basic or standard access, there are no charges for <a href=https://developers.google.com/adwords/api/ target=_blank>AdWords API</a> usage. Google is just looking to maintain quality over which developers can hammer on the API, while acknowledging a free tier allows for experimentation and innovation.  All you have to do is apply to be part of the standard level, if you reach limits of basic tier.
+     With both basic or standard access, there are no charges for <a href="https://developers.google.com/adwords/api/" target="_blank">AdWords API</a> usage. Google is just looking to maintain quality over which developers can hammer on the API, while acknowledging a free tier allows for experimentation and innovation.  All you have to do is apply to be part of the standard level, if you reach limits of basic tier.
 </p>
 <p>
      This is a good model for even a totally open data of free resource APIs. While you want your data and resources to be open, you also want to be able to offer a certain quality of service, and keep infrastructure costs to a minimum.

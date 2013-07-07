@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dat
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/data-marketplaces/data-market-visualization.jpg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/data-marketplaces/data-market-visualization.jpg"  width="250" align="right" />
 </p>
 <p>
-     I’ve been following the great coverage by Paul MIller over at Cloud Ave about whether <a href=http://www.cloudave.com/26791/is-infochimps-running-from-the-data-market-business/>Infochimps running from the Data Market business</a>, and <a href=http://www.cloudave.com/25863/discussing-data-markets-in-new-york-city/>Discussing Data Markets in New York City</a>. He’s touched on any interesting topic around the viability of data markets as a business, and the fate of several of the most high profile players in the space.
+     I’ve been following the great coverage by Paul MIller over at Cloud Ave about whether <a href="http://www.cloudave.com/26791/is-infochimps-running-from-the-data-market-business/">Infochimps running from the Data Market business</a>, and <a href="http://www.cloudave.com/25863/discussing-data-markets-in-new-york-city/">Discussing Data Markets in New York City</a>. He’s touched on any interesting topic around the viability of data markets as a business, and the fate of several of the most high profile players in the space.
 </p>
 <p>
-     In 2011, when it comes to data API marketplaces and providers I tended to showcase players like <a href=http://factual.com>Factual</a>, <a href=http://kasabi.com>Kasabi</a>, <a href=http://datamarket.com/>DataMarket</a> and <a href=http://www.infochimps.com/>InfoChimps</a>. In 2013, we’ve watched Kasabi disappear, and the migration of InfoChimps from an open data market, to a enterprise data platform. While Factual and Datamarket appear to be going strong.
+     In 2011, when it comes to data API marketplaces and providers I tended to showcase players like <a href="http://factual.com">Factual</a>, <a href="http://kasabi.com">Kasabi</a>, <a href="http://datamarket.com/">DataMarket</a> and <a href="http://www.infochimps.com/">InfoChimps</a>. In 2013, we’ve watched Kasabi disappear, and the migration of InfoChimps from an open data market, to a enterprise data platform. While Factual and Datamarket appear to be going strong.
 </p>
 <p>
      I think this reflects a common, lack of imagination by Silicon Valley because they are so focused on making money, they miss the need to support critical aspects of industries, that are required to allow for the growth they want to see.
@@ -27,10 +27,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dat
      There will be plenty of money down the road from APIs and data marketplaces, but by always looking at it through a Silicon Valley perspective, we are going to stifle the oxygen necessary for a truly healthy, vibrant space.
 </p>
 <p>
-     I’m spending time looking through the API service provider space, and <a href=/2013/03/01/api-deployment-as-a-service/>last week I noticed the big gap in there being API deployment services vs. API management services</a>. This imbalance is due to a gold rush by heavily VC funded API service providers looking to capitalize on the enterprise looking to proxy their existing infrastructure with a new breed of API services.
+     I’m spending time looking through the API service provider space, and <a href="/2013/03/01/api-deployment-as-a-service/">last week I noticed the big gap in there being API deployment services vs. API management services</a>. This imbalance is due to a gold rush by heavily VC funded API service providers looking to capitalize on the enterprise looking to proxy their existing infrastructure with a new breed of API services.
 </p>
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/data-marketplaces/data-markets.jpg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/data-marketplaces/data-markets.jpg"  width="250" align="right" />
 </p>
 <p>
      I’ve argueed this with execs at unamed API service provider companies, on whether the next growth in APIs will be from new, API providers or from the enterprise. I was told I’m naive and it shows my inexperience that I think it will come from outside the enterprise. While there will be money to be made off the enterprise evolving their existing infrastructure in this new way, in reality this is just a small evolution in business not anywhere near a revolution. Where big change in business sectors and economies will occur is when companies, organizations and government who didn’t jump on SOA bandwagon understand the value of opening up data, and making available via APIs in this new way.

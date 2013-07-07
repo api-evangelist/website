@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
 ---
 {% include JB/setup %}
 <p>
-     <a href=https://www.eff.org/press/releases/computer-scientists-urge-court-block-copyright-claims-oracle-v-google-api-fight><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/electronic-frontier-foundation/google-v-oracle-brief.png  width=250 align=right /></a>
+     <a href="https://www.eff.org/press/releases/computer-scientists-urge-court-block-copyright-claims-oracle-v-google-api-fight"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/electronic-frontier-foundation/google-v-oracle-brief.png"  width="250" align="right" /></a>
 </p>
 <p>
-     The <a href=https://www.eff.org/press/releases/computer-scientists-urge-court-block-copyright-claims-oracle-v-google-api-fight>Electronic Frontier Foundation (EFF) recently filed a a brief</a> in the U.S. Court of Appeals for the Federal Circuit, urging the court to block copyright claims in the Oracle v. Google legal battle. The EFF approached me several months ago to provide feedback for the brief. I sent over my research and published some of my thoughts to <a href=/2012/11/02/help-eff-make-case-for-no-copryight-on-apis/>Help EFF Make Case For No Copryight on APIs</a> and why <a href=http://apivoice.com/2012/12/08/api-copyright-would-restrict-api-interoperability/>API Copyright Would Restrict API Interoperability</a> and also lent my support as one of the <a href=https://www.eff.org/cases/oracle-v-google/amici>Signatories to the Computer Scientists’ Amicus Brief</a>.
+     The <a href="https://www.eff.org/press/releases/computer-scientists-urge-court-block-copyright-claims-oracle-v-google-api-fight">Electronic Frontier Foundation (EFF) recently filed a a brief</a> in the U.S. Court of Appeals for the Federal Circuit, urging the court to block copyright claims in the Oracle v. Google legal battle. The EFF approached me several months ago to provide feedback for the brief. I sent over my research and published some of my thoughts to <a href="/2012/11/02/help-eff-make-case-for-no-copryight-on-apis/">Help EFF Make Case For No Copryight on APIs</a> and why <a href="http://apivoice.com/2012/12/08/api-copyright-would-restrict-api-interoperability/">API Copyright Would Restrict API Interoperability</a> and also lent my support as one of the <a href="https://www.eff.org/cases/oracle-v-google/amici">Signatories to the Computer Scientists’ Amicus Brief</a>.
 </p>
 <p>
      Here is a summarized version of the arguement:
@@ -49,7 +49,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
                </ol>
           </li>
           <li>
-               Copyright in interfaces would creat an orphan software problem
+               Copyright in interfaces would creat an "orphan software" problem
                <ol>
                     <li>
                          Uncopyrightable interfaces protect both developers and users<br />
@@ -68,7 +68,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/goo
      The freedom to reimplement and extend existing aPIs has undoubtedly led to robust software and hardware industries, but also to an explosion of technological advances that do more than merely increase companies' bottom line. They open the world for the sharing of information, increased communication, and technological advances that could never have been contemplated.
 </blockquote>
 <p>
-     You can read the <a href=https://www.eff.org/document/amicus-brief-computer-scientists>full brief that was filed over at EFF</a>. Keeping APIs open, and free from copyright is something I am passionate about and feel very strongly that it is critical to a healthy, vibrant online economy.
+     You can read the <a href="https://www.eff.org/document/amicus-brief-computer-scientists">full brief that was filed over at EFF</a>. Keeping APIs open, and free from copyright is something I am passionate about and feel very strongly that it is critical to a healthy, vibrant online economy.
 </p>
 <p>
      I'm confident that the Judge will throw out Oracle's case, but I do no think this is the last time we'll see a company step up and try to apply copyright to APIs.

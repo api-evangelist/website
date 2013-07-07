@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-2015.jpg  width=225 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-2015.jpg"  width="225" align="right" />
 </p>
 <p>
      APIs are quickly moving into the mainstream. In 2012, companies, organizations and government agencies all took notice of the need for deploying and consuming APIs. In 2013 there is still a lot of evangelism to be done, to make people aware of what an APIs is, and why their company should have one, but I think we are approaching the phase where APIs will be the default for any company.
 </p>
 <p>
-     If you frequent the tech conferences like I do, you've heard folks like John Musser say that in 1995 we were asking, Do we need a website?, and by 2000 website was becoming the default. Fastforward to 2010, and we were asking, Do we need an API?, and I believe by 2015 APIs will be default for companies, just like websites in 2000.
+     If you frequent the tech conferences like I do, you've heard folks like John Musser say that in 1995 we were asking, "Do we need a website?", and by 2000 website was becoming the default. Fastforward to 2010, and we were asking, "Do we need an API?", and I believe by 2015 APIs will be default for companies, just like websites in 2000.
 </p>
 <p>
      APIs are built on HTTP just like our websites. They are not just a new technology trend. Your website is a critical part of your company, telling the world about your company, and the products and services you provide. If you are a company without a website in this century, you probably are pretty irrelevant in your industry.

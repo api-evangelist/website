@@ -6,23 +6,23 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pre
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/federal-strategy/presidential-innovation-fellows.jpeg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/federal-strategy/presidential-innovation-fellows.jpeg"  width="250" align="right" />
 </p>
 <p>
      The Presidential Innovation Fellows (PIF) program, launched last year, bringing in talented individuals from the private sector, to Washington DC for 6-12 month “tours of duty” in the Federal Government, to develop innovative solutions to our governments most difficult problems.
 </p>
 <p>
-     Today the United States CTO Todd Park and CIO Steve VanRoekel <a href=http://www.whitehouse.gov/blog/2013/02/05/throw-your-hat-ring-round-2-presidential-innovation-fellows-program>announced round two of the Presidential Innovation Fellows (PIF) program</a>. The first round of PIF projects included MyUSA (formerly known as MyGov), RFP-EZ, Blue Button, Better Than Cash, and Open Data Initiatives started in August 2012 with 18 inaugural Fellows.
+     Today the United States CTO Todd Park and CIO Steve VanRoekel <a href="http://www.whitehouse.gov/blog/2013/02/05/throw-your-hat-ring-round-2-presidential-innovation-fellows-program">announced round two of the Presidential Innovation Fellows (PIF) program</a>. The first round of PIF projects included MyUSA (formerly known as MyGov), RFP-EZ, Blue Button, Better Than Cash, and Open Data Initiatives started in August 2012 with 18 inaugural Fellows.
 </p>
 <p>
-     I had the pleasure to be <a href=http://apievangelist.com/2012/10/13/heading-to-washington-dc-to-talk-apis-with-innovation-fellows/>invited in October to spend half a day talking to a group of the fellows</a>, and help make sure they had an awareness of the API space, empowering the group to make the biggest impact possible. Last week when I was in DC, I also got to speak with a couple of the fellows as they were finishing up their tour of duty, and beginning to think about what is next.
+     I had the pleasure to be <a href="http://apievangelist.com/2012/10/13/heading-to-washington-dc-to-talk-apis-with-innovation-fellows/">invited in October to spend half a day talking to a group of the fellows</a>, and help make sure they had an awareness of the API space, empowering the group to make the biggest impact possible. Last week when I was in DC, I also got to speak with a couple of the fellows as they were finishing up their tour of duty, and beginning to think about what is next.
 </p>
 <p>
      The second round of the Presidential Innovation Fellows will tackle the following initiatives:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
-          <strong>Disaster Response &amp; Recovery</strong> - Collaboratively building and “pre-positioning needed tech tools ahead of future emergencies or natural disasters in order to mitigate economic damage and save lives
+          <strong>Disaster Response &amp; Recovery</strong> - Collaboratively building and “pre-positioning" needed tech tools ahead of future emergencies or natural disasters in order to mitigate economic damage and save lives
      </li>
      <li>
           <strong>MyUSA</strong> - Simplifying the process of finding and accessing information and government services that are right for you. Helping American businesses access the information and services that will help them grow, hire American workers, and export to foreign markets
@@ -58,6 +58,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pre
      I’m excited to evaluate more of what was accomplished in round one, and closely track who is accepted into the program for round two. I think the program has the potential to help fix some serious illnesses with open, transparency and lack of machine readable data from government agencies. My only addition to the program would be another tier of volunteers called Presidential Innovation Corps, where talented individuals who did not make it as fellows could still be put to use for other smaller initiatives and crowdsourcing opportunities--this group represents a lot of excitement, passion and talent, and with the pool growing in round two it represents a large group of eager citizens not being put to use.
 </p>
 <p>
-     If you believe in APIs, and believe they can transform how our government operates, I encourage you to <a href=http://www.whitehouse.gov/InnovationFellows>apply for the Presidential Innovation Fellows program</a>, and potentially participate in some serious change for our country.
+     If you believe in APIs, and believe they can transform how our government operates, I encourage you to <a href="http://www.whitehouse.gov/InnovationFellows">apply for the Presidential Innovation Fellows program</a>, and potentially participate in some serious change for our country.
 </p>
 

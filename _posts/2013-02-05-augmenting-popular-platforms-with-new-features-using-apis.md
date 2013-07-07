@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ins
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://insta.dm/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/instagram/instaDM-logo.png  align=right /></a>
+     <a href="http://insta.dm/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/instagram/instaDM-logo.png"  align="right" /></a>
 </p>
 <p>
-     There is an interesting <a href=http://blog.parse.com/2013/02/01/instadm-brings-private-messaging-to-instagram/ target=_blank>post on the Parse blog</a> about <a href=http://insta.dm/ target=_blank>instaDM</a>, which is a service built using Parse, the <a href=/trends/baas.php target=_blank>BaaS platform</a>, that provides private messaging in the Instagram ecosystem.
+     There is an interesting <a href="http://blog.parse.com/2013/02/01/instadm-brings-private-messaging-to-instagram/" target="_blank">post on the Parse blog</a> about <a href="http://insta.dm/" target="_blank">instaDM</a>, which is a service built using Parse, the <a href="/trends/baas.php" target="_blank">BaaS platform</a>, that provides private messaging in the Instagram ecosystem.
 </p>
 <p>
      This is a very interesting approach to externally developing features for another platform or service. I think Parse says it well:

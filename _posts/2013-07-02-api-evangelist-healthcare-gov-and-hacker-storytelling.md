@@ -6,19 +6,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://github.com><img src=https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg  width=225 align=right /></a>
+     <a href="http://github.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg"  width="225" align="right" /></a>
 </p>
 <p>
      I've been slowly evolving API Evangelist from a single site, into an interconnected network of individual API projects. API Evangelist started as a research project back in July 2010, making its shift to be a network of smaller, inter-connected research projects is fitting.
 </p>
 <p>
-     While API Evangelist currently still runs on my home brew CMS, shortly it will finish the migration to completely run on Github, making it merely a hollywood front for what is c<a href=http://www.apievangelist.com/2013/07/01/the-expanding-api-evangelist-network/>urrently 37+ API related, living research projects</a> of mine.
+     While API Evangelist currently still runs on my home brew CMS, shortly it will finish the migration to completely run on Github, making it merely a "hollywood front" for what is c<a href="http://www.apievangelist.com/2013/07/01/the-expanding-api-evangelist-network/">urrently 37+ API related, living research projects</a> of mine.
 </p>
 <p>
-     I call my evolving approach to projects, <a href=http://hackerstoryteliing.com>Hacker Storytelling</a>. I made up the name, but the approach is borrowed from several other philosophies which starts with concept of data journalism, but then has also evolved from conversations last year in Washington DC from very smart folks including Ben Balter (<a href=https://twitter.com/BenBalter>@BenBalter</a>), Gray Brooks (<a href=https://twitter.com/gbinal>@gbinal)</a>, and the very forward thinking work of the <a href=http://developmentseed.org/>Development Seed</a> team. Then of course I add my own style and approach to what I've learned.
+     I call my evolving approach to projects, <a href="http://hackerstoryteliing.com">Hacker Storytelling</a>. I made up the name, but the approach is borrowed from several other philosophies which starts with concept of data journalism, but then has also evolved from conversations last year in Washington DC from very smart folks including Ben Balter (<a href="https://twitter.com/BenBalter">@BenBalter</a>), Gray Brooks (<a href="https://twitter.com/gbinal">@gbinal)</a>, and the very forward thinking work of the <a href="http://developmentseed.org/">Development Seed</a> team. Then of course I add my own style and approach to what I've learned.
 </p>
 <p>
-     As I move my own network of research projects to run on Github, using this new approach, I'm also seeing other positive signs coming out of Washington on the same front. First the <a href=http://project-open-data.github.io/>White House Open Data Policy</a> released in May was created and published on Github, but then I just finished reading <a href=http://www.theatlantic.com/technology/archive/2013/06/healthcaregov-code-developed-by-the-people-and-for-the-people-released-back-to-the-people/277295/>Healthcare.gov: Code Developed by the People and for the People, Released Back to the People</a>, by Alex Howard (<a href=https://twitter.com/digiphile>@digiphile</a>). His post outlines how the United States Department of Health and Human Services (HHS)launched Healthcare.gov to support the Affordable Care Act -- AKA Obamacare. The website was built iteratively, in public, over the last couple months and it was completely done using Github, using a similar approach to my Hacker Storytelling. Seeing all of this, really makes me hopeful for my next year in Washington.
+     As I move my own network of research projects to run on Github, using this new approach, I'm also seeing other positive signs coming out of Washington on the same front. First the <a href="http://project-open-data.github.io/">White House Open Data Policy</a> released in May was created and published on Github, but then I just finished reading <a href="http://www.theatlantic.com/technology/archive/2013/06/healthcaregov-code-developed-by-the-people-and-for-the-people-released-back-to-the-people/277295/">Healthcare.gov: Code Developed by the People and for the People, Released Back to the People</a>, by Alex Howard (<a href="https://twitter.com/digiphile">@digiphile</a>). His post outlines how the United States Department of Health and Human Services (HHS)launched Healthcare.gov to support the Affordable Care Act -- AKA "Obamacare". The website was built iteratively, in public, over the last couple months and it was completely done using Github, using a similar approach to my Hacker Storytelling. Seeing all of this, really makes me hopeful for my next year in Washington.
 </p>
 <p>
      Alex does an amazing job of telling the story behind Healthcare.gov, I highly recommend reading his post. After reading, I wanted take a fresh walk through my approach, and talk about the importance of this new approach managing my projects, that I think will change the web, how we govern and conduct business.
@@ -29,7 +29,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 <p>
      To manage my projects and tell my stories, I'm using a handful of building blocks:
 </p>
-<ul class=mainlist>
+<ul >
      <li>Blog Posts
      </li>
      <li>Static Pages
@@ -44,7 +44,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 <p>
      The best part about these building blocks is that they only use, lightweight, open protocols:
 </p>
-<ul class=mainlist>
+<ul >
      <li>HTML
      </li>
      <li>CSS
@@ -55,13 +55,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
      </li>
 </ul>
 <p>
-     Each project becomes an open source repository, that I host at Github. Some projects start as private repositories, but if possible <strong>EVERYTHING</strong> becomes public. If you are unfamiliar with how Github and <a href=http://en.wikipedia.org/wiki/Git_(software)>Git</a> works, Github is a cloud service that provides version control for code. However since code is usually just files, you can apply the same open source code process to web site or documents you can build with HTML, CSS, JavaScript and JSON.
+     Each project becomes an open source repository, that I host at Github. Some projects start as private repositories, but if possible <strong>EVERYTHING</strong> becomes public. If you are unfamiliar with how Github and <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a> works, Github is a cloud service that provides version control for code. However since code is usually just files, you can apply the same open source code process to web site or documents you can build with HTML, CSS, JavaScript and JSON.
 </p>
 <p>
-     I don't know about you. But I can build some pretty fast websites, prototype applications and even full blown production apps in HTML, CSS, JavaScript and JSON. If you want to see the extreme version of what I'm doing, head over to <a href=http://developmentseed.org/>Development Seed</a> and see what they are up to. They are producing some mind blowing projects, using this approach
+     I don't know about you. But I can build some pretty fast websites, prototype applications and even full blown production apps in HTML, CSS, JavaScript and JSON. If you want to see the extreme version of what I'm doing, head over to <a href="http://developmentseed.org/">Development Seed</a> and see what they are up to. They are producing some mind blowing projects, using this approach
 </p>
 <p>
-     The really powerful thing about all of this, is this can run anywhere. You can run the <a href=http://www.allthingsdistributed.com/2011/08/Jekyll-amazon-s3.html>same configuration of site on Amazon S3</a>, Dropbox, or anywhere you can setup hosting. This isn't just something for alpha geeks, look closer at the Amazon S3 example, that is the CTO of Amazon running his blog using this approach.
+     The really powerful thing about all of this, is this can run anywhere. You can run the <a href="http://www.allthingsdistributed.com/2011/08/Jekyll-amazon-s3.html">same configuration of site on Amazon S3</a>, Dropbox, or anywhere you can setup hosting. This isn't just something for alpha geeks, look closer at the Amazon S3 example, that is the CTO of Amazon running his blog using this approach.
 </p>
 <p>
      <strong>So why am I doing this?</strong> There are so many reason, and to help me wrap my head further around them, I thought I would take a crack at listing as many as I could.
@@ -80,15 +80,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 </p>
 <p>
      <strong>Collaboration</strong><br />
-     Github has made the process of developing open source software, a social adventure. You can create repositories within individual Github accounts or underneath the umbrella of an organization. You can invite any other Github user to participate in the process, using open source software process, built into Github. Once you make public, you can also add <a href=http://disqus.com/>Disqus</a> and solicit public comments, if if so desired.
+     Github has made the process of developing open source software, a social adventure. You can create repositories within individual Github accounts or underneath the umbrella of an organization. You can invite any other Github user to participate in the process, using open source software process, built into Github. Once you make public, you can also add <a href="http://disqus.com/">Disqus</a> and solicit public comments, if if so desired.
 </p>
 <p>
      <strong>Versioned</strong><br />
-     <a href=http://en.wikipedia.org/wiki/Git_(software)>Git</a> is the central core of Github. Git was developed by Linus Torvalds to help him manage the developed of the open source operating system, Linux. Every document that is submitted to a Git(hub) repository, is versioned, allowing you to manage changes, accept contributions and even roll back to earlier versions when necessary. Git is well suited to open source, collaborative software development, but also works well for many other types of projects as well.
+     <a href="http://en.wikipedia.org/wiki/Git_(software)">Git</a> is the central core of Github. Git was developed by Linus Torvalds to help him manage the developed of the open source operating system, Linux. Every document that is submitted to a Git(hub) repository, is versioned, allowing you to manage changes, accept contributions and even roll back to earlier versions when necessary. Git is well suited to open source, collaborative software development, but also works well for many other types of projects as well.
 </p>
 <p>
      <strong>Storytelling</strong><br />
-     My approach, that of <a href=http://Healthcare.gov>Healthcare.gov</a>, and Development Seed all uses <a href=/admin/blog/design.apievangelist.com>Jekyll</a> alongside each project deployment. Jekyll is a simple, blog aware static site framework that runs very well on Github. Jekyll gives you a very simple, but powerful way to manage your pages as well as maintain a blog. This has changed my view of what a blog is for, making it as simple as four chronological journal entries for a single project or powering the 800+ blog entries of API Evangelist. Jekyll was actually developed by Tom Preston-Warner, the founder of Github, but the framework is so univeral it can run anywhere such as Amazon S3 and Dropbox.
+     My approach, that of <a href="http://Healthcare.gov">Healthcare.gov</a>, and Development Seed all uses <a href="/admin/blog/design.apievangelist.com">Jekyll</a> alongside each project deployment. Jekyll is a simple, blog aware static site framework that runs very well on Github. Jekyll gives you a very simple, but powerful way to manage your pages as well as maintain a blog. This has changed my view of what a blog is for, making it as simple as four chronological journal entries for a single project or powering the 800+ blog entries of API Evangelist. Jekyll was actually developed by Tom Preston-Warner, the founder of Github, but the framework is so univeral it can run anywhere such as Amazon S3 and Dropbox.
 </p>
 <p>
      <strong>Transparency</strong><br />
@@ -104,7 +104,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
 </p>
 <p>
      <strong>Syndication</strong><br />
-     Github possesses one of the most powerful syndication tools, which is called forking. Any Github user can fork one of my projects and set to work making it their own. Adding to it, cleaning it up and when appropriate make pull requests back to the original project, which allows me potentially to accept their work back into the central copy. After I add common social sharing tools, and you consider the native social features built into Github, this approach offers unlimited potential for syndication.
+     Github possesses one of the most powerful syndication tools, which is called "forking". Any Github user can fork one of my projects and set to work making it their own. Adding to it, cleaning it up and when appropriate make "pull requests" back to the original project, which allows me potentially to accept their work back into the central copy. After I add common social sharing tools, and you consider the native social features built into Github, this approach offers unlimited potential for syndication.
 </p>
 <p>
      <strong>Analytics</strong><br />
@@ -161,6 +161,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-
      I'm hoping to share my approach with as many people as I can. I'm watching my girlfriend Audrey discover how easy it is to setup new projects, and publish her work there. Setting everything I listed above into motion for her world, developer her own approach.
 </p>
 <p>
-     I don't think this methodology is for everyone, but if you are interested I'm happy to share. I will be adding more widgets and tools to my <a href=http://hackerstorytelling.com>Hacker Storyteling</a> project. While also point you to other similar implementations like <a href=http://HealthCare.gov>HealthCare.gov</a>, and people who are innovating with this approach like <a href=http://developmentseed.org/>Development Seed</a>.
+     I don't think this methodology is for everyone, but if you are interested I'm happy to share. I will be adding more widgets and tools to my <a href="http://hackerstorytelling.com">Hacker Storyteling</a> project. While also point you to other similar implementations like <a href="http://HealthCare.gov">HealthCare.gov</a>, and people who are innovating with this approach like <a href="http://developmentseed.org/">Development Seed</a>.
 </p>
 

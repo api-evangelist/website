@@ -6,30 +6,30 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://fedapi.com/ target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Fed-API-Logo-2.png  width=200 align=right /></a>
+     <a href="http://fedapi.com/" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Fed-API-Logo-2.png"  width="200" align="right" /></a>
 </p>
 <p>
-     I've been tracking on what I call API aggregation for some time now. I started seeing the <a href=/2010/11/19/universal-apis/ target=_blank>API aggregation trends in 2010</a>, then I saw this pick up in 2011 with the emergence of providers like <a href=http://aggregation.apievangelist.com/companies-detail.html?id=34 target=_blank>Singly</a> and <a href=http://aggregation.apievangelist.com/companies-detail.html?id=35 target=_blank>Adigami</a>.
+     I've been tracking on what I call API aggregation for some time now. I started seeing the <a href="/2010/11/19/universal-apis/" target="_blank">API aggregation trends in 2010</a>, then I saw this pick up in 2011 with the emergence of providers like <a href="http://aggregation.apievangelist.com/companies-detail.html?id=34" target="_blank">Singly</a> and <a href="http://aggregation.apievangelist.com/companies-detail.html?id=35" target="_blank">Adigami</a>.
 </p>
 <p>
      While many new companies provide you with interoperability and automation between multiple APIs, I consider aggregators to be about bringing together multiple APIs into a single aggregated end-point for developers to use, then also providing potentially new APIs that are only possible, because of the aggregation.
 </p>
 <p>
-     Last year, after I started spending more time in Washington DC, I met a talented group of folks who were playing around with the idea of an aggregate API for federal government. In the last couple weeks it looks like they were serious about it, and launched the debut version of <a href=http://fedapi.com/>Fed{API}</a>.
+     Last year, after I started spending more time in Washington DC, I met a talented group of folks who were playing around with the idea of an aggregate API for federal government. In the last couple weeks it looks like they were serious about it, and launched the debut version of <a href="http://fedapi.com/">Fed{API}</a>.
 </p>
 <p>
      Fed{API} is looking to make government data more accessible and reusable by taking data from multiple sources, some easy to pull and some much more difficult, then collect, correlate and catalog into a single, aggregate API stack that developers can put to use.
 </p>
 <p>
-     <a href=http://fedapi.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-1.png  width=500 /></a>
+     <a href="http://fedapi.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-1.png"  width="500" /></a>
 </p>
 <p>
-     I'm a big fan of <a href=http://aggregation.apievangelist.com/>API Aggregation</a>. I think this is the future of standardizing APIs and data across many sources, but as I'm watching providers tackle this, you begin to realize what a massive undertaking it will be. And FedAPI is looking to do this by opening up federal government data, which by itself is a massive challenge. So FedAPI is tackling two pretty massive problems, as a core business model.
+     I'm a big fan of <a href="http://aggregation.apievangelist.com/">API Aggregation</a>. I think this is the future of standardizing APIs and data across many sources, but as I'm watching providers tackle this, you begin to realize what a massive undertaking it will be. And FedAPI is looking to do this by opening up federal government data, which by itself is a massive challenge. So FedAPI is tackling two pretty massive problems, as a core business model.
 </p>
 <p>
      Even with the massive challenge ahead, I will be supporting FedAPI 100%, and doing what I can to make sure their initiative is successful. To do so, I think they will have to get two other groups involved:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Other API Aggregate Providers</strong> - FedAPI needs to make sure and reach out to Singly, Temboo, Adigami and the other API aggregators and see what they can learn, share knowledge and wisdom. Aside from FedAPI, all these providers need to work together and not re-invent the wheel when it comes to Auth and API connectors
      </li>
@@ -38,7 +38,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed
      </li>
 </ul>
 <p>
-     <a href=http://fedapi.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-capital.png  width=200 align=right /></a>
+     <a href="http://fedapi.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-capital.png"  width="200" align="right" /></a>
 </p>
 <p>
      I don't think that API Aggregation is the answer to all the problems that plague API integration, but I think API aggregators will play a major role in helping standardize API interfaces, data formats and provide critical cross-provider, inter-agency knowledge and wisdom--something individual API providers may never be able to deliver alone.

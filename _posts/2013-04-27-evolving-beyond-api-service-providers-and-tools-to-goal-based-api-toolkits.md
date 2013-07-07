@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uni
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/universe-expansion.png  width=325 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/universe-expansion.png"  width="325" align="right" />
 </p>
 <p>
-     As the universe of APIs expands, I’m working to find new ways that I can discover, educate myself, then organize information around the most meaningful areas in the API space. As part of this effort I’m reorganizing <a title=API Evangelist href=http://apievangelist.com>API Evangelist</a> site into a network of small story groups, so that I can focus on a specific piece of this expanding API universe.
+     As the universe of APIs expands, I’m working to find new ways that I can discover, educate myself, then organize information around the most meaningful areas in the API space. As part of this effort I’m reorganizing <a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a> site into a network of small story groups, so that I can focus on a specific piece of this expanding API universe.
 </p>
 <p>
-     Each portion of API Evangelist will run using what I call my <a title=Hacker Storytelling href=http://hackerstorytelling.com target=_blank>Hacker Storytelling</a> format, where I use Github Page, Jekyll along with a variety of JSON driven widgets that tell a story around a specific topic.
+     Each portion of API Evangelist will run using what I call my <a title="Hacker Storytelling" href="http://hackerstorytelling.com" target="_blank">Hacker Storytelling</a> format, where I use Github Page, Jekyll along with a variety of JSON driven widgets that tell a story around a specific topic.
 </p>
 <p>
      The first story group I’m tackling is redefining two of my main sections which I had called “service provider” and “tools”. My original intent was to find resources people could use to deploy APIs, and if it was an online service I put it in service providers and if you could download and install, it went under tools.
@@ -20,22 +20,22 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uni
 <p>
      I’m abandoning this approach and dismantling these sections and breaking them into goal oriented stories:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
-          <a title=API Design href=http://design.apievangelist.com target=_blank>Design</a>
+          <a title="API Design" href="http://design.apievangelist.com" target="_blank">Design</a>
      </li>
      <li>
-          <a title=API Deployment href=http://deployment.apievangelist.com target=_blank>Deployment</a>
+          <a title="API Deployment" href="http://deployment.apievangelist.com" target="_blank">Deployment</a>
      </li>
      <li>
-          <a title=API Managemet href=http://management.apievangelist.com target=_blank>Management</a>
+          <a title="API Managemet" href="http://management.apievangelist.com" target="_blank">Management</a>
      </li>
      <li>Evangelism
      </li>
      <li>Monetization
      </li>
      <li>
-          <a title=API Discovery href=http://discovery.apievangelist.com target=_blank>Discovery</a>
+          <a title="API Discovery" href="http://discovery.apievangelist.com" target="_blank">Discovery</a>
      </li>
      <li>Consumption
      </li>
@@ -50,6 +50,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/uni
      My objective is to allow people to find information from two main areas, either using APIs or providing APIs. You can then navigate to individual areas within those two goal areas, with some overlap between them. In addition to toolkits for using or providing APIs, I'm also rolling out other story groups in the areas of API trends, priorities and opportunities.
 </p>
 <p>
-     So stay tuned…<a title=API Evangelist href=http://apievangelist.com>API Evangelist</a> is always a living research project.
+     So stay tuned…<a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a> is always a living research project.
 </p>
 

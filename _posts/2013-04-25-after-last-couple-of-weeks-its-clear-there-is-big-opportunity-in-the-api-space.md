@@ -6,30 +6,30 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hun
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/hundred-dollar-bills.jpg  width=300 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/hundred-dollar-bills.jpg"  width="300" align="right" />
 </p>
 <p>
-     There was a lot of buzz in the API space over the last two weeks. I'm not a big on being first with news from the world of APIs, I leave this approach to the tech blogs like Techcrunch, RWW, GigaOm, The Next Web and others. I'd rather simmer on things for a bit, think beyond the press release, and craft a post that offers value beyond the initial announcement and the <a href=http://en.wikipedia.org/wiki/Churnalism>churnalism</a>.
+     There was a lot of buzz in the API space over the last two weeks. I'm not a big on being first with news from the world of APIs, I leave this approach to the tech blogs like Techcrunch, RWW, GigaOm, The Next Web and others. I'd rather simmer on things for a bit, think beyond the press release, and craft a post that offers value beyond the initial announcement and the <a href="http://en.wikipedia.org/wiki/Churnalism">churnalism</a>.
 </p>
 <p>
      To get everyone up to speed, four major things happened in the API space over the last two weeks:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
-          <a href=http://readwrite.com/2013/04/17/intel-acquires-mashery>Intel Buys Mashery</a>
+          <a href="http://readwrite.com/2013/04/17/intel-acquires-mashery">Intel Buys Mashery</a>
      </li>
      <li>
-          <a href=http://www.ca.com/us/content/Integration/Layer-7-Technologies.aspx>Computer Associates Buys Layer 7 Technologies</a>
+          <a href="http://www.ca.com/us/content/Integration/Layer-7-Technologies.aspx">Computer Associates Buys Layer 7 Technologies</a>
      </li>
      <li>
-          <a href=http://blog.programmableweb.com/2013/04/23/programmableweb-joins-mulesoft/>MuleSoft Acquires ProgrammableWeb</a>
+          <a href="http://blog.programmableweb.com/2013/04/23/programmableweb-joins-mulesoft/">MuleSoft Acquires ProgrammableWeb</a>
      </li>
      <li>
-          <a href=http://www.3scale.net/2013/04/thank-you-to-investors-and-customers/>3Scale gets $4.2M in Funding</a>
+          <a href="http://www.3scale.net/2013/04/thank-you-to-investors-and-customers/">3Scale gets $4.2M in Funding</a>
      </li>
 </ul>
 <p>
-     There is no arguing that these are some pretty significant signs the API industry is picking up the pace, especially when you have companies like Intel and Computer Associates taking notice and making investments. I've been tracking on the space for 3 years now, with round-ups of API service providers in <a title=API Service Providers 2011 href=http://blog.programmableweb.com/2011/10/19/api-service-provider-roundup/>2011</a> and <a href=/2012/06/15/api-service-provider-roundup-for-2012/>2012</a>. For 2010, 2011 it was all an uphill battle, but in 2012 I started seeing things heat up with the <a href=/2012/06/15/api-service-provider-roundup-for-2012/>introduction of several new API service providers</a>, then really stepping up in November 2012 with the <a href=/2012/11/13/axway-acquires-api-management-service-provider-vordel/>acquisition of Vordel by Axway</a>. But, the last couple of weeks are pretty outstanding, with not just acquisition of two separate API service providers, but also the fact that one of them is API pioneer Mashery, being purchased by chipmaker Intel. Love or hate Mashery, they help define the space and have been at it a while a while, and we all have an industry, partly due to their work.
+     There is no arguing that these are some pretty significant signs the API industry is picking up the pace, especially when you have companies like Intel and Computer Associates taking notice and making investments. I've been tracking on the space for 3 years now, with round-ups of API service providers in <a title="API Service Providers 2011" href="http://blog.programmableweb.com/2011/10/19/api-service-provider-roundup/">2011</a> and <a href="/2012/06/15/api-service-provider-roundup-for-2012/">2012</a>. For 2010, 2011 it was all an uphill battle, but in 2012 I started seeing things heat up with the <a href="/2012/06/15/api-service-provider-roundup-for-2012/">introduction of several new API service providers</a>, then really stepping up in November 2012 with the <a href="/2012/11/13/axway-acquires-api-management-service-provider-vordel/">acquisition of Vordel by Axway</a>. But, the last couple of weeks are pretty outstanding, with not just acquisition of two separate API service providers, but also the fact that one of them is API pioneer Mashery, being purchased by chipmaker Intel. Love or hate Mashery, they help define the space and have been at it a while a while, and we all have an industry, partly due to their work.
 </p>
 <h3>
      VC Cycles More Than API Cycles
@@ -41,7 +41,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hun
      The Enterprise Opportunity
 </h3>
 <p>
-     The acquisitions of Vordel, Mashery and Layer7 tell me that the enterprise is interested in APIs, whether it is for mobile, big data or the internet of things--the enterprise wants in. Duh? That really isn't much of a signal. It is logical, and if you are building an API service provider company, that is looking for an exit, you are going to build your company so that it appeals to the enterprise. It isn't really API business, it is just business. I know that this is what many of you focus on as being the opportunity, but in the end it is just short-sighted and doesn't reflect the real potential of APIs.
+     The acquisitions of Vordel, Mashery and Layer7 tell me that the enterprise is interested in APIs, whether it is for mobile, big data or the internet of things--the enterprise wants in. Duh? That really isn't much of a signal. It is logical, and if you are building an API service provider company, that is looking for an exit, you are going to build your company so that it appeals to the enterprise. It isn't really API business, it is just business. I know that this is what many of you focus on as "being the opportunity", but in the end it is just short-sighted and doesn't reflect the real potential of APIs.
 </p>
 <h3>
      The API Opportunity
@@ -59,16 +59,16 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hun
      I know all my haters will laugh, but I think the meager $4.2M investment made in 3Scale, is truly a positive sign for the API space. 3Scale isn't building an API service provider company for an exit. 3Scale has been the only freemium API service provider in the space since the beginning. Over the last 3 years, I've had multiple arguments with people across the space that the API opportunity for APIs is about unlocking enterprise resources with APIs, when in reality I feel the true API opportunity is about making sure every single business, organization and government entity understands APIs, stands one up, manages, iterates and evolves it until they get it right, without spending a fortune and being locked into contracts that are ultimately about boosting the numbers of a company intent on their exit. 3Scale has been doing this for years, and the $4.2M is just enough to grow and scale to the next logical and sustainable level.
 </p>
 <p>
-     <img src=http://kinlane-productions.s3.amazonaws.com/api-craft/API-Craft-SFO-July-2012.png  width=335 align=right />
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-craft/API-Craft-SFO-July-2012.png"  width="335" align="right" />
 </p>
 <p>
-     I know the 3Scale approach it is not the sexy startup way or the big numbers that the TechCrunch and Silicon Valley audience loves, but to me it is a healthy way to approach what the API space truly needs.  3Scale's approach to running their business, and helping people stand up and manage their APIs is a realistic, healthy and sustainable way that API owners, developers and the overall space really needs. 3Scale is profitable and sought a sensible next round of funding to do more of what they are already doing. They aren't brining in customers to boost numbers or strictly pandering to the enterprise, ultimately seeking an exit over delivering a quality product. 3Scale focuses on delivering the resources, tools and services that people need to understand and successfully manage their APIs. The sign that 3Scale can get the funding they need to keep moving forward, shows the space has a healthy edge.
+     I know the 3Scale approach it is not the sexy "startup way" or the "big numbers" that the TechCrunch and Silicon Valley audience loves, but to me it is a healthy way to approach what the API space truly needs.  3Scale's approach to running their business, and helping people stand up and manage their APIs is a realistic, healthy and sustainable way that API owners, developers and the overall space really needs. 3Scale is profitable and sought a sensible next round of funding to do more of what they are already doing. They aren't brining in customers to boost numbers or strictly pandering to the enterprise, ultimately seeking an exit over delivering a quality product. 3Scale focuses on delivering the resources, tools and services that people need to understand and successfully manage their APIs. The sign that 3Scale can get the funding they need to keep moving forward, shows the space has a healthy edge.
 </p>
 <h3>
      Meaningful Services, Tools and Educational Resources
 </h3>
 <p>
-     Successful acquisitions of API service providers, by large enterprises, will not define the API space as healthy. To deliver on the OG API vision, we will need a wealth of API resources, tools and services that make APIs accessible to <strong>ANYONE</strong>. There will be lots of money to be made when every individual company, organization or government organization can stand-up, run and iterate and find success with APIs for whatever their personal objectives or monetization goals are.
+     Successful acquisitions of API service providers, by large enterprises, will not define the API space as "healthy". To deliver on the OG API vision, we will need a wealth of API resources, tools and services that make APIs accessible to <strong>ANYONE</strong>. There will be lots of money to be made when every individual company, organization or government organization can stand-up, run and iterate and find success with APIs for whatever their personal objectives or monetization goals are.
 </p>
 <p>
      There is opportunity in the API space!  This is demonstrated by the buzz in the last couple weeks. But lets not get distracted by the opportunity to make money and selling to the enterprise. Let's focus on the opportunity that APIs afford individuals, companies, organizations and our government, and the impact APIs can make on the end-users or customers these companies sell to, or are in service of.

@@ -6,24 +6,24 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://theapistack.com target=_blank><img src=http://kinlane-productions.s3.amazonaws.com/api-stack/api-stack-logo.png  width=350 align=right /></a>
+     <a href="http://theapistack.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-stack/api-stack-logo.png"  width="350" align="right" /></a>
 </p>
 <p>
-     Over the last year I've worked hard to standardize and automate as much of my monitoring of the API space as I can. The amount of information I was monitoring daily was getting overwhelming--I needed to scale what I do, so I created what I call my <a href=http://theapistack.com/ranking.html>API Stack Ranking</a>.
+     Over the last year I've worked hard to standardize and automate as much of my monitoring of the API space as I can. The amount of information I was monitoring daily was getting overwhelming--I needed to scale what I do, so I created what I call my <a href="http://theapistack.com/ranking.html">API Stack Ranking</a>.
 </p>
 <p>
      The API Stack Ranking is not meant to be a top 25 list, it is meant to be a ranking that I can sort companies by each week, giving me a meaningful stack of companies, who are doing interesting things in the API space.
 </p>
 <p>
-     Each week I publish my <a href=http://theapistack.com target=_blank>API Stack</a>, but you can also see this influence on any of my research areas.  If you go to <a title=API Management href=http://management.apievangelist.com>API management</a> or the <a title=Backend as a Service (BaaS) href=http://baas.apievangelist.com>Backend as a Service (BaaS</a>) research projects, the providers are sorted by their ranking for the week.
+     Each week I publish my <a href="http://theapistack.com" target="_blank">API Stack</a>, but you can also see this influence on any of my research areas.  If you go to <a title="API Management" href="http://management.apievangelist.com">API management</a> or the <a title="Backend as a Service (BaaS)" href="http://baas.apievangelist.com">Backend as a Service (BaaS</a>) research projects, the providers are sorted by their ranking for the week.
 </p>
 <p>
      In addition to sharing my stack each week, I'd like to also share the criteria I use to determine my stack.  Currently I bundle my signals into three areas:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Internal</strong> - Signals within control of the companies I'm monitoring
-          <ul class=mainlist>
+          <ul >
                <li>Has a Blog
                </li>
                <li>Number of Blog Posts
@@ -42,7 +42,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      </li>
      <li>
           <strong>External</strong> - Signals from the public, outside of the companies control that I'm monitoring
-          <ul class=mainlist>
+          <ul >
                <li>Number of Twitter Followers
                </li>
                <li>Number of @Mentions for Twitter
@@ -63,7 +63,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      </li>
      <li>
           <strong>Analyst</strong> - Signals that are dependent on what I personally see and feel is important
-          <ul class=mainlist>
+          <ul >
                <li>Curated News
                </li>
                <li>Curated News I Write Notes About
@@ -93,7 +93,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      The API Stack Ranking isn't perfect.  But it has allowed me to quadruple the amount of information I take in, and surface what I feel are the real stories and reflect the companies that are truly impacting the API space each week.
 </p>
 <p>
-     I have also been able to expand the API Stack Ranking to any business or topical sector I wish now, much like I applied to <a title=BaaS href=http://baas.apievangelist.com>BaaS</a> I'm now evaluating <a title=Federal Government href=http://federal-government.apievangelist.com>federal government</a>, <a title=healthcare href=http://healthcare.apievangelist.com>healthcare</a> and other sectors in the same way.
+     I have also been able to expand the API Stack Ranking to any business or topical sector I wish now, much like I applied to <a title="BaaS" href="http://baas.apievangelist.com">BaaS</a> I'm now evaluating <a title="Federal Government" href="http://federal-government.apievangelist.com">federal government</a>, <a title="healthcare" href="http://healthcare.apievangelist.com">healthcare</a> and other sectors in the same way.
 </p>
 <p>
      Feel free to contact me directly about the API Stack, and the data and content I produce each week.  I'd love to hear your thoughts.

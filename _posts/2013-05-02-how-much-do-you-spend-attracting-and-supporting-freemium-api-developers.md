@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fre
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/bw-icons/freemium-customers.jpg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/freemium-customers.jpg"  width="250" align="right" />
 </p>
 <p>
      I had a question from an API owner land in my inbox. It is regarding the amount of attention and resources that should be spent on on-boarding new customers. Directly from the email:
@@ -36,7 +36,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fre
      The downside of an organic API evangelism campaign is it takes time to work. It takes months before you see anything. It is a very SEO driven approach, but it is how I've built API Evangelist over 3 years. Its lower cost than Google Adwords spend and hackathons, but takes someone with passion and domain expertise, mad programming skills and the ability to write stories, publish to Github and work social media like kung foo master--to execute!
 </p>
 <p>
-     The moral of the story is, that you should spend as little as you possibly can on bringing in developers into your funnel, and supporting them in operating at your freemium tier. Don't let the freeloaders rule your world. But this is easier said than done. Its a lot of work to generate resources that will bring the right customer in the door, in an organic way, and it <a href=/2012/09/18/simple-api-developer-tracking-framework/>takes a lot of outreach to engage with the customers</a> you have in the door to develop a <a href=http://apievangelist.com/2012/01/31/four-potential-levels-of-an-api-business-ecosystem/>sensible developer and partner framework</a>.
+     The moral of the story is, that you should spend as little as you possibly can on bringing in developers into your funnel, and supporting them in operating at your freemium tier. Don't let the freeloaders rule your world. But this is easier said than done. Its a lot of work to generate resources that will bring the right customer in the door, in an organic way, and it <a href="/2012/09/18/simple-api-developer-tracking-framework/">takes a lot of outreach to engage with the customers</a> you have in the door to develop a <a href="http://apievangelist.com/2012/01/31/four-potential-levels-of-an-api-business-ecosystem/">sensible developer and partner framework</a>.
 </p>
 <p>
      I think I have several more stories to derive from this great question, so stay tuned.

@@ -6,7 +6,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-api-evangelist-services.png  width=300 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tag-cloud-api-evangelist-services.png"  width="300" align="right" />
 </p>
 <p>
      I've had a lot of questions lately about how I make money, and how companies can either support what I do, and / or take advantage of services I offer. So I wanted to take some time to outline the services I offer to support the space, and make ends meet--while also keeping things moving forward in a healthy and positive way.  
@@ -17,7 +17,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Adhoc
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Hang Out</strong> (15 minutes free then $40 every 15 minute increment) - Google Hangouts are a great way to interact.  Let's talk.  The first 15 minutes are always free, then let's dive deeper into your goals, the industry and anything API related you want to know.
      </li>
@@ -28,13 +28,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
           <strong>API Onboarding</strong> ($250.00) - I will onboard with your API just like any other developer and give you feedback on what worked, and where the friction was.
      </li>
      <li>
-          <strong>Coding</strong> (<a href=http://kinlane.com/contact/>Contact Me</a>) - Need code samples, starter projects?  I'm happy to be a paid developer, and produce code to stimulate adoption of your API.
+          <strong>Coding</strong> (<a href="http://kinlane.com/contact/">Contact Me</a>) - Need code samples, starter projects?  I'm happy to be a paid developer, and produce code to stimulate adoption of your API.
      </li>
 </ul>
 <h2>
      Writing
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Blog Posts</strong> - I love writing relevant blog posts.  If the topic area adds value to the community, and helps your company be heard I'm happy to blog away.
      </li>
@@ -42,13 +42,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
           <strong>White Papers</strong> - I like doing deep dives into API related topics, producing white papers that help the industry move forward.
      </li>
      <li>
-          <strong>Presentation</strong> - I'm a prolific presentation writer using <a href=http://lab.hakim.se/reveal-js/>reveal.js</a>.  Let me know how I can craft an API related story for your company.
+          <strong>Presentation</strong> - I'm a prolific presentation writer using <a href="http://lab.hakim.se/reveal-js/">reveal.js</a>.  Let me know how I can craft an API related story for your company.
      </li>
 </ul>
 <h2>
      Consulting
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Deployment</strong> ($100.00 / hr) - Let me help you plan your API deplokyment.  I can help offer a valuable perspective to balance your team with a little outside perspective. 
      </li>
@@ -65,21 +65,21 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
 <h2>
      Research
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
-          <strong>Subsidize Existin</strong>g - Do you want to help make sure one of my existing <a title=projects href=http://kinlane.com/projects.php>projects</a> or <a title=research href=http://kinlane.com/research.php>research</a> are successful?  <a href=http://kinlane.com/contact/>Contact Me</a> and find out how to get involved.
+          <strong>Subsidize Existin</strong>g - Do you want to help make sure one of my existing <a title="projects" href="http://kinlane.com/projects.php">projects</a> or <a title="research" href="http://kinlane.com/research.php">research</a> are successful?  <a href="http://kinlane.com/contact/">Contact Me</a> and find out how to get involved.
      </li>
      <li>
-          <strong>Custom</strong> - Do you have API related research your company needs done?  <a href=http://kinlane.com/contact/>Let's talk</a> about your goals. 
+          <strong>Custom</strong> - Do you have API related research your company needs done?  <a href="http://kinlane.com/contact/">Let's talk</a> about your goals. 
      </li>
 </ul>
 <h2>
      Subscription
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Standard Montlhy </strong>- $1,500.00
-          <ul class=mainlist>
+          <ul >
                <li>
                     <strong>Writing</strong> ($500.00) - Access to all of my long form content.  White papers, research, etc.
                </li>
@@ -101,18 +101,18 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag
           </ul>
      </li>
      <li>
-          <strong>Partner</strong> - <a href=http://kinlane.com/contact/>Contact Me</a>
+          <strong>Partner</strong> - <a href="http://kinlane.com/contact/">Contact Me</a>
      </li>
 </ul>
 <h2>
      Speaking
 </h2>
-<ul class=mainlist>
+<ul >
      <li>
-          <strong>Events</strong> (<a href=http://kinlane.com/contact/>Contact Me</a>) - Let me know if you'd like me to speak at your conference, meetup or hackathon.
+          <strong>Events</strong> (<a href="http://kinlane.com/contact/">Contact Me</a>) - Let me know if you'd like me to speak at your conference, meetup or hackathon.
      </li>
      <li>
-          <strong>In-House </strong>(<a href=http://kinlane.com/contact/>Contact Me</a>) - I'm happy to come out for the day at speak to your company or organization about the API space and provide feedback on your approach.
+          <strong>In-House </strong>(<a href="http://kinlane.com/contact/">Contact Me</a>) - I'm happy to come out for the day at speak to your company or organization about the API space and provide feedback on your approach.
      </li>
 </ul>
 <p>

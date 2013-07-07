@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/imp
 ---
 {% include JB/setup %}
 <p>
-     <a title=Import.io href=http://import.io><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/import-io/import-io-logo.png  align=right /></a>
+     <a title="Import.io" href="http://import.io"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/import-io/import-io-logo.png"  align="right" /></a>
 </p>
 <p>
-     I wrote about the <a href=/2013/03/19/web-harvesting-to-api-with-import.io/>web to API service Import.io</a> earlier today, and before I close the Evernote for this story, I wanted to highlight something else I thought they did interesting, on their <a href=http://import.io/pricing>pricing page</a>.  
+     I wrote about the <a href="/2013/03/19/web-harvesting-to-api-with-import.io/">web to API service Import.io</a> earlier today, and before I close the Evernote for this story, I wanted to highlight something else I thought they did interesting, on their <a href="http://import.io/pricing">pricing page</a>.  
 </p>
 <p>
      I thought they provide a very honest peak into how they are pricing their services.  First off, they admit that they are a young company, which is cool, but they also lay out some pretty interesting points around their business philosophy::
 </p>
-<ul class=mainlist>
+<ul >
      <li>We are a free service. We will always provide a free-to-use tool
      </li>
      <li>We will introduce premium features. Some of these you may have to pay for
@@ -34,7 +34,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/imp
      All of these points are something I feel ALL startups should commit to as part of their services to their users. One thing I'd also like to see from startups, is some mention of their exit strategy.  What is the end goal?  I think this is a relevant question for all startups, as is also good one for Import.io after the Google acquisition and shut-down of a similar service called Needlebase, back in 2012.   
 </p>
 <p>
-     My goal isn't to pick on <a href=http://import.io/>Import.io</a>, but along with the other items they outline, I think all API startups should be openly discussing everything listed above.
+     My goal isn't to pick on <a href="http://import.io/">Import.io</a>, but along with the other items they outline, I think all API startups should be openly discussing everything listed above.
 </p>
-<ul class=mainlist></ul>
+<ul ></ul>
 

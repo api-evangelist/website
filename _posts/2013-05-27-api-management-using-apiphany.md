@@ -6,12 +6,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 ---
 {% include JB/setup %}
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-logo-blue.png  width=250 align=right /></a>I'm working my way through all the <a title=API management href=http://management.apievangelist.com>API management providers</a>, making sure I'm up to speed on what service each provider is offering these days. As part of this work I've been playing with the <a title=API Management href=http://apiphany.com target=_blank>Apiphany</a> platform, using a demo site the Apiphany team was so kind to setup for me.
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-logo-blue.png"  width="250" align="right" /></a>I'm working my way through all the <a title="API management" href="http://management.apievangelist.com">API management providers</a>, making sure I'm up to speed on what service each provider is offering these days. As part of this work I've been playing with the <a title="API Management" href="http://apiphany.com" target="_blank">Apiphany</a> platform, using a demo site the Apiphany team was so kind to setup for me.
 </p>
 <p>
      Using Apiphany I can manage my APIs, and launch a portal which allows me to hang all my APIs, then manage all aspects of their operations. Apiphany focuses on the three main components of API deployment &amp; consumption:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>APIs</strong> - API resources and their operations you've deployed and would like to hang and manage via your Apiphany portal
      </li>
@@ -26,25 +26,25 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      The way Apiphany sets up the systems is very intuitive, giving you quick, administrative control over the systems you will need to execute on either a very simple, or even a very complex API strategy.
 </p>
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-apis.png  width=500 /></a>
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-apis.png"  width="500" /></a>
 </p>
 <p>
      <strong>APIs</strong><br />
      Apiphany provides all the basics for API management, allowing you to add to endpoints, manage the title, description and manage operations for each endpoint, allowing you to define service operations to enable service documentation, interactive API console, per operation limits, request/response validation, and operation-level statistics. Beyond the basics you can mask APIs, implement sophisticated caching and import overall API definitions from a WADL, Google Discovery Document, Swagger or OData format.
 </p>
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/aiphany-import.png  width=500 /></a>
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/aiphany-import.png"  width="500" /></a>
 </p>
 <p>
      <strong>Products</strong><br />
-     After you have all your raw API resources defined, you can move to define your products, composed from your valuable API resources. The Apiphany product manager allows you to provide names and descriptions for your products, choose who has access and whether their are published or unpublished and the terms of use for any developer who subscribes to a product. API product management takes a lot of work, experience and creativity--the Apiphany management system makes it something anyone can do.
+     After you have all your raw API resources defined, you can move to define your "products", composed from your valuable API resources. The Apiphany product manager allows you to provide names and descriptions for your products, choose who has access and whether their are published or unpublished and the terms of use for any developer who subscribes to a product. API product management takes a lot of work, experience and creativity--the Apiphany management system makes it something anyone can do.
 </p>
 <p>
      <strong>Policies</strong><br />
      The policies management area of Apiphany is where it gets seriously powerful. Using the products, APIs and their operations, you can define granular level policies that are essential to API operations. Policies can range from converting XML to JSON, providing JSONP or simply setting headers for specific APIs operations, and potentially within as specific product composition. Policies gives you a library of common policies that are used across the API industry via easy to apply templates, but also allow you to define custom Node.js policies. The ability to define and apply policies across products, APIs and their operations provides a very modular, reusable and granular control over all aspects of your API platform.
 </p>
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-policies-2.png  width=500 /></a>
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-policies-2.png"  width="500" /></a>
 </p>
 <p>
      APIs, Products and Policies are the heart of the Apiphany API management solution. These provide the essential operational building blocks every API owner will need to execute an API platform. Apiphany also provides the necessary CMS framework to manage and support the developer portal, which wraps around your products, APIs and operations.
@@ -54,13 +54,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      The APIPhany solution gives you full control over a developer portal to hang products, APIs and operations within--giving yuo control to customize the look, navigation of the portal with full page, content and media management. The Apiphany API Portal comes complete with the essential building blocks like documentation, blog, support and other CMS essentials to support an API platform.
 </p>
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-dashboard.png  width=500 /></a>
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-dashboard.png"  width="500" /></a>
 </p>
 <p>
      <strong>Analytics</strong><br />
      Apiphany has added a pretty robust suite of API analytics that allow you manage the most common aspects of API operations, in the following three areas:
 </p>
-<ul class=mainlist>
+<ul >
      <li>Usage - Calls and bandwidth
      </li>
      <li>Health - Status code, cache and API response time
@@ -76,7 +76,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
      Developers are central to any API operations and Apiphany provides the tools you will need to manage developer details and their subscriptions to products, and how their applications are using API resources. Apiphany gives you the control to block, reset and define access levels and roles for each of your developers, providing the control you need to manage your API ecosystem.
 </p>
 <p>
-     <a title=API Management href=http://apiphany.com target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-developer.png  width=500 /></a>
+     <a title="API Management" href="http://apiphany.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/apiphany/apiphany-developer.png"  width="500" /></a>
 </p>
 <p>
      This is my first deep dive into the Apiphany API management platform. I like what I see. It has all the tools you will need to define, secure, manage and evolve your APIs. Deploying APIs requires a certain level of understanding of APIs, but with Apiphany anyone could take a set of API endpoints and transform and evolve them into some meaningful API driven products.

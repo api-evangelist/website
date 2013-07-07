@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://developer.crunchbase.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/crunchbase-logo.png  width=200 align=right /></a>
+     <a href="http://developer.crunchbase.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/crunchbase-logo.png"  width="200" align="right" /></a>
 </p>
 <p>
-     <a href=http://hackeducation.com/>Audrey</a> came to me last night and said she had a project that she wanted to tackle, using the <a href=http://developer.crunchbase.com/>CrunchBase API</a>. She wanted to pull a list of education startups that were founded in 2010-2012, showing their investments, CEO, founders and other related company information.
+     <a href="http://hackeducation.com/">Audrey</a> came to me last night and said she had a project that she wanted to tackle, using the <a href="http://developer.crunchbase.com/">CrunchBase API</a>. She wanted to pull a list of education startups that were founded in 2010-2012, showing their investments, CEO, founders and other related company information.
 </p>
 <p>
      A couple weeks ago, I helped Audrey download a PHP Twitter bot, reverse engineer and make it work for an objective she had around Tweeting random responses to a certain type of tweet. I figured she was ready to see what it took to hack on an API and get the research data she needed.
@@ -24,7 +24,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
      Back to the /search endpoint. Each search only returned 10 results, when there were actually 5,700. I looked at the documentation and the only parameter listed, was “query”. No way to control how many results returned, paginate or otherwise. So I start guessing, appending page=, and max=, maxrows=, anything to get more results. Eventually I was able to change the page, so I was able to write logic to loop through each page, getting at all the results required.
 </p>
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/crunchbase-search-endpoint.png  width=500 />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/crunchbase-search-endpoint.png"  width="500" />
 </p>
 <p>
      For each returned result from the /search endpoint, I would take the company name and perform a company search on the /entity endpoint. However each call to the endpoint would yield a 301, redirecting me to another URL. So the search for:
@@ -51,7 +51,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
      Now we had a MySQL table filled with 772 education startups. I exported as CSV, uploaded as a Google Spreadsheet, and shared it with Audrey. Game over. She had what she needed. Overall it took about 3 hours start to finish, which she felt was tedious, and feeling there was a lack of clarity regarding the whole process--something she couldn’t have done with me and my API programming skills. This is a problem CrunchBase.
 </p>
 <p>
-     <a href=http://developer.crunchbase.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/startup-ecosystem-visualization.png  width=325 align=right /></a>
+     <a href="http://developer.crunchbase.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/crunchbase/startup-ecosystem-visualization.png"  width="325" align="right" /></a>
 </p>
 <p>
      Audrey is your target audience. This needs to be dead simple. She shouldn’t have to blindly navigate the API endpoints, documentation, data structures and holes in the data. These are things I’m used to having to cobble together, but an analyst like herself, won’t have the time and patience.
@@ -62,7 +62,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
 <p>
      Quick feedback for whoever takes the job, regarding some building blocks to focus on:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Endpoints</strong> - Establish more meaningful names for the existing endpoints, while establishing some new ones
      </li>
@@ -97,6 +97,6 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/cru
      CrunchBase is a goldmine of data. As it is, I can make use of the data and generate value. But the API won’t remain at the center of that, I will extract the value I need and not return much to the platform, because well...it sucks ass. I can’t write back, and I do so much work to get the value I do, I feel like its mine after I’m done. Especially if the platform has no person or personality that I consider an owner or steward.  I don't feel beholden to give anything back.  Just take...not good for your business.
 </p>
 <p>
-     You guys have a lot of potential within the <a href=http://developer.crunchbase.com/io-docs>CrunchBase API</a>, I hope you dedicate the resources to make it work, and find a steward for the API that will actually care about what you have, and interact with your API consumers in a meaningful way.
+     You guys have a lot of potential within the <a href="http://developer.crunchbase.com/io-docs">CrunchBase API</a>, I hope you dedicate the resources to make it work, and find a steward for the API that will actually care about what you have, and interact with your API consumers in a meaningful way.
 </p>
 

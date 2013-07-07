@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Mik
 ---
 {% include JB/setup %}
 <p>
-     <a href=https://twitter.com/mamund target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/mike-amundsen/Mike-Amundsen.jpg  width=150 align=right /></a>
+     <a href="https://twitter.com/mamund" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/mike-amundsen/Mike-Amundsen.jpg"  width="150" align="right" /></a>
 </p>
 <p>
-     Master API architect at <a title=Layer7 Technologies href=http://www.layer7tech.com/>Layer7 Technologies</a> Mike Amundsen (<a href=https://twitter.com/mamund target=_blank>@mamund</a>) has a great post this week on <a href=http://www.layer7tech.com/blogs/index.php/four-tech-related-trends-that-will-shape-2013/ target=_blank>Four Tech-Related Trends That Will Shape 2013</a>.
+     Master API architect at <a title="Layer7 Technologies" href="http://www.layer7tech.com/">Layer7 Technologies</a> Mike Amundsen (<a href="https://twitter.com/mamund" target="_blank">@mamund</a>) has a great post this week on <a href="http://www.layer7tech.com/blogs/index.php/four-tech-related-trends-that-will-shape-2013/" target="_blank">Four Tech-Related Trends That Will Shape 2013</a>.
 </p>
 <p>
-     One of the predictions that caught my eye was that individual service deployments on the Web will get smaller and more numerous--he clarifies it with:
+     One of the predictions that caught my eye was that "individual service deployments on the Web will get smaller and more numerous"--he clarifies it with:
 </p>
 <blockquote>
      Influenced by the existence of the many mobile apps running on a single device, Web-based services will become small, single-focused offerings that (in the words of Doug Mcllroy) “do one thing and do it well.” This will also explode the number of available services. The advantage of this trend will be an increase in the agility and evolvability of service offerings. The challenge will be an increased need for governance at the “micro-service” level.

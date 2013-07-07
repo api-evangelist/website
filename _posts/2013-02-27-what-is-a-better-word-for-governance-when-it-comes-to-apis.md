@@ -6,13 +6,13 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/respect-my-authority.jpg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/respect-my-authority.jpg"  width="250" align="right" />
 </p>
 <p>
-     There is a great post by Lorinda Brandon (<a href=https://twitter.com/lindybrandon>@lindybrandon</a>) of <a title=SmartBear href=http://smartbear.com/>SmartBear</a> on ProgrammableWeb today called <a href=http://blog.programmableweb.com/2013/02/27/governance-vs-innovation-do-they-have-to-be-enemies/>Governance vs Innovation: Do They Have to be Enemies?</a>.  She continues a conversation, from <a href=http://www.apistrategyconference.com/>API Strategy &amp; Practice</a> around the word governance, and how in the API space, this is often considered a bad word.  
+     There is a great post by Lorinda Brandon (<a href="https://twitter.com/lindybrandon">@lindybrandon</a>) of <a title="SmartBear" href="http://smartbear.com/">SmartBear</a> on ProgrammableWeb today called <a href="http://blog.programmableweb.com/2013/02/27/governance-vs-innovation-do-they-have-to-be-enemies/">Governance vs Innovation: Do They Have to be Enemies?</a>.  She continues a conversation, from <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> around the word "governance", and how in the API space, this is often considered a bad word.  
 </p>
 <p>
-     I was moderating the questions for Alistair Farquharson (<a href=https://twitter.com/afarqu>@</a><a href=https://twitter.com/afarqu>afarqu</a>) CTO of <a title=SOA Software href=http://www.soa.com/>SOA Software</a>, when Irakli Nadareishvili (<a href=http://twitter.com/inadarei/ target=_blank>@inadarei</a>) of <a title=NPR href=http://www.npr.org/>NPR</a> actually agreed that it is a bad word and asked if we need to evolve beyond it and not embrace it.  I totally agree with Lorinda's approach to walking the line between governance and innovation, and look forward to more discussion around how to analyze API vs SOA principles within the enterprise--striking a balance that works for each individual approach.
+     I was moderating the questions for Alistair Farquharson (<a href="https://twitter.com/afarqu">@</a><a href="https://twitter.com/afarqu">afarqu</a>) CTO of <a title="SOA Software" href="http://www.soa.com/">SOA Software</a>, when Irakli Nadareishvili (<a href="http://twitter.com/inadarei/" target="_blank">@inadarei</a>) of <a title="NPR" href="http://www.npr.org/">NPR</a> actually agreed that it is a bad word and asked if we need to evolve beyond it and not embrace it.  I totally agree with Lorinda's approach to walking the line between governance and innovation, and look forward to more discussion around how to analyze API vs SOA principles within the enterprise--striking a balance that works for each individual approach.
 </p>
 <p>
      To help stimulate this conversation I wanted to break down the word, governance.  In the context of IT, governance is:
@@ -23,7 +23,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      With general definitions being:
 </p>
-<ol class=mainlist>
+<ol >
      <li>the persons who make up a body for the purpose of administering something
      </li>
      <li>the act of governing; exercising authority
@@ -32,7 +32,7 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
 <p>
      I think the illness around the word, when it is applied to APIs becomes clear when you start looking at the synonyms:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>Governance</strong> - administration, authority, bureaucracy, command, control, direction, domination, dominion, empire, execution, executive, guidance, influence, jurisdiction, law, ministry, patronage, political practice, politics, polity, power, powers-that-be, predominanc
      </li>
@@ -47,9 +47,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
      Let's separate the potentially bad synonyms:
 </p>
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-bad.png  width=400 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-bad.png"  width="400" align="right" />
 </p>
-<ul class=mainlist>
+<ul >
      <li>administration
      </li>
      <li>authority
@@ -85,9 +85,9 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/res
      And the good synonyms:
 </p>
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-good.png  width=400 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/governance-good.png"  width="400" align="right" />
 </p>
-<ul class=mainlist>
+<ul >
      <li>direction
      </li>
      <li>execution

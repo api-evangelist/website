@@ -6,12 +6,12 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/her
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://www.heroku.com/ target=_blank>Heroku</a> was down for a little while today. I saw the status report and for some reason actually clicked through to the web page. I don’t actually use Heroku, so it doesn’t impact me directly, but I’m always curious.
+     <a href="http://www.heroku.com/" target="_blank">Heroku</a> was down for a little while today. I saw the status report and for some reason actually clicked through to the web page. I don’t actually use Heroku, so it doesn’t impact me directly, but I’m always curious.
 </p>
 <p>
-     I really like the <a href=https://status.heroku.com/ target=_blank>Heroku status and incident report site</a>. The site elegantly displays the last 30 days of status for the Heroku platform--complete with real-time notifications via email, SMS, Twitter, RSS and API.
+     I really like the <a href="https://status.heroku.com/" target="_blank">Heroku status and incident report site</a>. The site elegantly displays the last 30 days of status for the Heroku platform--complete with real-time notifications via email, SMS, Twitter, RSS and API.
 </p>
 <p>
-     <a href=https://status.heroku.com/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-status-2.png  width=500 /></a>
+     <a href="https://status.heroku.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-status-2.png"  width="500" /></a>
 </p>
 

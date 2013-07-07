@@ -6,15 +6,15 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
 ---
 {% include JB/setup %}
 <p>
-     <img src=https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-gartner-aadi.jpg  width=250 align=right />
+     <img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-gartner-aadi.jpg"  width="250" align="right" />
 </p>
 <p>
-     It was inevitable. <a href=https://apievangelist.3scale.net/>API Evangelist now has its own API</a>. I had a couple partners ask for more sophisticated access than provided by RSS or JSON dumps out of my platform.  So I launched a handful of API endpoints, allowing you to get at information from my world.
+     It was inevitable. <a href="https://apievangelist.3scale.net/">API Evangelist now has its own API</a>. I had a couple partners ask for more sophisticated access than provided by RSS or JSON dumps out of my platform.  So I launched a handful of API endpoints, allowing you to get at information from my world.
 </p>
 <p>
      I currently have 13 endpoints providing access to the core of my platform, in 8 key areas:
 </p>
-<ul class=mainlist>
+<ul >
      <li>
           <strong>APIs</strong> - Name, logo and description of the 2K APIs I'm activtely monitoring
      </li>
@@ -41,10 +41,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin
      </li>
 </ul>
 <p>
-     There is a lot more data behind my firewall that I want to open up. I do a lot of research on top APIs like Twitter and Google as well as trending areas like <a href=/trends/aggregation.php>aggregation</a>, <a href=/trends/baas.php>backend</a>, <a href=/trends/reciprocity.php>reciprocity</a> and <a href=/trends/realtime.php>real-time</a> service providers.
+     There is a lot more data behind my firewall that I want to open up. I do a lot of research on top APIs like Twitter and Google as well as trending areas like <a href="/trends/aggregation.php">aggregation</a>, <a href="/trends/baas.php">backend</a>, <a href="/trends/reciprocity.php">reciprocity</a> and <a href="/trends/realtime.php">real-time</a> service providers.
 </p>
 <p>
-     I will also be opening up API endpoints into the site traffic for <a href=http://apievangelist.com>apievangelist.com</a>, <a href=http://apivoice.com>apivoice.com</a> and my other properties. And toying with opening up some collections of my personal data like calendar, projects, checkins and other aspects of my world.
+     I will also be opening up API endpoints into the site traffic for <a href="http://apievangelist.com">apievangelist.com</a>, <a href="http://apivoice.com">apivoice.com</a> and my other properties. And toying with opening up some collections of my personal data like calendar, projects, checkins and other aspects of my world.
 </p>
 <p>
      Currently I’m only issuing keys to API Evangelist subscribers and partners, but let me know if you are interested in getting at any of my data. Eventually I’ll make much of it openly available, but I’m still formulating my approach, and playing with different service compositions--so things will change.

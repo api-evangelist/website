@@ -6,19 +6,19 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Pre
 ---
 {% include JB/setup %}
 <p>
-     <img src=http://tech.co/wp-content/uploads/2012/08/PresidentialInnovationFellows.jpg  width=250 align=right />
+     <img src="http://tech.co/wp-content/uploads/2012/08/PresidentialInnovationFellows.jpg"  width="250" align="right" />
 </p>
 <p>
-     The news is finally out. I will be <a href=http://www.whitehouse.gov/blog/2013/06/24/new-round-innovators-joins-us-government-tackle-big-challenges>heading to Washington DC to spend a year as a White House Innovation Fellow</a>. APIs, open data and our government has been a passion of mine for my whole career, something that has escalated over the last year with my work on the White House Digital Strategy and Open Data Policy.
+     The news is finally out. I will be <a href="http://www.whitehouse.gov/blog/2013/06/24/new-round-innovators-joins-us-government-tackle-big-challenges">heading to Washington DC to spend a year as a White House Innovation Fellow</a>. APIs, open data and our government has been a passion of mine for my whole career, something that has escalated over the last year with my work on the White House Digital Strategy and Open Data Policy.
 </p>
 <p>
-     Now my passion for APIs+Government is being taken to a whole new level, and  I will be heading to Washington DC, to <a href=http://www.whitehouse.gov/innovationfellows/round-2-fellows>join 41 very talented individuals from the private sector</a>, to tackle some of the biggest challenges in our federal government. I will be enjoying the full backing of the White House, to employ APIs to help stimulate innovation within government.
+     Now my passion for APIs+Government is being taken to a whole new level, and  I will be heading to Washington DC, to <a href="http://www.whitehouse.gov/innovationfellows/round-2-fellows">join 41 very talented individuals from the private sector</a>, to tackle some of the biggest challenges in our federal government. I will be enjoying the full backing of the White House, to employ APIs to help stimulate innovation within government.
 </p>
 <p>
      I will be specifically working on the Veterans Affiars
 </p>
 <p>
-     (VA) modernization team with two other very talented individuals, Mollie Ruskin (<a href=https://twitter.com/mollieruskin>@mollieruskin</a>) and Ben Willman (<a href=https://twitter.com/benwillman>@benwillman</a>). We will be working on various projects, with the overall goal of streamlining the VA claims process.
+     (VA) modernization team with two other very talented individuals, Mollie Ruskin (<a href="https://twitter.com/mollieruskin">@mollieruskin</a>) and Ben Willman (<a href="https://twitter.com/benwillman">@benwillman</a>). We will be working on various projects, with the overall goal of streamlining the VA claims process.
 </p>
 <p>
      When I received the call from the VA, asking me to come to Washington and help, I could not say no. I'm pretty mission driven, when it comes to APIs, but helping out veterans and using APIs is the ultimate mission for me.

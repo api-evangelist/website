@@ -6,10 +6,10 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ope
 ---
 {% include JB/setup %}
 <p>
-     <a href=http://www.openi-ict.eu/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-logo.png  width=200 align=right /></a>
+     <a href="http://www.openi-ict.eu/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-logo.png"  width="200" align="right" /></a>
 </p>
 <p>
-     The <a title=Backend as a Service href=/trends/baas.php>Backend as a Service (BaaS)</a> space is picking up momentum in 2013. I’m tracking on 20 BaaS providers, in hopes of better understanding what is being offered in this space. Today I came across an interesting new, open source BaaS platform, being developed in the European Union called <a href=http://www.openi-ict.eu/ target=_blank>OPENi</a>.
+     The <a title="Backend as a Service" href="/trends/baas.php">Backend as a Service (BaaS)</a> space is picking up momentum in 2013. I’m tracking on 20 BaaS providers, in hopes of better understanding what is being offered in this space. Today I came across an interesting new, open source BaaS platform, being developed in the European Union called <a href="http://www.openi-ict.eu/" target="_blank">OPENi</a>.
 </p>
 <p>
      The project describes itself as:
@@ -36,26 +36,26 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ope
      In early 2013 the OPENi team will release software for the BaaS platform as an open-source project on github.com. When released I will evaluate it side by side with the other BaaS providers I”m tracking on.
 </p>
 <p>
-     If you are going to be at <a href=http://www.apistrategyconference.com/>API Strategy &amp; Practice</a> next week, make sure and watch my Backend as a Service Panel with:
+     If you are going to be at <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> next week, make sure and watch my Backend as a Service Panel with:
 </p>
-<ul class=mainlist>
-     <li>Ilya Sukhar (<a href=https://twitter.com/ilyasu>@ilyasu</a>) of <a href=http://www.parse.com/ target=_blank>Parse</a>
+<ul >
+     <li>Ilya Sukhar (<a href="https://twitter.com/ilyasu">@ilyasu</a>) of <a href="http://www.parse.com/" target="_blank">Parse</a>
      </li>
-     <li>Morgan Bickle (<a href=https://twitter.com/morganbickle>@morganbickle</a>) of <a href=http://www.kinvey.com/ target=_blank>Kinvey</a>
+     <li>Morgan Bickle (<a href="https://twitter.com/morganbickle">@morganbickle</a>) of <a href="http://www.kinvey.com/" target="_blank">Kinvey</a>
      </li>
-     <li>Marc Weil (<a href=https://twitter.com/marcweil>@marcweil</a>) of <a href=https://cloudmine.me/ target=_blank>Cloudmine</a>
+     <li>Marc Weil (<a href="https://twitter.com/marcweil">@marcweil</a>) of <a href="https://cloudmine.me/" target="_blank">Cloudmine</a>
      </li>
-     <li>Miko Matasumura (<a href=https://twitter.com/mikojava>@mikojava</a>) of <a href=http://kii.com/ target=_blank>Kii</a>
+     <li>Miko Matasumura (<a href="https://twitter.com/mikojava">@mikojava</a>) of <a href="http://kii.com/" target="_blank">Kii</a>
      </li>
-     <li>Ty Amell (<a href=https://twitter.com/tyamell>@tyamell</a>) of <a href=https://www.stackmob.com/ target=_blank>StackMob</a> 
+     <li>Ty Amell (<a href="https://twitter.com/tyamell">@tyamell</a>) of <a href="https://www.stackmob.com/" target="_blank">StackMob</a> 
      </li>
-     <li>James Tamplin (<a href=https://twitter.com/jamestamplin>@jamestamplin</a>) of <a href=https://www.firebase.com/ target=_blank>Firebase</a>
+     <li>James Tamplin (<a href="https://twitter.com/jamestamplin">@jamestamplin</a>) of <a href="https://www.firebase.com/" target="_blank">Firebase</a>
      </li>
 </ul>
 <p>
      If you have any questions you’d like asked about the future of MBaaS, let me know. I'm going to make it a great conversation!
 </p>
 <p>
-     <a href=http://www.openi-ict.eu/open-source/ target=_blank><img src=https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-concept.png  width=500 /></a>
+     <a href="http://www.openi-ict.eu/open-source/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/baas/openi/openi-concept.png"  width="500" /></a>
 </p>
 
