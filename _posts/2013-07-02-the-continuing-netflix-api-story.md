@@ -1,9 +1,11 @@
 ---
-layout: post
+layout: default
 title: 'The Continuing Netflix API Story'
 url: 'http://apievangelist.com2013/07/02/the-continuing-netflix-api-story/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/netflix-square.png'
 ---
+
+
 <p>
      <img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/netflix/netflix-square.png"  width="150" align="right" />
 </p>
