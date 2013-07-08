@@ -1,0 +1,46 @@
+---
+layout: default
+title: 'Dropbox As Your Apps Default File System'
+url: 'http://apievangelist.com2013/05/24/dropbox-as-your-apps-default-file-system/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fargo-small-picture.png'
+---
+
+
+<p>
+     <a href="http://fargo.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/dave-winer/fargo-small-picture.png"  width="125" align="right" /></a>
+</p>
+<p>
+     Cloud storage of documents is becoming commonplace. Individuals, companies, government and non-government organizations have increasingly seen the potential of storing files in the cloud using services like Amazon S3, Dropbox and Box.
+</p>
+<p>
+     As a web or mobile application developer, it is becoming more common to provide integration, syncing or even direct usage of popular cloud storage services like Dropbox as the application's storage system.
+</p>
+<p>
+     This last week I started playing with Dave Winer's (<a href="/admin/blog/davewiner">@davewiner</a>) simple idea outliner, notepad, todo list and project organizer--<a href="http://fargo.io/">Fargo</a>.
+</p>
+<p>
+     What caught my attention is Dave's use of Dropbox as the central storage for the app. It reminds me of another application I use called <a href="http://prose.io/">Prose.io</a>, which uses Github as the central storage system for the app.
+</p>
+<p>
+     I really dig this approach to delivering, dead-simple, meaningful apps like Fargo, that don't re-invent the wheel and focus on delivering value on top of the existing tools and platforms we already use.
+</p>
+<p>
+     I asked Dave what his thoughts are on this approach, in which he simply replied:
+</p>
+<div>
+     <blockquote >
+          <p>
+               @<a href="https://twitter.com/kinlane">kinlane</a> -- works like a dream
+          </p>— Dave Winer ☮ (@davewiner) <a href="https://twitter.com/davewiner/status/337027957333827584">May 22, 2013</a>
+     </blockquote>
+</div>
+<p>
+     I like Dave's approach to app development which is about delivering simple, useful apps that that sensibly put APIs to use, and establish a foundation using open formats like OPML.
+</p>
+<p>
+     As the hardware and operating systems developers depend on continues being vritualized and migrating into the cloud, the usage of open formats and common, API driven cloud resources like storage from Dropbox, will be common among successful app developers.
+</p>
+<p>
+     I think Dropbox as your apps default file system is here to stay.
+</p>
+
