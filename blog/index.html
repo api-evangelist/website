@@ -6,7 +6,7 @@ title: API Evangelist Blog
 <a href="http://feeds.feedburner.com/apievangelist/jiZd" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/icon-set-roundedcorners/rss.png" align="right" width="20" style="padding-top: 10px;" /></a>
 <h1>API Evangelist Blog</h1>
 
-{% for post in site.posts limit:50 %}
+{% for post in paginator.posts %}
 <div class="post">
     
     <p><a href="{{ post.source }}" rel="bookmark" title="{{ post.title }}" style="color:#000;"><h3><strong>{{ post.title }}</strong></h3></a>
@@ -17,3 +17,50 @@ title: API Evangelist Blog
    
 </div>
 {% endfor %}
+
+<div id="post-pagination" class="pagination">
+  {% if paginator.previous_page %}
+    <p class="previous">
+      {% if paginator.previous_page == 1 %}
+        <a href="/">Previous</a>
+      {% else %}
+        <a href="{{ paginator.previous_page_path }}">Previous</a>
+      {% endif %}
+    </p>
+  {% else %}
+    <p class="previous disabled">
+      <span>Previous</span>
+    </p>
+  {% endif %}
+
+  <ul class="pages">
+    <li class="page">
+      {% if paginator.page == 1 %}
+        <span class="current-page">1</span>
+      {% else %}
+        <a href="/">1</a>
+      {% endif %}
+    </li>
+
+    {% for count in (2..paginator.total_pages) %}
+      <li class="page">
+        {% if count == paginator.page %}
+          <span class="current-page">{{ count }}</span>
+        {% else %}
+          <a href="/page{{ count }}">{{ count }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% if paginator.next_page %}
+    <p class="next">
+      <a href="{{ paginator.next_page_path }}">Next</a>
+    </p>
+  {% else %}
+    <p class="next disabled">
+      <span>Next</span>
+    </p>
+  {% endif %}
+
+</div>
