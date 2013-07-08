@@ -1,22 +1,65 @@
-permalink: /:categories/:year/:month/:day/:title 
-safe: true
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+include:     ['.htaccess']
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-auto: true
-lsi: false
-source: api-evangelist
-destination: api-evangelist
-pygments: true
+keep_files:  ['.git','.svn']
+timezone:    nil
 
-paginate: 10
+future:      true
+show_drafts: nil
+limit_posts: 0
+pygments:    true
 
-title : API Integration
+relative_permalinks: true
 
-production_url : http://dev.apievangelist.com
+permalink:     date
+paginate_path: 'page:num'
 
-BASE_PATH : http://dev.apievangelist.com
+markdown:      maruku
+markdown_ext:  markdown,mkd,mkdn,md
+textile_ext:   textile
 
-ASSET_PATH : false
+excerpt_separator: "\n\n"
 
-archive_path: /archive.html
-categories_path : /categories.html
-tags_path : /tags.html
+safe:        false
+watch:       false    # deprecated
+server:      false    # deprecated
+host:        0.0.0.0
+port:        4000
+baseurl:     /
+url:         http://localhost:4000
+lsi:         false
+
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
+  png_dir:    images/latex
+  png_url:    /images/latex
+
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  use_coderay: false
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
+
+redcloth:
+  hard_breaks: true
