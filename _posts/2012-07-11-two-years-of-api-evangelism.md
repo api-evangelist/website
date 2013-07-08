@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Two Years of API Evangelism'
 url: 'http://apievangelist.com2012/07/11/two-years-of-api-evangelism/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-logo-250.png'

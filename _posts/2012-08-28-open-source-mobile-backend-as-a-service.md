@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Open Source Mobile Backend as a Service'
 url: 'http://apievangelist.com2012/08/28/open-source-mobile-backend-as-a-service/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Mobile Backend as a Service.png'

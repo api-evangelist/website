@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'February Hackathon Schedule'
 url: 'http://apievangelist.com2012/02/07/february-hackathon-schedule/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-hackathon.png'

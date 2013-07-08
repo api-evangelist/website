@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The API Fabric for the Next Generation of Apps'
 url: 'http://apievangelist.com2012/11/13/the-api-fabric-for-next-generation-of-apps/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/singly-logo_300.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Dropbox As Your Apps Default File System'
 url: 'http://apievangelist.com2013/05/24/dropbox-as-your-apps-default-file-system/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fargo-small-picture.png'

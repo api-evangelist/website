@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The 100 Open Source API Platform I Was Looking For'
 url: 'http://apievangelist.com2012/06/19/the-100-open-source-api-platform-i-was-looking-for/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/WSO2-API-Manager-Logo.png'

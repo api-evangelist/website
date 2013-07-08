@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Insights From API Pioneers Salesforce Developer Highlights of 2012'
 url: 'http://apievangelist.com2012/12/28/insights-from-api-pioneers-salesforce-developer-highlights-of-2012/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/developer-force-logo.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Evangelist Drawings'
 url: 'http://apievangelist.com2012/12/10/api-evangelist-drawings/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-drawing.jpg'

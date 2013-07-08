@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Five Hackathons at SXSW 2012'
 url: 'http://apievangelist.com2012/03/04/four-hackathons-at-sxsw-2012/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/sxsw_2012_logo.png'

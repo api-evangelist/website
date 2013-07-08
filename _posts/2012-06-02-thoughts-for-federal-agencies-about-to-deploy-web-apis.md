@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Thoughts For Federal Agencies About to Deploy Web APIs'
 url: 'http://apievangelist.com2012/06/02/thoughts-for-federal-agencies-about-to-deploy-web-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Building-a-21st-century-platform-to-better-serve-the-american-people-1.png'

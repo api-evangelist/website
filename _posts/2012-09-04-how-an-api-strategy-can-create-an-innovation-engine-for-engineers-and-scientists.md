@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'How an API Strategy can Create an Innovation Engine for Engineers and Scientists'
 url: 'http://apievangelist.com2012/09/04/how-an-api-strategy-can-create-an-innovation-engine-for-engineers-and-scientists/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/national-instruments-logo.png'

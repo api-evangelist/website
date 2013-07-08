@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'From CPU to API for Intel'
 url: 'http://apievangelist.com2013/04/18/from-cpu-to-api-for-intel/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Intel-logo.jpg'

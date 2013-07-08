@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Keep Your API Area Active So Developers Feel Like Someone Is Home'
 url: 'http://apievangelist.com2012/03/28/keep-your-api-area-active-so-developers-feel-like-someone-is-home/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/KinLane-Twitter.png'

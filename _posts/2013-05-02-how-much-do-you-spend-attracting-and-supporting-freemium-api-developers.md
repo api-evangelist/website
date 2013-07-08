@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'How Much Do You Spend Attracting and Supporting Freemium API Developers'
 url: 'http://apievangelist.com2013/05/02/how-much-do-you-spend-attracting-and-supporting-freemium-api-developers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/freemium-customers.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Can Be a Liability Without Proper BizDev Process'
 url: 'http://apievangelist.com2012/09/08/api-can-be-a-liability-without-proper-bizdev-process/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bizdev.jpeg'

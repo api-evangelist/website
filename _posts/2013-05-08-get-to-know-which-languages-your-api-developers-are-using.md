@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Get To Know Which Languages Your API Developers Are Using'
 url: 'http://apievangelist.com2013/05/08/getting-to-know-which-languages-your-api-developers-are-using/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/xero-logo.png'

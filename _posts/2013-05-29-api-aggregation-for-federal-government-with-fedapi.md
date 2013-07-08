@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Aggregation For Federal Government with FedAPI'
 url: 'http://apievangelist.com2013/05/29/api-aggregation-for-federal-government-with-fedapi/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed-API-Logo-2.png'

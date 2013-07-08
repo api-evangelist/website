@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Simple API Developer Tracking Framework'
 url: 'http://apievangelist.com2012/09/18/simple-api-developer-tracking-framework/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/charts-graphs-2.png'

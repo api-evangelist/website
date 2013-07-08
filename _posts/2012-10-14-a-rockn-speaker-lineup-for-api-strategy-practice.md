@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A Rockn Speaker Lineup for API Strategy Practice'
 url: 'http://apievangelist.com2012/10/14/rockn-speaker-lineup-for-the-api-strategy--practice-conference/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event.png'

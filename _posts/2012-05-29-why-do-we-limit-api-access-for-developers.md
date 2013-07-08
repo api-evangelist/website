@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Why Do We Limit API Access for Developers'
 url: 'http://apievangelist.com2012/05/29/why-do-we-limit-api-access-for-developers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Rate-Limiting.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Twitter Continues to Restrict Access to Our Tweets'
 url: 'http://apievangelist.com2012/06/29/twitter-continues-to-restrict-access-to-our-tweets/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-access.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Bringing ETL to the Masses with APIs'
 url: 'http://apievangelist.com2013/02/10/bringing-etl-to-the-masses-with-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Automation.png'

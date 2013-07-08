@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Review of APIs A Strategy Guide from OReilly Books'
 url: 'http://apievangelist.com2012/01/30/review-of-apis-a-strategy-guide-from-oreilly-books/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apis-a-strategy-guide.png'

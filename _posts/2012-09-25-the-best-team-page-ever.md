@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The Best Team Page Ever'
 url: 'http://apievangelist.com2012/09/25/the-best-team-page-ever/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/singly-logo_300.png'

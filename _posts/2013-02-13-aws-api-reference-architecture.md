@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'AWS API Reference Architecture'
 url: 'http://apievangelist.com2013/02/13/aws-api-reference-architecture/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws-ecommerce-reference-architecture.png'

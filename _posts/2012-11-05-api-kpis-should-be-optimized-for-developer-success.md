@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API KPIs Should Be Optimized for Developer Success'
 url: 'http://apievangelist.com2012/11/05/api-kpis-should-be-optimized-for-developers/'
 image: ''

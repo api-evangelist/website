@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Lets Talk APIs In Scandinavia With Nordic APIs'
 url: 'http://apievangelist.com2013/03/07/lets-talk-apis-in-scandinavia-with-nordic-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/nordic-apis-logo-2.png'

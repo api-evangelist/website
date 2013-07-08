@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'An API That Scrubs Personally Identifiable Information From Other APIs'
 url: 'http://apievangelist.com2013/03/13/an-api-that-scrubs-personally-identifiable-information-from-other-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/personally-identifable-information.png'

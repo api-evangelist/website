@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Managing API Terms of Service Privacy and Branding with Github'
 url: 'http://apievangelist.com2012/11/29/managing-api-terms-of-service-privacy-and-branding-with-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-text-horizontal.png'

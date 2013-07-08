@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Public Library Operations Machine Readable By Default'
 url: 'http://apievangelist.com2013/02/12/public-library-operations-machine-readable-by-default/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/city-of-palo-alto-logo.jpg'

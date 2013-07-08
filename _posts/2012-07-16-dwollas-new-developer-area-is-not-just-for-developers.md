@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Dwollas New Developer Area is Not Just for Developers'
 url: 'http://apievangelist.com2012/07/16/dwollas-new-developer-area-is-not-just-for-developers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dwolla-logo.jpeg'

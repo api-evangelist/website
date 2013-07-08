@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Building Blocks Bricks For Your Developer Portal APIDays'
 url: 'http://apievangelist.com2012/12/07/building-blocks-bricks-for-your-developer-portal-apidays/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-logo.png'

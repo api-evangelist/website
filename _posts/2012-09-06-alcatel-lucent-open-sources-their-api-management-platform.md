@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Alcatel Lucent Open Sources their API Management Platform'
 url: 'http://apievangelist.com2012/09/06/alcatel-lucent-open-sources-their-api-management-platform/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apigrove-logo.png'

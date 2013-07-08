@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Hashtag For Your Hackathon'
 url: 'http://apievangelist.com2012/01/08/hashtag-for-your-hackathon/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Twitter-Hashtag.jpg'

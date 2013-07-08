@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Steve Klabnik Added to Speakers at API Strategy Practice'
 url: 'http://apievangelist.com2012/09/13/steve-klabnik-added-to-speakers-at-api-strategy--conference/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/steve-klabnik.jpeg'

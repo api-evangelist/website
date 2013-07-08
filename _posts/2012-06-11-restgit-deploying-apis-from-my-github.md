@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'RESTGit Deploying APIs from My Github'
 url: 'http://apievangelist.com2012/06/11/restgit-deploying-apis-from-my-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo.png'

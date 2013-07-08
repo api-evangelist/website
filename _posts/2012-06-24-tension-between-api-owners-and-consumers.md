@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Tension Between API Owners and Consumers'
 url: 'http://apievangelist.com2012/06/24/tension-between-api-owners-and-consumers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/knight-dragon-standoff.jpg'

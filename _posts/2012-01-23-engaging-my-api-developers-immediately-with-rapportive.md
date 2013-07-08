@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Engaging My API Developers Immediately with Rapportive'
 url: 'http://apievangelist.com2012/01/23/engaging-my-api-developers-immediately-with-rapportive/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/rapportive-logo.png'

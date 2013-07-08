@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'An API Could Be The Fancys Kill Move Against Pinterest'
 url: 'http://apievangelist.com2012/05/31/an-api-could-be-the-fancys-kill-move-against-pinterest/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/the-fancy.jpg'

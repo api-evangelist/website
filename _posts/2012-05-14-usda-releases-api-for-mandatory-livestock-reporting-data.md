@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'USDA Releases API for Mandatory Livestock Reporting Data'
 url: 'http://apievangelist.com2012/05/14/usda-releases-api-for-mandatory-livestock-reporting-data/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Cattle-Dashboard.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: '0 People Found This API Useful Be the First'
 url: 'http://apievangelist.com2012/06/05/0-people-found-this-api-useful-be-the-first/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/koordinates-api.png'

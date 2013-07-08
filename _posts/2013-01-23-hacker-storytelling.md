@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Hacker Storytelling'
 url: 'http://apievangelist.com2013/01/23/hacker-storytelling/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hacker-Storytelling.png'

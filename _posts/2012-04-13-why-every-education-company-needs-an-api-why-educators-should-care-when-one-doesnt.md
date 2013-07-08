@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Why Every Education Company Needs an API Why Educators Should Care When One Doesnt'
 url: 'http://apievangelist.com2012/04/13/why-every-education-company-needs-an-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/darcy_modified.jpg'

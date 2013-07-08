@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Potential for API Aggregators to Provide Valuable Industry Data'
 url: 'http://apievangelist.com2013/05/13/potential-for-api-aggregators-to-provide-valuable-industry-data/'
 image: 'https://s3.amazonaws.com/kinlane-productions/api-evangelist/spreedly/spreedly-logo.png'

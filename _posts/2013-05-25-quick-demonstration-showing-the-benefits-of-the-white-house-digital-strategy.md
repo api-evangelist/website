@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Quick Demonstration Showing The Benefits of The White House Digital Strategy'
 url: 'http://apievangelist.com2013/05/25/quick-demonstration-of-benefits-of-white-house-digital-strategy/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/energy-developer.png'

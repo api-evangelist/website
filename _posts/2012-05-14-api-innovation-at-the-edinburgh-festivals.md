@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Innovation at the Edinburgh Festivals'
 url: 'http://apievangelist.com2012/05/14/api-innovation-at-the-edinburgh-festivals/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/edinburgh-photo1.jpg'

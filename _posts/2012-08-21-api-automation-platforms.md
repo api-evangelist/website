@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Automation Platforms'
 url: 'http://apievangelist.com2012/08/21/api-automation-platforms/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/automation-gears.jpeg'

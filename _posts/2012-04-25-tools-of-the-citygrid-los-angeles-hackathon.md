@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Tools of the CityGrid Los Angeles Hackathon'
 url: 'http://apievangelist.com2012/04/25/tools-of-the-citygrid-los-angeles-hackathon/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/citygrid-los-angeles.png'

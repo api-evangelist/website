@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A 100 Open API Industry Conference'
 url: 'http://apievangelist.com2012/10/15/a-100-open-api-industry--conference/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/open.jpeg'

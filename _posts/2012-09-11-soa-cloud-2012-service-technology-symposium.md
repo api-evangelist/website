@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'SOA Cloud 2012 Service Technology Symposium'
 url: 'http://apievangelist.com2012/09/11/soa-cloud-2012-service-technology-symposium/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/soa-cloud-2012-service-technology-symposium-logo.jpeg'

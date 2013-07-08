@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The APIs That I Depend On For My Business'
 url: 'http://apievangelist.com2012/08/02/the-apis-that-i-depend-on-for-my-business/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-logo-250.png'

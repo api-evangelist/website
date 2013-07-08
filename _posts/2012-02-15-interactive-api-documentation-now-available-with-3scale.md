@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Interactive API Documentation Now Available with 3Scale'
 url: 'http://apievangelist.com2012/02/15/interactive-api-documentation-now-available-with-3scale/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/3scale-logo.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Alcatel Lucents Laura Merling at API Strategy Practice'
 url: 'http://apievangelist.com2012/10/22/alcatel-lucents-laura-merling-at-api-strategy-practice/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/laura-merling.jpeg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'iContact Developers Area Landing Page Delivers'
 url: 'http://apievangelist.com2012/06/05/icontact-developers-area-landing-page-delivers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/icontact-logo.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Andreas Krohn API Evangelist'
 url: 'http://apievangelist.com2012/03/14/andreas-krohn-api-evangelist/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/andreas-krohn-api-evangelist.JPG'

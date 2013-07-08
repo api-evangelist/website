@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'My First Keynote With The Infamous Audrey Watters'
 url: 'http://apievangelist.com2013/06/17/my-first-keynote-with-the-infamous-audrey-watters/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/audrey-kin-paris.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Evangelist Strategy for CityGrid'
 url: 'http://apievangelist.com2012/01/22/api-evangelist-strategy-for-citygrid/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid.png'

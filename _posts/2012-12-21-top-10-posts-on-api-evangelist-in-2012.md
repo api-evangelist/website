@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Top 10 Posts on API Evangelist in 2012'
 url: 'http://apievangelist.com2012/12/21/top-10-posts-on-api-evangelist-in-2012/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-2012.png'

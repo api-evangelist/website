@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'What Does The API Evangelist Do'
 url: 'http://apievangelist.com2013/05/02/what-does-the-api-evangelist-do/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/kin-lane-in-api-we-trust.png'

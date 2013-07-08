@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Web Harvesting to API with Import io'
 url: 'http://apievangelist.com2013/03/19/web-harvesting-to-api-with-import.io/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/import-io-logo.png'

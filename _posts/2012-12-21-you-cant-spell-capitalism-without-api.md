@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'You Cant Spell Capitalism Without API'
 url: 'http://apievangelist.com2012/12/21/you-cant-spell-capitalism-without-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/you-cant-spell-capitalism-without-api.jpg'

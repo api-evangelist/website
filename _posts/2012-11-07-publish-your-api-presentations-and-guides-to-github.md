@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Publish Your API Presentations and Guides to Github'
 url: 'http://apievangelist.com2012/11/07/publish-your-api-presentations-and-guides-to-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png'

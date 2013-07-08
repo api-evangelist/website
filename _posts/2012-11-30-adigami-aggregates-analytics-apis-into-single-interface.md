@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Adigami Aggregates Analytics APIs Into Single Interface'
 url: 'http://apievangelist.com2012/11/30/adigami-aggregates-analytics-apis-into-single-interface/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/adigami-logo.png'

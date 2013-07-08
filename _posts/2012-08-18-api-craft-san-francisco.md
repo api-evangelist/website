@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Craft San Francisco'
 url: 'http://apievangelist.com2012/08/18/api-craft-san-francisco/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Craft-SFO-July-2012.png'

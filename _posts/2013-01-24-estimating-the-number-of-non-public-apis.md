@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Estimating the Number of Non Public APIs'
 url: 'http://apievangelist.com2013/01/24/estimating-the-number-of-non-public-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDKBridge-logo.gif'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Management Using Github'
 url: 'http://apievangelist.com2013/06/08/api-management-using-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-github.jpg'

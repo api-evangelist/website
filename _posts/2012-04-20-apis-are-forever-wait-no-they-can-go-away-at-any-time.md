@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'APIs Are Forever Wait No They Can Go Away at Any Time'
 url: 'http://apievangelist.com2012/04/20/apis-are-forever,-wait-no...they-can-go-away-at-any-time/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Google-Developer-Blog-Logo.png'

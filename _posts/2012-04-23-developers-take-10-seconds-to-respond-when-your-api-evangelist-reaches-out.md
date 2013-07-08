@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Developers Take 10 Seconds to Respond When Your API Evangelist Reaches Out'
 url: 'http://apievangelist.com2012/04/23/developers-take-10-seconds-to-respond-when-your-api-evangelist-reaches-out/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reaching_out.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Visualizing Hackathons in 2012'
 url: 'http://apievangelist.com2013/01/23/visualizing-hackathons-in-2012/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/hackathon-home-1.jpg'

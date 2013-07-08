@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Healthcare Imaging API'
 url: 'http://apievangelist.com2012/05/31/healthcare-imaging-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/medical-imaging-api.jpg'

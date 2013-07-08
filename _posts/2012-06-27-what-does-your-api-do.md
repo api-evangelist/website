@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'What Does Your API Do'
 url: 'http://apievangelist.com2012/06/27/what-does-your-api-do/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/question-mark.jpg'

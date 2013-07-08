@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Google Adjusts Adwords API Access Tiers'
 url: 'http://apievangelist.com2013/02/04/google-adjusts-adwords-api-access-tiers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/google-adwords-300x125.jpeg'

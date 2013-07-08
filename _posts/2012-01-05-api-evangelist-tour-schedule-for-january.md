@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Evangelist Tour Schedule for January'
 url: 'http://apievangelist.com2012/01/05/api-evangelist-tour-schedule-for-january/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-hackathon.png'

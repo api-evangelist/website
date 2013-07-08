@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Short Sighted Silicon Valley Limits Potential of Data Markets'
 url: 'http://apievangelist.com2013/03/04/short-sighted-silicon-valley-limits-potential-of-data-markets/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/data-market-visualization.jpg'

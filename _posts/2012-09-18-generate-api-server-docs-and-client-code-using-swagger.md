@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Generate API Server Docs and Client Code Using Swagger'
 url: 'http://apievangelist.com2012/09/18/generate-api-server,-docs-and-client-code-using-swagger/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Swagger-Logo.png'

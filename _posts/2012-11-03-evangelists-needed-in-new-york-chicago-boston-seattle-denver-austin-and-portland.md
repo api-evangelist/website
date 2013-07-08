@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Evangelists Needed in New York Chicago Boston Seattle Denver Austin and Portland'
 url: 'http://apievangelist.com2012/11/03/evangelists-needed-in-new-york-chicago-boston-seattle-denver-austin-and-portland/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Evangelist.png'

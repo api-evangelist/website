@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Taking APIs To Next Level With API Scripting Platforms'
 url: 'http://apievangelist.com2012/12/19/taking-apis-to-next-level-with-api-scripting-platforms/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/scripting-platforms.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A Great Time At API Days San Francisco'
 url: 'http://apievangelist.com2013/06/23/a-great-time-at-api-days-san-francisco/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-logo.png'

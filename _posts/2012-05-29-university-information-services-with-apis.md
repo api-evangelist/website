@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'University Information Services with APIs'
 url: 'http://apievangelist.com2012/05/29/university-information-access-with-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/UW-Web-Service-Registry.png'

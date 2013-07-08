@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'What is the Future of Web APIs'
 url: 'http://apievangelist.com2012/07/27/what-is-the-future-of-web-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/highway.jpeg'

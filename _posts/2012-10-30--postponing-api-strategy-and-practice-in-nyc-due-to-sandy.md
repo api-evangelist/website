@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: ' Postponing API Strategy and Practice in NYC Due to sandy'
 url: 'http://apievangelist.com2012/10/30/-postponing-api-strategy-and-practice-in-new-york-city-due-to-sandy/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The API Driven Life of Your Facebook Mobile App'
 url: 'http://apievangelist.com2012/05/25/the-api-driven-life-of-your-facebook-mobile-app/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/iPhone-Desktop.png'

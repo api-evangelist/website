@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Barack Obama Directs All Federal Agencies to Have an API'
 url: 'http://apievangelist.com2012/06/01/barak-obama-directs-all-federal-agencies-to-have-an-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/whitehouse-seal.png'

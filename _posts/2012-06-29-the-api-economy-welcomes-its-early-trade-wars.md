@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The API Economy Welcomes Its Early Trade Wars'
 url: 'http://apievangelist.com2012/06/29/the-api-economy-welcomes-its-early-trade-wars/'
 image: ''

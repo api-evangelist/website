@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Where Are The APIs For State Health Insurance Exchanges'
 url: 'http://apievangelist.com2012/11/13/where-are-the-apis-for-state-health-insurance-exchanges/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/State-Healthcare-Insurance-Exchanges.png'

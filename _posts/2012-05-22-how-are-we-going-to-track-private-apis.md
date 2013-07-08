@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'How Are We Going to Track Private APIs'
 url: 'http://apievangelist.com2012/05/22/how-are-we-going-to-track-private-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/fiber-cable-map.jpeg'

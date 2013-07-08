@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Dont Forget About the API Pioneers When You Think APIs Wont Work'
 url: 'http://apievangelist.com2012/07/12/dont-forget-about-the-api-pioneers-when-you-think-apis-wont-work/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ebay-developer-program-history.png'

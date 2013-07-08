@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Spectagram Rolls Out Instagrams Embeddable Strategy for Them'
 url: 'http://apievangelist.com2012/11/30/spectagram-rolls-out-instagrams-embeddable-strategy-for-them/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Spectagram-Logo.png'

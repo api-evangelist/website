@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Hacker Storytelling'
 url: 'http://apievangelist.com2012/04/04/hacker-storytelling/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ada-the-enchantress-of-numbers.jpg'

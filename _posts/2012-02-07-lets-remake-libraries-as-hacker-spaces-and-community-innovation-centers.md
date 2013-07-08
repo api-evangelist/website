@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Lets Remake Libraries as Hacker Spaces and Community Innovation Centers'
 url: 'http://apievangelist.com2012/02/07/lets-remake-libraries-as-hacker-spaces-and-community-innovation-centers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Library-NYC.jpg'

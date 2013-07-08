@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'APIs Can Save Money and Make Government More Efficient'
 url: 'http://apievangelist.com2012/10/25/apis-can-save-money-and-make-government-more-efficient/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/US-Department-of-Energy-KDF.png'

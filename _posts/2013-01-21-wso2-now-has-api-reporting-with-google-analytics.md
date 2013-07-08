@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'WSO2 Now Has API Reporting With Google Analytics'
 url: 'http://apievangelist.com2013/01/21/wso2-now-has-api-reporting-with-google-analytics/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wso2-logo-white-400X180.png'

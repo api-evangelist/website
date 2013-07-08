@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Qualifying for the API Stack'
 url: 'http://apievangelist.com2012/03/15/qualifying-for-the-api-stack/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/geoiq-logo.jpg'

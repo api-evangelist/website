@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Automated Documentation for REST APIs'
 url: 'http://apievangelist.com2012/03/08/automated-documentation-for-rest-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDKBridge-logo.gif'

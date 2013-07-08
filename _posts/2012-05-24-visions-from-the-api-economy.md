@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Visions from the API Economy'
 url: 'http://apievangelist.com2012/05/24/visions-from-the-api-economy/'
 image: ''

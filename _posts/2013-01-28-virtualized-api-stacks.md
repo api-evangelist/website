@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Virtualized API Stacks'
 url: 'http://apievangelist.com2013/01/28/virtualized-api-stacks/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Virtualized-API-Stacks.png'

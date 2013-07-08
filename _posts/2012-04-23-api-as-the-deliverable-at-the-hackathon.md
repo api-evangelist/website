@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API as the Deliverable at the Hackathon'
 url: 'http://apievangelist.com2012/04/23/api-as-the-deliverable-at-the-hackathon/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/3scale-500.png'

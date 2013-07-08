@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Driven Twitter Advertising'
 url: 'http://apievangelist.com2012/07/29/api-driven-twitter-advertising/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Twitter-Ads.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: '11 More Federal Departments and Agencies Have Published Their API Digital Strategies'
 url: 'http://apievangelist.com2012/08/21/11-more-federal-departments-and-agencies-have-published-their-api-digital-strategies/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/US_white_house_logo.png'

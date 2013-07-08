@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Amazing Visuals But Lack of API Imagination'
 url: 'http://apievangelist.com2012/12/22/amazing-visuals-but-lack-of-api-imagination/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/great-salt-desert.jpeg'

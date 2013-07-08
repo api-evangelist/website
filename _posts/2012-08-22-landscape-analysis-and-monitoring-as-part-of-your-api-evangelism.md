@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Landscape Analysis and Monitoring as Part of Your API Evangelism'
 url: 'http://apievangelist.com2012/08/22/landscape-analysis-and-monitoring-as-part-of-your-api-evangelism/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/landscape monitoring.png'

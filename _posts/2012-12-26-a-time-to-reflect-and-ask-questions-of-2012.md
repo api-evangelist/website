@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A Time to Reflect and Ask Questions of 2012'
 url: 'http://apievangelist.com2012/12/26/a-time-to-reflect-and-ask-questions-of-2012/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Personal-Data-Questions.png'

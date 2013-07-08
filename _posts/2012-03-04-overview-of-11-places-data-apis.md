@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Overview of 11 Places Data APIs'
 url: 'http://apievangelist.com2012/03/04/overview-of-11-places-data-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid.png'

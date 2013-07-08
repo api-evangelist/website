@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'When API Success Signals Begin Working Against You'
 url: 'http://apievangelist.com2013/05/10/when-api-success-signals-begin-working-against-you/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/restful-labs-logo.png'

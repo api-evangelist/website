@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Open Source Your API With Github'
 url: 'http://apievangelist.com2012/10/22/open-source-your-api-with-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-text-horizontal.png'

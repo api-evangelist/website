@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The Resource Stack'
 url: 'http://apievangelist.com2013/07/01/the-resource-stack/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Stack-Colored.png'

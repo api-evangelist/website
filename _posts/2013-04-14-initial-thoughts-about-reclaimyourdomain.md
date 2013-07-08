@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Initial Thoughts About ReclaimYourDomain'
 url: 'http://apievangelist.com2013/04/14/reclaim-your-domain/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/person-spider-web.jpg'

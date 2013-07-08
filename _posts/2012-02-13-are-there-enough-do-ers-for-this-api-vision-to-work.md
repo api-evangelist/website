@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Are There Enough Do ers For This API Vision to Work'
 url: 'http://apievangelist.com2012/02/13/are-there-enough-doers-for-this-api-vision-to-work/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Twilio-Logo.png'

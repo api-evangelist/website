@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Heroku Status and Incident Report Site'
 url: 'http://apievangelist.com2013/03/02/heroku-status-and-incident-report-site/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/heroku-status-2.png'

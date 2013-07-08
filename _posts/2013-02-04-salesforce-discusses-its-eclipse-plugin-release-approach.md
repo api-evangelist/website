@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Salesforce Discusses Its Eclipse Plugin Release Approach'
 url: 'http://apievangelist.com2013/02/04/salesforce-discusses-its-eclipse-plugin-release-approach/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/eclipse-ide-logo.jpeg'

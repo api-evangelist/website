@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: '30 APIs To Look At When Planning Your API'
 url: 'http://apievangelist.com2012/08/08/30-successful-apis-to-look-at-when-planning-your-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/aws-logo.png'

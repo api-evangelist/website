@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Hack Weekends Directory Hackathon Guide and Site Template'
 url: 'http://apievangelist.com2012/12/10/hack-weekends-directory-hackathon-guide-and-site-template/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hack-Weekends-Guide-Screenshot.png'

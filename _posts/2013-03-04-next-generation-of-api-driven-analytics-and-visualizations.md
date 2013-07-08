@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Next Generation of API Driven Analytics and Visualizations'
 url: 'http://apievangelist.com2013/03/04/next-generation-of-api-driven-analytics-and-visualizations/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-analytics.png'

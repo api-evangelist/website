@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Chartboosts API Driven Approach to Application Development'
 url: 'http://apievangelist.com2012/11/29/chartboosts-api-driven-approach-to-application-development/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Chartboost-Logo.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Learning from Sqoot Making Hackathons Accessible to EVERYONE'
 url: 'http://apievangelist.com2012/03/20/learning-from-sqoot-making-hackathons-accessible-to-everyone/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-jam.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Mobile and Web Advertising Will Heat Up in 2013 With Heavyweight Advertising APIs'
 url: 'http://apievangelist.com2013/03/05/mobile-and-web-advertising-will-heat-up-in-2013-with-heavyweight-advertising-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/amazon-mobile-app-distribution-logo.png'

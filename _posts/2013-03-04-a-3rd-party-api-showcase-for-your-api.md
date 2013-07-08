@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A 3rd Party API Showcase for Your API'
 url: 'http://apievangelist.com2013/03/04/a-3rd-party-api-showcase-for-your-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-counter-api-2.png'

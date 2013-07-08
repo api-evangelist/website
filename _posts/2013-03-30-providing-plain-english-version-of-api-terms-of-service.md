@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Providing Plain English Version Of API Terms of Service'
 url: 'http://apievangelist.com2013/03/30/providing-plain-english-version-of-api-terms-of-service/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/heello-logo.png'

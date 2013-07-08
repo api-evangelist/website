@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Deployment as a Service'
 url: 'http://apievangelist.com2013/03/01/api-deployment-as-a-service/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/tag-cloud-api-service-providers.png'

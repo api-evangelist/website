@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Top API Platforms Deliver More Node js Resources for Developers'
 url: 'http://apievangelist.com2013/03/13/top-api-platforms-deliver-more-node-js-resources-for-developers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/node-js-logo.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The Demand for API and Developer Evangelists'
 url: 'http://apievangelist.com2012/06/11/the-demand-for-api-and-developer-evangelists/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Developer-Evangelist.png'

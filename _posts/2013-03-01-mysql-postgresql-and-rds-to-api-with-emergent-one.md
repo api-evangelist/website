@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'MySQL PostgreSQL and RDS to API With Emergent One'
 url: 'http://apievangelist.com2013/03/01/mysql,-postgresql,-rds-to-api-with-emergent-one/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/emergent-one-logo-horizontal.png'

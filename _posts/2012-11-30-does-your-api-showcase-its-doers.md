@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Does Your API Showcase Its DOers'
 url: 'http://apievangelist.com2012/11/30/does-your-api-showcase-its-doers/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twilio-doers-gallery.png'

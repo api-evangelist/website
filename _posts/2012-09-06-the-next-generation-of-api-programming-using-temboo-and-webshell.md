@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The Next Generation of API Programming Using Temboo and Webshell'
 url: 'http://apievangelist.com2012/09/06/the-next-generation-of-api-programming-using-temboo-and-webshell/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/temboo-webshell.png'

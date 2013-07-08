@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Twitters Embed Strategy Gets Priority in API Developer Area'
 url: 'http://apievangelist.com2012/09/12/twitter-embed-strategy-gets-priority-in-api-developer-area/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-bird-light.png'

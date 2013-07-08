@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Developer Profiling Using Github'
 url: 'http://apievangelist.com2012/11/03/api-developer-profiling-using-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png'

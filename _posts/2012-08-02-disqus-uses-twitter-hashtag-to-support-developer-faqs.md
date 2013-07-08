@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Disqus Uses Twitter HashTag to Support Developer FAQs'
 url: 'http://apievangelist.com2012/08/02/disqus-uses-twitter-hashtag-to-support-developer-faqs/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/disqus-logo.gif'

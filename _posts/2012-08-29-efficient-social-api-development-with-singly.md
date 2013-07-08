@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Efficient Social API Development with Singly'
 url: 'http://apievangelist.com2012/08/29/efficient-social-api-development-with-singly/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/singly-logo-horizontal.png'

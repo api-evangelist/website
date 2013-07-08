@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Brand Control Within An API Ecosystem Twitter Edition'
 url: 'http://apievangelist.com2012/06/06/brand-control-within-an-api-ecosystem-twitter-edition/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter-bird-blue-on-white.png'

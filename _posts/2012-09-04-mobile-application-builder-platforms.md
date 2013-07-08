@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Mobile Application Builder Platforms'
 url: 'http://apievangelist.com2012/09/04/mobile-application-builder-platforms/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ipad-iphone-android-mobile.png'

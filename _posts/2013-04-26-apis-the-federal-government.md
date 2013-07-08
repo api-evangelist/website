@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'APIs The Federal Government'
 url: 'http://apievangelist.com2013/04/26/apis-and-the-federal-government/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Building-a-21st-century-platform-to-better-serve-the-american-people-1.png'

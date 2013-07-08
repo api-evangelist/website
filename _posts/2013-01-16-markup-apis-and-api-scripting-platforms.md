@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Markup APIs and API Scripting Platforms'
 url: 'http://apievangelist.com2013/01/16/markup-apis-and-api-scripting-platforms/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/markup-api.png'

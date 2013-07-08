@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'What Happens to Instagram API Developers After Facebook Acquisition'
 url: 'http://apievangelist.com2012/04/09/what-happens-to-instagram-api-developers-after-facebook-acquisition/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Instagram_logo.png'

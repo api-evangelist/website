@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'History of APIs Twilio'
 url: 'http://apievangelist.com2013/06/13/history-of-apis-twilio/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twilio-logo.jpeg'

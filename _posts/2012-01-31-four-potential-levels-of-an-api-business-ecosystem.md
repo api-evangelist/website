@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Four Potential Levels of an API Business Ecosystem'
 url: 'http://apievangelist.com2012/01/31/four-potential-levels-of-an-api-business-ecosystem/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/incubation.jpg'

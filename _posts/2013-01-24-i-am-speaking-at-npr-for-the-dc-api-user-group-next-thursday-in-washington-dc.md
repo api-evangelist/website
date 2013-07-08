@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'I Am Speaking at NPR for the DC API User Group Next Thursday in Washington DC'
 url: 'http://apievangelist.com2013/01/24/i-am-speaking-at-npr-for-the-dc-api-user-group-next-thursday-in-washington-dc/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/washington-dc-api-users-group.jpeg'

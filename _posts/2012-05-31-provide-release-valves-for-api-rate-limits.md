@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Provide Release Valves for API Rate Limits'
 url: 'http://apievangelist.com2012/05/31/provide-release-valves-for-api-rate-limits/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/teapot-steaming.jpg'

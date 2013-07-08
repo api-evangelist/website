@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: '146 Planned APIs from 19 Federal Depts and Agencies as Part of their Digital Strategy'
 url: 'http://apievangelist.com2012/08/30/planned-apis-from-19-federal-departments-and-agencies-as-part-of-digital-strategy/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/US_white_house_logo.png'

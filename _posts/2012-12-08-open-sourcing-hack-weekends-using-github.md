@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Open Sourcing Hack Weekends Using Github'
 url: 'http://apievangelist.com2012/12/08/open-sourcing-hack-weekends-using-github/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hack-Weekends-Github.png'

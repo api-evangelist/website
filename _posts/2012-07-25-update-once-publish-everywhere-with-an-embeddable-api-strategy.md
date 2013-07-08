@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Update Once Publish Everywhere with an Embeddable API Strategy'
 url: 'http://apievangelist.com2012/07/25/update-once,-publish-everywhere-with-the-right-embeddable-api-strategy/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/BandPage-Update-Once-Publish-Everwhere.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Mashery Plays API Match Maker with Developer Connect'
 url: 'http://apievangelist.com2012/01/31/mashery-plays-api-match-maker-with-developer-connect/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Mashery-Developer-Connect.png'

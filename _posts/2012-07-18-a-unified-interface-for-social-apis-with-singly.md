@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'A Unified Interface for Social APIs with Singly'
 url: 'http://apievangelist.com2012/07/18/a-unified-interface-for-social-apis-with-singly/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/singly-logo.png'

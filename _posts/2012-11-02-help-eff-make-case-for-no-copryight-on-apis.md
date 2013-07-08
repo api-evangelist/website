@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Help EFF Make Case For No Copryight on APIs'
 url: 'http://apievangelist.com2012/11/02/help-eff-make-case-for-no-copryight-on-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/electronic-frontier-foundation-logo.gif'

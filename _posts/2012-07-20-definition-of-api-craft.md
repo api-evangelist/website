@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Definition of API Craft'
 url: 'http://apievangelist.com2012/07/20/definition-of-api-craft/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apigee-logo.gif'

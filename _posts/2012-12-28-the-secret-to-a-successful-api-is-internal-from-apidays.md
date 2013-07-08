@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'The Secret to a Successful API is Internal from APIDays'
 url: 'http://apievangelist.com2012/12/28/the-secret-to-a-successful-api-is-internal-from-apidays/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-days-logo.png'

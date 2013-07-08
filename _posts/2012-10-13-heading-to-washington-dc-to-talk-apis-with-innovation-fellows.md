@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Heading to Washington DC to Talk APIs with Innovation Fellows'
 url: 'http://apievangelist.com2012/10/13/heading-to-washington-dc-to-talk-apis-with-innovation-fellows/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/PresidentialInnovationFellows.jpeg'

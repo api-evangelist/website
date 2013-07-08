@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Self Service vs Sales Oriented Web APIs'
 url: 'http://apievangelist.com2012/06/01/self-service-vs-sales-oriented-web-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/gnip-logo.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Helping People Understand APIs Through Real World Examples'
 url: 'http://apievangelist.com2013/04/27/helping-people-understand-apis-through-real-world-examples/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/commercial-fueling-network.jpg'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'ATTs new Cloud API Platform'
 url: 'http://apievangelist.com2012/01/16/atts-new-cloud-api-platform/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ATT-API-Platform.png'

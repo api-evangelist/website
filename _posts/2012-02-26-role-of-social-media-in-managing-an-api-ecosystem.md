@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Role of Social Media in Managing An API Ecosystem'
 url: 'http://apievangelist.com2012/02/26/role-of-social-media-in-managing-an-api-ecosystem/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/twitter_logo.jpg'

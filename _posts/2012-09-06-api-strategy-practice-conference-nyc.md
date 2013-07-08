@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Strategy Practice Conference NYC'
 url: 'http://apievangelist.com2012/09/06/api-strategy--practice-conference/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/API-Strategy-Home-Page.png'

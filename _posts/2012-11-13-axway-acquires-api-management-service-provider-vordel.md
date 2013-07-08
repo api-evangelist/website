@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Axway Acquires API Management Service Provider Vordel'
 url: 'http://apievangelist.com2012/11/13/axway-acquires-api-management-service-provider-vordel/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/vordel_logo.png'

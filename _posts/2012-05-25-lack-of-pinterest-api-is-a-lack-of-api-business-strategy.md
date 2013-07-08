@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Lack of Pinterest API is a Lack of API Business Strategy'
 url: 'http://apievangelist.com2012/05/25/lack-of-pinterest-api-is-a-lack-of-api-business-strategy/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Pinterest_Logo.png'

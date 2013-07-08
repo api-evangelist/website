@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Adding API Broker Under Monitoring for API Aggregators'
 url: 'http://apievangelist.com2013/05/13/adding-api-broker-under-monitoring-for-api-aggregators/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/payments-api-broker-spreedly.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Five Areas of Collective Action Around Personal Data'
 url: 'http://apievangelist.com2012/12/27/five-areas-of-collective-action-around-personal-data/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/world-economic-forum-personal-data-cover.png'

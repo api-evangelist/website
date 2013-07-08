@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'CityGrid Places Reviews Offers and Advertising API Review'
 url: 'http://apievangelist.com2012/02/13/citygrid-places,-reviews,-offers-and-advertising-api-review/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid-Getting-Started.png'

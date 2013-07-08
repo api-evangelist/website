@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Does Your API Have a Built in Incubator or Accelerator Program'
 url: 'http://apievangelist.com2013/01/28/does-your-api-have-a-built-in-incubator-or-accelerator-program/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Nike-Accelerator.png'

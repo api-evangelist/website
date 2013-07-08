@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'APIs in DFW'
 url: 'http://apievangelist.com2013/05/15/apis-in-dfw/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/dfw-api-meetup-group.jpeg'

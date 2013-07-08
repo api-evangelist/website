@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Mulesoft Launches API Discovery Hub'
 url: 'http://apievangelist.com2012/12/11/mulesoft-launches-api-discovery-hub/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/mulesoft-logo.jpeg'

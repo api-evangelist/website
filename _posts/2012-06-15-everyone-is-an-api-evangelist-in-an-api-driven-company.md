@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Everyone is an API Evangelist in an API Driven Company'
 url: 'http://apievangelist.com2012/06/15/everyone-is-an-api-evangelist-in-an-api-driven-company/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/banner-scale-robot.png'

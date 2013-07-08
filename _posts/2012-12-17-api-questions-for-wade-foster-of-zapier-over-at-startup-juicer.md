@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Questions for Wade Foster of Zapier over at Startup Juicer'
 url: 'http://apievangelist.com2012/12/17/api-questions-for-wade-foster-of-zapier-over-at-startup-juicer/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/zapier-logo.png'

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'How Do You Make Money From Your Apps'
 url: 'http://apievangelist.com2012/01/21/how-do-you-make-money-from-your-apps/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hundred-dollar-bill.jpg'

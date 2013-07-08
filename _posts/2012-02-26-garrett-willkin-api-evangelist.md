@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Garrett Willkin API Evangelist'
 url: 'http://apievangelist.com2012/02/26/garrett-willkin-api-evangelist/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/garrettwilkin_apievangelist.jpg'

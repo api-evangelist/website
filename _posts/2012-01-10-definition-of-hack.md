@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Definition of Hack'
 url: 'http://apievangelist.com2012/01/10/definition-of-hack/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Hack-the-Planet.jpg'

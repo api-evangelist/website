@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Finding Sponsors for my Local Hackathon Tour'
 url: 'http://apievangelist.com2012/04/17/finding-sponsors-for-my-local-hackathon-tour/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/citygrid-los-angeles.png'

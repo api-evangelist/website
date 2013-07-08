@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Facebook Provides Developers with Platform Alerts'
 url: 'http://apievangelist.com2012/11/30/facebook-provides-developers-with-platform-alerts/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/facebook-dev-alerts.png'

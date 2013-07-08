@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'API Code Samples via Gists'
 url: 'http://apievangelist.com2012/10/28/api-code-samples-via-gist/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo-basic.png'

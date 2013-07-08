@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Why We Write API Documentation'
 url: 'http://apievangelist.com2012/01/28/why-we-write-api-documentation/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/SDKBridge-logo.gif'

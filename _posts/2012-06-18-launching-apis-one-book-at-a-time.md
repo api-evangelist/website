@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Launching APIs One Book At A Time'
 url: 'http://apievangelist.com2012/06/18/launching-apis-one-book-at-a-time/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/pearson-nursing-guide.jpg'

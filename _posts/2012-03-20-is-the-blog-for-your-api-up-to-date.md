@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Is The Blog for Your API Up to Date'
 url: 'http://apievangelist.com2012/03/20/is-the-blog-for-your-api-up-to-date/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/blog_icon.jpg'

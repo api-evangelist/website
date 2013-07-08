@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'How to Run a Successful Hackathon for Your Open APIs'
 url: 'http://apievangelist.com2012/07/09/how-to-run-a-successful-hackathon-for-your-open-apis/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/layer7-logo.png'

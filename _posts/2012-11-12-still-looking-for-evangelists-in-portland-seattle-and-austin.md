@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Still Looking for Evangelists in Portland Seattle and Austin'
 url: 'http://apievangelist.com2012/11/12/still-looking-for-evangelists-in-portland,-seattle-and-austin/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Interested-In-Evangelism.png'

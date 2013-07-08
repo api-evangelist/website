@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'APIs Have Been Copyrightable for 22 Years'
 url: 'http://apievangelist.com2012/05/14/apis-have-been-copyrightable-for-22-years/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-legal.jpg'

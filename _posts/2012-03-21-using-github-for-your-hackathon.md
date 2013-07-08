@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Using Github For Your Hackathon'
 url: 'http://apievangelist.com2012/03/21/using-github-for-your-hackathon/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-logo.png'

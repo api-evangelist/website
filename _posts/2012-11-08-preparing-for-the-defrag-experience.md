@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Preparing for the Defrag Experience'
 url: 'http://apievangelist.com2012/11/08/preparing-for-the-defrag-experience/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Defrag-2012.png'

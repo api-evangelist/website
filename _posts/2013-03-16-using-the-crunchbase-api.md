@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 'Using The Crunchbase API'
 url: 'http://apievangelist.com2013/03/16/using-the-crunchbase-api/'
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/crunchbase-logo.png'
