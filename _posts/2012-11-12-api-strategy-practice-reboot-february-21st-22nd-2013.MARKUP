@@ -1,0 +1,24 @@
+---
+layout: default
+title: 'API Strategy Practice Reboot February 21st 22nd 2013'
+url: 'http://apievangelist.com2012/11/12/api-strategy-practice-reboot-february-21st-22nd-2013/'
+image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-strategy-practice-event-2.png'
+---
+
+
+<p>
+     It’s been 2 weeks since New York City was hit by hurricane Sandy, and while things aren’t back to normal, everyone is beginning to look to the future, and starting the process of moving past the devastating storm.
+</p>
+<p>
+     With this spirit in mind, we’ve confirmed dates for the <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> conference! Lock in <strong>February 21st and 22nd, 2013</strong>and make sure you are in New York City for the reboot of the communities own API industry conference.
+</p>
+<p>
+     <img src="https://s3.amazonaws.com/kinlane-productions/events/api-strategy-practice-conference/api-strategy-home-1.png"  width="525" />
+</p>
+<p>
+     So far it looks like we’ll have most of the session, panel and keynote lineup as in the original schedule with just a few minor adjustments. With the new dates, we’ll reboot ticket sales and start the countdown.
+</p>
+<p>
+     We look forward to having you joining the conversation at <a href="http://www.apistrategyconference.com/">API Strategy and Practice in New York City</a>, February 21st and 22nd, 2013. Don’t miss it!
+</p>
+
