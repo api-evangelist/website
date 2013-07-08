@@ -6,61 +6,28 @@ title: API Evangelist Blog
 <a href="http://feeds.feedburner.com/apievangelist/jiZd" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/icon-set-roundedcorners/rss.png" align="right" width="20" style="padding-top: 10px;" /></a>
 <h1>API Evangelist Blog</h1>
 
+<!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
-<div class="post">
-    
-    <p><a href="{{ post.source }}" rel="bookmark" title="{{ post.title }}" style="color:#000;"><h3><strong>{{ post.title }}</strong></h3></a>
-    <p><i><strong><span class="small">Posted on</span> <span class="post-date">{{ post.date | date:"%m-%d-%Y" }}</span> at <a href="http:{{ post.domain }}" target="_blank">{{ post.domain }}</a></strong></i></p>
-    <p><a href="{{ post.source }}" rel="bookmark" title="{{ post.title }}"><img src="{{ post.image }}" width="150" align="right" /></a></p>
-    <p>{{ post.content | strip_html | truncatewords: 100 }}...<a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}" style="color:#000; font-weight: bold;">read more</a>.</p>
-    <hr />     
-   
-</div>
+  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+  <p class="author">
+    <span class="date">{{ post.date }}</span>
+  </p>
+  <div class="content">
+    {{ post.content }}
+  </div>
 {% endfor %}
 
-<div id="post-pagination" class="pagination">
+<!-- Pagination links -->
+<div class="pagination">
   {% if paginator.previous_page %}
-    <p class="previous">
-      {% if paginator.previous_page == 1 %}
-        <a href="/">Previous</a>
-      {% else %}
-        <a href="{{ paginator.previous_page_path }}">Previous</a>
-      {% endif %}
-    </p>
+    <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
   {% else %}
-    <p class="previous disabled">
-      <span>Previous</span>
-    </p>
+    <span class="previous">Previous</span>
   {% endif %}
-
-  <ul class="pages">
-    <li class="page">
-      {% if paginator.page == 1 %}
-        <span class="current-page">1</span>
-      {% else %}
-        <a href="/">1</a>
-      {% endif %}
-    </li>
-
-    {% for count in (2..paginator.total_pages) %}
-      <li class="page">
-        {% if count == paginator.page %}
-          <span class="current-page">{{ count }}</span>
-        {% else %}
-          <a href="/page{{ count }}">{{ count }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-
+  <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
   {% if paginator.next_page %}
-    <p class="next">
-      <a href="{{ paginator.next_page_path }}">Next</a>
-    </p>
+    <a href="/page{{ paginator.next_page }}" class="next">Next</a>
   {% else %}
-    <p class="next disabled">
-      <span>Next</span>
-    </p>
+    <span class="next ">Next</span>
   {% endif %}
-
 </div>
