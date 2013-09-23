@@ -13,16 +13,6 @@ Since 2010 I have had a page on this site dedicated to "API Management". In 2013
   * **[Deployment**][2]
   * **[Management**][3]
 
-I'm grouping these projects under a single umbrella, I'm now calling "[providing APIs][4]". If you are a company or organization looking to provide API driven resources to partners, the public or even use them for internal operations, this section is for you.
-
-I will be adding several other API research areas in the near future, including:
-
-  * Monetization
-  * Evangelism
-  * Security
-  * Embeddable
-
-For each of the projects you will find building blocks, companies, tools, news and analysis. All projects stick to my new [Hacker Storytelling][5] format, making sure my research is open, distributable and machine readable.
 
    [1]: http://design.apievangelist.com
    [2]: http://deployment.apievangelist.com
