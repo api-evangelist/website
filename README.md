@@ -1,4 +1,4 @@
-api-evangelist
+API Evangelist
 ==============
 
-The API Evangelist public site.
+The API Evangelist public site, visit [apievangelist.com](http://apievangelist.com) to view.
