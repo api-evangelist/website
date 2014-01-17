@@ -5,8 +5,7 @@ url: 'http://apievangelist.com/2014/01/17/an_api_design_discussion_with_api_blue
 image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-design.png'
 ---
 
-
-<p>
+<p>
      <a href="http://design.apievangelist.com/" target="_blank"><img class="c1" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/api-design.png" alt="" width="150" align="right" /></a>
 </p>
 <p>
@@ -18,4 +17,44 @@ image: 'http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api
 <p>
      The conversation began on Twitter:
 </p>
-
+
+<div class="storify"><iframe src="//storify.com/kinlane/api-design/embed" width="100%" height=750 frameborder=no allowTransparency=true></iframe><script src="//storify.com/kinlane/api-design.js" type="text/javascript" language="javascript"></script><noscript>[<a href="//storify.com/kinlane/api-design" target="_blank">View the story "API Design" on Storify</a>]</noscript></div>
+
+<p>
+     Then we moved to jabbr.net to stop blasting our Twitter followers:
+</p>
+
+<div style="padding-left: 10px; padding-right: 10px; width:550px;">
+     <ul id="conversationListing" style="padding-left: 30px;"></ul>
+</div> 
+
+{% raw  %}
+<script id="conversationTemplate" type="text/template">       
+    <li style="list-style: none; padding: 3px;">
+        <strong>{{username}}</strong> - {{content}}
+    </li>                                                                                               
+</script>
+{% endraw %}
+
+<script type="text/javascript">
+function listConversation()
+    {
+    $.getJSON('/data/api-design-discussion-jabbr.json', function(data) {
+        toggle = 0;
+         $.each(data, function(key, val) {
+            var template = $('#conversationTemplate').html();
+            var html = Mustache.to_html(template, val);
+            $('#conversationListing').append(html);                          
+            });
+        });
+    } 
+</script>
+
+<script type="text/javascript">
+    listConversation();
+</script>
+
+<p>I will work to summarize and pull some stories from this. After I get more up to speed on what each provider is offering, the tooling surrounding their API definitions, I would also like to do a Google Hangout with the group. They are an smart, energetic bunch and Glenn knows how to stir the pot.</p>
+
+<p>Thanks everyone for participating, and Glenn for kicking off with your curiosity. I enjoy watching all y'all discuss the space. So very valuable!</p>
+
