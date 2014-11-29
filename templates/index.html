@@ -46,7 +46,7 @@ title: API Templates
 
 <script id="projecttypeTemplate" type="text/template">       
     <tr>
-        <td colspan="2"><strong>{{type}}</strong><ul id="{{slug}}" class="projectul"></ul></td>
+        <td colspan="2"><strong></strong><ul id="{{slug}}" class="projectul"></ul></td>
     </tr>                                                                                                    
 </script>
 
@@ -73,7 +73,7 @@ title: API Templates
 
 $.getJSON('/data/projects.json', function(data) {
     //alert(data['projects'].length);     
-    document.getElementById('projectcount').innerHTML = 'Currently I have ' + data['projects'].length + ' projects that I am working on.';                             
+   // document.getElementById('projectcount').innerHTML = 'Currently I have ' + data['projects'].length + ' projects that I am working on.';                             
     });           
     
 function listprojecttypes()
@@ -82,7 +82,6 @@ function listprojecttypes()
          $.each(data['project_type'], function(key, val) {
              
             $categorytype = val['type'];
-            alert($categorytype);
             if($categorytype == 'Template')
             	{
             	var template = $('#projecttypeTemplate').html();
