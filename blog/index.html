@@ -1,69 +1,75 @@
 ---
 layout: default
-title: API Evangelist Blog
 ---
 
-<h1 class="title">API Evangelist Blog</h1>
+<p align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" align="center" width="65%" style="padding-bottom: 10px;" /></p>
 
-<!-- This loops through the paginated posts -->
-{% for post in paginator.posts %}
-<div class="post">
+<div class="posts">
+  {% for post in paginator.posts %}
+  <div class="post">
+    <h1>
+      <a href="/dev/{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h1>
+
+    <span class="post-date">{{ post.date | date_to_string }}</span>
+
+    {{ post.content }}
     
-    <p><a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}" style="color:#000;"><h4><strong>{{ post.title }}</strong></h4></a>
-    <p><i><strong><span class="small">Posted on</span> <span class="post-date">{{ post.date | date:"%m-%d-%Y" }}</span></strong></i></p>
-    <p><a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}"><img src="{{ post.image }}" width="135" align="right" style="padding: 10px;" /></a></p>
-    <p>{{ post.content | strip_html | truncatewords: 100 }}...<a href="{{ post.url }}" rel="bookmark" title="{{ post.title }}" style="color:#000; font-weight: bold;">read more</a>.</p>
-    <br />
-    <hr />     
-   
+	<br /><br />
+	<!-- 3scale -->
+	<p align="center">
+	    <a href="http://bit.ly/13esk6Q" target="_blank" title="Empowered By 3Scale">
+	        <img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/3Scale/empowered-by-3scale.png" width="45%" style="padding-bottom: 15px;" />
+	    </a>        
+	</p>
+	<!-- 3scale -->  
+		
+	<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+		<tr>
+			<td align="center">
+				<a href="http://twitter.com/home?status={{ post.title }} - http://apievangelist.com{{ post.url }} via @apireport" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>				
+			</td>
+			<td align="center">
+				<a href="http://www.facebook.com/share.php?u=http://apievangelist.com{{ post.url }}&title=http://apievangelist.com{{ post.title }}" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+			</td>
+			<td align="center">
+				<a href="http://www.linkedin.com/shareArticle?mini=true&url=http://apievangelist.com{{ post.url }}&title={{ post.title }}&source=api.report" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>				
+			</td>
+			<td align="center">
+				<a href="https://plus.google.com/share?url=http://apievangelist.com{{ post.url }}" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>				
+			</td>	
+			<td align="center">
+				<a href="http://www.tumblr.com/share?v=3&u=http://apievangelist.com{{ post.url }}&t=http://apievangelist.com{{ post.title }}" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/tumblr.png" width="25" /></a>				
+			</td>
+			<td align="center">
+				<a href="http://www.reddit.com/submit?url=http://apievangelist.com{{ post.url }}&title=http://apievangelist.com{{ post.title }}" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/reddit.png" width="25" /></a>				
+			</td>
+			<td align="center">
+				<a href="http://news.ycombinator.com/submitlink?u=http://apievangelist.com{{ post.url }}&t=http://apievangelist.com{{ post.title }}" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/hackernews.jpeg" width="25" /></a>				
+			</td>															
+		</tr>
+	</table>	      
+    
+  </div>
+  {% endfor %}
 </div>
-{% endfor %}
 
+<!-- Pagination links -->
 <div class="pagination">
-  <ul>
-    {% if paginator.previous_page %}
-      {% if paginator.previous_page == 1 %}
-        <li>
-          <a href="/">&laquo;</a>
-        </li>
-      {% else %}
-        <li>
-          <a href="/blog/page{{paginator.previous_page}}">&laquo;</a>
-        </li>
-      {% endif %}
+  {% if paginator.next_page %}
+    <a href="/dev/blog/page{{paginator.next_page}}" class="older">Older</a>
+  {% else %}
+    <span class="next">Older</span>
+  {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a href="/" class="newer">Newer</a>
     {% else %}
-      <li class="disabled">
-        <a href="#">&laquo;</a>
-      </li>
+      <a href="/dev/blog/page{{paginator.previous_page}}" class="newer">Newer</a>
     {% endif %}
-    {% if paginator.page == 1 %}
-      <li class="active">
-        <a href="#">1</a>
-      </li>
-    {% else %}
-      <li>
-        <a href="/">1</a>
-      </li>
-    {% endif %}
-    {% for count in (2...12) %}
-      {% if count == paginator.page %}
-        <li class="active">
-          <a href="#">{{count}}</a>
-        </li>
-      {% else %}
-        <li>
-          <a href="/blog/page{{count}}">{{count}}</a>
-        </li>
-      {% endif %}
-    {% endfor %}
-    {% if paginator.next_page %}
-      <li>
-        <a href="/blog/page{{paginator.next_page}}">&raquo;</a>
-      </li>
-    {% else %}
-      <li class="disabled">
-        <a href="#">&raquo;</a>
-      </li>
-    {% endif %}
-  </ul>
+  {% else %}
+    <span class="previous">Newer</span>
+  {% endif %}
 </div>
