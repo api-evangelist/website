@@ -1,12 +1,82 @@
-{% include top.html %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 
-<body class="home blog two-col-left width-940 two-col-left-940" onload="checkLinkRot();">
-    
-  {% include header.html %}
+  {% include head.html %}
 
-  {{ content }}
+  <body>
 
-  {% include footer.html %}
+    <header class="masthead">
+      <div class="masthead-inner" align="center">  	      	
+		<h2>{"API Evangelist"}</h2>      		
+    	<a href="http://bit.ly/1cHBhd5" target="_blank">
+    		<img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/3scale/Winning-in-the-API-Economy-eBook-3scale.png" width="50%" style="border: 1px solid #FFF; margin-bottom: 25px;" />
+    	</a>                   	      	
+        <div class="colophon">
+          <ul class="colophon-links">
+            <li>
+              <a href="/dev/">101</a>
+            </li>
+            <li>
+              <a href="/dev/blog/">Blog</a>
+            </li>
+            <li>
+              <a href="/dev/network/">Network</a>
+            </li>   
+            <li>
+              <a href="http://kinlane.com/about/">About</a>
+            </li>                      
+          </ul>
+        </div>        
+        <script id="parterListingTemplate" type="text/template"> 
+            {% raw  %}  
+            <a href="{{url}}" target="_blank" title="{{title}}">
+           		<img src="{{logo}}" width="{{width}}" style="padding: 4px;" />
+            </a>   
+            {% endraw %}                                                                                                                    
+        </script>          
+        
+        <script type="text/javascript">
+        function listSponsors()
+            {
+            $.getJSON('/dev/data/sponsors.json', function(data) {               
+                $.each(data['sponsors'], function(key, val) {                  
+                var template = $('#parterListingTemplate').html();
+                var html = Mustache.to_html(template, val);
+                $('#partnerListingContainer').append(html);
+                });         
+            });             
+        }    
+        </script>
 
-</body>
+        <div id="partnerListingContainer" align="center" style="background-color:#FFF; margin-top: 45px; padding-top: 10px; width: 60%; border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px; border: 3px solid #FFFFFF; margin-bottom: 7px;">
+		
+		</div>
+        
+        <script type="text/javascript">
+            listSponsors();
+        </script>        
+        
+      </div>
+    </header>
+
+    <div class="content container">
+      {{ content }}
+      
+	      
+	     <div class="footer">
+		    <ul>
+		    	<li><a href="/dev/">101</a></li>
+		    	<li><a href="/dev/blog/">Blog</a></li>
+		    	<li><a href="/dev/network">Network</a></li>
+		    	<li><a href="http://kinlane.com/about/">About</a></li>
+		    	<li><a href="http://apicommons.org">API Commons</a></li>
+		    	<li><a href="http://apisjson.org">APIs.json</a></li>
+		    	<li><a href="/dev/branding-guidelines.html">Branding Guidelines</a></li>
+		    	<li><a href="http://kinlane.com/contact/">Contact</a></li>
+		    </ul>
+		</div>      
+      
+    </div>
+	
+  </body>
 </html>
