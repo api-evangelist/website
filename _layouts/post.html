@@ -45,20 +45,16 @@ layout: default
 
 <!-- Pagination links -->
 <div class="pagination">
-  {% if page.previous %}
-    <a href="{{ BASE_PATH }}{{ page.next.url }}" class="older">Older</a>
-  {% else %}
-    <span class="next">Older</span>
-  {% endif %}
-  {% if page.previous %}
-    {% if page.next %}
-      <a href="/" class="newer">Newer</a>
-    {% else %}
-      <a href="{{ BASE_PATH }}{{ page.next.url }}" class="newer">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="previous">Newer</span>
-  {% endif %}
+	  {% if page.next %}
+	    <a href="{{ site.production_url }}{{ page.next.url }}" class="older">Older</a>
+	  {% else %}
+	    <span class="next">Older</span>
+	  {% endif %}
+	{% if page.previous %}
+	  <a href="/" class="newer">Newer</a>
+	{% else %}
+	  <a href="{{ site.production_url }}{{ page.previous.url }}" class="newer">Newer</a>
+	{% endif %}
 </div>
 
 <div class="related">
