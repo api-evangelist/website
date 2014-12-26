@@ -43,6 +43,24 @@ layout: default
 	</tr>
 </table>
 
+<!-- Pagination links -->
+<div class="pagination">
+  {% if page.previous %}
+    <a href="/blog/page{{paginator.next_page}}" class="older">Older</a>
+  {% else %}
+    <span class="next">Older</span>
+  {% endif %}
+  {% if page.previous %}
+    {% if page.next %}
+      <a href="/" class="newer">Newer</a>
+    {% else %}
+      <a href="/blog/page{{paginator.previous_page}}" class="newer">Newer</a>
+    {% endif %}
+  {% else %}
+    <span class="previous">Newer</span>
+  {% endif %}
+</div>
+
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
