@@ -7,6 +7,22 @@
     {% if page.title %}{{ page.title }} &middot; {% endif %}
     {{ site.tagline }}
   </title>
+  
+	<!--Open Graph Stuff-->  
+	<meta property="og:title" content="{% if page.title %}" />
+	
+	{% if post.url %}
+		<meta property="og:url" content="{{ site.production_url }}{{ post.url }}" />
+  	{% else %}
+		<meta property="og:url" content="{{ site.production_url }}{{ page.url }}" />
+  	{% endif %}		
+	
+	{% if page.image %}
+		<meta property="og:image" content="{{ page.image }}" />  
+  	{% else %}
+		<meta property="og:image" content="{{ site.image }}" />  
+  	{% endif %}	
+	<!--Open Graph Stuff-->  
 
   <!-- CSS -->
   <style>
