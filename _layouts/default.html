@@ -10,16 +10,8 @@
 
 		  <h2 style="font-size: 20px;">{"API Evangelist"}</h2>
 
-      <!-- Winning in the API Economy
-    	<a href="http://bit.ly/1cHBhd5" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/whitepapers/3scale/report-image-winning-in-api-economy.png" width="42%" style="border: 1px solid #FFF;" title="Winning in the API Economy" /></a>
-      -->
-
       <!-- API Design -->
-      <a href="http://apis.how/xzca4kr2wb" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/whitepapers/3scale/report-image-api-design.png" width="45%" style="border: 1px solid #FFF;" title="API Design Providers Guide" /></a>
-
-      <!-- Platform Visiion of Giants
-      <a href=http://bit.ly/1Lcnvg8"" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/whitepapers/3scale/Platform-Vision-of-Giants-cover-e1438126737396.png" width="42%" style="border: 1px solid #FFF;" title="The Platform Vision of API Giants" /></a>
-      -->
+      <a href="http://apis.how/xzca4kr2wb" target="_blank" id="feature_project_link"><img id="feature_project_image" src="https://s3.amazonaws.com/kinlane-productions/whitepapers/3scale/report-image-api-design.png" width="45%" style="border: 1px solid #FFF;" title="API Design Providers Guide" /></a>
 
         <div class="colophon">
           <ul class="colophon-links">
@@ -134,17 +126,16 @@
 
         // Feature Projects
         $get_feature_project_url = "http://project.api.kinlane.com/project/feature/";
-      	console.log("loading..." + $get_feature_project_url);
       	$.ajax({
       	  url: $get_feature_project_url,
       	  type:"GET",
       	  success:function(data) {
             	$feature_title = data['feature_title'];
-            	console.log("feature_title: " + $feature_title);
               $feature_image = data['feature_image'];
-            	console.log("feature_image: " + $feature_image);
               $feature_url = data['feature_url'];
-            	console.log("feature_url: " + $feature_url);
+              $("#feature_project_link").attr("href", $feature_url);
+              $("#feature_project_image").attr("src", $feature_image);
+              $("#feature_project_image").attr("title", $feature_title);
           	}
       	});
 
