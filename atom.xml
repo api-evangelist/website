@@ -12,8 +12,8 @@ layout: none
 	{% for post in site.posts limit:25 %}<entry>
     <title>{{ post.title }}</title>
     <link href="http://apievangelist.com{{ post.url }}"/>
-    <updated>{{ post.date | date: "%a, %d %b %YT%H:%M:%S %z" }}</updated>
+    <updated>{{ post.date | date_to_rfc822 }}</updated>
     <summary>{{ post.content | xml_escape }}</summary>
   </entry>{% if forloop.first == true %}{% assign updated = post.date %}{% endif %}{% endfor %}
-  <updated>{{ updated | date: "%a, %d %b %YT%H:%M:%S %z" }}</updated>
+  <updated>{{ updated | date_to_rfc822 }}</updated>
 </feed>
