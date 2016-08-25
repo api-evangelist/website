@@ -4,6 +4,7 @@ layout: none
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ site.title }}</title>
+  {% for post in site.posts limit:25 %}{% if forloop.first == true %}{% assign updated = post.date %}<updated>{{ updated | date_to_rfc822 }}</updated>{% endif %}{% endfor %}
   <link href="{{ site.url }}"/>
   <author><name>Kin Lane</name></author>
   <id>{{ site.url }}/atom.xml</id>
@@ -12,6 +13,5 @@ layout: none
     <link href="http://apievangelist.com{{ post.url }}"/>
     <updated>{{ post.date | date_to_rfc822 }}</updated>
     <summary>{{ post.content | xml_escape }}</summary>
-  </entry>{% if forloop.first == true %}{% assign updated = post.date %}{% endif %}{% endfor %}
-  <updated>{{ updated | date_to_rfc822 }}</updated>
+  </entry>{% endfor %}
 </feed>
