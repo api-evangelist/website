@@ -5,152 +5,82 @@ title: Views For September 2016 - test 3
 
 <style>
 
-svg {
-    width: 100%;
-    height: 100%;
-    position: center;
+.axis text {
+  font-family: 'Poiret One', cursive;
+  font-size: 24pt;
 }
-
-.toolTip {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    position: absolute;
-    display: none;
-    width: auto;
-    height: auto;
-    background: none repeat scroll 0 0 white;
-    border: 0 none;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: -3px 3px 15px #888888;
-    color: black;
-    font: 12px sans-serif;
-    padding: 5px;
-    text-align: center;
+.axis .label {
+  font-size: 40pt;
 }
-
-text {
-    font: 10px sans-serif;
-    color: white;
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }
-text.value {
-    font-size: 120%;
-    fill: white;
-}
-
-.axisHorizontal path{
-    fill: none;
-}
-
-.axisHorizontal .tick line {
-    stroke-width: 1;
-    stroke: rgba(0, 0, 0, 0.2);
-}
-
-.bar {
-    fill: steelblue;
-    fill-opacity: .9;
+.y.axis path, .y.axis line {
+  stroke: none;
 }
 </style>
 
 <script>
 
-var w = 500,
-    h = 100;
-
-var svg = d3.select("#chart")
-  .append("svg")
-  .attr("width", w)
-  .attr("height", h);
-
-d3.json("views.json", function(data) {
-
-  var div = d3.select("body").append("div").attr("class", "toolTip");
-
-   var axisMargin = 20,
-           margin = 40,
-           valueMargin = 4,
-           width = parseInt(d3.select('body').style('width'), 10),
-           height = parseInt(d3.select('body').style('height'), 10),
-           barHeight = (height-axisMargin-margin*2)* 0.4/data.length,
-           barPadding = (height-axisMargin-margin*2)*0.6/data.length,
-           data, bar, svg, scale, xAxis, labelWidth = 0;
-
-   max = d3.max(data, function(d) { return d.value; });
-
-   svg = d3.select('body')
-           .append("svg")
-           .attr("width", width)
-           .attr("height", height);
-
-
-   bar = svg.selectAll("g")
-           .data(data)
-           .enter()
-           .append("g");
-
-   bar.attr("class", "bar")
-           .attr("cx",0)
-           .attr("transform", function(d, i) {
-               return "translate(" + margin + "," + (i * (barHeight + barPadding) + barPadding) + ")";
-           });
-
-   bar.append("text")
-           .attr("class", "label")
-           .attr("y", barHeight / 2)
-           .attr("dy", ".35em") //vertical align middle
-           .text(function(d){
-               return d.label;
-           }).each(function() {
-       labelWidth = Math.ceil(Math.max(labelWidth, this.getBBox().width));
-   });
-
-   scale = d3.scale.linear()
-           .domain([0, max])
-           .range([0, width - margin*2 - labelWidth]);
-
-   xAxis = d3.svg.axis()
-           .scale(scale)
-           .tickSize(-height + 2*margin + axisMargin)
-           .orient("bottom");
-
-   bar.append("rect")
-           .attr("transform", "translate("+labelWidth+", 0)")
-           .attr("height", barHeight)
-           .attr("width", function(d){
-               return scale(d.value);
-           });
-
-   bar.append("text")
-           .attr("class", "value")
-           .attr("y", barHeight / 2)
-           .attr("dx", -valueMargin + labelWidth) //margin right
-           .attr("dy", ".35em") //vertical align middle
-           .attr("text-anchor", "end")
-           .text(function(d){
-               return (d.value+"%");
-           })
-           .attr("x", function(d){
-               var width = this.getBBox().width;
-               return Math.max(width + valueMargin, scale(d.value));
-           });
-
-   bar
-           .on("mousemove", function(d){
-               div.style("left", d3.event.pageX+10+"px");
-               div.style("top", d3.event.pageY-25+"px");
-               div.style("display", "inline-block");
-               div.html((d.label)+"<br>"+(d.value)+"%");
-           });
-   bar
-           .on("mouseout", function(d){
-               div.style("display", "none");
-           });
-
-   svg.insert("g",":first-child")
-           .attr("class", "axisHorizontal")
-           .attr("transform", "translate(" + (margin + labelWidth) + ","+ (height - axisMargin - margin)+")")
-           .call(xAxis);
-
-});
+var outerWidth = 960;
+var outerHeight = 500;
+var margin = { left: 165, top: 0, right: 0, bottom: 90 };
+var barPadding = 0.2;
+var barPaddingOuter = 0.1;
+var xColumn = "views";
+var yColumn = "host";
+var xAxisLabelText = "Population";
+var xAxisLabelOffset = 75;
+var innerWidth  = outerWidth  - margin.left - margin.right;
+var innerHeight = outerHeight - margin.top  - margin.bottom;
+var svg = d3.select("body").append("svg")
+  .attr("width",  outerWidth)
+  .attr("height", outerHeight);
+var g = svg.append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var xAxisG = g.append("g")
+  .attr("class", "x axis")
+  .attr("transform", "translate(0," + innerHeight + ")")
+var xAxisLabel = xAxisG.append("text")
+  .style("text-anchor", "middle")
+  .attr("x", innerWidth / 2)
+  .attr("y", xAxisLabelOffset)
+  .attr("class", "label")
+  .text(xAxisLabelText);
+var yAxisG = g.append("g")
+  .attr("class", "y axis");
+var xScale = d3.scale.linear().range([0, innerWidth]);
+var yScale = d3.scale.ordinal().rangeRoundBands([0, innerHeight], barPadding, barPaddingOuter);
+var xAxis = d3.svg.axis().scale(xScale).orient("bottom")
+  .ticks(5)
+  .tickFormat(d3.format("s"))
+  .outerTickSize(0);
+var yAxis = d3.svg.axis().scale(yScale).orient("left")
+  .outerTickSize(0);
+function render(data){
+  xScale.domain([0, d3.max(data, function (d){ return d[xColumn]; })]);
+  yScale.domain(       data.map( function (d){ return d[yColumn]; }));
+  xAxisG.call(xAxis);
+  yAxisG.call(yAxis);
+  var bars = g.selectAll("rect").data(data);
+  bars.enter().append("rect")
+    .attr("height", yScale.rangeBand());
+  bars
+    .attr("x", 0)
+    .attr("y",     function (d){ return yScale(d[yColumn]); })
+    .attr("width", function (d){ return xScale(d[xColumn]); });
+  bars.exit().remove();
+}
+function type(d){
+  d.views = +d.views;
+  return d;
+}
+d3.json("views.json", type, render);
 
 </script>
-<div id="chart" class="toolTip" style="border: 1px solid #000;"></div>
+<div id="tooltip" class="hidden">
+    <p><span id="value">100</span>
+    </p>
+</div>
