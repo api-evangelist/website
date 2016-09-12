@@ -1,86 +1,96 @@
 ---
 layout: page
-title: Views For September 2016 - test 4
+title: Views
 ---
 
 <style>
 
-.axis text {
-  font-family: 'Poiret One', cursive;
-  font-size: 24pt;
+.bar {
+  fill: steelblue;
 }
-.axis .label {
-  font-size: 40pt;
+
+.bar:hover {
+  fill: brown;
 }
-.axis path, .axis line {
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
 }
-.y.axis path, .y.axis line {
-  stroke: none;
+
+.x.axis path {
+  display: none;
 }
+
 </style>
 
 <script>
 
-var outerWidth = 960;
-var outerHeight = 500;
-var margin = { left: 165, top: 0, right: 0, bottom: 90 };
-var barPadding = 0.2;
-var barPaddingOuter = 0.1;
-var xColumn = "views";
-var yColumn = "host";
-var xAxisLabelText = "Population";
-var xAxisLabelOffset = 75;
-var innerWidth  = outerWidth  - margin.left - margin.right;
-var innerHeight = outerHeight - margin.top  - margin.bottom;
-var svg = d3.select("body").append("svg")
-  .attr("width",  outerWidth)
-  .attr("height", outerHeight);
-var g = svg.append("g")
-  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-var xAxisG = g.append("g")
-  .attr("class", "x axis")
-  .attr("transform", "translate(0," + innerHeight + ")")
-var xAxisLabel = xAxisG.append("text")
-  .style("text-anchor", "middle")
-  .attr("x", innerWidth / 2)
-  .attr("y", xAxisLabelOffset)
-  .attr("class", "label")
-  .text(xAxisLabelText);
-var yAxisG = g.append("g")
-  .attr("class", "y axis");
-var xScale = d3.scale.linear().range([0, innerWidth]);
-var yScale = d3.scale.ordinal().rangeRoundBands([0, innerHeight], barPadding, barPaddingOuter);
-var xAxis = d3.svg.axis().scale(xScale).orient("bottom")
-  .ticks(5)
-  .tickFormat(d3.format("s"))
-  .outerTickSize(0);
-var yAxis = d3.svg.axis().scale(yScale).orient("left")
-  .outerTickSize(0);
-function render(data){
-  xScale.domain([0, d3.max(data, function (d){ return d[xColumn]; })]);
-  yScale.domain(       data.map( function (d){ return d[yColumn]; }));
-  xAxisG.call(xAxis);
-  yAxisG.call(yAxis);
-  var bars = g.selectAll("rect").data(data);
-  bars.enter().append("rect")
-    .attr("height", yScale.rangeBand());
-  bars
-    .attr("x", 0)
-    .attr("y",     function (d){ return yScale(d[yColumn]); })
-    .attr("width", function (d){ return xScale(d[xColumn]); });
-  bars.exit().remove();
-}
-function type(d){
+var margin = {top: 20, right: 20, bottom: 30, left: 40},
+    width = 860 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var x = d3.scale.ordinal()
+    .rangeRoundBands([0, width], .1);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .ticks(10);
+
+var svg = d3.select("p").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+d3.json("views.json", function(error, data) {
+  if (error) throw error;
+
+  x.domain(data.map(function(d) { return d.host; }));
+  y.domain([0, d3.max(data, function(d) { return d.views; })]);
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Number of Patent Applications");
+
+  svg.selectAll(".bar")
+      .data(data)
+    .enter().append("rect")
+      .attr("class", "bar")
+      .attr("x", function(d) { return x(d.host); })
+      .attr("width", x.rangeBand())
+      .attr("y", function(d) { return y(d.views); })
+      .attr("height", function(d) { return height - y(d.views); });
+});
+
+function type(d) {
   d.views = +d.views;
   return d;
 }
-d3.json("views.json", type, render);
-
 </script>
-<div id="tooltip" class="hidden">
-    <p><span id="value">100</span>
-    </p>
-</div>
+<div style="width: 90%;"><p></p></div>
