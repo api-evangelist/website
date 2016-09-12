@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Views - test 2
+title: Views - test 3
 ---
 
 <style>
@@ -36,10 +36,10 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40},
     width = 860 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-var x = d3.scale.ordinal()
+var y = d3.scale.ordinal()
     .rangeRoundBands([0, width], .1);
 
-var y = d3.scale.linear()
+var x = d3.scale.linear()
     .range([height, 0]);
 
 var xAxis = d3.svg.axis()
@@ -60,8 +60,8 @@ var svg = d3.select("p").append("svg")
 d3.json("views.json", function(error, data) {
   if (error) throw error;
 
-  y.domain(data.map(function(d) { return d.host; }));
-  x.domain([0, d3.max(data, function(d) { return d.views; })]);
+  x.domain(data.map(function(d) { return d.host; }));
+  y.domain([0, d3.max(data, function(d) { return d.views; })]);
 
   svg.append("g")
       .attr("class", "x axis")
