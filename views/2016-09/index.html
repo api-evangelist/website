@@ -5,92 +5,58 @@ title: Views For September 2016
 
 <style>
 
-.bar {
-  fill: steelblue;
-}
-
-.bar:hover {
-  fill: brown;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
+.bar.apples { fill: green; }
+.bar.oranges { fill: orange; }
+.bar.bananas { fill: yellow; }
+.bar.plums { fill: purple; }
 
 </style>
 
 <script>
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 860 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var w = 500,
+    h = 100;
 
-var x = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+var svg = d3.select("#chart")
+  .append("svg")
+  .attr("width", w)
+  .attr("height", h);
 
-var y = d3.scale.linear()
-    .range([height, 0]);
+d3.json("bars.json", function(json) {
 
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom");
+  var data = json;
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .ticks(10);
+  var max_n = 0;
+  for (var d in data) {
+    max_n = Math.max(data[d].n, max_n);
+  }
 
-var svg = d3.select("p").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  var dx = w / max_n;
+  var dy = h / data.length;
 
-d3.json("views.json", function(error, data) {
-  if (error) throw error;
+  // bars
+  var bars = svg.selectAll(".bar")
+    .data(data)
+    .enter()
+    .append("rect")
+    .attr("class", function(d, i) {return "bar " + d.host;})
+    .attr("x", function(d, i) {return 0;})
+    .attr("y", function(d, i) {return dy*i;})
+    .attr("width", function(d, i) {return dx*d.views})
+    .attr("height", dy);
 
-  x.domain(data.map(function(d) { return d.host; }));
-  y.domain([0, d3.max(data, function(d) { return d.views; })]);
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
+  // hosts
+  var text = svg.selectAll("text")
+    .data(data)
+    .enter()
     .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Number of Views");
-
-  svg.selectAll(".bar")
-      .data(data)
-    .enter().append("rect")
-      .attr("class", "bar")
-      .attr("y", function(d) { return x(d.host); })
-      .attr("width", x.rangeBand())
-      .attr("x", function(d) { return y(d.views); })
-      .attr("height", function(d) { return height - y(d.views); });
+    .attr("class", function(d, i) {return "host " + d.host;})
+    .attr("x", 5)
+    .attr("y", function(d, i) {return dy*i + 15;})
+    .text( function(d) {return d.host + " (" + d.views  + ")";})
+    .attr("font-size", "15px")
+    .style("font-weight", "bold");
 });
 
-function type(d) {
-  d.views = +d.views;
-  return d;
-}
 </script>
-<div style="width: 90%; border: 1px solid #000;"><p></p></div>
+<div id="chart"></div>
