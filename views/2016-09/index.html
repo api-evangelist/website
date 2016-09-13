@@ -5,6 +5,7 @@ title: Views - Test 1
 
 <style>
 
+
 .bar rect {
   fill: steelblue;
 }
@@ -31,7 +32,7 @@ title: Views - Test 1
 }
 
 </style>
-
+<script src="//d3js.org/d3v3.min.js"></script>
 <script>
 
 var m = [30, 10, 10, 30],
@@ -52,35 +53,35 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-d3.json("views.json", function(error, data) {
+d3.csv("sample-data.csv", function(error, data) {
   if (error) throw error;
 
   // Parse numbers, and sort by value.
-  data.forEach(function(d) { d.views = +d.views; });
+  data.forEach(function(d) { d.value = +d.value; });
   data.sort(function(a, b) { return b.value - a.value; });
 
   // Set the scale domain.
-  x.domain([0, d3.max(data, function(d) { return d.views; })]);
-  y.domain(data.map(function(d) { return d.host; }));
+  x.domain([0, d3.max(data, function(d) { return d.value; })]);
+  y.domain(data.map(function(d) { return d.name; }));
 
   var bar = svg.selectAll("g.bar")
       .data(data)
     .enter().append("g")
       .attr("class", "bar")
-      .attr("transform", function(d) { return "translate(0," + y(d.host) + ")"; });
+      .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
 
   bar.append("rect")
-      .attr("width", function(d) { return x(d.views); })
+      .attr("width", function(d) { return x(d.value); })
       .attr("height", y.rangeBand());
 
   bar.append("text")
       .attr("class", "value")
-      .attr("x", function(d) { return x(d.views); })
+      .attr("x", function(d) { return x(d.value); })
       .attr("y", y.rangeBand() / 2)
       .attr("dx", -3)
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
-      .text(function(d) { return format(d.views); });
+      .text(function(d) { return format(d.value); });
 
   svg.append("g")
       .attr("class", "x axis")
