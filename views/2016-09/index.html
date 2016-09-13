@@ -35,28 +35,61 @@ title: Views - Test 1
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-d3.json('views.json', function(data) {
-  nv.addGraph(function() {
-    var chart = nv.models.multiBarHorizontalChart()
-        .x(function(d) { return d.host })
-        .y(function(d) { return d.views })
-        .margin({top: 30, right: 20, bottom: 50, left: 175})
-        .showValues(true)           //Show bar value next to each bar.
-        .tooltips(true)             //Show tooltips on hover.
-        .transitionDuration(350)
-        .showControls(true);        //Allow user to switch between "Grouped" and "Stacked" mode.
+var m = [30, 10, 10, 30],
+    w = 750 - m[1] - m[3],
+    h = 730 - m[0] - m[2];
 
-    chart.yAxis
-        .tickFormat(d3.format(',.2f'));
+var format = d3.format(",.0f");
 
-    d3.select('#chart svg')
-        .datum(data)
-        .call(chart);
+var x = d3.scale.linear().range([0, w]),
+    y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
 
-    nv.utils.windowResize(chart.update);
+var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
+    yAxis = d3.svg.axis().scale(y).orient("left").tickSize(0);
 
-    return chart;
-  });
+var svg = d3.select("p").append("svg")
+    .attr("width", w + m[1] + m[3])
+    .attr("height", h + m[0] + m[2])
+  .append("g")
+    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
+
+d3.json("views.json", function(error, data) {
+  if (error) throw error;
+
+  // Parse numbers, and sort by value.
+  data.forEach(function(d) { d.views = +d.views; });
+  data.sort(function(a, b) { return b.value - a.value; });
+
+  // Set the scale domain.
+  x.domain([0, d3.max(data, function(d) { return d.views; })]);
+  y.domain(data.map(function(d) { return d.host; }));
+
+  var bar = svg.selectAll("g.bar")
+      .data(data)
+    .enter().append("g")
+      .attr("class", "bar")
+      .attr("transform", function(d) { return "translate(0," + y(d.host) + ")"; });
+
+  bar.append("rect")
+      .attr("width", function(d) { return x(d.views); })
+      .attr("height", y.rangeBand());
+
+  bar.append("text")
+      .attr("class", "value")
+      .attr("x", function(d) { return x(d.views); })
+      .attr("y", y.rangeBand() / 2)
+      .attr("dx", -3)
+      .attr("dy", ".35em")
+      .attr("text-anchor", "end")
+      .text(function(d) { return format(d.views); });
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis);
 });
 
 </script>
