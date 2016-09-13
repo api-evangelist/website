@@ -57,35 +57,35 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
 
-d3.csv("sample-data.csv", function(error, data) {
+d3.json("views.json", function(error, data) {
   if (error) throw error;
 
   // Parse numbers, and sort by value.
-  data.forEach(function(d) { d.value = +d.value; });
+  data.forEach(function(d) { d.views = +d.views; });
   data.sort(function(a, b) { return b.value - a.value; });
 
   // Set the scale domain.
-  x.domain([0, d3.max(data, function(d) { return d.value; })]);
-  y.domain(data.map(function(d) { return d.name; }));
+  x.domain([0, d3.max(data, function(d) { return d.views; })]);
+  y.domain(data.map(function(d) { return d.host; }));
 
   var bar = svg.selectAll("g.bar")
       .data(data)
     .enter().append("g")
       .attr("class", "bar")
-      .attr("transform", function(d) { return "translate(0," + y(d.name) + ")"; });
+      .attr("transform", function(d) { return "translate(0," + y(d.host) + ")"; });
 
   bar.append("rect")
-      .attr("width", function(d) { return x(d.value); })
+      .attr("width", function(d) { return x(d.views); })
       .attr("height", y.rangeBand());
 
   bar.append("text")
       .attr("class", "value")
-      .attr("x", function(d) { return x(d.value); })
+      .attr("x", function(d) { return x(d.views); })
       .attr("y", y.rangeBand() / 2)
       .attr("dx", -3)
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
-      .text(function(d) { return format(d.value); });
+      .text(function(d) { return format(d.views); });
 
   svg.append("g")
       .attr("class", "x axis")
