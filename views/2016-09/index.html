@@ -5,78 +5,54 @@ title: Views - Test 3
 
 <style>
 
-  .axis text {
-    font-family: 'Poiret One', cursive;
-    font-size: 24pt;
-  }
-  .axis .label {
-    font-size: 40pt;
-  }
-  .axis path, .axis line {
-    fill: none;
-    stroke: #000;
-    shape-rendering: crispEdges;
-  }
-  .y.axis path, .y.axis line {
-    stroke: none;
-  }
-</style>
+.chart rect {
+  fill: steelblue;
+}
 
-<p>here!</p>
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+</style>
+<svg class="chart"></svg>
+<script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-  var outerWidth = 960;
-  var outerHeight = 500;
-  var margin = { left: 165, top: 0, right: 0, bottom: 90 };
-  var barPadding = 0.2;
-  var barPaddingOuter = 0.1;
-  var xColumn = "views";
-  var yColumn = "host";
-  var xAxisLabelText = "Views";
-  var xAxisLabelOffset = 75;
-  var innerWidth  = outerWidth  - margin.left - margin.right;
-  var innerHeight = outerHeight - margin.top  - margin.bottom;
-  var svg = d3.select("p").append("svg")
-    .attr("width",  outerWidth)
-    .attr("height", outerHeight);
-  var g = svg.append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-  var xAxisG = g.append("g")
-    .attr("class", "x axis")
-    .attr("transform", "translate(0," + innerHeight + ")")
-  var xAxisLabel = xAxisG.append("text")
-    .style("text-anchor", "middle")
-    .attr("x", innerWidth / 2)
-    .attr("y", xAxisLabelOffset)
-    .attr("class", "label")
-    .text(xAxisLabelText);
-  var yAxisG = g.append("g")
-    .attr("class", "y axis");
-  var xScale = d3.scale.linear().range([0, innerWidth]);
-  var yScale = d3.scale.ordinal().rangeRoundBands([0, innerHeight], barPadding, barPaddingOuter);
-  var xAxis = d3.svg.axis().scale(xScale).orient("bottom")
-    .ticks(5)
-    .tickFormat(d3.format("s"))
-    .outerTickSize(0);
-  var yAxis = d3.svg.axis().scale(yScale).orient("left")
-    .outerTickSize(0);
-  function render(data){
-    xScale.domain([0, d3.max(data, function (d){ return d[xColumn]; })]);
-    yScale.domain(       data.map( function (d){ return d[yColumn]; }));
-    xAxisG.call(xAxis);
-    yAxisG.call(yAxis);
-    var bars = g.selectAll("rect").data(data);
-    bars.enter().append("rect")
-      .attr("height", yScale.rangeBand());
-    bars
-      .attr("x", 0)
-      .attr("y",     function (d){ return yScale(d[yColumn]); })
-      .attr("width", function (d){ return xScale(d[xColumn]); });
-    bars.exit().remove();
-  }
-  function type(d){
-    d.views = +d.views;
-    return d;
-  }
-  d3.json("views.json", type, render);
+var width = 420,
+    barHeight = 20;
+
+var x = d3.scale.linear()
+    .range([0, width]);
+
+var chart = d3.select(".chart")
+    .attr("width", width);
+
+d3.json("views.json", type, function(error, data) {
+  x.domain([0, d3.max(data, function(d) { return d.views; })]);
+
+  chart.attr("height", barHeight * data.length);
+
+  var bar = chart.selectAll("g")
+      .data(data)
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+  bar.append("rect")
+      .attr("width", function(d) { return x(d.views); })
+      .attr("height", barHeight - 1);
+
+  bar.append("text")
+      .attr("x", function(d) { return x(d.views) - 3; })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.views; });
+});
+
+function type(d) {
+  d.views = +d.views; // coerce to number
+  return d;
+}
+
 </script>
