@@ -3,95 +3,11 @@ layout: page
 title: Views for September, 2016
 ---
 
-<style>
-
-.bar rect {
-  fill: steelblue;
-}
-
-.bar text.value {
-  fill: white;
-  width: 500px;
-}
-
-.axis {
-  shape-rendering: crispEdges;
-}
-
-.axis path {
-  fill: none;
-}
-
-.x.axis line {
-  stroke: #fff;
-  stroke-opacity: .8;
-}
-
-.y.axis path {
-  stroke: black;
-}
-
-</style>
-
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
-
-var m = [30, 10, 10, 30],
-    w = 750 - m[1] - m[3],
-    h = 1000 - m[0] - m[2];
-
-var format = d3.format(",.0f");
-
-var x = d3.scale.linear().range([0, w]),
-    y = d3.scale.ordinal().rangeRoundBands([0, h], .1);
-
-var xAxis = d3.svg.axis().scale(x).orient("top").tickSize(-h),
-    yAxis = d3.svg.axis().scale(y).orient("left").tickSize(0);
-
-var svg = d3.select("p").append("svg")
-    .attr("width", w + m[1] + m[3])
-    .attr("height", h + m[0] + m[2])
-  .append("g")
-    .attr("transform", "translate(" + m[3] + "," + m[0] + ")");
-
-d3.json("views.json", function(error, data) {
-  if (error) throw error;
-
-  // Parse numbers, and sort by value.
-  data.forEach(function(d) { d.views = +d.views; });
-  data.sort(function(a, b) { return b.value - a.value; });
-
-  // Set the scale domain.
-  x.domain([2, d3.max(data, function(d) { return d.views; })]);
-  y.domain(data.map(function(d) { return d.host; }));
-
-  var bar = svg.selectAll("g.bar")
-      .data(data)
-    .enter().append("g")
-      .attr("class", "bar")
-      .attr("transform", function(d) { return "translate(0," + y(d.host) + ")"; });
-
-  bar.append("rect")
-      .attr("width", function(d) { return x(d.views); })
-      .attr("height", y.rangeBand());
-
-  bar.append("text")
-      .attr("class", "value")
-      .attr("x", function(d) { return x(d.views); })
-      .attr("y", y.rangeBand() / 2)
-      .attr("dx", -3)
-      .attr("dy", ".35em")
-      .attr("text-anchor", "end")
-      .text(function(d) { return format(d.views); });
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .call(xAxis);
-
-  svg.append("g")
-      .attr("class", "y axis")
-      .call(yAxis);
-});
-
-</script>
-<div id="chart"><p></p></div>
+<table width="100%">
+{% for entry in site.data.projects.views-2016-09 %}
+  <tr>
+    <td width="35%">{{ entry.host }}</td>
+    <td align="center">{{ entry.views }}</td>
+  </tr>
+{% endfor %}
+</table>
