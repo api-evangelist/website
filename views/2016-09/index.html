@@ -4,6 +4,7 @@ title: API Evangelist Network Views for September 2016
 ---
 
 <table width="100%" border="0">
+{% assign total = 0 %}
 {% for entry in site.data.projects.views-2016-09 %}
   {% if entry.host == 'apievangelist.com' %}
     <tr>
@@ -14,6 +15,7 @@ title: API Evangelist Network Views for September 2016
         <table style="width: {{ entry.views | divided_by:140 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.views }}</td></tr></table>
       </td>
     </tr>
+    {% assign total = total + 1 %}
   {% endif %}
 {% endfor %}
 
@@ -27,6 +29,8 @@ title: API Evangelist Network Views for September 2016
         <table style="width: {{ entry.views | divided_by:5 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.views }}</td></tr></table>
       </td>
     </tr>
+    {% assign total = total + 1 %}
   {% endunless %}
 {% endfor %}
 </table>
+<p align="center"><strong>{{ total }}</strong></p>
