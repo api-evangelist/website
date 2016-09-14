@@ -1,33 +1,18 @@
 ---
 layout: page
-title: API Evangelist Network Views for August 2016
+title: API Evangelist Network Feature Views for August 2016
 ---
 
-<p>These are the page views across my research for August of 2016 -- <a href="/views/">Return to Main Page</a>.</p>
+<p>These are the feature guide / white paper views across my research for August of 2016 -- <a href="/feature_count/">Return to Main Page</a>.</p>
 <table width="100%" border="0">
-{% for entry in site.data.projects.views-2016-08 %}
-  {% if entry.host == 'apievangelist.com' %}
+{% for entry in site.data.projects.feature-2016-08 %}
     <tr>
       <td style="width: 25%;">
-        <a href="http://{{ entry.host }}" target="_blank" style="font-size: 11px;">{{ entry.host }}</a>
+        <a href="http://{{ entry.url }}" target="_blank" style="font-size: 11px;">{{ entry.title }}</a>
       </td>
       <td align="left">
-        <table style="width: {{ entry.views | divided_by:100 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.views }}</td></tr></table>
+        <table style="width: {{ entry.feature_count | divided_by:20 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.feature_count }}</td></tr></table>
       </td>
     </tr>
-  {% endif %}
-{% endfor %}
-
-{% for entry in site.data.projects.views-2016-08 %}
-  {% unless entry.host == 'apievangelist.com' %}
-    <tr>
-      <td style="width: 25%;">
-        <a href="http://{{ entry.host }}" target="_blank" style="font-size: 11px;">{{ entry.host }}</a>
-      </td>
-      <td align="left">
-        <table style="width: {{ entry.views | divided_by:5 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.views }}</td></tr></table>
-      </td>
-    </tr>
-  {% endunless %}
 {% endfor %}
 </table>
