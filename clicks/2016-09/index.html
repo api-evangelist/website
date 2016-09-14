@@ -4,16 +4,22 @@ title: API Evangelist Network Clicks for September 2016
 ---
 
 <p>These are the feature guide / white paper, and sponsor logo clicks across my research for September of 2016 -- <a href="/feature/">Return to Main Page</a>.</p>
-333
+444
 <table width="100%" border="0">
-{% for entry in site.data.projects.clicks-2016-09.projects %}
-
   <tr>
     <td><strong>Feature Guides / White Papers</strong></td>
   </tr>
-  <tr>
-    <td><strong>{{ entry }}</strong></td>
-  </tr>
-
-{% endfor %}
+  {% for entry in site.data.projects.clicks-2016-09.projects %}
+    <tr>
+      <td style="width: 40%;">
+        <a href="{{ entry.url }}" target="_blank" style="font-size: 11px;">{{ entry.title }}</a>
+      </td>
+      <td align="left">
+        <table style="width: {{ entry.views_count | divided_by:25 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.views_count }}</td></tr></table>
+      </td>
+      <td align="left">
+        <table style="width: {{ entry.click_count | divided_by:25 }}px; height: 18px;"><tr><td style="background-color:#000; text-align: right; color:#FFF; padding-right: 5px; font-size: 11px;">{{ entry.click_count }}</td></tr></table>
+      </td>
+    </tr>
+  {% endfor %}
 </table>
