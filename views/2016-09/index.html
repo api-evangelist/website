@@ -62,7 +62,7 @@ d3.json("views.json", function(error, data) {
   data.sort(function(a, b) { return b.value - a.value; });
 
   // Set the scale domain.
-  x.domain([0, d3.max(data, function(d) { return d.views; })]);
+  x.domain([2, d3.max(data, function(d) { return d.views; })]);
   y.domain(data.map(function(d) { return d.host; }));
 
   var bar = svg.selectAll("g.bar")
@@ -78,7 +78,7 @@ d3.json("views.json", function(error, data) {
   bar.append("text")
       .attr("class", "value")
       .attr("x", function(d) { return x(d.views); })
-      .attr("y", y.rangeBand())
+      .attr("y", y.rangeBand() / 2)
       .attr("dx", -3)
       .attr("dy", ".35em")
       .attr("text-anchor", "end")
