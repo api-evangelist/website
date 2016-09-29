@@ -1,0 +1,24 @@
+---
+layout: post
+title: 'Thinking About How I Can Build Change Resilience Into My API Integrations'
+source: http://apievangelist.com/2016/09/28/thinking-about-how-i-can-build-change-resilience-into-my-api-integrations/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-change-2.png
+atomdate: 2016-09-28T17:00:00-07:00
+---
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-change-2.png" alt="" width="40%" align="right" /></p>
+<p>After I wrote <a href="http://apievangelist.com/2016/09/08/when-working-with-our-api-make-sure-you-build-faultresistance-into-your-code/">a piece on guidance from the USGS around writing fault-resistant code when putting their API to use</a>, my friend Darrel Miller expanding on this by suggesting I include "change resilience" as part of the definition.&nbsp;</p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en"><a href="https://twitter.com/kinlane">@kinlane</a> I would like to see that guidance expanded to include writing change resilient client code.</p>
+&mdash; Darrel Miller (@darrel_miller) <a href="https://twitter.com/darrel_miller/status/774043089493123073">September 9, 2016</a></blockquote>
+<script charset="utf-8" src="http://platform.twitter.com/widgets.js"></script>
+<p>It is something that has sat in my notebook for a couple weeks, and keeps floating up as a concept I'd like to explore further. I have some initial thoughts on what this means&nbsp;but is something that I need to write about before I grasp better. Hopefully, it will bring more suggestions about what change resilient code means to other people.</p>
+<p>Ok, so off the top of my head, what elements would I consider when thinking about producing change resilient client code:</p>
+<ul>
+<li><strong>Status Codes</strong> - Making sure clients read, and pay attention to HTTP status codes used by API providers.</li>
+<li><strong>Hypermedia</strong> - Links are fragile, and avoiding baking them into clients makes a whole lotta sense.&nbsp;</li>
+<li><strong>Plan B API</strong> - Have a backup API identified, that can be used when the A API provider goes away.</li>
+<li><strong>Circuit Breaker</strong> - Build in a circuit breaker into code that responds to specific status codes and events.</li>
+</ul>
+<p>Now that I'm exploring, I have to ask, who's responsibility is it to build change resilience into the clients? Provider or consumer? Seems like there is a healthy responsibility on both parties? IDK. I guess we should just all be honest about how fragile the API space is, and providers should be honest with consumers when it comes to thinking about change resiliency, but ultimately API consumers have to begin to thinking more deeply&nbsp;and investing more when it comes planning for change--not just freaking out when it happens.</p>
+<p>I have to admit that the code I have written as part of my API monitoring system, <a href="http://stack.apievangelist.com/companies.html">which integrates with over 30 APIs</a>, isn't very fault or change resistant. When things break, they break. As the only user, this isn't a showstopper for me, but thinking about change is something I"m going to be considering as I kick the tires on my client. <a href="http://apievangelist.com/2016/09/20/why-would-you-build-a-business-on-apis-they-are-unreliable/">While these APIs have been incredibly stable for me</a>, I can't help but listen to Darrel and want to be asking more questions when it comes to dealing with change across my API integrations.</p>
