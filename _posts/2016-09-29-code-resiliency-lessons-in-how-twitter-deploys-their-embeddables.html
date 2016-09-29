@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'Code Resiliency Lessons In How Twitter Deploys Their Embeddables'
+source: http://apievangelist.com/2016/09/29/code-resiliency-lessons-in-how-twitter-deploys-their-embeddables/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/twitter_widgets_js_depoly_arch_v2.png
+atomdate: 2016-09-29T13:00:00-07:00
+---
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/twitter_widgets_js_depoly_arch_v2.png" alt="" width="40%" align="right" /></p>
+<p><a href="/admin/blog/How Twitter deploys its widgets">I am learning about how Twitter deploys their </a><a href="/admin/blog/How Twitter deploys its widgets">widgets</a>. Extracting some insight for <a href="http://apievangelist.com/2016/09/28/thinking-about-how-i-can-build-change-resilience-into-my-api-integrations/">my research around how we can build change resiliency into our client code</a>. As I'm doing my regular monitoring of the API space I am trying to keep an eye out for any examples from leading providers of how there are investing in client code being more change resilient. This Twitter blog post provides me with three concepts I wanted to&nbsp;add to my research:</p>
+<ul>
+<li><strong>Reversibility:</strong>&nbsp;&lsquo;Rollback first, debug later&rsquo; is our motto. Rollback should be fast, easy, and simple. Ideally, it&rsquo;s a giant red button that can get our heart rates down.</li>
+<li><strong>Incremental release:</strong>&nbsp;All code has bugs and deploys have an uncanny way of surfacing them. That&rsquo;s why we wanted the ability to release new code in phases.</li>
+<li><strong>Visibility:</strong>&nbsp;We need to have graphs to show how both versions of widgets.js are doing at all times. We also need the ability to drill down by country, browser type, and widget type. These graphs should be real time so we can quickly tell how a deploy is going and take action as necessary.</li>
+</ul>
+<p>These are change elements that seem like they need consideration as we craft our web, mobile, device, visualization, bot, voice, and other types of API clients. These three elements should be present in the code, anywhere I'm making an API call. Being able to reverse how I'm interacting with an API, the incremental release of new API paths or changes to existing APIs, and having an analytics&nbsp;layer can contribute to helping us deal with change.</p>
+<p>I think I am going to get started with an analytics layer for my own client code. Start thinking about logging the calls I'm making to any API I depend on. I have this in place for the server side of the APIs that I manage&nbsp;but do not have any sort of logging at the client level. Not only do I not have any plan for change at the client layer, I might not even know there was a change because I do not have any visibility.</p>
+<ul>
+</ul>
