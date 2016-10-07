@@ -1,0 +1,27 @@
+---
+layout: post
+title: 'The Anatomy Of API Call Failure'
+source: http://apievangelist.com/2016/10/07/the-anatomy-of-api-call-failure/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ct3y_zqviaaggk5.jpg
+atomdate: 2016-10-07T13:00:00-07:00
+---
+<p>I have been&nbsp;spending time thinking about how we can build in <a href="http://apievangelist.com/2016/09/08/when-working-with-our-api-make-sure-you-build-faultresistance-into-your-code/">fault tolerance</a>, and <a href="http://apievangelist.com/2016/09/28/thinking-about-how-i-can-build-change-resilience-into-my-api-integrations/">change resiliency</a> into our API SDKs, and client code. I want to better understand what is necessary to develop the best possible integrations as possible. While doing my regular monitoring this week I came across a <a href="https://twitter.com/Runscope/status/783020481276317696/">Tweet from @Runscope</a>, with a pretty interesting image on this subject <a href="https://twitter.com/realm">crafted by @realm</a>, a mobile platform for sync.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/ct3y_zqviaaggk5.jpg" alt="" width="100%" /></p>
+<p>There is a wealth of building blocks here to apply at the client and SDK level, helping us achieve more fault tolerance, and make our applications, systems, and device integrations more change resilient. I wanted to break them out, providing a bulleted list I could include in my research:</p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-broken-link.png" alt="" width="15%" align="right" /></p>
+<ul>
+<li>Is the API Online?</li>
+<li>Did the server receive the request?</li>
+<li>Was URL request successful?</li>
+<li>Did the request timeout?</li>
+<li>Was there a server error?</li>
+<li>Was JSON receive successfully?</li>
+<li>Was JSON malformed?</li>
+<li>Was there an unexpected response?</li>
+<li>Were we&nbsp;able to map to JSON successfully?</li>
+<li>Is the JSON valid?</li>
+<li>Does local model match server model?</li>
+</ul>
+<p>There are some valuable nuggets present in this diagram. It should be crafted into some sort of algorithmic template that developers can apply when developing their API integrations, as well as for API providers when developing the SDK and client solutions they make available to their API communities. I'm taking note so that next time I spend some cycles on my <a href="http://sdk.apievangelist.com/">API SDK research</a> I can help solidify my own definition.</p>
+<p>This is a very micro look at fault-tolerance when it comes to API integration, and I'm continuing to look for other examples of change resiliency at this layer. Meaning, is there a plan B for the API call? Is there revenue ceiling considerations? Or other more non-technical, business and political considerations that should be baked into the code as well. Helping us all think more deeply around how we encourage change resiliency across&nbsp;the API community.</p>
