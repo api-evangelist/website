@@ -1,0 +1,24 @@
+---
+layout: post
+title: 'Providing API Developers with Github Login Using Singly'
+source: http://apievangelist.com/2012/09/05/providing-api-developers-with-github-login-using-singly/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/singly-plus-github.png
+---
+
+<p><a href="https://singly.com/docs/github" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/singly/singly-plus-github.png" alt="" width="150" align="right" /></a></p>
+<p>I&rsquo;m building a small API that I want to allow developers to register for.  I don&rsquo;t want to make it a complicated registration process, I just want them to provide some sort of credentials and I will issWue a key that they can use to make API calls.</p>
+<p>To keep it simple I&rsquo;m offering a login using a <a title="Github" href="http://www.github.com">Github</a> account.  Every developer has a Github account right?   Well if they don&rsquo;t, they should.  The easiest way there is to enable your API with a Github login is Singly.</p>
+<p>Using <a title="Singly" href="http://www.singly.com">Singly</a>, I sign in with my Github account (this is where I got this idea), then I <a href="https://singly.com/apps/new">add a new application</a>, giving it the root URL and callback URL of my API developer area.</p>
+<p><a href="https://singly.com/apps/new" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/singly/Singly-Application-Github.png" alt="" width="500" /></a></p>
+<p>Next I need to link up my Github account to my Singly account, by <a href="https://github.com/settings/applications">adding an application to my Github account</a>.  I give it a name, URL and when adding the callback, I add a Singly specific callback--Singly will handle the rest.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/singly/Github-App-Settings.png" alt="" width="500" /></p>
+<p>Now I just add a login with Github button to my developer area with the following URL:&nbsp;</p>
+<ul class="mainlist">
+<li><em>https://api.singly.com/v0/services/github?access_token=my_token</em></li>
+</ul>
+<p>When one of my API developers click on the Github login, it will route them to Github for OAuth, back to Singly and to my API callback URL where I can grab the authorization code for the user.</p>
+<script src="https://gist.github.com/3646162.js?file=github-login-using-singly.php"></script>
+<p>Now I can reference my API developer using their Github account, using their profile image, name as well as having some stats about the user like how many repositories they have, number of followers and who they follow--which provides me a pretty good baseline metric for distinguishing active developers vs. in-active developers.</p>
+<p><a href="https://github.com/kinlane"><img src="https://s3.amazonaws.com/kinlane-productions/kinlane-github.png" alt="" align="right" /></a></p>
+<p>Github login should be default for all API providers. It reduces developer on-boarding friction with an API, and uses the social network that makes the most sense for API developers.</p>

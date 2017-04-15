@@ -1,0 +1,11 @@
+---
+layout: post
+title: 'HTTP Header Awareness: Using The Link Header For Pagination'
+source: http://apievangelist.com/2016/05/02/http-header-awareness-using-the-link-header-for-pagination/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-link-header.png
+---
+<p><a href="https://developer.github.com/v3/#pagination"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/github-link-header.png" alt="" width="40%" align="right" /></a></p>
+<p>I was revisiting the concept of pagination for a specific project I am working, and after consulting my API research, I came up with a suitable approach using a Link Header. Beyond applying this in my specific project, I thought the usage of the header for pagination would be a suitable topic for helping with HTTP header awareness -- a topic I will be writing about regularly, to help folks be more aware of useful approaches to using HTTP headers.</p>
+<p><a href="https://developer.github.com/v3/#pagination">Github has the best example of using the link header for pagination that I could find</a>. Github uses the&nbsp;Link response header to hold a handful of Hypermedia link relations including next, last, first, and prev. Providing a nice way to handle not just pagination, but potentially any other related action you might want to take around an API response. It also provides a way to augment link relations to any existing API design, without adding to the actual response body -- which is one reason I decided to use it for my existing project.&nbsp;</p>
+<p>HTTP headers are a critical aspect of API integration, and an area that I feel many developers are lacking awareness of. Which is why I will be working harder to write up simple uses like Link header for pagination, that can help API providers, as well as API consumers better use common HTTP header patterns. To be clear, the Link header is not unique to Github, and is something that is <a href="https://tools.ietf.org/html/rfc5988#page-6">articulated in RFC 5988 for web linking</a>. Something I will add as a tooling to my API design research, so it can be considered as part of an overall <a href="http://design.apievangelist.com">API design toolbox</a>.</p>

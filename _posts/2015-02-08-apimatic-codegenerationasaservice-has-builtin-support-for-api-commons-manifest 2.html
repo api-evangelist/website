@@ -1,0 +1,21 @@
+---
+layout: post
+title: 'APIMATIC Code-Generation-as-a-Service Has Built-In Support For API Commons Manifest'
+source: http://apievangelist.com/2015/02/08/apimatic-codegenerationasaservice-has-builtin-support-for-api-commons-manifest/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/api-evangelist/apimatic/apimatic-logo.png
+---
+
+<p><a href="https://apimatic.io/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/apimatic/apimatic-logo.png" alt="" width="250" align="right" /></a></p>
+<p>The API savvy folks over at <a href="https://apimatic.io/">Apimatic</a> are at it again, pushing forward the conversation around generating of software development kits, using machine readable API formats, and this time the doorway to your SDK is via the <a href="http://apicommons.org/format.html">API Commons manifest</a>.</p>
+<p>I'm going to go ahead and use their own description, as it sums it well, no augmentation needed. Using the code generation API, you can generate SDKs for your API directly from your Github repository.&nbsp;</p>
+<p><strong>Step 1:</strong> Describe you API using some format. You may choose from Swagger, RAML, APIBlueprint, IODocs, and Google Discovery formats. Automatic code generation makes use of information in your API description to generate method and classes names. Please be as expressive as possible by not leaving out any optional fields as applicable e.g., not leaving out types and schemas for your parameters and fields.</p>
+<p><strong>Step 2: </strong>Define meta information about your API using API Commons manifest format. You can generate your API Commons manifest using the <a href="http://apicommons.org/manifest-generator.html">API Commons Manifest generator.</a> Be sure to enter all relevant information. Upload the generated manifest as a new file in the root directory of your Github repo by the name "api-commons- manifest.json". Be sure to have the correct name and location of this file.</p>
+<p><strong>Step 3:</strong> Open/Create a markdown file (README.md is a good candidate). Add the following markdown syntax to render an image link.</p>
+<p style="padding-left: 30px;">[![apimatic][apimatic-{platform-name}-image]][apimatic-{platform- name}-url]</p>
+<p style="padding-left: 30px;">[apimatic-{platform-name}-url]: https://apimatic.io/api/github/{account-name}/{repo-name}/{branch- name}?platform={platform-name}</p>
+<p style="padding-left: 30px;">[apimatic-{platform-name}-image]: https://apimatic.io/img/github/{platform-name}.svg</p>
+<p style="padding-left: 30px;">Replace the {platform-name} token with one of the following values: windows, android, ios<br />Replace the {account-name} token with the name of your url-encoded Github account name <br />Replace the {repo-name} token with the name of your url-encoded Github repository name <br />Replace the {branch-name} token with the name of your url-encoded Github branch name where the API Commons manifest file is present. ï¿¼</p>
+<p>To validate, open the following url after replacing tokens. This url should open the raw manifest file. https://raw.githubusercontent.com/{account-name}/{repo-name}/{branch- name}/api-commons-manifest.json</p>
+<p>You can see an example <a href="https://github.com/apimatic/videos">here</a>. Commit changes and navigate to your Markdown file in your browser. You will see apimatic widgets (image links), which you can click to generate SDKs for your API. To see an example, <a href="https://raw.githubusercontent.com/apimatic/videos/gh- pages/README.md">open this link to view the README.md </a>file in raw text form.</p>
+<p>The Apimatic team is owning the conversation when it comes to generation of full fledge SDKs for your APIs. I always hear folks talk about the limitations of auto-generation of client side code, but the Apimatic team is pushing the conversation forward with their persistent approach.</p>

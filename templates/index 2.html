@@ -1,0 +1,108 @@
+---
+layout: page
+title: API Templates
+---
+
+<p>As I build out my own APIs for use across my systems, as well as map out the landscape of valuable API resources today, I'm working to define templates that other API providers can follow when designing and deploying their own API infrastructure.</p>
+<p>These projects represent the templates I've established through my research, and will add other templates as they come off the assembly line. These API designs aren't mean to be the perfect solution for production environements, but to be seeds for new conversation around APIs, as well as providing a basic pattern you can use to start your own development.</p>
+
+<style>
+
+    .projectcontainer{
+        padding-left: 5px; 
+        padding-right: 5px; 
+        width:550px;
+    }
+    .projecttypelistingul{
+        padding-left: 10px;
+    }  
+    .projecttypelistingul td{
+        list-style: none; 
+        padding: 10px 5px 20px 5px;
+        font-size: 22px;
+        font-weight: bold;
+    }  
+    .projectul{
+        padding-left: 10px;
+    }  
+    .projectul td{
+        padding: 2px; 
+        color:#000;
+        font-size: 18px;
+        font-weight: normal;
+    } 
+</style>
+
+{% raw  %}
+
+<script id="projecttypeTemplate" type="text/template">       
+    <tr>
+        <td colspan="2"><strong></strong><ul id="{{slug}}" class="projectul"></ul></td>
+    </tr>                                                                                                    
+</script>
+
+<script id="projectTemplate" type="text/template">       
+    <tr>
+        <td width="25%" align="left">
+            <p><a href="{{url}}" target="_blank"><img src="{{image}}" width="{{image_width}}" align="left" style="padding: 15px;" /></a></p>
+            <p><a href="{{url}}" target="_blank"><strong>{{name}}</strong></a><br />{{summary}}</p>
+        </td>
+    </tr>  
+    <tr>
+        <td colspan="2"><hr /></td>
+    </tr>                                                                                                  
+</script>
+{% endraw %}
+
+<table id="projectListing" class="projecttypelistingul" width="100%"></table>  
+
+<!--BaaS Full Listing JavaScript--->
+<script type="text/javascript">
+
+$.getJSON('/data/projects.json', function(data) {
+    //alert(data['projects'].length);     
+   // document.getElementById('projectcount').innerHTML = 'Currently I have ' + data['projects'].length + ' projects that I am working on.';                             
+    });           
+    
+function listprojecttypes()
+    {
+    $.getJSON('/data/projecttype.json', function(data) {
+         $.each(data['project_type'], function(key, val) {
+             
+            $categorytype = val['type'];
+            if($categorytype == 'Template')
+            	{
+            	var template = $('#projecttypeTemplate').html();
+            	var html = Mustache.to_html(template, val);
+            	$('#projectListing').append(html);
+            	}  
+            
+            });                                   
+        });           
+    } 
+    
+function listprojects()
+    {
+    $.getJSON('/data/projects.json', function(data) {
+         $.each(data['projects'], function(key, val) {
+            categoryslug = val['typeslug']; 
+            if(categoryslug == 'template')
+            	{
+            	var template = $('#projectTemplate').html();
+            	var html = Mustache.to_html(template, val);
+            	$('#'+categoryslug).append(html);
+            	}   
+            });                                   
+        });        
+    }    
+</script>
+
+<!--Trigger BaaS Full Listing JavaScript onLoad-->
+<script type="text/javascript">
+listprojecttypes();
+listprojects();
+</script>
+
+<p>My APIs are usually developed in PHP, but for me the real value is the Swagger API definitions, and eventually I will also generate Python, Ruby, and Node.js versions of these same APIs.</p>
+<p>I intend to create cloud container definitions for all my API templates, providing blueprints for deploying on AWS, Heroku, Google App Engine, and othe popular cloud image formats, including Docker.</p>
+<p>As I add features to my production versions of these APIs, I will carve these features off and add to these templates. If you've taken one and added to it, feel free to share your patterns back with the community.</p>

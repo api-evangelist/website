@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'How Do We Handle That Trailing Slash In Our API Endpoints?'
+source: http://apievangelist.com/2015/08/04/how-do-we-handle-that-trailing-slash-in-our-api-endpoints/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-slash-icon.png
+---
+
+<p><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-slash-icon.png" alt="" width="250" align="right" /></p>
+<p>I am participating in several API focused <a href="https://slack.com/">Slack channels</a> these days, which opens up entirely new channels for conversations across the API community. I think the private channel(s) gives people a safe place to talk about the challenges they face, but there are also some very educational conversations that occur, that should also be shared publicly.&nbsp;</p>
+<p>One of these conversations from yesterday was focused on how we handle the trailing slash in our endpoints, a conversation started by Nicolas Greni&eacute; (<a href="https://twitter.com/picsoung">@picsoung</a>), <a class="tweet-url twitter-atreply pretty-link" dir="ltr" rel="nofollow" href="https://twitter.com/3scale"><span>@</span>3scale</a><span>&nbsp;hacker in residence, who asked about</span>:</p>
+<ul>
+<li>myapi.com/authors/ <strong>vs</strong> myapi.com/authors</li>
+<li>myapi.com/authors/1/ <strong>vs</strong> myapi.com/authors/1</li>
+</ul>
+<p>Something which Guillaume Laforge (<a href="https://twitter.com/glaforge">@glaforge</a>) of <a href="https://twitter.com/restlet">@Restlet</a> said, <em>"technically speaking, they are different resources&hellip; but practically speaking I think an API should accept both to do the obvious thing"</em>.</p>
+<p>Then John Sheehan (<a href="https://twitter.com/johnsheehan">@johnsheehan</a>) of <a href="https://twitter.com/runscope">@Runscope</a> brough some simple wisdom to the conversation, <em>"save a byte, remove the slash, and redirect when it's present to the non-slashed version</em>".&nbsp;</p>
+<p>Closing up the conversation&nbsp;Darrel Miller (<a href="https://twitter.com/darrel_miller">@darrel_miller</a>) shared a previous blog post he had published, <a href="http://www.bizcoder.com/2009/02/24/the-mystery-of-the-trailing-slash-and-the-relative-url/">the mystery of the trailing slash and the relative url</a>, which he concludes with ensuring the trailing slash is present in all his urls.</p>
+<p>I tend to flip-flop on topics like this, one month adding slashes to everything, and the next month running around removing them. It is my strange ebb and flow API design, and conversations like this help me draw a line in the sand, keeping my behavior consistent. I think I'm going to stick with making sure the slash is present, for no other reason than it looks better.</p>
+<p>I'll keep trying to cherry-pick simple wisdom like this from our conversations, capturing and sharing some of the exhaust from these private Slack channels, making sure the wisdom of the crowd gets shared, while still respecting the private conversations that occur.</p>

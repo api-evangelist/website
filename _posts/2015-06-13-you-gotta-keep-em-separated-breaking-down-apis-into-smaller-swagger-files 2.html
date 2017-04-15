@@ -1,0 +1,43 @@
+---
+layout: post
+title: 'You Gotta Keep Em Separated: Breaking Down APIs Into Smaller Swagger Files'
+source: http://apievangelist.com/2015/06/13/you-gotta-keep-em-separated-breaking-down-apis-into-smaller-swagger-files/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-puzzle-piece-two.png
+---
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-puzzle-piece-two.png" alt="" width="250" align="right" /></p>
+<p>As I work to chase an elusive answer to the question, <a href="http://apievangelist.com/2015/06/06/how-do-you-know-when-a-swagger-api-definition-is-complete/">what is a complete API Swagger definition</a>, I'm also faced with what I know John Musser (<a href="https://twitter.com/johnmusser">@johnmusser</a>)&nbsp;would agree is the age old question, what exactly constitutes an API? Is it the <a href="https://dev.twitter.com/rest/public">Twitter API</a>, or is it the Twitter account, status, friends, media, etc. APIs? While this has been a tough question, facing anyone who considers API discovery, I think it is a question that is evolving as part of the current microservices conversation.&nbsp;</p>
+<p>One layer of the microservices onion is focused on breaking down services into their smallest possible unit of value (at least this is one of my takeaways). Doing this is an enabler all the other orchestration, devops, voodoo magic that represent the other architectural layers of the microservices onion. As I work to <a href="http://theapistack.com/">define Swagger definitions for the almost 1000+ companies in my API Stack</a>, I'm working to employ this line of thought, and actively breaking down each API I profile, into the smallest unit possible, using <a href="http://swagger.io">Swagger</a>.</p>
+<p>An example of this in the wild, is with the messaging API from <a href="http://www.tigertext.com/">TigerText</a>, which could easily be a single API Swagger definition called <a href="http://www.tigertext.com/tigerconnect/">TigerConnect API</a>, but after breaking things down I'm left with six separate Swagger files:</p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td align="left">TigerConnect Events API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-events-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Group API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-group-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TIgerConnect Message API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-message-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Metadata API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-metadata-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Roster API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-roster-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect User API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-user-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a><br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>Ultimately this is more work for me, but from an API discovery perspective, I'm looking to identify the small, most unique unit of value possible, which allows me to discovery, and organize APIs into extremely precise, yet powerful <span style="text-decoration: underline;">API menus</span>. Right now this is a very manual process, but I'm developing tooling that will help me to "explode" existing Swagger definitions based upon unique API paths--we will see how that goes.</p>
+<p>Now I can evaluate TigerText's approach to user APIs, or metadata APIs, without wading through the actual messaging side of the coin. I am not in the business of creating at database of APIs, where my metric is number of APIs--my objective is a database of high quality APIs, where my metric is number of companies, with complete API definitions for resources they provide, and as complete profile of overall API operations as possible.&nbsp;</p>
+<p>We'll see how I feel about this after doing another 500 APIs (I've done almost 500 so far) :-) My tune may change, but I'm hoping to have more tooling that helps me throughout the process. I will never be able to fully automate the creation, or fine tuning of API definitions, but I feel I can automate certain aspects--greasing the gears.</p>

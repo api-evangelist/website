@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Use APIs.json To Organize My Swagger Defined APIs Running In Docker Containers'
+source: http://apievangelist.com/2015/01/10/use-apisjson-to-organize-my-swagger-defined-apis-running-in-docker-containers/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/swagger-api-docker.png
+---
+
+<p><img style="padding: 10px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/swagger-api-docker.png" alt="" width="200" align="right" /></p>
+<p>I continuing to <a href="http://apievangelist.com/2015/01/10/using-containers-to-bridge-what-swagger-cannot-define-on-the-serverside-for-my-apis/">evolve my use of Swagger as a kind of central truth in my API design, deployment, and management lifecycle</a>. This time I&rsquo;m using it as a fingerprint for defining how APIs or micro-services that run in Docker containers function. Along the way I&rsquo;m also using <a href="http://apisjson.org">APIs.json</a> as a framework for organizing these Swagger driven containers, into coherent API stacks or collections, that work together to accomplish a specific objective.</p>
+<p>For the project I&rsquo;m currently working on, I&rsquo;m deploying multiple Swagger defined APIs, each as separate Docker containers, providing some essential components I need to operate API Evangelist, like blog, links, images, and notes. Each of these components have its own Swagger definition, and corresponding Docker image, and specific instance of that Docker image deployed within a container.</p>
+<p>I&rsquo;m using APIs.json to daisy chain all of these APIs or micro-services together. I have about 15 APIs deployed, each are standalone services, with their own APIs.json, and supporting Swagger definition, but the overall project has a centralized APIs.json, which using the includes properties, provides linkage to each individual micro-services APIs.json--loosely coupling all of these container driven micro-services under single umbrella.</p>
+<p>At this point, I&rsquo;m just using APIs.json as a harness to define, and bring together the technical aspects of my new API stack. As I pull together other business elements like on-boarding, documentation, and code samples, I will add these as properties to my parent APIs.json. My goal is to demonstrate the value&nbsp;<a href="http://apisjson.org">APIs.json</a> brings to the table when it comes to API and micro-service discovery, specifically when you deploy distributed API stacks or collections using Docker container deployed micro-services.</p>

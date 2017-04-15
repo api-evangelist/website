@@ -1,0 +1,16 @@
+---
+layout: none
+---
+[{
+{% for tag in site.data.curated.08-15-2016 %}{% assign thistag = tag[0] %}{% assign thisentry = tag[1] %}
+  "{{ thistag }}": [{% for entry in thisentry %}
+    {
+    "curated_id": "{{ entry.curated_id }}",
+		"title": "{{ entry.title }}",
+		"link": "{{ entry.link }}",
+		"item_date": "{{ entry.item_date }}",
+		"domain": "{{ entry.host }}",
+		"screenshot_url": "{{ entry.screenshot_url }}"
+    }{% if forloop.last == false %},{% endif %}  {% endfor %}
+  ]{% if forloop.last == false %},{% endif %}{% endfor %}
+}]

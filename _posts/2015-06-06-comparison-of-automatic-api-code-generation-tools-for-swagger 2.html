@@ -1,0 +1,90 @@
+---
+layout: post
+title: 'Comparison of Automatic API Code Generation Tools For Swagger'
+source: http://apievangelist.com/2015/06/06/comparison-of-automatic-api-code-generation-tools-for-swagger/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apimatic-logo.png
+---
+
+<p><a href="https://apimatic.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/apimatic/apimatic-logo.png" alt="" width="250" align="right" /></a></p>
+<p>I have met with the <a href="https://apimatic.io/">APIMATIC team</a> several times over the last couple weeks to discuss the state of API definitions. If you aren't familiar with <a href="https://apimatic.io/">APIMATIC, they are a API code as a service provider</a>, that generates high quality client code in several languages, if your APIs are defined using common API definition formats like Swagger (they are also the people behind <a href="http://sdks.io">SDKs.io</a>).&nbsp;APIMATIC is as passionate about high quality Swagger definitions as I am, and have shared some really valuable research to help push forward the API definition conversation.</p>
+<p>In May, APIMATIC wanted to compare the quality of automatic code generation tools, using common Swagger specifications they found on Github. To set the bar for their research, APIMATIC established some basic operational parameters:</p>
+<ul>
+<li>Code generator must support Swagger file format</li>
+<li>Only client-side bindings are considered</li>
+<li>Must create complete libraries rather than just code snippets</li>
+<li>Only the following languages are considered: C#, Java / Android, Objective-C, PHP, Python Ruby</li>
+</ul>
+<p>While this research focuses on Swagger, I think the findings can be applied when thinking about other API definition formats like API Blueprint or RAML, but kicking things off with a focus on Swagger is wise.  With a basic framework defined, APIMATIC picked four of the leading code generation tools out there currently:</p>
+<ul>
+<li><strong><a href="http://editor.swagger.io">Swagger CodeGen</a></strong></li>
+<li><strong><a href="http://restunited.com">REST United</a></strong></li>
+<li><strong><a href="http://studio.restlet.com">Restlet Studio</a></strong></li>
+<li><strong><a href="https://apimatic.io">APIMATIC</a></strong></li>
+</ul>
+<p>As part of the decision to look at Swagger CodeGen, REST United, Restlet Studio, and their own APIMATIC solution, they provide a little detail on the code generation engines behind each solution:</p>
+<ul>
+<li>Swagger.io is the official host for open source Swagger CodeGen project</li>
+<li>REST United uses a customized version of Swagger CodeGen project and performs better than the official branch</li>
+<li>Restlet Studio uses Swagger CodeGen for Objective-C, but has its own CodeGen engine for Android and Java</li>
+<li>APIMATIC has its own CodeGen engine for all languages</li>
+</ul>
+<p>They took a sampling of Swagger specifications out of the thousands they found, and did a side by side comparison of how well each of the platforms did with the Swagger definitions, bringing us to the meat of this research, which as APIMATIC states &ldquo;successful compilation does not mean that the SDK will work out of the box!&rdquo;. In short, there are a lot of things to consider when generating code, and APIMATIC helps us see the problems with approaches to code generation, as well as the overall quality of Swagger definitions that are available out there.</p>
+<p>Embarrassingly two of the Swagger definitions they used were mine, which I acknowledge are often very incomplete, but they did use others well, including the sample Petstore definition used as demo for Swagger. The message is pretty loud -- the quality of Swagger definitions right now is pretty poor, and while APIMATIC goes a long way to ensure a usable client SDK is generated, they can only do so much with crap Swagger definitions.</p>
+<p>&nbsp;APIMATIC looks at some of the tops reasons why the code generated is so bad, resulting in code that often times just will not work:</p>
+<ul>
+<li>Missing Authentication Info</li>
+<li>Swagger.IO and Restlet Studio do not generate authentication code, even when auth info is available</li>
+<li>APIMATIC and REST United support OAuth 1 &amp; 2, Basic Auth, and Custom Headers/Parameters</li>
+<li>Missing Schemas/Model definitions</li>
+<li>All except APIMATIC use &ldquo;void&rdquo; return type when schemas are missing, meaning all responses are ignored, and no data is returned</li>
+</ul>
+<p>As they put it, here is APIMATIC&rsquo;s struggle: <em>"SDK&rsquo;s should work out of the box!&nbsp;Generated code often does not work out of the box, AND to make matter even worse, its not even easy to fix by hand.&nbsp;APIMATIC has implemented fallbacks to handle missing schemas and model definitions, but missing auth info cannot be fixed by any fallback measure."</em></p>
+<ul>
+</ul>
+<p>After you separate the differences in approaches by each code generation engine, it really comes down to a handful of reasons why the Swagger definitions are incomplete--something I see a lot of, as I look for Swagger definitions across the space:</p>
+<ul>
+<li>Invalid JSON</li>
+<li>Missing BaseURIs</li>
+<li>Missing Authentication Information</li>
+<li>Missing Endpoint OperationIds/NickNames</li>
+<li>Missing Schemas/Models</li>
+<li>Missing Error Codes/Messages</li>
+</ul>
+<p>These are the common problems I suffer from with many of my own Swagger definitions, as well as many I discover across the Internet. In my opinion, a complete Swagger definition is more art than tech, and you need the human who really cares about an API to hand finish it. I have many Swagger definitions that are complete, well as complete as the API is, but many I have for public APIs in my API Stack directory, are a work in progress.</p>
+<p>APIMATIC also provides three interesting proposal for enhancing Swagger definitions so we can automatically generate more robust code in the future:</p>
+<ul>
+<li>Support for Streaming API</li>
+<li>Support for WebHooks</li>
+<li>Support for Error Models, not just Error Messages</li>
+</ul>
+<p>The last one is just good API design, the other two are more about additions to the Swagger specification. APIMATIC also provides us with a look at the future, if we get our collective Swagger together, we can realize some serious benefits that will help us throughout the API life cycle:</p>
+<ul>
+<li>Naming conventions</li>
+<li>Design patterns</li>
+<li>Namespaces and packaging</li>
+<li>High readability and general formatting</li>
+<li>Code comments</li>
+<li>Identify redundant and unreachable code</li>
+<li>Generate IDE support (Visual Studio, XCode, Android Studio, Eclipse)</li>
+<li>Enabled IDE type-hinting (ie. PyCharm, Ruby Mine, Netbeans)</li>
+</ul>
+<p>I see APIMATIC as just one of many emerging API service providers who live along a Swagger driven API life cycle, but I feel they are one of the most important barometers we have, that we can use to understand the overall health of the Swagger ecosystem. If you can&rsquo;t generate working client code from your Swagger, it is likely you won&rsquo;t be able to mock, test, monitor, or achieve other critical stops along the API life cycle.</p>
+<p>Of course, I would be neglectful if I didn&rsquo;t mention that the&nbsp;APIMATIC team is obviously biased, as their motivation is to sell their services. This is true, but APIMATIC is the only player to emerge in the code generation game that I&rsquo;ve seen actually provide a high quality perspective and solution to the problem of client code generation. Look at what they offer:</p>
+<ul>
+<li><strong>Web Interface -</strong> Easy to use interface for managing code generation.</li>
+<li><strong>API -</strong> APIMATIC&rsquo;s CGaaS is available as an API.</li>
+<li><strong>Multi Definitions - </strong>Accepts API Description (Swagger, RAML, API Blueprint, IO Docs, Google Discovery)</li>
+<li><strong>Widgets -</strong> Maintain your API description, and the widget provides fresh SDKs where you need.</li>
+<li><strong>APIMATIC On-Prem - </strong>Available as a universal Linux binary - Provides simple locally hosted API.</li>
+<li><strong>SmartBear Ready! API Plugin - </strong>Generates SDKs from inside Ready! API.</li>
+</ul>
+<p>I also known Adeel and Zeeshan, and know they truly care about the health and quality of the API ecosystem, as well as looking to sell the valuable services they bring to the table with APIMATIC and SDKs.io. There is a lot of valuable insights to work with in the research they have started, something I will be contributing to in the future. I will let you review the slide deck from their research below, but I also wanted to point out two addition slides that I thought were interesting.</p>
+<p><strong>Statistics for Sources of API Descriptions (Where They Found Definitions)</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apimatic-api-definition-research-location.png" alt="" width="90%" align="middle" /></p>
+<p><strong>Statistics for API Descriptions Located (What Format The Definitions Were)</strong></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apimatic-api-definition-research-type.png" alt="" width="90%" align="middle" /></p>
+<p>There are two things interesting here, what formats are available, and where are people putting them. I&rsquo;m focused heavily on supporting Swagger and API Blueprint, and often find that discovery and indexing of these definitions is very difficult. I can find definitions on Github fairly easy, but finding them on the open Internet is proving to be more challenging, and resource intensive&mdash;something I will be working with the APIMATIC team on more as well.</p>
+<p>The moral of this story is that the Swagger definitions we are creating need to be more complete, and I think it points to the fact that we need more services and tooling to help us validate the completeness of our definitions, something I will also be working with the APIMATIC team on. We need a community driven way to share these API definitions, and as a community to help validate and certify API definitions, and also help complete them when necessary.</p>
+<p>I will work with APIMATIC to conduct this research on a regular basis, and is something we are both committed to improving on. In future posts, I&rsquo;ll talk about the work we are doing between APIMATIC, SDKs.io, and my API Stack research, which will provide opportunities for the community to get involved&mdash;so stay tuned.</p>
+<p style="text-align: center;"><iframe src="https://docs.google.com/presentation/d/11gkZZ8NYKIzRNvEnDZ3MrQebAocLi4MPmsvqpquxOYk/embed?start=false&amp;loop=false&amp;delayms=3000" width="640" height="389" align="center"></iframe></p>

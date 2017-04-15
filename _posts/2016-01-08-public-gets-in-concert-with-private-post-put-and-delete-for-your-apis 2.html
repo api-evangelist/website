@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'Public GETs, In Concert With Private POST, PUT, And DELETE For Your APIs'
+source: http://apievangelist.com/2016/01/08/public-gets-in-concert-with-private-post-put-and-delete-for-your-apis/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-open.png
+---
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-open.png" alt="" width="150" align="right" /></p>
+<p>Another story I wanted to tell from <a href="http://apievangelist.com/2016/01/07/i-loaded-that-csv-into-a-database-now-let-me-expose-an-api-so-i-can-get-some-help/">my work to expose an API yesterday, so I could get help with it</a>, was focused around the service composition that I used. I feel like this is a powerful story, that should be told, and retold among API evangelists, across conversations with folks who are new to the API space, and the concept of putting APIs to work in their daily business worlds.</p>
+<p>The largest concern I hear from people who don't fully understand API, is the perceived loss of control, from putting things up on the open Internet. When you don't understand <a href="http://3scale.net">modern API management infrastructure</a>, and the nuance of API service composition, what an API does can seem pretty scary. The first lesson around me exposing of an API, from the <a href="https://twitter.com/APIStrat">@APIStrat</a> speaker database, was about soliciting help from <span>Nicolas Greni&eacute; (</span><a href="https://twitter.com/picsoung?lang=en">@picsoung</a><span>)</span>, and the second lesson is centered around how I used a combination of public / private endpoints to make this work.</p>
+<p>The first two endpoints or methods I published from my speaker databases, were simple GETs:</p>
+<ul>
+<li><a href="http://api.apistrat.com/speakers/">http://api.apistrat.com/speakers/</a></li>
+<li><a href="http://api.apistrat.com/speakers/aO6zItrUhKEUexi7zNiUjOzzJ1230Rfno9P123DJRHNEuh4117/">http://api.apistrat.com/speakers/aO6zItrUhKEUexi7zNiUjOzzJ1230Rfno9P123DJRHNEuh4117/</a></li>
+</ul>
+<p>All 351 speakers in our database are already public, <a href="http://austin2015.apistrat.com/all-events/">on the schedules for each of the six @APIStrat events</a>, so there really is no reason why I would lock up the APIs to get this information--I am just returning JSON representations, in addition to the HTML I already do on the websites.</p>
+<p>However, for the collaboration part with <a href="https://twitter.com/picsoung?lang=en">@picsoung</a> the POST, PUT, DELETE (aka Add, Update, Delete), I'm going to need to secure things a little more. <a href="http://3scale.net">Using my already in place, 3Scale API management infrastructure</a>, I have an access tier specifically for my partners like 3Scale, <a href="http://wso2.com">WSO2</a>, and @picsoung already has a set of API keys at this API plan level. I simply put the three endpoints / methods for POST, PUT, and DELETE for the URLs above, into my "partner" level, and they require an appID and appKey for each API call--secured.</p>
+<p>This is a simple, yet powerful example of how APIs work, and specifically the level of control that API service composition gives you. I can easily make the speakers across our six conferences available in a machine readable format for use in other websites, and mobile applications. With the same API, I am also able to open up write capabilities to the partners who I trust, enabling them to help me evolve my speakers information. I am able to publicly share my resources via an API, making HTML and JSON versions of it available, while also opening up important collaboration which will move my work forward, in a safe, and secure way.</p>
+<p>This is APIs in action, and how they actually give you more control over the digital resources that are fueling your daily operations.</p>
+<ul>
+</ul>

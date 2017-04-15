@@ -1,0 +1,118 @@
+---
+layout: post
+title: 'Defining API Monitoring APIs So I Can Map To Each Stop Along The API Life Cycle'
+source: http://apievangelist.com/2015/12/16/defining-api-monitoring-apis-so-i-can-map-to-each-stop-along-the-api-life-cycle/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png
+---
+
+<p><a href="http://monitoring.apievangelist.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png" alt="" width="250" align="right" /></a></p>
+<p>I am going through each of the <a href="http://apievangelist.com/">35+ areas of the APi space that I monitor</a>, working to bring alive <a href="http://alpha.apievangelist.com/2015/12/15/playing-with-different-subway-journey-experiences-for-my-api-life-cycle-explorer/">the over 900 stops along the API life cycle</a>, that I have&nbsp;identified through my research. I'm still working through prototypes for my life cycle explorer, but <a href="http://plans.apievangelist.com/journey/beta/">the current version has organizations, tools, links, and questions, along with the title and description of each stop of the life cycle journey I am trying to bring into focus</a>.</p>
+<p>Part of my approach in <a href="http://apievangelist.com/2015/11/29/the-api-lifecycle-my-talk-from-defrag-and-apistrat/">identifying the different lines, areas, and stops along this life cycle</a> involves taking a look at the approach of leading API providers, as well as service being offered by companies selling their solutions to these API providers--giving me two sides of the API life cycle coin. In the last couple months I have also found another way to identify potential building blocks, and round off the ones I have, through the API definitions of leading API providers.</p>
+<p>All I do, is craft an OADF file for each of the API service providers I track on, within each area of my research. I'm spending time tonight working on my <a href="http://monitoring.apievangelist.com/">API monitoring research</a>, so I look at three of the service providers I track on, who have APIs. The OADF specs are not complete, but provide me a baseline definition for the surface area of each API, something I'll round out with more use. Here are the endpoints I have from each provider so far.</p>
+<p><strong><a href="https://www.apiscience.com/docs/api">API Science Monitors API</a></strong>&nbsp;(<a href="http://theapistack.com/data/api-science/api-science-monitors-api-swagger.json">oadf</a>)</p>
+<ul id="api-science-monitors-api">
+<li><strong>Get All Contacts</strong>&nbsp;- (GET) - /contacts.json</li>
+<li><strong>Create a Contact</strong>&nbsp;- (POST) - /contacts.json</li>
+<li><strong>Delete a Contact</strong>&nbsp;- (DELETE) - /contacts/{id}.json</li>
+<li><strong>Get a Specific Contact</strong>&nbsp;- (GET) - /contacts/{id}.json</li>
+<li><strong>Update a Contact</strong>&nbsp;- (PATCH) - /contacts/{id}.json</li>
+<li><strong>Get All Monitors</strong>&nbsp;- (GET) - /monitors</li>
+<li><strong>Create a Monitor</strong>&nbsp;- (POST) - /monitors</li>
+<li><strong>Apply Actions to Multiple Monitors</strong>&nbsp;- (PUT) - /monitors</li>
+<li><strong>Get a Specific Monitor</strong>&nbsp;- (GET) - /monitors/{id}</li>
+<li><strong>Get Checks For A Monitor</strong>&nbsp;- (GET) - /monitors/{id}/checks.json</li>
+<li><strong>Performance Report</strong>&nbsp;- (GET) - /monitors/{id}/performance</li>
+<li><strong>Show a Monitors Templates</strong>&nbsp;- (GET) - /monitors/{id}/templates</li>
+<li><strong>Get a Template</strong>&nbsp;- (GET) - /monitors/{id}/templates/{templates]</li>
+<li><strong>Create a Template</strong>&nbsp;- (POST) - /monitors/{id}/templates/{templates]</li>
+<li><strong>Testing your Monitor</strong>&nbsp;- (GET) - /monitors/{id}/test</li>
+<li><strong>Uptime Report</strong>&nbsp;- (GET) - /monitors/{id}/uptime.json</li>
+<li><strong>List All Tags</strong>&nbsp;- (GET) - /tags</li>
+</ul>
+<p><strong><a href="https://www.runscope.com/docs/api/tests">Runscope API</a></strong>&nbsp;(<a href="http://theapistack.com/data/runscope/runscope-api-swagger.json">oadf</a>)</p>
+<ul id="runscope-api">
+<li><strong>Account Resource</strong>&nbsp;- (GET) - /account</li>
+<li><strong>Teams Resource</strong>&nbsp;- (GET) - /teams/{teamId}/people</li>
+<li><strong>Team integrations list</strong>&nbsp;- (GET) - /teams/{teamId}/integrations</li>
+<li><strong>Returns a list of buckets.</strong>&nbsp;- (GET) - /buckets</li>
+<li><strong>Create a new bucket</strong>&nbsp;- (POST) - /buckets</li>
+<li><strong>Returns a single bucket resource.</strong>&nbsp;- (GET) - /buckets/{bucketKey}</li>
+<li><strong>Delete a single bucket resource.</strong>&nbsp;- (DELETE) - /buckets/{bucketKey}</li>
+<li><strong>Retrieve a list of messages in a bucket</strong>&nbsp;- (GET) - /buckets/{bucketKey}/messages</li>
+<li><strong>Clear a bucket (remove all messages).</strong>&nbsp;- (DELETE) - /buckets/{bucketKey}/messages</li>
+<li><strong>Create a message</strong>&nbsp;- (POST) - /buckets/{bucketKey}/messages</li>
+<li><strong>Retrieve a list of error messages in a bucket</strong>&nbsp;- (GET) - /buckets/{bucketKey}/errors</li>
+<li><strong>Retrieve the details for a single message.</strong>&nbsp;- (GET) - /buckets/{bucketKey}/messages/{messageId}</li>
+<li><strong>Returns a list of tests.</strong>&nbsp;- (GET) - /buckets/{bucketKey}/tests</li>
+<li><strong>Create a test.</strong>&nbsp;- (POST) - /buckets/{bucketKey}/tests</li>
+<li><strong>Delete a single test.</strong>&nbsp;- (DELETE) - /buckets/{bucketKey}/tests/{testId}</li>
+<li><strong>List test steps for a test.</strong>&nbsp;- (GET) - /buckets/{bucketKey}/tests/{testId}/steps</li>
+<li><strong>Add new test step.</strong>&nbsp;- (POST) - /buckets/{bucketKey}/tests/{testId}/steps</li>
+<li><strong>Update the details of a single test step.</strong>&nbsp;- (PUT) - /buckets/{bucketKey}/tests/{testId}/steps/{stepId}</li>
+<li><strong>Delete a step from a test.</strong>&nbsp;- (DELETE) - /buckets/{bucketKey}/tests/{testId}/steps/{stepId}</li>
+<li><strong>Return details of the test's environments (only those that belong to the specified test)</strong>&nbsp;- (GET) - /buckets/{bucketKey}/tests/{testId}/environments</li>
+<li><strong>Create new test environment.</strong>&nbsp;- (POST) - /buckets/{bucketKey}/tests/{testId}/environments</li>
+<li><strong>Update the details of a test environment.</strong>&nbsp;- (PUT) - /buckets/{bucketKey}/tests/{testId}/environments/{environmentId}</li>
+<li><strong>Returns list of shared environments for a specified bucket.</strong>&nbsp;- (GET) - /buckets/{bucketKey}/environments</li>
+<li><strong>Create new shared environment.</strong>&nbsp;- (POST) - /buckets/{bucketKey}/environments</li>
+<li><strong>Update the details of a test environment.</strong>&nbsp;- (PUT) - /buckets/{bucketKey}/environments/{environmentId}</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Auth API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-auth-api">
+<li><strong>List Authentication Settings</strong>&nbsp;- (GET) - /auth/</li>
+<li><strong>Delete an Authentication Setting</strong>&nbsp;- (DELETE) - /auth/{id}/</li>
+<li><strong>Get an existing Authentication Setting</strong>&nbsp;- (GET) - /auth/{id}/</li>
+<li><strong>Update an existing Authentication Setting</strong>&nbsp;- (PUT) - /auth/{id}/</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Calls API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-calls-api">
+<li><strong>List API Calls</strong>&nbsp;- (GET) - /calls/</li>
+<li><strong>Create new API Call</strong>&nbsp;- (POST) - /calls/</li>
+<li><strong>List API Calls by Authentication</strong>&nbsp;- (GET) - /calls/auth/{auth_id}/</li>
+<li><strong>Delete an API Call</strong>&nbsp;- (DELETE) - /calls/{id}/</li>
+<li><strong>Get an existing API Call</strong>&nbsp;- (GET) - /calls/{id}/</li>
+<li><strong>Update an existing API Call</strong>&nbsp;- (PUT) - /calls/{id}/</li>
+<li><strong>Trigger an API Call to run</strong>&nbsp;- (POST) - /calls/{id}/run</li>
+<li><strong>List Stats from before a date for an API Call</strong>&nbsp;- (GET) - /calls/{id}/stats/before</li>
+<li><strong>List Stats since a date for an API Call</strong>&nbsp;- (GET) - /calls/{id}/stats/since</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Deployments API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-deployments-api">
+<li><strong>List all Deployment</strong>&nbsp;- (GET) - /deployments/</li>
+<li><strong>Create a new Deployment</strong>&nbsp;- (POST) - /deployments/</li>
+<li><strong>Get all Deployments for an API Call</strong>&nbsp;- (GET) - /deployments/call/{call_id}/</li>
+<li><strong>Get all Deployments for a Workflow</strong>&nbsp;- (GET) - /deployments/workflow/{workflow_id}</li>
+<li><strong>Delete a Deployment</strong>&nbsp;- (DELETE) - /deployments/{id}/</li>
+<li><strong>Get an existing Deployment</strong>&nbsp;- (GET) - /deployments/{id}/</li>
+<li><strong>Update an existing Deployment</strong>&nbsp;- (PUT) - /deployments/{id}/</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Reports API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-reports-api">
+<li><strong>List all Reports</strong>&nbsp;- (GET) - /reports/</li>
+<li><strong>Create a new Report</strong>&nbsp;- (POST) - /reports/</li>
+<li><strong>Delete a Report</strong>&nbsp;- (DELETE) - /reports/{id}/</li>
+<li><strong>Get an existing Report</strong>&nbsp;- (GET) - /reports/{id}/</li>
+<li><strong>Update an existing Report</strong>&nbsp;- (PUT) - /reports/{id}/</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Tokens API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-tokens-api">
+<li><strong>List Auth Tokens</strong>&nbsp;- (GET) - /tokens/</li>
+<li><strong>Create a new Auth Token</strong>&nbsp;- (POST) - /tokens/</li>
+<li><strong>Get all tokens for an Authentication Setting&nbsp;</strong>- (GET) - /tokens/auth/{auth_id}/</li>
+<li><strong>Delete an Auth Token</strong>&nbsp;- (DELETE) - /tokens/{id}/</li>
+<li><strong>Get an existing Auth Token</strong>&nbsp;- (GET) - /tokens/{id}/</li>
+<li><strong>Update an Auth Token</strong>&nbsp;- (PUT) - /tokens/{id}/</li>
+</ul>
+<p><strong><a href="https://apimetrics.readme.io/">APIMetrics Workflows API</a></strong>&nbsp;(<a href="http://theapistack.com/data/apimetrics/apimetrics-workflows-api-swagger.json">oadf</a>)</p>
+<ul id="apimetrics-workflows-api">
+<li><strong>List all Workflows</strong>&nbsp;- (GET) - /workflows/</li>
+<li><strong>Create new Authentication Settings</strong>&nbsp;- (POST) - /workflows/</li>
+<li><strong>Delete a Workflow</strong>&nbsp;- (DELETE) - /workflows/{id}/</li>
+<li><strong>Get an existing Workflow</strong>&nbsp;- (GET) - /workflows/{id}/</li>
+<li><strong>Trigger a Workflow to run now</strong>&nbsp;- (POST) - /workflows/{id}/</li>
+<li><strong>Create a new Workflow</strong>&nbsp;- (PUT) - /workflows/{id}/</li>
+</ul>
+<p>When you compare the definitions for these API service providers, you are comparing apples to oranges, even though they exist in the same layer of the API space. To me, having them defined, will allow me to slowly weave them into <a href="http://monitoring.apievangelist.com/building-blocks.html">my master list of common building blocks for API monitoring</a>.</p>
+<p>What really excites me, is that for each potential stop along the API monitoring line, I might be able to actually link to specific API endpoints, and even down to the verb level. For example, I could link to the endpoint for creating a new test for API Science, APIMetrics, and Runscope, with a single button or widget.&nbsp;</p>
+<p>I find the API definitions for API service providers to be more interesting them some of the features they showcase via their site. I will be continuing to identify the API service providers that I track on who have APIs, and defining them using OADF. <a href="http://monitoring.apievangelist.com/apis.json">You can find the APIs for my API monitoring research available in the projects APIs.json file</a>, as well as <a href="http://monitoring.apievangelist.com/companies.html">each individual APIs.json and OADF files listed on the API monitoring service providers page</a>.</p>

@@ -1,0 +1,193 @@
+---
+layout: post
+title: 'Establishing A Common API Definition That API Management Providers Can Use'
+source: http://apievangelist.com/2015/10/15/establishing-a-common-api-definition-that-api-management-providers-can-use/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg
+---
+
+<p><a href="http://www.3scale.net/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg" alt="" width="300" align="right" /></a></p>
+<p class="p1"><a href="http://apievangelist.com/2015/10/13/bringing-api-building-blocks-to-life-as-the-apis-of-service-providers/">I mentioned the concept of what I call API building blocks coming to life by API service providers yesterday</a>. These are the features provided from API service providers that are made accessible via APIs. Mind blowing right? API service providers having APIs? Which then allows API providers to programmatically manage the operations of their own APIs? Who would have ever thought!! Actually it is a pretty clear example of API service providers who are kind of full of it, when they do not offer their own APIs--meaning they are telling you about the importance of APIs, but not actually practicing what they preach. It is kind of like API providers who do not use their own APIs in their applications (dogfooding).</p>
+<p class="p1">Anyhoo. <a href="http://apievangelist.com/">I have done a lot of work to define the common building blocks across API service providers, spanning over 17 stops along the API lifecycle</a>, and part of the next phase of my research is to connect these building blocks to actual API definitions that can help automate these vital API features. First up, <a href="https://support.3scale.net/reference/active-docs">I took the 3Scale API, and generated this list of common building blocks represented in the API for their API infrastructure</a>.</p>
+<p class="p1"><strong>Authorization</strong></p>
+<ul>
+<li><strong>Authorize</strong> (App Id authentication pattern)(GET) - Read-only operation to authorize an application in the App Id authentication pattern</li>
+<li><strong>Authorize</strong> (API Key authentication pattern)(GET) - Read-only operation to authorize an application in the App Key authentication pattern</li>
+<li><strong>Authorize</strong> (OAuth authentication mode pattern)(GET) - Read-only operation to authorize an application in the OAuth authentication pattern</li>
+</ul>
+<p><strong>Reporting</strong></p>
+<ul>
+<li><strong>Report</strong> (App Id authentication pattern)(POST) - Report the transactions</li>
+<li><strong>Report</strong> (API Key authentication pattern)(POST) - Report the transactions</li>
+<li><strong>Report</strong> (OAuth authentication pattern)(POST) - Report the transactions to</li>
+</ul>
+<p><strong>Authorization + Reporting</strong></p>
+<ul>
+<li><strong>AuthRep</strong> (Authorize + Report for the App Id authentication pattern)(GET) - Authrep is a 'one-shot' operation to authorize an application and report the associated transaction at the same time</li>
+<li><strong>AuthRep</strong> (Authorize + Report for the API Key authentication pattern)(GET) - Authrep is a 'one-shot' operation to authorize an application and report the associated transaction at the same time</li>
+<li><strong>AuthRep</strong> (OAuth authentication mode pattern)(GET) - Authrep is a 'one-shot' operation to authorize an application and report the associated transaction at the same time in the OAuth authentication pattern</li>
+</ul>
+<p class="p1"><strong>Account Management</strong></p>
+<ul>
+<li><strong>Account Feature List</strong>(GET) - Returns the list of the features available to accounts</li>
+<li><strong>Account Feature Create</strong>(POST) - Create an account feature</li>
+<li><strong>Account Feature Read</strong>(GET) - Returns an account feature</li>
+<li><strong>Account Feature Update</strong>(PUT) - Updates an account feature</li>
+<li><strong>Account Feature Delete</strong>(DELETE) - Deletes an account feature</li>
+<li><strong>Account Plan Feature List</strong>(GET) - Returns the list of the features associated to an account plan</li>
+<li><strong>Account Plan Features Create</strong>(POST) - Associate an account feature to an account plan</li>
+<li><strong>Account Plan Features Delete</strong>(DELETE) - Deletes the association of an account feature to an account plan</li>
+<li><strong>Account Plan List</strong>(GET) - Returns the list of all available account plans</li>
+<li><strong>Account Plan Create</strong>(POST) - Creates an account plan</li>
+<li><strong>Account Plan Read</strong>(GET) - Returns the account plan by id</li>
+<li><strong>Account Plan Update</strong>(PUT) - Updates an account plan</li>
+<li><strong>Account Plan Delete</strong>(DELETE) - Deletes and account plan</li>
+<li><strong>Account Plan set to Default</strong>(PUT) - Set the account plan to be the default one</li>
+<li><strong>Account List</strong>(GET) - Returns the list of the buyer accounts (the accounts that consume your API)</li>
+<li><strong>Account Find</strong>(GET) - Find an account by the username or email of its users (username takes precendence over email)</li>
+<li><strong>Account Read</strong>(GET) - Returns a buyer account</li>
+<li><strong>Account Update</strong>(PUT) - Updates a buyer account by id</li>
+<li><strong>Account Delete </strong>(DELETE) - Deletes a buyer account</li>
+<li><strong>Account Change Plan</strong>(PUT) - Changes the account plan of the buyer account</li>
+<li><strong>Account Approve</strong>(PUT) - Approves the account (changes the state to live)</li>
+<li><strong>Account Reject</strong>(PUT) - Rejects the account (changes the state to rejected)</li>
+<li><strong>Account Reset to Pending</strong>(PUT) - Resets the state of the account to pending</li>
+<li><strong>Account Set Credit Card</strong>(PUT) - Associates credit card tokens and billing address to an account</li>
+<li><strong>Account Delete Credit Card</strong>(DELETE) - Removes all credit card info of an account</li>
+<li><strong>Account Message</strong>(POST) - Sends a message to the account</li>
+<li><strong>Account Read</strong>(GET) - Returns your account</li>
+</ul>
+<p><strong>Application Management</strong></p>
+<ul>
+<li><strong>Application Plan Feature List</strong>(GET) - Returns the list of features of the application plan</li>
+<li><strong>Application Plan Feature Create</strong>(POST) - Associates a feature to an application plan</li>
+<li><strong>Application Plan Feature Delete</strong>(DELETE) -&nbsp;</li>
+<li><strong>Limits List per Application Plan</strong>(GET) - Returns the list of all limits associated to an application plan</li>
+<li><strong>Limit List per Metric</strong>(GET) - Returns the list of all limits associated to a metric of an application plan</li>
+<li><strong>Limit Create</strong>(POST) - Adds a limit to a metric of an application plan</li>
+<li><strong>Limit Read</strong>(GET) - Returns a limit on a metric of an application plan</li>
+<li><strong>Limit Update</strong>(PUT) - Updates a limit on a metric of an application plan</li>
+<li><strong>Limit Delete</strong>(DELETE) - Deletes a limit on a metric of an application plan</li>
+<li><strong>Pricing Rules List per Metric</strong>(GET) - Returns the list of all pricing rules associated to a metric of an application plan</li>
+<li><strong>Pricing Rules List per Application Plan</strong>(GET) - Returns the list of all pricing rules associated to an application plan</li>
+<li><strong>Application Plan List </strong>(all services)(GET) - Returns the list of all application plans across services</li>
+<li><strong>Application Plan List</strong>(GET) - Returns the list of all application plans of a service</li>
+<li><strong>Application Plan Create</strong>(POST) - Creates an application plan</li>
+<li><strong>Application Plan Read</strong>(GET) - Returns and application plan</li>
+<li><strong>Application Plan Update</strong>(PUT) - Updates an application plan</li>
+<li><strong>Application Plan Delete</strong>(DELETE) - Deletes an application plan</li>
+<li><strong>Application Plan Set to Default</strong>(PUT) - Makes the application plan the default one</li>
+<li><strong>Application List </strong>(all services)(GET) - Returns the list of applications across all services</li>
+<li><strong>Application Find</strong>(GET) - Finds an application by keys used on the integration of your API and 3scale's Service Management API or by id (no need to know the account_id)</li>
+<li><strong>Account Fetch Account Plan</strong>(GET) - Returns the account plan associated to an account</li>
+<li><strong>Application Key List</strong>(GET) - Lists app keys of the application</li>
+<li><strong>Application key Create</strong>(POST) - Adds an key of an application (valid only on the authentication mode app_id/app_key or oauth)</li>
+<li><strong>Application key Delete</strong>(DELETE) - Deletes an key of an application (valid only on the authentication mode app_id/app_key or oauth)</li>
+<li><strong>Application Referrer Filter List</strong>(GET) - Lists referrer filters of the application</li>
+<li><strong>Application Referrer Filter Create</strong>(POST) - Adds a referrer filter to an application</li>
+<li><strong>Application Referrer Filter Delete</strong>(DELETE) - Deletes a referrer filter of an application</li>
+<li><strong>Application List</strong>(GET) - Returns the list of application of an account</li>
+<li><strong>Application Create</strong>(POST) - Create an application</li>
+<li><strong>Application Read</strong>(GET) - Returns the application by id</li>
+<li><strong>Application Update</strong>(PUT) - Updates an application</li>
+<li><strong>Application Change Plan</strong>(PUT) - Changes the application plan of an application</li>
+<li><strong>Application Create Plan Customization</strong>(PUT) - Creates a customized application plan for the application</li>
+<li><strong>Application Delete Plan Customization</strong>(PUT) - Deletes the customized application plan of the application</li>
+<li><strong>Application Accept</strong>(PUT) - Accepts an application (changes the state to live)</li>
+<li><strong>Application Suspend</strong>(PUT) - Suspends an application (changes the state to suspended)</li>
+<li><strong>Application Resume</strong>(PUT) - Resume a suspended application</li>
+</ul>
+<p class="p1"><strong>User Management</strong></p>
+<ul>
+<li><strong>User List</strong>(GET) - Returns the list of users of an account</li>
+<li><strong>User Create</strong>(POST) - Creates a new user of the account (account_id)</li>
+<li><strong>User Read</strong>(GET) - Returns the user of an account</li>
+<li><strong>User Update</strong>(PUT) - Updates the user of an account</li>
+<li><strong>User Delete</strong>(DELETE) - Deletes a user of an account</li>
+<li><strong>User change Role to Member</strong>(PUT) - Changes the role of the user to member</li>
+<li><strong>User change Role to Admin</strong>(PUT) - Changes the role of the user to admin</li>
+<li><strong>User Suspend</strong>(PUT) - Changes the state of the user to suspended</li>
+<li><strong>User Unsuspend</strong>(PUT) - Change the state of the user back to active</li>
+<li><strong>User Activate</strong>(PUT) - Activate the user of an account</li>
+<li><strong>Limit List for End User Plans </strong>(GET) - Returns the list of all limits associated to a metric of an end user plan</li>
+<li><strong>Limit Create for End User Plans</strong>(POST) - Adds a limit to a metric of an end user plan</li>
+<li><strong>Limit Read for End User Plans</strong>(GET) - Returns a limit on a metric of an end user plan</li>
+<li><strong>Limit Update for End User Plans</strong>(PUT) - Updates a limit on a metric of an end user plan</li>
+<li><strong>Limit Delete for End User Plans</strong>(DELETE) - Deletes a limit on a metric of an end user plan</li>
+<li><strong>End User Plan List </strong>(all services)(GET) - Returns the list of all end user plans across services</li>
+<li><strong>End User Plan List</strong>(GET) - Returns the list of all end user plans of a service</li>
+<li><strong>End User Plan Create</strong>(POST) - Creates an end user plan</li>
+<li><strong>End User Plan Read</strong>(GET) - Returns and end user plan</li>
+<li><strong>End User Plan Update</strong>(PUT) - Updates an end user plan</li>
+<li><strong>End User Plan set to Default</strong>(PUT) - Makes the end user plan the default one</li>
+<li><strong>End User Read</strong>(GET) - Returns the end user by id</li>
+<li><strong>End User Create</strong>(POST) - Create an end user</li>
+<li><strong>End User Delete</strong>(DELETE) - Deletes a end user</li>
+<li><strong>End User Change Plan</strong>(PUT) - Changes the end user plan of an end user</li>
+<li><strong>User List</strong> (provider account)(GET) - Lists the users of the provider account</li>
+<li><strong>User Create </strong>(provider account)(POST) - Creates a new user in the provider account</li>
+<li><strong>User Read</strong> (provider account)(GET) - Gets the user of the provider account by id</li>
+<li><strong>User Update</strong> (provider account)(PUT) - Modifies the user of the provider account by id</li>
+<li><strong>User Delete </strong>(provider account)(DELETE) - Deletes the user of the provider account by id</li>
+<li><strong>User change Role to Member </strong>(provider account)(PUT) - Changes the role of the user of the provider account to member</li>
+<li><strong>User change Role to Admin</strong> (provider account)(PUT) - Changes the role of the provider account to admin (full rights and privileges)</li>
+<li><strong>User Suspend</strong> (provider account)(PUT) - Changes the state of the user of the provider account to suspended, remove the user's ability to sign-in</li>
+<li><strong>User Unsuspend </strong>(of provider account)(PUT) - Revokes the suspension of a user of the provider account</li>
+<li><strong>User Activate</strong> (provider account)(PUT) - Changes the state of the user of the provider account to active, to be done after sign-up</li>
+</ul>
+<p class="p1"><strong>Analytics</strong></p>
+<ul>
+<li><strong>Method List</strong>(GET) - List the methods of a metric</li>
+<li><strong>Method Create</strong>(POST) - Creates a method under a metric</li>
+<li><strong>Method Read</strong>(GET) - Returns the method of a metric</li>
+<li><strong>Method Update</strong>(PUT) - Updates a method of a metric</li>
+<li><strong>Method Delete</strong>(DELETE) - Deletes the method of a metric</li>
+<li><strong>Metric List</strong>(GET) - Returns the list of metrics of a service</li>
+<li><strong>Metric Create</strong>(POST) - Creates a metric on a service</li>
+<li><strong>Metric Read</strong>(GET) - Returns the metric of a service</li>
+<li><strong>Metric Update</strong>(PUT) - Updates the metric of a service</li>
+<li><strong>Metric Delete</strong>(DELETE) - Deletes the metric of a service</li>
+<li><strong>Application Usage by Metric</strong>(GET) - Returns the usage data for a given metric (or method) of an application</li>
+<li><strong>Service Usage by Metric</strong>(GET) - Returns the usage data of a given metric (or method) of a service</li>
+<li><strong>Service Top Applications</strong>(GET) - Returns usage and application data for the top 10 most active applications of a service</li>
+</ul>
+<p class="p1"><strong>Service Management</strong></p>
+<ul>
+<li><strong>Service Feature List</strong>(GET) - Returns the list of all features of a service</li>
+<li><strong>Service Feature Create</strong>(POST) - Creates a feature on a service</li>
+<li><strong>Service Feature Read</strong>(GET) - Returns a feature of a service</li>
+<li><strong>Service Feature Update</strong>(PUT) - Updates a feature of a service</li>
+<li><strong>Service Feature Delete</strong>(DELETE) - Deletes a feature of a service</li>
+<li><strong>Service Plan Feature List</strong>(GET) - Returns the list of features of a service plan</li>
+<li><strong>Service Plan Feature Add</strong>(POST) - Associates an existing feature to a service plan</li>
+<li><strong>Service Plan List </strong>(all services)(GET) - Returns a list of all service plans for all services</li>
+<li><strong>Service Plan List</strong>(GET) - Returns a list of service plans for a service</li>
+<li><strong>Service Plan Create</strong>(POST) - Creates a new service plan in a service</li>
+<li><strong>Service Plan Read</strong>(GET) - Returns a service plan by id</li>
+<li><strong>Service Plan Update</strong>(PUT) - Updates a service plan by id</li>
+<li><strong>Service Plan Delete</strong>(DELETE) - Deletes a service plan by id</li>
+<li><strong>Service Plan set to Default</strong>(PUT) - Sets the service plan as default</li>
+<li><strong>Service List</strong>(GET) - Returns the list of all services</li>
+<li><strong>Service Create</strong>(POST) - Creates a new service</li>
+<li><strong>Service Read</strong>(GET) - Returns the service by id</li>
+<li><strong>Service Update</strong>(PUT) - Update the service</li>
+<li><strong>Signup Express</strong>(POST) - This request allows to reproduce a sign-up from a buyer in a single API call</li>
+</ul>
+<p class="p1"><strong>Billing Management</strong></p>
+<ul>
+<li><strong>Invoice List by Account</strong>(GET) - Returns the list of all invoices by account</li>
+<li><strong>Invoice by Account</strong>(GET) - Returns an invoice by id</li>
+<li><strong>Invoice List(</strong>GET) - Returns the list of all invoices</li>
+<li><strong>Invoice</strong>(GET) - Returns an invoice by id</li>
+<li><strong>Invoice</strong>(PUT) - Modifies the state of the invoice</li>
+<li><strong>Invoice Line Items List</strong>(GET) - Returns the list of all line items of an invoice</li>
+<li><strong>Invoice Payment Transactions List</strong>(GET) - Returns the list of all payment transactions of an invoice</li>
+</ul>
+<p class="p1"><strong>Webhooks</strong></p>
+<ul>
+<li><strong>Webhooks List Failed Deliveries</strong>(GET) - Lists of webhooks that could not be delivered to your end-point after 5 trials</li>
+<li><strong>Webhooks Delete Failed Deliveries</strong>(DELETE) - Deletes failed deliveries records</li>
+</ul>
+<p><a href="http://apievangelist.com/2015/03/04/adding-four-new-building-building-blocks-providing-an-api-management-api-blueprint/">I've been using a subset of the 3Scale API management API definition as my standard blueprint for other API providers should follow, for a while now</a>. All API providers should have an API for base API account management--meaning your API consumers should be able to manage their accounts, services, apps, and billing via an API. <a href="http://apievangelist.com/2014/12/16/with-number-of-apis-continuing-to-grow-account-automation-will-be-key/">This will be a differentiation between API providers in the near future, and if you aren't up to speed, developers will be looking elsewhere</a>.</p>
+<p><a href="http://apievangelist.com/2015/09/24/how-open-source-api-proxies-and-other-api-services-and-tooling-can-strategically-partner/">This portion of my work is in response to a group of open source API management providers looking to encourage interoperability between their platforms, and what better way to do this than a common API management definition</a>. While not all API management solutions will have exactly the same features, if they can speak a common, API defined language, the better off the entire API space will be.</p>
+<p>This is something I want to encourage across all 17+ of the API service areas I track on. I'm going to take a look at <a href="http://monitoring.apievangelist.com">API monitoring</a>, and also try to generate a common outline from definition across some of the service providers I track on. I'm using API definitions to generate these outlines, and potentially merging across multiple API service providers. If you are one of the API service providers I track on, and have an API definition, make sure I have link so I can include in thi sportion of my research.</p>

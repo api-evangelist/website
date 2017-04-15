@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'How Much API Surface Area Before It Stops Being Micro?'
+source: http://apievangelist.com/2015/01/28/how-much-api-surface-area-before-it-stops-being-micro/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-map-grid.png
+---
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-map-grid.png" alt="" width="250" align="right" /></p>
+<p>I have most of the core platform that I run API Evangelist on <a href="https://kin-lane.github.io/master/">re-engineered as individual microservices</a>, defined on Github, and running using Docker instances. I&rsquo;m using <a href="http://apievangelist.com/2015/01/28/using-apisjson-for-my-microservice-navigation-and-discovery">APIs.json for discovery, navigation</a>, and to <a href="http://apievangelist.com/2015/01/28/using-swagger-as-fingerprint-for-my-microservice-docker-containers">connect swagger API definitions, to their docker backends</a>.  So far I have 18 microservices, which I define as very simple APIs, that do one thing, and focus on doing it well.</p>
+<p>I&rsquo;m very critical about any feature I add in, working hard to keep each service as micro as I can, reducing complexity, and bloat in any single API.  However, with each service I reach the point where I have to cut off feature creep, and establish an entirely new API definition--I am at this point with my link service.</p>
+<p>I have a pretty bloated link management system in the legacy version of my platform, something which handles links for functions ranging from <a href="https://pinboard.in/u:kinlane">Pinboard</a> integration, to handling linkrot on my public website. My legacy system runs using an API too, but it is a sloppily designed API, with a wide surface area, something I&rsquo;m looking to prevent in the next version.</p>
+<p>So far I&rsquo;ve broken out a single API into three separate microservices:</p>
+<ul>
+<li><strong>Link -</strong> A dead simple link management tool, allowing me to add a title, and url to a simple link data store, for future use.</li>
+<li><strong>Curated - </strong>A service to manage links I curate from many sources, including additional bells &amp; whistles, like pulling text body, taking screenshot, and much more.&nbsp;</li>
+<li><strong>Linkrot -</strong> A link storage system designed for a singe purpose&mdash;to address link rot on my public websites. The API works with a simple JS library to store, monitor, and take screenshots of websites I link to across my network.</li>
+</ul>
+<p>I have about five other simple, link related, microservices I&rsquo;m planning, but these three designs represent the main link resources I need to make API Evangelist work. All of the microservices I&rsquo;m designing will be open sourced at some point, but the linkrot implementation is one I may also be offering as a service. I&rsquo;m enjoying the feature across my sites, and is something that I think has some viability as a basic service.</p>
+<p>I&rsquo;m sure my own definition of what a microservice is--will evolve, ebb and flow, but for now the first rule of microservice club for me, is keep things doing one thing, and doing it very well&mdash;enforcing simplicity in every decision.</p>

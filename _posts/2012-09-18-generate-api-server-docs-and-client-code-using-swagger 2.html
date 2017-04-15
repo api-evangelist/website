@@ -1,0 +1,27 @@
+---
+layout: post
+title: 'Generate API Server, Docs and Client Code Using Swagger'
+source: http://apievangelist.com/2012/09/18/generate-api-server-docs-and-client-code-using-swagger/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Swagger-Logo.png
+---
+
+<p><a href="http://www.wordnik.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/wordnik/wordnik-logo.jpeg" alt="" width="200" align="right" /></a></p>
+<p>We all have our own approaches to API design and development, many of which will never see the light of day.  In the API space we hear a lot about API management and API success stories, but not much about the process of designing, developing and initial deployment of APIs.  I just had a little taste of how the <a href="http://www.wordnik.com/" target="_blank">Wordnik</a> team approaches it, using <a href="http://swagger.wordnik.com/" target="_blank">Swagger</a>.</p>
+<p>Often when you hear about Swagger in the industry, you hear about the UI portion.  You know the sexy <a title="interactive documentation" href="http://apievangelist.com/buildingblocks/interactive_documentation.php">interactive documentation</a> that is fast becoming a standard with APIs, but it&rsquo;s just the tip of the iceberg--there is a whole lot more power to Swagger, than just interactive docs.</p>
+<p style="padding-left: 30px;"><em>&ldquo;The heart of Swagger is the specification, and from that, cool shit can get done!&rdquo;,  say Tony Tam Wordnik CEO and technical co-founder.</em></p>
+<p>To demonstrate, Tony walked me through Wordnik&rsquo;s approach to designing, developming and deploying a new API driven iPad app, using a team of 3:</p>
+<ul class="mainlist">
+<li>One person driving an editor writing JSON files, which are the Swagger spec for the needed API</li>
+<li>The all three discussed the operations, parameters, while adding them to the JSON, and re-running the swagger spec validator after each meaningful change</li>
+<li>When they were happy with the specs, they loaded the JSON files into the UI through  apache installed on a local machine</li>
+<li>After they inspected each API and operation again, they wrote the models in the spec files, and reviewed again to make sure everything was good</li>
+<li>Then they ran the Swagger Codegen and generated a Scalatra (Scala) server from the spec files</li>
+<li>Then they ran the Swagger Codegen and generated an Objective-C client from the spec files</li>
+<li>The server developer went off and wired the server to the business logic</li>
+<li>The front-end guy went and wired the UI to the objective-c library</li>
+</ul>
+<p>The process took 2.5 hours in total, from API to interface--a technique they call interface-driven development, which focuses on modeling the perfect interface for the problem they are trying to solve using an API.</p>
+<p><a href="http://swagger.wordnik.com/" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/wordnik/Swagger-Logo.png" alt="" width="200" align="right" /></a></p>
+<p>To solve this particular problem, they needed a scala server for the back-end.  they could have just as easily generated a Node.JS server, a Rails Sinatra server or any other based upon simple <a title="mustache templates" href="http://mustache.github.com/">mustache templates</a>. Additionally they could generate JavaScript, Scala, PHP or Python clients, but for this project they only needed Objective-C.</p>
+<p>The <a href="http://www.wordnik.com/" target="_blank">Wordnik</a> approach to API design and development using <a href="http://swagger.wordnik.com/" target="_blank">Swagger</a> is interesting.  For me, it demonstrates that a clean API spec should not be an afterthought, and a means by which you generate interactive API documentation, or when API discovery becomes an issue.  Your entire design, development and management process should center around a meaningful API spec, which will then allow you to deploy your API server, interactive documentation, client code, while also providing API discovery.</p>

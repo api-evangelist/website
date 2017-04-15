@@ -1,0 +1,971 @@
+---
+layout: post
+title: 'Quantifying The Community Around The Swagger API Specification'
+source: http://apievangelist.com/2015/03/30/quantifying-the-community-around-the-swagger-api-specification/
+domain: apievangelist.com
+image: 
+---
+
+<p>This post is extracted from a deep dive I've been doing into the Swagger ecosystem, as part of regular conversations I have been having with Tony Tam (@fehguy), trying to understand how we can better tell stories about Swagger. I've been tuned into things for a while now around the Swagger community, and there is a lot going on, but from the outside, some of this can be hard to see. Seeking a better understand what is the Swagger community, I wanted to take a walk through the sites, forum, and Github repositories.</p>
+<p>First let&rsquo;s start with the basics, what is Swagger? Merriam Webster defines Swaggers as: : to walk in a very confident way : to walk with a swagger. ;-) Seriously though, Swagger is a machine readable format (either JSON or YAML), for describing an API, providing a description of API operations, in a way that other applications can read, and understand. Even though Swagger is machine readable, and designed for other applications, it has also become a language for humans to describe and collaborate, around a shared, quantifiable, vision of what an API can do, throughout all stages of the API life cycle.&nbsp;</p>
+<p>If you want to learn about Swagger yourself, you can tune into these channels to learn more:</p>
+<ul>
+<li><strong><a href="http://swagger.io/">Website</a></strong></li>
+<li><strong><a href="https://twitter.com/SwaggerApi">Twitter</a></strong></li>
+<li><strong><a href="https://github.com/swagger-api">Github</a></strong></li>
+<li><strong><a href="https://groups.google.com/forum/#!forum/swagger-swaggersocket">Google Group</a></strong></li>
+</ul>
+<p>My goal with this post is evolve my understanding and awareness of what Swagger is, and hopefully along the way I can help increase yours as well. In my experience, many people have a very distorted, and limited understanding of what Swagger is, and I&rsquo;d like to take some time to evolve that. When I started this research, my objective was to help Tony deliver a new website, and on-boarding materials for Swagger, assisting people of all skill levels in finding all things Swagger. I am just taking this moment to walk through what at I have so far, and craft a more robust version 1.0 narrative about what Swagger is, something that blogging helps me work through.</p>
+<p>One of the biggest misconceptions I find when I talk with folks about Swagger, is that it is interactive documentation, when that is actually Swagger UI--when it comes to Swagger all roads start with the Swagger specification:</p>
+<ul>
+<li><strong><a href="https://github.com/swagger-api/swagger-spec)">Swagger-Spec</a> </strong>- The goal of Swagger is to define a standard, language-agnostic interface to REST APIs which allows both humans and computers to discover and understand the capabilities of the service.</li>
+</ul>
+<p><a href="https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md">You can find version 2.0 of the spec here</a>, which is the current active version in use. The Swagger spec lets you describe all the essential aspects of API operations, with information about the operator, the host and basePath for the API, details about what type of content it produces or consumes, like JSON or XML. Most importantly it lets you describe each of the paths for an API, with details on parameters, responses, and other details of each specific API path. Swagger also provides you with the ability to describe the underlying data model definitions, describing the valuable resources being served up via APIs.</p>
+<p>To grasp the last paragraph, you have to have a pretty solid understanding of the moving parts of an API, but in short the Swagger spec gives us a language to potentially map out all of the common parts of an API. It also allows me to describe the security for each API, and tag to organize APIs into specific buckets. <a href="https://kin-lane.github.io/master/index.html">I use Swagger to describe the almost 20 APIs my business uses daily, with varying amount of detail about each resource, and the information it serves up</a>. All the 20 of the Swagger definitions provide me with a machine readable map of my own IT infrastructure&mdash;as well as a common language that almost any other developer, or potentially not developer can learn to read, and work with.</p>
+<p>With Swagger we now have a common way to communication around the APIs we develop, and also map out the public APIs we also depend on like Twilio, SendGrid, or even Twitter. Now what? Why do we do this? <a href="http://apievangelist.com/2014/06/05/what-are-the-incentives-for-creating-machine-readable-api-definitions/">There are an increasing number of incentives emerging for why you generate machine readable API definitions like Swagger</a>, which is part of the reason I&rsquo;m looking to further quantify the Swagger community, so I can add to the master list.</p>
+<p>Let&rsquo;s start with what I&rsquo;d consider to be the primary building blocks of Swagger, developed by the Swagger team, as part of the core offering:</p>
+<ul>
+<li><strong><a href="https://github.com/swagger-api/swagger-ui">swagger-ui </a>- </strong>Generation of interactive API documentation, which Swagger is often known for.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-codegen">swagger-codegen</a> -</strong> Generation of client code in a variety of languages using a Swagger definition.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-js">swagger-js</a> -</strong> A JavaScript library to connect to swagger-enabled APIs via browser or Node.js.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-socket">swagger-socket </a>- </strong>A REST over WebSocket tool for creating real-time integrations with Swagger.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-node-express">swagger-node-express</a> -</strong> Swagger module for Node.js w/express module</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-scala-module">swagger-scala-module</a> -</strong>&nbsp;Swagger support for Scala.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-editor">swagger-editor</a> -&nbsp;</strong>A visual editor for Swagger.      
+<ul>
+</ul>
+</li>
+</ul>
+<p>Those six repositories represent the core tooling that the Swagger team has evolved around the specification, providing what I&rsquo;d consider to be three stops along the API life cycle:</p>
+<ul>
+<li>Documentation</li>
+<li>Server Code</li>
+<li>Client Code</li>
+</ul>
+<p>Swagger is often known for its interactive API documentation (aka Swagger UI), but there has also been a lot of work done on the codegen platform, and editor, taking things well beyond just API documentation. This is just the beginning of what is possible with Swagger. In an effort to find out what else is being done with Swagger, and what is being built with the specification, I wanted to see what the community is up to, which platforms they are integrating it into, and what other standalone tooling is being built using Swagger.</p>
+<p>I want a better understanding of the core group of companies who have embraced the Swagger specification, and baked it into their own platform. I know there are hundreds of them out there, but finding them can be easier said than done, especially when I'm looking some sort of public announcement, blog post, press release, service description, to use as my reference. So far I have <strong><span style="text-decoration: underline;">49 companies</span></strong> that I&rsquo;m tracking on, who have pulled the Swagger spec, and incorporated into their own platform and infrastructure.</p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="http://www.3scale.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.3scale.net/"><strong>3scale</strong></a>&nbsp;(<a href="http://www.3scale.net/tag/swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.akana.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/akana-logo-formerly-soa.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.akana.com/"><strong>Akana</strong></a>&nbsp;(<a href="https://akana.com/news/press_detail/soa_software_eases_api_management_with_new_multi_api_description_language_s">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://activemq.apache.org/apollo/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-apollo-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://activemq.apache.org/apollo/"><strong>Apache Apollo</strong></a>&nbsp;(<a href="http://www.davsclaus.com/2014/09/66th-apache-camel-release-is-out-its.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://camel.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-camel.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://camel.apache.org/"><strong>Apache Camel</strong></a>&nbsp;(<a href="http://camel.apache.org/swagger.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apigee.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/apigee-logo.gif" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apigee.com/"><strong>Apigee</strong></a>&nbsp;(<a href="https://blog.apigee.com/taglist/swagge">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apigility.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apigility-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apigility.org/"><strong>Apigility</strong></a>&nbsp;(<a href="https://apigility.org/documentation/api-doc/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.apimatic.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apimatic-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.apimatic.io/"><strong>APIMATIC</strong></a>&nbsp;(<a href="https://www.facebook.com/apimatic/posts/94217215247839">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apis.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apis-io.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apis.io/"><strong>apis.io</strong></a>&nbsp;(<a href="http://apis.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apisjson.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apisdotjson.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apisjson.org/"><strong>APIs.json</strong></a>&nbsp;(<a href="http://apisjson.org/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.apitools.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apitools-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.apitools.com/"><strong>APItools</strong></a>&nbsp;(<a href="https://www.apitools.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://appnow.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/appnow-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://appnow.com/"><strong>AppNow</strong></a>&nbsp;(<a href="https://appnow.radarconline.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ardoq.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ardoq-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ardoq.com/"><strong>Ardoq</strong></a>&nbsp;(<a href="http://ardoq.com/visualizing-swagger-api-documentation/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.axway.com/vordel-products/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Axway_Logo_4_Color.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.axway.com/vordel-products/"><strong>Axway</strong></a>&nbsp;(<a href="https://www.axway.com/en/datasheet/axway-api-portal">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://beego.me/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/beego_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://beego.me/"><strong>Beego</strong></a>&nbsp;(<a href="http://beego.me/blog/beego_api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://catchsoftware.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/catch_logo.gif" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://catchsoftware.com/"><strong>Catch Software</strong></a>&nbsp;(<a href="http://catchsoftware.com/blogs/2013/08/get-your-swagger-on/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.cloud-elements.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cloud-elements-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.cloud-elements.com/"><strong>Cloud Elements</strong></a>&nbsp;(<a href="https://github.com/cloud-elements/doc-builder">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.django-rest-framework.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/django-rest-framework.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.django-rest-framework.org/"><strong>Django REST</strong></a>&nbsp;(<a href="http://www.django-rest-framework.org/topics/documenting-your-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.dreamfactory.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/dreamfactory.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.dreamfactory.com/"><strong>DreamFactory</strong></a>&nbsp;(<a href="http://blog.dreamfactory.com/blog/bid/294825/why-we-like-swagger-for-api-docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.elastic.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.elastic.io/"><strong>elastic.io</strong></a>&nbsp;(<a href="https://github.com/elasticio/sphereio-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.espressologic.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/esspresso-logic-logic.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.espressologic.com/"><strong>Espresso Logic</strong></a>&nbsp;(<a href="http://docs.espressologic.com/docs/live-api/api-docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.gluu.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/gluu-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.gluu.org/"><strong>Gluu</strong></a>&nbsp;(<a href="https://github.com/GluuFederation/gluu-flask">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apim.ibmcloud.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/bw-ibm-logo.jpeg" alt="" width="135" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apim.ibmcloud.com/"><strong>IBM</strong></a>&nbsp;(<a href="https://developer.ibm.com/answers/questions/27580/swagger-ui-import-and-export-in-api-management.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.magnolia-cms.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Magnolia-CMS-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.magnolia-cms.com/"><strong>Magnolia CMS</strong></a>&nbsp;(<a href="https://documentation.magnolia-cms.com/display/DOCS/REST+API#RESTAPI-SwaggerAPIexplorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://azure.microsoft.com/en-us/services/api-management/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/microsoft-azure-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://azure.microsoft.com/en-us/services/api-management/"><strong>Microsoft Azure</strong></a>&nbsp;(<a href="http://azure.microsoft.com/en-us/documentation/articles/api-management-howto-import-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://neo4j.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/neo4j-logo-2015.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://neo4j.com/"><strong>Neo4J</strong></a>&nbsp;(<a href="http://neo4j-swagger.tinj.com/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://developer.netflix.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1620_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://developer.netflix.com/"><strong>Netflix</strong></a>&nbsp;(<a href="http://www.oscon.com/oscon2014/public/schedule/detail/33481">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://nomos-software.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nomos-software-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://nomos-software.com/"><strong>Nomos Software</strong></a>&nbsp;(<a href="http://nomos-software.com/blog/swagger-ui-example">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://open311.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/open311-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://open311.org/"><strong>Open311</strong></a>&nbsp;(<a href="https://github.com/open311/swagger-open311">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.opendaylight.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/opendaylight-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.opendaylight.org/"><strong>OpenDaylight Project</strong></a>&nbsp;(<a href="https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Restconf_API_Explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.openi-ict.eu/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openi-logo.png" alt="" width="130" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.openi-ict.eu/"><strong>OPENi</strong></a>&nbsp;(<a href="https://github.com/OPENi-ict/swagger-def">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.openshift.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/200px-OpenShift-LogoType.svg.png" alt="" width="130" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.openshift.com/"><strong>OpenShift by Red Hat</strong></a>&nbsp;(<a href="https://blog.openshift.com/visualize-openshift-api-with-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://pivotal.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pivotal-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://pivotal.io/"><strong>Pivotal</strong></a>&nbsp;(<a href="http://gemfire.docs.pivotal.io/latest/userguide/gemfire_rest/using_swagger.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.getpostman.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/postman-rest-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.getpostman.com/"><strong>Postman REST Client</strong></a>&nbsp;(<a href="http://blog.getpostman.com/index.php/2014/11/17/postman-1-0-is-out-gorgeous-dark-theme-curlramlswaggerwadl-imports-performance-improvements/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.quandl.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/220px-Quandl_Logol.svg.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.quandl.com/"><strong>Quandl</strong></a>&nbsp;(<a href="https://github.com/AnCh7/FinancialCharting">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://restunited.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/rest-united.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://restunited.com/"><strong>REST United</strong></a>&nbsp;(<a href="http://restunited.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mediawiki.org/wiki/RESTBase"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/RESTBase-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mediawiki.org/wiki/RESTBase"><strong>RESTBase</strong></a>&nbsp;(<a href="https://github.com/wikimedia/swagger-router">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.restfiddle.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/RESTFiddle-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.restfiddle.com/"><strong>RESTFiddle</strong></a>&nbsp;(<a href="http://www.restfiddle.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apispark.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apispark-logo" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apispark.com/"><strong>Restlet / APISpark</strong></a>&nbsp;(<a href="http://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://getsandbox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/get-sandbox-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://getsandbox.com/"><strong>Sandbox</strong></a>&nbsp;(<a href="https://getsandbox.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://servicestack.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/service-stack.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://servicestack.net/"><strong>Service Stack</strong></a>&nbsp;(<a href="https://github.com/ServiceStack/ServiceStack/wiki/Swagger-API">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://smartbear.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/SmartBear-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://smartbear.com/"><strong>SmartBear Software</strong></a>&nbsp;(<a href="http://smartbear.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.snaplogic.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.snaplogic.com/"><strong>SnapLogic</strong></a>&nbsp;(<a href="http://video.snaplogic.com/fL5g/the-snaplogic-swagger-snap/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://strongloop.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/strongloop-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://strongloop.com/"><strong>StrongLoop</strong></a>&nbsp;(<a href="https://strongloop.com/strongblog/enterprise-api-swagger-2-0-loopback/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.synapp.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/synapp-io-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.synapp.io/"><strong>Synapp.io</strong></a>&nbsp;(<a href="http://www.synapp.io/blog/2014/11/7/putting-the-api-in-synappio">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tibco.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tibco-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tibco.com/"><strong>TIBCO Software</strong></a>&nbsp;(<a href="https://docs.tibco.com/pub/activematrix_businessworks/6.2.0/doc/html/GUID-FDE5F1A2-D4B3-4410-B8E2-2D412C00F596.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.visualstudio.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/visual-studio-2013-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.visualstudio.com/"><strong>Visual Studio</strong></a>&nbsp;(<a href="http://blogs.msdn.com/b/visualstudio/archive/2015/03/24/introducing-the-azure-api-apps-tools-for-visual-studio-2013.aspx">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.wavemaker.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/wavemaker-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.wavemaker.com/"><strong>WaveMaker, Inc.</strong></a>&nbsp;(<a href="http://www.wavemaker.com/blog/wavemaker-api-designer-brings-api-driven-development-to-custom-built-enterprise-applications/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://wso2.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/wso2-logo-white-800X360.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://wso2.com/"><strong>WSO2</strong></a>&nbsp;(<a href="http://blog.cobia.net/cobiacomm/2013/05/31/swagger-with-wso2-api-manager/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.yelp.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/536_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.yelp.com/"><strong>Yelp</strong></a>&nbsp;(<a href="https://github.com/Yelp">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This list represents a pretty interesting mix of folks who understand the potential of Swagger, and have invested in the community by making it a core part of their operations. I know there are more of these out there (a lot more), but they haven&rsquo;t talked publicly about what they are up to. This is just what I&rsquo;ve aggregated from going through the Swagger site, group, and Github repositories, and from what I already know of the API space, from my monitoring.<br /><br />After looking at the platforms who have pulled the Swagger specification into their operations, I wanted to see if I could also begin to quantify the community of APIs who have deployed Swagger UI, providing interactive API documentation for their own API platform. Since this is what Swagger is known for, I knew I would find quite a few to showcase. So far I have found 62:<br /><br /></p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="http://population.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/world-population-project.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://population.io/"><strong>World Population Project</strong></a>&nbsp;(<a href="http://api.population.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.3scale.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.3scale.net/"><strong>3scale</strong></a>&nbsp;(<a href="https://support.3scale.net/reference/active-docs#/account_management_api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://scholar.acindex.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ACI_Scholarly_Blog_Index.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://scholar.acindex.com/"><strong>ACI Blog Index</strong></a>&nbsp;(<a href="http://developer.acindex.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/api-evangelist-logo-400.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apievangelist.com/"><strong>API Evangelist</strong></a>&nbsp;(<a href="http://developer.apievangelist.com/core-apis.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.api2cart.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/api-2-cart.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.api2cart.com/"><strong>API2Cart</strong></a>&nbsp;(<a href="http://docs.api2cart.com/post/interactive-d">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://appsp.in/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/appspin_100.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://appsp.in/"><strong>AppSpin</strong></a>&nbsp;(<a href="http://docs.appsp.in/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://banckle.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/548_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://banckle.com/"><strong>Banckle</strong></a>&nbsp;(<a href="http://chat.banckle.com/api/v2.0/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.apiisn.com/betting/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/betisn-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.apiisn.com/betting/"><strong>BetISN</strong></a>&nbsp;(<a href="http://www.apiisn.com/betting/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://bitdango.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/bitdango-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://bitdango.com/"><strong>Bitdango</strong></a>&nbsp;(<a href="https://bitdango.com/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.bittitan.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/BitTitan_100.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.bittitan.com/"><strong>BitTitan</strong></a>&nbsp;(<a href="http://www.bittitan.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.callfire.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/CallFire_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.callfire.com/"><strong>CallFire</strong></a>&nbsp;(<a href="https://www.callfire.com/api-documentation/rest/version/1.1">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://carnivalmobile.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/carnival-logo-small.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://carnivalmobile.com/"><strong>Carnival Mobile</strong></a>&nbsp;(<a href="https://api.carnivalmobile.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.commercedatascience.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cdscience-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.commercedatascience.com/"><strong>CDScience</strong></a>&nbsp;(<a href="http://api.cdscience.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://citygro.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/citygro-logo-color.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://citygro.com/"><strong>CityGro</strong></a>&nbsp;(<a href="https://api.citygro.com/v1/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://citysdk.waag.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/citysdk-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://citysdk.waag.org/"><strong>CitySDK</strong></a>&nbsp;(<a href="http://dev.hel.fi/open311-test/swagger/dist/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://clarify.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/clarify-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://clarify.io/"><strong>Clarify API</strong></a>&nbsp;(<a href="http://clarify.io/docs/api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.climatechangecosts.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/textLogoClimateChange.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.climatechangecosts.com/"><strong>Climate Change Costs</strong></a>&nbsp;(<a href="http://www.climatechangecosts.com/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://getcloudify.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cloudify-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://getcloudify.org/"><strong>Cloudify</strong></a>&nbsp;(<a href="http://getcloudify.org/guide/3.0/rest-api/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.commafeed.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/commafeed-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.commafeed.com/"><strong>CommaFeed</strong></a>&nbsp;(<a href="https://www.commafeed.com/api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.concur.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Concur_Logo_HZ_Black_500px.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.concur.com/"><strong>Concur</strong></a>&nbsp;(<a href="https://www.concursolutions.com/api/docs/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://developer.datavalidation.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/data-validation-api.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://developer.datavalidation.com/"><strong>DataValidation API</strong></a>&nbsp;(<a href="https://developer.datavalidation.com/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.datumbox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/datumbox.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.datumbox.com/"><strong>Datumbox</strong></a>&nbsp;(<a href="http://www.datumbox.com/api-sandbox/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.dreamfactory.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/dreamfactory.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.dreamfactory.com/"><strong>DreamFactory</strong></a>&nbsp;(<a href="http://www.dreamfactory.com/developers/live_API">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://dronekit.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/3dr-dronekit-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://dronekit.io/"><strong>DroneKit</strong></a>&nbsp;(<a href="http://api.3drobotics.com/swagger-ui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.evercam.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/evercam-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.evercam.io/"><strong>Evercam</strong></a>&nbsp;(<a href="http://www.evercam.io/develop/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://developer.ean.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/195_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://developer.ean.com/"><strong>Expedia</strong></a>&nbsp;(<a href="https://www.expedia.com/static/mobile/swaggerui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://fanart.tv/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/logo3.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://fanart.tv/"><strong>fanart.tv</strong></a>&nbsp;(<a href="http://hermes.fanart.tv/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://formagg.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/formaggio-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://formagg.io/"><strong>Formagg.io</strong></a>&nbsp;(<a href="http://api.formagg.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://transit.geotrellis.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/GeoTrellis-Transit-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://transit.geotrellis.com/"><strong>GeoTrellis</strong></a>&nbsp;(<a href="http://transit.geotrellis.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.gettyimages.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/getty-images.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.gettyimages.com/"><strong>Getty Images</strong></a>&nbsp;(<a href="https://api.gettyimages.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://groupdocs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1066_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://groupdocs.com/"><strong>GroupDocs</strong></a>&nbsp;(<a href="http://api.groupdocs.com/v2.0/spec/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.getguru.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/guru-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.getguru.com/"><strong>Guru</strong></a>&nbsp;(<a href="http://help.getguru.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://habitrpg.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/habitrpg_pixel.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://habitrpg.com/"><strong>HabitRPG</strong></a>&nbsp;(<a href="https://habitrpg.com/static/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://hapijs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/hapi-js-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://hapijs.com/"><strong>hapi.js</strong></a>&nbsp;(<a href="http://hapijs.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://kubernetes.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kubernetes-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://kubernetes.io/"><strong>Kubernetes</strong></a>&nbsp;(<a href="http://kubernetes.io/third_party/swagger-ui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://gameinfo.na.leagueoflegends.com/en/game-info/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/League_of_legends_logo_transparent.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://gameinfo.na.leagueoflegends.com/en/game-info/"><strong>League of Legends</strong></a>&nbsp;(<a href="http://na.lolesports.com/api/swagger#!/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://na.lolesports.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/league-of-legends-esports.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://na.lolesports.com/"><strong>League of Legends eSports</strong></a>&nbsp;(<a href="http://na.lolesports.com/api/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.likibu.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/likibu-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.likibu.com/"><strong>Likibu</strong></a>&nbsp;(<a href="http://api.likibu.com/doc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mobovivo.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Mobovivo_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mobovivo.com/"><strong>Mobovivo</strong></a>&nbsp;(<a href="http://swagger-intel.mobovivo.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://openbadges.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mozilla-open-badges-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://openbadges.org/"><strong>Mozilla Open Badges</strong></a>&nbsp;(<a href="http://directory.openbadges.org/developers/api-explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.muckrock.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/muckrock_medium.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.muckrock.com/"><strong>MuckRock</strong></a>&nbsp;(<a href="https://www.muckrock.com/api_doc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.getmyfox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/myfox-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.getmyfox.com/"><strong>MyFox</strong></a>&nbsp;(<a href="https://api.myfox.me/dev/documentation">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://myneighbor.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/myneighbor-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://myneighbor.com/"><strong>MyNeighbor</strong></a>&nbsp;(<a href="http://api.myneighbor.com/docs/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mysms.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mysms-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mysms.com/"><strong>MySMS</strong></a>&nbsp;(<a href="https://api.mysms.com/swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://pingup.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pingup-logo-horizontal-preview.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://pingup.com/"><strong>Pingup</strong></a>&nbsp;(<a href="http://developers.pingup.com/#api-explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.popuparchive.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/popuparchive-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.popuparchive.com/"><strong>Pop Up Archive</strong></a>&nbsp;(<a href="https://developer.popuparchive.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.spacexplore.it/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Project-Chronos-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.spacexplore.it/"><strong>Project Chronos</strong></a>&nbsp;(<a href="http://www.spacexplore.it/api/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.ptisp.pt/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ptisp-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.ptisp.pt/"><strong>PTisp</strong></a>&nbsp;(<a href="http://api.ptisp.pt/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://puppetlabs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/puppet-labs-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://puppetlabs.com/"><strong>Puppet Labs</strong></a>&nbsp;(<a href="https://forgeapi.puppetlabs.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://qi-bench.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/qi-bench.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://qi-bench.org/"><strong>QI Bench</strong></a>&nbsp;(<a href="http://api.qi-bench.org/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.rackspace.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/rackspace-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.rackspace.com/"><strong>Rackspace</strong></a>&nbsp;(<a href="http://rackerlabs.github.io/wadl2swagger/rackspace.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://reliefweb.int/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/reliefweb-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://reliefweb.int/"><strong>ReliefWeb</strong></a>&nbsp;(<a href="http://apidoc.rwlabs.org/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://sensr.net/api"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/924_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://sensr.net/api"><strong>Sensr.net</strong></a>&nbsp;(<a href="https://api.sensr.net/doc/v3/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://shoeboxed.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/480_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://shoeboxed.com/"><strong>Shoeboxed</strong></a>&nbsp;(<a href="https://api.shoeboxed.com/v2/explorer/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://skimlinks.com/skimlinks"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/933_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://skimlinks.com/skimlinks"><strong>Skimlinks</strong></a>&nbsp;(<a href="https://skimlinks-pi.3scale.net/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://subledger.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/subledger.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://subledger.com/"><strong>Subledger</strong></a>&nbsp;(<a href="https://api.subledger.com/v2/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tadaweb.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tadaweb-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tadaweb.com/"><strong>TaDaweb</strong></a>&nbsp;(<a href="https://api.tadaweb.com/v1/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.taxamo.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Taxamo_logo-copy.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.taxamo.com/"><strong>taxamo</strong></a>&nbsp;(<a href="https://api.taxamo.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://theresumator.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/resumator-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://theresumator.com/"><strong>The Resumator</strong></a>&nbsp;(<a href="http://www.resumatorapi.com/v1/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.gov.uk/government/organisations/uk-commission-for-employment-and-skills"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/uk-commission-for-employment-and-skills.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.gov.uk/government/organisations/uk-commission-for-employment-and-skills"><strong>UK Commission for Employment and Skills</strong></a>&nbsp;(<a href="http://api.lmiforall.org.uk/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.wordnik.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/wordnik-logo-131gihv.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.wordnik.com/"><strong>Wordnik</strong></a>&nbsp;(<a href="http://developer.wordnik.com/docs.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://yunohost.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/YunoHost-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://yunohost.org/"><strong>YunoHost</strong></a>&nbsp;(<a href="http://api.yunohost.org/">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table><p>Finding websites that have implemented Swagger UI is harder than you think. There are only three search engines I could find that let you search the source code of websites for JavaScript files and code. Ultimately I ended up mostly depending on my own ability to find new APIs, and manually uncover whether or not Swagger was actually in use. I&rsquo;m working on a stack of Swagger and API Blueprint discovery search engines, but they aren&rsquo;t quite ready for this dive.<br /><br />Next I wanted to look through some of the tooling that has evolved as part of the Swagger community, which Github is definitely the place to begin this journey. <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=swagger">When you search Github for the word Swagger, you get almost 1000 repositories</a>. I was going to programmatically explore these results, but found that manually browsing through them was the best path to take, allowing me to make a decision on what each developer was up to.<br /><br />The one thing I learned doing through this process&mdash;Swagger means many different things, to many different people. Most refer to Swagger, and mean Swagger UI, while others refer to it as generating server side code, or maybe client side code. Moving forward, there needs to be a lot of work done helped educate people about first, what Swagger is, a specification, and what are&nbsp; each of the areas of tooling that are built on top of the Swagger specification.<br /><br />Even after looking through the almost 1000 Swagger related Github projects, things are still very hazy for me, but I did learn a lot along the way, about what languages, frameworks and platforms developers are using Swagger, and the types of tools and integrations they are developing.</p>
+<p>The best way to look at all of these projects is by language&mdash;here is the Github breakdown.</p>
+<ul>
+<li>411 JavaScript</li>
+<li>135 Java</li>
+<li>61 Ruby</li>
+<li>41 Python</li>
+<li>32 PHP</li>
+<li>31 Scala</li>
+<li>22 C#</li>
+<li>17 Shell</li>
+<li>13 Clojure</li>
+<li>8 Groovy</li>
+</ul>
+<p>This isn&rsquo;t accurate, because many of the JavaScript repositories are actually other languages. I forget to make sure Github knows what language a repo is sometimes too. Regardless, it gives you an idea of which programming languages developers are using to work with Swagger&mdash;one layer to look consider.<br /><br />Beyond the programming languages I want to know which platforms and frameworks developers are applying Swagger. Here are 36 frameworks and platforms I&rsquo;ve identified so far.</p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="https://angularjs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/AngularJS_logo.svg.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://angularjs.org/"><strong>AngularJS</strong></a>&nbsp;(<a href="http://github.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ant.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-ant.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ant.apache.org/"><strong>Apache Ant</strong></a>&nbsp;(<a href="http://github.com/cstroe/swagger-ant-task/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://camel.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-camel.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://camel.apache.org/"><strong>Apache Camel</strong></a>&nbsp;(<a href="http://github.com/myfear/CamelEE7RestSwagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://maven.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-maven.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://maven.apache.org/"><strong>Apache Maven</strong></a>&nbsp;(<a href="http://github.com/kongchen/swagger-maven-plugin/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://wink.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Apache_Wink_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://wink.apache.org/"><strong>Apache Wink</strong></a>&nbsp;(<a href="http://github.com/zouzias/swagger-jaxrs-wink/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.arangodb.com/foxx"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/arangodb_logo2.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.arangodb.com/foxx"><strong>ArangoDB Foxx</strong></a>&nbsp;(<a href="http://github.com/arangodb/foxx-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.npmjs.com/package/backbone-rest"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/backbone-rest.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.npmjs.com/package/backbone-rest"><strong>BackboneREST</strong></a>&nbsp;(<a href="http://github.com/robblovell/backbone-rest-swagger-example/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://cakephp.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cake-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://cakephp.org/"><strong>CakePHP</strong></a>&nbsp;(<a href="http://github.com/dave-newson/cakephp-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ckan.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ckan-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ckan.org/"><strong>CKAN</strong></a>&nbsp;(<a href="http://github.com/deepviator/ckan-integrate-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.django-rest-framework.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/django-rest-framework.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.django-rest-framework.org/"><strong>Django REST</strong></a>&nbsp;(<a href="http://github.com/avinash240/django-rest-framework-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://django-tastypie.readthedocs.org/en/latest/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tastypie2.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://django-tastypie.readthedocs.org/en/latest/"><strong>Django Tastypie</strong></a>&nbsp;(<a href="http://github.com/concentricsky/django-tastypie-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.elasticsearch.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1910_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.elasticsearch.org/"><strong>elasticsearch</strong></a>&nbsp;(<a href="http://github.com/timschlechter/swagger-for-elasticsearch/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://expressjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/express-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://expressjs.com/"><strong>Express</strong></a>&nbsp;(<a href="http://github.com/krakenjs/swaggerize-express/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://feathersjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/feathers-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://feathersjs.com/"><strong>Feathers</strong></a>&nbsp;(<a href="http://github.com/Glavin001/feathers-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://flask.pocoo.org/docs/0.10/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/flask-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://flask.pocoo.org/docs/0.10/"><strong>Flask</strong></a>&nbsp;(<a href="http://github.com/martinp/flask-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/bw-github.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Flask MongoRest</strong></a>&nbsp;(<a href="http://github.com/matchbox/flask-mongorest-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://flask-restful.readthedocs.org/en/0.3.2/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/flask-restful-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://flask-restful.readthedocs.org/en/0.3.2/"><strong>Flask Restful</strong></a>&nbsp;(<a href="http://github.com/rantav/flask-restful-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/gradle.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Gradle</strong></a>&nbsp;(<a href="http://github.com/dave-ellis/gradle-swagger-plugin">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grails-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Grails</strong></a>&nbsp;(<a href="http://github.com/alvarosanchez/grails-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://intridea.github.io/grape/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grape-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://intridea.github.io/grape/"><strong>Grape</strong></a>&nbsp;(<a href="http://github.com/tim-vandecasteele/grape-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://gruntjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grunt-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://gruntjs.com/"><strong>Grunt</strong></a>&nbsp;(<a href="http://github.com/tmalbonph/grunt-swagger-tools/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://guzzle.readthedocs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/guzzle-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://guzzle.readthedocs.org/"><strong>Guzzle</strong></a>&nbsp;(<a href="http://github.com/oco/swizzle/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://jersey.java.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/jersey-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://jersey.java.net/"><strong>Jersey</strong></a>&nbsp;(<a href="http://github.com/salimane/java-jersey2/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://laravel.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/laravel-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://laravel.com/"><strong>Laravel</strong></a>&nbsp;(<a href="http://github.com/slampenny/Swaggervel/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.linqpad.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/linqpad-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.linqpad.net/"><strong>LINQPad</strong></a>&nbsp;(<a href="http://github.com/dylanmei/linqpad-swagger-driver/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.mongodb.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mongodb.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.mongodb.org/"><strong>MongDB</strong></a>&nbsp;(<a href="http://github.com/dgiul/node-swagger-express-mongodb/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://nancyfx.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nancy-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://nancyfx.org/"><strong>Nancy</strong></a>&nbsp;(<a href="http://github.com/khellang/Nancy.Swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.pylonsproject.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pyramid-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.pylonsproject.org/"><strong>Pyramid</strong></a>&nbsp;(<a href="http://github.com/striglia/pyramid_swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://developer.salesforce.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/salesforce-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://developer.salesforce.com/"><strong>Salesforce</strong></a>&nbsp;(<a href="http://github.com/thysmichels/force.com-swagger-rest-spring-mvc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/sequelize-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Sequelize</strong></a>&nbsp;(<a href="https://github.com/mathisonian/swaggerize">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://silex.sensiolabs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/silex-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://silex.sensiolabs.org/"><strong>Silex</strong></a>&nbsp;(<a href="http://github.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.sinatrarb.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/sinatra-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.sinatrarb.com/"><strong>Sinatra</strong></a>&nbsp;(<a href="http://github.com/jphastings/sinatra-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://spring.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/spring-by-pivotal.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://spring.io/"><strong>Spring</strong></a>&nbsp;(<a href="http://github.com/wkennedy/swagger4spring-web/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://symfony.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/symfony-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://symfony.com/"><strong>Symfony</strong></a>&nbsp;(<a href="http://github.com/creads/api2symfony-bundle/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tornadoweb.org/en/stable/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tornado-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tornadoweb.org/en/stable/"><strong>Tornado-JSON</strong></a>&nbsp;(<a href="http://github.com/andyno/tornado-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://github.com/ryanuber/veneer"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/veneer-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://github.com/ryanuber/veneer"><strong>Veneer</strong></a>&nbsp;(<a href="http://github.com/ryanuber/veneer-swagger/">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond the programming languages, frameworks, and platform integrations I&rsquo;m looking to also understand the types of tools developers are actually building, and take Swagger beyond what the core development team, and working group could do. It is hard to understand the objectives of each of the developer projects I came across, but here are the X areas I&rsquo;ve identified so far:</p>
+<ul>
+<li>Converter</li>
+<li>Generator</li>
+<li>Parser</li>
+<li>Schema</li>
+<li>Validator</li>
+<li>Server</li>
+<li>Command-Line</li>
+<li>Powershell</li>
+<li>Client</li>
+<li>Proxy Generator</li>
+<li>Aggregator</li>
+<li>Tester</li>
+</ul>
+<p>This added a couple stops along the API life cycle for me, that Swagger is serving. I hadn&rsquo;t envisioned a Swagger powered CLI or Powershell tool. I&rsquo;ve only lightly thought about proxies, and aggregators driven by Swagger. When you bundle this with the platforms above who have integrated Swagger into their products and services, it starts to paint an even bigger picture of what is possible with Swagger.<br /><br />I think I&rsquo;m going to wrap up this dive into the Swagger ecosystem here. I still have all of the contributors, watchers, and people who have forked the core Swagger products, and well as many of the people involved in Swagger discussions via the Swagger Google Group and Twitter account to consider. Plus I think this article will flush out some other projects that are out there, being executed by my readers. Storytelling along the way is the best way to flush out hidden details in my opinion, and is one of the main reasons I&rsquo;m so transparent--I depend on people emailing and tweeting at me about stuff.<br /><br />This exercise has given me a new perspective on the Swagger community, and introduced me to some new companies, and tools. If you are doing anything cool with Swagger, please let me know, and I&rsquo;ll add it <a href="http://swagger.apievangelist.com/">to my research</a>. Remember, if you don&rsquo;t tell the story about what your are doing with APIs, nobody knows, including me&mdash;API evangelism 101. This is just my first attempt to better quantify the Swagger community, and I&rsquo;m happy to include what you are up to in future updates.</p>
