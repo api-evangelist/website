@@ -3,358 +3,150 @@ layout: default
 title: API Evangelist
 ---
 
-<p style="font-size: 14px; padding:5px;">My name is Kin Lane, the API Evangelist, and this is my domain, where I work to better understand the world of the Application Programming Interface, or just API. APIs are touching almost every aspect of our increasingly digital lives, providing access to the bits and bytes that make our personal and professional worlds work. I work daily to publish the news, organizations, individuals, tools, and other common patterns I come across as part of my research. You can stay in tune here on the home page of API Evangelist, or via Twitter at <a href="https://twitter.com/kinlane">@kinlane</a>, and <a href="https://twitter.com/apievangelist">@apievangelist</a>.</p>
-<p align="center"><a href="http://101.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-101.png" width="275" /></a></p>
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>I am Kin Lane, the API Evangelist...</h2>
+		</header>
+		<p>This is my online domain where I work to understand the world of the Application Programming Interfaces, also known as APIs. This new way of sharing data using the web is touching almost every aspect of our increasingly digital lives, providing access to the bits and bytes that make our personal and professional worlds go round.</p>
+		<p>API Evangelist is my full time research into how APIs are impacting our worlds (both good and bad), where I work to better understand the technology, business, and politics of the APIs that are driving our websites, mobile, and devices that seem to be everywhere.</p>
+		<p>API Evangelist is a network of data driven projects and APIs which I curate and manage as part of this ongoing research, hoping to provide easy access to the moving parts of my work. Everything you see here runs on Github, making everything forkable, and resuable for both humans and machines.</p>
+	</div>
+	<span class="image object">
+		<img src="/images/kin-lane-api-evangelist-cartoon.png" alt="" width="25%" />
+	</span>
+</section>
 
-<style>
-.lifecycle{
-	width: 600px;
-	display: inline;
-	list-style-type: none;
-	float: left;
-	margin: 0px 0px 0px 125px;
-	padding: 10px;
-}
+<!-- Section -->
+	<section>
+		<header>
+			<h2>API Evangelist Partners</h2>
+			<p>These are my partners who invest in API Evangelist each month, helping underwrite my research, and making sure I'm able to keep monitoring the API space as I do.</p>
+		</header>
+		<div class="features">
+			{% assign partners = site.data.partners | sort: 'view_sort' %}
+	    {% for partner in partners %}
+	      {% if partner.type == 'Sponsor' %}
+				<article>
+					<p><img src="{{ partner.image }}" width="75%" style="padding: 15px;" align="center" /></p>
+					<div class="content">
+						<h3><a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a></h3>
+						<p>{{ partner.description }}</p>
+					</div>
+				</article>
+	      {% endif %}
+	    {% endfor %}
+		</div>
+	</section>
 
-.lifecycle li{
-height: 125px;
-font-size: 24px;
-}
+{% for post in site.posts limit:1 %}
+	<section id="banner">
+		<div class="content">
+			<header>
+				<h2>Latest From Blog: {{ post.title }}</h2>
+				<p><em>{{ post.date | date_to_string }}</em></p>
+			</header>
+			{{ post.content }}
+			<ul class="actions" style="text-align: center;">
+				<li><a href="/blog/" class="button big">Read The Blog</a></li>
+			</ul>
+		</div>
+	</section>
+{% endfor %}
 
-.lifecycle img{
-margin-left: 8px;
-margin-right: 15px;
-}
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1><a href="http://101.apievangelist.com">API 101</a></h1>
+		</header>
+		<p>I have a lot of information regarding APIs on my network of sites, but I'm always trying to make sure I have a sufficient amount of 101, or getting started information for people who are just learning what an API is, and what is possible.</p>
+		<p>I have some information available to help walk you through the concept of an API, and how they have been expanding over the last 15 years across all the online services you have become familiar with on the web and mobile phone.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="http://101.apievangelist.com" class="button big">Getting Started With APIs</a></li>
+		</ul>
+	</div>
+	<span class="image object">
+		<img src="/images/api-101-square.png" alt="" width="25%" />
+	</span>
+</section>
 
-.tools{
-	width: 600px;
-	display: inline;
-	list-style-type: none;
-	float: left;
-	margin: 0px 0px 0px 100px;
-	padding: 10px;
-}
+<section id="banner">
+	<span class="image object">
+		<a href="/api-lifecycle/"><img src="/images/api-lifecycle-square.png" alt="" width="25%" /></a>
+	</span>
+	<div class="content">
+		<header>
+			<h1><a href="/api-lifecycle/">API Lifecycle Research</a></h1>
+		</header>
+		<p>I spend most of my time studying how API providers are approaching the technology, business, and politics of their API operations. This work began understanding mostly the technology and business of API management in 2010, but after seven years it has spread to over 70 areas of what I see as the API lifecycle.</p>
+		<p>This research reflects what API providers should be considering, but is extracted from the best (and worst) practices of the leading API providers out there. Because this is APIs, most of the services I cover as part of my API life cycle research also have APIs, allowing API infrastructure to be managed using APIs, adding an entirely new dimension to the conversation.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="/api-lifecycle/" class="button big">View API Lifecycle Research</a></li>
+		</ul>
+	</div>
+</section>
 
-.tools li{
-	height: 125px;
-	font-size: 24px;
-}
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1><a href="/api-stack/">API Stack Research</a></h1>
+		</header>
+		<p>I have looked at thousands of APIs conducting my API lifecycle research over the last seven years. Many of these APIs aren't worth noting, but the ones that are get included in my API Stack research, where I dive deeper into understanding the common building blocks of their operations, and spend more time profiling their APIs, and supporting operations.</p>
+		<p>You will find that I tend to study and research APIs I find interesting, or are beneficial to the world of technology. I tend to give equal time understanding organizational, instutions, government agencies, as well as the startups, SMB, SME, and enterprises that seem to dominate the conversation. While I do invest considerable resources in API definitions and discovery, and provide a rich catalog, I'm more interested in this work feeding my wider research and storytelling over actually being an API search engine or directory.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="/api-stack/" class="button big">View API Stack Research</a></li>
+		</ul>
+	</div>
+	<span class="image object">
+		<a href="/api-stack/"><img src="/images/stacks-square.png" alt="" width="25%" /></a>
+	</span>
+</section>
 
-.tools img{
-margin-left: 8px;
-}
+<section id="banner">
+	<span class="image object">
+		<a href="/products/"><img src="/images/product-square.png" alt="" width="25%" /></a>
+	</span>
+	<div class="content">
+		<header>
+			<h1><a href="/products/">Products</a></h1>
+		</header>
+		<p>In the world of API Evangelist I have long said that I do not have any products to sell, something that makes me more vendor agnostic. This is something that has shifted over time, and I've begun to define some "products" derived from my research. I work to publish API industry guides to the most mature areas of my research, helping people better navigate each of the areas of the API industry.</p>
+		<p>I'll keep publishing more API guides, and white papers, but I'm also hoping to develop new product lines of videos, lessons, audio, templates, and other useful things that my readers can also become customers. In coming years I'm hoping to expand and diversify how I fund my work to include a variety of products that hopefully folks will find valuable.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="/products/" class="button big">View Products</a></li>
+		</ul>
+	</div>
+</section>
 
-</style>
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1><a href="/services/">Services</a></h1>
+		</header>
+		<p>50% of my reveneu comes from consulting. I take my awarness generated by my research into 70+ areas of the API lifecycle and help companies, organizations, institutions, and government agencies evolve their own efforts. I do not manage API operations for anyone (well, except my own), but will help invest developing a team, or increasing the capacity of an existing internal team.</p>
+		<p>My services are derived from the requests I get regularly from my readers. It is a list I'm constantly evolving and shifting based upon where the API space is going, and what the demand is on the ground with API providers and consumers. If you need some help, take a look at the list of services I have, then feel free to reach out. If nothing else, I'd love to hear where you are in your journey, so maybe start by writing a quick snapshot of who you are, and what you are doing and send my way.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="/services/" class="button big">View Services</a></li>
+		</ul>
+	</div>
+	<span class="image object">
+		<a href="/services/"><img src="/images/services-square.png" alt="" width="25%" /></a>
+	</span>
+</section>
 
-<ul class="lifecycle">
-<li>
-	<a href="http://definitions.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" width="100" /></a>
-	<a href="http://definitions.apievangelist.com">Definitions</a>
-</li>
-<li>
-	<a href="http://design.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png" width="100" /></a>
-	<a href="http://design.apievangelist.com">Design</a>
-</li>
-<li>
-	<a href="http://hypermedia.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hypermedia.png" width="100" /></a>
-	<a href="http://hypermedia.apievangelist.com">Hypermedia</a>
-</li>
-<li>
-	<a href="http://dns.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-globe.png" width="100" /></a>
-	<a href="http://dns.apievangelist.com">Domain Name System (DNS)</a>
-</li>
-<li>
-	<a href="http://low.hanging.fruit.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-grapes.png" width="100" /></a>
-	<a href="http://low.hanging.fruit.apievangelist.com/">Low Hanging Fruit</a>
-</li>
-<li>
-	<a href="http://scraping.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-scraping.png" width="100" /></a>
-	<a href="http://scraping.apievangelist.com">Scraping</a>
-</li>
-<li>
-	<a href="http://database.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database.png" width="100" /></a>
-	<a href="http://database.apievangelist.com">Database</a>
-</li>
-<li>
-	<a href="http://deployment.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment-2.jpg" width="100" /></a>
-	<a href="http://deployment.apievangelist.com">Deployment</a>
-</li>
-<li>
-	<a href="http://algorithms.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-algorithms.png" width="100" /></a>
-	<a href="http://algorithms.apievangelist.com">Algorithms</a>
-</li>
-<li>
-	<a href="http://proxy.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-proxy.png" width="100" /></a>
-	<a href="http://proxy.apievangelist.com">Proxy</a>
-</li>
-<li>
-	<a href="http://virtualization.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtulization.png" width="100" /></a>
-	<a href="http://virtualization.apievangelist.com">Virtualization</a>
-</li>
-<li>
-	<a href="http://containers.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shipping-container.png" width="100" /></a>
-	<a href="http://containers.apievangelist.com">Containers</a>
-</li>
-<li>
-	<a href="http://serverless.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-serverless.png" width="100" /></a>
-	<a href="http://serverless.apievangelist.com">Serverless</a>
-</li>
-<li>
-	<a href="http://management.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tools.png" width="100" /></a>
-	<a href="http://management.apievangelist.com">Management</a>
-</li>
-<li>
-	<a href="http://portal.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.png" width="100" /></a>
-	<a href="http://portal.apievangelist.com/">Portal</a>
-</li>
-<li>
-	<a href="http://getting-started.apievangelist.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="100" /></a>
-	<a href="http://getting-started.apievangelist.com">Getting started</a>
-</li>
-<li>
-	<a href="http://documentation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-documentation.png" width="100" /></a>
-	<a href="http://documentation.apievangelist.com">Documentation</a>
-</li>
-<li>
-	<a href="http://frequently-asked-questions.apievangelist.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="100" /></a>
-	<a href="http://frequently-asked-questions.apievangelist.com">Frequently Asked Questions</a>
-</li>
-<li>
-	<a href="http://support.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png" width="100" /></a>
-	<a href="http://support.apievangelist.com">Support</a>
-</li>
-<li>
-	<a href="http://communications.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-chat.png" width="100" /></a>
-	<a href="http://communications.apievangelist.com">Communication</a>
-</li>
-<li>
-	<a href="http://road-map.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-roadmap.png" width="100" /></a>
-	<a href="http://road-map.apievangelist.com">Road Map</a>
-</li>
-<li>
-	<a href="http://issues.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="100" /></a>
-	<a href="http://issues.apievangelist.com">Issues</a>
-</li>
-<li>
-	<a href="http://change-log.apievangelist.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="100" /></a>
-	<a href="http://change-log.apievangelist.com">Change Log</a>
-</li>
-<li>
-	<a href="http://monitoring.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png" width="100" /></a>
-	<a href="http://monitoring.apievangelist.com">Monitoring</a>
-</li>
-<li>
-	<a href="http://testing.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png" width="100" /></a>
-	<a href="http://testing.apievangelist.com">Testing</a>
-</li>
-<li>
-	<a href="http://performance.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png" width="100" /></a>
-	<a href="http://performance.apievangelist.com">Performance</a>
-</li>
-<li>
-	<a href="http://authentication.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication-2.png" width="100" /></a>
-	<a href="http://authentication.apievangelist.com">Authentication</a>
-</li>
-<li>
-	<a href="http://encryption.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png" width="100" /></a>
-	<a href="http://encryption.apievangelist.com">Encryption</a>
-</li>
-<li>
-	<a href="http://vulnerabilities.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-vulnerabilities.png" width="100" /></a>
-	<a href="http://vulnerabilities.apievangelist.com">Vulnerabilities</a>
-</li>
-<li>
-	<a href="http://security.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png" width="70" /></a>
-	<a href="http://security.apievangelist.com">Security</a>
-</li>
-<li>
-	<a href="http://terms-of-service.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-terms-of-use.png" width="100" /></a>
-	<a href="http://terms-of-service.apievangelist.com">Terms of Services (TOS)</a>
-</li>
-<li>
-	<a href="http://privacy.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-privacy.png" width="100" /></a>
-	<a href="http://privacy.apievangelist.com">Privacy</a>
-</li>
-<li>
-	<a href="http://transparency.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-transparency.jpg" width="100" /></a>
-	<a href="http://transparency.apievangelist.com">Transparency</a>
-</li>
-<li>
-	<a href="http://licensing.apievangelist.com"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-licensing-stack.png" width="100" /></a>
-	<a href="http://licensing.apievangelist.com">Licensing</a>
-</li>
-<li>
-	<a href="http://branding.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-brand.png" width="100" /></a>
-	<a href="http://branding.apievangelist.com">Branding</a>
-</li>
-<li>
-	<a href="http://surveillance.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-surveillance-camera.jpg" width="100" /></a>
-	<a href="http://surveillance.apievangelist.com">Surveillance</a>
-</li>
-<li>
-	<a href="http://cybersecurity.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-cybersecurity.png" width="100" /></a>
-	<a href="http://cybersecurity.apievangelist.com">Cybersecurity</a>
-</li>
-<li>
-	<a href="http://regulation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation.png" width="100" /></a>
-	<a href="http://regulation.apievangelist.com">Regulation</a>
-</li>
-<li>
-	<a href="http://patents.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png" width="100" /></a>
-	<a href="http://patents.apievangelist.com">Patents</a>
-</li>
-<li>
-	<a href="http://discovery.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png" width="100" /></a>
-	<a href="http://discovery.apievangelist.com">Discovery</a>
-</li>
-<li>
-	<a href="http://client.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png" width="100" /></a>
-	<a href="http://client.apievangelist.com">Client</a>
-</li>
-<li>
-	<a href="http://command-line-interface.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-command-line.png" width="100" /></a>
-	<a href="http://command-line-interface.apievangelist.com">Command Line Interface (CLI)</a>
-</li>
-<li>
-	<a href="http://bots.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-robots.jpeg" width="100" /></a>
-	<a href="http://bots.apievangelist.com">Bots</a>
-</li>
-<li>
-	<a href="http://internet-of-things.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-iot.png" width="100" /></a>
-	<a href="hhttp://internet-of-things.apievangelist.com">Internet of Things (IoT)</a>
-</li>
-<li>
-	<a href="http://industrial.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-industrial.png" width="100" /></a>
-	<a href="http://industrial.apievangelist.com">Industrial</a>
-</li>
-<li>
-	<a href="http://network.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-network.png" width="100" /></a>
-	<a href="http://network.apievangelist.com">Network</a>
-</li>
-<li>
-	<a href="http://ide.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ide.png" width="100" /></a>
-	<a href="http://ide.apievangelist.com">Integrated Development Environment (IDE)</a>
-</li>
-<li>
-	<a href="http://sdk.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sdk.png" width="100" /></a>
-	<a href="http://sdk.apievangelist.com">Software Development Kit (SDK)</a>
-</li>
-<li>
-	<a href="http://embeddable.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/bw-embeddable.png" width="100" /></a>
-	<a href="http://embeddable.apievangelist.com">Embeddable</a>
-</li>
-<li>
-	<a href="http://visualization.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-visualization.png" width="100" /></a>
-	<a href="http://visualization.apievangelist.com">Visualization</a>
-</li>
-<li>
-	<a href="http://analysis.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analysis.png" width="100" /></a>
-	<a href="http://analysis.apievangelist.com">Analysis</a>
-</li>
-<li>
-	<a href="http://webhooks.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/webhooks.png" width="100" /></a>
-	<a href="http://webhooks.apievangelist.com">Webhooks</a>
-</li>
-<li>
-	<a href="http://logging.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging.png" width="100" /></a>
-	<a href="http://logging.apievangelist.com">Logging</a>
-</li>
-<li>
-	<a href="http://aggregation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png" width="90" /></a>
-	<a href="http://aggregation.apievangelist.com">Aggregation</a>
-</li>
-<li>
-	<a href="http://ipaas.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reciprocity2.png" width="100" /></a>
-	<a href="http://ipaas.apievangelist.com">iPaaS</a>
-</li>
-<li>
-	<a href="http://orchestration.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-orchestration.png" width="100" /></a>
-	<a href="http://orchestration.apievangelist.com">Orchestration</a>
-</li>
-<li>
-	<a href="http://realtime.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-real-time.png" width="100" /></a>
-	<a href="http://realtime.apievangelist.com">Real Time</a>
-</li>
-<li>
-	<a href="http://voice.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-microphone.png" width="100" /></a>
-	<a href="http://voice.apievangelist.com">Voice</a>
-</li>
-<li>
-	<a href="http://spreadsheets.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-excel-icon.jpg" width="100" /></a>
-	<a href="http://spreadsheets.apievangelist.com">Spreadsheets</a>
-</li>
-<li>
-	<a href="http://investment.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-investment.png" width="100" /></a>
-	<a href="http://investment.apievangelist.com">Investment</a>
-</li>
-<li>
-	<a href="http://monetization.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gears-questions.png" width="100" /></a>
-	<a href="http://monetization.apievangelist.com">Monetization</a>
-</li>
-<li>
-	<a href="http://plans.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-plan.png" width="100" /></a>
-	<a href="http://plans.apievangelist.com">Plans</a>
-</li>
-<li>
-	<a href="http://partners.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-partner.png" width="100" /></a>
-	<a href="http://partners.apievangelist.com">Partners</a>
-</li>
-<li>
-	<a href="http://acquisitions.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-acquisitions.png" width="100" /></a>
-	<a href="http://acquisitions.apievangelist.com">Acquisitions</a>
-</li>
-<li>
-	<a href="http://evangelism.apievangelist.com"><img src="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" width="100" /></a>
-	<a href="http://evangelism.apievangelist.com">Evangelism</a>
-</li>
-<li>
-	<a href="http://showcase.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-spotlights.png" width="100" /></a>
-	<a href="http://showcase.apievangelist.com">Showcase</a>
-</li>
-<li>
-	<a href="http://deprecation.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" width="100" /></a>
-	<a href="http://deprecation.apievangelist.com">Deprecation</a>
-</li>
-</ul>
-<br style="clear: both;">
-<ul class="tools">
-		<li>
-			<strong>Some Micro Tools I Have Built</strong>
-		</li>
-		<li>
-			<a href="http://kinlane.github.io/csv-converter/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csv.png" width="100" /></a>
-			<a href="http://kinlane.github.io/csv-converter/">CSV to JSON Converter</a>
-		</li>
-		<li>
-			<a href="http://minimum.viable.api.operations.definition.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tools.png" width="100" /></a>
-			<a href="http://minimum.viable.api.operations.definition.apievangelist.com/">Minimum Viable API Operations Definition</a>
-		</li>
-		<li>
-			<a href="http://create.your.first.apis.json.file.tools.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" width="100" /></a>
-			<a href="http://create.your.first.apis.json.file.tools.apievangelist.com/">Create Your First APIs.json File</a>
-		</li>
-		<li>
-			<a href="http://create.your.first.apis.json.file.minimal.tools.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" width="100" /></a>
-			<a href="http://create.your.first.apis.json.file.minimal.tools.apievangelist.com">Create Your First APIs.json File (minimum viable)</a>
-		</li>
-		<li>
-			<a href="http://apis.json.subscribe.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" width="100" /></a>
-			<a href="http://apis.json.subscribe.apievangelist.com/">APIs.json Subscriptions</a>
-		</li>
-		<li>
-			<a href="http://apis.json.annotation.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" width="100" /></a>
-			<a href="http://apis.json.annotation.apievangelist.com/">APIs.json Annotations</a>
-		</li>
-		<li>
-			<a href="https://api-evangelist-tools.github.io/api-design-guide/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png" width="100" /></a>
-			<a href="https://api-evangelist-tools.github.io/api-design-guide/">API Design Stylebook Builder</a>
-		</li>
-		<li>
-			<a href="http://openapi.toolbox.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/openapi-spec/openapi-spec-icon.png" width="100" /></a>
-			<a href="http://openapi.toolbox.apievangelist.com/">OpenAPI Spec Toolbox</a>
-		</li>
-	</ul>
-
-	<br style="clear: both;"/>
-	<p>It is important to remember, that all of my research sites, are actually machine readable projects, that run as Github repositories, and as I research the space, and gather more information, I publish to different areas. My research is constantly evolving, and being updated, and as you navigate my research, you are walking through my live workshop.</p>
-	<p>If you find a mess anywhere, please let me know via the Github issues for each project, or via Twitter and email if you need.</p>
+<section id="banner">
+	<span class="image object">
+		<a href="/tools/"><img src="/images/tools-square.png" alt="" width="25%" /></a>
+	</span>
+	<div class="content">
+		<header>
+			<h1><a href="/tools/">Tools</a></h1>
+		</header>
+		<p>I am a programmer. I have over 30 years of experience programming. Even though I do not currently own any production environment, or technology products, beyond operating my own infrastructure, I still can't help myselft when it comes to developing micro apps. I really enjoy developing simple, usually standalone JavaScript applications that run 100% on Github using Jekyll, and accomplish some specific goal in the API space.</p>
+		<p>While not all my tools are ready for prime time, I try to keep them each in their own Github Repo, with as much of the backstory, code, data, and other definitions needed to understand what is going on. When I feel a tool is relevant, or maybe publish a story about it, I will usually add it to this list of API Evangelist tools, and share as part of my regular research, and even sometimes to operate my business.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="/tools/" class="button big">View Tools</a></li>
+		</ul>
+	</div>
+</section>
