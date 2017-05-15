@@ -7,7 +7,7 @@ tags:
 - Marketing
 - Advertising
 - Tracking
-Image: "/uploads/remarketing_products_sm.jpg"
+image: "/uploads/remarketing_products_sm.jpg"
 ---
 I am going through my entire infrastructure lately, quantifying the [products](http://apieva![remarketing_products_sm.jpg](/uploads/remarketing_products_sm.jpg)ngelist.com/products/) and [services](http://apievangelist.com/services/) that API Evangelist offers, and the partnerships that make everything go round. As I do in my work as the API Evangelist, I'm looking to work through my thoughts here on the blog, and this week I have an interesting topic on the workbench--the API Evangelist remarketing tags.
 
