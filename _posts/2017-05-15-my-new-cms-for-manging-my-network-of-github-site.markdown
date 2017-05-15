@@ -1,5 +1,5 @@
 ---
-title: My New CMS For Manging My Network Of Github Site
+title: My New CMS For Manging My Network Of Github Sites
 date: 2017-05-15 15:00:00 Z
 tags:
 - CMS
