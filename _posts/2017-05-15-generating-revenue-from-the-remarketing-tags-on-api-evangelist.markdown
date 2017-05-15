@@ -9,7 +9,7 @@ tags:
 - Tracking
 image: "/uploads/remarketing_products_sm.jpg"
 ---
-I am going through my entire infrastructure lately, quantifying the [products](http://apieva![remarketing_products_sm.jpg](/uploads/remarketing_products_sm.jpg)ngelist.com/products/) and [services](http://apievangelist.com/services/) that API Evangelist offers, and the partnerships that make everything go round. As I do in my work as the API Evangelist, I'm looking to work through my thoughts here on the blog, and this week I have an interesting topic on the workbench--the API Evangelist remarketing tags.
+I am going through my entire infrastructure lately, quantifying the [products](http://apievangelist.com/products/) and [services](http://apievangelist.com/services/) that API Evangelist offers, and the partnerships that make everything go round. As I do in my work as the API Evangelist, I'm looking to work through my thoughts here on the blog, and this week I have an interesting topic on the workbench--the API Evangelist remarketing tags.
 
 According to Google, [remarketing tags are](https://support.google.com/adwords/answer/2472738): "To show ads to people who have visited your desktop or mobile website, add the remarketing tag to your website. The tag is a short snippet of code that adds your website visitors to remarketing lists; you can then target these lists with your ads. If your website has a Google Analytics tag, you can use this tag instead and skip adding the AdWords remarketing tag."
 
