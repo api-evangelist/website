@@ -3,12 +3,15 @@ layout: default
 ---
 <section>
 	<div class="content">
-		
+
 	<h3>The API Evangelist Blog</h3>
 	<p>This blog represents the thoughts I have while I'm research the world of APIs. I share what I'm working each week, and publish daily insights on a wide range of topics from design to depcration, and spanning the technology, business, and politics of APIs. <a href="https://github.com/kinlane/api-evangelist" target="_blank">All of this runs on Github, so if you see a mistake, you can either fix by submitting a pull request, or let me know by submitting a Github issue for the repository</a>.</p>
 	<center><hr style="width: 75%;" /></center>
+	{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
   {% for post in paginator.posts %}
+	 	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
     {% if post.title != null %}
+			{% if posttime < nowunix %}
         <h3><a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}</a></h3>
         <span class="post-date">{{ post.date | date_to_string }}</span>
         {{ post.content }}
@@ -16,7 +19,7 @@ layout: default
           <li><a href="{{ site.production_url }}{{ post.url }}" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
-
+				{% endif %}
     {% endif %}
   {% endfor %}
 
