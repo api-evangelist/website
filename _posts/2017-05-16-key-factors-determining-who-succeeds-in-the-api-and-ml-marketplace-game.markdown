@@ -1,5 +1,5 @@
 ---
-title: Key Factors Determining Who Succeeds With API and ML Marketplace Game
+title: Key Factors Determining Who Succeeds In The API and ML Marketplace Game
 date: 2017-05-16 17:00:00 Z
 tags:
 - Definitions
@@ -16,7 +16,7 @@ I was having a discussion with an investor today about the potential of algorith
 I really do not get excited about API marketplaces when you think just about API discovery--how do I find an API? We need solutions in this area, but I feel good implementations will immediately move from useful to commodity, with companies like Amazon already pushing this towards a reality.
 
 There are a handful of key factors for determining who ultimately wins the API Machine Learning (ML) marketplace game:
- 
+
 * Always Modular - Everything has to be decoupled and deliver micro value. Vendors will be tempted to build in dependency and emphasize relationships and partnerships, but the smaller and more modular will always win out.
 * Easy Multi-Cloud - Whatever is available in a marketplace has to be available on all major platforms. Even if the marketplace is AWS, each unit of compute has to be transferrable to Google or Azure cloud without ANY friction.
 * Enterprise Ready - The biggest failure of API marketplaces has always been being public. On-premise and private cloud API ML marketplaces will always be more successful that their public counterparts. The marketplace that caters to the enterprise will do well.
