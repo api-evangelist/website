@@ -12,9 +12,11 @@ title: Pull Feeds
     var $masterFeed = [];
 
     // RAW is only way we can get at _data
-    $feedurls = 'https://raw.githubusercontent.com/indieedtech/rss-aggregator/gh-pages/_data/feed-urls.json';
+    $feedurls = 'https://kinlane.github.io/content/schedule.jsonn';
 
     var allFeeds = $.get($feedurls, function (feeds) {
+
+      //https://github.com/kinlane/content/blob/master/_posts/2017-05-16-an-openapi-generator-for-publishing-to-github.markdown
 
       $feedsJSON = JSON.parse(feeds);
 
@@ -23,88 +25,14 @@ title: Pull Feeds
 
       $.each($feedsJSON, function(feedKey, feedEntry) {
 
-        $feedName = feedEntry['name'];
-        console.log($feedName);
-        $feedURL = feedEntry['url'];
-        $existAlready = 0;
+        $title = feedEntry['title'];
+        console.log($title);
+        $url = feedEntry['url'];
+        $updated = feedEntry['updated'];
+        $image = feedEntry['image'];
+        $github_user = feedEntry['github_user'];
+        $github_repo = feedEntry['github_repo'];
 
-        var thisFeed = $.get($feedURL, function (feeds) {
-
-          $countItems = 0;
-          $howManyItems = $(feeds).find("item").length;
-
-          $(feeds).find("item").each(function () {
-
-            $feedName = feedEntry['name'];
-
-            var el = $(this);
-            $title = el.find("title").text();
-            $link = el.find("link").text();
-            $pubDate = el.find("pubDate").text();
-            $pubDate = dateFormat($pubDate, "mm/dd/yyyy");
-
-            $feedentry = {};
-          	$feedentry['feed'] = $feedName;
-          	$feedentry['title'] = $title;
-          	$feedentry['link'] = $link;
-            $feedentry['pubDate'] = $pubDate;
-
-            $existAlready = 0;
-            $.each($masterFeed, function(existingKey, existingFeed) {
-                if(existingFeed['feed'] == $feedName && existingFeed['title'] == $title)
-                  {
-                  $existAlready = 1;
-                  }
-                });
-
-            // Add It
-            if($existAlready==0){
-          	  $masterFeed.push($feedentry);
-              }
-
-            $feedItem = '<li><a href="' + $link + '">' + $title + '</a> (<i>' + $feedName + ' on ' + $pubDate + '</i>)</li>';
-
-            $('#process-feeds').append($feedItem);
-
-            $countItems ++;
-
-            });
-          })
-          .done(function() {
-              $countFeeds++;
-
-              // Are we done yet?
-              //console.log($countFeeds + ' == ' + $howManyFeeds + ' && ' + $countItems + ' == ' + $howManyItems);
-              if($countFeeds==$howManyFeeds && $countItems == $howManyItems){
-                $feedJSON = JSON.stringify($masterFeed, null, 4);
-                $feedJSON = unescape(encodeURIComponent($feedJSON));
-
-                var github = new Github({token: $oAuth_Token,auth: "oauth"});
-              	var repo = github.getRepo($org,$repo);
-
-                repo.getTree('gh-pages?recursive=true', function(err, tree) {
-
-              		$.each(tree, function(treeKey, treeValue) {
-
-                    $writepath = '_data/feed-entries.json';
-              			$path = treeValue['path'];
-              			$sha = treeValue['sha'];
-                    //console.log($path + ' == ' + $writepath);
-              			if($path==$writepath)
-              				{
-                      repo.writemanual('gh-pages',$writepath, $feedJSON, 'Save', $sha, function(err) { });
-                      console.log("writing " + $writepath);
-              				}
-              			});
-              		});
-                }
-            })
-          .fail(function() {
-            // Feed failed for some reason
-            console.log("FAIL (probably CORS)");
-            $howManyFeeds = $howManyFeeds - 1;
-            $countFeeds++;
-          });
         });
       })
       .done(function() {
