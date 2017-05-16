@@ -1,0 +1,45 @@
+---
+layout: default
+title: Update Contact Information Spreadsheet
+---
+<h1>Update</h1>
+<script type="text/javascript">
+
+    // Reset the cookie manually
+    //Cookies.expire('token');
+
+    var $oAuthToken = getUrlVar('token');
+    var $yaml_store = "";
+
+    var $content_org = 'kinlane';
+    var $content_repo = 'content';
+
+    var $org = '{{ site.github_user }}';
+    var $repo = '{{ site.github_repo }}';
+
+    if($oAuthToken !='')
+      {
+      Cookies.set('token', $oAuthToken);
+      }
+
+    $oAuthToken = Cookies.get('token');
+
+    var github = new Github({token: $oAuthToken,auth: "oauth"});
+    var repo = github.getRepo($org,$repo);
+
+    repo.getTree('master?recursive=true', function(err, tree) {
+
+      $.each(tree, function(treeKey, treeValue) {
+
+        $path = treeValue['path'];
+        $sha = treeValue['sha'];
+
+        console.log("writing " + $path);
+
+        });
+      });
+
+    }
+
+</script>
+<textarea cols="10" rows="5" id="source" style="border: 1px solid #000; width: 100%; height: 350px;"></textarea>
