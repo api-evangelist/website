@@ -119,7 +119,9 @@ layout: default
       url: {{ this_url }}--<br />
       {% assign this_url = this_url | replace: 'http://apievangelist.com/apis/','' %}
       url: {{ this_url }}--<br />
-      {% assign thisobject = 'site.data.openapi' | append: this_url %}
+      {% assign this_url = this_url | replace: '.json','' %}
+      url: {{ this_url }}--<br />
+      {% assign thisobject = 'site.data.openapi.' | append: this_url %}
       Obj: {{ thisobject }}--<br />
       {% assign openapi_spec_json = thisobject %}
     {% endif %}
