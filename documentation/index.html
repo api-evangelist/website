@@ -115,9 +115,16 @@ layout: default
       {% assign thisname = apijson.name | downcase %}
       {% assign thisname = thisname | append:'/' %}
       {% assign thisname = thisname | replace: ' ','-' %}
-      --{{ property }}--
+      
       {% if property.type == 'x-openapi' %}
-        {% assign openapi_spec_json = site.data.openapi %}
+        {% this_url = property.url %}
+        {% assign this_url = this_url | replace: 'http://apievangelist.com/apis/','' %}
+        {% assign this_url = this_url | replace: '.json','' %}
+        {% assign this_url = this_url | replace: '/','.' %}
+        url: {{ this_url }}--<br />
+        {% assign thisobject = 'site.data.openapi' | append:'/' %}
+        Obj: {{ thisobject }}--<br />
+        {% assign openapi_spec_json = thisobject %}
       {% endif %}
 
     {% endfor %}
