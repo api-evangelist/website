@@ -15,7 +15,7 @@ I have been getting a lot of questions lately regarding tooling for version 3.0 
 
 <script src="https://gist.github.com/kinlane/23df6a0f26b0e455d4eae265f47d8d77.js"></script>
 
-[Then he converted it to version 3.0](https://github.com/Mermade/swagger2openapi/blob/master/schemas/openapi-3.json) -- UPDATE: Mike is working to get translated version up, I am aware it is just a schema currently--sorry!:
+[Then he converted it to version 3.0](https://github.com/Mermade/swagger2openapi/blob/master/schemas/openapi-3.json) -- <strong>UPDATE: Mike is working to get translated version up, I am aware it is just a schema currently--sorry!</strong>:
 
 <script src="https://gist.github.com/kinlane/d2a3d905eae9fb60a52dd0e14b78412a.js"></script>
 
