@@ -1,5 +1,16 @@
 <p align="center">
   {% assign partners = site.data.partners.index %}
+  {% assign partnerList = '' %}
+  {% for partner in partners %}
+  	{% assign category = block.category %}
+  	{% if partnerList contains category %}
+  	{% else %}
+  		{% if partnerList != '' %}
+  			{% assign partnerList = partnerList | append:',' %}
+  		{% endif %}
+  		{% assign partnerList = partnerList | append: category %}
+  	{% endif %}
+  {% endfor %}
   {% assign partners = partners | sample %}
   <a href="{{ partners.url }}" target="_blank">
     <img src="{{ partners.banner_url }}" width="50%" style="padding-top: 10px;" />
