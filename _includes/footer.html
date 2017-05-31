@@ -2,16 +2,18 @@
   {% assign partners = site.data.partners.index %}
   {% assign partnerList = '' %}
   {% for partner in partners %}
-  	{% assign category = block.category %}
-  	{% if partnerList contains category %}
-  	{% else %}
-  		{% if partnerList != '' %}
-  			{% assign partnerList = partnerList | append:',' %}
-  		{% endif %}
-  		{% assign partnerList = partnerList | append: category %}
-  	{% endif %}
+  	{% assign banner_url = block.banner_url %}
+    {% if banner_url != '' %}
+    	{% if partnerList contains banner_url %}
+    	{% else %}
+    		{% if partnerList != '' %}
+    			{% assign partnerList = partnerList | append:',' %}
+    		{% endif %}
+    		{% assign partnerList = partnerList | append: banner_url %}
+    	{% endif %}
+    {% endif %}
   {% endfor %}
-  {% assign partners = partners | sample %}
+  {% assign partners = partnerList | split: "," | sample %}
   <a href="{{ partners.url }}" target="_blank">
     <img src="{{ partners.banner_url }}" width="50%" style="padding-top: 10px;" />
   </a>
