@@ -1,21 +1,12 @@
-<p align="center">
-  {% assign partners = site.data.partners.index %}
-  {% assign partner_object = '' %}
-  {% assign partnerCount = 0 %}
-  {% for partner in partners %}
-  	{% assign banner_url = partner.banner_url %}
-    {% if banner_url != '' %}
-      {% assign partner_object[partnerCount] = partner %}
-      {% assign partnerCount = partnerCount | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-  partner_object: {{ partner_object }}<br />
-  {% assign show_partner = partner_object | sample %}
-  <a href="{{ show_partner.url }}" target="_blank">
-    <img src="{{ show_partner.banner_url }}" width="50%" style="padding-top: 10px;" />
-  </a>
-</p>
 <footer>
+
+  <p align="center">
+    {% assign show_partner = site.data.sponsors.index | sample %}
+    <a href="{{ show_partner.url }}" target="_blank">
+      <img src="{{ show_partner.banner_url }}" width="50%" style="padding-top: 10px;" />
+    </a>
+  </p>
+
   <p align="center">
     all of my work:
     <a href="http://apievangelist.com">apievangelist.com</a> |
