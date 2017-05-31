@@ -1,20 +1,16 @@
 <p align="center">
   {% assign partners = site.data.partners.index %}
-  {% assign partnerList = '' %}
+  {% assign partner_object = '' %}
+  {% assign partnerCount = 0 %}
   {% for partner in partners %}
   	{% assign banner_url = partner.banner_url %}
     {% if banner_url != '' %}
-    	{% if partnerList contains banner_url %}
-    	{% else %}
-    		{% if partnerList != '' %}
-    			{% assign partnerList = partnerList | append:',' %}
-    		{% endif %}
-    		{% assign partnerList = partnerList | append: banner_url %}
-    	{% endif %}
+      {% assign partner_object[partnerCount] = partner %}
+      {% assign partnerCount = partnerCount | plus: 1 %}
     {% endif %}
   {% endfor %}
-  partnerList: {{ partnerList }}<br />
-  {% assign show_partner = partnerList | split: "," | sample %}
+  partner_object: {{ partner_object }}<br />
+  {% assign show_partner = partner_object | sample %}
   <a href="{{ show_partner.url }}" target="_blank">
     <img src="{{ show_partner.banner_url }}" width="50%" style="padding-top: 10px;" />
   </a>
