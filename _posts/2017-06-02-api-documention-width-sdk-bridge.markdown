@@ -15,10 +15,10 @@ People often ask me what the best tool for API documentation is. There is no sim
 
 Also, there's a 60% off sale on our Udemy courses for you newsletter readers for the first 10 students to sign up:
 
-[API Documentation 1: JSON and XML for Technical Writers: $10](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-r/) (normally $25)
-[API Documentation 2: REST for Technical Writers: $16](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-y/) (normally $40)
-[API Documentation 3: The Art of API Documentation: $10](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-j/) (normally $25)
-[Coding for Writers 1: Basic Programming: $18 (normally $45)](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-t/)
+* [API Documentation 1: JSON and XML for Technical Writers: $10](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-r/) (normally $25)
+* [API Documentation 2: REST for Technical Writers: $16](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-y/) (normally $40)
+* [API Documentation 3: The Art of API Documentation: $10](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-j/) (normally $25)
+* [Coding for Writers 1: Basic Programming: $18 (normally $45)](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-t/)
 
 - Peter Gruenbaum, President, SDK Bridge
 
