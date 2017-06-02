@@ -7,6 +7,7 @@ tags:
 - API Evangelist
 ---
 
+<p><img src="https://s3.amazonaws.com/kinlane-productions/sdk-bridge/sdkridge-documentation-b.png" align="right" width="40%" style="padding: 15px;" /></p>
 This post is a straight up copy and paste from an email newsletter I get from Peter Gruenbaum of [SDK Bridge](http://sdkbridge.com/). I am a big supporter of API service providers like SDK Bridge, who has been doing API documentation the entire time I've been the API Evangelist. Peter isn't looking to be the next big startup, he's just operating a successful API service that addresses one of the biggest problems API providers face--documentation. Some of my readers might not be aware these types of services exist, which is why I'm copy / pasting this, and helping spread the good word.
 
 <hr />
