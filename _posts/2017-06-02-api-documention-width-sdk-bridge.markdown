@@ -21,8 +21,6 @@ Also, there's a 60% off sale on our Udemy courses for you newsletter readers for
 * [API Documentation 3: The Art of API Documentation: $10](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-j/) (normally $25)
 * [Coding for Writers 1: Basic Programming: $18 (normally $45)](http://sdkbridge.cmail20.com/t/r-l-yuhukiz-hdhyyhjli-t/)
 
-- Peter Gruenbaum, President, SDK Bridge
-
 **Free and Open Source API Documentation Tools**
 Diána Lakatos has written an excellent description of several free and open source tools that can read the standard API definition formats OpenAPI, RAML, and API Blueprint. In addition, she covers API documentation tools that require non-standard formats, and general purpose open source documentation tools that can be used for API documentation that you may want to consider.
 
