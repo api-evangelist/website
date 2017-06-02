@@ -1,5 +1,5 @@
 ---
-title: The Stripe Github Repo They Use To Manage Their OpenAPI
+title: The Github Repo Stripe Uses To Manage Their OpenAPI
 date: 2017-06-02 12:00:00 Z
 tags:
 - Definitions
