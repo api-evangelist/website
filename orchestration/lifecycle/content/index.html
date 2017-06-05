@@ -7,11 +7,12 @@ title: Pull Lifecycle Content
 {% assign key = '1-MjSwlabTvdu2tydPcDHAW4_Qwmw9DNkgvOteENARwM' %}
 {% assign projects = site.data.projects.index | sort: 'name' %}
 {% for project in projects %}
-  {% if project.category == 'Core research' %}
-  {% assign org = project.github_org %}
-  {% assign repo = project.github_repo %}
-  {% assign branch = 'gh-pages' %}
-  {% assign tag = project.name | downcase | replace: ' ', '-'  %}
+  {% if project.category == 'Core Research' %}
+    {% assign org = project.github_org %}
+    {% assign repo = project.github_repo %}
+    {% assign branch = 'gh-pages' %}
+    {% assign tag = project.name %}
+    <p><strong>{{ project.name }}</strong></p>
     <ul>
       <li><a href="http://job.api.kinlane.com/job/google-spreadsheet-publish-to-github/?key={{ key }}&sheet_id=1&sheet_name=home_content&org={{ repo }}&repo={{ repo }}&branch={{ branch }}&tag={{ tag }}">Home Content</a></li>
       <li><a href="http://job.api.kinlane.com/job/google-spreadsheet-publish-to-github/?key={{ key }}&sheet_id=2&sheet_name=blog_content&org={{ repo }}&repo={{ repo }}&branch={{ branch }}&tag={{ tag }}">Blog Content</a></li>
