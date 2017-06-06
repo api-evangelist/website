@@ -42,11 +42,11 @@ title: API Evangelist
 
 {% assign switch = true %}
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-{% for post in paginator.posts %}
+{% for post in site.posts %}
  	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
   {% if post.title != null %}
 		{% if posttime < nowunix %}
-
+			{% if switch == true %}
 				<section id="banner">
 					<div class="content">
 						{{ switch }}
@@ -61,7 +61,7 @@ title: API Evangelist
 					</div>
 				</section>
 				{% assign switch = false %}
-			
+			{% endif %}
 		{% endif %}
 	{% endif %}
 {% endfor %}
