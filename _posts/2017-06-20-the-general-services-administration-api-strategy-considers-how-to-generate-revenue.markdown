@@ -13,7 +13,9 @@ image: https://s3.amazonaws.com/kinlane-productions/gsa/gsa-api-strategy-diagram
 The objectives for the GSA crafting an API strategy are:
 
 ­* Harness API management to maximize customer value and technical efficiencies.
+
 ­* Adopt industry best practices with API design, development, and management.
+
 ­* Consider opportunities for revenue through API offerings.
 
 I always enjoy seeing federal agencies talk about efficiencies and best practices, but it gives me hope that all of this might actually work when I see federal agencies actually "considering opportunities for revenue through API offerings". Especially at the GSA, who provides technical guidance to the other 400+ federal agencies, as well as at the state and municipal level. I am not excited about our government charging money for digital resources, I am excited about our government exploring how it will generate revenue to sustain itself in the future.
