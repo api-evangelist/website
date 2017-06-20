@@ -8,7 +8,7 @@ tags:
 image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-question-shared.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-question-shared.png" align="right" width="20%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-question-shared.png" align="right" width="35%" style="padding: 15px;" /></p>
 
 I spend a lot of time trying to figure out what technology does. I read press releases, pitch emails, documentation, and marketing materials trying to get an idea of what is possible. While many of the APIs I come across are intuitive, and just make sense there is still a significant portion of them that leave me scratching my head regarding what it even does.
 
