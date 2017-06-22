@@ -1,5 +1,5 @@
 ---
-title: 'API Plans Aren't Sustainable For My Small Business'
+title: 'API Plans Are Not Sustainable For My Small Business'
 date: 2017-06-22 13:00:00 Z
 tags:
 - Plans
