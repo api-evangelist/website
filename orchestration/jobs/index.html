@@ -6,17 +6,14 @@ title: API Evangelist Projects
 <h2>API Evangelist Projects</h2>
 <p>These are the jobs for managing mmy core research projects.</p>
 <section id="banner">
-  <div class="features">
+  <table width="100%">
     {% assign projects = site.data.projects.index | sort: 'view_sort' %}
     {% for product in projects %}
-        <article>
-          <p><a href="{{ product.url }}" target="_blank"><img src="{{ product.image }}" width="150" style="padding: 15px;" align="center" /></a></p>
-          <div class="content">
-            <h3><a href="{{ product.url }}" target="_blank">{{ product.name }}</a></h3>
-            <p>{{ product.description }}</p>
-          </div>
-        </article>
+        <td><img src="{{ product.image }}" width="150" style="padding: 15px;" align="center" /></a></td>
+        <td>{{ product.name }}</a></td>
+        <td><a href="http://job.api.kinlane.com/job/feedly-pull-by-tag/?tag={{ product.name }}&org={{ product.githuborg }}&repo={{ product.githubrepo }}&branch={{ product.githubbranch }}">Curated</a></td>
+        <td><a href="http://job.api.kinlane.com/job/blog-pull-from-working-publish-to-github/?org={{ product.githuborg }}&branch={{ product.githubbranch }}&repo={{ product.githubrepo }}&tag={{ product.name }}">Blog</a></td>
     {% endfor %}
-  </div>
+  </table>
 </section>
 <p>This is all meant for my own internal usage, but if you've found -- woohoo!!</p>
