@@ -1,6 +1,6 @@
 ---
 title: 'Patent #US 20170153932: Adapting Legacy Endpoints To Modern APIs'
-date: 2017-06-27 13:00:00 Z
+date: 2017-06-27 09:00:00 Z
 tags:
 - Patents
 - API Evangelist

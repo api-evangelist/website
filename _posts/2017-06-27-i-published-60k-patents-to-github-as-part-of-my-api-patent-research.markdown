@@ -1,6 +1,6 @@
 ---
 title: I Published 60K Patents To Github As Part Of My API Patent Research
-date: 2017-06-27 13:00:00 Z
+date: 2017-06-27 09:00:00 Z
 tags:
 - Patents
 - Jekyll
