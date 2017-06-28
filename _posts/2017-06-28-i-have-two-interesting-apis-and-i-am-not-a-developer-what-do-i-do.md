@@ -32,6 +32,7 @@ David provided me with two sources of data he wanted to work, which I think help
 Here you have two sources of data that overlap. One is actually an API, which you can change paths, parameters, and get different JSON or XML results. The other is just a download of an XML or CSV file. One has authentication using [BasicAuth](https://en.wikipedia.org/wiki/Basic_access_authentication), which is a standard way of logging into websites, which often is reappropriated for accessing web APIs. You can start to see why API consumption can become pretty overwhelming, pretty quickly.
 
 **CSV Is Easier**
+
 So where do we start? Well with the HEFCE downloads you get the results in CSV, something you can quickly upload into a spreadsheet and get to work. This is pretty straightforward data 101 stuff, making CSV and the spreadsheet still number one when it comes to working with data--a wide audience. However, the core dataset David wanted to work with from UNISTATS is an API, with JSON and XML returned. I know us API folk like to think of APIs as opening up access to data, but this chasm is one that many folks aren't going to be able to step over.
 
 **XML is Harder**
