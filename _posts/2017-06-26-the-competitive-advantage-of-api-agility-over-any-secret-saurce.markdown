@@ -1,6 +1,6 @@
 ---
 title: The Competitive Advantage Of API Agility Over Any Secret Sauce
-date: 2017-06-26 13:00:00 Z
+date: 2017-06-26 09:00:00 Z
 tags:
 - Investment
 - Business of APIs

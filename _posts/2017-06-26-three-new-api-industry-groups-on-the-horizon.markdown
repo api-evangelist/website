@@ -1,6 +1,6 @@
 ---
 title: Three New API Industry Groups On The Horizon
-date: 2017-06-26 13:00:00 Z
+date: 2017-06-26 16:00:00 Z
 tags:
 - Definitions
 - Standards
