@@ -46,7 +46,7 @@ After frameworks, I am making sure to highlight some of the leading approaches t
 Whether in the cloud, on-premise, or even on device and even the network, there are some essential ingredients to deploying APIs. In my API deployment guide I wanted to make sure and spend some time focusing on the essential ingredients every API provider will have to think about.
 
 - **Compute** - The base ingredient for any API, providing the compute under the hood. Whether its bare metal, cloud instances, or serverless, you will need a consistent compute strategy to deploy APIs at any scale.
-- **Storage - Next, I want to make sure my readers are thinking about a comprehensive storage strategy that spans all API operations, and hopefully multiple locations and providers.
+- **Storage** - Next, I want to make sure my readers are thinking about a comprehensive storage strategy that spans all API operations, and hopefully multiple locations and providers.
 - **DNS** - Then I spend some time focusing on the frontline of API deployment--DNS. In todays online environment DNS is more than just addressing for APIs, it is also security.
 - **Encryption** - I also make sure encryption is baked in to all API deployment by default in both transit, and storage.
 
