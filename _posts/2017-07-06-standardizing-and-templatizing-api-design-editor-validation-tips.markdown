@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'Standardizing and Templatizing API Design Editor Validation Tips'
-date: date: 2017-07-06T09:00:00.000Z
+date: 2017-07-06T09:00:00.000Z
 tags:
   - API Evangelist
   - Design
