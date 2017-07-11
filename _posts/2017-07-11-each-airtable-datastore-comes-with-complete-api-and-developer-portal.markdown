@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Each Airpair Datastore Comes With Complete API and Developer Portal
+title: Each Airtable Datastore Comes With Complete API and Developer Portal
 date: 2017-07-11T16:00:00.000Z
 tags:
   - API Evangelist
