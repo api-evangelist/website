@@ -84,39 +84,39 @@ When a new user lands on the API documentation, they should see the core resourc
 
 There are additional API projects on the table that might warrant the addition of new API groups, beyond core resources, sub resources, and utility paths. The approval, feedback, and messaging discussions might require their own group, allowing them to be separated in documentation, code, testing, and other areas--reducing the load for new users, while expanding the opportunities for more advanced consumers. Eventually there might be a one to one connection between API path groups, and the API projects in the queue, allowing for different groups of APIs to be moved forward at different rates, and involve different groups of API consumers and vendors in the process.
 
-[**Project Scope / Filtering**](https://github.com/openreferral/api-specification/issues/40)
+### [Project Scope / Filtering](https://github.com/openreferral/api-specification/issues/40)
 Adding the fourth dimension to this scope / filtering discussion, I'm proposing we discuss how projects are defined and isolated, which can allow them to move forward at different rates, and be reflected in documentation, code, and other resources--allowing for filtering by consumers. This will drive the path filtering described above, but apply beyond just the API, and influencing documentation, SDKs, testing, monitoring, validation, and other aspects of API operations.
 
 With this tier I am looking to decouple API projects from one another, and from the core specification. I want the core HSDS/A specification to stay focused on doing one thing well, but I'd like to establish a clear way to move forward complimentary groups of API definitions, and supporting tooling independently of the core specification. As we prepare to begin the journey from version 1.1 to 1.2, there are a number of significant projects on the table, and we need a way to isolate and decouple each additional API project in the same we we do with individual API resources--keeping them clearly defined, focused on specific problem set, and a buffet of resources that the community can choose where they'd like to participate.
 
-[**Pagination**](https://github.com/openreferral/api-specification/issues/10)
+### [Pagination](https://github.com/openreferral/api-specification/issues/10)
 This is the discussion around how results will be paginated, allowing for efficient or complete requests to be requested, and navigate through large volumes of human services data. We need to be discussing how we will evolve the current approach to using page= and per_page= to articulate pagination. This approach is a common, well understood way to allow developers to paginate, but we need to keep discussion open as we answer some of the other API design questions on the table.
 
 The pagination topic overlaps with the hypermedia and response structure discussion. Eventually we may offer pagination as part of a response envelope, or relational links provided as part of the response when using JSON API, HAL, or other media type. Right now we will leave pagination as it is, but we should be thinking about how it will evolve alongside all other API design conversations in this list.
 
-[Sorting](https://github.com/openreferral/api-specification/issues/12)
+### [Sorting](https://github.com/openreferral/api-specification/issues/12)
 According to the current Ohana API implementation, which is the HSDA v1.0 definition, the guidance for sorting availability is as follows:
 
 > Except for location-based and keyword-based searches, results are sorted by location id in ascending order. Location-based searches (those that use the lat_lng or location parameter) are sorted by distance, with the ones closest to the search query appearing first. keyword searches are sorted by relevance since they perform a full-text search in various fields across various tables.
 
 This guidance follows the API definition from version 1.0 to 1.2, but for future versions we should be considering providing further guidance regarding sorting of results. I'd like to get more feedback from the community on how they are providing data sorting capabilities for API consumes, or even as part of web and mobile applications.
 
-[**Response Structure**](https://github.com/openreferral/api-specification/issues/6)
+### [Response Structure](https://github.com/openreferral/api-specification/issues/6)
 Right now the API responses for HSDA are pretty flat, like the schema. As part of the move from version 1.1 to 1.2 we need to be expanding on them, allowing for sub-resources to be included. This conversation will be heavily influenced by the schema filtering conversation above, as well as potentially the hypermedia and content negotiation discussions below. If we are gong to expand on the the schema being returned with API response we should be discussing all possible changes to the schema at once.
 
 This conversation is meant to bring together the API schema filtering, hypermedia, and content negotiation conversations into a single discussion regarding the overall structure of a response, by default, as well as through filtering at the path, parameter, or header levels. I'd like to see  HSDA responses expand to accommodate sub resources, but also the relationships between resources, as well as assisting with pagination, sorting, and other aspects of data, schema, and path filtering. I am looking to make sure the expansion of the response structure be more inclusive beyond just talk of sub resource access.
 
-[**Hypermedia**](https://github.com/openreferral/api-specification/issues/7)
+### [Hypermedia](https://github.com/openreferral/api-specification/issues/7)
 I really want to see a hypermedia fork in the HSDA definition, allowing more advanced users to negotiate and hypermedia version of the specification, instead of the more simpler, or even advanced default versions of the API. I recommend the adoption of HAL, Siren, or JSON API, as an alternate edition of an HSDA implementation. This expansion of the design of the HSDA specification would not impact the current version, but would allow for another dimension of API consumption and integration.
 
 The relationships between human services data, and the semantic nature of the data really begs for a hypermedia solution. It would allow more meaningful API responses, and defining of relationships between resources, and emphasis of the taxonomy. I will be encouraging a separate, but complimentary version of HSDA that uses one of the leading hypermedia media types. I'd like to ensure there is community awareness of the potential of this approach, and support for investing in this as part of the HSDA design strategy.
 
-[**Status Codes**](https://github.com/openreferral/api-specification/issues/3)
+### [Status Codes](https://github.com/openreferral/api-specification/issues/3)
 One of the areas of design around version 1.1 of the HSDA specification that was put off until future versions is guidance when it comes to API response status and error codes. Right now the OpenAPI definition for version 1.1 of the HSDA specification only suggests a 200 successful response, returning a reference to the appropriate HSDS schema. A project needs to be started that would provider further guidance for 300, 400, and 500 series status codes, as well as error responses.
 
 Each HSDA path should provide guidance on all relevant HTTP Status Codes, but should also provide guidance regarding the error object schema returned as part of every possible API response. Helping standardize how errors are communicated, and provide further guidance on how to help API consumers navigate a solution. Currently there is no guidance when it comes to HTTP responses and errors, something that should be considered in version 1.2 or 1.3, depending on available resources.
 
-[**Content Negotiation**](https://github.com/openreferral/api-specification/issues/39)
+### [Content Negotiation](https://github.com/openreferral/api-specification/issues/39)
 Augmenting other conversations around schema filtering, API response structure, and hypermedia, I want to make sure content negotiation stays part of the conversation. This aspect of API design will significantly impact API integration, and the evolution of the API specification. I want to make sure vendors, and other key actors are aware of it as an option, and can participate in the conversation regarding the different content types.
 
 This conversation should begin with making CSV and HTML representations of the data available as part of the API response structure alongside the current JSON representations. API consumers should have the option to get raw HTML, CSV, and JSON through content negotiation--with JSON remaining as the default. Then the conversation should evolve to consider HSDA specific content type designation, as well as implementation of a leading hypermedia media type like JSON API, HAL, or Siren.
@@ -128,19 +128,19 @@ That concludes the list of API design conversations that are occurring as part o
 ## API Projects
 As the version 1.0 to 1.1 migration occurred several projects were identified, or suggested for consideration. I want to make sure all these projects are on the table as part of the evolution of HSDA, beyond just the current API design discussion occurring. These are the projects we added to the specification that are moving forward but will have varying degrees of impact on the core API definition.
 
-[**Taxonomy**](https://github.com/openreferral/api-specification/issues/19)
+### [Taxonomy](https://github.com/openreferral/api-specification/issues/19)
 There are two objects included in version 1.1 of the Human Services Data Specification (HSDS) that deal with taxonomy, the service_taxonomy object, and the core taxonomy object. I purposely left these aspects of the schema out of version 1.1 of HSDA. I wanted to see more discussion regarding taxonomy before we included in the specification. This is one of the first areas that influenced the above discussions regarding path scope and filtering, as well as project scope and filtering.
 
 I'd like to see taxonomy exist as a separate set of paths, as a separate project, and out of the core specification. In addition to further discussion about what is HSDA taxonomy, I'd like to see  more consideration regarding what exactly is acceptable levels of HSDA compliant taxonomy. Ideally, the definition allows for multiple taxonomy, and possibly even a direct relationship between the available content types and a taxonomy, allowing for a more meaningful API response.
 
 I will leave open a Github issue to discuss taxonomy, and either move forward as entirely separate schema, or inclusion in version 1.2, 1.3 of the core HSDA definition. One aspect of this delay is to ensure that my awareness of available taxonomies is up to snuff to help provide guidance. I'm just not aware of everything out there, as well as an intimacy the leading taxonomies in use--I need to hear more from vendors and implementors on this subject before I feel confident in making any decision.
 
-[**Metadata**](https://github.com/openreferral/api-specification/issues/28)
+### [Metadata](https://github.com/openreferral/api-specification/issues/28)
 The metadata, and the meta_table_description objects v1.1 of HSDA were two elements I also left out of version 1.1 of HSDA. I felt like there should be more discussion around API management, logging, and other aspects of API operations that feed into this area, before we settled in on an API design to satisfy the HSDA metadata conversation. I'd like to hear more from human services implementors regarding what metadata they desire before we connect the existing schema to the API.
 
 The metadata conversation overlaps with the approval and feedback project. There are aspects of logging and meta data collection and storage that will contribute to the transactional nature of any approval and feedback solution. There is also conversation going on regarding privacy concerns around API access to HSDS data, and logging, auditing that occurs at the metadata level. This thread covers these conversations, and is looking to establish a separate group of API paths, and separate project to drive documentation, and other aspects of API operations.
 
-[**Approval & Feedback**](https://github.com/openreferral/api-specification/issues/34)
+### [Approval & Feedback](https://github.com/openreferral/api-specification/issues/34)
 One of the projects that came up recently was about working to define the layer that allows developers to add, update, and delete data via the API. Eventually through the HSDA specification we to encourage 3rd party developers, and external stakeholders to help curate and maintain critical human services data within a community, through trusted partners.
 
 HSDA allows for the reading and writing of organizations, locations, and services for any given area. I am looking to provide guidance on how API implementors can allow for POST, PUT, PATCH, and DELETE on their API, but require approval before any changing transaction is actually executed. Requiring the approval of an internal system administrator to ultimately give the thumbs up or thumbs down regarding whether or not the change will actually occur.
@@ -149,20 +149,20 @@ A process which immediately begs for the ability to have multiple administrators
 
 I am doing research into different approaches to tackling this, ranging from community approaches like Wikipedia, to publish and subscribe, and other events or webhook models. I am looking for technological solutions to opening up approval to the API request and response structure, with accompanying API and webhook surface area for managing all aspects of the approval of any API changes. If you know of any interesting solutions to this problem I’d love to hear more, so that I can include in my research, future storytelling, and ultimately the specification for the Open Referral Human Services Data Specification and API.
 
-[**Universal Unique IDs**](https://github.com/openreferral/api-specification/issues/35)
+### [Universal Unique IDs](https://github.com/openreferral/api-specification/issues/35)
 How will we allow for a universal unique ID system for all organizations, locations, and services, providing some provenance on the origin of the record. There is a solid conversation started about how to approach a universal ID system to live alongside, or directly as part of the core HSDA specification--depending on how we decide to approach project scope. Ideally, a universal ID system isn't pat of being compliant, but could add a healthy layer of certification for some leading providers.
 
 More research needs to be done regarding how universal IDs are handled in other industries. An exhaustive search needs to be conducted regarding any existing standards and guidance that can help direct this discussion. This approach to handling identifiers will have a significant impact on individual API implementations, as well as the overall HSDA definition. More importantly, it will set the stage for future HSDA aggregation and federation, allowing HSDA implementations to work together more seamlessly, and better serve end-uses.
 
-[**Messaging**](https://github.com/openreferral/api-specification/issues/37)
+### [Messaging](https://github.com/openreferral/api-specification/issues/37)
 I separated this project out of the approval and feedback project. I am suggesting that we isolate the messaging guidance for APIs, setting a standard for how you communicate within a single implementation as well across implementations. There are a number of messaging API standards and best practices available out there, as well as existing messaging APIs that are already in use by human services practitioners, including social channels like Facebook and Twitter, but also private channels like Slack.
 
 HSDA compliant messaging channels should live as a separate project, and set of API path specifications. It should augment the core HSDA definition, overlaying with existing contact information, but it should also be dovetailed with new projects like approval and feedback system. More research needs to be conducted on existing messaging API standards, and leading channels that existing human services implementations and their software vendors are already using.
 
-[**Webhooks**](https://github.com/openreferral/api-specification/issues/35)
+### [Webhooks](https://github.com/openreferral/api-specification/issues/35)
 I want to begin separate project for handling an important aspect of any API operations, and not just being their to receive requests, but can also push information externally, and respond to scheduled, or event driven aspects of API operations. Webhooks will play a role in the approval and feedback system, as well as the metadata, and messaging projects--eventually touching all aspects of the core HSDA resources, and separate projects.
 
 Alongside the approval and feedback, universal id, and messaging projects, webhooks will set the stage for the future of HSDA, where individual city and regional implementations can work together, share information, federate and share responsibility in updates and changes. Webhooks will be how each separate implementation will work in concert, making the deliver of human services more real time, and orchestrated across providers, achieving API the vision of Open Referral founder Greg Bloom.
 
-**What Is Next?**
+## What Is Next?
 We have a lot on the table to discuss currently. We need to settle some pretty important API design discussions that will continue to have an impact on API operations for a long time. I want to help push forward the conversation around these API design discussions, and get these API projects moving forward in tandem. I need more input from the vendors, and the community around some of the pressing discussions, and then I'm confident we can settle in on what the final version 1.1 of the API specification should be, and what work we want to tackle as part of 1.2 and beyond. I'm feeling like with a little discussion we can find a path forward to reach 1.2 in the fall of 2017.
