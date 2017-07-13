@@ -21,7 +21,7 @@ There were just too many decisions to make at the API request and response level
 ## API Design
 As part of my Human Services Data API (HSDA) work we have opened up a pretty wide API design conversation regarding where the API definition could (should) be going. I've tried to capture the conversations going on across the Slack, and Google Group using GitHub issues for the HSDA GitHub repository. I will be focusing in on 16 of these issues for the current community discussions.
 
-[**Versioning**](https://github.com/openreferral/api-specification/issues/8)
+### [Versioning](https://github.com/openreferral/api-specification/issues/8)
 We are moving forward the version of the API specification from 1.0 to 1.1. This version describes the API definition, to help quantify the compliance of any single API implementation. This is not guidance regarding how API providers should version their API--each implementation can articulate their compliance using an OpenAPI definition, or just in operation by being compliant. I purposely dodged providing versioning guidance of specific API implementations--until I could open up discussion around this subject.
 
 If you need a primer on API versioning I recommend [Troy Hunt's piece](https://www.troyhunt.com/your-api-versioning-is-wrong-which-is/) which helps highlight:
@@ -35,49 +35,49 @@ API versioning discussions are always hot topics, and there is no perfect answer
 
 I would like to open it up to the community, and get more feedback from vendors, and implementors. I'm curious what folks prefer when they are building applications. This decision was one that was wrapped up with potential content negotiation, hypermedia, and schema scope discussions to make without more discussion.
 
-[**Paths**](https://github.com/openreferral/api-specification/issues/27)
+### [Paths](https://github.com/openreferral/api-specification/issues/27)
 The API definition provides some basic guidance for HSDA implementations when it comes to naming API paths, providing a core set or resources, as well as sub-resources. There are a number of other API designs waiting in the wings to be hammered out, making more discussion around this relevant. How do we name additional API paths? Do we keep evolving a single stack of resources (expanding horizontally), or do we start grouping them and evolve using more sub-resources (expanding vertically)?
 
 Right now, we are just sticking with a core set of paths for /contacts, /locations, /organizations, and /services, with /search somewhat of an outlier, or I guess wrapper. We have moved forward with sub-resource guidance, but should standard API design guidance when it comes to crafting new paths, as well as sub-paths, including the actions discussion below. This will be an ongoing discussion when it comes to API design across future versions, making it an evergreen thread that will just keep growing as the HSDA definition matures.
 
-[**Verbs**](https://github.com/openreferral/api-specification/issues/26)
+### [Verbs](https://github.com/openreferral/api-specification/issues/26)
 HTTP verbs usage was another aspect of the evolution of the HSDA specification from v1.0 to v1.1--the new specification uses its verbs. Making sure POST, PUT, and DELETE were used across all core resources, as well as sub-resources, making the entire schema open for reading and writing at all levels. This further expanded the surface of the API definition, making it manageable at all levels.
 
 Beyond this expansion we need to open up the discussion regarding OPTIONS, and PATCH. Is there a need to provide partial updates using PATCH, and providing guidance on using OPTION for providing requirements associated with a resource, and the capabilities of the server behind the API. Also we should be having honest conversations about which verbs are available for sub-resources, especially when it comes to taking specific actions using HSDA paths. There is a lot more to discuss when it comes to HTTP verb usage across the HSDA specification.
 
-[**Actions**](https://github.com/openreferral/api-specification/issues/24)
+### [Actions](https://github.com/openreferral/api-specification/issues/24)
 I want to prepare for the future when we have more actions to be taken, and talk about how we approach API design in the service of taking action against resources. Right now HTTP verbs are taking care of the CRUD features for all resources and sub-resources. While I don't have any current actions in the queue to discus, we may want to consider this as part of the schema scope and filtering discussion--allowing API consumers to request partial, and complete representations of API resources using action paths. For example: /organization/simple, or /organizations/complete.
 
 As the HSDA specification matures this question will come up more and more, as vendors, and implementations require more specialized actions to be taken against resources. Ideally, we are keeping resources very resource oriented, but from experience I know this isn't always the case. Sometimes it becomes more intuitive for API developers to take action with simple, descriptive API paths, than adding more complexity with parameters, headers, and other aspects of the APIs design. I will leave this conversation open to help guide future versions, as well as the schema scope and filtering discussions.
 
-[**Parameters**](https://github.com/openreferral/api-specification/issues/24)
+### [Parameters](https://github.com/openreferral/api-specification/issues/24)
 Currently the numbers parameters in use for any single endpoint is pretty minimal. The core resources allow for querying, and sorting, but as of version 1.1, parameters are still pretty well-defined and minimal. The only path that has an extensive set of parameters is /search, which possesses category, email, keyword, language, lat_lng, location, org_name, page, per_page, radius, service_area, and status. I'd like to to continue the discussion about which parameters should be added to other paths, as well as used to help filter the schema, and other aspects of the API design conversation.
 
 I'd like to open up the parameter discussion across all HSDA paths, but I'd also like to establish a way to regularly quantify how many paths are available, as well as how loaded they are with default values, and enumerators. I'd like to feed this into overall API design guidance, helping keep API paths reflecting a microservices approach to delivering APIs. Helping ensure HSDA services do one thing, and do it well, with the right amount of control over the surface area of the request and response of each API path.
 
-[**Headers**](https://github.com/openreferral/api-specification/issues/5)
+### [Headers](https://github.com/openreferral/api-specification/issues/5)
 Augmenting the parameter discussion I want to make sure headers are an equal part of the discussion. They have the potential to play a role across several of these API design questions from versioning to schema filtering. They also will continue to emerge in authentication, management, security, and even sorting and content negotiation discussions.
 
 It is common for there to be a lack of literacy in developer circles when it comes to HTTP headers. A significant portion of the discussion around header usage should always be whether of not we want to invest in HTTP literacy amongst implementors, and their developer communities, over leveraging other non-header approaches to API design. HTTP Headers are an important building block of the web that developers should understand, but educating developers around their use can be time intensive and costly when it comes to guidance.
 
-[**Body**](https://github.com/openreferral/api-specification/issues/25)
+### [Body](https://github.com/openreferral/api-specification/issues/25)
 There is an open discussion around how the body will be used across HSDA compliant implementations. Currently the body is default for POST and PUT, aka add and update. This body usage has been extended across all core resources, as well as sub-resource, requiring the complete, or sub resource representation to be part of each POST or PUT request.
 
 There is no plan for any other APIs that will deviate from this approach, but we should keep this thread open to make sure we think about when the usage of the body is appropriate and when it might not be. We need to make sure that developers are able to effectively use the body, alongside headers, as well as parameters to get the desired results they are looking for.
 
-[**Data Scope / Filtering**](https://github.com/openreferral/api-specification/issues/22)
+### [Data Scope / Filtering](https://github.com/openreferral/api-specification/issues/22)
 Currently the only filtering beyond pagination that is available is the query parameter available on /contact, /organizations, /locations, and /services resources. After that search is where the heaviest data scope and filtering can be filtered and defined. We need to discuss the future of this. Should the core resources have similar capabilities to /search, or should /search be a first class citizen with the majority of the filtering capabilities?
 
 There needs to be more discussion around how data will be available bia default, and how it will be filtered as part of each API request. Will search be carrying most of the load, or will each core resource be given some control when it comes to filtering data. Whatever the approach it needs to be standardized across all existing paths, as well as applied to new API designs, keeping data filtering consistent across all HSDA designs. As this comes into focus I will be making sure there is a guide that provides guidance when it comes to data filtering practices in play.
 
-[**Schema Scope / Filtering**](https://github.com/openreferral/api-specification/issues/21)
+### [Schema Scope / Filtering](https://github.com/openreferral/api-specification/issues/21)
 This is one of the top issues being discussed as part of the migration from v1.1 to v1.2, regarding how to not just filter data that is returned as part of API responses, but how do you filter what schema gets returned as part of the response. When it came to v1.0 to v1.1 I didn't want to shift the response structure so that I can reduce any breaking changes for existing Ohana implementations, and open up with the community regarding the best approach for allowing schema filtering.
 
 My current recommendation when it comes to the filtering of how much or how little of the schema to return with each request is to allow for schema templates to be defined and named, then enable API consumers to specify which template they'd like returned. This should be specified through either through a [prefer header](https://apievangelist.com/2017/05/24/considering-http-prefer-header-instead-of-field-filtering-for-my-api/), as part of the path structure as an action, or possibly through a parameter--all would accept the name of a schema template they desire (ie. simple, complete, etc.).
 
 This approach to enabling schema templating could be applied at the GET, and could be also applied to POST or PUT requests. I personally recommend using a [prefer header](https://apievangelist.com/2017/05/24/considering-http-prefer-header-instead-of-field-filtering-for-my-api/), but I also emphasize the ease of use, and ease of defining the usage as part of documentation, and the OpenAPI definition--which it might make sense to allow for schema enablement as pat of the path name as an action. I'll leave it to the community to ultimately decide, as with the rest of this API design and project list, I'm just looking to provide guidance, and direction, built on the feedback of the community.
 
-[**Path Scope / Filtering**](https://github.com/openreferral/api-specification/issues/38)
+### [Path Scope / Filtering](https://github.com/openreferral/api-specification/issues/38)
 Next up in the scope and filtering discussion is regarding how we define, group, and present all available API paths included in the HSDA specification. With the current specification I see three distinct groups of API paths emerging: 1) core resources (/contacts, /organizations, /locations, /services), and 2) sub resources (/physical-address, /postal-address, /phones, and more), then the more utility aspects of meta data, taxonomy, and eventually webhooks.
 
 When a new user lands on the API documentation, they should see the core resources, and not be burdened with the cognitive load associated sub resources or the more utility aspects of HSDA consumption. However, once ready more advanced API paths are available. The grouping and filtering of the API paths can be defined as part of the OpenAPI definitions for the API(s), as well as the APIs.json index for the site. This path grouping will allow for API consumers to limit scope and filter which API paths are available in the documentation, and possibly with SDKs, testing, and other aspects of integration.
