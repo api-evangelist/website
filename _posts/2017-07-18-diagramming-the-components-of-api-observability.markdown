@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Diagramming The Components Of API Observability
 date: 2017-07-18T13:00:00.000Z
