@@ -7,9 +7,10 @@ tags:
   - API Evangelist
   - Communications
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/3D-Printing/regions/api-regions-global-map-from-google.png
+  https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-storytelling.png
 ---
-I know that some of my friends who follow API Evangelist shake their heads when I talk about API business models, partner programs, and many of the business sides of API operations. Much of my work will have an almost delusional attraction towards the concept of an API. Heavily doused in a belief in technology as a solution. This isn't accidental. This is API Evangelist. A persona I have developed to help me make a living, and help influence where we go (or don't go) with technology. 
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-storytelling.png" align="right" width="40%" style="padding: 15px;" /></p>
+I know that some of my friends who follow API Evangelist shake their heads when I talk about API business models, partner programs, and many of the business sides of API operations. Much of my work will have an almost delusional attraction towards the concept of an API. Heavily doused in a belief in technology as a solution. This isn't accidental. This is API Evangelist. A persona I have developed to help me make a living, and help influence where we go (or don't go) with technology.
 
 I am delusional enough to think I can influence change in how the world uses technology. I'm borderline megalomaniac, but there really is not sufficient ego to get me quite all the way there. While still very, very, very minor, I feel I have influenced where technology has flowed over my seven years as the API Evangelist. Even if it just slowing the speed (seconds) at which the machines turn on us, and kills us all. If nothing else, I know there are few folks out there who I have touched, and shaped how they see, use, and allow technology in their lives (cause they told me so).
 
