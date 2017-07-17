@@ -15,7 +15,7 @@ image: >-
 
 Here is my first draft of a Venn diagram beginning to articulate what I see as the components of API observability:
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/observable/api-observability-venn.png" width="100%" style="padding: 15px;" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/observable/api-observability-venn.png" width="75%" style="padding: 15px;" align="center" /></p>
 
 The majority of the API observability conversation in the API space currently centers around logging, monitoring, and performance--driven by internal motivations, but done in a way that is very public. I'm looking to push forward the notion of API observability to transcend the technical, and address the other operational, industry, and even regulatory concerns that will help bring observability to everyone's attention.
 
