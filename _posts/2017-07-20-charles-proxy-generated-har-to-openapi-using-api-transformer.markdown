@@ -13,6 +13,8 @@ image: >-
 ---
 <p><a href="https://twitter.com/jpmonette/status/885545611906428928"><img src="https://s3.amazonaws.com/kinlane-productions/charles-to-openapi/har-conversion.png" align="right" width="25%" style="padding: 15px;" /></a></p>I was responding to Jean-Philippe M. (@jpmonette) tweet regarding [whether or not I had moved forward my auto generation of OpenAPIs from traffic captured by Charles Proxy](https://apievangelist.com/2015/06/21/parsing-charles-proxy-exports-to-generate-swagger-definitions-while-also-linking-them-to-each-path/). It is one of many features of my internal systems I have not gotten around to finishing, but thankfully he actually answered his own question, and found a better solution than even I had--using my friends over at API Transformer.
 
+I had been exploring ways for speeding up the process of generating OpenAPI specs for the APIs that I'm reviewing, something that becomes very tedious when working with large APIs, as well as just profiling the sheer number of APIs I am looking profile as part of my work. I haven't been profiling many APIs lately, but the approach Jean-Philippe M. came up is petty damn easy, leaving me feeling pretty silly that I hadn't connected the dots myself. 
+
 Here is what you do. Fire up Charles Proxy:
 
 <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/charles-to-openapi/charles-session.png" align="center" width="80%" style="padding: 15px;" /></p>
