@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Misconceptions About What OpenAPI Is(nt) Still Slowing Conversations
 date: 2017-07-21T09:00:00.000Z
