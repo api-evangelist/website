@@ -4,7 +4,7 @@ layout: post
 title: >-
   Requiring ALL Platform Partners Use The API So There Is A Registered
   Application
-date: 2017-07-15T16:00:00.000Z
+date: 2017-07-21T13:00:00.000Z
 tags:
   - API Evangelist
   - Applications
