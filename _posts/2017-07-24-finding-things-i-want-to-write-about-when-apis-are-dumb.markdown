@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Finding Things I Want To Write About When APIs Are Dumb
 date: 2017-07-24T11:00:00.000Z
