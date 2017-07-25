@@ -19,15 +19,15 @@ Anyways, I will be in DC all day Thursday. Come join the conversation. I won't h
 
 Looking forward to seeing you all in DC. Thanks to [Red Hat](redhat.com) for bringing me out to DC, and making this conversation possible. I'll see you Thursday.
 
-**Event Details:**
+**Event Details:**<br />
 **Date:** Thursday, July 27, 2017
 
-**Time:** 1:30 p.m. – 5:00 p.m.
-**Registration:** 1:30 – 2:00 p.m.
-**Presentations:** 2:00 – 3:30 p.m.
-**Happy Hour:** 3:30 – 5:00 p.m.
+**Time:** 1:30 p.m. – 5:00 p.m.<br />
+**Registration:** 1:30 – 2:00 p.m.<br />
+**Presentations:** 2:00 – 3:30 p.m.<br />
+**Happy Hour:** 3:30 – 5:00 p.m.<br />
 
-**Location:**
-Tysons' Biergarten
-8346 Leesburg Pike
-Tysons, VA 22182
+**Location:**<br />
+Tysons' Biergarten<br />
+8346 Leesburg Pike<br />
+Tysons, VA 22182<br />
