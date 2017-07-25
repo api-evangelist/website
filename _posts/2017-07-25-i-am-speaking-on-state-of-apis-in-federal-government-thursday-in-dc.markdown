@@ -11,7 +11,7 @@ tags:
 image: >-
   http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am joining my friend Steve Willmott in DC this week to talk about federal government APIs](http://redhatapievents.com/dc). We will  be gathering at Tysons' Biergarten between 1:30 and 5:00 PM this Thursday to talk APIs, where both Steve and I will be speaking individually, with some QA, and a happy hour afterwards as an opportunity for more discussion.
+<p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am joining my friend Steve Willmott in DC this week to talk about federal government APIs](http://redhatapievents.com/dc). We will  be gathering at Tysons' Biergarten between 1:30 and 5:00 PM this Thursday to talk APIs. Both Steve and I will be speaking individually, with some QA, and a happy hour afterwards as an opportunity for more discussion.
 
 I am looking forward for the opportunity to hanging with my friend Steve, as the last time we've hung out and spoke together was APIStrat in Boston, but at APIStat we are always running a conference, and not actually focused on our views of the APIs space. So, I am eager to learn more detail about what 3Scale is up to as part of the Red Hat machine, and specifically some of the containerization, microservices, and virtualization discussions they are leading lately.
 
@@ -19,15 +19,15 @@ Anyways, I will be in DC all day Thursday. Come join the conversation. I won't h
 
 Looking forward to seeing you all in DC. Thanks to [Red Hat](redhat.com) for bringing me out to DC, and making this conversation possible. I'll see you Thursday.
 
-**Event Details:**<br />
+**Event Details:**
 **Date:** Thursday, July 27, 2017
 
-**Time:** 1:30 p.m. – 5:00 p.m.<br />
-**Registration:** 1:30 – 2:00 p.m.<br />
-**Presentations:** 2:00 – 3:30 p.m.<br />
-**Happy Hour:** 3:30 – 5:00 p.m.<br />
+**Time:** 1:30 p.m. – 5:00 p.m.
+**Registration:** 1:30 – 2:00 p.m.
+**Presentations:** 2:00 – 3:30 p.m.
+**Happy Hour:** 3:30 – 5:00 p.m.
 
-**Location:**<br />
-Tysons' Biergarten<br />
-8346 Leesburg Pike<br />
-Tysons, VA 22182<br />
+**Location:**
+Tysons' Biergarten
+8346 Leesburg Pike
+Tysons, VA 22182
