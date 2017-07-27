@@ -186,4 +186,4 @@ You see companies like Amazon, Microsoft, Zapier and Github stepping up with gov
 
 This reality is even more dire in a Trump administration. In the current administration any API leadership has been halted, and the two groups (USDS & 18F who are leading the charge are facing friction, and seeing top talent exit back to the private sector, unable to make the impact they had envisioned when they first signed up for government service. The API hard work is continuing across the federal government, within each agency, but in coming years we need the bulk of work to be assumed by the privacy sector, letting dedicated government employees know that we have their back, are here to support, integrate, and build on their hard work, while providing valuable and constructive feedback wherever we can.
 
-_Thank you to Red Hat for bringing me out, and gathering folks at Tyson's Corner for the interesting discussion about Government APIs._
+_Thank you to Red Hat for bringing me out, and gathering folks at Tyson's Corner for the interesting discussion about APIs--some interesting people showed up including government, vendors, and consulting groups._
