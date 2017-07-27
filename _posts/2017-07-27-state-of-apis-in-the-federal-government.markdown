@@ -10,7 +10,7 @@ image: >-
   https://s3.amazonaws.com/kinlane-productions/federal-government/state-2017/bw-government.png
 ---
 
-_This is my talk from Washington DC with Steve Willmott of [3Scale](https://www.3scale.net/) by [Red Hat](https://www.redhat.com) about [transforming enterprise IT with containers, APIs, and integration](http://redhatapievents.com/dc), where I spend some time considering the current state of APIs in the federal government._
+_This is my talk from Washington DC with Steve Willmott of [3Scale](https://www.3scale.net/) by [Red Hat](https://www.redhat.com) about [transforming enterprise IT with containers, APIs, and integration](http://redhatapievents.com/dc), where I assess the current state of APIs in the federal government, and the opportunity in the private sector when it comes to working with government data._
 
 **API Evangelist**
 <p><img src="https://s3.amazonaws.com/kinlane-productions/federal-government/state-2017/kin-lane-api-evangelist-cartoon.png" width="12%" style="padding: 15px;" align="right" /></p>My name is Kin Lane. I am the API Evangelist. I have studied the technology, business, and politics of Application Programming Interfaces, or more commonly known as APIs, full time since 2010. I spend time looking through the growing number of APIs available today, as well as the evolving group of service providers selling their solutions to API providers. I take what I learn across the space and publish as over 80 independent research projects that I run on Github, covering a growing number of stops along the API lifecycle.
