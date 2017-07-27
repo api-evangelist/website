@@ -9,6 +9,9 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/federal-government/state-2017/bw-government.png
 ---
+
+_This is my talk from Washington DC with Steve Willmott of [3Scale](https://www.3scale.net/) by [Red Hat](https://www.redhat.com) about [transforming enterprise IT with containers, APIs, and integration](http://redhatapievents.com/dc), where I spend some time considering the current state of APIs in the federal government._
+
 **API Evangelist**
 <p><img src="https://s3.amazonaws.com/kinlane-productions/federal-government/state-2017/kin-lane-api-evangelist-cartoon.png" width="12%" style="padding: 15px;" align="right" /></p>My name is Kin Lane. I am the API Evangelist. I have studied the technology, business, and politics of Application Programming Interfaces, or more commonly known as APIs, full time since 2010. I spend time looking through the growing number of APIs available today, as well as the evolving group of service providers selling their solutions to API providers. I take what I learn across the space and publish as over 80 independent research projects that I run on Github, covering a growing number of stops along the API lifecycle.
 
@@ -182,3 +185,5 @@ It is unrealistic to expect the federal government to do all this work alone. Wh
 You see companies like Amazon, Microsoft, Zapier and Github stepping up with government focused section of their platform, specialized products and services, and terms of service tailored for government adoption. We need more of this. We need more startups to step up, incentivize, and lead when it comes to APIs in government. Federal government APIs aren't just about what government is doing with APIs, it is also about what the private sector does to use these APIs, and how they engage with government agencies whenever possible to hep improve the quality of APIs, and software coming out of federal agencies.
 
 This reality is even more dire in a Trump administration. In the current administration any API leadership has been halted, and the two groups (USDS & 18F who are leading the charge are facing friction, and seeing top talent exit back to the private sector, unable to make the impact they had envisioned when they first signed up for government service. The API hard work is continuing across the federal government, within each agency, but in coming years we need the bulk of work to be assumed by the privacy sector, letting dedicated government employees know that we have their back, are here to support, integrate, and build on their hard work, while providing valuable and constructive feedback wherever we can.
+
+_Thank you to Red Hat for bringing me out, and gathering folks at Tyson's Corner for the interesting discussion about Government APIs._
