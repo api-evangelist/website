@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Making The Business Of APIs More Modular Before You Do The Tech
-date: 2017-07-15T13:00:00.000Z
+date: 2017-07-31T13:00:00.000Z
 tags:
   - API Evangelist
   - Containers
