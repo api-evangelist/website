@@ -6,6 +6,7 @@ date: 2017-08-04T09:00:00.000Z
 tags:
   - API Evangelist
   - Machine Learning
+  - Definitions 
 image: 'https://s3.amazonaws.com/kinlane-productions/mining-machine-learning.png'
 ---
 <p><img src="https://s3.amazonaws.com/kinlane-productions/mining-machine-learning.png" align="right" width="40%" style="padding: 15px;" /></p>I spend a lot of time trying out new APIs, working to understand what it is they do, or do not do. I have a pretty robust way of looking at APIs, profiling the company, and the APIs they offer, but when I'm wading through the marketing content, API documentation, and other resources, I am regularly stumped by the language that is used to describe what an API does. Honestly, this problem isn't exclusive to machine learning APIs, but with the recent explosion in artificial intelligence, machine learning, deep learning, cognitive and other types of algorithmic voodoo, the words being used seem to have gone to entirely new levels.
