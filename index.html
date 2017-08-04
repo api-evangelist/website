@@ -18,27 +18,27 @@ title: API Evangelist
 	</span>
 </section>
 
-<!-- Section -->
-	<section>
-		<header>
-			<h2>API Evangelist Partners</h2>
-			<p>These are my partners who invest in API Evangelist each month, helping underwrite my research, and making sure I'm able to keep monitoring the API space as I do.</p>
-		</header>
-		<div class="features">
-			{% assign partners = site.data.partners.index | sort: 'view_sort' %}
-	    {% for partner in partners %}
-	      {% if partner.type == 'Sponsor' %}
-				<article>
-					<p><a href="{{ partner.url }}" target="_blank"><img src="{{ partner.image }}" width="75%" style="padding: 15px;" align="center" /></a></p>
-					<div class="content">
-						<h3><a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a></h3>
-						<p>{{ partner.description }}</p>
-					</div>
-				</article>
-	      {% endif %}
-	    {% endfor %}
-		</div>
-	</section>
+<!-- Partners -->
+<section>
+	<header>
+		<h2>API Evangelist Partners</h2>
+		<p>These are my partners who invest in API Evangelist each month, helping underwrite my research, and making sure I'm able to keep monitoring the API space as I do.</p>
+	</header>
+	<div class="features">
+		{% assign partners = site.data.partners.index | sort: 'view_sort' %}
+    {% for partner in partners %}
+      {% if partner.type == 'Sponsor' %}
+			<article>
+				<p><a href="{{ partner.url }}" target="_blank"><img src="{{ partner.image }}" width="75%" style="padding: 15px;" align="center" /></a></p>
+				<div class="content">
+					<h3><a href="{{ partner.url }}" target="_blank">{{ partner.name }}</a></h3>
+					<p>{{ partner.description }}</p>
+				</div>
+			</article>
+      {% endif %}
+    {% endfor %}
+	</div>
+</section>
 
 {% assign switch = true %}
 {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
