@@ -16,13 +16,13 @@ image: >-
 
 I noticed on Algorithmia's page there was [a Bibtex citation](http://www.bibtex.org/), which referenced the author, and project Github repository:
 
-@misc{athalye2015neuralstyle,
-  author = {Anish Athalye},
-  title = {Neural Style},
-  year = {2015},
-  howpublished = {\url{https://github.com/anishathalye/neural-style}},
-  note = {commit xxxxxxx}
-}
+@misc{athalye2015neuralstyle,<br />
+  author = {Anish Athalye},<br />
+  title = {Neural Style},<br />
+  year = {2015},<br />
+  howpublished = {\url{https://github.com/anishathalye/neural-style}},<br />
+  note = {commit xxxxxxx}<br />
+}<br />
 
 This provides an interesting way to address citation in not just machine learning, but with open source driving algorithmic APIs in general. It gives me food for thought when it comes to [what licensing I should be considering when wrapping open source software with an API](http://apievangelist.com/2015/12/02/what-licensing-should-i-be-considering-when-i-take-open-source-software-and-offer-up-as-an-api/). I've been [thinking about dependencies a lot lately when it comes to APIs and their definitions](http://apievangelist.com/2017/08/04/including-api-dependencies-within-api-definition/), and I'd consider citation or attribution to be in a similar category. I guess rather then technical dependency, it is more in the business and legal dependency category.
 
