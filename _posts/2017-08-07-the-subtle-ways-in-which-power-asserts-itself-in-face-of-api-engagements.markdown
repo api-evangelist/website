@@ -8,6 +8,9 @@ tags:
   - Politics of APIs
   - Evangelist
   - Standards
+  - Federal government
+  - City government
+  - State government    
 image: >-
   https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_copper_circuit.jpg
 ---
