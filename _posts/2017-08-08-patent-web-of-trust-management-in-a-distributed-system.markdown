@@ -1,6 +1,6 @@
 ---
 title: 'Patent #9397835, Web of trust management in a distributed system'
-date: 2017-08-03T16:00:00.000Z
+date: 2017-08-08T16:00:00.000Z
 published: true
 layout: post
 tags:

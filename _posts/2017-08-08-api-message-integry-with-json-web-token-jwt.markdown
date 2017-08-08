@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: API Message Integrity with JSON Web Token (JWT)
 date: 2017-08-08T11:00:00.000Z
