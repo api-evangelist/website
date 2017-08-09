@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: 'Continuous Integration And Deployment For Government Procurement'
 date: 2017-08-09T16:00:00.000Z
