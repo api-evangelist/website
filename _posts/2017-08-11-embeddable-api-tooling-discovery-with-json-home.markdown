@@ -10,7 +10,7 @@ tags:
   - Definitions
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-widgets.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-widgets.png" align="right" width="30%" style="padding: 15px;" /></p>[I have been studying JSON Home](http://apievangelist.com/2017/08/03/api-discovery-using-json-home/), trying to understand how it sizes up to [APIs.json](http://apisjson.org), and [other formats I'm tracking on like Pivio](http://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/). JSON Home has a number of interesting features, and I thought one of their examples was also interesting, and was relevant to [my API embeddable research](http://embeddable.apievangelist.com/). In this example, JSON Home was describing a widget that was putting an API to use as part of its operation.
+[I have been studying JSON Home](http://apievangelist.com/2017/08/03/api-discovery-using-json-home/), trying to understand how it sizes up to [APIs.json](http://apisjson.org), and [other formats I'm tracking on like Pivio](http://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/). JSON Home has a number of interesting features, and I thought one of their examples was also interesting, and was relevant to [my API embeddable research](http://embeddable.apievangelist.com/). In this example, JSON Home was describing a widget that was putting an API to use as part of its operation.
 
 Here is the snippet from the JSON Home example, providing all details of how it works:
 
