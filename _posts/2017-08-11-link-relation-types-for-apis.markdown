@@ -78,21 +78,21 @@ The link relation types below have been registered by IANA perSection 6.2.1 of R
 
 6.1.  Link Relation Type: service-doc
 
-   Relation Name: service-doc
-   Description: Linking to service documentation that is primarily   intended for human consumption.
-   Reference: [[ This document ]]
+   Relation Name: service-doc<br />
+   Description: Linking to service documentation that is primarily   intended for human<br /> consumption.<br />
+   Reference: [[ This document ]]<br />
 
 6.2.  Link Relation Type: service-desc
 
-   Relation Name: service-desc
-   Description: Linking to service description that is primarily   intended for consumption by machines.
-   Reference: [[ This document ]]
+   Relation Name: service-desc<br />
+   Description: Linking to service description that is primarily   intended for consumption by machines.<br />
+   Reference: [[ This document ]]<br />
 
 6.3.  Link Relation Type: status
 
-   Relation Name: status
-   Description: Linking to a resource that represents the status of a   Web service or API.
-   Reference: [[ This document ]]
+   Relation Name: status<br />
+   Description: Linking to a resource that represents the status of a   Web service or API.<br />
+   Reference: [[ This document ]]<br />
 
 <hr />
 
@@ -101,4 +101,4 @@ This specification provides a more coherent service-doc, and service-desc that I
 
 It makes me happy to see this specification pushing forward and formalizing the conversation. I see the evolution of link relations for APIs as an important part of the API discovery and definition conversations in coming years. Processing this specification has [helped jumpstart some conversation around APIs.json](https://github.com/apis-json/api-json/issues), as well as other specifications like [JSON Home](http://apievangelist.com/2017/08/03/api-discovery-using-json-home/) and [Pivio](http://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/).
 
-[Thanks for letting me build on your work Erik!](https://tools.ietf.org/html/draft-wilde-service-link-rel-03) - I am looking forward to helping contribute.
+[Thanks for letting me build on your work Erik!](https://tools.ietf.org/html/draft-wilde-service-link-rel-03) - I am looking forward to contributing.
