@@ -10,16 +10,16 @@ image: 'https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png'
 ---
 ## Where To Begin With Webhooks For The Human Services Data API
 
-<p><a href="https://www.slideshare.net/progrium/web-hooks-and-the-programmable-world-of-tomorrow-presentation/21-REST_Hooksrest_and_web_hooks"><img src="https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png" align="right" width="40%" style="padding: 15px;" /></p>I am getting to work on a base set of webhook specification for [my human services data API work](http://org.open.referral.adopta.agency/), and I wanted to take a fresh drive through a handful of the leading APIs I'm tracking on. I'm needing to make some recommendations regarding how human services data APIs should be pushing information via APIs, as we as providing APIs. Webhooks are fascinating to me because they really are just APIs in reverse. Webhooks are just an API request, where the target URL is a variable, allowing an API call to be made from a platform, to any target URL, on an triggering events, or on a schedule as a job.
+<p><a href="https://www.slideshare.net/progrium/web-hooks-and-the-programmable-world-of-tomorrow-presentation/21-REST_Hooksrest_and_web_hooks"><img src="https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png" align="right" width="40%" style="padding: 15px;" /></a></p>I am getting to work on a base set of webhook specification for [my human services data API work](http://org.open.referral.adopta.agency/), and I wanted to take a fresh drive through a handful of the leading APIs I'm tracking on. I'm needing to make some recommendations regarding how human services data APIs should be pushing information via APIs, as we as providing APIs. Webhooks are fascinating to me because they really are just APIs in reverse. Webhooks are just an API request, where the target URL is a variable, allowing an API call to be made from a platform, to any target URL, on an triggering events, or on a schedule as a job.
 
 Here are six of the API providers I took a look at while doing this webhook research:
 
-- [Box](https://developer.box.com/v2.0/docs/getting-started-with-webhooks-v2)
-- [Gumroad]([https://gumroad.com/webhooks)
-- [Venmo](https://developer.venmo.com/docs/webhooks)
-- [Github](https://developer.github.com/webhooks/)
-- [Stripe](https://stripe.com/docs/webhooks)
-- [Slack](https://api.slack.com/incoming-webhooks)
+- [**Box**](https://developer.box.com/v2.0/docs/getting-started-with-webhooks-v2)
+- [**Gumroad**]([https://gumroad.com/webhooks)
+- [**Venmo**](https://developer.venmo.com/docs/webhooks)
+- [**Github**](https://developer.github.com/webhooks/)
+- [**Stripe**](https://stripe.com/docs/webhooks)
+- [**Slack**](https://api.slack.com/incoming-webhooks)
 
 All of these API providers offer webhooks, allowing developers to create an API call that will be fired off when a specific event occurs. These events are usually tied to a specific object. Box is documents. Github is a repository. Stripe is a payment. With human services it will be an organization, location, or service. There are a handful of key concepts at play when it comes to webhooks, making them an important part of the equation:
 
