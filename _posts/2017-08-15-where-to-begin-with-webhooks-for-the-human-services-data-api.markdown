@@ -14,12 +14,12 @@ image: 'https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png'
 
 Here are six of the API providers I took a look at while doing this webhook research:
 
-- [**Box**](https://developer.box.com/v2.0/docs/getting-started-with-webhooks-v2)
-- [**Gumroad**]([https://gumroad.com/webhooks)
-- [**Venmo**](https://developer.venmo.com/docs/webhooks)
-- [**Github**](https://developer.github.com/webhooks/)
-- [**Stripe**](https://stripe.com/docs/webhooks)
-- [**Slack**](https://api.slack.com/incoming-webhooks)
+- [Box](https://developer.box.com/v2.0/docs/getting-started-with-webhooks-v2)
+- [Gumroad]([https://gumroad.com/webhooks)
+- [Venmo](https://developer.venmo.com/docs/webhooks)
+- [Github](https://developer.github.com/webhooks/)
+- [Stripe](https://stripe.com/docs/webhooks)
+- [Slack](https://api.slack.com/incoming-webhooks)
 
 All of these API providers offer webhooks, allowing developers to create an API call that will be fired off when a specific event occurs. These events are usually tied to a specific object. Box is documents. Github is a repository. Stripe is a payment. With human services it will be an organization, location, or service. There are a handful of key concepts at play when it comes to webhooks, making them an important part of the equation:
 
