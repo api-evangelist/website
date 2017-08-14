@@ -15,15 +15,15 @@ I spend a lot of time monitoring API platforms, thinking about different ways of
 
 First you take a look at Twitter, by doing a quick Google search for Twitter Bots:
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-twitter-search.png" align="center" width="90%" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-twitter-search.png" align="center" width="65%" /></p>
 
 Then you take a look at Facebook, by doing a quick Google search for Facebook Bots:
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-facebook-search.png" align="center" width="90%" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-facebook-search.png" align="center" width="65%" /></p>
 
 Finally take a look at Slack, by doing a quick Google search for Slack Bots:
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-slack-search.png" align="center" width="90%" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bots/bots-slack-search.png" align="center" width="65%" /></p>
 
 It is pretty clear who owns the conversation when it comes to bots on their platform. While Twitter and Facebook both have information and guidance about doing bots they do not own the conversation like Slack does. Something that is reflected in the search engine placement. It is also something that sets the tone of the conversation that is going on within the community, and defines the types of bots that will emerge on the platform.
 
