@@ -6,6 +6,8 @@ date: 2017-08-15T09:00:00.000Z
 tags:
   - API Evangelist
   - Webhooks
+  - HSDS
+  - HSDA
 image: 'https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png'
 ---
 <p><a href="https://www.slideshare.net/progrium/web-hooks-and-the-programmable-world-of-tomorrow-presentation/21-REST_Hooksrest_and_web_hooks"><img src="https://s3.amazonaws.com/kinlane-productions/webhooks/RESTHooks.png" align="right" width="40%" style="padding: 15px;" /></a></p>I am getting to work on a base set of webhook specification for [my human services data API work](http://org.open.referral.adopta.agency/), and I wanted to take a fresh drive through a handful of the leading APIs I'm tracking on. I'm needing to make some recommendations regarding how human services data APIs should be pushing information via APIs, as we as providing APIs. Webhooks are fascinating to me because they really are just APIs in reverse. Webhooks are just an API request, where the target URL is a variable, allowing an API call to be made from a platform, to any target URL, on an triggering events, or on a schedule as a job.
