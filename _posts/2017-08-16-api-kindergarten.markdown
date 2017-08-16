@@ -6,7 +6,6 @@ date: 2017-08-16T07:00:00.000Z
 tags:
   - API Evangelist
   - Lessons
-  - 101
   - Training
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-alphabet-apple.png'
 ---
