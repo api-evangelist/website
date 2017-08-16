@@ -10,7 +10,8 @@ image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png'
 ---
 I am preparing a talk for tomorrow and I needed a new list of each stop along the API lifecycle, and since each of my project exist as Github repositories, and are defined as a YAML and JSON data store, I can simply define a new liquid template for generating a new HTML listing of all the stops along the API lifecycle--after generating this list I figured I'd share here as a story:
 
-<table>
+<center>
+<table style="width:50%;" align="center">
    <tr>
       <td width="50"><a href="http://definitions.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png" width="50" style="padding: 5px;" align="center" /></a></td>
       <td width="50"><a href="http://definitions.apievangelist.com" target="_blank">Definitions</a></td>
@@ -352,6 +353,7 @@ I am preparing a talk for tomorrow and I needed a new list of each stop along th
       <td width="50"><a href="http://deprecation.apievangelist.com" target="_blank">Deprecation</a></td>
    </tr>
 </table>
+</center>
 
 I'm always presenting [my API lifecycle research](http://apievangelist.com/api-lifecycle/) as a listing, or in a linear fashion. I always feel like I should be creating an actual lifecycle visualization, but then I always end up feeling like I should just invest in my subway API map work, and create more robust way to represent how the API lifecycle truly looks.
 
