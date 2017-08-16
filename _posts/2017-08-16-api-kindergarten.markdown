@@ -7,6 +7,7 @@ tags:
   - API Evangelist
   - Lessons
   - 101
+  - Training
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-alphabet-apple.png'
 ---
 <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-alphabet-apple.png" align="right" width="25" style="padding: 15px" /></p>[I'm working on a number of API courses and lessons lately](http://apievangelist.com/2017/07/24/first-handful-of-lessons-using-my-google-sheet-github-approach/). Some are API 101 courses, while others are more advanced courses for the seasoned API provider, and consumer. As I think about what is needed when it comes to classes and workshops across the API sector, I'm considering doing an API Kindergarten series, where business and IT leaders can learn the basics of doing business with APIs.
