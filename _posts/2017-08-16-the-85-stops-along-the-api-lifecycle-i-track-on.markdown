@@ -12,8 +12,7 @@ I am preparing a talk for tomorrow and I needed a new list of each stop along th
 
 Here are the 85 stops along the API lifecycle landscape from my vantage point as the API Evangelist:
 
-<center>
-<table style="width:50%;" align="center">
+<table style="width:50%;" align="left">
    <tr>
       <td width="10%"><a href="http://definitions.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png" width="50" style="padding: 5px;" align="center" /></a></td>
       <td width="10%"><a href="http://definitions.apievangelist.com" target="_blank">Definitions</a></td>
@@ -355,7 +354,6 @@ Here are the 85 stops along the API lifecycle landscape from my vantage point as
       <td width="10%"><a href="http://deprecation.apievangelist.com" target="_blank">Deprecation</a></td>
    </tr>
 </table>
-</center>
 
 I'm always presenting [my API lifecycle research](http://apievangelist.com/api-lifecycle/) as a listing, or in a linear fashion. I always feel like I should be creating an actual lifecycle visualization, but then I always end up feeling like I should just invest in my subway API map work, and create more robust way to represent how the API lifecycle truly looks.
 
