@@ -8,7 +8,7 @@ tags:
   - Lifecycle
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-lifecycle.png'
 ---
-I am preparing a talk for tomorrow and I needed a new list of each stop along the API lifecycle, and since each of my project exist as Github repositories, and are defined as a YAML and JSON data store, I can simply define a new liquid template for generating a new HTML listing of all the stops along the API lifecycle--after generating this list I figured I'd share here as a story.
+I am preparing a talk for tomorrow, and I needed a new list of each stop along the API lifecycle, and since each of my project exist as Github repositories, and are defined as a YAML and JSON data store, I can simply define a new liquid template for generating a new HTML listing of all the stops along the API lifecycle--after generating this list I figured I'd share here as a story.
 
 Here are the 85 stops along the API lifecycle landscape from my vantage point as the API Evangelist:
 
