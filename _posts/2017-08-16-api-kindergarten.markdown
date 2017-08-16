@@ -9,6 +9,7 @@ tags:
   - Training
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-alphabet-apple.png'
 ---
+
 <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-alphabet-apple.png" align="right" width="25%" style="padding: 15px" /></p>[I'm working on a number of API courses and lessons lately](http://apievangelist.com/2017/07/24/first-handful-of-lessons-using-my-google-sheet-github-approach/). Some of these are API 101 courses, while others are more advanced courses for the seasoned API provider, and consumer. As I think about what is needed when it comes to classes and workshops across the API sector, I'm considering doing an API Kindergarten series, where business and IT leaders can learn the basics of doing business with APIs.
 
 The curriculum for the API kindergarten program include hands on lessons on how to play nicely, get along with others, the importance of sharing, and helping them learn the important soft skills like not shitting your pants. I'm always surprised at the lack of basic skills by company, organizational, institutional, and government leadership when it comes to the essentials of why APIs work, and think a little primer on things might help some realize they shouldn't be doing APIs in the first place, or maybe prevent some major crisis down the road.
