@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-title: Looking At Facebook Blueprint As I Study API Training Programs
-date: date: 2017-08-22T13:00:00.000Z
+title: 'Looking At Facebook Blueprint As I Study API Training Programs'
+date: 2017-08-22T13:00:00.000Z
 tags:
   - API Evangelist
   - Training
