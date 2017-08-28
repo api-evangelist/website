@@ -27,7 +27,7 @@ I haven't pulled any patents as part of my [API patent research](http://patents.
 
 In which my response was, "oh. ouch. well, gonna have to think on this one sir. I'll let you know my response, but I'm going to guess you might not like how I feel either. I'm not pro-patent. let me simmer on it for a couple days and I'll share my thoughts."  As I was simmering I was pulled into the conversation again by Tony Tam:
 
-<blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-partner="tweetdeck"><p lang="en" dir="ltr">Better products great for everyone. Undermining OSS efforts bad for all. And again, US patent system is hella busted this case in point</p>&mdash; Tony Tam (@fehguy) <a href="https://twitter.com/fehguy/status/901233923916652544">August 26, 2017</a></blockquote>
+<blockquote class="twitter-tweet" data-conversation="none" data-cards="hidden" data-partner="tweetdeck"><p lang="en" dir="ltr">Avoiding the point. You patented something in OSS for years--ironically even used by the <a href="https://twitter.com/uspto">@uspto</a>.  I&#39;m sure <a href="https://twitter.com/kinlane">@kinlane</a> has thoughts on this</p>&mdash; Tony Tam (@fehguy) <a href="https://twitter.com/fehguy/status/901230276742848512">August 25, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 In which my response was:
