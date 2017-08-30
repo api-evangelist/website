@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Your APIs Are An Invasive Species
-date: 2017-08-03T16:00:00.000Z
+date: 2017-08-30T16:00:00.000Z
 tags:
   - API Evangelist
   - Politics of APIs
