@@ -1,0 +1,22 @@
+---
+published: true
+layout: post
+title: Holding Little Guys More Accountable Than We Do VCs And Bigcos
+date: 2017-08-30T09:00:00.000Z
+tags:
+  - API Evangelist
+  - Politics of APIs
+  - Evangelism
+  - Accountability
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/photos/36700218276_b6782330e1_z.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/photos/36700218276_b6782330e1_z.jpg" align="right" width="40%" style="padding: 15px;" /></p>I spend a lot of time defending my space as the API Evangelist. I've had lengthy battles with folks in the comments of my blog for defending women, charging for my services, being pay for play, having secret agendas, and much more. I've had my site taken down a handful of times (before I made static on Github Pages), because I stood up for my girlfriend, or just joined in on the wrong (right) cause. When you have been doing this as long as you have, you see the size of the armies of tech bros that are out there, waiting to pounce. It is why I don't share links to Reddit or Hacker News anymore. I stopped sharing to DZone for same reason, but they've since cleaned up their community, brought in some great talent (including women), and I've started syndicating there again.
+
+Most recently I had someone accuse me of pay for play, even though there was no disclosure statement present, and I have had two other folks accuse me of having an agenda set forth by my partners. If you know me, you understand how ridiculous this is, but this never stops the waves of young men finding their way to my site, and pointing the finger. What I find fascinating about this is these men never point the finger at Techcrunch, or call out API startups (and bigcos) for colluding, sponsoring, pay for play, and the other bullshittery that goes on. They go after folks who are outspoken against the machine, and never after the machine itself. If people don't like something I said, or what someone I'm writing about is up to, they tend to go after me, without spending any time getting to know me, looking at my background, or looking at the seven years of storytelling on my site--[there is a single page to do it](http://apievangelist.com/archive/)!
+
+The majority of these folks rarely ever have their own blog, name and pictures on their Twitter or Github accounts, and have a minimum digital footprint. They don't understand what it is like to be out in the public sphere sharing their ideas on a daily basis, and prefer hiding behind anonymity while they go after the little guy. Again, rarely do you see them going after the Silicon Valley, or larger corporate machine--too big of target. I have special Twitter lists I add these folks too, and usually when one of them pisses in my Cheerios I'll spend some time seeing what the others are up to, and most times it is more of the same. Trolls. It is easy to dismiss these folks as part of the wider illness we see infecting the Internet, but much like sexism and racism, the real damage is done by the waves of complicit individuals and platforms who support them, chime in, pile on, and maintain an environment where this type of behavior is normalized.
+
+For the most part I'm a diplomat. I tend to perform API Evangelist in a supportive, friendly tone. I started API Evangelist on this tone with intent. I saw the meanness in the space, fully grasped my assholeness as a VP of technology within an enterprise group, and wanted to do something different, and help people feel like APIs were approachable and friendly. I still support this tone, but this week, I'm performing a more offensive version of API Evangelist. One that is calling y'all out for the bullshit that you do each day online in this business, or condone and support daily in your complacency. I'm not really as unhinged as these posts make me out to be (close), I'm just exploring the illness that is rampant in the space, and pushing back a little. There is a significant amount of cover afforded to VCs, bigcos, and the startups who support their message, and for the handful of us out in the open, we often become a much easier target, when in reality there should be much more accountability for those that are responsible for the illnesses in the tech sector, ad are often out of site, but actually have their hands on the puppet strings that make things go around.
+
+_**Note:** If my writing is a little dark this week, [here is a little explainer](http://apievangelist.com/2017/08/28/api-rant-vs-api-research/)--don't worry, things will back to normal at API Evangelist soon._
