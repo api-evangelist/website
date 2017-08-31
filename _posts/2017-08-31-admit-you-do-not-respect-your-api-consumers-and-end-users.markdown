@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Admit It You Do Not Respect Your API Consumers And End Users
-date: 2017-08-31T16:00:00.000Z
+date: 2017-08-31T13:00:00.000Z
 tags:
   - API Evangelist
   - Politics of APIs
