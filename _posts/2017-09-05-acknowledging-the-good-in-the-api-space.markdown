@@ -1,0 +1,20 @@
+---
+published: true
+layout: post
+title: Acknowledging The Good In The API Space
+date: 2017-09-05T09:00:00.000Z
+tags:
+  - API Evangelist
+  - Politics of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-api-evangelist-cartoon.png
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-api-evangelist-cartoon.png" align="right" width="25%" style="padding: 15px;" /></p>With such a dark week of blog posts last week I wanted to make sure and start this week off with a brighter post, talking about the good I see in the API space. It can be easy to find than some of the darker things I talked about, but after seven years doing this I see enough good things going on in the API community, that I keep doing this performance I call API Evangelist. It can be easy to rant and rave about the bad, but I find it takes a lot of work to identify the good things going on in the cracks, as they rarely get the attention of the mainstream tech community propaganda engine.
+
+First, there are some really smart folks who truly care about human beings and are dedicated to the world of APIs. I do not know of any other layer of technology that sustains a community of people that is not just about startups and mindless moving forward of technology in every industry. I can use all of my fingers counting the folks who truly care about doing APIs, and making a meaningful impact with them. I have had the pleasure of working with these folks, and brining many of them together as part of my APIStrat conference, and regularly enjoy learning from them, reading their stories, and engaging with them on a regular basis as part of this API journey.
+
+Second, not all APIs are startup focused. I work with many API providers who are doing very interesting, non-startup, non-VC investment, and most importantly, non-exploitative API things. I regularly work with passionate folks doing APIs at all levels of government, making an impact on the environment, pushing for transparency in our legal system, helping provide human services, and truly making change in a meaningful way using web APIs. APIs are neither good, nor bad, or are they neutral, they are simply a reflection of their creators and operators. It keeps me going, to learn about the many ways in which APIs are being used for good, and moving beyond their startup origins, doing meaningful things that makes the lives of human beings better.
+
+Third, APIs are just the next evolution of the web. All the bad things I talked about last week can just as easily be applied to the web. APIs do not have to be the next vendor solution, or something you have to buy. APIs are just about moving our bits and bytes around online, using low cost web technology. They often become the scapegoat for exploitation, unreliability, security, and privacy concerns, but as I said before they are just a reflection of their creator and operators. This is one of the main reasons I'm an evangelist for APIs, not because they are always a good idea, but because when they are done right, they can bring some important observability into some existing technological situations, helping us understand exactly what is going on behind the digital and algorithmic curtain.
+
+It was a learning experience to spend a week ranting openly about the space last week. The way people responded, or didn't response was very telling about the API community. It feels like something I will be doing regularly (maybe not at that scale), because I felt like it pushed back much of the illness in the space that can become very suffocating to an independent operator like me. The venture backed technology machine doesn't always realize (or maybe it does) what an invasive and assaulting force it is. They think they are just asking for some free time, or for a guest post opportunity, and don't often see how damaging they are, because everyone is doing it. I feel like I was able to carve out a defensive zone around what I do, even if it was just for a bit. Thanks again for all your support folks.
