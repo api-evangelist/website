@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: API Education Is Needed But Rarely Prioritized In The Current Environment
-date: 2017-09-01T13:00:00.000Z
+date: 2017-09-11T13:00:00.000Z
 tags:
   - API Evangelist
   - Training
