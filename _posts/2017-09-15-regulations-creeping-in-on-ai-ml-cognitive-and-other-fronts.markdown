@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: 'Regulations Creeping In On AI, ML, Cognitive, And Other Fronts'
 date: 2017-09-15T15:00:00.000Z
