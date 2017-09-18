@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: Why Was My Week of API Rants So Well Received?
 date: 2017-09-18T11:00:00.000Z
