@@ -1,15 +1,14 @@
 ---
 published: true
 layout: post
-title: What It Was About Web APIs That First Captured My Attention
+title: 'What It Was About Web APIs That First Captured My Attention?'
 date: 2017-09-18T09:00:00.000Z
 tags:
   - API Evangelist
   - Business of APIs
   - Politics of APIs
   - Evangelism
-image: >-
-  http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png
+image: 'http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png'
 ---
 <p><img src="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" align="right" width="40%" style="padding: 15px;" /></p>  
   
