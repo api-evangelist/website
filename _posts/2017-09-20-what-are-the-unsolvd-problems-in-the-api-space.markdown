@@ -1,0 +1,22 @@
+---
+published: true
+layout: post
+title: What Are The Unsolved Problems In The API Space?
+date: 2017-09-20T11:00:00.000Z
+tags:
+  - API Evangelist
+  - Politics of APIs
+  - Business of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_dali_three.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_dali_three.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+_I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
+
+There are always endless numbers of fabricated unsolved problems in the API space. These are unsolved problems that are usually unsolved because they were just made up to get someone to buy a new service or product. They aren't real problems. Technology is good at being applied to make believe problems, vendor fabricated problems, and solving real problems created by the last couple of waves of technology. I'd say that biggest unsolved problem is how APIs can actually solve the legacy technical debt challenges large companies, institutions, and government agencies face. There is a lot of rhetoric regarding how APis can unwind all of this, but honestly there are few examples of it in practice. With many API efforts in 2017, bogged down in cultural friction, and a web (pun intended) of technical complexity.
+
+One aspect of this problem of legacy technical debt is the problem of delivering technology in an Internet age, without actually embracing the web. People doing APIs don't always have the knowledge of the web, and what makes it work before they get to work doing APIs. Vendors are offering up tools and services that provide web API solutions, but don't always embrace the web, and the existing standards and protocols that make the web work. APIs are the next evolution of the web, and rely on many of the same concepts for it to work. When you ignore the web when doing APIs, you will always face challenges in interoperability, and reuse, and often end up building siloed solutions that do not achieve deliver the solutions that doing APIs have promised.
+
+I regularly see API providers, and service providers delivering their solutions to problems using APIs, with no awareness of the web they are relying on, and the building blocks that make it work. We often see technological solutions that can potentially deliver value, but are done so in a proprietary way, with all roads leading towards a commercial solution, extracting any value from open source implementations, and the web, while not giving anything back. All of this behavior is just leading to the next generation of technical debt, that is being sold as the solution for the last couple of generations of technical debt. When in reality, everyone wants to just operate efficiently, securely, and effectively using the web, but rarely do they ever fully invest in learning what that means, and working with vendors who support this vision.
+
+It is easy to say the biggest unsolved problems are the new ones, but in my opinion, this is lazy. New technology will always become yesterday's old technology. in the race to adopt each new wave of technological solution it is easy to pass the biggest existing problems off to other folks, and pay attention to the new and shiney technology. This is easy. Yes it just contributes to the problem, and rarely actually provides comprehensive, equitable solutions that will make a difference unwinding the technical debt we've already built up. So I tend not to get distracted with the endless waves of made up problems you read about daily. I think the biggest unsolved problem in the space is technical debt, and how we unwind it as we move forward. This isn't just about adopting new acronyms, phrases, terms, and technology. It is often about deeply considering the why and how we are doing this, and having open conversations about what technology we should be doing, and shouldn't be doing. Then doing it in small enough chunks that it can be eliminated as soon as it shifts from asset to a liability, and either eliminated or replaced with something that works.
