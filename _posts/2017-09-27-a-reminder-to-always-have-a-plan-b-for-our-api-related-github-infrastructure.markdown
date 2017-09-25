@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: A Reminder To Always Have A Plan B For Our API Related Github Infrastructure
 date: 2017-09-27T15:00:00.000Z
