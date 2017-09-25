@@ -10,7 +10,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-api-stylebook.png
 ---
-<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-api-stylebook.png" aign="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-api-stylebook.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 _This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure._
 
 Current API design focusses on using schema to help quantify the payload of the request and response structure of our APIs. JSON Schema, MSON, and other data specifications have emerged to help us quantify the bits we are passing back and forth with APIs. Alongside this evolution, another data format has emerged to help us define simple descriptions of our application-level semantics, similar to how we are using HTML microformats to share data on the web, Application-Level Profile Semantics (ALPS).
