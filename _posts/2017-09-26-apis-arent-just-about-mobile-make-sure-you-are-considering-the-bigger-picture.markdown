@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'APIs Are Not Just About Mobile, Make Sure You Considering The Bigger Picture'
+title: 'APIs Are Not Just About Mobile, Make Sure You Are Considering The Bigger Picture'
 date: 2017-09-26T11:00:00.000Z
 tags:
   - API Evangelist
