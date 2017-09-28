@@ -10,7 +10,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png
 ---
-<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png" aign="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 _This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure._
 
 gRPC is a high-performance open source remote procedure call (RPC) framework that is often used to deploy APIs across data centers that also supporting load balancing, tracing, health checks and authentication. While gRPC excels in more controlled, tightly coupled environments, it is also applicable for delivering resources to web, mobile, and other Internet connected devices.
