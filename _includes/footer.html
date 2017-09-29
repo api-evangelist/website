@@ -1,7 +1,21 @@
 <footer>
   <p align="center">
     {% assign partners = site.data.sponsors.index %}
-    {% assign partners = site.data.sponsors.index | sample %}
+
+    {% assign banner_list = '' %}
+    {% for partner in partners %}
+			{% assign banner = partner.banner_url %}
+			{% if banner_list contains banner %}
+			{% else %}
+				{% if banner_list != '' %}
+					{% assign banner_list = banner_list | append:',' %}
+				{% endif %}
+				{% assign banner_list = banner_list | append: banner %}
+			{% endif %}
+		{% endfor %}
+		{% assign bannerArray = banner_list | split: "," %}
+
+    {% assign partners = bannerArray | sample %}
     <a href="{{ partners.url }}" target="_blank">
       <img src="{{ partners.banner_url }}" width="50%" style="padding-top: 10px; border: 1px solid ###;" />
     </a>
