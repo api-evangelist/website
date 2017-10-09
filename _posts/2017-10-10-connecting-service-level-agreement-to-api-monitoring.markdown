@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Connecting Service Level Agreement To API Monitoring
+title: Connecting Service Level Agreements To API Monitoring
 date: 2017-10-10T13:00:00.000Z
 tags:
   - API Evangelist
