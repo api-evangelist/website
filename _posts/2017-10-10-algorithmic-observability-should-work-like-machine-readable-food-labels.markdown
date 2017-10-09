@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Algorithmic Observability Should Work Like Machine Readable Food Labels
-date: 2017-10-09T09:00:00.000Z
+date: 2017-10-10T11:00:00.000Z
 tags:
   - API Evangelist
   - Algorithms
