@@ -19,7 +19,7 @@ While I am keeping an eye on gRPC itself, this particular story is about the con
 - [Talk](https://www.youtube.com/watch?v=UVsIfSfS6I4) - A 15 minute course introduction video.
 - [Slides](https://docs.google.com/presentation/d/1dgI09a-_4dwBMLyqfwchvS6iXtbcISQPLAXL6gSYOcc/edit?usp=sharing) - Slides that go along with the talk.
 - [Codelab](https://codelabs.developers.google.com/codelabs/cloud-grpc/index.html) - A 45m codelab that attendees can complete using [Cloud Shell](https://cloud.google.com/shell/).
-## Resources and community
+### Resources and community
 - [**gRPC Website**](http://www.grpc.io/)
 - **Codelab**
 	- [Building a gRPC service with Node.js](https://codelabs.developers.google.com/codelabs/cloud-grpc/index.html)
@@ -34,7 +34,7 @@ While I am keeping an eye on gRPC itself, this particular story is about the con
     - [Stack Overflow](http://stackoverflow.com/tags/grpc/)
 - **Keep in Touch**
 	- [Twitter](https://twitter.com/grpcio)</li></ul>|
-## Request Support for Your Event
+### Request Support for Your Event
 - [gRPC Stickers](https://goo.gl/forms/C3TCtFdobz4ippty2)
 - [Sign up for office hours with gRPC team](https://goo.gl/forms/pvxNwWExr5ApbNst2)
 
