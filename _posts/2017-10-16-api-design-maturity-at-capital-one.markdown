@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: API Design Maturity At Capital One
 date: 2017-10-16T15:00:00.000Z
