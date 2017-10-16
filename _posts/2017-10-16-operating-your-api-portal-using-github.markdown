@@ -14,11 +14,11 @@ image: 'https://s3.amazonaws.com/kinlane-productions/jekyll/jekyllrb.png'
 
 If you are just getting going with understand how Github can be used to support your API operations, I wanted to provide a simple checklist of the concepts at play, that will lead you being able to publish your API portal to Github.
 
-- Github Account - You will need an account to be able to use Github. Anything you do on Github that is public will be free. You can do private portals on Github, but this story is about using it for a public API portal.
-- Github Organization - I recommend starting an organization for your API operations, instead of under just a single users account. Then you can make the definition for the API the first repository, and possibly the portal your second repository you create.
-- Github Repo - A Github repository is basically a folder on the platform which you can start the code, pages, and other content used as part of API operations.
-- [Github Pages](https://pages.github.com/) - Each Github repository has the ability to turn on a public project site, which can be used as a hosting location for a developer portal.
-- [Jekyll](https://jekyllrb.com/) - Github Pages allows any Github repository to become a website hosting location which you can access via your Github user account, or even provide an address using your own domain.
+- **Github Account** - You will need an account to be able to use Github. Anything you do on Github that is public will be free. You can do private portals on Github, but this story is about using it for a public API portal.
+- **Github Organization** - I recommend starting an organization for your API operations, instead of under just a single users account. Then you can make the definition for the API the first repository, and possibly the portal your second repository you create.
+- **Github Repo** - A Github repository is basically a folder on the platform which you can start the code, pages, and other content used as part of API operations.
+- [**Github Pages**](https://pages.github.com/) - Each Github repository has the ability to turn on a public project site, which can be used as a hosting location for a developer portal.
+- [**Jekyll**](https://jekyllrb.com/) - Github Pages allows any Github repository to become a website hosting location which you can access via your Github user account, or even provide an address using your own domain.
 
 I recommend every API provider think about hosting their API portal on Github. The learning curve isn't that significant to get up and running, and if your portal is public, it is free. You can version control, and leverage other key aspects of Github for evolving and managing your API portal. There are a growing number of examples of [forkable API portals like from the GSA](https://apievangelist.com/2017/06/14/gsa-api-standards-with-working-prototype-api-and-portal/), or [an interesting minimum viable API documentation template](http://portal.apievangelist.com/2017/09/05/a-new-minimumviable-documentation-jekyll-template-for-apis/) from my friend James Higginbotham ([@launchany](https://twitter.com/launchany)). Demonstrating that the practice is growing, with the number of healthy examples to build on diversifying.
 
