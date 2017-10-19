@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Adding Ping Events To my Webhooks And API Research
+title: Adding Ping Events To My Webhooks And API Research
 date: 2017-10-19T13:00:00.000Z
 tags:
   - API Evangelist
