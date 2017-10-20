@@ -16,12 +16,12 @@ To help me think though the UI elements needed for helping manage the essential 
 - **Creation** - The landing page for developer account creation. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.
 - **Login** - The page for logging back in after a developer has registered. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.
 - **Dashboard** - The landing page once an API consumer is logged in -- providing access to all aspects of their API access.
-**Account** - The ability to update developer account information.
-**Key(s)** - The ability to get the master set, or multiple copies of API keys.
-**Plans** - Viewing all available plans, with the ability to see which plan a consumer is part of and switch plans if relevant.
-**Usage** - See history of all API consumption by API and time period.
-**Credit Card** - The addition and updating of account credit card.
-**Billing** - See history of all invoices for API consumption.
+- **Account** - The ability to update developer account information.
+- **Key(s)** - The ability to get the master set, or multiple copies of API keys.
+- **Plans** - Viewing all available plans, with the ability to see which plan a consumer is part of and switch plans if relevant.
+- **Usage** - See history of all API consumption by API and time period.
+- **Credit Card** - The addition and updating of account credit card.
+- **Billing** - See history of all invoices for API consumption.
 
 There may be more of these added to my current projects. Things like forgot password, and other aspects, but this gives me this visibility into the API consumer account, and usage aspects of the API management I'm trying deliver. These are the basic features any API management provider delivers, and represent the default areas of control an API provider should have over API consumption. It doesn't have to be pretty, and have all the bells and whistles, but it should give each API consumer what they need to manage their access, consumption, and understand what they've consumed and been billed for.
 
