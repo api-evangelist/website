@@ -158,7 +158,7 @@ I have been working with databases for 30 years. I began working with web servic
 
 This reflects the core capabilities present across the API landscape. While SOAP and REST make up much of the landscape, hypermedia, GraphQL, event sourcing, and other approaches are seeing more adoption. I emphasize every platform make REST, or web APIs the central focus of the platform, keeping the bar low for API consumers, leverage web technology to reach the widest audience possible.
 
-**7. Please describe your experience and strategies that you have employed at enterprises to create Experience Services from mashup/aggregation/combination of other API’s, services, database calls etc. **
+**7. Please describe your experience and strategies that you have employed at enterprises to create Experience Services from mashup/aggregation/combination of other API’s, services, database calls etc.**
 
 I've been tracking on API aggregation as a discipline for over five years now, having worked with several groups to aggregate common APIs. It is an under developed layer to the web API sector, but one that has a number of proprietary, as well as open source solutions available.
 
@@ -221,7 +221,7 @@ API governance is something i've tuned into across a variety of enterprise, high
 
 Sadly, API governance isn't something I've seen consistently applied across the enterprise, at institutions and government agencies. There is no standard for API governance. There are few case studies when it comes to API governance to learn from. Slowly I am seeing larger enterprises share their strategies, and seeing some universities publish papers on the topic. Providing some common building blocks we can organize into a coherent API governance strategy.
 
-**10. Please describe your experience and methodologies for DevOps/RunOps processes across deployments. Highlight strategies for policy testing, versioning, debugging etc. **
+**10. Please describe your experience and methodologies for DevOps/RunOps processes across deployments. Highlight strategies for policy testing, versioning, debugging etc.**
 
 API management is a living entity, and we focus on delivering API operations with flat teams who have access to the entire stack, from backend to understanding application and consumer needs. All aspects of the API life cycle embraces a microservices, continuous evolution pace, with Github playing a central from from define to deprecation.
 
@@ -235,7 +235,7 @@ API management is a living entity, and we focus on delivering API operations wit
 
 A DevOps focus is maintained across as many stops along an API life cycle, and reflected in API governance practices. However, it is also recognized that a DevOps will not always be compatible with existing legacy practices, and custom approaches might be necessary to maintain specific backend resources, until their practices can be evolved, and brought in alignment with wider practices.
 
-**11. Please describe your experience and strategies employed for analytics related to runtime management, performance monitoring, usage tracking, trend analysis. **
+**11. Please describe your experience and strategies employed for analytics related to runtime management, performance monitoring, usage tracking, trend analysis.**
 
 Logging and anaysis is a fundamental component of API management, feeding an overall awareness of how API are being consumer, which contributes to the product road map, security, and overall platform reliability. The entire API stack should be analyzed from the backend, to the furthest application endpoints, whenever possible.
 
@@ -250,11 +250,11 @@ Logging and anaysis is a fundamental component of API management, feeding an ove
 
 API management has matured over the last decade to give us a standard approach to managing API access at consumption time, optimizing usage, limiting bad behavior, and incentivizing healthy behavior. API monitoring and testing practices have evolved this perspective of the health, availability, and how APIs are being used from the client perspective. All of this information gets funneled into the road map, refining API gateway plans, rate limits, and other run time systems to adjust and support desired API usage.
 
-**12. Please describe your experience with integrating MuleSoft with Enterprise Identity Management, Directory Services and implementing Role Based access. **
+**12. Please describe your experience with integrating MuleSoft with Enterprise Identity Management, Directory Services and implementing Role Based access.**
 
 I do not have any experience in this area with Mulesoft specifically, but have worked in general with IAM and directory solutions in other platforms, and heavy usage on AWS, for securing the API gateway's interaction with existing backend system.
 
-**13. Please describe your experience with generating and documenting API’s and the type of standards they follow. Describe approaches taken for hosting these documentations and keeping them evergreen. **
+**13. Please describe your experience with generating and documenting API’s and the type of standards they follow. Describe approaches taken for hosting these documentations and keeping them evergreen.**
 
 API documentation is always a default aspect of the API platform, and delivered just like code as part of DevOps and CI/CD workflows using Github. With almost every stop along the API life cycle, all documentation is API definition driven, keeping things interactive, with the following elements always in play:
 
@@ -374,7 +374,7 @@ Our team is capable of working in any environment, and suggest test environments
 
 To facilitate the defining, and evolution of a technical evaluation we recommend starting a private Github repository, either initiated by the VA, or off error, where a set of requirements, and definitions can be established as a seed for the technical evaluation, as well as quickly become many seeds for actual platform implementation.
 
-**In Conclusion**
+**In Conclusion**<br />
 That was a title more work than I anticipated. I had scheduled about six hours to think through this, and go through my research to find relevant answers. When I started this response, I was planning on adding a whole other section for suggestions beyond the questions that were being asked, but I think they are able to get at more of the proposed strategy than I anticipated. There were some redundant areas of this RFI, as well as some foreshadowing regarding what would be possible with such an API, but I think the questions were able to get at what is needed.
 
 I'm not sure how my responses will size up with my partners, or alongside the other responders to the RFI. My responses reflect what I see working across the wider public API space, and are based upon what I've learned opening up data, and trying to move forward other API projects across other federal agencies, all the way down to the municipal level. I'm guessing my approach will be heavier on the business and politics of API platform operations, and lighter on the reliance on the technical elements, addressing in my opinion the biggest obstacle to API success--culture, silos, and delivering consistently across disparate groups working under a common vision.
