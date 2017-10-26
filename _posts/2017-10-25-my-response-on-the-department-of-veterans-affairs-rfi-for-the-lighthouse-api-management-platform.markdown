@@ -252,11 +252,11 @@ API management has matured over the last decade to give us a standard approach t
 
 **12. Please describe your experience with integrating MuleSoft with Enterprise Identity Management, Directory Services and implementing Role Based access. **
 
-I do not have any experience in this area with Mulesoft specifically, but have worked in general with IAM and directory solutions in other platforms, and heavy usage on AWS, for securing the API gateway's interaction with existing backedn system.
+I do not have any experience in this area with Mulesoft specifically, but have worked in general with IAM and directory solutions in other platforms, and heavy usage on AWS, for securing the API gateway's interaction with existing backend system.
 
 **13. Please describe your experience with generating and documenting API’s and the type of standards they follow. Describe approaches taken for hosting these documentations and keeping them evergreen. **
 
-API documentation is always a default aspect of the API platform, and delivered just like code as part of DevOps and CI/CD workflows using Github. With almost every stop along the API life cycle, all documentation is API definition driven, keeping things interactive, with the folllowing elements always in play:
+API documentation is always a default aspect of the API platform, and delivered just like code as part of DevOps and CI/CD workflows using Github. With almost every stop along the API life cycle, all documentation is API definition driven, keeping things interactive, with the following elements always in play:
 
 - **Definitions** - All documentation is driven using OpenAPI, API Blueprint, or RAML, acting as the central machine readable truth of what an API does, and what schema it uses. API definition driven API documentation contributes to them always being up to date, and reflect the freshest view of any API.
 - **Interactive** - All API documentation is API driven, allowing for the documentation to be interactive, acting as an explorer, and dynamic dashboard for playing with and understanding what an API does.
@@ -264,11 +264,11 @@ API documentation is always a default aspect of the API platform, and delivered 
 - **Visualizations** - Evolving on top of interactive documentation features, we are beginning to weave in more visual, dashboard, and reporting features directly into API document.
 - **Github** - Github plays a central role in the platform life cycle, with all aPI definitions and documentation running within Github repository, and integrated as part of CI/CD workflows, and DevOps frame of mind.
 
-All platform documentation is a living, breathing, element of the ecosystem. If should be versioned, evolved, and deployed along with other supporting microservice artifacts. Mulesoft has documentation to support this approach, as well as there being a suite of open soucre solutions we can consider to support a variety of different types of APIs.
+All platform documentation is a living, breathing, element of the ecosystem. If should be versioned, evolved, and deployed along with other supporting microservice artifacts. Mulesoft has documentation to support this approach, as well as there being a suite of open source solutions we can consider to support a variety of different types of APIs.
 
 **14. Please describe your proposed complete process lifecycle for publishing high quality, high value APIs with highest speed to market.**
 
-Evolving beyond question #8, and addressing the API provider side of the coin, I wanted to share a complete (enough) view of the life cycle from the API provider perspective. Addressing the needs of backend API teams, as well as the core API team when it comes to delivering usable, reliable, APIs that are active, and enjoy health release cycles. While not entirely a linear approach, here as many of the stops along our proposed API lifecycle, as applied to individual APIs, but applied consistently across the entire platform.
+Evolving beyond question number 8, and addressing the API provider side of the coin, I wanted to share a complete (enough) view of the life cycle from the API provider perspective. Addressing the needs of backend API teams, as well as the core API team when it comes to delivering usable, reliable, APIs that are active, and enjoy health release cycles. While not entirely a linear approach, here as many of the stops along our proposed API lifecycle, as applied to individual APIs, but applied consistently across the entire platform.
 
 - **Definitions** - Every API starts as an API definition, which follows the API throughout its life, and drives every other stop along the way.
 - **Design** - Planning, applying, evolving, and measuring how API design is applied, taking the definition, and delivering as a consistent API that complies with API governance.
@@ -286,7 +286,7 @@ Evolving beyond question #8, and addressing the API provider side of the coin, I
 
 This life cycle will play out over and over for each API published on the Lighthouse API platform. It will independently be executed by API teams for each API they produce, and replayed with each major and minor release of an API. A well defined, and well traveled API life cycle helps ensure consistency across teams, helping enforce compliance, familiarity, and reusability across APIs, no matter which team is behind the facade.
 
-**15. Please describe your experience and approach towards establishing a 24x7 technical support team for the users, developers and other stakeholders of the platform. **
+**15. Please describe your experience and approach towards establishing a 24x7 technical support team for the users, developers and other stakeholders of the platform.**
 
 Support is an essential building block of any successful API platform, as well as a default aspect of every single APIs individual life cycle. We break API platform support into two separate distinct categories.
 
@@ -307,9 +307,9 @@ Beyond self-service support all API platforms should have multiple direct suppor
 
 A combination of self-service and direct support channels allows for a resource starved core API team, as well as individual backend teams to manage many developers and applications, across many API resources in an efficient manner. Ensuring API consumers get the answers they are looking for, while ensuring relevant feedback and comments end up back in the product road map, with each appropriate product team.
 
-**16. Please describe your experience in establishing metrics and measures for tracking the overall value and performance of the platform. **
+**16. Please describe your experience in establishing metrics and measures for tracking the overall value and performance of the platform.**
 
-This is somewhat overlapped with question #11, but I'd say focuses in on the heart of metrics and analysis at the API management level. Understand performance and reliability through the entire stack is critical to platform reliability, but the API management core is all about developing an awarness of how APIs are being consumed, and the value generated as part of this consumption. While performance definitely impacts value, we focus on API management to help us measure and understand consumption of each resource, and understand and measure the value delivered in consumption.
+This is somewhat overlapped with question #11, but I'd say focuses in on the heart of metrics and analysis at the API management level. Understand performance and reliability through the entire stack is critical to platform reliability, but the API management core is all about developing an awareness of how APIs are being consumed, and the value generated as part of this consumption. While performance definitely impacts value, we focus on API management to help us measure and understand consumption of each resource, and understand and measure the value delivered in consumption.
 
 I've been studying how API management establishes the metrics needed, and measures and tracks API consumption, trying to understand value generation using the following elements:
 
@@ -323,7 +323,7 @@ I've been studying how API management establishes the metrics needed, and measur
 
 API management is the future of public data, content, and other resource management. Understanding API consumption, measuring, analysing, and reporting upon API consumption is required to being able to evolve healthy API resources forward, and develop viable applications, that are putting API resources to use. API management will continue to become the tax system, the royalty system, and value generation capture mechanism across government agencies and public resources in coming years.
 
-**17. Please describe your experience and the approach you would take as the API Program Core Team to deploy an effective strategy that will allow VA to distribute the development of API’s across multiple teams and multiple contractor groups while reducing friction, risk and time to market. **
+**17. Please describe your experience and the approach you would take as the API Program Core Team to deploy an effective strategy that will allow VA to distribute the development of API’s across multiple teams and multiple contractor groups while reducing friction, risk and time to market.**
 
 A microservice, CI/CID, DevOps approach to providing and consuming APIs has begun to shift the landscape for how API platforms are supporting the API life cycle across many disparate teams, trusted external partners, and even 3rd party application and system developers. Distilling all elements of the API supply chain to modular, well defined components, helps establish a platform that can be centralized, but encouraging a consistent way to approach the federated delivery of APIs and supporting resources.
 
