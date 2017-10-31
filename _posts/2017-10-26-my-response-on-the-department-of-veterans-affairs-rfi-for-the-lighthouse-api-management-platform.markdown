@@ -45,7 +45,7 @@ Before I get to the questions included as part of the RFI, I wanted to give some
 **My Answers To The RFI Questions**
 The VA provides 20 separate questions as part of their RFI. Shining a light on some of the thinking that is occurring within the agency. I've bolded their questions, and provide some of my thought inline, sharing my official responses. My team will work to combine everyones feedback, and publish a formal response to the VA's RFI.
 
-**1. Drawing on your experience with API platforms, how do you see it being leveraged further within the healthcare industry in such a manner as described above? What strengths and opportunities exist with such an approach in healthcare? **
+**1. Drawing on your experience with API platforms, how do you see it being leveraged further within the healthcare industry in such a manner as described above? What strengths and opportunities exist with such an approach in healthcare?**
 
 An API first platform as proposed by the VA reflects what is already occurring in the wider healthcare space. With veteran healthcare spending being such a significant portion of healthcare spending in this country, the presence of an API platform like this would not just benefit the VA, veterans, veteran hospitals, and veteran service organizations (VSO), it would benefit the larger economy. A VA API platform would be the seed for a federated approach to not just consuming valuable government resources, but also deploying APIs that will benefit veterans, the VA, as well as the larger healthcare ecosystem.
 
@@ -143,7 +143,7 @@ API security is another dimension of the API sector I've been monitoring and stu
 
 Our API security experience comes from past projects, working with vendors, and studying the best practices of API leaders. Increasingly API security is a group effort, with a growing number of opportunities to work with security organizations, and major tech platforms who see the majority of threats present today. Increasing the volume of information available to integrate directly into platform security operations.
 
-**6. Please describe your experience with all the capabilities that the platform offers and the way you have employed them to leverage existing enterprise digital assets (e.g. other integration service buses, REST APIs, SOAP services, databases, libraries) **
+**6. Please describe your experience with all the capabilities that the platform offers and the way you have employed them to leverage existing enterprise digital assets (e.g. other integration service buses, REST APIs, SOAP services, databases, libraries)**
 
 I have been working with databases for 30 years. I began working with web services in 2000, and have worked exclusively with web APIs in a full time capacity since 2010. I've worked hard to keep myself in tune with the protocols, and design patterns in use across the public and private API sectors. Here are the capabilities I'm tuned into currently.
 
