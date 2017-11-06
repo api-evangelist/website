@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'A Simple API Using AWS RDS, Lambda, and API Gateway'
-date: 2017-11-02T16:00:00.000Z
+date: 2017-11-06T13:00:00.000Z
 tags:
   - API Evangelist
 image: >-
