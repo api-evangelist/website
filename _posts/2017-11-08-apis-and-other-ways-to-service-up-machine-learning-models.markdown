@@ -1,7 +1,6 @@
 ---
-published: true
 layout: post
-title: ''
+title: 'APIs And Other Ways Of Serving Up Machine Learning Models'
 date: 2017-11-08T15:00:00.000Z
 tags:
   - API Evangelist
@@ -12,8 +11,9 @@ tags:
   - Deployment
 image: >-
   https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png
+g
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png" align="right" width="45%" style="padding: 15px;" /></p>As with most areas of the tech sector, behind the hype there are real world things going on, and machine learning is one area I've been studying, learning, and playing with what is actually possible when it comes to APIs. I've been studying the approach across each of the major cloud platforms, including AWS, Azure, and Google t push forward my understanding of the ML landscape. [Recently the Google Tensorflow team released an interesting overview of how they are serving up Tensorflow models, making machine learning accessible across a wide variety of use cases](http://research.googleblog.com/2017/11/latest-innovations-in-tensorflow-serving.html). Not all of these are API specific, but I do think they are should be considered equally as part of the wider machine learning (ML) application programming interface (API) delivery approach.
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png" align="right" width="45%" style="padding: 15px;" /></p>As with most areas of the tech sector, behind the hype there are real world things going on, and machine learning is one area I've been studying, learning, and playing withd what is actually possible when it comes to APIs. I've been studying the approach across each of the major cloud platforms, including AWS, Azure, and Google t push forward my understanding of the ML landscape. Recently the Google Tensorflow team released an interesting overview of how they are serving up Tensorflow models, making machine learning accessible across a wide variety of use cases. Not all of these are API specific, but I do think they are should be considered equally as part of the wider machine learning (ML) application programming interface (API) delivery approach.
 
 Over the past year and half, with the help of our users and partners inside and outside of Google, TensorFlow Serving has advanced performance, best practices, and standards for ML delivery:
 
@@ -29,4 +29,4 @@ I like that easy-to-use APIs are on the list. I predict that ease of use, and a 
 
 I'm working to develop my own ML models, and actively using a variety of them available over at [Algorithmia](https://algorithmia.com/). I'm pushing forward a project to help me quantify and categorize ML solutions that I come across, and when they are delivered using an API, I am generating an OpenAPI, and applying a set of common tags to help me quantify, categorize, and index all the ML APIs. While I am focused on the technology, business, and politics of ML APIs, I'm interested in understanding how ML models are being delivered, so that I can help keep pace with exactly how APIs can augment these evolving practices, making ML more accessible, as well as observable.
 
-We are in the middle of the algorithmic evolution of the API space, where we move beyond just data and content APIs, and where ML, AI, and other algorithmic voodoo is becoming mainstream. I feel pretty strongly that APIs are an import piece of this puzzle, helping us quantify and understand what ML algorithms do, or don't do. No matter how the delivery model for ML evolves, batches, distributes, or any other mutation, there should be an API layer for accessing, auditing, and shining a light on what is going on. This is why I regularly keep an eye on what teams like Tensorflow are up to, so that I can speak intelligently to what is happening on this evolving ML front.
+We are in the middle of the algorithmic evolution of the API space, where we move beyond just data and content APIs, and where ML, AI, and other algorithmic voodoo is becoming more mainstream. I feel pretty strongly that APIs are an import piece of this puzzle, helping us quantify and understand what ML algorithms do, or don't do. No matter how the delivery model for ML evolves, batches, distributes, or any other mutation, there should be an API layer for accessing, auditing, and shining a light on what is going on. This is why I regularly keep an eye on what teams like Tensorflow are up to, so that I can speak intelligently to what is happening on this evolving ML front.
