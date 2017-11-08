@@ -11,7 +11,6 @@ tags:
   - Deployment
 image: >-
   https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png
-g
 ---
 <p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png" align="right" width="45%" style="padding: 15px;" /></p>As with most areas of the tech sector, behind the hype there are real world things going on, and machine learning is one area I've been studying, learning, and playing withd what is actually possible when it comes to APIs. I've been studying the approach across each of the major cloud platforms, including AWS, Azure, and Google t push forward my understanding of the ML landscape. Recently the Google Tensorflow team released an interesting overview of how they are serving up Tensorflow models, making machine learning accessible across a wide variety of use cases. Not all of these are API specific, but I do think they are should be considered equally as part of the wider machine learning (ML) application programming interface (API) delivery approach.
 
