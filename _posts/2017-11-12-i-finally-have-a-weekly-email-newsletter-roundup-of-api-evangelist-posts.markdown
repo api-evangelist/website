@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: I Finally Have A Weekly Email Newsletter Roundup Of API Evagelist Posts
+title: I Finally Have A Weekly Email Newsletter Roundup Of API Evangelist Posts
 date: 2017-11-12T11:00:00.000Z
 tags:
   - API Evangelist
