@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: I Added A Simple Bulk API For My Human Services Data API
-date: 2017-11-14T16:00:00.000Z
+date: 2017-11-14T09:00:00.000Z
 tags:
   - API Evangelist
   - HSDA
