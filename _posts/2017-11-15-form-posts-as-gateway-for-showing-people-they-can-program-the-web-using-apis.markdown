@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: Form Posts As Gateway For Showing People They Can Program The Web Using APIs
+date: 2017-11-15T13:00:00.000Z
+tags:
+  - API Evangelist
+  - Forms
+  - 101
+  - Low Hanging Fruit
+image: 'https://s3.amazonaws.com/kinlane-productions/forms/contact-form.png'
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/forms/contact-form.png" align="right" width="45%" style="padding: 15px;" /></p>I am always looking for new avenues to help on-board folks with APIs. [I'm concerned that folks aren't quite ready for the responsibility that comes with a programmable web](http://apievangelist.com/2017/11/10/are-people-ready-for-an-online-api-driven-world-that-is-progammable/), and I'm looking for ways to help show them how the web is already programmable, and that APIs can help them take more control over their data and content online. A significant portion of [my low hanging fruit API work](https://apievangelist.com/2016/04/13/formalizing-my-approach-to-identifying-the-low-hanging-api-fruit/) centers around the forms already in use across websites, and how these forms are a doorway for data, and content that should also be available via an API. If information is already available on your website, and being gathered or displayed in response to a form on your website, it is a great place to start a conversation around providing an API that delivers the same functionality.
+
+Sometimes forms drive website searches, and act as a way to gather some data before presenting results--providing a good example of a GET API. In other situations forms act as an input for data, such as a contact form, or survey response. In these scenarios, forms provide a good example of a writable, or POST API path--allowing data and content to be added into a system. I'm always pointing out that if data is displayed in tables, or accessible through a form submission on a website, this is where you should start with readable APIs. The same holds true for form submissions that gather data, being where folks should bet starting with writable APIs.
+
+I feel like contact, messaging, and survey forms are all good examples of how companies, organizations, institutions, and government agencies can begin with write APIs. Business users get the concept of a form, and even its submission via a POST on the web. It is a great place to start the conversation with folks about having APIs that don't just deliver information, but also accept new information using the web. I'm thinking about how I can use Google Forms in conjunction with the work I've been doing around managing data using Google Sheets, and exposing it publicly using the Google Sheets API. Demonstrating how simple it is to make data reusable across many applications using Google Sheets, but then also open up access to submit data using Google Forms.
+
+Forms are nothing new in my work as the API Evangelist. I see regular waves of starts emerge to try and crack open the intersection of forms and APIs. I feel like it is one of those areas where we need a lot more training and educational materials, as well as simple prototypes and open source tooling to help folks understand how forms and APIs work together before the next waves of form based startups can get the traction they desire. I feel like there is a significant opportunity to open up the mind of the average business user regarding the programmatically of the web using APIs, but it isn't just a business opportunity, its an educational opportunity. Which the API space isn't always good at delivering in because we tend to be so distracted with the building and selling of startups. Hopefully, someone comes along and can use forms as a way to onboard the next wave of API savvy folks, which eventually will pencil out in the success of one or more form centered API startups.
