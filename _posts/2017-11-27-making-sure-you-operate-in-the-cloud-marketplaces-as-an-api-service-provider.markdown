@@ -8,8 +8,7 @@ tags:
   - Marketplace
   - Database
   - Deployment
-image: >-
-  https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png
+image: https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png
 ---
 _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
@@ -17,7 +16,7 @@ _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.co
 
 If you are an API service provider, and you are selling services to API providers anywhere along the API lifecycle, I recommend you follow the example of friends over at SlashDB, who have their database to API offerings in two of the leading marketplaces:
 
-- [**AWS**](https://aws.amazon.com/marketplace/pp/B01MU8W71L] - Automatically constructing a REST API to databases for reading and writing on the AWS platform.
+- [**AWS**](https://aws.amazon.com/marketplace/pp/B01MU8W71L) - Automatically constructing a REST API to databases for reading and writing on the AWS platform.
 - [**Azure Marketplace**](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/vte.slashdb) - SlashDB enables you to do more with traditional databases and Microsoft Azure.
 
 As more companies, organizations, institutions, and government agencies move their databases into the cloud, SlashDB sees the opportunity to help them quickly turn databases and tables into web interfaces for querying data. Having your API service ready to go, in the environments where your potential customers are already operating is how much of this API stuff will go down in the future. Amazon has set the stage for how we'll be delivering IT infrastructure over the last decade with the introduction of the cloud, and Google and Microsoft are quickly playing catch up. The savvy API service providers understand their role in this cloud evolution and make sure their services are available as retail solutions, but also as plug and play wholesale solutions in these cloud marketplaces.
