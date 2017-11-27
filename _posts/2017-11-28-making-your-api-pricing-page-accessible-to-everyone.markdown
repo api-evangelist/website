@@ -15,7 +15,7 @@ I've been talking with [the folks over at Bitscoop about their integration platf
 
 Bitscoop is really priced for EVERYONE, with a simple free tier to get started using the platform.
 
-<p align="center"><a href="https://bitscoop.com/pricing/"><img src="https://s3.amazonaws.com/kinlane-productions/bitscoop/bitscoop-pricing-free.png" align="center" width="75%" /></a></p>
+<p align="center"><a href="https://bitscoop.com/pricing/"><img src="https://s3.amazonaws.com/kinlane-productions/bitscoop/bitscoop-pricing-free.png" align="center" width="40%" /></a></p>
 
 Next there are three tiers of access: developer, organization, and enterprise. It's not as "ascendable" as I'd like it (smoother hop from tier to tier), but because Bitscoop clearly articulates how much additional calls are for each tier, the jump from tier to tier isn't as painful.
 
