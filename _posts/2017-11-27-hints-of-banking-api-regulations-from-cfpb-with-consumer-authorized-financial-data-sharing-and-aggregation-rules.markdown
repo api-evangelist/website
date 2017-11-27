@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: ''
+title: 'Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules'
 date: 2017-11-27T11:00:00.000Z
 tags:
   - API Evangelist
@@ -12,7 +12,7 @@ image: >-
   https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png
 ---
 <p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/"><img src="https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png" align="right" width="45%" style="padding: 15px;" /></a></p>
-[The Consumer Finance Protection Bureau (CFPB) has started laying out some consumer-authorized data sharing and aggregation rules to begin moving forward the banking data scraping conversation in (hopefully) a more production way](https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/). It is common knowledge that many financial focused (Fintech) companies regularly access consumers account data using their credentials, so that they scrape relevant account information from their bank, for use in a wide variety of 3rd party tools. This is a common practice that everyone in the industry knows about, understands is a potential security and privacy risk, but everyone looks the other way because it adds value to the consumer ecosystem. 
+[The Consumer Finance Protection Bureau (CFPB) has started laying out some consumer-authorized data sharing and aggregation rules to begin moving forward the banking data scraping conversation in (hopefully) a more production way](https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/). It is common knowledge that many financial focused (Fintech) companies regularly access consumers account data using their credentials, so that they scrape relevant account information from their bank, for use in a wide variety of 3rd party tools. This is a common practice that everyone in the industry knows about, understands is a potential security and privacy risk, but everyone looks the other way because it adds value to the consumer ecosystem.
 
 In a perfect world each bank would have a public API portal where Fintech aggregators could come and sign up for application keys, and get the authorization of users via OAuth, and obtain access to their banking data in a secure, and accountable way. However, as we are well aware, we do not live in a perfect world, and banks are pretty resistant to change, so the scraping continues. At some point we are going to see the landscape begin to shift, and I'm guessing it will be at the regulatory level where we finally begin to see this behavior changed--making the CFPB's rules announcement a reflection of what is coming down the pipes when it comes to banking API regulation.
 
