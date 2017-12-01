@@ -11,6 +11,7 @@ layout: default
   {% for post in paginator.posts %}
 	 	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
     {% if post.title != null %}
+			debug: {{ posttime }} < {{ nowunix }}
 			{% if posttime < nowunix %}
         <h3><a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}</a></h3>
         <span class="post-date">{{ post.date | date_to_string }}</span>
