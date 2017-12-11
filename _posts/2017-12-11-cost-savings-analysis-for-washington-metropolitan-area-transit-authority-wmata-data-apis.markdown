@@ -27,4 +27,4 @@ Streamdata.io does this by being stood up in front of the WMATA web API and cach
 
 I'm learning about Streamdata.io's process for calculating these savings, which is why I'm writing this story. I'm going to work to help apply this to many other APIs, as well as look at productizing the tool so that maybe it can become a self-service tool for other API providers to evaluate their own cost savings, if they went to a real-time way of doing things. To help me understand the savings beyond WMATA, I'm going to be doing benchmarks across all the other US transit provides, and see what kind of numbers I can generate.
 
-_**Disclosure:** Streamdata.io is API Evangelists sole partner._
+_**Disclosure:** Streamdata.io is API Evangelists partner._
