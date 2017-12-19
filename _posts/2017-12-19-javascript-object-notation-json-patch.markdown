@@ -16,7 +16,7 @@ image: >-
 The introduction for [JSON Patch from RFC [RFC4627]](https://tools.ietf.org/html/rfc6902) describes it this way:
 
 > JavaScript Object Notation (JSON) [RFC4627] is a common format for the exchange and storage of structured data.  HTTP PATCH [RFC5789] extends the Hypertext Transfer Protocol (HTTP) [RFC2616] with a method to perform partial modifications to resources.
-JSON Patch is a format (identified by the media type "application/json-patch+json") for expressing a sequence of operations to apply to a target JSON document; it is suitable for use with the HTTP PATCH method.
+> JSON Patch is a format (identified by the media type "application/json-patch+json") for expressing a sequence of operations to apply to a target JSON document; it is suitable for use with the HTTP PATCH method.
 This format is also potentially useful in other cases in which it is necessary to make partial updates to a JSON document or to a data structure that has similar constraints (i.e., they can be serialized as an object or an array using the JSON grammar).
 
 JSON Patch is an efficient way to only get the details from an API regarding only what has changed, instead of sending everything over the pipes each time. It makes sense that Streamdata.io has used it in conjunction with Server-Sent Events (SSE) to efficiently cache and stream data from existing web APIs. I have to admit I never put this together with the PATCH method for API responses. Most of the APIs I've seen that use PATCH, do not actually implement JSON PATCH, so this was a learning moment for me. Something I'm always thankful for, constantly reminding me just how much I do not know in the space, even with my experience studying APIs.
