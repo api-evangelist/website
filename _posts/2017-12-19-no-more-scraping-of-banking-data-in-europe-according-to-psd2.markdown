@@ -16,13 +16,9 @@ image: 'https://s3.amazonaws.com/kinlane-productions/psd2/european-commission-pr
 Here is the section from the press release specifically addressing "what data can TPPs access and use via screen scraping":
 
 > PSD2 prohibits TPPs from accessing any other data from the customer payment account beyond those explicitly authorised by the customer. Customers will have to agree on the access, use and processing of these data.
-
 > With these new rules, it will no longer be allowed to access the customer's data through the use of the techniques of "screen scraping". Screen scraping means accessing the data through the customer interface with the use of the customer's security credentials. Through screen scraping, TPPs can access customer data without any further identification vis-à-vis the banks.
-
 > Banks will have to put in place a communication channel that allows TPPs to access the data that they need in accordance with PSD2. The channel will also be used to enable banks and TPPs to identify each other when accessing these data. It will also allow them to communicate through secure messaging at all times.
-
 > Banks may establish this communication channel by adapting their customer online banking interface. They may also create a new dedicated interface that will include all necessary information for the relevant payment service providers.
-
 > The RTS specifies the contingency safeguards that banks shall put in place if they decide to develop a dedicated interface. This will ensure fair competition and business continuity for TPPs.
 
 Banks will have to provide APIs for aggregators to access data. Aggregators will not be allowed to scrape, and are being forced to use the APIs. While there will be a rolling out period, and I'm sure there will still be the bad actors on both sides of the equation, it is the groundwork for a much more sensible and secure approach to providing access to banking customers data--cleaning up the current mess. It is an important step for the banking sector, as well as a significant precedent for the API space when it comes to requiring API access to users data, allowing them to take advantage of valuable 3rd party services.
