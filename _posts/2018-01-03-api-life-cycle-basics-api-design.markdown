@@ -17,13 +17,13 @@ API design is not just about REST. Sure, a great deal of the focus within this s
 
 In the last five years API design has matured into its own discipline, focusing on a define and design first approach to developing APIs, shifting away from a code then document approach we've seen dominate for the last decade, and is still common place at many organizations. There are a handful of tooling, and websites that have emerged to help API providers, architects, developers, and designers get a handle on this stop along the API journey--here are just a few.
 
-- Swagger Editor (http://editor.swagger.io) - Leverage the Swagger editor for manually working with OpenAPI definitions.
-- Apicurio (http://www.apicur.io/) - A robust, and beautiful open source tool for designing APIs.
-- API Design Guide - Continue to establish, evolve, and disseminate the organizational API design guide, providing guidance for all teams--make sure there is a feedback loop involved with its development.
-- API Stylebook (http://apistylebook.com/) - Learning and extracting from other companies API design guides.
-- Designing and Implementing Hypermedia APIs (https://www.infoq.com/articles/hypermedia-api-tutorial-part-one) - A thoughtful post on how to design hypermedia APIs.
-- GraphQL Design (http://graphql.org/learn/best-practices/) - The best practices for designing a GraphQL API.
-- GRPC API Design (https://grpc.io/docs/guides/) - A guide to designing gRPC APIs that leverage HTTP/2 and Protocol Buffers.
+- [**Swagger Editor**](http://editor.swagger.io) - Leverage the Swagger editor for manually working with OpenAPI definitions.
+- [**Apicurio**](http://www.apicur.io/) - A robust, and beautiful open source tool for designing APIs.
+- **API Design Guide** - Continue to establish, evolve, and disseminate the organizational API design guide, providing guidance for all teams--make sure there is a feedback loop involved with its development.
+- [**API Stylebook**](http://apistylebook.com/) - Learning and extracting from other companies API design guides.
+- [**Designing and Implementing Hypermedia APIs**](https://www.infoq.com/articles/hypermedia-api-tutorial-part-one) - A thoughtful post on how to design hypermedia APIs.
+- [**GraphQL Design**](http://graphql.org/learn/best-practices/) - The best practices for designing a GraphQL API.
+- [**GRPC API Design**](https://grpc.io/docs/guides/) - A guide to designing gRPC APIs that leverage HTTP/2 and Protocol Buffers.
 
 API design is as much of a discipline as it is a methodology rooted in a specific standard, protocol, or history. It is about having the discipline to document current practices for designing APIs that are in production, then standardize, communicate, and evolve those practices in a formal way. While also studying and learning from other leading API providers and practitioners regarding how they are designing their APIs. Which is why I include the API Stylebook in this stop along the API journey--everyone should be learning from each other, which also includes sharing your API design guide when it is ready.
 

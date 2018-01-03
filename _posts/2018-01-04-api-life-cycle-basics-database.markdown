@@ -8,7 +8,7 @@ tags:
   - Database
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png" align="right" width="45%" style="padding: 15px" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png" align="right" width="25%" style="padding: 15px" /></p>
 
 _This is a series of stories I'm doing as part of [my API Transit work](http://basics.apievangelist.com/), trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I'm using a subway map visual, and experience to help map out the journey, which I'm calling [API transit](http://basics.apievangelist.com/)--leveraging the verb form of transit, to describe what every API should go through._
 
@@ -16,13 +16,13 @@ Deploying an API from a database is the most common approach to delivering APIs 
 
 If you are deploying APIs from a centralized legacy database, there will be significantly more security, performance, and other operational concerns than if your database is dedicated to providing a backend to your API. There are a growing number of open source tools for helping broker the relationship between your API and the database, as well as evolving services, and entire database platforms that are API-centric. Here are just a handful of what I'm seeing out there to support the database stop along an API journey.
 
-[DataBeam](https://github.com/GSA/DataBeam) - Generic RESTful Interface for databases.
-[Arrest-MySQL](https://github.com/alixaxel/ArrestDB/) - A plug-n-play RESTful API for your MySQL database.
-[Postgrest](https://github.com/begriffs/postgrest/) - REST API for any Postgres database.
-[Restheart](https://github.com/SoftInstigate/restheart) - RESTHeart, the automatic REST API Server for MongoDB.
-[NodeAPI](https://github.com/ealeksandrov/NodeAPI) - Simple RESTful API implementation on Node.js + MongoDB.
-[PHP CRUID API](https://github.com/mevdschee/php-crud-api) - Single file PHP script that adds a REST API to a SQL database
-[Google Cloud Spanner](https://cloud.google.com/spanner/) - loud Spanner is the first and only relational database service that is both strongly consistent and horizontally scalable.
+- [DataBeam](https://github.com/GSA/DataBeam) - Generic RESTful Interface for databases.
+- [Arrest-MySQL](https://github.com/alixaxel/ArrestDB/) - A plug-n-play RESTful API for your MySQL database.
+- [Postgrest](https://github.com/begriffs/postgrest/) - REST API for any Postgres database.
+- [Restheart](https://github.com/SoftInstigate/restheart) - RESTHeart, the automatic REST API Server for MongoDB.
+- [NodeAPI](https://github.com/ealeksandrov/NodeAPI) - Simple RESTful API implementation on Node.js + MongoDB.
+- [PHP CRUID API](https://github.com/mevdschee/php-crud-api) - Single file PHP script that adds a REST API to a SQL database
+- [Google Cloud Spanner](https://cloud.google.com/spanner/) - loud Spanner is the first and only relational database service that is both strongly consistent and horizontally scalable.
 
 There are many database to API tools and services available out there. There are also many cloud-native solutions available to help you generate APIs from your preferred cloud provider. Amazon, Azure, and Google all provide API deployment, and management solutions directly from their database solutions. The most difficult part about helping folks thinking about this stop along the API journey, is the many different scenarios for how data is stored, and the limitations on how that data can be made available via APIs.
 
