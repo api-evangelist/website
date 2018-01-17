@@ -8,7 +8,11 @@ tags:
   - Deprecation
 image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" align="right" width="45%" style="padding: 15px;" /></p>This is a simple one. All APIs will eventually need to be deprecated. This is how you avoid legacy systems that have been up for over decades. Make sure the life span of each service is discussed as part of its conception, and put some details out about the expected timeline for its existence. Even if this becomes an unknown, at least you thought about it, and hopefully discussed it with others.
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" align="right" width="30%" style="padding: 15px;" /></p>
+
+_This is a series of stories I'm doing as part of [my API Transit work](http://basics.apievangelist.com/), trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I'm using a subway map visual, and experience to help map out the journey, which I'm calling [API transit](http://basics.apievangelist.com/)--leveraging the verb form of transit, to describe what every API should go through._
+
+This is a simple one. All APIs will eventually need to be deprecated. This is how you avoid legacy systems that have been up for over decades. Make sure the life span of each service is discussed as part of its conception, and put some details out about the expected timeline for its existence. Even if this becomes an unknown, at least you thought about it, and hopefully discussed it with others.
 
 Here are just a few of the common building blocks I'm seeing with API operations that respect their users enough to plan for API deprecation:
 
