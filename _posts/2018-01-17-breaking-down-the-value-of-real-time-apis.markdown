@@ -20,7 +20,7 @@ When it comes to the delivery or streaming of real time events, it isn't just ab
 
 To help me break down the algorithm for measuring the value delivered by Streamdata.io, I've started with creating three simple APIs.
 
-- **Ppll API** - A service for polling any API I give it. I can adjust the settings, but the default is that it polls it every 60 seconds, until I tell it to stop. Storing every response on a private Amazon S3 bucket.
+- **Poll API** - A service for polling any API I give it. I can adjust the settings, but the default is that it polls it every 60 seconds, until I tell it to stop. Storing every response on a private Amazon S3 bucket.
 - **API Size** - A service that processes each API response in the bucket and calculates the size of the response.
 - **API Change** - A service that determines if an API response has changed from the previous response from 60 seconds before, identifying the frequency of change.
 
