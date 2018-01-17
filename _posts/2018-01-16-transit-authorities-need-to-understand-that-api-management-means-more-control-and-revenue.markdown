@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: >-
-  Transit Authorities Need too Understand that API Management Means More Control
+  Transit Authorities Need to Understand that API Management Means More Control
   and Revenue
 date: 2018-01-16T13:00:00.000Z
 tags:
