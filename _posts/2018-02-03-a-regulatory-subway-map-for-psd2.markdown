@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 layout: post
 title: A Regulatory Subway Map For PSD2
 date: 2018-02-03T09:00:00.000Z
