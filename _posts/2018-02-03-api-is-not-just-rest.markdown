@@ -15,6 +15,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/talks/api-days-paris-2018/api-not-rest-1.png
 ---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/talks/api-days-paris-2018/api-days-paris-2018-api-is-not-just-rest.png" align="right" width="40%" style="padding: 15px;" /></p>
 _This is one of my talks from [APIDays Paris 2018](http://www.apidays.io/events/paris-2017). Here is the abstract: The modern API toolbox includes a variety of standards and methodologies, which centers around REST,  but also includes Hypermedia, GraphQL, real time streaming, event-driven architecture , and gRPC. API design has pushed beyond just basic access to data, and also can be about querying complex data structures, providing experience rich APIs, real-time data streams with Kafka and other standards, as well as also leveraging the latest algorithms and providing access to machine learning models. The biggest mistake any company, organization, or government agency can do is limit their API toolbox to be just about REST. Learn about a robust and modern API toolbox from the API Evangelist, Kin Lane._
 
 **Diverse Toolbox**

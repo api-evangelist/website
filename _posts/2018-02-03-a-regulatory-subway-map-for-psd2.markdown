@@ -14,6 +14,7 @@ tags:
   - Regulations
 image: 'https://s3.amazonaws.com/kinlane-productions/transit/paris-metro.pn'
 ---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/talks/api-days-paris-2018/api-days-paris-2018-a-regulatory-subway-map-for-psd2.png" align="right" width="40%" style="padding: 15px;" /></p>
 _This is one of my talks from [APIDays Paris 2018](http://www.apidays.io/events/paris-2017). Here is the abstract: Understanding the PSD2 regulations unfolding for the banking industry is a daunting challenge for banks, aggregators, and regulators, let alone when you are an average user, journalist, or analyst trying to make sense of things. As the API Evangelist I have used a common approach to mapping out transit systems using the universally recognized subway map introduced by Harry Beck in London in the early 20th century. I'm taking this mapping technique and applying it to the PSD2 specification, helping provide a visual, and interactive way to navigating this new regulatory world unfolding in Europe. Join me for an exploration of API regulations in the banking industry, and how we can use a subway and transit map to help us quickly understand the complexities of PSD2, and learn what takes to get up and running with this new definition for the API economy._
 
 **Using Transit As API Analogy**
