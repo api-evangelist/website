@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Using Jeykyll And OpenAPI To Evolve My API Documentation And Storytelling
+title: Using Jekyll And OpenAPI To Evolve My API Documentation And Storytelling
 date: 2018-02-16T09:00:00.000Z
 tags:
   - API Evangelist
