@@ -11,7 +11,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-openapi.png
 ---
-<img src="https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-openapi.png" align="right" width="45%" style="padding: 15px;"/></p>After learning more about [what Open Banking is doing for APIs in the UK](https://www.openbanking.org.uk/), I realized that I needed an OpenAPI template for the industry specification. There are six distinct schema available as part of the project, and I wanted a complete OpenAPI to describe which paths were available, as well as the underlying response schema. I got work crafting one from the responses that were available within [the Open Banking documentation](https://www.openbanking.org.uk/open-data-apis/).
+After learning more about [what Open Banking is doing for APIs in the UK](https://www.openbanking.org.uk/), I realized that I needed an OpenAPI template for the industry specification. There are six distinct schema available as part of the project, and I wanted a complete OpenAPI to describe which paths were available, as well as the underlying response schema. I got work crafting one from the responses that were available within [the Open Banking documentation](https://www.openbanking.org.uk/open-data-apis/).
 
 Open Banking had schema available for their API definitions, but OpenAPI is the leading API and data specification out there today, so it makes sense that there should be an OpenAPI available, helping all participating banking API providers take advantage of all the tooling available within the OpenAPI community. To help support, I have published my Open Banking OpenAPI definition as a Github Gist:
 
