@@ -16,7 +16,7 @@ image: >-
 
 To provide a response, I have taken the main questions they asked, broken them out here, and provided answers to the best of my ability. In my style, the answers are just free form rants, based upon my knowledge of the VA, and the wider API space. It is up to the VA, to decide what is relevant to them, and should be included in their agency API strategy.
 
-**_2. Current Scope
+**_2. Current Scope<br />
 While the acquisition strategy for Lighthouse has not yet been formalized, VA envisions that the program will consist of multiple contracts.  For example, a contract for recommending policy and standards to form governance would likely be separate from an API build team.  The key high level activities below are anticipated to be included within these contracts, and VA is requesting feedback from industry on how these activities should be aligned between multiple contracts.  The list below is not inclusive of all tasks required to support this program.  Additionally, VA intends to provide the IAM solution and the provisioning of necessary cloud resources to host the proposed technology stack.  VA’s current enterprise cloud providers are Microsoft Azure and Amazon Web Services._**
 
 **Microservice Focused Operational & Implementation**<br />
@@ -182,7 +182,7 @@ All operational aspects of the Lighthouse platform should be developed as indepe
 
 The modular, containerized, microservice approach to delivering the Lighthouse platform will allow for the deployment, scaling, and redundant implementation of services in any cloud environment, as well as on-premise, or hybrid scenarios. All services operate using the same microservice footprint, using containers, and a consistent API surface area, allowing for the entire platform stack to be orchestrated against no matter where the actual service resides.
 
-_**Question: 3. Use Case
+_**Question: 3. Use Case<br />
 To better provide insight into aligning activities to contracts, VA has provided the use case below. Please walk through this use case discussing each activity and the contract it would be executed under.
 
 **Veteran Verification Sample Use Case: VA has a need for a Veteran Verification API to verify a Veteran status from a number of VA backend systems to be shared internally and externally as an authoritative data source.  These backend systems potentially have conflicting data, various system owners, and varying degrees of system uptime._**
@@ -207,7 +207,7 @@ APIs, coupled with the proper terms of service in place can eliminate an environ
 
 <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/69_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 
-_**Question: 4. Response
+_**Question: 4. Response<br />
 In addition to providing the requested content above, VA asks for vendors to respond to the following questions:**
 
 **Describe how you would align the aforementioned activities between contracts, and the recommended price structure for contracts?_**
