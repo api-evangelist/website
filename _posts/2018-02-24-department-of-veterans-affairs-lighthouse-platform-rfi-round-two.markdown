@@ -389,7 +389,7 @@ Next, let's look at the Azure stack to see what they bring to the table. There i
 - <a href="https://azure.microsoft.com/en-us/services/managed-disks/">Managed Disks</a> - Persistent, secured disk storage for Azure virtual machines
 - <a href="https://azure.microsoft.com/en-us/services/storage/queues/">Queue Storage</a> - Effectively scale apps according to traffic
 - <a href="https://azure.microsoft.com/en-us/services/storage/files/">File Storage</a> - File shares that use the standard SMB 3.0 protocol
-
+<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/27_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 **Deployment**
 - <a href="https://azure.microsoft.com/en-us/services/app-service/api/">API Apps</a> - Easily build and consume Cloud APIs
 
@@ -483,3 +483,5 @@ I see the AWS API stack, and the Azure API stack, as a starter set of services t
 Enable VA services to be delivered as individual, self-contained units, that can be used as part of a larger VA orchestration of veteran services. Open up the VA and let some sunlight in. Think about what Amazon has been able to achieve by delivering its own internal operations as services, and remaking not just retail, but also touching almost every other industry with Amazon Web Services. [The Amazon Web Services myth story](https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/) provides a powerful and compelling narrative for any company, organizations, institution, or government agency like the VA to emulate.
 
 This proposal is not meant to be a utopian vision for the VA. However it is meant to, as the name of the project reflects, shine a light on existing ways of delivering services via the cloud. Helping guide each service in its own individual journey, while also serving the overall mission of the platform--to help the veteran be successful in their own personal journey.
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/pano-lighthouse_copper_circuit.jpg" align="center"></p>
