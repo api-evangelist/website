@@ -19,7 +19,7 @@ To provide a response, I have taken the main questions they asked, broken them o
 **_2. Current Scope
 While the acquisition strategy for Lighthouse has not yet been formalized, VA envisions that the program will consist of multiple contracts.  For example, a contract for recommending policy and standards to form governance would likely be separate from an API build team.  The key high level activities below are anticipated to be included within these contracts, and VA is requesting feedback from industry on how these activities should be aligned between multiple contracts.  The list below is not inclusive of all tasks required to support this program.  Additionally, VA intends to provide the IAM solution and the provisioning of necessary cloud resources to host the proposed technology stack.  VA’s current enterprise cloud providers are Microsoft Azure and Amazon Web Services._**
 
-**Microservice Focused Operational & Implementation**
+**Microservice Focused Operational & Implementation**<br />
 Lighthouse should embrace a microservices way of doing things, so that the platform can avoid legacy trappings when it comes to delivering software at the VA, which have resulted in large, monolithic systems, possessing enormous budgets, and entrenched teams, that are able to develop a resistance to change and evolution. This microservices way of doing things should be adopted internally, as well as externally, then applied to the technology, business, and politics of delivering ALL Lighthouse infrastructure.
 
 All contracts should be defined and executed in a modular way, with the only distinction between  projects being operational, or for specific project implementations. Everything should be delivered as microservices, no matter whether it is in support of operating the Lighthouse platform, or delivering services to Lighthouse-driven applications. The technology and business of each service should be self-contained, modular, and focusing on doing one thing, and doing it well. Ensuring all services executed as part of Lighthouse operations are decoupled, working independently, allowing for easily defining, delivering, managing, evolving, and deprecating of every operational and implementational service that makes Lighthouse work.
@@ -61,7 +61,7 @@ Operational services will be the first projects delivered via the platform, and 
 
 The OpenAPI, JSON Schema, and other definitions for each microservice will ultimately be the contract for each project. Of course, to deliver the first set of operational platform services (compute, storage, DNS, pipeline, logging, etc.) these independent contracts might need to be grouped into a single, initial contract. Something that will also occur around different groups of services being delivered at any point in the future, but each individual service should be self-contained, with its own contract definition existing in it's Github repository core.
 
-_**Question: API Roadmap Development (Backlog, Future)**_
+_**Question: API Roadmap Development (Backlog, Future)**_<br />
 Each service being delivered via Lighthouse will possess its own self-contained road map as part of its definition. Providing a standardized, yet scalable way to address what is being planned, is being delivered, operated, and when anything will ultimately be deprecated.
 
 - **Github Issues** - Each Github repository has it's own issues for managing all conversations around the service road map. Tags and milestones can be used to designate the past, present, future, and other relevant segmentation of the road map.
@@ -70,7 +70,7 @@ Each service being delivered via Lighthouse will possess its own self-contained 
 
 The Lighthouse platform road map should work like an orchestra, with each participant bringing their contribution, but platform operators and conductors defining the overall direction the platforms is headed. At scale, Lighthouse will be thousands of smaller units, organized by hundreds of service owners and stewards, serving millions of end-users, with feedback loops in service through the stack.
 
-_**Question: Outreach (Internal & External Parties)**_
+_**Question: Outreach (Internal & External Parties)**_<br />
 Outreach is essential to the viability of any platform, and represents the business and political challenges that lie ahead for the VA, or any government agency looking to work seamlessly with public and private sector partners, as well as the public at large. There will be many services involved with Lighthouse operations that will need to be private, but the default should always be public, allowing for as much transparency and observability as possible, which will feed platform outreach in a positive way.
 
 - **Github Project Pages** - Each Github repository can have a public facing Github Pages static site portal and landing page. Allowing for individual service, or group portals to exist, providing a destination for all stakeholders to get involved.
@@ -81,7 +81,7 @@ Outreach is essential to the viability of any platform, and represents the busin
 
 This type of outreach around platform operations is something that scares the hell out of government folks, and the majority of government APIs operation are critically deficient in the area of outreach. This has to change. If there is no feedback loop in place, and outreach doesn't occur regularly and consistently, the platform will not succeed. This is how the API world operates.
 
-_**Question: Management of API Request Process (Internal (VA)/External (Non-VA))**_
+_**Question: Management of API Request Process (Internal (VA)/External (Non-VA))**_<br />
 New services will always be needed. Operational and implementation related requests should all be treated the same. Obviously there will be different prioritization mechanisms in place, but API requests should just be the birth of any new service, allowing it to begin its journey, and transit through the API lifecycle described above. Not all requests will reach deployment, and not all deployments will reach maturity, but all API requests should be treated equally.
 
 - **Definitions** - Each API request begins with a definition. A simple description of what a service will do.
@@ -93,14 +93,14 @@ New services will always be needed. Operational and implementation related reque
 
 New API requests should be encourage. Anyone should be able to submit a new service, replicate, or augment an existing service, or respond to a platform API RFP. The life cycle described above should be open to everyone looking to submit an API request. Allowing them to define, design, mock, and iterate their submission. Even providing a nearly usable representation of a service, even before the idea or service is accepted. Forcing everyone to flesh out their service, deliver a viable proof of concept, that will streamline the API acceptance process.
 
-_**Question: Propose, Implement and Manage the PaaS (technology stack)**_
+_**Question: Propose, Implement and Manage the PaaS (technology stack)**_<br />
 As mentioned before, this aspect of Lighthouse should be delivered as microservices, alongside every other service being delivered via the platform. It just so happens that this portion of the stack will be the first to be delivered, and be iterated upon, evolved, and deprecated just like any other service. To put this in perspective, I will outline the AWS, and Azure infrastructure need to support management of the platform later on in this post, while considering the fact that AWS and Azure have been on the same journey that the VA is on with Lighthouse, something that has been playing out for the last decade.
 
 The VA wants to be the Amazon of serving veterans. They want internal groups, vendors, contractors, veteran health and service organizations, and independent developers to come build their solutions on the Lighthouse platform. The VA should uses its own services for internal service delivery, as well as supporting external projects. The operational side of Lighthouse platform should be all microservice projects, with the underlying infrastructure being Azure or AWS solutions, providing a common platform as a service stack that can be leveraged, no matter where the actual service is deployed.
 
 <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 
-_**Question: DevOps Continuous Integration and Continuous Delivery (CI/CD) of APIs**_
+_**Question: DevOps Continuous Integration and Continuous Delivery (CI/CD) of APIs**_<br />
 Every service in support of operations or implementations via the Lighthouse platform will exist as a self-contained Github repository, with all the artifacts needed to be included in any application pipeline. The basic DNA blueprint for each service should be crafted to support any single CI/CD service, or ideally even multiple types of CI/CD and orchestration solutions like AWS and Azure both support.
 
 - **Microservices** - Lighthouse CI/CD will be all about microservice orchestration, and using a variety of pipelines to deliver and evolve initially hundreds, and eventually thousands of services in concert.
@@ -109,14 +109,14 @@ Every service in support of operations or implementations via the Lighthouse pla
 
 Both AWS and Azure provide CI/CD workflows, which can be used to satisfy the portion of the RFI. I will list out all the AWS and Azure services I think should be considered below. Additionally, Jenkins, CircleCI, or other 3rd party CI/CD could easily be brought in to deliver on this aspect of platform delivery. The microservices core can be used as part of any pipeline delivery model.
 
-_**Question: Environment Operations & Maintenance (O&M)**_
+_**Question: Environment Operations & Maintenance (O&M)**_<br />
 Again, everything operates as microservices, and gets delivered independently as services that can be configured and maintained as part of overall platform operations and maintenance, or in service of individual services, and groups of services supporting specific implementations.
 
 - **Microservices** - Everything is available as microservices, allowing the underlying environment operations and maintainenace to be orchestration, and optimized in real time.
 
 Each of the AWS and Azure services listed below are APIs. They allow for the configuration and management of each service via API or CLI, allowing the architecture to be seamlessly managed as part of the overall API stack, as well as the CI/CD pipeline. Making environment operations and maintenance, just part of the continuous delivery cycle(s).
 
-_**Question: Release Management**_
+_**Question: Release Management**_<br />
 Release occurs at the granular service level. With Github and CI/CD as the vehicle for moving release forward daily, versioning, defining, and communicating all the way. With the proper code and API level testing in place, release management can happen safely at scale.
 
 - **Github** - Github version control, branches, and release management should  be used as part of the overall release management strategy.
@@ -124,11 +124,11 @@ Release occurs at the granular service level. With Github and CI/CD as the vehic
 - **CI/CD Pipelines** - Everything should be a pipeline, broken down by logical operational, organization, and project boundaries, operating on a continuous release cycle.
 - **Microservices** - Everything is operated independently, and released independently via containers, with approach dependency management as part of each release.
 - **Definitions** - OpenAPI and JSON Schema are versioned and use to act as the contract for each release.
-- **Communications**d - Along with each release, comes a standard approach to notification, communication, and support.
+- **Communications** - Along with each release, comes a standard approach to notification, communication, and support.
 
 Release management will horizontally take a significant amount of time to wrap your head around. Moving forward hundreds, and thousands of services in concert won't be easy. However it will be more resilient, and forgiving than moving forward a single monolith.
 
-_**Question: API Analytics**_
+_**Question: API Analytics**_<br />
 Awareness should be baked in by default to the Lighthouse platform, measuring everything, and reporting on it consistently, providing observability across all aspects of operations in alignment with security policies. Analysis should be its own set of operational services, that span the entire length of the Lighthouse platform.
 
 - **Log Shipping** - The database, container, web server, management, and DNS logs for ALL services should be shipped, and centralized, for complete access and analysis.
@@ -140,7 +140,7 @@ Awareness should be baked in by default to the Lighthouse platform, measuring ev
 
 A standard logging strategy across all services is how we achieve a higher level of API analytics, going beyond just database or web server statics, and even API management analytics, providing end to end, comprehensive platform service measurement, analysis, reporting, and visualization. Allowing platform operators, consumers, and auditors to access and understand how all service are being used, or not being used.
 
-_**Question: Approval to Operate (ATO) Support for Environments**_
+_**Question: Approval to Operate (ATO) Support for Environments**_<br />
 Every service introduced as part of the Lighthouse platform should have all the information required to support ATO, with it baked into the governance and maturity life cycle for any service. It actually lends itself well to the maturity elements of the lifecycle above, ensuring there is ATO before anything is deployed.
 
 - **Definitions** - All definitions are present for satisfying ATO.
@@ -150,7 +150,7 @@ Every service introduced as part of the Lighthouse platform should have all the 
 
 ATO can be built into the templated API request and submission process discussed earlier, allowing for already approved architecture, tooling, and patterns to be used over and over, streamlining the ATO cycle. Helping service developers enjoy more certainty around the ATO process, while still allowing for innovation to occur, pushing the ATO definition and process when it makes sense.
 
-_**Question: Build APIs including system level APIs that connect into backend VA systems**_
+_**Question: Build APIs including system level APIs that connect into backend VA systems**_<br />
 Everything is a microservice, and there are plenty of approaches to ensure that legacy backend systems can enjoy continued use and evolution through evolved APIs. The API life cycle allows for the evolution of existing backend systems that operate in the cloud and on-premise in small, bit-size service implementations.
 
 - **Gateway** - AWS API Gateway and Azure API management makes it easy to publish newer APIs on top of legacy backend systems.
@@ -161,7 +161,7 @@ Everything is a microservice, and there are plenty of approaches to ensure that 
 
 From the frontend, you shouldn't be able to tell whether a legacy VA system is in use, or newer cloud infrastructure. All applications should be using APIs, and all APIs should be delivered as individual or groups of microservices, that do one thing and does it well. As APIs evolve, the backend systems should be decoupled and evolved as well, but until that becomes possible, all consumption of data, content, and other resources will be routed through the Lighthouse API stack.
 
-_**Question: API key management or managing third party access (authorization, throttling, etc.)**_
+_**Question: API key management or managing third party access (authorization, throttling, etc.)**_<br />
 Both theAWS API Gateway, and Azure API Management allow for the delivery of modern API management infrastructure that can be used to govern internal, partner, and 3rd party access to resources. All applications should be using APIs, and ALL APIs should be using a standardized API management approach, no matter whether the consumption is internal or external. Ensuring consistent authorization, throttling, logging, and other aspects of doing business with APIs.
 
 - **IAM** - Leverage API keys, JWT, and OAuth in conjunction with IAM policies governing which backend resources are available to API consumers.
@@ -173,7 +173,7 @@ Both theAWS API Gateway, and Azure API Management allow for the delivery of mode
 
 API management is baked into the cloud. It is a discipline that has been evolving for over a decade, and is available on both the AWS and Azure platforms. The tools are there, Lighthouse just needs to establish a coherent strategy for authentication, service composition, logging, reporting, and responding to API consumption at scale in real time. Staying out of the way of consumers, while also ensuring that they only have access to the data, content, and other resources they are allowed to, in alignment with overall governance.
 
-_**Management of API lifecycle in cloud, hybrid, and/or on premise environments**_
+_**Management of API lifecycle in cloud, hybrid, and/or on premise environments**_<br />
 All operational aspects of the Lighthouse platform should be developed as independent microservices, with a common API--no matter what the underlying architecture is. The DNS service API should be the same, regardless of whether it is managing AWS or Azure DNS, or possibly any other on-premise or 3rd party service--allowing for platform orchestration using a common API stack.
 
 - **Microservices** - Each operational service is a microservice, with possibly multiple versions, depending on the backend architecture in use.
@@ -259,7 +259,7 @@ All of the incentive framework is defined and enforced via the API governance st
 
 This model is already visible on the AWS platform. All the pieces are there to make it happen for any platform, operating on top of the AWS platform. The marketplace, billing, and AWS API Gateway connection to API plans exists. When you combine the authentication and service composition available at the AWS API Gateway layer, with the IAM policy solutions available via AWS, an enterprise grade solution for delivering this model securely at scale, comes into focus.
 
-_**Question: Is there a method of paying or incentivizing the contractor based on API usage?**_
+_**Question: Is there a method of paying or incentivizing the contractor based on API usage?**_<br />
 I think I hit on this with the above answer(s). Keep payments small, and well defined. Measured, reported upon, and priced using the cloud model, connecting to a clear set of API governance guidance and expectations. The following areas can support paying and incentivizing contractors based upon not just usage, but also meeting the API contract.
 
 - **Management** - API management puts all microservices into plans, then log, meter, and track on value exchanged at this level.
@@ -271,8 +271,7 @@ I think I hit on this with the above answer(s). Keep payments small, and well de
 
 When you operate APIs on AWS and Azure, the platform as a service layer can utilize and benefit from the underlying infrastructure as a service monetization framework. Meaning, you can use AWS's business model for managing the measuring, paying, and incentivizing of microservice owners. All the gears are there, they just need to be set in motion to support the management of a government API marketplace platform.
 
-_**Based on the information provided, please discuss your possible technology stack and detail your experience supporting these technologies.**_
-
+_**Based on the information provided, please discuss your possible technology stack and detail your experience supporting these technologies.**_<br />
 Both Amazon Web Services and Azure provide the building blocks of what you need to execute the above. Each cloud platform has its own approach to delivering infrastructure at scale. Providing an interesting mix of API driven resources you can jumpstart any project.
 <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/27_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 **AWS**
@@ -475,7 +474,7 @@ Next, let's look at the Azure stack to see what they bring to the table. There i
 **Monetization**
 - <a href="https://azure.microsoft.com/en-us/services/cost-management/">Cost Management</a> - Optimize what you spend on the cloud, while maximizing cloud potential
 
-**Experience**
+**Experience**<br />
 I have been studying Amazon full time for almost eight years. I've been watching Azure play catch up for the last three years. I run my infrastructure, and a handful of clients on AWS. I understand the API landscape of both providers, and how they can be woven into vision proposed so far.
 
 I see the AWS API stack, and the Azure API stack, as a starter set of services that can be built upon to deliver the base Lighthouse implementation. All the components are there. It just need the first set of Lighthouse services to be defined, delivering the essential building blocks  any platform needs, things like compute, storage, dns, messaging, etc. I recommend that the VA Lighthouse team take the AWS API stack, and mold it into v1 of the Lighthouse API stack. Take the momentum from AWS's own API journey, build upon it, and set into motion the VA Lighthouse API journey.
