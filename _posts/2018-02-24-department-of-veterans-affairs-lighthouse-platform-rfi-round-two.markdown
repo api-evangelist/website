@@ -6,14 +6,12 @@ date: 2018-02-24T09:00:00.000Z
 tags:
   - API Evangelist
   - Federal Government
-	- Strategy
-	- Governance
-	- Platform
+  - Strategy
+  - Governance
+  - Platform
 image: >-
   http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_113_800_500_0_max_0_1_-1.jpg
 ---
-## Round Two Of The Department of Veterans Affairs Lighthouse Platform RFI
-
 <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_113_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm spending some more time thinking about APIs at the Department of Veterans Affairs (VA), in response to round two of their request for information (RFI). [A couple months back I had responded to an earlier RFI](http://apievangelist.com/2017/10/26/my-response-on-the-department-of-veterans-affairs-rfi-for-the-lighthouse-api-management-platform/), providing as much information as I could think of, for consideration as part of their API journey. As a former VA employee, and son of two Vietnam Vets (yes two), you can say I'm always willing to invest some in APIs over at the VA.
 
 To provide a response, I have taken the main questions they asked, broken them out here, and provided answers to the best of my ability. In my style, the answers are just free form rants, based upon my knowledge of the VA, and the wider API space. It is up to the VA, to decide what is relevant to them, and should be included in their agency API strategy.
