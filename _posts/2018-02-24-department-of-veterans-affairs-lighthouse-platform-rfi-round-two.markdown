@@ -483,4 +483,4 @@ Enable VA services to be delivered as individual, self-contained units, that can
 
 This proposal is not meant to be a utopian vision for the VA. However it is meant to, as the name of the project reflects, shine a light on existing ways of delivering services via the cloud. Helping guide each service in its own individual journey, while also serving the overall mission of the platform--to help the veteran be successful in their own personal journey.
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/pano-lighthouse_copper_circuit.jpg" align="center"></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/pano-lighthouse_copper_circuit.jpg" width="100%" align="center"></p>
