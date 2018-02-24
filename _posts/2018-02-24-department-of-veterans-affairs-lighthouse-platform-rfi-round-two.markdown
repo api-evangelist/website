@@ -274,7 +274,7 @@ When you operate APIs on AWS and Azure, the platform as a service layer can util
 _**Based on the information provided, please discuss your possible technology stack and detail your experience supporting these technologies.**_
 
 Both Amazon Web Services and Azure provide the building blocks of what you need to execute the above. Each cloud platform has its own approach to delivering infrastructure at scale. Providing an interesting mix of API driven resources you can jumpstart any project.
-
+<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/27_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 **AWS**
 First, let's take a look at what is relevant to this vision from the Amazon Web Services side of things. These are all the core AWS solutions on the table, with dashboard, API, and command line access to get the job done.
 
