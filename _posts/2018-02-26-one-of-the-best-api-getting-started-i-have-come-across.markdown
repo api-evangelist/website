@@ -14,12 +14,12 @@ image: 'https://s3.amazonaws.com/kinlane-productions/starling/starling-home-page
 
 The Starling getting started page is broken up into six separate sections:
 
-1) Register Your Application
-2) Setup Starter Kit
-3) Play in the Sandbox
-4) Personal Access
-5) Going Live
-6) Contact Us
+1) Register Your Application<br />
+2) Setup Starter Kit<br />
+3) Play in the Sandbox<br />
+4) Personal Access<br />
+5) Going Live<br />
+6) Contact Us<br />
 
 Each getting started section has a simple, concise description with relevant visuals and code samples, as well as possession simple action buttons, like sign, login, register application, and the other meaningful things you need to get started. The Starling getting started is going to become my go to example of how to create an API getting started page. You can really tell whoever put it together spent a lot of time refining it, and walking through it until it was 100% complete.
 
