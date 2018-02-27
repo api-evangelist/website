@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: What Is The Streamdata.io API Gallery?
+title: Mapping Out The API Landscape
 date: 2018-02-27T09:00:00.000Z
 tags:
   - API Evangelist
