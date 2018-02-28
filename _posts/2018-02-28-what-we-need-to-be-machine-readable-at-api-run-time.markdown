@@ -10,8 +10,9 @@ tags:
   - Real Time
   - Directory
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_174_800_500_0_max_0_-5_-1.jpg
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_spagetti_accident.jpg
 ---
+<p><img src="{{ page.image }}" width="45%" style="padding: 15px;" /></p>
 I had breakfast with Mike Amundsen (<a href="https://twitter.com/mamund">@mamund</a>) and Matt McLarty (<a href="https://twitter.com/MattMcLartyBC">@MattMcLartyBC</a>) of the CA API Academy team this morning in midtown this morning. As we were sharing stories of what each other was working on, the topic of what is needed to execute an API call came up. Not the time consuming find an API, sign up for an account, figure out the terms of service and pricing version, but all of this condensed into something that can happen in a split second within applications and systems.
 
 How do we distill down the essential ingredients of API consumption into a single, machine readable unit that can be automated into what Mike Amundsen calls, "find and bind". This is something I've been thinking a lot about lately as I work on my API discovery research, and there are a handful of elements that need to be present:
