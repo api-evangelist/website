@@ -16,14 +16,23 @@ image: 'https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png'
 Here is what a base WebAPI type schema could look like:
 
 ```{
+
   "@context": "http://schema.org/",
+
   "@type": "WebAPI",
+
   "name": "Google Knowledge Graph Search API",
+
   "description": "The Knowledge Graph Search API lets you find entities in the Google Knowledge Graph. The API uses standard schema.org types and is compliant with the JSON-LD specification.",
+
   "documentation": "https://developers.google.com/knowledge-graph/",
+
   "termsOfService": "https://developers.google.com/knowledge-graph/terms",
+
   "provider": {
+
     "@type": "Organization",
+
     "name": "Google Inc."
   }
 }```
