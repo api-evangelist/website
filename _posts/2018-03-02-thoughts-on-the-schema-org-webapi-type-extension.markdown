@@ -11,7 +11,7 @@ tags:
   - Protocols
 image: 'https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm putting some thought into [the Schema.Org WebAPI Type Extension proposal](https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types) by Mike Ralphson (Mermade Software) and Ivan Goncharov (APIs.guru), to "facilitate better automatic discovery of WebAPIs and associated machine and human-readable documentation". It's an interesting evolution in how we define APIs, in terms of API discovery, but I would also add potentially at "execute time".
+<p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;" /></p>I'm putting some thought into [the Schema.Org WebAPI Type Extension proposal](https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types) by Mike Ralphson (Mermade Software) and Ivan Goncharov (APIs.guru), to "facilitate better automatic discovery of WebAPIs and associated machine and human-readable documentation". It's an interesting evolution in how we define APIs, in terms of API discovery, but I would also add potentially at "execute time".
 
 Here is what a base WebAPI type schema could look like:
 
