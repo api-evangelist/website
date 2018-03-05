@@ -14,53 +14,64 @@ image: 'https://s3.amazonaws.com/kinlane-productions/rules/9968073905_95ce575233
 
 With Speccy, there are a default set of rules, things like ensuring you have a summary or a description for each API path:
 
-```{
+```
+{
 	"name": "operation-summary-or-description",
 	"object": "operation",
 	"enabled": true,
 	"description": "operation should have summary or description",
-	"or": ["summary", "description"]<br />
-}```
+	"or": ["summary", "description"]
+}
+```
 
 Or making sure you add descriptions to your parameters:
 
-```{
+```
+{
 	"name": "parameter-description",
 	"object": "parameter",
 	"enabled": true,
 	"description": "parameter objects should have a description",
 	"truthy": "description"
-}```
+}
+```
 
 Or making sure you include tags for each aPI path:
 
-```{
+```
+{
 	"name": "operation-tags",
 	"object": "operation",
 	"enabled": true,
 	"description": "operation should have non-empty tags array",
 	"truthy": "tags",
 	"skip": "isCallback"
-}```
+}
+```
+
 Then you can get more strict by requiring contact information:
 
-```{
+```
+{
 	"name": "contact-properties",
 	"object": "contact",
 	"enabled": true,
 	"description": "contact object should have name, url and email",
 	"truthy": [ "name", "url", "email" ]<br />
-}```
+}
+```
 
 And make sure youi have a license applied to your API:
 
-```{
+```
+{
 	"name": "license-url",
 	"object": "license",
 	"enabled": true,
 	"description": "license object should include url",
 	"truthy": "url"
-}```
+}
+```
 
 Speccy is available [as a Node package](https://www.npmjs.com/package/speccy), which you can easily run at the command line. Speccy is definitely what is needed out there right now, helping us validate the growing number of OpenAPI definitions in our life. As many companies are thinking about how they can apply API governance across their operations, they should be looking at contributing to [Speccy](https://github.com/wework/speccy). It is something I've been talking with API service providers about for some time, but haven't seen an open source answer emerge, that can help us develop rules for what we expect of our OpenAPI definitions.
 <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/openapi-logo.png" align="right" width="25%" style="padding: 15px;" /></p>
