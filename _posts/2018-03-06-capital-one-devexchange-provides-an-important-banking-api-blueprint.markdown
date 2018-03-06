@@ -14,7 +14,7 @@ image: >-
 
 The Capital One DevExchange begins as any API operation should, with a dedicated portal located at developer.[domain]:
 
-- [developer.capitalone.com](https://developer.capitalone.com]
+- [developer.capitalone.com](https://developer.capitalone.com/)
 
 After landing on the home page for the Capital One DevExchange you get everything you need to get up and running with the APIs they have:
 
