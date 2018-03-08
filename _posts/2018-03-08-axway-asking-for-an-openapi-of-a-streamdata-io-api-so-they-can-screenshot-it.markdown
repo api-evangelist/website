@@ -9,7 +9,7 @@ tags:
   - Definitions
   - Communication
   - Evangelism
-image: ''
+image: 'https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beachclouds_clean_view.jpg'
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are working closely with [Axway](https://www.axway.com/en) on a number of projects over here at [Streamdata.io](http://apis.how/streamdata). After we got out of a meeting with their team the other day we received an email from them asking if we had an OpenAPI definition for a demo Streamdata.io market data API. They were wanting to include it in some marketing materials, and needed a screenshot of it. To be able to generate the visual they desired, they needed an OpenAPI to make it tangible enough for capturing in a screenshot and presenting as part of a larger story.
 
