@@ -7,6 +7,8 @@ tags:
   - API Evangelist
   - Discovery
   - Definitions
+  - Executable
+  - Runtime
 image: >-
   https://s3.amazonaws.com/kinlane-productions/peachtree/peachtree-email-validation.png
 ---
