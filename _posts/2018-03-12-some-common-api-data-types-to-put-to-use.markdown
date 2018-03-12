@@ -13,7 +13,7 @@ image: >-
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm continuing my exploration of the API design guidance published by leading API providers. This time, I am taking a look at the API design guide publish by Adidas, [specifically the portion of it addressing what some of the common API types should be](https://adidas-group.gitbooks.io/api-guidelines/content/application/common-data-types.html). Providing some API design essentials, that all of us API providers should be baking into our APIs by default.
 
-Here is the short list of default standards Adidas is supporting across their API operations:
+Here is the short list of [default standards Adidas](https://adidas-group.gitbooks.io/api-guidelines/) is supporting across their API operations:
 
 - **Date and Time Format** - Date and Time MUST always conform to the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) e.g.: 2017-06-21T14:07:17Z (date time) or 2017-06-21 (date), it MUST use the UTC (without time offsets).
 - **Duration Format** - Duration format MUST conform to the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601) standard e.g.: P3Y6M4DT12H30M5S (three years, six months, four days, twelve hours, thirty minutes, and five seconds).
