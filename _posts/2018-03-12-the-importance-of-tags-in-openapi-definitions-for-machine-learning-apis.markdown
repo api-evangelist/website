@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: The Importance Of Tags In OpenAPI Definitions For Machine Learning APIs
-date: 2018-03-12T13:00:00.000Z
+date: 2018-03-12T14:00:00.000Z
 tags:
   - API Evangelist
   - Machine Learning
