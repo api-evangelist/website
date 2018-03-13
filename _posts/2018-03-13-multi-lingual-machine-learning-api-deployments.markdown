@@ -8,6 +8,7 @@ tags:
   - Machine Learning
   - Internationalization
   - Localization
+  - Regions
 image: >-
   https://s3.amazonaws.com/kinlane-productions/paralleldots/multi-lingual-website-676x507.jpg
 ---
