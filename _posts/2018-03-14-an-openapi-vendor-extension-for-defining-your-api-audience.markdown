@@ -9,6 +9,7 @@ tags:
   - Evangelism
   - Security
   - Governance
+  - Evangelism
 image: >-
   http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg
 ---
