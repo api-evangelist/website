@@ -7,6 +7,7 @@ tags:
   - API Evangelist
   - Design
   - Versioning
+  - Reliability
 image: >-
   http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
 ---
