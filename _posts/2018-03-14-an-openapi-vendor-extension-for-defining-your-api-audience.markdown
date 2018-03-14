@@ -23,7 +23,7 @@ image: >-
 - **external-public** - APIs with this audience can be accessed by anyone with Internet access.
 
 _**Note:** a smaller audience group is intentionally included in the wider group and thus does not need to be declared additionally. The API audience is provided as API meta information in the info-block of the Open API specification and must conform to the following specification_:
-
+```
 #/info/x-audience:
   type: string
   x-extensible-enum:
@@ -36,18 +36,18 @@ _**Note:** a smaller audience group is intentionally included in the wider group
     Intended target audience of the API. Relevant for standards around
     quality of design and documentation, reviews, discoverability,
     changeability, and permission granting.
-
+```
 _**Note:** Exactly one audience per API specification is allowed. For this reason a smaller audience group is intentionally included in the wider group and thus does not need to be declared additionally. If parts of your API have a different target audience, we recommend to split API specifications along the target audience — even if this creates redundancies (rationale)._
 
 Here is an example of the OpenAPI vendor extension in action, as part of the info block:
-
+```
 swagger: '2.0'
 info:
   x-audience: company-internal
   title: Parcel Helper Service API
   description: API for <...>
   version: 1.2.4
-
+```
 Providing a pretty interesting way of establishing the scope and reach of each API in a way that makes each API owner think deeply about who they are / should be targeting with the service. Done in a way that makes the audience focus machine readable, and available as part of it's OpenAPI definition which can be then used across discovery, documentation, and through API governance and security.
 
 I like the multiple views of who the audience could be, going beyond just public and private APIs. I like that it is an OpenAPI vendor extension. I like that they even have a schema crafted for the vendor extension--another interesting concept I'd like to see more of. Overall, making for a pretty compelling approach to define the reach of our APIs, and quantifying the audience we are looking to reach with each API we publish.
