@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: An OpenAPI Vendor Extension For Defining Your API Au
+title: An OpenAPI Vendor Extension For Defining Your API Audience
 date: 2018-03-14T11:00:00.000Z
 tags:
   - API Evangelist
