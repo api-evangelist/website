@@ -1,3 +1,4 @@
+
 ---
 published: true
 layout: post
@@ -13,7 +14,7 @@ tags:
 image: >-
   http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>The food delivery service Zalando has an interesting approach to classifying their APIs based upon who is consuming them. It isn't just about APIs being published publicly, or privately, they actually have standardized their definition, and have established an OpenAPI vendor extension, so that the definition is machine readable and available via their OpenAPI.
+<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>The clothing marketplace Zalando has an interesting approach to classifying their APIs based upon who is consuming them. It isn't just about APIs being published publicly, or privately, they actually have standardized their definition, and have established an OpenAPI vendor extension, so that the definition is machine readable and available via their OpenAPI.
 
 [According to the Zalando API design guide](http://zalando.github.io/restful-api-guidelines/index.html#219), "_each API must be classified with respect to the intended target audience supposed to consume the API, to facilitate differentiated standards on APIs for discoverability, changeability, quality of design and documentation, as well as permission granting. We differentiate the following API audience groups with clear organisational and legal boundaries._"
 
