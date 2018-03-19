@@ -14,9 +14,9 @@ tags:
   - Privacy
   - Transparency
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg
+https://s3.amazonaws.com/kinlane-productions/facebook/suspending-cambridge-analytica-facebook.png
 ---
-I'm processing [the recent announcement by Facebook to shut off the access of Cambridge Analytica](https://newsroom.fb.com/news/2018/03/suspending-cambridge-analytica/) to it's valuable social data. The story emphasizes the importance of real time awareness and response to API consumers at the API management level, as well as the difficulty in ensuring that API consumers are doing what they should be with the data and content being made available via APIs. Access to platforms using APIs is more art than science, but there are some proven ways to help mitigate serious abuses, and identify the bad actors early on, and prevent their operation within the community.
+<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm processing [the recent announcement by Facebook to shut off the access of Cambridge Analytica](https://newsroom.fb.com/news/2018/03/suspending-cambridge-analytica/) to it's valuable social data. The story emphasizes the importance of real time awareness and response to API consumers at the API management level, as well as the difficulty in ensuring that API consumers are doing what they should be with the data and content being made available via APIs. Access to platforms using APIs is more art than science, but there are some proven ways to help mitigate serious abuses, and identify the bad actors early on, and prevent their operation within the community.
 
 While I applaud Facebook's response, I'm guessing they could have taken more action earlier on. Their response is more about damage control to their reputation, after the fact, than it is about preventing the problem from happening. Facebook most likely had plenty of warning signs regarding what Aleksandr Kogan, Strategic Communication Laboratories (SCL), including their political data analytics firm, Cambridge Analytica, were up to. If they weren't than that is a problem in itself, and Facebook should be investing in more policing of their API consumers activity, as they claim they are doing in their release.
 
