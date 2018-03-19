@@ -4,7 +4,7 @@ layout: post
 title: >-
   Facebook, Cambridge Analytica, And Knowing What API Consumers Are Doing With
   Our Data
-date: {}
+date: 2018-03-19T09:00:00.000Z
 tags:
   - API Evangelist
   - Observability
