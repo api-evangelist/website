@@ -1,9 +1,7 @@
 ---
 published: true
 layout: post
-title: >-
-  Facebook, Cambridge Analytica, And Knowing What API Consumers Are Doing With
-  Our Data
+title: Facebook, Cambridge Analytica, And Knowing What API Consumers Are Doing With Our Data
 date: 2018-03-19T09:00:00.000Z
 tags:
   - API Evangelist
@@ -13,8 +11,7 @@ tags:
   - Data
   - Privacy
   - Transparency
-image: >-
-https://s3.amazonaws.com/kinlane-productions/facebook/suspending-cambridge-analytica-facebook.png
+image: https://s3.amazonaws.com/kinlane-productions/facebook/suspending-cambridge-analytica-facebook.png
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm processing [the recent announcement by Facebook to shut off the access of Cambridge Analytica](https://newsroom.fb.com/news/2018/03/suspending-cambridge-analytica/) to it's valuable social data. The story emphasizes the importance of real time awareness and response to API consumers at the API management level, as well as the difficulty in ensuring that API consumers are doing what they should be with the data and content being made available via APIs. Access to platforms using APIs is more art than science, but there are some proven ways to help mitigate serious abuses, and identify the bad actors early on, and prevent their operation within the community.
 
