@@ -1,10 +1,16 @@
 ---
 published: true
 layout: post
-title: ''
-date: {}
+title: Facebook's Business Model Is Out Of Alignment With Their API Management Layer
+date: 2018-03-21T09:00:00.000Z
 tags:
   - API Evangelist
+  - Management
+  - Monetization
+  - Plans
+  - Politics of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/adam-smith_blue_circuit.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>All the controls for Facebook to have done something about the Cambridge Analytics situation are already in place. The Facebook API management layer has everything needed to have prevented the type of user data abuse we've experienced, and honestly the user data abuse that has happens in many other applications, and will continue to occur. The cause of this behavior is rooted in Facebook's business model, and a wider culture that is fueled by venture capital investment, and backdoor data brokering. It is just how the big data / app economy is funded, and when your business model is all based upon advertising, user engagement to generate data / signals, and being about leveraging that behavior for targeting--you are never going to reign in your API management layer.
 

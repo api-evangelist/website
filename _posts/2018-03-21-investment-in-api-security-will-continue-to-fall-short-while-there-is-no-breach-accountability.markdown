@@ -9,6 +9,7 @@ tags:
   - API Evangelist
   - Security
   - Politics of APIs
+  - Investment
 image: >-
   http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_128_800_500_0_max_0_-1_-1.jpg
 ---
