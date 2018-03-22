@@ -13,7 +13,7 @@ image: 'https://s3.amazonaws.com/kinlane-productions/postman/postman-icon.png'
 
 As I was profiling APIs, and creating Postman Collections, the Okta team tweeted at me, their own approach to delivering their APIs. They tactically place Run in Postman buttons throughout their API documentation, as well as [provide a complete listing of all the Postman Collections they have](https://developer.okta.com/docs/api/getting_started/api_test_client.html#collections-quick-reference). Showcasing that they have broken up their Postman Collections along what I'd consider to be service lines. Providing small, meaningful collections for each of [their user authentication and authorization APIs](https://developer.okta.com/docs/api/getting_started/api_test_client.html):
 
-<table>
+<table width="100%">
   <thead>
     <tr>
       <th style="text-align: left">Collections</th>
