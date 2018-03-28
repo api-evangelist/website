@@ -8,7 +8,7 @@ tags:
   - Discovery
   - Definitions
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_113_800_500_0_max_0_-1_-1.jpg
+  https://s3.amazonaws.com/kinlane-productions/apis-json/apis-json-home-page-2018.png
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I know many folks in the API sector don't know about [APIs.json](http://apisjson.org/format.html), and if they do they often think it is yet another API definition format, competing wit OpenAPI, Postman Collections, and others. So, I want to take a moment to share the vision again, and maybe convert one or two more folks to the possibilities around having a machine readable format for the entire operations. This is where APIs.json elevates the conversation, is it isn't just about defining an API, it is about defining API operations, looking to make things more discoverable, and executable by default.
 
