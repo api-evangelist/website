@@ -12,7 +12,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/twitter/twitter-bird-blue-on-white.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>It's been a long, long road for Twitter when it comes to realizing the importance of having a plan when it comes to their API management strategy. Aside from monetizing the firehose through former parter, and now acquired solution Gnip, Twitter has never had any sort of plan when it came to providing access tiers for their API. I try to revisit the Twitter developer portal a couple times a year, but I'm going to have to increase the number of visits as there seems to be more rapid shifts towards getting control over their API management layer in recent months.
+<p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;" /></p>It's been a long, long road for Twitter when it comes to realizing the importance of having a plan when it comes to their API management strategy. Aside from monetizing the firehose through former parter, and now acquired solution Gnip, Twitter has never had any sort of plan when it came to providing access tiers for their API. I try to revisit the Twitter developer portal a couple times a year, but I'm going to have to increase the number of visits as there seems to be more rapid shifts towards getting control over their API management layer in recent months.
 
 The [API plan matrix that has emerged as part of Twitter's pricing page](https://developer.twitter.com/en/pricing) provides a view of the unfolding plan for the social media platform.
 
