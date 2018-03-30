@@ -25,7 +25,6 @@ There was [a question posted on API Craft recently that I think gets at the chal
 > _4. How can the API specifications be linked with the implementation (java) to keep them up-to-date?_<br />
 > _5. How do we show API dependencies when one api uses the other one?_<br /><br />
 > _We basically need to think about the end-to-end work-flow that helps teams in their SDLC to design API's. For the start I am trying to see what can we achieve with free tools. Can someone share their thoughts based on their experience?_
-
 This reflects what I'm hearing from the numerous projects I'm consulting with. Some of the OpenAPI (Swagger) related questions can be addressed using Github, but the code integration, dependency, and other aspects of this question are much harder to answer, let alone solve with a single tool. Each team has their existing workflows, pipelines, and software delivery processes in place, so helping articulate how you should do this at scale, gets pretty difficult very quickly.
 
 **Github, Gitlab, or BitBucket At Core**
