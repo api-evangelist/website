@@ -17,14 +17,14 @@ image: >-
 
 There was [a question posted on API Craft recently that I think gets at the challenges we all face](https://groups.google.com/forum/#!topic/api-craft/H3tpTPJnoZQ):
 
-> _We plan to use Open API 3 specification for designing API's that are required to build our enterprise web application. These API's are being developed to integrate the backend with frontend. They are initially planned to be internal/private. To roll out an API First strategy across multiple teams (~ 30) in our organization we want to recommend and centrally deploy a standard set of tools that could be used by teams to design and document API's._<br />
+> _We plan to use Open API 3 specification for designing API's that are required to build our enterprise web application. These API's are being developed to integrate the backend with frontend. They are initially planned to be internal/private. To roll out an API First strategy across multiple teams (~ 30) in our organization we want to recommend and centrally deploy a standard set of tools that could be used by teams to design and document API's._<br /><br />
 > _I am new to the swagger tool set. I understand that there is a swagger-editor tool that can help in API design while swagger-ui could help in API documentation. Trying them I realized a few problems_<br /><br />
 > _1. How would teams save their API's centrally on a server? Swagger editor does not provide a way to centrally store them._<br />
 > _2. How can we get a directory look up that displays all the designed API's?_<br />
 > _3. How can we integrate the API design and API documentation tool?_<br />
 > _4. How can the API specifications be linked with the implementation (java) to keep them up-to-date?_<br />
 > _5. How do we show API dependencies when one api uses the other one?_<br /><br />
-> _We basically need to think about the end-to-end work-flow that helps teams in their SDLC to design API's. For the start I am trying to see what can we achieve with free tools. Can someone share their thoughts based on their experience?_<br />
+> _We basically need to think about the end-to-end work-flow that helps teams in their SDLC to design API's. For the start I am trying to see what can we achieve with free tools. Can someone share their thoughts based on their experience?_
 
 This reflects what I'm hearing from the numerous projects I'm consulting with. Some of the OpenAPI (Swagger) related questions can be addressed using Github, but the code integration, dependency, and other aspects of this question are much harder to answer, let alone solve with a single tool. Each team has their existing workflows, pipelines, and software delivery processes in place, so helping articulate how you should do this at scale, gets pretty difficult very quickly.
 
