@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: An OpenAPI Service Dependency Vendor Extensions
+title: An OpenAPI Service Dependency Vendor Extension
 date: 2018-04-02T11:00:00.000Z
 tags:
   - API Evangelist
