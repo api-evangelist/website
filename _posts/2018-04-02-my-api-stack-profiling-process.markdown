@@ -76,15 +76,15 @@ Most of this ranking I can automate through there being a complete APIs.json and
 **Streamdata.io Stream Rank**<br />
 Adding to my ranking system, I am applying my partner [Streamdata.io's ranking system for APIs](https://streamdata.io/blog/benchmark-quantifying-api-performance/), looking to determine that activity surrounding an API, and how much opportunity exists to turn an API event a real time stream, as well as identify the meaningful events that are occurring. Using the OpenAPI definitions generated for each API being profiled, I begin profiling for Stream Rank by defining the following:
 
-- Download Size - What is the API response download size when I poll an API?
-- Download Time - What is the API response download time when I poll an API?
-- Did It Change - Did the response change from the previous response when I poll an API?
+- **Download Size** - What is the API response download size when I poll an API?
+- **Download Time** - What is the API response download time when I poll an API?
+- **Did It Change** - Did the response change from the previous response when I poll an API?
 
 I poll an API for at least 24-48 hours, and up to a week or two if possible. I'm looking to understand how large API responses are, and how often they change--taking notice of daily or weekly trends in activity along the way. The result is a set of scores that help me identify:
 
-- Bandwidth Savings - How much bandwidth can be saved?
-- Processor Savings - How much processor time can be saved?
-- Real Time Savings - How real time an API resource is, which amplifies the savings?
+- **Bandwidth Savings** - How much bandwidth can be saved?
+- **Processor Savings** - How much processor time can be saved?
+- **Real Time Savings** - How real time an API resource is, which amplifies the savings?
 
 All of which go into what we are calling a Stream Rank, which ultimately helps us understand the real time opportunity around an API. When you have data on how often an API changes, and then you combine this with the OpenAPI definition, you have a pretty good map for how valuable a set of resources is based upon the ranking of the overall API provider, but also the value that lies within each endpoints definition. Providing me with another pretty compelling dimension to the overall ranking for each of the APIs I'm profiling.
 
