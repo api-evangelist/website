@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: If Github Pages Was Default I Could Provide A Run On Github Button
+title: If Github Pages Could Be Turned On By Default I Could Provide A Run On Github Button
 date: 2018-04-16T09:00:00.000Z
 tags:
   - API Evangelist
