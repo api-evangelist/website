@@ -10,6 +10,7 @@ tags:
   - Hypermedia
   - Definitions
   - Design
+  - HTTP/2
 image: >-
   https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg
 ---
