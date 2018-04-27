@@ -4,7 +4,7 @@ layout: post
 title: >-
   Venture Capital Obfuscating The Opportunities For Value Exchange At The API
   Management Level
-date: 2018-04-17T13:00:00.000Z
+date: 2018-04-27T13:00:00.000Z
 tags:
   - API Evangelist
   - Monetization
