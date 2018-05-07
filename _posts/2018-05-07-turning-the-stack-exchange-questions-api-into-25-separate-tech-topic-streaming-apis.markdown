@@ -10,9 +10,9 @@ tags:
   - Streaming
   - Real Time
   - Definitions
-image: ''
+image: 'http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-1.jpg'
 ---
-[I'm turning different APIs into topical streams using Streamdata.io](http://streamdata.io). I have been profiling hundreds of different APIs as part of my work to build out the [Streamdata.io API Gallery](http://api.gallery.streamdata.io/), and as I'm creating OpenAPI definitions for each API, I'm realizing the potential for event and topical driven streams across many existing web APIs. One thing I am doing after profiling each API is that I benchmark them to see how often the data changes, applying what we are calling StreamRank to each API path. Then I try to make sure all the parameters, and even enum values for each parameter are represented for each API definition, helping me see the ENTIRE surface area of an API. Which is something that really illuminates the possibilities surrounding each API.
+<p><img src="{{ page.image }}" width="40%" align="right" style="padding: 15px;" /></p>[I'm turning different APIs into topical streams using Streamdata.io](http://streamdata.io). I have been profiling hundreds of different APIs as part of my work to build out the [Streamdata.io API Gallery](http://api.gallery.streamdata.io/), and as I'm creating OpenAPI definitions for each API, I'm realizing the potential for event and topical driven streams across many existing web APIs. One thing I am doing after profiling each API is that I benchmark them to see how often the data changes, applying what we are calling StreamRank to each API path. Then I try to make sure all the parameters, and even enum values for each parameter are represented for each API definition, helping me see the ENTIRE surface area of an API. Which is something that really illuminates the possibilities surrounding each API.
 
 After profiling [the Stack Exchange Questions API](https://api.stackexchange.com/docs/questions#order=desc&sort=activity&tagged=php&filter=default&site=stackoverflow&run=true), I began to see how much functionality and data is buried within a single API endpoint, and was something I wanted to expose and make much easier to access. Taking a single OpenAPI definition for the Stack Exchange Questions API:
 
