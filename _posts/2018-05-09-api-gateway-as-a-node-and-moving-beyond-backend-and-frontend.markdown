@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: API Gateway As A Just Node And Moving Beyond Backend and Frontend
+title: API Gateway As A Node And Moving Beyond Backend and Frontend
 date: 2018-05-09T09:00:00.000Z
 tags:
   - API Evangelist
