@@ -8,8 +8,6 @@ tags:
   - Microservices
 image: 'https://s3.amazonaws.com/kinlane-productions/gorilla-monolith.png'
 ---
-## 1000 LB Gorilla Monolith and Microservices
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/gorilla-monolith.png"  width="75%" /></p>
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/gorilla-monolith.png"  width="100%" /></p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/gorilla-microservices.png"  width="100%" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/gorilla-microservices.png"  width="75%" /></p>
