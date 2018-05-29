@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: API Coordination And Communication Across Federal Government Agencies
-date: 2018-05-01T09:00:00.000Z
+date: 2018-05-29T09:00:00.000Z
 tags:
   - API Evangelist
   - Federal Government
