@@ -23,27 +23,27 @@ First up are the six members of the APIStrat steering committee, playing differe
 
 Then we have assembled nineteen folks on the program committee who will be reviewing your talk submissions before you can get on stage at APIStrat in Nashville:
 
-Amy Palamountain (<a href="https://twitter.com/ammeep">@ammeep</a>) - <a href="https://github.com/">GitHub</a>
-Ash Hathaway (<a href="https://twitter.com/Ash_Hathaway">@Ash_Hathaway</a>) - <a href="https://pivotal.io/">Pivotal</a>
-Carly Thelander (<a href="https://twitter.com/CarlyNThelander">@CarlyNThelander</a>) - <a href="https://localmilkrun.com/">MilkRun</a>
-David Biesack (<a href="https://twitter.com/davidbiesack">@davidbiesack</a>) - <a href="https://www.apiture.com/">Apiture</a>
-Gail Frederick (<a href="https://twitter.com/screaminggeek">@screaminggeek</a>) - <a href="https://www.ebay.com/">eBay</a>
-George Atala (<a href="https://twitter.com/gmatala">@gmatala</a>) - <a href="https://quanterocapital.com/">Quantero Capital</a>
-Glenn Block (<a href="https://twitter.com/gblock">@gblock</a>) - <a href="">Auth0 https://auth0.com/
-Gregory Koberger (<a href="https://twitter.com/gkoberger">@gkoberger</a>) - <a href="https://readme.io/">ReadMe</a>
-James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>) - <a href="https://launchany.com">LaunchAny</a>
-Jennifer Riggins (<a href="https://twitter.com/jkriggins">@jkriggins</a>) - <a href="http://ebranding.ninja/">the eBranding Ninja</a>
-Joey French (<a href="https://twitter.com/josephtfrench">@josephtfrench</a>) - <a href="https://intrinio.com/">Intrinio</a>
-Kyle Dallaire (<a href="https://twitter.com/kyledallaire">@kyledallaire</a>) - <a href="https://recruitingdigital.capitalone.com/">Capital One Digital</a>
-Melissa Jurkoic (<a href="https://twitter.com/melissa_jurkoic">@melissa_jurkoic</a>) - <a href="https://www.amadeus-hospitality.com/">Amadeus Hospitality</a>
-Phil Sturgeon (<a href="https://twitter.com/philsturgeon">@philsturgeon</a>) - <a href="https://www.wework.com">WeWork</a>
-Sai Vennam (<a href="https://twitter.com/sai_vennam">@sai_vennam</a>) - <a href="">IBM https://www.ibm.com/
-Shelby Switzer (<a href="https://twitter.com/switzerly">@switzerly</a>) - <a href="https://www.healthify.us/">Healthify</a>
-Skip Hovsmith (<a href="https://twitter.com/skiphovsmith">@skiphovsmith</a>) - <a href="https://www.approov.io">Critical Blue</a>
-Taylor Barnett (<a href="https://twitter.com/taylor_atx">@taylor_atx</a>) - <a href="https://stoplight.io/">Stoplight</a>
-Tessa Mero (<a href="https://twitter.com/TessaMero">@TessaMero</a>) - <a href="https://www.cisco.com/">Cisco</a>
-Yina Arenas (<a href="https://twitter.com/yina_arenas">@yina_arenas</a>) - <a href="https://developer.microsoft.com/en-us/graph">Microsoft Graph</a>
+- Amy Palamountain (<a href="https://twitter.com/ammeep">@ammeep</a>) - <a href="https://github.com/">GitHub</a>
+- Ash Hathaway (<a href="https://twitter.com/Ash_Hathaway">@Ash_Hathaway</a>) - <a href="https://pivotal.io/">Pivotal</a>
+- Carly Thelander (<a href="https://twitter.com/CarlyNThelander">@CarlyNThelander</a>) - <a href="https://localmilkrun.com/">MilkRun</a>
+- David Biesack (<a href="https://twitter.com/davidbiesack">@davidbiesack</a>) - <a href="https://www.apiture.com/">Apiture</a>
+- Gail Frederick (<a href="https://twitter.com/screaminggeek">@screaminggeek</a>) - <a href="https://www.ebay.com/">eBay</a>
+- George Atala (<a href="https://twitter.com/gmatala">@gmatala</a>) - <a href="https://quanterocapital.com/">Quantero Capital</a>
+- Glenn Block (<a href="https://twitter.com/gblock">@gblock</a>) - <a href="">Auth0 https://auth0.com/
+- Gregory Koberger (<a href="https://twitter.com/gkoberger">@gkoberger</a>) - <a href="https://readme.io/">ReadMe</a>
+- James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>) - <a href="https://launchany.com">LaunchAny</a>
+- Jennifer Riggins (<a href="https://twitter.com/jkriggins">@jkriggins</a>) - <a href="http://ebranding.ninja/">the eBranding Ninja</a>
+- Joey French (<a href="https://twitter.com/josephtfrench">@josephtfrench</a>) - <a href="https://intrinio.com/">Intrinio</a>
+- Kyle Dallaire (<a href="https://twitter.com/kyledallaire">@kyledallaire</a>) - <a href="https://recruitingdigital.capitalone.com/">Capital One Digital</a>
+- Melissa Jurkoic (<a href="https://twitter.com/melissa_jurkoic">@melissa_jurkoic</a>) - <a href="https://www.amadeus-hospitality.com/">Amadeus Hospitality</a>
+- Phil Sturgeon (<a href="https://twitter.com/philsturgeon">@philsturgeon</a>) - <a href="https://www.wework.com">WeWork</a>
+- Sai Vennam (<a href="https://twitter.com/sai_vennam">@sai_vennam</a>) - <a href="">IBM https://www.ibm.com/
+- Shelby Switzer (<a href="https://twitter.com/switzerly">@switzerly</a>) - <a href="https://www.healthify.us/">Healthify</a>
+- Skip Hovsmith (<a href="https://twitter.com/skiphovsmith">@skiphovsmith</a>) - <a href="https://www.approov.io">Critical Blue</a>
+- Taylor Barnett (<a href="https://twitter.com/taylor_atx">@taylor_atx</a>) - <a href="https://stoplight.io/">Stoplight</a>
+- Tessa Mero (<a href="https://twitter.com/TessaMero">@TessaMero</a>) - <a href="https://www.cisco.com/">Cisco</a>
+- Yina Arenas (<a href="https://twitter.com/yina_arenas">@yina_arenas</a>) - <a href="https://developer.microsoft.com/en-us/graph">Microsoft Graph</a>
 
 Than you to everyone for helping do the hard work of making sure APIStrat not only continues, but continues to represent the wider API community. Everyone is doing this work because they care about the community, and want to make the event as good as, or better than it has been in the past. This is the 9th edition of APIStrat, spanning New York, San Francisco, Amsterdam, Chicago, Berlin, Austin, Boston, Portland, and now Nashville! It has been a pretty wild ride.
 
-While we have everyone we need for these committees, we still need help in other areas. First, get your talk submitted before the CFP closes next week. Second, we need your financial support, so make sure you consider sponsoring APIStrat, and help make sure Nashville rocks. Beyond that we can use some help spreading the word. We are looking to grow the event beyond the usuall 500 threshold, helping expand participation in the event, as well as the OpenAPI Iniative. If you want to help, feel free to ping me anytime, and I'll see you in Nashville.
+While we have everyone we need for these committees, we still need help in other areas. First, get your talk submitted before the CFP closes next week. Second, we need your financial support, so make sure you consider sponsoring APIStrat, and help make sure Nashville rocks. Beyond that we can use some help spreading the word. We are looking to grow the event beyond the usual 500 threshold, helping expand participation in the event, as well as the OpenAPI Initiative. If you want to help, feel free to ping me anytime, and I'll see you in Nashville.
