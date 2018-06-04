@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Catch Me At The DC API Meetup in Washington DC This Tuesday Evening
+title: Catch Me At The DC API User Group in Washington DC This Tuesday Evening
 date: 2018-06-04T11:00:00.000Z
 tags:
   - API Evangelist
