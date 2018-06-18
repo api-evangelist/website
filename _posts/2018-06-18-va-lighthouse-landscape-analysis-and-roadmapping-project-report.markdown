@@ -88,7 +88,7 @@ While there aren't consistent naming conventions used in crafting these subdomai
 
 Beyond program-related domains, state/region level domains are being used to organize data and content for presentation to consumers. Only [22 subdomains](https://api-evangelist.github.io/va-api-landscape/domains/state-tag-list/) are represented currently, but the practice demonstrates the prominence of these locations when it comes to organizing information.
 
-![Image showing tag cloud for state domains.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-state.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-state.png" width="90%" align="center">
 
 Some states are just paths within the top-level VA domains, while others exist within regional subdomains, with the rest possessing their own subdomain. This demonstrates the importance of states and regions, but also the inconsistency of how domains or paths are used to organize information.
 
@@ -96,7 +96,7 @@ Some states are just paths within the top-level VA domains, while others exist w
 
 Lastly, you find many city-related subdomains being used to organize data and content, providing another dimension on how resources are being organized, while demonstrating the dominance of specific cities. We have identified [120 individual city-related domains](https://api-evangelist.github.io/va-api-landscape/domains/city-tag-list/).
 
-![Image showing tag cloud for city domains.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-city.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-city.png" width="90%" align="center">
 
 Like states, there isn't a consistent pattern in which cities have their own subdomain, with others existing as a path within state subdomains or top-level domains. The approach to using cities as part of subdomain DNS addressing further demonstrates the importance of location when it comes to the organization of data and content.
 
@@ -104,7 +104,7 @@ Like states, there isn't a consistent pattern in which cities have their own sub
 
 As part of the spidering the va.gov domain across the 278 subdomains that exist, over 4M individual URLs were identified, with slightly less than 1/3 of these URLs evaluated for potential data sources to-date. Across these URLs, we took the base path and grouped them by the number of pages and data files that exist.
 
-![Image showing tag cloud for paths.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/path.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/path.png" width="90%" align="center">
 
 While there are many other paths in use across the VA websites, these paths reflect the top paths in use to deliver data and content. Providing a look at what the most relevant resources are when it comes to providing web access to data and content, which is something that should be considered when delivering the same data and content to other applications.
 
@@ -126,7 +126,7 @@ Each of type of format that we targeted provides a different story as to the typ
 
 We discovered [534 CSV files](https://api-evangelist.github.io/va-api-landscape/csv/) containing a variety of data. By parsing the titles of the web pages these CSV files were linked from, and the names of some of the files, we identified handful of top resource types present across these files.
 
-![Image showing tag cloud for CSV files.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/csv.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/csv.png" width="90%" align="center">
 
 CSV files tell a particular story because they were most likely published by people working at the VA, who exported the files from spreadsheets and made them available on the website for a reason. This makes them relevant to the VA's API conversation. You can view a [list of CSV resources](https://api-evangelist.github.io/va-api-landscape/csv/tag-list/), as well as a [complete list of CSV files](https://api-evangelist.github.io/va-api-landscape/csv/) on the GitHub repository.
 
@@ -134,7 +134,7 @@ CSV files tell a particular story because they were most likely published by peo
 
 We identified [6,077 spreadsheets](https://api-evangelist.github.io/va-api-landscape/xls/) containing a variety of data. After parsing these files for semantic meaning, we identified handful of top resource types present across these files.
 
-![Image showing tag cloud for XLS files.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xls.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xls.png" width="90%" align="center">
 
 Similar to CSV files, the presence of spreadsheets tell a very human story. Spreadsheets are the #1 source of data on the web, and reflects the data management and publishing practices across the VA. After evaluating what types of resources are available across these spreadsheets, we have been considering the use of spreadsheets as a data source, as well as a data publishing tool. You can view a [list of XLS/XLSX resources](https://api-evangelist.github.io/va-api-landscape/xls/tag-list/), as well as a [complete list of XLS/XLSX files](https://api-evangelist.github.io/va-api-landscape/xls/) on the GitHub repository.
 
@@ -142,7 +142,7 @@ Similar to CSV files, the presence of spreadsheets tell a very human story. Spre
 
 We identified [467 JSON files](https://api-evangelist.github.io/va-api-landscape/json/) containing a variety of data. Unlike the CSV and spreadsheet data sources, JSON files likely represent a more modern systems approach to publishing data and a whole another set of data sources, which should be considered when deploying APIs.
 
-![Image showing tag cloud for JSON files.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/json.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/json.png" width="90%" align="center">
 
 JSON reflects the latest evolution of data publishing at the VA. But they are only a small subset of the data being made available across VA web properties. This implies they have only become a recent priority when it comes to publishing data in a format that is consumable by developers and computers. You can view a [list of JSON resources](https://api-evangelist.github.io/va-api-landscape/json/tag-list/), as well as a [complete list of JSON files](https://api-evangelist.github.io/va-api-landscape/json/) on the GitHub repository.
 
