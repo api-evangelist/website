@@ -12,7 +12,7 @@ image: 'https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png'
 ---
 # VA API Landscape Analysis and Roadmapping Project Report
 
-![Illustration of a lighthouse.](https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png" width="90%" align="center">
 
 This report summarizes Skylight's evaluation of the VA's public datasets, which exist within the [va.gov](https://va.gov/) web domain, as well as an analysis of what types of data representatives of the Veteran community expressed would be most useful and valuable to Veterans and their supporters if made more digitally accessible and available by the VA. This report also outlines potential resources that can be turned into application programming interfaces (APIs) as part of the VA's Lighthouse platform initiative, and actions the VA should consider to move forward successfully.
 
@@ -80,7 +80,7 @@ We assume there are other domains that haven't been indexed by our spider, as we
 
 After the top-level domains of va.gov and www.va.gov, the most common approach to defining domains is by program, providing the addressing needed for organizing information by relevant programs. We have identified [133 individual program-related domains](https://api-evangelist.github.io/va-api-landscape/domains/programs-tag-list/).
 
-![Image showing tag cloud for program domains.](https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-programs.png)
+<img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-programs.png" width="90%" align="center">
 
 While there aren't consistent naming conventions used in crafting these subdomains, it does demonstrate the prominence of programs, research, and other related groupings used across the VA web presence for organizing resources.
 
