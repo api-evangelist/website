@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Working To Keep Programming At Edges Of The API Conversation
+title: Working To Keep Programming Language Dogma At Edges Of The API Conversation
 date: 2018-06-21T09:00:00.000Z
 tags:
   - API Evangelist
