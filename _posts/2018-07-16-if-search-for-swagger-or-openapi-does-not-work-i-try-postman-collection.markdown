@@ -2,8 +2,8 @@
 published: true
 layout: post
 title: >-
-  If A Search For Swagger or OpenAPI Does Yield Results I Try For A Postman
-  Collection Next
+  If A Search For Swagger or OpenAPI Doesn't Yield Results I Try For A Postman
+  Collection
 date: 2018-07-16T09:00:00.000Z
 tags:
   - API Evangelist
