@@ -14,16 +14,16 @@ image: 'https://s3.amazonaws.com/kinlane-productions/tv-maze/tvm_api.png'
 
 Like any good hypermedia should, TVMaze begins with its root URL: http://api.tvmaze.com, and provides a robust set of endpoints from there:
 
-## <strong>Search</strong></a>
+## Search
 - <a href="http://www.tvmaze.com/api#show-search">Show Search</a>
 - <a href="http://www.tvmaze.com/api#show-single-search">Show single search</a>
 - <a href="http://www.tvmaze.com/api#show-lookup">Show Lookup</a>
 - <a href="http://www.tvmaze.com/api#people-search">People search</a>
 
-## <strong>Schedule</strong></a>
+## Schedule
 - <a href="http://www.tvmaze.com/api#full-schedule">Full Schedule</a>
 
-## <strong>Shows</strong></a>
+## Shows
 - <a href="http://www.tvmaze.com/api#show-main-information">Show main information</a>
 - <a href="http://www.tvmaze.com/api#show-episode-list">Show episode list</a>
 - <a href="http://www.tvmaze.com/api#episode-by-number">Episode by number</a>
@@ -35,12 +35,12 @@ Like any good hypermedia should, TVMaze begins with its root URL: http://api.tvm
 - <a href="http://www.tvmaze.com/api#show-aka">Show AKA's</a>
 - <a href="http://www.tvmaze.com/api#show-index">Show index</a>
 
-## <strong>People</strong></a>
+## People
 - <a href="http://www.tvmaze.com/api#person-main-information">Person main information</a>
 - <a href="http://www.tvmaze.com/api#person-cast-credits">Person cast credits</a>
 - <a href="http://www.tvmaze.com/api#person-crew-credits">Person crew credits</a>
 
-## <strong>Updates</strong></a>
+## Updates
 - <a href="http://www.tvmaze.com/api#show-updates">Show updates</a>
 
 The TVMaze API isn't an overly complex hypermedia API. I think it is simple, elegant, and shows how you can use link relations to establish a more meaningful experience for API consumers. Allowing you to navigate the large, ever-changing catalog of television shows, allowing the API client to do the heavy lifting of navigating the shows, schedules, and people involved with each production.
