@@ -14,7 +14,7 @@ image: >-
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I'm currently learning more about SLA4OAI, an open source standard for describing SLA in APIs](https://github.com/isa-group/SLA4OAI-Specification), which is based on the standards proposed by the OAI, adding an optional profile for defining SLA (Service Level Agreements) for APIs. "This SLA definition in a neutral vendor flavor will allow to foster innovation in the area where APIs expose and documents its SLA, API Management tools can import and measure such key metrics and composed SLAs for composed services aggregated way in a standard way." Providing not just a needed standard for the API sector, but more importantly one that is built on top of an existing standard.
 
-SLA4OAI, provides an intersesting way to define the SLA for any API, providing a set of objects that augment and can be paired with an OpenAPI definition using an x-sla vendor extension:
+SLA4OAI, provides an interesting way to define the SLA for any API, providing a set of objects that augment and can be paired with an OpenAPI definition using an x-sla vendor extension:
 
 - **[Context](https://github.com/isa-group/SLA4OAI-Specification/blob/master/Specification.md#522-contextobject)** - Holds the main information of the SLA context.
 - **[Infrastructure](https://github.com/isa-group/SLA4OAI-Specification/blob/master/Specification.md#524-infrastructureobject)** - Required Provides information about tooling used for SLA storage, calculation, governance, etc.
