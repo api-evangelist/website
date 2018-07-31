@@ -18,11 +18,8 @@ image: >-
 My friend Fran Mendez (@fmvilas) is the creator and maintainer of the specification, and he is doing way too much of the work on this important specification and he needs our help. Here is Fran's request for our help to contribute:
 
 > _AsyncAPI is an open source project that's currently maintained by me, with no company or funds behind. More and more companies are using AsyncAPI and the work needed is becoming too much work for a single person working in his spare time. E.g., for each release of the specification, tooling and documentation should be updated. One could argue that I should be dedicating full time to the project, but it's in this point where it's too much for spare time and very little to get enough money to live. I want to keep everything for free, because I firmly believe that engineering must be democratized. Also, don't get me wrong, this is not a complaint. I'm going to continue running the project either with or without contributors, because I love it. This is just a call-out to you, the AsyncAPI lover. I'd be very grateful if you could lend a hand, or even raise your hand and become a co-maintainer. Up to you 😊_
-
 > _On the other hand, I only have good words for all of you who use and/or contribute to the project. Without you, it would be just another crazy idea from another crazy developer 😄_
-
 > _Thank you very much! 🙌_
-
 > _– Fran Mendez_
 
 When it comes to contributing to the AsyncAPI, [Fran has laid out some pretty clear ways in which he needs our help](https://github.com/asyncapi/contribute/blob/master/README.md), providing a range of options for you to pitch in and help, depending on what your skills are, and the bandwidth you have in your day.
