@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: >-
-  The Redirect URL To Confirm Selling Your API In AWS Marketplace Provides Us With A Postivie
+  The Redirect URL To Confirm Selling Your API In AWS Marketplace Provides Us With A Positive
   Template
 date: 2018-08-20T09:00:00.000Z
 tags:
