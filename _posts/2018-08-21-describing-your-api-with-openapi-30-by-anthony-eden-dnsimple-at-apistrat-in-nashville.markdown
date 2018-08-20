@@ -9,8 +9,8 @@ tags:
   - API Evangelist
   - API Events
   - APIStrat
-  - Microservices
-  - Orchestration
+  - DNS
+  - Definitions
 image: >-
   https://s3.amazonaws.com/kinlane-productions/events/apistrat-2018/anthony-eden-dns-simple.jpeg
 ---
