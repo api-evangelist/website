@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Reviewing The Department Of Veterans Affair's New Developer Portal
+title: Reviewing The Department Of Veterans Affairs New Developer Portal
 date: 2018-08-28T09:00:00.000Z
 tags:
   - API Evangelist
