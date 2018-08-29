@@ -18,15 +18,15 @@ image: >-
 
 <p>My friends over at APImetrics monitor APIs across multiple industries, but we've been partnering to keep an eye on federal government APIs, in support of my work in DC. They've recently [shared an informative dashboard tracking on the performance of federal government APIs](https://apimetrics.io/us-government-api-performance-dashboard/), providing an interesting view of the government API landscape, and the overall reliability of APIs they provide.</p>
 
-<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-1.png" width="95%" align="right" style="padding: 15px;" /></a></p>
+<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-1.png" width="95%" style="padding: 15px;" /></a></p>
 
 <p>They continue by breaking down the performance of federal government APIs, including how the APIs perform across multiple North American regions across four of the leading cloud providers:</p>
 
-<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-2.png" width="95%" align="right" style="padding: 15px;" /></a></p>
+<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-2.png" width="95%" style="padding: 15px;" /></a></p>
 
 <p>Helping us visualize the availability of federal government APIs for the last seven days, by applying their <a href="https://apimetrics.io/2017/04/21/casc-score/">APImetrics CASC score</a>:</p>
 
-<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-3.png" width="95%" align="right" style="padding: 15px;" /></a></p>
+<p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-3.png" width="95%" style="padding: 15px;" /></a></p>
 
 <p>I know it sucks being labeled as one of the worst performing APIs, but you also have the opportunity to be named one the best performing APIs. ;-) This is a subject that many private sector companies struggle with, and the federal government has an extremely poor track record for monitoring their APIs, let alone sharing the information publicly. Facing up to this stuff sucks, and you are forced to answer some difficult questions about your operations, but it is also something can't be ignored away when you have a public API</p>
 
