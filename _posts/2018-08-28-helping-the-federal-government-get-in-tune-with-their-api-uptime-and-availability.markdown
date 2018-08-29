@@ -24,7 +24,7 @@ image: >-
 
 <p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-2.png" width="95%" style="padding: 5px;" /></a></p>
 
-<p>Helping us visualize the availability of federal government APIs for the last seven days, by applying their <a href="https://apimetrics.io/2017/04/21/casc-score/">APImetrics CASC score</a>:</p>
+<p>Helping us visualize the availability of federal government APIs for the last seven days, by applying their <a href="https://apimetrics.io/2017/04/21/casc-score/">APImetrics CASC score</a> to each of the federal government APIs, and ranking their overall uptime and availability:</p>
 
 <p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-3.png" width="95%" style="padding: 5px;" /></a></p>
 
