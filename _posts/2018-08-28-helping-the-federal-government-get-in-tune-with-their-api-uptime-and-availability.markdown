@@ -24,7 +24,7 @@ Nobody likes to be told that their APIs are unreliable, and unavailable on a reg
 
 <p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-2.png" width="95%" align="right" style="padding: 15px;" /></a></p>
 
-<p>Helping us visualize the availability of federal government APIs for the last seven days, by applying their [APImetrics CASC score](https://apimetrics.io/2017/04/21/casc-score/):</p>
+<p>Helping us visualize the availability of federal government APIs for the last seven days, by applying their <a href="https://apimetrics.io/2017/04/21/casc-score/">APImetrics CASC score</a>:</p>
 
 <p align="center"><a href="https://apimetrics.io/us-government-api-performance-dashboard/"><img src="https://s3.amazonaws.com/kinlane-productions/apimetrics/api-metrics-federal-government-3.png" width="95%" align="right" style="padding: 15px;" /></a></p>
 
