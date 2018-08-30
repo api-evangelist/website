@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: Why I Find The Department Of Veterans Affairs API Effort To Be So Significant
+title: Why I Feel The Department Of Veterans Affairs API Effort Is So Significant
 date: 2018-08-30T09:00:00.000Z
 tags:
   - API Evangelist
