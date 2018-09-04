@@ -1,0 +1,53 @@
+---
+published: true
+layout: post
+title: The Basics Of The VA API Feedback Loop
+date: 2018-09-04T09:00:00.000Z
+tags:
+  - API Evangelist
+  - Federal Government
+  - Communications
+  - Support
+  - Feedback Loop
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/federal-government/va/va-github-issue-production-api-access-request.png
+---
+<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm working to break down the moving parts of API efforts over at the VA, and work to provide as much relevant feedback as I possibly can. One of the components I'm wanting to think about more is the feedback loop for the VA API efforts. The feedback loop is one of the most essential aspects of doing an API, and is quickly can become one of the most debilitating, paralyzing, and nutrient starving aspects of operating an API platform if done wrong, or non-existent. However, the feedback loop is also one of the most valuable reasons for wanting to do APIs in the first place, providing the essential feedback you will need from consumers, and the entire API ecosystem to move the API forward in a meaningful way.
+
+**Current Seeds Of The VA API Feedback Loop**
+Current the VA is supporting the VA API developer portal using [GitHub Issues](https://github.com/department-of-veterans-affairs/vets-api-clients/issues) and email. I mentioned in [my previous review of the VA API developer portal](http://apievangelist.com/2018/08/28/reviewing-the-department-of-veterans-affairs-va-new-developer-portal/) that the personal email addresses provided for email support should be generalized, sharing the load when it comes to email support for the platform. Next, I'd like to address the usage of GitHub issues for support, along with email, and step back to look at how this contributes to, or could possibly take away from the overall feedback loop for the VAPI API effort. Defining what the basics of an API feedback loop for the VA might be.
+
+**Expanding Upon The VA Usage Of GitHub Issues**
+I support the usage of GitHub issues for public support of any API related project. It provides a simple, observable way for anyone to get support around the VA APIs. While I'm guessing it was accidental, I like the specialization of the current repo, and usage of GitHub issues, and that it being dedicated to VA API clients and their needs. I'd encourage this type of continued focus when it comes to establishing additional feedback loops, keeping them dedicated to a specific aspect of operating on the VA API platform. It is something that might seem a little messy at first, but could easily be managed with the proper strategy, and usage of GitHub APIs, which I'll highlight below.
+
+**Makes API Operations More Public And Observable**
+One of the most important reasons for using GitHub as the cornerstone of the VA API feedback loop is that it allows for transparent, observable, auditable operation of the feedback loop across the VA API platform. One of the critical aspects of the overall health of the VA API platform in the future, will be feedback loops being as open as they possibly can. Of course, there are some feedback loops that should remain private, which GitHub issues can accommodate, but whenever possible the feedback loop for the VA API platform should be in the public domain, allowing all stakeholders, veterans, and the public to actively participate in the process. In a way that can ensures every aspect of API operations is documented, and auditable, providing as much accountability as possible across VA API operations.
+
+**Allowing For More Modular Organization Of Feedback Loops**
+Using GitHub Issues for the deployment, management, and organization of more modular feedback loops. Treating your feedback loops just as you would your APIs, making them small, meaningful, and doing one thing and doing it well. Any GitHub repository can have its own GitHub Issues, allowing for the deployment of specialized feedback loops based upon single project that are part of different organizational groups. Beyond the modularity available when you leverage GitHub repositories, and organize them within GitHub Organizations, Github Issues can also be tagged, allowing for even more meaningful organization of feedback as it comes in, tagging and bagging for consideration as part of the road map, and other decision making processes that will be feeding off the VA API platform's feedback loop.
+
+**Enabling Feedback Loop Automation With The GitHub API**
+Another benefit of using GitHub Issues as an API feedback loop building block, is that they also have an API. Allowing for the automation of all aspects of the VA API platform feedback loop(s). The GitHub API can be used to aggregate, automate, audit, and work with the Github Issues for any GitHub organization and repo the VA has access to. Providing the ability to manage not just the Github Issues for a single GitHub repository, but for the orchestration of feedback loops across many different GitHub repositories, managed by many different GitHub organizations. Establishing a distributed feedback loop system in which VA API leadership can use to coordinate with different internal, agency, partner, vendor, or public stakeholder(s) at scale, across many different projects, and components of the VA API platform.
+
+**Augmenting Public Feedback With Private Github Repos**
+While it is critical that as many of the feedback loops across the VA API platform are publicly accessible, and observable by everyone as possible, it is also important that there are private channels for communication around some of the components of the platform. This is another reason why GitHub Issues can work as a building block for not just public feedback loops, but also being able to operate feedback loops as well. Taking advantage of private repositories when it comes to establishing modular, automated, and private conversations to occur around certain VA API platform projects. Balancing the public aspects of the platform, with feedback loops amongst trusted groups, while still leveraging GitHub for delivering the identity and access management aspects of governing private VA feedback loops.
+
+**Extending Private GitHub Repos With Email Support**
+Beyond the private GitHub repositories, and using their issues to facilitate private conversations, it always makes sense to have a generalized and dedicated email account as part of the feedback loop for any API platform. Providing another private, but also a vendor neutral way of supporting the platform. People just are familiar with email, and it makes sense to have a general account that is managed by many individuals who are coordinating around platform operations. Make it easy to provide feedback around the API the VA API operations, and support anyone participating within the VA API ecosystem.
+
+**Auditing, Documenting, And Reporting Upon The VA Feedback Loop**
+I suggested in [my review of the VA API platform](http://apievangelist.com/2018/08/28/reviewing-the-department-of-veterans-affairs-va-new-developer-portal/) that email should be standardized and delivered via a dedicated email account, so that multiple stakeholders can participate in support of the platform from a VA operational perspective. This way emails can be tagged, organized, and archived in support of the larger VA API feedback loop. Making sure all questions get answered, and that they are also contributed to the evolution of the platform. Something that can also be done via the automation described earlier using the GitHub API. Allowing all threads, across any project and organization to be audited, documented, and reported upon across all VA API operations. Ensuring that their is transparency, observability, and accountability across the VA API platform feedback loop.
+
+**Have A Strategy In Place For The VA API Feedback Loop**
+GitHub Issues and email are the two basic building blocks of any API platform, and I support the VA starting their official journey here. I think GitHub makes for an essential building block of any API platform, when used right. It just helps to have a plan in place for when a repo's GitHub is included in the overall feedback loop framework, and the organization and prioritization of the conversation going on there. GitHub Issues spread across many different GitHub repositories, without any real strategy to how they are organized, tagged, and engaged with can seem overwhelming, and become a mess. However, with a little planning, and the establishment of even the most basic approach to managing them, can help develop a pretty robust feedback loop across the VA API platform, that follows the lead of how open source software gets delivered.
+
+**Consider Other API Feedback Loop Building Blocks**
+I wanted to keep this post just about the basics of the feedback loop for the VA, or for any API platform--GitHub Issues, and email. However, I'd also like suggest the consideration of some other building blocks, to help augment GitHub Issues, providing some other direct, and indirect approaches to operating the VA API platform feedback loop:
+
+- **FAQ** - Providing a frequently asked question that is an aggregate of all the questions that get asked across the GitHub issues, and via email.
+- **Newsletter** - Providing a regular channel for updating platform stakeholders, via a structured email newsletter. Offering up private, and public editions, targeting different groups.
+- **Road Map** - Publishing a road map regarding what is getting built across all projects included within the VA API platform perimeter, aggregating GitHub Issues that evolve as part of the feedback loop and get tagged as milestones for adding to the road map.
+
+I'm always hesitant to make suggestions about where to go next, when an organization is just getting started on their API journey. However, I think the VA team knows when to ignore my advice, and when they can cherry pick the things they want to include in their strategy. I just want to make sure I provide as much constructive criticism about what is there, and constructive feedback around what can be invested in next.
+
+Hopefully this post provides a basic overview of the VA API platform feedback loop. Expands on what they are already doing, but shines a light on some of the positive aspects of using GitHub for the VA API platform feedback loop. I was the one who worked with the former VA CIO Marina Martin ([@MarinaNitze](https://twitter.com/MarinaNitze)) to get the the VA GitHub organization setup back in 2013. So it makes me happy to see it being used as a cornerstone of the VA API platform. I am happy to give feedback on how they can continue to put the powerful platform to such good use.
