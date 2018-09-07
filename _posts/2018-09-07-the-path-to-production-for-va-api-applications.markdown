@@ -107,14 +107,14 @@ Each year developers will receive an email from a VA API audit representative, r
 
 <hr />
 
-**It Is Not Just A Path, But Journey**
+**It Is Not Just A Path, But Journey**<br />
 I'm trying to shift the narrative for the path to production into being a more complete picture of the journey. What is expected of the developers, their applications, as well as setting the table of what can be expected of the VA. I don't expect the VA to bite on all of these suggestions, but I can't help but put them in there when they are relevant, and I have the opportunity ;-)
 
-**Decouple Developer And Application(s)**
+**Decouple Developer And Application(s)**<br />
 Some of the reasons I separated the developer review from the application review is so that a developer could sign up and immediately get a key to kick the tires and begin developing. When ready, which many will never be, they can submit an application for potential production access. Developers might end up having multiple applications, so if we can decouple them early on, and allow all developers to have a default application in the development environment, but also be able to have multiple applications in a production environment, I feel things will be more scalable.
 
-**Not Forgetting The Path After Production**
+**Not Forgetting The Path After Production**<br />
 I wanted to make sure and put in some sort of process that would help ensure both the VA, and developers are investing in ongoing management of their engagement. Ensuring light monthly reviews of ALL applications using the APIs, and pushing for developers and the VA to stay engaged. While also making sure all developers and applications get annual reviews, preventing what happened with the Cambridge Analytica / Facebook situation, where a malicious application gets access to such a large amount of data, without any regular review. Making sure the VA isn't forgetting about applications once they are in a production state. Pushing this to be more than just about achieving production status with an application, and also continuing to ensure it is serving end-users, the veterans.
 
-**Serving Veterans With Your Application**
+**Serving Veterans With Your Application**<br />
 To close, I'd say that calling this a path to production doesn't do it justice. It should be guide to being able to serve a veteran with your application. Acknowledging that it will take a significant amount of development before your application will be ready, but also that the VA will work to review your developer account, and your application, and ensure that VA APIs, and the applications that depend on them will operate as expected, and always be in service of the veteran. Something that will require a certain level of rigor when it comes to the development, certification, and support of applications across the VA API ecosystem.
