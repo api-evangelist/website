@@ -15,7 +15,6 @@ I've had several folks asking me to articulate my vision of an API centric "sale
 I envision a API-driven value generation funnel that can be tipped upside down, over and over, like an hour glass, generating value is it repeatedly pushes API activity through center, driven by a healthy ecosystem of developers, applications, and end-users putting applications to work / use. Providing a way to generate awareness and engagement with any API platform, while also ensuring a safe, reliable, and secure ecosystem of applications that encourage end-user adoption, engagement, and loyalty--further expanding on the potential for developers to continue developing new applications, and enhancing their applications to better serve end-users.
 
 I am seeing things in eleven separate layers, something I'll keep shifting and adjusting in future iterations, but I just wanted to get a draft funnel out the door:
-<img src="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" align="right" width="48%" style="padding: 15px;" />
 - **Layer One** - Getting folks in the top of the funnel.
   - **Awareness** - Making people aware of the APIs that are available.
   - **Engagement** - Getting people engaged with the platform in some way.
@@ -23,9 +22,9 @@ I am seeing things in eleven separate layers, something I'll keep shifting and a
   - **Participation** - Getting developers participating on regular basis.
 - **Layer Two**
 	- **Developers** - Getting developers signing up and creating accounts.
-	- **Applications** - Getting developers signing up and creating applications.
+	- **Applications** - Getting developers signing up and creating applications.<img src="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" align="right" width="60%" style="padding: 15px;" />
 - **Layer Three**
-	- **Sandbox Activity** - Developers being active wthin the sandbox environment.
+	- **Sandbox Activity** - Developers being active within the sandbox environment.
 - **Layer Four**
 	- **Certifed Developers** - Certifying developers in some way to know who they are.
 	- **Certified Application** - Certifying applications in some way to ensure quality.
