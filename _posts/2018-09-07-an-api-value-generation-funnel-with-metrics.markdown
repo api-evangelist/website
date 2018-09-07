@@ -29,7 +29,7 @@ I am seeing things in ten separate layers right now, something I'll keep shiftin
 - **Layer Four**
 	- **Certifed Developers** - Certifying developers in some way to know who they are.
 	- **Certified Application** - Certifying applications in some way to ensure quality.
-- Layer Five
+- **Layer Five**
 	- **Production Activity** - Incentivizing production applications to be as active as possible.
 - **Layer Six**
 	- **Value Generation (IN / OUT)** - Driving the intended behavior from all applications.
@@ -47,7 +47,7 @@ I am seeing things in ten separate layers right now, something I'll keep shiftin
   - **Engagement** - Push for deeper engagement with end-users, and the applications they use.
   - **End-Usage** - Incentivize the publishing and consumption of all platform resources.
 
-I'm envisioning a funnel that you can turn on its head over and over and generate momentum, and kinetic energy, with the right amount of investment--the narrative for this will work in either direction. Resulting in a two-sided funnel both working in concert to generate value in the middle.
+I'm envisioning a funnel that you can turn on its head over and over and generate momentum, and kinetic energy, with the right amount of investment--the narrative for this will work in either direction. Resulting in a two-sided funnel both working in concert to generate value in the middle of the two-sided funnel.
 
 To go along with this API value generation funnel, I'm picturing the following metrics being applied to quantify what is going on across the platform, and the eleven layers:
 
