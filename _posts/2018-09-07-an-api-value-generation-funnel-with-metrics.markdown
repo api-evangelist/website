@@ -52,15 +52,15 @@ I'm envisioning a funnel that you can turn on its head over and over and generat
 To go along with this API value generation funnel, I'm picturing the following metrics being applied to quantify what is going on across the platform, and the eleven layers:
 
 - **One** - Unique visitors, page views, RSS subscribers, blog comments, tweets, GitHub follows, forks, and likes.
-- **Two** - New developers and new applications.
-- **Three** - API calls on sandbox API resources.
-- **Four** - New certified developers and applications.
-- **Five** - API calls in the production API resources.
-- **Six** - GET, POST, PUT, DELETE on different types of resources.
-- **Seven** - Support requests, communication, and other new resources.
-- **Eight** - Number of developers and applications audited.
-- **Nine** - Number of new and existing developers and applications showcased.
-- **Ten** - Number of end-users, sessions, page views, and other activity.
+- **Two** - New developers who are signing up, and adding new applications to the platform.
+- **Three** - API calls on sandbox API resources, and overall activity in the development environment.
+- **Four** - New certified developers and applications that have been reviewed and given production access.
+- **Five** - API calls for production API resources, understanding the overall activity across the platform.
+- **Six** - GET, POST, PUT, DELETE on different types of resources, in different types of service plans, at different rates.
+- **Seven** - Support requests, communication, and other new resources that have occurred in support of operations.
+- **Eight** - Number of developers and applications audited on a regular basis ensuring quality of application catalog.
+- **Nine** - Number of new and existing developers and applications being showcased as part of platform operations.
+- **Ten** - Number of end-users, sessions, page views, and other activity across the applications being delivered.
 
 Providing a stack of metrics you can use to understand how well you are doing within each layer, understanding not just the metrics for a single area of your operations, but how well you are doing at building momentum, and increasing value generation. I hesitate to call this a sales funnel, because sales isn't my jam. It is also because I do not see APIs as something you always sell--sometimes you want people contributing data and content into a platform, and not always just consuming resources. A well balanced API platform is generating value, not just selling API calls.
 
