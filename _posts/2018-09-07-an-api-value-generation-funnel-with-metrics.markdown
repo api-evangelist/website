@@ -23,7 +23,7 @@ I am seeing things in ten separate layers right now, something I'll keep shiftin
   - **Participation** - Getting developers participating on regular basis.
 - **Layer Two**
 	- **Developers** - Getting developers signing up and creating accounts.
-	- **Applications** - Getting developers signing up and creating applications.<img src="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" align="right" width="60%" style="padding: 15px;" />
+	- **Applications** - Getting developers signing up and creating applications.<a href="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" align="right" width="75%" style="padding: 15px;" /></a>
 - **Layer Three**
 	- **Sandbox Activity** - Developers being active within the sandbox environment.
 - **Layer Four**
