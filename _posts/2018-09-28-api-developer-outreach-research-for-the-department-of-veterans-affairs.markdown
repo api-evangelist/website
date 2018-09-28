@@ -48,8 +48,6 @@ if we were forced to distill all of the interviews and all of our existing infor
 
 In the pages below, you will find a large number of specific suggestions culled from extensive interviews and our collective personal experience. All of these specific techniques are in service to the idea of designing the API program with the programmers who will use the API in mind at all times.
 
-# Research findings and thoughts
-
 ## Purpose and scope of developer outreach programs
 
 ### What we learned
