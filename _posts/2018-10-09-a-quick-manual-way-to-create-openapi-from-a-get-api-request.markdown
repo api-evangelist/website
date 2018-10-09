@@ -11,9 +11,9 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/api-definition-stories/xignite-api-url.png
 ---
-I have numerous tools that help me create OpenAPIs from the APIs I stumble across each day. Ideally I'm crawling, scraping, harvesting, and auto-generating OpenAPIs, but inevitably the process gets a little manual. To help reduce friction in these manual processes, I try to have a variety of services, tools, and scripts I can use to make my life easier, when it comes to create a machine readable definition of an API I am using.
+I have numerous tools that help me create OpenAPIs from the APIs I stumble across each day. Ideally I'm crawling, scraping, harvesting, and auto-generating OpenAPIs, but inevitably the process gets a little manual. To help reduce friction in these manual processes, I try to have a variety of services, tools, and scripts I can use to make my life easier, when it comes to create a machine readable definition of an API I am using--in this scenario it is [the xignite CloudAlerts API](https://www.xignite.com/product/market-data-alerts#/DeveloperResources/request).
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/api-definition-stories/xignite-api-url.png" width="75%" align="center"></p>
+<p align="center"><a href="https://www.xignite.com/product/market-data-alerts#/DeveloperResources/request"><img src="https://s3.amazonaws.com/kinlane-productions/api-definition-stories/xignite-api-url.png" width="75%" align="center"></a></p>
 
 One way I'll create an OpenAPI from a simple GET API request, providing me with a machine readable definition of the surface area of that API, is using [Postman](https://www.getpostman.com/). When you have the URL copied onto your clipboard, open up your Postman, and paste the URL with all the query parameters present.
 
@@ -36,3 +36,8 @@ I can merge my JSON schema with my OpenAPI, adding it to the definition collecti
 <p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/api-definition-stories/xignite-cloud-alerts.png" width="75%" align="center"></p>
 
 There are definitely other ways of scraping API documentation, processing .HAR files generated from a proxy, but I think this is a way that anyone, even a non-developer can accomplish. I did my version in JSON, but the same process will work for YAML, making the resulting definition a little more human readable, while still maintaining it's machine readability. I like documenting these little processes so that my readers can put to use, but it also provides a nice definition that I can use to remember how I get things done--my memory isn't what it used to be.
+
+The resulting API definitions from this process are:
+
+- [OpenAPI](https://gist.githubusercontent.com/kinlane/394bb4cc4a42f44911e229217370f903/raw/4815f58a219bd629977da07b2494c9b5655c4aa7/xignite-cloud-alerts.json)
+- ]Postman Collection](https://www.getpostman.com/collections/02a6658c25631d716407)
