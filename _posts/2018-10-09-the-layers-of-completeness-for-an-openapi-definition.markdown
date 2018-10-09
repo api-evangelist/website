@@ -19,13 +19,13 @@ Everyone wants their OpenAPIs to be complete, but what that really means will de
 <script src="https://gist.github.com/kinlane/1aa1a3f492da5f18bc7947b62589c8f8.js"></script>
 
 **Parameters** - Provide a complete list of all path, query, and header parameters that can be used as part of an API.
-https://gist.github.com/kinlane/29d0247d6ff4aaa39db4dc793df4a2f9
+<script src="https://gist.github.com/kinlane/29d0247d6ff4aaa39db4dc793df4a2f9.js"></script>
 
 **Descriptions** - Flesh out descriptions for all the path and parameter descriptions, helping describe an API does.
 <script src="https://gist.github.com/kinlane/160ae6aafdf5a5fb7114b5dd2ac37981.js"></script>
 
 **Enums** - Publish a list of all the enumerated values that are possible for each parameter used as part of an API.
-https://gist.github.com/kinlane/444731f0214cab5efcc3ae77011823ba
+<script src="https://gist.github.com/kinlane/444731f0214cab5efcc3ae77011823ba.js"></script>
 
 **Definitions** - Document the underlying schema being returned by creating a JSON schema definition for the API.
 <script src="https://gist.github.com/kinlane/e833af3e1df40c716289c6cb81a64b88.js"></script>
