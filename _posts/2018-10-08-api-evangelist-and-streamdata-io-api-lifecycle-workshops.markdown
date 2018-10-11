@@ -46,7 +46,7 @@ While not all organizations will be ready to use a YAML API lifecycle artifact a
 If you are interested in what we are offering with our API lifecycle workshops, there are few things you can do to getting things started:
 
 - <a href="mailto:info@apievangelist.com"><strong>Email Me</strong></a> - Happy to answer any questions, and get you the information you need to sell the workshop to your team.
-- <a href="https://docs.google.com/forms/d/1Z7DQB3-mxLiKcXnhmSA4tVK5IU6xJHhhWX82vChhe_A/edit">Take Survey</a> - Take a quick survey about your operations, helping us tailor a workshop for your needs.
+- <a href="https://docs.google.com/forms/d/e/1FAIpQLSfhb9ToanbWHESr4e2_lP3TTvUIifL3YYP6mNy7yUGqS-3kpA/viewform?usp=sf_link">Take Survey</a> - Take a quick survey about your operations, helping us tailor a workshop for your needs.
 - <a href="http://locations.api.lifecycle.workshop.apievangelist.com/">Demo Workshop</a> - Take a stroll around one of our demos that we use in our workshop, introducing you to what we'll be discussing.
 
 While I work from a common set of workshop material, I work to tailor each engagement for the company, organization, institution, or government agency I'm working with. All of my API lifecycle workshop blueprints are meant to be forkable, customizable, and something anyone can turn into their own working API lifecycle strategy.
