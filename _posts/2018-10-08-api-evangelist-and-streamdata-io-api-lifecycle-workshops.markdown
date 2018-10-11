@@ -43,4 +43,10 @@ The resulting API lifecycle strategy we leave behind after the workshop is done 
 While not all organizations will be ready to use a YAML API lifecycle artifact as part of their API orchestration, it helps to have the API lifecycle well defined, even if many steps are still manual. It helps teams think more critically about how they approach the deliver of APIs, while also being something that can be downloaded, forked, and reused by different groups across the enterprise. Eventually it is something that can be further automated, measured, and used to help quantify the maturity level of each APIs, as well as API across distributed teams.
 
 **Next Steps For Developing A Strategy**
-If you are interested in what we are offering with our API lifecycle workshops, [simply let me know](mailto:info@apievangelist.com), and I can get the ball rolling by getting you starter API lifecycle strategy kit, and provide more information about scheduling and pricing for our engagement. Then we can begin to figure out how we can get something into the calendar, and hopefully jumpstart the API conversation with your team. If there are any other things you’d like to see, or have questions about, just let me know. Like the API journey, my API lifecycle workshops are always evolving and adapting.
+If you are interested in what we are offering with our API lifecycle workshops, there are few things you can do to getting things started:
+
+- <a href="mailto:info@apievangelist.com"><strong>Email Me</strong></a> - Happy to answer any questions, and get you the information you need to sell the workshop to your team.
+- <a href="https://docs.google.com/forms/d/1Z7DQB3-mxLiKcXnhmSA4tVK5IU6xJHhhWX82vChhe_A/edit">Take Survey</a> - Take a quick survey about your operations, helping us tailor a workshop for your needs.
+- <a href="http://locations.api.lifecycle.workshop.apievangelist.com/">Demo Workshop</a> - Take a stroll around one of our demos that we use in our workshop, introducing you to what we'll be discussing.
+
+While I work from a common set of workshop material, I work to tailor each engagement for the company, organization, institution, or government agency I'm working with. All of my API lifecycle workshop blueprints are meant to be forkable, customizable, and something anyone can turn into their own working API lifecycle strategy.
