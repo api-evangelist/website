@@ -14,12 +14,11 @@ image: >-
 
 In response, I set out to evolve [my own API lifecycle researched](http://apievangelist.com/), gathered over the last eight years of studying the API space, and make it more accessible to the enterprise, as self-service short form and long form content, in-person workshops, and forkable blueprints that any enterprise can set in motion on their own. The results is a series of evolvable API projects, that we are using to drive our ongoing workshop engagements with enterprise API groups, focusing in on six critical areas of the API lifecycle:
 
-- **Discovery** - Knowing where all of your APIs and services are across groups.
-- **Design** - Focus in on an a design and virtualized API lifecycle before deployment.
-- **Deployment** - Understanding the many ways in which APIs can be deployed.
-- **Operations** - Thinking critically about properly operating API infrastructure.
-- **Outreach** - Helping understand how to reach out internally and externally.
-- **Governance** - Understanding how to measure, report, and evolve API operations.
+- **Discovery** (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Discovery">demo</a>) - Knowing where all of your APIs and services are across groups.
+- **Design** (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Design">demo</a>) - Focus in on an a design and virtualized API lifecycle before deployment.
+- **Development** (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Development">demo</a>) - Understanding the many ways in which APIs can be developed & deployed.
+- **Production** (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Production">demo</a>) - Thinking critically about properly operating API infrastructure.
+- **Governance** (<a href="http://locations.api.lifecycle.workshop.apievangelist.com/outline-items/#Governance">demo</a>) - Understanding how to measure, report, and evolve API operations.
 
 Not all of our workshops will cover all of these areas. Depending on the time we have available, the scope of the team participating in a workshop(s), and how far along teams are in their overall API journey, the workshops might head in different directions, and expand or contract the depth in which we dive into each of these area (ie. not everyone is ready for governance). After several workshops this year, we have found these areas of the API lifecycle to be the most meaningful ways to organize a workshop, and help enterprise group think more critically about their API strategy.
 
