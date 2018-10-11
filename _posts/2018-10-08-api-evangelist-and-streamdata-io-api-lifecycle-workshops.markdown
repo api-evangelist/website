@@ -23,7 +23,7 @@ In response, I set out to evolve [my own API lifecycle researched](http://apieva
 
 Not all of our workshops will cover all of these areas. Depending on the time we have available, the scope of the team participating in a workshop(s), and how far along teams are in their overall API journey, the workshops might head in different directions, and expand or contract the depth in which we dive into each of these area (ie. not everyone is ready for governance). After several workshops this year, we have found these areas of the API lifecycle to be the most meaningful ways to organize a workshop, and help enterprise group think more critically about their API strategy.
 
-**Craft An API Strategy For Your Enterprise**
+**Craft An API Strategy For Your Enterprise**<br />
 The purpose of our API lifecycle workshops is to help enterprise organizations develop a strategy. Bring in outside API knowledge, learn more about where an enterprise API group is in their overall API journey, and leave them with a structured artifact that helps them step back and look at the entire lifecycle of their APIs. Moving the API conversation across the enterprise forward in a meaningful way with three distinct actions:
 
 - **Starter API Lifecycle Strategy** - Provides a template API lifecycle strategy in GitHub or GitLab as README, and YAML file. Providing a framework to consider as you craft your own API strategy, providing a starting point for your journey. Generated from eight years of research on the API space, providing a living document that can be used to execute and evolve the overall API lifecycle strategy for an enterprise organization.
@@ -33,7 +33,7 @@ The purpose of our API lifecycle workshops is to help enterprise organizations d
 <p><img src="https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg" width="45%" align="right" style="padding: 15px;" /></p>
 We are happy to continue the conversation around the API lifecycle artifact we will leave with you. We don’t expect you to use everything we propose. We are more interested in teaching you about what is possible, and continuing to work with you to refine, evolve, and make the API lifecycle your own. We’ve just worked hard to identified many different ways to operating API infrastructure at scale, and continue to help standardize and make it more accessible by large enterprise organizations.
 
-**Helping You In Your Journey**
+**Helping You In Your Journey**<br />
 The resulting API lifecycle strategy we leave behind after the workshop is done will possess all the knowledge we’ve aggregated across API research, gathered across leading API providers, and polished by conducting API workshops within the enterprise. Embedded within this API lifecycle artifact we’ll leave you with some added elements that will help you in your journey, going beyond just advice on process, and helping the rubber meet the road.
 
 - **Links** - Provide a wealth of references to external resources, attached to each stop along the API lifecycle, bring our API research into your organization, allowing you to put to use inline as you are building your API strategy.
@@ -42,7 +42,7 @@ The resulting API lifecycle strategy we leave behind after the workshop is done 
 
 While not all organizations will be ready to use a YAML API lifecycle artifact as part of their API orchestration, it helps to have the API lifecycle well defined, even if many steps are still manual. It helps teams think more critically about how they approach the deliver of APIs, while also being something that can be downloaded, forked, and reused by different groups across the enterprise. Eventually it is something that can be further automated, measured, and used to help quantify the maturity level of each APIs, as well as API across distributed teams.
 
-**Next Steps For Developing A Strategy**
+**Next Steps For Developing A Strategy**<br />
 If you are interested in what we are offering with our API lifecycle workshops, there are few things you can do to getting things started:
 
 - <a href="mailto:info@apievangelist.com"><strong>Email Me</strong></a> - Happy to answer any questions, and get you the information you need to sell the workshop to your team, and get you in the calendar.
