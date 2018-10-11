@@ -32,7 +32,7 @@ The purpose of our API lifecycle workshops is to help enterprise organizations d
 <p><a href="http://locations.api.lifecycle.workshop.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg" width="45%" align="right" style="padding: 15px;" /></a></p>
 We are happy to continue the conversation around the API lifecycle artifact we will leave with you. We don’t expect you to use everything we propose. We are more interested in teaching you about what is possible, and continuing to work with you to refine, evolve, and make the API lifecycle your own. We’ve just worked hard to identified many different ways to operating API infrastructure at scale, and continue to help standardize and make it more accessible by large enterprise organizations.
 
-**Helping You In Your Journey**<br />
+**Helping You On Your Journey**<br />
 The resulting API lifecycle strategy we leave behind after the workshop is done will possess all the knowledge we’ve aggregated across API research, gathered across leading API providers, and polished by conducting API workshops within the enterprise. Embedded within this API lifecycle artifact we’ll leave you with some added elements that will help you in your journey, going beyond just advice on process, and helping the rubber meet the road.
 
 - **Links** - Provide a wealth of references to external resources, attached to each stop along the API lifecycle, bring our API research into your organization, allowing you to put to use inline as you are building your API strategy.
