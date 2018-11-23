@@ -11,7 +11,7 @@ tags:
   - Evangelism
   - Strategy
   - Lifecycle
-image: 'http://journey.streamdata.io/assets/journey.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions/journey/journey-bridge.jpg'
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been researching the API space full time for the last eight years, and over that time I have developed a pretty robust view of what the API landscape looks like. [You can find almost 100 stops along what I consider to be the API lifecycle on the home page of API Evangelist](http://apievangelist.com/#api-lifecycle). While not every organization has the capacity to consider all 100 of these stops, they do provide us with a wealth of knowledge generated throughout my own journey. Where I've been documenting what the API pioneers have been doing with their API operations, how startups leverage simple web API infrastructure, as well as how the enterprise has been waking up to the API potential in the last couple of years.
 
