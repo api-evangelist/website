@@ -3,6 +3,7 @@ published: true
 layout: post
 title: YAML API Management Artifacts From AWS API Gateway
 date: 2018-11-23T09:00:00.000Z
+tags:
   - API Evangelist
   - Gateway
   - Definitions
