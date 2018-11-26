@@ -16,7 +16,6 @@ image: >-
 
 [OpenAPI](https://www.openapis.org/) provides us with machine readable details about the surface area of our API which can be used throughout the API lifecycle, but it lacks other details about the surface area of our API operations. So when I do come across interesting approaches to extending the OpenAPI specification which are also injecting a machine readable artifact into the OpenAPI that support other stops along the API lifecycle, I like to showcase what they are doing. I've become very fond of one within the OpenAPI export of any AWS API Gateway deployed API I'm working with, which provides some valuable details that can be used as part of both the deployment and management stops along the API lifecycle:
 <pre><code>
-x-amazon-apigateway-integration:<br>
 x-amazon-apigateway-integration:
 	uri: "http://example.com/path/to/the/code/behind/"
 	responses:
