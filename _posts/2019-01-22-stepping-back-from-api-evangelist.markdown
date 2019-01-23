@@ -8,7 +8,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>After eight years of storytelling I have decided to step back from API Evangelist. There just aren't enough nutrients in the work to sustain me financially, ethically, or creatively. It has been a fun and interesting ride since I kicked off this crazy idea in 2010, but the time has come to step away.
+<p><img src="{{ page.image }}" width="25%" align="right" style="padding: 15px;" /></p>After eight years of storytelling I have decided to step back from API Evangelist. There just aren't enough nutrients in the work to sustain me financially, ethically, or creatively. It has been a fun and interesting ride since I kicked off this crazy idea in 2010, but the time has come to step away.
 
 While I still have some long form essays I'd like to publish after gathering my thoughts, and I will keep the blog and Twitter account up for historical purposes, I'm stepping away to give 100% of my attention to a full time job. Who knows, maybe someday I'll come back around to the work, but for now I'm going to put it all down.
 
