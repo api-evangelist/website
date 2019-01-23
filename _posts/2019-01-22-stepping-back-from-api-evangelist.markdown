@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: Stepping Back From API Evangelist
-date: 2019-11-01T09:00:00.000Z
+date: 2019-01-22T09:00:00.000Z
 tags:
   - API Evangelist
 image: >-
@@ -15,4 +15,3 @@ While I still have some long form essays I'd like to publish after gathering my 
 Thank you to everyone along the way who has supported me. I wish you all the best, and look forward to seeing some of your faces down the road. I am thankful for all the wonderful memories we've created along the way as we all worked to make APIs a little more human.
 
 Onward, the API Evangelist.
-
