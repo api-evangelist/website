@@ -1,18 +1,752 @@
 ---
-layout: none
+layout: default
+title: API Evangelist
 ---
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ site.title }}</title>
-  {% for post in site.posts limit:25 %}{% if forloop.first == true %}{% assign updated = post.date %}<updated>{{ updated | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>{% endif %}{% endfor %}
-  <link rel="self" href="{{ site.url }}/newsletter.xml"/>
-  <author><name>Kin Lane</name></author>
-  <id>{{ site.url }}/atom.xml</id>{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-	{% for post in site.posts limit:25 %}{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}{% if posttime < nowunix %}<entry>
-    <title>{{ post.title }}</title>
-    <link href="http://apievangelist.com{{ post.url }}"/>
-    <updated>{{ post.date | date: "%Y-%m-%dT%H:%M:%SZ" }}</updated>
-    <content><![CDATA[{{ post.content | strip_html | xml_escape | truncate: 400 }}]]></content>
-    <id>http://apievangelist.com{{ post.url }}</id>
-  </entry>{% endif %}{% endfor %}
-</feed>
+
+<!-- Banner -->
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>I am Kin Lane, the API Evangelist...</h2>
+		</header>
+		<p align="right"><img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane-cartoon-questioning.png" alt="Kin Lane" width="22%" align="right" /></p>
+		<p>This is my online domain where I work to understand the world of the Application Programming Interfaces, also known as APIs. A way of sharing data using the web that is touching almost every aspect of our increasingly digital lives, providing access to the bits and bytes that make our personal and professional worlds go round.</p>
+		<p>API Evangelist is my full time research into how APIs are impacting our worlds (both good and bad), where I work to better understand the technology, business, and politics of the APIs that are driving our websites, mobile, and devices that seem to be everywhere.</p>
+		<p>API Evangelist is a network of data driven projects and APIs which I curate and manage as part of this ongoing research, hoping to provide easy access to the moving parts of my work. Everything you see here runs on Github, making everything forkable, and resuable for both humans and machines.</p>
+	</div>
+</section>
+
+<!-- Partners -->
+<section>
+	{% include partner-fma.html %}
+</section>
+
+<!-- Blog -->
+{% assign switch = true %}
+{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+{% for post in site.posts %}
+ 	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
+  {% if post.title != null %}
+		{% if posttime < nowunix %}
+			{% if switch == true %}
+				<section id="banner">
+					<div class="content">
+						<header>
+							<h2>Latest From Blog: {{ post.title }}</h2>
+							<p><em>{{ post.date | date_to_string }}</em></p>
+						</header>
+						{{ post.content }}
+						<ul class="actions" style="text-align: center;">
+							<li><a href="/blog/" class="button big">Read The Blog</a></li>
+						</ul>
+					</div>
+				</section>
+				{% assign switch = false %}
+			{% endif %}
+		{% endif %}
+	{% endif %}
+{% endfor %}
+
+<section id="banner">
+	<div class="content">
+		<header>
+			<h1><a href="http://101.apievangelist.com">API 101</a></h1>
+		</header>
+		<p>I have a lot of information regarding APIs on my network of sites, but I'm always trying to make sure I have a sufficient amount of 101, or getting started information for people who are just learning what an API is, and what is possible.</p>
+		<p>I have some information available to help walk you through the concept of an API, and how they have been expanding over the last 15 years across all the online services you have become familiar with on the web and mobile phone.</p>
+		<ul class="actions" style="text-align: center;">
+			<li><a href="http://101.apievangelist.com" class="button big">Getting Started With APIs</a></li>
+		</ul>
+	</div>
+	<span class="image object">
+		<a href="http://101.apievangelist.com"><img src="/images/api-101-square.png" alt="" width="25%" /></a>
+	</span>
+</section>
+
+<section id="banner">
+	<a name="api-lifecycle"></a>
+	<div class="content">
+	<header>
+		<h1>API Lifecycle</h1>
+	</header>
+	<p>These are the stops in a modern API lifecycle that I keep track of trying to understand how APIs are being delivered across the space:</p>
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">
+		<tr>
+			<td style="vertical-align: middle; width: 100px;">
+				{% include subway-vertical-top.html %}
+			</td>
+			<td style="min-height: 400px; padding-top: 3px; padding-left: 25px; vertical-align: top;">
+				<h3><a href="http://definitions.apievangelist.com" target="_blank">Definitions</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://definitions.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/definitions/" target="_blank">Journey</a>)</span></h3>
+				From the simplest definition of what a service does, all the way to the complete OpenAPI definition for each service.
+			</td>
+		</tr>
+		<tr>
+			<td style="vertical-align: middle;">
+				{% include subway-vertical.html %}
+			</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://design.apievangelist.com" target="_blank">Design</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://design.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/design/" target="_blank">Journey</a>)</span></h3>
+			The consistent design of each service leverage existing patterns, as well as the web to deliver each service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://hypermedia.apievangelist.com" target="_blank">Hypermedia</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://hypermedia.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding how hypermedia can be applied at the design level to help us bring more resiliency to our APIs infrastructure.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://microservices.apievangelist.com" target="_blank">Microservices</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://microservices.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Trying to learn about about organizations are adopting a microservices way of delivering API driven services to meet their needs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://versioning.apievangelist.com" target="_blank">Versioning</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://versioning.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/versioning/" target="_blank">Journey</a>)</span></h3>
+			Plan for handling changes, and the inevitable evolution of each service, its definitions, and supporting code.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://database.apievangelist.com" target="_blank">Database</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://database.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/database/" target="_blank">Journey</a>)</span></h3>
+			The backend database schema, infrastructure, and other relevant information regarding how data is managed.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://data.apievangelist.com" target="_blank">Data</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://data.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Looking at pure data and how it is used and made available using APIs as the access point for working with valuable data assets.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://scraping.apievangelist.com" target="_blank">Scraping</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://scraping.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding why and how people are scraping data and content instead of using APIs and the imbalance that exists across the web.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://graphql.apievangelist.com" target="_blank">GraphQL</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://graphql.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Learning how GraphQL and other query languages are being used to make APIs more accessible to targeted consumers who desire access to entire schema.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://compute.apievangelist.com" target="_blank">Compute</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://compute.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/compute/" target="_blank">Journey</a>)</span></h3>
+			How is the underlying compute delivered for each service using whether it is in in the cloud or on-premise infrastructure.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://containers.apievangelist.com" target="_blank">Containers</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://containers.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding cntainers are being used when it comes to deploying and orchestration API infrastructure.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://serverless.apievangelist.com" target="_blank">Serverless</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://serverless.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Keeping an eye on how serverless is changing the conversation and being used to deploy and consume APIs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://storage.apievangelist.com" target="_blank">Storage</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://storage.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/storage/" target="_blank">Journey</a>)</span></h3>
+			What does storage of all heavy objects, media, and other assets involved with the delivery of services.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://blockchain.apievangelist.com" target="_blank">Blockchain</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://blockchain.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding where the distributed, encrypted opportunities lie within the blockchain if it exists beyond the hype.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://algorithms.apievangelist.com" target="_blank">Algorithms</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://algorithms.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Applying algorithms behind our APIs, going beyond just data, and providing logic and other magic using code.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://deployment.apievangelist.com" target="_blank">Deployment</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://definitions.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/definitions/" target="_blank">Journey</a>)</span></h3>
+			Details services developed, and deployed, including frameworks and other libraries being used.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://orchestration.apievangelist.com" target="_blank">Orchestration</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://orchestration.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/orchestration/" target="_blank">Journey</a>)</span></h3>
+			Defining what the build, syndication, and orchestration of service deployments and integrations look like, and are executed.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://dependencies.apievangelist.com" target="_blank">Dependencies</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://dependencies.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/dependencies/" target="_blank">Journey</a>)</span></h3>
+			Identifying all backend service, code and infrastructure dependencies present for each service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://search.apievangelist.com" target="_blank">Search</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://search.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/search/" target="_blank">Journey</a>)</span></h3>
+			Strategy for understanding what search will look like for each individual service, and play a role in larger, more comprehensive search across services.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://proxy.apievangelist.com" target="_blank">Proxy</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://proxy.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/proxy/" target="_blank">Journey</a>)</span></h3>
+			What proxies are in place to translate, cache, stream, and make services more efficient and secure?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://gateway.apievangelist.com" target="_blank">Gateway</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://gateway.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/gateway/" target="_blank">Journey</a>)</span></h3>
+			What gateways are in place to defend, protect, route, translate, and act as gatekeeper for service operations?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://grpc.apievangelist.com" target="_blank">GRPC</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://grpc.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Keeping an eye on how Google is evolving APIs using HTTP/2 and Protobuf to provide B2B scale APIs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://virtualization.apievangelist.com" target="_blank">Virtualization</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://virtualization.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/virtualization/" target="_blank">Journey</a>)</span></h3>
+			Details how how services and their underlying data are mocked, virtualized, sandboxed, and made available for non-production usage.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+			<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://dns.apievangelist.com" target="_blank">DNS</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://dns.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/dns/" target="_blank">Journey</a>)</span></h3>
+			The domain addressing being used for routing, management and auditing of all service traffic.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://authentication.apievangelist.com" target="_blank">Authentication</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://authentication.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/authentication/" target="_blank">Journey</a>)</span></h3>
+			What is involved with authentication across all services, including key-based approaches, basic authentication, JWT, and OAuth solutions.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://management.apievangelist.com" target="_blank">Management</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://management.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/management/" target="_blank">Journey</a>)</span></h3>
+			Information about how services are composed, limited, measured, reported upon, and managed consistently across all services.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://logging.apievangelist.com" target="_blank">Logging</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://logging.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/logging/" target="_blank">Journey</a>)</span></h3>
+			What is being logged as part of service operations, and what is required to participate in overall logging strategy?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://portal.apievangelist.com" target="_blank">Portal</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://portal.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/portal/" target="_blank">Journey</a>)</span></h3>
+			The strategy for how all services are required to be published to one or many public, private, and partner developer portals.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://getting-started.apievangelist.com" target="_blank">Getting Started</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://getting-started.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Learning how companies are providing getting started pages to help developers get up and running with APIs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://documentation.apievangelist.com" target="_blank">Documentation</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://documentation.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/documentation/" target="_blank">Journey</a>)</span></h3>
+			The requirements for what documentation is expected as part of each service presence, defining what the services delivers.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://support.apievangelist.com" target="_blank">Support</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://support.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/support/" target="_blank">Journey</a>)</span></h3>
+			Relevant support channels, points of contact, and best practices for receiving support as an API consumer.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://communications.apievangelist.com" target="_blank">Communications</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://communications.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/communications/" target="_blank">Journey</a>)</span></h3>
+			Information about the communication strategy around each service, and how blogs, social, and other channels should be leveraged.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://road-map.apievangelist.com" target="_blank">Road Map</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://road-map.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/road-map/" target="_blank">Journey</a>)</span></h3>
+			Details on a services road map, and what the future will hold, providing individual service, as well as larger organizational details on what is next.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://issues.apievangelist.com" target="_blank">Issues</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://issues.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/issues/" target="_blank">Journey</a>)</span></h3>
+			Expectations, communications, and transparency around what the current bugs, issues, and other active problems exist on a platform.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://change-log.apievangelist.com" target="_blank">Change Log</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://change-log.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/change-log/" target="_blank">Journey</a>)</span></h3>
+			Translating the road map, and issues into a log of activity that has occurred for each service, providing a history of the service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://monitoring.apievangelist.com" target="_blank">Monitoring</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://monitoring.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/monitoring/" target="_blank">Journey</a>)</span></h3>
+			What is required when it comes to monitoring the availability and activity of each individual service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://testing.apievangelist.com" target="_blank">Testing</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://testing.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/testing/" target="_blank">Journey</a>)</span></h3>
+			The tactical, as well as strategic testing that is involved with each service, ensuring it is meeting service level agreements.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://performance.apievangelist.com" target="_blank">Performance</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://performance.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/performance/" target="_blank">Journey</a>)</span></h3>
+			How is the performance of each service measured and report upon, providing a benchmark for the quality of service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://reliability.apievangelist.com" target="_blank">Reliability</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://reliability.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Tracking on how companies are being more reliable when it comes to their API operations, and ofering a higher level of services with their APIs infrastructure.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://observability.apievangelist.com" target="_blank">Observability</a></h3>
+			What does observability of the service look like, providing transparency and accountability using all of its existing outputs?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://caching.apievangelist.com" target="_blank">Caching</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://caching.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/caching/" target="_blank">Journey</a>)</span></h3>
+			What caching exists at the server, CDN, and DNS layers for each service to provide a higher level of performance?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://encryption.apievangelist.com" target="_blank">Encryption</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://encryption.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/encryption/" target="_blank">Journey</a>)</span></h3>
+			Details regarding what is expected regarding encryption on disk, as well as in transport for each service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://security.apievangelist.com" target="_blank">Security</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://security.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/security/" target="_blank">Journey</a>)</span></h3>
+			Detailed strategy and processes regarding how each service is secured on a regular basis as part of operations.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://vulnerabilities.apievangelist.com" target="_blank">Vulnerabilities</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://vulnerabilities.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Looking at the vulnerabilities, and the effort to patch them that exist across the technology sector and may be impacting APIs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://breaches.apievangelist.com" target="_blank">Breaches</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://breaches.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Tracking on the breaches that are ocurring and trying to learn from them and apply to the world of APIs.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://cybersecurity.apievangelist.com" target="_blank">Cybsecurity</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://cybersecurity.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Looking at the more theatrical side of security and what stories are being told to influence and stoke our fears.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://rogue.apievangelist.com" target="_blank">Rogue</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://rogue.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Keeping an eye on the unauthorized and rogue APIs that are launched when companies fail to make publicly available APIs accessible to consumers.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://terms-of-service.apievangelist.com" target="_blank">Terms of Service (TOS)</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://terms-of-service.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/terms-of-service/" target="_blank">Journey</a>)</span></h3>
+			Considerations, and legal requirements applied to each service as part of the overall, or individual terms of services.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://privacy.apievangelist.com" target="_blank">Privacy</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://privacy.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/privacy/" target="_blank">Journey</a>)</span></h3>
+			Details regarding the privacy of platform owners, developers, and end users as it pertains to service usage.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://service-level-agreements.apievangelist.com" target="_blank">Service Level Agreements (SLA)</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://service-level-agreements.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/service-level-agreements/" target="_blank">Journey</a>)</span></h3>
+			Details regarding what service levels are required to be met when it comes to partner and public engagements.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://licensing.apievangelist.com" target="_blank">Licensing</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://licensing.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/licensing/" target="_blank">Journey</a>)</span></h3>
+			Information about backend server code, API surface area, data, and client licensing in play.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://copyright.apievangelist.com" target="_blank">Copyright</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://copyright.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Studying how copyright is being applied to APIs, and other aspects of deploying technology behind API infrastructure.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://patents.apievangelist.com" target="_blank">Patents</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://patents.apievangelist.com" target="_blank">Research</a></span></h3>
+			Understanding how APIs are being patented by companies, and what impact this will have on the wider API ecosystem.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://branding.apievangelist.com" target="_blank">Branding</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://branding.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/branding/" target="_blank">Journey</a>)</span></h3>
+			What branding requirements are in place for the platforms and its partners when it comes to the service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://regulation.apievangelist.com" target="_blank">Regulation</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://regulation.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/regulation/" target="_blank">Journey</a>)</span></h3>
+			Information regarding regulations in place that effect service operations, and are required as part of its usage.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://gdpr.apievangelist.com" target="_blank">GDPR</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://gdpr.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding how GDPR is impacting businesses and how APIs can be put to work to help satisfy the regulation.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://discovery.apievangelist.com" target="_blank">Discovery</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://discovery.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/discovery/" target="_blank">Journey</a>)</span></h3>
+			How are services catalogued and made discoverable, making them accessible to other systems, developers, as well as to internal, partner, or public groups.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://client.apievangelist.com" target="_blank">Client</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://client.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/client/" target="_blank">Journey</a>)</span></h3>
+			Information about clients being used to interface with and work with the service, allowing it to be put to use without code.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://command-line-interface.apievangelist.com" target="_blank">Command Line Interface</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://command-line-interface.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/command-line-interface/" target="_blank">Journey</a>)</span></h3>
+			The command line interface (CLI) tooling being used to developer or consume a service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://sdk.apievangelist.com" target="_blank">SDKs</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://sdks.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/sdks/" target="_blank">Journey</a>)</span></h3>
+			What software development kits (SDK) are generated, or developed and maintained as part of a service’s operation?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://plugin.apievangelist.com" target="_blank">Plugin</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://plugin.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/plugin/" target="_blank">Journey</a>)</span></h3>
+			What platform plugins are developed and maintained as part of a services operations, allowing it to work with other platforms and services.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://ide.apievangelist.com" target="_blank">IDE</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://ide.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/ide/" target="_blank">Journey</a>)</span></h3>
+			Are there integrated development environment (IDE) integrations, libraries, plugins, or availability considerations for each service?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://browsers.apievangelist.com" target="_blank">Browsers</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://browsers.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/browsers/" target="_blank">Journey</a>)</span></h3>
+			Are there any browser plugins, add-ons, bookmarklets and integrations used as part of each service’s operation?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://embeddable.apievangelist.com" target="_blank">Embeddable</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://embeddable.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/embeddable/" target="_blank">Journey</a>)</span></h3>
+			Information about any embeddable badges, buttons, widgets, and other JavaScript enabled solutions built on top of a service?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://internat-of-things.apievangelist.com" target="_blank">Internet of Things</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://internat-of-things.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Understanding how APIs are being used to connect devices to the Internet, generating more data while also using the cloud for connectivity.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://industrial.apievangelist.com" target="_blank">Embeddable</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://industrial.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Looking at the industrial side of the Internet of Things, going beyond just consumer level discussions and looking at how business are connecting devices to the Internet.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://bots.apievangelist.com" target="_blank">Bots</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://bots.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/bots/" target="_blank">Journey</a>)</span></h3>
+			What type of automation and bot implementations are in development or being supported as part of a service’s operation?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://visualization.apievangelist.com" target="_blank">Visualization</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://virtualization.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/virtualization/" target="_blank">Journey</a>)</span></h3>
+			Are there specific visualizations that exist to help present the resources available within any service?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://analysis.apievangelist.com" target="_blank">Analysis</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://analysis.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/analysis/" target="_blank">Journey</a>)</span></h3>
+			How are logs, APIs, and other aspects of a service being used as part of wider analysis, and analytics strategy?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://machine-learning.apievangelist.com" target="_blank">Machine Learning</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://machine-learning.apievangelist.com" target="_blank">Research</a>)</span></h3>
+			Looking to learn about how machine learning is being used via APIs, and trying to cut through the hype and understand how it can really be put to work.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://aggregation.apievangelist.com" target="_blank">Aggregation</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://aggregation.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/aggregation/" target="_blank">Journey</a>)</span></h3>
+			Are there any aggregation solutions in place that involve the service, and depend on its availability?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://integrations.apievangelist.com" target="_blank">Integration</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://integration.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/integration/" target="_blank">Journey</a>)</span></h3>
+			What 3rd party integrations are available for working with a service in existing integration platforms like IFTTT, and Zapier.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://network.apievangelist.com" target="_blank">Network</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://network.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/network/" target="_blank">Journey</a>)</span></h3>
+			Information about networks that are setup, used, and allocated for each service governing how it can be accessed and consumed.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://regions.apievangelist.com" target="_blank">Regions</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://regions.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/regions/" target="_blank">Journey</a>)</span></h3>
+			Which regions does a service operate within, making it available in specific regions, and jurisdictions–also which regions is it not allowed to operate within.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://webhooks.apievangelist.com" target="_blank">Webhooks</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://webhooks.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/webhooks/" target="_blank">Journey</a>)</span></h3>
+			Are there webhooks employed to respond to events that occur via the service, pushing data, and notification externally to consumers?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://migration.apievangelist.com" target="_blank">Migration</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://migration.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/migration/" target="_blank">Journey</a>)</span></h3>
+			What solutions are available for migrating an API between regions, cloud environments, and on-premise?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://backups.apievangelist.com" target="_blank">Backup</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://backup.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/backup/" target="_blank">Journey</a>)</span></h3>
+			What types of backups are in place to bring redundancy to the database, server, storage, and other essential aspects of a service’s operations?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://realtime.apievangelist.com" target="_blank">Real Time</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://realtime.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/real-time/" target="_blank">Journey</a>)</span></h3>
+			Are there Server-Sent Events (SSE), Websocket, Kafka, and other real time aspects of a service’s delivery?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://voice.apievangelist.com" target="_blank">Voice</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://voice.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/voice/" target="_blank">Journey</a>)</span></h3>
+			Are there any voice or speech enablement, integrating services with Alex, Siri, Google Home, or other conversational interface?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://spreadhheets.apievangelist.com" target="_blank">Spreadsheets</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://spreadsheets.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/spreadsheets/" target="_blank">Journey</a>)</span></h3>
+			What types of spreadsheet integrations, connectors, and publishing solutions are available for a service?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://investment.apievangelist.com" target="_blank">Investment</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://investment.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/investment/" target="_blank">Journey</a>)</span></h3>
+			Where do the funds for operating a service come from within a company, from external organizations, or VC funds?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://monetization.apievangelist.com" target="_blank">Monetization</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://monetization.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/monetization/" target="_blank">Journey</a>)</span></h3>
+			What does it cost to operate a service, breaking down the one time and recurring costs involved with delivering the service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://plans.apievangelist.com" target="_blank">Plans</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://plans.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/plans/" target="_blank">Journey</a>)</span></h3>
+			Outline of plans involved with defining, measuring, reporting, and quantifying value generated around a service’s operation.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; ">
+			<h3><a href="http://partners.apievangelist.com" target="_blank">Partners</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://partners.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/partners/" target="_blank">Journey</a>)</span></h3>
+			An overview of partner program involved with a service’s operation, and how a wider partner strategy affects a service’s access and consumption.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://certification.apievangelist.com" target="_blank">Certification</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://certification.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/certification/" target="_blank">Journey</a>)</span></h3>
+			Are there certification channels available for applications and developers, defining the knowledge required to competently operate and integrate a service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://evangelism.apievangelist.com" target="_blank">Evangelism</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://evangelism.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/evangelism/" target="_blank">Journey</a>)</span></h3>
+			What does internal, public, and partner evangelism efforts and requirements look like for a service, and its overall presence?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://showcase.apievangelist.com" target="_blank">Showcase</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://showcase.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/showcase/" target="_blank">Journey</a>)</span></h3>
+			How are developers and applications using a service showcased, and presented to the community, demonstrating the valuable around a service?
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://deprecation.apievangelist.com" target="_blank">Deprecation</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://deprecation.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/deprecation/" target="_blank">Journey</a>)</span></h3>
+			What are the plans for deprecating a service, involved the road map and communication around the individual and overall deprecation of service(s).
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;">{% include subway-vertical.html %}</td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: middle;">
+			<h3><a href="http://training.apievangelist.com" target="_blank">Training</a>&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://training.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/training/" target="_blank">Journey</a>)</span></h3>
+			What training materials need to be developed, or already exist to support the service.
+		</td>
+	</tr>
+	<tr>
+		<td style="vertical-align: middle;"> {% include subway-vertical-bottom.html %} </td>
+		<td style="min-height: 400px; padding-top: 30px; padding-left: 25px; vertical-align: bottom;">
+			<h3><a href="http://governance.apievangelist.com" target="_blank">Governance&nbsp;&nbsp;<span style="font-size: 18px; font-weight: normal;">(<a href="http://governance.apievangelist.com" target="_blank">Research</a>) (<a href="http://journey.apievangelist.com/journey/governance/" target="_blank">Journey</a>)</span></h3>
+			How are all steps measured, quantified, aggregated, reported upon, and audited as part of a larger quality of service effort for each service.
+		</td>
+	</td>
+</tr>
+</table>
+</div>
+</section>
+
+<section id="banner">
+	<div class="content" style="padding: 25px;">
+		<a name="REST API Notes Newsletter"></a>
+		<header>
+			<h3>REST API Notes Newsletter</h3>
+		</header>
+		<p>A carefully curated newsletter from Matthew Reinbold, providing a succinct list of only the most important web API news each week, allowing you to stay more informed of what is happening in the API space in less time.</p>
+		<form action="https://tinyletter.com/RESTAPINotes" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/RESTAPINotes', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true">
+			<p>
+				<label for="mce-EMAIL"><strong>Email Address  <span class="asterisk">*</span></strong></label>
+				<input type="email" name="email" id="tlemail" placeholder="email@example.com" style="width: 100%;" width="100%" /></p>
+				<input type="submit" value="Subscribe" />
+				<input type="hidden" value="1" name="embed"/>
+		</form>
+		<p>More information about <a href="https://tinyletter.com/RESTAPINotes/">REST API Notes email newsletter is available via their website.</a></p>
+</div>
+</section>
+
+<section id="banner">
+	<div class="content" style="padding: 25px;">
+		<a name="API Developer Weekly"></a>
+		<header>
+			<h3>API Developer Weekly</h3>
+		</header>
+		<p>The API Developer Weekly is a weekly newsletter hyper-focused on the business, design, development, and deployment of APIs for web and mobile apps.</p>
+		<div id="mc_embed_signup">
+		<form action="https://launchany.us2.list-manage.com/subscribe/post?u=5005148108dfbac726f74e31e&amp;id=239e48d26e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+		    <div id="mc_embed_signup_scroll">
+			<label for="mce-EMAIL">Subscribe to our mailing list</label>
+			<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+		    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+		    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5005148108dfbac726f74e31e_239e48d26e" tabindex="-1" value=""></div>
+		    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+		    </div>
+		</form>
+		<p>More information about <a href="https://apideveloperweekly.com/">API Developer Weekly is available on their website</a>.</p>
+		</div>
+		<!--End mc_embed_signup-->
+</div>
+</section>
