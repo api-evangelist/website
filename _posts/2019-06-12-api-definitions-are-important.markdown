@@ -8,7 +8,7 @@ tags:
 image: >-
   https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/christianity-christianity-under-construction-copper-circuit.jpg
 ---
-<img src="{{ page.image }}" width="25%" align="right" style="padding: 15px;" />
+<img src="{{ page.image }}" width="35%" align="right" style="padding: 15px;" />
 I found myself scrolling down the home page of API Evangelist and thinking about what topic(s) I thought were still the most relevant in my mind after not writing about APIs for the last six months. Hands down it is API definitions. These machine and human readable artifacts are the single most important thing for me when it comes to APIs I'm building, and putting to work for me.
 
 Having mature, machine readable API definitions for all API that you depend on, is essential. It also takes a lot of hard work to make happen. It is why I went API define first a long time ago, defining my APIs before I ever get to work designing, mocking, developing, and deploying my APIs. Right now, I'm heavily dependent on my:
