@@ -6,7 +6,7 @@ date: 2019-06-17T09:00:00.000Z
 tags:
   - API Evangelist
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/rockingchair-face-2-atari-asteroids.jpg
+  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/gears-4882162452-fa3126b38d-b-umberto-bocc.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 Two years later, [I'm still working to define the API driven marketplace that is my digital self](https://apievangelist.com/2017/01/09/the-api-driven-marketplace-that-is-my-digital-self/). Understanding how I generate revenue from my brand (vomits in mouth a little bit), but also fight off the surveillance capitalists from mining and extracting value from my digital existence. It takes a lot of hard work to define the APIs you depend on to do business, and quantify the digital bits that you are transacting on the open web, amongst partners, and unknowingly with 3rd parties. As an individual, I find this to be a full time job, and within the enterprise, it is something that everyone will have to own a piece of, which in reality, is something that is easier said than done.
