@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: There Is No Single Right Way To Do APIs
-date: 2019-06-17T09:00:00.000Z
+date: 2019-06-16T09:00:00.000Z
 tags:
   - API Evangelist
 image: >-
