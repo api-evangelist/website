@@ -1,7 +1,6 @@
 # API Evangelist
 
-This blog is no longer active, but still contains research about the API space from 2010 through 2018.
+Making sense of the technology, business and politics of APIs.
 
-Kin Lane
-@kinlane
-@apievangelist
+URL: http://apievangelist.com
+Twitter: @apievangelist
