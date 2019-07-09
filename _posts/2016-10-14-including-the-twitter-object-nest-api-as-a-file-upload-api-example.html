@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Including The Twitter Object Nest API As A File Upload API Example'
+source: http://apievangelist.com/2016/10/14/including-the-twitter-object-nest-api-as-a-file-upload-api-example/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_13_at_9.17.46_pm.png
+atomdate: 2016-10-14T09:00:00-07:00
+---
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_13_at_9.17.46_pm.png" alt="" width="40%" align="right" /></p>
+<p>One request I get from folks on a regular basis, is an example of file upload APIs. Each time I get one of these requests I regret that I do not have more file upload and storage APIs profiled, allowing me to share a list of examples. So file upload APIs are high on my list to keep an eye out for as I'm doing my regular monitoring and mapping of the API universe.&nbsp;</p>
+<p>An API I wanted to add to this list was <a href="https://dev.twitter.com/rest/ton">the&nbsp;TON (Twitter Object Nest) API</a>, which "allows implementers to upload media and various assets to Twitter".&nbsp;The TON API is an interesting model for me because it supports resumable, and non-resumable uploads--with all files over 64MB required to be resumable. I wanted to profile the API in a story, and add some of the key aspects to my research on file upload APIs, so that I could reference in future conversations.</p>
+<p>Some of the core features of how the TON API operates are:</p>
+<ul>
+<li>The Content-Type of requests cannot be application/x-www-form-urlencoded.</li>
+<li>The Content-Type of requests&nbsp;are&nbsp;a valid media type as defined by&nbsp;<a href="http://www.iana.org/assignments/media-types/media-types.xhtml">IANA</a>.</li>
+<li>Chunks should be in integer multiples of X-TON-Min-Chunk-Size (except the last).</li>
+<li>The Location header after upload needs to be saved to be used in other Twitter API calls.</li>
+</ul>
+<p>Here is the basic makeup of the initial request to kick off a resumable upload:</p>
+<ul>
+<li>Authorization: See 3-legged authorization</li>
+<li>Content-Length: Set to 0</li>
+<li>Content-Type: The Content-Type of the asset to be uploaded.</li>
+<li>X-TON-Content-Type: Identical to Content-Type</li>
+<li>X-TON-Content-Length: Total number of bytes of the asset to be uploaded</li>
+</ul>
+<p>The initialization response contains a Location which can then be used in other calls to the Twitter API. After you make the resumable upload initialization call, you can make each of the follow-up chunk uploads for the file--here is an example resumable video upload request:</p>
+<ul>
+<li>PUT /1.1/ton/bucket/{bucket}/SzFxGfAg_Zj.mp4?resumable=true&amp;resumeId=28401873 HTTP/1.1</li>
+<li>Authorization: // oAuth1.0a (3-legged) details here</li>
+<li>Content-Type: video/mp4</li>
+<li>Content-Length: {number of bytes transferred in this request}</li>
+<li>Content-Range: bytes {starting position, inclusive, 0-indexed}-{end position, inclusive}/{total content length}</li>
+</ul>
+<p>Anything under 64MB in size can just be done in <a href="https://dev.twitter.com/rest/ton/single-chunk">a single chunk</a>. Next, I'm going to create an OpenAPI Spec for <a href="https://dev.twitter.com/rest/ton">the Twitter TON API</a>, and hack together a simple server side edition of it in PHP, just so I can play with a complete example, in a sandbox environment. I will play with the Twitter TON API as well, and get familiar with how it works in relationship to the rest of the Twitter API.</p>
+<p>Once I profile the file upload APIs for a couple of other providers I will add as a single area of my API stack research. I'm hoping to establish a common set of design patterns that I can point people to when designing their own file upload APIs, providing a single repository of API definition patterns that anyone can fork and put to use.</p>
+<ul>
+</ul>

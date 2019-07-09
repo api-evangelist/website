@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'Open API Ecosystem Overview: December 2010'
+source: http://apievangelist.com/2010/12/26/open-api-ecosystem-overview-december-2010/
+domain: apievangelist.com
+image: 
+---
+
+</td>
+</tr>
+</tbody>
+</table>

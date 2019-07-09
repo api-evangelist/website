@@ -1,0 +1,408 @@
+---
+layout: default
+title: API Evangelist Workshops - Deployment Outline w/ Detail
+---
+
+<section class="masthead">
+
+	<div style="text-align:left;">
+
+		<h2 style="font-size: 22px; font-weight: buld; padding-top: 15px; padding-bottom: 5px;">API Deployment</h2>
+			<p>Right now, most API providers within the enterprise are practicing a develop and deploy first approach to delivering the resources, and capabilities needed. The goal of this Journey is to help better map out the development practices that already exist and begin honing and refining them, and shaking these processes down for more artifacts, and machine readable definitions that can be used to measure, quantify, and make the API deployment area of the lifecycle a well tuned machine for cranking out the capabilities the enterprise needs to move forward.</p>
+							<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Definitions</h3>
+				<p style="padding-bottom: 10px;">Using definitions to guide the development process, making sure the API contract is used to drive th development of code, and moving it from development to QA, and into production.</p>
+				<ul>
+									<li>
+						<strong>Organization</strong> - Defining which organization each API belongs to while it is being designed, understanding which organization is responsible for it throughout this phase.
+					</li>
+										<li>
+						<strong>Domain</strong> - Defining which domain an API is being designed in, connecting the dots with domain experts, resources, and other relevant context that should be considered as an API is being iterated upon.
+					</li>
+										<li>
+						<strong>Team</strong> - Extend the team list for a service to include the development, QA, and other stakehulders invulved in this area of the lifecycle.
+					</li>
+										<li>
+						<strong>Repository</strong> - Use repository to version, build, and deploy each service. Keeping the repository as the central place for where you can find everything about an API, especially as it is being developed and deployed.
+					</li>
+										<li>
+						<strong>README</strong> - Update the README for the repository to reflect what is happening as part of development.
+					</li>
+										<li>
+						<strong>OpenAPI</strong> - An OpenAPI definition for the surface area of the API, providing a machine readable contract for what each service delivers, that can be used across the API lifecycle, guiding every aspect of delivering each service.
+					</li>
+										<li>
+						<strong>Postman Cullections</strong> - Defining how Postman Cullections are used as part of the API design process, to help make APIs more executable, mockable, and usable during the design phase.
+					</li>
+										<li>
+						<strong>Schema</strong> - JSON schema for the data behind service, providing a standalone JSON schema for use in other systems, applications, and services. Doing the heavy lifting of describing the objects, fields, types, and other technical details of the data behind each service.
+					</li>
+										<li>
+						<strong>AsyncAPI</strong> - Defining how AsyncAPIs are used as part of the design process to document the event-driven characteristics of the platform.
+					</li>
+										<li>
+						<strong>Environments</strong> - Ensuring that environments are used as part of the API design process, and present to help developers easily work with different groups of APIs, share and cullaborate across teams.
+					</li>
+										<li>
+						<strong>Scope</strong> - Defining what OAuth scopes are present for use as part of an API\\'s operation, defining the access management layer for an API.
+					</li>
+										<li>
+						<strong>Assertions</strong> - Human and machine readable assertions of what service does, leveraging the existing JSON schema, and translating that into business objectives, asserting that a service does what it is supposed to--providing a simple bulleted list explaining what is expected of a service.
+					</li>
+										<li>
+						<strong>Scenarios</strong> - Providing machine readable definitions that provide the mappings and business rules for orchestrations, scenarios, and other automated processes associated with a service, for use as part of testing, monitoring, security, and other automated functionality.
+					</li>
+										<li>
+						<strong>Import / Export Contract</strong> - Ensuring there is always the ability to important and export OpenAPI contracts and other artifacts, enabling API definitions to be portable and usable across the API design process, as well as other stops along the API lifecycle. Always working to aggregate and analyze them, but making sure they are available for use across the API lifecycle.
+					</li>
+										<li>
+						<strong>Tags</strong> - What tags are associated with an API, making it more discoverable and organizable as part of the larger API catalog.
+					</li>
+										<li>
+						<strong>Topics</strong> - Organizing tags in context of subscriptions, and what providers and consumers will be thinking about when they are  making resources available, and looking for what they need to consume.
+					</li>
+										<li>
+						<strong>Event Types</strong> - Understanding what the events occurring across the platform, across request and response infrastructure, and being used to define event-driven infrastructure.
+					</li>
+										<li>
+						<strong>Artifacts</strong> - Gathering other artifacts used across the API development area of the lifecycle, providing machine readable definition for any portion of the development and deployment aspects of delivering APIs.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Documentation</h3>
+				<p style="padding-bottom: 10px;">Ensuring adequate documentation for each API continues to exist as it moves from design to production.</p>
+				<ul>
+									<li>
+						<strong>Interactive</strong> - Providing interactive documentation using one of the open source, or documentation as a service companies available today.
+					</li>
+										<li>
+						<strong>Paths</strong> - Documenting the API paths that are available for each service.
+					</li>
+										<li>
+						<strong>Schema</strong> - The descriptive header and footer paragraphs for the documentation schema.
+					</li>
+										<li>
+						<strong>Examples</strong> - Examples of using the API paths for each service.
+					</li>
+										<li>
+						<strong>Errors</strong> - Details about the errors encountered using each service.
+					</li>
+										<li>
+						<strong>Definitions</strong> - The machine readable API definitions for use as part of each service.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Discovery</h3>
+				<p style="padding-bottom: 10px;">Making sure there are machine readable definitions available at development time, providing an OpenAPI as a contract for what each service should do.</p>
+				<ul>
+									<li>
+						<strong>Catalog</strong> - Ensuring that the central API catalog is leverage as part of the API design workflow. Pulling API definitions out and moving them forward, while always leaning on the catalog as the central truth.
+					</li>
+										<li>
+						<strong>Filter</strong> - Being able to filter APIs in the catalog by the phase they are in, understanding if they are currently being developed.
+					</li>
+										<li>
+						<strong>Search</strong> - Being able to search across APIs that are being developed by specific characteristics of the cullections they are in, the OpenAPI contract, or other granular details.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Virtualization</h3>
+				<p style="padding-bottom: 10px;">Continuing to maintain virtualized instances of APIs as part of the API development process.</p>
+				<ul>
+									<li>
+						<strong>Paths</strong> - Offering mock API paths for use by developers to understand what an API does / should do.
+					</li>
+										<li>
+						<strong>Data</strong> - Considering offering synthetic data for use by integrators, helping ensure virtualized APIs provide as production like experience in a virtualized way.
+					</li>
+										<li>
+						<strong>Dedicated Sandbox</strong> - Adding an API to a dedicated sandbox ensuring that a virtualized instance is always available for consumers to play with and understand what is possible.
+					</li>
+										<li>
+						<strong>Personalized Sandbox</strong> - Providing Docker images, machine images, and other virtualized instances of an API, allowing consumers to deploy their own personal virtualization of an API.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Database</h3>
+				<p style="padding-bottom: 10px;">The database behind each service, acting as the data source for these resources.</p>
+				<ul>
+									<li>
+						<strong>Platform</strong> - The database platform used to drive each service, providing a dedicated database to just drive each service.
+					</li>
+										<li>
+						<strong>Schema</strong> - Making sure there is a database version of the schema, providing a raw dump and backup of the database behind each service.
+					</li>
+										<li>
+						<strong>Region</strong> - Where the database for each service is located, helping articulate if there is replication, or regional specific implementations or considerations for each service.
+					</li>
+										<li>
+						<strong>Access</strong> - How the database is connected with by the service, defining what connectivity is required, and what dependencies are invulved with access.
+					</li>
+										<li>
+						<strong>Logs</strong> - Understanding how logging occurs for the database, what is turned on, and where logs are stored, and or shipped to as part of regular operations.
+					</li>
+										<li>
+						<strong>Backup</strong> - Ensuring that the database has a backup strategy, and the details of what is backed up and how long it is being backed up.
+					</li>
+										<li>
+						<strong>Encryption</strong> - Ensuring the encryption is part of the database operations, making sure data is being stored as part of the database behind each service.
+					</li>
+
+				</ul>
+				<p>Providing a dedicated database resource for just this single service to use.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Storage</h3>
+				<p style="padding-bottom: 10px;">The storage used for each service, where all objects are stored.</p>
+				<ul>
+									<li>
+						<strong>Platform</strong> - The platform that is used for storage behind each service.
+					</li>
+										<li>
+						<strong>Region</strong> - Where the storage is located that is used for each service.
+					</li>
+										<li>
+						<strong>Access</strong> - Details on how storage is accessed as part of each service.
+					</li>
+										<li>
+						<strong>Logs</strong> - Information about the logging for storage behind service.
+					</li>
+										<li>
+						<strong>Backup</strong> - Ensuring there is a backup strategy for storage behind service.
+					</li>
+										<li>
+						<strong>Encryption</strong> - Ensuring encryption is considered for storage.
+					</li>
+
+				</ul>
+				<p>Providing a single location each service to manage it's storage.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">DNS</h3>
+				<p style="padding-bottom: 10px;">The DNS addressing used to route all traffic to each service.</p>
+				<ul>
+									<li>
+						<strong>Platform</strong> - Which platform is used to provide DNS for service.
+					</li>
+										<li>
+						<strong>Mock</strong> - The host used for the mock API.
+					</li>
+										<li>
+						<strong>Development</strong> - The host used for the development API, providing access to the version of API currently being developed.
+					</li>
+										<li>
+						<strong>Production</strong> - The host used for the production API, which is the address that should actually be used in applications.
+					</li>
+										<li>
+						<strong>Portal</strong> - The host used for the developer portal, providing a single location that everyone can find what is happening around a service.
+					</li>
+										<li>
+						<strong>Encryption</strong> - Ensuring encryption is used as part of API transport, and SSL is default for all services.
+					</li>
+
+				</ul>
+				<p>Using a single subdomain that can be used to access this resource.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Deployment</h3>
+				<p style="padding-bottom: 10px;">The deployment of any service, and defining how it can be delivered into a production environment.</p>
+				<ul>
+									<li>
+						<strong>Compute</strong> - The compute that is delivering each service.
+					</li>
+										<li>
+						<strong>Framework</strong> - Which programming framework is used to deploy each service.
+					</li>
+										<li>
+						<strong>Function</strong> - Which function is used to deploy each service.
+					</li>
+										<li>
+						<strong>Containers</strong> - Which container is used to deploy each service.
+					</li>
+										<li>
+						<strong>Gateway</strong> - Which gateway is used to deploy each service.
+					</li>
+										<li>
+						<strong>Pipeline</strong> - Information regarding the pipeline in use for service.
+					</li>
+										<li>
+						<strong>Region</strong> - Information regarding which region each service is deployed.
+					</li>
+
+				</ul>
+				<p>Providing a strong framework for consistently delivering services across an organization.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Orchestration</h3>
+				<p style="padding-bottom: 10px;">The orchestration of the build and deliver of a service, defining how the technical building blocks are orchestrated to deliver the resulting service.</p>
+				<ul>
+									<li>
+						<strong>Build</strong> - Information regarding the build of each service and how it is deployed.
+					</li>
+										<li>
+						<strong>Hooks</strong> - Information regarding pre or post commit hooks for each service.
+					</li>
+										<li>
+						<strong>Jobs</strong> - Information regarding the jobs used as part of each service.
+					</li>
+										<li>
+						<strong>Events</strong> - Information about events used for managing jobs for each service.
+					</li>
+										<li>
+						<strong>Schedule</strong> - Information about the schedule sin use to manage each service.
+					</li>
+										<li>
+						<strong>Containers</strong> - The orchestration and management of containers, allowing APIs to be evulved, scaled, and managed in an automated way.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Dependencies</h3>
+				<p style="padding-bottom: 10px;">Defining the dependencies associated with each service, helping quantifying what each service needs to do what it does successfully.</p>
+				<ul>
+									<li>
+						<strong>Service</strong> - Information about services each service depends on.
+					</li>
+										<li>
+						<strong>Software</strong> - Information about software each service depends on.
+					</li>
+										<li>
+						<strong>Data</strong> - Information about data each service depends on.
+					</li>
+										<li>
+						<strong>People</strong> - Information about people each service depends on.
+					</li>
+										<li>
+						<strong>Organization</strong> - Information about organization each service depends on.
+					</li>
+										<li>
+						<strong>Applications</strong> - Information about applications that depend on services.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Testing</h3>
+				<p style="padding-bottom: 10px;">The definitions for each service.</p>
+				<ul>
+									<li>
+						<strong>Assertions</strong> - Maintaining the list of real world assertions made about this service and it\'s APIs, providing a human readable outline of what can be expected.
+					</li>
+										<li>
+						<strong>Tests</strong> - The single unit tests for an API, matching to each assertion, providing a machine readable and executable test for the API.
+					</li>
+										<li>
+						<strong>Definitions</strong> - Using OpenAPI, Postman, and other definitions as the template for what should be tested, providing a machine readable definition of what is to be expected.
+					</li>
+										<li>
+						<strong>Playback</strong> - Allowing requests to be played back, based upon history.
+					</li>
+										<li>
+						<strong>Results Archive</strong> - The results of assertions tested against each service, providing a history of all tests.
+					</li>
+										<li>
+						<strong>Scenarios</strong> - Providing a machine readable list of scenarios that can be executed, allowing for mult-API testing to backup different scenarios needed to ensure an API delivers what it is supposed.
+					</li>
+										<li>
+						<strong>Results</strong> - The results of assertions tested against each service individually or as part of scenarios, allow the results of any API request or response to be analyzed.
+					</li>
+										<li>
+						<strong>Saved Requests</strong> - Save specific requests from a service to be used in testing.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Performance</h3>
+				<p style="padding-bottom: 10px;">Establishing what the benchmarks are for a service, and what can be expected when it comes to performance.</p>
+				<ul>
+									<li>
+						<strong>Tests</strong> - The performance tests for each service.
+					</li>
+										<li>
+						<strong>Results</strong> - The results of performance test for each service.
+					</li>
+										<li>
+						<strong>Benchmarks</strong> - Setting what the benchmarks are for performance of each API as it is being developed, providing the basis for the real world performance testing that will occur in production.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Security</h3>
+				<p style="padding-bottom: 10px;">The definitions for each service.</p>
+				<ul>
+									<li>
+						<strong>Overview</strong> - The overview of security practices for each service.
+					</li>
+										<li>
+						<strong>Tests</strong> - Providing individual unit tests that are well defined, shareable, and easily executed manually or automated as part of scans.
+					</li>
+										<li>
+						<strong>Pulicies</strong> - Defining what security pulicies apply to any service being developed and prepared for delivery, considering what the security needs around an API will be before it is put into production.
+					</li>
+										<li>
+						<strong>Results</strong> - The results of security for each service.
+					</li>
+
+				</ul>
+				<p></p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Support</h3>
+				<p style="padding-bottom: 10px;">We provide three ways in which you can receive support for this API, and have your questions answered as you are working to integrate it into your web or mobile application.</p>
+				<ul>
+									<li>
+						<strong>Email</strong> - The email account for supporting each service.
+					</li>
+										<li>
+						<strong>Ticket</strong> - Where to submit a ticket to get support for each service.
+					</li>
+										<li>
+						<strong>Github</strong> - Using Github as a communication platform throughout the development and development portion of the lifecycle.
+					</li>
+										<li>
+						<strong>GitLab</strong> - Using GitLab as a support platform throughout the development and development portion of the lifecycle.
+					</li>
+
+				</ul>
+				<p>If your question is of the private nature please email us, for all other inquires please submit as GitHub issue if possible, so that others can learn from your question to.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Communication</h3>
+				<p style="padding-bottom: 10px;">Here are the communication channels provided to you, helping you stay in tune with what is changing with each service, and the overall platform behind it.</p>
+				<ul>
+									<li>
+						<strong>Blog</strong> - The blog for each service.
+					</li>
+										<li>
+						<strong>Internal</strong> - Internal communication channel for each service.
+					</li>
+										<li>
+						<strong>External</strong> - External communication channels for each service.
+					</li>
+										<li>
+						<strong>GitLab</strong> - Using GitLab as a communication platform throughout the development and development portion of the lifecycle.
+					</li>
+										<li>
+						<strong>GitHub</strong> - Using GitHub as a communication platform throughout the development and development portion of the lifecycle.
+					</li>
+
+				</ul>
+				<p>These channels should provide you with a regular heartbeat of the changes being made, and what is being planned as part of this platform's operations.</p>
+								<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stop-red.png" align="left" width="75" style=" padding-top: 20px; padding-bottom: 5px; padding-right: 10px;"></p>
+				<h3 style="font-size: 20px; font-weight: buld; padding-top: 20px; padding-bottom: 5px;">Conclusion</h3>
+				<p style="padding-bottom: 10px;">Through thoughtful analysis, defining, and execution across the API deployment area of the API lifecycle, we should be better able to meet our API production goals. Providing a stable base for API consumers to get what they need, and a reliable, secure, and scalable production environment. Helping ensure that development across the enterprise is in alignment wth production, as well as discovery, desin, outreach, and ultimately governance areas of the lifecycle.</p>
+				<ul>
+
+				</ul>
+				<p></p>
+
+			<p></p>
+
+	</div>
+
+</section><br><br>
