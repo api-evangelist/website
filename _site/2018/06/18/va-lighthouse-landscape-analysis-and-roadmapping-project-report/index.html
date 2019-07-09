@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>VA API Landscape Analysis and Roadmapping Project Report</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="VA API Landscape Analysis and Roadmapping Project Report | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="VA API Landscape Analysis and Roadmapping Project Report | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>VA API Landscape Analysis and Roadmapping Project Report</h2>
+<p><span class="post-date">18 Jun 2018</span></p>
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png" width="90%" align="center" /></p>
+
+<p>This report summarizes Skylight’s evaluation of the VA’s public datasets, which exist within the <a href="https://va.gov/">va.gov</a> web domain, as well as an analysis of what types of data representatives of the Veteran community expressed would be most useful and valuable to Veterans and their supporters if made more digitally accessible and available by the VA. This report also outlines potential resources that can be turned into application programming interfaces (APIs) as part of the VA’s Lighthouse platform initiative, and actions the VA should consider to move forward successfully.</p>
+
+<h2 id="landscape-analysis">Landscape analysis</h2>
+
+<h3 id="the-purpose">The purpose</h3>
+
+<p>APIs are the next evolution in the web, and shouldn’t be thought of as the latest tech trend or vendor solution. The first phase of the web was about delivering data and content to humans using a browser. The second phase of the web is about delivering that same data and content to other applications and algorithms using APIs.</p>
+
+<p>With that said, the purpose of this landscape analysis is, in effect, to assist the VA in evaluating the data and content that they’ve made available during the first phase of the web. This, in turn, will help set the stage for the VA to make smart investments in phase two of their web presence.</p>
+
+<p>The VA has already signaled they’re committed to investing in the second phase of their web presence with the announcement of the <a href="https://www.oit.va.gov/developer/">Lighthouse API platform initiative</a>. Our landscape analysis will help ensure that the Lighthouse program is aware of what types of data and content that the VA has already identified as important to serving the Veteran community. This visibility will allow the Lighthouse program to bring these resources into alignment with the development and operation of their API platform.</p>
+
+<h3 id="the-process">The process</h3>
+
+<p>To help the VA evaluate the landscape that defines their web presence, we employed a “low-hanging-fruit” process that involved identifying the resources that exist across their web properties. That process relied on a spidering script, which we ran for two weeks (and continue to run). To begin the process, we seeded the script by giving it the root URL for the va.gov domain. The script then proceeded to:</p>
+
+<ul>
+  <li>
+    <p>Parse every URL on the page and store it in a database;</p>
+  </li>
+  <li>
+    <p>Count every table on the page, and the number of rows that exist in the table;</p>
+  </li>
+  <li>
+    <p>Count every form that exists on the page; and</p>
+  </li>
+  <li>
+    <p>Extract the title from the meta tags for each page.</p>
+  </li>
+</ul>
+
+<p>The script then iterated and repeated this for every URL it found on any web page, working to identify each of the following types of data resources:</p>
+
+<ul>
+  <li>
+    <p>HTML table with more than 10 rows</p>
+  </li>
+  <li>
+    <p>HTML form</p>
+  </li>
+  <li>
+    <p>CSV file</p>
+  </li>
+  <li>
+    <p>XML file</p>
+  </li>
+  <li>
+    <p>JSON file</p>
+  </li>
+  <li>
+    <p>XLS/XLSX file</p>
+  </li>
+</ul>
+
+<p>The script ignored any URLs external to the seed domain (va.gov) and many common web objects (for example, images, Word docs, and videos).</p>
+
+<p>As each page was processed, the script tried to identify potential data resources to deliver as an API by parsing several elements from them:</p>
+
+<ul>
+  <li>
+    <p>The title of the page a file was published on,</p>
+  </li>
+  <li>
+    <p>The name of the file itself, and</p>
+  </li>
+  <li>
+    <p>Occasionally a sample of the data.</p>
+  </li>
+</ul>
+
+<p>We took the list of words extracted from this process, and sorted and grouped them by the number of times the word appeared, helping us understand the overall presence of each potential resource. Sometimes this produced a lot of meaningless words, but we worked to filter those out, leaving only the meaningful data resources.</p>
+
+<p>After running the script for a couple of weeks, we spidered nearly 1/3 of the URLs (out a total of 4M+) targeted for processing. That was enough progress to start painting an interesting picture of the VA’s web presence and existing data resources, as described in the sections that follow.</p>
+
+<h3 id="vas-web-presence">VA’s web presence</h3>
+
+<p>The VA has a sprawling web presence, spanning multiple domains and subdomains. We focused our analysis on everything within the va.gov domain. In the future, we can extend the analysis to other domains, but for now we focused on the core VA web presence.</p>
+
+<h4 id="domain-sprawl">Domain sprawl</h4>
+
+<p>The VA’s web presence is spread across a mix of domain levels, including top-level domain and subdomain levels — program, state/region, and city. Domains play a role in providing addresses in the browser so that users can find the resources they need, as well as providing similar addressing for applications to find the resources they need via APIs. The VA domain sprawl reflects the growth of the VA’s web presence, and the lack of overall strategy when it comes to providing web address and routing to all VA resources. The current strategy (or lack thereof) represents the need for location- and program-related resource discovery, whether it’s in the browser, or for other applications via APIs.</p>
+
+<p>We assume there are other domains that haven’t been indexed by our spider, as we were only able to index less than 1/3 of the targeted URLs during our two-week timebox. We can continue indexing and updating numbers beyond this period in order to paint an even more complete picture. Ideally, this would extend beyond the core va.gov domain. Domain and subdomains play an important role in determining how APIs will be accessed, and have a downstream impact on the overall API design, affecting both API path and parameter design. This makes domain and subdomains a top-level consideration early on in the VA’s API journey.</p>
+
+<h4 id="program-domains">Program domains</h4>
+
+<p>After the top-level domains of va.gov and www.va.gov, the most common approach to defining domains is by program, providing the addressing needed for organizing information by relevant programs. We have identified <a href="https://api-evangelist.github.io/va-api-landscape/domains/programs-tag-list/">133 individual program-related domains</a>.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-programs.png" width="90%" align="center" /></p>
+
+<p>While there aren’t consistent naming conventions used in crafting these subdomains, it does demonstrate the prominence of programs, research, and other related groupings used across the VA web presence for organizing resources.</p>
+
+<h4 id="state-domains">State domains</h4>
+
+<p>Beyond program-related domains, state/region level domains are being used to organize data and content for presentation to consumers. Only <a href="https://api-evangelist.github.io/va-api-landscape/domains/state-tag-list/">22 subdomains</a> are represented currently, but the practice demonstrates the prominence of these locations when it comes to organizing information.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-state.png" width="90%" align="center" /></p>
+
+<p>Some states are just paths within the top-level VA domains, while others exist within regional subdomains, with the rest possessing their own subdomain. This demonstrates the importance of states and regions, but also the inconsistency of how domains or paths are used to organize information.</p>
+
+<h4 id="city-domains">City domains</h4>
+
+<p>Lastly, you find many city-related subdomains being used to organize data and content, providing another dimension on how resources are being organized, while demonstrating the dominance of specific cities. We have identified <a href="https://api-evangelist.github.io/va-api-landscape/domains/city-tag-list/">120 individual city-related domains</a>.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-city.png" width="90%" align="center" /></p>
+
+<p>Like states, there isn’t a consistent pattern in which cities have their own subdomain, with others existing as a path within state subdomains or top-level domains. The approach to using cities as part of subdomain DNS addressing further demonstrates the importance of location when it comes to the organization of data and content.</p>
+
+<h3 id="website-outline">Website outline</h3>
+
+<p>As part of the spidering the va.gov domain across the 278 subdomains that exist, over 4M individual URLs were identified, with slightly less than 1/3 of these URLs evaluated for potential data sources to-date. Across these URLs, we took the base path and grouped them by the number of pages and data files that exist.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/path.png" width="90%" align="center" /></p>
+
+<p>While there are many other paths in use across the VA websites, these paths reflect the top paths in use to deliver data and content. Providing a look at what the most relevant resources are when it comes to providing web access to data and content, which is something that should be considered when delivering the same data and content to other applications.</p>
+
+<h4 id="data-vocabulary">Data vocabulary</h4>
+
+<p>After assessing the titles of HTML pages and the names of files, it’s clear there’s no consistent vocabulary in use across VA resources. This, combined with the use of key phrases, acronyms, and singular and plural variances, make it difficult to cleanly identify resources. We opted to use just keywords over phrases and to not expand acronyms as part of the process due to the difficulty in consistently identifying resources.</p>
+
+<p>Even with the difficulties in identifying some resources, we were still able to paint a fairly compelling picture of the resources being exposed as common data formats across VA web properties. That’s because we were able to isolate, group, and identify words that are most commonly associated with resources. From there, we were able to establish some resource lists, which we have organized visually as tag clouds and tag lists.</p>
+
+<h3 id="data-resources">Data resources</h3>
+
+<p>Data is available across VA websites in a variety of formats. We focused on a handful of easy to identify formats, reflecting the low-hanging-fruit aspect of this landscape analysis. While there’s data locked up in simple text files and zipped packages, we chose to look for the easiest to identify and the easiest to publish data sources. Data that’s published by humans usually take the form of CSV files, spreadsheets, and HTML tables. Data that’s published by systems usually take the form of JSON and XML.</p>
+
+<h4 id="data-formats">Data formats</h4>
+
+<p>Each of type of format that we targeted provides a different story as to the type of resources being published. Publication implies that those resources carry some level of value and importance to VA stakeholders, and, potentially, to Veterans, their supporters, and other consumers of this information. We worked to harvest all the data available from several formats, but also worked to identify the top resources available from each type.</p>
+
+<h4 id="csv-files">CSV files</h4>
+
+<p>We discovered <a href="https://api-evangelist.github.io/va-api-landscape/csv/">534 CSV files</a> containing a variety of data. By parsing the titles of the web pages these CSV files were linked from, and the names of some of the files, we identified handful of top resource types present across these files.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/csv.png" width="90%" align="center" /></p>
+
+<p>CSV files tell a particular story because they were most likely published by people working at the VA, who exported the files from spreadsheets and made them available on the website for a reason. This makes them relevant to the VA’s API conversation. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/csv/tag-list/">list of CSV resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/csv/">complete list of CSV files</a> on the GitHub repository.</p>
+
+<h4 id="xlsxlsx-files">XLS/XLSX files</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/xls/">6,077 spreadsheets</a> containing a variety of data. After parsing these files for semantic meaning, we identified handful of top resource types present across these files.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xls.png" width="90%" align="center" /></p>
+
+<p>Similar to CSV files, the presence of spreadsheets tell a very human story. Spreadsheets are the #1 source of data on the web, and reflects the data management and publishing practices across the VA. After evaluating what types of resources are available across these spreadsheets, we have been considering the use of spreadsheets as a data source, as well as a data publishing tool. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/xls/tag-list/">list of XLS/XLSX resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/xls/">complete list of XLS/XLSX files</a> on the GitHub repository.</p>
+
+<h4 id="json-files">JSON files</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/json/">467 JSON files</a> containing a variety of data. Unlike the CSV and spreadsheet data sources, JSON files likely represent a more modern systems approach to publishing data and a whole another set of data sources, which should be considered when deploying APIs.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/json.png" width="90%" align="center" /></p>
+
+<p>JSON reflects the latest evolution of data publishing at the VA. But they are only a small subset of the data being made available across VA web properties. This implies they have only become a recent priority when it comes to publishing data in a format that is consumable by developers and computers. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/json/tag-list/">list of JSON resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/json/">complete list of JSON files</a> on the GitHub repository.</p>
+
+<h4 id="xml-files">XML files</h4>
+
+<p>We found <a href="https://api-evangelist.github.io/va-api-landscape/xml/">3,099 XML files</a> containing a variety of data. Like JSON files, XML files represent system-generated publication of data. Unlike JSON, however, XML reflects an older systems approach to data publication. And are likely being generated by legacy systems that’ll be important to interface with over the course of the VA’s API journey.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xml.png" width="90%" align="center" /></p>
+
+<p>XML represents a large portion of the data being published across VA web properties. This list of priority resources represents a significant part of the system-based publishing of data occurring at the VA. And provides a large snapshot of the systems that should be evolved as part of the deployment of APIs. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/xml/tag-list/">list of XML resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/xml/">complete list of XML files</a> on the GitHub repository.</p>
+
+<h4 id="html-tables">HTML tables</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/table/">8,393 pages that had tables on them with over 10 rows</a>. These tables represent potentially valuable data and should be considered as part of the VA’s API deployment conversations.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/table.png" width="90%" align="center" /></p>
+
+<p>While HTML tables tell a story about top resources that VA stakeholders thought website users needed access to, these tables also represent data that was published with potential search engine optimization (SEO) in mind. In other words, someone wanted the data to be indexed by search engines in order to make it more readily accessible. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/table/tag-list/">list of table resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/table/">complete list of pages containing tables</a> on the GitHub repository.</p>
+
+<h4 id="html-forms">HTML forms</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/form/">9,439 pages with more than one form present</a>, which is usually just a basic search. Similar to HTML tables, these forms provide a window into how the VA is making data available for users to search, explore, and consume in the browser. This, in turn, tells another story of what types of resources are published to VA websites.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/form.png" width="90%" align="center" /></p>
+
+<p>HTML forms often times provide a search mechanism for other table, CSV, JSON, XML, and spreadsheet resources, many of which are listed in the sections above. HTML forms tell their own story as to how and why data are being published across VA websites. And offer another source of resources that are being made available and should be considered as part of the VA’s API deployment efforts.</p>
+
+<h4 id="datagov">Data.gov</h4>
+
+<p>The only external source of data that we analyzed was data.gov, which hosts a number of VA data resources. While somewhat out-of-date, the VA datasets on data.gov tell an important part of the story that should be considered as part of the Lighthouse efforts. There are a lot of lessons to be learned from how data.gov has been used, beyond just understanding what resources have been published there.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/data-gov.png)" width="90%" align="center" /></p>
+
+<p>The resources published to data.gov reflect the VA’s recent past when it comes to making data resources available and accessible via manual downloads and APIs. We think that the most important lesson that the VA should take away from its experience with data.gov is that the VA should own all the data and API resources and syndicate them as part of other external efforts. That way the VA owns the full scope of the effort, which will ultimately result in the VA being more invested in API operations. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/data-gov/tag-list/">list of data.gov resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/data-gov/">complete list of data files</a> on the GitHub.</p>
+
+<h3 id="humanizing-the-data">Humanizing the data</h3>
+
+<p>To give us a more human perspective on what types of data resources are most valuable to Veterans and their supporters, <a href="https://www.eventbrite.com/e/veterans-data-needs-prioritization-workshop-tickets-46761726583">we facilitated a series of online workshops</a> using <a href="https://mural.co/">Mural</a>. About 50 people total participated across all three workshops, with about 40% reporting as Veterans and 60% non-Veterans. During these workshops, we employed the <a href="https://articles.uie.com/kj_technique/">KJ technique</a> for establishing group priorities. The KJ technique relies on a focus question to drive the results of the workshop. We used the following focus question:</p>
+
+<p>“What types of data, content, and other resources would be most useful to Veterans and their supporters if the VA could make them more available and accessible on the web, mobile devices, and other platforms?”</p>
+
+<p>The following images capture the results of each workshop:</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-1-results.png" width="90%" align="center" /></p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-2-results.png" width="90%" align="center" /></p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-3-results.png" width="90%" align="center" /></p>
+
+<p>The yellow cards represent all the ideas, in response to the focus question, that everyone brainstormed. As you can see, these yellow cards were organized into like groups. The blue cards represent descriptive labels that participants gave to each group. The black circles with numbers represent the votes that the participants casted when asked which group labels they thought best answered the focus question. We weighted Veteran votes 2x more heavily than votes from non-Veterans.</p>
+
+<p>You may notice things that seem out of place in the final results (for example, yellow cards that look like they belong to another category). This is largely due to the timeboxed nature of the activities. In other words, not everything could be made perfect, but that doesn’t detract from the overall usefulness of the results.</p>
+
+<p>Given the fact that the results were spread across three different workshop sessions, we took the additional step of normalizing the groupings and merging the votes.</p>
+
+<ol>
+  <li>
+    <p>Directory of Services/Resources – <strong>34 votes</strong></p>
+  </li>
+  <li>
+    <p>Mental Health – <strong>21 votes</strong></p>
+  </li>
+  <li>
+    <p>Personal Healthcare Data – <strong>20 votes</strong></p>
+  </li>
+  <li>
+    <p>Personalized Self-Service Portal – <strong>20 votes</strong></p>
+  </li>
+  <li>
+    <p>Benefits – <strong>13 votes</strong></p>
+  </li>
+  <li>
+    <p>Peer Support Networking – <strong>8 votes</strong></p>
+  </li>
+  <li>
+    <p>Family Support Networking – <strong>9 votes</strong></p>
+  </li>
+  <li>
+    <p>Real-Time Status – <strong>8 votes</strong></p>
+  </li>
+  <li>
+    <p>Patient Experience Data – <strong>7 votes</strong></p>
+  </li>
+  <li>
+    <p>Military-to-Civilian Transition – <strong>7 votes</strong></p>
+  </li>
+  <li>
+    <p>Ratings and Calculators – <strong>6 votes</strong></p>
+  </li>
+  <li>
+    <p>Appointments – <strong>6 votes</strong></p>
+  </li>
+  <li>
+    <p>Medical Healthcare – <strong>5 votes</strong></p>
+  </li>
+  <li>
+    <p>Housing Assistance – <strong>5 votes</strong></p>
+  </li>
+  <li>
+    <p>Public Accountability and Awareness – <strong>4 votes</strong></p>
+  </li>
+  <li>
+    <p>Service History Data – <strong>4 votes</strong></p>
+  </li>
+  <li>
+    <p>Veteran Status Verification – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Statistical Analysis and Machine Learning – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Metadata Support – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Documentation – <strong>0 votes</strong></p>
+  </li>
+</ol>
+
+<p>It’s entirely possible that these groupings could be further normalized, or even some of the ideas within the original groups split out into separate groups. Some groupings could even be disregarded as irrelevant (for example, Metadata Support). However, we didn’t want to dilute the results of what the participants came up with. Somewhat surprising is the low number of votes for Medical Health. That may be a result of lacking the right type of participant representation in the workshops, at least for that particular category.</p>
+
+<h3 id="summary-of-the-landscape-analysis"><strong>Summary of the landscape analysis</strong></h3>
+
+<p>The landscape analysis, which only processed about 1/3 of the URLs targeted for spidering over the course of a two-week period, revealed about 20,216 data files. This work produced a lot of data to wrangle and make sense of. Each of the data formats made available tell their own story about what types of data has been published to VA websites and why. The number of times a resource has been published using a particular data format (CSV, XML, JSON, XLS/XLSX, etc.) serves as a vote for making that resource available and accessible on the web.</p>
+
+<p>Despite the huge amount of information to work with, we believe that our analysis provides valuable insight into some of the most relevant data resources, based on years of publication to VA websites. The top resources identified from all of the URLs, file formats, tables, and forms all point to data resources that should be considered turning into APIs. If these data resources were considered a priority when publishing to the VA’s websites, then there’s a good chance that they should be considered priorities when it comes to publishing via APIs as part of the Lighthouse initiative.</p>
+
+<h2 id="lighthouse-program-considerations-moving-forward">Lighthouse program considerations moving forward</h2>
+
+<h3 id="resources-to-prioritize">Resources to prioritize</h3>
+
+<p>After spending time with all of the data uncovered during the landscape analysis, we began to see patterns emerge from across all the resources being published to the VA’s web properties, as well as those resources identified by people during our facilitated workshops. So based on analysis of the available data, we recommend that the VA Lighthouse program give consideration to prioritizing the following 25 resources:</p>
+
+<ol>
+  <li>
+    <p><strong>Healthcare Facilities –</strong> Up-to-date information on hospitals, clinics, and other healthcare facilities.</p>
+  </li>
+  <li>
+    <p><strong>Organizations –</strong> Details on any type of organization that services Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Services –</strong> Services being offered by the VA, healthcare facilities, and other organizations.</p>
+  </li>
+  <li>
+    <p><strong>Programs –</strong> Programs being offered by the VA, healthcare facilities, and other organizations.</p>
+  </li>
+  <li>
+    <p><strong>Resources –</strong> Content, video, and other resources providing healthcare, outpatient, and other relevant content.</p>
+  </li>
+  <li>
+    <p><strong>Schedules –</strong> The schedules of healthcare facilities, organizations, services, and programs being offered.</p>
+  </li>
+  <li>
+    <p><strong>Events –</strong> Calendar and details of relevant events that service Veterans around the country.</p>
+  </li>
+  <li>
+    <p><strong>Benefits –</strong> Details of the benefits being offered to Veterans, including elements of the process involved.</p>
+  </li>
+  <li>
+    <p><strong>Performance –</strong> Performance details for the healthcare facilities, organizations, services, and programs.</p>
+  </li>
+  <li>
+    <p><strong>Insurance –</strong> Home, auto, and healthcare insurance information that Veterans can take advantage of.</p>
+  </li>
+  <li>
+    <p><strong>Loans –</strong> Information on home, auto, and other types of loans available to Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Grants –</strong> Grants for education, businesses, projects, and other Veteran-focused efforts.</p>
+  </li>
+  <li>
+    <p><strong>Education –</strong> Educational opportunities and information available to Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Training –</strong> Specific training opportunities available that Veterans can take advantage of.</p>
+  </li>
+  <li>
+    <p><strong>Jobs –</strong> Job postings that Veterans can apply to and use to guide their career.</p>
+  </li>
+  <li>
+    <p><strong>Human Resources –</strong> VA human resources and related information in support of VA employees and Veterans.</p>
+  </li>
+  <li>
+    <p><strong>Forms –</strong> Directory, access, and management of forms and the data that’s stored within them.</p>
+  </li>
+  <li>
+    <p><strong>Budgets –</strong> Budget information on healthcare facilities, organizations, programs, and services.</p>
+  </li>
+  <li>
+    <p><strong>Statistics –</strong> Statistics and data on all aspects of VA operations, and anything that impacts Veterans.</p>
+  </li>
+  <li>
+    <p><strong>Cemeteries –</strong> Details of the cemeteries, and the Veterans who are laid to rest at all locations.</p>
+  </li>
+  <li>
+    <p><strong>News –</strong> News that impacts Veterans from across any source and is relevant to the community.</p>
+  </li>
+  <li>
+    <p><strong>Press –</strong> Press releases from the VA and related organizations and programs.</p>
+  </li>
+  <li>
+    <p><strong>Research –</strong> Information and other resources produced as part of specific Veteran-related research.</p>
+  </li>
+  <li>
+    <p><strong>Surveys –</strong> Centralized organization, access to, and the results of Veteran and program-related surveys.</p>
+  </li>
+  <li>
+    <p><strong>FOIA –</strong> Process and information related to Freedom of Information Act (FOIA) efforts occurring at VA.</p>
+  </li>
+</ol>
+
+<p>These resources represent what was harvested and analyzed as part of our landscape analysis, merging many of the patterns present across individual datasets. They’re organized using a REST-centric approach to turning data into API resources, which allows for data access via HTTP. Many of the keywords identified as part of the landscape analysis have been rolled-up into higher level areas — such as PTSD, mental health, and suicide — would exist across services, programs, and resources.</p>
+
+<p>These suggested resources are derived from about 65% of the top-level resources identified across all the top paths, file formats, tables, and forms. They represent a nice cross-section of resources across all the data formats, but also reflect the general web presence of the VA. Our list also provides a coherent stack of resources that could be developed, deployed, and maintained in support of the central veteran APIs, offering personalized and generalized data experiences that would benefit Veterans and their families.</p>
+
+<h3 id="centralize-focus-on-the-veteran">Centralize focus on the Veteran</h3>
+
+<p>From a data perspective, the most important resource above all is the Veteran and their personal data. Therefore, the identity and healthcare record of a Veteran should be at the front and center of any API deployed as part of the Lighthouse API platform initiative. This requires full knowledge and accurate information about a Veteran. In others words, in order for the Lighthouse’s APIs to work well, there must be a robust identity and access management in place, as well as detailed, layered, portable, and usable Veteran profiles.</p>
+
+<h3 id="increase-personalization">Increase personalization</h3>
+
+<p>One thing that became evident during our work is the need for greater personalization of data across almost every resource that we identified. Where there’s value in having general information available (for example, medical facilities), this data becomes exponentially more valuable when it’s personalized, localized, and made more relevant to the Veteran who is browsing, searching, engaging. Therefore, there are two types of engagement models with the resources that we propose: (1) general access without knowledge of the Veteran and (2) personalized knowledge of the Veteran via custom configuration settings that determine the relevancy of the data and content when these are made available via APIs and within applications.</p>
+
+<p>There are existing portal efforts such as <a href="https://www.vets.gov/">vets.gov</a> that are available as part of the VA’s online presence. The personalization efforts occurring there should be reflected across the design and operation of the Lighthouse’s APIs. By designing APIs to operate in generalized or personalized mode, this would empower API developers to act on behalf of a Veteran using OAuth tokens. If a token’s present, each API will act in a more personalized manner and allow for localization based upon a Veteran’s preferences and history of interactions. This personalization layer should act as a bridge between the core healthcare record of a Veteran and the other resources that we outlined above.</p>
+
+<h3 id="writing-not-just-reading-data">Writing, not just reading data</h3>
+
+<p>Many of the resources that we identified represent read-only access to data and content. It’s important to note that getting access to data and content is useful; however, a significant portion of the resources that we harvested and gathered through conversations with the community will require the ability to write information via APIs. Forms, surveys, and other feedback loops will need to allow for APIs that not only GET data, but also POST and PUT data as part of their operations. This additional operations will round-off the Lighthouse’s stack of resources, helping to ensure that services provide a two-way street for engaging with the VA community.</p>
+
+<p>In addition to reading, the ability to write data and content will be a deciding factor in whether applications built on top of the APIs will deliver meaningful value to Veterans and their supporters. If information is only being pushed outwards, many applications will be seen as having little to no value to users, developers, and operators of the Lighthouse API platform. To help ensure meaningful value is delivered to everyone involved, all applications should be capable of sharing usage data and feed analytics and support feedback loops between users and the platform operators. With the ability to write data, the APIs will lack meaning and substance, and will contribute to lack of adoption and integration.</p>
+
+<h3 id="focus-on-the-source-of-the-data">Focus on the source of the data</h3>
+
+<p>A common misconception in conducting a landscape analysis such as the one we performed is to assume that the data discovered can be published via any APIs that are deployed as part of the next phase of work. That’s rarely the situation, because most of the discovered data is just published snapshots derived from existing data sources. This is certainly the case with the VA. Much of the data we discovered is unusable in its current state due to lack of normalization, duplication, being out of date, and other noise and clutter. Many of the XML and JSON files identified provider a much cleaner option for transforming into web APIs. However, with any resource identified, it’s more desirable to integrate the original source of data than relying on published snapshots.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/api-landscape-layers.png" width="90%" align="center" /></p>
+
+<p>Even after coming to a consensus on the data resources to transform into APIs, the next phase of work should focus on identifying the data sources for each of the targeted resource areas, and not relying on published data that already exist across websites. While it’s tempting, and sometimes necessary to rely on published data for the source of API data, it increases the chance that an API will eventually become dormant, out-of-date, and cause many of the issues that we’ve seen play out with the existing VA datasets. Our landscape analysis came at the resource prioritization from an external, public perspective. We recommend a subsequent, more internal landscape analysis to identify the data sources for important resource types emerging from this landscaping effort.</p>
+
+<h3 id="improve-domain-management">Improve domain management</h3>
+
+<p>Moving forward, it’d be logical to have a standardized approach to naming subdomains for both web and API properties in support of VA operations. Establishing a common approach to naming city, state, regional, program, research, and other resource areas would provide human- and machine-readable access to these resources. This might be difficult to do for web properties with so much legacy infrastructure, but the API platform provides an opportunity to establish a standardized approach moving forward.</p>
+
+<h3 id="leverage-common-data-formats">Leverage common data formats</h3>
+
+<p>Our landscape analysis revealed a lack of a consistency when it comes to vocabulary, schema, and data formats. Most of the data published is derived from an existing system or represents a human-directed process. There’s a significant amount of fluff and noise surrounding these valuable data and a lack of consistent naming and field types.</p>
+
+<p>Based upon the resources that we’ve identified for your consideration, there are a handful of existing data formats the VA should consider. Some of these are already underway, while others are not currently reflected in the Lighthouse’s efforts, but are used by other government entities to publish data in a consistent manner.</p>
+
+<ul>
+  <li>
+    <p><strong>Fast Healthcare Interoperability Requirements (FHIR) –</strong> FHIR is already in-motion at the VA, but worth highlighting here. FHIR provides an anchor for why common data schema formats are relevant to other resources beyond Veteran healthcare records.</p>
+  </li>
+  <li>
+    <p><strong>Open Referral (211) –</strong> Open Referral is a common schema and API specification for defining human services, including organizations, locations, and services, along with all the supporting information and metadata that goes with this core set of resources.</p>
+  </li>
+  <li>
+    <p><strong>Open311 –</strong> Open311 is a common data format for reporting problems and issues at the municipal level, but can easily be adopted for establishing feedback loops at any level of government. It provides a common schema for how large volumes of information get submitted via API infrastructure.</p>
+  </li>
+  <li>
+    <p><strong>Schema.org –</strong> A common schema vocabulary that provides object definitions for almost every resource identified throughout this landscape analysis, and the recommended list of resources above.</p>
+  </li>
+</ul>
+
+<p>There are undoubtedly other open data formats that can be leveraged. Common microformats and other RFCs should also be considered, but these can be addressed during the define and design stages of the API development lifecycle, once individual resources have been decided upon. Common formats help ensure resources are interoperable and reusable across VA groups; they also help bring teams together to speak in a common language, using a common dictionary, which will go a long ways to standardizing how data is published and consumed.</p>
+
+<h3 id="improve-analytical-information">Improve analytical information</h3>
+
+<p>We had hoped there would have been more analytical information available to help rank the resource data that we identified. We did incorporate the ranking information available from data.gov as an input into our resource prioritization. However, we relied mostly on publication frequency and the overall occurrence of each keyword to help weight relevance. The existence of a word in a path, title, and file name gives it a weight, which can be amplified for every occurrence, providing us with adequate levels of prioritization, grouping, and organization to help us understand each topics importance. If a topic exists frequently across VA web properties, and exists as a sectional grouping, and title of data file, it has importance and relevance.</p>
+
+<p>The lack of analytics, or access to current analytics, across existing VA data sources demonstrates the importance of having a consistent and comprehensive analytics strategy across the VA’s data. There should be download counts for all machine-readable files. And, more importantly, real-time analytics for the consumption of this data via simple web APIs. There should be regional- and program-related ata. We should have personalized data that reflects what’s most important to Veterans. We should understand what’s relevant what isn’t through strategically-designed analytics across web and API operations. The lack of analytics is why we’re working to identify relevant data sources, so those can be made more available and analytics become the default — not an afterthought.</p>
+
+<h3 id="continue-refining-the-landscape-analysis">Continue refining the landscape analysis</h3>
+
+<p>Our landscape analysis produced a lot of information that was messy and difficult to work with. We can continue to make another pass, which would involve refining indexes, optimizing title and filename parsing, and developing key phrase, plural word, and other dictionaries to make the results much more refined.</p>
+
+<p>There was a lot of data to harvest, process, and make sense of in a two-week sprint. However, we feel that we were able to do a good job of making sense of what was captured. Another sprint could easily be spent sorting through all of the data targeted, separating quality datasets from the more messier ones. Creating a dictionary to translate words and rehydrate acronyms would be very useful to help make further sense of what’s available in CSV, XLS/XLSX, JSON, and XML files. More work could also be done around forms: identifying the types available; defining their search mechanisms; defining what input parameters they allow (whether GET or POST); and unlocking further details on how they store data. Form and table data often have a direct connection to backend databases, which make them more valuable than some of the published data files.</p>
+
+<p>All of the data from the landscape analysis has been published to GitHub, minus the primary index of harvested and processed URLs. Those are too big to publish as JSON to GitHub, but we’ll evaluate how best to provide access to each site index using a solution such as Amazon AMI. We also started experimenting with a secondary spider solution in order to generate an index of the VA website and can publish those indexes as separate GitHub repositories within a single GitHub repository when completed. We feel like these newer indexes could provide a much richer approach to understanding the data and content across the VA’s web properties. And allow for other researchers and analysts to fork and work to make sense of the data that they contain.</p>
+
+<h3 id="incorporate-user-research">Incorporate user research</h3>
+
+<p>It’s critical that any further landscape analysis focused on uncovering valuable data resources from across the VA’s web presence is combined with user research activities, such as the series of design workshops that we conducted. Doing so will provide a human perspective on what’s most important to Veterans and their supporters.</p>
+
+<p>We strongly encourage the Lighthouse program to conduct a similar workshop activity to the one that we ran, leveraging the VA’s much stronger outreach capability in order to attract an even larger and more diversified representation of the Veteran community’s data resource needs.</p>
+
+<p>We also recommend that the Lighthouse program consider using the <a href="https://en.wikipedia.org/wiki/Service_blueprint">service blueprinting technique</a> as a way to help identify and prioritize specific APIs for deployment. For example, a service blueprint could be created for a specific interaction that Veterans have with the VA, such as trying to find information on healthcare facilities. It’s likely that any service blueprints you want to create could be acquired by chunking the work into multiple micro-purchases. At the very least, we recommend trying to do at least one as an experiment. Once specific APIs are identified, you could then map them against a 2x2 prioritization matrix, based on how high they score against two main criteria: Veteran Experience Impact (y-axis) and Readiness to Execute (x-axis).</p>
+
+<h2 id="conclusion-this-journey-is-just-beginning">Conclusion: this journey is just beginning</h2>
+
+<p>The landscape analysis for the VA doesn’t end here. Just like the resulting API effort, the evaluation of the VA’s web presence should be an ongoing process. Work should continue to help identify what datasets are being published to the VA’s web properties, and to incorporate these datasets into API operations or to replace them with API-driven solutions. In the long term, there shouldn’t be any tables, forms, CSV files, JSON files, XML files, or XLS/XLSX files without a direct connection to the API platform. Eventually all data should be derived from a federated, but standardized, set of API platforms that are designed, deployed, and managed consistently as part of the VA Lighthouse effort.</p>
+
+<p>Hopefully the work conducted here provides a base of resources for the Lighthouse program to consider as it moves forward. Ideally, everything uncovered as part of this work eventually becomes an API, or part of a suite of APIs. We understand that this won’t be a reality anytime soon, but we worked diligently to uncover the most valuable resources and to provide a concise list of data resources that could be turned into APIs and used to begin driving web, mobile, and desktop applications that serve Veterans and their families. There’s a wealth of resources available to Veterans across the VA’s websites. The challenge now is how do we ensure these resources deliver value consistently across many platforms? A simple, consistent, and usable API stack is the answer.</p>
+
+<h2 id="lessons-to-share">Lessons to share</h2>
+
+<p>This project is one of the VA’s first experiments using the microconsulting model in support of the Lighthouse initiative. Sharing what went well, what didn’t, and what could we have been done better — all in the name of continuous improvement — is the responsibility of everyone involved in order to make not only the Lighthouse initiative a success, but the microconsulting model as well. With that said, here’s what we have to share:</p>
+
+<ul>
+  <li>
+    <p>We thoroughly enjoyed working on this as a micro-project. We felt that the short-timeboxed, tightly-scoped nature of the work focused our efforts on executing only the most essential activities, giving even more meaning to inherently impactful work. As <a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">Parkinson’s Law</a> states, “work expands so as to fill the time available for its completion.”</p>
+  </li>
+  <li>
+    <p>Looking back, our approach to this project involved some known unknowns (and some unknown unknowns) from a technical standpoint. In particular, the question of how well our spidering process could scale to handle the VA’s enormous web footprint. It would have been best to propose conducting an <a href="http://agiledictionary.com/209/spike/">agile “spike”</a> activity as a small micro-project in order to gain risk-reducing knowledge.</p>
+  </li>
+  <li>
+    <p>For micro-projects under a tight schedule and for which there are external dependencies (for example, scheduling interviews or workshops with external participants), some lead time may be necessary before formally kicking off the project.</p>
+  </li>
+  <li>
+    <p>Those people who participated in our facilitated workshops expressed extreme gratitude for the opportunity to contribute to the progress of the Lighthouse program. Working in the open and co-creating with the public will not only foster an engaged community of supporters, but will also lead to better quality outcomes.</p>
+  </li>
+  <li>
+    <p>While our workshop activities were extremely valuable in giving us a human perspective on our landscape analysis, we felt that there could have been even greater representation from the Veteran community. We should have been more proactive about leveraging the VA’s outreach capability to draw in an even more dense and diverse group of Veterans and their supporters.</p>
+  </li>
+</ul>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=VA API Landscape Analysis and Roadmapping Project Report - https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/&title=https://apievangelist.comVA API Landscape Analysis and Roadmapping Project Report" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/&title=VA API Landscape Analysis and Roadmapping Project Report&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/06/18/the-importance-of-openapi-tooling/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/06/19/adding-a-lead-to-the-salesforce-rest-api/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

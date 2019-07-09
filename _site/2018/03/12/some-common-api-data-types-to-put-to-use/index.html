@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Some Common API Data Types To Put To Use</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Some Common API Data Types To Put To Use | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Some Common API Data Types To Put To Use | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Some Common API Data Types To Put To Use</h2>
+<p><span class="post-date">12 Mar 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’m continuing my exploration of the API design guidance published by leading API providers. This time, I am taking a look at the API design guide publish by Adidas, <a href="https://adidas-group.gitbooks.io/api-guidelines/content/application/common-data-types.html">specifically the portion of it addressing what some of the common API types should be</a>. Providing some API design essentials, that all of us API providers should be baking into our APIs by default.</p>
+
+<p>Here is the short list of <a href="https://adidas-group.gitbooks.io/api-guidelines/">default standards Adidas</a> is supporting across their API operations:</p>
+
+<ul>
+  <li><strong>Date and Time Format</strong> - Date and Time MUST always conform to the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> e.g.: 2017-06-21T14:07:17Z (date time) or 2017-06-21 (date), it MUST use the UTC (without time offsets).</li>
+  <li><strong>Duration Format</strong> - Duration format MUST conform to the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> standard e.g.: P3Y6M4DT12H30M5S (three years, six months, four days, twelve hours, thirty minutes, and five seconds).</li>
+  <li><strong>Time Interval Format</strong> - Time Interval format MUST conform to the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> standard e.g.: 2007-03-01T13:00:00Z/2008-05-11T15:30:00Z.</li>
+  <li><strong>Standard Time Stamps</strong> - Where applicable, a resource representation SHOULD contain the standard timestamps: createdAt, updatedAt, and finishedAt, using the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a>.</li>
+  <li><strong>Language Code Format</strong> - Language codes MUST conform to <a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">the ISO 639</a> e.g.: en for English.</li>
+  <li><strong>Country Code Format</strong> - Country codes MUST conform to <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">the ISO 3166-1</a> alpha-2 e.g.: DE for Germany.</li>
+  <li><strong>Currency Format</strong> - Currency codes MUST conform to <a href="https://en.wikipedia.org/wiki/ISO_4217">the ISO 4217</a> e.g.: EUR for Euro.</li>
+</ul>
+
+<p>These are the common data formats we are all using across our APIs. We should be working to support standard formats wherever possible, embracing the wider web, and investing in the longevity and usability of our API designs. Making our APIs sure that they speak to as wide of audience as they possibly can, and operate in a consistent way, no matter which API you are integrating with.</p>
+
+<p>I want to also give a shout out to the <a href="http://apistylebook.com/">API Stylebook</a>, where I’m easily finding these API design guides that I’m using for these stories, and including in my API design guidance in my consulting work. Also, I’d like to encourage other API providers to reuse the patterns present in these guides, as well as publishing their own API design governance guidance whenever possible. It is critical that we all share these stories, so that we can learn from each other, and emulate the healthiest patterns already in use across the space.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Some Common API Data Types To Put To Use - https://apievangelist.com/2018/03/12/some-common-api-data-types-to-put-to-use/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/03/12/some-common-api-data-types-to-put-to-use/&title=https://apievangelist.comSome Common API Data Types To Put To Use" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/03/12/some-common-api-data-types-to-put-to-use/&title=Some Common API Data Types To Put To Use&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/03/12/some-common-api-data-types-to-put-to-use/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/03/12/thinking-about-delete-and-destroyting-entities/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/03/12/the-importance-of-tags-in-openapi-definitions-for-machine-learning-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

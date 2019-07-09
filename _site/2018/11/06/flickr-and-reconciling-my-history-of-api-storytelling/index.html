@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Flickr And Reconciling My History Of APIs Storytelling</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Flickr And Reconciling My History Of APIs Storytelling | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/flickr/361347580_2d9d02b83d_z.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Flickr And Reconciling My History Of APIs Storytelling | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/flickr/361347580_2d9d02b83d_z.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Flickr And Reconciling My History Of APIs Storytelling</h2>
+<p><span class="post-date">06 Nov 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/flickr/361347580_2d9d02b83d_z.jpg" width="45%" align="right" /></p>
+<p>Flickr was <a href="http://apievangelist.com/2010/10/06/flickr-api-review/">one of the first APIs that I profiled back in 2010</a> when I started API Evangelist. Using their API as a cornerstone of my research, <a href="http://apievangelist.com/2011/02/09/history-of-apis-flickr-api/">resulting in their API making it into my history of APIs storytelling</a>, continuing to be a story I’ve retold hundreds of times in the conversations I’ve had over the eight years of being the API Evangelist. Now, after the second (more because of Yahoo?) acquisition, <a href="https://www.businesswire.com/news/home/20181101005328/en/Flickr-Announces-New-Photographer-Centric-Improvements-Flickr-Pro">Flickr users are facing significant changes regarding the number of images we can store on the platform, and what we will be charged for using the platform</a>–forcing me to step back, and take another look at the platform that I feel has helped significantly shape the API space as we know it.</p>
+
+<p>When I step back and think about Flickr, it’s most important contribution to the world of APIs was all about the resources it made available. Flickr was the original image sharing API, powering the growing blogosphere at the beginning of this century. Flickr gave us a simple interface for humans in 2004, and an API for other applications just six months later, that provided us all with a place to upload the images we would be using across our storytelling on our blogs. Providing the API resources that we would be needed to power the next decade of storytelling via our blogs, but also set into the motion the social evolution of the web, demonstrating that images were an essential building block of doing business on the web, and in just a couple of years, on the new mobile devices that would become ubiquitous in our lives.</p>
+
+<p>Flickr was an important API resource, because it provided access to an important resource–our images. The API allowed you to share these meaningful resources on your blog, via Facebook and Twitter, and anywhere else you wanted. In 2005, this was huge. At the time, I was working to make a shift from being an developer lead, to playing around with side businesses built using the different resources that were becoming available online via simple web APIs. Flickr quickly became a central actor in my digital resource toolbox, and I was using it regularly in my work. As an essential application, Flickr quickly got out of my way by offering an API. I would still use the Flickr interface, but increasingly I was just publishing images to Flickr via the API, and embedding them in blogs, and other marketing, becoming what we began to call social media marketing, and eventually was something that I would rebrand as API Evangelist while making it more about the tooling I was using, than the task I was accomplishing.</p>
+
+<p>After thinking about Flickr as a core API resource, next I always think about the stories I’ve told about Flickr’s Caterina Fake who coined the phase, “business development 2.0”. As I tell it, back in the early days of Flickr, the team was getting a lot of interest in the product, and unable to respond to all emails and phone calls. They simply told people to build on their API, and if they were doing something interesting, they would know, because they had the API usage data. Flickr was going beyond the tech and using an API to help raise the bar for business development partnerships, putting the burden on the integrator to do the heavy lifting, write the code, and even build the user base, before you’d get the attention of the platform. If you were building something interesting, and getting the attention of users, the Flickr team would be aware of it because of their API management tooling, and they would reach out to you to arrange some sort of partner relationship.</p>
+
+<p><img src="http://kinlane-productions.s3.amazonaws.com/flickr/flickr-beta.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>It makes for a good story. It resonates with business people. It speaks to the power of doing APIs. It is also enjoys a position which omits so many other negative aspects of doing startups, which as a technologist becomes too easy to look the other way when you are just focused on the tech, and as a business leader after the venture capital money begins flowing. Business development 2.0 has a wonderful libertarian, pull yourself up by your bootstrap ring to it. You make valuable resources available, and smart developers will come along and innovate! Do amazing things you never thought of! If you build it, they will come. Which all feeds right into the sharecropping, and exploitation that occurs within ecosystems, leading to less than ethical API providers poaching ideas, and thinking that it is ok to push public developers to work for free on their farm. Resulting in many startups seeing APIs as simply a free labor pool, and source of free road map ideas, manifesting concepts like the “<a href="https://apievangelist.com/2018/07/09/operating-your-api-in-the-cloud-kill-zone/">cloud kill zone</a>”. Business development 2.0 baby!!</p>
+
+<p>Another dimension of this illness we like to omit is around the lack of a business model. I mean, the shit is free! Why would we complain about free storage for all our images, with a free API? It is easier for us to overlook the anti-competitive approaches to pricing, and complain down the road when each acquisition of the real product (Flickr) occurs, than it is to resist companies who lack a consumer level business model, simply because we are all the product. Flickr, Twitter, Facebook, Gmail, and other tools we depend on are all free for a reason. Because they are market creating services, and revenue is being generated at other levels out of our view as consumers, or API developers. We are just working on Maggie’s Farm, and her pa is reaping all the benefit. When it come’s to Flickr, Maggie and her {a cashed out a long time ago, and the farm keeps getting sold and resold, all while we still keep working away in the soil, giving them our digital bits that we’ve cultivate there, until conditions finally become unacceptable enough to run us off.</p>
+
+<p>I’ve begun moving off of Flickr a couple years ago. I stopped using them for blog photo hosting in 2010. I stopped uploading photos there regularly over the last couple years. The latest crackdown doesn’t mean much to me. It will impact my storytelling to potentially lose such an amazing resource of openly licensed photos. However, I’ve saved each photo I use, and it’s attribution locally–hopefully my attribution link doesn’t begin to 404 at some point. Hopefully other openly licensed photo collections emerge on the horizon, and ideally SmugMug doesn’t do away with openly licensed treasure trove they are stewards of now. The latest acquisition and business model shift occurring across the Flickr platform doesn’t hit me too hard, but the situation does give me an opportunity to step back and reassess my API storytelling, and the role that Flickr plays in my API Evangelist narrative. Giving me another opportunity to eliminate bullshit and harmful myths from my storytelling and myth making–which I feel like is getting pretty close to leaving me with nothing left to tell when it comes to APIs.</p>
+
+<p>In the end, if I just focus purely on the tech, and ignore the business and politics of APIs, I can keep telling these bullshit. This is the real Flickr lesson for me. I’d say there is two reasons we perpetuate stories like this. One, “because we just didn’t know any better”. Which is pretty weak. Two, it is how capitalism works. It is why us dudes, especially us white dudes thrive so well in a Silicon Valley tech libertarian world, because this type of myth making benefits us, even when it repeatedly sets us up for failure. This is one of the things that makes me throw up a little (a lot) in my mouth when I think about the API Evangelist persona I’ve created. This entire reality makes it difficult for me to keep doing this API Evangelist theater each day. APIs are cool and all, but when they are wielded as part of this larger money driven stream of consciousness, we (individuals) are always going to lose. In the end, why the fuck do I want to be a mouthpiece for this kind of exploitation. I don’t.</p>
+
+<p><em><strong>Photo Credit:</strong> <a href="https://www.flickr.com/photos/kinlane/361347580/in/dateposted-public/">Kin Lane (The First Photo I Uploaded to Flickr)</a></em></p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Flickr And Reconciling My History Of APIs Storytelling - https://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/&title=https://apievangelist.comFlickr And Reconciling My History Of APIs Storytelling" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/&title=Flickr And Reconciling My History Of APIs Storytelling&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/11/01/the-impact-of-travel-on-being-the-api-evangelist/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/11/16/the-ability-to-link-to-api-service-provider-features-in-my-workshops-and-storytelling/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

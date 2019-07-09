@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Separating The Licensing Layers Of Your Valuable Data Using APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Separating The Licensing Layers Of Your Valuable Data Using APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-onion.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Separating The Licensing Layers Of Your Valuable Data Using APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-onion.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Separating The Licensing Layers Of Your Valuable Data Using APIs</h2>
+<p><span class="post-date">24 Apr 2017</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-onion.png" alt="" width="25%" align="right" /></p>
+<p>Data is power. If you have valuable data, people want it. While this is the current way of doing things on the Internet, it really isn't a new concept. The data in databases has always been wielded alongside business and political objectives. I have worked professionally as a database engineer for 30 years this year, with my first job building COBOL databases for use in schools across the State of Oregon in 1987, and have seen many different ways that data is the fuel for the engines of power.</p>
+<p>Data is valuable. We put a lot of work into acquiring, creating, normalizing, updating, and maintaining our data. However, this value only goes so far if we keep it siloed, and isolated. We have to be able to open up our data to other stakeholders, partners, or possibly even the public. This is where modern approaches to APIs can help us in some meaningful ways, allowing data stewards to sensibly, and securely open up access to valuable API resources using low-cost web technology. One of the most common obstacles I see impeding companies, organizations, institutions, and agencies from achieving API success, center around restrictive views on data licensing, not being able to separate the data layers by using APIs, and being overly concerned about a loss of power when you publish APIs.</p>
+<p>You worked hard to develop the data you have, but you also want to make accessible. To protect our interests I see many folks impose pretty proprietary restrictions around their data, which ends up hurting its usage and viability in partner systems, and introducing friction when it comes to accessing and putting data to work--when this is the thing you really want as a data steward. Let me take a stab at helping you reduce this friction by better understanding how APIs can help you peel the licensing onion layers back when it comes to your valuable data.</p>
+<table>
+<tbody>
+<tr>
+<td width="50%" align="center" valign="top"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/contact_point_data.png" alt="" width="95%" align="right" /></td>
+<td style="text-align: left;" width="50%" align="center" valign="top">
+<p><strong>Your Valuable Data</strong><br />This is an example point of contact record. I've worked hard to create this bit of data (not really), and maintain a relationship with this point of contact. It takes time to validate that their record is up to date, always relfecting reality in my database.</p>
+<p>While openly licensed data is one important piece of the puzzle, and data should be openly licensed when it makes sense, this is the layer of this discussion you may want to be a little more controlling in who has access to, and how partners and the public are able to put your data to use in their operations.</p>
+<p>In an online, always on, digital environment, you want data accessible, but to be able to do this you need to think critically about how you peel back the licensing onion when it comes to this data.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/contact_point_schema.png" alt="" width="95%" align="right" /></td>
+<td style="text-align: left;" width="50%" align="center" valign="top">
+<p><strong>The Schema For Your Data</strong><br />The first layer to peel back when you are looking to make data more accessible with APIs is at the schema level. This is the names, description, data type, and other details about the meta layer of your valuable data--it isn't the data, but the description of the structure of your data.</p>
+<p>Ideally, your schema already employs predefined schemas like we find at <a href="http://schema.org">Schema.org</a>, or <a href="http://openreferral.org">Open Referral</a>. Following common definitions will significantly widen the audience for any dataset, allowing data to seamlessly be used across a variety of systems. These forms of schema or openly licensed, usually putting into the public domain.</p>
+<p>The schema layer of open data can often resemble the data itself, using machine readable formats like XML, JSON, and YAML. This is most likely the biggest contributing factor for data stewards failing to see this as a separate layer of access from the data itself, and sometimes applying a restrictive license, or forgetting to license it at all.</p>
+<p>Data is often more ephemeral than the schema. Ideally, schemas do not change often, are shared and resused, as well as free from restrictive licensing. For system integrations to work, and for partnerships to be sustainable, we need to speak a common language, and schema is how we describe our data so it can be put to use outside our firewall.</p>
+<p>Make sure the schema for your data is well-defined, machine readable, and openly licensed for the widest possible use.</p>
+</td>
+</tr>
+<tr>
+<td width="50%" align="center" valign="top"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/contact_point_api.png" alt="" width="95%" align="right" /></td>
+<td style="text-align: left;" width="50%" align="center" valign="top">
+<p><strong>Defining Access To Data Using OpenAPI&nbsp;</strong><br />The third layer of this licensing onion is the API layer, which governs access to data, defining how requests are made upon data, and how responses are structured. Many API providers are putting <a href="http://openapis.org">OpenAPI</a> to work to define this layer of data operations.</p>
+<p>As with the schema layer of data operations, you are hoping that other companies, organizations, institutions, and government agencies will integrate this layer into their operations. This layer is much more permanent than the ephermeral data layer, and should be well defined, ideally sharing common patterns, and free from restrictive licensing.</p>
+<p>Per the Oracle v Google Java API copyright case in the United States, the API layer is subject to copyright enforcement, meaning the naming, ordering of the surface area of your API can be copyright. If you are looking for others to comfortably integrate this definition into their operations, it should be openly licensed.&nbsp;</p>
+<p>The API layer is not your data. It defines how data will be accessed, and put to use. It is important to separate this layer of your data operations, allowing it to shared, reused, and implemented in many different ways supporting web, mobile, voice, bot, and a growing number of API driven applications.</p>
+<p>Make sure the API layer to data operations is well-defined, machine readable, and free from restrictive licensing when possible.&nbsp;</p>
+<p>&nbsp;</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Currently, many data providers I talk to see this all as a single entity. It's our data. It's valuable. We need to protect it. Even at the same time they really want it simultaneously put to work in other systems, by partners, or even the public. Because they cannot separate the layers, and understand the need for separate licensing considerations, they end up being very closed with the data, schema, and API layers of their operations--introducing friciton at all steps of the application and data life cycle.</p>
+<p>Modern approaches to <a href="http://management.apievangelist.com">API management</a> and logging at the API layer is how savvy data stewards are simultaenoulsy opening up access, and maintaing control over data, while also increasing awareness around how data is being put to use, or not used. Key-based access, <a href="http://plans.apievangelist.com">rate limits, access plans</a>, are all approaches to opening up access to data, while maximizing control, and maintaining a desired balance of power between steward, partners, and consumers. In this model, your schema and API definition needs to be open, accessible, and shareable, where the data itself can be much more tightly controlled, depending on the goals of the data steward, and the needs of consumers.</p>
+<p>Let me know if you want to talk through the separation of these layers of licensing and access around your data resources. I'm all for helping you protect your valuable data, but in a pragrmatic way. If you want to be successful in partnering with other stakeholders, you need to be thinking more critically about separating the layers of your data operations, and getting better at peeling back the onion of your data operations--something that seems to leave many folks with tears in their eyes.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Separating The Licensing Layers Of Your Valuable Data Using APIs - https://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/&title=https://apievangelist.comSeparating The Licensing Layers Of Your Valuable Data Using APIs" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/&title=Separating The Licensing Layers Of Your Valuable Data Using APIs&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/04/24/separating-the-licensing-layers-of-your-valuable-data-using-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/04/24/a-ranking-score-to-determine-if-your-api-was-sla-compliant/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/04/24/the-concern-around-availability-and-reliability-of-government-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

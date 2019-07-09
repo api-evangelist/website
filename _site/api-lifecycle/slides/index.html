@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Lifecycle Slides</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Lifecycle Slides | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Lifecycle Slides | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>API Lifecycle Slides</h2>
+
+
+
+  
+
+  
+    <section>
+      <a href="http://definitions.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-definitions.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://definitions.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Definitions</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://design.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-design-fiction.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://design.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Design</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://soap.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-soap.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://soap.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">SOAP</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://grpc.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-grpc.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://grpc.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">gRPC</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://hypermedia.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hypermedia.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://hypermedia.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Hypermedia</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://governance.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-governance.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://governance.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Governance</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://versioning.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-version.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://versioning.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Versioning</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://dns.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-globe.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://dns.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">DNS</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://low.hanging.fruit.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-grapes.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://low.hanging.fruit.apievangelist.com/" target="_blank" style="font-size: 24px; font-weight: bold;">Low Hanging Fruit</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://scraping.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-scraping.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://scraping.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Scraping</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://database.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://database.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Database</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://rogue.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-pirate-flag.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://rogue.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Rogue</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://deployment.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://deployment.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Deployment</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://compute.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-servers.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://compute.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Compute</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://deployment.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-file-storage.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://deployment.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Storage</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://microservices.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-microservice.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://microservices.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Microservices</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://algorithms.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-algorithms.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://algorithms.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Algorithms</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://machine-learning.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-machine-learning.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://machine-learning.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Machine Learning</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://search.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-search.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://search.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Search</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://proxy.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-proxy.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://proxy.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Proxy</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://virtualization.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtulization.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://virtualization.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Virtualization</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://containers.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shipping-container.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://containers.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Containers</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://management.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/api-management.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://management.apievangelist.com/" target="_blank" style="font-size: 24px; font-weight: bold;">Management</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://serverless.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-serverless.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://serverless.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Serverless</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://portal.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://portal.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Portal</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://getting-started.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://getting-started.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Getting Started</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://documentation.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-documentation.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://documentation.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Documentation</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://frequently-asked-questions.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://frequently-asked-questions.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Frequently Asked Questions</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://support.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://support.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Support</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://communications.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-chat.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://communications.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Communications</a></p>
+    </section>
+  
+
+  
+
+  
+    <section>
+      <a href="http://road-map.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-roadmap.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://road-map.apievangelist.com/" target="_blank" style="font-size: 24px; font-weight: bold;">Road Map</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://issues.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://issues.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Issues</a></p>
+    </section>
+  
+
+  
+
+  
+    <section>
+      <a href="http://change-log.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://change-log.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Change Log</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://monitoring.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://monitoring.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Monitoring</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://testing.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://testing.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Testing</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://performance.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://performance.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Performance</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://caching.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-cache.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://caching.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Caching</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://reliability.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reliability.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://reliability.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Reliability</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://authentication.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication-2.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://authentication.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Authentication</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://encryption.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://encryption.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Encryption</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://vulnerabilities.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-vulnerabilities.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://vulnerabilities.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Vulnerabilities</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://breaches.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-breach.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://breaches.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Breaches</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://security.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://security.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Security</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://terms-of-service.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-terms-of-use.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://terms-of-service.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Terms of Service (TOS)</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://surveillance.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-surveillance-camera.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://surveillance.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Surveillance</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://privacy.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-privacy.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://privacy.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Privacy</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://cybersecurity.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-cybersecurity.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://cybersecurity.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Cybersecurity</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://reclaim.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-fist.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://reclaim.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Reclaim</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://transparency.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-transparency.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://transparency.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Transparency</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://observability.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-observable.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://observability.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Observability</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://licensing.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-creative-commons.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://licensing.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Licensing</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://copyright.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-copyright.gif" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://copyright.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Copyright</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://accessibility.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-accessbility.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://accessibility.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Accessibility</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://branding.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-brand.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://branding.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Branding</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://regulation.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://regulation.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Regulation</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://patents.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://patents.apievangelist.com/" target="_blank" style="font-size: 24px; font-weight: bold;">Patents</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://discovery.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/api-discovery.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://discovery.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Discovery</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://client.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://client.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Client</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://command-line-interface.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-command-line.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://command-line-interface.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Command Line Interface</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://bots.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-robots.jpeg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://bots.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Bots</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://internet-of-things.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internet-of-things.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://internet-of-things.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Internet of Things</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://industrial.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-industrial.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://industrial.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Industrial</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://network.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-network.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://network.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Network</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://ide.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ide.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://ide.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">IDE</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://sdk.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sdk.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://sdk.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">SDK</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://plugin.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-plugin.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://plugin.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Plugin</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://browsers.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-browser.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://browsers.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Browsers</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://embeddable.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-embeddable.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://embeddable.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Embeddable</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://visualization.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-visualization.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://visualization.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Visualization</a></p>
+    </section>
+  
+
+  
+
+  
+    <section>
+      <a href="http://analysis.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analysis.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://analysis.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Analysis</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://logging.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://logging.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Logging</a></p>
+    </section>
+  
+
+  
+
+  
+    <section>
+      <a href="http://aggregation.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://aggregation.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Aggregation</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://ipaas.apievangelist.com/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/reciprocity-trends.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://ipaas.apievangelist.com/" target="_blank" style="font-size: 24px; font-weight: bold;">iPaaS</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://webhooks.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/webhooks.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://webhooks.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Webhooks</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://integrations.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-integration-automation.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://integrations.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Integrations</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://migration.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-migration.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://migration.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Migration</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://backups.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-backup.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://backups.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Backups</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://realtime.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/real-time-2.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://realtime.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Real Time</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://orchestration.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-orchestration.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://orchestration.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Orchestration</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://voice.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-microphone.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://voice.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Voice</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://spreadsheets.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-excel-icon.jpg" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://spreadsheets.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Spreadsheets</a></p>
+    </section>
+  
+
+  
+
+  
+
+  
+    <section>
+      <a href="http://investment.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-investment.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://investment.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Investment</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://monetization.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dollar-sign.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://monetization.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Monetization</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://plans.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-plan.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://plans.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Plans</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://partners.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-partner.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://partners.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Partners</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://certification.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certification.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://certification.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Certification</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://acquisitions.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-acquisitions.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://acquisitions.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Acquisitions</a></p>
+    </section>
+  
+
+  
+
+  
+    <section>
+      <a href="http://evangelism.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://evangelism.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Evangelism</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://showcase.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-spotlights.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://showcase.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Showcase</a></p>
+    </section>
+  
+
+  
+    <section>
+      <a href="http://deprecation.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" width="50%" style="padding: 5px;" align="center" /></a></p>
+      <p><a href="http://deprecation.apievangelist.com" target="_blank" style="font-size: 24px; font-weight: bold;">Deprecation</a></p>
+    </section>
+  
+
+
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

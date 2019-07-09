@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/helsinki-subway-map.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/helsinki-subway-map.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki</h2>
+<p><span class="post-date">29 Jan 2016</span></p>
+<p><a href="http://apievangelist.com/2015/11/29/the-api-lifecycle-my-talk-from-defrag-and-apistrat/">If you caught my keynotes at @Defrag and @APIStrat last year, you know I'm working on using the subway map as a method for visualizing, understand, and eventually exploration of the API life cycle</a>. I feel like the subway map concept, has helped us find a globally universal way of understanding the transport of humans, via some very complex transportation systems, in cities around the globe--something I feel can be applied to world of APIs.</p>
+<p>I was giving a version of my API life cycle talk to a group in Finland the other evening (their morning), and someone in the audience sent me <a href="http://liikenne.hylly.org/rata/lahi/">a link to the real-time subway map for Helsinki</a>. If you watch it closely, it updates based upon where the trains are, sharing times and locations.&nbsp;</p>
+<p><a href="http://liikenne.hylly.org/rata/lahi/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/helsinki-subway-map.png" alt="" width="100%" /></a></p>
+<p style="text-align: center;"><em>Click To See Real Interactive Map</em></p>
+<p>This is what I'm working for across the API space. I see the subway map analogy being key to <a href="http://apievangelist.com">understanding our API life cycle, across the 40+ areas I track on in my research</a>, as well as a potential real-time window to understanding how each API is being used by employing <a href="http://3scale.net">modern API management infrastructure like 3Scale</a>.</p>
+<p>API providers (which ALL companies will be shortly) should have real-time windows into where each of their vital API resources are in the life cycle, whether they are being designed, developed, managed or deprecated. We should also be able to experience real-time views of how are APIs are being consumed, which apps are currently making calls, and potentially even security threats against our API infrastructure.</p>
+<p>The subway map is also providing me a way to educate new, and existing API folks in the space, providing them with an interactive journey within the design, definition, deployment, management, monitoring, <a href="http://apievangelist.com">and 40+ other areas of the API life cycle I keep an eye on</a>. I'm optimistic for what is possible, when it comes to applying the subway map concept to the world of APIs, but like earlier subway engineers, I think it will take some time before I fight just the right approach. ;-)</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki - https://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/&title=https://apievangelist.comMy Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/&title=My Vision For One Possible Future Of The API Life Cycle Present In A Real-Time Subway Map For Helsinki&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/01/29/my-vision-for-one-possible-future-of-the-api-life-cycle-present-in-a-realtime-subway-map-for-helsinki/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/01/29/breaking-out-api-support-into-a-separate-research-area/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/01/29/parse-shutting-down-maybe-we-should-lower-our-expectations-of-tech-just-a-little-bit/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

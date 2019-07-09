@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Overview of 11 Places Data APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Overview of 11 Places Data APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Overview of 11 Places Data APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Overview of 11 Places Data APIs</h2>
+<p><span class="post-date">04 Mar 2012</span></p>
+<p>Since starting as <a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a> here at <a title="CityGrid" href="http://www.citygrid.com">CityGrid</a>, I have been asked a couple of times how we stack up against other places APIs. So I went through the 11 other places APIs, gathering info, in an attempt to see what each offered.</p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/citygrid_logo.jpg"><img class="aligncenter size-medium wp-image-771" title="citygrid_logo" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/citygrid_logo-300x66.jpg" alt="" width="200" align="right" /></a><strong>CityGrid Places API</strong></strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by longitude/latitude, "where" using cities, neighborhoods, zip codes, metro areas, addresses and intersections. Details for each places is also available.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- 18 Million US Places</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- &nbsp;No Storage. &nbsp;Cache up to 15 minutes.</li>
+<li><strong>Attribution</strong>&nbsp;- Include logo and phrase &ldquo;powered by CityGrid; data from Infogroup &copy;[YEAR]&rdquo;</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- Yes</li>
+<li><strong>Meta Data</strong>&nbsp;- No</li>
+<li><strong>Rating / Review</strong>&nbsp;- Yes</li>
+<li><strong>Deals / Offers</strong>&nbsp;- Yes</li>
+<li><strong>Revenue Share</strong>&nbsp;- Yes</li>
+<li><strong>Call Limits</strong>&nbsp;- 10M / Month</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Check-In</strong>&nbsp;- No</li>
+<li><strong>Write</strong>&nbsp;- No</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>Other</strong></p>
+<ul class="mainlist">
+<li><strong>Places that Pays</strong>&nbsp;- A program that monetizes the display of, and interaction with, CityGrid places is called Places that Pay.</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://docs.citygridmedia.com/">http://docs.citygridmedia.com/</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/facebook_logo.jpg"><img class="aligncenter size-medium wp-image-772" title="facebook_logo" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/facebook_logo-300x99.jpg" alt="" width="200" align="right" /></a>Facebook Graph API</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing the ability to search the Facebook Graph objects with a &ldquo;type&rdquo; of place, and longitude/latitude, keyword search and area to find places listed as objects within Facebook.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Not Found</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- No</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- No</li>
+<li><strong>Rating / Review -Yes</strong></li>
+<li><strong>Deals / Offers</strong>&nbsp;- Yes</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- One call per second</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- OAuth</li>
+<li><strong>Pricing</strong>&nbsp;- FREE</li>
+<li><strong>Check-In</strong>&nbsp;- Yes</li>
+<li><strong>Write</strong>&nbsp;- Yes</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://developers.facebook.com/docs/reference/api/">http://developers.facebook.com/docs/reference/api/</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/factual-logo-315x82.png"><img class="aligncenter size-medium wp-image-773" title="factual-logo-315x82" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/factual-logo-315x82-300x78.png" alt="" width="200" align="right" /></a>Factual</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by latitude/longitude, and &ldquo;where&rdquo; using full text search query string.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- 55 million entities in 47 countries</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- Yes</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- Yes</li>
+<li><strong>Meta Data</strong>&nbsp;- Yes</li>
+<li><strong>Rating and Review</strong>&nbsp;- No</li>
+<li><strong>Deals</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- cross ref = 10,000 per day / crosswalk = 500 per day / read = 10,000 per day &nbsp;/ resolve = 100 per day</li>
+<li><strong>Response Format</strong>&nbsp;- JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Unsigned and signed requests w/ 2-legged OAuth.</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Write</strong>&nbsp;- Yes</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>Other:</strong></p>
+<ul class="mainlist">
+<li><strong>Select</strong>&nbsp;- What fields to include in the query.</li>
+<li><strong>Places API - Resolve</strong>&nbsp;- Resolve is an entity resolution API that makes partial records complete, matches one entity against another, and assists in de-duping and normalizing datasets.</li>
+<li><strong>Places API - Crossref</strong>&nbsp;- The Crossref API enables you to find the URLs for pages that mention a specific business or point of interest or vice versa.</li>
+<li><strong>Places API - Restaurants</strong>&nbsp;- The U.S. Restaurant table contains Factual's core places attributes in addition to 43 extended attributes on 800,000+ restaurants, bars, and casual eateries including datatypes such as cuisine, ratings, hours of operations, and price.</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://developer.factual.com/">http://developer.factual.com/</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/foursquare_logo.png"><img class="aligncenter size-medium wp-image-774" title="foursquare_logo" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/foursquare_logo-300x93.png" alt="" width="200" align="right" /></a>Foursquare Venue API</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by &nbsp;hierarchical list of categories, longitude/latitude, &ldquo;where&rdquo; using search term, managed by requesting users, over time range, trending and exploration.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could Not Find</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- Okay to keep caches of foursquare data as long as they are refreshed at least every 30 days.</li>
+<li><strong>Attribution -Yes</strong></li>
+<li><strong>Multi-Provider</strong>&nbsp;- Yes</li>
+<li><strong>Meta Data</strong>&nbsp;- Yes</li>
+<li><strong>Rating and Review</strong>&nbsp;- Yes</li>
+<li><strong>Deals</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- 5,000 requests per hour</li>
+<li><strong>Response Format</strong>&nbsp;- JSON</li>
+<li><strong>Authentication</strong>&nbsp;- OAuth 2.0 w/ To make a userless request, specify your consumer key's Client ID and Secret instead of an auth token in the request URL.</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Write -Yes</strong></li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>Other</strong>:</p>
+<ul class="mainlist">
+<li><strong>Actions</strong>&nbsp;- You can edit, flag, mark to do, propose edit for venues in Foursquare database.</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="https://developer.foursquare.com/overview/venues">https://developer.foursquare.com/overview/venues</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/fwix_logo_300.jpg"><img class="aligncenter size-full wp-image-775" title="fwix_logo_300" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/fwix_logo_300.jpg" alt="" width="200" align="right" /></a>Fwix</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by<br />latitude/longitude, and text search based upon categories, address, city, province, postal code, country, neighborhood and text keyword.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- 23M in US.</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- No storage. &nbsp;Yes to cache.</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- Yes</li>
+<li><strong>Rating / Review</strong>&nbsp;- No</li>
+<li><strong>Deals / Offers</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- Yes</li>
+<li><strong>Call Limits</strong>&nbsp;- 5,000 calls per unique user per day</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Write</strong>&nbsp;- Yes</li>
+<li><strong>Delete</strong>&nbsp;- Yes</li>
+</ul>
+<p><strong>Other</strong>:</p>
+<ul class="mainlist">
+<li><strong>Geotagger Methods</strong>&nbsp;- Returns places geotagged to a given web page.</li>
+<li><strong>Content Methods</strong>&nbsp;- Returns geotagged content in or near a location.</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://fwix.com/developer_tools/api">http://fwix.com/developer_tools/api</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/google-places-logo-square.gif"><img class="aligncenter size-full wp-image-776" title="google-places-logo-square" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/google-places-logo-square.gif" alt="" width="199" height="174" align="right" /></a>Google Places API</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by latitude/longitude, keyword matched against all fields, name of place, type of place restricted by radius. &nbsp;&nbsp;As well as pulling details for each places.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could not find</li>
+<li><strong>Store / Cache Data -</strong></li>
+<li><strong>Attribution</strong>&nbsp;- "Powered by Google" logo is displayed above or below the data</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- No</li>
+<li><strong>Rating / Review</strong>&nbsp;- Yes</li>
+<li><strong>Deals / Offers</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- 1&thinsp;000 requests per 24 hour period</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Check-In</strong>&nbsp;- Yes</li>
+<li><strong>Write</strong>&nbsp;- Yes</li>
+<li><strong>Delete</strong>&nbsp;- Yes</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://code.google.com/apis/maps/documentation/places/">http://code.google.com/apis/maps/documentation/places/</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/infochimps-logo.jpg"><img class="aligncenter size-medium wp-image-777" title="infochimps-logo" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/infochimps-logo-300x122.jpg" alt="" width="200" align="right" /></a>InfoChimps</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by longitude/latitude with radius, address, bounding box or IP address.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could not find</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- Yes</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- &nbsp;No</li>
+<li><strong>Rating and Review</strong>&nbsp;- No</li>
+<li><strong>Deals / Offers</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- Couldn&rsquo;t Find</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free w/ Premium Pricing</li>
+<li><strong>Check-In</strong>&nbsp;- No</li>
+<li><strong>Write</strong>&nbsp;- &nbsp;Yes</li>
+<li><strong>Delete</strong>&nbsp;- Yes</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://www.infochimps.com/datasets/business-places-by-locationary">http://www.infochimps.com/datasets/business-places-by-locationary</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/nokia-developer.jpeg"><img class="aligncenter size-full wp-image-778" title="nokia-developer" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/nokia-developer.jpeg" alt="" width="250" align="right" /></a>Nokia</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a JavaScript places search that can be searched by search term, with a detail search for display by JS widget.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Not Found</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- No</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- No</li>
+<li><strong>Rating / Review</strong>&nbsp;- No</li>
+<li><strong>Deals / Offers</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- Not Found</li>
+<li><strong>Response Format</strong>&nbsp;- JSON</li>
+<li><strong>Authentication</strong>&nbsp;- None</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Check-In</strong>&nbsp;- No</li>
+<li><strong>Write</strong>&nbsp;- No</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://api.maps.nokia.com/places/index.html">http://api.maps.nokia.com/places/index.html</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/yahoo_geo_logo_med.png"><img class="aligncenter size-full wp-image-780" title="yahoo_geo_logo_med" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/yahoo_geo_logo_med.png" alt="" width="242" height="81" align="right" /></a>Yahoo GeoPlanet</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be searched by type, county, state, country, oceans, seas, continents, hierarchy and full text search. &nbsp;Also returns places detail by ID.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could not find</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- No</li>
+<li><strong>Attribution</strong>&nbsp;- Must contain the copyright notice "Copyright &copy; Yahoo! Inc. 2008, All Rights Reserved"</li>
+<li><strong>Multi-Provider IDs -No</strong></li>
+<li><strong>Meta Data</strong>&nbsp;- Yes</li>
+<li><strong>Rating / Review</strong>&nbsp;- No</li>
+<li><strong>Deals / Offers</strong>&nbsp;- No</li>
+<li><strong>Revenue Share</strong>&nbsp;- No</li>
+<li><strong>Call Limits</strong>&nbsp;- &ldquo;Reasonable Request Volume&rdquo;</li>
+<li><strong>Response Format</strong>&nbsp;- JSON / XML</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Write</strong>&nbsp;- Yes</li>
+<li><strong>Delete</strong>&nbsp;- Yes</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://developer.yahoo.com/geo/geoplanet/">http://developer.yahoo.com/geo/geoplanet/</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/Yelp_Logo.jpg"><img class="aligncenter size-medium wp-image-781" title="Yelp_Logo" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/Yelp_Logo-300x153.jpg" alt="" width="200" align="right" /></a>Yelp API</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;You can search location using geo bounding box, longitude and latitude, neighborhood, address or city and filter listings by &ldquo;where&rdquo;, using a list of support categories. &nbsp;&nbsp;As well as pulling details for each places.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could not find</li>
+<li><strong>Store / Cache Data -No</strong></li>
+<li><strong>Attribution</strong>&nbsp;- Yes with logo</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- Yes</li>
+<li><strong>Rating / Review</strong>&nbsp;- Overall count with 3 review excerpts</li>
+<li><strong>Deals / Offers</strong>&nbsp;- Yes</li>
+<li><strong>Revenue Share</strong>&nbsp;- Yes with Commission Junction</li>
+<li><strong>Call Limits</strong>&nbsp;- 10,000 calls/day</li>
+<li><strong>Response Format</strong>&nbsp;- JSON</li>
+<li><strong>Authentication</strong>&nbsp;- OAuth</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Check-In</strong>&nbsp;- No</li>
+<li><strong>Write</strong>&nbsp;- No</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://www.yelp.com/developers/documentation/v2/overview">http://www.yelp.com/developers/documentation/v2/overview</a></p>
+<hr />
+<p><strong><a href="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/yp-developer-center.png"><img class="aligncenter size-medium wp-image-782" title="yp-developer-center" src="http://www.citygridmedia.com/developer/wp-content/uploads/2012/03/yp-developer-center-300x67.png" alt="" width="200" align="right" /></a>YP</strong></p>
+<p><strong>Search Overview -</strong>&nbsp;Providing a places search that can be queried by keyword and longitude/latitude, street address, city, postal code, Neighborhood, state, points of interest or by phone number with a radius. &nbsp;Places details are also provided.</p>
+<ul class="mainlist">
+<li><strong>Database Size</strong>&nbsp;- Could not find</li>
+<li><strong>Store / Cache Data</strong>&nbsp;- No</li>
+<li><strong>Attribution</strong>&nbsp;- Yes</li>
+<li><strong>Multi-Provider IDs</strong>&nbsp;- No</li>
+<li><strong>Meta Data</strong>&nbsp;- No</li>
+<li><strong>Rating / Review</strong>&nbsp;- yes</li>
+<li><strong>Deals / Offers</strong>&nbsp;- Yes</li>
+<li><strong>Revenue Share</strong>&nbsp;- Yes</li>
+<li><strong>Call Limits</strong>&nbsp;- &nbsp;50,000 requests per day.</li>
+<li><strong>Response Format</strong>&nbsp;- XML / JSON</li>
+<li><strong>Authentication</strong>&nbsp;- Key</li>
+<li><strong>Pricing</strong>&nbsp;- Free</li>
+<li><strong>Check-In</strong>&nbsp;- No</li>
+<li><strong>Write</strong>&nbsp;- No</li>
+<li><strong>Delete</strong>&nbsp;- No</li>
+</ul>
+<p><strong>URL</strong>&nbsp;-&nbsp;<a href="http://developer.yp.com/">http://developer.yp.com/</a></p>
+<p>If you see anything missing or incorrect, let me know at @citygridapiteam.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Overview of 11 Places Data APIs - https://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/&title=https://apievangelist.comOverview of 11 Places Data APIs" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/&title=Overview of 11 Places Data APIs&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2012/03/04/overview-of-11-places-data-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2012/03/03/follow-terms-of-service-to-get-increase-in-number-of-api-calls/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2012/03/05/turning-api-forum-posts-into-blog-stories/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

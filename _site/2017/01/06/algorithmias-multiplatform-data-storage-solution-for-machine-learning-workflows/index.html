@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Algorithmia&#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Algorithmia&amp;#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_01_06_at_11.14.26_am.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Algorithmia&amp;#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_01_06_at_11.14.26_am.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Algorithmia&#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows</h2>
+<p><span class="post-date">06 Jan 2017</span></p>
+<p>I've been working with <a href="http://algorithmia.io">Algorithmia</a> to manage a large number of images as part of&nbsp;<a href="http://image.rotoscope.work/">my algorithmic rotoscope side project</a>, and they have a really nice omni-platform approach to allowing me to manage my images and other files I am using in my machine learning workflows. Images, files, and the input and output of heavy object is an essential part of almost any machine learning task, and Algorithmia makes easy to do across the storage platforms we use the most (hopefully).&nbsp;</p>
+<p>Algorithmia provides you with local data storage--pretty standard stuff, but they also allow you to connect your Amazon S3 account, or your Dropbox account, and connect to specific folders, buckets, while helping you handle all of your permissions. Maybe I have my blinders on with this because I heavily use Amazon S3 as me default online storage, and Dropbox is my secondary store, but I think the concept still is worth sharing..</p>
+<p><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_01_06_at_11.14.26_am.png" alt="" width="90%" align="center" /></p>
+<p>This allows me to seamlessly manage the objects, documents, files, and other images I store across my operation as part of my machine learning workflow. &nbsp;Algorithmia even provides you with an intuitive way of referencing files, by allowing each Data URI to uniquely identifies files and directories, with each composed of a protocol and a path, with each service having its own unique protocol:</p>
+<ul>
+<li><strong>data:// </strong>Algorithmia hosted data</li>
+<li><strong>dropbox:// </strong>Dropbox default connected accounts</li>
+<li><strong>S3://</strong> Amazon S3 default connected account</li>
+</ul>
+<p>This approach dramatically simplifies my operations when working with files, and allows me to leverage the API driven storage services I am already putting to work, while also taking advantage of <a href="https://algorithmia.com/algorithms">the growing number of algorithms available to me in Algorithmia's catalog</a>. In my algorithmic rotoscope project I am breaking videos into individual images, producing 60 images per second of video, and uploading to Amazon S3. Once images are uploaded, I can then run Algorithmia's Deep Filter algorithm against all images, sometimes thousands of images, using their text models, or any of the 25+ I've trained myself.&nbsp;</p>
+<p>This approach is not limited to just video and images, this is generic to any sort of API driven machine learning orchestration. Just swap out video and images, with mapping, content, or other resource, and then find the relevant machine learning workflow you need to apply, and get to work. While I am having fun playing with my drone videos and texture filters, the approach can be just as easily applied to streamline any sort of marchine learning workflow.</p>
+<p>One additional benefit of storing data this way is I've found Dropbox to be a really amazing layer for including humans in the workflow. I leverage Amazon S3 for my wholesale, compute grade storage, but Dropbox is where I publish images, videos, and documents that I need to put in front of humans, or include them in the machine learning workflow. I find this gives them a role in the process, in a way that gives them control over the data, images, videos, and other objects, on a platform they are already comfortable with. I'd encourage Algorithmia, and other providers to also consider including Google Drive as part of this--it would go a long way logically connected with the human portion of the wokflows.</p>
+<p>Anyways, I thought Algorithmia's approach to storage was interesting, worth highlight, and something that other providers might consider implementing themselves.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Algorithmia&#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows - https://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/&title=https://apievangelist.comAlgorithmia&#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/&title=Algorithmia&#039;s Multi-Platform Data Storage Solution For Machine Learning Workflows&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/01/06/algorithmias-multiplatform-data-storage-solution-for-machine-learning-workflows/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/01/05/what-i-learned-crafting-api-definitions-for-66-of-the-amazon-web-services/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/01/09/evaluating-a-new-channel-for-publishing-my-bits/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

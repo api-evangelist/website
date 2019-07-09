@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Evangelist </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <section>
+	<div class="content">
+
+	<h3>The API Evangelist Blog</h3>
+	<p>This blog is dedicated to understanding the world of APIs, exploring a wide range of topics from design to deprecation, and spanning the technology, business, and politics of APIs. <a href="https://github.com/kinlane/api-evangelist" target="_blank">All of this runs on Github, so if you see a mistake, you can either fix by submitting a pull request, or let us know by submitting a Github issue for the repository</a>.</p>
+	<center><hr style="width: 75%;" /></center>
+	
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/11/02/truly-launches-age-verification-api/">Tru.ly Launches Age Verification API</a></h3>
+        <span class="post-date">02 Nov 2011</span>
+        <p>
+     <a title="Tru.ly" href="https://tru.ly"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/truly/truly-logo.png" alt="" width="200" align="right" /></a>
+</p>
+<p>
+     <a title="Tru.ly" href="https://tru.ly">Tru.ly</a> just launched an <a title="Tru.ly" href="https://tru.ly">age verification API</a> that authenticates the age of an online user based by cross-referencing user-submitted personal information with data points from Tru.ly verification partners.
+</p>
+<p>
+     Verification is done by matching user-submitted information with that in a national database of government and public data. In order to become verified, specific pieces of information must match. Tru.ly also uses a proprietary technology to flag users who may be trying to game the system.
+</p>
+<p>
+     Using Tru.ly, websites with restricted content such as movies, alcohol and video games can programmatically verify its user’s ages, going beyond using just asking for a birth date.
+</p>
+<p>
+     The API was developed to confirm an age while also promoting the guidelines set forth in the <a href="http://www.coppa.org/coppa">Children Online Privacy Protection Act</a> (COPPA), specifically section 1302-9, which defines verifiable parental consent as any reasonable effort, so as to ensure that the parent is aware of the website’s personal information collection, use, and disclosure practices.
+</p>
+<p>
+     Your can read more on <a title="Tru.lys Age Verification API" href="/admin/Blog/tru.ly/api">Tru.ly’s age verification API</a> at their site.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/11/02/truly-launches-age-verification-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/11/02/opening-up-information-is-not-enough-its-needs-to-be-accessible/">Opening Up Information is Not Enough, Its Needs to be Accessible</a></h3>
+        <span class="post-date">02 Nov 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/fcc/FCC-Logo.jpg" alt="" width="175" align="right" />
+</p>
+<p>
+     The <a title="FCC Open Comission" href="http://www.fcc.gov/encyclopedia/open-commission-meetings-schedule-2011">FCC Open Commission</a> recently proposed to require that television stations make their “public inspection file” available online. The public inspection file is a traditional hallmark of broadcast regulation--a collection of documents that all radio and television stations must maintain and make publicly accessible.
+</p>
+<p>
+     But as the <a title="Technology Liberation Front" href="http://techliberation.com/2011/10/31/fcc-requires-online-public-inspection-files-but-misses-point-of-opengov-data-accessibility/">Technology Liberation Front points out</a>, “availability is not accessibility”, stating:
+</p>
+<blockquote>
+     <em>"If the FCC follows its usual practice of having filers submit PDFs (many of which are often scanned from printed documents), this data may be nearly useless to the small number of researchers who would really benefit from having a large set of public inspection files available online."</em>
+</blockquote>
+<p>
+     This is a common misconception among government agencies, that just publishing a PDF to a web is making the information “accessible”. Sure anyone can download this information, but it makes extracting meaning and value across many television stations so much work, pretty much nobody will do it. Researchers need this type of true access to compare data across stations, and identify larger trends and patterns that exist.
+</p>
+<p>
+     This approach to information disclosure is does not meet the transparency guidelines set by the Obama Administration to implement Open Government by requiring agencies to:
+</p>
+<blockquote>
+     <em>"publish information online in an open format that can be retrieved, downloaded, indexed, and searched by commonly used web search applications. An open format is one that is platform independent, machine readable, and made available to the public without restrictions that would impede the re-use of that information."</em>
+</blockquote>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/fcc/television-icon.png" alt="" width="175" align="right" />
+</p>
+<p>
+     Transparency offers an alternative to regulation that goes all the way back to President Clinton’s Executive Order 12866 (1993) which states "Each agency shall identify and assess available alternatives to direct regulation, including … providing information upon which choices can be made by the public."
+</p>
+<p>
+     Federal agencies requiring business to collect and make information to the public, without also requiring that they submit it in a machine-readable format, creates more bureaucratic, useless government. There needs to be more education of officials who oversee transparency initiatives and make sure that truly understand what is needed to make data open and accessible.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/11/02/opening-up-information-is-not-enough-its-needs-to-be-accessible/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/11/02/open-and-freemium-api-access-and-rate-limits/">Open and Freemium API Access and Rate Limits</a></h3>
+        <span class="post-date">02 Nov 2011</span>
+        <p>
+     <a title="Topsy Labs" href="http://topsylabs.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/topsy/top-labs-logo.jpg" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I’m spending some time getting to know the <a href="http://topsylabs.com/products/api/">Topsy Labs API</a> today. <a title="Topsy Labs" href="http://topsylabs.com/">Topsy Labs</a> offers access to its proprietary metrics, social content, and influence data via a RESTful API. As I was reviewing, their API access and rates limit page caught my eye.
+</p>
+<p>
+     Here is their intro paragraph:
+</p>
+<blockquote>
+     <em>We provide limited, free API access so that you can quickly and easily test the service and confirm the value it will provide to your business. We have three different tiers to match your implementation.</em>
+</blockquote>
+<p>
+     What is interesting, is they not only provide a freemium level they have one better, a free and open tier, provider two introductory API access levels:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>No API Key</strong> - 3,000 queries/day – API calls that do not carry an API key will be limited to 3,000 queries/day.
+     </li>
+     <li>
+          <strong>Free API Key</strong> - 7,000 queries/day – API calls that carry an API key will increase their limit to 7,000 queries/day.
+     </li>
+</ul>
+<p>
+     Then they provide a quick link: <a title="Register to get Started" href="http://manage.topsy.com/app/create">Register to get started</a>
+</p>
+<p>
+     What an inviting, frictionless way to getting started with an API. For those wanting more, they also provide information about obtaining a commercial API key:
+</p>
+<p class="c2">
+     <em>Once you confirm the value of our API, you can get a commercial license, giving you more volume to accommodate your business needs, exposes other valuable API calls, provides you with technical support, and ensures you are guaranteed specific service level parameters.</em>
+</p>
+<p>
+     The Topsy Labs approach provides an interesting model for some API owners to provide limited and free API access to their APIs, enabling developers to quickly and easily test the service and confirm the value before integrating.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/11/02/open-and-freemium-api-access-and-rate-limits/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/11/01/researching-166-apis-for-my-development-team/">Researching 166 APIs for My Development Team</a></h3>
+        <span class="post-date">01 Nov 2011</span>
+        <p>
+     <a title="API Industries" href="/industries/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Tag-Cloud-Industries.png" alt="" width="325" align="right" /></a>
+</p>
+<p>
+     I try to pay attention to how APIs are transforming as many <a title="API Industries" href="/industries/">industries</a> as I can. I usually carve out at least an hour each day, to evalute a specific industry, the APIs in it, trying to understand what each API delivers and how the industry works, while also identifying where the opportunities lie.
+</p>
+<p>
+     Right now I am looking at two areas or industries of APIs:
+</p>
+<ul class="mainlist">
+     <li>
+          <a title="Cloud Storage APIs" href="http://developer.mimeo.com/projects/project_detail.php?ID=36">Cloud Storage APIs</a>
+     </li>
+     <li>
+          <a title="Image and Photo APIs" href="http://developer.mimeo.com/projects/project_detail.php?ID=35">Image and Photo APIs</a>
+     </li>
+</ul>
+<p>
+     Even though I want to be familiar with both these areas, and will write stories on everything I find, my primary goal is to provide the <a title="Mimeo" href="http://www.mimeo.com">Mimeo</a> development team with as much information, about the best document and photo storage APIs available for integrating into our systems.
+</p>
+<p>
+     There are <a title="46 storage APIs" href="http://www.programmableweb.com/apis/directory/1?apicat=Storage">46 storage APIs</a> and <a title="120 photo APIs" href="http://www.programmableweb.com/apis/directory/1?apicat=Photos">120 photo APIs</a> in the <a title="ProgrammableWeb Directory" href="http://www.programmableweb.com/apis/directory/">ProgrammableWeb directory</a>. I went through all of the APIs and pulled out the APIs that were RESTful, had potential for print integration and were popular or were a stable, quality service. I found 19 storage APIs and 12 photo APIs I felt were a fit.
+</p>
+<p>
+     After looking at 166 APIs and pulling out 31 APIs that offered value, you walk away with a pretty good sense of what makes a good API deployment. Anyone who is launching an API should spend time looking at at least 50 other APIs before building their own. API areas should simple, straight the point and employ the <a title="essential API building blocks" href="/2011/03/07/api-area-common-building-blocks/">essential API building blocks</a>.
+</p>
+<p>
+     I’d say the biggest problem with each API is: <em><strong>What the hell does this API do?</strong></em>
+</p>
+<p>
+     Every API should put a really simple explanation of what it does in 150 words or less. Pretend you just have one tweet to use. What value does your API deliver? Make it count!
+</p>
+<p>
+     There are so many other things I consider when evaluating an API, these are a few of my immediate concerns while trying to quickly assess a lot of APIs. Think about it, I’m only dealing with 166 APIs out of 4000 APIs. What will this look like when we have 100K + APIs?
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/11/01/researching-166-apis-for-my-development-team/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/26/twilio-rolling-out-twilio-voice-api-into-europe/">Twilio Rolling Out Twilio Voice API Into Europe</a></h3>
+        <span class="post-date">26 Oct 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/twilio/twiliomap.png" alt="" width="250" align="right" />
+</p>
+<p>
+     Twilio just made their first move into Europe by offering <a title="Twilio Voice Service in the United Kingdom" href="http://www.twilio.com/blog/2011/10/twilio-launches-in-europe-opens-office-london.html">Twilio Voice service in the United Kingdom</a>.
+</p>
+<p>
+     The <a title="Twilio Voice API" href="http://www.twilio.com/api/voice">Twilio Voice API</a> is now available in the UK, allowing developers to launch local phone numbers in the country.  Along with the release Twilio has announced the opening of their first international office based in East London.
+</p>
+<p>
+     The UK launch is the first to go live of five countries currently in Beta including France, Poland, Austria, Denmark and Portugal with several more countries on the way.
+</p>
+<p>
+     Twilio's APIs have proven a favorite of developers, and fast becoming an essential cloud computing service for applications.
+</p>
+<p>
+     The move into Europe will only grow their developer base and the number of applications using the cloud telephony API. Something that traditional telcos should take notice of.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/26/twilio-rolling-out-twilio-voice-api-into-europe/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/26/mashery-now-runs-onpremise-or-in-the-cloud/">Mashery Now Runs On-Premise or in the Cloud</a></h3>
+        <span class="post-date">26 Oct 2011</span>
+        <p>Last week <a title="Mashery" href="http://mashery.com/">Mashery</a> rolled out a new on-premise version of their API management proxy. &nbsp;A solution meant to address a common concern of IT and API owners, that when using Mashery, all of their data and resources run through the Mashery proxy in the cloud. &nbsp;This concern can be a show stopper for many companies.</p>
+<p>Until this last week, Mashery had four API management solutions that all ran in the cloud.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto; padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashery/Mashery-Products-1.png" alt="" width="500" align="center" /></p>
+<p>Now Mashery has separated the proxy portion of their traffic manager into two offerings, one for the cloud and one for on-premise.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto; padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashery/API-Traffic-Cloud-Local.png" alt="" width="500" align="center" /></p>
+<p>Mashery has bundled the new Mashery Cloud and Mashery Local with their existing API Traffic, API Analytics &amp; Reporting and API Portal and are calling it, the Mashery API control center.  Using the API control center you now have the flexibility to deploy on-premise or in the cloud as needed.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto; padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashery/mashery-api-control-center.jpg" alt="" width="500" align="center" /></p>
+<p>Of course the full benefits of the Mashery API Distribution Network which includes scalability, redundancy, PCI compliance, access to global partner network and SLA&rsquo;s are only available for APIs deployed using Mashery Cloud.</p>
+<p>Even though the&nbsp;<a title="Mashery API Control Center" href="http://mashery.com/solution/controlcenter/">Mashery API Control Center</a> is meant to provide flexibility of deployment for API owners, the move is clearly a direct shot at their primary competitor Apigee, who have had an on-premise solution for some time, but <a title="Mashery" href="/serviceproviders/mashery.php">Mashery</a> claims their control center provides much more flexibility than "their competitors".</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/26/mashery-now-runs-onpremise-or-in-the-cloud/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/25/the-api-service-provider-i-missed-vordel/">The API Service Provider I Missed, Vordel</a></h3>
+        <span class="post-date">25 Oct 2011</span>
+        <p><a title="Vordel" href="http://www.vordel.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/vordel/Vordel-API-Management.png" alt="" width="325" align="right" /></a></p>
+<p>I have done a lot of research lately on the <a title="API Service Provider" href="/serviceproviders/">API service provider</a> landscape.  My goal is to understand who provides API delivery and management services, what they offer and help API owners understand the differences.</p>
+<p>I wrote a <a title="roundup of 11 of the API service providers" href="http://blog.programmableweb.com/2011/10/19/api-service-provider-roundup/">roundup of 11 of the API service providers on ProgrammableWeb</a> last week.  I feel like I have a pretty good grasp of all the providers, but of course a new one came out of the woodwork.</p>
+<p>It wasn't a new API service provider like <a href="/serviceproviders/mashape.php">Mashape</a> or <a href="/2011/10/07/easy-api-development-with-apiary-io/">Apiary.io</a>, it is a veteran player in the space, <a title="Vordel" href="http://www.vordel.com/">Vordel</a>.  Vordel has been around for almost 10 years and I would consider them part of the old guard of service oriented architecture (SOA) and web services providers, that existed before web APIs were cool.</p>
+<p>Vordel provides a range of products we recognize with enterprise API deployments including <a title="API Gateways" href="http://www.vordel.com/solutions/api_gateway2.html">API Gateways</a>, <a title="XML Firewalls" href="http://www.vordel.com/solutions/xml_firewall.html">XML firewalls</a> and <a title="XML accelerators" href="http://www.vordel.com/solutions/xml_accelerator.html">accelerators</a>.  Vordel specializes in the legacy system connectors that are needed to bring existing enterprise systems into the new web API game.</p>
+<p>The Vordel API Gateway compares to what I've seen from <a title="Layer7" href="http://www.apievangelist.com/2011/06/17/layer-7-technologies-launches-new-api-portal/">Layer7</a> and <a title="SOA Software" href="/2011/06/17/atmosphere-a-new-api-management-portal/">SOA Software</a>, with the following key features:</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/vordel/Vordel-API-Gateway.png" alt="" width="250" align="right" /></p>
+<ul class="mainlist">
+<li>Protocol translation for REST and SOAP</li>
+<li>Versioning and lifecycle management</li>
+<li>Caching of frequently used calls</li>
+<li>Monitor, log and audit usage</li>
+<li>Secure API from threats</li>
+<li>Service level agreements (SLA)</li>
+</ul>
+<p>Vordel has an impressive client list including the FBI, Coast Guard and Dunn &amp; Bradstreet, and delivers some progressive integrations, like a deployment of their API gateway for <a title="Blackhawk Network" href="http://www.blackhawknetwork.com/">Blackhawk Network</a>, which extends REST services to their business partners like iTunes and Facebook.</p>
+<p>I see all the hardened enterprise services I've seen with existing providers, I think why they may have missed my radar is they lack the open API building blocks like developer portals, app showcases, forums and the self-service partner systems I tend to track on.</p>
+<p>Vordel is new to me, it will take some more time to get to know their products and team like I have with existing API management service providers.  As I learn more about Vordel I will share more information about the company, the services they offer, and what makes them stand out from existing landscape of <a title="API Service Providers" href="/serviceproviders/">API service providers</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/25/the-api-service-provider-i-missed-vordel/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/">How Do I Convince My Managers of the Importance of Having Internal APIs?</a></h3>
+        <span class="post-date">25 Oct 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/puzzle-apis-decoupling.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     One of the ways I develop content for this site is by talking through my day to day experiences as an API Evangelist. I feel that talking through what I’m learning in real-time, is the best way to make it stick, while also sharing with the public. There is a lot of value that comes out of my daily learning, and it would be wrong to not share this.
+</p>
+<p>
+     I had someone approach me on LinkedIn today and ask:
+</p>
+<blockquote>
+     <em>I'm trying to convince my colleagues and managers on the importance of having internal API, not just as a prologue to public API, but also as a way to have cleaner, better-understood interfaces internally for our developers. Do you have any thoughts or tips on the subject?</em>
+</blockquote>
+<p>
+     <a title="Internal evangelism" href="http://apievangelist.com/2011/09/29/api-evangelism-is-equal-parts-internal,-partner-and-public-outreach/">Internal evangelism</a> is a big part of my role, and I know its something that other API advocates face as they are trying to sell the concept of APIs to decision makers within their company. Testing the water with APIs internally is the best way to get started, and learn what goes into planning, deploying and managing an API.
+</p>
+<p>
+     When trying to sell your bosses on APIs for internal use, I would start with:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>Decoupling</strong> - Deploying resources and your data within your company as individual RESTful resources decouple them, allowing them to consumed and managed independently. This kind of of decoupling of data and resources enable more agile scaling, migration and integration into a wide range of organizations and applications across your company. Consider how <a title="consider how API enabled Netflix to move from the data center to the cloud" href="http://blog.programmableweb.com/2011/06/20/apis-power-netflix%E2%80%99s-move-to-cloud-enabling-world-domination/">APIs have enabled Netflix to migrate from the data-center to the cloud</a>, with unprecedented growth simultaneously, and also enabling them to grow globally.
+     </li>
+     <li>
+          <strong>Product Management</strong> - Allocating your companies data and resources as independent RESTful APIs will simplify your product management allowing them to be defined, launched, deployed and even killed off independently of each other. This type of allocation will allow very granular ownership of each product, allowing product managers to own specific APIs or groups of API products, and scale product ownership with new managers as needed.
+     </li>
+     <li>
+          <strong>Organization Interoperability</strong> - APIs enable much more flexible collaboration between different departments that may be geographically or organizational distant. With a growing virtual workforce, this type of interoperability will be key to companies being able to staff up and meet the demands of their growing businesses.
+     </li>
+     <li>
+          <strong>Multi-Use</strong> - APIs will enable your companies resources and data to be used across multiple implementations from internal applications, websites, mobile and tablet devices without building out separate systems.
+     </li>
+</ul>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/blueprints.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     That is where I’d start with selling colleagues and managers on the importance of having internal APIs. APIs can introduce flexibility and agility not only into your IT and development operations, but also introduce a <a title="RESTful Business Architecture" href="/2011/04/09/restful-business-architecture/">RESTful business architecture</a> into your company.
+</p>
+<p>
+     In addition to the benefits APIs will introduce internally, all of this will set the stage for improved business development with your partners and your company will be primed, if and when you are ready to open up your APIs to the public.
+</p>
+<p>
+     <strong>UPDATE:</strong>
+</p>
+<p>
+     The person who contacted me on LinkedIn got back to me with this:
+</p>
+<blockquote>
+     <em>Thank you. I showed your post to one of the managers here and it actually made him changed his mind. The next step it to persuade we need to use vendors such as 3Scale, Apigee or Mashery instead of building it all by ourselves. </em>
+</blockquote>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/25/a-walk-through-datagov-with-some-thoughts-on-whats-next/">A Walk Through Data.gov with Some Thoughts on Whats Next</a></h3>
+        <span class="post-date">25 Oct 2011</span>
+        <p><a href="http://www.data.gov/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/Datagov.png" alt="" width="250" align="right" /></a></p>
+<p><a href="http://www.data.gov/" target="_blank">Data.gov</a> for me is like being a kid in a candy store.  My experience with data goes back to High School when I got my first programming job right out of Mr. Smiths computer class.  I built Cobol database for use by school districts in the State of Oregon, jump-starting my career as a programmer.  Ever since I&rsquo;ve had an obsession with data, and specifically with government data, and <a title="trying to make sense how government operates" href="http://oregonbudget.laneworks.net/" target="_blank">trying to make sense of how our government operates</a>.</p>
+<p>I have been playing with various data-sets at Data.gov since they launched, but today I finally spent some time evaluating their approach to delivering the Data.gov ecosystem.  It is a pretty robust approach to opening up our government, agency by agency.</p>
+<p>The Data.gov sites centers around data-sets available by agency, category and topics, with the ability to view as raw data, files &amp; documents, charts, maps, calendars, filtered views and interactive data-sets.  Data is made available in a wide range of formats including .csv, .xls, .xml, .rdf, .kml and .shp files when each format applies.</p>
+<p>Data.gov is not just for developers, many of the data-sets are available in interactive formats, as well as a wide variety of applications, making the data accessible and usable by anyone.   A couple examples of applications include <a title="product recalls" href="http://explore.data.gov/Wholesale-and-Retail-Trade/All-Product-Recalls/ezdk-xtg7" target="_blank">product recalls</a>, <a title="travel warnings" href="http://explore.data.gov/National-Security-and-Veterans-Affairs/Travel-Warnings/hkvp-3krc" target="_blank">travel warnings</a> and <a title="hospital compare" href="http://explore.data.gov/Social-Insurance-and-Human-Services/Hospital-Compare/g4a8-s9zu" target="_blank">hospital compare</a>.  What really makes these apps valuable, is the data-sets are usually available alongside, so if you want to dive in deeper and use the data in other ways, you can.</p>
+<p>Since Data.gov is a the top level site for the open data initiative, there is an obvious need to break it down into some smaller communities.  These communities include:</p>
+<p><a title="Energy" href="http://www.data.gov/communities/energy" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/Energy-Data-Gov.png" alt="" width="325" align="right" /></a></p>
+<ul class="mainlist">
+<li><strong><a title="Energy" href="http://www.data.gov/communities/energy" target="_blank">Energy</a></strong> - Data, tools, apps, challenges, resources, blog, forums centered around energy data, meant to facilitate public discussion of and awareness on our Nation&rsquo;s energy activity.</li>
+<li><strong><a title="Health" href="http://www.data.gov/communities/health" target="_blank">Health</a></strong> - Data, apps, blog and forum centered around health and health care, intended to help the public make better informed decisions about their health.</li>
+<li><strong><a title="Law" href="http://www.data.gov/communities/law" target="_blank">Law</a></strong> - Data and tools providing administrative decisions, case filings, legal interpretations and agency directives from the Executive Branch for legal professionals, researchers, the business community and the general public.</li>
+</ul>
+<p>The energy, health and law communities at Data.gov represent different areas of our government.  I&rsquo;m assuming they will add education, with data from <a title="data.ed.gov" href="http://data.ed.gov/" target="_blank">data.ed.gov</a> as a community in the near future.  There is a &ldquo;learn&rdquo; section off the home page of Data.gov, but it doesn&rsquo;t have the community building tools the other areas have, with just links to external sites and resources.</p>
+<p>There are two other communities, that are more focused on technology, as opposed to areas of our government:</p>
+<ul class="mainlist">
+<li><strong><a title="Open Data" href="http://www.data.gov/communities/opendata" target="_blank">Open Data</a></strong> - Blog, forum and Twitter stream dedicate to the concept of open data and the government, and the community being built around it.</li>
+<li><strong><a title="Semantic Web" href="http://www.data.gov/communities/semantic" target="_blank">Semantic Web</a></strong> - Apps, blog and forums dedicated to evolving linked data amongst the Data.gov open data initiative. </li>
+</ul>
+<p><a title="Environmental and Compliance Data" href="http://explore.data.gov/Geography-and-Environment/EPA-Enforcement-and-Compliance-History-Online-ECHO/c8kh-iqih" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/Environmental-Compliance-Data.png" alt="" width="325" align="right" /></a></p>
+<p>There is one more community called <strong>"<a title="Restore the Gulf" href="http://www.data.gov/restorethegulf" target="_blank">Restore the Gulf</a>"</strong>, which is focused around the specific issue that we are facing down in the Gulf of Mexico.  Hopefully it is the start of a third type of Data.gov community that can address various issues our country faces, pulling together data, tools and resources to build a community to address the issue.</p>
+<p>I can see the work that went into building community around the areas of government, technology and issues, but as its coming together it still looks a little disjointed, with learning not really coming together as an actual education community and &ldquo;developers corner&rdquo; off the home page ending up linking to the open data community, creating a little redundancy.  Its a great effort to bring together community, with just a little more structure, and presence, the site can really deliver on this vision.</p>
+<p>There are other sections tying together the site like an <a title="about page" href="http://www.data.gov/about" target="_blank">about page</a>, <a title="frequently asked questions" href="http://www.data.gov/faq">frequently asked questions</a> and <a title="contact information" href="http://www.data.gov/contact">contact information</a>.   Data.gov also addresses <a title="data policy" href="http://www.data.gov/datapolicy">data</a> and <a title="privacy policy" href="http://www.data.gov/privacypolicy">privacy</a> with policy pages and even speaks to <a title="accessibility" href="http://www.data.gov/accessibility">accessibility</a> which is something you don&rsquo;t see in many data and API ecosystems.  There are also <a title="tutorials" href="http://www.data.gov/developers#TB_inline?height=200&amp;width=400&amp;inlineId=tb_external">tutorials</a>, <a title="videos" href="http://www.data.gov/developers#TB_inline?height=200&amp;width=400&amp;inlineId=tb_external">videos</a> and a <a title="whats new" href="http://www.data.gov/whatsnew">whats new</a> section providing other resources to get everyone understanding the vision, how to use the resources available, as well as keeping users engaged with any new announcements.</p>
+<p>The site does a great job showcasing applications and important data-sets with a gallery, also using feature displays on the home page and within community pages.  These are great for exposing some of the great data-sets and applications available within the site.  This kind of discovery is very important to introducing users to whats available without feeling overwhelmed by the large amounts of data available.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/Featured-Tool.png" alt="" width="250" align="right" /></p>
+<p>Overall Data.gov does an amazing job of delivering huge amounts of quality government data-sets in very usable formats, making it interactive and providing applications for working with the data.  There are also APIs available for accessing the data, which is extremely important in empowering developers to build web an mobile applications, crunch data and build visualizations that shedding light into how our government operates, increasing participation.  The Data.gov platform and APIs are delivered by a service provider called <a title="Socrata" href="http://www.socrata.com/" target="_blank">Socrata</a>.  I will provide more coverage of the APIs and Socrata after I work with them a little more, and gain a better understanding of how they work.</p>
+<p>A lot of effort has been put into building community around the Data.gov initiative, but as I mentioned in my last post about <a title="Bringing Awareness to Data.Gov with Grassroots Evangelism" href="/2011/10/24/bringing-awareness-to-data-gov-with-grassroots-evangelism/" target="_blank">bringing awareness to Data.gov with grassroots evangelism</a>, I think there is a lot more to do in making sure people everywhere are aware Data.gov exists and do a little more to bring them to the site, by reaching out to the online communities where they already exists, like <a title="Github" href="http://github.com" target="_blank">Github</a>, <a title="Stack Exchange" href="http://stackexchange.com/" target="_blank">Stack Exchange</a> and <a title="Hacker News" href="http://news.ycombinator.com/" target="_blank">Hacker News</a>, participating in their community, listening, joining and taking part in their world.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/digital-town-hall.png" alt="" width="250" align="right" /></p>
+<p>There is a lot that can be done online to create awareness around the resources our government is making available, but a robust online presence is not enough.  There needs to be a grassroots effort to bring Data.gov to every small town, engaging the public within each community via schools, libraries and other community gathering places--make them aware of the rich resources our government has exposed and challenge them to come together and help us find the answers that make our government operate more efficiently.</p>
+<p><a href="http://www.data.gov/" target="_blank">Data.gov</a> is a an excellent start, next we need to increase our governments presence online and offline, creating the feedback loop that will bring developers, data scientists and our brightest minds together within the communities available at Data.gov and beyond.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/25/a-walk-through-datagov-with-some-thoughts-on-whats-next/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/24/incentivize-your-api-developers-to-contribute-with-lower-pricing/">Incentivize Your API Developers to Contribute with Lower Pricing</a></h3>
+        <span class="post-date">24 Oct 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/content-api-monetization.png" alt="" width="250" align="right" /></p>
+<p>As the number of APIs grow, the number of ways in which API owners control and incentivize their developers ecosystems evolves.    <a title="APIs are your business development platform" href="/2010/10/07/biz-dev-2-0/">APIs are your business development 2.0 platform</a>, and it is up to you to tailor your services to incentivize your developers as well as control API usage to meet your business goals.</p>
+<p>One emerging way to control API consumption to meet your business goals is through a balance between pricing and <a title="Terms of Service" href="/buildingblocks/terms_of_use__conditions.php">terms of service (TOS)</a>.    By offering branding opportunities to developers that they can deploy alongside the content and resources they consume via your API, you can easily turn your developer community into an extension of your marketing department.</p>
+<p>Price breaks can be offered to developers who extend your brand, encouraging them to build a business around your API content and resources as long as it adds value to your brand.  API consumers who opt not to take part in branding, can be charged more, adding value to your company purely as revenue opportunity.</p>
+<p><a title="Branding" href="/buildingblocks/branding.php">Branding</a> and pricing controls are a growing way to ensure your API adds value to your company either as revenue or brand syndication, but another way some content and data API providers are finding success, is through a contribution incentive.  Just like brand extension, API contribution gives developers an opportunity to participate deeper and receive price breaks, while also be encouraged to contribute content back to an API, enriching content and add valuable information back to your companies API.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-monetization.jpg" alt="" width="250" align="right" /></p>
+<p>Writeable APIs can be made available allowing developers to contribute user reviews, comments, annotations or even correct and update content that originated from your company. Proper service and key management around your API,  allows you to track which users contribute content back to your system.  As a result of this participation you can offer further price breaks in the form of credits, or even end up paying customers for their content contributions.</p>
+<p>Incentivizing and controlling API usage through brand, pricing and contribution may not work for every API, but it offers some interesting opportunities for publishers and API owners to develop new forms of self-service, business development relationships around their API ecosystems.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/24/incentivize-your-api-developers-to-contribute-with-lower-pricing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/24/bringing-awareness-to-datagov-with-grassroots-evangelism/">Bringing Awareness to Data.Gov with Grassroots Evangelism</a></h3>
+        <span class="post-date">24 Oct 2011</span>
+        <p>
+     <a title="Data.gov" href="http://explore.data.gov/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/Datagov.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I just finished a four week roadshow that included three <a title="Startup Weekend" href="http://startupweekend.org/">Startup Weekend</a> EDU events -- one in Seattle, one in San Francisco and one in Washington DC -- as well as two versions of the <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs conferences</a> -- one in San Francisco and one in New York City.
+</p>
+<p>
+     It might not seem at first glance that these events had much in common. During the Startup Weekends, business people, teachers and developers rallied to build startups that focused on solving problems in education, while the Business of APIs conferences showcased businesses telling their stories about how opening up data and APIs have transformed them and made them more competitive within their respective industries.
+</p>
+<p>
+     Both events re-enforced for me the importance of both on-the-ground and online evangelism. Both are necessary for ensuring the success of open data and APIs.
+</p>
+<p>
+     At both series of events, I encountered many people who had never heard of <a title="Twilio" href="http://www.twilio.com">Twilio</a> or <a title="Amazon Web Services" href="http://aws.amazon.com/">Amazon Web Services</a> -- two API providers that are leaders in their industries (as well as were sponsors at the events). Both Twilio and Amazon Web Services provide essential cloud resources that can be used by any company and developer, but without the proper awareness and education, these resources go unused. Both companies are active in sponsoring start-up weekends, hackathons, codeathons, meetups and the like, but Twilio does much better at having "boots on the ground" at these events. This presence is one of the things that has made Twilio a developer favorite and, in turn, spawned thousands of apps and many start-ups. But clearly they still have work to do to get their name "out there," particularly at events outside of Silicon Valley.
+</p>
+<p>
+     But having someone on-the-ground isn't always enough. At the Startup Weekend EDU events, for example, there were several people present from the Department of Education and to their credit, they spent the entire time engaging and listening to business people, teachers and developers about what they needed. That was great to see, but at the same time, but there were no materials there about the amazing data and APIs provided by the Department of Education at data.ed.gov and no real encouragement of developers to take advantage of these things.
+</p>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/data-gov/data_gov_open.png" alt="" width="250" align="right" />
+</p>
+<p>
+     It seems as though we are missing the opportunity to help people become familiar with the various resources that the <a title="Department of Education" href="http://data.ed.gov/">Department of Ed</a> (along with its parent <a title="Data.gov" href="http://explore.data.gov/">data.gov</a> site) offers. As code-athons and other startup-building events continue to spread, it seems a shame to not take better advantage of these tools.
+</p>
+<p>
+     The tech companies do send out their developer advocates and evangelists to "get the word out." Facebook, Google, Twitter, Twilio and the like all have an <a title="army of these sorts of people" href="http://code.google.com/team/">army of these sorts of people</a> to help others work with their data and their APIs.
+</p>
+<p>
+     Now that the government has opened its data, it seems as though the missing piece might be this evangelism element -- taking the open data on the road, from town to town, making the wealth of resources available at <a title="data.gov" href="http://explore.data.gov/">data.gov</a> known and challenging some of our brightest minds to get involved to make our country a better place.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/24/bringing-awareness-to-datagov-with-grassroots-evangelism/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/22/open-access-to-your-drupal-site-with-a-content-api/">Open Access to Your Drupal Site with a Content API</a></h3>
+        <span class="post-date">22 Oct 2011</span>
+        <p>
+     <a title="Seaborne Inc." href="http://seabourneinc.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/seabourne-inc/Seabourne.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     Last spring when I started writing for <a title="ProgrammableWeb" href="http://blog.programmableweb.com">ProgrammableWeb</a>, my first post was "<a title="Everything Site Should Be An API" href="http://blog.programmableweb.com/2011/04/06/everything-should-be-an-api-says-fcc/">Everything Should Be an API," Says FCC.</a> The story was about the new FCC web site, that was built entirely on top of RESTful APIs using the Drupal platform.
+</p>
+<p>
+     Since that post, I met the company behind the <a title="FCC Website" href="http://www.fcc.gov/">FCC website</a> redesign, <a title="Seaborne Inc." href="http://seabourneinc.com/">Seabourne Inc.</a>, which builds some pretty innovative solutions using Drupal, employing APIs in everything they do. As part of the FCC.gov website project, Seabourne Inc. built a module for Drupal that leverages the platform for content publishing, powered by APIs.
+</p>
+<p>
+     <a title="Seaborne Inc." href="http://www.fcc.gov/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/fcc/FCC-Logo.jpg" alt=" width=" width="135" align="right" /></a>
+</p>
+<p>
+     I spoke with Mike Reich, the CEO of Seabourne Inc. about APIs, he is as passionate about APIs as I am, but has identified the best place to start when it comes to opening up the government, is with content APIs instead of just focusing on data APIs.
+</p>
+<p>
+     He’s right. In the rush to open up government data, many of us overlook the huge archives and content generated on a daily basis by our government. Recently, many government agencies are adopting Drupal as a content management platform, and using Seaborne’s Content API for Drupal, any agency or organization can make content openly accessible via an API.
+</p>
+<p>
+     Their Content APIs can instantly make content from an agencies website available for other agencies to access in a self-service way, reducing the resources needed for inter-departmental coordination. In addition to making external coordination more efficient, it can make rolling out separate web sites, applications and mobile apps much more cost efficient as well.
+</p>
+<p>
+     <a title="Seaborne Inc." href="http://seabourneinc.com/projects/contentapi/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/seabourne-inc/Content-API-Drupal-1.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     <a title="Content APIs" href="http://seabourneinc.com/projects/contentapi/">Content APIs</a> can also open content to the public allowing media, companies and even individuals to pull content and mash it up, evolve, derive meaning and stories from it that a government agency may not have time or even perspective to do. In my opinion this type of content access by the public truly reflects the next generation of democracy, allowing anyone to get involved in government, even demonstrating better ways to understand how government operates.
+</p>
+<p>
+     You can access the <a title="Content API for Drupal" href="http://seabourneinc.com/projects/contentapi/">Content API for Drupal</a> on the Seaborne Inc. website, I’m installing a prototype Drupal website so I can play with the API, helping me understand whats possible when using Drupal in conjunction with the Content API.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/22/open-access-to-your-drupal-site-with-a-content-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/20/selfservice-and-freemium-are-important-to-the-success-of-apis/">Self-Service and Freemium Are Important to the Success of APIs</a></h3>
+        <span class="post-date">20 Oct 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/self-service.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     At a recent presentation at the <a title="Business of APIs Conference in San Francisco" href="http://www.apievangelist.com/2011/10/06/business-of-apis-conference-in-san-francisco-wrapup/">Business of API conference in San Francisco</a>, Twilio CEO Jeff Lawson argued that two of the ways APIs can be successful in courting new developers are by being self-service and by having a "freemium" option. Both of these features empower developers to start using an API right away, without entering a credit card, talking to customer service, sales or having to wait for budget approval. They can just sign-up, get a key and start hacking!
+</p>
+<p>
+     This shouldn't just be a model for APIs targeting the public developers; it can work with the enterprise as well. This model would allow enterprise developers to get up and running using an API quickly, building their own working prototypes, and in turn, using this prototype to make a case for why a company should use an API -- all without talking to their boss or getting approval.
+</p>
+<p>
+     Of course, an API can still have a traditional sales funnel, where developers can get support, pay for premium services, and engage to get appropriate SLAs. But by providing both a self-service and a freemium option, there is the potential to reach new customers -- customers that may not respond to a traditional enterprise software sales cycle.
+</p>
+<p>
+     I strongly believe that both self-service and freemium have a place with all APIs. These help expose what is needed for developers to see the value an API delivers so they can prove this value to their company; then later, they can engage sales and business departments to strengthen and harden the relationship.
+</p>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/freepremium.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     This approach is gaining acceptance and can be seen across many of the successful APIs in the space, like Twilio Self-Service and freemium pricing are things that all the major API service providers (<a title="3Scale" href="/serviceproviders/3scale.php">3Scale</a>, <a title="Mashery" href="/serviceproviders/mashery.php">Mashery</a> and <a href="/serviceproviders/apigee.php">Apigee</a>) endorse when they advise their customers during setup of their own APIs.
+</p>
+<p>
+     APIs open entirely new channels, attract new customers, and encourage the development of new ways of doing business you could never even imagine on your own! Right? Yet only 3Scale and Mashape actually offer truly self-service, freemium options for their API management platforms. At <a href="http://www.mimeo.com">Mimeo</a> I've deployed entirely new APIs I can't get internal resources for, and I've done so using both 3Scale and Mashape. With their platforms I've built new <a title="document printing APIs" href="http://mimeoconnect.3scale.net/">document printing APIs</a>. I launched these without the help of IT. By doing so, I’m attracting new users and in turn evangelizing internally at <a href="http://www.mimeo.com">Mimeo</a> to get greater buy-in and budgets -- all without engaging with sales, spending money, or getting my budget' approval.
+</p>
+<p>
+     The enterprise can learn a lot from open APIs. Idon't think the traditional enterprise sales process is all bad; it has its place, but it doesn't offer the transparency that is needed in many cases, and where I think many businesses feel they are protecting their intellectual property and delivering a stronger product, they are actually missing the boat on a lot of new business.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/20/selfservice-and-freemium-are-important-to-the-success-of-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/18/considerations-when-planning-endpoints-for-your-restful-api/">Considerations When Planning Endpoints for your RESTful API</a></h3>
+        <span class="post-date">18 Oct 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Tag-Cloud-REST-URL.png" alt="" width="325" align="right" />
+</p>
+<p>
+     Someone asked me recently for some advice regarding what they should consider when constructing the URL and endpoints for their RESTful API.  I thought I’d share the advice I passed along.
+</p>
+<p>
+     I don't intend this to be a comprehensive guide to building URLs for a true REST API, just some things to consider for the newbie API product manager who may not have a hardcore REST developer on their team.
+</p>
+<p>
+     When planning your endpoints for a RESTful API, there are 3 things I tell people to consider:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>Domain</strong> - Put your API at a separate domain or sub-domain than your website.  It will make it easier to migrate and scale, and your IT team will thank you.  For example: 
+          <ul class="mainlist">
+               <li>
+                    <a href="https://api.yourdomain.com">https://api.yourdomain.com</a>
+               </li>
+          </ul>
+     </li>
+     <li>
+          <strong>Versioning</strong> - Make sure and consider the versioning of your API in your URL structure.  How you version will depend on the preferences of your dev team, the most common patterns I see are a v preceding the version number of your API or using year and month of the version.  How often you release may impact your decision.  For example:
+          <ul class="mainlist">
+               <li>
+                    <a href="https://api.peoplebrowsr.com/v1/"><span>https://api.yourdomain.com/v1/</span></a>
+               </li>
+               <li>
+                    <a href="https://api.peoplebrowsr.com/2011/11/"><span>https://api.yourdomain.com/2011/11/</span></a>
+               </li>
+          </ul>
+     </li>
+     <li>
+          <strong>Resources</strong> - The next part of your URL should be the resource of what you are offering.  Make it self-describing of the resource you are offering through the endpoint.  Make it reflect what a developer is looking to consume when using your API.  For example:
+          <ul class="mainlist">
+               <li>
+                    <a href="https://api.yourdomain.com/v1/articles/"><span>https://api.yourdomain.com/v1/</span><span>article/</span></a>
+               </li>
+               <li>
+                    <a href="https://api.yourdomain.com/v1/users/"><span>https://api.yourdomain.com/v1/</span><span>user/</span></a>
+               </li>
+          </ul>
+     </li>
+</ul>
+<p>
+     How you define your API resources is very important, its something you will have to live with forever.  Make your resource descriptions count, your developers will thank you.
+</p>
+<p>
+     The other thing I strong urge is to offer SSL for your API from day one.  Its not a huge problem down the road, but any change will come with issues, and many of your developers will request and even require SSL in some cases, before they integrate with your API.
+</p>
+<p>
+     That is all the general advice I have, how you describe your resources is up to you, and how RESTful you make the rest of your API is up to your dev team.  I don't get involved in the religious REST arguments, I leave that for the experts.  I just wanted share some of the common things you should consider when constructing your URL endpoints.
+</p>
+<p>
+     Let me know anything I'm missing you REST geeks!
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/18/considerations-when-planning-endpoints-for-your-restful-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/18/business-of-apis-conference-in-new-york/">Business of APIs Conference in New York</a></h3>
+        <span class="post-date">18 Oct 2011</span>
+        <p>
+     <a title="Business of APIs Conference" href="http://apiconference.com/"><img src="http://kinlane-productions.s3.amazonaws.com/events/Business-of-APIs-Conference-2011.png" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     I am getting ready for the <a title="Mashery" href="http://www.mashery.com">Mashery</a>, <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs Conference</a> in New York tomorrow.
+</p>
+<p>
+     BAPI is in its 5th year of bringing together the big players in the API space, to talk about their companies API strategies, and their efforts to reinvent their businesses using APIs.
+</p>
+<p>
+     The Business of APIs San Francisco two weeks ago was a very rewarding experience, you can checkout my <a title="wrap-up for the event" href="http://www.apievangelist.com/2011/10/06/business-of-apis-conference-in-san-francisco-wrapup/">wrap-up of the event</a> for more details.
+</p>
+<p>
+     There are 18 speakers at the New York event:
+</p>
+<div>
+     <ul class="mainlist">
+          <li>
+               <strong>Andrew Nicklin</strong> - Director Enterprise Architecture at New York City Department of Information Technology &amp; Telecommunications
+          </li>
+          <li>
+               <strong>Matt Thomson</strong> - VP of Platform at Klout
+          </li>
+          <li>
+               <strong>Brian Fife</strong> - Director of Technology Alliances at Rovi Corporation
+          </li>
+          <li>
+               <strong>Arjun Moorthy</strong> - VP of Business Development at Hubspot
+          </li>
+          <li>
+               <strong>Kence Anderson</strong> - Director of Ad Products at Flite
+          </li>
+          <li>
+               <strong>Frank Denbow</strong> - Founder at Startup Threads, Songsicle
+          </li>
+          <li>
+               <strong>Jesse Emery</strong> - Co-founder at YourTrove 
+          </li>
+          <li>
+               <strong>Andrew Mager</strong> - Developer Community Manager at Spotify
+          </li>
+          <li>
+               <strong>Reeve Thompson</strong> - Co-CEO at Cabana
+          </li>
+          <li>
+               <strong>Jean-Luc David</strong> - Senior Product Manager at YellowAPI
+          </li>
+          <li>
+               <strong>Erik Bursch</strong> - Director Operations and Content Systems at USA Today
+          </li>
+          <li>
+               <strong>John Donovan</strong> - Founder at Daylife
+          </li>
+          <li>
+               <strong>Ryan Bloom</strong> - Senior Director Engineering at Lulu.com
+          </li>
+          <li>
+               <strong>Ryan Patrick</strong> - Director of Product Development at Dunn &amp; Bradstreet/Hoover’s
+          </li>
+          <li>
+               <strong>Paul Gelb</strong> - VP Mobile Practice Lead at Razorfish
+          </li>
+          <li>
+               <strong>Larry Glenn</strong> - Senior Director Application Development at Saks.com
+          </li>
+          <li>
+               <strong>Justin Kerr Sheckler</strong> - Developer API Lead at Etsy.com
+          </li>
+          <li>
+               <strong>Jason Guenther</strong> - VP of Technology and Product Development at ESPN
+          </li>
+     </ul>
+     <p>
+          A couple of the companies talking, also spoke at BAPI in San Francisco, but they've invited a different person to give the talk, so there shouldn't be much redundancy.  
+     </p>
+     <p>
+          BAPI NYC is from 1:00PM – 6:00PM at the <a title="Hudson Theatre" href="http://www.millenniumhotelnyc.com/hudson-theatre/">Hudson Theatre</a> in New York. The <a title="New York event October 19th" href="http://www.eventbrite.com/event/2025693905?ref=ebtn">New York event</a> is the second in the Business of APIs series, with the third in <a title="London event October 25th" href="http://www.eventbrite.com/event/2025746061?ref=ebtn">London, October 25th</a>.
+     </p>
+     <p>
+          <a title="Registration" href="http://apiconference.com/register/">Registration</a> is still open for NYC and London, I recommend getting over there.
+     </p>
+</div>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/18/business-of-apis-conference-in-new-york/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/14/usa-today-announces-commercial-terms-of-use-for-its-api/">USA Today Announces Commercial Terms of Use for Its API</a></h3>
+        <span class="post-date">14 Oct 2011</span>
+        <p>
+     <a title="USA Today" href="http://developer.usatoday.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/usatoday/USA-Today-Logo.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     <a title="USA Today" href="http://developer.usatoday.com/">USA Today</a> has announced that they now support the commercial access of articles, reviews and census data through their content APIs.
+</p>
+<p>
+     Any developer can request a key, and start making calls for free, with initial calls being restricted at a default rate. But as applications prove successful they are now willing to increase usage caps on a case-by-case basis. USA Today doesn’t describe what its commercial pricing will be, but they state in their <a title="Terms and Conditions" href="http://developer.usatoday.com/API_Terms_of_Use">terms and conditions</a>:
+</p>
+<blockquote>
+     If USAT decides to charge a fee for use of or access to the USAT APIs, such fees will be disclosed to you prior to USAT charging such fees to you.
+</blockquote>
+<p>
+     Every couple of months USA Today rolls out a new API or evolution in their business model, as they get more comfortable with their API. This latest move seems to seems to be centered around encouraging commercial of its census data, which the NY Times makes available for commercial use as well.
+</p>
+<p>
+     Its interesting to watch these media giants evolve their business models using APIs to make themselves more competitive.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/14/usa-today-announces-commercial-terms-of-use-for-its-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/14/new-data-api-around-nasa-data-sets/">New Data API Around NASA Data Sets</a></h3>
+        <span class="post-date">14 Oct 2011</span>
+        <p>
+     <a title="NASA just launched a new Data API" href="http://open.nasa.gov/blog/2011/10/12/announcing-the-data-nasa-gov-api/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/nasa/open-nasa.png" alt="" width="225" align="right" /></a>
+</p>
+<p>
+     <a title="NASA just launched a new Data API" href="http://open.nasa.gov/blog/2011/10/12/announcing-the-data-nasa-gov-api/">NASA just launched a new Data API</a> around its online archive of <a title="NASA data sets" href="http://data.nasa.gov/">NASA data sets</a>, that they launched back in August. The data.nasa.gov API provides a RESTful interface, with responses in JSON for the NASA data archives.
+</p>
+<p>
+     The new <a title="NASA Data API" href="http://data.nasa.gov/api-info/">NASA Data API</a> is part of the ongoing <a title="NASA Government Data Plan" href="http://www.nasa.gov/open/plan/index.html">NASA Open Government Plan</a>, providing access to data sets in a variety of categories including aeronautics, climate, earth science, engineering, institutional, life sciences, operations and space sciences.
+</p>
+<p>
+     There is a wealth of data available at data.nasa.gov. The APIs make it easier to access this data, but they are just data APIs. There is a huge opportunity for someone to abstract more meaningful, focused APIs delivering just photos of the moon, weather or climate change related data.
+</p>
+<p>
+     <a title="NASA just launched a new Data API" href="http://open.nasa.gov/blog/2011/10/12/announcing-the-data-nasa-gov-api/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/nasa/nasa-data-gov-old-computer.png" alt="" width="225" align="right" /></a>
+</p>
+<p>
+     For example, a developer looking to get earth, moon and other planetary photographs, can find what they are looking for in the data.nasa.gov data sets, but they have to navigate the different categories and build the proper requests to get exactly what they are looking for. Some developers are willing to go through this trouble, while others are not, and will give up quickly.
+</p>
+<p>
+     There is opportunity for someone to deploy a earth photo API, moon photo API and mars photo API for example. These APIs would provide quick access API interfaces around specific and meaningful collections. Developers could quickly build calls pulling the information they need, while non-developers could also syndicate and share using widgets and other embeddable tools.
+</p>
+<p>
+     Its great to see government agencies not only making data available, but deploying APIs making the data easier to access. But there are more opportunities to derive more meaning, and identify new opportunities around these rich archives of data.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/14/new-data-api-around-nasa-data-sets/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/09/getting-ready-for-the-xcommerce-innovate-developer-conference-in-san-francisco/">Getting Ready for the X.Commerce Innovate Developer Conference in San Francisco</a></h3>
+        <span class="post-date">09 Oct 2011</span>
+        <p>
+     <a href="http://www.innovate-conference.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/xcommerce/x-commerce-innovate-developer-conference-2011.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I'm getting ready for the <a href="http://www.innovate-conference.com/">X.Commerce Innovate Developer Conference 2011</a>, at Moscone Center in San Francisco this week.
+</p>
+<p>
+     <a href="https://www.x.com/">X.Commerce</a> is the merging of <a href="https://www.x.com/developers/paypal">Paypal</a>, <a href="https://www.x.com/developers/ebay">eBay</a> and <a href="http://www.magentocommerce.com/">Magento's</a> developer ecosystems into a single developer community empowering the next generation of merchants who need to operate in the world of global, multi-channel commerce.
+</p>
+<p>
+     The APIs that make up X.Commerce are:
+</p>
+<ul class="mainlist">
+     <li>
+          <a href="https://www.x.com/developers/paypal"><strong>Paypal</strong></a> - Website Payment Pro, Express Checkout and Adaptive Payments are a a couple of Paypals Payment APIs that X.Commerce developers can take advantage of.
+     </li>
+     <li>
+          <a href="https://www.x.com/developers/ebay"><strong>eBay</strong></a> - The hardened suite of search, trading and buying APIs from the popular auction platform that was one of the <a title="early pioneers of the web API space" href="/2011/01/26/history-of-apis-ebay/">early pioneers in the web API space</a>.
+     </li>
+     <li>
+          <a href="http://www.magentocommerce.com/"><strong>Magento</strong></a> - The API allows access to the Customer, Catalog and Order modules of any users Magento E-Commerce account.
+     </li>
+</ul>
+<p>
+     X.Commerce strives to bring together Marketplace, Payment, Mobile Products into a single developer ecosystem, with essential Account Management, Information and Reporting Products.
+</p>
+<p>
+     Even though you still have to go out to each individual sites developer ecosystems, you can tell they are working to bring together the communities in a central next generation merchant portal.
+</p>
+<p>
+     <a href="http://www.innovate-conference.com/"><img class="c2" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/xcommerce/x-commerce-powered-by-paypal-ebay-magento.png" alt="" width="500" /></a>
+</p>
+<p>
+     This is what I expect at the X.Commerce Innovate Developer Conference, an event bringing together all eBay, Paypal and Magento developers and learn about each other, as well as share resources between the communities.
+</p>
+<p>
+     <a href="http://www.innovate-conference.com/">X.Commerce Innovate Developer Conference 2011</a> is October 12th, 13th and 14th 2011 and <a href="https://www.innovateregistration.com/main.aspx">registration is still open</a> for the event. I can get you $200 off the registration price, if you use the code: API200. Hope to see you there!
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/09/getting-ready-for-the-xcommerce-innovate-developer-conference-in-san-francisco/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/unlocking-government-data-with-socrata/">Unlocking Government Data with Socrata</a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.socrata.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/socrata/Socrata-Open-Data-Company.png" alt="" width="250" align="right" /></a></p>
+<p>I was introduced to the API service provider <a title="Socrata" href="http://www.socrata.com/">Socrata</a> last week.  Socrata has a government data platform that exceeds anything I&rsquo;ve envisioned.  In the past, I have said that <a title="Every State Should Have an API" href="http://blog.programmableweb.com/2011/09/06/every-city-should-have-an-api-lets-start-with-watertown-ma/">every state should have an API</a>.&nbsp;Socrata looks like that platform.</p>
+<p>Socrata says it best:  <em>&ldquo;Social Data Discovery Solution Promotes Civic Engagement, Improves Decision and Policy Making, and Achieves Government Transparency.&rdquo;</em></p>
+<p>Socrata defines "<a title="Social Data Discovery" href="http://www.socrata.com/discover/">Social Data Discovery</a>" as a solution for public and private institutions to transform raw data, contained in large departmental databases, and deploy using the latest web and API technologies. &nbsp;According to Socrata:</p>
+<p style="padding-left: 30px;">&nbsp;<em>&ldquo;Social Data Discovery promotes civic engagement, enabling an online community of journalists, policy makers, scientists/domain experts, and citizens to visualize data and engage in discussion with one another. Together, audiences with disparate viewpoints  can analyze and discover insights from datasets, improving decision and  policy making.&rdquo;</em></p>
+<p>They seems to get the political, technical and economic challenges faced when delivering government data solutions, and provide a very comprehensive solution for city, county, state and federal agencies to manage their data:</p>
+<ul class="mainlist">
+<li><strong>Data-Set On-Boarding</strong> - A process, acknowledging the need to clean and transform data so its accessible by an external audience.</li>
+<li><strong>Web APIs </strong>- Ability to deploy RESTful APIs with for data sets with a key for authentication. </li>
+<li><strong>Datasets and Feeds </strong>- Availablity of datasets in common formats like CSV, TSV, XML, KML,  and Atom.</li>
+<li><strong>Mobile</strong> - The platform appears to deliver necessary resources for iPhone, Android, and Blackery mobile platforms.</li>
+<li><strong>Management</strong> - Socrata appears to offer many of the essential API maangement services as other providers.</li>
+<li><strong>Analytics</strong> - Provides the necessary reporting and analytics to make sense of how data is being consumed and distributed.</li>
+</ul>
+<p>The problem with trying to get data from government agencies, is often that you end up with PDF and MIcrosoft Excel reports, and not the quality data feeds and APIs developers need.  In my post, &ldquo;<a href="http://apievangelist.com/2011/09/06/every-city,-county-and-state-should-have-an-api/">Every City, County and State Should Have an API</a>&rdquo;, I identify that government workers are only working with the tools we give them.   They need better tools.</p>
+<p><a href="http://www.socrata.com/"><img style="display: block; margin-left: auto; margin-right: auto; padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/socrata/Socrata-Data-Overview.png" alt="" width="550" /></a></p>
+<p>Socrata looks like just the tool for the job.  Socrata appears to have all the key elements that government agencies will need to manage, publish and share important data with other agencies and the public using &ldquo;Social Data Discovery&rdquo;.  I&rsquo;m thoroughly impressed with what they&rsquo;ve delivered for our government in the form of <a title="Data.gov" href="http://explore.data.gov/">Data.gov</a>.  They also provide solutions for <a title="Medicare" href="http://www.socrata.com/customer-spotlight/medicare/">MediCare</a>, <a title="State of Oregon" href="http://www.socrata.com/customer-spotlight/state-of-oregon/">State of Oregon</a>, <a title="State of Oklahoma" href="http://www.socrata.com/customer-spotlight/state-of-oklahoma/">State of Oklahoma</a>, <a title="City of Seattle" href="http://www.socrata.com/customer-spotlight/city-of-seattle/">City of Seattle</a> and <a title="City of Chicago" href="http://www.socrata.com/customer-spotlight/city-of-chicago/">City of Chicago</a>, among others.</p>
+<p>This is just my first look at the platform.  I will be spending more time evaluating what they offer.  If you&rsquo;d like to understand Socrata better, I recommend starting with the <a title="solutions tour" href="http://www.socrata.com/solutions/solution-tour/">solutions tour</a>, then downloading their <a title="product white paper" href="http://socrata.com/wp-content/uploads/2010/11/Socrata_Social_Data_Discovery-Government.pdf?mkt_tok=3RkMMJWWfF9wsRonuKzOZKXonjHpfsX%2B6%2BwtXrHr08Yy0EZ5VunJEUWy2YMDT9QhcOuuEwcWGog80wNbCOGBfQ%3D%3D">product white paper</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/unlocking-government-data-with-socrata/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/learning-management-systems-lms-integration-with-instructure-canvas-api/">Learning Management Systems (LMS) Integration with Instructure Canvas API</a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p>
+     <a title="Instructure" href="http://www.instructure.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/instructure/Instructure_logo.jpg" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I had a great response to my <a title="Learning Management System API Roundup" href="/2011/10/02/learning-management-system-(lms)-apis/">Learning Management System (LMS) APIs round-up</a> last week after <a title="Startup Weekend Seattle EDU" href="http://blog.programmableweb.com/2011/09/30/40-education-apis-for-startup-weekend-seattle-edu/">Startup Weekend Seattle EDU</a>. After posting I quickly updated with another LMS suggestion I got for <a title="Sakai" href="https://confluence.sakaiproject.org/dosearchsite.action?queryString=api">Sakai</a>. Then a couple days ago the PR director for <a title="Instructure" href="http://www.instructure.com/">Instructure</a> introduced me to their <a title="LMS Platform Canvas" href="http://www.instructure.com/">LMS platform, Canvas</a>.
+</p>
+<p>
+     Canvas is a open-source LMS created by Instructure and released under the AGPLv3 license. Instructure also provides a cloud version, with all the features of the open source version of Canvas, but comes with hosting, mobile apps, services integration, and automated provisioning.
+</p>
+<p>
+     <a title="Instructure" href="http://www.instructure.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/instructure/Instructure-LMS-Classroom.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     The <a title="Canvas MLS includes a REST API" href="https://canvas.instructure.com/doc/api/index.html">Canvas LMS includes a REST API</a>, using OAuth for authentication, enforces SSL, with all API responses in JSON. The API is currently under development and many areas of the application are still unavailable via the external API, but there are still quite a few methods available for the LMS already, and more to come.
+</p>
+<p>
+     The Canvas solution appears to have all the latest features of a modern software as a service platform. They provide an open-source version, as well as a hosted platform.  Its built with Ruby, on a PostGres database, and runs on the Amazon Cloud.  The API is simple, and they intend to expose all features of the core LMS via the API, with all documentation hosted at Github.
+</p>
+<p>
+     When the API is complete, I’d definitely say that the Instructure Canvas and API is the most robust LMS solution I’ve come across so far. When they finish their API, and pull together a community around the API, they will definitely be a strong force in the LMS space.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/learning-management-systems-lms-integration-with-instructure-canvas-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/factual-launches-app-gallery-to-showcase-data-apps/">Factual Launches App Gallery to Showcase Data Apps</a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.factual.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/factual/factual-logo.png" alt="" width="125" align="right" /></a></p>
+<p><a href="http://blog.factual.com/factual-app-gallery">Factual has launch a new application gallery</a> to showcase the diverse number of applications built using data provided by Factual.</p>
+<p>You can search for apps, browse by category, and filter by open source, paid or free apps. &nbsp;Looks like there are about 18 apps in the directory currently ranging from augmented reality to daily deals.</p>
+<p>The <a href="http://www.factual.com/gallery">Factual App Gallery</a> isn&rsquo;t a particularly unique launch, we are seeing <a title="App Showcase" href="/buildingblocks/app_gallery.php">app showcases</a> popup within many APIs, but it shows that Factual is gaining steam, and I think it shows the appetite for building apps around datasets is growing.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/factual-launches-app-gallery-to-showcase-data-apps/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/distributed-and-seamless-api-management-using-3scale-apis/">Distributed and Seamless API Management Using 3Scale APIs</a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.3scale.net/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="200" align="right" /></a></p>
+<p>I just added four new API to my API stack series.  I&rsquo;m considering breaking the API Stack series into a separate feed, they kind of clutter the main feed.  Anyways, the four new APIs are from <a title="3Scale" href="/serviceproviders/3scale.php">3Scale</a>:</p>
+<ul class="mainlist">
+<li><strong><a title="Service Management API" href="/2011/10/08/api-stack-api-service-management-with-3scale-service-management-api/">Service Management API</a></strong></li>
+<li><strong><a title="Account Management API" href="/2011/10/08/api-stack-api-account-management-with-3scale-account-management-api-/">Account Management API</a></strong></li>
+<li><strong><a title="Analytics API" href="/2011/10/08/api-stack-api-analytics-with-3scale-analytics-api-/">Analytics API</a></strong></li>
+<li><strong><a title="Billing API" href="/2011/10/08/api-stack-api-billing-with-3scale-billing-api-/">Billing API</a></strong></li>
+</ul>
+<p>These four APIs offer the essential building blocks to control, manage and monetize the distribution of data, content and services via a web API. &nbsp;3Scale has had their <a title="Service Management API" href="http://www.3scale.net/support/service-management-api">Service Management API</a> for a while, but recently <a title="added the account, analytics and billing services" href="http://blog.programmableweb.com/2011/10/06/api-management-within-your-existing-platform/">added the account, analytics and billing services</a>, making a complete set of API management APIs.</p>
+<p>3Scale already has two significant differentiors from other API managerment service providers:</p>
+<ul class="mainlist">
+<li><strong>Proxy-Less</strong> - 3Scale is different than the other service providers in that they don't proxy your APIs.  3Scale only uses a "connector" to integrate the services you want into your API. </li>
+<li><strong>Self-Service</strong> - 3Scale is the only self-service API management service with a freemium model.  Well, except for&nbsp;<a title="Mashape" href="/serviceproviders/mashape.php">Mashape</a>, they do to, but are in beta currently. </li>
+</ul>
+<p>Adding a set of APIs, definitely sets 3Scale apart from the other <a title="API Management Service Providers" href="/serviceproviders/">API management service providers</a>.  You can sign-up, connect 3Scale services to your API, without routing your API through a proxy, and seamlessly integrate 3Scale service, account and billing management into your existing systems, complete with analytics.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3Scale/API-Management -3scale-API-Management-Solution.png" alt="" width="550" /></p>
+<p>Using 3Scale you can operate for free up to 50K calls per day, and start paying after your API grows or once you are looking to monetize your API and begin billing users.</p>
+<p>Since <a title="3Scale" href="/serviceproviders/3scale.php">3Scale</a> has a freemium model, I can play around with a lot of different deployments, until I find the configuration I'm looking for.   I think I'll launch an API for <a title="API Evangelist" href="http://www.apievangelist.com">API Evangelist</a> using 3Scale.  See if I can integrate 3Scale service and user management into my existing CMS, and deploy some API analytics.  I don't have anything at the moment I'd feel good about billing for, but maybe some day.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/distributed-and-seamless-api-management-using-3scale-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/api-stack-api-service-management-with-3scale-service-management-api/">API Stack - API Service Management with 3Scale Service Management API</a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.3scale.net/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="200" align="right" /></a></p>
+<p><a title="3Scale" href="http://www.3scale.net/">3scale</a> provides scalable API Infrastructure as a Service to control, manage and monetize the distribution of data, content or services for devices, mobile and web applications.</p>
+<p>The <a title="3Scale Service Management API" href="http://www.3scale.net/support/service-management-api">3Scale Service Management API</a> allows you to authorize access to your API, monitor calls and report traffic seamlessly in your applications.</p>
+<p>The 3Scale Service Management API provides a RESTful API, using a key for authentication, and responses in an XML format.</p>
+<p>3Scale provides a freemium account with 50K calls per day, and other packages for higher volume calls.</p>
+<p>The <a title="3Scale Service Management API" href="http://www.3scale.net/support/service-management-api">3Scale Service Management API</a> for API service management is a perfect tool for the API Stack.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/api-stack-api-service-management-with-3scale-service-management-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/api-stack-api-billing-with-3scale-billing-api/">API Stack - API Billing with 3Scale Billing API </a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.3scale.net/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="200" align="right" /></a></p>
+<p><a title="3Scale" href="http://www.3scale.net/">3Scale</a> provides scalable API Infrastructure as a Service to control, manage and monetize the distribution of data, content or services for devices, mobile and web applications.</p>
+<p>The <a title="3Scale Billing API" href="http://www.3scale.net/support/billing-api/">3Scale Billing API</a> provides access to 3Scale&rsquo;s billing features to enable you to access invoices, line items and payment information for each of your API users, enabling integration into your own internal systems.</p>
+<p>The 3Scale Billing API provides a RESTful API, using a key for authentication, and responses in an XML format.</p>
+<p>3Scale provides a freemium account with 50K calls per day, and other packages for higher volume calls. The billing and pricing module needed for this API requires an additional add-on package starting at $59 a month.</p>
+<p>The <a title="3Scale Billing API" href="http://www.3scale.net/support/billing-api/">3Scale Billing API</a> for API billing and monetization is a perfect tool for the API Stack.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/api-stack-api-billing-with-3scale-billing-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/api-stack-api-analytics-with-3scale-analytics-api/">API Stack - API Analytics with 3Scale Analytics API </a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p>
+     <a href="http://www.3scale.net/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="200" align="right" /></a>
+</p>
+<p>
+     <a title="3Scale" href="http://www.3scale.net/">3scale</a> provides scalable API Infrastructure as a Service to control, manage and monetize the distribution of data, content or services for devices, mobile and web applications.
+</p>
+<p>
+     The <a title="3Scale Analytics API" href="http://www.3scale.net/support/analytics-api/">3Scale Analytics API</a> lets you pull out usage statistics for your API, either for the whole service or for each application, allowing you to integrate stats information into your own internal dashboards or provide enhanced dashboards for your API users.
+</p>
+<p>
+     The 3Scale Analytics API provides a RESTful API, using a key for authentication, and responses in an XML format.
+</p>
+<p>
+     3Scale provides a freemium account with 50K calls per day, and other packages for higher volume calls.
+</p>
+<p>
+     The <a title="3Scale Analytics API" href="http://www.3scale.net/support/analytics-api/">3Scale Analytics API</a> for API analytics is a perfect tool for the API Stack.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/api-stack-api-analytics-with-3scale-analytics-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/08/api-stack-api-account-management-with-3scale-account-management-api/">API Stack - API Account Management with 3Scale Account Management API </a></h3>
+        <span class="post-date">08 Oct 2011</span>
+        <p><a href="http://www.3scale.net/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="200" align="right" /></a></p>
+<p><a title="3Scale" href="http://www.3scale.net/">3scale</a> provides scalable API Infrastructure as a Service to control, manage and monetize the distribution of data, content or services for devices, mobile and web applications.</p>
+<p>The <a title="3Scale Account Management API" href="http://www.3scale.net/support/account-management-api">3Scale Account Management API</a> gives you full control over all the organisations, developers and applications using an API, allowing you to integrate seamlessly into your existing sites and applications.</p>
+<p>The 3Scale Account Management API provides a RESTful API, using a key for authentication, and responses in an XML format.</p>
+<p>3Scale provides a freemium account with 50K calls per day, and other packages for higher volume calls.</p>
+<p>The <a title="3Scale Account Management API" href="http://www.3scale.net/support/account-management-api">3Scale Account Management API</a> for API account management is a perfect tool for the API Stack.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/08/api-stack-api-account-management-with-3scale-account-management-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/07/the-business-of-klouts-api/">The Business of Klout&#039;s API</a></h3>
+        <span class="post-date">07 Oct 2011</span>
+        <p><a href="http://klout.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/klout/klout-logo.jpg" alt="" width="250" align="right" /></a></p>
+<p>I <a title="attended the Business of APIs Conference in San Francisco" href="/2011/10/06/business-of-apis-conference-in-san-francisco-wrapup/">attended Mashery's Business of APIs Conference in San Francisco</a> last week.  There were a lot of great API presentations,  but I thought one really told a great story in-line with the focus of the event, which is the <a title="Business of APIs" href="/business_of_apis.php">Business of APIs</a>.</p>
+<p>Tyler Singletary(<a title="@harmophone" href="http://twitter.com/#!/harmophone">@harmophone</a>), Developer Evangelist at <a title="Klout" href="http://klout.com/">Klout</a>, told a story around how they are continuing to grow, control and monetize Klout, while also ensuring Klout continues to have meaning and deliver value.</p>
+<p><a href="http://klout.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/klout/klout.JPG" alt="" width="250" align="right" /></a></p>
+<p>Klout's value lies in brand awareness, integrity and the meaning, usefulness and value of the Klout Score to consumers and businesses.  To continue offering value and maintaing the integrity of the brand, they are creating a dynamic way to manage their API community, incentivize postive usage of the API, while controlling negative usage.</p>
+<p>To build awareness of the Klout brand, and increase value, Klout depends on properly displaying of Klout Score and Klout Logo, and linking back to Klout profiles.  The more value an API user delivers to the Klout brand the more relaxed Klout can be on quotas, rate limits and even pricing.</p>
+<p>Not all API users will deliver the same value to the Klout brand, competitors may access data, and application may use scores in a more programmatical way, and not have the desired awareness generating value of other implementations. In these cases Klout can impose tariffs, implementing much stricter quotas, rate limits and charge more for accessing the API.</p>
+<p>Through a dynamic terms of service, branding guidelines, and pricing, Klout can adjust these business controls based upon how much value an API user brings to the Klout brand, establishing a desired balance within their API ecosystem.  Finding that sweet spot where they are delivering the desired units of value to their consumers, while protecting, growing and building value in the Klout brand, even generating revenue it where it makes sense.</p>
+<p><a href="http://klout.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/klout/klout-plus-k.jpg" alt="" width="125" align="right" /></a></p>
+<p>I really like Tyler's transparent way telling the story of how Klout is defining its business model, and employing their API to deliver maximum value to their business.  Their dynamic approach to incentivize and tariff their community, using their terms of service, branding guidelines and pricing is something I'll be thinking about a lot more.</p>
+<p>Klout will be presenting at the <a title="Business of APIs in New York" href="http://www.eventbrite.com/event/2025693905?ref=ebtn">Business of APIs in New York</a>.  I recommend attending to learn more about how <a title="Klout" href="http://klout.com/">Klout</a> is approaching the business of their API.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/07/the-business-of-klouts-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/07/internal-api-evangelism-demo-fridays/">Internal API Evangelism - Demo Fridays</a></h3>
+        <span class="post-date">07 Oct 2011</span>
+        <p><a title="Mimeo" href="http://www.mimeo.com"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/mimeo/mimeo-logo-250.jpg" alt="" width="200" align="right" /></a></p>
+<p>At <a title="Mimeo" href="http://www.mimeo.com">Mimeo</a> we have demo Fridays where anyone can demo what they&rsquo;re working on.  For demo Fridays I tend to build prototypes showing different ways to integrate with the <a title="Mimeo Document Printing APIs" href="http://mimeoconnect.3scale.net/">Mimeo Document Printing APIs</a>.  As my schedule has gotten busier this fall, with more developer support, and attending hackathons and conferences, I don&rsquo;t always have time to polish a prototype for Friday demos.</p>
+<p>So this Fridays demo I started showcasing some of the ideas I&rsquo;m brainstorming with other developers, and the potential ways they might use our APIs.  Here are the four I demoed today:</p>
+<ul class="mainlist">
+<li><a href="/admin/Blog/"><strong>Cabana</strong></a> - Very sexy, GUI mobile application development environment I saw demo at BAPI.  I want to understand more about how they will integrate APIs into the mobile building environment.</li>
+<li><a href="/admin/Blog/"><strong>Breezy</strong></a> - Breezy launched their mobile printing network last month, allowing you to print to Fedex Office, local print shops, coffee shops and hotels from your mobile device.  I am brainstorming how to print common business documents using Mimeo and have delivered next day using Breezy.</li>
+<li><a href="/admin/Blog/"><strong>PicPlum</strong></a> - Let&rsquo;s you email or upload photos into a queue and when ready add contacts and have photos printed and delivered to your family and friends.</li>
+<li><a href="/admin/Blog/"><strong>Chute</strong></a> - A centrally located backup, syncing and photo sharing platform.  Its currently in beta, but I got a look at the back-end, and its a very powerful photo management and distribution platform.</li>
+</ul>
+<p>Not all of these projects I demoed are guaranteed to go anywhere.  Some of the photo products at Mimeo, still need APIs exposed before I can offer some of the more specialized photo printing services.  However showing the types of projects developers are engaging me on, creates more awareness within the company about what developers want, and opens up the floor for comments and valuable feedback.</p>
+<p>Internal API evangelism is an ever increasing part of my API evangelist role.  Making everyone at Mimeo aware of what I am doing with our APIs, as well as what other types of platforms and APIs are available,  all contributes to more awareness and engagement across the company.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/07/internal-api-evangelism-demo-fridays/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/07/easy-api-development-with-apiaryio/">Easy API Development with apiary.io</a></h3>
+        <span class="post-date">07 Oct 2011</span>
+        <p><a title="Apiary.io" href="http://apiary.io/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/apiary/apiary-io-logo.png" alt="" width="250" align="right" /></a></p>
+<p>I'm spending a lot of time lately evaluating the various API management service providers like <a title="3Scale" href="/serviceproviders/3scale.php">3Scale</a>, <a title="Apigee" href="/serviceproviders/apigee.php">Apigee</a>,&nbsp;<a title="Mashery" href="/serviceproviders/mashery.php">Mashery</a>,and&nbsp;<a title="Mashape" href="/serviceproviders/mashape.php">Mashape</a>.</p>
+<p>One thing that I have to explain a lot to people about these API management services&hellip;is they are API management services.  Not API deployment services.</p>
+<p>The only one provider that has a solution to deploy your API is <a title="Mashape" href="/serviceproviders/mashape.php">Mashape</a>, but now there is a new provider gearing up, called <a title="Apiary.io" href="http://apiary.io/">Apiary.io</a>.  Apiary.io wants to make developing and implementing APIs a quicker process.</p>
+<p>Apiary.io site says they will also help you describe, test, manage and share your API with developers.</p>
+<p>I feel that API deployment services is a huge opportunity in this space, its good to see a provider step up that will help API owners deploy their APIs, as well as manage them.</p>
+<p><a title="Apiary.io" href="http://apiary.io/">Apiary.io</a> is still in private Beta, so I can't take it for a spin yet.  It will be interesting to learn more about what this latest API service provider can bring to the table.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/07/easy-api-development-with-apiaryio/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/06/ryan-sarver-at-the-mashery-business-of-apis-conference/">Ryan Sarver at the Mashery Business of APIs Conference</a></h3>
+        <span class="post-date">06 Oct 2011</span>
+        <p>A video of the fireside chat with Twitter Director of Platform Ryan Sarver at the Mashery Business of APIs conference in San Francisco this month.  Some interesting insight into Twitters approach to managing their API and its 750K developers, 1.1 M registered apps and 15 Billion API requests per day.</p>
+<p>&nbsp;</p>
+<p><iframe src="http://www.youtube.com/embed/Mu_RMMIUkc8" width="620" height="515"></iframe></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/06/ryan-sarver-at-the-mashery-business-of-apis-conference/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/06/business-of-apis-conference-in-san-francisco-wrapup/">Business of APIs Conference in San Francisco - Wrapup</a></h3>
+        <span class="post-date">06 Oct 2011</span>
+        <p>
+     <a title="Business of APIs Conference" href="http://apiconference.com/"><img src="http://kinlane-productions.s3.amazonaws.com/events/Business-of-APIs-Conference-2011.png" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     I finished up the <a title="Mashery" href="http://www.mashery.com">Mashery</a>, <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs Conference</a> in San Francisco on Tuesday.  After a days rest and reflection on the event I wanted to capture my thoughts on BAPI - SF.  
+</p>
+<p>
+     The turnout was impressive.  I got to see a lot of familiar faces, was introduced to some new APIs and met a few new folks looking to transform their businesses using APIs.  
+</p>
+<p>
+     On the 16 presentations I saw, here are some of my thoughts:
+</p>
+<ul class="mainlist">
+     <li class="c2">
+          <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/daniel.JPG" alt="" width="175" align="right" />
+     </li>
+     <li>
+          <strong>Daniel Jacobson</strong> - I have seen Daniel talk several times, so I'm familiar with his talk, but he adds new slides each time.  Always love seeing how they are solving internal and partner needs with their APIs, as well helping them achieve world domination using APIs and the Amazon cloud.
+     </li>
+     <li>
+          <strong>Adam Trachtenberg</strong> - There were three things I took away from listening to Andy.  1) Your API should get all the same love and attention as your primary business.  2)  Hold Hackathons within your own company to encourage innovation 3) LinkedIn is a model of how any API should employ embeddable buttons and widgets around their API.
+     </li>
+     <li>
+          <strong>Steve Citron-Poust</strong> -  I need to watch his pitch again.  His speaking style was engaging so I was drawn in by his perspective of ecosystem management, and didn't take good enough notes.  He offers a very realist perspective of managing your developers, and the differences in managing a private-label, partner API platform.
+     </li>
+     <li class="c2">
+          <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/john-musser-2.JPG" alt="" width="225" align="right" />
+     </li>
+     <li>
+          <strong>John Musser</strong> - John always has a very concise view of the entire API industry, showing the growth, and helping us understand the scope and depth of this growth.  ProgrammableWeb recently hit 4K APIs in its directory, showing some phenomenal growth in number of APIs, but also by industry, and varying ways companies are monetizing their APIs.
+     </li>
+     <li>
+          <strong>Neel Ketkar</strong> - Neel from Rovi talked about the advantages of an open API, and the importance of providing a feedback framework for your developers and incorporating feedback into your roadmap.  Neel also urged the importance of having a flexible API infrastructure allowing for change, because you will have to continually evolve how you deliver your services.  But one nugget I walked away with, that I'm evolving as separate story, is "arming your corporate sales team with APIs", how this can be a very empowering differentiator.
+     </li>
+     <li class="c2">
+          <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/klout.JPG" alt="" width="175" align="right" />
+     </li>
+     <li>
+          <strong>Tyler Singletary</strong> - Tyler takes home the grand prize for the most relevant presentation, reflecting the mission of the event, which is the Business of APIs.  His presenation is fulll of valuable insights into how to approach your API business model, how it relates to your TOS and branding guidelines.  I'm working on a completely separate story about Tylers presentation at BAPI.
+     </li>
+     <li>
+          <strong>Marie Alexander</strong> - Unfortunately I don't have much feedback on the fireside chat with Marie from Quova.  I ran out of power, because Mashery didn't have power plugs for press(:(), so I went out of room to charge and ended up talking to other folks.
+     </li>
+     <li>
+          <strong>Ben Metcalfe</strong> - I think Ben offers some very realistic advice for API owners, that is grounded in actual experience in bulding and implementing API strategy for small and enterprise level businesses.   I need to talk to Ben more about what his Swordfi.sh company offers.
+     </li>
+     <li class="c2">
+          <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/abraham.JPG" alt="" width="175" align="right" />
+     </li>
+     <li>
+          <strong>Abraham Williams</strong> - Thoroughly entertained by Abrahams presention on Unicorns (developers), and how to manage and encourage them within your community.  I've seen his pitch a couple times and it gets more polished each time.  I don't want to call his talk "the basics", I think "the essentials", is more appropriate.  Every business looking to launch an API should watch his talk.
+     </li>
+     <li>
+          <strong>Seth Blank</strong> - I'm am super excited by any talk that can use the words Fuck and API together so much.  He had a very colorful presentation about what developers love and hate about APIs.
+     </li>
+     <li>
+          <strong>Dave Carroll</strong> - Dave is the extremely wise and cool uncle of the API space.  Saleforce is one of the elders in the space, and Dave has been there the whole time, so he gets it at a level I think many of us can't quite see.  He demonstrates the important role APIs have played in current and future sucess of Salesforce.
+     </li>
+     <li>
+          <strong>Ryan Sarver</strong> - Ryan gave a very polished view of Twitter and its API ecosystem.  I don't think Victoria asked the hard questions, but we got some insight into how they view their often troubled developer ecosystem, and what Twitter would like to see.  I'm uploading a video I took of his talk, and will post a separate post about it after I watch again.
+     </li>
+     <li class="c2">
+          <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/jeff2.JPG" alt="" width="200" align="right" />
+     </li>
+     <li>
+          <strong>Jeff Lawson</strong> - Always love watching Jeff give a talk.  I've seen this one 3 times now, but he shoots from the hip and evolves it each time.  So much to learn from Twilio, but the nugget I walked away with this time was APIs should have a self-service model, as well as a sales funnel for approach enterprise sales.  Its a model that works well across the board, not just the enterprise.
+     </li>
+     <li>
+          <strong>Reeve S. Thompson</strong> - Ok, was totally blown by the Cabana mobile app builder.  I talked with Reeve Thompson for a bit, and looking forward to talking more.  They build a mobile app using both the Twitter and Klout API in 300 seconds, live during the demo.  They are the vision I was talking about in <a title="Widget Building Platform for APIs" href="/2011/06/22/widget-builder-environment-for-apis/">Widget Builder Environment for APIs</a>, but for mobile.  
+     </li>
+</ul>
+<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-2011/bapi-sf-2011.jpg" alt="" width="225" align="right" />
+</p>
+<p>
+     Overall BAPI was a great experience, except for that one dude I spilled a glass of water on his leg.  So sorry man!!
+</p>
+<p>
+     I'm really looking forward to the New York <a title="New York event October 19th" href="http://www.eventbrite.com/event/2025693905?ref=ebtn">New York event October 19th</a> and if I can afford to, I will be going to the <a title="London event October 25th" href="http://www.eventbrite.com/event/2025746061?ref=ebtn">London event on October 25th</a>.  If you want to help <a title="Audrey Watters" href="http://www.hackeducation.com/">Audrey</a> and I get there, let me know!  :)
+</p>
+<p>
+     I'm still working on a couple other side stories from the event, I will post them when they are ready.  The registration is still open for both events. I highly recommend getting to at least one of them if you can.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/06/business-of-apis-conference-in-san-francisco-wrapup/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/03/business-of-apis-conference-in-san-francisco/">Business of APIs Conference in San Francisco</a></h3>
+        <span class="post-date">03 Oct 2011</span>
+        <p>
+     <a title="Business of APIs Conference" href="http://apiconference.com/"><img src="http://kinlane-productions.s3.amazonaws.com/events/Business-of-APIs-Conference-2011.png" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     I am getting ready for the <a title="Mashery" href="http://www.mashery.com">Mashery</a>, <a title="Business of APIs Conference" href="http://apiconference.com/">Business of APIs Conference</a> in San Francisco tomorrow.
+</p>
+<p>
+     BAPI is in its 5th year of bringing together the big players in the API space, to talk about their companies API strategies, and their efforts to reinvent their businesses using APIs.
+</p>
+<p>
+     There are 16 speakers this year:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>Victoria Barret</strong> - Associate Editor at Forbes
+     </li>
+     <li>
+          <strong>Daniel Jacobson</strong> - Director of Engineering at Netflix
+     </li>
+     <li>
+          <strong>Adam Trachtenberg</strong> - Director of Developer Network at LinkedIn
+     </li>
+     <li>
+          <strong>Steve Citron-Poust</strong> - Technology Evangelist at deCarta
+     </li>
+     <li>
+          <strong>John Musser</strong> - Founder at Programmable Web
+     </li>
+     <li>
+          <strong>Anne Driscoll</strong> - VP Business Operations at Nin
+     </li>
+     <li>
+          <strong>Neel Ketkar</strong> - Senior Director Product Management at Cloud Services Platform Rovi Corp
+     </li>
+     <li>
+          <strong>Tyler Singletary</strong> - Developer Evangelist at Klout
+     </li>
+     <li>
+          <strong>Marie Alexander</strong> - President and CEO at Quova
+     </li>
+     <li>
+          <strong>Ben Metcalfe</strong> - Founder &amp; Lead Consultant at Swordfish Corp
+     </li>
+     <li>
+          <strong>Abraham Williams</strong> - Unicorn Herder at InboxQ
+     </li>
+     <li>
+          <strong>Seth Blank</strong> - Founder and CEO at YourTrove
+     </li>
+     <li>
+          <strong>Dave Carroll</strong> - Director of Developer Evangelism at salesforce.com
+     </li>
+     <li>
+          <strong>Ryan Sarver</strong> - Director of Platform at Twitter
+     </li>
+     <li>
+          <strong>Jeff Lawson</strong> - CEO and Co Founder at Twilio
+     </li>
+     <li>
+          <strong>Reeve S. Thompson</strong> - Co-CEO, at Cabana
+     </li>
+</ul>
+<p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/events/business-of-apis-audience.jpg" alt="" width="225" align="right" />
+</p>
+<p>
+     That is a whole lot of API experience. I went to BAPI last year, and the talks were great and I connected with a bunch of other API experts, during the half-day event.
+</p>
+<p>
+     BAPI is from 1:00 – 5:30 at the <a title="Julia Morgan Ballroom" href="http://www.juliamorganballroom.com/">Julia Morgan Ballroom</a> in San Francisco. The <a title="San Francisco BAPI" href="http://www.eventbrite.com/event/1825463009?ref=ebtn">San Francisco BAPI</a> is the first of three events, with a <a title="New York event October 19th" href="http://www.eventbrite.com/event/2025693905?ref=ebtn">New York event October 19th</a> and a <a title="London event October 25th" href="http://www.eventbrite.com/event/2025746061?ref=ebtn">London event October 25th</a>.
+</p>
+<p>
+     Registration is still open for all three events. I highly recommend getting to at least one of them if you can.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/03/business-of-apis-conference-in-san-francisco/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/02/what-does-it-mean-to-be-a-google-developer/">What Does It Mean To Be A Google Developer?</a></h3>
+        <span class="post-date">02 Oct 2011</span>
+        <p><a href="http://code.google.com/"><img src="http://kinlane-productions.s3.amazonaws.com/google/google_code.jpg" alt="" width="250" align="right" /></a></p>
+<p>With over 100 APIs, and an army of developer advocates, Google is one of the top API ecosystems in the world, alongside Twitter and Facebook.</p>
+<p>Google is stepping back and rethinking how they interact and support their developer community and are <a title="looking for feedback" href="http://googlecode.blogspot.com/2011/09/what-does-it-mean-to-be-google.html">looking for feedback</a> from the developer community.</p>
+<p>They want to know what inspires you as a developer, what does being a Google developer mean to you, and how Google can make your experience as a developer better.</p>
+<p>Facebook has made a tremendous effort to better engage their developer community with <a title="Facebook Operation Developer Love" href="/2011/04/30/facebooks-operation-developer-love/">Operation Facebook Love</a>, and its really good to see Google make a similar attempt.  We&rsquo;ll see what comes from it, to voice your opinion, you can <a title="submit your video" href="http://developers.google.com/go/stories">submit a video</a> or <a title="write to Google" href="http://goo.gl/MBlre">write to Google</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/02/what-does-it-mean-to-be-a-google-developer/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/10/02/learning-management-system-lms-apis/">Learning Management System (LMS) APIs</a></h3>
+        <span class="post-date">02 Oct 2011</span>
+        <p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/learning-kids.jpeg" alt="" width="250" align="right" />
+</p>
+<p>
+     At <a title="Mimeo" href="http://developer.mimeo.com">Mimeo</a> I get approached by a lot of customers who use various learning management systems, and ask if they can print training and classroom materials from their LMS. I ask them the name of their LMS system, then set out to research what is possible.
+</p>
+<p>
+     I've researched almost 30 LMS systems so far (according to my notes), and I've come across 3 that have APIs. I'm in talks with a fourth, <a title="Schoology" href="http://apievangelist.com/apis/schoology_api.php">Schoology</a>, that has an API as a premium feature, but information is limited and they are super busy with the new school year.
+</p>
+<p>
+     Here are the three LMS platforms that I've come across that have APIs:
+</p>
+<ul class="mainlist">
+     <li>
+          <a href="http://gls.agilix.com/Docs/Concept/Overview"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/BrainHoney-Logo.png" alt="" width="150" align="right" /></a><a href="http://gls.agilix.com/Docs/Concept/Overview"><strong>BrainHoney</strong></a> – A learning management system providing course authoring, learning objective management, and gradebook management
+     </li>
+     <li>
+          <a href="http://apievangelist.com/apis/haiku_learning_system.php"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/haiku-logo.png" alt="" width="150" align="right" /></a><a href="http://apievangelist.com/apis/haiku_learning_system.php"><strong>Haiku Learning System</strong></a> – Learning management system providing website design and development, listserve hosting, assignment dropboxes, and more for teachers to take classrooms online
+     </li>
+     <li>
+          <a href="http://help.litmos.com/developer-api/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/LMS/litmos-logo.png" alt="" width="150" align="right" /></a><a href="http://help.litmos.com/developer-api/"><strong>Litmos</strong></a> – Litmos is a SCORM-certified, learning management system, that enables developers to connect their applications to the Litmos training engine, providing deeper integration of training data generated in Litmos with any other systems
+     </li>
+</ul>
+<p>
+     I find it pretty disturbing that only 3% of the learning management systems have APIs. APIs are essential not only to providing data portability for your customers, but can open up entirely new sales channels for an LMS provider.
+</p>
+<p>
+     A web API can enable other content systems and applications to incorporate your LMS into their application. An API will not give away your content or intellectual property, it will open it up and allow you to build new types of revenue channels with customers who might not have adopted your platform by itself, without seamless integration with their existing systems.
+</p>
+<p>
+     My <a title="research into the dcuation and learning management space" href="http://apievangelist.com/industries/education.php">research into the education and learning management</a> space is still in its infancy. If you know of any tools I should evaluate, please let me know. Whether its K-12, Higher Ed, or corporate learning, education is one space that dramatically benefit from the power of the API.
+</p>
+<ul class="mainlist"></ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/10/02/learning-management-system-lms-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/29/api-evangelism-is-equal-parts-internal-partner-and-public-outreach/">API Evangelism is Equal Parts Internal, Partner and Public Outreach</a></h3>
+        <span class="post-date">29 Sep 2011</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/API-Evangelist-Thirds.png" alt="" align="right" /></p>
+<p>Historically APIs are deployed to provide data and resources to business partners.  However, in the last 5 years we have seen a shift in focus to also delivering more open, publicly focused APIs, based upon the success of popular services like <a title="Google Maps" href="/2011/01/30/history-of-apis-google-maps-api/">Google Maps</a>, <a title="Twitter" href="/apis/twitter.php">Twitter</a> and <a title="Twilio" href="/apis/twilio.php">Twilio</a>.  In the last year, many companies are also seeing the benefits of deploying and consuming APIs internally, in addition to partner driven, and open public APIs.</p>
+<p><a title="3Scale" href="/serviceproviders/3scale.php">3Scale</a>, <a title="Apigee" href="/serviceproviders/apigee.php">Apigee</a> and&nbsp;<a title="Mashery" href="/serviceproviders/mashery.php">Mashery</a> all advocate for evaluating the deployment of APIs for internal and partner consumption as well as carefully weighing the value of a public facing API ecosystem.  As an API evangelist I aslo have found the need for equal distribution of resources when it comes to evangelizing the benefits of APIs as well.</p>
+<ul class="mainlist">
+<li><strong>Internal API Evangelism</strong> - I spend â of my time educating internal departments from IT to marketing about the benefits of APIs.  I want everyone to understand that APIs will make our company more flexible and nimble, and help us out-maneuver our competitors.  APIs also will assist us in delivering mobile content and applications within our company and to our customers.</li>
+<li><strong>Partner API Evangelism</strong> - I spend â of my time educating our partners about the various APIs we have, how they can be used, and provide as much material as I can about our web services.  I also evangelize about other APIs that compliment our services and can provide benefits to our partners.  Its not just about selling our partners on our services, its letting them know we are invested in their success.</li>
+<li><strong>Public API Evangelism </strong>- I spend â of my time blogging, tweeting and generating code samples, prototypes and any other materials that will help get the word out to the public about our APIs.  Public API evangelism is not just about SEO content, its about social engagement.  Reaching out to developers and companies where they already frequent, making sure I listen, participate and add value to those communities on behalf of my company.</li>
+</ul>
+<p>APIs are not just an external interface.  Although they do offer tremendous benefits when interacting with the public or sharing information and resources with your most valued partners, they can also make your company operate more efficiently.</p>
+<p>API evangelism shouldn&rsquo;t be just about reaching out to your public or partner developers.  Your API evangelism strategy should also focus internally within your company and across all departments.  Make sure your API evangelism strategy is equal parts internal, partner and public outreach and eventually you will find the success your looking for.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/29/api-evangelism-is-equal-parts-internal-partner-and-public-outreach/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/28/identify-influencers-with-the-klout-api/">Identify Influencers with the Klout API</a></h3>
+        <span class="post-date">28 Sep 2011</span>
+        <p><a title="Klout API" href="http://developer.klout.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/klout/Klout-API-Overview.jpg" alt="" width="300" align="right" /></a></p>
+<p><a title="Klout" href="http://klout.com/">Klout</a> just updated their API area. The <a title="Klout API" href="http://developer.klout.com/">Klout API</a> was originally released in 2009, but the new API area has several improvements including faster response times for the API, better documentation and improved terms of service.</p>
+<p>Using the Klout API developers can pull someones Klout Score, which is the measurement of their overall online influence using social networks like Twitter, LinkedIn and Google+.   It provides a way of essentially high-grading users on your network, and rewarding or engaging users differently based upon their overall network influence.</p>
+<p>I categorize the Klout API as a &ldquo;partner API&rdquo;, meaning that can add value to just about any existing API community and application.  For example, with my <a href="http://developer.mimeo.com/">Mimeo Connect Document Printing APIs</a>, a print application could offer lower pricing to a user based upon their Klout score.  If you are building a poster, flyer or book printing application and you offer lower pricing to people who are influencers, you can probably bet they&rsquo;ll talk about your app within their network.</p>
+<p>The Klout API opens up a lot of opportunities for web and mobile app developers to enrich their understanding of their existing user base, identifying the users that are the biggest influencers, and may contribute to a larger network effect around their application.</p>
+<p>Klout has delivered their API using the <a title="Mashery API Platform" href="/serviceproviders/mashery.php">Mashery API platform</a>, you can register for an API key and learn more about the platform at <a title="developer.klout.com" href="http://developer.klout.com">developer.klout.com</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/28/identify-influencers-with-the-klout-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/28/advertising-network-dedicated-to-apis-and-developers/">Advertising Network Dedicated to APIs and Developers</a></h3>
+        <span class="post-date">28 Sep 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Tag-Cloud-API-Advertising.png" alt="" width="350" align="right" /></p>
+<p>One of the things I do here at <a href="http://www.apievangelist.com/">API Evangelist</a> is review APIs for their owners and provide suggestions for how they can improve the technology, ecosystem and better monetize their API.</p>
+<p>When it comes to monetization many of the API owners seem to have a good grasp of how they are covering the base costs of operating their API, but are looking for ways to expand their revenue, and actually make their API profit engine.</p>
+<p>Just like with web and mobile applications the first way people think about monetizing their API is using advertising.  Though I don&rsquo;t always agree with employing advertising as part of an API ecosystem, it makes sense that many owners are considering it.  Advertising has been a primary revenue generator for web sites and applications, and has become a staple for mobile applications, using mobile advertising platforms like <a title="AdMob" href="http://www.admob.com/">AdMob</a>.</p>
+<p>With this growing demand, I see a huge opportunity for someone to step up and provide a plug-and-play advertising network that API owners can deploy as part of their API ecosystems.  An API advertising network could provide broad or specialized sponsored content that could be delivered within existing API content.   An API advertising network would have different ways to filter and tailor content so advertising would not be intrusive and blend with the content already being delivered as part of an API, whether its delivering text, images, audio or video.</p>
+<p>API advertising networks would have revenue sharing for developers built in.  As an API owner I could choose to share advertising revenue with my developer ecosystem in any amount I wanted.  Advertising would be pushed to all API calls made by developers, but they could be given an option to register for the revenue sharing program, and the system would track all ads delivered through a developers site or application, and pay out associated revenue.</p>
+<p>Web advertising models like Google Adsense are great for website and application development, and mobile advertising platforms like AdMob are delivering for mobile developers, but there is a need to meet the advertising needs of API owners and their developer ecosystem.  API advertising will need to deliver adaptive models that evolve with the new API economy, and help API owners further monetize their content and resources, while also providing much needed revenue sharing for their developer community.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/28/advertising-network-dedicated-to-apis-and-developers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/27/tiny-speck-is-changing-how-games-are-built-using-apis/">Tiny Speck is Changing How Games Are Built Using APIs</a></h3>
+        <span class="post-date">27 Sep 2011</span>
+        <p>
+     <a href="http://www.glitch.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/glitch/glitch-logo.png" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     <a title="Audrey Watters" href="http://www.hackeducation.com/">Audrey</a> introduced me to a very cool gaming company the other day called <a title="Tiny Speck" href="http://tinyspeck.com/">Tiny Speck</a>. The company, the latest project of Flickr co-founder Stewart Butterfield, has released its first game to the public today: <a title="Glitch" href="http://www.glitch.com/">Glitch</a>. Glitch is a web-based massively-multiplayer game. The game allows you to choose how to grow and shape the world: building and developing, learning new skills, collaborating or competing with everyone else in one enormous, ever-changing, persistent world.
+</p>
+<p>
+     Glitch is a visually stunning game environment, delivered using a flash client (although the startup does state other clients will be available someday). There's a lot that's familiar about the game, particularly to fans of MMOs and social games -- Glitch is a combination of the two, arguably. But where Glitch really strikes me as doing something new is with its back-end. Glitch uses a low level Java back-end with game logic scripted in JavaScript, built on a suite of APIs, allowing for maximum flexibility and easy deployment. No surprise, it's this API piece that strikes me as compelling and different from other games.
+</p>
+<p>
+     <a href="http://www.glitch.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/glitch/glitch-universe-1.jpg" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     I do have a list of game-related APIs to evaluate, I just haven’t had the time to dive in too deeply. But at first glance most game APIs tend to only deliver meta-information about games, profiles, and the communities around games. Though I don’t doubt APIs drive a lot of game development, most developers I’ve talked to don’t think much about it, let alone make the APIs public or showcase them.
+</p>
+<p>
+     Glitch could be a “game-changer” in that Tiny Speck has built its game around the API, as well as exposing these same APIs to its developer community, enabling them in turn to build web, iOS, and Android games around the Glitch universe.
+</p>
+<p>
+     <a href="http://www.glitch.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/glitch/glitch-universe-2.jpg" alt="" width="300" align="right" /></a>
+</p>
+<p>
+     The Glitch API uses JSON over HTTP or HTTPS, in an RPC style, allowing parameters to be passed via GET or POST vars, with an available JSONP callback. The API provides access to players, skills, avatars, achievements, auctions, calendars and locations within the game.
+</p>
+<p>
+     I hope there are other gaming platforms employing APIs in this fashion, if you know of any let me know. Glitch is the first game I’ve seen build an entire game upon APIs, enabling the ultimate amount of flexibility in its development and deployment, and also opening this power up to the gaming community to create an endless, ever-changing, persistent gaming universe.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/27/tiny-speck-is-changing-how-games-are-built-using-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/26/a-single-provider-for-high-quality-transit-data-and-apis/">A Single Provider for High Quality Transit Data and APIs</a></h3>
+        <span class="post-date">26 Sep 2011</span>
+        <p>
+     <a href="http://ww1.jeppesen.com/main/corporate/land/journey-planning/index.jsp" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/jeppesen/jeppesen-logo-400.jpg" alt="" width="275" align="right" /></a>
+</p>
+<p>
+     I wrote about the <a title="need for more transit API" href="/2011/09/11/the-need-for-more-transit-apis/">need for more Transit APIs</a> a couple weeks ago, and the opportunity for some company or organization to step up and coordinate transit APIs on a global, country, regional and local level. Also the opporunity for developers to provide local resources for building applications, "acquiring" of local data, understanding local constraints, and be the overall contact for a specific locale.
+</p>
+<p>
+     To me, there appears to be a hunger for transit data, and there is a major gap in how this "public data" is being made available for developers to build websites, web and mobiles apps, that businesses and commuters can use. The opportunity is so big, that tech savvy commuters are stepping up, scraping data, and building transit APIs and applications themselves.
+</p>
+<p>
+     I had a lot of people contact me after my post, but one clear player emerged, that appears to be just the company I was looking for. That company is <a title="Jeppesen" href="http://ww1.jeppesen.com/main/corporate/">Jeppesen</a>, a Boeing funded company that has a new service called the <a title="Jeppesen Journey Planner API" href="http://ww1.jeppesen.com/main/corporate/land/journey-planning/index.jsp">Jeppesen Journey Planner API</a>.
+</p>
+<p>
+     Jeppesen has developed a very robust set of transit APIs, providing:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>Public Transit Journey Plans</strong> - Request multimodal public transit journey plans
+     </li>
+     <li>
+          <strong>Polyline Trip Details</strong> - Draw the journey plans on a map
+     </li>
+     <li>
+          <strong>Stop Locations</strong> - Locate all the public transit stops within an area
+     </li>
+     <li>
+          <strong>Stop Timetable</strong> - Obtain a list of departures (or arrivals) from a public transit stop
+     </li>
+     <li>
+          <strong>Walk Journey Plans</strong> - Request walking journey plans between locations
+     </li>
+     <li>
+          <strong>Service Provider</strong> - Identify the public transit service providers in an area
+     </li>
+     <li>
+          <strong>Fares</strong> - Find out the cost of the journey (when transit fare information is available)
+     </li>
+     <li>
+          <strong>Trip Timetable</strong> - Discover all the stopping points for a specific trip
+     </li>
+</ul>
+<p>
+     Jeppesen is aggregating data from transit agencies around the world, including 23 regions in the US, and locations in Australia, New Zealand, Canada and the UK, into a single set of web services. Jeppesen has enough markets to be a viable option, and they are looking to add more markets in the near future.
+</p>
+<p>
+     Their pricing is very affordable and is broken down by stop timetable and journey planning requests. Even though the API currently targets the enterprise and businesses, it is low priced enough that individual developers could use to build applications, that they could monetize and build a viable business around.
+</p>
+<p>
+     <a href="http://ww1.jeppesen.com/main/corporate/land/journey-planning/index.jsp" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/jeppesen/Jeppesen-Journey-Planner.png" alt="" width="325" align="right" /></a>
+</p>
+<p>
+     Jeppesen has spent the last 18 months developing the transit API, looking to provide high quality data aggregation for developers. The API has just been made available for production and has partners in Australia and the UK building applications on the platform.
+</p>
+<p>
+     The Jeppesen Journey Planner API comes in both SOAP and RESTful flavors, with C#, Java and Python code samples. The API is brand new so it lacks other code samples, mobile SDKs, and other community aspects that we are used to with more mature APIs. However, the API is very well done, walking you through an overview of the API, its features, and pricing--while also providing very simple and complete API documentation.
+</p>
+<p>
+     <a title="Registration for the transit API" href="http://ww1.jeppesen.com/main/corporate/land/journey-planning/signup.jsp">Registration for the transit API</a> is not self-service, but they offer a free trial and I had my API key within 24 hours of submitting the request form.
+</p>
+<p>
+     There are still a lot of questions to be answered regarding how Jeppesen will incentivize partners and developers to build applications around the API, will there be revenue sharing opportunities, and what type of local, regional outreach and support there will be. But I'm sure these questions will get answered in time.
+</p>
+<p>
+     For now, Jeppesen shows a lot of potential to be transit API player I was looking for. I think they have a lot of work ahead of them, to meet the transit data needs of enterprise and businesses, while also satisfying the needs of local commuters, especially those very tech savvy ones we see demanding high quality access to their areas transit data.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/26/a-single-provider-for-high-quality-transit-data-and-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/25/twilio-connect-is-not-oauth-for-api-billing/">Twilio Connect is NOT OAuth for API Billing</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p><a title="Twilio Connect" href="http://www.twilio.com/api/connect"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/twilio-connect-screenshot.png" alt="" width="300" align="right" /></a></p>
+<p>During <a title="TwilioCon" href="http://www.twilio.com/conference/">TwilioCon</a> last week I covered the release of Twilio Connect in two posts, starting with, "<a title="Twilio Introduces Twilio Connect, Its New In-App Billing Model" href="http://blog.programmableweb.com/2011/09/21/twilio-introduces-twilio-connect-its-new-in-app-billing-model/">Twilio Introduces Twilio Connect, Its New In-App Billing Model</a>" on <a title="ProgrammableWeb" href="http://www.programmableweb.com">ProgrammableWeb</a>, and on API Evangelist with, "<a title="http://blog.apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/" href="/2011/09/20/twilio-connect-is-oauth-for-api-billing/">Twilio Connect is OAuth for API Billing</a>".</p>
+<p><a title="Twilio connect" href="http://www.twilio.com/api/connect">Twilio Connect</a> is a new billing solution that enables developers to offload charges for Twilio API usage to their application users, rather than their own Twilio accounts, and billing customers separately.  Twilio Connect is modeled after OAuth in that it uses a &ldquo;two-legged&rdquo; process for application users to setup and authenticate a payment relationship with Twilio, that a developer can leverage within their app using a token.</p>
+<p>I mentioned lightly in my post on API Evangelist:</p>
+<blockquote><em>&ldquo;OAuth 2.0 allows for designation of which account resources a developer can access, enabling users to approve at a very granular level, which could very easily be used for billing access as well.&rdquo;</em></blockquote>
+<p>Then yesterday I got called out on Twitter by <a title="Travis Spencer" href="http://travisspencer.com/">Travis Spencer</a> (<a href="http://www.twitter.com/travisspencer">@travisspencer</a>), stating that because Twilio did not use OAuth 2.0 to implement Twilio Connect, it was a step backwards, and I was irresponsible for not calling Twilio out on this.  He is totally right, and I humbly admit to not covering this story well enough.</p>
+<p>In most cases OAuth is implemented for basic user account authentication, but with the introduction of OAuth 2.0 you can use for authenticating access in a very granular way for any user resources that you choose.  So it could be very easily used for billing authentication, and its irresponsible of Twilio to not embrace industry standards, and developing their own, proprietary, one-off implementation.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/oauth/oauth-basic.png" alt="" width="400" /></p>
+<p>OAuth has a reputation for being tough to implement, both from a provider standpoint as well as working with as a developer, but with each version it is getting easier to use, and since its being widely accepted as an industry standard it is all of our responsibility as API owners to make sure it is used properly, and help developers understand the benefits.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/oauth/oauth-additionalscope.png" alt="" width="400" /></p>
+<p>Travis is right, and using widely accepted standards like OAuth 2.0 make API consumption easier.  API owners need to implement OAuth for user account authentication, as well as adding additional scope for accessing other user resources such as billing.</p>
+<p>Twilio leads in many ways when it comes to API ecosystem management, but they should have implemented Twilio Connect using OAuth 2.0.</p>
+<p>Thanks Travis for calling me out, I always welcome anyone to keep me in check, and happy to admit when I&rsquo;m wrong.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/twilio-connect-is-not-oauth-for-api-billing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/25/sorry-salesforcecom-but-databasecom-is-not-open/">Sorry SalesForce.com, but Database.com is not Open</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p><a href="http://www.database.com/es/howitworks"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/salesforce/Database-Com-Open.png" alt="" width="300" align="right" /></a></p>
+<p>I&rsquo;m working on reviewing various APIs as part of my <a title="database industry overview" href="/industries/databases.php">database industry overview</a>, where I&rsquo;m trying to understand the different approaches to delivering database platforms using web APIs as the primary interface.</p>
+<p>One of these database platforms is <a title="Database.com" href="http://www.database.com">Database.com</a>.  I really like what <a title="SalesForce.com" href="http://www.SalesForce.com">SalesForce.com</a> is doing with Database.com, but I take issue with their section declaring Database.com as an open platform.  SalesForce.com claims because you can access Database.com from any language, any platform, and any device through standards-based APIs, it is "open".</p>
+<p>I think many folks in the enterprise space truly believe this makes something open.  All it means is, if you have the money and approved credentials, you can access.  If I launch a database on Database.com it is open for "me" to access, and those I give access to.  And yes, since it uses REST I am "open" to access via any language or platform I choose.  But I'm sorry, that does not make it "open".</p>
+<p>I recommend SalesForce.com take a look at <a title="Freebase" href="http://www.freebase.com/">Freebase</a>.  All the data contained in Freebase is licensed by a Creative <a title="Creative Commons Attribution License" href="http://creativecommons.org/licenses/by/2.0/">Commons Attribution License</a>, which means that it's free for you to browse, query, copy, and even use the data in your own systems or software, even for commercial use, all you have to do is attribute it back to Freebase.</p>
+<p>Anyone has access to use and contribute to Freebase, as well as use any programming language or platform to access the data available on the platform.  Access to data is only one aspect of "open", developers must also be freely open to use and contribute to it, as the community sees fit.</p>
+<p>As much as I love and evangelize the power of the API, an API alone does not make systems or data open.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/sorry-salesforcecom-but-databasecom-is-not-open/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/25/making-apis-accessible-to-regular-users-with-widgets/">Making APIs Accessible to Regular Users with Widgets</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p>
+     <a href="http://www.recovery.gov/FAQ/Developer/Pages/RecoveryAPI.aspx"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/federal-government/recovery-org/Recovery-Gov-Logo.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I was reviewing the <a href="http://www.recovery.gov/FAQ/Developer/Pages/RecoveryAPI.aspx">Recovery API</a> yesterday, which gives you a RESTful API for exploring where all the money went as part of our governments Recovery Act. I have a sort of obsession with this kind of government data, and began playing with, and tracking on where the stimulus money went in my home state of Oregon.
+</p>
+<p>
+     I started hacking on the API by manipulating the query string variables to get different types of responses on how stimulus money was spent by city, county and project types like roads, education and the environment. Since I’m a developer I’m very comfortable with hacking on the URL query string like this, but I noticed they also had a tool they called the, “<a title="Advanced Recipient Data Search Widget" href="http://www.recovery.gov/FAQ/Developer/Pages/AdvSearchWidget.aspx">Advanced Recipient Data Search Widget</a>”.
+</p>
+<p>
+     The advanced recipient data search widget allows me to adjust the same fields, but using an actual form. Using the widget anyone can easily build requests against the Recovery API without being a developer, and I even found it allowed me to explore and understand the API quicker and easier. The widget even displays the final request string you can copy and paste and see the XML results in the browser or just as results grid on the screen. And you can also choose to download the results as a CSV when done.
+</p>
+<p>
+     <a href="http://www.recovery.gov/FAQ/Developer/Pages/AdvSearchWidget.aspx"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/federal-government/recovery-org/recovery-org-widget-screenshot.gif" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     The form could be better. It does not provide drop-down values for each of the fields, and the pop-up window is a little clunky. It still is a very useful tool helping not only developers get up and running, but allows the average user to come in and use, understand and export results from the Recovery API.
+</p>
+<p>
+     I’m a big fan of <a title="API Explorer and Console Tools" href="/buildingblocks/api_explorer.php">API explorer and console tools</a>, but they still often are built for developers, by developers to explore and understand how an API works. The Recovery API’s, advanced recipient data search widget provides a much needed bridge for the average user to take advantage of the power of an API. At <a title="Mimeo" href="http://www.mimeo.com">Mimeo</a>, I’m taking many of my code samples and prototypes and making them live to not only show developers what is possible, but it also allows the average user to come in and use the <a title="Print and Publishing APIs" href="http://developer.mimeo.com">print and publishing APIs</a> without writing code.
+</p>
+<p>
+     I think it is important for us to provide this type of bridge within our APIs so the average user can come and take advantage of our APIs. APIs are not just for developers, and these types of tools can really demonstrate the value of APIs to the average business person, which might just motivate them to find a developer and commission deeper integration with our APIs.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/making-apis-accessible-to-regular-users-with-widgets/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/what-to-include-in-api-reference-documentation/">What to Include in API Reference Documentation</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p><em>This post comes from the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge</a> newsletter. &nbsp;I find so much value from what Peter and Jonathan do over at SDK Bridge, I asked them if I could repost their newsletter here and share with all of you.</em></p>
+<hr />
+<p><a title="SDK Bridge" href="http://sdkbridge.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/SDKBridge-logo.gif" alt="" width="250" align="right" /></a>This article presents a series of questions that your writing should answer for each type of element you would typically find in reference documentation.</p>
+<p>To begin with, think about what a new user needs to know. If you can write for a new user, then you'll cover everything that an existing user will need to know. Once you have that mindset, answer the questions below. For a given element, some of the answers will be obvious from the context and not need to be documented, so use your judgment. In general:</p>
+<ul class="mainlist">
+<li>For collaborations or common interactions or scenarios, is there a conceptual topic that discusses this? If so, link to or reference the conceptual topic from the API topic.</li>
+<li>For any elements that have a user interface component, is there a design guideline topic that discusses it? If so, link to or reference the design guideline from the API topic.</li>
+</ul>
+<p>For classes or structures:</p>
+<ul class="mainlist">
+<li>What function does it serve?</li>
+<li>What other classes or structures does it interact with? What collaborations does it participate in?</li>
+<li>What is its uninitialized state, if any?</li>
+<li>In which ways can you obtain an initialized object or value?</li>
+<li>Who is responsible for disposing of the item? Only an issue if the item is not garbage collected.</li>
+</ul>
+<p>For methods or functions:</p>
+<ul class="mainlist">
+<li>What does it operate on and what does it do?</li>
+<li>What are valid inputs (or states), and what are its outputs?</li>
+<li>Does it have any side effects?</li>
+<li>Are there any corner or edge cases, and if so, what is its expected behavior in each?</li>
+<li>What exceptions or error codes can it generate?</li>
+</ul>
+<p>For constants or enumerations:</p>
+<ul class="mainlist">
+<li>What does the value signify?</li>
+<li>Refer back to the contexts in which it occurs or is used.</li>
+</ul>
+<p>For Web API requests:</p>
+<ul class="mainlist">
+<li>What does it do?</li>
+<li>What are its query and header parameters?</li>
+<li>What does it return?</li>
+<li>Does it have any side effects?</li>
+<li>Are there any corner or edge cases, and if so, what is its expected behavior in each?</li>
+<li>What error codes can it generate?</li>
+</ul>
+<p>If your company has an existing writing team, then the team will likely already have templates or guidelines for API reference documentation that address many of the issues discussed in this article. Just remember that the mindset of the people using your documentation is going to be a bit different that the mindset of the people designing or implementing the API. As a writer, you will need to translate between the two. If you keep these things in mind, it will be easier to write accessible and useable documentation.</p>
+<hr />
+<p><em>If you don't know who SDK Bridge is, they provide <a title="API and SDK Documentation Services" href="http://sdkbridge.com/">API and SDK documentation services</a>, that will truly help developers understand how to build on top of your API. You can find more information about them at the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge website</a>.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/what-to-include-in-api-reference-documentation/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/">Twilio Connect is OAuth for API Billing</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p>
+     <a title="Twilio" href="http://www.twilio.com"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/Twilio-Logo.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     <a title="Twilio" href="http://www.twilio.com">Twilio</a> just announced a new API billing solution called Twilio Connect.  The new billing solution enables developers to offload charges for Twilio API usage to their application users, rather than their own Twilio accounts, and billing customers separately.
+</p>
+<p>
+     Twilio Connect is modeled after OAuth in that it uses a “two-legged” process for application users to setup and authenticate a payment relationship with Twilio, that a developer can leverage within their app using a token.
+</p>
+<p>
+     To start, developers put a Twilio Connect button in their application.  Application users then click the button and are taken to a secure Twilio page that allows them to setup a new Twilio account, requiring only the minimal needed information:  name, billing info, and email.   Upon successful setup, the application is then issued a token, which combined with a Twilio developers key, enables that application to consume Twilio API services, and bill to the users account.
+</p>
+<p>
+     If you think about it, it makes perfect sense.  What OAuth has done for user account authentication,  Twilio is doing for developer billing authentication.  OAuth 2.0 allows for designation of which account resources a developer can access, enabling users to approve at a very granular level, which could very easily be used for billing access as well.  However the complexity of OAuth 2.0 can often scare away businesses looking to implement oAuth, and developers looking to build around an API that authenticates with OAuth.  Twilio is taking the best features from OAuth, while keep the developer implementation dead simple.
+</p>
+<p>
+     Not all APIs would benefit from a billing authentication model like Twilio Connect.  It would work best for APIs that truly have a “cloud utility” model for their pricing, allowing developers to pay for only what they consume.  This would allow for the burden of billing to be lifted from developers, enabling them to do what they do best--code applications.  
+</p>
+<p>
+     <img class="c2" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/twilio-connect-button.png" alt="" align="right" />
+</p>
+<p>
+     One problem I see here is that developers who rely on marking up underlying API services as part of their businesss model, would not benefit from a billing model like this.  But there is opportunity for API owners to take control of in-app billing, to make secure, and operate in the best interest of all application users, while also open up a new revenue sharing opportunity for their developers.  They could offer different percentages of revenue share depending on how much business a developers app generates.  
+</p>
+<p>
+     Right now, the benefit for all developers may not be immediately clear, especially if they depend on revenue from these services, and there may be no benefit to the applicaiton user to have their own Twilio account.  It may actually add an extra unecessary step that could confuse a user during setup.  But think about when Twilio SMS and voice is ubiquitous across business, which is on its way.  A business could connect and disconnect its central telephony account from within different applications and services, and enable them to see their voice and SMS usage company wide, across a variety of applications.
+</p>
+<p>
+     <a title="Twilio Connect" href="http://blog.programmableweb.com/2011/09/21/twilio-introduces-twilio-connect-its-new-in-app-billing-model/">Twilio Connect</a> an interesting approach to API billing. I like the way Twilio thinks, and the company continues to lead in the API space when it comes to making developers lives easier.  I can’t help but think of how this would benefit other APIs, and if this possibly could become a staple for APIs like OAuth has.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/google-introduces-a-google-hangout-api/">Google Introduces a Google+ Hangout API</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/google_plus.png" alt="" width="150" align="right" /></p>
+<p>Not even a week after Google rolled out the long awaited <a title="Google+ API" href="/2011/09/16/google-api-a-technology-review/">Google+ API</a>, they <a title="rolled out Google+ Hangouts API" href="http://googleplusplatform.blogspot.com/2011/09/introducing-google-hangouts-api.html">launched the Google+ Hangouts API</a>, enabling developers to build collaborative apps that run inside of a Google+ Hangout</p>
+<p>The <a title="Google+ Hangout API" href="http://developers.google.com/+/hangouts/">Google+ Hangout API</a> will provide developers with the ability to manipulate the UI, interact with hangout participants and respond to the different events that occur within a hangout. &nbsp;The functionality is reminiscent of the way Google Wave gadgets and robots could interact with a wave and its participants. &nbsp;I wonder if we are seeing some of the Google Wave code being recycled?</p>
+<p>To use Google+ you have to register your application with Google, and specify any other Google+ users on your team that will be able to load the application into their hangout. &nbsp;Since the Google+ Hangouts API is only in developer preview, this is temporary requirement.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/google-plus-hangouts.png" alt="" width="250" align="right" /></p>
+<p>Once registered, apps behaves like a normal web app, but it also can take part in the real-time conversations within a hangout using the API. &nbsp;Google+ Hangout apps will use whats called a &ldquo;shared state&rdquo; among all instances, notifying users of changes by other application users in real-time.</p>
+<p>The decision to release the Google+ clearly was a strategic move against Facebook, which I understand, but I still feel strongly that a empowering developers with a fully write enabled API from the beginning, is very important to setting the tone for the Google+ API ecosystem.</p>
+<p>Many developers, including myself <a title="were not happy with the limited functionality of the Google+ API release" href="/2011/09/16/google-api-a-technology-review/">were not happy with the limited functionality of the initial Google+ API release</a>. &nbsp;However, I could tell that Google was being cautious in their API roll-out, and there is potentially much more behind the scenes. &nbsp;I expect Google will be rolling out new APIs as they feel confident, or maybe when they feel it will give them a strategic advantage, like this week during the <a title="Facebook F8 Conference" href="http://www.facebook.com/f8">Facebook F8 conference</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/google-introduces-a-google-hangout-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/17/providing-code-libraries-is-not-enough-for-your-api/">Providing Code Libraries is Not Enough for Your API</a></h3>
+        <span class="post-date">17 Sep 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Tag-Cloud-API-Code-Samples.png" alt="" width="250" align="right" /><a title="Code libraries" href="http://apievangelist.com/buildingblocks/code_libraries.php">Code libraries</a> have been a staple of open API communities for quite a few years now. &nbsp;API owners provide developers with working samples of code in a variety of programming languages, to get started working with an API. &nbsp;Sample code helps developer get up and running quicker, and increases the chances a developer will actually adopt an API.</p>
+<p>I was reviewing how Google approached the release of the Google+ API this week, and noticed their <a title="download section" href="http://developers.google.com/+/downloads">download section</a> not only contained the usual code libraries, but also contain whats called "starter projects". &nbsp;These starter projects provide a complete framework with everything you need to get start with OAuth, and to start building an application on top of the Google+ API.</p>
+<p>Does this reflect the future of what API owners should be providing for their developers? &nbsp;Should we be providing web and mobile app starter projects to help get developers up and running with our APIs? &nbsp;These kits could assist them in moving from idea to integration, but starter kits might go even further than that. &nbsp;</p>
+<p>By providing starter applications projects to our developers we can go beyond faster integration, and also help steer the quality of how applications are designed, ensure they using best coding practices, following security standards, and ultimately delivering better applications that are in line with the goals of the API owner.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/Google-Plus-Starter-Projects.png" alt="" width="550" align="center" /></p>
+<p>Companies don't just want developers using their APIs, they want them building quality applications around them, that reflect positively on the API. &nbsp;Starter projects, may be just the way to steer how developers build around an API, and guide them in a positive direction.</p>
+<p>Starter projects do this from a functional perspective, but another example of this from the UI and branding perspective, can be seen with <a title="Twitters Bootstrap Toolkit" href="http://twitter.github.com/bootstrap/">Twitter's Bootstrap toolkit</a>. &nbsp;Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites, and includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation and everything developers need to build sharp looking Twitter web apps.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/twitter/Bootstrap-Twitter.png" alt="" width="550" align="center" /></p>
+<p>I'm sure Twitter is interested in helping developers kickstart development, but ultimately they are helping developers build better looking apps that fall in line with Twitter's vision of what a Twitter client should look like. &nbsp;The Twitter Bootstrap toolkit helps jump start developers, but it also guides their UI to reflect the standards of the API owners, and can also help developers adhere to branding requirements.</p>
+<p>I anticipate that providing code libraries and samples will not be enough in the future, and API owners will have to provide more complete UI toolkits, as well as starter web and mobile application starter projects that encourage developers to integrate, while also guiding them when it comes to best practices for their user interface, coding and security. &nbsp;</p>
+<p>This isn't my idea, I"m just taking cues from two of the leading API providers, Google and Twitter. &nbsp;Will providing more <a title="building blocks" href="http://apievangelist.com/buildingblocks/">building blocks</a> like starter projects and UI toolkits be the future? Or will it look more like what <a title="Facebook and Heroku are doing when it comes to application development" href="http://blog.programmableweb.com/2011/09/16/facebook-apps-in-the-cloud-made-easy-by-heroku-partnership/">Facebook and Heroku are doing when it comes to application development</a>?</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/17/providing-code-libraries-is-not-enough-for-your-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/16/google-api-a-technology-review/">Google API a Technology Review</a></h3>
+        <span class="post-date">16 Sep 2011</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/google-plus/google_plus.png" alt="" width="200" align="right" />I was happy to see <a title="Google launch an API for Google + this week" href="http://googleplusplatform.blogspot.com/2011/09/getting-started-on-google-api.html">Google launch an API for Google +</a> this week. &nbsp;I&rsquo;m not chomping at the bit to build anything social on it, but I&rsquo;m glad they made it public.&nbsp;</p>
+<p>I wanted to take some time to review the API from a technology standpoint, and look at what possibilities it opens up for developers.</p>
+<p>The <a title="Google + API" href="https://developers.google.com/+/overview">Google + API</a> provides a RESTful interface for the newly launched Google social network, Google +, &nbsp;and provides access to profile data and activity streams. &nbsp;The API uses <a title="OAuth" href="http://apievangelist.com/buildingblocks/oauth.php">OAuth</a> for authentication and JSON for its request and response formats.</p>
+<p>That&rsquo;s it. &nbsp;Pretty underwhelming from a developers perspective. &nbsp;I&rsquo;ll be able to make some badges or widgets, maybe stream my activities in the sidebar of my Wordpress blog. &nbsp;&nbsp;&nbsp;Where is my photo access (wait that is in Picassa), or my video access (wait that is in Youtube), &nbsp;or my social events (wait that is in Google Calendar)?</p>
+<p>Ok, forget about about other content, what about my write access? &nbsp;I want to be able to write to my activity stream and update my profile. &nbsp;I want other apps that I authorize to be able to publish to my activity stream. &nbsp;</p>
+<p>I'll stop there. &nbsp;Without write access, there is no use railing about lack of application platform, access to circles, and true data portability and ownership via the API.</p>
+<p>In short, I think Google could have come out of the gate with a little more. &nbsp;Maybe linking up some of my other Google systems via my Google + profile, like Picassa images, and Youtube video. &nbsp;But more importantly developers should have write access. &nbsp;OAuth, plus write access to my social profile and activity stream should have been part of this release. &nbsp;&nbsp;It would have sent the right message to developers.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/Google-Developers.png" alt="" width="580" align="center" /></p>
+<p>I also understand how hard all of this is for them. &nbsp;They have a lot to consider, and pleasing developers are only one piece of the puzzle. &nbsp;&nbsp;But as we&rsquo;ve seen with Twilio and Twitter, your developer ecosystem can help make your platform have the applications and features users are looking for, making it a desirable place to be. &nbsp;</p>
+<p>Platform success seems to come based upon the adoption of three key user groups: &nbsp;early adopters, developers and end-users. &nbsp;With Google + we&rsquo;ve just experienced the early adopter phase, what sort of environment will Google provide for developers during the next phase of growth.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/16/google-api-a-technology-review/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/14/can-you-build-an-api-using-scraped-data/">Can You Build an API Using Scraped Data?</a></h3>
+        <span class="post-date">14 Sep 2011</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/web-scraper.jpg" alt="" width="250" align="right" />I&rsquo;ve come across several APIs lately that rely on getting their data from web scraping. &nbsp;These API owners have written scripts that spider page(s) on a regular schedule, pull content, parse it and clean it up for storage in a database.</p>
+<p>Once they&rsquo;ve scraped or harvested this data from the web page source, they then get to work transforming and normalizing for access via a RESTful API. &nbsp;&nbsp;With an API they can now offer a standard interface that reliably pulls data from a database and delivers it in XML or JSON to any developer. &nbsp;</p>
+<p>These API owners are still at the mercy of the website source that is being scraped. &nbsp;What if the website changes something? &nbsp;</p>
+<p>This is definitely a real problem, and scraping is not the most reliable data source. &nbsp;But if you think about it, APIs can go up and down in availability, making them pretty difficult to work with too. As long as you have failure built into your data acquisition process and hopefully have a plan B, the API can offer a consistent interface for your data.</p>
+<p>Web scraping is not an ideal foundation for building a business around, but if the value of the data outweighs the work involved with obtaining, cleaning up, normalizing and delivering the data--then its worth it. &nbsp;&nbsp;And this type of approach to data APIs will continue.</p>
+<p>There is far more data available via web pages today then there is from web APIs. &nbsp;This discrepancy leaves a lot of opportunities for web scrapers to build business around data you might own, and you make available online, but haven&rsquo;t made time to open, control and monitor access to it via an APi.</p>
+<p>The opportunity to build businesses around scraping will continue in any sector until dependable APIs are deployed that provide reasonable pricing, as well as clear incentive and revenue models for developers to build their businesses on.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/14/can-you-build-an-api-using-scraped-data/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/13/unified-data-apis-for-geo-weather-and-beyond/">Unified Data APIs for Geo, Weather and Beyond</a></h3>
+        <span class="post-date">13 Sep 2011</span>
+        <p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Hurricane-Irene.jpg" alt="" width="250" align="right" />Last week I covered <a title="Centralized Geo Data with New InfoChimps API" href="/2011/09/01/centralized-geo-data-with-infochimps-new-api/">Centralized Geo Data with New InfoChimps API</a>, and talked about how I felt it was a <a title="Look at the Future of Data" href="/2011/09/01/a-look-at-the-future-of-data-apis/">Look at the Future of Data</a>.  After writing I started thinking about other data that is ready for the same type of treatment that InfoChimps is giving geo data.<br />
+     <br />
+     <span>I was reading <a title="Audrey Watters" href="http://www.hackeducation.com">Audrey’s</a> post today on O’Reilly today called, <a title="a new look at weather data" href="http://radar.oreilly.com/2011/09/weatherspark-weather-data-visualization.html">A new look for weather data</a>, where she talks with <a title="Weatherspark" href="http://weatherspark.com/">WeatherSpark</a> co-founder <a title="Jacob Norda" href="http://twitter.com/#!/jacobnorda">Jacob Norda</a> about his company's approach to weather data and visualizations.</span><br />
+     <br />
+     <span>Norda talks about where the problems with traditional weather information are, how WeatherSpark gets its data, and how weather data can be improved overall.</span><br />
+     <br />
+     <span>It seems weather data suffers from all the same problems as geo data, such as multiple sources, varying schemas, huge datasets that are not easy linked with other sets of data.   Weather data has huge legacy system usage as well as massive growth in generation and consumption with the introduction of sensors and mobile devices.</span><br />
+     <br />
+     <span>Norda concludes the interview by saying, “We're considering offering a unified API, but it's in the pre-roadmap stage at this point.”  Seems like a common theme with data and APIs, lately.</span><br />
+     <br />
+     <span>What other areas of data are reaching this point, where developers could benefit from a unified API?</span>
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/13/unified-data-apis-for-geo-weather-and-beyond/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/13/printing-and-publishing-apis/">Printing and Publishing APIs</a></h3>
+        <span class="post-date">13 Sep 2011</span>
+        <div>
+     <p>
+          <img src="http://kinlane-productions.s3.amazonaws.com/mimeo/printing-press.jpg" alt="" width="250" align="right" />
+     </p>
+     <p>
+          As the API Evangelist for Mimeo, I spend a lot of time looking for other print related APIs. I spent some time today to update my list, and here what I found:
+     </p>
+     <ul class="mainlist">
+          <li>
+               <a title="Entusem API" href="/apis/the_enthusem_api_.php"><strong>Enthusem API</strong> </a>- Provides card printing services.
+          </li>
+          <li>
+               <strong><a title="Google Cloud Print" href="/apis/google_cloud_print.php">Google Cloud Print</a></strong> - Enables printing to any cloud-connected printer.
+          </li>
+          <li>
+               <strong><a title="Lulu Publishing API" href="/apis/lulu_publishing_api.php">Lulu Publishing API</a></strong> - Provides book publishing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Connect Cloud Print API" href="/apis/mimeo_connect_cloud_print_api.php">Mimeo Connect Cloud Print API</a> </strong>- Provides printing of common business documents like bound, single sheet, poster, cards, binders and booklets.
+          </li>
+          <li>
+               <strong><a title="Mime Card Printing API" href="/apis/mimeo_card_printing_api_.php">Mimeo Card Printing API</a></strong> - Provides card printing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Flyer &amp; Brochure Printing API" href="/apis/mimeo_flyer_&amp;_brochure_printing_api.php">Mimeo Flyer &amp; Brochure Printing API</a></strong> - Provides flyers and brochure printing.
+          </li>
+          <li>
+               <strong><a title="Mimeo Spiral Notebook Printing API" href="http://mimeoconnect.3scale.net/wiki/spiral-notebook-printing-api">Mimeo Spiral Notebook Printing API</a></strong> - Provides spiral notebook printing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Poster Printing API" href="/apis/mimeo_poster_printing_api.php">Mimeo Poster Printing API</a></strong> - Provides poster printing services.
+          </li>
+          <li>
+               <strong><a title="Moo.com" href="/apis/moo_api.php">Moo.com</a></strong> - Provides printing of MiniCards, StickerBooks, Postcards, Business Cards and Greeting Cards.
+          </li>
+          <li>
+               <strong><a title="Newspaper Club API" href="/apis/newspaper_club_api.php">Newspaper Club API</a></strong> - Provides access to a layout tool created for building classic looking newspapers designed for print.
+          </li>
+          <li>
+               <strong><a title="PicWing" href="http://www.picwing.com/apidocs">PicWing</a></strong> - Provides photo printing services.
+          </li>
+          <li>
+               <strong><a title="Snapfish Publisher" href="/apis/snapfish_publisher.php">Snapfish Publisher</a></strong> - Provides photo printing Services.
+          </li>
+          <li>
+               <strong><a title="ShareBook API" href="/apis/sharedbook_api.php">SharedBook API</a></strong> - Provides book building and publishing services.
+          </li>
+          <li>
+               <strong><a title="Shutterfly" href="/apis/shutterfly_api.php">Shutterfly</a></strong> - Provides photo printing services.
+          </li>
+          <li>
+               <strong><a title="ZetaPrints" href="http://www.zetaprints.com/help/about-web-to-print-api/">ZetaPrints</a></strong> - Provides web-to-print services for many document types.
+          </li>
+     </ul>
+     <p>
+          Let's take inventory of what types of printing services are available.  First Google provides a web-based framework for registering, access and printing to any web-enabled printer.  And The Newspaper Club API provides newspaper layout tools.  Those really are print related, but not necessary produce print as a final product.
+     </p>
+     <p>
+          When it comes to actual printing, there are an assortment of business documents including books, binders, newsletters, booklets, cards, spiral notebook.
+     </p>
+     <p>
+          Some big name photo printing services, and nice high end minicards, stickerBooks, postercards, business and greeting cards with Moo.com.
+     </p>
+     <p>
+          If you know of any other print or publishing APIs I should add to the list, let me know.
+     </p>
+</div>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/13/printing-and-publishing-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+
+	<table width="100%" border="1" style="background-color:#FFF; border: 0px #FFF;">
+		<tr style="background-color:#FFF; border: 0px #FFF;">
+			<td align="left">
+				<a href="/blog/page60" class="button"><< Prev</a></li>
+			</td>
+			<td></td>
+			<td align="right">
+				<a href="/blog/page62" class="button">Next >></a>
+			</td>
+		</tr>
+	</table>
+
+  </div>
+</section>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

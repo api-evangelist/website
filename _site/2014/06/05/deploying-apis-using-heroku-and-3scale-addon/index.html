@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Deploying APIs Using Heroku And 3Scale Add-On</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Deploying APIs Using Heroku And 3Scale Add-On | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-logo.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Deploying APIs Using Heroku And 3Scale Add-On | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-logo.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Deploying APIs Using Heroku And 3Scale Add-On</h2>
+<p><span class="post-date">05 Jun 2014</span></p>
+<p><a href="https://heroku.com"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-logo.png" alt="" width="225" align="right" /></a></p>
+<p>I am playing around with deploying APIs using multiple cloud platforms, and using popular container solutions. Next up is quickly deploying one of my utility APIs, to <a href="http://heroku.com">Heroku</a>, complete with access control, traffic reports, and supporting analytics with <a href="http://bit.ly/13esk6Q">3Scale infrastructure</a>.</p>
+<p><strong>Application - Simple Screen Capture API</strong><br /> I&rsquo;ve been working through an <a href="http://apievangelist.com/2014/04/17/an-operational-harness-for-my-screen-capture-api/">operational harness</a> for deploying all my APIs, and the API I use to push forward my approach to API deployment, is a <a href="http://apievangelist.com/2014/01/06/creating-my-own-screenshot-api/">screen capture API</a>. This is what I will be deploying on Heroku, creating a simple application, that will take screen captures of web pages that I pass to it.</p>
+<p><strong>3Scale Heroku Add-On</strong><br /> To make API deployment on Heroku easier, <a href="https://addons.heroku.com/threescale">3Scale has created a Heroku add-on</a> that you can easily deploy for any application you have running on the PaaS platform. With just a single click I added the 3Scale Heroku add-on to my screen capture API--now I can apply 3Scale API infrastructure to my API.</p>
+<p><strong>API Access Control</strong><br /> Using 3Scale I can control who has access to my screen capture API, by setting rate limits and quotas, and if I want I can even charge for access. I can compose any type of service levels for my API that I want. I will create tiers for internal access, external partners, and a public tier where I charge a fee for each API call.</p>
+<p><strong>API Traffic Report and Analytics</strong><br /> With all of my screen capture API traffic managed with 3Scale, I can now see traffic analytics and reports, broken down any account, application or for specific service. Any developer who signs up for my screen capture API, will get access to the reports for their account usage as well.</p>
+<p><a href="https://addons.heroku.com/threescale"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/3Scale/3scale-heroku-add-on.png" alt="" width="325" align="right" /></a></p>
+<p><strong>Ready-To-Go Developer Portal</strong><br /> One of the benefits of using 3Scale for deploying your API on Heroku, is that you get a developer portal to go with your APIs. This is where developers will to learn about your API, register for API keys, and view reports on their usage.</p>
+<p><strong>Free To Get Started</strong><br /> One of the main reasons I use 3Scale to mange my APIs, is that even though I&rsquo;m on the paid tier now, 3Scale allows me to fire up new APIs, manage access and receive reports at no charge.  I don&rsquo;t pay until my APIs start generating traffic, and if my business model is sound, I should be covered. You get up to 250 user accounts with a traffic volume 150,000 API calls per day before you have to move up to the next tier.</p>
+<p><strong>Multi-lingual APIs In Cloud</strong><br /> 3Scale provides <a href="https://devcenter.heroku.com/articles/threescale#deployment-overview">instructions for deploying APIs using Ruby, Node.js, and Java</a>, allowing you to the language you prefer for API deployment.</p>
+<p><strong>Drive API Code From Github</strong><br /> I will be driving the development of the code for my screen capture API using Github. Heroku allows me connect my application to a specific Github repository, allowing me to <a href="http://apievangelist.com/2014/02/05/github-as-the-central-presence-definition-configuration-and-source-code-for-your-api/">manage all my API deployment centrally using Github</a>.</p>
+<p>I already have a PHP version of my screen capture API, that uses the Slim REST framework, which wraps around PhantomJS, which does the actual screen capture. Now I can take my standard utility grade, screen capture API and easily deploy on Heroku, for my own internal use, for a partner, or to any wholesale customer who would like to deploy a screen capture API in their own Heroku account.</p>
+<p>Next I&rsquo;m going to look at various ways to deploy the same screen capture API using Amazon Web Services (AWS). There are several options for deploying APIs on AWS, and hopefully I can find the easiest, lowest cost way to get an API deployed, by playing with several approaches.</p>
+<p><em><strong>Disclosure: </strong>3Scale is an API Evangelist partner.</em></p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Deploying APIs Using Heroku And 3Scale Add-On - https://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/&title=https://apievangelist.comDeploying APIs Using Heroku And 3Scale Add-On" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/&title=Deploying APIs Using Heroku And 3Scale Add-On&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2014/06/05/deploying-apis-using-heroku-and-3scale-addon/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/06/05/beta-testing-linkrotjs-on-api-evangelist/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/06/05/help-developers-understand-what-to-do-next-with-your-api-response/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

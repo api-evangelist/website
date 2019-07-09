@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Using An OpenAPI Spec As Central Truth In Stakeholder Discussions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Using An OpenAPI Spec As Central Truth In Stakeholder Discussions | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/openreferral_logo_green.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using An OpenAPI Spec As Central Truth In Stakeholder Discussions | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/openreferral_logo_green.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Using An OpenAPI Spec As Central Truth In Stakeholder Discussions</h2>
+<p><span class="post-date">12 Jan 2017</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/openreferral_logo_green.png" alt="" width="40%" align="right" /></p>
+<p>I am working with <a href="https://openreferral.org/">Open Referral</a> to evolve the schema for the delivery of human services, as well as helping craft a first draft of the OpenAPI Spec for the API definition. The governing organization is looking to take this to the next level, but there are also a handful of the leading commercial providers at the table, as well other groups closer to the municipalities who are implementing and managing Open211 human service implementations.</p>
+<p><a href="https://apievangelist.com/2016/03/31/gathering-my-thoughts-about-open-referral-and-the-human-services-api/">I was working with Open Referral on this before checking out this last summer</a>, and would like to help steward the process, and definition(s) forward further in 2017. This means that we need&nbsp;to speak using a common language when hammering out this specification&nbsp;and be using a common platform where we can record changes, and produce a resulting living document. I will be borrowing from existing work I've done on API definitions, schema, and scope across the API space, and putting together a formal process design specifically for the very public process of defining, and delivering human services at the municipal level.</p>
+<p>I use<a href="http://openapis.org"> OpenAPI Spec (openapis.org)</a> as an open, machine readable format to drive this process. It is the leading standard for defining APIs in 2017, and now is officially part of the Linux Foundation. OpenAPI Spec provides all stakeholders in the process with a common language when describing the Open Referral in JSON Schema, as well as the surface area of the API that handles responses &amp; requests made of the underlying schema.</p>
+<p><a href="http://adopta-agency.github.io/open-referral-api/">I have an OpenAPI Spec from earlier work</a>&nbsp;on this project, with the <a href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json">JSON version</a> of the machine-readable definition, as well as a <a href="https://github.com/adopta-agency/open-referral-api/blob/gh-pages/api-commons/openapi-spec.yaml">YAML edition</a>--OpenAPI Spec allows for JSON or YAML editions, which helps the format speak to a wider, even less technical audience. These current definitions are not complete agreed upon definitions for the human services specification, and are just meant to jumpstart the conversation at this point.</p>
+<p>OpenAPI Spec provides us with a common language to use when communicating around the API definition and design process with all stakeholders, in a precise, and machine readable way. OpenAPI Spec can be used to define the master Open Referral definition, as well as the definition of each individual deployment or integration. This opens up the opportunity to conduct a "diff" between the definitions, showing what is compatible, and what is not, at any point in time.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/sponsor_logo_oai_print.jpg" alt="" width="40%" align="right" /></p>
+<p>The platform I will be using to facilitate this discussion is Github, which provides the version control, "diff", communication, and user interactions that will be required throughout the lifecycle of the Open Referral specification. Allowing each path, parameter, response, request, and other elements to be discussed independently, with all history present. Github also provides an interesting opportunity for developing other tools, <a href="http://apis.json.annotation.apievangelist.com/)">like I have for annotating the API definition as part of the process</a>.</p>
+<p>This approach to defining a common data schema and API definition requires that all stakeholders involved become fluent in OpenAPI Spec, and JSON Schema, but is something that I've done successfully with other technical, as well as non-technical teams. This process allows us all to all be on the same page with all discussion around the Open Referral API definition and schema, with the ability to invite and include new participants in the conversation at any time using Github's existing services.</p>
+<p>Once a formal draft API specification + underlying JSON schema for Open Referral is established, it will become the machine readable contract&nbsp;and act as a central source of truth regarding the API definition as well as the data model schema. It is a contract that humans can follow, as well as be used to drive almost every other stop along the API life cycle like deployment, mocking, management, testing, monitoring, SDKs, documentation, and more.</p>
+<p>This process is not unique to Open Referral. I want to be as public with the process to help other people, who are working to define data schema, understand what is possible when you use APIs, OpenAPI Spec, JSON Schema, and Github. I am also looking to reach the people who do the hard work of delivering human services on the ground in cities&nbsp;and help them understand what is possible with Open Referral. Some day I hope to have a whole suite of server-side, and client-side tooling developed around the standard, empowering cities, organizations, and even commercial groups deliver human services more effectively.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Using An OpenAPI Spec As Central Truth In Stakeholder Discussions - https://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/&title=https://apievangelist.comUsing An OpenAPI Spec As Central Truth In Stakeholder Discussions" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/&title=Using An OpenAPI Spec As Central Truth In Stakeholder Discussions&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/01/12/using-an-openapi-spec-as-central-truth-in-stakeholder-discussions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/01/12/the-google-baseline-for-a-user-account-area/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/01/12/why-i-still-believe-in-apisthe-2017-edition/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

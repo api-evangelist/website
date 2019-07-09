@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Long Running API Requests And Differential API Responses</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Long Running API Requests And Differential API Responses | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Long Running API Requests And Differential API Responses | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Long Running API Requests And Differential API Responses</h2>
+<p><span class="post-date">10 Jul 2018</span></p>
+<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I am shifting my long running API operations from a PHP / EC2 based implementation to a more efficient Node.js / Lambda based solution, and I promised James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>) that I’d share a breakdown of my process with him a month or so back. I’m running 100+, to bursts of 1000+ long running API requests for a variety of purposes, and it helps me to tell the narrative behind my code, introducing some coherence into the why and how of what I’m doing, while also sharing with others along the way. <a href="http://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/">I had covered my earlier process a little bit in a story a few months ago</a>, but as I was migrating the process, I wanted to further flesh out, and make sure I wasn’t mad.</p>
+
+<p>The base building block of each long running API request I am making is HTTP. The only difference between these API requests, and any others I am making on a daily basis, is that they are long running–I am keeping them alive for seconds, minutes, and historically hours. My previous version of this work ran as long running server side jobs using PHP, which I monitored and kept alive as long as I possibly could. My next generation scripts will have a limit of 5 minutes per API request, because of constraints imposed by Lambda, but I am actually find this to be a positive constraint, and something that will be helping me orchestrate my long running API requests more efficiently–making them work on a schedule, and respond to events.</p>
+
+<p>Ok, so why am I running these API calls? A variety of reasons. I’m monitoring a Github repository, waiting for changes. I’m monitoring someone’s Twitter account, or a specific Tweet, looking for a change, like a follow, favorite, or retweet. Maybe I’m wanting to know when someone asks a new question about Kafka on Stack Overflow, or Reddit. Maybe I’m wanting to understand the change schedule for a financial markets API over the course of a week. No matter the reason, they are all granular level events that are occurring across publicly available APIs that I am using to keep an eye on what is happening across the API sector. Ideally all of these API platforms would have webhook solutions that would allow for me to define and subscribe to specific events that occur via their platform, but they don’t–so I am doing it from the outside-in, augmenting their platform with some externally event-driven architecture.</p>
+
+<p>An essential ingredient in what I am doing is <a href="http://streamdata.io">Streamdata.io</a>. Which provides me a way to proxy any existing JSON API, and turn into a long running / streaming API connection using Server-Sent Events (SSE). Another essential ingredient of this is that I can choose to get my responses as JSON PATCH, which only sends me what has changed after the initial API response comes over the pipes. I don’t receive any data, unless something has changed, so I can proxy Github, Twitter, Stack Overflow, Reddit, and other APIs, and tailor my code to just respond to the differential updates I receive with each incremental update. I can PATCH the update to my initial response, but more importantly I can take some action based upon the incremental change, triggering an event, sending a webhook, or any other action I need based upon the change in the API space time continuum I am looking for.</p>
+
+<p>My previous scripts would get deployed individually, and kept alive for as long as I directed the jobs manager. It was kind of a one size fits all approach, however now that I’m using Lambda, each script will run for 5 minutes when triggered, and then I can schedule to run again every 5 minutes–repeating the cycle for as long as I need, based upon what I’m trying to accomplish. However, now I can trigger each long running API request based upon a schedule, or based upon other events I’m defining, leveraging AWS Cloudwatch as the logging mechanism, and AWS Cloudwatch Events as the event-driven layer. I am auto-generating each Node.js Lambda script using OpenAPI definitions for each API, with a separate environment layer driving authentication, and then triggering, running, and scaling the API streams as I need, updating my AWS S3 Lake(s) and AWS RDS databases, and pushing other webhook or notifications as I need.</p>
+
+<p>I am relying heavily on Streamdata.io for the long running / streaming layer on top of any existing JSON API, as well as doing the differential heavy lifting. Every time I trigger a long running API request, I’ll have to do a diff between it’s initial response, and the previous one, but every incremental update for the next 4:59 is handled by Streamdata.io. Then AWS Lambda is doing the rest of the triggering, scaling, logging, scheduling, and event management in a way more efficient way than I was previously with my long running PHP scripts running as background jobs on a Linux EC2 server. It is a significant step up in efficiency and scalability for me, allowing me to layer on an event-driven layer on top of existing 3rd party API infrastructure I am depending on to keep me informed of what is going on, and keep my network of API Evangelist research moving forward.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Long Running API Requests And Differential API Responses - https://apievangelist.com/2018/07/10/long-running-api-requests-and-differential-api-responses/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/07/10/long-running-api-requests-and-differential-api-responses/&title=https://apievangelist.comLong Running API Requests And Differential API Responses" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/07/10/long-running-api-requests-and-differential-api-responses/&title=Long Running API Requests And Differential API Responses&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/07/10/long-running-api-requests-and-differential-api-responses/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/07/10/json-patch-to-articulate-change-for-your-api-roadmap/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/07/10/my-moving-towards-a-modern-api-lifecycle-at-post-con-2018/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

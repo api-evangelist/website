@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Police Report: Raw Thoughts From On-Boarding With Your API</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Police Report: Raw Thoughts From On-Boarding With Your API | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Police Report: Raw Thoughts From On-Boarding With Your API | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>API Police Report: Raw Thoughts From On-Boarding With Your API</h2>
+<p><span class="post-date">06 Jul 2015</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-police.png" alt="" width="225" align="right" /></p>
+<p><a href="http://theapistack.com/companies.html">I am working hard to generate detailed profiles, that include APIs.json indexes, and Swagger definitions, for each of the 1000 companies I have listed in the API Stack</a>. I have encouraged anyone to step up and help me profile these companies, join the conversation via the Github issues where the API stack is hosted, resulting in some really nice folks jumping in to hellp me tackle the hard work.</p>
+<p>One of these brave souls who stepped up, and get their hands dirty is Bob Salita, who is also sharing his experience, via what he calls an <span style="text-decoration: underline;">"API Police Report"</span>, derived from his experience onboarding with APIs. I thought his condensed thoughts reflect what I see everyday as I onboard with new APIs, and was worth sharing.</p>
+<p><strong>He starts with a simple question: What do developers want?</strong></p>
+<ul>
+<li>To use your API. Duh! Don&rsquo;t get in their way.</li>
+</ul>
+<p><strong>What do we force a developer do?</strong></p>
+<ul>
+<li>Google for your website.</li>
+<li>Sign up as a generic user (usually unstated).</li>
+<li>Wait for email verification link.</li>
+<li>Click on verification link.</li>
+<li>Log into website.</li>
+<li>Find link to developer site.</li>
+<li>Find link to API documentation.</li>
+<li>Register app (usually OAuth).</li>
+<li>Figure out how to obtain API credentials.</li>
+<li>Find link to endpoints.</li>
+<li>Figure out how to use API credentials.</li>
+<li>Play in playground.</li>
+<li>Search for SDK in preferred language.</li>
+<li>Cancel dinner date.</li>
+<li>How can we improve onboarding?</li>
+</ul>
+<ol> </ol>
+<p dir="ltr"><strong>What you can do! Anticipate needs, minimize process:</strong></p>
+<ul>
+<li>Big button showing &ldquo;Get Started&rdquo;. No registration needed.</li>
+<li>Transfer to Playground with temporary key installed.</li>
+<li>Offer easy navigation to friendly API Docs, SDKs, permanent credentials.</li>
+</ul>
+<p dir="ltr"><span><strong>The anti-patterns to onboarding</strong>:</span></p>
+<ul>
+<li>Secret onboarding. No Google hits.</li>
+<li>No Developer or API link.</li>
+<li>No Sign Up button. No Sign Up imperative.</li>
+<li>No App registration link.</li>
+<li>No Get Credentials link.</li>
+<li>No Authorization procedure.</li>
+<li>No authorization endpoints (shhh, secret).</li>
+<li>No Rest API documentation link.</li>
+<li>No Curl link.</li>
+<li>No API playground</li>
+<li>No safe sandbox (financial industry).</li>
+<li>No SDK link. Too few languages choices.</li>
+<li>Must interview with sales or support rep.</li>
+<li>Must mail in API registration.</li>
+<li>SSL certificate warnings. &ldquo;Get me out of here!&rdquo;</li>
+<li>Inability to change locale, language or monetary unit.</li>
+<li>USS (Ugly Site Syndrome). So 2005.</li>
+<li>Unclear use case.</li>
+<li>Uncompelling content.</li>
+<li>Confusing website.</li>
+<li>Confusing biz plan.</li>
+<li>Too much unnecessary registration info requested.</li>
+<li>Slow registration process, delayed email verification, snail-mail (s/b &lt; 10 seconds).</li>
+<li>Missing page navigation.</li>
+<li>IP blacklisting.</li>
+<li>Short trial &ndash; 7/14 days. s/b 30 days.</li>
+<li>Broken registration, broken authorization process, broken APIs.</li>
+<li>Too much engagement.</li>
+</ul>
+<p><strong>What Are The Best Practices:</strong></p>
+<ol> </ol> 
+<ul>
+<li>OAuth 2 support.</li>
+<li>API Playground.</li>
+<li>Safe sandbox (financial services).</li>
+<li>Use mashery.com.</li>
+</ul>
+<p dir="ltr"><strong>Sometimes you have to be a snob &ndash; for good reasons:</strong></p>
+<ul>
+<li>Limit registration size. Limit beta size.</li>
+<li>Vet registrants for reasons of security, accountability (Bitcoin), company size, sales volume.</li>
+<li>Refuse because of IP location.</li>
+<li>Refuse because of free email account.</li>
+<li>Be expensive.</li>
+</ul>
+<ol> </ol>
+<p>I am just publishing his raw report as is, because I think it reflects what a tough job it is to profile these APIs, and the thoughts that go through your head as you do the work. This work is something API providers should be doing themselves! They should be going through their APIs, putting on their external developer hats, and try to think like a new developer might--experience the friction.</p>
+<p>The process of trying to understand what an API does, how to get access, and the process of indexing the API operations using <a href="http://apisjson.org">APIs.json</a>, and craft individual <a href="http://swagger.io">Swagger</a> definitions for each available APIs is a lot of work, but it represents the work, and thought you should be putting into your API--it is an important journey!</p>
+<p>I will be referencing these "<em>API Police Reports"</em> in future stories, because Bob's honest thoughts, as he does this hard work, provide a wealth of detail that all API providers should be tuning into.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=API Police Report: Raw Thoughts From On-Boarding With Your API - https://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/&title=https://apievangelist.comAPI Police Report: Raw Thoughts From On-Boarding With Your API" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/&title=API Police Report: Raw Thoughts From On-Boarding With Your API&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/07/06/api-police-report-raw-thoughts-from-onboarding-with-your-api/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/07/06/a-simple-walkthrough-of-how-to-deploy-a-4th-of-july-fireworks-api-using-a-google-spreadsheet-and-apispark/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/07/06/where-is-the-containerized-api-marketplace-that-businesses-will-need-for-success-in-the-api-economy/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

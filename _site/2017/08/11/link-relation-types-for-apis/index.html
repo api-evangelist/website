@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Link Relation Types for APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Link Relation Types for APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/erik-wilde/link-relation-types-for-web-services.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Link Relation Types for APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/erik-wilde/link-relation-types-for-web-services.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Link Relation Types for APIs</h2>
+<p><span class="post-date">11 Aug 2017</span></p>
+<p><a href="https://tools.ietf.org/html/draft-wilde-service-link-rel-03"><img src="https://s3.amazonaws.com/kinlane-productions/erik-wilde/link-relation-types-for-web-services.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>I have been reading through a number of specifications lately, trying to get more up to speed on what standards are available for me to choose from when designing APIs. Next up on my list is <a href="https://tools.ietf.org/html/draft-wilde-service-link-rel-03">Link Relation Types for Web Services</a>, by Erik Wilde. I wanted to take this informational specification and repost here on my site, partially because I find it easier to read, and the process of breaking things down and publishing as a posts helps me digest the specification and absorb more of what it contains.</p>
+
+<p>I’m particularly interested in this one, because Erik captures what I’ve had in my head for APIs.json property types, but haven’t been able to always articulate as well as Erik does, let alone published as an official specification. I think his argument captures the challenge we face with mapping out the structure we have, and how we can balance the web with the API, making sure as much of it becomes machine readable as possible. I’ve grabbed the meat of Link Relation Types for Web Services and pasted here, so I can break down, and reference across my storytelling.</p>
+
+<hr />
+
+<ol>
+  <li>Introduction<br />
+One of the defining aspects of the Web is that it is possible to interact with Web resources without any prior knowledge of the specifics of the resource.  Following Web Architecture by using URIs, HTTP, and media types, the Web’s uniform interface allows interactions with resources without the more complex binding procedures of other approaches.</li>
+</ol>
+
+<p>Many resources on the Web are provided as part of a set of resources that are referred to as a “Web Service” or a “Web API”.  In many cases, these services or APIs are defined and managed as a whole, and it may be desirable for clients to be able to discover this service information.</p>
+
+<p>Service information can be broadly separated into two categories: One category is primarily targeted for human users and often uses generic representations for human readable documents, such as HTML or PDF. The other category is structured information that follows some more formalized description model, and is primarily intended for consumption by machines, for example for tools and code libraries.</p>
+
+<p>In the context of this memo, the human-oriented variant is referred to as “documentation”, and the machine-oriented variant is referred to as “description”.</p>
+
+<p>These two categories are not necessarily mutually exclusive, as there are representations that have been proposed that are intended for both human consumption, and for interpretation by machine clients. In addition, a typical pattern for service documentation/description is that there is human-oriented high-level documentation that is intended to put a service in context and explain the general model, which is complemented by a machine-level description that is intended as a detailed technical description of the service.  These two resources could be interlinked, but since they are intended for different audiences, it can make sense to provide entry points for both of them.</p>
+
+<p>This memo places no constraints on the specific representations used for either of those two categories.  It simply allows providers of aWeb service to make the documentation and/or the description of their services discoverable, and defines two link relations that serve that purpose.</p>
+
+<p>In addition, this memo defines a link relation that allows providers of a Web service to link to a resource that represents status information about the service.  This information often represents operational information that allows service consumers to retrieve information about “service health” and related issues.</p>
+
+<ol>
+  <li>
+    <p>Terminology<br />
+The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”,”SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119 [RFC2119].</p>
+  </li>
+  <li>
+    <p>Web Services<br />
+“Web Services” or “Web APIs” (sometimes also referred to as “HTTP API” or “REST API”) are a way to expose information and services on the Web. Following the principles of Web architecture[ they expose URI-identified resources, which are then accessed and transferred using a specific representation.  Many services use representations that contain links, and often these links are typed links.</p>
+  </li>
+</ol>
+
+<p>Using typed links, resources can identify relationship types to other resources.  RFC 5988 [RFC5988] establishes a framework of registered link relation types, which are identified by simple strings and registered in an IANA registry.  Any resource that supports typed links according to RFC 5988 can then use these identifiers to represent resource relationships on the Web without having to re-invent registered relation types.</p>
+
+<p>In recent years, Web services as well as their documentation and description languages have gained popularity, due to the general popularity of the Web as a platform for providing information and services.  However, the design of documentation and description languages varies with a number of factors, such as the general application domain, the preferred application data model, and the preferred approach for exposing services.</p>
+
+<p>This specification allows service providers to use a unified way to link to service documentation and/or description.  This link should not make any assumptions about the provided type of documentation and/or description, so that service providers can choose the ones that best fit their services and needs.</p>
+
+<p>3.1.  Documenting Web Services<br />
+In the context of this specification, “documentation” refers to information that is primarily intended for human consumption.Typical representations for this kind of documentation are HTML andPDF.</p>
+
+<p>Documentation is often structured, but the exact kind of structure depends on the structure of the service that is documented, as well as on the specific way in which the documentation authors choose to document it.</p>
+
+<p>3.2.  Describing Web Services<br />
+In the context of this specification, “description” refers to information that is primarily intended for machine consumption.Typical representations for this are dictated by the technology underlying the service itself, which means that in today’s technology landscape, description formats exist that are based on XML, JSON, RDF, and a variety of other structured data models.  Also, in each of those technologies, there may be a variety of languages that a redefined to achieve the same general purpose of describing a Web service.</p>
+
+<p>Descriptions are always structured, but the structuring principles depend on the nature of the described service.  For example, one of the earlier service description approaches, the Web ServicesDescription Language (WSDL), uses “operations” as its core concept, which are essentially identical to function calls, because the underlying model is based on that of the Remote Procedure Call (RPC) model.  Other description languages for non-RPC approaches to services will use different structuring approaches.</p>
+
+<p>3.3.  Unified Documentation/Description<br />
+If service providers use an approach where there is no distinction of service documentation Section 3.1 and service descriptionSection 3.2, then they may not feel the need to use two separate links.  In such a case, an alternative approach is to use the”service” link relation type, which has no indication of whether it links to documentation or description, and thus may be better fit if no such differentiation is required.</p>
+
+<ol>
+  <li>Link Relations for Web Services<br />
+In order to allow Web services to represent the relation of individual resources to service documentation or description, this specification introduces and registers two new link relation types.</li>
+</ol>
+
+<p>4.1.  The service-doc Link Relation Type<br />
+The “service-doc” link relation type is used to represent the fact that a resource is part of a bigger set of resources that are documented at a specific URI.  The target resource is expected to provide documentation that is primarily intended for human consumption.</p>
+
+<p>4.2.  The service-desc Link Relation Type<br />
+The “service-desc” link relation type is used to represent the fact that a resource is part of a bigger set of resources that are described at a specific URI.  The target resource is expected to provide a service description that is primarily intended for machine consumption.  In many cases, it is provided in a representation that is consumed by tools, code libraries, or similar components.</p>
+
+<ol>
+  <li>Web Service Status Resources<br />
+Web services providing access to a set of resources often are hosted and operated in an environment for which status information may be available.  This information may be as simple as confirming that a service is operational, or may provide additional information about different aspects of a service, and/or a history of status information, possibly listing incidents and their resolution.</li>
+</ol>
+
+<p>The “status” link relation type can be used to link to such a status resource, allowing service consumers to retrieve status information about a Web service’s status.  Such a link may not be available from all resources provided by a Web service, but from key resources such as a Web service’s home resource.</p>
+
+<p>This memo does not restrict the representation of a status resource in any way.  It may be primarily focused on human or machine consumption, or a combination of both.  It may be a simple “traffic light” indicator for service health, or a more sophisticated representation conveying more detailed information such as service subsystems and/or a status history.</p>
+
+<ol>
+  <li>IANA Considerations<br />
+The link relation types below have been registered by IANA perSection 6.2.1 of RFC 5988 [RFC5988]:</li>
+</ol>
+
+<p>6.1.  Link Relation Type: service-doc<br /></p>
+
+<p>Relation Name: service-doc<br />
+   Description: Linking to service documentation that is primarily   intended for human<br /> consumption.<br />
+   Reference: [[ This document ]]<br /></p>
+
+<p>6.2.  Link Relation Type: service-desc<br /></p>
+
+<p>Relation Name: service-desc<br />
+   Description: Linking to service description that is primarily   intended for consumption by machines.<br />
+   Reference: [[ This document ]]<br /></p>
+
+<p>6.3.  Link Relation Type: status<br /></p>
+
+<p>Relation Name: status<br />
+   Description: Linking to a resource that represents the status of a   Web service or API.<br />
+   Reference: [[ This document ]]<br /></p>
+
+<hr />
+
+<p><strong>Adding Some Of My Own Thoughts Beyond The Specification</strong>
+This specification provides a more coherent service-doc, and service-desc that I think we did with humanURL, and support for multiple API definition formats (swagger, api blueprint, raml) as properties for any API. This specification provides a clear solution for human consumption, as well as one intended for consumption by machines. Another interesting link relation it provides is status, helping articulate the current state of an API.</p>
+
+<p>It makes me happy to see this specification pushing forward and formalizing the conversation. I see the evolution of link relations for APIs as an important part of the API discovery and definition conversations in coming years. Processing this specification has <a href="https://github.com/apis-json/api-json/issues">helped jumpstart some conversation around APIs.json</a>, as well as other specifications like <a href="http://apievangelist.com/2017/08/03/api-discovery-using-json-home/">JSON Home</a> and <a href="http://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/">Pivio</a>.</p>
+
+<p><a href="https://tools.ietf.org/html/draft-wilde-service-link-rel-03">Thanks for letting me build on your work Erik!</a> - I am looking forward to contributing.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Link Relation Types for APIs - https://apievangelist.com/2017/08/11/link-relation-types-for-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/08/11/link-relation-types-for-apis/&title=https://apievangelist.comLink Relation Types for APIs" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/08/11/link-relation-types-for-apis/&title=Link Relation Types for APIs&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/08/11/link-relation-types-for-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/08/11/about-api-data-gov/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/08/14/investing-time-to-learn-api-best-practices-so-you-do-not-reinvent-the-wheel/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

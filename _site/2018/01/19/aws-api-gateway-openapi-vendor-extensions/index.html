@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>AWS API Gateway OpenAPI Vendor Extensions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="AWS API Gateway OpenAPI Vendor Extensions | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AWS API Gateway OpenAPI Vendor Extensions | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>AWS API Gateway OpenAPI Vendor Extensions</h2>
+<p><span class="post-date">19 Jan 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I was doing some work on the AWS API Gateway, and as I was going through their API documentation I found some of <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html">the OpenAPI vendor extensions they use as part of operations</a>. These vendor extensions show up in the OpenAPI you export for any API, and reflect how AWS has extended the OpenAPI specification, making sure it does what they need it to do as part of AWS API Gateway operations.</p>
+
+<p>AWS has 20 separate OpenAPI vendor extensions as part of the OpenAPI specification for any API you manage using their gateway solution:</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-any-method.html">x-amazon-apigateway-any-method</a> - Specifies the Swagger Operation Object for the API Gateway catch-all ANY method in a Swagger Path Item Object. This object can exist alongside other Operation objects and will catch any HTTP method that was not explicitly declared.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-api-key-source.html">x-amazon-apigateway-api-key-source</a> - Specify the source to receive an API key to throttle API methods that require a key. This API-level property is a String type.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-authorizer.html">x-amazon-apigateway-authorizer</a> - Defines a custom authorizer to be applied for authorization of method invocations in API Gateway. This object is an extended property of the Swagger Security Definitions object.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-authtype.html">x-amazon-apigateway-authtype</a> - Specify an optional customer-defined information describing a custom authorizer. It is used for API Gateway API import and export without functional impact.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-binary-media-types.html">x-amazon-apigateway-binary-media-types</a> - Specifies the list of binary media types to be supported by API Gateway, such as application/octet-stream, image/jpeg, etc. This extension is a JSON Array.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-documentation.html">x-amazon-apigateway-documentation</a> - Defines the documentation parts to be imported into API Gateway. This object is a JSON object containing an array of the DocumentationPart instances.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html">x-amazon-apigateway-gateway-responses</a> - Defines the gateway responses for an API as a string-to-GatewayResponse map of key-value pairs.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.gatewayResponse.html">x-amazon-apigateway-gateway-responses.gatewayResponse</a> - Defines a gateway response of a given response type, including the status code, any applicable response parameters, or response templates.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.responseParameters.html">x-amazon-apigateway-gateway-responses.responseParameters</a> - Defines a string-to-string map of key-value pairs to generate gateway response parameters from the incoming request parameters or using literal strings.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.responseTemplates.html">x-amazon-apigateway-gateway-responses.responseTemplates</a> - Defines GatewayResponse mapping templates, as a string-to-string map of key-value pairs, for a given gateway response. For each key-value pair, the key is the content type; for example, “application/json”, and the value is a stringified mapping template for simple variable substitutions. A GatewayResponse mapping template is not processed by the Velocity Template Language (VTL) engine.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html">x-amazon-apigateway-integration</a> - Specifies details of the backend integration used for this method. This extension is an extended property of the Swagger Operation object. The result is an API Gateway integration object.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-requestTemplates.html">x-amazon-apigateway-integration.requestTemplates</a> - Specifies mapping templates for a request payload of the specified MIME types.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-requestParameters.html">x-amazon-apigateway-integration.requestParameters</a> - Specifies mappings from named method request parameters to integration request parameters. The method request parameters must be defined before being referenced.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responses.html">x-amazon-apigateway-integration.responses</a> - Defines the method’s responses and specifies parameter mappings or payload mappings from integration responses to method responses.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-response.html">x-amazon-apigateway-integration.response</a> - Defines a response and specifies parameter mappings or payload mappings from the integration response to the method response.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responseTemplates.html">x-amazon-apigateway-integration.responseTemplates</a> - Specifies mapping templates for a response payload of the specified MIME types.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responseParameters.html">x-amazon-apigateway-integration.responseParameters</a> - Specifies mappings from integration method response parameters to method response parameters. Only the header and body types of the integration response parameters can be mapped to the header type of the method response.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validator.html">x-amazon-apigateway-request-validator</a> - Specifies a request validator, by referencing a request_validator_name of the x-amazon-apigateway-request-validators Object map, to enable request validation on the containing API or a method. The value of this extension is a JSON string.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validators.html">x-amazon-apigateway-request-validators</a> - Defines the supported request validators for the containing API as a map between a validator name and the associated request validation rules. This extension applies to an API.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a> - Specifies the validation rules of a request validator as part of the x-amazon-apigateway-request-validators Object map definition.</li>
+</ul>
+
+<p>I keep track of these vendor extensions as part of <a href="http://openapi.toolbox.apievangelist.com/">my OpenAPI toolbox</a>, but I also like to aggregate them, and learn from them. They tell an important story of what AWS is looking to do with the AWS API Gateway. They point to some interesting use cases for the OpenAPI specification including validation, and transforming or mapping API requests and responses, to name a few. There is always a lot to learn from API providers who are extending the OpenAPI specification.</p>
+
+<p>I encounter a number of API designers and architects who don’t know they can extend the specification. It is important that teams realize they can not just extend the specification to fit their needs, but also that they should be learning from how other API proviers are doing this. A few signs of an API provider who is further along in their API journey are 1) actively maintaining and sharing and OpenAPI definition for their APIs, and 2) actively extending and sharing the vendor extensions they use to make OpenAPI do exactly what they need.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=AWS API Gateway OpenAPI Vendor Extensions - https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/&title=https://apievangelist.comAWS API Gateway OpenAPI Vendor Extensions" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/&title=AWS API Gateway OpenAPI Vendor Extensions&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/01/19/a-health-check-response-format-for-http-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/01/22/key-points-from-the-payment-services-directive-2-psd2/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

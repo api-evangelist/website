@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/1_lfoybsgdnspy0i24b3dubg.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/1_lfoybsgdnspy0i24b3dubg.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots</h2>
+<p><span class="post-date">29 Sep 2016</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/standing_on_the_shoulders_of_giants_%E2%80%93_making_meya_%E2%80%93_medium.png" alt="" width="40%" align="right" /></p>
+<p>I was <a href="https://medium.com/making-meya/standing-on-the-shoulders-of-giants-2b89817fdff7#.6c2jfloeq">reading an interesting post on developing bots from Meya</a>, a bot platform provider, which I think describes the abstraction layer between what we are calling&nbsp;bots, and what we know as APIs. I have been trying to come up with a simple way of quantifying the point where bots and APIs work together,&nbsp;and Meya's approach to flow and intent provides me with a nice scaffolding.</p>
+<p>The flow step of their bot design rationale&nbsp;provides a nice way to think about how bots will work, breaking out each step of the bot interaction in plain English.&nbsp;They use a YAML format they call Bot Flow Markup lLnguage, or BFML, to describe the flows, comparing BFML to HTML, with this definition:</p>
+<p style="padding-left: 30px;"><em><span class="markup--strong markup--p-strong">HTML is spatial, and BFML is temporal. HTML determines&nbsp;<em class="markup--em markup--p-em">where</em>&nbsp;UI exists, and BFML determines&nbsp;<em class="markup--em markup--p-em">when</em>&nbsp;UI exists.</span></em></p>
+<p>The second part of their bot design rationale involves&nbsp;Intents, providing this additional definition:</p>
+<p style="padding-left: 30px;"><em>If BFML is like HTML, then intents are like URLs.</em></p>
+<p>According to Meya, "intents can be keywords, regular expressions, and natural language models as you get more sophisticated". This seems to be where the&nbsp;more human aspect of what is getting done here is defined, mapping each intent to a specific flow, which can execute one or many steps to potentially satisfy the intent.</p>
+<p>The third step is components, which is where the direct API connection comes clear. If you look at their example, in the component they are simply making a call to the Chuck Norris joke API, returning the results as part of the flow. Each part of the flow calls its targeted component, and each component can make a GET, POST, PUT, PATCH, or DELETE to an API that provides the data, content, or algorithm behind the component.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/1_lfoybsgdnspy0i24b3dubg.png" alt="" width="100%" align="center" /></p>
+<p>This provides me with a beginning scaffolding to think about how bot platforms are constructing the API abstraction layer behind bot activity. I will be going through other bot platforms to understand each individual napproach. Bots to me are just another endpoint for the API economy, and like mobile phones, we can have the API layer be shadowy and dark, or we can have it be more transparent and standardized, with platforms sharing their approach like Meya&nbsp;does.</p>
+<p>I am picturing a world where we share open definitions of bot flows, and the intents that trigger them in YAML. &nbsp;There will be marketplaces of flows, sharing the logic behind the what is working (or not) within the bot community. These flows shouldn't be a company's secret sauce, any more than the API definitions that they employ within each function are. The secret sauce should be the data, content, and algorithms behind each API, that is called as part of any flow, designed to satisfy a specific intent.</p>
+<p>When providers like Meya&nbsp;share they approach via their blog it gives me the opportunity to learn about their approach. It also gives me the opportunity to explore, and compare with the rest of my research, without having to always fire up their platform--which I do not always have the time to do (I wish I did). This helps me push forward my bot research in baby steps, derived from people who are doing interesting things in the space&nbsp;and are willing to share with the community--which is what API Evangelist is all about.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots - https://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/&title=https://apievangelist.comFlow Abstraction And Intent Layer On Top Of APIs To Feed The Bots" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/&title=Flow Abstraction And Intent Layer On Top Of APIs To Feed The Bots&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/09/29/flow-abstraction-and-intent-layer-on-top-of-apis-to-feed-the-bots/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/09/29/code-resiliency-lessons-in-how-twitter-deploys-their-embeddables/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/09/29/schemahub39s-usage-of-github-to-launch-their-api-service-is-a-nice-approach/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

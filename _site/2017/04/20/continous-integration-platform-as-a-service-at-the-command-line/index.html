@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Continous Integration Platform As A Service At The Command Line</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Continous Integration Platform As A Service At The Command Line | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_04_17_at_12.55.54_pm.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Continous Integration Platform As A Service At The Command Line | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_04_17_at_12.55.54_pm.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Continous Integration Platform As A Service At The Command Line</h2>
+<p><span class="post-date">20 Apr 2017</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_04_17_at_12.55.54_pm.png" alt="" width="40%" align="right" /></p>
+<p>Integration platform as a service (iPaaS) provider Zapier <a href="https://zapier.com/engineering/zapier-command-line-interface/">recently launched a command line tool for managing your integrations</a>, adding an interesting dimension to the platform--leaning in what feels like a continuous integration direction. The integration platform has long had a web builder for managing your integrations with over 750 API-driven services, using their APIs, but the command line interface feels like it's begging to be embedded into your development workflow and life cycle.&nbsp;</p>
+<p>Zapier is catering to engineers by allowing them to:</p>
+<ul>
+<li><strong>Bring your Node libraries.</strong> Zapier CLI Apps are made entirely of Node JS code. Use whichever libraries from NPM that you like. You can control every aspect of how Zapier interacts with your API, and our schema defines how authentication, Triggers, Actions, and Searches work.</li>
+<li><strong>Run your tests before you deploy</strong>. We believe unit testing is the best way to ensure high-quality code. You can use Mocha or another Node testing framework to feel confident in the code you deploy to Zapier.</li>
+<li><strong>Your app can live in source control.</strong> Every aspect of your integration&mdash;and every change you make&mdash;is written in code. That means you can track changes with Git or other source control like you do on other projects.</li>
+<li><strong>Version your app.</strong> You work in releases or sprints for the rest of your projects, why not do the same with your Zapier app? Turn your app updates into versions, then migrate some or all of your users to the latest version.</li>
+<li><strong>Collaborate with teammates.</strong> You don&rsquo;t need to go it alone with your Zapier integration. A CLI app can be owned by more than one Zapier account, with new members quickly added using the tool. That way, the whole team can deploy updates to your Zapier app.</li>
+</ul>
+<p>Here are the benefits of the Zapier CLI over the current web builder:</p>
+<ul>
+<li><strong>Coding locally.</strong> As mentioned above, you build CLI Apps on your local machine&mdash;not on Zapier's website.</li>
+<li><strong>Improved control over authentication flow. </strong>CLI Apps give you control over the API calls needed to set up authentication. This is particularly helpful if your API uses a slightly different flow for OAuth2 than what the Web Builder assumes. Now, you can determine the necessary calls and store whatever info your API needs.</li>
+<li><strong>Improved Custom Fields. </strong>When setting input fields, you can define static fields as well as functions to compute fields dynamically. These dynamic fields can be the result of API calls, or they can be computed based on the value of a static field.</li>
+<li><strong>Middleware.</strong> Tired of including a function call to add a header to each request? Or a call to parse out the responses? Now you can define middleware that runs before requests or after responses to process calls in a standard way.</li>
+<li><strong>Resources.</strong> You can define a single resource like a &ldquo;Contact&rdquo; and the methods allowed on that resource&mdash;like &ldquo;get, list, create.&rdquo; From this resource definition, Zapier can automatically generate Triggers and Actions, reusing some of the meta information defined on the resource.</li>
+</ul>
+<p>First, I see this significantly benefiting companies and organizations when it comes to the orchestration of internal and partner APIs--your engineering team should be developing Zapier applications for your most important business functions. Second,&nbsp;I see this significantly benefiting companies and organizations when it comes to empowering&nbsp;internal business and technical folks with a complete library of workflows for all the 3rd party services you depend on, like SalesForce, Google, Facebook, Twitter, and other leading SaaS providers.</p>
+<p>Providing a Command Line Interface (CLI) alongside an Application Programming Interface (API) seems to be coming back into popularity, partly due to continuous integration (CI) trends. Amazon has always had a CLI alongside their APIs, but it is something other API providers, as well as API service providers like Zapier, seem to be tapping into. I'm going to make some time to build a stack of API Evangelist Zapier apps so I can define some of my most common integrations, and explore further automation as part of my own internal continuous integration workflow.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Continous Integration Platform As A Service At The Command Line - https://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/&title=https://apievangelist.comContinous Integration Platform As A Service At The Command Line" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/&title=Continous Integration Platform As A Service At The Command Line&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/04/19/protecting-our-valuable-data-with-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/04/20/human-service-apis-on-aws-azure-google-and-heroku/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

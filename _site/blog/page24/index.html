@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Evangelist </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <section>
+	<div class="content">
+
+	<h3>The API Evangelist Blog</h3>
+	<p>This blog is dedicated to understanding the world of APIs, exploring a wide range of topics from design to deprecation, and spanning the technology, business, and politics of APIs. <a href="https://github.com/kinlane/api-evangelist" target="_blank">All of this runs on Github, so if you see a mistake, you can either fix by submitting a pull request, or let us know by submitting a Github issue for the repository</a>.</p>
+	<center><hr style="width: 75%;" /></center>
+	
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/22/the-why-behind-the-github-graphql-api/">The Why Behind The Github GraphQL API</a></h3>
+        <span class="post-date">22 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/the_github_graphql_api__github_engineering.png" alt="" width="40%" align="right" /></p>
+<p><a href="http://apievangelist.com/2016/08/30/graphql-seems-like-we-do-not-want-to-do-the-hard-work-of-api-design/">I wrote a skeptical piece the other day about GraphQL</a>, which I followed up with <a href="http://apievangelist.com/2016/09/02/i-am-keeping-my-mind-open-and-looking-forward-to-learning-more-about-graphql/">another post saying I would keep an open mind</a>. I've added GraphQL to my regular monitoring of the space, but I don't have its own research area yet, but if the conversation keeps expanding I will. A recent expansion in the GraphQL conversation for me was <a href="http://githubengineering.com/the-github-graphql-api/">Github releasing the GitHub GraphQL API</a>.</p>
+<p>In the release blog&nbsp;post, from Github they provide exactly what I'm looking for in the GraphQL conversation--<a href="http://githubengineering.com/the-github-graphql-api/#why">the reasons why they&nbsp;chose to start supporting GraphQL</a>. In their post Github&nbsp;describes some of the challenges API consumers were having with the existing API, which led them down the GraphQL path:</p>
+<ul>
+<li>sometimes required two or three separate calls to assemble a complete view of a resource</li>
+<li>responses simultaneously sent too many data and didn&rsquo;t include data that consumers needed</li>
+</ul>
+<p>They also talk about some of what they wanted to accomplish:</p>
+<ul>
+<li>wanted to identify the OAuth scopes required for each endpoint</li>
+<li>wanted to be smarter about how our resources were paginated</li>
+<li>wanted assurances of type-safety for user-supplied parameters</li>
+<li>wanted to generate documentation from our code</li>
+<li>wanted to generate clients</li>
+</ul>
+<p>Github says they <em>"studied a variety of API specifications built to make some of this easier, but we found that none of the standards totally matched our requirements"</em> and felt that <em>"GraphQL represents a massive leap forward for API development. Type safety, introspection, generated </em>documentation <em>and predictable responses benefit both the maintainers and consumers of our platform"</em>. Some interesting points to consider, as I work to understand the benefits GraphQL brings to the table.</p>
+<p>I'm still processing the entire story behind their decision to go GraphQL, and will share any more thoughts I'm having in future blog posts. With this major release from Github, I am now keeping an eye out for other providers who are headed in this direction. Hopefully, they will be as transparent about their reasons why as Github has--this kind of storytelling around API design and deployment is important for the rest of the API community to learn from.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/22/the-why-behind-the-github-graphql-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/22/syndicating-api-evangelist-posts-to-medium-using-their-api/">Syndicating API Evangelist Posts To Medium Using Their API</a></h3>
+        <span class="post-date">22 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/medium_black.png" alt="" width="40%" align="right" /></p>
+<p>Now that I have API Evangelist up to regular levels of operation after a summer break, I'm working to expand where I publish my content, and next up on the list is Medium. Like many other popular destinations I refuse to completely depend on Medium for my blogging presence, but I recognize the network effects, and I'm more than happy to syndicate my work there.&nbsp;</p>
+<p>To help me manage the publishing of my stories to Medium I wired up the <a href="https://github.com/Medium/medium-api-docs">Medium API</a> into my API monitoring and publishing platform. I use the Github API to publish blog posts to API Evangelist, Kin Lane, and API.Report, and it is pretty easy to add a layer that will publish select stories to Medium as well. All I have to do is tag posts in a certain way, and my "scheduler" and the Medium API does the rest.</p>
+<p>I will be evaluating which of my stories go up to Medium on an individual basis. I'm not wanting everything to go there, but would like to open up some of my work for discussion on the platform. While I already share my API Evangelists posts to LinkedIn and Facebook, I will also be syndicating select stories using <a href="https://www.linkedin.com/help/linkedin/answer/47445/long-form-posts-on-linkedin-overview?lang=en">LinkedIn Publishing</a> and <a href="https://developers.facebook.com/blog/post/2015/09/22/instant-articles-from-CMS/">Facebook Instant Articles</a>&nbsp;next. I will only be publishing my content to platforms that bring value, but more importantly have APIs so I can retain as much control over my work from a central location within my domain.</p>
+<p>You can find everything <a href="https://medium.com/@kinlane">published under @KinLane over a Medium</a>, something I might expand upon with specific publications in the near future, but for now, I'll keep it all under my user account.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/22/syndicating-api-evangelist-posts-to-medium-using-their-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/22/providing-branding-and-attribution-assets-with-each-api-response/">Providing Branding And Attribution Assets With Each API Response</a></h3>
+        <span class="post-date">22 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-brand.png" alt="" width="25%" align="right" /></p>
+<p><a href="http://branding.apievangelist.com/">I am tracking on the approaches of API providers who have branding&nbsp;world together when it comes to platform operations</a>. I'm always surprised at how few API providers actually have anything regarding branding in place, especially when it seems like loss of&nbsp;brand control, attribution, and other concerns seem to be at the top of everyone's list.</p>
+<p>I was hooking up the <a href="https://github.com/Medium/medium-api-docs">Medium API</a> to my API monitoring and publishing system, syndicating select stories of mine to the platform and found myself thinking about how important an API branding strategy is (should be) to content platforms like them. Medium doesn't let you pull posts via the API (yet), but if it did, I would make sure branding and attribution was&nbsp;default.</p>
+<p>Few API providers have their API brand strategy together, let alone provide easy to understand&nbsp;and find assets to support the strategy. It seems like to me that if you are concerned about brand control, or just want to really extend your brand across all websites and mobile applications where your API resources are put to use, you would want to bake branding and attribution into the API response itself, as well as a robust branding area of the developer portal.</p>
+<p>I'm going to explore concepts around branding and attribution as a default layer of API access. Everything from thinking about hypermedia approaches to providing link relations, to maybe <a href="http://apievangelist.com/2016/05/02/http-header-awareness-using-the-link-header-for-pagination/">including link relations in the header like Github does with pagination</a>, but using branding and attribution focused link relations. I would like to be able to provide light footprint options that may not require changing up the JSON response, or add an entirely new media type.</p>
+<p>When Medium does open up /GET for posts on the platform, I'd be stoked if there were branding and attribution elements present, driven by settings in my account. I'm not under the delusion that every developer who makes a call to an API will respect branding guidelines, but if it is front and center with every API call, and easy to implement, the chances increase dramatically.</p>
+<p>Anyways, some food for thought around branding. I will push this topic forward as I have time&nbsp;and maybe play with a prototype for the API Evangelist&nbsp;blog. I'd love for consumers and syndicators of my content to be able to extend the reach of my brand, or at least send some love my way with a little attribution.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/22/providing-branding-and-attribution-assets-with-each-api-response/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/22/google-spreadsheets-as-an-engine-for-api-goodness/">Google Spreadsheets As An Engine For API Goodness</a></h3>
+        <span class="post-date">22 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/how_to_make_a_twitter_bot_with_google_spreadsheets_version_0_4_zach_whalen.png" alt="" width="40%" align="right" /></p>
+<p>I was watching my partner in crime Audrey Watters (<a href="https://twitter.com/audreywatters">@audreywatters</a>) build the <a href="https://twitter.com/weaponizedu">weaponized edu Twitter bot</a> using a Google Spreadsheet as an engine.<a href="http://www.zachwhalen.net/posts/how-to-make-a-twitter-bot-with-google-spreadsheets-version-04/"> Something she learned from Zach Whalen, a professor at University of Mary Washington</a>. Audrey is not a programmer, but she has become extremely&nbsp;proficient at building these little bots, and using the Twitter API--demonstrating the potential of Google Sheets as an engine for an API-driven bot solutions, or in this case bot mayhem.</p>
+<p>Zach's approach is extremely well defined--you will have to <a href="https://docs.google.com/spreadsheets/d/1Cbg_6pYN04XtDHpDLtxAP3ExQEBL8PYBXBQ1E5_Sq30/copy">copy and go through the spreadsheet yourself to see</a>. Everything you need to get the job done is there, from step by step instructions, to storing your API tokens, and planting the seeds for your bot intelligence. This is the kind of API stuff I'm always talking about when I say that API shouldn't just be for developers--all it takes is having no fear of APIs, and well laid out blueprints like Zach has provided.</p>
+<p>It is an approach I'd like to explore more as I have time. I'm not a big fan of the spreadsheet but I fully get its role amongst muggle society. Spreadsheets keep me fascinated because of the many dimensions of API they possess. Spreadsheets can provide APIs, consume APIs, and as Zach's approach to bot development demonstrates, they can be a pretty serious engine for driving API goodness.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/22/google-spreadsheets-as-an-engine-for-api-goodness/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/22/api-branding-embeddables-that-can-boost-my-api-rate-limits/">API Branding Embeddables That Can Boost My API Rate Limits</a></h3>
+        <span class="post-date">22 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/bw_boost_incentives.png" alt="" width="30%" align="right" /></p>
+<p>I'm expanding on my <a href="http://branding.apievangelist.com/">API branding research</a>, putting some thought into <a href="http://apievangelist.com/2016/09/22/providing-branding-and-attribution-assets-with-each-api-response/">how we might be able to include branding and attribution in API responses</a>. Next, I'd like to brainstorm ways to incentivize both API providers, as well as API consumers to employ sensible branding practices. You'd think API providers would be all over this stuff, but for some reason, they seem to need as much encouragement, and structure as API consumers do--this is why I'm wanting to explore how I can drive both sides.</p>
+<p>First, why do I care about branding when it comes to APIs? Well, the more successful companies are with their APIs, the more their companies brand can be not just protected, but enhanced--the more APIs are seen in a positive light, rather than the threat to brand control that is often cast on them. And, the more APIs we have, the more access to valuable data and content for use in web, and mobile applications.</p>
+<p>While there are many nuances to API branding, it often centers around making text, link, and image assets available&nbsp;for developers to use wherever they put API driven data, content, and algorithms to use. APIs have many different approaches to branding requirements and enforcement, but few actually provide rich assets and tooling to support a coherent branding strategy. All it takes is a handful of logos, some JavaScript APIs, and guidance for developers, and branding can significantly extend the reach of any brand--not hurt it as many perceive an API will do.</p>
+<p>The benefits of branding to API provider are clear for me, but I'd like to explore what we can do to incentivize API consumers. What if, with all the tracking of where branding and attribution are deployed (aka API brand reach), we tracked each domain or subdomain, as well as each impression of text, logos, and other assets? &nbsp;What if network reach and brand exposure could buy me API credits, and raise my API rate limits as a consumer? I mean, as a developer I'm potentially extending the reach of your brand, providing you with valuable exposure, and potentially inbound links and traffic--if I am rewarded for doing this, the chances I execute healthy API branding practices will ony increase.</p>
+<p>Just some thoughts on incentivizing both the API provider and consumer sides of the coin when it comes to API branding. I am going to play around with a design for a simple set of logos and JavaScript APIs for supporting API branding assets. <a href="http://apievangelist.com/2016/09/22/providing-branding-and-attribution-assets-with-each-api-response/">I'm going to also play around with baking in links to these resources within API responses either as JSON collections or present in headers</a>. Once in place, I'll have a better idea of the type of data I can collect, and how it can possibly be measured, and applied to increasing API rate limits or possible equal credits for API access--all things I know developers will want.</p>
+<p>Stay tuned for more on API branding in coming weeks...</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/22/api-branding-embeddables-that-can-boost-my-api-rate-limits/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/21/what-i-mean-when-i-say-api/">What I Mean When I Say API</a></h3>
+        <span class="post-date">21 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png" alt="" width="40%" align="right" /></p>
+<p>People love to tell me the limitations of my usage of the acronym API. They like to point out they were around before the web, that they are used in hardware, or are not an API unless it is REST. There are endless waves of dudes who like to tell me what I mean when I say API. To help counter-balance&nbsp;each wave I like to regularly&nbsp;evolve, and share what I mean when I say API--not what people might interpret I mean.</p>
+<p>When I say API, I am talking about exposing data, content, or algorithm as an interface for programmatic use in other applications via web technology. Application in "Application Programming Interface" means any "application" to me, not just a software application. Consider visualizations, image rendering, bots, devices, or any other way that web technology is being applied in 2016.</p>
+<p>I do not mean REST when I say API. I do not mean exclusively dynamic&nbsp;APIs--it could simply be a JSON &nbsp;data store &nbsp;made available via a Github repo. If machine-readable data, content, and algorithms are being accessed using web technology for use in any application, in a programmatic way--I'm calling it API. You may have your own interpretations, and be bringing your own API baggage along for the ride, but this is what I'm talking about when you hear me say API.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/21/what-i-mean-when-i-say-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/21/the-psa-peugeot-citrons-apis/">The PSA Peugeot Citroën’s APIs</a></h3>
+        <span class="post-date">21 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/psa_group_for_developers_api_for_connected_cars_peugeot_citroen_and_ds_automobiles.png" alt="" width="40%" align="right" /></p>
+<p>I was turned on to <a href="https://developer.psa-peugeot-citroen.com/">the API program out of&nbsp;Groupe PSA</a>, &nbsp;the French multinational manufacturer of automobiles and motorcycles sold under the Peugeot, Citro&euml;n and DS Automobiles brands from a friend online the other day. Rarely do I just generally showcase an API provider, but I think their approach is simple, clean, and a nice start for a major automobile brand, and worthwhile to take note of.&nbsp;</p>
+<p>Companies of all shapes are doing APIs, but very few have the awareness to make their API program public, and accessible to the general public. I think the&nbsp;<span>PSA Peugeot Citro&euml;n&rsquo;s APIs are a pretty interesting set of resources for making available to car owners, and worth talking about:</span></p>
+<ul>
+<li><strong>Telemetry</strong> - Request data from the car: average speed, location, instantaneous consumption, engine speed, etc.</li>
+<li><strong>Maintenance Alerting -</strong> Request data from the various events or notifications that can be detected by the car: time before maintenance, fired alerts, etc.</li>
+<li><strong>Correlation - </strong>These APIs lets your application evaluate your driving style with others.</li>
+</ul>
+<p>Making vehicle data, events and notifications makes sense to me when it comes to vehicles and APIs, and is something that seems like it should just be default&nbsp;mode for all automobile manufacturers. The correlation API seems in a different category, and elevated to more of an innovate class, beyond just the usual car activity. I'm not a huge car guy, but I know people who are, and being able to size up against the competition or a specific community, could become a little addictive.</p>
+<p>I've added the&nbsp;PSA Peugeot Citro&euml;n&rsquo;s APIs to my monitoring of the space, and will keep an eye on what they are up to. I'm already following other user manufacturers&nbsp;like <a href="https://developer.ford.com/">Ford</a> and <a href="https://developer.gm.com/">GM</a> who have API efforts, as well as <a href="https://developer.hondasvl.com/">Japanese manufactuers like Honda</a>. I may have to stop, and take roll call in the world of automobiles and see who have official public API develop efforts, and put some pressure on those who do not have their program together yet (like they'll listen).</p>
+<p>If you know of any auto related API efforts I do not already have in <a href="http://auto.stack.network/">my auto API stack</a>, please let me know--I depend on my readers to keep me tuned into which companies are the cool kids doing API.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/21/the-psa-peugeot-citrons-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/21/be-part-of-your-community-do-not-just-sell-to-it/">Be Part Of Your Community, Do Not Just Sell To It</a></h3>
+        <span class="post-date">21 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-community-join.png" alt="" width="30%" align="right" /></p>
+<p>A recent story&nbsp;from Gordon Wintrob (<a href="https://twitter.com/gwintrob">@gwintrob</a>) about how T<a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.wmhz62h57">wilio's distributed team solves developer</a><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.wmhz62h57">evangelism</a>&nbsp;has given me a variety of seeds for stories on API Evangelist this week. I love that in 2016, even after an IPO, I am still writing positive things about Twilio and showcasing them as an example for other API providers to emulate.</p>
+<p>Twilio just gets APIs, and they deeply understand how to effectively build a community of passionate developers, demonstrated by this statement from Gordon's story on developing credibility:</p>
+<p style="padding-left: 30px;"><em>How do you have technical credibility? You have to really be part of your programming community. Each of us is a member of our community, not marketing or trying to sell to it.</em></p>
+<p>It sounds so simple. Yet is something so many companies struggle with. An API community is often seen as something external, and often times even the API is seen as something external, and this is where most API efforts fail. I know, you are saying that not all companies can be API-first, where the API is the core product focus like Twilio--it doesn't matter. Not being able to integrate with your developer community, is more about your company culture, than it is about APIs.</p>
+<p>Another area my audience will critique me is around sales--you have to do sales to make money! Yes, and even Twilio has a sales team to come in at the right time. This is about building technical credibility with your developer community, by truly being part of it--if you are always trying to sell to them, there will always be an us and them vibe, and you will never truly be part of your own community.</p>
+<p>As an API provider, I always recommend that you get out there and use other APIs, to experience the pain of being an API consumer. Using Twilio, and participating in the Twilio community should be the 101 edition of this. Where all API providers spend a couple of months using the Twilio API, and "actively" participating in their community before getting to work on their own API program.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/21/be-part-of-your-community-do-not-just-sell-to-it/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/21/a-new-api-programming-language-sdk-icon-set/">A New API Programming Language SDK Icon Set</a></h3>
+        <span class="post-date">21 Sep 2016</span>
+        <p><a href="http://devicon.fr/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/devicon_all_programming_languages_and_development_tools_related_icons_font.png" alt="" width="40%" align="right" /></a></p>
+<p>I was working on a&nbsp;<a href="http://portal.minimum.apievangelist.com/">forkable definition of my API portal</a>&nbsp;and I wanted to evolve the icons that I usually use as part of my API storytelling. I primarily use the <a href="http://api.thenounproject.com/">Noun Project API</a>, to associate simple black and white icons which represent&nbsp;the stories I tell, companies I showcase, and topics I cover. One area I find the Noun Project deficient&nbsp;is when it comes to icons for specific technologies, so while working on my project I wanted to find a new source. I fired up the Googles and got to work.</p>
+<p>I quickly came across <a href="http://devicon.fr/">Devicon,&nbsp;a set of icons representing programming languages</a>, designing &amp; development tools which you can use as a font or with&nbsp;SVG code. <a href="https://github.com/konpa/devicon">At the Github repo for the project</a>, it says they have&nbsp;78 icons with over 200 versions total. I used a set of the icons to d<a href="http://portal.minimum.apievangelist.com/code/">isplay API SDKs on my API portal prototype</a>, allowing anyone who forks to turn on and off which programming languages they offer SDKs for.</p>
+<p>Being pretty graphically challenged, as you can tell by my logo, I'm a big fan of projects like <a href="http://devicon.fr/">Devicon</a>--especially when they make it so simple, and so good looking, all at the same time. If you are needing icons for your API portal I recommend taking a look at what they are doing. They have images for all the technology that cool kids are using these days, and they seem open to crafting more if you find something missing.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/21/a-new-api-programming-language-sdk-icon-set/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/20/why-would-you-build-a-business-on-apis-they-are-unreliable/">Why Would You Build A Business On APIs? They Are Unreliable!</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-unstable.png" alt="" width="30%" align="right" /></p>
+<p>People love to tell me how unreliable APIs are, while also echoing this sentiment across the tech blogosphere. I always find it challenging <a href="http://apievangelist.com/2016/08/05/reconciling-how-reliable-apis-are-while-also-embracing-tone-set-by-vc-investment/">to reconcile how the entrenreurs&nbsp;who spread these tales choose to put the blame on the technology</a>, and not the companies behind the technology, or more appropriately the investment behind the companies. APIs are just a reflection of what is going on already within a company, and are good, nor bad--they are just a tool that can be implemented well, or not so well.</p>
+<p>I was taking some time this last week to work on my API monitoring system, which I call Laneworks. In addition to having my own API stack, <a href="http://stack.apievangelist.com/companies.html">I depend on a variety of other APIs to operate my business</a>. As I was kicking the tires, poking around the code for some of my most valuable integrations I found myself thinking about the stability and reliability of APIs, and how stable some APIs have been for me.</p>
+<p>Since 2011 I have stored ALL heavy objects (images, video, audio) used in my API monitoring and research on S3. I have NEVER had to update the code. Since 2012 I have used Pinboard as the core of my API curation system, aggregating links I favorited on Twitter, and added using my browser bookmarklet--again I have NEVER updated the code that drives this. Since 2013 all of my public websites run on Github using Github Pages, employing the Github API to publish blog posts, and all other content and data used in my research.</p>
+<p>The Amazon S3, Pinboard, and Github APIs make my business work. Three suppliers who have been working without a problem for 5, 4, and 3 years. The only thing I have had to do is pay my bill, and keep my API keys rotated, and the reliable API vendors to the rest. Storing images, video, and audio, curated the news and other stories I share with you&nbsp;and publish the blog posts and web pages you use to browse my API research. So explain to me, why would you want to build a business on APIs, when they are so unreliable?</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/why-would-you-build-a-business-on-apis-they-are-unreliable/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/20/standards-evangelism/">Standards Evangelism</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-standard.png" alt="" width="30%" align="right" /></p>
+<p>As the API Evangelist, I spend a lot of time thinking about evangelism (*your mind is&nbsp;blown*). <a href="http://apievangelist.com/2016/08/22/the-expanding-world-of-technology-evangelism/">TFrom what I'm seeing, the world of technology evangelism has been expanding</a>, where database, container, and other types of platforms are borrowing the approaches proven by API pioneers like Amazon and Twilio. As I'm doing work with Erik Wilde (@dret) around his <a href="http://webconcepts.info/">Webconcepts.info work</a>, and reading <a href="https://opcfoundation.org/about/what-is-opc/">an article about industrial automation standards</a>, I'm left thinking about how important evangelism is going to be for standards and specifications.</p>
+<p>Standards are super important, so I have to be frank--the community tends to suck at evangelizing itself, in an accessible way that reflects the success established in the API world. I'm super thankful for folks like Erik Wilde, Mike Amundsen, and others who work tirelessly to evangelism API related web concepts, specifications, and standards. The importance of outreach and positive evangelism around standards reflect the reasons why I started API Evangelist--to make APIs more accessible to the masses.&nbsp;</p>
+<p>This is why I have to get behind folks like Erik who step up to help evangelize standards. I do not have the dedication required to tune into the W3C, IANA, ISO, and other standards bodies, and super thankful for those who do. So if I can help any of you standard obsessed folks hone your approach to storytelling, and evangelism let me know. I'd love to see standards evangelism become commonplace--making them more friendly, accessible, and known across the tech sector.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/standards-evangelism/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/20/i-am-feeling-the-same-about-yaml-as-i-did-with-json-a-decade-ago/">I Am Feeling The Same About YAML As I Did With JSON A Decade Ago</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-face-idk.png" alt="" width="40%" align="right" /></p>
+<p>I have been slowly evolving the data core of each of my research projects from JSON to YAML. I'm still providing JSON, and even XML, Atom, CSV, and other machine-readable representations as part of my research, but the core of each project, which lives in the Jekyll _data folder are all YAML moving forward.&nbsp;</p>
+<p>When I first started using YAML I didn't much care for it. When the OpenAPI Specification introduced the YAML version, in addition to the JSON version, I wasn't all that impressed. It felt like the early days of JSON back in 2008 when I was making the switch from primarily XML to a more JSON-friendly&nbsp;environment. It took me a while to like JSON&nbsp;because I really liked my XML--now it is taking me a while to like YAML&nbsp;because I really like my JSON.</p>
+<p>I do not anticipate that JSON will go the same way that XML did for me. I think it will remain a dominant machine-readable format in what I do, but YAML is proving to have more value as the core of my work--especially when it is managed with Jekyll and Github. I am enjoying having been in the industry long enough to see these cycles, and be in a position where I can hopefully think more thoughtfully&nbsp;about each one as it occurs.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/i-am-feeling-the-same-about-yaml-as-i-did-with-json-a-decade-ago/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/20/d3js-visualizations-using-yaml-and-jekyll/">D3.js Visualizations Using YAML and Jekyll</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><a href="http://d3.js.yaml.jekyll.apievangelist.com/bar-chart/"><img style="padding: 15px;" src="http://d3.js.yaml.jekyll.apievangelist.com/images/d3-js-bar-chart.png" alt="" width="40%" align="right" /></a></p>
+<p>I am increasingly using <a href="http://d3js.org/">D3.js</a> as part of my storytelling process. Since all my websites run using Jekyll, and published entirely using Github repositories wich are shared as Github Page sites, it makes sense to standardize how I publish my visualizations.</p>
+<p>Jekyll provides a wealth of data management tools, including the ability to manage YAML dta stores in the _data folder. An approach I feel is not very well understand, and lacks real world examples regarding how to use when managing open data--I am looking to change that.</p>
+<p>I like my data visualizations beautiful, dynamic, with the data right behind--making <a href="https://d3js.org/">D3.js</a> the obvious choice. For this work, I took data intended for use as a bar and pie chart&nbsp;and published as YAML to this Github repositories _data folder. This approach to centrally storing machine-readable data, in the simple, more readable YAML format, makes the data behind visualizations much more accessible in my opinion.</p>
+<script src="https://gist.github.com/kinlane/0ee5a0eff2de2038dc3b69b88f563097.js"></script>
+<p>The problem with using D3.js visualization&nbsp;is that I need it in JSON format. Thankfully, using Jekyll and Liquid, I can easily establish dynamic versions of my data in JSON, XML, or any other format I need it in. I place these JSON pages in a separate folder I am just calling /data.</p>
+<script src="https://gist.github.com/kinlane/148fd30889a79d324bd21e7c271cbb5b.js"></script>
+<p>Now I have the JSON I need to power my D3.js visualizations. To share the actual visualization, I created separate editions for my bar and pie charts, and have the HTML, CSS, and JavaScript for each chart, in its own file.</p>
+<script src="https://gist.github.com/kinlane/27a4628dbb9c3f4392b2efb8d7500366.js"></script>
+<p>There are two things being accomplished here. 1) I'm decoupling the data source in a way that makes it easier to swap in and out different D3.js visualizations, and 2) I'm centralizing the data management, making it easily managed by even a non-technical operator, who just needs to grasp how Jekyll and YAML works--which dramatically lowers the barriers to entry for managing the data needed for visualizations.</p>
+<p>There is definitely a learning curve involved. Jekyll, Github Pages, and YAML take some time to absorb, but the reverse engineerability of this approach lends itself to reuse&nbsp;and reworking by any data curious person that isn't afraid of Github. I'm hoping to keep publishing any new D3.js visualization I create in this way, to provide small, forkable, data-driven visualizations that can be used as part of data storytelling efforts-<a href="https://github.com/kinlane/d3-js-using-yaml-jekyll">everything here is available as a public repo</a>.</p>
+<p>As a 25-year data veteran, <a href="http://kinlane.com/2016/08/15/using-github-repos-and-jekyll-as-a-data-store/">I find myself very intrigued with the potential of Jekyll as a data management solution, something that when you combine with the social coding benefits of Github, and Github Pages, can unleash unlimited possibilities</a>. I'm going to keep working to define small, modular examples of how to do this, and publish as individual Github lessons for you to fork and learn from.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/d3js-visualizations-using-yaml-and-jekyll/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/20/a-trusted-github-authentication-layer-for-api-management/">A Trusted Github Authentication Layer For API Management</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png" alt="" width="40%" align="right" /></p>
+<p>I am reworking the management layer for my APIs. For the last couple of years, I had aspirations of running my APIs with a retail layer generating revenue for API Evangelist--something which required a more comprehensive API management layer. In 2016, I'm not really interested in generating revenue from the APIs I operate, I'm just looking to put them to work in my own business, and if others want access I'm happy to open things up and broker some volume deals.</p>
+<p>To accomplish this I really do not need heavy security or service composition for my APIs, I'm just needed to limit who has access so they aren't just 100% public, and identify those who are using, and how much they are actually consuming. To facilitate this I am just going to use Github as a trusted layer for authentication. Using an OAuth proxy, I'll let my own applications authenticate using their respective Github user, and identify themselves using a Github OAuth token when making calls to each API.&nbsp;</p>
+<p>Each application I have operating on top of my APIs have its own Github account. Once they do the OAuth dance with my proxy, my system will then have a Github token identifying who they are. I won't need to validate the token is still good with each call, something I'll verify each hour or day, and cache locally to improve API performance. Anytime an unidentified token comes through, I'll just make a call to Github, and get the Github users associated, and check them against a trusted list of Github users who I have approved for accessing my APIs.</p>
+<p>I'm not really interested in securing access to all the content, data, and algorithms I'm exposing using APIs. I'm only looking to identify which applications are putting them to work&nbsp;and evaluate their amount of usage each day and month. This way I can monitor my own API consumption, while still opening things up to partners or any other 3rd party developer that I trust--if they are using too much, I can drop them a message to have a conversation about next steps.</p>
+<p>I'm still rolling out this system out, but it got me thinking about API access in general, and the possibilities that a trusted list of Github accounts could be used to expedite API registration, application setup, and the obtaining keys. Imagine if as a developer I could just ping any API, do an OAuth dance with my Github credentials, and get back my application id and secret keys for making API calls--all in a single flow. As an API provider I could just maintain a single trusted list of Github users, as well as consult other lists maintained by companies or individuals I trust, and reduce friction when onboarding, or automatically&nbsp;approve developers for higher levels of access and consumption.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/a-trusted-github-authentication-layer-for-api-management/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/19/putting-the-concept-of-the-public-api-to-rest-as-a-dominant-narrative/">Putting The Concept Of The Public API To Rest As A Dominant Narrative</a></h3>
+        <span class="post-date">19 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dominant-narrative.png" alt="" width="40%" align="right" /></p>
+<p>APIs come in all different shapes and sizes. I focus on a specific type of APIs that leverage web technology for making data, content, and algorithms available over the Internet. While these APIs are available on the open Internet, who has the ability to discover, and put them to use will vary significantly. APIs have gained in popularity because of successful publicly available APIs like Twitter and Twilio, something that has contributed to these types of APIs being the dominant narrative of what APIs are.</p>
+<p>A lack of awareness of what modern approaches to API management can do for securing web APIs as well as the dominance of this narrative that APIs need to be open like Twitter and Twilio tends to set the bar to unrealistic levels for API providers. Who has access to a web API is just one dimension of what APIs are, and sharing content, data, and algorithms securely via the web should be the focus. It's not whether&nbsp;or not we should do public or private APIs--it is about how you will be sharing your resources in a digital economy.</p>
+<p>While I encourage ALL companies, institutions, and government agencies to be as transparent as they possibly can regarding the presence of their APIs, its documentation, and other resources--who actually&nbsp;can access them is entirely up to the discretion of each provider. You should treat ALL your APIs like they use public infrastructure (aka the web), secure them appropriately, and get to work making sure all your digital resources are accessible in this way, not being bogged down by useless legacy discussions.</p>
+<p>Which is why I support putting the concept of the public API to rest as a dominant narrative around what is an API--you shouldn't hear me talking about public vs private anymore. If you do slap me.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/19/putting-the-concept-of-the-public-api-to-rest-as-a-dominant-narrative/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/19/providing-yaml-driven-xml-json-and-atom-using-jekyll-and-github/">Providing YAML driven XML, JSON, and Atom using Jekyll And Github</a></h3>
+        <span class="post-date">19 Sep 2016</span>
+        <p>The power of Jekyll on Github Pages as a data management solutions is not a very widely held concept. I'm always amazed at how technologists and programmers don't understand <a href="http://jekyllrb.com/">Jekyll</a>, let alone how it can be used as a data engine--maybe I can help a little by sharing my own usage. As I develop examples of this in action, I want to publish them as <a href="http://xml.son.yaml.jekyll.apievangelist.com/">Github repositories that anyone can fork and reverse engineer to use in their own work</a>.</p>
+<p>While it was not love at first sight for me, I'm increasingly becoming a fan of using YAML for storing and managing a significant portion of the data I use across my business. Part of the reasons I'm using YAML is its readability. The other reasons stem from the augmented benefits of using Jekyll and Github Pages to store and syndicate machine readable YAML for use across my storytelling--when you put YAML data into the _data folder for any Jekyll site, it opens up a new world of possibilities.</p>
+<script src="https://gist.github.com/kinlane/325b2f3ca761b5deaf52666f78117b5d.js"></script>
+<p>Any YAML data I put into the _data folder immediately become objects I can work with across any HTML page within a Jekyll site, <a href="https://shopify.github.io/liquid/">using Liquid</a>. Where this really starts to impact my world is when I started dynamically generating other formats of data stored as YAML.</p>
+<p>First up is JSON. Here is the file I am using to generate a JSON representation of my central YAML file stored in _data folder.</p>
+<script src="https://gist.github.com/kinlane/470db918abe87ac309c373c998e7a1c1.js"></script>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.json">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate JSON representation</a>:</p>
+<script src="https://gist.github.com/kinlane/01a280996ba007a6806852ae312ef26b.js"></script>
+<p>Next up is XML. Here is the file I am using to generate a XML representation of my central YAML file stored in _data folder.</p>
+<script src="https://gist.github.com/kinlane/37f5a98f29869dce1f243ea5a9a4ba7d.js"></script>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate XML representation</a>:</p>
+<script src="https://gist.github.com/kinlane/4abec529e89e4b87a558a6e15986d8a3.js"></script>
+<p>Next up is Atom. Maybe I may want a feed of the latest products added to the catalog, so here is the file I am using to generate an Atom XML representation of my central YAML file stored in _data folder.</p>
+<script src="https://gist.github.com/kinlane/48fbdd576049d25257b2efafba7e0738.js"></script>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/atom.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website, I get a separate Atom XML representation</a>:</p>
+<script src="https://gist.github.com/kinlane/c4ecdeadf80622c2b54e040355745f2b.js"></script>
+<p>From a single YAML file, I just generated a JSON, XML, and Atom representation of the same list of products. <a href="https://github.com/kinlane/xml-json-using-yaml-jekyll">It is all stored in a Github repository, and published as a Jekyll website hosted using Github Pages</a>. This particular Github repo is meant to just be a demonstration of what is possible using Jekyll, YAML, and Github Pages. I will use this work as a base in a variety of other projects, where I use these various formats to drive web and mobile applications, as well as visualizations and analytics used across my API storytelling.</p>
+<p>There are a wealth of reasons why I conduct this type of work. First, it is work I will use in my own research and storytelling, which all operates using Github and Jekyll. Second, doing my work out in the open, using open source tools and definitions, published as Github repositories making my work forkable, and reusable by others. There is a learning curve involved with unpacking what is happening here, but I feel pretty strongly that these are reusable modules that anyone can put to use--not just developers.</p>
+<p>I will publish other examples of this in action as I develop them. When I need the Liquid scripts to generate JSON, XML, or Atom feeds in any of my projects I will just visit this repo, and copy / paste. When I develop new ones I will generalize and publish here for everyone to use as well.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/19/providing-yaml-driven-xml-json-and-atom-using-jekyll-and-github/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/19/my-forkable-minimum-api-portal-definition/">My Forkable Minimum API Portal Definition</a></h3>
+        <span class="post-date">19 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal.jpg" alt="" width="20%" align="right" /></p>
+<p><a href="http://portal.minimum.apievangelist.com/">I am updating my minimum API portal definition</a>&nbsp;so I can apply to my own API infrastructure, and since I operate 100% on Github using Github Page and Jekyll, <a href="https://github.com/api-evangelist/portal-minimum">I have made it a forkable API portal definition that anyone can put to work as their own API developer portal</a>. This edition of my API portal definition uses Bootstrap for its UI, and Jekyll for the CMS, making it pretty extensible, and remixable once you fork it on Github.</p>
+<p>My goal was to make a simple, forkable API portal, that could act as a checklist for API providers looking to quickly set up a presence for their API. I know many companies, institutions, and government agencies do not have the resources&nbsp;to host one, let alone the time to pay attention to all the details--that is my job! To help API providers out, I have included what I feel is a&nbsp;complete API portal in the&nbsp;_config.yml for the Jekyll site.</p>
+<p>All you have to do is scroll down the API portal definition and comment out what you don't want, and fill in the areas you do, and the Jekyll site should do the rest. I've included the most common areas I like to see from all API providers in my definition.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/minimum_api_portal.png" alt="" width="45%" align="right" /></p>
+<ul>
+<li>Portal</li>
+<li>Simple Description</li>
+<li>Getting Started</li>
+<li>Authentication</li>
+<li>Documentation</li>
+<li>Discovery</li>
+<li>Code</li>
+<li>Communication</li>
+<li>Plans</li>
+<li>Self-Service Support</li>
+<li>Direct Support</li>
+<li>Road Map</li>
+<li>Issues</li>
+<li>Change Log</li>
+<li>Legal</li>
+</ul>
+<p>This is just the first draft of my forkable API portal definition. I am going to apply to my Kin Lane, and API Evangelist API infrastructure, as well as a handful of independent APIs that I operate. Then I'm going to apply it to a couple of government APIs I want to simplify, <a href="http://apievangelist.com/2016/09/08/defining-api-surface-area-by-converting-html-forms-to-open-api-specs/">like the USGS Water Services I am working o</a>n, to harden it a little bit. Sometimes all it takes is to better organize the information for an API, to help make it more accessible, and intuitive, reducing the friction when trying to get up and running.</p>
+<p>I would wait a couple weeks to fork the API portal definition, until I stabilize it some more against theother APIs, unless you are feeling adventurous. If you aren't afraid of working with YAML, Jekyll, and Liquid driven HTML, the API portal is pretty fun to play with. If nothing else, <a href="https://github.com/api-evangelist/portal-minimum/blob/gh-pages/_config.yml">you can use the&nbsp;_config.yml as a checklist to think about as you review or craft your own API portal</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/19/my-forkable-minimum-api-portal-definition/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/19/my-dream-api-sketchbook-and-portfolio/">My Dream API Sketchbook And Portfolio</a></h3>
+        <span class="post-date">19 Sep 2016</span>
+        <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sketchbook.png" width="40%" align="right" style="padding: 15px;" /><p>I have a vision of an API notebook in my head I desperately want to get out. First of all, I want to come up with another name for it, which is a journey that always starts with playing around with synonyms. Direct synonyms of notebook include a diary, journal, log, workbook, pad, and binder-yes, all of that is relevant to what I would like to see. After that, a few other words resonated, including album, collection, portfolio, and registry.</p>
+<p>This isn't just a folder to put my API definitions. It will be the place where I go to find all <a href="http://stack.apievangelist.com/companies.html">the definitions of 3rd party API which IÂ depend on</a>, as well as the APIs I'm designing, deploying, and operating as part of my own business. I want to be able to just record ideas, sketches, and thoughts I have as I'm thinking about APIs. I want to be able to annotate APIs that I find, and iterate, remix, and riff off of other API designers and architects work. Maybe an API sketchbook?</p>
+<p>An artistic design book is just the beginning. I'd also like it to be my professional sketchbook,Â where my business partners and customers can discover the API I depend on, and share with the world. I want it to be a directory of APIs that are relevant to my business. My sketchbook is where I'm creative, but it is also where I get business done. Maybe acting as an API portfolio? I want it to be fun, but also accommodate my professional existence as well.Â </p>
+<p>I just want a place where I can design and evolve the API definitions that impact my world. I want to be able to share them, as well as subscribe to other people's API designs. I want my designs versioned, and be able to play back their evolution, and see a timeline, and possibly the attributions of where I found my API inspiration, or leveraged an existing definition or specification. My API sketchbook / folio should evolve with me, and help me make sense of all the API definitions I use, discovery new ones, and always help me not reinvent the wheel.Â </p>
+<p>Crafting my dream API sketchbook / portfolio is easier to write about than it will be to build. Doing it simply and beautifully will be hard. Doing it so it scales, and allows me to manage not just 10s or 100s of APIs, but work from thousands of APIs will be very difficult. I'm hoping it is something that I won't have to build on my own, and is an idea that many will contribute to, helping push forward the converstion around how we craft, store, organize, and collaborate around the APIs that are increasingly playing a central role in our business and personal world.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/19/my-dream-api-sketchbook-and-portfolio/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/19/a-twilio-process-to-emulate-within-your-own-api-operations/">A Twilio Process To Emulate Within Your Own API Operations</a></h3>
+        <span class="post-date">19 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-recycling.jpg" alt="" width="40%" align="right" /></p>
+<p>Leading API providers do not always make me happy with they way they conduct themselves, but it always makes me smile that one of the top API providers consistently over the last five years, continues to do things right, and set a good example that I can write about. I am not delusional to think that everything is perfect behind the Twilio curtain, but a story&nbsp;from Gordon Wintrob (<a href="https://twitter.com/gwintrob">@gwintrob</a>) about how T<a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.wmhz62h57">wilio's distributed team solves developer </a><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.wmhz62h57">evangelism</a>&nbsp;leaves me hopeful (once again) about the potential of APIs.</p>
+<p>There are several gems in this post, but one of them that stood out for me, and I think reflects the API potential which more companies should be emulating, is about how Twilio designs, develops&nbsp;and evolves new APIs. I think Gordon tells it the best:&nbsp;</p>
+<p style="padding-left: 30px;"><em><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.eigslel5d">We also have a broader concept of our Developer Network, which handles a lot of the coding and writing for our public-facing documentation, blog posts, and our interactions with the community. Typically they&rsquo;ll give feedback on the budding ideas for the new API. This feedback comes long before it goes out to the first beta customers.</a></em></p>
+<div><em><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.eigslel5d">The Developer Network brings a fresh set of eyes with less biased perspectives. They&rsquo;ll say things like, &ldquo;You know what? These parts of the API are awesome. This is what I would use it for.&rdquo; or &ldquo;These are the things that need work.&rdquo; That way we know how the API would work for a developer at a hackathon or trying to finish the story points in a sprint. How do we make it as easy as possible for them?</a></em></div>
+<p id="fd0b" class="graf--p graf-after--p" style="padding-left: 30px;"><em><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.eigslel5d">Once the API or service comes together, we go to a closed beta process for a small group of customers. If we do a product announcement at all, then we&rsquo;ll have a &ldquo;request access&rdquo; button. We&rsquo;ll use that as a list of people that are really chomping at the bit to get coding. Then, after a period of time, when we have some API stability with people in our private beta process, we&rsquo;ll switch to a public beta. Then it&rsquo;s open to everyone who needs access.</a></em></p>
+<p style="padding-left: 30px;"><em><a href="https://getputpost.co/how-twilios-distributed-team-solves-developer-evangelism-c6bdb1a19212#.eigslel5d">We get more feedback before we go fully operational, but there should be no API instability after a public beta period. As an API company, we can&rsquo;t go and change that underlying API once it&rsquo;s in production. That would be a terrible experience. If we really need to change that endpoint API, it should be a new version.</a></em></p>
+<p>Forgive me for just copying and pasting this much from your story Gordon, but I think it needs isolation as its own story. This is the approach to designing, developing, and operating APIs that companies need to hear more about. These are the technical product development benefits which being API-first can bring to the table. It's not just about providing data, content, and algorithms available via the web, it is about opening up the conception, design, and iteration of these API resource in a structured, collaborative, and evolutionary lifecycle on the web.&nbsp;</p>
+<p>This is what makes Twilio such a great API role model to showcase. I know Gordon is telling pretty stories, originating from Twilio, but like the <a href="http://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/">secret to Amazon's success</a>--these stories can have a significant impact on how individuals, companies, institutions, and government gencies approach technology within their own operations. Thanks for such a good story Gordon, providing me with some material to riff on.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/19/a-twilio-process-to-emulate-within-your-own-api-operations/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/16/standardizing-api-documentation-for-use-across-the-api-lifecycle/">Standardizing API Documentation For Use Across The API Lifecycle</a></h3>
+        <span class="post-date">16 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png" alt="" width="40%" align="right" /></p>
+<p><a href="http://apievangelist.com/2014/06/25/if-i-could-design-my-perfect-api-design-editor/">I've been pushing for better API design tooling for some time now</a>, something that significantly overlaps with <a href="http://apievangelist.com/2015/02/02/we-need-better-api-documentation-and-ui-deployment-options/">movements I would also like to see around API documentation as well</a>. In my opinion, we have made significant strides with the introduction of Swagger UI, as well as pushed the API documentation conversation to be part of the API design process by Apiary. This is something that was further re-enforced with the evolution of Swagger UI to be part of the Swagger Editor toolkit--where Swagger UI was used in real-time as part of the API design process, not just later down the road as API documentation for consumers.</p>
+<p>This demonstrates for me the importance of API documentation, not just in helping API consumers understand what an API does at integration time, but also for API providers at design, mock, test, and any other time during the API lifecycle. Functional, attractive looking, and often interactive documentation that describes what an API does is needed from design to deprecation, and is an area of the API world that I feel is pretty underserved at the moment.</p>
+<p>Swagger UI is a 100% client side JavaScript solution, which if you've ever cracked open the code, know that it cannot be used as a base template to move this&nbsp;conversation forward. The more <a href="https://github.com/lord/slate">attractive Slate solution</a> is appealing right up <a href="http://apievangelist.com/2015/06/25/we-should-be-generating-slate-from-swagger-so-we-maintain-a-machine-readable-core/">until you realize it doesn't perpetuate the machine readable API core</a> we will need to successfully integrate with every other stop along the API lifecycle. I haven't seen any movement out <a href="http://apievangelist.com/2015/06/25/we-should-be-generating-slate-from-swagger-so-we-maintain-a-machine-readable-core/">the efforts to make an OpenAPI Spec driven Slate</a>, but I am pleased with the movements by <a href="http://apievangelist.com/2016/01/25/a-new-open-source-interactive-api-documentation-from-folks-over-at-lucybot/">Lucybot in their Lucybot Console</a>. These are moving the needle a little bit&nbsp;but won't get us far down the road when it comes to API documentation that can be used across all stops along the lifecycle without friction.</p>
+<p>We will need API documentation that can be published in web, mobile, and &nbsp;desktop solutions that are serving the API community. It needs to be easily embeddable, on any platform, and help API designers, architects, consumers, analysts, and anyone else with a stake in the outcome &nbsp;understand what the hell is going on. We need our API documentation to be plug and play in our API portals like Swagger UI has been. We need API documentation to be a driver of the API design and mock conversations like Apiary has injected. We need it to drive other areas of API management like Gelato and Readme are doing, or other areas of the API lifecycle like APIMATIC is doing for helping us managing SDKs.</p>
+<p>We need a 100% client-side solution, as well as a diverse range of supercharged server and desktop solutions, that can be used across the API life cycle, whether supporting creation or consumption. We need an open source solution run by a benevolent dictator (not it), who will help ensure its platform agnostic, and has a fully customizable UI and styling, which can be embedded into leading API services and tooling, helping standardize the documentation for each area of the API lifecycle. We need the next steps in the evolution of API documentation, and visualization to be set into motion in 2016.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/16/standardizing-api-documentation-for-use-across-the-api-lifecycle/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/16/learning-from-the-success-of-swagger-ui/">Learning From The Success Of Swagger UI</a></h3>
+        <span class="post-date">16 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-openapi-spec.png" alt="" width="40%" align="right" /></p>
+<p>I feel like we haven't really sat down and studied the success of Swagger UI. I'm not talking about the OpenAPI Spec (fka Swagger Spec), I am only talking about the interactive API documentation that you can find on Github. Aside from the shitshow that was the movement of Swagger to be OpenSpec API, I'm thinking there are some lessons available around just the interactive API documentation itself.</p>
+<p>First, we have to acknowledge that many people think Swagger is the documentation, and do not understand the separate nature of the specification, and the UI layer that is meant to be API documentation, and used within API tooling like the Swagger Editor. While there are numerous benefits realized from the concept of the OpenAPI Spec, the number one reason people implement is to deploy the interactive API documentation.</p>
+<p>People need documentation for their API to communicate what it does with consumers, as well as other key stakeholders throughout the API life cycle. From what I can tell, this need is not being addressed in any new and innovative ways since the launch of Swagger UI, aside from the small group of API documentation service provider that have emerged. I can get behind paying for additional API lifecycle solutions as part of a service, but API document just seems like it should always be free by default--as well as evolved separately from the concerns of an aspiring startup.Â </p>
+<p>Let me try and sum up what made Swagger UI so good. It was forkable. You could fork the repo, make tweaks to the core Swagger JSON file, and if you had it published using Github Pages, you had documentation! I feel like this represents the minimum viable expenditures that API developers are willing to make when it comes to providing API documentation -- WSDL +1 (not very much). If you could understand how to tweak the JSON file, which many just see as a config file for Swagger (UI), you could have good looking (enough) API docs.</p>
+<p>Nobody has evolved on this concept. Nobody. I'm sorry, there are some slick implementations within leading API service providers, but nobody has even replicated what is Swagger UI, using the Slate, Lucybot, or other evolved and attractive UI. We need a simple, forkable, OpenAPI Spec driven replacement for Swagger UI--just to compete. Then we need to get to work on a better iteration of it, something that can be used in any web, mobile, or desktop solution. Sadly, API providers don't want to work very hard to publish documentation and other resources, and I'm guessing that if they have to cough up some money, they'll most often just keep looking.</p>
+<p>I feel like nobody has stopped to consider the success of Swagger UI. Not even the Swagger team. Nobody is building upon the forkability, and plug and playability that Swagger UI brought to API documentation. You know why? Because everyone is focused on building products. The OG Swagger wasn't a product, it was built to deliver on a need that API providers had. Everyone is focusing on building the next service they can sell, not the next solution API providers will need. I know, we need people building good products and services--I agree. The problem is when EVERYONE is focused on products and services, and nobody is interested delivering the open tooling the community needs.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/16/learning-from-the-success-of-swagger-ui/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/">A Look At The State Of API Documentation Solutions</a></h3>
+        <span class="post-date">16 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png" alt="" width="40%" align="right" /></p>
+<p>A friend of mine was asking where he should get started with upgrading the documentation for an existing API, and was asking for assistance on what tools or services he should be considering. The state of things when it comes to API document shifts and changes, which is why I do my research the way I do, to ensure I have <a href="http://documentation.apievangelist.com">a single static location I can go find the latest for my research in API documentation</a>, when I get questions like this.</p>
+<p>Discussing API documentation like many aspects of the API conversation can be difficult, due to a wide range of views on exactly what is API documentation. Some people consider the entire API portal, including the documentation, some include other code libraries, etc, but I define it as specific documentation describing the API surface area (auth &amp; request / response). As I begin my work, at first glance, the world of API documentation seems like it has evolved, but after a quick look through my research, I see it really hasn't evolved that much.</p>
+<p><strong>Swagger UI Changing How We Document Our APIs</strong><br />In 2011 how we documented our APIs changed significantly with the introduction of the <a href="https://github.com/swagger-api/swagger-ui">Swagger specification and UI</a>. The simple, visual, interactive documentation which was driven by the now OPenAPI Spec, shifted the conversation for how we provide documentation. All you had to do was generate the machine-readable specification, and the interactive documentation was automatically generated--solving one of the biggest obstacles for API providers.</p>
+<p><strong>Apiary Providing Design, Mocking, Testing, and Documentation</strong><br />Building on what Swagger UI provided, the service provider <a href="http://apiary.io">Apiary.io </a>entered the game with their own version of the API documentation but shifted the conversation around documenting APIs earlier on in the life-cycle, during the design portion of the work. I consider Apiary to be first and foremost an API design service provider, but they are also a contender when it comes to API documentation because their solution spans multiple stops along the life cycle including design, mocking, testing, portal, and documentation.</p>
+<p>In the last five years, I've watched Swagger play a central role in many of the design, and documentation solutions out there, with providers like Restlet and Apigee following the lead for how we document our APIs--further contributing to the success of OpenAPI Spec as the driving specification. I've also watched Apiary evolve as a service, and adopt OpenAPI Spec as well as yusing their own format API Blueprint, as the driving specification for API documentation--setting the stage for a new breed of API service providers.</p>
+<p><strong>API Documentation Service Providers</strong><br />Along the way other services have launched, building on what we've seen from Apiary, but I think taking the API portal, and API documentation conversations in their own direction.</p>
+<ul>
+<li><a href="https://gelato.io/">Gelato.io</a> - An API portal plus documentation service that was now purchased by Mashape.</li>
+<li><a href="https://readme.io/">Readme.io</a> - Another API portal plus documentation service, with a wealth of API management resources.</li>
+<li><a href="https://api-docs.io/">API Doc</a> - A simple, free OpenAPI Spec and RAML-driven API documentation solution from Stoplight.io team.</li>
+<li><a href="https://restunited.com/">Rest United</a> - A pretty robust PI documentation and SDK solution that supports all major API definition formats.</li>
+<li><a href="http://apidox.net/">APIDox</a> - An XML driven API documentation solution.</li>
+</ul>
+<p>Overall I like the robustness of Readme.io and REST United, but dig the simplicity, and machine readability of API Doc. Honestly, I don't see the sense for an API documentation service provider that doesn't support ALL the API definition formats. I don't care what stops along the API life cycle you are serving you should speak API definition by default. I believe that these API service providers are playing an important role in moving the conversation forward, but I think it is also something that gets balanced out by a number of open source offerings out there as well.</p>
+<p><strong>Some Of The Open Source OpenAPI Spec Options</strong><br />As with API management, the quantity of open source API documentation solutions isn't moving as fast as I'd like, but I'll take whatever I can. A handful of open source API documentation solutions have emerged, each with their own take on what is needed--these are the ones I"m tracking on who have built on the OpenAPI Spec:</p>
+<ul>
+<li><a href="https://github.com/lucybot/lucy-console">Lucy Console</a> - Utilizes<span> </span>OpenAPI Spec <span>to generate both static documentation and an interactive API console via Node.js.</span></li>
+<li><a href="http://wiredcraft.github.io/carte/">Carte</a> - A simple, static Jekyll edition that can run on Github pages.</li>
+<li><a href="https://github.com/aleung/jekyll-swagger-ui/">Jekyll</a> - A more robust Jekyll edition with a ruby plugin delivering functionality.</li>
+<li><a href="https://github.com/marcgibbons/django-rest-swagger/">Django</a> - An OpenAPI Spec driven version for Django in Python.</li>
+</ul>
+<p>I am the biggest fan of anything that runs 100% client side, and secondarily a fan of Jekyll + Github solutions, which open up the options for folks doing APIs at larger organizations, where they might be able to easily stand up hosting environments. Ultimately I think there should be a diverse range of one-click solutions for every platform out there.</p>
+<p><strong>Some of the Open Source API Blueprint Solutions</strong><br />API providers should speak all API definition formats fluently, but API Blueprint is mandatory for modern APIs. Apiary provides the primary API documentation solution for the API Blueprint specification, but it shows the health of the community that there are also some open source options that have emerged:</p>
+<ul>
+<li><a href="https://github.com/danielgtaylor/aglio">Aglio</a> - <span>An API Blueprint renderer with theme support that outputs static HTML</span></li>
+<li><a href="https://github.com/kirkstrobeck/blueprint-docify">Docify</a> - <span>Autogenerate API blueprint documentation with CI for Github pages.</span></li>
+<li><a href="https://github.com/peterhellberg/hiro/">Hiro</a> - <span>Generates HTML from API Blueprints using the Snow Crash command line tool Drafter and Iglo.</span></li>
+</ul>
+<p>I'm regularly monitoring Github, looking for other open source options for API blueprint, as I'm rooting it on as an engine for API documentation, or more importantly I think API narration--telling the story around what an API does.</p>
+<p><strong>Other Open Source Approaches To API Documentation</strong><br />Beyond OpenAPI Spec and API Blueprint driven efforts there are a handful of other open source API documentation solutions I am keeping an eye on. Serving a variety of platforms, and languages, there are a couple I'm looking at:</p>
+<ul>
+<li><a href="https://github.com/lord/slate">Slate</a> - <span>Beautiful static documentation for your API.</span></li>
+<li><a href="https://github.com/mapbox/docbox">DocBox</a> - <span>REST API documentation generator in Markdown for React.</span></li>
+<li><a href="https://github.com/Thibaut/devdocs">DevDocs</a> - Combines<span> multiple API documentations in a fast, organized, and searchable interface.</span></li>
+<li><a href="https://github.com/mpociot/whiteboard">Whiteboard</a> - <span>This project started as a fork of the popular </span><a href="https://github.com/tripit/slate">Slate</a><span> API documentation tool, which uses ruby, after finding the initial setup of Slate quite cumbersome, it was developed as a NodeJS based project.</span></li>
+</ul>
+<p>I'm not sure why someone would develop any API documentation without using OpenAPI Spec or API Blueprint as its machine readable core, but that is my very biased and studied view. I'm happy to see a diverse number of solutions available, but a little concerned about the lack of consistency between them when it comes to its central definition, how its deployed, as well as the UI and styling.</p>
+<p>For me, it's a no-brainer to define your API surface area using OpenAPI Specs, API Blueprint, and Postman. Once you've done this, then you can start thinking about API documentation, code samples, SDKs. mocks, testing, and other resources after that. If you are looking to tackle documentation and have a budget for using an API service provider I recommend taking a look at Apiary or Readme. However, if you are on a budget, have some coding expertise, I recommend looking at Swagger UI + OpenAPI Spec. If you are concerned with look &amp; feel, and Swagger UI doesn't do it for you, I recommend taking a look at Lucy Console.</p>
+<p>I wish the landscape for API documentation was more open, plug-n-play, and one-click deployable. I get the concept of paying for API docs as part of a wider API lifecycle solution, but I'm thinking we haven't fully learned from the success of Swagger UI and making sure there are an enough static and dynamic, open source, API documentation solutions available--designed for a variety of platforms. Something that would help both the open source tooling market, as well as provide consistency across the API service providers.</p>
+<p>Well, I'm not sure I helped with this roundup of API documentation. I did remove a couple of dead projects <a href="http://documentation.apievangelist.com">from my research</a>, and made sure it was refreshed with what I've been seeing lately, but I'm thinking I need to stew on the state of API documentation solutions a little more and try to understand why things are stagnating. There seems to be movement in the area of proprietary services, as well as some movement with individual providers doing slick things with their API docs, but I'm not seeing the level of open, interactive, and forkability that I saw with Swagger UI--which leaves me thinking there are some deficiencies at play.</p>
+<p>Anyways, more to come...</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/15/the-next-api-lifecycle-opportunity-will-be-in-design-and-definitions/">The Next API Lifecycle Opportunity Will Be In Design And Definitions</a></h3>
+        <span class="post-date">15 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/bw_possibilities.png" alt="" width="30%" align="right" /></p>
+<p>Looking through <a href="http://apievangelist.com/numbers/">the numbers for my API Evangelist research</a>, and tallying up what I've learned along the way, I feel like the next opportunity out there will be about API design and definitions. The release of the <a href="http://apievangelist.com/2016/09/12/api-stylebook-a-collections-of-resources-for-api-designers/">API Stylebook</a>, and <a href="http://apievangelist.com/2016/09/12/the-new-api-design-and-deployment-solution-materia-is-pretty-slick/">Materia</a> reflect this opportunity--serving the growing appetite for API design knowledge, and tooling being generated as businesses continue waking up to the need for APIs.</p>
+<p>The API management landscape has been well defined by pioneers like 3Scale and Apigee, and validated by their acquisitions by Red Hat and Google this summer. What is picking up momentum now, is the world of API design services, tooling, and specification set into motion by early <a href="http://apievangelist.com/2014/02/27/api-design-tooling-from-api-blueprint/">pioneers of API design&nbsp;like Apiary.io</a>. I am guessing it will play out over the next six years or so, taking longer than we expect, similar to the way API management has played out.</p>
+<p>This is when pioneers like Apiary will do well, but there will also be a steadily increasing need for new ways to help API providers craft their API designs, and leverage these definitions for use across almost every aspect of the API life cycle. Companies who have a good handle on their API surface area, and schema at play, will more successfully deploy, manage, test, scale, and orchestrate with this infrastructure. When you have all the moving parts well defined, the chances you will have a better handle on things only increases.</p>
+<p>Modern approaches to defining your APIs using API Blueprint and OpenAPI Spec are allowing us to better define the fast growing and evolving (almost too fast) layers of API we are developing and operating. API design services like Apiary and Restlet Studio are helping us better work with API definitions across the API life cycle. The API Stylebook is helping us share API design knowledge, and Materia&nbsp;is pushing the API design and deployment conversation forward. This is just the beginning of a wealth of new services, open source tooling and specifications that will emerge to help define this next API life cycle opportunity.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/15/the-next-api-lifecycle-opportunity-will-be-in-design-and-definitions/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/15/now-keeping-an-eye-on-66-areas-of-the-api-lifecycle/">Now Keeping An Eye On 66 Areas Of The API Lifecycle</a></h3>
+        <span class="post-date">15 Sep 2016</span>
+        <p>As I was firing back up API Evangelist after a break this summer, I took the opportunity to add in a couple of new areas to my research, that I've had sitting on the backburner, <a href="http://apievangelist.com">bringing the number of areas of my API lifecycle research up to 66</a>. Each area operates as an <a href="https://github.com/api-evangelist">independent Github repository</a>, possessing the JSON, YAML, and HTML for each area of my API industry monitoring, research, and storytelling.</p>
+<p>I approach my work this way&nbsp;because the individual repositories allow&nbsp;me to put my blinders on when it comes to each project, while also scaling my work to include as many possible areas that influence what we like to call the API economy. Not all areas are as mature as API management, which has been being defined for well over a decade, but each area plays its own significant role that in my mind makes it worthy enough to be its own separate project.</p>
+<p><a href="http://apievangelist.com"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_lifecycle_66_tag_cloud.png" alt="" width="100%" /></a></p>
+<p><a href="http://apievangelist.com">You can always access the list of API lifecycle research projects from the home page of API Evangelist</a>, and I try to provide a sort of pagination on the home page of each project, allowing for a leisurely&nbsp;stroll through all 66 areas of research. Each area will at least have some news I've curated, with some of the more mature areas also having companies, tools, and blog posts that I've written over the years.</p>
+<p>As I scroll down the list on the home page I can really see the API life cycle maturing and coming into focus. We still have decades of work ahead of us when it comes to properly designing, defining, and making our API discoverable, but I can see it all coming into focus. The problem is that I can also see the deficient areas like terms of service, privacy policies, patents, and copyright lacking in attention and discussion amidst each wave of growth.&nbsp;</p>
+<p>Which is why I list the areas of concern right alongside the growing opportunities emerging across the API lifecycle.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/15/now-keeping-an-eye-on-66-areas-of-the-api-lifecycle/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/15/if-you-have-an-online-product-catalog-you-should-have-an-api/">If You Have An Online Product Catalog You Should Have An API</a></h3>
+        <span class="post-date">15 Sep 2016</span>
+        <p><a href="https://octopart.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/datasheets_electronic_parts_components_search__octopart.png" alt="" width="40%" align="right" /></a></p>
+<p><a href="https://octopart.com/">Octopart is the products company that I regularly use as a reference for how product-focused companies should be doing APIs</a>. Octopart's is an electronic parts company who have a physical, product centered company which is easy for people to understand, that also happens to do APIs well. Octopart doesn't do APIs just because they are cool, they do APIs because it enables the purchasing of their products in other systems.</p>
+<p>When you land on the Octopart website you are given a product catalog search, allowing humans to browse their virtual electronic parts warehouse, but as soon as you scroll below the fold you also see a link to their API. The Octopart API is nothing fancy, but it has all the essentials, including <a href="https://octopart.com/api/home">a simple REST API for accessing /brands, /categories, /parts, and /sellers in their&nbsp;virtual electronic parts warehouse</a>.&nbsp;</p>
+<p>You can tell Octopart API integrations often center around the spreadsheets, an Octoparts showcases with their bill of material (BOM) solution, as well as open source Microsoft Excel and Google Spreadsheet add-ons, but when you <a href="https://octopart.com/api/app-gallery">browse their application gallery</a> you&nbsp;can find other types of integrations with their catalog as well. Their approach to doing APIs seems like it should be a default for any company with a wealth of products to sell in an online environment.</p>
+<p>When browsing through the Octoparts API you don't feel like it is something that was launched as a momentary trendy idea, and it is something that gets just as much emphasis as the HTML edition of the product catalog. The API is keeping spreadsheet editions of the catalog in sync, as well as providing sync capabilities for their BOM-driven order workflow. In my opinion, it has all the characteristics a commerce API provider should possess in a modern digital business environment.</p>
+<p>While evangelizing APIs I often find I have to help unwind some of the miseducation companies have received about APIs from vendors trying to sell them external solutions. I find that companies with online product catalogs often see an API as something separate from their website, a separate software solution they needed to buy, where in reality the API is just the wholesale version of the product catalog for use in other web properties, mobile applications, spreadsheets, and systems--something that should be present alongside the HTML edition of your product catalog, and not buried in some help or feature section.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/15/if-you-have-an-online-product-catalog-you-should-have-an-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/14/tracking-on-where-the-politics-of-apis-intersects-with-the-business-of-apis/">Tracking On Where The Politics Of APIs Intersects With The Business of APis</a></h3>
+        <span class="post-date">14 Sep 2016</span>
+        <p><a href="https://www.twilio.com/enterprise"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_14_at_10.48.11_am.png" alt="" width="40%" align="right" /></a></p>
+<p><a href="https://www.twilio.com/enterprise">While reviewing the details of Twilio's new enterprise plan</a>, the one thing that stood out for me was the strong emphasis of the security and legal elements within this level of business integration. <a href="http://apievangelist.com/2016/01/05/security-will-increasingly-be-used-as-component-of-tiered-api-planning/">I've talked out security being included as part of plan details </a><a href="http://apievangelist.com/2016/01/05/security-will-increasingly-be-used-as-component-of-tiered-api-planning/">before</a>, and is something I will keep talking about as leading providers continue to bring it front and center as part of API plans and operations.</p>
+<p><a href="https://www.twilio.com/enterprise">Advanced security is the focal point for Twilio's new enterprise plan</a>, providing audit events, and public key client validation, but shortly after showcasing these security features, the next section is all about providing finer grain access management including customizable role-based access control (RBAC), and Single Sing-On (SSO). Demonstrating how important security is overall to the average enterprise customer.</p>
+<p>From what I'm seeing across API providers, security is definitely the number one concern, and something that I'm guessing will keep showing up as part of <a href="http://plans.apievangelist.com/">API pricing and pricing tiers</a>. Every time I come across this practice in the wild I will record which elements are being included, and try to do a write up showcasing and sharing the approach. Good security practices and features won't be cheap, and as more companies tightene&nbsp;their belts, I am guessing it will keep bubbling up as paid features in the upper tiers of API access.&nbsp;</p>
+<p>On the same note, the second area of growth I'm seeing, which is also present in TWilio's approach to their enterprise plan, is greater control over accounts, billing, and systems usage--something that includes API access, allowing API consumers to automate. Security is top of mind, but efficiently&nbsp;managing usage&nbsp;and dialing in revenue seems to be just as important to businesses looking looking to optimize their integrations with 3rd party API resources.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/14/tracking-on-where-the-politics-of-apis-intersects-with-the-business-of-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/14/sharing-some-basic-numbers-for-api-evangelist/">Sharing Some Basic Numbers For API Evangelist</a></h3>
+        <span class="post-date">14 Sep 2016</span>
+        <p>I don't spend a lot of time worrying about the website traffic numbers for API Evangelist. Once a week I'll take a look at my Google Analytics or CloudFlare dashboards. I don't write for page views, but I do like to know which of my areas of research is of interest to the public, and generally what people are clicking on.</p>
+<p>To help me visit my numbers each week, I started publishing them to <a href="https://github.com/kinlane/api-evangelist">the API Evangelist </a><a href="https://github.com/kinlane/api-evangelist">repo</a>, and sharing via a <a href="http://apievangelist.com/numbers/">new numbers section</a> on the site.&nbsp;</p>
+<p>I wanted to start with seeing the page views across all of my API research projects, giving me an idea of the interest levels in each area:</p>
+<p><a href="http://apievangelist.com/views/2016-08/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_evangelist_views.png" alt="" width="100%" /></a></p>
+<p>Next, I wanted to see the page views that each guide or white paper was getting in the top left corner of my site:</p>
+<p><a href="http://apievangelist.com/feature/2016-08/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_evangelist_document_views.png" alt="" width="100%" /></a></p>
+<p>After the views, I wanted to get a better understanding of what people were clicking on when it came to&nbsp;these guides &amp; white papers:</p>
+<p><a href="http://apievangelist.com/clicks/2016-08/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_evangelist_guide_clicks.png" alt="" width="100%" /></a></p>
+<p>I also wanted to see which of the sponsor logos I include on the left-hand navigation were being clicked on by my readers:</p>
+<p><a href="http://apievangelist.com/clicks/2016-08/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_evangelist_sponsor_logo_clicks.png" alt="" width="100%" /></a></p>
+<p>Numbers do not drive what I do. I research and write about what grabs my attention, not based upon what drives traffic. However, I do like sharing these basic numbers with my partners, and readers, so that they can get a feel for my reach, and what areas of my research are of interest to the public.</p>
+<p><a href="http://apievangelist.com/numbers/">The numbers reports are simple static views of activity across my sites</a>. I will publish the JSON that drives the reports each week, along with the rest of my industry monitoring each week. Once I get enough data published to do some quarterly reports I will work to slice and dice, and see what I can come up with when it comes to visualizations. I'm enjoying playing with D3.js as a visual layer to the JSON data that I'm publishing to Github, across my API industry research--the problem is that I can get lost for hours doing this.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/14/sharing-some-basic-numbers-for-api-evangelist/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/14/harvesting-companies-who-are-doing-apis-from-press-releases/">Harvesting Companies Who Are Doing APIs From Press Releases</a></h3>
+        <span class="post-date">14 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-press-apis.png" alt="" width="40%" align="right" /></p>
+<p>Press releases continue to be one of the best ways for me to discover companies who have embarked on their API journey. From what I can tell, even with the shrinkage around funding for startups, the number companies offering up APIs is increasing. The big difference in the current wave of companies doing APIs. is these are just regular businesses, using APIs to provide access to resources in web, mobile, device, and partner integrations--a more business usage of APIs, as opposed to startups where the product is an API.</p>
+<p>This class of SMB, and SME API provider tend not to be so good at sharing the documentation, code, and other resources for their API operations via their sites, but do see the value in pointing it out when issuing a press release. The reasons vary for why they showcase their APIs, often times it is just in the little "about" paragraph, but sometimes it is the center&nbsp;of a partnership, an acquisition was made possible, or the focus of a new product or service. I wish companies were more into being public about it, but I'll take what I can get--I am guessing many just haven't thought about it, or don't have the resources to do it right.</p>
+<p>I'd say press releases are the number one way I discover companies who are doing APIs, with <a href="http://apievangelist.com/2016/09/02/api-patent-search-as-way-to-discover-companies-who-are-doing-apis/">patent filings as a close second or third</a>. After I publish eachpress release to <a href="http://api.report">API.Report</a>, I have a CRON job running that extracts any URLs referenced in the page, spiders them looking for blog feeds, and Twitter or Github accounts, and makes sure they are entered into my monitoring system. If you are an API service provider looking for interesting leads of companies who are doing APIs let me know--I'm looking to formalize the list of companies I extract from press releases each week. I'm thinking about providing this list as a new API Evangelist service, and subsidize my research with new sources of information about APIs, as well as some potential revenue that can help&nbsp;me keep the lights on.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/14/harvesting-companies-who-are-doing-apis-from-press-releases/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/14/building-the-case-for-redefining-the-mortgage-industry-using-apis/">Building The Case For Redefining The Mortgage Industry Using APIs</a></h3>
+        <span class="post-date">14 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-mortgage-api.png" alt="" width="40%" align="right" /></p>
+<p>I am trying to get better at showcasing the early stories I find about APIs making their moves into new industries. It helps to have a post to reference when I add an area as an official research project, and begin tracking on companies more closely in the industry. I'm sure I've seen mortgage-related&nbsp;API rhetoric before, but a post in the <a href="http://www.nationalmortgagenews.com/">National Mortgage </a><a href="http://www.nationalmortgagenews.com/">News</a>, provides a pretty clear mark in the sand&nbsp;<a href="http://www.nationalmortgagenews.com/news/technology/to-redefine-mortgage-technology-focus-on-connectivity-1086186-1.html">to begin building the case for redefining the mortgage industry using APIs</a>.</p>
+<p>The description of the mortgage industry sounds like other industries where many disparate systems and players exist, with a minefield of technical, business, and politic considerations littering the landscape. One reason I cherry picked this article out of the hundreds of posts I tune into each week, is the focus on a new area like mortgages, but also because it focuses on the reality on the ground, and acknowledges there is no single end-to-end solution that will fix what is going--despite many vendor claims.</p>
+<p style="padding-left: 30px;"><em>"No one actually has an end-to-end solution. And with anyone who claims to be an end-to-end solution, their customers are using other services to round out their capabilities."</em></p>
+<p>People will always seek out solutions to their integration issues, this is what shadow IT has shown us in recent history. It is clear the mortgage industry is facing what many other industries are facing, and that they are using many disparate systems, many operating in the cloud, and the need move things around more efficiently is becoming critical. There is no silver bullet in this environment, and APIs are increasingly providing the connectivity that is needed to 3rd party systems, as well as opening up and providing access to internal system resources.</p>
+<p>This post provides me with an early line in the sand, showing where I started tuning into the mortgage industry closer. I've added a couple of new keyword search phrases to my API monitoring, and if I keep coming up with conversations around how APIs are being applied in this industry, I will add a mortgage API research area to my work, and begin aggregating the players in the space, along with the tools, services, and processes that are being applied on the ground.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/14/building-the-case-for-redefining-the-mortgage-industry-using-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/14/an-api-data-retention-policy-and-paying-for-longer-storage/">An API Data Retention Policy And Paying for Longer Storage</a></h3>
+        <span class="post-date">14 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-data-retention.png" alt="" width="40%" align="right" /></p>
+<p>I was reading<a href="http://blog.bronto.com/product/rules-retention-long-bronto-save-data/">&nbsp;the rules of retention, and how long does Bronto save data</a>. Their clarity around offering a <a href="https://helpdocs.bronto.com/bmp/#concept/c_bmp_data_retention_policy.html">data retention policy</a> grabbed my attention, but I also found the ability to pay for longer storage, increasing data retention worth highlighting as well. If longer storage is an option for inclusion in API plans, it might also make sense to charge for shorter periods? IDK--maybe pay for something to go away sooner, with a shorter overall time to live (TTL).</p>
+<p>Before I can see the Bronto data retention policy I have to create an account, so it won't happen today. I will make sure and get in there to document&nbsp;the moving parts of their policy as I am&nbsp;curious how much detail they get into. After that, I"d bee keen on finding any other API provider who provides a data retention policy, and help&nbsp;highlight those who do, while also assembling a list of the common moving parts.</p>
+<p>Providing details on what data is being collected is something I'd like to see all platforms do by default, but I'd also like to see increased detail on how long data is stored like Bronto is offering, and possibly some day even see it in a machine-readable format. This blog post is meant to serve as a reminder for me to add data retention to my <a href="http://terms-of-service.apievangelist.com/">API terms of service research</a>, as well as an element to consider when crafting <a href="http://plans.apievangelist.com/">API plans</a>, and an&nbsp;<a href="http://monetization.apievangelist.com/">API monetization</a> strategy.&nbsp;</p>
+<p>Honestly, I'm thinking I will have to push pretty hard to get providers to even share what data they are collecting, let alone offer up the details of how long it is being stored. By highlighting providers like Bronto, maybe I can convince other API providers of the value of this type of transparency--until it is seen as a standard business practice.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/14/an-api-data-retention-policy-and-paying-for-longer-storage/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/the-general-bikeshare-feed-specification/">The General Bikeshare Feed Specification</a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/north_american_bikeshare_association.png" alt="" width="40%" align="right" /></p>
+<p>I came across a story about&nbsp;<a href="http://insidebigdata.com/2016/09/08/stage-intelligence-adds-support-for-the-gbfs-open-data-standard-into-its-bico-distribution-solution/">Stage Intelligence Adds Support for the GBFS Open Data Standard</a> in my regular monitoring, and wanted to add the specification to my <a href="http://definitions.apievangelist.com/">API definition toolbox</a>, and share here on my blog. Staritng with the basics, what is the <a href="https://github.com/NABSA/gbfs">GBFS Open Data Standard</a>?</p>
+<p style="padding-left: 30px;"><em>General Bikeshare Feed Specification, known as GBFS, is the open data standard for bikeshare. GBFS will make real-time data feeds publicly available online in a uniform format so that map and transportation based apps can easily incorporate this data into their platforms.</em></p>
+<p><a href="https://github.com/NABSA/gbfs/blob/master/gbfs.md">Documentation is available on Github, including JSON definitions for the bikeshare data model</a>. All it needs now is an <a href="https://openapis.org/specification">OpenAPI Spec generated for it,</a> providing one possible API definition for the GBFS specification (you know you want to build it). Then people could put the definitions to use in generating open source server and client side API tooling for&nbsp;bikeshare programs to deploy.</p>
+<p><a href="https://github.com/NABSA/gbfs/blob/master/systems.csv">I was impressed to see 49 separate bikeshare programs are supporting the specification</a>. I am always looking to add open data specifications to my <a href="http://definitions.apievangelist.com/">API definition research</a>, even if they are just the data model--maybe with a little nudging I can stimulate some investment in at least the API definitions, if not supporting code, and other tools and resources.</p>
+<p>I'll take the list of bikeshare&nbsp;services who are currently using the standard and see if any of them have an API, and maybe aggregate the common patterns already in use on the ground. If nothing else, hopefully, I can shine some SEO on the&nbsp;<a href="https://github.com/NABSA/gbfs/blob/master/gbfs.md">General Bikeshare Feed Specification</a> and prevent at least one developer from reinventing the wheel.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/the-general-bikeshare-feed-specification/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/if-an-algorithm-impacts-our-life-it-should-be-opened-up-with-an-api-for-auditing/">If An Algorithm Impacts Our Life It Should Be Opened Up With An API For Auditing</a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-algorithm-flow.png" alt="" width="40%" align="right" /></p>
+<p>As I was reading <a href="https://medium.com/@katecrawford/artificial-intelligence-is-hard-to-see-a71e74f386db#.rmv7mf65l">artificial intelligence is hard to see</a> by Kate Crawford (<a href="https://twitter.com/katecrawford">@katecrawford</a>), my brain once again begins crunching the different ways APIs can be applied to help us "see" the algorithms evolving around us. API all by themselves do not move things forward much, but when you combine with modern approaches to applying&nbsp;<a href="http://definitions.apievangelist.com/">API definitions</a>, introduce the <a href="http://authentication.apievangelist.com">access and authentication benefits of OAuth</a>, employ <a href="http://logging.apievangelist.com">sensible and robust logging practices</a>, and work to develop <a href="http://visualization.apievangelist.com/">API driven visualization</a> layers for algorithms--I'm thinking we can really begin to move the conversation forward.</p>
+<p><strong>Defining the Algorithmic Surface Area With An API And API Definition</strong><br />Leading API specifications formats like <a href="https://openapis.org/specification">OpenAPI Spec</a> and <a href="http://apiblueprint.org">API Blueprint</a> are allowing API providers and architects to define the request and response model for web APIs. Many APIs are serving up data and content, but for the algorithmic&nbsp;variety, API definitions allow for the description the inputs and outputs for the algorithm--giving us an important way to describe what an algorithm actually does.&nbsp;</p>
+<p><strong>Opening Up Access To Algorithmic Resources Using OAuth</strong><br />It is common for OAuth to be used to help manage authentication and access to data, content, and algorithms being made available via APIs. OAuth is used to securely open up access to the proper 3rd party developers, or in this scenario regulators, journalists, and researchers, in a way that defines the scope of what they have access to, whether they can just read, as well as write via an API. OAuth could easily be applied, and evolved to meet the needs of algorithmic transparency and auditing, giving us access to the levers and controls that are driving decisions behind the algorithmic curtain.</p>
+<p><strong>Record And Measure Algorithmic Responses Across A Variety Of Uses</strong><br />Logging is used to measure almost every layer of the Internet today, from the server and database backends, all the way up to the web and mobile applications that are driving our front ends. API management providers have applied logging to the API layer, carefully recording how data, content, and algorithms are being accessed, and the system, application, or user who is accessing them. Logging could be used to record how algorithms are performing across a wide variety of auditing and test scenarios, providing a possible baseline for determining what an algorithm does, and how it can be improved upon--in a open, but secure and controlled environment.</p>
+<p><strong>Using An API Driven Visualization Layer To Help Us See Algorithms</strong><br />Using API definitions that give us a way to quantify the inputs and outputs of algorithmic resources, along with the logging of a range of requests, and resulting responses, it is then possible to <a href="http://d3js.org/">craft visualizations using open libraries like D3.js</a>, to help us "see" an algorithm. We can see what goes in, what comes out, and how this works across a variety of scenarios. While visualizations will only be as good as the API itself, and the sampling of requests made, they give&nbsp;us the tools we will need to begin seeing and understanding the impact algorithms are making in our lives.&nbsp;</p>
+<p>APIs do not equal transparency, and understanding of how algorithms work, but they can help us define and communicate around what they do, and open up access to researchers, regulators, and journalists looking to validate and make sense of what an algorithm does, or does not do. An API for Facebook or Twitter censorship algorithms will not ensure they are fair and balanced, but they can give us the tools to evaluate, and potentially course correct these algorithms out in the open, as they evolve.</p>
+<p>I'm seeing a steady build in the number of questions being asked about how algorithms work or don't work, and are impacting our lives. I do not think it is unreasonable to ask owners and operators of these algorithms to open up their solutions for review by trusted 3rd party researchers, regulators, and journalists. We are going to have to get to work opening up this technical infrastructure, as well as developing the API talent that will be needed for reviewing algorithms in this way. I understand that many companies will be resistant to this, but if your algorithm is impacting our lives, we deserve to understand how they work.</p>
+<p>I will keep writing on this subject whenever possible, and hopefully, begin to evolve a more coherent approach to employing modern API infrastructure in the service of "seeing algorithms". We tend to think of using APIs for developing web, mobile, and increasingly device-based apps, but increasingly they are also being used to migrate our bits and bytes around the Internet using what is called Integration Platform as a Service (iPaaS), and I see no reason why we can begin to evolve API infrastructure specifically for enabling algorithmic transparency.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/if-an-algorithm-impacts-our-life-it-should-be-opened-up-with-an-api-for-auditing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/">Considering How APIs Are Influencing The Fundamentals of Software Engineering </a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_12_at_11.03.07_pm.png" alt="" width="40%" align="right" /></p>
+<p style="white-space: normal;">I am preparing for my hangout with the&nbsp;<a href="https://www.youtube.com/results?q=%23TC1019">#TC1019</a>&nbsp;<a href="http://kenscourses.com/tc1019fall2016/">Fundamentals of Software Engineering</a> (3rd-semester course) out of the Tecnol&oacute;gico de Monterrey, Campus Guadalajara. In my own style, I didn't just want to prepare for the discussion, I wanted to publish it on my blog, providing an outline that students to walk away with, but hopefully is something that can also live on as part of my API research.</p>
+<p style="white-space: normal;">Where do I start? Well, it is a fundamental of software engineering course, so let's look at how the modern API movement can influence and impact the modern software engineer. I may be biased but I think APIs are significantly changing how we develop software, in some pretty important ways--let's explore.</p>
+<p style="white-space: normal;"><strong>History of Modern Web APIs</strong><br />I always recommend anyone interested in learning more about APIs to pause for a moment and&nbsp;consider the history of modern web APIs, even if you think you know the API world already. In my opinion, many technologists take for granted some of the most common platforms out there, and haven't' taken the&nbsp;time to learn more about a specific API, and in many cases do not know that an API already exists for common platforms we use every day.</p>
+<ul>
+<li><a href="http://history.apievangelist.com/">History of APIs, a Primer</a></li>
+<li><a href="http://apievangelist.com/2016/03/27/some-milestones-from-the-last-15-years-of-web-api-history/">Some Milestones From The Last 15 Years Of API</a></li>
+</ul>
+<p>The more we understand the short history of web APIs, and why they are working, the more we can borrow from what is already working. Whether you are looking to provide API resources, consume APIs, or ideally do both--spend some time browsing through the history I've organized above.</p>
+<p style="white-space: normal;"><strong>Focus On HTTP &amp; HTTP/2 In Modern Programming<br /></strong>The technology driving the web is low cost and ubiquitous, making it perfect for usage to deliver not just HTML to websites, but JSON that can be used in other systems, mobile applications, as well as device-based applications. There are some important standards being applied as part of the current API movement that impact software engineering fundamentals, here are a handful of the core elements.</p>
+<ul>
+<li><a href="http://webconcepts.info/">Web Concepts</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a></li>
+<li><a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
+</ul>
+<p>You don't have to be a master of everything I've listed--I am far from being up to speed on everything here. However, I recommend spending as much time as you can, on a regular basis, absorbing the concepts at play when it comes to Internet technology&nbsp;and consider how existing API providers are putting them to work in their operations.</p>
+<p style="white-space: normal;"><span><strong>Next Step In The Evolution Of The Web</strong><br />It is import to see modern APIs as just the next step in how data, content, and algorithmic resources are made available using Internet technology. One concept at play here, which is included above in the HTTP &amp; HTTP/2 resource is what is called content negotiation--I recommend starting here, and I've included a simple tool to help bring it home.</span></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Content_negotiation">Content Negotiation</a></li>
+<li><a href="http://website.apievangelist.com/">Simple Demonstration</a></li>
+</ul>
+<p style="white-space: normal;"><span>API is not a specific vendor solution&nbsp;or even an open source code base--it is an approach to leverage existing web technology to achieve objectives around operating in a web and mobile, and now Internet of Things (IoT) landscape. APIs are not just about delivering JSON, it is about delivering the resources necessary to get the job done, negotiating exactly the format that is needed.</span></p>
+<p style="white-space: normal;"><span><strong>Wealth Of Resources Available Via Diverse Number of API Providers</strong><br />I track on many companies doing interesting things with APIs, but I always start with learning about the companies who are selling services, and developing tools that API providers are putting to work. You can browse these API life cycle providers as part of my ongoing research:</span></p>
+<ul>
+<li><a href="http://theapistack.com/lifecycle/">API Life Cycle Providers</a></li>
+</ul>
+<p style="white-space: normal;">These companies don't just sell services to API providers, if they are doing it right they also have APIs themselves. When every step along the life of an API, also has an API, the concept of the programmable web becomes more realistic.</p>
+<p style="white-space: normal;"><strong>Wealth of API Resources Available To Help Manage The API Life Cycle</strong><br />After the API service providers, I keep an eye on companies who are delivering API resources in specific business verticals, which I call my stack APIs. These areas contain many of the common APIs that developers&nbsp;are using, but also some you hopefully may not know already about.</p>
+<ul>
+<li><a href="http://theapistack.com/stack/">API Stack Providers</a></li>
+</ul>
+<p style="white-space: normal;">I am adding to this stack as fast as I possibly can. I'm constantly having to prioritize which APIs and add and remove from this list of API resources. Hopefully, as a software engineer you can find some interesting APIs amongst these stacks.</p>
+<p style="white-space: normal;"><strong>Making Digital Resources Available In Any Programming Language</strong><br />One of the most common mistakes I see from aPI providers are references to, and dogma from their preferred programming language. Modern web APIs employ REST, employing the HTTP &amp; HTTP/2 pipes, and leave the specifics of individual programming languages behind the API, and within client solutions. To help guide yoru learning I recommend taking a look at the API design best practices of API pioneers:</p>
+<ul>
+<li><a href="http://apievangelist.com/2016/09/12/api-stylebook-a-collections-of-resources-for-api-designers/">API Stylebook</a></li>
+</ul>
+<p style="white-space: normal;">Successful API designers, architects, and operators transcend any single API programming languages, learning to craft an interface that speaks to as wide as possible audience, allowing the software you build to acomplish more.</p>
+<p style="white-space: normal;"><span><strong>Focus On API Definitions, Media Types, And Schemas Over Code</strong><br />When focusing on APIs, I strongly recommend favoring API definitions, media types, and schemas over keeping to much code around. Things move fast in the workd of APIs, and the surface of an API will change, and there are many ways API architects are mitigating change, and remaining agile--I recommending speaking fluent:</span></p>
+<ul>
+<li><a href="https://openapis.org/specification">OpenAPI Spec</a></li>
+<li><a href="https://apiblueprint.org/">API Blueprint</a></li>
+<li><a href="http://webconcepts.info/concepts/media-types">Media Types</a></li>
+<li><a href="http://schema.org/">Schema.org</a></li>
+</ul>
+<p style="white-space: normal;"><span>If you speak in these formats, as an API architect you will be able to focus on delivering more standardized, and flexible API resource, helping you as a software&nbsp;engineer, be agile and potentially more distributed--truly embracing what makes the web work, and is the fuel for the growth in API usage when it comes to developing software.</span></p>
+<p style="white-space: normal;"><span>That is where I recommend starting with the world of APIs&nbsp;when it comes to their impact on the fundamentals of software engineering. As a software engineer, HTTP is the core of what you should be studying and including in your toolbox. I've included a wealth of resources here, for use in our classroom discussion, but also hopefully something the students will be able to study as part of their ongoing API education.</span></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/api-providers-partnering-to-provide-a-developer-business-incubator/">API Providers Partnering To Provide A Developer Business Incubator</a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/box_incubator_construction.jpg" alt="" width="40%" align="right" /></p>
+<p>Building on <a href="http://apievangelist.com/2016/08/10/investing-in-your-api-community-like-amazon-and-slack/">my earlier coverage of how API providers are investing in their API community like Amazon and Slack</a>, I wanted to document the <a href="https://developer.box.com/incubator">incubator over at Box</a>. Acknowledging that <em>"the enterprise applications of the future will be cloud-based and massively scalable"</em>, and to <em>"support the development of these applications, Box Platform and Amazon Web Services are teaming up to provide you with everything you need to build and scale your business."</em> Providing yet with another (AWS-powered) partnership and API community investment blueprint to put on the shelf.</p>
+<p>Examples like this are why I kicked off my <a href="http://partners.apievangelist.com/">API partner research</a> but also reflects why I expanded to keep an eye on <a href="http://investment.apievangelist.com/">investment that is occurring&nbsp;in the space</a>. I don't want API investment to simply mean VC-led investment when there are such a diverse number of other approaches available for how API providers can invest in their platforms, and API communities. <a href="https://developer.box.com/incubator">The Box incubator</a> offers up&nbsp;free and promotional credits, marketing, and training opportunities as part of the program that opens October 1st, 2016--something I'll work to expand on once they go live.</p>
+<p>Eventually, I'd like to have an assortment of blueprints to show how API providers are investing in partners, developers, and the potential businesses that are being built on top of platform APIs. I refuse to accept that VC investment of public APIs is the only way forward, and the dominant narrative for what API investment looks like. Hopefully by sharing other examples from successful API providers will help diversify perspectives and narratives around API investment, incubation, and partnering.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/api-providers-partnering-to-provide-a-developer-business-incubator/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/api-infrastructure-to-help-your-3rd-party-developers-be-more-efficient/">API Infrastructure To Help Your 3rd Party Developers Be More Efficient</a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-code.png" alt="" width="40%" align="right" /></p>
+<p>One of the popular narratives for why companies should be doing APIs emerged out of the last couple waves of startup investments, which encouraged investment in public APIs so that developers could build the next big web&nbsp;or mobile app (if you build it they will come). This narrative proved to not be true for many APIs, leaving API providers often feeling unsuccessful. <a href="http://apievangelist.com/2016/09/07/the-netflix-public-api-was-the-most-successful-api-failure-ever/">The API providers like Netflix who were able to evolve and iterate until they found success with their </a><a href="http://apievangelist.com/2016/09/07/the-netflix-public-api-was-the-most-successful-api-failure-ever/">APIs</a> are the examples we should be following, not a single narrative around public API access.</p>
+<p><a href="http://apievangelist.com/2016/09/08/are-you-being-transparent-with-your-api-infrastructure-to-attract-top-talent-like-netflix-is/">Netflix talks about their API, and open sources their API technology to attract the attention of developer talent</a>. This is just one of many reasons why companies are doing APIs in 2016, a subject I want to contribute to through brainstorming about "what is API success". One idea I am working on at the moment is about using APIs to help reduce friction when it comes t working with 3rd party contractors who are developing and operating&nbsp;web and mobile applications, or system to system integrations for companies--a real world scenario that I think many people might not be considering when thinking about APIs.</p>
+<p>Modern API management solutions allow us to decide who has access to an API, and dial in how much they can use. APIs can have their documentation and other resources publicly available without allowing for public access to the API resource itself--this access can be granted on an invite only, or as part of a wider approval process. This is something that makes having well-defined APIs for all internal resources in place, complete with a modern API management registration, access, and service composition workflow a&nbsp;critical enabler of efficiency&nbsp;when working with 3rd party developers, agencies, and other service providers.</p>
+<p>Having API documentation, SDKs, and other resources publicly available reduces the time required to share this information with developers. The ability to offer self-service registration, which also includes a manual approval process, makes it easy to turn, or off 3rd party contractors access to internal data, content, and other algorithmic resources. This just makes good business sense--every company out there wants to be able to reduce friction when it comes to working with the outside developers who are helping deliver essential web, mobile and device applications.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/api-infrastructure-to-help-your-3rd-party-developers-be-more-efficient/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/13/adding-to-the-available-branding-resources-for-api-developers/">Adding To The Available Branding Resources For API Developers</a></h3>
+        <span class="post-date">13 Sep 2016</span>
+        <img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/design_resources__spotify_developer.png" width="40%" align="right" style="padding: 15px;" /><p>Spotify recently updated the availableÂ <a href="https://developer.spotify.com/design/">design resources and branding guidelines</a> including their logos, icons and colors in their developer portal. I'm a big fan when any company has a dedicated page driving their <a href="http://branding.apievangelist.com/">API branding strategy</a>, as it makes it easy for me to find logos, and understand how a company wants to be presented in my stories.Â </p>
+<p>Spotify provides a range of design resources including logos, icons, display rules, minimum size, logo misuse, colors, fonts, and restrictions--all elements I'll consider adding as branding building blocks for API providers. I also thought that Spotify's quick description of their design resources is worthy of showcasing:</p>
+<p class="text-description" style="padding-left: 30px;"><em>Welcome to our hub for partner guidelines and assets. We want to make it easy for you to integrate Spotify in your app while respecting our brand and legal/licensing restrictions.</em></p>
+<p>Their design resources page for the API developer portal simple, and describes the important balance between API provider and consumer when it comes to a company and platform's brand. I'm adding Spotify's design resources to my listing of branding page for API providers--it provides a healthy reference of how it can be done in the music industry.</p>
+<p>Additionally, I think the closing page for the Spotify design resources page has a couple more lessons:</p>
+<p style="padding-left: 30px;"><em>If you are having trouble with anything in this guide, you are missing brand elements from the brand package, or you are unsure if your communication best represents the Spotify brand, please contact the Spotify design team. </em></p>
+<p><em> </em></p>
+<p><em>I would add contact information, and suggestions, as two new elements to consider when crafting a branding page. I have a handful of other branding pages from the API providers to review. I'll continue posting stories about each one (if worthy), as I mine them for other helpful elements that API providers might want toÂ think about when crafting their own page.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/13/adding-to-the-available-branding-resources-for-api-developers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/12/where-is-the-deploy-to-aws-and-google-button/">Where Is The Deploy To AWS and Google Button?</a></h3>
+        <span class="post-date">12 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/deploy_buttons_heroku_azure.png" alt="" width="40%" align="right" /></p>
+<p>I was playing around <a href="https://github.com/prose/gatekeeper">Prose.io's Gatekeep solution</a>,&nbsp;<span>a proxy for enabling the client-side application&nbsp;dance OAuth with GitHub. I tend to use Oauth.io for all of my oAuth dancing, especially client-side on Github Pages, but for the current application I am working on, I wanted a server-side proxy where I could work some other magic--which led me playing with Prose's Gateway.</span></p>
+<p>When you scroll down the page for the oAuth gateway, you'll find two deploy buttons, one for Heroku, and one for Azure--<a href="http://apievangelist.com/2014/08/23/push-button-api-deployment-with-the-heroku-button/">I want all APIs, and all API solutions that support API operations (like Prose's Gateway) to be deployed like this.</a>&nbsp; True open API solutions should operate this way, offering up server-side solutions in a Github repository, with one-click buttons for deploying in your infrastructure of choice.</p>
+<p>As I write this I realize in addition to a deploy to Heroku, and Azure buttons, there should be deploy to AWS and Google buttons as well. There are <a href="https://blogs.aws.amazon.com/application-management/post/Tx33XKAKURCCW83/Automatically-Deploy-from-GitHub-Using-AWS-CodeDeploy">deploy instructions for AWS</a>, but not a branded button. They also have <a href="https://aws.amazon.com/iot/button/">the "phystical" IoT Button</a>, but alas no "virtual" deploy to AWS. There is also <a href="https://developers.google.com/apps-marketplace/listing">deploy instructions for Google</a>, but again no organized branded button effort. While I'm sure AWS and Google will eventually do this, it smells like an opportunity for a sort of aggregate API deployment service provider.</p>
+<p>Just like the wealth of website templates available out there, from the WordPress to the Jekyll, we need to start building up our inventory of API solutions, which might also serve up HTML, but more importantly be serving up the JSON we need for syndication, and in mobile and device-based applications. Businesses shouldn't have to hand-craft the most common of API design patterns out there, they should be able to just click one button and have deployed in their cloud infrastructure of choice.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/12/where-is-the-deploy-to-aws-and-google-button/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/12/the-new-api-design-and-deployment-solution-materia-is-pretty-slick/">The New API Design And Deployment Solution Materia Is Pretty Slick</a></h3>
+        <span class="post-date">12 Sep 2016</span>
+        <p><a href="https://getmateria.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/materia_screen_entities.png" alt="" width="40%" align="right" /></a></p>
+<p>I was playing with a new API design and deployment solution, from some of my favorite developers out there this weekend called <a href="https://getmateria.com/">Materia</a>, which bills itself as <em>"a modern development environment to build advanced mobile and web applications"</em>--I would add, <em>"with an API heart"</em>.</p>
+<p>Materia&nbsp;is slick. it is modern. While very simple, it is also very complete--allowing you to define your underlying data model or entities, design and deploy APIs, and then publish a single page applications (SPA) for use on the web, or mobile devices. Even though I'm one of those back to land, hand-crafted API folks, I could see myself using Materia to quickly design and deploy APIs.&nbsp;</p>
+<p>I say this in the most positive light imaginable, but Materia reminds me of the Microsoft Access for APIs. Partly its the diagramming interface for the entities, but it is also the fact that it bridges the backend to the frontend, allowing you to not just design and deploy the database and APIs, but also the resulting user interface that will put them to work.</p>
+<p>I know they are just getting going with developing Materia, but I can't help but share a couple things I'd like to see, that would make it continue to be the modern API driven application it is striving to be:</p>
+<ul>
+<li><strong>OpenAPI Specs or Blueprints - </strong>Allow users to import, export, and manage my APIs in the popular API definition format my choice.</li>
+<li><strong>Schema.org - </strong>Provide users with a wealth of existing entity&nbsp;models to choose from, so they do not reinvent the wheel.</li>
+<li><strong>Github - </strong>Allow for the publishing of projects, and importing of them to and from Github, allowing for the sharing of server design and deployment patterns.</li>
+</ul>
+<p>There are a number of other things I'd like to see, but I'm sensitive to the fact that they are just getting started. These three areas would significantly widen the initial audience for Materia beyond the developer class, which is who the application solution should be targeting. Like I said, it has the potential to be the Microsoft Access of APIs for small businesses, which isn't quite the Microsoft Excel of APIs, but a close second. ;-)</p>
+<p>Nice work guys! It is the another positive advancement in the world of API design alongside&nbsp;<a href="https://restlet.com/products/restlet-studio/">Restlet launched their API design studio</a>, and <a href="http://apiary.io">Apiary</a> setting&nbsp;<a href="http://apievangelist.com/2011/10/07/easy-api-development-with-apiaryio/">this modern era of API design into motion with Apiary</a>. I'll be tuning into Materia's evolution on <a href="https://twitter.com/MateriaHQ">Twitter</a>, and play more with the <a href="https://github.com/webshell/materia-server">server</a> and <a href="https://github.com/webshell/materia-designer">designer</a> editions available on Github.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/12/the-new-api-design-and-deployment-solution-materia-is-pretty-slick/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/12/google-acquired-apigee/">Google Acquired Apigee</a></h3>
+        <span class="post-date">12 Sep 2016</span>
+        <p><a href="https://cloudplatform.googleblog.com/2016/09/Google-to-acquire-apigee.html"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_12_at_9.18.25_am.png" alt="" width="40%" align="right" /></a></p>
+<p>The news came in late last week that <a href="https://cloudplatform.googleblog.com/2016/09/Google-to-acquire-apigee.html">Google was acquiring API management pioneer Apigee</a>. The news caught me by surprise. I thought if there was still going to be an acquisition of Apigee that it would come from their flagship client AT&amp;T or from other giants like IBM. While it was surprising, seconds after hearing it, the acquisition made total sense, and I think it just reflects the increased usage of APIs by businesses of all shapes and sizes.</p>
+<p>As I wrote about last week, <a href="http://apievangelist.com/2016/09/09/prepare-for-the-more-boring-and-very-business-age-of-apis/">we are entering a very boring and business age of APIs</a>. My point is not that it will all be boring (as some of Twitter folks responded without reading), it is that it will be too boring for the Silicon Valley hype machine. It is like 2003 for the web, where all businesses were realizing that serving up HTML on the web was essential, but in 2016 it is now also about serving up JSON for use in&nbsp;web, mobile, and device-based applications--Google is wisely looking for a piece of this action.</p>
+<p>The leading cloud providers (AWS, Microsoft, and Google) all have API management solutions now, acknowledging that <a href="http://apievangelist.com/2013/06/10/history-of-apis-mashery/">a decade after Mashery first standardized API management as a service</a>, serving up content, data, and algorithms in an organized, managed way is essential to doing business in a digital age. In the Google announcement, I also saw echoes of modern approaches to deploying APIs using containers and other virtualization approaches, which I feel reflects the decisions we saw in Red Hat buying 3Scale, and the API-led container and serverless rhetoric we are hearing out of AWS.</p>
+<p>I was already preparing for a deeper dive into the convergence of Google's API efforts, including its cloud computing and container offerings, as well as its <a href="https://cloud.google.com/endpoints/">existing API cloud endpoint solution</a>--the Apigee acquisition only helps me prioritize this mapping of the existing API landscape over at Google for me. Google has a lot of catching up to do when it comes to offering up API solutions that specifically target API providers, but with their experience as a provider of over a 100 APIs, I'm fairly confident they'll have the experience to pick up the momentum pretty quickly.</p>
+<p><em><strong>P.S.</strong> <a href="http://apievangelist.com/2011/12/21/business-of-google-apis-2011/">I propsoed a little early that Google would play in this game</a>, but I'm getting used to the fact that nothing happens as fast as I'd like to see in the world of APIs.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/12/google-acquired-apigee/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/12/considering-the-hypothesis-api-approach-when-expanding-the-api-life-cycle-discussion/">Considering The Hypothesis API Approach When Expanding The API Life Cycle Discussion</a></h3>
+        <span class="post-date">12 Sep 2016</span>
+        <p><a href="http://h.readthedocs.io/en/latest/api/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/linkedin/the_hypothesis_api_the_hypothesis_annotation_framework.png" alt="" width="40%" align="right" /></a></p>
+<p>I have been playing around with different ways to&nbsp;<a href="http://apievangelist.com/2016/09/07/a-web-concepts-and-specifications-javascript-library-for-api-providers/">craft a web concepts and specification JavaScript library for API providers</a>, and one of the approaches I've been considering is out of the <a href="https://hypothes.is/">annotation platform Hypothes.is</a>. Their <em>"mission is to bring a new layer to the web"</em> allowing anyone to <em>"discuss, collaborate, organize your research, or take personal notes"--</em>while I'm looking to bring a new layer to the world of APIs, allowing API providers to weave in important web concepts and specifications across their API portals and documentation.</p>
+<p><a href="http://h.readthedocs.io/en/latest/api/">Hypothes.is has a simple API, allowing you to search, read, create, update, and delete annotations on any HTML page available at a public URL</a>. This is exactly what I'd like to see done for any OpenAPI Spec JSON files, with my earlier<a href="http://apis.json.annotation.apievangelist.com/"> APIs.json&nbsp;Annotation work</a>. While I am envisioning this new JavaScript API library existing more as a&nbsp;<a href="http://darsa.in/tooltip/">tooltip</a>&nbsp;or&nbsp;<a href="http://introjs.com/">introduction</a>, I also like the approach Hypothes.is takes for annotation, and would like to figure when and where I might be able to weave it in.</p>
+<p>As I was learning about the Hypothes.is API I noticed that there were annotated elements within the API documentation, which when I clicked on, popped up out my Hypothes.is browser toolbar, and displayed a discussion around the API documentation. Eventually I'd like to see&nbsp;<a href="http://apis.json.annotation.apievangelist.com/">annotation discussions around the API design itself like I did with my annotation tool</a>, about important web concepts and specs like available in <a href="http://webconcepts.info/">webconcepts.info</a>, as well as references to the API design guidelines like we see within the <a href="http://apistylebook.com/">API Stylebook</a>.</p>
+<p>In theory, an API provider should just be able to embed a JavaScript library and provide key concepts and specs used across their API design, with references to the constraints defined by the platform's API guidelines, while also opening up a discussion around each available API path. While this is something that should be API provider induced, it might also be applied like Hypothes.is does. and injected into the browser layer, and controlled by the API community, as well as the provider. IDK</p>
+<p>Anyhoo....just some considerations as I consider how the Hypothes.is API could be used to widen the API life cycle discussion, while also significantly contribute to web literacy and the sharing of healthy API design&nbsp;practices.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/12/considering-the-hypothesis-api-approach-when-expanding-the-api-life-cycle-discussion/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/12/api-stylebook-a-collections-of-resources-for-api-designers/">API Stylebook: A Collections Of Resources For API Designers</a></h3>
+        <span class="post-date">12 Sep 2016</span>
+        <p><a href="http://apistylebook.com"><img style="padding: 10px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_stylebook.png" alt="" width="40%" align="right" /></a></p>
+<p>My friend&nbsp;<a href="https://www.linkedin.com/in/arnaudlauret/">Arnaud Lauret</a>&nbsp;(<a href="https://twitter.com/arno_di_loreto">@arno_di_loreto</a>)<span>, the&nbsp;</span><a href="http://apihandyman.io/">API Handyman</a>, has released a very cool new project called the&nbsp;<a href="http://apistylebook.com/">API Stylebook--a collections of resources for API designers</a>. It is a brilliant aggregation of twelve API design guides from Atlassian, Cisco, Cloud Foundry, Haufe, Heroku, Microsoft, PayPal, Red Hat, The White House, Zalando.</p>
+<p>I think the API Stylebook purpose describes it well:</p>
+<p style="padding-left: 30px;"><em>The API Stylebook aims to help API Designers to solve API design matters and build their API design guidelines by providing quick and easy access to selected and categorized resources.</em><br /><br /><em>In this first </em>version<em>, the API Stylebook provides direct links to specific topics within publicly available API Design Guidelines. Instead of reinventing the wheel or searching google for hours, API Designers quickly can find solutions and inspiration from these existing guidelines.</em></p>
+<p>The API Stylebook isn't just a list of API design guidelines from these companies, it is a <a href="https://github.com/arno-di-loreto/apistylebook-data/tree/master/design/guidelines">machine readable distillation of the twelve API design guides</a> into a master list of <a href="http://apistylebook.com/design/topics/">API design topics</a> you can consider when crafting your own API design guide. It is slick. I like Arnaud's approach to analyzing the existing API design patterns across API platforms who have shared their guides. I also really like <a href="https://github.com/arno-di-loreto/apistylebook-data/tree/master/design/guidelines">the approach to breaking things down as YAML</a>, and publish as a very good looking website using Github, and Github Pages.</p>
+<p>I'm hoping it is something that will&nbsp;stimulate other API providers to craft and share their own API design guide. If you do, I'm sure Arnaud would add to his work, especially if you use his work as a blueprint for your design guide--keeping things as standardized as possible. Projects like this are critical to the growth of the space, and a lack of resources like API Stylebook, and <a href="http://webconcepts.info/">Webconcepts.info</a> have seriously slowed the consistency and interoperability across the world of APIs.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/12/api-stylebook-a-collections-of-resources-for-api-designers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/09/we-better-get-to-work-on-evolving-an-open-emergency-response-api-stack/">We Better Get To Work On Evolving An Open Emergency Response API Stack</a></h3>
+        <span class="post-date">09 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-error.png" alt="" width="35%" align="right" /></p>
+<p>As I listened to the news about flooding coming out of Louisiana, and the impending hurricane headed up the east coast, I'm momentarily distracted from my monitoring of the API space. As I switch back to my work, I can't help but think about the stack of open APIs we will need to tackle future disasters (global climate change). No, APIs are not the silver bullet solution, but if the networking, storage, database, messaging, and any other gear in the disaster relief machine had a wealth available open API definitions, and open source software--the disaster relief machine could potentially be more efficient, scalable, and decentralized.</p>
+<p>I'm not even sure what the current emergency response stack looks like, something I'm sure looks very different at the municipal, county, state, and federal levels. As I do with the other <a href="http://apievangelist.com">areas of research in my API work</a>, I will add an emergency response API project, where I will continue to aggregate news, stories, companies, agencies, and individuals doing interesting things in this area. It will take time to build up enough research on the current state of API usage when it comes to emergency response, but once I generate enough awareness around it, I will blog more about it here on API Evangelist.</p>
+<p>I'm guessing there is a wealth of information already out there, as well as proprietary services, and open tooling to choose from. Like many other areas of our society which I see APIs touching upon, I find lots of isolated, disparate solutions, but I see very few groups truly leveraging the interoperability that is possible when you employ APIs, as well as the increase community effects when you are sharing your API definitions, open source server software, as well as the web and mobile client solutions developed on top. We will see how much time I have for this area of research in coming months, but I'm hoping to get in a couple hours each week. Luckily, like most of my work, you will be able to find this work on Github, and fork to take in the different direction, or submit a pull request or issue sharing anything you feel should be included.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/09/we-better-get-to-work-on-evolving-an-open-emergency-response-api-stack/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/09/regex-suggestion-discovery-for-web-concepts-and-specs-during-api-design-time/">Regex Suggestion Discovery For Web Concepts And Specs During API Design Time</a></h3>
+        <span class="post-date">09 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-regex.png" alt="" width="35%" align="right" /></p>
+<p>I am working on taking the&nbsp;<a href="http://apievangelist.com/2016/09/06/a-json-feed-of-critical-web-concepts-to-integrate-into-api-design-service-and-tooling/">JSON feed of web concepts and specs</a>&nbsp;and developing a simple<a href="http://apievangelist.com/2016/09/07/a-web-concepts-and-specifications-javascript-library-for-api-providers/"> website JavaScript tooltip library</a>&nbsp;that API providers can employ to inject web literacy into their API developer portals and documentation. I have settled in on using an existing&nbsp;<a href="http://darsa.in/tooltip/">JavaScript tooltip library</a>&nbsp;for the core functionality and have put <a href="http://apievangelist.com/2016/09/08/a-dictionary-to-lookup-web-concepts-and-specs-for-the-javascript-tooltip/">some thought into a basic dictionary lookup that can be used in web and API literacy tooling</a>.</p>
+<p>As I was brainstorming on what is possible within a basic dictionary which could be used to map specific keywords and phrases to the <a href="http://webconcepts.info/concepts/concepts.json">web concepts</a>&nbsp;and&nbsp;<a href="http://webconcepts.info/specs/specs.json">specs</a> that Erik Wilde (@dret) has showcased in his <a href="http://webconcepts.info">webconcepts.info</a> work, it occurred to me that there should also be a regex layer to this dictionary lookup. I purposely left it out of my brainstorming on the dictionary, because I wanted to keep simple for usage within API portals and documentation, leaving my thoughts around how this could be applied wth in API design services and tooling, as well as potentially within IDEs (Atom, Visual Studio, Eclipse, etc.).</p>
+<p>I am envisioning regular expressions that could be applied to data, text within API definitions like <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI Spec</a> and <a href="http://apiblueprint.org">API Blueprint</a>. When you are editing or have placed your cursor in a data field, a tooltip could pop&nbsp;up, or display in the help tooling with information about&nbsp;<a href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601</a> or <a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>. When you are working with headers, as part of the API design process, <a href="http://webconcepts.info/concepts/http-headers">information regarding HTTP headers could be auto-completed</a>, and shown in tooltips and other help solutions.</p>
+<p>In short, the basic dictionary would handle keywords and phrases, where the regex layer could be used for more structured considerations within the API design process. It would take time to build up a wealth of regular expressions that could be assigned to each available <a href="http://webconcepts.info/concepts/concepts.json">web concepts</a>&nbsp;or&nbsp;<a href="http://webconcepts.info/specs/specs.json">spec</a>, however once the heavy lifting is done, we would be injecting web literacy, and the common building blocks of the Internet earlier on in the API lifecycle, at design time, before things get too much more expensive down the road.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/09/regex-suggestion-discovery-for-web-concepts-and-specs-during-api-design-time/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/09/providing-video-walk-throughs-on-youtube-for-your-api-or-api-provider-services/">Providing Video Walk Throughs On Youtube For Your API or API Provider Services</a></h3>
+        <span class="post-date">09 Sep 2016</span>
+        <p><a href="https://www.youtube.com/channel/UCocudCGVb3MmhWQ1aoIgUQw"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Postman_YouTube.png" alt="" width="40%" align="right" /></a></p>
+<p>I like Postman's approach to <a href="https://www.youtube.com/channel/UCocudCGVb3MmhWQ1aoIgUQw">using Youtube for providing walk-through's for specific actions users will want to take in their API client service</a>. All of their video walk-throughs are very simple, straightforward, and seem to speak to specific things that users are going to want to tackle when design, developing, or even integrating with an API.</p>
+<p>Another thing I wanted to highlight, is that I came across <a href="https://www.youtube.com/channel/UCocudCGVb3MmhWQ1aoIgUQw">Postman's Youtube Account</a> because I saw <a href="https://twitter.com/postmanclient">@postmanclient</a> tweet a link in response to a specific question, from a user about a specific need they had. This demonstrates for me, the importance of weaving video walk-throughs with your regular feedback loop and FAQ's, making sure you have video answers to the things your users are most asking about most--a great way to scale your support, while also increasing your SEO and SMM reach. #winwin</p>
+<p>I am not a big video watcher. I have lists of videos I should be watching, and rarely ever do, but I do know quite a few people who are, and having easily available video how-to resources, can score big points. Especially if you have a well thought out catalog of videos that match the common questions users are asking right at your fingertips--allowing you to Tweet, post to Facebook and LinkedIn, or use as part of conversations around integration on Github, in the moment.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/09/providing-video-walk-throughs-on-youtube-for-your-api-or-api-provider-services/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/09/prepare-for-the-more-boring-and-very-business-age-of-apis/">Prepare For The More Boring And Very Business Age of APIs</a></h3>
+        <span class="post-date">09 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-boring.png" alt="" width="35%" align="right" /></p>
+<p>I just went through all the APIs in my monitoring system looking for a diverse set of them to showcase in an API economy story I'm working on, and while I can point to some pretty exciting milestones along the history of APIs, I predict the future will be very boring. Think about the web between the first dot.com bubble burst and the web 2.0 years, that kind of boring--less money going around, but everybody is doing it.</p>
+<p>While looking through APIs there are so many robust, powerful, yet very yawn-worthy APIs in my book when it comes to accounting, marking, sales, and advertising. There are slow moving, the universe expanding API offerings coming out of mapping, satellite, and drone APIs. Banking, healthcare, insurance, and other similar areas are steadily talking about the benefits of APIs. On, and on, and on, across almost every industry.</p>
+<p>I can't keep pace with the number of companies publishing press releases that mention their APIs, as well as the increased volume of patents which mention APIs--almost all of which do not showcase their APIs publicly on their websites. Everybody seems to be doing APIs, but the singular grand vision of public APIs that many people still seem to associate with the concept has failed by the measure of the tech blogosphere and the VC in-crowd. Everybody is doing APIs, will be doing APIs, and it is becoming too widespread to have a properly hyped conversation about--it is just something you do.</p>
+<p>Thankfully I am pretty ADD / OCD, and love sifting through the mundane, the yawn-worthy, looking for the gems that are worth showcasing. Every once in a while I'll find some ground shaking movement and tremors, and the occasionally&nbsp;critical API initiatives, but most of it will just be the very boring, business as usual, like we saw after the early days of the web--remember, <a href="http://apievangelist.com/2016/08/31/why-apis-are-just-the-next-step-of-the-web-and-not-the-latest-trend/">APIs are just the next step in the evolution of the web</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/09/prepare-for-the-more-boring-and-very-business-age-of-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/09/everything-is-fragile-in-the-world-of-apis/">Everything Is Fragile In The World Of APIs</a></h3>
+        <span class="post-date">09 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-broken-link.png" alt="" width="30%" align="right" /></p>
+<p>I was working through some thoughts around programming language dependencies, looking through a service I came across called <a href="http://bundler.io/">Bundler</a>, and found myself thinking about API dependencies (go figure, man I have a problem), and the <a href="http://reliability.apievangelist.com/">reliability of the APIs </a>we are building on top of. Anyways, when it comes to the latest trends in programming languages in a production environment, I'm out of the mainstream current, and when I'm in over my head like this I usually turn to my API Evangelist Slack group for answers.</p>
+<p>I asked the group for any random thoughts about programming language dependencies vs. API dependencies. There weren't that many thoughts, except&nbsp;a single profound one from the king of making sure <a href="http://runscope.com">everything is 200 OK</a>, John Sheehan (<a href="https://twitter.com/johnsheehan">@johnsheehan</a>)--who said:</p>
+<p style="padding-left: 30px;"><strong><em>Everything is fragile!</em></strong></p>
+<p>Deep shit, and so very true. As I was pondering the weight of these thoughts, I also came across a page within the <a href="http://apievangelist.com/2016/09/08/when-working-with-our-api-make-sure-you-build-faultresistance-into-your-code/">USGS water service APIs that was dedicated to helping developers craft fault-resistance code</a>. I think we are just getting started in our understanding of just how fragile the web is, making services like <a href="http://runscope.com">Runscope pretty critical</a>, but also makes having this conversation within your API portal, with your API consumers, like USGS is doing, pretty critical as well. I will also selfishly add that we should be talking more about good practices for API providers, as well as API consumers, in industry blogs that speak to the API sector.</p>
+<p>If I've learned anything in six years as the API Evangelist, it is: Everything is fragile. Everything will break. Everything will change. Everything will eventually go away. This applies the to the tech, business, and politics of APIs. This can be a bad thing, or a good thing, depending on how we manage the design, deployment, management, and communicating around our API operations. I'm going to continue to look for other examples of what API providers are doing to help their developers deal with <a href="http://reliability.apievangelist.com/">API reliability</a>. I am also going to continue to showcase other successful API design, deployment, and management patterns that are helping us stabilize&nbsp;things, and yes that includes <a href="http://hypermedia.apievangelist.com">hypermedia</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/09/everything-is-fragile-in-the-world-of-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/08/when-working-with-our-api-make-sure-you-build-faultresistance-into-your-code/">When Working With Our API Make Sure You Build Fault-Resistance Into Your Code</a></h3>
+        <span class="post-date">08 Sep 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Writing_Fault-Resistant_Code.png" alt="" width="40%" align="right" /></p>
+<p>As I was working my way through <a href="http://waterservices.usgs.gov/">the USGS water services APIs</a>, I came across their <a href="http://waterservices.usgs.gov/docs/portable_code.html">page for writing fault-resistant code</a>. There are many things going on in the USGS developer portal I think are worth talking about, and the reminder for developers to write more resilient code is one that I feel needs constant discussion, from many different angles. I know that this is one area I will get comments about hypermedia as a solution, but for right now I want to think through what is coming out of existing API efforts on the ground like USGS.</p>
+<p>The <a href="http://waterservices.usgs.gov/docs/portable_code.html">USGS provides 13 separate pieces of advice to help you achieve more fault-tolerant code</a> as you integrate with their water APIs:</p>
+<ul>
+<li>Join the Water Data System Notification Service</li>
+<li>Check HTTP error codes</li>
+<li>If your application is server-based, acquire data in XML if the format exists</li>
+<li>If your application is browser-based or client-based (such as a native app), acquire data in the JSON format if available</li>
+<li>If a service offers a version number, request that version of the service</li>
+<li>Write your queries efficiently</li>
+<li>Why you should avoid tab-delimited (RDB) files</li>
+<li>Parse XML using an XML parser</li>
+<li>Use standard libraries</li>
+<li>Consider using curl or wget to acquire data</li>
+<li>Use scheduled tasks to automate data collection</li>
+<li>Guidance on how often you should fetch data</li>
+</ul>
+<p>I am not sure all of these apply universally, but I like the idea of API providers sharing their view of how developers can write better code when integrating with their APIs, based on their own experiences. I also like that their list begins with acknowledging that you need to stay in tune with the feedback loops which are in place, acknowledging that this is important for both API provider and consumer stability.</p>
+<p>Having a page dedicated to helping API developers develop more fault-resistant code, just seems like a good building block to add to any ecosystem. I'm guessing it is good from a provider perspective as well, by helping you think through design considerations that would impact a developer's ability to build in fault resistance, as well as being an important educational resource for them. I personally like it because it is yet another building block that I think helps developers, but also provides me with a great window into how API providers see the web API universe.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/08/when-working-with-our-api-make-sure-you-build-faultresistance-into-your-code/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/08/when-the-latest-tech-bullshit-has-me-down-i-will-work-on-water-apis/">When The Latest Tech Bullshit Has Me Down I Will Work On Water APIs</a></h3>
+        <span class="post-date">08 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-glass-half-full.png" alt="" width="35%" align="right" /></p>
+<p>I come across a lot of really bad ideas for startups and APIs, as well as many badly behaved companies with great API implementations. With so much money flowing around space, the incentives for behaving badly have increased, and it seems like people's appetite for it, and willingness to even defend it, seems to only grow. When I come across this activity, historically I allow my feathers to get pretty ruffled, but going forward I'm trying to adapt and evolve in different ways.</p>
+<p>As <a href="http://kinlane.com/2016/08/23/fine-tuning-my-real-time-for-maximum-efficiency/">I work to dial in my "real time" for maximum efficiency</a>, and acknowledge that <a href="http://kinlane.com/2016/09/01/real-time-is-often-more-about-what-they-desire-than-what-we-want/">real time is often in service of what "they" want and not what I want</a>, I'm finding new ways to respond the stupidity in the space--one that is healthier for me, and minimizes my service to the machine. The machine enjoys putting out <a href="https://techcrunch.com/2016/08/27/the-api-for-absurdity/">bullshit stories that get people worked up</a>, which people then, in turn, respond with <a href="http://www.programmableweb.com/news/headlines-condemn-apis-are-written-clicks-not-reality/analysis/2016/08/31">very emotional, and often lengthy responses</a>--all in service of page views and clicks. None of this helps the community, moves forward conversations, it is the service of the domains that participate--often in the form of advertising, and perceived relevance.</p>
+<p>When you are down in the weeds, watching the revolution&nbsp;of each gear within this machine, it all seems normal, but we do not see the emotional and intelligence tax involved with this behavior. As I work to fire back up API Evangelist after a summer break, I am working to minimize this tax on my professional and personal self, and I have come up with a new way to respond when I come across things that are just dumb, emotional, and add no value to the world--I will work on water data and APIs.</p>
+<p>Opening up water related data using APIs is the ultimate image I have in my head of a focus on APIs that will truly matter now&nbsp;and in the future. Instead of allowing the emotional bur from these "real time" social media events to attach, or at least build up and get underneath my clothing, I'm training myself to take a different path. When I come across dumb API, link bait blog post, badly behaved companies&nbsp;or charged forum and Twitter conversation, I'm going to pick up my water API research, and move it forward an inch or two.</p>
+<p>If a topic keeps popping up&nbsp;and it continues to seem important to me, I will add to my writer's notebook and eventually craft something--which will occasionally be ranty, and possess click bait&nbsp;titles. ;-) This is just one of many new tools in my toolbox for helping me stay emotionally sane while immersed in this digital landscape, but more importantly keep my energy reserves full for working on the projects that actually matter. #NoToInternetTax</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/08/when-the-latest-tech-bullshit-has-me-down-i-will-work-on-water-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/08/defining-api-surface-area-by-converting-html-forms-to-open-api-specs/">Defining API Surface Area By Converting HTML Forms To Open API Specs</a></h3>
+        <span class="post-date">08 Sep 2016</span>
+        <p><a href="http://waterservices.usgs.gov/rest/GW-Levels-Test-Tool.html"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/USGS_Groundwater_Levels_REST_Web_Service_URL_Generation_Tool.png" alt="" width="40%" align="right" /></a></p>
+<p>I'm investing some time learning about the <a href="http://waterservices.usgs.gov/">USGS Water Services</a>. They have some pretty interesting APIs, providing access to a wealth of data about water table levels, river flows, and other key points across all USGS sites. While their developer area has a wealth of information available, it is also pretty verbose and tough to absorb.</p>
+<p>I wanted to help make the information more accessible, filterable, and remixable by turning it into an OpenAPI Spec. It is A LOT OF WORK to craft a complete OpenAPI Spec for a robust API like the six that are available from the USGS. One way I help alleviate this work is to scrape API documentation. As I was preparing to do this I noticed they also have testing tools for 5 out of the 6 APIs, which are just HTML forms containing a definition of the surface area for each API.&nbsp;</p>
+<ul>
+<li><a href="http://waterservices.usgs.gov/rest/IV-Test-Tool.html">Instantaneous Values (IV) Web Service</a></li>
+<li><a href="http://waterservices.usgs.gov/rest/Site-Test-Tool.html">Site Service</a></li>
+<li><a href="http://waterservices.usgs.gov/rest/DV-Test-Tool.html">Daily Values (DV) Web Service</a></li>
+<li><a href="http://waterservices.usgs.gov/rest/GW-Levels-Test-Tool.html">Groundwater Levels Web Service</a></li>
+<li><a href="http://waterservices.usgs.gov/rest/Statistics-Service-Test-Tool.html">Statistics Web Service</a></li>
+</ul>
+<p>The HTML forms provide me with a slightly more structured definition of each API so I will start here. Once I've ingested these, I will write a scrape script for the HTML API documentation, and link the two up. Once I'm done with this I will be able to generate an OpenAPI Spec that is halfway complete (with just the surface area). Once I have this I can load up in my Postman client, turn on Charles Proxy and my internal API monitoring system will fill in the remaining definitions for the Open API Spec--now I have the request and response model, in a machine readable format.&nbsp;</p>
+<p>As I write the code to tackle this, I'm thinking about what a great approach HTML forms are to helping both technical, and semi-technical HTML craftspeople define the surface area of an API. Then I think about my friend Mike Amundsen (<a href="https://twitter.com/mamund">@mamund</a>) and <a href="http://alps.io/">his work on ALPS</a>, and I smile, and I'm reminded of how much work we have ahead of us when it comes to both <a href="http://webconcepts.info/">web literacy</a> and <a href="https://github.com/alps-io/profiles">establishing more meaningful, reusable design patterns across the API space</a>(that repo should be full).</p>
+<p><em><strong>P.S.</strong> Is there a better tool out there for turning HTML Forms into OpenAPI Spec or at least JSON or YAML?<br /></em><em><strong>P.S.S.</strong> If you wanna create an API that I can pass any web page with a form in it, and get back an OpenAPI Spec, you are a good person.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/08/defining-api-surface-area-by-converting-html-forms-to-open-api-specs/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/09/08/are-you-being-transparent-with-your-api-infrastructure-to-attract-top-talent-like-netflix-is/">Are You Being Transparent With Your API Infrastructure To Attract Top Talent Like Netflix Is</a></h3>
+        <span class="post-date">08 Sep 2016</span>
+        <p><a href="https://jobs.netflix.com/jobs"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Work_at_Netflix.png" alt="" width="45%" align="right" /></a></p>
+<p><a href="http://apievangelist.com/2016/09/07/the-netflix-public-api-was-the-most-successful-api-failure-ever/">I consider Netflix to be the most successful API failure ever</a>. Even though their public is completely private, exclusively for internal and partner uses, they are still very transparent and open with how they operate&nbsp;and open up the&nbsp;code behind. The reason behind this is simple, and self-serving, but is one that I can get behind 100%--making sure they are hiring the best developer talent, that reflects the company culture.</p>
+<p>You see always see these motivations present in the closing paragraphs of their blog posts: "<em>If you are interested in helping us tackle this and other equally interesting challenges, come join us! We are <a href="https://jobs.netflix.com/jobs/860912">hiring</a> for <a href="https://jobs.netflix.com/jobs/860577">several</a> different <a href="https://jobs.netflix.com/jobs/860522">roles</a></em><em>.</em>" I've also had this discussion with&nbsp;Daniel Jacobson (<a href="https://twitter.com/daniel_jacobson">@daniel_jacobson</a>), the VP of Edge Engineering at Netflix (responsible for API and Playback), where he was pretty clear about preferring the type of developer who isn't afraid that the story of what their building will be public on the blog, and their code published openly to Github.</p>
+<p>When you think about this a little, it is such an important way to set the stage when it comes to API talent searches, and for your HR operations. An API-centric company regularly publishes overviews of their architecture, with supporting stories of the challenges and triumphs along the way, as well as the <a href="https://github.com/netflix/">open sourcing of as much of your code as possible on Github</a>. Now, as an API-centric developer looking for my next role, I can review the history of the companies architecture, look through and even fire up and use a significant portion of the code behind this architecture--all before I sit down for my first interview. #Brilliant</p>
+<p>The transparency that APIs can bring to the table for companies, organizations, institutions, and government agencies can come in many shapes and sizes--sometimes good, and sometimes bad. Using a public API as a developer talent honeypot is nothing new--API providers have been doing this for a while. However, there aren't many examples publicly traded companies who are sharing stories and code of their internal API operations as a way to attract, and potentially pre-qualify / filter top talent. Just one more thing to consider as you are planning your API strategy this year.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/08/are-you-being-transparent-with-your-api-infrastructure-to-attract-top-talent-like-netflix-is/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+
+	<table width="100%" border="1" style="background-color:#FFF; border: 0px #FFF;">
+		<tr style="background-color:#FFF; border: 0px #FFF;">
+			<td align="left">
+				<a href="/blog/page23" class="button"><< Prev</a></li>
+			</td>
+			<td></td>
+			<td align="right">
+				<a href="/blog/page25" class="button">Next >></a>
+			</td>
+		</tr>
+	</table>
+
+  </div>
+</section>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Jumpstarting the Automobile API Conversation With Carvoyant</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jumpstarting the Automobile API Conversation With Carvoyant | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/carvoyant/carvoyant-logo.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Jumpstarting the Automobile API Conversation With Carvoyant | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/carvoyant/carvoyant-logo.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Jumpstarting the Automobile API Conversation With Carvoyant</h2>
+<p><span class="post-date">06 Mar 2014</span></p>
+<p><a title="Carvoyant" href="http://www.carvoyant.com/" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/carvoyant/carvoyant-logo.png" alt="" width="225" align="right" /></a></p>
+<p>I had the pleasure of doing <a href="http://www.youtube.com/watch?v=cKWgzOjgAjM">Carvoyant Connected Car Cast today with Bret Tobey and Matt Galvin, hosted by the infamous Mike Maney (@the_spinmd) today</a>. The session was nothing formal, just a conversation about cars and APIs.</p>
+<p>The conversation triggered several potential stories for me, but after the talk I couldn&rsquo;t stop thinking about how they talked about the <a title="Carvoyant" href="http://www.carvoyant.com/" target="_blank">Carvoyant API</a> being a research &amp; development (R&amp;D) lab, and conversation starter about whats next for the automobile industry.</p>
+<p>Auto companies are on board with APIs playing a significant role in the future of the auto industry, but their window for change is in not just years, but multiple years. Tech giants like Google and Apple are turning their attention to the opportunities surrounding the connected car, but their runway is pretty lengthy as well&mdash;highly dependent on the car manufacturers.</p>
+<p><a title="Carvoyant" href="http://www.youtube.com/watch?v=cKWgzOjgAjM" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/carvoyant/carvoyant-connected-car-cast.png" alt="" width="325" align="right" /></a></p>
+<p>Carvoyant has options for connecting cars right now, providing a device you can plug in cars that are 1996 and newer, and an API for developers to build apps that integrate with user&rsquo;s vehicles. Carvoyant isn&rsquo;t about delivering content to your vehicle like Apple and Google are working on, it is about getting data from your vehicle, about its location, engine, tires, fuel and other vehicle data points and automobile centric events.</p>
+<p>Like other Internet connected devices in our lives its going to take some experimentation before we find the right formula that works for people and their beloved cars, the sort of R&amp;D that APIs are well suited for. I think vehicles play a pretty clear role in our lives, we understand the value they deliver, but I think its going to take some time to understand how to safely, and sensibly connect our cars to the Internet, and we need to jumpstart this conversation&mdash;not let it just be between car manufacturers and tech giants, but include auto enthusiasts, mechanics, developers and most importantly car owners.</p>
+<p>As with other industries API are moving into, I&rsquo;m extremely excited about the opportunities, but also very concerned with the potential for exploitation of end-users. As we move towards a world of connected cars, we need to have some serious conversations appropriate uses of technology, access to data, privacy, security and numerous other challenges we face with the API connected automobile.</p>
+<p>I&rsquo;m excited that Carvoyant is available to connect cars now, and not having waiting for each year of new vehicles from manufacturers, allowing us to jumpstart not just the research &amp; development, but also the conversation about what a connected car in our world actually means.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Jumpstarting the Automobile API Conversation With Carvoyant - https://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/&title=https://apievangelist.comJumpstarting the Automobile API Conversation With Carvoyant" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/&title=Jumpstarting the Automobile API Conversation With Carvoyant&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/03/05/some-of-the-common-building-blocks-of-payment-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/03/06/so-you-wanna-do-a-spreadsheet-or-database-to-api-startup/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

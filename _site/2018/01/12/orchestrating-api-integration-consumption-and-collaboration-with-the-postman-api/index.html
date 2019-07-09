@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Orchestrating API Integration, Consumption, and Collaboration with the Postman API</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Orchestrating API Integration, Consumption, and Collaboration with the Postman API | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Orchestrating API Integration, Consumption, and Collaboration with the Postman API | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Orchestrating API Integration, Consumption, and Collaboration with the Postman API</h2>
+<p><span class="post-date">12 Jan 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>You hear me say it all the time–if you are selling services and tooling to the API sector, you should have an API. In support of this way of thinking I like to highlight the API service providers I work with who follow this philosophy, and today’s example is from (Postman](https://getpostman.com). If you aren’t familiar with Postman, I recommend getting acquainted. It is an indispensable tool for integrating, consuming, and collaborating around the APIs you depend on, and are developing. Postman is essential to working with APIs in 2018, no matter whether you are developing them, or integrating with 3rd party APIs.</p>
+
+<p>Further amplifying the usefulness of Postman as a client tool, <a href="https://docs.api.getpostman.com">the Postman API</a> reflects the heart of what Postman does as not just a client, but a complete life cycle tool. The Postman API provides five separate APIs, allowing you orchestration your API integration, consumption, and collaboration environment.</p>
+
+<ul>
+  <li><a href="https://docs.api.getpostman.com/#8ca888b7-ef54-f3b4-312f-3f3e2e2cf04e"><strong>Collections</strong></a> - The /collections endpoint returns a list of all collections that are accessible by you. The list includes your own collections and the collections that you have subscribed to.</li>
+  <li><a href="https://docs.api.getpostman.com/#a237ffbe-0444-b394-a2c4-b99f691931cf"><strong>Environments</strong></a> - The /environments endpoint returns a list of all environments that belong to you. The response contains an array of environments’ information containing the name, id, owner and uid of each environment.</li>
+  <li><a href="https://docs.api.getpostman.com/#ef6bef63-0b8e-1a70-dd88-c7c1b94f8dab"><strong>Mocks</strong></a> - This endpoint fetches all the mocks that you have created.</li>
+  <li><a href="https://docs.api.getpostman.com/#993648ea-7b28-9636-f532-1ef8a74ff093"><strong>Monitors</strong></a> - The /monitors endpoint returns a list of all monitors that are accessible by you. The response contains an array of monitors information containing the name, id, owner and uid of each monitor.</li>
+  <li><a href="https://docs.api.getpostman.com/#1ddc0a3c-d5ff-b062-d0fb-9e6086be0536"><strong>User</strong></a> - The /me endpoint allows you to fetch relevant information pertaining to the API Key being used.</li>
+</ul>
+
+<p>The user, collections, and environments APIs reflect the heart of the Postman API client, where mocks and monitors reflects its move to be a full API life cycle solution. This stack of APIs, and the Postman as a client tool reflects how API development, as well as API operation should be conducted. You should be maintaining collections of APIs that exist within many environments, and you should always be mocking interfaces as you are defining, designing, and developing them. You should then also be monitoring all the APIs you depend–whether or not the APIs are yours. If you depend on APIs, you should be monitoring them.</p>
+
+<p>I’ve long been advocating that someone development an API environment management solution for API developers, providing a single place we can define, store, and share the configuration, keys, and other aspects of integration with the APIs we depend on. The Postman collections and environment APIs is essentially this, plus you get all the added benefits of the services and tooling that already exist as part of the platform. Demonstrating why as an API service provider, you want to be following your own advice and having an API, because you never know when the core of your solution, or even one of the features could potentially become baked into other applications and services, and be the next killer feature developers can’t do without.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Orchestrating API Integration, Consumption, and Collaboration with the Postman API - https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/&title=https://apievangelist.comOrchestrating API Integration, Consumption, and Collaboration with the Postman API" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/&title=Orchestrating API Integration, Consumption, and Collaboration with the Postman API&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/01/12/api-life-cycle-basics-testing/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/01/15/an-organized-approach-to-openapi-vendor-extensions-across-api-teams/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

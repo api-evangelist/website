@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Generating Revenue From The Support Of Public Data Using APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Generating Revenue From The Support Of Public Data Using APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/machine-road_blue_circuit_4.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generating Revenue From The Support Of Public Data Using APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/machine-road_blue_circuit_4.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Generating Revenue From The Support Of Public Data Using APIs</h2>
+<p><span class="post-date">09 Jan 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/machine-road_blue_circuit_4.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m exploring the different ways that public data access via APIs can be invested in, even with the opportunity for generating revenue, but without charging access to the data itself. I want public data to remain accessible, but in reality it costs money to provide access to public data, to refine, and evolve it. This is meant to be an exploration of how public data is invested in, not how you lock up public data, so please read everything before commenting, as every time I write about this subject, there are folks who blindly declare that ALL public data has to be free, no matter what. I agree (mostly), but there has to be commercial monetization opportunities around public data, otherwise it will never evolve, improve, be enriched, and in some cases available at all.</p>
+
+<p>I am looking for opportunities for public data stewards / owners to generated much needed revenue, as well as commercial interests to come in and augment, and build upon what is already available–going beyond what cash and resource strapped data stewards / owners might be able to do on their own. Here are a couple of areas I’m documenting a little more right now.</p>
+
+<ul>
+  <li><strong>Wholesale APIs</strong> - Deploying, managing, and providing access to public data via APIs that are designed specifically for individual consumers. This could be deploying an API on AWS, Google, Azure, or other infrastructure provider, and providing private, or even I guess public access to the data. Delivering a personalized, customized, and performant public data API experience.</li>
+  <li><strong>Real Time APIs</strong> - Providing a proxied stream of data from one or many public data sources, going beyond what the data steward / owner is capable of delivering. Charging for the technology, not access to the data itself.</li>
+  <li><strong>Cached</strong> - Delivering a cached experience, so that when the primary source goes down, all API consumers are still able to get at historical, or other relevant data without interruption.</li>
+  <li><strong>Transformation</strong> - Providing access to the data but in a different format than the source can provide. This is where the line begins to get blurry because technically you would be charging for access to the data here, albeit in a different format. Maybe it could be done as a wholesale API, where you charge for the service, not the data?</li>
+  <li><strong>Enriched</strong> - Enriching public data, adding in additional data points, and other relevant data and content that makes it better. Another area things start to get blurry, because again, you are beginning to charge for access to the data. Maybe you would need to have a way to separate public, from the enrichment, I guess?</li>
+</ul>
+
+<p>Those are just a couple of examples I’m looking thinking about. Most public data sources restrict the ability to charge for access to their data by any 3rd party–makes sense. In this particular exercise I’m looking at transit data, and how the overall data and API access experience can be improved upon. There are augmented APIs built upon public transit feeds, like we see from <a href="https://dcmetrohero.com/">MetroHero</a>, who is built upon <a href="https://wmata.com/">WMATA</a>. They clearly state that they are not sanctioned by WMATA, and could go away at any point, and make it known the data is freely available, and should remain that way downstream. I’m also looking at building upon <a href="http://datamine.mta.info/list-of-feeds">MTA transit feeds in NYC</a>, making the GTFS Realtime feeds available as SIRI feeds, but it is something that will cost me money, and I can’t afford to just provide for access free, subsidizing other applications without some return.</p>
+
+<p>I’d like to improve upon MTA transit feeds. Make them more usable, and available in a streaming format using <a href="http://apis.how/streamdata">Streamdata.io</a>. I can’t do this in their current format. I can easily proxy their feeds, and transform into a simpler SIRI JSON feed, but then I’m expected to just make them freely available. I’m looking to see how I can do this as a wholesale API, as well as make available in a paid streaming format. I’m not charging for the data, I’m charging for the serving of it in real time? IDK. I am just exploring these thoughts right now. I get where all the concerns come into the picture around making money off public data, and limiting who gets access, however I really want public data to remain available, and improve–this is something that takes money, investment, and the ability to generate revenue.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Generating Revenue From The Support Of Public Data Using APIs - https://apievangelist.com/2018/01/09/generating-revenue-from-the-support-of-public-data-using-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/01/09/generating-revenue-from-the-support-of-public-data-using-apis/&title=https://apievangelist.comGenerating Revenue From The Support Of Public Data Using APIs" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/01/09/generating-revenue-from-the-support-of-public-data-using-apis/&title=Generating Revenue From The Support Of Public Data Using APIs&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/01/09/generating-revenue-from-the-support-of-public-data-using-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/01/09/the-child-welfare-digital-services-certification-approval-and-licensing-services-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/01/09/the-data-behind-the-washington-post-story-on-police-shootings-in-2017/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>API Evangelist</title>
+  <updated></updated>
+  <link rel="self" href="http://localhost:4000/atom.xml"/>
+  <author><name>Kin Lane</name></author>
+  <id>http://localhost:4000/atom.xml</id>
+	<entry>
+    <title>The Details Of My API Rating Formula</title>
+    <link href="http://apievangelist.com/2019/07/09/The-details-of-my-api-rating-formula/"/>
+    <updated></updated>
+    <content><![CDATA[
+Last week I put some thoughts down about the basics of my API rating system. This week I want to go through each of those basics, and try to flesh out the details of how I would gather the actual data needed to rank API providers. This is a task I’ve been through with several different companies, only to be abandoned, and then operated on my own for about three years, only to abandon once I ran low on resources. I’m working to invest more cycles into actually defining my API rating in a transparent and organic way, then applying it in a way that allows me to continue evolving, while also using to make sense of the APIs I am rapidly indexing.
+
+First, I want to look at the API-centric elements I will be considering when looking at a company, organization, institution, government agency, or other entity, and trying to establish some sort of simple rating for how well they are doing APIs. I’ll be the first to admit that ratings systems are kind of bullshit, and are definitely biased and hold all kinds of opportunity for going, but I need something. I need a way to articulate in real time how good of an API citizen an API provider is. I need a way to rank the searches for the growing number of APIs in my API search index. I need a list of questions I an ask about an API in both a manual, or hopefully automated way:
+
+
+  **Active / Inactive **- APIs that have no sign of life need a lower rating.
+    
+      HTTP Status Code - Do I get a positive HTTP status code back when I ping their URL(s)?
+      Active Blog - Does their blog have regular activity on it, with relevant and engaging content?
+      Active Twitter - Is there a GitHub account designated for the API, and is it playing an active role in its operations?
+      Active GitHub - Is there a GitHub account designated for the API, and is it playing an active role in its operations?
+      Manual Visit - There will always be a need for a regular visit to an API to make sure someone is still home.
+    
+  
+  Free / Paid - What something costs impacts our decision to use or not.
+    
+      Manual Visit - There is no automated way to understand API pricing.
+    
+  
+  Openness - Is an API available to everyone, or is a private thing.
+    
+      Manual Review - This will always be somewhat derived from a manual visit by an analyst to the API.
+      Sentiment Analysis  - Some sentiment about the openness could be established from analyzing Twitter, Blogs, and Stack Exchange.
+    
+  
+  Reliability - Can you depend on the API being up and available.
+    
+      Manual Review - Regularly check in on an API to see what the state of things are.
+      Sentiment Analysis - Some sentiment about the reliability of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+      Monitoring Feed / Data - For some APIs, monitoring could be setup, but will cost resources to be able to do accurately.
+    
+  
+  Fast Changing - Does the API change a lot, or remain relatively stable.
+    
+      Manual Review - Regularly check in on an API to see how often things have changed.
+      Change Log Feed - Tune into a change log feed to see how often changes are Ade.
+      Sentiment Analysis   - Some sentiment about the changes to an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+    
+  
+  Social Good - Does the API benefit a local, regional, or wider community.
+    
+      Manual Review - It will take the eye of an analyst to truly understand the social impact of an API.
+    
+  
+  **Exploitative - Does the API exploit its users data, or allow others to do so.
+    
+      Manual Review - It will take a regular analyst review to understand whether an API has become exploitative.
+      Sentiment Analysis - Some sentiment about the exploitative nature of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+    
+  
+  Secure - Does an API adequately secure its resources and those who use it.
+    
+      Manual Review - Regularly check in on an API to see how secure things are.
+      Sentiment Analysis - Some sentiment about the security of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+      Monitoring Feed / Data - For some APIs, monitoring could be setup, but will cost resources to be able to do accurately, unless provided by provider.
+    
+  
+  Privacy - Does an API respect privacy, and have a strategy for platform privacy.
+    
+      Manual Review - Regularly check in on an API to see how privacy is addressed, and what steps the platform has been taking to address.
+      Sentiment Analysis - Some sentiment about the privacy of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+    
+  
+  Monitoring - Does a platform actively monitor its platform and allow others as well.
+    
+      **Manual Review **- Regularly check in on an API to see how secure things are.
+      Sentiment Analysis - Some sentiment about the security of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+      Monitoring Feed / Data - For some APIs, monitoring could be setup, but will cost resources to be able to do accurately, unless provided by provider.
+    
+  
+  Observability - Is there visibility into API platform operations, and its processes.
+    
+      Manual Review - It will always take an analyst to understand observability until there are feeds regarding every aspect of operations.
+    
+  
+  Environment - What is the environment footprint or impact of API operations.
+    
+      Manual Review - This would take a significant amount of research into where APIs are hosted, and disclosure regarding the environment impact of data centers, and the regions they operate in.
+    
+  
+  Popular - Is an API popular, and something that gets a large amount of attention.
+    
+      Manual Review - Analysts can easily provide a review of an API to better understand an APIs popularity.
+      Sentiment Analysis - Some sentiment about the presence of an API could be established from analyzing Twitter, Blogs, and Stack Exchange.
+      Twitter Followers** - The number of Twitter followers for an account dedicated to an API provides some data.
+      Twitter Mentions - Similarly the number of mentions of an API providers Twitter account provides additional data.
+      GitHub Followers - The number of GitHub followers provides another dimension regarding how popular an API is.
+      Stack Exchange Mentions - The question and answer site always provides some interesting insight into which APIs are being used.
+      Blog Mentions - The number of blog posts on top tech blogs, as well as independent blogs provide some insight into popularity.
+    
+  
+  Value - What value does an API bring to the table in generalized terms.
+    
+      Manual Review **- The only way to understand the value an API brings to the table is for an analyst to evaluate the resources made available. Maybe some day we’ll be able to do this with more precision, but currently we do not have the vocabulary for describing.
+    
+  
+
+
+I am developing a manual questionnaire I can execute against while profiling every API. I have already done this for many APIs, but I’m looking to refine for 2019. I will also be automating wherever I can, leverage other APIs, feeds, and some machine learning to help me augment my heuristic analyst rank with some data driven elements. Some of these will only change when I, or hopefully another analyst reviews them, but some of this will be more dependent on data gathered each month. It will take some time for a ranking system based upon these elements to come into focus, but I’m guessing along the way I”m going to learn a lot, and this list will look very different in twelve months.
+
+Next, I wanted to look at the elements of the rating system itself which I think are essential to the success of an API ranking system based upon the elements above. I’ve seen a number of efforts fail when it comes to indexing and ranking APIs. It is not easy. It is a whole lot of work, without an easy path to monetization like Google established with advertising. Many folks have tried and failed, and I feel like some of these elements will help keep things grounded, and provide more opportunity for success, if not at least sustainability.
+
+
+  YAML Core - I would define the rating system in YAML.
+    
+      Rating Formula - The rating formula is machine readable and available as YAML, taking everything listed above and automating the application of it across APIs using a standard YAML definition.
+      Rating Results - Publishing a YAML dump of the results of rating for each API provider, also providing a machine readable template for understanding how each API provider is being ranked.
+    
+  
+  GitHub Base - Everything would be in a series of repositories.
+    
+      GitHub Repo - A GitHub repository is the unit of compute and storage for the rating.
+      Git Management - I am using GitHub to apply the rating system across all APIs in my search index.
+      GitHub API Management - I am automating the granular editing of the YAML core using the GitHub API.
+    
+  
+  Observable - The entire algorithm, process, and results are open.
+    
+      Search Transparency - I will be tracking keyword searches, minus IP and user agent, then publishing the results to GitHub as YAML.
+      Minimal Tracking - There will be minimal tracking of end-users searching and applying the ranking, with tracking being provider focused.
+    
+  
+  Evolvable - It would be essential to evolve and adapt over time.
+    
+      Semantic Versioned - The search engine will be semantically versioned, providing a way of understanding it as it evolves.
+      YAML - Everything is defined as YAML which is semantically versioned, so nothing is removed or changed until major releases.
+    
+  
+  Weighted - Anyone can weight the questions that matters to them.
+    
+      Data Points - All data points will have a weight applied as a default, but ultimately will allow end-users to define the weights they desire.
+      Slider Interface - Providing end-users with a sliding interface for defining the importance of each data point to them, and apply to the search.
+    
+  
+  Completeness - Not all the profiles of APIs will be as complete as others.
+    
+      Data Points - The continual addition and evolution of data points, until we find optimal levels of ranking across industries, for sustained periods of time.
+    
+  
+  Ephemeral - Understanding that nothing lasts forever in this world.
+    
+      Inactive - Making sure things that are inactive reflect this state.
+      Deprecation - Always flag something as deprecated, reducing in rank.
+      Archiving - Archive everything that has gone away, keeping indexes pure.
+    
+  
+  Community - It should be a collaboration between key entities and individuals.
+    
+      GitHub - Operate the rating system out in the open on GitHub, leveraging the community for evolving.
+      Merge Request - Allow for merge requests on the search index, as well as the ratings being applied.
+      Forks - Allow for the workability of the API search, leveraging ranking as a key dimensions for how things can be forked.
+      Contribution - Allow for community contribution to the index, and the ranking system, establishing partnerships along the way.
+    
+  
+  Machine Readable - Able for machines to engage with seamlessly.
+    
+      YAML - Everything is published as YAML to keep things simple and machine readable.
+      APIs.json - Follow a standard for indexing API operations and making them available.
+      OpenAPI - Follow a standard for indexes the APIs, and making them available.
+    
+  
+  Human Readable - Kept accessible to anyone wanting to understand.
+    
+      HTML - Provide a simple HTML application for end-users.
+      CSS - Apply a minimalist approach to using CSS.
+      JavaScript - Drive the search and engagement with client-side JavaScript, powered by APIs.
+    
+  
+
+
+This provides me with my starter list of elements I think will set the tone for how this API search engine will perform. Ultimately there will be a commercial layer to how the API search and ranking works, but the goal is to be as transparent, observable, and collaborative around how it all works. A kind of observability that does not exist in web search, and definitely doesn’t in anything API search related. I’ll give it to DuckDuckGo, for being the good guys of web search, which I think provides an ethical model to follow, but I want to also be open with the rating system behind, to avoid some of the illness that commonly exists within rating agencies of any kind.
+
+Next stop, will be about turning the rating elements into a YAML questionnaire that I can begin systematically applying to the almost 2,000 APIs I have in my index. With most of it being a manual process, I need to get the base rating details in place, begin asking them, and then version the questionnaire schema as I work my way through all of the APIs. I have enough experience with profiling APIs to know that what questions I ask, how I ask them, and what data I can gather about API will rapidly evolve once I begin trying to satisfy questions again real world APIs. How fast I can apply my API rating system to the APIs I have indexed, as well as quickly turn around and refresh over time will depend on how much time and resources I am able to manifest for this project. Something that will come and go, as this is just a side project for me, to keep me producing fresh content and awareness of the API space.
+]]></content>
+    <id>http://apievangelist.com/2019/07/09/The-details-of-my-api-rating-formula/</id>
+  </entry><entry>
+    <title>Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change</title>
+    <link href="http://apievangelist.com/2019/07/08/thinking-differently-when-approaching-openapi-diffs-and-considering-how-to-layer-each-potential-change/"/>
+    <updated></updated>
+    <content><![CDATA[
+I have a lot of OpenAPI definitions, covering about 2,000 separate entities. For each entity, I often have multiple OpenAPIs, and I am finding more all the time. One significant challenge I have in all of this centers around establishing a master “truth” OpenAPI, or series of definitive OpenAPIs for each entity. I can never be sure that I have a complete definition of any given API, so I want to keep vacuuming up any OpenAPI, Swagger, Postman, or other artifact I can, and compare it with the “truth” copy” I have on indexed. Perpetually layering the additions and changes I come across while scouring the Internet for signs of API life. This perpetual update of API definitions in my index isn’t easy, and any tool that I develop to assist me will be in need constant refinement and evolution to be able to make sense of the API fragments I’m finding across the web.
+
+There are many nuances of API design, as well as the nuances of how the OpenAPI specification is applied when quantifying the design of an API, making the process of doing a “diff” between two OpenAPI definitions very challenging. Rendering common “diff” tools baked into GitHub, and other solutions ineffective when it comes to understanding the differences between two API definitions that may represent a single API. These are some of the things I’m considering as I’m crafting my own OpenAPI “diff” tooling:
+
+
+  Host - How the host is stored, defined, and applied across sandbox, production, and other implementations injects challenges.
+  Base URL - How OpenAPI define their base url versus their host will immediately cause problems in how diffs are established.
+  Path - Adding even more instability, many paths will often conflict with host and base URL, providing different fragments that show as differences.
+  Verbs - Next I take account of the verbs available for any path, understanding what the differences are in methods applied.
+  Summary - Summaries are difficult to diff, and almost always have to be evaluated and weighted by a human being.
+  Description -  Descriptions are difficult to diff, and almost always have to be evaluated and weighted by a human being.
+  Operation ID - These are usually autogenerated by tooling, and rarely reflect a provider defined standard, making them worthless in “diff”.
+  Query Properties - Evaluating query parameters individually is essential to a granular level diff between OpenAPI definitions.
+  Path Properties - Evaluating path parameters individually is essential to a granular level diff between OpenAPI definitions.
+  Headers - Evaluating headers individually is essential to a granular level diff between OpenAPI definitions.
+  Tags - Most providers do not tag their APIs, and they are often not included, and rarely provide much value when applying a “diff”.
+  **Request Bodies - Request bodies provide a significant amount of friction for diffs depending on the complexity and design of an API.
+  Responses - Responses often provide an incomplete view of an API, and rarely are robust enough to impact the “diff” view.
+  Status Codes - Status codes should be evaluated on an individual basis, providing a variety of ways to articulate these statuses.
+  Content Types - Content types these days are often application/json, but do provide some opportunities to define unique characteristics.
+  Schema Objects - Schema is often not defined, and rarely used as part of a diff unless OpenAPIs are generated from log, HAR, and other files.
+  Schema Properties - Schema properties are rarely present in OpenAPIs, making them not something that comes  up on the “diff” radar.
+  Security Definitions - Security definitions are the holy grail of automating API indexing, but are rarely present in OpenAPI, and only in Postman Collections.
+  References - The use of $ref, or absence of $ref and doing everything inline poses massive challenges to coherently considering “diff” results.
+  Scope - The size of the OpenAPI snippet being applied as part of a “diff” helps narrow what needs to be considered by a human or machine.
+
+
+This reflects the immediate concerns I have approaching the development of a custom “diff” tool for OpenAPI. First I am just trying to establish a strategy for stripping back the layers of OpenAPI definitions, and established a sort of layered user interface for me to manually accept or reject changes to an OpenAPI. An interface that will also allow me to define a sort of rules vocabulary for increasingly automating the decision making process. I’d love it if eventually the diff tool would show me just a single diff, present me with the change it thinks I should make, and allow me to just agree and move to the next “diff”. I have a lot of work to get things to this point.
+
+Like API search, I feel like API diff is something I have to reduce to its basics, and then fumble my way towards finding an acceptable solution. I don’t feel there is a single “diff” tool for JSON or YAML that will have the eye that I demand for analyzing, presenting, and either manually or automatically merging a diff. Like the other layers of my API search engine, diff is something I need to think through, iterate upon, and repeat until I come up with something that helps me merge “diffs” efficiently across thousands of APIs, and hopefully eventually automates and abstract away the most common differences between the APIs that I am spidering and indexing. Like every other area it is something I’m only working on when I have time, but something I will eventually come out the other end with a usable OpenAPI diff tool, that can help me make sense of all the API definitions I’m bombarded with on a daily basis.
+]]></content>
+    <id>http://apievangelist.com/2019/07/08/thinking-differently-when-approaching-openapi-diffs-and-considering-how-to-layer-each-potential-change/</id>
+  </entry><entry>
+    <title>Why The Open Data Movement Has Not Delivered As Expected</title>
+    <link href="http://apievangelist.com/2019/07/05/why-the-open-data-movement-has-not-delivered-as-expected/"/>
+    <updated></updated>
+    <content><![CDATA[
+I was having a discussion with my friends working on API policy in Europe about API discovery, and the topic of failed open data portals came up. Something that is a regular recurring undercurrent I have to navigate in the world of APIs. Open data is a subset of the API movement, and something I have first-hand experience in, building many open data portals, contributing to city, county, state, and federal open data efforts, and most notably riding the open data wave into the White House and working on open data efforts for the Obama administration.
+
+Today, there are plenty of open data portals. The growth in the number of portals hasn’t decreased, but I’d say the popularity, utility, and publicity around open data efforts has not lived up to the hype. Why is this? I think there are many dimensions to this discussion, and few clear answers when it comes to peeling back the layers of this onion, something that always makes me tear up.
+
+
+  Nothing There To Begin With - Open data was never a thing, and never will be a thing. It was fabricated as part of an early wave of the web, and really never got traction because most people do not care about data, let alone it being open and freely available.
+  It Was Just Meant To Be A Land Grab - The whole open data thing wasn’t about open data for all, it was meant to be open for business for a few, and they have managed to extract the value they needed, enrich their own datasets, and have moved on to greener pastures (AI / ML).
+  No Investment In Data Providers - One f the inherent flaws of the libertarian led vision of web technology is that government is bad, so don’t support them with taxes. Of course, when they open up data sets that is goo for us, but supporting them in covering compute, storage, bandwidth, and data refinement or gathering is bad, resulting in many going away or stagnating.
+  It Was All Just Hype From Tech Sector - The hype about open data outweighs the benefits and realities on the ground, and ultimately hurt the movement with unrealistic expectations, setting efforts back many years, and are now only beginning to recover now that the vulture capitalists are on to other things.
+  Open Data Is Not Sexy - Open data is not easy to discover, define, refine, manage, and maintain as something valuable. Most government, institutions, and other organizations do have the resources to do properly, and only the most attractive of uses have the resources to pay people to do the work properly, incentivizing commercial offerings over the open, and underfunded offerings.
+  Open Data Is Alive and Well - Open data is doing just fine, and is actually doing better, now that the spotlight is off of them. There will be many  efforts that go unnoticed, unfunded, and fall into disrepair, but there will also be many fruitful open data offerings out there that will benefit communities, and the public at large, along with many commercial offerings.
+  Open Data Will Never Be VC Big - Maybe open data share the spotlight because it just doesn’t have the VC level revenue that investors and entrepreneurs are looking for. If it enriches their core data sets, and can be used to trying their machine learning models, it has value as a raw material, but as something worth shining a light on, open data just doesn’t rise to the scope needed to be a “product” all by itself.
+
+
+My prognosis on why open data never has quite “made it”, is probably a combination of all of these things. There is a lot of value present in open data as a raw material, but a fundamental aspect of why data is “open”, is so that entrepreneurs can acquire it for free. They aren’t interested in supporting city, county, state, and federal data stewards, and helping them be successful. They just want it mandated that it is publicly available for harvesting as a raw material, for use in the technology supply chain. Open data primarily was about getting waves of open data enthusiasts to do the heavy lifting when it came to identifying where the most value raw data sources exist.
+
+I feel pretty strong that we were all used to initiate a movement where government and institutions opened up their digital resources, right as this latest wave of information economy was peaking. Triggering institutions, organizations, and government agencies to bare fruit, that could be picked by technology companies, and used to enrich their proprietary datasets, and machine learning models. Open doesn’t mean democracy, it mostly means for business. This is the genius of the Internet evolution, is that it gets us all working in the service of opening things up for the “community”. Democratizing everything. Then once everything is on the table, companies grab what they want, and show very little interest in giving anything back to the movement. I know I have fallen for several waves of this ver the last decade.
+
+I think open data has value. I think community-driven, standardized sets of data should continue to be invested in. I think we should get better at discovery mechanisms involving how we find data, and how we enable our data to be found. However, I think we should also recognize that there are plenty of capitalists who will see what we produce as a valuable raw resource, and something they want to get their hands on. Also, more importantly, that these capitalists are not in the businesses of ensuring this supply of raw resource continues to exist in the future. Like we’ve seen with the environment, these companies do not care about the impact their data mining has on the organizations, institutions, government agencies, and communities that produced them, or will be impacted when efforts go unfunded, and unsupported. Protecting our valuable community resources from these realities will not be easy as the endless march of technology continues.
+]]></content>
+    <id>http://apievangelist.com/2019/07/05/why-the-open-data-movement-has-not-delivered-as-expected/</id>
+  </entry><entry>
+    <title>API Interoperability is a Myth</title>
+    <link href="http://apievangelist.com/2019/07/03/api-interoperatibility-is-a-myth/"/>
+    <updated></updated>
+    <content><![CDATA[
+There are a number of concepts we cling to in the world of APIs. I’ve been guilting of inventing, popularizing, and spreading many myths in my almost decade as the API Evangelist. One of them that I’d like to debunk and be more realistic about is when it comes to API interoperability. When you are focused on just the technology of APIs, as well as maybe the low-level business of APIs, you are an API interoperability believer. Of course everyone wants API interoperability, and that all APIs should work seamlessly together. However, if you at all begin operating at the higher levels of the business of APIs, and spend any amount of time studying the politics of why and how we do APIs at scale, you will understand that API interoperability is a myth.
+
+This reality is one of the reasons us technologists who possess just a low-level understanding of how the business behind our tech operation, are such perfect tools for the higher level business thinkers, and people who successfully operate and manipulate at the higher levels of industries, or even at the policy level. We are willing to believe in API interoperability, and work to convince our peers that it is a thing, and we all work to expose, and open up the spigots across our companies, organizations, institutions, and government agencies. Standardized APIs and schema that play nicely with each other are valuable, but only within certain phases of a companies growth, or as part of a myth-information campaign to convince the markets that a company is a good corporate citizen. However, once a company achieves dominance, or the winds change around particular industry trends, most companies just want to ensure that all roads lead towards their profitability.
+
+Believing in API interoperability without a long term strategy means you are opening up your company to value extraction by your competitors. I don’t care how good your API management is, if your API makes it frictionless to integrate with because you use a standard format, it just means that the automated value harvesters of companies will find it frictionless to get at what you are serving, and more easily weaponize and monetize your digital resources. It pains me to say this, but it is the reality. If you are in the business of making your API easier to connect with, you are in the business of making it easier for your competitors to extract value from you. Does this mean we shouldn’t do APIs, and make them interoperable? No, but it does mean that we shouldn’t be ignorant of the cutthroat, exploitative, and aggressive nature of businesses that operate within our industries. Does it mean we shouldn’t invest in standards? No, but we should be aware that not every company sitting at the table shares the same interests as us, and could be playing a longer game that involves lock-in, proprietary nuances, or even slowing the standards movement in their favor.
+
+I think that storage APIs are a great example of this. In the early days of cloud storage APIs, I remember everyone saying they were AWS S3 compatible—even Google and Microsoft highlighted this. However, as things have progressed, everyone adds their own tweaks, changes, and nuances that make it much harder to get your terabytes of data off their platform. It was easy to get it in, and keep it synced across your providers, but eventually the polarities change, and all roads lead to lock-in, and are not in the service of interoperability. This is just businesses. I’m not condoning it, I am only repeating what my entrepreneurial friends tell me. If you make it easy for your customers to use other services, you are eroding their loyalty to your brand, and eventually they will leave. So you have to make it harder for them over time. Just incrementally. Forget to grease the door hinges. Change the way the doorknob turns. Make the door narrower. Stop following the international or local standards for how you design a door, call it innovation, and reduce the ways in which your customers can easily get out the door.
+
+I call this the Hotel California business model. You can check-in, but you can never leave. Wrap it all in a catchy tune, even call yourself a hotel, but in reality you’ve gotten hooked a technological myth, and you will never actually be able to ever find the door. Anyways, c’mon, I fucking hate the Eagles, don’t we just have some Credence we could play? Anyways, I got off track. Nobody, but us low-level delusional developers believe in API interoperability. The executives don’t give a shit about it. Unless it supports the latest myth-information campaign. In the long run, nobody wants their APIs to work together, we all just want EVERYONE to use OUR APIs! Sure, we also want to be seen as working together on standards groups, and that our APIs are the the standard EVERYONE should follow, ensuring interoperability with us at the center. But, nobody truly believes in API interoperability. If you do, I recommend you do some soul searching regarding where you exist in the food chain. I’m guessing you are a lower level pawn, doing the work of the puppet master in your industry. This is why you won’t find me on many standards bodies, or me blindly pushing interoperability at scale. It doesn’t exist. It isn’t real. Let’s get to work on more meaningful policy level things that will help shape the industry.
+]]></content>
+    <id>http://apievangelist.com/2019/07/03/api-interoperatibility-is-a-myth/</id>
+  </entry><entry>
+    <title>Your API and Schema Is That Complex Because You Have Not Done The Hard Work To Simplify</title>
+    <link href="http://apievangelist.com/2019/07/02/your-api-and-schame-is-that-complex-because-you-have-not-done-the-hard-work-to-simplify/"/>
+    <updated></updated>
+    <content><![CDATA[
+I find myself looking at a number of my more complex API designs, and saying to myself, “this isn’t complicated because it is hard, it is complicated because I did not spend the time required to simplify it appropriately”. There are many factors contributing to this reality, but I find that more often than not it is because I’m over-engineering something, and I am caught up in the moment focusing on a purely computation approach, and not considering the wider human, business, and other less binary aspects of delivering APIs.
+
+While I am definitely my own worst enemy in many API deliver scenarios, I’d say there are a wide range of factors that are influencing how well, or poorly that I design my API resources, with just a handful of them being:
+
+
+  Domain - I just do not have the domain knowledge required to get the job done properly.
+  Consumer - I just do not have the knowledge I need of my end consumers to do things right.
+  Bandwidth - I just do not have the breathing room to properly sit down and make it happen.
+  Narcissism - I am the best at this, I know what is needed, and I deem this complexity necessary.
+  Lazy - I am just too damn lazy to actually dig in and get this done properly in the first place.
+  Caring - I just do not give a shit enough to actually go the extra distance with API design.
+  Dumb - This API is dumb, and I really should not be developing it in the first place.
+
+
+These are just a few of the reasons why I settle for complexity over simplicity in my API designs. It isn’t right. However, it seems to be a repeating pattern in some of my work. It is something that I should be exploring more. For me to understand why my work isn’t always of highest quality possible I need to explore each of these areas and understand where I can make improvements, and which areas I cannot. Of course I want to improve in my work, and reach new heights with my career, but I can’t help be dogged by imperfections that seem out of my control…or are they?
+
+I have witnessed API simplicity. APIs that do powerful and seemingly complicated things, but in an easy and distilled manner. I know that it is possible to do, but I can’t help but feel that 90% of my API designs fall short of this reality. Some get very close, while others look like amateur hour. One thing is clear. If I’m going to deliver high quality simple and intuitive APIs, I’m going to have to work very hard at it. No matter how much experience I have, I can only improve the process so much, and there will always be a significant amount of investment required to take things to the next level.
+]]></content>
+    <id>http://apievangelist.com/2019/07/02/your-api-and-schame-is-that-complex-because-you-have-not-done-the-hard-work-to-simplify/</id>
+  </entry><entry>
+    <title>The Basics of My API Rating Formula</title>
+    <link href="http://apievangelist.com/2019/07/01/the-basics-of-my-api-ratings-formula/"/>
+    <updated></updated>
+    <content><![CDATA[
+I have been working on various approaches to rating APIs since about 2012. I have different types of algorithms, even having invested in operating one from about 2013 through 2016, which I used to rank my daily intake of API news. Helping me define what the cream on top of each industry being impacted by APIs, while also not losing site of interesting newcomers to the space. I have also had numerous companies and VCs approach me about establishing a formal API rating system—many of whom concluded they could do fairly easily and went off to try, then failed, and gave up. Rating the quality of APIs is subjective and very hard.
+
+When it comes to rating APIs I have a number of algorithms to help me, but I wanted to step back and think of it from a more simpler human vantage point, and after establishing a new overall relationship with the API industry. What elements do I think should exist within a rating system for APIs:
+
+
+  Active / Inactive - APIs that have no sign of life need a lower rating.
+  Free / Paid - What something costs impacts our decision to use or not.
+  Openness - Is an API available to everyone, or is a private thing.
+  Reliability - Can you depend on the API being up and available.
+  Fast Changing - Does the API change a lot, or remain relatively stable.
+  Social Good - Does the API benefit a local, regional, or wider community.
+  Exploitative - Does the API exploit its users data, or allow others to do so.
+  Secure - Does an API adequately secure its resources and those who use it.
+  Privacy - Does an API respect privacy, and have a strategy for platform privacy.
+  Monitoring - Does a platform actively monitor its platform and allow others as well.
+  Observability - Is there visibility into API platform operations, and its processes.
+  Environment - What is the environment footprint or impact of API operations.
+  Popular - Is an API popular, and something that gets a large amount of attention.
+  Value - What value does an API bring to the table in generalized terms.
+
+
+These are just a handful of the most relevant data points I’d rank APIs on. Using terms that almost anyone can understand. You might not fully understand the technical details of what an API delivers, but you should be able to walk through these overall concepts that will impact your company, organization, institution, or government agency when putting an API to work. Now the more difficult questions around this API rating system, is how do you make it happen. Gathering data to satisfy all of these areas is easier said than done.
+
+Getting the answer to some of these question will be fairly easy, and we can come up with some low tech ways to handle. However, some of them are near impossible to satisfy, let alone do it continually over time. It isn’t easy to gather the data needed to answer these questions. In my opinion no single entity can deliver what is needed, and it will ultimately need to be a community thing if we are going to provide any satisfactory answer to these API rating questions, regularly satisfy them on a regular schedule, and then honestly acknowledge when an API goes dormant, or away altogether. To properly do this, it would have to be done out in the open, and a few things I’d consider introducing would be:
+
+
+  YAML Core - I would define the rating system in YAML.
+  YAML Store - I would store all data gathered as YAML.
+  GitHub Base - Everything would be in a series of repositories.
+  Observable - The entire algorithm, process, and results are open.
+  Evolvable - It would be essential to evolve and adapt over time.
+  Weighted - Anyone can weight the questions that matters to them.
+  Completeness - Not all the profiles of APIs will be as complete as others.
+  Ephemeral - Understanding that nothing lasts forever in this world.
+  Collaborative - It should be a collaboration between key entities and individuals.
+  Machine Readable - Able for machines to engage with seamlessly.
+  Human Readable - Kept accessible to anyone wanting to understand.
+
+
+I will stop there. I have other criteria I’d like to consider when defining a ranking system. Specifically, a public ranking system, for public APIs. Actually, I’d consider a company, organizations, institution, and government agency ranking system with an emphasis on APIs. Do they do APIs or not? If they do, how many of the questions can we answer pretty easily, with as few resources as possible, while being able to reliably measure using these data points on into the future. It is something we need. It is something that will be very difficult to setup, taking a significant amount of investment over time. It will also rely on the contribute of other entities and individuals. It is something that won’t be easy to make happen. That shouldn’t stop us from doing it.
+
+That is the basics of my API rating formula. Version 2019. This is NOT an idea for a startup. There is revenue to be generated here, but not if approached through the entrepreneurial playbook. It will fail. I’ve seen it happen over and over. This is a request for the right entities and individuals to come together and make it happen. It is dumb that there is no way of understanding which APIs are good or bad. It is also dumb that there is no healthy and active API search engine after APIs having gone so mainstream—another sign of the ineffectiveness of doing not just API rating, but API discovery as a venture backed startup. Sorry, there are just some infrastructural things we’ll all need to invest in together to make this all work at scale. Otherwise we are going to just end up with a chaotic, unreliable network of API-driven services behind our applications. If you’d like to talk API ratings with me, drop me an email at info@apievangelist.com, or tweet at @apievangelist.
+]]></content>
+    <id>http://apievangelist.com/2019/07/01/the-basics-of-my-api-ratings-formula/</id>
+  </entry><entry>
+    <title>The Complexity of API Discovery</title>
+    <link href="http://apievangelist.com/2019/07/01/the-complexity-of-api-discovery/"/>
+    <updated></updated>
+    <content><![CDATA[
+I can’t get API discovery out of my mind. Partly because I am investing significant cycles in this area at work, but it is also something have been thinking about for so long, that it is difficult to move on. It remains one of the most complex, challenging, and un-addressed aspects of the way the web is working (or not working) online today. I feel pretty strongly that there hasn’t been investment in the area of API discovery because most technology companies providing and consuming APIs prefer things be un-discoverable, for a variety of conscious and un-conscious reasons behind these belief systems. 
+
+What API Discovery Means? Depends On Who You Are…
+One of the reasons that API discovery does not evolve in any significant ways is because there is not any real clarity on what API discovery is. Depending on who you are, and what your role in the technology sector is, you’ll define API discovery in a variety of ways. There are a handful of key actors that contribute to the complexity of defining, and optimizing in the area of API discovery.
+ 
+
+  Provider - As an API provider, being able to discover your APIs, informs your operations regarding what your capabilities are, building a wider awareness regarding what a company, organization, institution, or government agency does, helping eliminate inefficiencies, and allows for more meaning decisions to be made at run-time across operations.
+  Consumer - What you need as an internal consumer of APIs, or maybe a partner, or 3rd party developer will significantly shift the conversation around what API discovery means, and how it needs to be “solved”. There is another significant dimension to this discussion, separating human from other system consumption, further splintering the discussion around what API discovery is when you are a consumer of APIs.
+  Analyst - As an analyst for specific industries, or technology in general, need to understand the industries they are watching, and how API tooling is being applied, helping them develop an awareness of what is happening, and understand what the future might hold.
+  Investor - A small number of investors are in tune with APIs, and even grasp what API discovery means to their portfolio, and the industries they are investing in, generally being unaware of how API discovery will set the tone for how markets behave–providing the nutrients (or lack of) markets need to understand what is happening across industries.
+  Journalist - Most journalists grasp the importance of Facebook and Twitter, but only a small percentage understand what APIs are, and how ubiquitous they are, and the benefits they bring to the table when it comes to helping them in their investigations, and research, let alone how it can benefit them in their work when it comes to syndication and exposure for their work–making API discovery pretty critical to what they do.
+  University - I am seeing more universities depending on accessible APIs when it comes to research, and an increase in the development of API related curriculum–just as important, I am also seeing the increased development of open source API tooling out of university environments.
+  Government - APIs will play an increasing role in regulation, taxation, and government funded / implemented research, making API discovery key to finding the data they need, and being able to have their finger on the pulse of what citizens and businesses are up to on any given week.
+  End-User - Last, but definitely not least, the end-user should b e concerned with API discovery, and using it as a low water mark for where they should be doing business, and requiring that the platforms they use have APIs, and have their best interests in mind when allowing for 3rd party access to their data.
+
+
+How APIs Are Discovered?
+Across these different views of the API discovery landscape, there are a variety of ways in which APIs are discovered, and made discoverable. Providing some formal, and some not so formal ways to define the the API landscape, and develop an awareness of the API ecosystems that have risen up within different industries, within institutions and government agencies. These are the ways I am focused on finding APIs, and making APIs findable, inside and outside the firewall.
+
+Our motivations for finding APIs inside or outside the firewall are not always in sync with our motivations for having our APIs be found. This affects our view of the landscape when it comes to how hard API discovery is, and what the possible solutions for it will be. I find people’s view on API discovery to be very relative to their view of the landscape, and very few people in the API sector travel widely enough, exchange ideas externally enough, and lift themselves up high enough to be able to understand API discovery well enough to provide the right tools and services to move the conversation forward.
+
+Within the Firewall
+API discovery with the firewall is a real struggle. Most companies I know do not know where all of their APIs are. There is no single up to date truth of where each API is, what it does, let alone the machine readable details of what it delivers. These are a few of the ways in which I have seen groups tackle API discovery within the firewall: 
+
+
+  Directories - Many employ a catalog, directory, or database of APIs, micro services, and other relevant solutions.
+  Git Repositories - Git within the enterprise is a very viable way to manage a large volume of artifacts you can use for discovery.
+  Word of Mouth - Talking to people is always a great way to understand what APIs exist across the enterprise landscape.
+  Documentation - The documentation for APIs often become the focal point of API discovery because it can be searched.
+  Log Files - Harvest what is actually coming across the wire, parse APIs that are in use, and documenting them in some way.
+
+
+The biggest challenge with API discovery within the firewall is having dedicated resources to keep up with the discovery, documenting, while also keeping catalogs, repositories, documentation, and other key sources of API discovery information up to date. In my experience, rarely do teams ever get the budget to properly invest in API discovery, with things often done as part of skunk works, or in every day operations—as teams can–which is never enough.
+
+Outside the Firewall
+This is the aspect of API discovery that gets the most attention when it comes to API discovery. These are the API rock stars, directors, marketplaces, and API showcasing that occurs across tech blogs. API discovery outside the firewall has access to far more tools and services to leverage when getting the word out, or helping you find what you are looking for. The challenge becomes, like most other things on the open web, how do you cut through the noise, and get your APIs found, or find the APIs you are looking for. 
+
+
+  Directories - You use some of the existing API directories out there. Providing you access to a small subsection of the APIs that these operators can find, and manually publish to their API catalogs. There really isn’t a single source of truth when it comes to API directories, but there are some that have been around longer than others.
+  Marketplaces - There have been numerous waves of investment into API marketplaces, trying to centralize the discovery and integration with APIs, hoping to simplify APIs enough that consumers use you as their doorway to the API world—giving the API marketplace provider a unique look at how APIs are consumed.
+  Documentation - Public API documentation is how your APIs will be found using Google, which is the number one way people are going to find your API—using a Google search. I’m surprised that Google hasn’t tackled the issue of API discovery already, but I’m guessing they haven’t deemed it valuable enough to tackle, and will most likely swoop in and take dominate once some smaller providers plant the seeds.
+  Definitions - API discovery has gotten easier, and more robust with the introduction of API definitions like Swagger, OpenAPI, API Blueprint, RAML, Postman collections and other machine readable formats. Going beyond just static or even dynamic API documentation, and providing a machine readable artifact that can be indexed and used to drive API search.
+  Domains - You can drive a lot of interesting API discovery using domains, and building indexes of different types of domains, then conduct several types of searches to see if they have any APIs. Using search engine APIs, Twitter, Github, and other social media APIs to find APIs across the landscape—using domains as the anchor for refining and making API discovery queries more precise.
+  Scraping - If you have the URL for an companies, organization, institution, or government agencies API documentation page you can also scrape that page, or pages for more information about how any API operations, and what it does—adding to the index of APIs to be search against.
+  Search Engines - While Google doesn’t have a good API anymore, Bing and DuckDuckGo do.It is easy to build up an index of queries to search Bing to uncover potential domains, documentation, definitions, and other artifacts to enrich an API discovery index. With the right key phrase glossary, you can quickly automate a pretty comprehensive search for new APIs.
+  GitHub - The social coding platform is a rich one of API related data. Similar to search engines you can easy build a search query vocabulary to uncover a number of domains, documentation, definitions, and other artifacts to enrich an API discovery index.
+  Integrated Development Environment (IDE) - The IDE is an untapped market when it comes to helping developers find APIs, and to help API providers reach developers. Microsoft has been increasing API discovery features, while also being extended with plugins by the community. There is no universal API search engine baked into the top IDEs, a definite missed opportunity.
+  News - It is pretty easy to harvest press releases, blog posts, and other news sources and use them as rich sources of information for new APIs. Helping seed a list of potential domains to look for documentation and other API artifacts. Publishing a press release, or posting to their blog is the most common way that API providers get the word out, unfortunately it tends to be the only thing they do.
+  Tweets - Twitter is also a rich source of information about APIs, with a variety of accounts, hashtags, and other ways to make queries for new APIs more precise. Using the social media platform as.a way of tuning into potential new APIs, as well as the activity around existing APIs in the index.
+  LinkedIn - More business, institutions, and government entities are talking about their APIs on LinkedIn, publishing posts, job listings, and other API related goings on. Making it a pretty rich way to find new APIs, and companies who are embarking, or making their way along their API journey.
+  Security Alerts - Sadly, security alerts is one way I learn about companies and their APIs—when they become un-secure. Providing information about API providers who operate in the shadows, as well as more information to index when actually rating APIs in the index, but that is another story.
+
+
+Even once you discover the APIs you are looking for, often times more context is required, and you may or may not have the time or expertise to assess what an API delivers, and what it will take to get up and running with an API.
+
+
+  Documentation - Where the documentation resides for the API.
+  Signup - Where a user can signup to use an API.
+  Pricing - What is the pricing for using an API.
+  Support - Where do you get support if you need help.
+  Terms of Service - Where do I find the legalize behind AP operations.
+
+
+These are just five of the most common questions APIs consumers are going to ask when they are looking at an API, and would benefit from direct links to these essential building blocks as part of any API search results.  I have over a hundred questions that I like to ask of an API as I’m reviewing, which all reflect what a potential API consumer will be asking when they come across an API out in the wild.
+
+Four Primary Dimensions Of Complexity
+I’d say that these are the four main dimensions of complexity I see out there when it comes to API discovery, which makes it really hard to provide a single API discovery solution, and why there hasn’t been more investment in this area. It is difficult to make sense of APIs, and what people are looking for. It is hard to get all API providers on the same page when it comes to investing in API discovery as part of their regular operations. API discovery is something I’ll keep investing in, but it is something that will need wider investment from the community, as well as some bigger players to step up and help move the conversation forward.
+
+Other than API marketplaces, and the proliferation of API definitions, I haven’t seen any big movements in the API discovery conversation. We still have ProgrammableWeb. We still have Google. Not much more. With the number of APIs growing, this is only going to become more of a pain point. I’m interested in investing in API discovery not because I want to help everyone find APIs, or have their APIs found. Im more interested in shining a light on what is going on. I am looking to understand the spread of APIs across the digital landscape, and better see where they are pushing into our physical worlds. My primary objective is not to make sure all APIs are found so they can be used. My primary objects is to make sure all APIs are found so we have some observability into how the machine works.
+]]></content>
+    <id>http://apievangelist.com/2019/07/01/the-complexity-of-api-discovery/</id>
+  </entry><entry>
+    <title>Why Schema.org Does Not See More Adoption Across The API Landscape</title>
+    <link href="http://apievangelist.com/2019/06/25/why-schema-org-does-not-see-more-adoption-across-the-api-landscape/"/>
+    <updated></updated>
+    <content><![CDATA[
+I’m a big fan of Schema.org. A while back I generated an OpenAPI 2.0 (fka Swagger) definition for each one and published to GitHub. I’m currently cleaning up the project, publishing them as OpenAPI 3.0 files, and relaunching the site around it. As I was doing this work, I found myself thinking more about why Schema.org isn’t the goto schema solution for all API providers. It is a challenge that is multi-layered like an onion, and probably just as stinky, and will no doubt leave you crying.
+
+First, I think tooling makes a big difference when it comes to why API providers haven’t adopted Schema.org by default across their APIs. If more API design and development tooling would allow for the creation of new APIs using Schema.org defined schema, I think you’d see a serious uptick in the standardization of APIs that use Schema.org. In my experience, I have found that people are mostly lazy, and aren’t overly concerned with doing APIs right, they are just looking to get them delivered to meet specifications. If we provide them with tooling that gets the API delivered to specifications, but also in a standardized, they are doing to do it.
+
+Second, I think most API providers don’t have the time and bandwidth to think of the big picture like using standardized schema for all of their resources. Most people are under pressure to more with less, and standards is something that can be easily lost in the shuffle when you are just looking to satisfy the man. It takes extra effort and space to realize common standards as part of your overall API design.  This is a luxury most companies, organizations, and government agencies can not afford, resulting in many ad hoc APIs defined in isolation.
+
+Third, I think some companies just do not care about interoperability. Resulting in them being lazy, or not making it a priority as stated in the first and second points. Most API providers are just concerned with you using their API, or checking the box that they have an API. They do not connect the dots between standardization and it being easier for consumers to put their resources to work. Many platforms who are providing APIs are more interested in lock-in, providing proprietary SDKs and tooling on top of their API. Selling them on the benefits of interoperable open source SDKs and tooling just falls on deaf ears—leaving most API providers to perpetually reinvent the wheel when there is an existing well defined one within reach.
+
+I wish ore API folks cared about Schema.org. I wish I had the luxury of using in more of my own work. If it is up to me, I will always adopt Schema.org for my core API designs, but unfortunately I’m not always the one in charge of what gets decided. I will continue to invest in OpenAPI definitions for all of the Schema.org defined schema. This allows me to have within reach when I’m getting ready to define a new API. If Schema.org ready API definitions are in a neat stack on my desk, the likelihood that I’m going to put to work in the API tooling I’m developing, and actually as the base for an API I’m delivering, increases significantly. Helping me standardize my API vocabulary to something that reaches beyond the tractor beam of daily API bubble.
+]]></content>
+    <id>http://apievangelist.com/2019/06/25/why-schema-org-does-not-see-more-adoption-across-the-api-landscape/</id>
+  </entry><entry>
+    <title>Avoiding Complexity and Just Deploying YAML, JSON, and CSV APIs Using GitHub or GitLab</title>
+    <link href="http://apievangelist.com/2019/06/24/avoiding-complexity-and-ust-deploying-yaml-json-csv-apis-using-github-or-gitlab/"/>
+    <updated></updated>
+    <content><![CDATA[
+I find that a significant portion of I should be doing when defining, designing, developing, and delivering an API is all of avoiding complexity. Every step away along the API journey I am faced with opportunities to introduce complexity, forcing me to constantly question and say no to architectural design decisions. Even after crafting some pretty crafty APIs in my day, I keep coming back to JSON or YAML within Git, as the most sensible API architectural decision I can make.
+
+Git, with JSON and YAML stored within a repository, fronted with a Jekyll front-end does much of what I need. The challenge with selling this concept to others is that it is a static publish approach to APIs, instead of a dynamic pull of relevant data. This approach isn’t for every API solution, I’m not in the business selling one API solution to solve all of our problems. However, for many of the API uses I’m building for, a static Git-driven approach to publishing machine readable JSON or YAML data is a perfect low cost, low tech solution to delivering APIs.
+
+A Git repository hosted on GitHub or GitLab will store a significant amount of JSON, YAML, or CSV data. Something you can easily shard across multiple repositories within an organization / group, as well as across many repositories within many organization / groups. Both GitHub and GitLab offer free solutions, essentially letting you publish as many repositories as you want. As I said earlier, this is not a solution to all API needs, but when I’m looking to introduce some constraints to keep things low cost, simple, and easy to use and manage—a Git-driven API is definitely worth considering. However, going static for your API will force you to think about how you automate the lifecycle of your data, content, and other resources.
+
+The easiest way to manage JSON, CSV, or YAML data you have on GitHub or GitLab is to use the GitHub or GitLab API, allowing you to update individual JSON, CSV, or YAML files in real-time. If you want to do it in batch process by checking out the repository, making all the changes you want and committing back as a single Git commit using the command line—I’ve automated a number of these to reduce the number of API calls I’m making. If you want to put in an editorial layer you can require submission via pull / merge request, requiring there be multiple eyes on each update to the data behind a static API. It is an imperative, and a declarative API, with an open source approval workflow by default—all for free.
+
+Once you have your data in the Git repository you can make it available using the RAW links provided by GitHub or GitLab. However, I prefer to publish a Jekyll front-end, which can act as the portal landing page for the site, but then you can also manually or dynamically create neat paths that route users to your data using sensible URLs—the best part is you can add a cname and publish your own domain. Making your API accessible to humans, while also providing intuitive, easy to follow URLs to the static data that has been published using the GitHub or GitLab API, or the underlying Git infrastructure to do in bulk.
+
+This is the cheapest, most productive way to deliver simple data and content APIs. The biggest challenges are that you have to begin thinking a little differently about how you manage your data. You have to move from a pull to a push way of delivering data, and embrace the existing CI/CD way of doing things embraced by both GitHub and GitLab. For me, using Git to deliver APIs provides a poor mans way to not just deliver an API, but also ensure it is secure, performant, and something I can automate the management of using existing tools developers are depending on. Over the last couple of years I’ve pushed the limits of this approach by publishing thousands of OpenAPI-driven API discovery portals, and it is something I’m going to be refining and using as the default layer for delivering simple APIs that allow me to avoid unnecessary complexity.
+]]></content>
+    <id>http://apievangelist.com/2019/06/24/avoiding-complexity-and-ust-deploying-yaml-json-csv-apis-using-github-or-gitlab/</id>
+  </entry><entry>
+    <title>Organizing My APIs Using OpenAPI Tags</title>
+    <link href="http://apievangelist.com/2019/06/19/organizing-my-apis-using-openapi-tags/"/>
+    <updated></updated>
+    <content><![CDATA[
+I like my OpenAPI tags. Honestly, I like tags in general. Almost every API resource I design ends up having some sort of tagging layer. Too help me organize my world, I have a centralized tagging vocabulary that I use across my JSON Schema, OpenAPI, and AsyncAPI, to help me group, organize, filter, publish, and maintain my catalog of API and schema resources.
+
+The tag object for the OpenAPI specification is pretty basic, allowing you to add tags for an entire API contract, as well as apply them to each individual API method. Tooling, such as API documentation uses these tags to group your API resources, allowing you to break down your resources into logical bounded contexts. It is a pretty basic way of defining tags, that can go a long ways depending on how creative you want to get. I am extending tags with an OpenAPI vendor extension, but I also see that there is a issue submitted suggesting they move the specification forward by allowing for the nesting of tags–potentially taking OpenAPI tagging to the next level.
+
+I’m allowing for a handful of extensions to the OpenAPI specification to accomplish the following:
+
+
+  Tag Grouping - Help me nest, and build multiple tiers of tags for organization APIs.
+  Tag Sorting - Allowing me to define a sort order that goes beyond an alphabetical list.
+
+
+I am building listing, reporting, and other management tools based up OpenAPI tagging to help me in the following areas:
+
+
+  Tag Usage - Reporting how many resources are available for each tag, and tag group.
+  Tag Cleanup - Helping me de-dupe, rename, deal with plural challenges, etc.
+  Tag Translations - Translating old tags into new tags, helping keep things meaningful.
+  Tag Clouds - Generating D3.js tag clouds from the tags applied to API resources.
+  Packages - Deployment of NPM packages based upon different bounded contexts defined by tags.
+
+
+I am applying tags to the following specifications, stretching my OpenAPI tagging approach to be more about a universal way to organize all my resources:
+
+
+  JSON Schema - All schema objects have tags to keep organized.
+  OpenAPI - Each API method have tags, for easy grouping.
+  AsyncAPI - Each pub/sub, event, and message API have APIs.
+  APIs.json - Collections of APIs have tags for discoverability.
+
+
+Tags are an important dimension of API discoverability when it comes to my API definitions. They provide rich metadata that I can use to make sense of my API infrastructure. Without them, the quality of my API definitions tend to trend lower. By evolving the tagging schema, and investing in tooling to help me make sense across the API definitions I’m depending on, I can push the boundaries of how I tag, and evolve it to be the core of how I manage my API definitions.
+
+I’ll keep watching how others are tagging their APIs, although I don’t see too much innovation, and low levels of usage by other API providers as part of their API definitions. I’ll also keep an eye out for other ways in which tag schema are being extended, helping potentially define the future of how the leading API specifications enable tagging. I have a short list of tooling I am developing to help make my life easier, but I’m working hard to just make sure I’m applying tags across my API resources in a consistent way. I find this is the most valuable aspect of API tagging, but eventually I’m guessing that the tooling will make the real difference when it comes to slicing and dicing, and making sense of my API infrastructure at scale.
+]]></content>
+    <id>http://apievangelist.com/2019/06/19/organizing-my-apis-using-openapi-tags/</id>
+  </entry><entry>
+    <title>Doing The Hard Work To Define APIs</title>
+    <link href="http://apievangelist.com/2019/06/17/doing-the-hard-work-to-define-apis/"/>
+    <updated></updated>
+    <content><![CDATA[
+Two years later, I am still working to define the API driven marketplace that is my digital self. Understanding how I generate revenue from my brand (vomits in mouth a little bit), but also fight off the surveillance capitalists from mining and extracting value from my digital existence. It takes a lot of hard work to define the APIs you depend on to do business, and quantify the digital bits that you are transacting on the open web, amongst partners, and unknowingly with 3rd parties. As an individual, I find this to be a full time job, and within the enterprise, it is something that everyone will have to own a piece of, which in reality, is something that is easier said than done.
+
+Convincing enterprise leadership of the need to be aware of every enterprise capability being defined at the network, system, or application level is a challenge, but doable. Getting consensus on how to do this at scale, across the enterprise will be easier said than done. Identifying how the network, system, and applications across a large organization are being accessed, what schema, messages, and other properties are being exchanged is not a trivial task. It is a massive undertaking to reverse engineer operations, and identify the core capabilities being delivered, then define and document in a coherent way that can be shared with others, and included as part of an organization messaging campaign.
+
+Many will see work to define all enterprise API capabilities as a futile task–something that is impossible to deliver. Many others will not see the value of doing it in the first place, and unable to realize the big picture, they will see defining of APIs and underlying schema as meaningless busy work. Even when you do get folks on-board with the important, having the discipline to see the job through becomes a significant challenge. If moral is low within any organization group, and team members do not have visibility into the overall strategy, the process of defining gears that make the enterprise move forward will be seen as mind numbing accounting work–not something most teams will respond positively about working on.
+
+Once you do define your APIs, you then have to begin investing in defining what the future will hold when it comes to unwinding, evolving, maturing the API infrastructure you are delivering and depending on. This is something that can’t fully move forward until a full or partial accounting of enterprise API capabilities has occurred. If you do not know what is, you will always have trouble defining or controlling what will be. One of the reasons we have so much technical debt is we prefer to focus on what comes next rather than attending to the maintenance required to keep everything clean ,coherent, organized, and well defined. It is always easier to focus on the future, than it is to reconcile with mess we’ve created in the past. This is why it is so easy to sell each wave of enterprise technology solutions, promising to do this work for you–when in reality, most times, you are just laying down the next layer of debt.
+
+Whether it is our personal lives, or our professional worlds, defining the APIs we depend on, as well as the APIs that aren’t useful and become parasitic, as well as the schema objects they produce and exchange is a lot of hard work. Hard work most of us will neglect and outsource for convenience. Making the work become even harder down the road–nobody will care about doing this as we do. The really fascinating part of all of this for me, is that with each cycle of technology that passes through, we keep doubling down on technology being the solution to yesterday’s problem, even though it is the core of yesterday’s problem. In my experience, once you really begin investing in the hard work to define the APIs you depend on, you begin to realize that you don’t need so many of them. That the number of API connections you depend on can actually begin to hurt you, which is something that can wildly grow if you aren’t in tune with what your API landscape consists of in your personal and professional worlds.
+]]></content>
+    <id>http://apievangelist.com/2019/06/17/doing-the-hard-work-to-define-apis/</id>
+  </entry><entry>
+    <title>There Is No Single Right Way To Do APIs</title>
+    <link href="http://apievangelist.com/2019/06/16/there-is-no-single-right-way-to-do-apis/"/>
+    <updated></updated>
+    <content><![CDATA[
+My time working in the API sector has been filled with a lot of lessons. I researched hard, paid attention, and found a number of surprising realities emerge across the API landscape. The majority of surprises have been in the shadows caused by my computational belief scaffolding I’ve been erecting since the early 1980s. A world where there has to be absolutes, known knowns, things are black and white, or more appropriately 1 or 0. If I studied all APIs, I’d find some sort of formula for doing APIs that is superior to everyone else’s approach to doing APIs. I was the API Evangelist man–I could nail down the one right way to do APIs. (Did I mention that I’m a white male autodidact?)
+
+I was wrong. There is no one right way to do APIs. Sure, there are many different processes, practices, and tools that can help you optimize your API operations, but despite popular belief, there is no single “right way” to do define, design, provide, or consume APIs. REST is not the one solution. Hypermedia is not the one solution. GraphQL is not the one solution. Publish / Subscribe is not the one solution. Event-driven is not the one solution. APIs in general are the the one solution. Anyone telling you there is one solution to doing APIs for all situations is selling you something. Understanding your needs, and what the pros and cons of different approaches are, is the only thing that will help you.
+
+If you are hyper focused on the technology, it is easy to believe in a single right way of doing things. Once you start having to deliver APIs in a variety of business sectors and domains, you will quickly begin to see your belief system in a single right way of doing things crumble. Different types of data require different types of approaches to API enablement. Different industries are knowledgable in different ways of API enablement, with some more mature than others. Each industry will present its own challenges to API delivery and consumption, that will require a different toolbox, and mixed set of skills required to be successful. Your social network API strategy will not easily translate to the healthcare industry, or other domain.
+
+With a focus on the technology and business of APIs, you can still find yourself dogmatic around a single right way of doing things. Then, if you find yourself doing APIs in a variety of organizations, across a variety of industries, you quickly realize how diverse your API toolbox and approach will need to be. Organizations come with all kinds of legacy technical debt, requiring a myriad of approaches to ensuring APIs properly evolve across the API lifecycle. Once a technological approach to delivering software gets baked into operations, it becomes very difficult to unwind, and change behavior at scale across a large organization–there is no single right way to do APIs within a large enterprise organization. If someone is telling you there is, they are trying to sell you the next generation of technology to bake into your enterprise operations, which will have to be unwound at some undisclosed date in the future–if ever.
+
+I’ve always considered my API research and guidance to be a sort of buffet–allowing my readers choose the mix that works for them. However, I still found myself providing industry guides, comprehensive checklists, and other declarative API narratives that still nod towards there being a single, or at least a handful of right ways of doing APIs. I think that APIs will ultimately be like cancer, something we never quite solve, but there will be huge amounts of money spent trying to deliver the one cure. I’ll end with the comparison there, because I don’t want to get me on a rant regarding the many ways in which APIs and cancer will impact the lives of everyday people. In the end, I will still keep studying and understanding different approaches to doing APIs (both good or bad), but you’ll find my narrative to be less prescriptive when it comes to any single way of doing APIs, as well as suggesting that doing APIs in the first place is the right answer to any real world problem.
+]]></content>
+    <id>http://apievangelist.com/2019/06/16/there-is-no-single-right-way-to-do-apis/</id>
+  </entry><entry>
+    <title>API Definitions Are Important</title>
+    <link href="http://apievangelist.com/2019/06/12/api-definitions-are-important/"/>
+    <updated></updated>
+    <content><![CDATA[
+I found myself scrolling down the home page of API Evangelist and thinking about what topic(s) I thought were still the most relevant in my mind after not writing about APIs for the last six months. Hands down it is API definitions. These machine and human readable artifacts are the single most important thing for me when it comes to APIs I’m building, and putting to work for me.
+
+Having mature, machine readable API definitions for all API that you depend on, is essential. It also takes a lot of hard work to make happen. It is why I went API define first a long time ago, defining my APIs before I ever get to work designing, mocking, developing, and deploying my APIs. Right now, I’m heavily dependent on my:
+
+
+  JSON Schema - Essential for defining all objects being used across API contracts.
+  OpenAPI - Having OpenAPI contracts for al my web APIs is the default–they drive everything.
+  AsyncAPI - Critical for defining all of my non HTTP 1.1 API contracts being provided or consumed.
+  Postman Collections - Providing me with the essential API + environment definitions for run-time use.
+  APIs.json - Helping me define all the other moving parts of API operations, indexing all my definitions.
+
+
+While there is plenty of other stops along the API lifecycle that are still relevant to me, my API definitions are hands down the most valuable intellectual property I possess. These four API specifications are essential to making my world work, but there are other more formalized specifications I’d love to be able to put to work:
+
+
+  Orchestrations - I’d liked to see a more standardized, machine readable way for working with many API calls in a meaningful way. I know you can do this with Postman, and I’ve done with OpenAPI, and like Stoplight.io’s approach, but I want an open source solution.
+  Licensing - I am not still actively using API Commons, but I’d like to invest in a 2.0 version of the API licensing specification, moving it beyond just the API licensing, and consider SDK, and other layers.
+  Governance - I’d like to see a formal way of expressing API governance guidance that can be viewed by a human, or executed as part of the pipeline, ensuring that all API contracts conform to a set of standards.
+
+
+These area hit on the main areas that concern for me when it comes to defining the contracts I need to further automate the integration and deployment of API resources in my life. While there are definitely other stops along the API lifecycle on my mind, I spend the majority of my time creating, refining, communicating, and moving forward API definitions that define and drive every other stop along the API lifecycle.
+
+API definitions represent API sanity for me. If they aren’t in order, there is disorder. An immature API definition requires investment, socialization amongst stakeholders, and iterating upon before it will ever be considered for publishing. I’ll be exploring the other things that matter for me along the API lifecycle, and then I’m guessing that the rest of this stuff I’ve been researching over the last eight years will either disappear, or just be demoted on the site. We’ll see how this refresh rolls out, but I’m guestimating about 25% of my research will continue to move forward after this reboot.
+]]></content>
+    <id>http://apievangelist.com/2019/06/12/api-definitions-are-important/</id>
+  </entry><entry>
+    <title>API Evangelist Is Open For Business</title>
+    <link href="http://apievangelist.com/2019/06/10/api-evangelist-is-open-for-business/"/>
+    <updated></updated>
+    <content><![CDATA[
+After six months of silence I've decided to fire API Evangelist back up again. I finally reached a place where I feel like I can separate out the things that caused me to step back in the first place. Mostly, I have a paycheck now, some health insurance, and I don't have to pretend I give a shit about APIs, startups, venture capital, and the enterprise. I'm being paid well to do an API job. I can pay my rent. I can go to the doctor when my health takes a hit. My basic needs are met.
+
+Beyond that, I'm really over having to care about building an API community, making change with APIs, and counteracting all of the negative effects of APIs in the wild. I can focus on exactly what interests me about technology, and contribute to the 3% of the API universe that isn't doing yawnworthy, half-assed, or straight up shady shit. I don't have to respond to all the emails in my inbox just because I need to eat, and have a roof over my head. I don't have to jump, just because you think your API thing is the next API thing. I can just do me, which really is the founding principle of API Evangelist.
+
+Third, I got a kid to put through college, and I'm going to make y'all pay for it. So, API Evangelist is open for business. I won't be producing the number of stories I used to. I'll only be writing about things I actually find interesting, and will explore other models for generating content, traffic, and revenue. So reach out, and pitch me. I'm looking for sponsors, and open to almost anything. Don't worry, I'll be my usual honest self and tell you whether I'm interested or not, and have strong opinions on what should be said, but pitch me. I'm open for business, I'll entertain any business offer keep API Evangelist in forward motion, and generating revenue for me.
+
+If you are interested in sponsoring API Evangelist, it is averaging 2K page views a day, but normally averages 5K a day when it is in full active mode. The Twitter account has 10K followers, and the audience is a pretty damn good representation of the API pie if I don't say so myself. It is a damn shame to squander what I've built over the last nine years just because I like to ride on a sparkly high horse. If I've learned anything during my time as the API Evangelist, it is that revenue drives ALL decisions. So get in on the action. Let me know what you are thinking, and I'll get to work adding your logo to the site, and turning on the other sponsorship opportunities. Ping me at info@apievangelist.com to get the ball rolling.
+]]></content>
+    <id>http://apievangelist.com/2019/06/10/api-evangelist-is-open-for-business/</id>
+  </entry><entry>
+    <title>Asking The Honest Questions When It Comes To Your API Journey</title>
+    <link href="http://apievangelist.com/2018/11/27/asking-the-honest-questions-when-it-comes-to-your-api-journey/"/>
+    <updated></updated>
+    <content><![CDATA[
+I engage with a lot of enterprise organizations in a variety of capacities. Some are more formal consulting and workshop engagements. While others are just emails, direct messages, and random conversation in the hallways and bars around API industry events. Many conversations are free flowing, and they trust me to share my thoughts about the API space, and provide honest answers to their questions regarding their API journey. Where others express apprehension, concern, and have trouble engaging with me because they are worried about what I might say about their approach to doing APIs within their enterprise organizations. Some have even told me that they’d like to formally bring me in for discussions, but they can’t get me pass legal or their bosses–stating I have a reputation for being outspoken.
+
+While in Vegas today, I had breakfast with Paolo Malinverno, analyst from Gartner, he mentioned the Oscar Wilde quote, “Whenever people agree with me I always feel I must be wrong.” Referring to the “yes” culture than can manifest itself around Gartner, but also within industries and the enterprise regarding what you should be investing in as a company. That people get caught up in  up in culture, politics, and trends, and don’t always want to be asking, or be asked the hard questions. Which is the opposite of what any good API strategist, leader, and architect should be doing. You should be equipped and ready to be asked hard questions, and be searching out the hard questions. This stance is fundamental to API success, and you will never find what you are seeking when it comes to your API journey if you do not accept that many questions will be difficult.
+
+The reality that not all API service providers truly want to help enterprise organizations genuinely solve the business challenges they face, and that many enterprise technology leaders aren’t actually concerned with truly solving real world problems, has been one of the toughest pills for me to swallow as the API Evangelist over the last eight years. Realizing that there is often more money to be made in not solving problems, not properly securing systems, or systems being performant, efficient, and working as expected. While I think many folks are too far down in the weeds of operations and company culture to fully make the right decision, I also think there are many people who make the wrong technological decision because it is the right business decision in their view. They do it to please share holders, investors, their boss, or just going with the flow when it comes to the business culture within their enterprise, and the industry that they operate in.
+
+Honestly, there isn’t a lot of money to be made asking the hard questions, and addressing the realities of getting business done using APIs within the enterprise. Not all companies are willing to pay you to come in and speak truth to what is going on. Pointing out the illnesses that exist within the enterprise, and potentially provide solutions to what is happening. People are afraid what you are going to ask. People don’t want to pay someone to rock the boat. I find it to be a rare occurrence to find large enterprise organizations who are willing to look in the mirror and be held accountable for their legacy technical debt, and be forced to make the right decisions when it comes to moving forward with the next generation of investment. Which is why most organizations will stumble repeatedly in their API journeys, be more susceptible to the winds of technological trends and investment cycles, all because they aren’t willing to surround themselves with the right people who are willing to speak truth.
+]]></content>
+    <id>http://apievangelist.com/2018/11/27/asking-the-honest-questions-when-it-comes-to-your-api-journey/</id>
+  </entry><entry>
+    <title>A Diverse API Toolbox Driving Hybrid Integrations Across An Event-Driven Landscape</title>
+    <link href="http://apievangelist.com/2018/11/25/a-diverse-api-design-toolbox-driving-hybrid-integrations-in-an-event-driven-landscape/"/>
+    <updated></updated>
+    <content><![CDATA[
+I’m heading to Vegas in the morning to spend two days in conversations with folks about APIs. I am not there for AWS re:Invent, or the Gartner thingy, but I guess in a way I am, because there are people there for those events, who want to talk to me about the API landscape. Folks looking to swap stories about enterprise API investment in possessing a diverse API toolbox for driving hybrid integrations in an event-driven landscape. I’m not giving any formal talks, but as with any engagement, I’m brushing up on the words I use to describe what I’m seeing across the space when it comes to the enterprise API lifecycle.
+
+The Core Is All About Doing Resource Based, Request And Response APIs Well
+I’m definitely biased, but I do not subscribe to popular notions that at some point REST, RESTful, web, and HTTP APIs will have to go away. We will be using web technology to provide simple, precise, useful access to data, content, and algorithms for some time to come, despite the API sectors continued evolution, and investment trends coming and going. Sorry, it is simple, low-cost, and something a wide audience gets from both a provider and consumer perspective. It gets the job done. Sure, there are many, many areas where web APIs fall short, but that won’t stop success continuing to be defined by enterprise organizations who can do microservices well at scale. Despite relentless assaults by each wave of entrepreneurs, simple HTTP APIs driving microservices will stick around for some time to come.
+
+API Discovery And Knowing Where All Of Your APIs Resources Actually Are
+API discovery means a lot of things to a lot of people, but when it comes to delivering APIs well at scale in a multi-cloud, event-driven world, I’m simply talking about knowing where all of your API resources are. Meaning, if I walked into your company tomorrow, could you should me a complete list of every API or web service in use, and what enterprise capabilities they enable? If you can’t, then I’m guessing you aren’t going to be all that agile, efficient, and ultimately effective with doing your APIs at scale, and be able to orchestrate much, and identify what the most meaningful events are that occur across the enterprise landscape. I’m not even getting to the point of service mesh, and other API discovery wet dreams, I’m simply talking about being able to coherently articulate what your enterprise digital capabilities are.
+
+Always Be Leveraging The Web As Part Of Your Diverse API Toolbox
+Technologists, especially venture fueled technologists love to take the web for granted. Nothing does web scale better than, the web. Understand the objectives behind your APIs, and consider how you are leveraging the web, negotiate, cache, and build on the strengths of the web. Use the right media type for the job, and understand the tradeoffs of HTML, CSV, XML, JSON, YAML, and other media types. Understand when hypermedia media types might be more suitable for document, media, and other content focused API resources. Simple web APIs make a huge difference when they further speak to their intended audience and allow them to easily translate an API call into a workable spreadsheet, or navigate to the previous or next episode, installment, or other logical grouping with sensible hypermedia controls. Good API design is more about having a robust and diverse API design toolbox to choose from, than it is ever about the dogma that exists around any specific approach, philosophy, protocol, or venture capital fueled trend.
+
+Have A Clear Vision For Who Will Be Using Your APIs
+One significant mistake that API designers, developers, and architects make over and over again, is not having a clear vision of who will be using the APIs they are building. Defining, designing, delivering, and operating an API that is based upon what the provider wants over what the consumers will need. Using protocols, ignoring existing patterns, and adopting the latest trend that have nothing to do with what API consumers will be needing or capable of putting to work. Make sure you know your consumers, and consider giving them more control with query languages like GraphQL and Falcor, allowing them to define the type of experience they want. Work to have a clear vision of who will be consuming an API, even if you don’t know who they are. Starting simple with basic web APIs that help easily on-board new users who are unfamiliar with the domain and schema, while also allowing for the evolution give power-users who are in the know, more access, more control, and a stronger voice in the vision of what your APIs deliver or do not.
+
+Responding In Real Time, Not Just Upon Request
+A well oiled request and response API infrastructure is a critical base for any enterprise organization, however, a sign of a more mature, scalable API operations is always the presence of event-driven infrastructure including webhooks, streaming solutions, and multi-protocol, multi-message approaches to moving data and content around, and responding algorithmically based upon real time events occurring across the domains. Investing in event-driven infrastructure is not simply about using Kafka, it is about having a well-defined, well-honed web API base, with a suite of event-driven approaches in ones toolbox for also providing access to internal, partner, and last mile public and 3rd party resources using an appropriate set of protocols, and message formats. Something that might be as simple as a webhook subscription to changes, getting a simple HTTP push when something changes, to maintaining persistent HTTP connections to get an HTTP push when something changes, all the way to high volume HTTP and TCP connections to a variety of topical channels using Kafka, or other industrial grade API-driven solutions like gRPC, and beyond.
+
+Have A Reason For When You Switch Protocols
+There are a number of reasons why we switch protocols, moving off HTTP towards a TCP way of getting things done, with most reasoning being more emotional than they are ever technical. When I ask people why they went from HTTP APIs to Kafka, or Websockets, there is rarely a protocol based response. They did it because they needed things done in real time, through the existence of specific channels, or just simple because Kafka is how you do big data, or Websockets is how you do real time data. There wasn’t much scrutiny of who the consumers are, what was gained by moving to TCP, and what was lost by moving off HTTP. There is little awareness of the work Google has done around gRPC and HTTP/2, or what has happened recently around HTTP/3, formerly known as Quick UDP Internet Connections (QUIC). I’m no protocol expert, but I do grasp the role that these protocols play, and understand that the fundamental foundation of APIs is the web, and the importance of having a well thought out strategy when it comes to using the Internet for delivering on the API vision across the enterprise.
+
+Ensuring All Your API Infrastructure Is Reliable
+It doesn’t matter what your API design processes are, and what tools you are using if you cannot do it reliably. If you aren’t monitoring, testing, securing, and understanding performance, consumption, and limitations across ALL of your API infrastructure, then there will never be the right API solution. Web APIs, hypermedia, GraphQ, Webooks, Server-Sent Events, Websockets, Kafka, gRPC, and any other approach will always be inadequate if you cannot reliably operate them. Every tool within your API design toolbox should be able to be effectively deployed, thoughtfully managed, and coherently monitored, tested, secured, and delivered as a reliable service. If you don’t understand what is happening under the hood with any of your API infrastructure, out of your league technically, or kept in the dark through vendor magic, it should NOT be a tool in your toolbox, and be something that left in the R&amp;amp;D lab until you can prove that you can reliably deliver, support, scale, and evolve something that is in alignment with, and has purpose augmenting and working with your existing API infrastructure.
+
+Be Able To Deliver, Operate, And Scale Your APIs Anywhere They Are Needed
+One increasingly critical aspect of any tool in our API design is whether or not we can deploy and operate it within multiple environments, or find that we are limited to just a single on-premise or cloud location. Can your request and response web API infrastructure operate within the AWS, Google, or Azure clouds? Does it operate on-premise within your datacenter, locally for development, and within sandbox environments for partners and 3rd party developers? Where your APIs are deployed will have have just as big of an impact on reliability and performance as your approach to design and the protocol you re using. Regulatory and other regional level concerns may have a bigger impact on your API infrastructure, than using REST, GraphQL, Webhooks, Server-Sent Events, or Kafka. Being able to ensure you can deliver, operate, and scale APIs anywhere they are needed is fast becoming a defining characteristic of the tools that we possess in our API toolboxes.
+
+Making Sure All Your Enterprise Capabilities Are Well Defined
+The final, and most critical element of any enterprise API toolbox, is ensuring that all of your enterprise capabilities are defined as machine readable API contracts, using OpenAPI, AsyncAPI, JSON Schema, and other formats. API definitions should provide human and machine readable contracts for all enterprise capabilities that are in play. These contracts contribute to every stop along the API lifecycle, and help both API providers and consumers realize everything I have discussed in this post. OpenAPI provides what we need to define our request and response capabilities using HTTP, and Async provides what we need to define our event-driven capabilities, providing the basis for understanding what we are capable of delivering using our API toolboxes, and responding to via the hybrid integration solutions we’ve engineered, and automated using our event-driven solutions. Defining the surface area of our API infrastructure, but also the API operations that surround the enterprise capabilities we are enabling internally, with partners, and publicly via our enterprise API efforts.
+]]></content>
+    <id>http://apievangelist.com/2018/11/25/a-diverse-api-design-toolbox-driving-hybrid-integrations-in-an-event-driven-landscape/</id>
+  </entry><entry>
+    <title>The API Journey</title>
+    <link href="http://apievangelist.com/2018/11/23/the-api-journey/"/>
+    <updated></updated>
+    <content><![CDATA[
+I’ve been researching the API space full time for the last eight years, and over that time I have developed a pretty robust view of what the API landscape looks like. You can find almost 100 stops along what I consider to be the API lifecycle on the home page of API Evangelist. While not every organization has the capacity to consider all 100 of these stops, they do provide us with a wealth of knowledge generated throughout my own journey. Where I’ve been documenting what the API pioneers have been doing with their API operations, how startups leverage simple web API infrastructure, as well as how the enterprise has been waking up to the API potential in the last couple of years.
+
+Over the years I’ve tapped this research for my storytelling on the blog, and for the white papers and guides I’ve produced. I use this research to drive my talks at conferences, meetups, and the workshops I do within the enterprise. I’ve long had a schema for managing my research, tracking on the APIs, companies, people, tools, repos, news, and other building blocks I track across the API universe. Now, after a year of working with them on the ground at enterprise organizations, I’m partnering with Streamdata.io (SDIO) to continue productizing my approach to the API lifecycle, which we are calling Journey, or specifically SDIO Journey.
+
+Our workshops are broken into four distinct areas of the lifecycle:
+
+
+  Discovery (Goals, Definition, Data Sources, Discovery Sources, Discovery Formats, Dependencies, Catalog, Communication, Support, Evangelism) - Defining your digital resources are and what your enterprise capabilities are.
+  Design (Definitions, Design, Versioning, Webhooks, Event-Driven, Protocols, Virtualization, Testing, Landing Page, Documentation, Support, Communication, Road Map, Discovery) - Going API first, as well as API design first when it comes to the delivery of all of your API resources.
+  Development (Definitions, Discovery, Virtualization, Database, Storage, DNS, Deployment, Orchestration, Dependencies, Testing, Performance, Security, Communication, Support) - Considering what is needed to properly develop API resources at scale, and move from design to production.
+  Production (Definitions, Discovery, Virtualization, Authentication, Management, Logging, Plans, Portal / Landing Page, Getting Started, Documentation, Code, Embeddables, Licensing, Support, FAQs, Communication, Road Map, Issues, Change Log, Legal, Monitoring, Testing, Performance, Tracing, Security, Analysis, Maintenance) - Thinking about the production needs of an API operation, extracting the building blocks from successful APIs available across the web.
+  Outreach (Purpose, Scope, Defining Success, Sustaining Adoption, Communication, Support, Virtualization, Measurement, Structure) - Getting more structured around how you handle outreach around your APIs, whether they are internal, partner, or public API resources.
+  Governance (Design, Testing, Monitoring, Performance, Security, Observability, Discovery, Analysis, Incentivization, Competition) - Looking at how you can begin defining, measuring, analyzing, and providing guidance across API operations at the highest levels.
+
+
+We are currently working with several API service providers to deliver SDIO Journey workshops within their enteprise organizations, helping bring more API awareness to their pre-sales, sales, business, and executive groups. While also working to deliver independent Journey workshops for their customers, helping them see the bigger picture when it comes to the API lifecycle, but also begin establishing their own formal strategy for how they can execute on their own personal vision and version of it. Helping enterprise organization learn from the research I’ve gathered over the last eight years, and begin thinking more constructively, and being more thoughtful and organized about how they approach the delivery, iteration, and sustainment of APIs across the enterprise.
+
+I have turned SDIO Journey into a set of basic APIs that allow me to build, replicate, and deliver our Journey workshops. I’m preparing for a handful of workshops before the end of the year with Axway, and for API Days in Paris, but then in 2019, continue productizing and delivering these API workshops, helping encourage other enterprise organizations to invest more in their own API Journey, get more structured in how they think about the delivering of microservices across the enterprise. Helping them realize that the transformation they are going through right now isn’t going to stop. It is something that will be ongoing, and require their organization to learn to accept perpetual change and evolution in how they deliver the data, content, and algorithmic resources they’ll need to do business across the enterprise. While also evolving their understanding that all of this is more about people, business, and politics more than it will ever be about technology all by itself.
+
+If you have any questions about the SDIO Journey workshops we are doing, feel free to reach out, and I’ll get you more details about how to get involved.
+]]></content>
+    <id>http://apievangelist.com/2018/11/23/the-api-journey/</id>
+  </entry><entry>
+    <title>YAML API Management Artifacts From AWS API Gateway</title>
+    <link href="http://apievangelist.com/2018/11/23/api-management-yaml-artifacts-from-aws-api-gateway/"/>
+    <updated></updated>
+    <content><![CDATA[
+I’ve always been a big supporter of creating machine readable artifacts that help define the API lifecycle. While individual artifacts can originate and govern specific stops along the API lifecycle, they can also bring value when applied across other stops along the API lifecycle, and most importantly when it comes time to govern everything. The definition and evolution of individual API lifecycle artifacts is the central premise of my API discovery format APIs.json–which depends on there being machine readable elements within the index of each collection of APIs being documented, helping us map out the entire API lifecycle.
+
+OpenAPI provides us with machine readable details about the surface area of our API which can be used throughout the API lifecycle, but it lacks other details about the surface area of our API operations. So when I do come across interesting approaches to extending the OpenAPI specification which are also injecting a machine readable artifact into the OpenAPI that support other stops along the API lifecycle, I like to showcase what they are doing. I’ve become very fond of one within the OpenAPI export of any AWS API Gateway deployed API I’m working with, which provides some valuable details that can be used as part of both the deployment and management stops along the API lifecycle:
+
+x-amazon-apigateway-integration:
+	uri: &quot;http://example.com/path/to/the/code/behind/&quot;
+	responses:
+		default:
+			statusCode: &quot;200&quot;
+	requestParameters:
+		integration.request.querystring.id: &quot;method.request.path.id&quot;
+	passthroughBehavior: &quot;when_no_match&quot;
+	httpMethod: &quot;GET&quot;
+	type: &quot;http&quot;
+
+This artifact is associated with each individual operation within my OpenAPI. It tells the AWS gateway how to deploy and manage my API. When I first import this OpenAPI into the gateway, it will deploy each individual path and operation, then it helps me manage it using the rest of the available gateway features. From this OpenAPI definition I can design, then autogenerate and deploy the code behind each individual operation, then deploy each individual path and operation to the AWS API Gateway and map them to the code behind. I can do this for custom APIs I’ve deployed, as well as Lambda brokered APIs–I prefer the direct way, because it is still easier, stabler, more flexible and cost effective for me to write the code behind each of my API operations, than to go full serverless.
+
+However, this artifact demonstrates for me the importance of artifacts associated with each stop along the API lifecycle. This little bit of OpenAPI extended YAML gives me a significant amount of control when it comes to the automation of deploying and managing my APIs. There are even more properties available for other layers of the AWS Gateway not included in this example, but is something that I will keep mapping out. Having these types of machine readable artifacts present within our OpenAPI specifications for describing the surface area of our APIs, as well as present within our APIs.json indexes for describing the surface area of our API operations will be critical to further automating, scaling, and defining the API lifecycle as it exists across the enterprise.
+]]></content>
+    <id>http://apievangelist.com/2018/11/23/api-management-yaml-artifacts-from-aws-api-gateway/</id>
+  </entry><entry>
+    <title>What Does The Next Chapter Of Storytelling Look Like For API Evangelist?</title>
+    <link href="http://apievangelist.com/2018/11/21/what-does-the-next-chapter-of-storyteling-look-like-for-api-evangelist/"/>
+    <updated></updated>
+    <content><![CDATA[
+I find myself refactoring API Evangelist again this holiday season. Over the last eight years of doing API Evangelist I’ve had to regularly adjust what I do to keep it alive and moving forward. As I  close up 2018, I’m finding the landscape shifting underneath me once again, pushing me to begin considering what the next chapter of API Evangelist will look like. Pushing me to adjust my presence to better reflect my own vision of the world, but hopefully also find balance with where things are headed out there in the real world.
+
+I started API Evangelist in July of 2010 to study the business of APIs. As I was researching things in 2010 and 2011 I first developed what I consider to be the voice of the API Evangelist, which continues to be the voice I use in my storytelling here in 2018. Of course, it is something that has evolved and matured over the years, but I feel I have managed to remain fairly consistent in how I speak about APIs throughout the journey. It is a voice I find very natural to speak, and is something that just flows on some days whether I want it to or not, but then also something I can’t seem to find at all on other days. Maintaining my voice over the last eight years has required me to constantly adjust and fine tune, perpetually finding the frequency required to keep things moving forward.
+
+First and foremost, API Evangelist is about my research. It is about me learning. It is about me crafting stories that help me distill down what I’m learning, in an attempt to articulate to some imaginary audience, which has become a real audience over the years. I don’t research stuff because I’m being paid (not always true), and I don’t tell stories about things I don’t actually find interesting (mostly true). API Evangelist is always about me pushing my skills forward as a web architect, secondarily about me making a living, and third about sharing my work publicly and building an audience–in short, I do API Evangelist to 1) learn and grow, 2) pay the bills, and 3) cultivate an audience to make connections.
+
+As we approach 2019, I would say my motivations remain the same, but there is a lot that has changed in the API space, making it more challenging for me to maintain the same course while satisfying all these areas in a meaningful way. Of course, I want to keep learning and growing, but I’d say a shift in the API landscape toward the enterprise is making it more challenging to make a living. There just aren’t enough API startups out there to help me pay the bills anymore,  and I’m having to speak and sell to the enterprise more. To do this effectively, a different type of storytelling strategy is required to keep the paychecks coming in. Something I don’t think is unique to my situation, and is something that all API focused efforts are facing right now, as the web matures, and the wild west days of the API come to a close. It was fun while it lasted–yee haw!!
+
+In 2019, the API pioneers like SalesForce, Twitter, Facebook, Instagram, Twilio, SendGrid, Slack, and others are still relevant, but it feels like API storytelling is continuing it’s migration towards the enterprise. Stories of building an agile, scrappy startup using APIs isn’t as compelling as they used to be. They are being replaced by stories of existng enterprise groups become more innovative, agile, and competitive in a fast changing digital business landscape. The technology of APIs, the business of APIs, and the stories that matter around APIs have all been caught up in the tractor beam of the enterprise. In 2010, you did APIs if you were on the edge doing a startup, but by 2013 the enterprise began tuning into what is going on, by 2016 the enterprise responded with acquisitions, and by 2018 we are all selling and talking to the enterprise about APIs.
+
+Despite what many people might believe, I’m not anti-enterprise. I’m also not pro-startup. I’m for the use of web infrastructure to deliver on ethical and sensible private sector business objectives, strengthen expectations of what is possible in the public sector, while holding both sectors accountable to each other. I understand the enterprise, and have worked there before. I also understand how it is evolving over the last eight years through API discussions I have been having had with enterprise folks, workshops I’ve conducted within various public and private sector groups, and studying this latest shift in technology adoption across large organizations. Ultimately, I am very skeptical that large business enterprises can adapt, decouple, evolve, and embrace API and microservice principles in a way that will mean success, but I’m interested in helping educate enterprise teams, and assist them in crafting their enterprise-wide API strategy, and contribute what I can to incentivize change within these large organizations.
+
+A significant portion of my audience over the last eight years is from the enterprise. However, I feel like these are the people within the enterprise who have picked up their heads, and consciously looked for new ways of doing things. My audience has always been fringe enterprise folks operating at all levels, but API Evangelist does not enjoy mainstream enterprise adoption and awareness. A significant portion of my storytelling speaks to the enterprise, but I recognize there is a portion of it that scares them off, and doesn’t speak to them at all. One of the questions I am faced with is around what type of tone do I strike as the API Evangelist in this next chapter? Will it be a heavy emphasis on the politics of APIs, or will it be more about the technology and business of APIs? To continue learning and growing in regards to what is happening on the ground with APIs, I’m going to need enterprise access. To continue making a living doing APIs, I’m going to need more enterprise access. The question for me is always around how far I put my left foot in the enterprise or government door, and how far I keep my right found outside in the real world–where there is no perfect answer, and is something that requires constant adjustment.
+
+Another major consideration for me is always around authenticity. An area I posses a natural barometer in, and while I have a pretty high tolerance for API blah blah blah, and writing API industry white papers, when I start getting into areas of technology, business, or politics where I feel like I’m not being authentic, I automatically begin shutting down. I’ve developed a bulshit-o-meter over the years that helps me walk this line successfully. I’m confident I can maintain and not sell out here. My challenge is more about continuing to do something that matters to someone who will continue investing in my work, and having relevance to the audience I want to reach, and less about keeping things in areas that I’m interested in. I will gladly decline conversations, relationships, and engagements in unethical areas, shady government or business practices, avoid classified projects, and pay for play concepts along the way. Perpetually pushing me to always strike a balance between something that interests me, that pushes my skills, bring value to the table, has a meaningful impact, enjoys a wide reach, while also paying the bills. Which reflects what I’m thinking through as I write this blog post, demonstrating how I approach my own professional development.
+
+So, what does the next chapter of storytelling look like for API Evangelist? I do not know. I know it will have more of a shift towards the enterprise. Which means a heavy emphasis on the technology and business of APIs. However, I’m also thinking deeply about how I present the political side of the API equation, and how I voice my opinions and concerns when it comes to privacy, security, transparency, observability, regulation, surveillance, and ethics that swirls around APIs. I’m guessing they can still live side by side in some way, I just need to be smarter about the politics of it, and less rantier and emotional. Maybe separate things into a new testament for the enterprise that is softer, wile also maintaining a separate old testament for the more hellfire and brimstone. IDK. It is something I’ll continue mulling over, and make decisions around as I continue to shift things up here at API Evangelist. As you can tell my storytelling levels are lower than normal, but my traffic is still constant, reflecting other shifts in my storytelling that have occurred in the past. I’ll be refactoring and retooling over the holidays, and no doubt have more posts about the changes. If you have any opinions on what value you get from API Evangelist, and what you’d like to see present in the next chapter, I’d love to hear from you in the comments below, on Twitter, or personally via email.
+]]></content>
+    <id>http://apievangelist.com/2018/11/21/what-does-the-next-chapter-of-storyteling-look-like-for-api-evangelist/</id>
+  </entry><entry>
+    <title>The Ability To Link To API Service Provider Features In My Workshops And Storytelling</title>
+    <link href="http://apievangelist.com/2018/11/16/the-ability-to-link-to-api-service-provider-features-in-my-workshops-and-storytelling/"/>
+    <updated></updated>
+    <content><![CDATA[
+All of my API workshops are machine readable, driven from a central YAML file that provides all the content and relevant links I need to deliver what I need during a single, or multi-day API strategy workshop. One of the common elements of my workshops are links out to relevant resource, providing access to services, tools, and other insight that supports whatever I’m covering in my workshop. There are two parts to this equation, 1) me knowing to link to something, and 2) being able to link to something that exists.
+
+A number of API services and tooling I use don’t follow web practices and do not provide any easy way to link to a feature, or other way of demonstrating the functionality that exists. The web is built on this concept, but along the way within web and mobile applications, we’ve have seemed to lose our understanding for this fundamental concept. There are endless situations where I’m using a service or tool, and think that I should reference in one of my workshops, but I can’t actually find any way to reference as a simple URL. Value buried within a JavaScript nest, operating on the web, but not really behaving like you depend on the web.
+
+Sometimes I will take screenshots to illustrate the features of a tool or service I am using, but I’d rather have a clean URL and bookmark to a specific feature on a services page. I’d rather give my readers, and workshop attendees the ability to do what I’m talking about, not just hear me talk about it. In a perfect world, every feature of a web application would have a single URL to locate said feature. Allowing me to more easily incorporate features into my storytelling and workshops, but alas many UI / UX folks are purely thinking about usability and rarely thinking about instruct-ability, and being able to cite and reference a feature externally, using the fundamental building blocks of the web.
+
+I understand that it isn’t easy for all application developers to think externally like this, but this is why I tell stories like this. To help folks think about the externalities of the value they are delivering. It is one of the fundamental features of doing business on the web–you can link to everything. However, I think we often forgot what makes the web so great, as we think about how to lock things down, erect walled gardens around our work, something that can quickly begin to work against us. This is why doing APIs is so important as it can helps us think outside of the walls of the gardens we are building, and consider someone else’s view of the world. Something that can give us the edge when it comes to reaching a wider audience with whatever we are creating.
+]]></content>
+    <id>http://apievangelist.com/2018/11/16/the-ability-to-link-to-api-service-provider-features-in-my-workshops-and-storytelling/</id>
+  </entry><entry>
+    <title>Flickr And Reconciling My History Of APIs Storytelling</title>
+    <link href="http://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/"/>
+    <updated></updated>
+    <content><![CDATA[
+Flickr was one of the first APIs that I profiled back in 2010 when I started API Evangelist. Using their API as a cornerstone of my research, resulting in their API making it into my history of APIs storytelling, continuing to be a story I’ve retold hundreds of times in the conversations I’ve had over the eight years of being the API Evangelist. Now, after the second (more because of Yahoo?) acquisition, Flickr users are facing significant changes regarding the number of images we can store on the platform, and what we will be charged for using the platform–forcing me to step back, and take another look at the platform that I feel has helped significantly shape the API space as we know it.
+
+When I step back and think about Flickr, it’s most important contribution to the world of APIs was all about the resources it made available. Flickr was the original image sharing API, powering the growing blogosphere at the beginning of this century. Flickr gave us a simple interface for humans in 2004, and an API for other applications just six months later, that provided us all with a place to upload the images we would be using across our storytelling on our blogs. Providing the API resources that we would be needed to power the next decade of storytelling via our blogs, but also set into the motion the social evolution of the web, demonstrating that images were an essential building block of doing business on the web, and in just a couple of years, on the new mobile devices that would become ubiquitous in our lives.
+
+Flickr was an important API resource, because it provided access to an important resource–our images. The API allowed you to share these meaningful resources on your blog, via Facebook and Twitter, and anywhere else you wanted. In 2005, this was huge. At the time, I was working to make a shift from being an developer lead, to playing around with side businesses built using the different resources that were becoming available online via simple web APIs. Flickr quickly became a central actor in my digital resource toolbox, and I was using it regularly in my work. As an essential application, Flickr quickly got out of my way by offering an API. I would still use the Flickr interface, but increasingly I was just publishing images to Flickr via the API, and embedding them in blogs, and other marketing, becoming what we began to call social media marketing, and eventually was something that I would rebrand as API Evangelist while making it more about the tooling I was using, than the task I was accomplishing.
+
+After thinking about Flickr as a core API resource, next I always think about the stories I’ve told about Flickr’s Caterina Fake who coined the phase, “business development 2.0”. As I tell it, back in the early days of Flickr, the team was getting a lot of interest in the product, and unable to respond to all emails and phone calls. They simply told people to build on their API, and if they were doing something interesting, they would know, because they had the API usage data. Flickr was going beyond the tech and using an API to help raise the bar for business development partnerships, putting the burden on the integrator to do the heavy lifting, write the code, and even build the user base, before you’d get the attention of the platform. If you were building something interesting, and getting the attention of users, the Flickr team would be aware of it because of their API management tooling, and they would reach out to you to arrange some sort of partner relationship.
+
+
+It makes for a good story. It resonates with business people. It speaks to the power of doing APIs. It is also enjoys a position which omits so many other negative aspects of doing startups, which as a technologist becomes too easy to look the other way when you are just focused on the tech, and as a business leader after the venture capital money begins flowing. Business development 2.0 has a wonderful libertarian, pull yourself up by your bootstrap ring to it. You make valuable resources available, and smart developers will come along and innovate! Do amazing things you never thought of! If you build it, they will come. Which all feeds right into the sharecropping, and exploitation that occurs within ecosystems, leading to less than ethical API providers poaching ideas, and thinking that it is ok to push public developers to work for free on their farm. Resulting in many startups seeing APIs as simply a free labor pool, and source of free road map ideas, manifesting concepts like the “cloud kill zone”. Business development 2.0 baby!!
+
+Another dimension of this illness we like to omit is around the lack of a business model. I mean, the shit is free! Why would we complain about free storage for all our images, with a free API? It is easier for us to overlook the anti-competitive approaches to pricing, and complain down the road when each acquisition of the real product (Flickr) occurs, than it is to resist companies who lack a consumer level business model, simply because we are all the product. Flickr, Twitter, Facebook, Gmail, and other tools we depend on are all free for a reason. Because they are market creating services, and revenue is being generated at other levels out of our view as consumers, or API developers. We are just working on Maggie’s Farm, and her pa is reaping all the benefit. When it come’s to Flickr, Maggie and her {a cashed out a long time ago, and the farm keeps getting sold and resold, all while we still keep working away in the soil, giving them our digital bits that we’ve cultivate there, until conditions finally become unacceptable enough to run us off.
+
+I’ve begun moving off of Flickr a couple years ago. I stopped using them for blog photo hosting in 2010. I stopped uploading photos there regularly over the last couple years. The latest crackdown doesn’t mean much to me. It will impact my storytelling to potentially lose such an amazing resource of openly licensed photos. However, I’ve saved each photo I use, and it’s attribution locally–hopefully my attribution link doesn’t begin to 404 at some point. Hopefully other openly licensed photo collections emerge on the horizon, and ideally SmugMug doesn’t do away with openly licensed treasure trove they are stewards of now. The latest acquisition and business model shift occurring across the Flickr platform doesn’t hit me too hard, but the situation does give me an opportunity to step back and reassess my API storytelling, and the role that Flickr plays in my API Evangelist narrative. Giving me another opportunity to eliminate bullshit and harmful myths from my storytelling and myth making–which I feel like is getting pretty close to leaving me with nothing left to tell when it comes to APIs.
+
+In the end, if I just focus purely on the tech, and ignore the business and politics of APIs, I can keep telling these bullshit. This is the real Flickr lesson for me. I’d say there is two reasons we perpetuate stories like this. One, “because we just didn’t know any better”. Which is pretty weak. Two, it is how capitalism works. It is why us dudes, especially us white dudes thrive so well in a Silicon Valley tech libertarian world, because this type of myth making benefits us, even when it repeatedly sets us up for failure. This is one of the things that makes me throw up a little (a lot) in my mouth when I think about the API Evangelist persona I’ve created. This entire reality makes it difficult for me to keep doing this API Evangelist theater each day. APIs are cool and all, but when they are wielded as part of this larger money driven stream of consciousness, we (individuals) are always going to lose. In the end, why the fuck do I want to be a mouthpiece for this kind of exploitation. I don’t.
+
+Photo Credit: Kin Lane (The First Photo I Uploaded to Flickr)
+]]></content>
+    <id>http://apievangelist.com/2018/11/06/flickr-and-reconciling-my-history-of-api-storytelling/</id>
+  </entry><entry>
+    <title>The Impact Of Travel On Being The API Evangelist</title>
+    <link href="http://apievangelist.com/2018/11/01/the-impact-of-travel-on-being-the-api-evangelist/"/>
+    <updated></updated>
+    <content><![CDATA[
+Travel is an important part of what I do. It is essential to striking up new relationships, and reenforcing old ones. It is important for me to get out of my bubble, expose myself to different perspectives, and see the world in different ways. I am extremely grateful for the ability to travel around the US, and the world the way that I do. I am also extremely aware of the impact that travel has on me being the API Evangelist–the positive, the negative, and the general shift in my tone in storytelling after roaming the world.
+
+One of the most negative impact that traveling has on my world is on my ability to complete blog posts. If you follow my work, when I’m in the right frame of mind, I can produce 5-10 blog posts across the domains I write for, on a daily basis. The words just do not flow in the same way when I am on the road. I’m not in a storyteller frame of mind. At least in the written form. When I travel, I am existing in a more physical and verbal sense as the API Evangelist, something that doesn’t always get translated into words on my blog(s). This is something that is ok for short periods of time, but after extended periods of time on the road, it is something that will begin to take a toll on my overall digital presence.
+
+After the storytelling impact, the next area to suffer when I am on the road, is my actual project work. I find it very difficult to write code, or think at architectural levels while on the road. I can flesh out and move forward smaller aspects of the projects I’m working on, but because of poor Internet, packed schedules, and the logistics of being on the road, my technical mind always suffers. This is something that is also related to the impact on my overall storytelling. Most of the stories I publish on a daily basis evolve out of me moving forward actual projects as part of my API Evangelist work. If I am not actually developing a strategy, designing a specific API, or working on API definitions, discovery, governance, or one of the loftier aspects of my work, the chances I’m telling interesting stories will significantly be diminished.
+
+Once I land back home, one of the first orders of business is to unclog the pipes with a “travel is hard” story. ;-) Pushing my fingers to work again. Testing out the connections between my brain and my fingers. While I also open up my IDE, command line, API universe dashboard, and begin refining my paper notes about what the fuck I was actually doing before I got on that airplane. Make it all work again is tough. Even the simplest of tasks seem difficult, and many of the projects I’m working on just seem too big to even know where to even begin. However, with a little effort, focus, and lack of a plane, train, or meeting to be present for, I’ll find my way forward again, slowly picking back up the momentum I enjoy as the API Evangelist. Researching, coding, telling stories, and pushing forward my projects so that they can have an impact on the space, and continue paying the bills to keep this vessel moving forward in the direction that I want.
+]]></content>
+    <id>http://apievangelist.com/2018/11/01/the-impact-of-travel-on-being-the-api-evangelist/</id>
+  </entry><entry>
+    <title>What Are Your Enterprise API Capabilities?</title>
+    <link href="http://apievangelist.com/2018/10/22/what-are-your-enterprise-api-capabilities/"/>
+    <updated></updated>
+    <content><![CDATA[
+I spend a lot of time helping enterprise organizations discover their APIs. All of the organizations I talk to have trouble knowing where all of their APIs are–even the most organized of them. Development and IT groups have just been moving too fast over the last decade to know where all of their web services, and APIs are. Resulting in large organizations not fully understanding what all of their capabilities are, even if it is something they actively operate, and may drive existing web or mobile applications.
+
+Each individual API within the enterprise represents a single capability. The ability to accomplish a specific enterprise tasks that is valuable to the business. While each individual engineer might be aware of the capabilities present on their team, without group wide, and comprehensive API discovery across an organization, the extent of the enterprise capabilities is rarely known. If architects, business leadership, and any other stakeholder can’t browse, list, search, and quickly get access to all of the APIs that exist, the knowledge of the enterprise capabilities will not be able to be quantified or articulated as part of regular business operations.
+
+In 2018, the capabilities of any individual API is articulated by it’s machine readable definition. Most likely OpenAPI, but could also be something like API Blueprint, RAML, or other specification. For these definitions to speak to not just the technical capabilities of each individual API, but also the business capabilities, they will have to be complete. Utilizing a higher level strategic set of tags that help label and organize each API into a meaningful set of business capabilities that best describes what each API delivers. Providing a sort of business capabilities taxonomy that can be applied to each API’s definition and used across the rest of the API lifecycle, but most importantly as part of API discovery, and the enterprise digital product catalog.
+
+One of the first things I ask any enterprise organization I’m working with upon arriving, is “do you know where all of your APIs are?” The answer is always no. Many will have a web services or API catalog, but it almost always is out of date, and not used religiously across all groups. Even when there are OpenAPI definitions present in a catalog, they rarely contain the meta data needed to truly understand the capabilities of each API. Leaving developer and IT operations existing as black holes when it comes to enterprise capabilities, sucking up resources, but letting very little light out when it comes to what is happening on the inside. Making it very difficult for developers, architects, and business users to articulate what their enterprise capabilities are, and often times reinventing the wheel when it comes to what the enterprise delivers on the ground each day.
+]]></content>
+    <id>http://apievangelist.com/2018/10/22/what-are-your-enterprise-api-capabilities/</id>
+  </entry><entry>
+    <title>Join Me For A Fireside Chat At The Paris API Meetup This Wednesday</title>
+    <link href="http://apievangelist.com/2018/10/22/join-me-for-a-fireside-chat-at-the-paris-api-meetup-this-week/"/>
+    <updated></updated>
+    <content><![CDATA[
+I am in Europe for most of October, and while I am in Paris we thought it would be a good idea to pull together a last minute API Meetup. Romain Simiand (@RomainSimiand), the API Evangelist at PeopleDoc was gracious enough to help pull things together, and the Streamdata.io team is stepping up to help with food and drink. Pulling together a last minute gathering at PeopleDoc in Paris, and bringing me on stage to talk about the technology, business, and politics of APIs, well as about some of my recent work on API discovery, and event-driven architecture.
+
+You can find more details on the Paris API Meetup site, with directions on how to find PeopleDoc. Make sure you RSVP so that we know you are coming, and of course, please help spread the word. We are over 30 people attending so far, but I think we can do better. I’m happy to get on stage and help drive the API discussion, but I’d prefer to have a healthy representation of the Paris API community asking questions, helping me understand what is happening across the area when it comes to APIs. I always have plenty of knowledge to share, but it becomes exponentially more valuable when people on the ground within communities are asking questions, and making it relevant to what is happening within the day to day operations of companies in the local area.
+
+While I enjoy doing conference keynotes and panels, my favorite format of event is the Meetup. Bringing together less than 100 people have a discussion about APIs. I always find that I learn the most in this environment, and able to actually engage with developers and business folks about what really matters when it comes to APIs. The larger the audience the more it is just about me broadcasting my message, and when it is a smaller and more intimate venue, I feel like I can better connect with people. In my opinion, this is how all API events should be–small, intimate, and a real world conversation about APIs. Not just an API pundit pushing their thoughts out, ensuring that all participants feel like they are actually part of the conversation.
+
+If you are in the Paris region, or can make the time to hope on a plane or train and make it to Paris this Wednesday, I love to hang out. If you can’t make it, I’ll be back for API Days Paris in December, but it will be a bigger event, and it might be more difficult to carve out the time to hang. So, bring your API questions, and come over to the PeopleDoc office this Wednesday, and we’ll have a proper discussion about the technology, business, or politics of APIs. Helping drive the API discussion going on in France, continuing to push it forward. Making France a leader when it comes to doing business in the growing API economy. I look forward to seeing you all in Paris this week!
+]]></content>
+    <id>http://apievangelist.com/2018/10/22/join-me-for-a-fireside-chat-at-the-paris-api-meetup-this-week/</id>
+  </entry><entry>
+    <title>I Participated In An API Workshop With The European Commission Last Week</title>
+    <link href="http://apievangelist.com/2018/10/22/i-particiated-in-an-api-workshop-with-the-european-commission-last-week/"/>
+    <updated></updated>
+    <content><![CDATA[
+I was in Ispra, Italy last week for a two day workshop on APIs with the European Commission. The European Commission’s DG CONNECT together with the Joint Research Centre (JRC) launched a study with the purpose to gain further understanding of the current use of APIs in digital government and their added value for public services, and they invited me to participate. I was joined by Mehdi Medjaoui (@medjawii), David Berlind (@dberlind), and Mark Boyd (@mgboydcom), along with EU member states, and European cities, to help provide feedback and strategies for consideration by the commission.
+
+This European Commission study is looking at “innovative ways to improve interconnectivity of public services and reusability of public sector data, including dynamic data in real-time, safeguarding the data protection and privacy legislation in place.” Looking to:
+
+
+  assess digital government APIs landscape and opportunities to support the digital
+  transformation of public sector
+  identify the added value for society and public administrations of digital government APIs (key enablers, drivers, barriers, potential risks and mitigates)
+  define a basic Digital Government API EU framework and the next steps
+
+
+David Berlind from ProgrammableWeb gave a couple talks, with myself, Mehdi, and Mark following up. The rest of the time spent was hearing presentations from EU member states, and other municipal efforts–learning more about the successes and the challeges they face. What I heard reflected what I’ve experienced in federal government, as well as city, county, and state level API efforts I’ve participated in across the United States. &amp;lt;p&amp;gt;&amp;lt;/p&amp;gt;All groups were struggling to win over leaders and the public, modernize legacy system, build on top of open data efforts, and push forward the conversation using a modern approach to delivering web APIs.
+
+I am eager to see what comes out of the European Commission API project. While there are still interesting things happening in the United States, I feel like there is an opportunity for the EU to leap frog us when it comes to meaningful API adoption within government. While many cities, counties, and states are still investing in open data and APIs, the investment at the federal level has stagnated with the current administration. There are still plenty of agencies moving forward the API conversation, but the leadership is coming from the GSA, and from within individual agencies, not from the executive branch. What is happening at the European Commission has the potential to be adopted by all the countries in the European Union, and making a pretty significant impact in how government works using APIs.
+
+I’ll be staying in touch with the group leading the effort, and making myself available for future gatherings. There was talk of holding another gathering at API Days in Paris, and I am sure there will be further workshops as the project evolves. Clearly the European Commission has a huge amount of work ahead of them, but the fact that they are coming together like this, and highlighting, as well as learning from the existing work going on across the member states, shows significant promise. I made it clear as we were wrapping up regarding the importance of continued storytelling between the member states, as well as out of the European Commission. Emphasizing it will take a regular drumbeat of activity, and sharing of the work in real-time, for all of this to evolve as they desire. However, with the right cadence, the API effort out of Europe could make a pretty significant impact across the EU, and beyond.
+]]></content>
+    <id>http://apievangelist.com/2018/10/22/i-particiated-in-an-api-workshop-with-the-european-commission-last-week/</id>
+  </entry>
+</feed>

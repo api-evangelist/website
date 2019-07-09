@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Evangelist </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <section>
+	<div class="content">
+
+	<h3>The API Evangelist Blog</h3>
+	<p>This blog is dedicated to understanding the world of APIs, exploring a wide range of topics from design to deprecation, and spanning the technology, business, and politics of APIs. <a href="https://github.com/kinlane/api-evangelist" target="_blank">All of this runs on Github, so if you see a mistake, you can either fix by submitting a pull request, or let us know by submitting a Github issue for the repository</a>.</p>
+	<center><hr style="width: 75%;" /></center>
+	
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/28/new-oauth-toolkit-from-layer-7-technologies/">New OAuth Toolkit from Layer 7 Technologies</a></h3>
+        <span class="post-date">28 Jul 2011</span>
+        <a title="OAuth" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=184"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/OAuth.png" alt="" width="150" align="right" /></a><a title="Layer 7 Technologies" href="http://www.layer7tech.com/">Layer 7 Technologies</a> introduced a new <a title="OAuth Toolkit" href="http://www.layer7tech.com/products/oauth-toolkit">OAuth Toolkit</a>, ageneralized framework for handling a broad range of OAuth scenarios across cloud, web and mobile applications.<p></p>
+<a title="OAuth" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=184">OAuth</a> is a simple way to publish and interact with protected data, and is a popular method to allow secure API authorization, enabling websites to provide a more streamlined user login experience with the additional benefits of enhanced privacy and security.<p></p>
+The Layer 7 OAuth Toolkit is the first solution of its kind that enables enterprises to control policy and identity aspects of many different OAuth token operations, a capability that is particularly important as enterprises increasingly use OAuth to authorize access to APIs in cloud settings, said Phil Walston, vice president of products at Layer 7 Technologies. By allowing enterprises to seamlessly manage their OAuth implementations as the standard evolves, the toolkit simplifies operations while providing rigorous security and control.<a title="Layer 7 Technologies" href="http://www.layer7tech.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/layer7-logo.png" alt="" width="250" align="right" /></a><p></p>
+Features of the Layer 7 OAuth Toolkit are:
+<ul class="mainlist">
+	<li>Policy and identity controls to handle HMAC-SHA1 or RSA-SHA1 signature methods, SAML and OAuth WRAP</li>
+	<li>Mix and match implementations of OAuth with SAML</li>
+	<li>Ability to drop in new signature and credential methods without changing APIs</li>
+</ul>
+Layer 7's new OAuth Toolkit supports a variety of standards, including OAuth 1a, OAuth 2.0, SAML 1.1, SAML 2.0, WS-Trust, <a title="REST" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=196">REST</a> and <a title="JSON" href="http://blog.apievangelist.com/2011/01/27/api-technology-json/">JSON</a>.<p></p>
+Layer 7 will be demonstrating its OAuth Toolkit at the Layer 7 Hospitality Suite at <a title="Gartners Catalyst Conference" href="http://www.gartner.com/technology/summits/na/catalyst/">Gartner's Catalyst Conference</a> at the San Diego Hilton Bayfront, Aqua Room 311, from 6:00 - 9:00 p.m., July 26-29.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/28/new-oauth-toolkit-from-layer-7-technologies/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/28/api-stack-audio-transcription-with-quicktate-api/">API Stack - Audio Transcription with Quicktate API</a></h3>
+        <span class="post-date">28 Jul 2011</span>
+        <a href="http://quicktate.com/" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/quicktate/quicktate-logo.jpg" alt="" width="200" align="right" /></a><a href="http://quicktate.com/" target="_blank">Quicktate</a> provides an XML-RPC API audio transcription, using API keys for authentication.
+<p></p>Using the <a href="http://quicktate.com/quicktate/api.php">Quicktate API</a>, developers can transcribe .wav or .mp3 audio files into text. Quicktate API supports transcribing in English or Spanish.
+<p></p>Quicktate API charges 1 1/4 cents per for general transcriptions, 1 1/2 cents for legal, and 2 cents per word for medical transcriptions.
+<p></p><a href="http://quicktate.com/quicktate/api.php">Quicktate API for audio transcription</a> is a perfect tool for the API Stack.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/28/api-stack-audio-transcription-with-quicktate-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/25/inrix-raises-37-million-to-deliver-traffic-data/">INRIX Raises $37 Million to Deliver Traffic Data</a></h3>
+        <span class="post-date">25 Jul 2011</span>
+        <p>
+     <a href="http://www.inrix.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/inrix/inrix-logo.gif" alt="" width="200" align="right" /></a><a href="http://www.inrix.com/">INRIX�</a>, an international provider of traffic information, and driving services, <a title="announced a commitment of $37 million in funding" href="http://www.inrix.com/pressrelease.asp?ID=133">announced a commitment of $37 million in funding</a> led by Kleiner, Perkins, Caufield &amp; Byers' (KPCB) Green Growth Fund and August Capital.
+</p>
+<p>
+     The investment will be used as part of a continued global expansion and R&amp;D efforts focused on the company's in-car, location based services (LBS) and mobile applications businesses.
+</p>
+<p>
+     With over 150 industry-leading customers across 8 different distribution channels, a profitable business, and nearly 90 percent compound annual revenue growth over the past 3 years, INRIX did not need to raise capital, said Bryan Mistele, president and CEO of INRIX. However, given new market opportunities including the rapid adoption of our premium traffic services, increasing demand from automakers for global solutions and the explosion of LBS on mobile devices, we're accelerating several investments designed to firmly cement our global leadership position.
+</p>
+<p>
+     The investment by KPCB Green Growth Fund and August Capital show the growth of the LBS data market, and resulting APIs that gather and deliver this data to mobile applications.
+</p>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/inrix/inrix-traffic-mobile-applications.jpg" alt="" width="300" align="right" />Traffic congestion costs the U.S. economy upwards of $155 billion dollars annually. Last year alone, US drivers wasted 3.9 billion gallons of fuel sitting idle in traffic, and the US is a small part of a much larger and growing global traffic problem, commented Michael Linse, partner at Kleiner, Perkins, Caufield &amp; Byers. We believe that INRIX is uniquely positioned to help improve the efficiency of our cars in ways that reduce fuel consumption and improve sustainability for all.
+</p>
+<p>
+     We are experiencing a convergence of automotive and mobile efforts that leverage the latest smart devices, data analytics and connectivity technologies that improve how the world's one billion drivers travel from place to place.
+</p>
+<p>
+     The use of crowd-sourced traffic information from mobile devices, vehicles, and sensors on the road can provide continuous real-time speed, congestion, accident data that can provide a unique understanding of traffic events from school schedules, concerts, sporting events and everyday commutes to deliver highly accurate real-time, predictive and historical traffic information.
+</p>
+<p>
+     APIs are the "vehicle" in which data will travel from cars, phones, and sensors and to companies like INRIX, and investors are started to see the huge potential in this massively growing market.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/25/inrix-raises-37-million-to-deliver-traffic-data/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/24/deploy-and-monetize-amazon-simpledb-data-with-api-from-webservius/">Deploy and Monetize Amazon SimpleDB Data with API from WebServius</a></h3>
+        <span class="post-date">24 Jul 2011</span>
+        <a title="Amazon SimpleDB" href="http://aws.amazon.com/simpledb/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/AWS_LOGO_CMYK.jpg" alt="" width="200" align="right" /></a><a title="Amazon SimpleDB" href="http://aws.amazon.com/simpledb/">Amazon SimpleDB</a> is a highly available, flexible, and scalable key-value data store built in the clouds.
+<p></p><a title="WebServius" href="http://blog.apievangelist.com/2011/07/18/webservius-api-service-provider/">WebServius</a> provides self-service API deployment and management solutions, that allow you to monetize your data.
+<p></p>By combining Amazon SimpleDB and WebServius you can quickly deploy and monetize any dataset using an API.
+<p></p>You start by uploading your data to Amazon SimpleDB, then create a WebServius account and connect it to your SimpleDB account.
+<p></p><a title="WebServius" href="http://blog.apievangelist.com/2011/07/18/webservius-api-service-provider/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/webservius/webservius-logo.png" alt="" width="200" align="right" /></a>Using WebServius you set any pricing rules you want, such as selling the data at $0.001 per row. You instantly get a commercial-grade pay-per-use API complete with a user signup page, a system for issuing API keys, and billing capabilities.
+<p></p>Amazon SimpleDB gives you a way to store and scale access to your data, while WebServius provides way to open up access, while also securing and monetizing it through an RESTful API that developers will understand and know how to use.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/24/deploy-and-monetize-amazon-simpledb-data-with-api-from-webservius/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/24/could-you-be-an-api-evangelist/">Could you be an API Evangelist?</a></h3>
+        <span class="post-date">24 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-tag-cloud-1.png" alt="" width="325" align="right" />In the summer of 2010 I was looking to reinvent my career. I was looking for a new direction. Somewhere I could apply all my strengths, and stay relevant and at the forefront of a fast changing tech landscape.
+<p></p>As part of this effort, I spent some time considering what areas dominated the past 5 years of my career. Looking at my resume, social media and cloud computing were the two major themes. Then I put some thought into what technology is dominating right now, and will continue growing in the next couple years. The answer was mobile technology.
+<p></p>Looking to apply what I know, but also be relevant and competitive in the future, I wanted to find a common thread. What did all of these areas have in common? It was clearly application programming interfaces, or more specifically, web APIs.
+<p></p>APIs drove the social media revolution from Flickr to Twitter, reinvented IT with cloud computing, and is a driving force behind mobile applications.
+<p></p>I found an area to focus my energy, but do I have the skills needed to work with APIs. What is needed to be successful with an API?
+<p></p>I set off to study all the top APIs out there and answer this question. After much research, success with an API seemed to boil down to equal parts technical, business, and marketing. It sounded like a fit for my skills.
+<p></p>Successful APIs like Amazon, Twilio and Google all had one thing in common. They had developer advocates or technical evangelists. This is what I wanted to do. What skills are required to be an API developer advocate or evangelist?
+<ul class="mainlist">
+     <li>
+          <strong>Hacker</strong> - You have to have a love of hacking. You have to be able to write code samples, prototypes and be able to know what programmers experience hacking on an API. You should also be able to push the boundaries on what can be done with APIs.
+     </li>
+     <li>
+          <strong>Business Development</strong> - You need business development experience and an understand of how APIs can evolve businesses and industries. You push to understand how APIs can change how business is conducted, where it can be applied, an how this can be communicated to existing business leaders.
+     </li>
+     <li>
+          <strong>Sales and Marketing</strong> - You need to be able to plan and maintain an on and offline sales and marketing presence. Attend and speak at events, able to mingle with both developers and business people, and possess a knowledge of traditional marketing as well as online and social media marketing tactics.
+     </li>
+</ul>The biggest skill you have to posses is the classic self-starter or self-motivator. There is no well laid road-map to follow, you have to be able to plan, strategize, execute and fail or succeed all on your own.
+<p></p>I closely monitor how other players are executing, and apply relevant pieces to my own strategy. But ultimately you have have the knowledge and confidence to define your own road-map, and awareness to adjust as necessary.
+<p></p>This kind of experience I've gained from being the leader on several development teams, and wisdom gained from running my own business, including several failed startups.
+<p></p>I'm writing this blog post this for my own benefit. To establish a clear definition of who I am, and what I'm bringing to the table, and make sure I'm on track with my career.
+<p></p>However, I also want to help others understand this evolving new role of being a developer advocate or API evangelist. There is a growing need in this area, and I get offered an average of 2-3 jobs per week in this area. I'm very happy in my current position, so they all end with me telling them I will refer anyone I know from my network.
+<p></p>Which is kind of bullshit, because I don't know anyone with these skills, that is looking for work. Do you have these skills? Maybe you should consider a career with APIs. Let me know.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/24/could-you-be-an-api-evangelist/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/23/api-stack-text-analysis-with-saplo-api/">API Stack - Text Analysis with Saplo API</a></h3>
+        <span class="post-date">23 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/saplo/saplo-logo.jpeg" alt="" width="200" align="right" /><a title="Saplo" href="http://saplo.com/">Saplo</a> provides an RESTful API for text analysis, using oath for authentication.
+<p></p>Using the <a title="Saplo API" href="http://saplo.com/api">Saplo API</a> you can perform text analysis such as entity tagging, related articles, contextual recognition and sentiment anlysis.
+<p></p>Saplo provides a free account for non-commercial use with a limit of 240 calls per hour, and also a premium plan with pricing based upon the amount of text processed.
+<p></p><a title="Saplo API" href="http://saplo.com/api">Saplo API for text analysis</a>is a perfect tool for the API Stack.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/23/api-stack-text-analysis-with-saplo-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/22/moving-the-file-open-dialog-box-to-the-web-with-google-picker-api/">Moving the File Open Dialog Box to the Web with Google Picker API</a></h3>
+        <span class="post-date">22 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/file-open-dialog.png" alt="" width="300" align="right" />The file open dialog box is an important tool that we use every day, but we very rarely notice it or think much about it.
+<p></p>On the Windows platform, using the file open dialog box, we see our desktop, my documents or whatever was the last hell hole of a folder we were working in.
+<p></p>On the Mac, using the file open dialog box, it seems like I eternally live in my downloads folder with the occasional venture do my documents or desktop folders. Maybe that's just me?
+<p></p>More and more I find myself living in my Amazon S3, which I still access via my Firefox S3Fox extension versus the Amazon Console. Old habits die hard. Regardless, more of my world is living in the clouds.
+<p></p>The file open dialog box just doesn't have the same meaning in the clouds. Its a desktop, localized tool. When we open it, we see that local desktop mess we've created and maintained (well sort of).
+<p></p>When we open a web dialog, we don't see much. It seems to be something made up, nothing near the meaning of when we open it locally. Or we are forced to paste the URL of a single file or page into a textbox.
+<p></p>Google is <a title="making a move to re-invent the File Open Dialog" href="http://googlecode.blogspot.com/2011/07/get-picky-with-google-picker-api.html">making a move to re-invent the file open dialog box</a>, in context of the web, and the context of your Google workspace.
+<p></p>With the <a title="Google Picker API" href="http://code.google.com/apis/picker/docs/index.html">Google Picker API</a>, any developer can build a web-based file open dialog box. In Google's opinion, a web-based file open dialog box should provide a user with a more modern experence:
+<ul class="mainlist">
+     <li>
+          <strong>Familiar</strong> � A look-and-feel that users will recognize.
+     </li>
+     <li>
+          <strong>Graphical</strong> � A dialog experience, with many views showing previews or thumbnails.
+     </li>
+     <li>
+          <strong>Streamlined</strong> � An inline, modal window, so users never leave the main application.
+     </li>
+</ul>I would add that users need to see, and have access to the content they use most. In this day and age, this means on and offline content. Google Picker API gives you access to what you use most on the Google platform. This makes sense in the context of the Google vision.
+<p></p>As a developer Google Picker API provides you display access to a users:
+<ul class="mainlist">
+     <li>Google Docs (Folders, Docs, Spreadsheets, Presentations)
+     </li>
+     <li>Picasa Web Folders
+     </li>
+     <li>Videos (Youtube?)
+     </li>
+</ul>Since I use Google Docs and Picassa heavily, this will help, but I still don't consider this the next generation of the file open dialog box.
+<p></p>I would like to see all of my Google Data (I'm sure Google is working on this), and other sources of data I use regularly. I need my Flickr, Amazon S3, Twitter, Instapaper, Evernote, Github, Pinboard and any other relevant applications I use.
+<p></p>Will Google open up access to other services, allow them to register their services, and offer access within the new, web-based vision of the file open dialog box?
+<p></p>I agree the file open dialog box is ready for an overhaul. I like Google's style. I think they have the talent and resources to make it happen. I also think they will recognize the importance of opening up access to other services.
+<p></p><strong>One last random thought:</strong> When will my file open dialog box give me access to my <a title="Locker Project" href="http://lockerproject.org/">Locker Project</a> data?
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/22/moving-the-file-open-dialog-box-to-the-web-with-google-picker-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/22/building-api-developer-business-models/">Building API Developer Business Models</a></h3>
+        <span class="post-date">22 Jul 2011</span>
+        <a title="Bluevia API" href="https://bluevia.com/en/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/bluevia/bluevia-logo.jpg" alt="" width="200" align="right" /></a>API business models are still in its infancy. Many API owners are in experimental mode when it comes to how they make money with their API.
+<p></p>Beyond the fuzzy plans for how API owners intend to make money, even more API owners don't have a clear vision of how they will reward their developers, and share revenue with its API ecosystem.
+<p></p>There are examples of leadership from API owners. <a title="Qwerly gives discounts of API costs for high volume API users" href="http://blog.apievangelist.com/2011/05/24/whats-next-for-apis-learning-from-social-apis/">Qwerly gives discounts on API costs for high volume API users</a> and <a title="YellowAPI pay developers for high volumes of traffic" href="http://blog.programmableweb.com/2011/06/01/should-we-be-limiting-developers-api-usage/">YellowAPI pay developers for high volumes of traffic</a> originating from their applications as well as sharing advertising revenue with developers.
+<p></p>The <a title="Bluevia API" href="https://bluevia.com/en/">Bluevia API</a> is another innovator in the space with its straightforward business models provided for its development community. <a title="Bluevia lays out four business models" href="https://bluevia.com/en/page/view/menupath/main.gotomarket.sell.businessModels">Bluevia lays out four business models</a> developers can choose from:
+<ul class="mainlist">
+     <li>Downloads - Earn 70% of downloaded apps that developers publish to Movistar and O2 App Stores
+     </li>
+     <li>Subscriptions - Earn 70% of recurring revenue stream fees of ongoing subscription of apps that developers publish to Movistar and O2 App Stores
+     </li>
+     <li>Mobile Advertising - Earn 50% of advertising revenue when developers integrate Telefonica's ad network
+     </li>
+     <li>Messaging Sending and Receiving - Earn 10% of SMS and MMS that are sent from a developer app
+     </li>
+</ul><a title="Bluevia lays out four business models" href="https://bluevia.com/en/page/view/menupath/main.gotomarket.sell.businessModels"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/bluevia/bluevia-business-models.png" alt="" width="300" align="right" /></a>Bluevia provides a step-by-step process for walking developers through obtaining an API key, certifying an application and API key, publishing to the store, and collecting revenue from one or all of the available developer business models.
+<p></p>This type of straightforward approach represents the future of how API owners can clearly communicate how a platform intends to generate revenue, and share revenue with the developer community so that they too can be successful in building businesses around an API platform. It sets clear expectations with the developer community, allowing developers to understand the risks and benefits with building a business around an API.
+<p></p>Bluevia's approach to revenue earned from selling apps in a marketplace is nothing new. Other providers like YellowAPI also share mobile advertising revenue, and other service revenue with developers. What really stands out is their clear presentation of solid business models that developers can choose from. This identifies the value of the developer community, and gives them the clear revenue opportunities they need to be successful.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/22/building-api-developer-business-models/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/20/tracking-and-harnessing-innovation-at-hackathons/">Tracking and Harnessing Innovation at Hackathons</a></h3>
+        <span class="post-date">20 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/melange/melange-blue-500px.png" alt="" width="250" align="right" />A lot of innovation occurs at <a title="hackathons" href="http://www.apievangelist.com/hackathons-and-contests.php">hackathons</a>. Seems like every hackathon I attend, there are discussion about how to better harness the talent available at these events, and develop a way to track what gets generated.
+<p></p>The last hackathon I attended one of the ideas pitched was actually a web application that tracks what gets produced at hackathons. It would track the participants, and provide repositories for any code created. The application would provide access to ideas and projects from any participating event.
+<p></p>It's a pretty good idea. I think a lot of good ideas and code goes to waste from contests and hackathons. Evening winning ideas may never go anywhere.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/hackathon.jpg" alt="" width="300" align="right" />Today I came across a Google project called <a title="Melange" href="http://code.google.com/p/soc/">Melange</a>. Melange is an open-source web application that Google uses to track the <a title="Google Summer of Code" href="http://www.google-melange.com/gsoc/homepage/google/gsoc2011">Google Summer of Code</a> and <a title="Google Code-In" href="http://code.google.com/opensource/gci/2010-11/index.html">Google Code-in</a> programs.
+<p></p>The goal of the project is to create a framework for tracking open-source contribution programs. Google is able to manage Google Summer of Code programs, and other similar programs with the web application.
+<p></p>Melange is part content management system, part issue tracking system, and part customer relationship manager. It is written in Python and runs on Google App Engine.
+<p></p>At first glance it looks like Melange is setup to track all the users, ideas, projects and code for a hackathon environment. It might take a little customization, but Melange may work as a platform for tracking hackathons and contests.
+<p></p>It would be great to have access and visibility to projects and code that gets generated from event to event, and information about the smart people were involved.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/20/tracking-and-harnessing-innovation-at-hackathons/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/20/api-stack-faxing-with-phaxio/">API Stack - Faxing with Phaxio</a></h3>
+        <span class="post-date">20 Jul 2011</span>
+        <a href="http://www.phaxio.com/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/phaxio-logo-2.png" alt="" width="200" align="right" /></a><a href="http://www.phaxio.com/" target="_blank">Phaxio</a> provides a RESTful API for developers to send faxes from their applications.<p></p>
+Using Phaxio you can send and receive faxes, with all responses formatted in JSON.<p></p>
+All outgoing and incoming faxes are 7 cents per page.<p></p>
+Phaxio API is for faxing and a perfect tool for the API Stack.<p></p>
+<strong>URL:</strong> <a href="http://www.phaxio.com/" target="_blank">http://www.phaxio.com/</a>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/20/api-stack-faxing-with-phaxio/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/20/api-and-embed-strategy-for-visually/">API and Embed Strategy for Visual.ly</a></h3>
+        <span class="post-date">20 Jul 2011</span>
+        <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/visually/visually-logo.png" alt="" width="250" align="right" />It is hard for me to imagine why someone would launch a web application these days, without immediately launching an API, or at least having plans for an API shortly after release.
+<p></p>There always is some data that can be liberated, and make it available in a JSON format. Simple data APIs can easily drive widgets and other embeddable tools, providing viral marketing tools that drive awareness and SEO.
+<p></p>So when I am playing with new web applications, if there is no clear API strategy, it always gets me thinking about the possibilities. This happened when I was playing the new <a title="infographic builder and marketplace Visual.ly" href="http://www.visual.ly">infographic builder and marketplace Visual.ly</a> today.
+<p></p>There is no evidence of an API at Visual.ly. I see an RSS feed of infographics, but no API. So I started thinking about a simple API and embeddable strategy for them.
+<p></p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/visually/visually-infographic.png" alt="" width="300" align="right" />I would start with infographic and designer services providing JSON responses for searches on the infographic marketplace and graphic designers.
+<p></p>Visual.ly only provides tools for sharing infographics. You can't actually embed them, I believe this is how they plan to monetize. So you wouldn't have full copies of infographics via the API. You'd provide smaller representations of parts and pieces, or other relevant visualizations.
+<p></p>For every infographic, a designer would create a handful of small images, and the API could serve up these images and all the meta data for each entry in the marketplace.
+<p></p>This would open up possibilities for embeddable buttons, widgets and gadgets that anyone could copy and paste, and virally promoteinfographics without actually giving away everything.
+<p></p>The Visual.ly API wouldn't be complex to begin with, just allow basic access to infographics and designers, and provide an assortment of embeddable tools for users to syndicate content. A more advanced API, providing more complete access to infographics and the builder, can come later.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/20/api-and-embed-strategy-for-visually/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/19/partial-response-and-updates-with-google-apis/">Partial Response and Updates with Google APIs</a></h3>
+        <span class="post-date">19 Jul 2011</span>
+        <img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/puzzle-partial.png" alt="" width="250" align="right" /><a title="last year google launched support for partial responses and updates" href="http://googlecode.blogspot.com/2010/03/making-apis-faster-introducing-partial.html">Last year google launched support for partial response and updates</a> to a couple of the Google APIs. The goals was to significantly reduce network, memory, and CPU resources needed to work with Google APIs.<p></p>
+Now Google is <a title="adding support" href="http://googlecode.blogspot.com/2011/07/lightning-fast-performance-tips-for.html">adding support </a>for partial response, and an improved version of <a title="partial update, called patch" href="http://code.google.com/apis/buzz/v1/performance.html#patch">partial update, called patch</a>, to a number of newer APIs including:
+<ul class="mainlist">
+	<li><a title="Google Buzz API" href="http://code.google.com/apis/buzz/">Google Buzz API</a></li>
+	<li><a title="Google URL Shortener API" href="http://code.google.com/apis/urlshortener/">Google URL Shortener API</a></li>
+	<li><a title="Google Tasks API" href="http://code.google.com/apis/tasks/">Google Tasks API</a></li>
+</ul>
+All APIs available in the <a title="Google APIs Discovery Service" href="http://blog.apievangelist.com/2011/05/21/google-apis-discovery-service/">Google APIs Discovery Service</a> and the <a title="Google APIs Explorer" href="http://blog.apievangelist.com/2011/05/21/google-apis-explorer/">APIs Explorer</a> supporting partial response and updates.<p></p>
+The partial response algorithm works by supplying a fields query parameter to any API call that returns data, you can request specific fields.<p></p>
+Here is an example request that returns only titles and timestamps of a user's public Buzz activities: <a href="http://blog.apievangelist.com/2011/05/21/google-apis-explorer/">https://www.googleapis.com/buzz/v1/activities/kinlane@gmail.com/@public?alt=json&amp;pp=1&amp;fields=items(title,updated)</a><p></p>
+A full response for Buzz activity would be around 53KB and the partial response is 3KB, a reduction of almost 95%!<p></p>
+You can try out both partial response and patch algorithms in the <a title="Google APIs Explorer" href="https://code.google.com/apis/explorer/">Google APIs Explorer</a>. In partial responses, the fields parameter is available for most methods. You can easily tell which are partial update methods by the .patch in the method name. Both the fields parameter and the patch method on the tasklist resource in the APIs explorer.<p></p>
+Partial response and updates are a great way to make APIs more efficient for devices with limited connectivity, as well as making API platforms operate as efficiently as they can by delivering only what information is needed.<p></p>
+Google is in a unique position with the number of APIs they offer, volume of API calls they manage, and wide audience they deliver to. We can all learn a lot from watching them organize their APIs, and apply elements of their approach to our own API ecosystems.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/19/partial-response-and-updates-with-google-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/19/building-the-perfect-api-stack/">Building the Perfect API Stack</a></h3>
+        <span class="post-date">19 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/poker-chip-stack.jpg" alt="" width="250" align="right" />As I'm reviewing APIs, I spend a lot of time considering the viability and business use cases for an API.
+<p></p>While considering this, I keep having thoughts about the perfect API stack. In my opinion, these are APIs that do one thing and do it well, makes a developers life easier, and have clear business value.
+<p></p>The first one that comes to mind is <a title="Twilio" href="http://www.apievangelist.com/api-detail.php?API_ID=1823">Twilio</a>. When I think of Twilio, I think of two clear use cases: voice and SMS.
+<p></p>Voice and SMS are two critical tools to have in your developer toolbox. These are services that have clear value, that would take a lot of effort to duplicate yourself, making it a no brainer to pay for as a service.
+<p></p>In an effort to define the perfect API stack, I'm going to start blogging about APIs that fall into this category as I find them. They will be short posts that introduce you to these services, and when I get enough I will launch a landing page showcasing the perfect API stack.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/19/building-the-perfect-api-stack/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/18/webservius-api-service-provider/">WebServius API Service Provider</a></h3>
+        <span class="post-date">18 Jul 2011</span>
+        <a title="WebServius" href="http://www.webservius.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/webservius/webservius-logo.png" alt="" width="300" align="right" /></a><a title="WebServius" href="http://www.webservius.com/">WebServius</a> provides a self-service tool for deploying, managing and monetizing datasets using an API.<p></p>
+WebServius provides users with the ability to integrate and store data, and enable access to the data via a REST API with XML and JSON responses.<p></p>
+There is support for planning, development, implementation and ongoing management of APIs generated from data sources.<p></p>
+WebServius offers two service levels:
+<ul class="mainlist">
+	<li><strong>Self-Service - </strong>Tier for technical people who can handle the setupthemselves, using the WebServius self-service interface. The self-service plan is free up to 50 API subscribers, with up to 10,000 total API calls per day and 5 calls per second at peak times. If you go over any of the limits of the self-service plan, it costs $1 for every 30,000 API calls.</li>
+	<li><strong>Full-Service - </strong>Pricing level if you are planning to create a commercial-grade data API. Service is custom fit to exact needs, starting from data integration, to API download page, to user management. Pricing varies based upon needs.</li>
+</ul>
+There is also a 20% charge of all revenue made through an API whether it is on the self-service or full-service pricing structure.<p></p>
+Using WebServius you can proxy an existing REST API or connect directly to a data service provider, including Amazon SimpleDB.<p></p>
+Once data is integrated, WebServius allows you to create custom details, plans, promotions, policies and pricing for the data API you wish to publish.<p></p>
+Each published API on WebServius is given a detail page for subscribers to access. There are also options for custom site integration and private label deployment solutions.<p></p>
+<a title="WebServius" href="http://www.webservius.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/webservius/piggybank-monetize-api.png" alt="" width="300" align="right" /></a>Users can then register, and subscribe to specific plan for any published API,then access data via the API or a full data download.<p></p>
+All subscribers are given API keys and WebServius provides tools for validating API keys, and throttling of API requests.<p></p>
+WebServius handles all the security, performance and reliability of the API platform, and also provides a reporting suite for monitoring API activity in real-time.<p></p>
+<a title="WebServius" href="http://www.webservius.com/">WebServius</a> offers a complete data API solution for entry level providers as well as a businesses looking to monetize their datasets on a larger scale.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/18/webservius-api-service-provider/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/17/providing-a-comprehensive-api-area-search/">Providing a Comprehensive API Area Search</a></h3>
+        <span class="post-date">17 Jul 2011</span>
+        <img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/search-magnifying-glass.jpg" alt="" width="250" align="right" />One of the new features that Twitter rolled out with the <a title="new Twitter developer area" href="http://blog.apievangelist.com/2011/07/11/twitter-launches-new-api-developer-area/">new Twitter developer area</a> was an enhanced search tool powered by <a title="Apache Solr" href="http://lucene.apache.org/solr/">Apache Solr</a>. The new unified search provides an engine for searching across all areas of the new developer area, including the mailing list historical archives.<p></p>
+Many of us API owners have to cobble together our developer areas from several tools like <a title="Wordpress" href="http://www.wordpress.org">Wordpress</a>, <a title="Google Groups" href="http://groups.google.com/">Google Groups</a>, and other tools we can leverage to quickly provide communication and support for our APIs. There is nothing wrong with this approach, however one side effect is that we end up with information available in separate silos, making information harder for developers to find.<p></p>
+Providing a single search interface, that allows developers to search across all systems, delivering comprehensive and relevant search results can make a significant difference in whether or not a developer finds the details they need to successfully integrate.<p></p>
+Apache Solr is one indexing tool you can deploy as part of your API area, but there are also lower impact solutions such as <a title="Google Custom Search" href="http://www.google.com/cse/">Google Custom Search</a> that can be deployed as an external service, without investing in costly equipment or software.<p></p>
+Don't underestimate the power of having a single search interface that developers can use to find the information they are looking for when integrating with your API.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/17/providing-a-comprehensive-api-area-search/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/17/fear-and-uncertainty-around-a-public-api/">Fear and Uncertainty Around a Public API</a></h3>
+        <span class="post-date">17 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/fear.gif" alt="" width="200" align="right" />I spend a lot of time looking through various APIs. One common problem I see, are with, what on the surface appear to be <a title="public APIs" href="http://blog.apievangelist.com/2011/06/01/open-vs-closed-apis/">public APIs</a>, but once I start looking to get access as a developer, I get walls thrown up.
+<p></p>Often times, information about the API is public. I can browse the documentation, code samples and more, but when I want to play with the API I have to ask for access and wait for approval.
+<p></p>This is different than a <a title="private APIs" href="http://blog.apievangelist.com/2011/06/01/open-vs-closed-apis/">private API</a>, where you just want to give API access to a private audience. I can tell these API owners have a good idea, want to open it up to the public, but they are very concerned about who has access to their API.
+<p></p>These businesses are concerned about what people will do with their data and resources. They have concerns for their brand, and legal issues to wrestle with. What will developers do? How will it affect customers? Will it damage the companies reputation?
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/wall-usb-port.jpg" alt="" width="250" align="right" />There are a lot of unanswered questions when launching an API. None of us have all the answers, and can predict what the future holds, and managing public developers can be a lot of work.
+<p></p>What you need is a quality API management platform, with tools for providing visibility into how developers are using your API. If you can't build the tools you need yourself, make sure and check out the API service providers like <a title="3Scale" href="http://blog.apievangelist.com/2010/10/10/3scale-api-services/">3Scale</a>, <a title="Apigee" href="http://blog.apievangelist.com/2010/10/10/apigee-api-services/">Apigee</a>, <a title="Mashery" href="http://blog.apievangelist.com/2010/10/10/mashery-api-services/">Mashery</a>, <a title="Layer7" href="http://blog.apievangelist.com/2011/06/17/layer-7-technologies-launches-new-api-portal/">Layer7</a> or <a title="Atmospher" href="http://blog.apievangelist.com/2011/06/17/atmosphere-a-new-api-management-portal/">Atmosphere</a>.
+<p></p>Next you need an agile process and attitude for evaluating API usage and feedback, then be able to quickly evolve your API to satisfy your business objectives, adding the most value to your brand, while also building a healthy and vibrant developer ecosystem.
+<p></p>One of my goals with<a title="API Evangelist" href="http://blog.apievangelist.com">API Evangelist</a>, is to pay attention to the industry as a whole, understand the best practices for API management and share this knowledge with other API owners so there is less fear and uncertainty around deploying public and private APIs.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/17/fear-and-uncertainty-around-a-public-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/16/twitter-launching-advertising-api-in-q4/">Twitter Launching Advertising API in Q4</a></h3>
+        <span class="post-date">16 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twitter/Twitter-Logo.jpg" alt="" width="200" align="right" />According to <a title="Reuters" href="http://www.reuters.com">Reuters</a>, <a title="Twitter is preparing to launching an Advertising API" href="http://www.reuters.com/article/2011/07/13/twitter-idUSN1E76C1Y920110713">Twitter is preparing to launch an Advertising API</a>, targeting larger advertisers, allowing them to tailor, automate, and publish ads in bulk directly into Twitter users' streams.
+<p></p>Access to the Twitter Adverting API, which Twitter plans to begin in the fourth quarter, will initially be rolled out as a test involving a limited number of partners, <a title="according to Reuters" href="http://www.reuters.com/article/2011/07/13/twitter-idUSN1E76C1Y920110713">according to Reuters</a>.
+<p></p>The Advertising API is a sign that Twitter is pulling together its business model and looking to further monetize its network in the same way as Google does with its Adwords and Adsense, and Facebook with its Ad Network.
+<p></p>Right now you have to <a title="submit a form" href="http://business.twitter.com/advertise/start">submit a form</a>, and talk with a sales person to run ads on Twitter, the new API would create an automated advertising marketplace on top of the Twitter ecosystem.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twitter/Twitter-Advertising-Screenshot.png" alt="" width="250" align="right" />According to Reuters, Twitter's advertising API will initially let advertisers automatically deliver ads in two formats:
+<ul class="mainlist">
+     <li>
+          <strong><a title="Promoted Tweets" href="http://business.twitter.com/advertise/promoted-tweets">Promoted Tweets</a></strong> - Allowing an advertiser to sponsor any 140 character messages via Twitter
+     </li>
+     <li>
+          <strong><a title="Promoted Accounts" href="http://business.twitter.com/advertise/promoted-accounts">Promoted Accounts</a></strong> - Enabling advertisers to promote its own Twitter account to other users
+     </li>
+</ul>A marketing research firm <a title="eMarketer" href="http://www.emarketer.com/">eMarketer</a>, estimates that <a title="Twitter is expected to generate about $150 million in ad revenue" href="http://www.emarketer.com/Article.aspx?R=1008192">Twitter is expected to generate about $150 million in ad revenue</a> through its ad network in 2011.
+<p></p>Evolving the Twitter advertising network to a self-service system, and adding an API for programmatic integration, will significantly increase the volume of advertising that runs through the network, putting it on par with Google and Facebook's offering.
+<p></p>This kind of system is well-suited for larger advertisers that need to buy ads in bulk and run large-scale online advertising campaigns that involve thousands of different versions of an ad.
+<p></p>"They can just flood the system with ad types and almost in real time they can figure out which ads are working, which are most successful, which are getting the clicks at the right price," says Debra Aho Williamson, analyst at eMarketer.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twitter/twitter-monetization.png" alt="" width="200" align="right" />The release of an API is the next logical step for the Twitter advertising network, but one area that isn't mentioned in the Reuters piece -- and is critical to the overall health of the Twitter ecosystem: where do the developers fit in?
+<p></p>Will developers be able participate in the advertising network and share in the revenue generated from advertising on their sites and applications?
+<p></p>Developers play a central role in building sites and applications that will drive traffic and resulting revenue for Twitter and its advertisers. Giving developers an opportunity to make money from their efforts, will only strengthen the overall platform, and bring more value for advertisers and Twitter.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/16/twitter-launching-advertising-api-in-q4/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/16/tumblr-releases-api-v2/">Tumblr Releases API v2</a></h3>
+        <span class="post-date">16 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/tumblr/Tumblr-Engineering-Blog.png" alt="" width="260" align="right" /><a title="Tumblr just released version 2.0 of the blog platform API" href="http://engineering.tumblr.com/post/7541361718/introducing-tumblrs-new-api">Tumblr just released version 2.0 of the popular blogging platform API</a>, in an effort to make developers lives a little easier when integrating with the Tumblr platform.
+<p></p>The previous version of the API made distinctions between read and write operations and pushed different activity to two separate domains, the www.tumblr.com and the blog subdomain.
+<p></p>The new API version consolidates all API access to api.tumblr.com and exposes two major resources in the URI: /blog and /user. Consolidation under one domain will allow Tumblr to effectively measure and balance traffic using DNS.
+<p></p>The new URLs will follow a pattern, making them intuitive, allowing developers to easily discover and experiment with the API without having to rely exclusively on documentation.
+<p></p>Instead of adhering to strict RESTful practices, Tumblr is looking to create simple URLs that enable manipulation by the average human.
+<p></p>For example, to pull the avatar of my tumblr blog I use the following URL: <a href="http://api.tumblr.com/v2/blog/kinlane.tumblr.com/avatar">http://api.tumblr.com/v2/blog/kinlane.tumblr.com/avatar</a>
+<p></p>The API returns the default avatar image, and if I want a larger size, I just append the size to the URL: <a href="http://api.tumblr.com/v2/blog/kinlane.tumblr.com/avatar/512">http://api.tumblr.com/v2/blog/kinlane.tumblr.com/avatar/512</a>
+<p></p>In the first version of the Tumblr API, all data was available in XML, with JSON support added largely as an afterthought. Now Tumblr has just decide to eliminate XML, and focused on dialing in their JSON implementation. A common approach for API owners.
+<p></p>The new API implements OAuth 1.0a for authentication and they are looking at upgrading to OAuth 2.0 in the neear future.
+<p></p>I like how Tumblr has consolidated under a single domain, and I favor their approach to intuitive URL's over a strict RESTful implemntation.
+<p></p>The Tumblr API v2 is definitely an improvement, I will see how it sizes up against the <a title="new Posterous API launched last month" href="http://blog.apievangelist.com/2011/06/10/posterous-from-saas-to-paas-using-an-api/">new Posterous API launched last month</a>.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/16/tumblr-releases-api-v2/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/16/facebook-removes-application-directory/">Facebook Removes Application Directory</a></h3>
+        <span class="post-date">16 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/facebook/facebook-removes-app-directory.jpg" alt="" width="250" align="right" />Many <a title="Facebook Developers" href="https://developers.facebook.com/">Facebook developers</a> have been confused about what it means to submit to the Facebook App Directory, and frustrated by the length of time it took to get their applications approved.
+<p></p><a title="Facebook has stated" href="https://developers.facebook.com/blog/post/523/">Facebook has stated</a> that the Facebook App Directory actually drives less than 0.5% of all application installations, with the highest number of installations actually coming from Facebook search.
+<p></p>And until now, to be visible in search, you had to submit your app to the App Directory.
+<p></p>In light of this data Facebook is removing the App Directory and depending on search for application discovery on the Facebook platform.
+<p></p>For an app to show up in search, developers now need to go to the application detail page, and click the Submit to Search link in the left sidebar while editing the application.
+<p></p>When submitted, applications are automatically available in search and there is no longer an approval process to go through. When any changes are made to application settings, it will automatically be updated in the listing.
+<p></p>Obviously this approach doesn't apply to all <a title="application directories" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=180">API application directories</a>, but some interesting data to consider from one of the larger development platforms, when deploying your own <a title="API application directory" href="http://blog.apievangelist.com/2011/06/08/a-white-label-api-appstore-platform/">API application directory</a>.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/16/facebook-removes-application-directory/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/15/boxnet-mobile-developer-challenge/">Box.net Mobile Developer Challenge</a></h3>
+        <span class="post-date">15 Jul 2011</span>
+        <a href="http://sites.box.net/devchallenge/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/box/Box-Mobile-Dev-Challenge.png" alt="" width="250" align="right" /></a>Box.net just announced the <a title="Mobile Dev Challenge" href="http://sites.box.net/devchallenge/">Mobile Dev Challenge</a>,along with their release of two new API methods, an updated iOS library, and new Android library.<p></p>
+The goal of the Box Mobile Dev Challenge is to build the next generation of mobile and tablet applications for businesses.<p></p>
+Winners of the challenge will get mobile ad network credits with InMobi, meetings with Draper Fisher Jurvetson to pitch their big ideas, TouchPads from HP, $35K in cash, and an opportunity to present onstage at Box's customer conference, BoxWorks.<p></p>
+Developers have 60 days to build innovative apps that use the box platform, including the new APIs.<p></p>
+Application entries will be evaluated by a panel of judges from Accenture, AT&amp;T, DFJ, HP, InMobi, Verizon, ReadWriteWeb, MobileCrunch, VentureBeat and Box.net.<p></p>
+You can find more information on the <a href="http://sites.box.net/devchallenge/" target="_blank">Box Mobile Dev Challenge</a> page.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/15/boxnet-mobile-developer-challenge/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/15/blackberry-messenger-apps-hackathon/">Blackberry Messenger Apps Hackathon</a></h3>
+        <span class="post-date">15 Jul 2011</span>
+        
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/15/blackberry-messenger-apps-hackathon/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/14/foursquare-unleashes-its-deals-api/">Foursquare Unleashes Its Deals API</a></h3>
+        <span class="post-date">14 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/foursquare_logo.png" alt="" width="200" align="right" /><a title="Foursquare launched a new Merchant API" href="http://blog.foursquare.com/2011/07/13/more-powerful-tools-for-businesses-introducing-our-merchant-api/">Foursquare launched a new Merchant API</a> that will allow developers and merchants to create specials using any technology.
+<p></p>The new Merchant API comes right after their <a title="announcements of national partnership with American Express" href="http://blog.foursquare.com/2011/06/23/american-express-specials-now-for-everyone-nationwide/">announcement of a national partnership with American Express</a>, and the new API will make it even easier for other merchant partners to create deals using foursquare.
+<p></p>It looks like foursquare is depending on its 10,000-strong developer community to take on Facebook and Groupon in the deal-making space.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/14/foursquare-unleashes-its-deals-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/11/twitter-launches-new-api-developer-area/">Twitter Launches New API Developer Area</a></h3>
+        <span class="post-date">11 Jul 2011</span>
+        <a title="dev.twitter.com" href="https://dev.twitter.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twitter/New-Twitter-Developer-Area.png" alt="" width="300" align="right" /></a>Twitter just launch an updated version of the <a title="Twitter Developer Site" href="https://dev.twitter.com/">Twitter Developer Site</a>. The new developer area focuses on enhancing developer communication channels and providing improved reference material and documentation.
+<p></p>The new <a title="dev.twitter.com" href="https://dev.twitter.com/">dev.twitter.com</a> is built using the <a title="Drupal Platform" href="http://www.drupal.org">Drupal platform</a> and focuses on providing core building blocks for its developer community:
+<ul class="mainlist">
+     <li>
+          <strong><a title="Twitter Discussion Forum" href="https://dev.twitter.com/discussions">Forum</a></strong> - Retiring of the old mailing list with a new dicussion forum that includes hot topics, email category subscriptions, and Dev Teatime, a section to focus on the social side of the Twitter developer community.
+     </li>
+     <li>
+          <strong><a title="Twitter Blog" href="https://dev.twitter.com/blog">Blog</a></strong> - A new blog to learn about important API announcements, events, tips and how-tos, case studies, product insights, and featuring content from different teams at Twitter, as well guest blog posts from community members.
+     </li>
+     <li>
+          <strong><a title="Twitter Documentation" href="https://dev.twitter.com/docs">Documentation</a></strong> - The new Twitter docs have better structure and searchability, so they are easier to update, and easier to find the most up to date information about the API.
+     </li>
+     <li>
+          <strong><a title="Twitter Search" href="https://dev.twitter.com/search/apachesolr_search/Search">Enhanced Search</a></strong> - The new developer area search is powered by Apache Solr, providing a unified search engine with filters and more relevant search results including from the group mailing list historical archives.
+     </li>
+</ul>Twitter focuses on the most important aspects of a developer area, while also providing many other important <a title="API Building Blocks" href="http://www.apievangelist.com/ecosystem-building-blocks.php">API building blocks</a>:
+<ul class="mainlist">
+     <li>Getting Started
+     </li>
+     <li>Application Management
+     </li>
+     <li>Embeddable Tools
+     </li>
+     <li>API Status
+     </li>
+     <li>Authentication Overview
+     </li>
+     <li>Developers for Hire
+     </li>
+     <li>Videos
+     </li>
+     <li>Terms of Use
+     </li>
+     <li>Branding Guidelines
+     </li>
+     <li>API Explorer (Apigee)
+     </li>
+</ul>The new API developers area looks very complete and provides a unified front for the Twitter developer ecosystem, right down to the comprehensive search.
+<p></p>Its obvious they are working to turn over a new leaf in developer relations by providing improved resources, and most importantly develop communication tools. The new discussion forum features an Introduce Yourself and gives developers the ability create threads as well as reply to threads, which will definitely initiate discussion within the community. The forum is already filling up with introductions and comments.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/11/twitter-launches-new-api-developer-area/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/09/wisdom-shared-from-the-foursquare-api-team/">Wisdom Shared from the Foursquare API Team</a></h3>
+        <span class="post-date">09 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/foursquare/foursquare-engineering-logo.png" alt="" align="right" />Foursquare is <a title="sunsetting their APIv1" href="https://groups.google.com/forum/#!topic/foursquare-api/tZPFTbUTQJQ">sunsetting their APIv1</a>, and recently spent some time sharing the lessons they learned during APIv1 and the decisions that went into APIv2.
+<p></p>Here are some excerpts:
+<ul class="mainlist">
+     <li>
+          <strong>JSON -</strong> This was a no brainer. Its flexible and understood by everybody.
+     </li>
+     <li>
+          <strong>OAuth2 and HTTPS-Only -</strong> OAuth2 is straightforward to implement on the server and client, and offloading encryption to HTTPS makes it easy to get it right.
+     </li>
+     <li>
+          <strong>REST Lite -</strong> It makes sense to use resourceful URLs for certain key objects, like users/USER_ID or venues/VENUE_ID, with actions and connections hanging off of them. Also avoiding deeply nested URLs like users/USER_ID/tips/TIP_ID, instead using tips/TIP_ID, leads to much simpler URLs. Finally, they avoided using the extended set of HTTP verbs beyond POST and GET, putting the action into the endpoint name, such as tips/add.
+     </li>
+     <li>
+          <strong>Documentation -</strong> Quality documentation combined with an API explorer is a win. Also theimplementationof a simple documentation generation system, made it easy for Foursquare engineers to keep API documentation up to date.
+     </li>
+     <li>
+          <strong>Timestamps as Seconds Since Epoch -</strong> Renders timestamps not readable by humans, but extremely easy to parse.
+     </li>
+     <li>
+          <strong>Versioning -</strong> The hardest part of designing an API is that you're stuck with a bunch of decisions you can't take back. But in some cases they needed to take them back anyway, so they came up with the idea of clients sending back a version like 20110708 and promising to be compatible with all changes up to the date.
+     </li>
+     <li>
+          <strong>Object Level detail -</strong> It's always hard to decide how much detail to include in an object, and Foursquare lets the clients dictate what to include where. In APIv2, they introduced compact and full JSON representations of resources.
+     </li>
+     <li>
+          <strong>Envelope -</strong> The decision to wrap all responses in { meta: { � }, response: {...} } was well received, along with the error details included in the meta block.
+     </li>
+</ul>They provide a lot more wisdom in their blog post,<a title="APIv2: Woulda, coulda, shoulda" href="http://engineering.foursquare.com/2011/07/08/apiv2-woulda-coulda-shoulda/">APIv2: Woulda, coulda, shoulda</a>. Some of the points I couldn't do justice with just an excerpt.
+<p></p>Some of their reflections are just reminders of the success of JSON, OAuth2 and a simple RESTful approach. But their insight about how to structure objects, envelopes, timestamps and categories has me putting some more thought into upcoming changes to my API.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/09/wisdom-shared-from-the-foursquare-api-team/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/06/updates-to-mashape-api-management-platform/">Updates to Mashape API Management Platform</a></h3>
+        <span class="post-date">06 Jul 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape/mashape-manage-your-APIs.png" alt="" width="300" align="right" />Mashape<a title="released a few new enhancements" href="http://blog.mashape.com/introducing-some-new-things-inbox-new-wizard">released a few enhancements</a> to their API management platform.
+<ul class="mainlist">
+     <li>
+          <strong>Inbox</strong> - Mashape redesigned their inbox and messaging system. Developers can contact you from your API detail page, and the inbox provides interface for managing developers and your conversations.
+     </li>
+     <li>
+          <strong>API Wizard</strong> - The API setup and management wizard is no longer a step by step wizard. It now gives you five options in a left hand navigation, leaving the room for more options to be added in the future.
+     </li>
+     <li>
+          <strong>Private APIs</strong> - You can now deploy a private API with Mashape, only inviting the developers you want to have access.
+     </li>
+</ul>Some small changes, but prettyimportantchanges for API owners and developers who use <a title="Mashape" href="http://blog.apievangelist.com/2011/03/04/mashape-api-service-provider/">Mashape</a>.
+<p></p>I would say the ability to deploy a private API is the most significant, as more people realize the value of APIs, and deploy them for partners, not the general public.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/06/updates-to-mashape-api-management-platform/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/05/claiming-my-blog-posts-and-social-profiles/">Claiming My Blog Posts and Social Profiles</a></h3>
+        <span class="post-date">05 Jul 2011</span>
+        <img src="http://kinlane-productions.s3.amazonaws.com/rellinking.png" alt="" width="350" align="right" />I made some more changes to my network over the holidays. I'm working to better tie together my blog(s) and my social network profiles using the <a title="rel= property" href="http://www.w3schools.com/jsref/prop_link_rel.asp">rel="" property</a>.<p></p>
+The process is a three part process, meant to link the various places I write with my author brand, that is represented in my social network profiles, most importantly Google +.<p></p>
+I write on several blogs and I want the authorship of my work to be linked back to my <a title="Google + Profile" href="https://plus.google.com/106460238807821851374/">Google + profile</a>.<p></p>
+I'm very Google centric, so in my network this is the most important profile in my network. This also feeds into my overall SEO strategy which is another story.<p></p>
+I started by created two separate author pages on my two blogs. <a title="Kin Lane" href="http://www.kinlane.com/about/">Kin Lane</a> and <a title="API Evangelist" href="http://blog.apievangelist.com/about/">API Evangelist</a>.<p></p>
+Then I updated all of my blog posts within those domains to link my author name to those respective about pages, and include the rel='author' link.  This attributes each post to me, the author.<p></p>
+Then on those about me pages I listed my social network profiles, most importantly Google +, and included the link rel='me'. This attributes each of these social network profiles as my profile pages.<p></p>
+The final link is on my Google + Profile page I make sure and add link to both my blogs, and include the option "This page is specifically about me", which automatically includes the rel='me' property for each of the links.<p></p>
+All of this completes a circle showing that I am the author of my blog posts, and associating these blog posts with my Google Profile. Google will now recongize that these profile pages and blog posts are associated with my Google Profile.<p></p>
+This all results in improving my author brand in eyes of Google, and since Google dominates the web, the eyes of the Internet.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/05/claiming-my-blog-posts-and-social-profiles/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/07/04/updated-blog-sharing/">Updated Blog Sharing</a></h3>
+        <span class="post-date">04 Jul 2011</span>
+        <img src="http://kinlane-productions.s3.amazonaws.com/core-share-buttons.png" alt="" align="right" />I updated the sharing tools on blog.apievangelist.com today.  Previously it had eight buttons, representing the top social network channels that drive traffic to the blog.<p></p>
+I'm changing it, putting emphasis on:
+<ul class="mainlist">
+	<li><a title="Google +1" href="http://www.google.com/webmasters/+1/button/" target="_blank">Google +1</a></li>
+	<li><a title="Twitter Share Button" href="http://twitter.com/about/resources/tweetbutton" target="_blank">Twitter</a></li>
+	<li><a title="LinkedIn Share Button" href="http://www.linkedin.com/publishers" target="_blank">LinkedIn</a></li>
+</ul>
+These are the top places that people share posts on API Evangelist that drives traffic to the blog.<p></p>
+<img src="http://kinlane-productions.s3.amazonaws.com/secondary-share-buttons.png" alt="" align="right" />I started by adding individual buttons from all the major providers:
+<ul class="mainlist">
+	<li><a title="Facebook Like Button" href="http://developers.facebook.com/docs/reference/plugins/like/#" target="_blank">Facebook</a></li>
+	<li><a title="StumbleUpon Share Button" href="http://www.stumbleupon.com/badges/" target="_blank">StumbleUpon</a></li>
+	<li><a title="Digg Share Button" href="http://about.digg.com/downloads/button/smart" target="_blank">Digg</a></li>
+	<li><a title="Reddit Share Button" href="http://www.reddit.com/buttons" target="_blank">Reddit</a></li>
+</ul>
+At first I used <a title="AddThis Sharing" href="http://www.addthis.com/analytics" target="_blank">AddThis</a> for the whole share toolbar, but I couldn't get it to layout the way I wanted.   So I used individual buttons from the Google +1, Twitter and LinkedIn, then I used AddThis for the other top providers:
+<ul class="mainlist">
+	<li>Instapaper</li>
+	<li>Hacker News</li>
+	<li>DZone</li>
+	<li>Posterous</li>
+	<li>Tumblr</li>
+	<li>Reddit</li>
+</ul>
+I will be making some major updates to <a title="kinlane.com" href="http://www.kinlane.com" target="_blank">kinlane.com</a> and using the same share strategy for the blog and web site.  I'll keep adjusting to keep in line with top channels that drive traffic to my blogs.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/07/04/updated-blog-sharing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/30/what-does-online-sales-tax-battle-mean-for-apis/">What Does Online Sales Tax Battle Mean for APIs</a></h3>
+        <span class="post-date">30 Jun 2011</span>
+        <a title="Amazon Affiliate Program" href="https://affiliate-program.amazon.com/" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/amazon/affiliate/amazon-affiliates.png" alt="" width="250" align="right" /></a>Amazon sent me an email about the recent <a title="signing of the online sales tax law, by California Governor Brown" href="http://www.mercurynews.com/top-stories/ci_18282733" target="_blank">signing of the online sales tax law by California Governor Brown</a>, which would force online retailers who have no physical presence in California, to collect the same levies as bricks-and-mortar stores.
+<p></p>As a result of this, contracts with all <a title="California residents particpating in the Amazon Associates Program are terminated" href="http://www.kinlane.com/2011/06/amazon-end-affiliate-program-in-california/">California residents participating in the Amazon Associates Program are terminated</a> effective, June 29, 2011.
+<p></p>As I was writing up the story of this on <a title="kinlane.com" href="http://kinlane.com">kinlane.com</a>, ad it got me thinking about the impact of this on API affiliate programs. I'm tracking on various monetization strategies for APIs, and affiliate sales is one of them.
+<p></p>California has broadened their definition regarding who has to pay sales tax, to include theaffiliatesof online retailers. But from what I can read it all still goes back to the sale of <em><span class="c2">"tangible personal property"</span></em>. The tax code defines what type of merchandise is subject to use tax as:
+<blockquote>
+     <em>Generally, the same types of items that are subject to sales tax are subject to use tax. Sales and use tax applies to the sale or use of tangible personal property in California. Section 6016 of the Revenue and Taxation Code defines tangible personal property as "personal property which may be seen, weighed, measured, felt, or touched, or which is in any other manner perceptible to the senses."</em>
+</blockquote>I'm no lawyer, but my interpretation of the <a title="assembly bill 28" href="http://www.leginfo.ca.gov/pub/11-12/bill/asm/ab_0001-0050/abx1_28_bill_20110628_enrolled.pdf">assembly bill 28</a>, is that if your API is not faciliting the sale of <em><span class="c2">tangible goods</span></em>, you are safe. If your selling access to bits and bytes, and you want to share revenue with developers and / or affiliates who drive traffic and sales to your API, you are not subject to any online sales tax for California.
+<p></p>I haven't read New York, Illinois or other states bills. I will some night when I need help going to sleep, and update in the future.
+<p></p><span class="c3">Related articles</span>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.digitaltrends.com/computing/california-tax-law-forces-amazon-to-withdraw-associates-program/">California tax law forces Amazon to withdraw associates program</a> (digitaltrends.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.blippitt.com/amazon-terminates-deal-with-25k-california-affiliates-video/">Amazon Terminates Deal with 25K California Affiliates (VIDEO)</a> (blippitt.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://gigaom.com/2011/06/29/amazon-sales-tax-california/">Next up in Amazon's tax war: California</a> (gigaom.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.kinlane.com/2011/06/amazon-end-affiliate-program-in-california/">Amazon End Affiliate Program in California</a> (kinlane.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/30/what-does-online-sales-tax-battle-mean-for-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/30/opensource-version-of-the-mashape-api-proxy/">Open-Source Version of the Mashape API Proxy</a></h3>
+        <span class="post-date">30 Jun 2011</span>
+        <a href="http://www.mashape.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape-logo.png" alt="" width="250" align="right" /></a>The <a title="Mashape API Proxy" href="https://github.com/Mashaper/Mashape-API-Proxy">Mashape API Proxy</a> is an open-source version of the same proxy that allows APIs to integrate with the <a title="Mashape Platform" href="http://www.mashape.com/">Mashape Platform</a> andhandles authorizing users, billing, rate limiting and other features.<p></p>
+Version 1.1 is whats available for <a title="download on Github" href="https://github.com/Mashaper/Mashape-API-Proxy">download on Github</a>, and Mashape is testing the private version 1.2 of the proxy with a small set of API providers, and they will push it to Github after its been tested.<p></p>
+The new version dramatically improves the performance and the security of the proxy, while reducing latency.<p></p>
+The API Proxy version 1.1 is an extremely early version and Mashape recommends waiting for version 1.2 before deploying.<p></p>
+The open-source Mashape API Proxy is written in JavaScript and runs on the latest version of <a title="node.js" href="http://nodejs.org/">node.js</a><p></p>
+This is the first <a title="open-source API proxy" href="https://github.com/Mashaper/Mashape-API-Proxy">open-source API proxy</a> that I know of, and in my opinion, opens up a lot of possibilities for the API industry.
+<h6 class="zemanta-related-title" style="font-size: 1em;">Related articles</h6>
+<ul class="zemanta-article-ul">
+	<li class="zemanta-article-ul-li"><a href="http://blog.apievangelist.com/2011/06/11/the-battle-for-your-api-proxy/">The Battle for Your API Proxy</a> (apievangelist.com)</li>
+	<li class="zemanta-article-ul-li"><a href="http://mashable.com/2011/06/02/mashape/">Need an API? Try Mashape's Marketplace [INVITES]</a> (mashable.com)</li>
+	<li class="zemanta-article-ul-li"><a href="http://www.readwriteweb.com/hack/2011/06/mashape-the-marketplace-for-ap.php">Mashape, the Marketplace for APIs, Moves to Beta</a> (readwriteweb.com)</li>
+	<li class="zemanta-article-ul-li"><a href="http://blog.apievangelist.com/2011/06/17/new-api-management-platform-players/">New API Management Platform Players</a> (apievangelist.com)</li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/30/opensource-version-of-the-mashape-api-proxy/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/30/new-pricing-for-genability-energy-api/">New Pricing for Genability Energy API</a></h3>
+        <span class="post-date">30 Jun 2011</span>
+        <a title="Energy pricing data provider Genability" href="http://www.genability.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/genability/genability-logo.jpg" alt="" width="250" align="right" /></a><a title="Energy pricing data provider Genability" href="http://www.genability.com/">Energy pricing data provider Genability</a> just announced the roll-out of more <a title="flexible pricing for their API" href="https://developer.genability.com/plans-pricing">flexible pricing for their API</a>.
+<p></p>The new pricing structure gives Genability API developers more options with no long term commitments, when accessing the Genability tariff and electricity pricing database.
+<p></p><a title="Genability API" href="https://developer.genability.com/">Genability API</a> pricing starts with a free plan which offers 10 unique tariff credits per month, and will serve up 1,000 calls per hour.
+<p></p>Genability bulk paid plans range from $89.99 / month to $1499.99 a month:<img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/genability/genability-pricing.png" alt="" width="325" align="right" />
+<ul class="mainlist">
+     <li>
+          <strong>Bronze for 89.99 / month</strong>, with 100 unique tariff credits per month, and 5,000 calls per hour
+     </li>
+     <li>
+          <strong>Silver for 299.99 / month</strong>, with 350 unique tariff credits per month, and 20,000 calls per hour
+     </li>
+     <li>
+          <strong>Gold for $799.99 / month</strong>, with 1000 unique tariff credits per month, and 50,000 calls per hour
+     </li>
+     <li>
+          <strong>Platinum for $1499.99 / month</strong>, with 2000 unique tariff credits per month, and 100,000 calls per hour
+     </li>
+</ul>The call per hour portion is pretty straightforward, but whats a tariff credit?
+<p></p>A tariff credit is when you request a full tariff (including all its rates, bands and properties), or request a price, or a calculation on a tariff. Genability keep track of each tariff you request, and keep a count of the unique ones, with subsequent calls for previously requested tariffs being free.
+<p></p>All of Genability's API plans both, both free and paid, include LSE data, season &amp; time of use data, and zip codes, and geo-location data.
+<p></p>Genability also offers custom pricing plans, if one of their doesn't fit your needs, just contact them and they'll negotiate additional services, flexible usage policies or volume pricing.
+<p></p>It's interesting to see pricing for an API that provides access to energy utility pricing, take on a very utility pricing model for consumption.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/30/new-pricing-for-genability-energy-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/30/mashape-provides-tools-to-distribute-discover-and-hack-apis/">Mashape Provides Tools to Distribute, Discover and Hack APIs</a></h3>
+        <span class="post-date">30 Jun 2011</span>
+        <a href="http://www.mashape.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape-logo.png" alt="" width="250" align="right" /></a>I'm exploring the <a title="Mashape API Platform" href="http://www.mashape.com/">Mashape API Platform</a>, trying to break things down and understand everything in more detail. Blogging about a topic does this for me.
+<p></p>So let's start with deploying an API with Mashape.
+<p></p>With the <a title="Mashape PHP Library" href="https://github.com/Mashaper/mashape-php-library">Mashape PHP Library</a> you can deploy an API on your infrastructure. You <a title="download the library from Github" href="https://github.com/Mashaper/mashape-php-library">download the library from Github</a>, deploy on your server, and then add the methods for your API by extending the Mashape PHP component class.
+<p></p>If you already have an API that returns JSON responses, you can just register it as a Mashape API for distribution, without deploying the Mashape PHP Library.
+<p></p>If you've deployed your API without the Mashape PHP Library you will need to accomplish one more step. You will need to implement the <a title="Mashape Connector" href="http://www.mashape.com/guide/publish/xml#authentication">Mashape Connector</a> by adding one line of code to your API, which is required to connect your API to the Mashape Platform and handle user authorization, billing, and rate-llimiting.
+<p></p>Whichever way you deploy your API, you can now distribute it using Mashape. The first step for distributing an API is to create an XML file that describes what the API does. This XML file gets deployed on your server and needs to be updated as your API evolves.
+<p></p>Once your API is deployed and published to Mashape, the platform distributes your API to the <a title="Mashape Marketplace" href="http://www.mashape.com/explore/">Mashape Marketplace</a> and provides a detail page with title, description, documentation, test console and <a title="Mashape PHP Client Library" href="https://github.com/Mashaper/mashape-php-client-library">PHP</a>, <a title="Mashape Python Client Library" href="https://github.com/Mashaper/mashape-python-client-library">Python</a>, <a title="Mashape Ruby Client Library" href="https://github.com/Mashaper/mashape-ruby-client-library">Ruby</a>, <a title="Mashape Java Client Library" href="https://github.com/Mashaper/mashape-java-client-library">Java</a> and <a title="Mashape Objective C Client Library" href="https://github.com/Mashaper/mashape-objectivec-client-library">Objective C</a> client libraries.
+<p></p>Mashape then provides a way for developers to sign-up and start hacking on any API in the Mashape Marketplace with a single developer account and key. There are also social features allowing users to follow and contact other users.
+<p></p>All APIs that are published using Mashape will connect and communicate with Mashape through an API Proxy. This is the proxy that handles the authorization of users, implementation of billing, rate limiting and other functions described above.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape/Mashape-Manage-Your-API.png" alt="" width="350" align="right" />Right now the proxy is primarily available via the Mashape platform, but you can also find an <a title="Open-Source version of the Mashape API Proxy" href="http://blog.apievangelist.com/2011/06/30/open-source-version-of-the-mashape-api-proxy/">open-source version of the Mashape API proxy</a> on Github. The API Proxy is intended to be downloaded and installed on your servers, which will increase the performance and security of your API.
+<p></p>In addition to being able to register your API and use the <a title="Mashape API Proxy" href="http://blog.apievangelist.com/2011/06/30/open-source-version-of-the-mashape-api-proxy/">Mashape API Proxy</a> in the cloud, you can <a title="download and install" href="https://github.com/Mashaper/Mashape-API-Proxy">download and install</a> on-premise. Since it is open-source, you could also fork the code and potentially add in your own modifications to the API proxy, which is written in JavaScript and runs on the latest version of node.js
+<p></p>I'm playing around with deploying one small and one large data-set as two separate APIs using the Mashape PHP Library, so I can get more familiar with how the platform works. I just wanted to work through some thoughts about what they provide here on the blog. More to come on <a title="Mashape" href="http://blog.apievangelist.com/2011/03/04/mashape-api-service-provider/">Mashape</a>...
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/30/mashape-provides-tools-to-distribute-discover-and-hack-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/29/videos-for-mashery-evolution-of-distribution-event/">Videos for Mashery, Evolution of Distribution Event</a></h3>
+        <span class="post-date">29 Jun 2011</span>
+        <a title="Evolution of Distribution" href="http://mashery.com/events/eod.html"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/events/evolution-of-distribution/mashery-evolution-of-distribution-event-1.png" alt="" width="250" align="right" /></a>The other week I attended an event put on by<a title="Mashery" href="http://www.mashery.com/">Mashery</a>, called<a title="Evolution of Distribution" href="http://mashery.com/events/eod.html">The Evolution of Distribution</a>. Mashery has published videos from the event on their site.
+<p></p>The event focused on the growing need to distribute information to a multitude of Internet connected devices using APIs, andMashery invited four leaders in the API space to showcase their experience:
+<ul class="mainlist">
+     <li>
+          <a title="Daniel Jacobsen" href="http://twitter.com/#!/daniel_jacobson">Daniel Jacobson</a>, Director of Engineering for<a title="Netflix API" href="http://developer.netflix.com/">Netflix API</a>
+     </li>
+     <li>
+          <a title="Kumar Kandaswamy" href="http://twitter.com/#!/Kumar_K">Kumar Kandaswamy</a>, Director,<a title="Open API Platform Business for Best Buy" href="http://www.bbyopen.com/">Open API Platform Business for Best Buy</a>
+     </li>
+     <li>
+          <a title="Adam Kleinberg" href="http://twitter.com/#!/adamkleinberg">Adam Kleinberg</a>, CEO of<a title="Traction" href="http://www.tractionco.com/">Traction</a> and Mashable.com Tech Writer
+     </li>
+     <li>
+          <a title="Edwin Aoki" href="http://twitter.com/#!/edwinaoki">Edwin Aoki</a>, Chief Architect of PayPal/eBay
+     </li>
+</ul>Mashery did a great job in publishing video for each of the four talks online, as well as remarks by <a title="Quentin Hardy" href="http://twitter.com/#!/qhardy">Quentin Hardy</a> who moderated theEvolution of Distribution Speaker Panel.
+<p></p>You can find all the videos on the Mashery, <a title="Evolution of Distribution" href="http://mashery.com/events/eod.html">Evolution of Distribution page</a> on their site.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/10/lessons-in-api-deployment-from-netflix/">Lessons in API Deployment From Netflix</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/02/mashery-evolution-of-distribution/">Mashery - Evolution of Distribution</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/03/api-basics-for-retail-companies-from-best-buy/">API Basics for Retail Companies from Best Buy</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/29/videos-for-mashery-evolution-of-distribution-event/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/29/facebook-officially-lauches-graph-api-explorer/">Facebook Officially Lauches Graph API Explorer</a></h3>
+        <span class="post-date">29 Jun 2011</span>
+        <img src="http://kinlane-productions.s3.amazonaws.com/facebook/facebook-graph-API-explorer-bubbles.png" alt="" width="300" align="right" />Facebook just <a title="officially launched the Graph API Explorer" href="http://developers.facebook.com/blog/post/517/">officially launched the Graph API Explorer</a>, a tool allowing developers to quickly explore the social graph of people, photos, events, pages and the relationships between them, via the <a title="Facebook Graph API" href="https://developers.facebook.com/docs/reference/api/">Facebook Graph API</a>.<p></p>
+Like other <a title="API Explorers" href="http://blog.apievangelist.com/2011/03/24/explorers-open-api-access-beyond-developers/">API explorers</a>, the <a title="Graph API Explorer" href="https://developers.facebook.com/tools/explorer/">Graph API Explorer</a> allows developers to make requests against the API and see formatted results in-line.<p></p>
+The Graph API Explorer interface allows you to obtain an access_token with the specific permissions necessary to access data, navigating the same permissions dialog users will see when permissions are requested in a production app.<p></p>
+The Graph API Explorer then allows developers to switch between HTTP GET, POST and DELETE to get, create, update or delete objects.  When POSTing to the API, you can also provide a list of fields and values that you want to send as parameters to the API.<p></p>
+For every request the Graph API Explorer provides formatted results, allowing developers to move between objects in the graph by click their Ids, showing the details of each object on the social graph. Just like the real Facebook application, the Graph API Explorer only shows you the objects and data you have acess to see, and that you give the Graph API Explorer permission to access on your behalf.<p></p>
+The <a title="Facebook Graph API Explorer was originally deployed by a Facebook employee" href="http://blog.apievangelist.com/2011/05/17/facebook-joins-api-explorer-game-sort-of/">Facebook Graph API Explorer was originally deployed by a Facebook employee</a>, and now is being officially as part of the Facebook developers program, and is part of a growing trend of RESTful API explorers like <a title="Apigee Console" href="http://blog.apievangelist.com/2011/03/07/apigee-api-console-is-now-free-for-everyone-to-use/">Apigee Console</a> and <a title="Google API Explorer" href="http://blog.apievangelist.com/2011/05/21/google-apis-explorer/">Google API explorer</a>.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/29/facebook-officially-lauches-graph-api-explorer/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/29/apigee-delivers-api-pcidss-compliance/">Apigee Delivers API PCI-DSS Compliance</a></h3>
+        <span class="post-date">29 Jun 2011</span>
+        <a title="Apigee" href="http://apigee.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/apigee-logo.gif" alt="" width="250" align="right" /></a><a title="Apigee" href="http://apigee.com/">Apigee</a> justannounced their <a title="Apigee Enterprise Cloud PCI" href="http://forms.apigee.com/acton/form/549/001c:d-0002/0/index.htm">Apigee Enterprise Cloud PCI</a>, a new offering that enables organizations to deliver transactional APIs, securely deployed in a private or public cloud.
+<p></p>Apigee's new Enterprise Cloud PCI supports full compliance with the <a title="Payment Card Industry Data Security Standard" href="https://www.pcisecuritystandards.org/security_standards/">Payment Card Industry Data Security Standard (PCI-DSS)</a>, while taking advantage of the compute resources of the cloud to support transactional API traffic and sensitive customer data.
+<p></p>To fully protect critical customer credit card information, there's an increased focus on compliance, especially as more e-commerce services shift to cloud computing and APIs, said Chet Kapoor, Apigee CEO. ...The Apigee Enterprise Cloud API also protects and screens sensitive data flowing between an application and an API residing on a public cloud, so businesses can now confidently broaden their e-commerce network with transactional APIs.
+<p></p>The Apigee Enterprise Cloud PCI solution is deployed in PCI-compliant data centers, allowing customers to:
+<ul class="mainlist">
+     <li>Build and deploy transactional APIs
+     </li>
+     <li>Maintain PCI compliance and data protection of all API traffic
+     </li>
+     <li>Tap the scalability of the cloud for secure transactional APIs
+     </li>
+</ul>The <a title="Apigee Enterprise" href="http://blog.apievangelist.com/2010/10/10/apigee-api-services/">Apigee Enterprise</a> Cloud PCI can also be deployed on-premise, delivering the same capabilities for in-house PCI-DSS compliant deployments.
+<p></p>PCI-DSS is associated with e-commerce, and financial transaction security, but can be universally applied to securing any online transactions. The availability of this type of API security will go a long way in convincing IT departments to deploy their API infrastructure in the clouds.
+<h6 class="zemanta-related-title c1">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/new-api-management-platform-players/">New API Management Platform Players</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/21/open-source-api-billing-and-traffic-control/">Open Source API Billing and Traffic Control</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/layer-7-technologies-launches-new-api-portal/">Layer 7 Technologies Launches New API Portal</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/29/apigee-delivers-api-pcidss-compliance/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/27/rise-in-mobile-payments-good-sign-for-apis/">Rise in Mobile Payments Good Sign for APIs</a></h3>
+        <span class="post-date">27 Jun 2011</span>
+        <a href="https://personal.paypal.com/us/cgi-bin/?cmd=_render-content&amp;content_ID=marketing_us/mobile_payments"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/paypal/paypal-mobile-payments.gif" alt="" width="200" align="right" /></a>Mobile is hot. Everyone is talking about the<a title="growth in mobile payments in 2011" href="http://gigaom.com/2011/06/24/3b-in-mobile-payments-for-paypal-this-year-but-bigger-prize-at-stake/">growth in mobile payments this year</a>.
+<p></p>Forrester Research predicted that mobile commerce will hit $6 billion in 2011 - and reach up to $31 billion by 2016.
+<p></p><a title="Paypal Mobile Payments" href="https://personal.paypal.com/us/cgi-bin/?cmd=_render-content&amp;content_ID=marketing_us/mobile_payments">PayPal</a> just raised their 2011 Mobile Total Payments Volume (TPV) projections to $3 billion. Paypal first predicted $1.5 billion in 2011 mobile payments volume, then in February, they upped that to $2 billion, and now they've adjusted to $3 billion.
+<p></p>Paypal is running $10 million in mobile TPV a day, up from the $6 million they reported in March.
+<p></p>It shows that mobile users are actively purchasing products and services online using sites and applications on their mobile devices.
+<p></p>Just like with social media and cloud computing, APIs are a silent force behind the mobile revolution. APIs drive the applications and sites that mobile users are puting to use.
+<p></p>The growth in mobile payments is a sign of the overall growth in the mobile market, as well as massive growth in API deployment to support the mobile demand.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/27/rise-in-mobile-payments-good-sign-for-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/26/mobile-api-documentation-with-mashape-documentor/">Mobile API Documentation with Mashape Documentor</a></h3>
+        <span class="post-date">26 Jun 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashape-documentor-261x300.png" alt="" width="200" align="right" />The <a title="Mashape Documentor" href="http://www.magdev.de/mashape-documentor/">Mashape Documentor</a> is an engine for automatically generating a mobile version of documentation for any API running on the <a title="Mashape API Platform" href="http://www.mashape.com/">Mashape API Platform</a>.
+<p></p>Using PHP, the Mashape Documenter reads the api.xml for a Mashape API, then generates a mobile version of the documentation in HTML5, CSS3, and Jquery.
+<p></p>You can drop the script into the root of an API, where the api.xml is located,customize the header and footer of the mobile interface and your up and running.
+<p></p><a title="Marco Gritisch" href="http://twitter.com/#!/magdev">Marco Gr�tsch</a>, who created Mashape Documenter has made it available under a BSD license, and is available for <a title="download on his blog" href="http://www.magdev.de/mashape-documentor/">download on his blog</a> (its in german).
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/11/the-battle-for-your-api-proxy/">The Battle for Your API Proxy</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/new-api-management-platform-players/">New API Management Platform Players</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://www.readwriteweb.com/hack/2011/06/mashape-the-marketplace-for-ap.php">Mashape, the Marketplace for APIs, Moves to Beta</a> (readwriteweb.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/26/mobile-api-documentation-with-mashape-documentor/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/26/amazon-kills-alexa-soap-api-due-to-security/">Amazon Kills Alexa SOAP API Due To Security</a></h3>
+        <span class="post-date">26 Jun 2011</span>
+        <a href="http://aws.amazon.com/awis/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/amazon/alexa-logo.gif" alt="" width="200" align="right" /></a>Amazon recently sent an email to all developers notifying them of upcoming changes to the <a title="Alexa Top Sites API" href="http://docs.amazonwebservices.com/AlexaTopSites/latest/">Alexa Top Sites API</a>.<p></p>
+On November 25, 2011 Amazon will deprecate the Alexa Top Sites SOAP API. The SOAP interface has had repeated security issues over the last couple of years, and since only a small percentage of users actually use the API, they decided to decommission it.<p></p>
+Alexa will also be enforcing that all requests to the API must be signed using <a title="signature version 2" href="http://docs.amazonwebservices.com/AlexaTopSites/latest/CalculatingSignatures.html">signature version 2</a>.  Version 2 is significantly more secure that the version, and all <a title="Amazon Web Services" href="http://aws.amazon.com/">Amazon Web Services</a> are being required to migrate to it.<p></p>
+I wonder if Amazon is having similar security issues with other SOAP APIs?   Maybe the other SOAP APIs just have more users and it was worthwhile for them to fix.<p></p>
+Makes you wonder how many SOAP users vs. REST users Amazon Web Services has.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/26/amazon-kills-alexa-soap-api-due-to-security/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/23/why-your-api-registration-process-sucks/">Why Your API Registration Process Sucks</a></h3>
+        <span class="post-date">23 Jun 2011</span>
+        <a title="self-service registration to your API" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=198"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/api-registration.png" alt="" width="250" align="right" /></a>This is one story I'm sure I will be telling over and over. Its about providing <a title="self-service registration to your API" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=198">self-service registration to your API</a>, and access to your documentation.
+<p></p>I'm working my way through 78 travel APIs right now, reviewing each of them for a series of travel industry API stories.
+<p></p>I'm only halfway through, and about 25% of them require me to email them or submit a contact form to get access to their API.
+<p></p>I can understand doing this if your goal is to only work with partners and vendors, but all of these APIs came from the <a title="Programmable Web API Directory" href="http://www.programmableweb.com/apis/directory">ProgrammableWeb API directory</a>. So I assume your goal is to target a wider public audience.
+<p></p>Here is how your approach is hurting you:
+<ol class="mainlist">
+     <li>As a developer I need instant gratification. I need to make sure your API has what I need. I need to quickly get at your documentation, see your endpoints, and potentially be able to grab a code sample and see some results. If you can't provide this for me, someone else will.
+     </li>
+     <li>As an API blogger and writer I need immediate access. If I'm going to include you in my story for the travel industry APIs, and showcase what you offer. I need access, without waiting or talking to you, to see the value you deliver, and where you fit in.
+     </li>
+</ol>Now I've submitted the contact forms and emails for each of these APIs. I've gotten a couple responses, 24 or 48 hours later (some no response). I've already moved on, I see the name in an email, realize its from my travel research, but I don't remember anything else. Even though I have access now, its unlikely that I will return. The moment to make your mark has passed.
+<p></p>What would be the reason for limited access to your API? Maybe you don't have staff or time to manage the potential spammers or other probing type of users that will come through? If you don't have the resources, its likely you won't have the resources to support my needs as a developer either.
+<p></p>Put some thought into why you are preventing access to your API. Why isn't it self-service? You are hurting your growth way more than you know.
+<p></p>If you don't have the resources, you should consider talking to a service provider like <a title="Mashery" href="http://blog.apievangelist.com/2010/10/10/mashery-api-services/">Mashery</a>, <a title="Apigee" href="http://blog.apievangelist.com/2010/10/10/apigee-api-services/">Apigee</a>, or <a title="3Scale" href="http://blog.apievangelist.com/2010/10/10/3scale-api-services/">3Scale</a>. They can deliver the type of self-service gratification, consumers of your API have grown accustom to.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/23/why-your-api-registration-process-sucks/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/23/api-ecosystem-tracking-with-statsd-and-graphite/">API Ecosystem Tracking with StatsD and Graphite</a></h3>
+        <span class="post-date">23 Jun 2011</span>
+        <img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/graphite-stats-d.png" alt="" width="250" align="right" />When managing an API and its ecosystem, we are all making this up as we go along.  We have to constantly try new things, build them out, test, measure, and readjust.<p></p>
+Measuring being the most important, and when considering your API analytics, it shouldn't be just about tracking usage of your API.  You should measure every aspect of your <a title="API ecosystem" href="http://www.apievangelist.com/ecosystem.php">API ecosystem</a>.<p></p>
+Applying metrics, gathering data, and reporting on this should be easy, and be part of your development DNA.  Your metrics should be flexible and change as your ecosystem evolves.  Any engineer, evangelist or other team member should be able to implement, gather and measure as the need arises.<p></p>
+I was introduced to StatsD and Graphite reporting last week, by <a title="Flip" href="http://twitter.com/#!/mrflip">Flip</a> from <a title="InfoChimps" href="http://www.infochimps.com/">Infochimps</a>, while at the <a title="O'Reilly Velocity conference" href="http://velocityconf.com/velocity2011">O'Reilly Velocity Conference</a>.<p></p>
+<a title="StatsD" href="https://github.com/etsy/statsd">StatsD</a> is a dead simple NodeJS daemon that listens for messages over a UDP port. When a message is received, it parses the messages, and extracts metrics data.<p></p>
+<a title="Graphite" href="http://graphite.wikidot.com/faq#toc0">Graphite</a> is a highly scalable real-time graphing system. Data can be sent to Graphite's processing back-end, carbon, which stores the data in Graphite's specialized database. The data can then be visualized through graphite's web interfaces.<p></p>
+StatsD lets you define what you want to track, throw it at the StatsD over a UDP port, once processed you can schedule it to dump to Graphite for further processing and visualization.<p></p>
+Using StatsD + Graphite, you can provide any metric you wish, and Graphite will just report on it, with no management overhead.  This type of flexibility provides the perfect agile environment measuring anything in an API ecosystem.<p></p>
+For example you can introduce new tracking for each deployment of an account sign-up widget using:  StatsD::increment("widget.accountsignup.deploy");<p></p>
+StatsD will accept and process the new data, where Graphite will begin receiving, processing and provide a visualization for this new data set.<p></p>
+Since the StatsD interface is over UDP you don't have to worry about what this will do to your API or application performance, you just throw data at it....and let StatsD and Graphite do the rest.<p></p>
+StatsD and Graphite introduces a very flexible environment for analytics, allowing you to track anything and everything as you roll it out.  You can track your API, widgets, forum activity, virtually anything you implement as part of your API ecosystem.<p></p>
+This type of deploy and measure strategy can help you understand whether your succeeding or failing in real-time.  In the volatile world of APIs, this can mean the difference between overall success or failure with your API.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/23/api-ecosystem-tracking-with-statsd-and-graphite/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/22/widget-builder-environment-for-apis/">Widget Builder Environment for APIs</a></h3>
+        <span class="post-date">22 Jun 2011</span>
+        <a title="Apigee Console" href="http://apigee.com/about/products_togo.html"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/apigee-api-console.jpg" alt="" width="250" align="right" /></a>There are many tools out there for working with Web APIs, but the one I am seeing used more and more is an API explorer. API explorers allow users to make calls and explore REST APIs using a Web interface -- all without writing code.
+<p></p>These <a title="API explorers" href="http://blog.apievangelist.com/2011/03/24/explorers-open-api-access-beyond-developers/">API explorers</a> are making it a lot easier for developers to discover, learn, and integrate with Web APIs. I also think they have a lot more potential, beyond the developer community.
+<p></p>Non-developers can use an API explorer to make calls against an API, retrieve JSON, and then use tools like Google Spreadsheets to process responses, building visualizations, and so on.
+<p></p>There is a huge opportunity for API explorer providers to tap into the larger, non-developer community, and one of the easiest ways to do this may be by adding a widget layer to their applications.
+<p></p>An API widget builder would have similar features to the <a title="Integrated Development Environment (IDE) for APIs" href="http://blog.apievangelist.com/2011/06/18/integrated-development-environment-ide-for-apis/">Integrated Development Environment (IDE) for APIs</a> I proposed last week:
+<ul class="mainlist">
+     <li>
+          <strong>API Discovery</strong> - Allowing users to discover and select pre-defined selection of RESTful APIs
+     </li>
+     <li>
+          <strong>Authentication</strong> - Enable HTTP Basic and oAuth authentication with APIs
+     </li>
+     <li>
+          <strong>Services</strong> - Render full list available services for selected API
+     </li>
+     <li>
+          <strong>Request / Responses</strong> - Allow for building requests, manually sending, and seeing fresponses for selected API
+     </li>
+     <li>
+          <strong>Github Integration</strong> - Allow adding and connecting to both private and public Github repositories
+     </li>
+</ul><a title="WolframAlphas widget builder" href="http://developer.wolframalpha.com/widgetbuilder/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/wolfram-alpha/wolfram-alpha-widget-builder.png" alt="" width="250" align="right" /></a>Then I would add a new layer to the environment:
+<ul class="mainlist">
+     <li>
+          <strong>Widget Builder</strong> - Provide tools for widget discovery, creation, connecting to APIs, configuration, sandbox, and copy / paste embeddable code for syndication.
+     </li>
+     <li>
+          <strong>Export Tools</strong> - Ability to export any API responses to Google Spreadsheet, Microsoft Excel, Comma Separate or Tab Separated values.
+     </li>
+</ul>With this type of environment, non-technical users could easily connect to APIs, mash-up responses and build widgets for embedding in their presentations, web sites, applications, and mobile devices.
+<p></p>There are a couple of widget building platforms out there like <a title="Sprout Inc" href="http://sproutinc.com/">Sprout Inc</a> or <a title="Widgetbox" href="http://www.widgetbox.com/overview/">Widgetbox</a>, but I'm picturing something more like <a title="WolframAlphas Widget Builder" href="http://developer.wolframalpha.com/widgetbuilder/">WolframAlpha's widget builder</a>. Take <a title="Apigee Console" href="http://apigee.com/about/products_togo.html">Apigee Console</a> and add a widget builder like WolframAlpha's, and I think you'd have something close to what I'm envisioning.
+<p></p>I hope some existing API service provider or IDE developer sees the opportunities within the API space and builds a developer IDE and widget builder for APIs.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/deploying-smarter-api-documentation/">Deploying Smarter API Documentation</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/18/integrated-development-environment-ide-for-apis/">Integrated Development Environment (IDE) for APIs</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.programmableweb.com/2011/04/15/new-widgets-and-graph-like-api-expands-linkedins-reach/">New Widgets and Graph-like API Expands LinkedIn's Reach</a> (programmableweb.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/04/13/linkedin-api-platform-and-the-evolution-of-the-api/">LinkedIn API Platform and the Evolution of the API</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/22/widget-builder-environment-for-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/22/what-challenges-do-api-service-providers-face-in-the-enterprise-space/">What Challenges Do API Service Providers Face in the Enterprise Space?</a></h3>
+        <span class="post-date">22 Jun 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/enterprise.jpg" alt="" width="250" align="right" />APIs are hot right now. With the success of Twitter, Twilio, Facebook and others -- due in no small part to their APIs -- the enterprise space is taking notice. The demand for enterprise API services is increasing, with a number of services providers stepping up to compete for the business. As this happens, there are three major areas that may prove challenging for API service providers targeting the enterprise space:
+<p></p><strong>Developers:</strong> Wide range of vendor, partner, and public developer needs and expectations.
+<ul class="mainlist">
+     <li>
+          <strong>Open and Accessible</strong> - A public, self-service and accessible API ecosystem, with less of an enterprise feel
+     </li>
+     <li>
+          <strong>Documentation</strong> - Simple, yet complete API documentation
+     </li>
+     <li>
+          <strong>Common Tools</strong> - Forums, Mobile SK, explorers and other tools developers have grown accustom to.
+     </li>
+     <li>
+          <strong>Monetization</strong> - The ability to make money from their work.
+     </li>
+</ul><strong>Business Interests:</strong> Wide variety of business interests wanting to deploy and manage APIs
+<ul class="mainlist">
+     <li>
+          <strong>Legal</strong> - Whole new worlds of legal concerns for some companies
+     </li>
+     <li>
+          <strong>Transparency</strong> - Struggles with what transparent means? And how much is too much?
+     </li>
+     <li>
+          <strong>Branding</strong> - What happens to the brand? Where are pitfalls? Where are opportunities?
+     </li>
+     <li>
+          <strong>Non-IT</strong> - More engagement from non-IT decision makers when deploying APIs.
+     </li>
+     <li>
+          <strong>Tools</strong> - Reports, widgets and other GUI tools that allow decision makers to put APIs to work.
+     </li>
+</ul><strong>Enterprise IT:</strong> Sector that has high expectations when it comes to software.
+<ul class="mainlist">
+     <li>
+          <strong>Secure</strong> - Mission critical security in all areas.
+     </li>
+     <li>
+          <strong>Scalable</strong> - Scalability has to be baked in.
+     </li>
+     <li>
+          <strong>SLA</strong> - Service levels have to be guaranteed.
+     </li>
+     <li>
+          <strong>On-Premise -</strong> Ability to deliver behind the firewall.
+     </li>
+     <li>
+          <strong>Private Cloud -</strong> Deploying in their private cloud infrastructure.
+     </li>
+     <li>
+          <strong>Public Cloud -</strong> Deploy on public cloud infrastructure.
+     </li>
+</ul>When it comes to providing API services to the enterprise, you have different public, vendor and partner-developer expectations -- which all may be quite different. To complicate things, you may have decisions around APIs increasingly coming from non-IT departments, bringing a whole bunch of business related concerns.
+<p></p>Lastly, this is the enterprise. Things have to be solid. Web APIs have been proven in social media, cloud computing and other areas not born in the enterprise. There is just a much higher expectation over quality of service then there has been with the Twitter API and other open APIs.
+<p></p>All of this will test API service providers, forcing them to deliver a unique set of tools that meet the needs of some potentially competing interests of open developers, internal and external business interests, and traditional IT decision makers.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/22/what-challenges-do-api-service-providers-face-in-the-enterprise-space/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/22/3scale-and-layer7-partner-for-secure-api-management/">3Scale and Layer7 Partner for Secure API Management</a></h3>
+        <span class="post-date">22 Jun 2011</span>
+        <a title="3Scale API Management Platform" href="http://www.3scale.net/api-management/solution/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/3scale-logo.jpg" alt="" width="250" align="right" /></a>Two API service providers have brought their products together to deliver a more robust enterprise API solution. <a title="3Scale API Management Platform" href="http://www.3scale.net/api-management/solution/">3Scale API management platform</a> now integrates with <a title="Layer7 Technolies XML Gateway" href="http://www.layer7tech.com/products/xml-gateway-overview">Layer7 Technologies XML security gateways</a>.
+<p></p>3scale's API Management suite includes an API portal for developers and partners on-boarding and support, API access control, policies management, analytics and billing and payments features.
+<p></p>The Layer7 XML Gateway provides high performance traffic filtering, API security and attack protection, traffic routing, API transformation services and caching.
+<p></p><a title="Layer7 Technolies XML Gateway" href="http://www.layer7tech.com/products/xml-gateway-overview"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/layer7-logo.png" alt="" width="250" align="right" /></a>Enterprise API providers can use 3scale's plugin to issue API keys, policies and access rights that can be pushed and pulled between security gateways and 3scale's management dashboards.
+<p></p>Layer7 XML Gateway can be deployed on-premise, in a private or public cloud. With this new partnership 3Scale offers the same deployment flexibility for their API management solution.
+<p></p>The partnership gives 3Scale a leg up with the enterprise with a more robust, secure enterprise API gateway, and Layer7 gains a management suite to offer their API customers. It's a win for both of them, creating a very strong <a title="Enterprise API Solution" href="http://blog.apievangelist.com/2011/06/22/what-challenges-do-api-service-providers-face-in-the-enterprise-space/">enterprise API solution</a>.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/22/3scale-and-layer7-partner-for-secure-api-management/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/19/hapi-hackathon-wrapup/">HAPI Hackathon Wrapup</a></h3>
+        <span class="post-date">19 Jun 2011</span>
+        <a title="HAPI Hackathon" href="http://www.hapihack.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/HAPI-Hack-Weekend.png" alt="" width="250" align="right" /></a>The <a title="HAPI Hackathon" href="http://www.hapihack.com/">HAPI hackathon</a> wrapped up June 12th in San Francisco. The event brought developers together to hack on over 9 APIs in order to build something cool over the course of a weekend.
+<p></p>The event started out Friday night with <a title="Tokbox" href="http://www.opentok.com/">TokBox</a>, Ebay / <a title="Paypal" href="http://x.com/">Paypal</a>, <a title="Foursquare" href="http://developer.foursquare.com/">Foursquare</a>, <a title="Box.net" href="http://box.net/developers">Box.net</a>, <a title="Twilio" href="http://twilio.com/">Twilio</a>, <a title="Genability" href="http://developer.genability.com/">Genability</a>, <a title="Factual" href="http://www.factual.com/">Factual</a>, and <a title="Mashery" href="http://developer.mashery.com/apis">Mashery</a> showcasing their companies and their APIs to developers.
+<p></p>Next, developers lined up to pitch their ideas and generate interest amongst other participants. 10 ideas were pitched, then developers formed groups and got to work.
+<p></p>Developers spent all weekend drinking coffee, eating pizza and bagels, and hacking away. Everything culminated Sunday afternoon when developers presented their hacks.
+<p></p>Over sixteen hacks were presented, with prizes going to the best:
+<ul class="mainlist">
+     <li>
+          <strong>FourSquare2Go</strong> won a Foursquare prize for their offline Foursquare application.
+     </li>
+     <li>
+          <strong>Energy Dashboard</strong> won both the Mashery APIs and Genabiity API prizes for their energy insight, and prediction tool.
+     </li>
+     <li>
+          <strong>Congress Connector</strong> won multiple Twilio API, Factual API and Ebay / Paypal API prizes for their tool that made connecting with your congressional rep easier.
+     </li>
+     <li>
+          <strong>Chat Living Room</strong> won a TokBox API prize with their group Youtube video chat room.
+     </li>
+     <li>
+          <strong>Hapidocs</strong> won a Box.net API prize for their location based file storage application.
+     </li>
+     <li>
+          <strong>SoshoWise</strong> won a Ebay / Paypal API prize for their expert driven how to video application.
+     </li>
+</ul><a title="TokBox" href="http://www.tokbox.com/">TokBox</a> who organized the event, wanted to bring the developers together into an environment where they could make whatever they want, and offer support and prizes from nine different APIs.
+<p></p>Overall the <a title="Hackathon" href="http://www.apievangelist.com/hackathons-and-contests.php">hackathon</a> was a success, with developers going home with cash and schwag, and the APIs involved generated more awareness of the services they provide.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/08/hapi-hack-weekend/">HAPi Hack Weekend</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/18/1775/">Genability API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/13/using-your-api-to-find-new-developer-talent/">Using Your API to Find New Developer Talent</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/19/hapi-hackathon-wrapup/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/19/apis-are-key-to-industry-growth/">APIs Are Key to Industry Growth</a></h3>
+        <span class="post-date">19 Jun 2011</span>
+        <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/NetworkedHelpDesk/Networked-help-desk.png" alt="" width="300" align="right" />At the <a title="Glue Conference" href="http://gluecon.com/2011/">Glue Conference</a> this year in Colorado, I sat on a panel called, <a title="Whats Next for APIs?" href="http://www.kinlane.com/2011/05/whats-next-for-apis/">Whats Next for APIs?</a>. In my talk, one area I focused on, was how industries would organize and put APIs to work.
+<p></p>There is a growing trend within specific industries. They are coming together and pushing for standards, interoperability, and ways to work together.
+<p></p>I'm seeing evidence of this within the customer service industry. An industry association called <a title="NetworkedHelpDesk.org" href="http://networkedhelpdesk.org/">NetworkedHelpDesk.org</a> is using APIs to connect together customer service applications and establish a seamless way to communicate among industry partners and vendors.
+<p></p>Customer service applications are in high demand, and potentially connected with many other applications, so it is critical that they communicate and inter-operate efficiently.
+<p></p>NetworkedHelpDesk.org has brought together other applications such as <a title="Twilio" href="http://www.apievangelist.com/api-detail.php?API_ID=1823">Twilio</a>, SugarCRM, Freshbooks, Atlassian and Zendesk, with different types of applications including ticketing systems, bug trackers, development trackers, knowledge bases, and CRM software.
+<p></p>The goal of <a title="NetworkedHelpDesk.org" href="http://networkedhelpdesk.org/">NetworkedHelpDesk.org</a> is to deliver on the promise of the cloud, and enable disparate systems to collaborate with each other, using a standardized API format for the customer service industry.
+<p></p>I think we'll see more industries coming together like this, to establish ways they can work together more efficiently using APIs.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/19/apis-are-key-to-industry-growth/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/18/integrated-development-environment-ide-for-apis/">Integrated Development Environment (IDE) for APIs</a></h3>
+        <span class="post-date">18 Jun 2011</span>
+        <a title="Akshell" href="http://www.akshell.com/ide/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Akshell-Screenshot.png" alt="" width="250" align="right" /></a>I recently moved my IDE off my desktop and onto the web. I'm test driving two separate web-based integrated development environments (IDE):
+<ul class="mainlist">
+     <li>
+          <strong><a title="Akshell" href="http://www.akshell.com/ide/">Akshell</a></strong> - I like environment, its smooth and has Github integration. But its primarily a JavaScript IDE. I met the developers and like where they are going with it.
+     </li>
+     <li>
+          <strong><a title="ShiftEdit" href="http://shiftedit.net/">ShiftEdit</a></strong> - This is the one I'm using the most, because I work 70% of the time in PHP. I like the FTP access, but only has SVN for its repositoring integration.
+     </li>
+</ul>As I was working with the <a title="Dropbox API" href="https://www.dropbox.com/developers">Dropbox API</a>, <a title="Posterous API" href="http://posterous.com/api">Posterous API</a>, and <a title="Tumblr API" href="http://www.tumblr.com/docs/en/api">Tumblr API</a> today, and was thinking how nice it would be to have an IDE dedicated to APIs.
+<p></p>There are several <a title="API Explorers" href="http://blog.apievangelist.com/2011/03/24/explorers-open-api-access-beyond-developers/">API explorers</a> popping up out there, that let you play with one or multiple APIs and generate requests and display responses. This is a start.
+<p></p>I would like a full-blown IDE that I can add <a title="RESTful APIs" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=196">RESTful APIs</a> to my libraries and would have all the capabilities of an explorer, but also have access to client libraries, code samples, and other features of an IDE for the APIs I use the most.
+<p></p>I could integrate both my public and private Github repositories, and I could leverage the social coding available in the <a title="Github Community" href="http://www.github.com">Github community</a>.
+<p></p>Switching between APIs can be a bitch, remembering what I did last time I worked with an API, where the code is, the syntax, and more. I'm also spending a lot of time using multiple APIs, in a single script. Like pulling <a title="bookmarks from Instapaper API, generating a PDF with PDF Crowd, then sending to Mimeo to have printed" href="http://www.kinlane.com/2011/06/read-it-later-binder-with-instaper-and-mimeo-connect/">bookmarks from Instapaper API, generating a PDF with PDF Crowd, then sending to Mimeo to have printed</a>. That is 3 separate API calls.
+<p></p>I see a lot of potential for an IDE that is dedicated to the API space, an IDE that helps us developers efficiently integrate with the APIs we use most...as well as discover new APIs.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/deploying-smarter-api-documentation/">Deploying Smarter API Documentation</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/04/02/integrate-github-into-an-api-community/">Integrate Github Into an API Community</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/04/15/community-driven-api-code-samples-and-libraries/">Community Driven API Code Samples and Libraries | API Evangelist</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/18/integrated-development-environment-ide-for-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/18/genability-api-review/">Genability API Review</a></h3>
+        <span class="post-date">18 Jun 2011</span>
+        <a title="Genability" href="http://genability.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/genability/genability-logo.jpg" alt="" width="250" align="right" /></a><a title="Genability" href="http://genability.com/">Genability</a> have assembled a database of electricity pricing information from over 3500 electricity providers throughout North America.
+<p></p>The<a title="Genability API" href="https://developer.genability.com/">Genability API</a> is RESTful with JSON responses, and application keys for authentication.
+<p></p><strong>Documentation &amp; Tools</strong>
+<ul class="mainlist">
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=117" target="_blank">Overview of the API</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=191" target="_blank">Pricing</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=120" target="_blank">Reference &amp; Documentaton</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=150" target="_blank">Terms of Use / Conditions</a>
+     </li>
+</ul><strong>Support &amp; Management</strong>
+<ul class="mainlist">
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=123" target="_blank">Blog w/ RSS Feeds</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=116" target="_blank">Dashboard</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=158" target="_blank">LinkedIn</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=159" target="_blank">Twitter</a>
+     </li>
+</ul><strong>Community</strong>
+<ul class="mainlist">
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=131" target="_blank">Forum</a>
+     </li>
+</ul><strong>Developer</strong>
+<ul class="mainlist">
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=199" target="_blank">Account Info</a>
+     </li>
+     <li>
+          <a href="../../ecosystem-building-blocks-detail.php?Building_Block_ID=198" target="_blank">Registration</a>
+     </li>
+</ul>
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/11/etsy-api-review/">Etsy API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/17/factual-api-review/">Factual API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://apievangelist.wordpress.com/2011/06/13/hunch-api-review/">Hunch API Review</a> (apievangelist.wordpress.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/18/genability-api-review/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/17/new-api-management-platform-players/">New API Management Platform Players</a></h3>
+        <span class="post-date">17 Jun 2011</span>
+        <a href="http://www.layer7tech.com/" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/layer7-logo.png" alt="" width="200" align="right" /></a>Two new API management platforms were launched this month. <a title="Layer 7 Technologies" href="http://www.layer7tech.com/products/layer-7-api-portal">Layer 7 technologies</a> launched the <a title="Layer 7 API Portal" href="http://www.layer7tech.com/products/layer-7-api-portal">Layer 7 API Portal</a>, and <a title="SOA Software" href="http://www.soa.com/">SOA Software</a> launched their <a title="Atmosphere API Platform" href="http://blog.apievangelist.com/2011/06/17/atmosphere-a-new-api-management-portal/">Atmosphere API platform</a>.
+<p></p>These new platforms show the API space is really heating up in 2011. The enterprise is taking notice of the value of APIs, and service providers are lining up to compete for the business.
+<p></p>These new platforms offer asimilarset of services as <a title="Mashery" href="http://blog.apievangelist.com/2010/10/10/mashery-api-services/">Mashery</a>, <a title="Apigee" href="http://blog.apievangelist.com/2010/10/10/apigee-api-services/">Apigee</a>, <a title="3Scale" href="http://blog.apievangelist.com/2010/10/10/3scale-api-services/">3Scale</a> including:
+<ul class="mainlist">
+     <li>API Provisioning
+     </li>
+     <li>Metrics and Billing
+     </li>
+     <li>Security and Control
+     </li>
+     <li>Reporting and Analytics
+     </li>
+     <li>Developer Registration and Accounts
+     </li>
+     <li>Developer Support
+     </li>
+</ul><a href="http://atmosphere.soa.com/" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/atmosphere-api-management.png" alt="" width="200" align="right" /></a>Some of them deploy their solutions on-premise, while others deploy in the cloud, and a couple of them will do both. Each provider has their own approach to API management, but essentially accomplish the same end goal.
+<p></p>I'm going to work on a better side by side comparison of Layer 7, Atmosphere, Mashery, Apigee, 3Scale and Mashape. Hopefully to help people understand what each API service providers delivers.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/17/new-api-management-platform-players/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/17/layer-7-technologies-launches-new-api-portal/">Layer 7 Technologies Launches New API Portal</a></h3>
+        <span class="post-date">17 Jun 2011</span>
+        <a title="Layer 7 Technologies" href="http://www.layer7tech.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/layer7-logo.png" alt="" width="250" align="right" /></a><a title="Layer 7 Technologies" href="http://www.layer7tech.com/">Layer 7 Technologies</a> recently launched a new API Portal platform.  The new <a title="Layer 7 API Portal" href="http://www.layer7tech.com/products/layer-7-api-portal">Layer 7 API portal </a>provides API service providers with a secure, turn-key way to manage developers who build applications against their APIs.<p></p>
+They Layer 7 API Portal platform provides:
+<ul class="mainlist">
+	<li>API Provisioning Tools</li>
+	<li>Rate &amp; Account Plan Tools</li>
+	<li>Key, Token and Certification Authentication Management</li>
+	<li>Developer Registration &amp; Account Management</li>
+	<li>Forums &amp; Support Tools</li>
+	<li>Documentation &amp; Resources</li>
+	<li>Content Management</li>
+	<li>Dashboard Creation and Management</li>
+	<li>Analytics, Metrics, and Reporting</li>
+	<li>Alerts and Notifications</li>
+	<li>Enterprise-grade security and PCI DSS compliance</li>
+	<li>On-premise Deployment</li>
+</ul>
+The Layer 7 API portal provides all the common API management tools service providers, and developers are growing accustomed to.<p></p>
+The new API portal is the latest addition to the Layer 7 family of API <a title="gateway" href="http://www.layer7tech.com/products/xml-gateway-overview">gateway</a> and <a title="cloud management" href="http://www.layer7tech.com/products/cloudspan-gateways">cloud management</a> tools.  Layer 7 has been playing in the API space for a while now, but this portal represents a growing trend of API management tools targeting the enterprise.
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/17/layer-7-technologies-launches-new-api-portal/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/17/factual-api-review/">Factual API Review</a></h3>
+        <span class="post-date">17 Jun 2011</span>
+        <a href="http://www.factual.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/factual/factual-logo.png" alt="" align="right" /></a><a href="http://www.factual.com/">Factual</a> is an open data platform and community, with a goal to maximize data accuracy, transparency, and availability. They provide a marketplace of evolving data on thousands of topics.
+<p></p>Factual provides a RESTful API that returns JSON response, using an application key for authentication. Factual provides full data sets for download, Ruby Gem and IPhone SDK for development.
+<p></p><strong>Documentation &amp; Tools</strong>
+<ul class="mainlist">
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=125" target="_blank">Code Libraries</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=191" target="_blank">Pricing</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=165" target="_blank">Privacy</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=120" target="_blank">Reference &amp; Documentaton</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=150" target="_blank">Terms of Use / Conditions</a>
+     </li>
+</ul><strong>Support &amp; Management</strong>
+<ul class="mainlist">
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=123" target="_blank">Blog w/ RSS Feeds</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=116" target="_blank">Dashboard</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=132" target="_blank">FAQ</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=159" target="_blank">Twitter</a>
+     </li>
+</ul><strong>Community</strong>
+<ul class="mainlist">
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=131" target="_blank">Forum</a>
+     </li>
+</ul><strong>Developer</strong>
+<ul class="mainlist">
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=199" target="_blank">Account Info</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=169" target="_blank">App Manager</a>
+     </li>
+     <li>
+          <a href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=198" target="_blank">Registration</a>
+     </li>
+</ul>
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/30/3taps-api-review/">3Taps API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/11/etsy-api-review/">Etsy API Review</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/13/hunch-api-review/">Hunch API Review</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/17/factual-api-review/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/06/17/deploying-smarter-api-documentation/">Deploying Smarter API Documentation</a></h3>
+        <span class="post-date">17 Jun 2011</span>
+        <a title="Posterous" href="http://www.posterous.com"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/posterous/posterous-logo.jpg" alt="" width="160" align="right" /></a><a title="Posterous" href="http://www.posterous.com">Posterous</a> recently launched a <a title="new API" href="http://blog.apievangelist.com/2011/06/10/posterous-from-saas-to-paas-using-an-api/">new API</a> giving users access to all the functionality available through the Posterous web interface.
+<p></p>Instead of just delivering documentation for the <a title="Posterous API" href="http://posterous.com/api">Poserous API</a>, they went a step further and made the documentation smarter, and more interactive.
+<p></p>Think <a title="API Explorer" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=209">API explorer</a> meets <a title="API Documentation" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=120">API documentation</a>. The Posterous API documentation provides a list of all API services, endpoints, and methods, but it doesn't stop there.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/posterous/posterous-api-make-request.png" alt="" width="350" align="right" />When logged into your Posterous account, the API documentation automatically includes your api_token, which is necessary for making API calls.
+<p></p>Once authenticated you can make any call against the API right in the documentation. Each endpoint allows entry of necessary fields, displays a request URL, and a JSON response message.
+<p></p>This type of interactive API documentation allows developers to learn and explore how an API works in a live environment, making real calls.
+<p></p>This approach to delivering API documentation steps up the game a little bit, and the same old type of documentation may not do anymore.
+<h6 class="zemanta-related-title c2">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/10/posterous-from-saas-to-paas-using-an-api/">Posterous, From SaaS to PaaS Using an API</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/06/13/api-tools-service-providers/">API Tools &amp; Service Providers</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/27/google-api-house-cleaning/">Google API House Cleaning</a> (apievangelist.com)
+     </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/06/17/deploying-smarter-api-documentation/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+
+	<table width="100%" border="1" style="background-color:#FFF; border: 0px #FFF;">
+		<tr style="background-color:#FFF; border: 0px #FFF;">
+			<td align="left">
+				<a href="/blog/page62" class="button"><< Prev</a></li>
+			</td>
+			<td></td>
+			<td align="right">
+				<a href="/blog/page64" class="button">Next >></a>
+			</td>
+		</tr>
+	</table>
+
+  </div>
+</section>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

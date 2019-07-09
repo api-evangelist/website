@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Generating Operational Revenue From Public Data Access Using API Management</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Generating Operational Revenue From Public Data Access Using API Management | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/public-data-api-management/parks-prohibit-commercial-use.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Generating Operational Revenue From Public Data Access Using API Management | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/public-data-api-management/parks-prohibit-commercial-use.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Generating Operational Revenue From Public Data Access Using API Management</h2>
+<p><span class="post-date">20 Nov 2017</span></p>
+<p><i>This is part of some research I'm doing with <a href="http://apis.how/streamdata">Streamdata.io</a>. We share a common interest around the accessibility of public data, so we thought it would be a good way for us to partner, and Streamdata.io to underwrite some of my work, while also getting the occasional lead from you, my reader. Thanks for supporting my work <a href="http://apis.how/streamdata">Streamdata.io</a>, and thanks for support them readers!</i></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/public-data-api-management/parks-prohibit-commercial-use.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>A concept I have been championing over the years involves helping government agencies and other non-profit organizations generate revenue from public data. It is a quickly charged topic whenever brought up, as many open data and internet activists feel public data should remain freely accessible. Something I don’t entirely disagree with, but this is a conversation, that when approached right can actually help achieve the vision of open data, while also generating much needed revenue to ensure the data remains available, and even has the opportunity to improve in quality and impact over time.</p>
+
+<p><strong>Leveraging API Management</strong>
+I’d like to argue that APIs, and specifically API management has been well established in the private sector, and increasingly in the public sector, for making valuable data and content available online in a secure and measurable way. Companies like Amazon, Google, and even Twitter are using APIs to make data freely available, but through API management are limiting how much any single consumer can access, and even charging per API call to generate revenue from 3rd party developers and partners. This proven technique for making data and content accessible online using low-cost web technology, requiring all consumers to sign up for a unique set of keys, then rate limiting access, and establishing different levels of access tiers to identify and organize different types of consumers, can and should be applied in government agencies and non-profit organizations to make data accessible, while also asserting more control over how it is used.</p>
+
+<p><strong>Commercial Use of Public Data</strong>
+While this concept can apply to almost any type of data, for the purposes of this example, I am going to focus on 211 data, or the organizations, locations, and services offered by municipalities and non-profit organizations to hep increase access and awareness of health and human services. With 211 data it is obvious that you want this information to be freely available, and accessible by those who need it. However, there are plenty of commercial interests who are interested in this same data, and are using it to sell advertising against, or enrich other datasets, and products or services. There is not reason why cash strapped cities, and non-profit organizations carry the load to maintain, and serve up data for free, when the consumers are using it for commercial purposes. We do not freely give away physical public resources to commercial interests (well, ok, sometimes), without expecting something in return, why would we behave differently with our virtual public resources?</p>
+
+<p><strong>It Costs Money To Serve Public Data</strong>
+Providing access to public data online costs money. It takes money to run the database, servers, bandwidth, and websites and applicatiosn being used to serve up data. It takes money to clean the data, validate phone numbers, email addresses, and ensure the data is of a certain quality and brings value to end-users. Yes this data should be made freely available to those who need it. However, the non-profit organizations and government agencies who are stewards of the data shouldn’t be carrying the financial burden of this data remaining freely available to commercial entities who are looking to enrich their products and services, or simply generate advertising revenue from public data. As modern API providers have learned there are always a variety of API consumers, and I’m recommending that public data stewards begin leverage APIs, and API management to better understand who is accessing their data, and begin to put them into separate buckets, and understand who should be sharing the financial burden of providing public data.</p>
+
+<p><strong>Public Data Should Be Free To The Public</strong>
+If it is public data, it should be freely available to the public. One the web, and through the API. The average citizen should be able to come use human service websites to find services, as well as us the API to help them in their efforts to help others find services. As soon as any application of the public data moves into the commercial realm, and the storage, server, and bandwidth costs increase, they shouldn’t be able to offload the risk and costs to the platform, and be forced to help carry load when it comes to covering platform costs. API management is a great way to measure each application consumption, and then meter and quantify their role and impact, and either allow them to remain freely accessing information, or be forced to pay a fee for API access and consumption.</p>
+
+<p><strong>Ensuring Commercial Usage Helps Carry The Load</strong>
+Commercial API usage will have a distinctly different usage fingerprint than the average citizen, or smaller non-commercial application. API consumers can be asked to declare they application upon signing up for API access, as well as be identified throughout their consumption and traffic patterns. API management excels at metering and analyzing API traffic to understand where it is being applied, either on the web or in mobile, as well as in system to system, and other machine learning or big data analysis scenarios. Public data stewards should be in the business of requiring ALL API consumers sign up for a key which they include with each call, allowing the platform to identify and measure consumption in real-time, and on recurring basis.</p>
+
+<p><strong>API Plans &amp; Access Tiers For Public Data</strong>
+Modern approaches to API management lean on the concept of plans or access tiers to segment out consumers of valuable resources. You see this present in software as a service (SaaS) offerings who often have starter, professional, and enterprise levels of access. Lower levels of the access plan might be free, or low cost, but as you ascend up the ladder, and engage with platforms at different levels, you pay different monthly, as well as usage costs. While also enjoying different levels of access, and loosened rate limits, depending on the plan you operate within. API plans allows platforms to target different types of consumers with different types of resources, and revenue levels. Something that should be adopted by public data stewards, helping establish common access levels that reflect their objectives, as well as is in alignment with a variety of API consumers.</p>
+
+<p><strong>Quantifying, Invoicing, And Understanding Consumption</strong>
+The private sector focuses on API management as a revenue generator. Each API call is identified and measured, grouping each API consumers usage by plan, and attaching a value to their access. It is common to charge API consumers for each API call they make, but there are a number of other ways to meter and charge for consumption. There is also the possibility of paying for usage on some APIs, where specific behavior is being encouraged. API calls, both reading and writing, can be operated like a credit system, accumulating credits, as well as the spending of credits, or translation of credits into currency, and back again. API management allows for the value generated, and extracted from public data resources is measured, quantified, and invoiced for even if money is never actually transacted. API management is often used to show the exchange of value between internal groups, partners, as well as with 3rd party public developers as we see commonly across the Internet today.</p>
+
+<p><strong>Sponsoring, Grants, And Continued Investment in Public Data</strong>
+Turning the open data conversation around using APIs, will open up direct revenue opportunities for agencies and organizations from charging for volume and commercial levels of access. It will also open up the discussion around other types of investment that can be made. Revenue generated from commercial use can go back into the platform itself, as well as funding different applications of the data–further benefitting the overall ecosystem. Platform partners can also be leveraged to join at specific sponsorship tiers where they aren’t necessarily metered for usage, but putting money on the table to fund access, research, and innovative uses of public data–going well beyond just “making money from public data”, as many open data advocates point out.</p>
+
+<p><strong>Alternative Types of API Consumers</strong>
+Discovering new applications, data sources, and partners is increasingly why companies, organizations, institutions, and government agencies are doing APIs in 2017. API portals are becoming external R&amp;D labs for research, innovation, and development on top of digital resources being made available via APIs. Think of social science research that occurs on Twitter or Facebook, or entrepreneurs developing new machine learning tools for healthcare, or finance. Once data is available, identified as quality source of data, it will often be picked up by commercial interests building interesting things, but also university researchers, other government agencies, and potentially data journalists and scientists. This type of consumption can contribute directly to new revenue opportunities for organization around their valuable public data, but it can also provide more insight, tooling, and other contributions to a cities or organizations overall operations.</p>
+
+<p><strong>Helping Public Data Stewards Do What They Do Best</strong>
+I’m not proposing that all public data should be generating revenue using API management. I’m proposing that there is a lot of value in these public data assets being available, and a lot of this value is being extracted by commercial entities who might not be as invested in public data stewards long term viability. In an age where many businesses of all shapes and sizes are realizing the value of data, we should be helping our government agencies, and the not for profit organizations that serve the public good realize this as well. We should be helping them properly manage their digital data assets using APIs, and develop an awareness of who is consuming these resources, then develop partnerships, and new revenue opportunities along the way. I’m not proposing this happens behind closed doors, and I’m interested in things following an open API approach to providing observable, transparent access to public resources.</p>
+
+<p>I want to see public data stewards be successful in what they do. The availability, quality, and access of public data across many business sectors is important to how the economy and our society works (or doesn’t). I’m suggesting that we leverage APIs, and API management to work better for everyone involved, not just generate more money. I’m looking to help government agencies, and non-profit organizations who work with public data understand the potential of APIs when it comes to access to public data. I’m also looking to help them understand modern API management practices so they can get better at identifying public data consumers, understanding how they are putting their valuable data to work, and develop ways in which they can partner, and invest together in the road map of public data resources. This isn’t a new concept, it is just one that the public sector needs to become more aware of, and begin to establish more models for how this can work across government and the public sector.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Generating Operational Revenue From Public Data Access Using API Management - https://apievangelist.com/2017/11/20/generating-operational-revenue-from-public-data-access-using-api-management/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/11/20/generating-operational-revenue-from-public-data-access-using-api-management/&title=https://apievangelist.comGenerating Operational Revenue From Public Data Access Using API Management" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/11/20/generating-operational-revenue-from-public-data-access-using-api-management/&title=Generating Operational Revenue From Public Data Access Using API Management&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/11/20/generating-operational-revenue-from-public-data-access-using-api-management/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/11/17/the-many-meanings-of-do-not-make-the-same-mistake-as-twitter-did-with-their-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/11/21/day-2638-apis-are-dumb/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

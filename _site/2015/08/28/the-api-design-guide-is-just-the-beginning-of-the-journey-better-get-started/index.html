@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>The API Design Guide Is Just The Beginning Of The Journey - Better Get Started!</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey--better-get-started/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The API Design Guide Is Just The Beginning Of The Journey - Better Get Started! | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-journey.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey--better-get-started/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The API Design Guide Is Just The Beginning Of The Journey - Better Get Started! | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-journey.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>The API Design Guide Is Just The Beginning Of The Journey - Better Get Started!</h2>
+<p><span class="post-date">28 Aug 2015</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-journey.png" alt="" width="175" align="right" /></p>
+<p>I'm processing all of my thoughts from some travel to the big city of San Francisco. <a href="http://apievangelist.com/2015/08/28/crafting-and-publishing-api-design-guide-shows-that-you-are-further-along-in-your-api-journey/">I was providing feedback on Microsoft's API design guide, as part of the&nbsp;OneAPI Technical Advisory Group</a>. As I was thinking about the journey Microsoft is on, the role of the API design guide, and <a href="http://design.apievangelist.com/tools.html">how many other companies like Paypal, and Cisco, are on the same journey</a>.&nbsp;</p>
+<p>In parallel to this, <a href="https://kin-lane.github.io/master/">I am on my own journey with my own API stack</a>, I've been looking at everything from a slightly different perspective than many other analysts and providers in the space. When I started in 2010, it was all about API management, then after folks kept asking me about options for deploying APIs I expanded my monitoring to API deployment. Then Jakub the CEO of Apiary, moved the dial back ruth on the life-cycle, and got me paying attention to the concept of API design.</p>
+<p>Fast-forward to 2015, <a href="http://apievangelist.com/">I am paying attention to almost 20 separate areas, as part of my core API research</a>. I tune into a number of other areas, but these research projects make up the heart of my API storytelling. On the trip back from San Francisco today I had a few thoughts, and needed to organize them in context of my core research.&nbsp;</p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-considerations.png" alt="" width="100%" /></p>
+<p><strong>Define (A)</strong></p>
+<ul>
+<li><strong>A1 - Tech</strong> 
+<ul>
+<li>Do you use Swagger to define APIs?</li>
+<li>Do you use API Blueprint&nbsp;to define APIs?</li>
+<li>Are there other API definition formats you use?</li>
+<li>Do you employ NO API definitions?</li>
+</ul>
+</li>
+<li><strong>A2 - Business</strong> 
+<ul>
+<li>Do you support multiple API definition formats?</li>
+<li>Do you use API definition formats to engage with other services or tools?</li>
+<li>Are your service tiers represented in your aPI definitions?</li>
+</ul>
+</li>
+<li><strong>A3 - Politics</strong> 
+<ul>
+<li>Do you share your API definitions publicly?</li>
+<li>How do you license your API definitions? Are they open?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Design (B)</strong></p>
+<ul>
+<li><strong>B1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Do you use Restlet Studio's API design tools?</li>
+<li>Do you use&nbsp;APIMATIC&nbsp;&nbsp;API design tools?</li>
+<li>Do you use&nbsp;Apigee API Studio&nbsp;API design tools?</li>
+<li>Do you use&nbsp;Gelato&nbsp;API design tools?</li>
+</ul>
+</li>
+<li><strong>B2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you use a service provider for API design?</li>
+<li>Do you use a consultant(s) for API design?</li>
+<li>Do partners and other stakeholders participate in the API design process?</li>
+</ul>
+</li>
+<li><strong>B3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you JSON:API?</li>
+<li>Do you hypermedia?</li>
+<li>Do you JSON-LD?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Deploy (C)</strong></p>
+<ul>
+<li><strong>C1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What gateway tech do you use?</li>
+<li>What API frameworks do you use?&nbsp;</li>
+<li>What cloud solutions do you use?</li>
+</ul>
+</li>
+<li><strong>C2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Are you monetizing APIs?</li>
+<li>Are you covering costs of deployment?</li>
+</ul>
+<ul>
+<li>Do you hand API deployment internally?.</li>
+<li>Do you depend on outside resource to deploy APIs?</li>
+</ul>
+</li>
+<li><strong>C3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Are your API deployment solutions open source?</li>
+<li>Do Your API Deployment resources scale?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Manage (D)</strong></p>
+<ul>
+<li><strong>D1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Are you rolling your own API management solution?</li>
+<li>Which API management solution are you using?</li>
+</ul>
+</li>
+<li><strong>D2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you require registration to use an API?</li>
+<li>Do you have service tiers?</li>
+<li>Do you have partner levels of access?</li>
+</ul>
+<ul>
+<li>Do all areas of your companies operation apply same approach?</li>
+</ul>
+</li>
+<li><strong>D3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Is your API management solution open source?&nbsp;</li>
+<li>Do you provide support for your API developers?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Secure (E)</strong></p>
+<ul>
+<li><strong>E1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Do you require SSL?</li>
+<li>Do you require API keys?&nbsp;</li>
+<li>Are you employing OAuth?</li>
+</ul>
+</li>
+<li><strong>E2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Are you investing in security?</li>
+<li>What would a security breach cost you?</li>
+<li>Do all areas of your companies operation apply consistent template?</li>
+</ul>
+</li>
+<li><strong>E3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Are you more secure than your competition?</li>
+<li>Do you share your security practices publicly?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Monetize</strong></p>
+<ul>
+<li><strong>F1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Which management solution do you use to handle monetization?</li>
+<li>Is there an API for your API monetization layer?</li>
+<li>Is there a developer dashboard for pricing, billing, and revenue sharing?</li>
+</ul>
+</li>
+<li><strong>F2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you apply consistent monetization strategy across all APIs?</li>
+<li>Is your billing real-time?</li>
+<li>Is API revenue, your only revenue stream?</li>
+<li>Do you have a credit based system, beyond just API call based?</li>
+</ul>
+</li>
+<li><strong>F3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you share your pricing publicly?&nbsp;</li>
+<li>Is your partner program transparent?</li>
+<li>Do developers have dashboard for managing billing?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Monitoring</strong></p>
+<ul>
+<li><strong>G1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What services to you use for monitoring APIs?&nbsp;</li>
+<li>What open source tooling do you use for your monitoring?</li>
+<li>Does your monitoring include testing, performance, and security?</li>
+</ul>
+</li>
+<li><strong>G2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>What do you spend on API monitoring each month?</li>
+<li>Is there a dedicated person(s) to monitoring APIs?</li>
+<li>What has outages cost you in the past?</li>
+</ul>
+</li>
+<li><strong>G3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you publish your monitoring reports publicly?</li>
+<li>Do you keep your ecosystem in tune with monitoring via messaging system(s)?</li>
+</ul>
+</li>
+</ul>
+<ul>
+</ul>
+<p><strong>Testing</strong></p>
+<ul>
+<li><strong>H1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What services to you use for testing your APIs?&nbsp;</li>
+<li>What open source tooling do you use for your testing?</li>
+</ul>
+<ul>
+<li>What are your benchmarks?</li>
+</ul>
+</li>
+<li><strong>H2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you provide testing tools to your developers?</li>
+<li>Can developers request specific types of testing for APIs?</li>
+</ul>
+</li>
+<li><strong>H3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you publish your monitoring reports publicly?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Performance</strong></p>
+<ul>
+<li><strong>I1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What services to you use for testing your APIs?&nbsp;</li>
+<li>What open source tooling do you use for your testing?</li>
+<li>What are your benchmarks?</li>
+</ul>
+</li>
+<li><strong>I2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you have SLAs for any tiers of operation?</li>
+<li>Do you generate any revenue from SLAs in place?</li>
+</ul>
+</li>
+<li><strong>I3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you publish your monitoring reports publicly?</li>
+<li>Do you consistently meet your SLAs?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Virtualization</strong></p>
+<ul>
+<li><strong>J1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What services to you use for virtualizing your APIs?&nbsp;</li>
+<li>What open source tooling do you use for your API virtualization?</li>
+</ul>
+</li>
+<li><strong>J2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Is virtualization part of your QA process?</li>
+<li>Do you virtualized instances of your API as an added service?</li>
+<li>Do you provide a sandbox or simulators for developers by default?</li>
+</ul>
+</li>
+<li><strong>J3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Do you provide virtualization for developers?</li>
+<li>Are your virtualization images openly sourced?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Orchestration</strong></p>
+<ul>
+<li><strong>K1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>What services to you use for virtualizing your APIs?&nbsp;</li>
+<li>What open source tooling do you use for your API virtualization?</li>
+</ul>
+</li>
+<li><strong>K2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you have dedicated people to managing your API architecture?</li>
+<li>Do you have dedicated services for&nbsp;managing your API architecture?</li>
+</ul>
+</li>
+<li><strong>K3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Can you migrate between infrastructure providers? (ie. AWS to Google)</li>
+<li>Is your server side API code open source?</li>
+<li>Are you virtualization images openly licensed and available? (ie. Docker Images)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Embeddability</strong></p>
+<ul>
+<li><strong>L1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Do you use oEmbed?</li>
+<li>Do you have bookmarklets?</li>
+<li>Do you have a JavaScript API?</li>
+</ul>
+</li>
+<li><strong>L2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you have a standardize strategy for allowing users to embed API driven resources?</li>
+<li>Is your embeddable strategy integrated with your overall marketing and branding efforts?</li>
+<li>Do you offer embeddable tool builder?</li>
+</ul>
+</li>
+<li><strong>L3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Are your embeddable tools non-invasive? Protect privacy?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Evangelize</strong></p>
+<ul>
+<li><strong>M1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Do you have robot evangelists? Just sounded cool, and couldn't think of anything to put here.</li>
+</ul>
+</li>
+<li><strong>M2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Do you have dedicated evangelist resources?</li>
+<li>Do you contract with 3rd parties for any evangelist resources?</li>
+<li>Is your evangelism coupled with your marketing?</li>
+</ul>
+</li>
+<li><strong>M3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Are there opportunities for developers to get involved with evangelism?</li>
+<li>Do you have healthy feedback loop present with your API operations?</li>
+</ul>
+</li>
+</ul>
+<p><strong>Discovery</strong></p>
+<ul>
+<li><strong>N1<strong>&nbsp;- Tech</strong></strong> 
+<ul>
+<li>Do you have an APIs.json for your API operations?</li>
+<li>Do you employ API definitions?</li>
+<li>Are you using hypermedia?</li>
+</ul>
+</li>
+<li><strong>N2<strong>&nbsp;- Business</strong></strong> 
+<ul>
+<li>Are your APIs plug and play with other platforms?</li>
+<li>Are your APIs public or private?</li>
+</ul>
+</li>
+<li><strong>N3<strong>&nbsp;- Politics</strong></strong> 
+<ul>
+<li>Does discovery feed every other layer of API life-cycle?</li>
+<li>Does discover play into your security strategy?</li>
+</ul>
+</li>
+</ul>
+<p>Sorry, I don't mean to be a downer. But...we are just getting started with stabilizing how we do APIs. I feel like we are beginning to formalize how we manage or APIs (thanks Mashery, 3Scale, and APIgee), and we are getting a handle on API deploy (thanks Restlet, Amazon), and we are deep into understanding how we define (thanks Swagger and API Blueprint), and ultimately design (thanks Apiary, Restlet, and Apigee).</p>
+<p>We are moving fast into testing, monitoring, performance, and virtualization (thanks Runscope, APITools, API Science, and SmartBear), but our security sucks, embeddability has stagnated, and evangelism and discovery really isn't improving. I'm working on APIs.json, and bringing together the Swagger and API Blueprint communities, but there is so much work left when it comes to discovery, and automating each of the areas listed above.</p>
+<p>There really is no point to this post. It is my mental vomit, after a trip to San Francisco, and working on Microsoft's API design guide. Stay tuned for how any of this applies to anything.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=The API Design Guide Is Just The Beginning Of The Journey - Better Get Started! - https://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey-better-get-started/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey-better-get-started/&title=https://apievangelist.comThe API Design Guide Is Just The Beginning Of The Journey - Better Get Started!" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey-better-get-started/&title=The API Design Guide Is Just The Beginning Of The Journey - Better Get Started!&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/08/28/the-api-design-guide-is-just-the-beginning-of-the-journey-better-get-started/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/08/28/crafting-and-publishing-api-design-guide-shows-that-you-are-further-along-in-your-api-journey/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/08/28/thinking-beyond-just-language-specific-clients-and-also-speaking-the-formats-popular-http-clients-are-using/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

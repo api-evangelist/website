@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger/swaggerLogo360.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger/swaggerLogo360.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations</h2>
+<p><span class="post-date">23 Feb 2015</span></p>
+<p><a href="http://swagger.io"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger/swaggerLogo360.png" alt="" width="120" align="right" /></a></p>
+<p>Some of the side effects of being so open and transparent about my ideas, like <a href="http://apievangelist.com/2014/10/24/someone-please-build-my-open-interactive-portable-and-visual-api-documentation-toolkit/">the one I had around API visualizations</a>, is that <a href="http://apievangelist.com/2015/02/06/my-wish-has-been-granted-swagger-driven-api-visualizations-from-ardoq/">people who are doing similar things, like Ardoq</a>, eventually find you. Even better, is when someone closely follows your thoughts, and takes your ideas, and sets into motion, your original idea, in a way that will allow it to become bigger than the original idea.</p>
+<p>Last week Chris Spiliotopoulos (<a href="https://twitter.com/chefarchitect">@chefarchitect</a>) sent me an email, with a <a href="https://github.com/chefArchitect/swagger.ed">simple Chrome extension</a> attached, asking what I thought. After installing the add-on (just drag onto your Chrome extension page), I visited <a href="https://github.com/kinlane/api-stack/tree/gh-pages/data">my notebook of Swagger defined APIs over at API Stack</a>, and when Twilio&rsquo;s Swagger definition loaded in the browser, I saw a little Swagger icon show up in my browsers address bar&mdash;you know kind of like when there is an RSS feed available.</p>
+<p><a href="https://github.com/chefArchitect/swagger.ed"><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger-ed/swagger-ed-address-bar.png" alt="" width="90%" /></a></p>
+<p>I click on the icon, and a new layer to my browser opens up, with a simple, crude, yet potentially powerful visualization of Twilio&rsquo;s API surface area.</p>
+<p><a href="https://github.com/chefArchitect/swagger.ed"><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger-ed/swagger-ed-visualization-1.png" alt="" width="90%" /></a></p>
+<p>Honestly, the visualization does little for sorting out the complexities of the API, but it demonstrates a possible future, where we can browse the Internet, stumble across APIs, and their machine readable definitions, and open up an entirely new, visual layer that helps us quantify, and make sense of what an API does. APIs are a very abstract concept, and helping developers understand the scope and value of an API can be difficult, the introduction of API definition driven visualizations go a long way in helping speed up the conversation.</p>
+<p>Imagine being able to immediately understand the scope of a microservice. How big is micro? Can I see a tag cloud of parameters? Is there a visualization layer to explore the underling data model? Can you provide me with a visualization diff between two similar APIs, defined using Swagger or API Blueprint. I&rsquo;m just getting going on brainstorming ideas for visualizations, and so is Chris&mdash;a conversation that I think will be never-ending as we continue to work to understand the digital resources being deployed across the API landscape.</p>
+<p>I have an alpha version of an <a href="http://apisjson.org">APIs.json</a> and Swagger editor, that I&rsquo;m using for the <a href="https://kin-lane.github.io/master/">redesign of my platform using microservices</a>, and don&rsquo;t just see the conversation Chris is started exclusively being about visualizing on the meta layer of APIs, but also directly connecting and exploring the valuable data, content, and other digital resources being made available via APIs. I also envision being able to explore collections of APIs defined using APIs.json, allowing not just software to navigate between many APIs, but also humans&mdash;something that is core to the APIs.json vision.</p>
+<p>Swagger.ed is open source, and <a href="https://github.com/chefArchitect/swagger.ed">available in a Github repo</a>. It is just an initial prototype, but imagine what is possible when you can take a machine readable Swagger or API Blueprint file, and instantly explore the meta layer to any API, then also visually explore data returned, like the <a href="https://open.fda.gov/drug/event/">FDA is doing with clinical drug trials</a>. If you have any visualizations you&rsquo;d like to see, feel free to <a href="https://github.com/chefArchitect/swagger.ed/issues">submit as an issue</a> on Chris&rsquo;s work, or in the comments here. I would love to better understand how visualizations can better help you understand your own APIs, and the APIs that are littered across the online landscape, thta you depend on.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations - https://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/&title=https://apievangelist.comI Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/&title=I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/02/23/developing-small-simple-meaningful-tools-that-make-an-impact-across-the-api-space/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/02/23/looking-beyond-the-number-of-apis-or-just-new-apis-and-working-harder-to-find-only-the-most-important-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

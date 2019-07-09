@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analytics-4.jpeg">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analytics-4.jpeg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack</h2>
+<p><span class="post-date">25 Jul 2014</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-analytics-4.jpeg" alt="" width="250" align="right" /></p>
+<p>I&rsquo;m in the middle of processing multiple emails, as well as coming down off an early morning conversation, all on the subject of analytics. A portion of the conversations are about analytics at the web site, web or mobile app level, and a portion of it was around analytics for API developers, as well as API platform providers&mdash;basically the full stack of analytics including platforms, developers, apps, all the way to the end-user.</p>
+<p>Increased visibility into the API layer, and how developers and their apps are consuming API resources, is a cornerstone of API management. There are numerous solutions out there to give you analytics in websites and web apps (<a href="http://www.google.com/analytics/">Google Analytics</a>), and within the mobile app itself (<a href="http://bit.ly/1rggWl3">Mixpanel</a>), and there are analytics at the API layer for both API providers, and the many developers who are integrating APIs into their applications and systems (<a href="http://bit.ly/13esk6Q">3Scale</a>).</p>
+<p>API providers, with the assistance of API infrastructure solutions like <a href="http://bit.ly/13esk6Q">3Scale</a>, have done very well in making sense of how resources are composed through a service composition layer, that includes a robust number of metrics and analytics for both provider and developer. This is great for allowing API providers to understand how developers, and their applications are consuming API resources, while at the same time delivering a subset of analytics for each individual developer regarding their individual API usage. This is great, but if a developer wants more application level information, they usually have to look elsewhere to other tools and services. (this is evolving)</p>
+<p>After my conversations this morning, I was left thinking big picture about the future of analytics for the API driven, multichannel, website, single page, mobile, and Iot application stack. I am left with a vision of a tool that can handle all channels, not just the needs of the platform, and its developers, but also bring the end-users in the conversation. I need a standalone, open source framework, that I can use for not just a single platform, but something that could deployed for each end users, so it can span multiple platforms, for a single user, or group of users.</p>
+<p>This is where it gets challenging, I&rsquo;m trying to think of this from a users perspective, abstracting away the provider, developer, and even the app, making the end-user the focus of the conversation. I still want to meet the needs of the provider and developers, I just want to shift the perspective, to the end deliverable, the actual &ldquo;thing&rdquo; we are looking to deliver, aka. the human element&mdash;moving the conversation furhter out of the business and geek realm.</p>
+<p>I immediately think of the <a href="http://tincanapi.com/">Tin Can API</a>, aka <a href="http://bit.ly/1lEVW0y">Experience API</a>. Ok, I have to admit <a href="https://twitter.com/audreywatters">@AudreyWatters</a> made me think of it, after I described the solution I was looking for, she said, &ldquo;that sounds like the Tin Can API&rdquo;?  To which I said DOH!!! If you are unfamiliar with the Experience API, they describe themselves as:</p>
+<blockquote><em>...a service that allows for statements of experience to be delivered to and stored securely in a Learning Record Store (LRS)...</em></blockquote>
+<p>If we swap out the concept of an LRS for education, and call it a Platform Record Store(PRS), or if we are going to give it to each end-user to track across platforms, we call it a User Record Store (URS)&mdash;basically a online place to store your experiences. For education its an LRS, but for the wider API world I&rsquo;m calling it a PRS or URS, depending on how it is deployed.</p>
+<p>Regardless of where you store the data, the Experience API lets you record just that, &ldquo;experiences&rdquo;. You can define your own objects, and verbs (actions), to be taken against those objects. The Experience API gives you a language map, authentication, authority, and many other goodies to make each &ldquo;statement of experience&rdquo; as meaningful as possible. Ok, so you are thinking, WTF is all this? An experience API really? Ok, well to put it in geek speak, its a logging API, just in this scenario we are making it about user experience instead of app, API, or just platform needs. Entering a richer realm of context, and potentially asking much more meaningful questions, rather than just logging on some bullshit metric.</p>
+<p>Let&rsquo;s explore a little--If I&rsquo;m a platform provider I can track on the experiences that matter to me:</p>
+<ul class="mainlist">
+<li>/GET of a /user API resource</li>
+<li>/POST of an /image API resource</li>
+<li>/POST of a /blog API resource</li>
+</ul>
+<p>These are the API metrics that API providers are tracking on currently, and the <a href="http://bit.ly/1lEVW0y">Experience API</a> model accommodates these common API usage experiences, while also opening up a whole new world of exploration. I think this new model would encourage API providers to explore new ways of measuring their API usage, and how resources are actually being put to use--kind of like we've been doing for years with API infrastructure providers.</p>
+<p>From a developer&rsquo;s perspective, I can now can tap into those platform defined experiences for my account, and use across my apps. This is essentially what we have today from API infrastructure providers like 3Scale. Lets take to the next level, let&rsquo;s allow each developer to define their own experiences, that they can track on and use in their own applications, for example:</p>
+<ul class="mainlist">
+<li>View a users settings</li>
+<li>Share of an image</li>
+<li>View of a blog post</li>
+<li>Logged out of app</li>
+</ul>
+<p>All of these experiences would be meaningful to the application developer, helping them understand how users are engaging with their apps. This layer of the experience stack would be open, allowing each developer to define&mdash;leaving it up to them whether they wanted to share with platform providers or not. (controversial!)</p>
+<p>Next, let's talk about end-users of applications that are built. We could also use this to drive end-user analytics, allowing them to see a report of their activity on any application, or depending on how this whole idea is deployed, across applications. It would provide a web and mobile dashboard like app users are growing accustom to, as well as provide a sort of notification layer, if end-users are interested.</p>
+<p><a href="http://tincanapi.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/tin-can-api/tin-can-api-scorm-cloud.jpg" alt="" width="250" align="right" /></a></p>
+<p>What is important about this model is transparency. It gives platforms, and developers single place to record metrics (experiences), in a way that provides transparency to the end-user.(controversial!) We can also open up the experience definitions to the end-users, letting each end-user define the things that matter to them, and the experiences they want to capture. I imagine, this is only for the savvy app user, seems like you&rsquo;d end up with a lot of ridiculous experience statements, but even if 1% of the feedback was interesting, it could provide an interesting feedback loop about what really is meaningful to end-users. Not exactly sure how you&rsquo;d integrate user-defined experiences into the application operations, but at the minimum it could be a feedback mechanism, and integration is manual.</p>
+<p>From my perspective, all of the current API analytics stuff is born out of a very necessary, but technical, and boring IT realm. The experiences we are creating are very database, system, platform, app or resource directed experiences, with monetization in mind&mdash;all while trying to build the most meaningful app for end-users. We need to flip the paradigm, like we are seeing from API pioneers like Netflx, <a href="http://thenextweb.com/dd/2013/12/17/future-api-design-orchestration-layer/">who are talking about designing experience based API</a>s, instead of resource based APIs. In this way of thinking, the API is designed with the end-user experience in mind, and not blinded with where the resource came from, or how its structured&mdash;it is all based upon how it will actually be used.</p>
+<p>Think of what an &ldquo;experience&rdquo; based analytics approach could do for business models, rather than focusing on the few experiences we already know, like how to monetize with the page view, app session, ad view, and add click. We could start identifying much more meaningful experiences to end-users, and yes even experiences that people are willing to pay for&mdash;the monetized experience! <a href="https://twitter.com/audreywatters">@audreywatters</a> will love that. Reducing everything to a transaction baby! Its my job.</p>
+<p>Well that concludes my analytics brain vomit for the day. I responded to my two emails, and had a fruitful call with a leading tech company about the future of analytics in the API stack, and successfully puked up this post. If you read it, I&rsquo;m very sorry, and I hope it made sense. I&rsquo;m still working through these thoughts, but it is a bucket that has been overflowing for a while now. I&rsquo;ll put on the side burner, stir my thoughts around in future stories, and figure out what is next.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack - https://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/&title=https://apievangelist.comA Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/&title=A Shared, Distributed Experience(Metrics) Layer For The API Driven Application Stack&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2014/07/25/a-shared-distributed-experiencemetrics-layer-for-the-api-driven-application-stack/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/07/24/showcasing-your-api-integrations-with-other-platforms/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/07/25/getting-to-know-mike-kelly-for-the-api-craft-2014-detroit-hypermedia-panel/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

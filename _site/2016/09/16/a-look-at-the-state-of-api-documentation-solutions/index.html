@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>A Look At The State Of API Documentation Solutions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="A Look At The State Of API Documentation Solutions | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A Look At The State Of API Documentation Solutions | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>A Look At The State Of API Documentation Solutions</h2>
+<p><span class="post-date">16 Sep 2016</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png" alt="" width="40%" align="right" /></p>
+<p>A friend of mine was asking where he should get started with upgrading the documentation for an existing API, and was asking for assistance on what tools or services he should be considering. The state of things when it comes to API document shifts and changes, which is why I do my research the way I do, to ensure I have <a href="http://documentation.apievangelist.com">a single static location I can go find the latest for my research in API documentation</a>, when I get questions like this.</p>
+<p>Discussing API documentation like many aspects of the API conversation can be difficult, due to a wide range of views on exactly what is API documentation. Some people consider the entire API portal, including the documentation, some include other code libraries, etc, but I define it as specific documentation describing the API surface area (auth &amp; request / response). As I begin my work, at first glance, the world of API documentation seems like it has evolved, but after a quick look through my research, I see it really hasn't evolved that much.</p>
+<p><strong>Swagger UI Changing How We Document Our APIs</strong><br />In 2011 how we documented our APIs changed significantly with the introduction of the <a href="https://github.com/swagger-api/swagger-ui">Swagger specification and UI</a>. The simple, visual, interactive documentation which was driven by the now OPenAPI Spec, shifted the conversation for how we provide documentation. All you had to do was generate the machine-readable specification, and the interactive documentation was automatically generated--solving one of the biggest obstacles for API providers.</p>
+<p><strong>Apiary Providing Design, Mocking, Testing, and Documentation</strong><br />Building on what Swagger UI provided, the service provider <a href="http://apiary.io">Apiary.io </a>entered the game with their own version of the API documentation but shifted the conversation around documenting APIs earlier on in the life-cycle, during the design portion of the work. I consider Apiary to be first and foremost an API design service provider, but they are also a contender when it comes to API documentation because their solution spans multiple stops along the life cycle including design, mocking, testing, portal, and documentation.</p>
+<p>In the last five years, I've watched Swagger play a central role in many of the design, and documentation solutions out there, with providers like Restlet and Apigee following the lead for how we document our APIs--further contributing to the success of OpenAPI Spec as the driving specification. I've also watched Apiary evolve as a service, and adopt OpenAPI Spec as well as yusing their own format API Blueprint, as the driving specification for API documentation--setting the stage for a new breed of API service providers.</p>
+<p><strong>API Documentation Service Providers</strong><br />Along the way other services have launched, building on what we've seen from Apiary, but I think taking the API portal, and API documentation conversations in their own direction.</p>
+<ul>
+<li><a href="https://gelato.io/">Gelato.io</a> - An API portal plus documentation service that was now purchased by Mashape.</li>
+<li><a href="https://readme.io/">Readme.io</a> - Another API portal plus documentation service, with a wealth of API management resources.</li>
+<li><a href="https://api-docs.io/">API Doc</a> - A simple, free OpenAPI Spec and RAML-driven API documentation solution from Stoplight.io team.</li>
+<li><a href="https://restunited.com/">Rest United</a> - A pretty robust PI documentation and SDK solution that supports all major API definition formats.</li>
+<li><a href="http://apidox.net/">APIDox</a> - An XML driven API documentation solution.</li>
+</ul>
+<p>Overall I like the robustness of Readme.io and REST United, but dig the simplicity, and machine readability of API Doc. Honestly, I don't see the sense for an API documentation service provider that doesn't support ALL the API definition formats. I don't care what stops along the API life cycle you are serving you should speak API definition by default. I believe that these API service providers are playing an important role in moving the conversation forward, but I think it is also something that gets balanced out by a number of open source offerings out there as well.</p>
+<p><strong>Some Of The Open Source OpenAPI Spec Options</strong><br />As with API management, the quantity of open source API documentation solutions isn't moving as fast as I'd like, but I'll take whatever I can. A handful of open source API documentation solutions have emerged, each with their own take on what is needed--these are the ones I"m tracking on who have built on the OpenAPI Spec:</p>
+<ul>
+<li><a href="https://github.com/lucybot/lucy-console">Lucy Console</a> - Utilizes<span> </span>OpenAPI Spec <span>to generate both static documentation and an interactive API console via Node.js.</span></li>
+<li><a href="http://wiredcraft.github.io/carte/">Carte</a> - A simple, static Jekyll edition that can run on Github pages.</li>
+<li><a href="https://github.com/aleung/jekyll-swagger-ui/">Jekyll</a> - A more robust Jekyll edition with a ruby plugin delivering functionality.</li>
+<li><a href="https://github.com/marcgibbons/django-rest-swagger/">Django</a> - An OpenAPI Spec driven version for Django in Python.</li>
+</ul>
+<p>I am the biggest fan of anything that runs 100% client side, and secondarily a fan of Jekyll + Github solutions, which open up the options for folks doing APIs at larger organizations, where they might be able to easily stand up hosting environments. Ultimately I think there should be a diverse range of one-click solutions for every platform out there.</p>
+<p><strong>Some of the Open Source API Blueprint Solutions</strong><br />API providers should speak all API definition formats fluently, but API Blueprint is mandatory for modern APIs. Apiary provides the primary API documentation solution for the API Blueprint specification, but it shows the health of the community that there are also some open source options that have emerged:</p>
+<ul>
+<li><a href="https://github.com/danielgtaylor/aglio">Aglio</a> - <span>An API Blueprint renderer with theme support that outputs static HTML</span></li>
+<li><a href="https://github.com/kirkstrobeck/blueprint-docify">Docify</a> - <span>Autogenerate API blueprint documentation with CI for Github pages.</span></li>
+<li><a href="https://github.com/peterhellberg/hiro/">Hiro</a> - <span>Generates HTML from API Blueprints using the Snow Crash command line tool Drafter and Iglo.</span></li>
+</ul>
+<p>I'm regularly monitoring Github, looking for other open source options for API blueprint, as I'm rooting it on as an engine for API documentation, or more importantly I think API narration--telling the story around what an API does.</p>
+<p><strong>Other Open Source Approaches To API Documentation</strong><br />Beyond OpenAPI Spec and API Blueprint driven efforts there are a handful of other open source API documentation solutions I am keeping an eye on. Serving a variety of platforms, and languages, there are a couple I'm looking at:</p>
+<ul>
+<li><a href="https://github.com/lord/slate">Slate</a> - <span>Beautiful static documentation for your API.</span></li>
+<li><a href="https://github.com/mapbox/docbox">DocBox</a> - <span>REST API documentation generator in Markdown for React.</span></li>
+<li><a href="https://github.com/Thibaut/devdocs">DevDocs</a> - Combines<span> multiple API documentations in a fast, organized, and searchable interface.</span></li>
+<li><a href="https://github.com/mpociot/whiteboard">Whiteboard</a> - <span>This project started as a fork of the popular </span><a href="https://github.com/tripit/slate">Slate</a><span> API documentation tool, which uses ruby, after finding the initial setup of Slate quite cumbersome, it was developed as a NodeJS based project.</span></li>
+</ul>
+<p>I'm not sure why someone would develop any API documentation without using OpenAPI Spec or API Blueprint as its machine readable core, but that is my very biased and studied view. I'm happy to see a diverse number of solutions available, but a little concerned about the lack of consistency between them when it comes to its central definition, how its deployed, as well as the UI and styling.</p>
+<p>For me, it's a no-brainer to define your API surface area using OpenAPI Specs, API Blueprint, and Postman. Once you've done this, then you can start thinking about API documentation, code samples, SDKs. mocks, testing, and other resources after that. If you are looking to tackle documentation and have a budget for using an API service provider I recommend taking a look at Apiary or Readme. However, if you are on a budget, have some coding expertise, I recommend looking at Swagger UI + OpenAPI Spec. If you are concerned with look &amp; feel, and Swagger UI doesn't do it for you, I recommend taking a look at Lucy Console.</p>
+<p>I wish the landscape for API documentation was more open, plug-n-play, and one-click deployable. I get the concept of paying for API docs as part of a wider API lifecycle solution, but I'm thinking we haven't fully learned from the success of Swagger UI and making sure there are an enough static and dynamic, open source, API documentation solutions available--designed for a variety of platforms. Something that would help both the open source tooling market, as well as provide consistency across the API service providers.</p>
+<p>Well, I'm not sure I helped with this roundup of API documentation. I did remove a couple of dead projects <a href="http://documentation.apievangelist.com">from my research</a>, and made sure it was refreshed with what I've been seeing lately, but I'm thinking I need to stew on the state of API documentation solutions a little more and try to understand why things are stagnating. There seems to be movement in the area of proprietary services, as well as some movement with individual providers doing slick things with their API docs, but I'm not seeing the level of open, interactive, and forkability that I saw with Swagger UI--which leaves me thinking there are some deficiencies at play.</p>
+<p>Anyways, more to come...</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=A Look At The State Of API Documentation Solutions - https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/&title=https://apievangelist.comA Look At The State Of API Documentation Solutions" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/&title=A Look At The State Of API Documentation Solutions&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/09/16/a-look-at-the-state-of-api-documentation-solutions/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/09/15/the-next-api-lifecycle-opportunity-will-be-in-design-and-definitions/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/09/16/learning-from-the-success-of-swagger-ui/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

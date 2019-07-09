@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>I Like The Scope Of The AWS SDK for JavaScript</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="I Like The Scope Of The AWS SDK for JavaScript | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/SDK/aws-sdk-for-javascript.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="I Like The Scope Of The AWS SDK for JavaScript | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/SDK/aws-sdk-for-javascript.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>I Like The Scope Of The AWS SDK for JavaScript</h2>
+<p><span class="post-date">02 Nov 2017</span></p>
+<p><a href="http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/SDK/aws-sdk-for-javascript.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>I’ve tried picking up Node.js as a server side approach to delivering APIs a couple of times in the past few years. Both times express, and a handful of other issues ran me off from using it as my default backend programming language for APIs. I use a lot of JavaScript in the client, but it just didn’t feel like it was what I needed to drive my backend solutions. Over the last week I’ve been architecting a handful of APIs using Lambda and Node.js scripts, and I have to admit I’m pretty sold on Node.js as a backend solution now. This conversion is partly due to Lambda and a serverless way of doing things, but is also due to <a href="http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/">the AWS SDK for JavaScript</a>, which is a pretty robust example of an API SDK.</p>
+
+<p><a href="http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/">The AWS SDK for JavaScript</a> covers 106 separate AWS services, and I haven’t actually calculated how many methods are available–a lot. I’ve been using it recently to manage AWS RDS, DynamoDB, and API Gateway, and the SDK is a delight to use, is well documented, and enjoys excellent coverage of AWS services. There were two elements at play here that made this work for me, 1) simplicity of the AWS SDK in Node, and 2) the simplicity of implementing in the serverless environment that is Lambda. I found Node.js scaffolding to be overly complex for APIs in previous experiences, something that melted away with a serverless implementation. I am well versed in JavaScript, and with the AWS SDK being so simple enough, I was able to get up and running with a variety of functions on Lambda pretty quickly. Something that becomes really powerful when exposed as an API resource using AWS API Gateway.</p>
+
+<p>This is going to date me, and I know that only a handful of people will understand, but the AWS SDK for JavaScript, combined with Lambda and API Gateway reminds me of VBScript on Windows server, circa 2000. Back in the day, I had my own server farm, on my own dedicated T1, on an entire C block of IP addresses, running Windows 2000. I was able to orchestrated some pretty cool cross-server voodoo using VBScript when it came to managing the server, database, web server, DNS (Active Directory), and other moving parts of my world. I have way more resources at my disposal with AWS, and a much more robust vocabulary with the AWS SDK for Javascript than I did back in the day, but the feeling I have is very similar. I am able to orchestrate pretty effectively across my operations, using a variety of AWS, 3rd party, as well as my own home grown APIs. I have the control over my infrastructure that I am looking to have, allowing me to get what I need done.</p>
+
+<p>I like the scope of the AWS SDK for JavaScript. It gives me access to what I need, while also introducing me to other AWS APIs at the same time. I set out to use the SDK for DynamoDB, then RDS, and API Gateway, and now I’m exploring how I can use it for managing EC2 ad S3, evolving the current PHP SDK I’ve had in place for the last five years. I was’t looking to evolve some of my legacy API infrastructure using this new approach which I’ve evolving for a client, but the ease of use, scalability, and benefits brought to the table are proving to be worth the extra work. I’m rolling out a suite of Lambda functions for managing RDS, EC2, S3, and API gateway, as well as expanding to work with Github, Stripe, and other external APIs I depend on. This ease of use, plus the security benefits introduced by AWS IAM is pushing me further into the AWS universe, without the vendor lock-in regret I was expecting to have.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=I Like The Scope Of The AWS SDK for JavaScript - https://apievangelist.com/2017/11/02/i-like-the-scope-of-the-aws-sdk-for-javascript/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/11/02/i-like-the-scope-of-the-aws-sdk-for-javascript/&title=https://apievangelist.comI Like The Scope Of The AWS SDK for JavaScript" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/11/02/i-like-the-scope-of-the-aws-sdk-for-javascript/&title=I Like The Scope Of The AWS SDK for JavaScript&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/11/02/i-like-the-scope-of-the-aws-sdk-for-javascript/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/10/26/my-response-on-the-department-of-veterans-affairs-rfi-for-the-lighthouse-api-management-platform/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/11/06/an-example-of-how-every-api-provider-should-be-using-openapi-out-of-the-slack-platform/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

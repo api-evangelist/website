@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_aqua.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_aqua.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS</h2>
+<p><span class="post-date">28 Aug 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_aqua.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I am trying to develop a base base API pricing formula for determining what my hard costs are for each API I’m publishing using Amazon RDS, EC2, and AWS API Gateway. I also have some APIs I am deploying using Amazon RDS, Lambda, and AWS API Gateway, but for now I want to get a default base for determining what operating my APIs will cost me, so I can mark up and reliably generate profit on top of the APIs I’m making available to my partners. AWS has all the data for me to figure out my hard costs, I just need a formula that helps me accurately determine what my AWS bill will be per API.</p>
+
+<p>Math isn’t one of my strengths, so I’m going to have to break this down, and simmer on things for a while, before I will be able to come up with some sort of working formula. Here are my hard costs for what my AWS resources will cost me, for three APIs I have running currently in this stack:</p>
+
+<ul>
+  <li><strong>AWS RDS</strong> - I am running a db.r3.large instance which costs me $0.29 per hour or 211.70 per month, with the bandwidth free to my Amazon EC2 instances in the same availability zone. I do not have any public access, so I don’t have any incoming or outgoing traffic, except from the EC2 instance.</li>
+  <li><strong>AWS EC2</strong> - I am running a t2.large instance which costs me $0.0928 per hour or $67.74 per month with bandwidth out costing me $0.155 per GB. I’m curious if they have an Amazon EC2 to AWS API Gateway data consideration? I couldn’t find anything currently.</li>
+  <li><strong>AWS API Gateway</strong> - Overall using AWS API Gateway costs me $3.50 per million API calls received, with the first 1GB costing me $0.00/GB, and costing me $0.09/GB for the next 9.999 TB.</li>
+</ul>
+
+<p>Across these three APIs, I am seeing an average of 5KB per responses, which is an important variable to use in these calculations. The <a href="https://calculator.s3.amazonaws.com/index.html">AWS API Calculator</a> helps me figure out your monthly bill across services, but it doesn’t help me break down what my hard costs are per API call. I need to establish a flat rate of what it costs for a single API call to exist. Each API will be in its own plan, so I can charge different rates for different APIs, but I need a baseline that I start with for each API call to make sure I’m covering my hard AWS costs. Sure, the more API calls I make, the more profitable I’ll be, but at some point I’ll also have to scale the infrastructure to keep a certain quality of service–there are a number of things to consider here.</p>
+
+<p>I envision my API pricing having the following components:</p>
+
+<ul>
+  <li><strong>Base</strong> - A base cost to cover my AWS bill, considering AWS RDS, EC2, and API Gateway hard costs.</li>
+  <li><strong>Resource</strong> - A price for covering investment in resource. Work finding, cleaning up, refining, and evolving.</li>
+  <li><strong>Markup</strong> - The percentage of markup for each API call, allowing me to generate a profit from the resources I’m providing.</li>
+  <li><strong>Partner</strong> - Provide a volume discount, charging light users more, and giving a break to my partners who are consumer larger volumes.</li>
+</ul>
+
+<p>I’m studying other pricing models from the telco, and software hosting spaces. I’ll also be doing some landscape analysis to see what people are charging for comparable API resources. I possess a wealth of data on what API providers and service providers are charging for their services. The trick will be finding comparable services to what I’m offering, and for the unique resources I possess, I’m going to have to be able to set my own price, and then test out my assumptions, and formula over time–until I find the sweet spot for covering my hard costs, and generating profit at some point from a specific service I’m offering.</p>
+
+<p>If you have an advice for me. Help on the math side of things, or examples from other industries, I’d love to hear more. I’ll be open sourcing and sharing everything I figure out, and tell the story of how it is being applied to each API I am publishing. I want the history to be present for each of my APIs, adding to my wider <a href="http://monetization.apievangelist.com/">API monetization</a> and <a href="http://plans.apievangelist.com/">API planning</a> research. In the end, I don’t think there is a perfect answer to what the pricing for an API should be. The best path forward involves covering your hard costs, and then experimenting over time to see what the market will bear. This is why AWS has gotten so good at doing this for cloud, because they have been doing this work for over a decade now. I am sure they have a lot of data, as well as experience understanding how to price API resources so they are both competitive, disruptive, and profitable.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS - https://apievangelist.com/2018/08/28/trying-to-define-an-algorithm-for-aws-api-cost-calculations-across-api-gateway-lambda-and-rds/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/08/28/trying-to-define-an-algorithm-for-aws-api-cost-calculations-across-api-gateway-lambda-and-rds/&title=https://apievangelist.comTrying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/08/28/trying-to-define-an-algorithm-for-aws-api-cost-calculations-across-api-gateway-lambda-and-rds/&title=Trying To Define An Algorithm For My AWS API Cost Calculations Across API Gateway, Lambda, And RDS&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/08/28/trying-to-define-an-algorithm-for-aws-api-cost-calculations-across-api-gateway-lambda-and-rds/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/08/28/reviewing-the-department-of-veterans-affairs-va-new-developer-portal/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/08/29/api-portals-designed-for-api-provider-and-api-consumer/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

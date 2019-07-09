@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation-uncertainty.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation-uncertainty.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows</h2>
+<p><span class="post-date">07 Jan 2016</span></p>
+<p><img style="padding: 0px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation-uncertainty.png" alt="" width="40%" align="right" /></p>
+<p>I pulled the title for this post directly from <a href="http://dyn.com/blog/which-way-does-your-data-flow/">understanding the impact of cross-border routing of data during an era of emerging geographic restrictions</a>, from <a href="http://dyn.com/">Dyn</a>. I'm writing about this to add it to my list of numerous concerns for API providers, when it comes to internationalizing their APIs, for the global API economy--such as <a href="http://apievangelist.com/2015/10/24/successful-patterns-for-multilingual-apis-and-documentation/">establishing&nbsp;successful patterns for multi-lingual APIs and documentation</a>, or <a href="http://apievangelist.com/2016/01/05/your-api-access-replicated-into-multiple-regions-around-the-globe-for-additional-charge/">providing API access that is replicated into multiple regions around the globe</a>.</p>
+<p>Dyn's perspective comes from a more regulatory level, which I think coming from a DNS provider is something that makes the story even more compelling. At any rate, I feel with the big data / surveillance culture that is thriving right now, regulatory concerns, when it comes to data and privacy will continue to be a natural response, and will increase, and continue to be more heavy handed.&nbsp;</p>
+<p>I am not a fan of regulation, I understand its purpose, but historically I have not been an advocate for. However there has to be a counterbalance to the bad big data behavior from tech companies, surveillance by tech companies and the government, and the increasing cyberbullshittery that is going on. I'd prefer this counter-balance be a human and people driven response, but I'm guessing it will end up being a wave of very emotional government regulatory responses, <a href="http://www.export.gov/safeharbor/eu/eg_main_018365.asp">like we seen with Safe Harbor</a>, and beyond.</p>
+<p>Its my opinion that extensive logging, software defined networking, and APIs coupled with OAuth controls is how we are going to orchestrate our operations in this new, extremely volatile, land-mine ridden regulatory environment that is unfolding. This is why I keep an eye on global DNS infrastructure providers like Dyn, <a href="http://dns.apievangelist.com/">as part of my DNS research</a>, so that I can map out all of their API operations, and include alongside logging, SDN, and other relevant APIs--the automation of cross-border data flows using APIs, so that you can mitigate regulatory uncertainty.</p>
+<p>I see the concept of "data flow" playing a significant role in helping use define our digital self, both individual and organizationally. Similar to <a href="http://stack.apievangelist.com/companies.html">bringing into focus what online services I depend on,</a> and having a better handle on where my valuable digital assetts are stored, I want to know where my data flows, and have some control over it as a business or as individual. I suspect this is something that more businesses, and god help us, hopefully more individuals begin asking for, and head off some of the regulatory headwinds that are in store for all of us.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows - https://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/&title=https://apievangelist.comUsing APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/&title=Using APIs To Address Regulatory Uncertainty Involved In Cross-Border Data Flows&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/01/07/using-apis-to-address-regulatory-uncertainty-involved-in-crossborder-data-flows/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/01/07/i-loaded-that-csv-into-a-database-now-let-me-expose-an-api-so-i-can-get-some-help/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/01/08/are-we-stepping-back-and-considering-the-potential-for-abuse-with-our-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-monetization.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-monetization.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online</h2>
+<p><span class="post-date">29 Aug 2015</span></p>
+<p><a href="http://monetization.apievangelist.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-monetization.png" alt="" width="250" align="right" /></a></p>
+<p>I'm almost to the point with <a href="https://kin-lane.github.io/master/">my API stack</a>, where I can start plugging in new APIs I have planned. Up until now, the APIs i have deployed, are of little use to a wider commercial audience. However some of the APIs I have planned for the next year, I'm looking to monetize their usage, and operate as part of a larger commercially viable API stack. (practice what I preach baby!)</p>
+<p>To run this stack, I need a plug and play way to define what an API is costing me, and potentially how much revenue I am generating from each API. With this in mind, here is my draft look at an API monetization framework, that I am employing across my API Stack.&nbsp;</p>
+<p><strong>Acquisition</strong> (One Time or Recurring)</p>
+<p><strong> </strong></p>
+<ul>
+<strong> </strong> 
+</ul>
+<ul>
+<li><strong>Discover - </strong>What did I spent to find this. I may have had to buy someone dinner or beer to find, as well as time on the Internet searching.</li>
+<li><strong>Negotiate</strong> - What time to I have in actually getting access to something. Sometimes its time, and sometimes it costs me.&nbsp;</li>
+<li><strong>Licensing</strong> - There is a chance I would license a database from a company or institution, so I want to have this option in there. Even if this is open source, I want the license referenced.</li>
+<li><strong>Purchase</strong> - Also the chance I may buy a database from someone outright, or pay them to put the database together, resulting in one-time fee.&nbsp;</li>
+</ul>
+<p><strong>&nbsp;Development</strong> (One Time or Recurring)<strong>&nbsp;</strong></p>
+<ul>
+<li><strong>Normalization</strong> - What does it take me to cleanup, and normalize a dataset, or across content. This is usually he busy janitorial work necessary.</li>
+<li><strong>Design</strong> - What does it take me to generate a Swagger and API Blueprint, something that isn't just auto-generated, but also has a hand polish to it.</li>
+<li><strong>Database</strong> - How much work am I putting into setting up the database. A lot of this I can automate, but there is always a setup cost.</li>
+<li><strong>Server</strong> - Defining the amount of work I put into setting up, and configuring the server to run a new API, including where it goes in my operations plan.</li>
+<li><strong>Coding</strong> - How much work to I put into actually coding an API. I use the Slim PHP framework, and using automation scripts I can generate 75% of it usually.</li>
+<li><strong>DNS</strong> - What was the overhead in me defining, and configuring the DNS for any API, setting up endpoint domain, as well as potentially a portal URL.&nbsp;</li>
+</ul>
+<p><strong><strong><strong>Operation</strong></strong></strong> (Recurring)</p>
+<ul>
+<li><strong>Compute</strong> - What percentage of my AWS compute is dedicated to an API. Flat percentage of the server its one until usage history exists.</li>
+<li><strong>Storage</strong> - How much on disk storage am I using to operate an API? Could fluctuate from month to month, and exponentially increase for some.</li>
+<li><strong>Bandwidth</strong> - How much bandwidth in / out is an API using to get the job done.</li>
+<li><strong>Management</strong> - What percentage of API management resources is dedicated to the API. A flat percentage of API management overhead until usage history exists.</li>
+<li><strong>Evangelism</strong> - How much energy do I put into evangelizing any single API? Did I write a blog post, or am I'm buying Twitter or Google Ads? How is word getting out?</li>
+<li><strong>Monitoring</strong> - What percentage of the API monitoring, testing, and performance service budget is dedicated to this API. How large is surface area for monitoring?</li>
+</ul>
+<p><strong><strong><strong><strong>Pricing </strong></strong></strong></strong>(Recurring)</p>
+<ul>
+<li><strong>Tier(s) -</strong> Which of the 7 service tiers is an API available in, and which endpoint paths + verbs are accessible in the tier (api-pricing definition).</li>
+<li><strong>Credit(s) -</strong> How many credits does an API use when any single endpoint is engaged, specified as entire endpoint or individual paths + verbs (api-credit definition).</li>
+</ul>
+<ul>
+<strong><strong><strong> </strong></strong></strong> 
+</ul>
+<p><strong><strong><strong> </strong></strong></strong></p>
+<p><strong><strong><strong><strong>Revenue </strong></strong></strong></strong>(Recurring)</p>
+<ul>
+<li><strong>Monthly</strong> - How much revenue is being brought in on a monthly basis for an API and all of its endpoints.</li>
+<li><strong>Users</strong>&nbsp;- How much revenue is being brought in on a monthly basis for a specific user, for an API and all of its endpoints.</li>
+<li><strong>Applications</strong>&nbsp;- How much revenue is being brought in on a monthly basis for a specific application,&nbsp;for an API and all of its endpoints.</li>
+</ul>
+<p>I am looking for this framework to help me set pricing, and rate limits for any API I publish. My goal is to rapidly make available some valuable databases, and more functional APIs using common open source software, available for free, but also generate enough revenue from high volume users, to run the whole thing. To do this, I need to understand exactly what an API is costing, allowing me to set a price, with the intent of breaking even, and then generating some revenue where it makes sense.</p>
+<p>As part of this work I will be generate an APIs.json type I am calling <a href="http://api-pricing.apievangelist.com">api-pricing</a>, which I am looking to help be balance out consumption across my API stack. Using my <a href="http://3scale.net">3Scale API infrastructure</a> I am able to easily add and subtract credits for API usage across users, and apps, then handle the billing based upon what pricing I have set for all my API usage.</p>
+<p>My pricing will not just be about retail usage. Some of my APIs I will be deployed in other people's infrastructure, and letting them control the pricing, credits, and service composition. This is the wholesale layer to my strategy, allowing me to go beyond my own internal usage, by B2D usage, and open up new opportunities for API deployment and consumption.</p>
+<p>As with most of my work, I'm going to be very transparent about my pricing, making sure it is indexed within each APIs.json file, and available alongside each APIs Swagger, API Blueprint, Postman Collection, and API Science monitor--encouraging wider consumption, and processing.</p>
+<ul>
+<strong><strong><strong> </strong></strong></strong> 
+</ul>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online - https://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/&title=https://apievangelist.comAn API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/&title=An API Monetization Framework To Help Me Standardize Pricing For The APIs I Bring Online&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/08/29/an-api-monetization-framework-to-help-me-standardize-pricing-for-the-apis-i-bring-online/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/08/28/we-need-an-open-abstraction-layer-to-help-us-better-define-and-design-our-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/08/29/influencing-important-work-like-the-uk-open-banking-api-standard-is-why-i-do-this/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

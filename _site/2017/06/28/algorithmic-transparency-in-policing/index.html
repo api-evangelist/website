@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Algorithmic Observability In Predictive Policing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Algorithmic Observability In Predictive Policing | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Algorithmic Observability In Predictive Policing | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Algorithmic Observability In Predictive Policing</h2>
+<p><span class="post-date">28 Jun 2017</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/crypto-machine-bletchley_copper_circuit.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>As I study the world of APIs I am always on the lookout for good examples of APIs in action so that I can tell stories about them, and help influence the way folks do APIs. This is what I do each day. As part of this work, I am investing as much time as I can into better understanding how APIs can be used to help with algorithmic transparency, and helping us see into the black boxes that often are algorithms.</p>
+
+<p>Algorithms are increasingly driving vital aspects of our world from what we see in our Facebook timelines, to whether or not we would commit a crime in the eyes of the legal system. <a href="http://washingtonmonthly.com/magazine/junejulyaugust-2017/code-of-silence/">I am reading about algorithms being used in policing in the Washington Monthly</a>, and I learned about an important example of algorithmic transparency that I would like to highlight and learn more about. A classic argument regarding why algorithms should remain closed is centered around intellectual property and protecting the work that gives you your competitive advantage–if you share your secret algorithm, your competitors will just steal it. While discussing the predictive policing algorithm, Rebecca Wexler explores the competitive landscape:</p>
+
+<blockquote>
+  <p>But Perlin’s more transparent competitors appear to be doing just fine. <a href="https://www.cybgen.com/products/casework.shtml">TrueAllele’s</a> main rival, a program called STRmix, which claims a 54 percent U.S. market share, has an official policy of providing defendants access to its source code, subject to a protective order. Its developer, John Buckleton, said that the key to his business success is not the code, but rather the training and support services the company provides for customers. “I’m committed to meaningful defense access,” he told me. He acknowledged the risk of leaks. “But we’re not going to reverse that policy because of it,” he said. “We’re just going to live with the consequences.”</p>
+</blockquote>
+
+<blockquote>
+  <p>And remember <a href="http://www.predpol.com/">PredPol</a>, the secretive developer of predictive policing software? <a href="https://www.hunchlab.com/">HunchLab</a>, one of PredPol’s key competitors, uses only open-source algorithms and code, reveals all of its input variables, and has shared models and training data with independent researchers. Jeremy Heffner, a HunchLab product manager, and data scientist explained why this makes business sense: only a tiny amount of the company’s time goes into its predictive model. The real value, he said, lies in gathering data and creating a secure, user-friendly interface.</p>
+</blockquote>
+
+<p>In my experience, the folks who want to keep their algorithms closed are simply wanting to hide incompetence and shady things going on behind the scenes. If you listen to individual companies like Predpol, it is critical that algorithms stay closed, but if you look at the wider landscape you quickly realize this is not a requirement to stay competitive. There is no reason that all your algorithms can’t be wrapped with APIs, providing access to the inputs and outputs of all the active parts. Then using modern API management approaches these APIs can be opened up to researchers, law enforcement, government, journalists, and even end-users who are being impacted by algorithmic results, in a secure way.</p>
+
+<p>I will be continuing to profile the algorithms being applied as part of predictive policing, and the digital legal system that surrounds it. As with other sectors where algorithms are being applied, and APIs are being put to work, I will work to find positive examples of <a href="http://apievangelist.com/2016/08/04/pushing-for-more-algorithmic-transparency-using-apis/">algorithmic transparency</a> like we are seeing from STRmix and HunchLab. I’d like to learn more about their approach to ensuring observability around these algorithms, and help showcase the benefits of transparency and observability of these types of algorithms that are impacting our worlds–helping make sure everyone knows that black box algorithms are a thing of the past, and the preferred approach of snake oil salesman.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Algorithmic Observability In Predictive Policing - https://apievangelist.com/2017/06/28/algorithmic-transparency-in-policing/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/06/28/algorithmic-transparency-in-policing/&title=https://apievangelist.comAlgorithmic Observability In Predictive Policing" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/06/28/algorithmic-transparency-in-policing/&title=Algorithmic Observability In Predictive Policing&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/06/28/algorithmic-transparency-in-policing/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/06/28/continue-to-explore-restaurant-menu-as-an-analogy-for-api-copyright-and-patents/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/06/29/electronic-submission-of-injury-and-illness-records-to-osha-using-api/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

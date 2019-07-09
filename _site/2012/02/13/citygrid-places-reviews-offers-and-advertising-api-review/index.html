@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>CityGrid Places, Reviews, Offers and Advertising API Review</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CityGrid Places, Reviews, Offers and Advertising API Review | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid-Getting-Started.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="CityGrid Places, Reviews, Offers and Advertising API Review | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/CityGrid-Getting-Started.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>CityGrid Places, Reviews, Offers and Advertising API Review</h2>
+<p><span class="post-date">13 Feb 2012</span></p>
+<p><a title="CityGrid API" href="http://developer.citygridmedia.com"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/citygrid/CityGrid.png" alt="" width="250" align="right" /></a></p>
+<p>Much of the work I get as an <a title="API Evangelist" href="http://www.apievangelist.com">API Evangelist</a> starts with a review of an API area.  I have evolved a way to look at API areas, and identify which building blocks are present or missing, all contributing to the success or failure of an API.</p>
+<p>I started evolved this methodology in summer of 2012 when I was first building API Evangelist, by reviewing over 250+ of the top APIs out there.  I generated a list of the common building blocks used by APIs, as well as identified a bunch of innovative and less commonly used <a title="Building Blocks" href="http://blog.apievangelist.com/buildingblocks/">building blocks</a>.</p>
+<p>When I first started working with <a title="CityGrid" href="http://www.citygrid.com">CityGrid</a> I reviewed their API area, which contained the following building blocks:</p>
+<ul class="mainlist">
+<li><a title="API Dashboard" href="http://developer.citygridmedia.com/">API Dashboard</a></li>
+<li>Documentation for <a title="content api documentation" href="http://docs.citygridmedia.com/display/citygridv2/Content+by+CityGrid">Content</a> and <a title="advertising API" href="http://docs.citygridmedia.com/display/citygridv2/Ads+by+CityGrid">Advertising</a> APIs</li>
+<li><a title="SDK for iOS and Android" href="http://docs.citygridmedia.com/display/citygridv2/SDKs">SDKs for iOS and Android</a></li>
+<li><a title="version history" href="http://docs.citygridmedia.com/display/citygridv2/Version+history">Version History</a></li>
+<li><a title="blog" href="http://www.citygridmedia.com/developer/blog/">Blog</a></li>
+<li><a title="forums" href="http://www.citygridmedia.com/developer/forum/">Forum(s)</a></li>
+<li><a title="terms and conditions" href="http://docs.citygridmedia.com/display/citygridv2/Terms+and+Conditions">Terms and Conditions</a></li>
+<li><a title="usage requirements" href="http://docs.citygridmedia.com/display/citygridv2/Usage+Requirements">Usage Requirements</a></li>
+<li><a title="self-service registration" href="http://developer.citygridmedia.com/dashboard/registration">Self-Service Registratio</a>n</li>
+</ul>
+<p><a href="http://docs.citygridmedia.com/display/citygridv2/Getting+Started"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/citygrid/CityGrid-Getting-Started.png" alt="" width="300" align="right" /></a></p>
+<p>I have a list of what I consider <a title="essential api building blocks" href="http://blog.apievangelist.com/2012/01/31/four-potential-levels-of-an-api-business-ecosystem/">essential API area building blocks</a>, and most of them are represented here, but there were a couple missing.  So today I added 3 more areas:</p>
+<ul class="mainlist">
+<li><a title="Getting Started" href="http://docs.citygridmedia.com/display/citygridv2/Getting+Started">Getting Started</a></li>
+<li><a title="publisher overview" href="http://docs.citygridmedia.com/display/citygridv2/Publisher+Overview">Publisher Overview</a></li>
+<li><a title="FAQ" href="http://docs.citygridmedia.com/display/citygridv2/FAQ">FAQ</a></li>
+</ul>
+<p>An API has to have a getting started page as well as a place for frequently asked questions.  Developers have to find the information they need to go from evaluation to integration without asking for help.</p>
+<p>The publisher overview page is unique.  It covers the different business tiers of developers, or as we call them at CityGrid, publishers.  Even though these tiers are unique to how we approach things at CityGrid, they are <a title="four potential levels of an api ecosystem" href="http://blog.apievangelist.com/2012/01/31/four-potential-levels-of-an-api-business-ecosystem/">four potential levels of an API ecosystem</a>, that other API owners can employ.</p>
+<p>The CityGrid API area is not up to par 100% by the standards I preach here on API Evangelist.  I&rsquo;m working on a new code samples page which has PHP, Python, Ruby code samples and starter kits--which I will publish this week at some point.  But overall the <a title="CityGrid API community" href="http://developer.citygridmedia.com">CityGrid API community</a> contains the essential building blocks I feel are necessary to build an ecosystem, and I&rsquo;m working on finding out what else my developers will need to be successful and put them in my roadmap.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=CityGrid Places, Reviews, Offers and Advertising API Review - https://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/&title=https://apievangelist.comCityGrid Places, Reviews, Offers and Advertising API Review" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/&title=CityGrid Places, Reviews, Offers and Advertising API Review&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2012/02/13/citygrid-places-reviews-offers-and-advertising-api-review/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2012/02/13/are-there-enough-doers-for-this-api-vision-to-work/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2012/02/15/interactive-api-documentation-now-available-with-3scale/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

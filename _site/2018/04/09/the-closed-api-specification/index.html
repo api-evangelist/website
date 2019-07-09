@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>The ClosedAPI Specification</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The ClosedAPI Specification | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fence_ww2_dresden.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The ClosedAPI Specification | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fence_ww2_dresden.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>The ClosedAPI Specification</h2>
+<p><span class="post-date">09 Apr 2018</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fence_ww2_dresden.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>You’ve heard of OpenAPI, right? It is the API specification for defining the surface area of your web API, and the schema you employ–making your public API more discoverable, and consumable in a variety of tools services. OpenAPI is the API definition for documenting your API when you are just getting started with your platform, and you are looking to maximize the availability and access of your platform API(s). After you’ve acquired all the users, content, investment, and other value, ClosedAPI is the format you will want to switch to, abandoning OpenAPI, for something a little more discreet.</p>
+
+<h3 id="collect-as-much-data-as-you-possibly-can">Collect As Much Data As You Possibly Can</h3>
+<p>Early on you wanted to be defining the schema for your platform using OpenAPI, and even offering up a GraphQL layer, allowing your data model to rapidly scale, adding as may data points as you possible can. You really want to just ingest any data you can get your hands on the browser, mobile phones, and any other devices you come into contact with. You can just dump it all into big data lake, and sort it out later. Adding to your platform schema when possible, and continuing to establish new data points that can be used in advertising and targeting of your platform users.</p>
+
+<h3 id="turn-the-firehose-on-to-drive-activity">Turn The Firehose On To Drive Activity</h3>
+<p>Early on you wanted your APIs to be 100% open. You’ve provided a firehose to partners. You’ve made your garden hose free to EVERYONE. OpenAPI was all about providing scalable access to as many users as you can through streaming APIs, as well as lower volume transactional APIs you offer. Don’t rate limit too heavily. Just keep the APIs operating at full capacity, generating data and value for the platform. ClosedAPI is for defining your API as you begin to turn off this firehose, and begin restricting access to your garden hose APIs. You’ve built up the capacity of the platform, you really don’t need your digital sharecroppers anymore. They were necessary early on in your business, but they are not longer needed when it comes to squeezing as much revenue as you can from your platform.</p>
+
+<h3 id="the-closedapi-specification">The ClosedAPI Specification</h3>
+<p>We’ve kept the specification as simple as possible. Allowing you to still say you have API(s), but also helping make sure you do not disclose too much about what you actually have going on. Providing you the following fields to describe your APIs:</p>
+
+<ul>
+  <li>Name</li>
+  <li>Description</li>
+  <li>Email</li>
+</ul>
+
+<p>That is it. You can still have hundreds of APIs. Issue press releases. Everyone will just have to email you to get access to your APIs. It is up to you to decide who actually gets access to your APIs, which emails you respond, or if the email account is ever even checked in the first place. The objective is just to appear that you have APIs, and will entertain requests to access them.</p>
+
+<h3 id="maintain-control-over-your-platform">Maintain Control Over Your Platform</h3>
+<p>You’ve worked hard to get your platform to where it is. Well, not really, but you’ve worked hard to ensure that others do the work for you. You’ve managed to convince a bunch of developers to work for free building out the applications and features of your platform. You’ve managed to get the users of those applications to populate your platform with a wealth of data, making your platform exponentially more valuable that you could have done on your own. Now that you’ve achieved your vision, and people are increasingly using your APIs to extract value that belongs to you, you need to turn off the fire hose, garden hose, and kill off applications that you do not directly control.</p>
+
+<p>The ClosedAPI specification will allow you to still say that you have APIs, but no longer have to actually be responsible for your APIs being publicly available. Now all you have to do is worry about generating as much revenue as you possibly can from the data you have. You might lose some of your users because you do not have publicly available APIs anymore, as well as losing some of your applications, but that is ok. Most of your users are now trapped, locked-in, and dependent on your platform–continuing to generate data, content, and value for your platform. Stay in tune with the specification using the road map below.</p>
+
+<h3 id="roadmap">Roadmap:</h3>
+
+<ul>
+  <li><strong>Remove Description</strong> – The description field seems extraneous.</li>
+</ul>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=The ClosedAPI Specification - https://apievangelist.com/2018/04/09/the-closed-api-specification/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/04/09/the-closed-api-specification/&title=https://apievangelist.comThe ClosedAPI Specification" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/04/09/the-closed-api-specification/&title=The ClosedAPI Specification&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/04/09/the-closed-api-specification/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/04/09/i-will-be-speaking-at-the-api-conference-in-london-this-week/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/04/10/sharing-api-definition-patterns-across-teams-by-default/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

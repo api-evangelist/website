@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Some Common Features Of An API Application Review Process</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Some Common Features Of An API Application Review Process | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Some Common Features Of An API Application Review Process | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Some Common Features Of An API Application Review Process</h2>
+<p><span class="post-date">15 Feb 2018</span></p>
+<p><a href="https://twitter.com/ktinboulder/status/961601920887607296"><img src="https://s3.amazonaws.com/kinlane-productions/kelly-taylor-app-approval-tweet.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="https://twitter.com/ktinboulder/status/961601920887607296">I received a tweet from my friend Kelly Taylor with USDS</a>, asking for any information regarding establishing an “approve access to production data” for developers. <a href="https://bluebutton.cms.gov/developers/">He is working on an OAuth + FHIR implementation for the Centers for Medicare and Medicaid Services (CMS) Blue Button API</a>. Establishing a standard approach for on-boarding developers into a production environment always makes sense, as you don’t want to give access to sensitive information without making sure the company, developer, and application has been thoroughly vetted.</p>
+
+<p>As I do with my work, I wanted to think through some of the approaches I’ve come across in my research, and share some tips and best practices. <a href="https://bluebutton.cms.gov/developers/#production-api-access">The Blue Button API team has a section published regarding how to get your application approved</a>, but I wanted to see if I can expand on, while also helping share this information with other readers. This is a relevant use case that I see come up regularly in healthcare, financial, education, and other mainstream industries.</p>
+
+<p><strong>Virtualization &amp; Sandbox</strong><br />
+The application approval conversation usually begins with ALL new developers being required to work with a sandboxed set of APIs, only providing production API access to approved developers. This requires having a complete set of virtualized APIs, mimicking exactly what would be used in production, but in a much safer, protected environment. One of the most important aspects of this virtualized environment is that there also needs to be robust sets of virtualized data, providing as much parity regarding what developers will experience when they enter the production environment. The sandbox environment needs to be as robust and reliable as the production, which is a mistake I see made over and over from providers, where the sandbox isn’t reliable, or as functional, and developers never are able to reach production status in a consistent and reliable way.</p>
+
+<p><strong>Doing a Background Check</strong><br />
+Next, as reflected in the Blue Button teams approach, you should be profiling the company and organization, as well as the individual behind each application. <a href="http://apievangelist.com/2016/03/30/best-buy-will-not-issue-api-keys-to-free-email-accounts-and-wants-to-get-to-know-your-company/">You see company’s like Best Buy refusing any API signup that doesn’t have an official company domain that can be verified</a>. In addition to requiring developers provide a thorough amount of information about who they are, and who they work for, many API providers are using background and profiling services like <a href="https://clearbit.com/">Clearbit</a> to obtain more details about a user based upon their email, IP address, and company domain. Enabling different types of access to API resources depending on the level of scrutiny a developer is put under. I’ve seen this level of scrutiny go all the way up to requiring the scanning of drivers license, and providing corporate documents before production access is approved.</p>
+
+<p><strong>Purpose of Application</strong><br />
+One of the most common filtering approaches I’ve seen centers around asking developer about the purpose of their application. The more detail the better. As we’ve seen from companies like Twitter, the API provider holds a lot of power when it comes to deciding what types of applications will get built, and it is up to the developer to pitch the platform, and convince them that their application will serve the mission of the organization, as well as any stakeholders, and end-users who will be leveraging the application. This process can really be a great filter for making sure developers think through what they are building, requiring them to put forth a coherent proposal, otherwise they will not be able to get full access to resources. This part of the process should be conducted early on in the application submission process, reducing frustrations for developers if their application is denied.</p>
+
+<p><strong>Syncing The Legal Department</strong><br />
+Also reflected in the Blue Button team’s approach is the syncing of the legal aspects of operating an API platform, and it’s applications. Making sure the application’s terms of service, privacy, security, cookie, branding, and other policies are in alignment with the platform. One good way of doing this is offering a white label edition of the platforms legal documents for use by the each application. Doing the heavy legal work for the application developers, while also making sure they are in sync when it comes to the legal details. Providing legal develop kits (LDK) will grow in prominence in the future, just like providing software development kits (SDK), helping streamline the legalities of operating a safe and secure API platform, with a wealth of applications in its service.</p>
+
+<p><strong>Live or Virtual Presentation</strong><br />
+Beyond the initial pitch selling an API provider on the concept of an application, I’ve seen many providers require an in-person, or virtual demo of the working application before it can be added to a production environment, and included in the application gallery. It can be tough for platform providers to test drive each application, so making the application owners do the hard work of demonstrating what an application does, and walking through all of its features is pretty common. I’ve participated on several judging panels that operate quarterly application reviews, as well as part of specific events, hackathons, and application challenges. Making demos a regular part of the application lifecycle is easier to do when you have dedicated resources in place, with a process to govern how it will all work in recurring batches, or on a set schedule.</p>
+
+<p><strong>Getting Into The Code</strong><br />
+As part of the application review process many API providers require that you actually submit your code for review via Github. Providing details on ALL dependencies, and performing code, dependency, and security scans before an application can be approved. I’ve also see this go as far as requiring the use of specific SDKs, frameworks, or include proxies within the client layer, and requiring all HTTP calls be logged as part of production applications. This process can be extended to include all cloud and SaaS solutions involved, limiting where compute, storage, and other resources can be operated. Requiring all 3rd party APIs in use be approved, or already on a white list of API providers before they can be put to use. This is obviously the most costly part of the application review process, but depending on how high the bar is being set, it is one that many providers will decide to invest in, ensuring the quality of all applications that run in a production environment.</p>
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions/apple-app-review.png" align="right" width="40%" style="padding: 15px;" /></p>
+
+<p><strong>Regular Review &amp; Reporting</strong><br />
+One important thing about the application review process is that it isn’t a one time process. Even once an application is accepted an added into the production environment, this process will need to be repeated for each version release of the application, along with the changes to the API. Of course the renewal process might be shorter than the initial approval workflow, but auditing and regular check-in should be common, and not forgotten. This touches on the client level SDK, and API management logging needs of the platform, and that regular reporting upon application usage and activity should be available in real time, as well as part of each application renewal. API operations is always about taking advantage the real time awareness introduced at the API consumption layer, and staying in tune with the healthy, and not so healthy patterns that emerge from logging everything an application is doing.</p>
+
+<p><strong>Business Model</strong><br />
+It is common to ask application developers about their business model. The absence of a business model almost always reflects the underlying exploitation and sale of data being access or generated as part of application’s operation. Asking developers how they will make money and sustain their operations, along with regular checkins to make sure it is truly in effect, is an easy to ensure that applications are protecting the interests of the platform, its partners, and the applications end-users.</p>
+
+<p>There are many other approaches I’ve seen API providers require before accepting an application into production. However, I think we should also be working hard to keep the process simple, and meaningful. Of course, we want a high bar for quality, but as with everything in the API world, there will always be compromises in how we deliver on the ground. Depending on the industry you are operating the bar will be made higher, or possibly lowered a little to allow for more innovation. I’ve included a list of some of the application review process I found across my research–showing a wide range of approaches across API providers we are all familiar with. Hopefully that helps you think through the application review process a little more. It is something I’ll write about again in the future as I push forward my research, and distill down more of the common building blocks I’m seeing across the API landscape.</p>
+
+<p><strong>Some Leading Application Review Processes</strong><br /></p>
+
+<ul>
+  <li><a href="https://www.instagram.com/developer/review/">Instagram</a></li>
+  <li><a href="https://developer.concur.com/manage-apps/app-certification.html">SAP Concur</a></li>
+  <li><a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/">Paypal</a></li>
+  <li><a href="https://developers.google.com/adsense/host/review_main">Adsense</a></li>
+  <li><a href="https://help.shopify.com/api/listing-in-the-app-store/app-requirements-and-success-criteria/app-review-checklist">Shopify</a></li>
+  <li><a href="https://developer.riotgames.com/application-process.html">Riot Games</a></li>
+  <li><a href="https://api.slack.com/security-review">Slack</a></li>
+  <li><a href="https://www.docusign.com/blog/dsdev-docusign-go-live-process-now-automated/">Docusign</a></li>
+  <li><a href="http://dev.splunk.com/view/app-cert/SP-CAAAE8P">Splunk</a></li>
+  <li><a href="https://go.developer.ebay.com/compatible-application-check-and-checklist-going-live">Ebay</a></li>
+  <li><a href="https://developer.apple.com/app-store/review/">Apple</a></li>
+</ul>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Some Common Features Of An API Application Review Process - https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/&title=https://apievangelist.comSome Common Features Of An API Application Review Process" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/&title=Some Common Features Of An API Application Review Process&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/02/14/code-generating-openapi-still-prevailing-approach/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/02/15/how-big-or-small-is-an-api/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

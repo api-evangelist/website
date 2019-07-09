@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>My API Life Cycle Research From Design To Deprecation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="My API Life Cycle Research From Design To Deprecation | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="My API Life Cycle Research From Design To Deprecation | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>My API Life Cycle Research From Design To Deprecation</h2>
+<p><span class="post-date">08 Apr 2016</span></p>
+<p>It always makes me smile, when I talk to someone about one or many areas of my API research, sharing how I conduct my work, and they are surprised to find how many areas I track on. <a href="http://apievangelist.com">My home page has always been a doorway to my research</a>, and I try to keep this front door as open as possible, providing easy access to my more mature areas like API management, all the way to my newer areas like how bots are using APIs.</p>
+<p>From time to time, I like to publish my API life cycle research to an individual blog post, which I guess puts my home page, the doorway to my research into my readers Twitter stream, and feed reader. Here is a list of my current research for April 2016, from design to deprecation.</p>
+<table cellspacing="5" cellpadding="5" width="100%">
+<tbody>
+<tr>
+<td width="100" align="center"><a href="http://design.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design.png" alt="" width="40" /></a></td>
+<td width="50%"><a href="http://design.apievangelist.com/">Design</a></td>
+<td width="30%" align="center"><a href="http://design.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://design.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://hypermedia.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hypermedia.png" alt="" width="40" /></a></td>
+<td><a href="http://hypermedia.apievangelist.com/">Hypermedia</a></td>
+<td width="30%" align="center"><a href="http://hypermedia.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://hypermedia.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://definitions.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-icon.png" alt="" width="40" /></a></td>
+<td width="50%"><a href="http://definitions.apievangelist.com/">Definitions</a></td>
+<td width="30%" align="center"><a href="http://definitions.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://definitions.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://dns.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-globe.png" alt="" width="40" /></a></td>
+<td><a href="http://dns.apievangelist.com/">Domain Name System (DNS)</a></td>
+<td width="30%" align="center"><a href="http://dns.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://dns.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://deployment.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment-2.jpg" alt="" width="40" /></a></td>
+<td><a href="http://deployment.apievangelist.com/">Deployment</a></td>
+<td width="30%" align="center"><a href="http://deployment.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://deployment.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://virtualization.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-virtulization.png" alt="" width="40" /></a></td>
+<td><a href="http://virtualization.apievangelist.com/">Virtualization</a></td>
+<td width="30%" align="center"><a href="http://virtualization.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://virtualization.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://containers.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-shipping-container.png" alt="" width="40" /></a></td>
+<td><a href="http://containers.apievangelist.com/">Containers</a></td>
+<td width="30%" align="center"><a href="http://containers.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://containers.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://serverless.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-serverless.png" alt="" width="40" /></a></td>
+<td><a href="http://serverless.apievangelist.com/">Serverless</a></td>
+<td width="30%" align="center"><a href="http://serverless.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://serverless.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://management.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-tools.png" alt="" width="40" /></a></td>
+<td><a href="http://management.apievangelist.com/">Management</a></td>
+<td width="30%" align="center"><a href="http://management.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://management.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://getting-started.apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" alt="" width="40" /></a></td>
+<td><a href="http://getting-started.apievangelist.com/">Getting started</a></td>
+<td width="30%" align="center"><a href="http://getting-started.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://getting-started.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://documentation.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-documentation.png" alt="" width="40" /></a></td>
+<td><a href="http://documentation.apievangelist.com/">Documentation</a></td>
+<td width="30%" align="center"><a href="http://documentation.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://documentation.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://frequently-asked-questions.apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" alt="" width="40" /></a></td>
+<td><a href="http://frequently-asked-questions.apievangelist.com/">Frequently Asked Questions</a></td>
+<td width="30%" align="center"><a href="http://frequently-asked-questions.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://frequently-asked-questions.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://support.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-support.png" alt="" width="40" /></a></td>
+<td><a href="http://support.apievangelist.com/">Support</a></td>
+<td width="30%" align="center"><a href="http://support.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://support.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://roadmap.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-roadmap.png" alt="" width="40" /></a></td>
+<td><a href="http://roadmap.apievangelist.com/">Roadmap</a></td>
+<td width="30%" align="center"><a href="http://roadmap.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://roadmap.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://issues.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" alt="" width="40" /></a></td>
+<td><a href="http://issues.apievangelist.com/">Issues</a></td>
+<td width="30%" align="center"><a href="http://issues.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://issues.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://change-log.apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" alt="" width="40" /></a></td>
+<td><a href="http://change-log.apievangelist.com/">Change Log</a></td>
+<td width="30%" align="center"><a href="http://change-log.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://change-log.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://monitoring.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-heart-monitor.png" alt="" width="40" /></a></td>
+<td><a href="http://monitoring.apievangelist.com/">Monitoring</a></td>
+<td width="30%" align="center"><a href="http://monitoring.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://monitoring.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://testing.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png" alt="" width="40" /></a></td>
+<td><a href="http://testing.apievangelist.com/">Testing</a></td>
+<td width="30%" align="center"><a href="http://testing.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://testing.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://performance.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-performance.png" alt="" width="40" /></a></td>
+<td><a href="http://performance.apievangelist.com/">Performance</a></td>
+<td width="30%" align="center"><a href="http://performance.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://performance.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://authentication.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-authentication-2.png" alt="" width="40" /></a></td>
+<td><a href="http://authentication.apievangelist.com/">Authentication</a></td>
+<td width="30%" align="center"><a href="http://authentication.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://authentication.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://encryption.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-encryption.png" alt="" width="40" /></a></td>
+<td><a href="http://encryption.apievangelist.com/">Encryption</a></td>
+<td width="30%" align="center"><a href="http://encryption.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://encryption.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://security.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png" alt="" width="35" /></a></td>
+<td width="50%"><a href="http://security.apievangelist.com/">Security</a></td>
+<td width="30%" align="center"><a href="http://security.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://security.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://terms-of-service.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-terms-of-use.png" alt="" width="40" /></a></td>
+<td><a href="http://terms-of-service.apievangelist.com/">Terms of Services (TOS)</a></td>
+<td width="30%" align="center"><a href="http://terms-of-service.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://terms-of-service.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://privacy.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-privacy.png" alt="" width="40" /></a></td>
+<td><a href="http://privacy.apievangelist.com/">Privacy</a></td>
+<td width="30%" align="center"><a href="http://privacy.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://privacy.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://licensing.apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-licensing-stack.png" alt="" width="40" /></a></td>
+<td><a href="http://licensing.apievangelist.com/">Licensing</a></td>
+<td width="30%" align="center"><a href="http://licensing.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://licensing.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://branding.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-brand.png" alt="" width="40" /></a></td>
+<td><a href="http://branding.apievangelist.com/">Branding</a></td>
+<td width="30%" align="center"><a href="http://branding.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://branding.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://regulation.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-government-regulation.png" alt="" width="40" /></a></td>
+<td><a href="http://regulation.apievangelist.com/">Regulation</a></td>
+<td width="30%" align="center"><a href="http://regulation.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://regulation.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://patents.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png" alt="" width="40" /></a></td>
+<td width="50%"><a href="http://patents.apievangelist.com/">Patents</a></td>
+<td width="30%" align="center"><a href="http://patents.apievangelist.com/">{"View Research"}</a></td>
+<td width="20%" align="center"><a href="http://patents.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://discovery.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png" alt="" width="40" /></a></td>
+<td><a href="http://discovery.apievangelist.com/">Discovery</a></td>
+<td width="30%" align="center"><a href="http://discovery.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://discovery.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://client.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png" alt="" width="40" /></a></td>
+<td><a href="http://client.apievangelist.com/">Client</a></td>
+<td width="30%" align="center"><a href="http://client.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://client.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://command-line-interface.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-command-line.png" alt="" width="40" /></a></td>
+<td><a href="http://command-line-interface.apievangelist.com/">Command Line Interface (CLI)</a></td>
+<td width="30%" align="center"><a href="http://command-line-interface.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://command-line-interface.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://bots.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-robots.jpeg" alt="" width="40" /></a></td>
+<td><a href="http://bots.apievangelist.com/">Bots</a></td>
+<td width="30%" align="center"><a href="http://bots.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://bots.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://ide.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-ide.png" alt="" width="40" /></a></td>
+<td><a href="http://ide.apievangelist.com/">Integrated Development Environment (IDE)</a></td>
+<td width="30%" align="center"><a href="http://ide.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://ide.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://sdk.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sdk.png" alt="" width="40" /></a></td>
+<td><a href="http://sdk.apievangelist.com/">Software Development Kit (SDK)</a></td>
+<td width="30%" align="center"><a href="http://sdk.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://sdk.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://embeddable.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/bw-embeddable.png" alt="" width="40" /></a></td>
+<td><a href="http://embeddable.apievangelist.com/">Embeddable</a></td>
+<td width="30%" align="center"><a href="http://embeddable.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://embeddable.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://visualization.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-visualization.png" alt="" width="40" /></a></td>
+<td><a href="http://visualization.apievangelist.com/">Visualization</a></td>
+<td width="30%" align="center"><a href="http://visualization.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://visualization.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://webhooks.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/webhooks.png" alt="" width="40" /></a></td>
+<td><a href="http://webhooks.apievangelist.com/">Webhooks</a></td>
+<td width="30%" align="center"><a href="http://webhooks.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://webhooks.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://logging.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging.png" alt="" width="40" /></a></td>
+<td><a href="http://logging.apievangelist.com/">Logging</a></td>
+<td width="30%" align="center"><a href="http://logging.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://logging.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://aggregation.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/aggregation-trend.png" alt="" width="45" /></a></td>
+<td><a href="http://aggregation.apievangelist.com/">Aggregation</a></td>
+<td width="30%" align="center"><a href="http://aggregation.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://aggregation.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://scraping.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-scraping.png" alt="" width="40" /></a></td>
+<td><a href="http://scraping.apievangelist.com/">Scraping</a></td>
+<td width="30%" align="center"><a href="http://scraping.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://scraping.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://reciprocity.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-reciprocity2.png" alt="" width="40" /></a></td>
+<td><a href="http://reciprocity.apievangelist.com/">Reciprocity</a></td>
+<td width="30%" align="center"><a href="http://reciprocity.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://reciprocity.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://orchestration.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-orchestration.png" alt="" width="40" /></a></td>
+<td><a href="http://orchestration.apievangelist.com/">Orchestration</a></td>
+<td width="30%" align="center"><a href="http://orchestration.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://orchestration.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://realtime.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-real-time.png" alt="" width="40" /></a></td>
+<td><a href="http://realtime.apievangelist.com/">Real-Time</a></td>
+<td width="30%" align="center"><a href="http://realtime.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://realtime.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://voice.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-microphone.png" alt="" width="40" /></a></td>
+<td><a href="http://voice.apievangelist.com/">Voice</a></td>
+<td width="30%" align="center"><a href="http://voice.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://voice.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://spreadsheets.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-excel-icon.jpg" alt="" width="40" /></a></td>
+<td><a href="http://spreadsheets.apievangelist.com/">Spreadsheets</a></td>
+<td width="30%" align="center"><a href="http://spreadsheets.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://spreadsheets.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://monetization.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gears-questions.png" alt="" width="40" /></a></td>
+<td><a href="http://monetization.apievangelist.com/">Monetization</a></td>
+<td width="30%" align="center"><a href="http://monetization.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://monetization.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://plans.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-plan.png" alt="" width="40" /></a></td>
+<td><a href="http://plans.apievangelist.com/">Plans</a></td>
+<td width="30%" align="center"><a href="http://plans.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://plans.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://partners.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-partner.png" alt="" width="40" /></a></td>
+<td><a href="http://partners.apievangelist.com/">Partners</a></td>
+<td width="30%" align="center"><a href="http://partners.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://partners.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://evangelism.apievangelist.com/"><img src="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" alt="" width="40" /></a></td>
+<td><a href="http://evangelism.apievangelist.com/">Evangelism</a></td>
+<td width="30%" align="center"><a href="http://evangelism.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://evangelism.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td width="100" align="center"><a href="http://deprecation.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" alt="" width="40" /></a></td>
+<td><a href="http://deprecation.apievangelist.com/">Deprecation</a></td>
+<td width="30%" align="center"><a href="http://deprecation.apievangelist.com/">{"View Research"}</a></td>
+<td width="15%" align="center"><a href="http://deprecation.apievangelist.com/blog.xml"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-rss-icon.png" alt="" width="25" /></a><br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>I am constantly working to improve my research, organizing more of the organizations who are doing interesting things, the tooling that is being deployed, and relevant news from across the area. I use all this research, to fuel my analysis, and drive my lists of common building blocks, which I include in my guides, blueprints, and other white papers and tutorials that I produce.</p>
+<p>I am currently reworking all the PDF guides for each research area, updating the content, as well as the layout to use my newer minimalist guide format. As each one comes off the assembly line, I will add to its respective research area, and publish an icon + link on the home page of API Evangelist--so check back regularly. If there is any specific area you'd like to see get more attention, always let me know, and I'll see what I can do.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=My API Life Cycle Research From Design To Deprecation - https://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/&title=https://apievangelist.comMy API Life Cycle Research From Design To Deprecation" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/&title=My API Life Cycle Research From Design To Deprecation&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/04/08/my-api-life-cycle-research-from-design-to-deprecation/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/04/08/example-of-api-service-providers-making-onboarding-with-services-easier-using-api-definitions/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/04/08/the-api-assertions-we-make-believe-in-and-require-for-our-business-contracts/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

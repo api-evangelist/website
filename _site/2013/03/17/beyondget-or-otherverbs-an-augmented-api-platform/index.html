@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>BeyondGET or OtherVerbs, an Augmented API Platform </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform-/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BeyondGET or OtherVerbs, an Augmented API Platform  | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/augmented-post.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform-/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BeyondGET or OtherVerbs, an Augmented API Platform  | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/augmented-post.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>BeyondGET or OtherVerbs, an Augmented API Platform </h2>
+<p><span class="post-date">17 Mar 2013</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-post.png" alt="" width="300" align="right" /></p>
+<p>I have a idea for a new API platform.  Since I do not have any startup aspirations, I prefer setting my ideas free, for anyone to use, instead of acting on them myself.</p>
+<p>This idea is an evolution from an earlier one, which I had while working with the CityGrid API, called &ldquo;augmented places&rdquo;. &nbsp;While at CityGrid I constantly had people asking if they could submit data back to the API.  Stating they had a better list of pizza places in Brooklyn or vegan restaurants in Santa Cruz.  I had to always turn these folks away, and one morning I sketched out  &ldquo;augmented places&rdquo;.  It would be a service where anyone could submit their own meta data about a place, either adding an entirely new place, updating an existing one, or even remove a listing. It would provide an external service that could augment all places APIs, not just CityGrid.</p>
+<p>Fast forward to the other night, I did some data journalism for my girlfriend Audrey (<a href="https://twitter.com/audreywatters">@audreywatters</a>), which included <a href="/2013/03/16/using-the-crunchbase-api/">pulling data from the Crunchbase API</a>.  I pulled 3000 education startups from around the world, then after delivering to her in a JSON object and Google Spreadsheet, I immediately used the script to pull any API related startup, for my own needs.  I quickly compared a handful of results with my existing API database and in many cases, I have much better information on some of these companies than CrunchBase.  Yet I have no way to submit this data back to CrunchBase, to correct or add to what they have.</p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-put.png" alt="" width="300" align="right" /></p>
+<p>This is common in the open API space.  Most data APIs only allow you to /GET.   Allowing for the other verbs /POST, /PUT, and /DELETE, usually require not just more resources to deploy and manage, but also a certain mindset that is open to receiving information from your API consumers, which could range from internal and partner users, to the general public.  Some places I&rsquo;ve worked, are just scared shitless of repercussions of doing something like this.</p>
+<p>Which brings me to my idea for a new API service.  Let&rsquo;s call it <strong>BeyondGET</strong> or <strong>OtherVerbs</strong>.  A service that would allow people to add API resources they&rsquo;d like to augment with the ability to POST, PUT and GET.  So I could add an entry for Crunchbase using api.crunchbase.com/v/1/company/.  I would define each entry with a Swagger definition, and the system would create a basic data store for the entry.   You could now submit changes to existing records, as well as entirely new records or mark a record for deletion--providing an augmented, external, crowdsourced layer on top of potentially distributed API resources.</p>
+<p>Developers could use a primary API resource as well as the augmented version of the API if they choose.   You would have to add some sort of trusted user layer, so developers could only show data submitted by trusted sources. &nbsp;Seems like some sort of Git layer for versioning would be needed as well.</p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/augmented-delete.png" alt="" width="330" align="right" /></p>
+<p>API owners could also choose to use an augmented layer as a sort of crowdsource queue for their API.  The API owner could decide which users they trust and what data was relevant enough to let back in.  It could act as a DMZ for your API.</p>
+<p>There would also need to be a data licensing layer to all of this, that if well crafted, could open up the potential for revenue sharing or at least virtual credits to use against other API services.  I know CityGrid was discussing how they could reward API consumers for their contributions, and I could see this being a way to deliver on that across the API space.</p>
+<p>Anyways, I&rsquo;d love to hear thoughts on this.  Or run with building a version of it yourself.  It would be awesome to see a whole breed of augmented API service providers pop up, allowing me to add a new section about it at API Evangelist. :)</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=BeyondGET or OtherVerbs, an Augmented API Platform  - https://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform/&title=https://apievangelist.comBeyondGET or OtherVerbs, an Augmented API Platform " target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform/&title=BeyondGET or OtherVerbs, an Augmented API Platform &source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2013/03/17/beyondget-or-otherverbs-an-augmented-api-platform/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2013/03/16/using-the-crunchbase-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2013/03/17/the-api-pipes-from-resource-to-last-mile/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

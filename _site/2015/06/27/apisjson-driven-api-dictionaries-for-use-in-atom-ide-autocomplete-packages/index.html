@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/atom-editor/atom-editor-logo.jpg">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/atom-editor/atom-editor-logo.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages</h2>
+<p><span class="post-date">27 Jun 2015</span></p>
+<p><a href="https://atom.io/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/atom-editor/atom-editor-logo.jpg" alt="" width="250" align="right" /></a></p>
+<p>I have been using the <a href="https://atom.io/">Atom editor</a>&nbsp;when I work on local files on my workstation for some time now. With the latest version 1.0 release I took a fresh look at the architecture, and under the hood at the packages that make the platform so powerful, and extensible. One of the packages I was reverse engineering this weekend, is the&nbsp;<a href="https://github.com/atom/autocomplete-atom-api">Atom API Autocomplete Package</a>.</p>
+<p><a href="https://github.com/atom/autocomplete-atom-api">The&nbsp;Atom API Autocomplete Package</a> is one of <a href="https://atom.io/packages/search?q=autocomplete">several autocompete packages</a> that gives Atom some of that IDE feel when you are editing files. I like the feel of Atom autocomplete, and I really dig that this functionality is extensible via Atom packages. This experience got me thinking again about the IDEs role in API design and development, and how I'd like to see more API definition driven dictionaries, defined using <a href="http://apisjson.org">APIs.json</a>, driving IDE autocomplete features like the Atom editor has.</p>
+<p>Like everything in my world, my concept of APIs.json driven dictionaries is a work in progress, but to kick things off <a href="https://kin-lane.github.io/dictionary/">I launched a new API I'm calling my dictionary API</a>, that helps me build and manage dictionaries that I can potentially use in an Atom autocomplete package. As I do with all of my work, I want to put my ideas out there early to get feedback, and stimulate other people's imaginations.</p>
+<p>To provide the content for my dictionaries, I am using <a href="http://swagger.io">Swagger</a>, my primary API definition format. All I do is index any single, or collection of multiple APIs using <a href="http://apisjson.org">APIs.json</a>, and pass the URL to my new dictionary API, and I get back a JSON dictionary.&nbsp;</p>
+<script src="https://gist.github.com/kinlane/378e4a9a4ec021fb7c4a.js"></script>
+<p>This is my first draft of an potential dictionary output. I still have to get familiar with the Atom package design, and I've noticed different autocomplete packages handle their completions differently, but I at least wanted an automated way for importing Swagger definition(s), and create a single JSON dictionary that I could use as my Atom package completion store. My API will allow me to iterate on my JSON schema until I find one that works, while allowing me to generate dictionaries from existing APIs.json collections that I have defined.</p>
+<p>Along with other APIs.json driven services that I am working on, like generating <a href="http://alpha.apievangelist.com/2015/04/07/including-postman-collections-in-my-apisjson-files/">Postman Collections</a>, <a href="http://alpha.apievangelist.com/2015/06/06/adding-apimatic-sdks-to-my-master-stack-and-including-in-each-apisjson/">APIMATIC SDKs</a>, and <a href="http://alpha.apievangelist.com/2015/06/06/adding-api-science-monitors-to-my-master-stack-and-including-in-each-apisjson/">API Science monitors</a>, I want to be able to easily generate API dictionaries that can be used throughout the API lifecycle to enrich any developer's IDE experience, and make sure they have the paths, parameters, and underlying data models for the APIs they need, right at their fingertips, in the environment they already use.</p>
+<p>Imagine what API dictionaries could do for enterprise groups, in helping them standardize their API design practices, across groups, and an entire organization when they are working from common dictionaries, that are kept in sync using machine readable API definitions like <a href="http://swagger.io">Swagger</a> and <a href="http://apiblueprint.org">API Blueprint</a>, bound into indexes using <a href="http://apisjson.org">APIs.json</a>.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages - https://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/&title=https://apievangelist.comAPIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/&title=APIs.json Driven API Dictionaries For Use In Atom IDE Autocomplete Packages&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/06/27/apisjson-driven-api-dictionaries-for-use-in-atom-ide-autocomplete-packages/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/06/25/we-should-be-generating-slate-from-swagger-so-we-maintain-a-machine-readable-core/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/06/27/the-responsive-swagger-driven-version-of-slate-api-documentation-i-was-looking-for/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

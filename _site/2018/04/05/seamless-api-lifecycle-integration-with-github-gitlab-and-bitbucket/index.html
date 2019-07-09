@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket</h2>
+<p><span class="post-date">05 Apr 2018</span></p>
+<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p><em>This is a story, in a series of stories that I’m doing as part of the version 3.0 release of the <a href="https://next.stoplight.io/">Stoplight.io platform</a>. Stoplight.io is one the few API service providers I’m excited about what when it comes to what they are delivering in the API space, so I jumped at the opportunity to do some paid work for them. As I do, I’m working to make these stories about the solutions the provide, and refrain from focusing on just their product, hopefully maintaining my independent stance as the API Evangelist, and keeping some of the credibility I’ve established over the years.</em></p>
+
+<p>Github, Gitlab, and Bitbucket have taken up a central role in the delivery of the valuable API resources we are using across our web, mobile, and device-based applications. These platforms have become integral parts of our development, and software build processes, with Github being the most prominent player when it comes to defining how we deliver not just applications, but increasingly API-driven applications on the web, our mobile phones, and common Internet connected objects becoming more ubiquitous across our physical worlds.</p>
+
+<p><strong>A Lifecycle Directory Of Groups and Users</strong>
+These social coding platforms come with the ability to manage different groups, projects, as well as the users involved with moving project forward. While version control isn’t new, Github is credited with making this aspect of managing code a very social endeavor which can be done publicly, or privately within select groups. Providing a rich environment for defining who is involved with each microservice that is being moved along the API lifecycle, allowing teams to leverage the existing organization and user structure provided by these platforms as part of their API lifecycle organizational structure.</p>
+
+<p><strong>Repositories As A Wrapper For Each Service</strong>
+Five years ago you would most likely find just code within a Github repository. In 2018, you will find schema, documentation, API definitions, and numerous artifacts stored and evolved within individual repositories. The role of the code repository in the API lifecycle when it comes to helping to move forward an API from design, to mocking, to documentation, testing, and other stops along the lifecycle can’t be understated. The individual repository has become synonymous with a single unit of value in microservices, containerization, and continuous deployment and integration conversations, making it the logical vehicle for the API lifecycle.</p>
+
+<p><strong>Knowing the Past And Seeing The Future Of The API Lifecycle</strong>
+The API lifecycle has a beginning, an end, as well as many stops along the way. Increasingly the birth of an API begins in a repository, with a simple README file explaining its purpose. Then the lifecycle becomes defined through a series of user-driven submissions via issues, comments, and commits to the repository. Which are then curated, organized and molded into a road map, list of currently known issues, and a resulting change log of everything that has occurred. Making seamless integration for individual repositories, as well as across all of an organization’s API-centric repositories pretty critical to moving along the API lifecycle in an efficient manner.</p>
+
+<p><strong>Providing A Single Source Voice And Source Of Truth</strong>
+With the introduction of Jekyll, and other static page solutions to the social coding realm, the ability for a repository to become a central source of information, communications, notifications, and truth has been dramatically elevated. The API lifecycle is being coordinated, debated, and published using the underlying Git repository, becoming a platform for delivering the code, definitions, and other more technical elements. We are increasingly publishing documentation along side code and OpenAPI definition updates, and aggregating issues, milestones, and other streams generated at the repository level to provide a voice for the API lifecycle.</p>
+
+<p><strong>Seamless Integration With Lifecycle Tooling Is Essential</strong>
+Version control in its current form is the movement we experience across the API lifecycle. The other supporting elements for organizational, project, and user management provide the participation layer throughout the lifecycle. The communication and notification layers give the life cycle a voice, keeping everyone in sync and moving forward in concert. For any tool or service to contribute to the API lifecycle in a meaningful way, it has to seamless integrate with Git, as well as the underlying API for these software development, version control, devops, and social coding platforms. Successful API service providers will integrate with our existing software lifecycle(s), serving one or many stops, and helping us all move beyond a single, walled garden platform mentality.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket - https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/&title=https://apievangelist.comSeamless API Lifecycle Integration With Github, Gitlab, And BitBucket" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/&title=Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/04/05/helping-stoplight-io-get-the-word-out-about-version-30/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/04/05/nest-branding-and-marketing-guidelines/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

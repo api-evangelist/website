@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/tech-business-politics-03-2014.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/tech-business-politics-03-2014.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing</h2>
+<p><span class="post-date">06 Sep 2014</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/tech-business-politics-03-2014.png" alt="" width="325" align="right" /></p>
+<p>There was a very interesting piece from venture capitalist Albert Wenger (<a href="https://twitter.com/albertwenger">@albertwenger</a>) of <a href="http://www.usv.com/">Union Square Ventures</a> over the labor day weekend, called <a href="http://continuations.com/post/96355016855/labor-day-right-to-an-api-key-algorithmic-organizing">Labor Day: Right to an API Key (Algorithmic Organizing)</a>,&nbsp;that I&rsquo;ve had open ever since and wanted to take a moment to add my thoughts to. First let me say, I agree 100% with Albert&rsquo;s post, but I felt that the piece left out some very critical elements, which I think Albert simply left out because he was just trying to get a short thought published over a holiday weekend, but I feel pretty strongly these points are critical to his argument, and should be put out there.</p>
+<p>You can read the <a href="http://continuations.com/post/96355016855/labor-day-right-to-an-api-key-algorithmic-organizing">full post over on Albert's blog</a>, but I think this statement sums it up nicely:</p>
+<blockquote><em>There is a simple and universal regulatory change that would dramatically shift the bargaining power: an individual right to an API Key. By this I mean a key that would give an enduser *full* read/write access to the system including every action or screen the enduser can take or see on the web site or application. Alternatively one could think of this as an individual right to be represented by an algorithm.</em></blockquote>
+<p>Shortly after Albert published his post, his partner Fred Wilson (<a href="https://twitter.com/fredwilson">@fredwilson</a>) chimed in with his own post, called <a href="http://avc.com/2014/09/algorithmic-organizing/">Algorithmic Organizing</a>,&nbsp;and again I took just single paragraph that I think sums it up:</p>
+<blockquote><em>I believe that in the long run these platforms may/will be replaced by blockchain based networks of labor where there is no platform middleman and there would be no need for a legal right to an API because all the data would be public by default.</em></blockquote>
+<p>I agree with what both Albert and Fred are saying, and it makes me happy to see such prominent VC firms seeing the future in this way. What I wish to add to this conversation is some critical thought around the the business and political building blocks that often times don't get discussed in these conversations, but are actually the real reason this vision can work, but at the same time are why this vision could also become more dangerous than the one we currently have.</p>
+<p>The dangerous part I refer to, is the blind faith that the algorithm can represent us, providing some neutral, pure extension of ourselves, free of the power structures that perpetuate much of the divide between the haves and have nots that we see in the physical world. I believe that APIs have all the potential to deliver a better future, but the API, and the keys, are just two variables in the algorithm in which they Albert and Fred speak of, when in reality there are numerous other variables at play that need to be discussed as well, or we will find ourselves in the same situations we currently are, but a potentially more dangerous world where the algorithm obfuscates any exploitation that is happening, and protects the perpetrator.</p>
+<p><strong>Passive Aggressive API Rate Limiting</strong> <br />The easiest way to limit the power any developer or end-user that is given by an API, is rate limiting. Rate limits can be established to restrict what you can access by the second, minute, hour, day, or any other configuration, making it pretty near impossible to realize any power or control you may think you have been given by a service. Most API providers are transparent with their rate limiting, and publish simple explanations of what they limit, and why, acknowledging the real world need to reduce overhead in API operations, and provide a certain quality of service for everyone. The problem with rate limiting comes in when platforms are not clear about their motivations for rate limiting, what the limitations are, and the actual rate limits to do reflect what is published publicly.</p>
+<p><strong>Hiding Motives Behind API Error Handling </strong><br />Error handling on API requests are great way to limit actual access to any API resource, allowing the API provider to hide behind errors in the system, when in reality they are purposefully working to limit what you can actually do with the API. Errors can be generated per user, application or for entire groups, making it almost impossible to hold platforms accountable when it comes to making resources truly accessible. I&rsquo;m not saying this is a common practice for  API providers, I&rsquo;m just saying that it is technically feasible, and I am pretty damn sure I&rsquo;ve seen it in the wild, making it a real concern for me. Even if it occurs due to incompetency, it is still preventing you from being truly accessing any resources, and making the truly algorithm represent you.</p>
+<p><strong>Service Stability Can Bring Down Any Vision </strong><br />Building on the API error handling described above, overall service stability is a common way that API driven resources can be also rendered useless. Sure a company has an API, and you have an API key to access resources made available via that API, but if you can&rsquo;t actually connect to the API in a reliable way, what does it matter? There are a number of reasons service stability can be unreliable, it can be due a lack or resources, incompetence, or it can be intentional&mdash;as a recovering IT director, I can guarantee I&rsquo;ve seen this in action. I don&rsquo;t care how open your API is, if it isn't reliable it will not provide any value to anyone.</p>
+<p><strong>Security Needs To Be Priority </strong><br />An open, publicly available API might be great for you to gain access to your online resources, and the assets of any company, organization, or government agency, but the same can instantly be used against you if security is not given top priority. Security is not a reason to avoid APIs, just like websites, and other systems, APIs can be secured, but if it is not done right, and systems are not properly monitored, any API can be breached, going from APIs being a good thing, to APIs being the worst thing on earth&mdash;demonstrating pretty clearly this is more than just about the technology of APIs.</p>
+<p><strong>Terms of Service Rule Everything </strong><br />The Terms of Service (TOS) provide a legal framework for developers, and end-users to operate within, set forth by a platform. TOS should protect the API owners company, assets and brand, but should also provide assurances for developers who are building businesses on top of an API, and ultimately how end-users can make a system work for them. If the TOS are out of balance, no amount of API access will matter if you are legally compromised in what you can actually do with resources.</p>
+<p><strong>Transparency in Partner Tiers Of Access</strong><br />One of the benefits of modern approaches to APIs is the ability to compose different sets of services, and multiple access levels for different partners. Partner access is a great way to incentivize development on top of any platform, and give higher levels of access to those who contribute to the value of a platform.  Where this model begins to break down is when there is a lack of transparency, and platforms do not share information about what levels of access actually exist, which basically brings us back to the good ol boy networks we currently see across virtually any industry.</p>
+<p><strong>Paying Attention To Privacy </strong><br />Privacy policies also protect the interests of partners, developers and platform users, while also protecting the API owner from damaging activity on their platform. Like an API terms of service, privacy policies need to strike a balance that protects everyone involved, while also allowing for innovation and commercial activity. APIs can very technically sound, but if the privacy of end-users are not respected, an API can become a liability for everyone involved. Privacy is another area that we will see increasingly become a problem in the future, preventing many from seeing APIs as a good thing, but if done right we can make sure APIs reflect the vision Albert and Fred speak of.</p>
+<p><strong>Who Owns The Information I Pull Via An API </strong><br />Content and data ownership is an extremely contentious topic right now, with platforms claiming they own content that is generated using their services, and end-users rightfully feeling they have a stake in ownership of the content, data, media, and other information they generate on the platform. What good is API access, if I have no ownership of the content we generate via the platform? Sure I can access valuable resources, but if I can&rsquo;t legally do anything with it, what value is created by the API and its underlying algorithm?</p>
+<p><strong>The Deprecation Of Any API Led Vision </strong><br />An API deprecation policy sets expectations with API consumers about when and how API resources will be shut down. These policies help build trust with API developers and end-users, giving them an idea of how long they can depend on an API resource, and what they can expect when an API reaches the end of life. You may have access to data and content that a platform contains, complete with API access, but if that service can go away at any point after an acquisition, or due to lack or resources or leadership, and you do not have any sort of heads up, an API is immediately rendered meaningless in this wider discussion.</p>
+<p><strong>The Power of Industry Influence </strong><br />As I watch the enterprise and government take notice of the API space, I&rsquo;m seeing some pretty clear examples of industry influence over the value brought to the table by APIs. I do not care how open, transparent, and technically sound your API is, and you can follow every bit of my advice, but if the 1000 lb gorilla in any industry is not happy with a service, an API will be no defense against acquisition, shutdown, or their legal attack. If a large corporate or government entity doesn't like your platform, they can shut you down, even if it is just through a sustained legal attack. This is one of my biggest concerns about VC investment in seemingly open, and altruistic APIs driven platforms, is that your investors always provide a doorway for industry influence to change the course of your API, no matter what you might believe as the platform owner.</p>
+<p><strong>The Smoke And Mirrors Of "Open"<br /></strong>One of the most used terms in the world of APIs is &ldquo;open", and at the same time is also one of the most abused terms I know of. All of the reasons listed above can affect how truly open any API, platform and company is, preventing Albert and Fred&rsquo;s vision from ever becoming a reality. I could list another 50 ways that API providers prevent &nbsp;access to content and resources via APIs, ranging from lack of communication to complex pricing. My goal with this post is to show that there are some very real ways in which APIs can be used against the average worker and citizen, and that APIs are not good, bad, nor neutral&mdash;just like algorithms. They just reflect the intentions of their creators, and while I think there are many opportunities to make sure they reflect us, the end-user, citizen and worker, I think more often than not, they reflect the desires of their owners.</p>
+<p><strong>Twitter As The Perpetual Poster Child </strong><br />I really love Twitter, and I think the platform is amazing. The company has made some very serious effot to improve problems on their API platform, but they still are the best example I can use to demonstrate how every one of these variables listed can be used against the access and freedom an API could provides, without you even knowing it. When it comes to demonstrating the power that APIs bring to the table, and the democratization of our digital resources, Twitter is a shining example. When it comes to demonstrating how an API can be leveraged against its users, and algorithmic organizing can just as easily be used against us, Twitter is a shining example. Search across the API Evangelist network and you will see I&rsquo;m both a lover and critic of Twitter, and I do not believe Dick Costolo is Mr. Smithers plotting and scheming how Twitter can screw us all over, but I do think at scale, after you&rsquo;ve taken a certain amount of funding, and you become interesting to the powers that be&mdash;things change, and an API, and the algorithms behind can be used in very harmful ways.</p>
+<p><strong>Algorithmic Transparency </strong><br />It is easy to get excited about the potential around APIs and algorithms. I don't have a problem with this, more power to you (pun intended), however I personally feel algorithmic solutionism, and API solutionism for that matter, is not healthy. The way forward involves transparency, and communication around some of the very difficult areas I&rsquo;ve listed. Alex Howard (<a href="https://twitter.com/digiphile">@digiphile</a>) wrote a great post at TechRepublic earlier this year, called <a href="http://www.techrepublic.com/article/data-driven-policy-and-commerce-requires-algorithmic-transparency/">data-driven policy and commerce requires algorithmic transparency</a>, which I think sums up this concept very nicely. For all of this to work, there has to be enough sunlight to keep things disinfected or we are going to see many of the same problem we see in the physical world, as well as a whole bunch of new problem we&rsquo;ve never anticipated.</p>
+<p><strong>Algorithmic Accountability </strong><br />Additionally, I don&rsquo;t feel that even algorithmic transparency will be enough, we have to make sure companies, organizations, institutions, government agencies, and individuals are held accountable for their actions. If there is no way to hold companies accountable for their violations in the ways discussed above, what does an open, transparent API or algorithm even matter? It doesn&rsquo;t mean anything, and it doesn&rsquo;t give us any balance, it just transfers the same power structures we&rsquo;ve known in the physical world to the virtual world, but now things are even more difficult to understand or hold any individual or company accountable for their malicious activity.</p>
+<p>As I said earlier, I totally agree with Albert Wenger and Fred Wilson on their labor day API thoughts. I feel that every company, organization, institution, government agency, and even many individuals should have APIs, and that they are the key to a better future. However I think many of these entities will also omit very important detail from API discussions, similar to each of Albert and Fred&rsquo;s posts. I do not believe they did it intentionally, or have any ill intent, but I think in our obsession with technology, algorithms, and APIs, we can miss a lot, and this is what many companies will count on, and use to their advantage.</p>
+<p>If we do not pay attention to how the technological, business, and political building blocks are being used for exploitation, and manipulation, we are creating an even more dangerous divide between the haves and have nots, while opening up serious opportunities for abuse by the ruling merchant class, and further erode the rights we enjoy as workers, not moving them in a more positive direction. The real scary part for me, is that you probably won&rsquo;t ever even notice that any of this exploitation is evn occurring, and it will be very difficult to hold anyone accountable, all because of the magic of the algorithm and APIs.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing - https://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/&title=https://apievangelist.comAPI Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/&title=API Evangelist Thoughts On The Right To An API Key And Algorithmic Organizing&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2014/09/06/api-evangelist-thoughts-on-the-right-to-an-api-key-and-algorithmic-organizing/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/09/04/explaining-apis-to-your-senior-leadership/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/09/08/a-conversation-with-ijroth-dorkitude-antonyfalco-and-medjawii-in-the-next-generation-api-stack-panel-apistrat/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

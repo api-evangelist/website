@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Make Sure And Have Multiple KPIs For Your APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Make Sure And Have Multiple KPIs For Your APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-billionaires-club.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Make Sure And Have Multiple KPIs For Your APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-billionaires-club.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Make Sure And Have Multiple KPIs For Your APIs</h2>
+<p><span class="post-date">07 May 2013</span></p>
+<p><a href="http://blog.programmableweb.com/2011/05/25/who-belongs-to-the-api-billionaires-club/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/programmableweb/api-billionaires-club.png" alt="" width="325" align="right" /></a></p>
+<p>In the API space, we have to be constantly measuring and looking for signals that will help us understand where we should be focusing our resources, as part of an overall strategy.  One of the ways we measure value within the world of APIs (and business) is using KPIs, or Key Performance Indicators. Using KPIs we strive to measure the Return on our Investment (ROI), as we gamble with the technology, business and politics of APIs.</p>
+<p>One approach to quantifying the value, that has emerged from API providers, API service providers and the tech blogosphere is using the "API call". It is simple. You launch an API, so you quantify it by the number of times someone calls it.  Kind of like a page view, right?</p>
+<p>Out of this eyeball derived reality(which is silly since APIs aren't for humans), the API space has become obsessed with the number of API calls, resulting in what is known as the <a href="http://blog.programmableweb.com/2011/05/25/who-belongs-to-the-api-billionaires-club/">API billionaires club</a>.  The Billionaires Club is an elite group of tech providers who have billions of calls per month on their API.  It is a pretty simple algorithm. Have API + Have Billions of Requests = Your In The Billionaires Club. And if you are in the billionaires club, you are successful. &nbsp;End of calculation.</p>
+<p>To quickly get to the point of my story, let's take one of my favorite members of the API billionaires club, Netflix. &nbsp;Billionaire Club Membership + Shutting Down Public API = Success. It is a different variation on the whole concept of measuring API success. The news, commonly held KPIs and definition of success doesn't immediately pan out in the whole Netflix story.</p>
+<p>Netflix, along with Twitter are both &nbsp;API case studies for the history books. Both of these API stories reflect the ups and downs of the API world, and the often bipolar nature of the public API ecosystem and schizophrenic nature of the tech blogosophere.  In contrast, along with Amazon Web Services, Twitter and Twilio, Netflix is a constant player in the stories I tell about success in the API sector. But at the same time, Netflix is considered to be a failure by common public APIs measurements. Are you feeling the crazy? &nbsp;I do!!</p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/netflix/netflix-square.png" alt="" width="200" align="right" /></p>
+<p>As I've <a href="http://apievangelist.com/2013/03/12/netflix-api-is-much-more-than-a-public-api/">covered before</a>, the blogosphere tends to associate closure of the Netflix, with the ecosystem failures of Twitter.  While this is an easy comparison to make, when you look further, you see a lot more going on. &nbsp;Which tells me we need better ways to measure API success and failure and tell the stories around the ups and downs.</p>
+<p>After monitoring the API space for some time now, I'm looking for signals beyond what normal bloggers, analysts and pundits are following. In this hunt, Github is becoming an ever increasing gold mine of signals. &nbsp;To help demonstrate, let's take a look at the signals the <a href="https://github.com/netflix">Netflix Github account</a> puts out.</p>
+<ul class="mainlist">
+<li><strong><a href="https://github.com/Netflix/Priam">Priam</a></strong> - Co-Process for backup/recovery, Token Management, and Centralized Configuration management for Cassandra. (Last updated a day ago)</li>
+<li><strong><a href="https://github.com/Netflix/aminator">aminator</a></strong> - A tool for creating EBS AMIs. This tool currently works for CentOS/RedHat Linux images and is intended to run on an EC2 instance. (Last updated 2 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/astyanax">astyanax</a></strong> - A Cassandra Java Client (Last updated 2 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/asgard">asgard</a></strong> - Web interface for application deployments and cloud management in Amazon Web Services (AWS). Binary download: http://netflix.box.com/asgard Twitter: http://twitter.com/AsgardOSS (Last updated 3 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/RxJava">RxJava</a></strong> - A library for composing asynchronous and event-based programs using observable sequences for the Java VM. (Last updated 4 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/denominator">denominator</a></strong> - (Last updated 5 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/blitz4j">blitz4j</a></strong> - Logging framework for fast asynchronous logging (Last updated 6 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/SimianArmy">SimianArmy</a></strong> - Tools for keeping your cloud operating in top form. Chaos Monkey is a resiliency tool that helps applications tolerate random instance failures. (Last updated 8 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/ribbon">ribbon</a></strong> - Ribbon is a Inter Process Communication (remote procedure calls) library with built in software load balancers. The primary usage model involves REST calls with various serialization scheme support. (Last updated 9 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/frigga">frigga</a></strong> - Utilities for working with Asgard named objects (Last updated 10 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/curator">curator</a></strong> - ZooKeeper client wrapper and rich ZooKeeper framework (Last updated 11 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/karyon">karyon</a></strong> - The nucleus or the base container for Applications and Services built using the NetflixOSS ecosystem (Last updated 12 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/edda">edda</a></strong> - Service to track changes in your cloud (Last updated 13 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/brutal">brutal</a></strong> - A multi-network asynchronous chat bot framework using twisted (Last updated 17 days ago)</li>
+<li><strong><a href="https://github.com/Netflix/archaius">archaius</a></strong> - Library for configuration management API (Last updated 17 days ago)</li>
+</ul>
+<p>When I pulled this data, several days ago, there are 15 separate repositories, in four separate programming languages, including Python, Java, Groovy, Scala, that have all been updated in the last 30 days. &nbsp;The fact that Netflix has a Github account, has open sourced so much of their code, while also actively maintaining it all, point at some very meaningful signals that we can tune into and work to emulate.</p>
+<p>While the number of calls against an API is a valid KPI to measure the potential success of an API, we have to have multiple KPIs when truly trying to understand the value of a company, the platform or any single API resource. &nbsp;Let's not get hung up on any single KPI, let's consider as many as we can--to see what makes sense and truly defines succcess.</p>
+<p>There is so much to learn from reading between the lines in the world of APIs.</p>
+<ul class="mainlist">
+</ul>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Make Sure And Have Multiple KPIs For Your APIs - https://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/&title=https://apievangelist.comMake Sure And Have Multiple KPIs For Your APIs" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/&title=Make Sure And Have Multiple KPIs For Your APIs&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2013/05/07/make-sure-and-have-multiple-kpis-for-your-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2013/05/07/api-enabled-toys-for-our-children/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2013/05/08/get-to-know-which-languages-your-api-developers-are-using/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

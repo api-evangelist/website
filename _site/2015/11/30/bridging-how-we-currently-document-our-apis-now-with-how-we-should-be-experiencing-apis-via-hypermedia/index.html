@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/foxycart-api-screenshot.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/foxycart-api-screenshot.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia</h2>
+<p><span class="post-date">30 Nov 2015</span></p>
+<p><a href="https://api.foxycart.com/docs"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/foxycart-api-screenshot.png" alt="" width="325" align="right" /></a></p>
+<p>I am still catching up on my feeds, and open browser tabs, and one tab that has been open for a couple of weeks is <a href="https://medium.com/@lukestokes/why-your-colleagues-still-don-t-understand-hypermedia-apis-1a5a2cf82540">Why Your Colleagues Still Don&rsquo;t Understand Hypermedia APIs</a>, by Luke Stokes (<a href="https://twitter.com/lukestokes">@lukestokes</a>) of <a href="http://www.foxycart.com/">FoxyCart</a>. The post is very thought provoking for me, and represents what I feel is the very pragmatic front of the hypermedia movement, from someone who has helped move the concept of a hypermedia API from academic discussion to reality, with the <a href="https://api.foxycart.com/docs">FoxyCart API</a>.</p>
+<p>His challenges at the end of his post really set the stage for me:</p>
+<p style="padding-left: 30px;"><em>So how do we find a balance between idealism about what Hypermedia API documentation systems &ldquo;should&rdquo; be and what they practically are? How can we move the whole ecosystem forward by encouraging client developers to code to link relationships instead of hard-coded URLs? How do we help pave the way for the future but not look like unsophisticated outsiders in the process? What pragmatic steps should we take to be like the other cool kids using standard documentation presentations while at the same time saying, &ldquo;Um, yeah, don&rsquo;t do that. Don&rsquo;t code to the URL, code to the link relationship instead.&rdquo;</em></p>
+<p>For me, his questions illuminate the canyon between where the API community is currently with API design, and the vision of where we should be going with our API design practices. The more I play and learn with hypermedia, the less I see it as the lofty vision for the future, and the more I see it as a set of practical design patterns that will make my API work more meaningful.</p>
+<p>The shortcomings of API definitions like Swagger (now OADF), is that it was designed for documenting your API, after it was already designed--awesome, but not remotely about API design. Where the concept of hypermedia is all way back the other direction, where you have to put some serious thought into your API design, before you ever roll up your sleeves to write code--big gap between these worlds.</p>
+<p>J<a href="http://apiary.io">akub, Z, and the Apiary.io</a> team has done some amazing work to bring the mainstream conversation closer towards API design, much than hypermedia folks had ever done--until recently. What Luke asks, reflects the work we have left to bridge the divide, and emphasizes that it has to be something that scales. This is why Swagger was successful, because it provided the section of the bridge that API architects needed to solve an immediate problem that on the table, at scale--documentation.&nbsp;</p>
+<p>The problem is, the masses are pretty short-sighted, and often unwilling to the heavy learning and lifting needed to "code to link relationships, instead of hard-coded URLs". Unfortunately we will need more tooling to help us build more sections of the bridge (beyond Swagger), as we won't be able to it all at once. I think the important thing with this tooling, is we need make sure with each section of the bridge that we build, we are also educating API architects, and client developers around HTTP, media types, link relations, and other empowering hypermedia concepts.&nbsp;</p>
+<p>Anyways, Luke got me pumped with his questions. I do not know what the answers are either, but I want to lend a hand to help figuring it out, and will be asking these questions over and over in my head, showcase solutions that y'all are working on, and tell stories here on the blog, until we make some progress.</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia - https://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/&title=https://apievangelist.comBridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/&title=Bridging How We Currently Document Our APIs Now With How We Should Be Experiencing APIs Via Hypermedia&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/11/30/bridging-how-we-currently-document-our-apis-now-with-how-we-should-be-experiencing-apis-via-hypermedia/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/11/30/apis-dedicated-to-elections-at-the-city-county-state-or-federal-level/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/11/30/how-do-i-price-my-api-resources/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

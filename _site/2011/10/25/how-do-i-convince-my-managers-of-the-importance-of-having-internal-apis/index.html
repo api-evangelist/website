@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>How Do I Convince My Managers of the Importance of Having Internal APIs?</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How Do I Convince My Managers of the Importance of Having Internal APIs? | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/puzzle-apis-decoupling.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How Do I Convince My Managers of the Importance of Having Internal APIs? | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/puzzle-apis-decoupling.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>How Do I Convince My Managers of the Importance of Having Internal APIs?</h2>
+<p><span class="post-date">25 Oct 2011</span></p>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/puzzle-apis-decoupling.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     One of the ways I develop content for this site is by talking through my day to day experiences as an API Evangelist. I feel that talking through what I’m learning in real-time, is the best way to make it stick, while also sharing with the public. There is a lot of value that comes out of my daily learning, and it would be wrong to not share this.
+</p>
+<p>
+     I had someone approach me on LinkedIn today and ask:
+</p>
+<blockquote>
+     <em>I'm trying to convince my colleagues and managers on the importance of having internal API, not just as a prologue to public API, but also as a way to have cleaner, better-understood interfaces internally for our developers. Do you have any thoughts or tips on the subject?</em>
+</blockquote>
+<p>
+     <a title="Internal evangelism" href="http://apievangelist.com/2011/09/29/api-evangelism-is-equal-parts-internal,-partner-and-public-outreach/">Internal evangelism</a> is a big part of my role, and I know its something that other API advocates face as they are trying to sell the concept of APIs to decision makers within their company. Testing the water with APIs internally is the best way to get started, and learn what goes into planning, deploying and managing an API.
+</p>
+<p>
+     When trying to sell your bosses on APIs for internal use, I would start with:
+</p>
+<ul class="mainlist">
+     <li>
+          <strong>Decoupling</strong> - Deploying resources and your data within your company as individual RESTful resources decouple them, allowing them to consumed and managed independently. This kind of of decoupling of data and resources enable more agile scaling, migration and integration into a wide range of organizations and applications across your company. Consider how <a title="consider how API enabled Netflix to move from the data center to the cloud" href="http://blog.programmableweb.com/2011/06/20/apis-power-netflix%E2%80%99s-move-to-cloud-enabling-world-domination/">APIs have enabled Netflix to migrate from the data-center to the cloud</a>, with unprecedented growth simultaneously, and also enabling them to grow globally.
+     </li>
+     <li>
+          <strong>Product Management</strong> - Allocating your companies data and resources as independent RESTful APIs will simplify your product management allowing them to be defined, launched, deployed and even killed off independently of each other. This type of allocation will allow very granular ownership of each product, allowing product managers to own specific APIs or groups of API products, and scale product ownership with new managers as needed.
+     </li>
+     <li>
+          <strong>Organization Interoperability</strong> - APIs enable much more flexible collaboration between different departments that may be geographically or organizational distant. With a growing virtual workforce, this type of interoperability will be key to companies being able to staff up and meet the demands of their growing businesses.
+     </li>
+     <li>
+          <strong>Multi-Use</strong> - APIs will enable your companies resources and data to be used across multiple implementations from internal applications, websites, mobile and tablet devices without building out separate systems.
+     </li>
+</ul>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/blueprints.jpg" alt="" width="250" align="right" />
+</p>
+<p>
+     That is where I’d start with selling colleagues and managers on the importance of having internal APIs. APIs can introduce flexibility and agility not only into your IT and development operations, but also introduce a <a title="RESTful Business Architecture" href="/2011/04/09/restful-business-architecture/">RESTful business architecture</a> into your company.
+</p>
+<p>
+     In addition to the benefits APIs will introduce internally, all of this will set the stage for improved business development with your partners and your company will be primed, if and when you are ready to open up your APIs to the public.
+</p>
+<p>
+     <strong>UPDATE:</strong>
+</p>
+<p>
+     The person who contacted me on LinkedIn got back to me with this:
+</p>
+<blockquote>
+     <em>Thank you. I showed your post to one of the managers here and it actually made him changed his mind. The next step it to persuade we need to use vendors such as 3Scale, Apigee or Mashery instead of building it all by ourselves. </em>
+</blockquote>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=How Do I Convince My Managers of the Importance of Having Internal APIs? - https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/&title=https://apievangelist.comHow Do I Convince My Managers of the Importance of Having Internal APIs?" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/&title=How Do I Convince My Managers of the Importance of Having Internal APIs?&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2011/10/25/how-do-i-convince-my-managers-of-the-importance-of-having-internal-apis/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2011/10/25/a-walk-through-datagov-with-some-thoughts-on-whats-next/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2011/10/25/the-api-service-provider-i-missed-vordel/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

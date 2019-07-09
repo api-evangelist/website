@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-threat-info-sharing-api.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-threat-info-sharing-api.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification</h2>
+<p><span class="post-date">01 Aug 2017</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-threat-info-sharing-api.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><a href="http://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/">I wrote about the opportunity around developing an aggregate threat information API</a>, and got some interest in both creating, as well as investing in some of the resulting products and services that would be derived from this security API work. As part of the feedback and interest on that post, I was pointed in the direction of the <a href="https://oasis-open.github.io/cti-documentation/">Structured Threat Information Expression (STIX)</a>, a structured language for cyber threat intelligence, and <a href="https://oasis-open.github.io/cti-documentation/">Trusted Automated Exchange of Intelligence Information (TAXII)</a>, and transport mechanism for sharing cyber threat intelligence.</p>
+
+<p>This is why I write about my projects openly like this, so that my readers can help me identify existing approaches for tackling whatever I am focusing on. I prefer to never reinvent the wheel, and build on top of any existing work that is already available. I’m thinking the next step is to craft an OpenAPI fo TAXII, and STIX. Creating a machine readable blueprint for deploying, managing, and documenting a threat intelligence API. I couldn’t find any existing work on an OpenAPI definition, so this seems like a logical place to begin working to build on, and augment the work of <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti">the Cyber Threat Intelligence Technical Committee</a>. Clearly, the working group has created a robust set of specifications, but I’d like to help move it closer to implementation with an OpenAPI.</p>
+
+<p><a href="https://github.com/threat-intelligence">I have created a Github organization to help organize any work on this project</a>. I have forked the project for STIX and TAXII there, as well as started <a href="https://github.com/threat-intelligence/planning">a planning repository</a> to coordinate any work I’m contributing to the conversation. I have also created a repository for working on and publishing the OpenAPI that will define the project. Once we have this, I’d like to start thinking about the development of a handful of server side implementations in maybe Node.js, Python, PHP, or other common programming language. Here are the next steps I’d like to see occur around this project:</p>
+
+<ul>
+  <li><strong>OpenAPI</strong> - Create an OpenAPI for STIX and TAXII to provide a single representation of a threat intelligence sharing API.</li>
+  <li><strong>Threat List</strong> - Take the <a href="http://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/">threat intelligence list I originally published</a>, and identify how any of the sources would map to OpenAPI.</li>
+  <li><strong>Storytelling</strong> - Tell stories throughout the process to attract the attention of other players, contributors, and investors, so that this project can live on.</li>
+</ul>
+
+<p>I’m not looking to own this project 100%. I just don’t have the time and resources. However I do want to see an OpenAPI move forward, as well as a wealth of open source resources for deploying, integrating, and aggregating around threat intelligence sharing. This work is bigger than any single player, and is something that needs to be open, spanning thousands of providers, not controlled by a handful of gatekeepers. Players in the threat intelligence sharing game need to be able to decide who they consume and share threat intelligence with, something that will require a federated world of APIs that all speak in a common language. <a href="https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=cti">The Cyber Threat Intelligence Technical Committee</a> is off to a great start. I just want to contribute with some cycles to help bring their work in alignment with what is going on in the mainstream world of APIs, while also beating a drum so that I can bring more attention to any work going on in this important area. Our world is going to need significant investment in the area of threat intelligence sharing if we are going to be successful online in coming years.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification - https://apievangelist.com/2017/08/01/craft-an-openapi-for-an-existing-threat-intelligence-sharing-api-specification/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2017/08/01/craft-an-openapi-for-an-existing-threat-intelligence-sharing-api-specification/&title=https://apievangelist.comCraft An OpenAPI For An Existing Threat Intelligence Sharing API Specification" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2017/08/01/craft-an-openapi-for-an-existing-threat-intelligence-sharing-api-specification/&title=Craft An OpenAPI For An Existing Threat Intelligence Sharing API Specification&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2017/08/01/craft-an-openapi-for-an-existing-threat-intelligence-sharing-api-specification/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/08/01/us-energy-information-administration-excel-add-in-and-google-add-on/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/08/02/making-sure-your-api-service-connects-to-other-stops-along-lifecycle/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Considering How APIs Are Influencing The Fundamentals of Software Engineering </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering-/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Considering How APIs Are Influencing The Fundamentals of Software Engineering  | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_12_at_11.03.07_pm.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering-/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Considering How APIs Are Influencing The Fundamentals of Software Engineering  | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_12_at_11.03.07_pm.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Considering How APIs Are Influencing The Fundamentals of Software Engineering </h2>
+<p><span class="post-date">13 Sep 2016</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_09_12_at_11.03.07_pm.png" alt="" width="40%" align="right" /></p>
+<p style="white-space: normal;">I am preparing for my hangout with the&nbsp;<a href="https://www.youtube.com/results?q=%23TC1019">#TC1019</a>&nbsp;<a href="http://kenscourses.com/tc1019fall2016/">Fundamentals of Software Engineering</a> (3rd-semester course) out of the Tecnol&oacute;gico de Monterrey, Campus Guadalajara. In my own style, I didn't just want to prepare for the discussion, I wanted to publish it on my blog, providing an outline that students to walk away with, but hopefully is something that can also live on as part of my API research.</p>
+<p style="white-space: normal;">Where do I start? Well, it is a fundamental of software engineering course, so let's look at how the modern API movement can influence and impact the modern software engineer. I may be biased but I think APIs are significantly changing how we develop software, in some pretty important ways--let's explore.</p>
+<p style="white-space: normal;"><strong>History of Modern Web APIs</strong><br />I always recommend anyone interested in learning more about APIs to pause for a moment and&nbsp;consider the history of modern web APIs, even if you think you know the API world already. In my opinion, many technologists take for granted some of the most common platforms out there, and haven't' taken the&nbsp;time to learn more about a specific API, and in many cases do not know that an API already exists for common platforms we use every day.</p>
+<ul>
+<li><a href="http://history.apievangelist.com/">History of APIs, a Primer</a></li>
+<li><a href="http://apievangelist.com/2016/03/27/some-milestones-from-the-last-15-years-of-web-api-history/">Some Milestones From The Last 15 Years Of API</a></li>
+</ul>
+<p>The more we understand the short history of web APIs, and why they are working, the more we can borrow from what is already working. Whether you are looking to provide API resources, consume APIs, or ideally do both--spend some time browsing through the history I've organized above.</p>
+<p style="white-space: normal;"><strong>Focus On HTTP &amp; HTTP/2 In Modern Programming<br /></strong>The technology driving the web is low cost and ubiquitous, making it perfect for usage to deliver not just HTML to websites, but JSON that can be used in other systems, mobile applications, as well as device-based applications. There are some important standards being applied as part of the current API movement that impact software engineering fundamentals, here are a handful of the core elements.</p>
+<ul>
+<li><a href="http://webconcepts.info/">Web Concepts</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP</a></li>
+<li><a href="https://en.wikipedia.org/wiki/HTTP/2">HTTP/2</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a></li>
+</ul>
+<p>You don't have to be a master of everything I've listed--I am far from being up to speed on everything here. However, I recommend spending as much time as you can, on a regular basis, absorbing the concepts at play when it comes to Internet technology&nbsp;and consider how existing API providers are putting them to work in their operations.</p>
+<p style="white-space: normal;"><span><strong>Next Step In The Evolution Of The Web</strong><br />It is import to see modern APIs as just the next step in how data, content, and algorithmic resources are made available using Internet technology. One concept at play here, which is included above in the HTTP &amp; HTTP/2 resource is what is called content negotiation--I recommend starting here, and I've included a simple tool to help bring it home.</span></p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Content_negotiation">Content Negotiation</a></li>
+<li><a href="http://website.apievangelist.com/">Simple Demonstration</a></li>
+</ul>
+<p style="white-space: normal;"><span>API is not a specific vendor solution&nbsp;or even an open source code base--it is an approach to leverage existing web technology to achieve objectives around operating in a web and mobile, and now Internet of Things (IoT) landscape. APIs are not just about delivering JSON, it is about delivering the resources necessary to get the job done, negotiating exactly the format that is needed.</span></p>
+<p style="white-space: normal;"><span><strong>Wealth Of Resources Available Via Diverse Number of API Providers</strong><br />I track on many companies doing interesting things with APIs, but I always start with learning about the companies who are selling services, and developing tools that API providers are putting to work. You can browse these API life cycle providers as part of my ongoing research:</span></p>
+<ul>
+<li><a href="http://theapistack.com/lifecycle/">API Life Cycle Providers</a></li>
+</ul>
+<p style="white-space: normal;">These companies don't just sell services to API providers, if they are doing it right they also have APIs themselves. When every step along the life of an API, also has an API, the concept of the programmable web becomes more realistic.</p>
+<p style="white-space: normal;"><strong>Wealth of API Resources Available To Help Manage The API Life Cycle</strong><br />After the API service providers, I keep an eye on companies who are delivering API resources in specific business verticals, which I call my stack APIs. These areas contain many of the common APIs that developers&nbsp;are using, but also some you hopefully may not know already about.</p>
+<ul>
+<li><a href="http://theapistack.com/stack/">API Stack Providers</a></li>
+</ul>
+<p style="white-space: normal;">I am adding to this stack as fast as I possibly can. I'm constantly having to prioritize which APIs and add and remove from this list of API resources. Hopefully, as a software engineer you can find some interesting APIs amongst these stacks.</p>
+<p style="white-space: normal;"><strong>Making Digital Resources Available In Any Programming Language</strong><br />One of the most common mistakes I see from aPI providers are references to, and dogma from their preferred programming language. Modern web APIs employ REST, employing the HTTP &amp; HTTP/2 pipes, and leave the specifics of individual programming languages behind the API, and within client solutions. To help guide yoru learning I recommend taking a look at the API design best practices of API pioneers:</p>
+<ul>
+<li><a href="http://apievangelist.com/2016/09/12/api-stylebook-a-collections-of-resources-for-api-designers/">API Stylebook</a></li>
+</ul>
+<p style="white-space: normal;">Successful API designers, architects, and operators transcend any single API programming languages, learning to craft an interface that speaks to as wide as possible audience, allowing the software you build to acomplish more.</p>
+<p style="white-space: normal;"><span><strong>Focus On API Definitions, Media Types, And Schemas Over Code</strong><br />When focusing on APIs, I strongly recommend favoring API definitions, media types, and schemas over keeping to much code around. Things move fast in the workd of APIs, and the surface of an API will change, and there are many ways API architects are mitigating change, and remaining agile--I recommending speaking fluent:</span></p>
+<ul>
+<li><a href="https://openapis.org/specification">OpenAPI Spec</a></li>
+<li><a href="https://apiblueprint.org/">API Blueprint</a></li>
+<li><a href="http://webconcepts.info/concepts/media-types">Media Types</a></li>
+<li><a href="http://schema.org/">Schema.org</a></li>
+</ul>
+<p style="white-space: normal;"><span>If you speak in these formats, as an API architect you will be able to focus on delivering more standardized, and flexible API resource, helping you as a software&nbsp;engineer, be agile and potentially more distributed--truly embracing what makes the web work, and is the fuel for the growth in API usage when it comes to developing software.</span></p>
+<p style="white-space: normal;"><span>That is where I recommend starting with the world of APIs&nbsp;when it comes to their impact on the fundamentals of software engineering. As a software engineer, HTTP is the core of what you should be studying and including in your toolbox. I've included a wealth of resources here, for use in our classroom discussion, but also hopefully something the students will be able to study as part of their ongoing API education.</span></p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Considering How APIs Are Influencing The Fundamentals of Software Engineering  - https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/&title=https://apievangelist.comConsidering How APIs Are Influencing The Fundamentals of Software Engineering " target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/&title=Considering How APIs Are Influencing The Fundamentals of Software Engineering &source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2016/09/13/considering-how-apis-are-influencing-the-fundamentals-of-software-engineering/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/09/13/api-providers-partnering-to-provide-a-developer-business-incubator/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/09/13/if-an-algorithm-impacts-our-life-it-should-be-opened-up-with-an-api-for-auditing/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

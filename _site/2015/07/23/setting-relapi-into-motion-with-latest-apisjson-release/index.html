@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Setting rel=api Into Motion With Latest APIs.json Release</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Setting rel=api Into Motion With Latest APIs.json Release | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-icon.jpg">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Setting rel=api Into Motion With Latest APIs.json Release | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-icon.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Setting rel=api Into Motion With Latest APIs.json Release</h2>
+<p><span class="post-date">23 Jul 2015</span></p>
+<p><a href="http://apisjson.org/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-icon.jpg" alt="" width="200" align="right" /></a>Bruno Pedro (<a href="/admin/blog/bpedro">@bpedro</a>) who has been building <a href="http://apisjson.org/">APIs.json</a> into his <a href="https://www.apichangelog.com">API Changelog service</a>, made a pull request to the specification recently, pushing forward the link relation conversation for APIs.json. As listed in the specification, we have long intended to make APIs.json an official media type:</p>
+<p><strong>3.5. &nbsp;Media Type</strong></p>
+<p style="padding-left: 30px;">It is intended that if there is sufficient traction, the media type "application/apis+json" will be&nbsp;&nbsp; submitted to IANA as per RFC:&nbsp;http://tools.ietf.org/html/rfc4288</p>
+<p>However when it came to expressing your APIs.json as a link relation, we didn't even really have a plan in our road-map, resulting in a very generic allocation of a link relation for APIs.json.</p>
+<p><strong>3.8. Link Relation</strong></p>
+<p style="padding-left: 30px;"><strong>&nbsp;</strong>In order for an API to reference its own description, it is recommended that it include header or in-line references to the APIs.json file using the existing described by link relation:</p>
+<p style="padding-left: 30px;">[Note, this is a generic link relation but seems to fit the bill]</p>
+<p>What Bruno is suggesting that we get a little more precise when it comes to our link relation, something the rest of the governing group for APIs.json agrees with. Here is the last update to the link relation:</p>
+<p><strong>3.8. Link Relation&nbsp;</strong></p>
+<p style="padding-left: 30px;">In order for a Web site to reference its API description, it is recommended that it includes a header or&nbsp;&nbsp; in-line reference to the APIs.json resource using the api link relation, e.g.:&nbsp;</p>
+<p style="padding-left: 30px;">It is intended that if there is sufficient traction, the link relation &ldquo;api&rdquo; will be&nbsp;&nbsp; submitted to IANA as per RFC: http://tools.ietf.org/html/rfc5988</p>
+<p>As with the media type, we intend to submit the link relation to Iana, per its RFC. Bruno's pull request sets in motion the formal link relation, but then also escalates the media type submission as well.&nbsp;</p>
+<p>With the interest and usage we have seen in the first year of the specification, we are confident the API discovery format will get traction. We are already seeing exploration around the link relation, achieving RSS like experience in the browsers, when visiting websites that have an active API program.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-evangelist-link-relation.png" alt="" width="75%" align="middle" /></p>
+<p>I have added a link relation to my <a href="http://apievangelist.com">API Evangelist</a>, <a href="/admin/blog/Kin Lane">Kin Lane</a>, and <a href="https://kin-lane.github.io/master/">Master API project</a>, all pointing to my <a href="https://kin-lane.github.io/master/apis.json">central APIs.json</a>, which provides an index of not just each of the APIs I use to operate the API Evangelist network, but also the supporting building blocks of API operations like pricing, support, etc.&nbsp;</p>
+<p>Thanks Bruno for the pull request, pushing out a minor release of the APIs.json spec, <a href="http://apisjson.org/format/apisjson_0.15.txt">moving us to&nbsp;0.15</a>. This release primes the pump, for a queue of APIs.json requests that are in the works, like more API property types, country origin, and much more.&nbsp;</p>
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Setting rel=api Into Motion With Latest APIs.json Release - https://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/&title=https://apievangelist.comSetting rel=api Into Motion With Latest APIs.json Release" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/&title=Setting rel=api Into Motion With Latest APIs.json Release&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2015/07/23/setting-relapi-into-motion-with-latest-apisjson-release/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/07/23/pushing-my-api-gateway-thoughts-forward-api-gateway-anywhere-with-justapis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/07/23/the-window-to-the-api-economy-for-everybody-else/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

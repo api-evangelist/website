@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Expanding The Layer Of API Discovery From With The Developers IDE</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Expanding The Layer Of API Discovery From With The Developers IDE | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/eclipse/eclipse-ide-logo.jpeg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Expanding The Layer Of API Discovery From With The Developers IDE | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/eclipse/eclipse-ide-logo.jpeg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Expanding The Layer Of API Discovery From With The Developers IDE</h2>
+<p><span class="post-date">03 Jul 2014</span></p>
+<p><a href="http://www.eclipse.org/" target="_blank"><img class="c1" src="https://s3.amazonaws.com/kinlane-productions/eclipse/eclipse-ide-logo.jpeg" alt="" width="200" align="right" /></a></p>
+<p>Much like API <a href="http://design.apievangelist.com">design</a> and <a href="http://integration.apievangelist.com">integration</a>, the world of <a href="http://discovery.apievangelist.com">API discovery</a> is heating up in 2014. We are moving beyond the API directory as our primary mode of API search, in favor of a distributed approach using APIs.json, and supporting <a href="http://apievangelist.com/2014/07/03/an-open-source-distributed-api-search-engine/">open source search engines like APIs.io</a>. Another area of API discovery I&rsquo;ve been <a href="http://apievangelist.com/2011/06/18/integrated-development-environment-ide-for-apis/">watching for a while</a>, and predict will become an important layer of API discovery, will be via the Integrated Development Environment (IDE) plugin.</p>
+<p><strong>Open Source SalesForce API IDE Plugin</strong><br /> SalesForce just<a href="https://developer.salesforce.com/blogs/engineering/2014/07/new-eclipse-plugin.html"> announced they have just open sourced their API IDE plugin on Github</a>, after developing on it since 2007, when <a href="http://www.salesforce.com/us/developer/docs/apexcode/index_Left.htm">APEX</a> was born. The plugin is old, but is very much in use in the SalesForce ecosystem, <a href="http://apievangelist.com/2013/02/04/salesforce-discusses-its-eclipse-plugin-release-approach/">something I&rsquo;ve written about before</a>. They will be accepting pull requests on the main branch, looking to improve on the codebase, while looking to also maintain a community branch, as well as encouraging you to establish your own branch.</p>
+<p><strong>Does Your API Have An IDE Plugin?</strong><br /> How far along are you on your own APIs Eclipse Plugin? Are you trying to reach enterprise developers with your API resource? You should probably look at the pros and cons of providing your API developers with a plugin, for leading IDEs. With the open sourcing of SalesForce API IDE plugin, <a href="https://github.com/forcedotcom/idecore">you can reverse engineer their approach</a> and see what you can use for your own APIs IDE plugin&mdash;smells like a good opportunity to me.</p>
+<p><a href="https://developer.salesforce.com/blogs/engineering/2014/07/new-eclipse-plugin.html" target="_blank"><img class="c1" src="https://s3.amazonaws.com/kinlane-productions/salesforce/apex_doc_plugin_menu.jpg" alt="" width="325" align="right" /></a></p>
+<p><strong>Opportunity For General Or Niche API IDE Plugins</strong><br /> Not that using SalesForce open source IDE would be the place to start for this kind of project, but I think there is a huge opportunity to develop API focused IDE plugins, for top developed environments, across many popular APIs. Developers shouldn&rsquo;t have to leave their development environments to find the resources they need, they should be able to have quick access to the APIs they depend on te most, and discover new API resources right from their local environment, aking IDE plugins an excellent API discovery opportunity.</p>
+<p><strong>Native Opportunities For IDE Platforms</strong><br /> I&rsquo;ve seen a lot of new development environments emerge, many are web-based, with varying degrees of being &ldquo;integrated&rdquo;. I think that IDE developers can take a lead from <a href="http://baas.apievangelist.com/companies.html">Backend as a Service (BaaS) providers</a> and build in the ability to define an integrated stack of API resources, right into a developer's web, mobile, or Iot development environment. If you are building a platform for developers to produce code, you should begin baking in API discovery and integration directly into your environment.</p>
+<p>All I do as the API Evangelist, is shed light on what API pioneers like SalesForce are up to, and expand on their ideas, using my knowledge of the industry--resulting in these stories. SalesForce has been doing APIs for 14 years now, and the IDE has been part of their API driven ecosystem for the last seven years. I think their move to open source the technology, is an opportunity for the wider API space to run with, by helping improve the community SalesForce API IDE plugin, but also apply their experience, and legacy code to help evolve and improve on this layer of API discovery, available within the IDE.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Expanding The Layer Of API Discovery From With The Developers IDE - https://apievangelist.com/2014/07/03/expanding-the-layer-of-api-discovery-from-with-the-developers-ide/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2014/07/03/expanding-the-layer-of-api-discovery-from-with-the-developers-ide/&title=https://apievangelist.comExpanding The Layer Of API Discovery From With The Developers IDE" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2014/07/03/expanding-the-layer-of-api-discovery-from-with-the-developers-ide/&title=Expanding The Layer Of API Discovery From With The Developers IDE&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2014/07/03/expanding-the-layer-of-api-discovery-from-with-the-developers-ide/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/07/03/an-open-source-distributed-api-search-engine/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/07/03/expanding-the-layer-of-api-discovery-from-within-the-developers-ide/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>
