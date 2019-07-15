@@ -9,7 +9,7 @@ tags:
   - Declarative
   - Design
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/lost-angeles-downtown-freeway-los-angeles-downtow-freeway-copper-circuit-2.jpg
+  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/server-cloud-server-racks-clouds-smoking-cigarette.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 At every turn in my API work I come across folks who claim that declarative APIs solutions are superior to imperative ones. They want comprehensive, single implementation, do it all their way approaches, over granular, multiple implementation API calls that are well defined by the platform. Declarative calls allow you to define a single JSON or YAML declaration that can then be consumed to accomplish many things, abstracting away the complexity of doing those many things, and just getting it done. Imperative API interfaces require many individual API calls to tweak each and every knob or dial on the system, but is something that is often viewed as more cumbersome from a seasoned integrator, but for newer, and lower level integrators a well designed imperative API can be an important lifeline.
