@@ -8,7 +8,7 @@ tags:
   - Deprecation
   - Reliability
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/lost-angeles-downtown-freeway-los-angeles-downtow-freeway-copper-circuit-2.jpg
+  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/catacombs-catacombs-copper-circuit.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 APIs are notorious for going away. There are so many APIs that disappear I really stopped tracking on it as a data point. I used keep track of APIs that were shuttered so that I could play a role in the waves of disgruntled pitchfork mobs rising up in their wake--it used to be a great way to build up your Hacker News points! But, after riding the wave a couple hundred waves of APIs shuttering, you begin to not really not give a shit anymore—-growing numb to it all. API deprecation grew so frequent, I wondered why anyone would make the claim that once you start an API you have to maintain it forever. Nope, you can shut down anytime. Clearly.
