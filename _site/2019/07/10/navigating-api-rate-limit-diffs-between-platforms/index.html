@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Navigating API Rate Limit Differences Between Platforms</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Navigating API Rate Limit Differences Between Platforms | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-death-valley-national-park-dali-three-just-road.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Navigating API Rate Limit Differences Between Platforms | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-death-valley-national-park-dali-three-just-road.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Navigating API Rate Limit Differences Between Platforms</h2>
+<p><span class="post-date">10 Jul 2019</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-death-valley-national-park-dali-three-just-road.jpg" width="45%" align="right" style="padding: 15px;" />
+I always find an API providers business model to be very telling about the company’s overall strategy when it comes to APIs. I’m currently navigating the difference between two big API providers, trying to balance my needs spread across very different approaches to offering up API resources. I’m working to evolve and refine my API search algorithms and I find myself having to do a significant amount of work due to the differences between GitHub and Microsoft Search. Ironically, they are both owned by the same company, but we all know their business models are seeking alignment as we speak, and I suspect my challenges with GitHub API is probably a result of this alignment.</p>
+
+<p>The challenges with integrating with GitHub and Microsoft APIs are pretty straightforward, and something I find myself battling regularly when integrating with many different APIs. My use of each platform is pretty simple. I am looking for APIs. The solutions are pretty simple, and robust. I can search for code using the GitHub Search API, and I can search for websites using the Bing Search API. Both produce different types of results, but what both produce is of value to me. The challenge comes in when I can pay for each API call with Bing, and I do not have that same option with GitHub. I am also noticing much tighter restriction on how many calls I can make to the GitHub APIs. With Bing I can burst, depending on how much money I want to spend, but with GitHub I have no relief value—I can only make X calls a minute, per IP, per user.</p>
+
+<p>This is a common disconnect in the world of APIs, and something I’ve written a lot about. GitHub (Microsoft) has a more “elevated” business model, with the APIs being just an enabler of that business model. Where Bing (Microsoft) is going with a much more straightforward API monetization strategy—pay for what you use. In this comparison my needs are pretty straightforward—-both providers have data I want, and I’m willing to pay for it. However, there is an additional challenge. I’m also using GitHub to manage the underlying application for my project. Meaning after I pull search results from GitHub and Bing, and run them through my super top secret, magical, and proprietary refinement algorithm, I publish the refined results to a GitHub repository, and manage the application in real time using Git, and GitHub APIs—which counts against my API usage.</p>
+
+<p>I used to manage all my static sites and applications 100% on GitHub, using the APIs to orchestrate the data behind each Jekyll-driven site. For the last five years I’ve run API Evangelist, and waves of simple data-driven static applications on GitHub like this. It has been a good ride. A free ride. One I fear is coming to a close. I can no longer deploy static data-driven Jekyll apps on the platform, and confidently manage using the GitHub API anymore. It is something I do not expect to continue getting for free. I’d be happy to pay for my account on a per organization, per repo, and per API call basis. In the end, I’ll probably begin just relying on Git for bulk builds of each application I run on GitHub, and eventually begin migrating them to my own servers, running Jekyll on my own, and custom developing an API for managing the more granular changes across hundreds of micro applications that run on Jekyll using YAML data. It would be nice for GitHub to notice this type of application development as part of their business model, but I’m guessing it isn’t mainstream enough for folks to adopt, and GitHub to cater to.</p>
+
+<p>Getting back to the search portion of this post. I am finding myself writing a scheduling algorithm that spread out my API calls across a 24 hour period. I guess I can also leverage the different GitHub accounts I have access to and maybe spread the harvesting across a couple EC2 instance, but I’d rather just do what Bing offers me, and put in my credit card. I am sure there are other ways I can find to circumvent the GitHub API rate limits, but why? I would rather just be above board and put in my credit card to be able to scale how I’m using the platform. One of the biggest challenges to API integration at scale in the future will be API providers who do not offer relief valves for their consumers. Significantly increasing the investment required to integrate with an API in a meaningful way, making it much more difficult to seamless use just a handful of APIs, let alone hundreds or thousands of them. This challenge is nothing new, and just one example of how the business of APIs can get in the way of the technology of APIs—-slowing things down along the way.</p>
+
+<hr />
+<table cellpadding="5" cellspacing="5" align="center" border="0" style="border-bottom: 0px; padding-bottom: 10px;">
+	<tr>
+		<td align="center">
+			<a href="http://twitter.com/home?status=Navigating API Rate Limit Differences Between Platforms - https://apievangelist.com/2019/07/10/navigating-api-rate-limit-diffs-between-platforms/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/twitter.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.facebook.com/share.php?u=https://apievangelist.com/2019/07/10/navigating-api-rate-limit-diffs-between-platforms/&title=https://apievangelist.comNavigating API Rate Limit Differences Between Platforms" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/facebook.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="http://www.linkedin.com/shareArticle?mini=true&url=https://apievangelist.com/2019/07/10/navigating-api-rate-limit-diffs-between-platforms/&title=Navigating API Rate Limit Differences Between Platforms&source=apievangelist.com" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/linkedin.png" width="25" /></a>
+		</td>
+		<td align="center">
+			<a href="https://plus.google.com/share?url=https://apievangelist.com/2019/07/10/navigating-api-rate-limit-diffs-between-platforms/" target="_bank"><img src="https://s3.amazonaws.com/kinlane-productions/icons/google-plus.png" width="25" /></a>
+		</td>
+	</tr>
+</table>
+
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/07/10/the-json-schema-tooling-in-my-life/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/07/11/taking-a-fresh-look-at-the-nuance-of-api-search/" class="button">Next >></a></li>
+	
+</ul>
+
+<div id="disqus_thread"></div>
+<script>
+(function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = '//apievangelist.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/" target="_blank"><img src="https://apievangelist.com/images/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/" class="image"><img src="https://apievangelist.com/images/postman-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

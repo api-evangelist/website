@@ -129,6 +129,373 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2011/09/25/twilio-connect-is-not-oauth-for-api-billing/">Twilio Connect is NOT OAuth for API Billing</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p><a title="Twilio Connect" href="http://www.twilio.com/api/connect"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/twilio-connect-screenshot.png" alt="" width="300" align="right" /></a></p>
+<p>During <a title="TwilioCon" href="http://www.twilio.com/conference/">TwilioCon</a> last week I covered the release of Twilio Connect in two posts, starting with, "<a title="Twilio Introduces Twilio Connect, Its New In-App Billing Model" href="http://blog.programmableweb.com/2011/09/21/twilio-introduces-twilio-connect-its-new-in-app-billing-model/">Twilio Introduces Twilio Connect, Its New In-App Billing Model</a>" on <a title="ProgrammableWeb" href="http://www.programmableweb.com">ProgrammableWeb</a>, and on API Evangelist with, "<a title="http://blog.apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/" href="/2011/09/20/twilio-connect-is-oauth-for-api-billing/">Twilio Connect is OAuth for API Billing</a>".</p>
+<p><a title="Twilio connect" href="http://www.twilio.com/api/connect">Twilio Connect</a> is a new billing solution that enables developers to offload charges for Twilio API usage to their application users, rather than their own Twilio accounts, and billing customers separately.  Twilio Connect is modeled after OAuth in that it uses a &ldquo;two-legged&rdquo; process for application users to setup and authenticate a payment relationship with Twilio, that a developer can leverage within their app using a token.</p>
+<p>I mentioned lightly in my post on API Evangelist:</p>
+<blockquote><em>&ldquo;OAuth 2.0 allows for designation of which account resources a developer can access, enabling users to approve at a very granular level, which could very easily be used for billing access as well.&rdquo;</em></blockquote>
+<p>Then yesterday I got called out on Twitter by <a title="Travis Spencer" href="http://travisspencer.com/">Travis Spencer</a> (<a href="http://www.twitter.com/travisspencer">@travisspencer</a>), stating that because Twilio did not use OAuth 2.0 to implement Twilio Connect, it was a step backwards, and I was irresponsible for not calling Twilio out on this.  He is totally right, and I humbly admit to not covering this story well enough.</p>
+<p>In most cases OAuth is implemented for basic user account authentication, but with the introduction of OAuth 2.0 you can use for authenticating access in a very granular way for any user resources that you choose.  So it could be very easily used for billing authentication, and its irresponsible of Twilio to not embrace industry standards, and developing their own, proprietary, one-off implementation.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/oauth/oauth-basic.png" alt="" width="400" /></p>
+<p>OAuth has a reputation for being tough to implement, both from a provider standpoint as well as working with as a developer, but with each version it is getting easier to use, and since its being widely accepted as an industry standard it is all of our responsibility as API owners to make sure it is used properly, and help developers understand the benefits.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/oauth/oauth-additionalscope.png" alt="" width="400" /></p>
+<p>Travis is right, and using widely accepted standards like OAuth 2.0 make API consumption easier.  API owners need to implement OAuth for user account authentication, as well as adding additional scope for accessing other user resources such as billing.</p>
+<p>Twilio leads in many ways when it comes to API ecosystem management, but they should have implemented Twilio Connect using OAuth 2.0.</p>
+<p>Thanks Travis for calling me out, I always welcome anyone to keep me in check, and happy to admit when I&rsquo;m wrong.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/twilio-connect-is-not-oauth-for-api-billing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/25/sorry-salesforcecom-but-databasecom-is-not-open/">Sorry SalesForce.com, but Database.com is not Open</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p><a href="http://www.database.com/es/howitworks"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/salesforce/Database-Com-Open.png" alt="" width="300" align="right" /></a></p>
+<p>I&rsquo;m working on reviewing various APIs as part of my <a title="database industry overview" href="/industries/databases.php">database industry overview</a>, where I&rsquo;m trying to understand the different approaches to delivering database platforms using web APIs as the primary interface.</p>
+<p>One of these database platforms is <a title="Database.com" href="http://www.database.com">Database.com</a>.  I really like what <a title="SalesForce.com" href="http://www.SalesForce.com">SalesForce.com</a> is doing with Database.com, but I take issue with their section declaring Database.com as an open platform.  SalesForce.com claims because you can access Database.com from any language, any platform, and any device through standards-based APIs, it is "open".</p>
+<p>I think many folks in the enterprise space truly believe this makes something open.  All it means is, if you have the money and approved credentials, you can access.  If I launch a database on Database.com it is open for "me" to access, and those I give access to.  And yes, since it uses REST I am "open" to access via any language or platform I choose.  But I'm sorry, that does not make it "open".</p>
+<p>I recommend SalesForce.com take a look at <a title="Freebase" href="http://www.freebase.com/">Freebase</a>.  All the data contained in Freebase is licensed by a Creative <a title="Creative Commons Attribution License" href="http://creativecommons.org/licenses/by/2.0/">Commons Attribution License</a>, which means that it's free for you to browse, query, copy, and even use the data in your own systems or software, even for commercial use, all you have to do is attribute it back to Freebase.</p>
+<p>Anyone has access to use and contribute to Freebase, as well as use any programming language or platform to access the data available on the platform.  Access to data is only one aspect of "open", developers must also be freely open to use and contribute to it, as the community sees fit.</p>
+<p>As much as I love and evangelize the power of the API, an API alone does not make systems or data open.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/sorry-salesforcecom-but-databasecom-is-not-open/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/25/making-apis-accessible-to-regular-users-with-widgets/">Making APIs Accessible to Regular Users with Widgets</a></h3>
+        <span class="post-date">25 Sep 2011</span>
+        <p>
+     <a href="http://www.recovery.gov/FAQ/Developer/Pages/RecoveryAPI.aspx"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/federal-government/recovery-org/Recovery-Gov-Logo.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     I was reviewing the <a href="http://www.recovery.gov/FAQ/Developer/Pages/RecoveryAPI.aspx">Recovery API</a> yesterday, which gives you a RESTful API for exploring where all the money went as part of our governments Recovery Act. I have a sort of obsession with this kind of government data, and began playing with, and tracking on where the stimulus money went in my home state of Oregon.
+</p>
+<p>
+     I started hacking on the API by manipulating the query string variables to get different types of responses on how stimulus money was spent by city, county and project types like roads, education and the environment. Since I’m a developer I’m very comfortable with hacking on the URL query string like this, but I noticed they also had a tool they called the, “<a title="Advanced Recipient Data Search Widget" href="http://www.recovery.gov/FAQ/Developer/Pages/AdvSearchWidget.aspx">Advanced Recipient Data Search Widget</a>”.
+</p>
+<p>
+     The advanced recipient data search widget allows me to adjust the same fields, but using an actual form. Using the widget anyone can easily build requests against the Recovery API without being a developer, and I even found it allowed me to explore and understand the API quicker and easier. The widget even displays the final request string you can copy and paste and see the XML results in the browser or just as results grid on the screen. And you can also choose to download the results as a CSV when done.
+</p>
+<p>
+     <a href="http://www.recovery.gov/FAQ/Developer/Pages/AdvSearchWidget.aspx"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/federal-government/recovery-org/recovery-org-widget-screenshot.gif" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     The form could be better. It does not provide drop-down values for each of the fields, and the pop-up window is a little clunky. It still is a very useful tool helping not only developers get up and running, but allows the average user to come in and use, understand and export results from the Recovery API.
+</p>
+<p>
+     I’m a big fan of <a title="API Explorer and Console Tools" href="/buildingblocks/api_explorer.php">API explorer and console tools</a>, but they still often are built for developers, by developers to explore and understand how an API works. The Recovery API’s, advanced recipient data search widget provides a much needed bridge for the average user to take advantage of the power of an API. At <a title="Mimeo" href="http://www.mimeo.com">Mimeo</a>, I’m taking many of my code samples and prototypes and making them live to not only show developers what is possible, but it also allows the average user to come in and use the <a title="Print and Publishing APIs" href="http://developer.mimeo.com">print and publishing APIs</a> without writing code.
+</p>
+<p>
+     I think it is important for us to provide this type of bridge within our APIs so the average user can come and take advantage of our APIs. APIs are not just for developers, and these types of tools can really demonstrate the value of APIs to the average business person, which might just motivate them to find a developer and commission deeper integration with our APIs.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/25/making-apis-accessible-to-regular-users-with-widgets/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/what-to-include-in-api-reference-documentation/">What to Include in API Reference Documentation</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p><em>This post comes from the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge</a> newsletter. &nbsp;I find so much value from what Peter and Jonathan do over at SDK Bridge, I asked them if I could repost their newsletter here and share with all of you.</em></p>
+<hr />
+<p><a title="SDK Bridge" href="http://sdkbridge.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/SDKBridge-logo.gif" alt="" width="250" align="right" /></a>This article presents a series of questions that your writing should answer for each type of element you would typically find in reference documentation.</p>
+<p>To begin with, think about what a new user needs to know. If you can write for a new user, then you'll cover everything that an existing user will need to know. Once you have that mindset, answer the questions below. For a given element, some of the answers will be obvious from the context and not need to be documented, so use your judgment. In general:</p>
+<ul class="mainlist">
+<li>For collaborations or common interactions or scenarios, is there a conceptual topic that discusses this? If so, link to or reference the conceptual topic from the API topic.</li>
+<li>For any elements that have a user interface component, is there a design guideline topic that discusses it? If so, link to or reference the design guideline from the API topic.</li>
+</ul>
+<p>For classes or structures:</p>
+<ul class="mainlist">
+<li>What function does it serve?</li>
+<li>What other classes or structures does it interact with? What collaborations does it participate in?</li>
+<li>What is its uninitialized state, if any?</li>
+<li>In which ways can you obtain an initialized object or value?</li>
+<li>Who is responsible for disposing of the item? Only an issue if the item is not garbage collected.</li>
+</ul>
+<p>For methods or functions:</p>
+<ul class="mainlist">
+<li>What does it operate on and what does it do?</li>
+<li>What are valid inputs (or states), and what are its outputs?</li>
+<li>Does it have any side effects?</li>
+<li>Are there any corner or edge cases, and if so, what is its expected behavior in each?</li>
+<li>What exceptions or error codes can it generate?</li>
+</ul>
+<p>For constants or enumerations:</p>
+<ul class="mainlist">
+<li>What does the value signify?</li>
+<li>Refer back to the contexts in which it occurs or is used.</li>
+</ul>
+<p>For Web API requests:</p>
+<ul class="mainlist">
+<li>What does it do?</li>
+<li>What are its query and header parameters?</li>
+<li>What does it return?</li>
+<li>Does it have any side effects?</li>
+<li>Are there any corner or edge cases, and if so, what is its expected behavior in each?</li>
+<li>What error codes can it generate?</li>
+</ul>
+<p>If your company has an existing writing team, then the team will likely already have templates or guidelines for API reference documentation that address many of the issues discussed in this article. Just remember that the mindset of the people using your documentation is going to be a bit different that the mindset of the people designing or implementing the API. As a writer, you will need to translate between the two. If you keep these things in mind, it will be easier to write accessible and useable documentation.</p>
+<hr />
+<p><em>If you don't know who SDK Bridge is, they provide <a title="API and SDK Documentation Services" href="http://sdkbridge.com/">API and SDK documentation services</a>, that will truly help developers understand how to build on top of your API. You can find more information about them at the <a title="SDK Bridge" href="http://sdkbridge.com/">SDK Bridge website</a>.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/what-to-include-in-api-reference-documentation/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/">Twilio Connect is OAuth for API Billing</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p>
+     <a title="Twilio" href="http://www.twilio.com"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/Twilio-Logo.png" alt="" width="250" align="right" /></a>
+</p>
+<p>
+     <a title="Twilio" href="http://www.twilio.com">Twilio</a> just announced a new API billing solution called Twilio Connect.  The new billing solution enables developers to offload charges for Twilio API usage to their application users, rather than their own Twilio accounts, and billing customers separately.
+</p>
+<p>
+     Twilio Connect is modeled after OAuth in that it uses a “two-legged” process for application users to setup and authenticate a payment relationship with Twilio, that a developer can leverage within their app using a token.
+</p>
+<p>
+     To start, developers put a Twilio Connect button in their application.  Application users then click the button and are taken to a secure Twilio page that allows them to setup a new Twilio account, requiring only the minimal needed information:  name, billing info, and email.   Upon successful setup, the application is then issued a token, which combined with a Twilio developers key, enables that application to consume Twilio API services, and bill to the users account.
+</p>
+<p>
+     If you think about it, it makes perfect sense.  What OAuth has done for user account authentication,  Twilio is doing for developer billing authentication.  OAuth 2.0 allows for designation of which account resources a developer can access, enabling users to approve at a very granular level, which could very easily be used for billing access as well.  However the complexity of OAuth 2.0 can often scare away businesses looking to implement oAuth, and developers looking to build around an API that authenticates with OAuth.  Twilio is taking the best features from OAuth, while keep the developer implementation dead simple.
+</p>
+<p>
+     Not all APIs would benefit from a billing authentication model like Twilio Connect.  It would work best for APIs that truly have a “cloud utility” model for their pricing, allowing developers to pay for only what they consume.  This would allow for the burden of billing to be lifted from developers, enabling them to do what they do best--code applications.  
+</p>
+<p>
+     <img class="c2" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/twilio/twilio-connect-button.png" alt="" align="right" />
+</p>
+<p>
+     One problem I see here is that developers who rely on marking up underlying API services as part of their businesss model, would not benefit from a billing model like this.  But there is opportunity for API owners to take control of in-app billing, to make secure, and operate in the best interest of all application users, while also open up a new revenue sharing opportunity for their developers.  They could offer different percentages of revenue share depending on how much business a developers app generates.  
+</p>
+<p>
+     Right now, the benefit for all developers may not be immediately clear, especially if they depend on revenue from these services, and there may be no benefit to the applicaiton user to have their own Twilio account.  It may actually add an extra unecessary step that could confuse a user during setup.  But think about when Twilio SMS and voice is ubiquitous across business, which is on its way.  A business could connect and disconnect its central telephony account from within different applications and services, and enable them to see their voice and SMS usage company wide, across a variety of applications.
+</p>
+<p>
+     <a title="Twilio Connect" href="http://blog.programmableweb.com/2011/09/21/twilio-introduces-twilio-connect-its-new-in-app-billing-model/">Twilio Connect</a> an interesting approach to API billing. I like the way Twilio thinks, and the company continues to lead in the API space when it comes to making developers lives easier.  I can’t help but think of how this would benefit other APIs, and if this possibly could become a staple for APIs like OAuth has.
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/twilio-connect-is-oauth-for-api-billing/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/20/google-introduces-a-google-hangout-api/">Google Introduces a Google+ Hangout API</a></h3>
+        <span class="post-date">20 Sep 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/google_plus.png" alt="" width="150" align="right" /></p>
+<p>Not even a week after Google rolled out the long awaited <a title="Google+ API" href="/2011/09/16/google-api-a-technology-review/">Google+ API</a>, they <a title="rolled out Google+ Hangouts API" href="http://googleplusplatform.blogspot.com/2011/09/introducing-google-hangouts-api.html">launched the Google+ Hangouts API</a>, enabling developers to build collaborative apps that run inside of a Google+ Hangout</p>
+<p>The <a title="Google+ Hangout API" href="http://developers.google.com/+/hangouts/">Google+ Hangout API</a> will provide developers with the ability to manipulate the UI, interact with hangout participants and respond to the different events that occur within a hangout. &nbsp;The functionality is reminiscent of the way Google Wave gadgets and robots could interact with a wave and its participants. &nbsp;I wonder if we are seeing some of the Google Wave code being recycled?</p>
+<p>To use Google+ you have to register your application with Google, and specify any other Google+ users on your team that will be able to load the application into their hangout. &nbsp;Since the Google+ Hangouts API is only in developer preview, this is temporary requirement.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/google-plus-hangouts.png" alt="" width="250" align="right" /></p>
+<p>Once registered, apps behaves like a normal web app, but it also can take part in the real-time conversations within a hangout using the API. &nbsp;Google+ Hangout apps will use whats called a &ldquo;shared state&rdquo; among all instances, notifying users of changes by other application users in real-time.</p>
+<p>The decision to release the Google+ clearly was a strategic move against Facebook, which I understand, but I still feel strongly that a empowering developers with a fully write enabled API from the beginning, is very important to setting the tone for the Google+ API ecosystem.</p>
+<p>Many developers, including myself <a title="were not happy with the limited functionality of the Google+ API release" href="/2011/09/16/google-api-a-technology-review/">were not happy with the limited functionality of the initial Google+ API release</a>. &nbsp;However, I could tell that Google was being cautious in their API roll-out, and there is potentially much more behind the scenes. &nbsp;I expect Google will be rolling out new APIs as they feel confident, or maybe when they feel it will give them a strategic advantage, like this week during the <a title="Facebook F8 Conference" href="http://www.facebook.com/f8">Facebook F8 conference</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/20/google-introduces-a-google-hangout-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/17/providing-code-libraries-is-not-enough-for-your-api/">Providing Code Libraries is Not Enough for Your API</a></h3>
+        <span class="post-date">17 Sep 2011</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Tag-Cloud-API-Code-Samples.png" alt="" width="250" align="right" /><a title="Code libraries" href="http://apievangelist.com/buildingblocks/code_libraries.php">Code libraries</a> have been a staple of open API communities for quite a few years now. &nbsp;API owners provide developers with working samples of code in a variety of programming languages, to get started working with an API. &nbsp;Sample code helps developer get up and running quicker, and increases the chances a developer will actually adopt an API.</p>
+<p>I was reviewing how Google approached the release of the Google+ API this week, and noticed their <a title="download section" href="http://developers.google.com/+/downloads">download section</a> not only contained the usual code libraries, but also contain whats called "starter projects". &nbsp;These starter projects provide a complete framework with everything you need to get start with OAuth, and to start building an application on top of the Google+ API.</p>
+<p>Does this reflect the future of what API owners should be providing for their developers? &nbsp;Should we be providing web and mobile app starter projects to help get developers up and running with our APIs? &nbsp;These kits could assist them in moving from idea to integration, but starter kits might go even further than that. &nbsp;</p>
+<p>By providing starter applications projects to our developers we can go beyond faster integration, and also help steer the quality of how applications are designed, ensure they using best coding practices, following security standards, and ultimately delivering better applications that are in line with the goals of the API owner.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/Google-Plus-Starter-Projects.png" alt="" width="550" align="center" /></p>
+<p>Companies don't just want developers using their APIs, they want them building quality applications around them, that reflect positively on the API. &nbsp;Starter projects, may be just the way to steer how developers build around an API, and guide them in a positive direction.</p>
+<p>Starter projects do this from a functional perspective, but another example of this from the UI and branding perspective, can be seen with <a title="Twitters Bootstrap Toolkit" href="http://twitter.github.com/bootstrap/">Twitter's Bootstrap toolkit</a>. &nbsp;Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites, and includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation and everything developers need to build sharp looking Twitter web apps.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/twitter/Bootstrap-Twitter.png" alt="" width="550" align="center" /></p>
+<p>I'm sure Twitter is interested in helping developers kickstart development, but ultimately they are helping developers build better looking apps that fall in line with Twitter's vision of what a Twitter client should look like. &nbsp;The Twitter Bootstrap toolkit helps jump start developers, but it also guides their UI to reflect the standards of the API owners, and can also help developers adhere to branding requirements.</p>
+<p>I anticipate that providing code libraries and samples will not be enough in the future, and API owners will have to provide more complete UI toolkits, as well as starter web and mobile application starter projects that encourage developers to integrate, while also guiding them when it comes to best practices for their user interface, coding and security. &nbsp;</p>
+<p>This isn't my idea, I"m just taking cues from two of the leading API providers, Google and Twitter. &nbsp;Will providing more <a title="building blocks" href="http://apievangelist.com/buildingblocks/">building blocks</a> like starter projects and UI toolkits be the future? Or will it look more like what <a title="Facebook and Heroku are doing when it comes to application development" href="http://blog.programmableweb.com/2011/09/16/facebook-apps-in-the-cloud-made-easy-by-heroku-partnership/">Facebook and Heroku are doing when it comes to application development</a>?</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/17/providing-code-libraries-is-not-enough-for-your-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/16/google-api-a-technology-review/">Google API a Technology Review</a></h3>
+        <span class="post-date">16 Sep 2011</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/google-plus/google_plus.png" alt="" width="200" align="right" />I was happy to see <a title="Google launch an API for Google + this week" href="http://googleplusplatform.blogspot.com/2011/09/getting-started-on-google-api.html">Google launch an API for Google +</a> this week. &nbsp;I&rsquo;m not chomping at the bit to build anything social on it, but I&rsquo;m glad they made it public.&nbsp;</p>
+<p>I wanted to take some time to review the API from a technology standpoint, and look at what possibilities it opens up for developers.</p>
+<p>The <a title="Google + API" href="https://developers.google.com/+/overview">Google + API</a> provides a RESTful interface for the newly launched Google social network, Google +, &nbsp;and provides access to profile data and activity streams. &nbsp;The API uses <a title="OAuth" href="http://apievangelist.com/buildingblocks/oauth.php">OAuth</a> for authentication and JSON for its request and response formats.</p>
+<p>That&rsquo;s it. &nbsp;Pretty underwhelming from a developers perspective. &nbsp;I&rsquo;ll be able to make some badges or widgets, maybe stream my activities in the sidebar of my Wordpress blog. &nbsp;&nbsp;&nbsp;Where is my photo access (wait that is in Picassa), or my video access (wait that is in Youtube), &nbsp;or my social events (wait that is in Google Calendar)?</p>
+<p>Ok, forget about about other content, what about my write access? &nbsp;I want to be able to write to my activity stream and update my profile. &nbsp;I want other apps that I authorize to be able to publish to my activity stream. &nbsp;</p>
+<p>I'll stop there. &nbsp;Without write access, there is no use railing about lack of application platform, access to circles, and true data portability and ownership via the API.</p>
+<p>In short, I think Google could have come out of the gate with a little more. &nbsp;Maybe linking up some of my other Google systems via my Google + profile, like Picassa images, and Youtube video. &nbsp;But more importantly developers should have write access. &nbsp;OAuth, plus write access to my social profile and activity stream should have been part of this release. &nbsp;&nbsp;It would have sent the right message to developers.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/google-plus/Google-Developers.png" alt="" width="580" align="center" /></p>
+<p>I also understand how hard all of this is for them. &nbsp;They have a lot to consider, and pleasing developers are only one piece of the puzzle. &nbsp;&nbsp;But as we&rsquo;ve seen with Twilio and Twitter, your developer ecosystem can help make your platform have the applications and features users are looking for, making it a desirable place to be. &nbsp;</p>
+<p>Platform success seems to come based upon the adoption of three key user groups: &nbsp;early adopters, developers and end-users. &nbsp;With Google + we&rsquo;ve just experienced the early adopter phase, what sort of environment will Google provide for developers during the next phase of growth.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/16/google-api-a-technology-review/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/14/can-you-build-an-api-using-scraped-data/">Can You Build an API Using Scraped Data?</a></h3>
+        <span class="post-date">14 Sep 2011</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/web-scraper.jpg" alt="" width="250" align="right" />I&rsquo;ve come across several APIs lately that rely on getting their data from web scraping. &nbsp;These API owners have written scripts that spider page(s) on a regular schedule, pull content, parse it and clean it up for storage in a database.</p>
+<p>Once they&rsquo;ve scraped or harvested this data from the web page source, they then get to work transforming and normalizing for access via a RESTful API. &nbsp;&nbsp;With an API they can now offer a standard interface that reliably pulls data from a database and delivers it in XML or JSON to any developer. &nbsp;</p>
+<p>These API owners are still at the mercy of the website source that is being scraped. &nbsp;What if the website changes something? &nbsp;</p>
+<p>This is definitely a real problem, and scraping is not the most reliable data source. &nbsp;But if you think about it, APIs can go up and down in availability, making them pretty difficult to work with too. As long as you have failure built into your data acquisition process and hopefully have a plan B, the API can offer a consistent interface for your data.</p>
+<p>Web scraping is not an ideal foundation for building a business around, but if the value of the data outweighs the work involved with obtaining, cleaning up, normalizing and delivering the data--then its worth it. &nbsp;&nbsp;And this type of approach to data APIs will continue.</p>
+<p>There is far more data available via web pages today then there is from web APIs. &nbsp;This discrepancy leaves a lot of opportunities for web scrapers to build business around data you might own, and you make available online, but haven&rsquo;t made time to open, control and monitor access to it via an APi.</p>
+<p>The opportunity to build businesses around scraping will continue in any sector until dependable APIs are deployed that provide reasonable pricing, as well as clear incentive and revenue models for developers to build their businesses on.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/14/can-you-build-an-api-using-scraped-data/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/13/unified-data-apis-for-geo-weather-and-beyond/">Unified Data APIs for Geo, Weather and Beyond</a></h3>
+        <span class="post-date">13 Sep 2011</span>
+        <p>
+     <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Hurricane-Irene.jpg" alt="" width="250" align="right" />Last week I covered <a title="Centralized Geo Data with New InfoChimps API" href="/2011/09/01/centralized-geo-data-with-infochimps-new-api/">Centralized Geo Data with New InfoChimps API</a>, and talked about how I felt it was a <a title="Look at the Future of Data" href="/2011/09/01/a-look-at-the-future-of-data-apis/">Look at the Future of Data</a>.  After writing I started thinking about other data that is ready for the same type of treatment that InfoChimps is giving geo data.<br />
+     <br />
+     <span>I was reading <a title="Audrey Watters" href="http://www.hackeducation.com">Audrey’s</a> post today on O’Reilly today called, <a title="a new look at weather data" href="http://radar.oreilly.com/2011/09/weatherspark-weather-data-visualization.html">A new look for weather data</a>, where she talks with <a title="Weatherspark" href="http://weatherspark.com/">WeatherSpark</a> co-founder <a title="Jacob Norda" href="http://twitter.com/#!/jacobnorda">Jacob Norda</a> about his company's approach to weather data and visualizations.</span><br />
+     <br />
+     <span>Norda talks about where the problems with traditional weather information are, how WeatherSpark gets its data, and how weather data can be improved overall.</span><br />
+     <br />
+     <span>It seems weather data suffers from all the same problems as geo data, such as multiple sources, varying schemas, huge datasets that are not easy linked with other sets of data.   Weather data has huge legacy system usage as well as massive growth in generation and consumption with the introduction of sensors and mobile devices.</span><br />
+     <br />
+     <span>Norda concludes the interview by saying, “We're considering offering a unified API, but it's in the pre-roadmap stage at this point.”  Seems like a common theme with data and APIs, lately.</span><br />
+     <br />
+     <span>What other areas of data are reaching this point, where developers could benefit from a unified API?</span>
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/13/unified-data-apis-for-geo-weather-and-beyond/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2011/09/13/printing-and-publishing-apis/">Printing and Publishing APIs</a></h3>
+        <span class="post-date">13 Sep 2011</span>
+        <div>
+     <p>
+          <img src="http://kinlane-productions.s3.amazonaws.com/mimeo/printing-press.jpg" alt="" width="250" align="right" />
+     </p>
+     <p>
+          As the API Evangelist for Mimeo, I spend a lot of time looking for other print related APIs. I spent some time today to update my list, and here what I found:
+     </p>
+     <ul class="mainlist">
+          <li>
+               <a title="Entusem API" href="/apis/the_enthusem_api_.php"><strong>Enthusem API</strong> </a>- Provides card printing services.
+          </li>
+          <li>
+               <strong><a title="Google Cloud Print" href="/apis/google_cloud_print.php">Google Cloud Print</a></strong> - Enables printing to any cloud-connected printer.
+          </li>
+          <li>
+               <strong><a title="Lulu Publishing API" href="/apis/lulu_publishing_api.php">Lulu Publishing API</a></strong> - Provides book publishing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Connect Cloud Print API" href="/apis/mimeo_connect_cloud_print_api.php">Mimeo Connect Cloud Print API</a> </strong>- Provides printing of common business documents like bound, single sheet, poster, cards, binders and booklets.
+          </li>
+          <li>
+               <strong><a title="Mime Card Printing API" href="/apis/mimeo_card_printing_api_.php">Mimeo Card Printing API</a></strong> - Provides card printing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Flyer &amp; Brochure Printing API" href="/apis/mimeo_flyer_&amp;_brochure_printing_api.php">Mimeo Flyer &amp; Brochure Printing API</a></strong> - Provides flyers and brochure printing.
+          </li>
+          <li>
+               <strong><a title="Mimeo Spiral Notebook Printing API" href="http://mimeoconnect.3scale.net/wiki/spiral-notebook-printing-api">Mimeo Spiral Notebook Printing API</a></strong> - Provides spiral notebook printing services.
+          </li>
+          <li>
+               <strong><a title="Mimeo Poster Printing API" href="/apis/mimeo_poster_printing_api.php">Mimeo Poster Printing API</a></strong> - Provides poster printing services.
+          </li>
+          <li>
+               <strong><a title="Moo.com" href="/apis/moo_api.php">Moo.com</a></strong> - Provides printing of MiniCards, StickerBooks, Postcards, Business Cards and Greeting Cards.
+          </li>
+          <li>
+               <strong><a title="Newspaper Club API" href="/apis/newspaper_club_api.php">Newspaper Club API</a></strong> - Provides access to a layout tool created for building classic looking newspapers designed for print.
+          </li>
+          <li>
+               <strong><a title="PicWing" href="http://www.picwing.com/apidocs">PicWing</a></strong> - Provides photo printing services.
+          </li>
+          <li>
+               <strong><a title="Snapfish Publisher" href="/apis/snapfish_publisher.php">Snapfish Publisher</a></strong> - Provides photo printing Services.
+          </li>
+          <li>
+               <strong><a title="ShareBook API" href="/apis/sharedbook_api.php">SharedBook API</a></strong> - Provides book building and publishing services.
+          </li>
+          <li>
+               <strong><a title="Shutterfly" href="/apis/shutterfly_api.php">Shutterfly</a></strong> - Provides photo printing services.
+          </li>
+          <li>
+               <strong><a title="ZetaPrints" href="http://www.zetaprints.com/help/about-web-to-print-api/">ZetaPrints</a></strong> - Provides web-to-print services for many document types.
+          </li>
+     </ul>
+     <p>
+          Let's take inventory of what types of printing services are available.  First Google provides a web-based framework for registering, access and printing to any web-enabled printer.  And The Newspaper Club API provides newspaper layout tools.  Those really are print related, but not necessary produce print as a final product.
+     </p>
+     <p>
+          When it comes to actual printing, there are an assortment of business documents including books, binders, newsletters, booklets, cards, spiral notebook.
+     </p>
+     <p>
+          Some big name photo printing services, and nice high end minicards, stickerBooks, postercards, business and greeting cards with Moo.com.
+     </p>
+     <p>
+          If you know of any other print or publishing APIs I should add to the list, let me know.
+     </p>
+</div>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2011/09/13/printing-and-publishing-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2011/09/13/api-automation-for-the-masses-with-if-this-then-that/">API Automation for the Masses with If This Then That</a></h3>
         <span class="post-date">13 Sep 2011</span>
         <p>
@@ -1098,209 +1465,6 @@ The <a href="http://www.imgtocss.com/" target="_blank">IMG to CSS API</a> for im
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2011/08/05/does-api-value-and-reliability-trump-docs-and-code-samples/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/05/api-terms-of-service-predict-an-unsure-future/">API Terms of Service Predict an Unsure Future</a></h3>
-        <span class="post-date">05 Aug 2011</span>
-        <a href="http://info.yahoo.com/legal/us/yahoo/mediaplayer/details.html"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/Yahoo-Terms-Center.png" alt="" width="300" align="right" /></a>I was just working on a piece for <a title="ProgrammableWeb" href="http://www.programmableweb.com">ProgrammableWeb</a> about the new <a title="Yahoo WebPlayer" href="http://webplayer.yahoo.com/">Yahoo WebPlayer</a>, which is amedia player that can play video and audio from any site or service, and be distributed across the web.<p></p>
-While browsing around the Yahoo WebPlayer site I came to the Terms of Service, which I found three items that stand out:
-<blockquote><em>Yahoo! can update and change this Agreement and TOS by posting a new version without notice to you.</em><p></p>
-<em>You understand and agree that the Player may allow for advertisements and that these advertisements are necessary for Yahoo! to provide the Player for your use.</em><p></p>
-<em>Yahoo! Media Player is free, but Yahoo! reserves the right to charge fees for future use of or access to the Player at Yahoo!'s sole discretion.</em></blockquote>
-I think these are pretty standard <a title="Rules of the Road" href="https://dev.twitter.com/terms/api-terms">rules of the road</a> that us publishers and developers are getting used when integrating with APIs and deploying gadgets, widgets and other embeddable tools. But they don't give us much build upon, as a content publisher, or developer trying to build a business.<p></p>
-I cannot see into the future, and I understand the problems providers face, but these terms seem pretty wide open, in favor of the provider. What can we do to make terms of services (TOS) for APIs and other tools more in support of the community a provider is targeting with these services?<p></p>
-I don't have the answers, just asking the question. This bizdev 2.0 stuff is a lot harder than we anticipated.
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/05/api-terms-of-service-predict-an-unsure-future/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/03/more-government-data-with-the-federal-register-api/">More Government Data with the Federal Register API</a></h3>
-        <span class="post-date">03 Aug 2011</span>
-        <a title="Office of the Federal Register" href="http://www.archives.gov/federal-register/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/government/presidential-seal.png" alt="" width="175" align="right" /></a>Each day Federal agencies publish documents in the Federal Register. These documents include proposed rules, final rules, public notices, and Presidential actions. The print-based version of the Federal Register can be difficult to read, process and access, so the <a title="Office of the Federal Register" href="http://www.archives.gov/federal-register/">Office of the Federal Register</a> (OFR) of the <a title="National Archives and Records Administration" href="http://www.archives.gov/">National Archives and Records Administration</a> (NARA), and the <a title="U.S. Government Printing Office" href="http://www.gpo.gov/">U.S. Government Printing Office</a> (GPO), who all joined forces to launch the <a title="federalregister.gov" href="http://www.federalregister.gov/">FederalRegister.gov</a> website, also deployed an API.<p></p>
-The goal of the initiative was to make it even easier for developers to build new ways of interacting with Federal Register data, making it easier for citizens and communities to understand the regulatory process and to participate in the Government decision-making process.<p></p>
-The <a title="Federal Register API" href="http://www.federalregister.gov/blog/learn/developers">Federal Register API</a> is RESTful, with no keys required for authentication and responses in a JSON format. They even provide a simple JSON interface for callbacks. All data in the Federal Register is updated daily by 6 a.m., and is published Monday through Friday, except Federal holidays, and consists of four types of entries:
-<ul class="mainlist">
-	<li><strong>Presidential Documents</strong> - Executive orders and proclamations</li>
-	<li><strong>Rules and Regulations</strong> - Policy statements and interpretations of rules</li>
-	<li><strong>Proposed Rules</strong> - Petitions for rulemaking and other advance proposals</li>
-	<li><strong>Notices</strong> - Scheduled hearings and meetings open to the public, grant applications, administrative orders, and other announcements of government actions</li>
-</ul>
-The Federal Register API is meant to deliver print-based material in machine-readable formats, to make the Federal Register more searchable, accessible, easier to digest, and easier to share withother systems.<p></p>
-The Federal Registers, encourages every citizen to become more involved in the workings of their government and to make their voices heard on the things that matter to them, from the smallest to the largest issues.<p></p>
-I'm reporting on multiple government APIs lately with, <a title="http://blog.programmableweb.com/2011/08/01/sunlight-labs-releases-influence-explorer-text-api/" href="Political Influence in U.S. an API Call Away" target="_blank">Political Influence in U.S. an API Call Away</a>" and "<a title="More Government Data with U.S. Department of Labor API" href="http://blog.programmableweb.com/2011/07/28/more-government-data-with-u-s-department-of-labor-api/" target="_blank">More Government Data with U.S. Department of Labor API</a>". With all the bullshit and theatrics in politics and the media, this kind of news really gets me excited about getting more involved in the Government decision-making process.
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/03/more-government-data-with-the-federal-register-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/02/will-rest-accommodate-our-api-needs-in-the-future/">Will REST Accommodate Our API Needs in the Future?</a></h3>
-        <span class="post-date">02 Aug 2011</span>
-        
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/02/will-rest-accommodate-our-api-needs-in-the-future/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/02/mashery-open-sources-their-api-io-docs/">Mashery Open Sources Their API I/O Docs</a></h3>
-        <span class="post-date">02 Aug 2011</span>
-        <img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-service-providers/mashery/mashery-io-docs-screenshot.jpg" alt="" width="300" align="right" />Last week at OSCON, I wrote about <a title="Masherys Release of their API I/O Docs" href="http://blog.programmableweb.com/2011/07/26/mashery-delivers-smarter-api-documentation/">Mashery's release of their new I/O Docs</a>. <a title="Mashery I/O Docs" href="http://mashery.com/solution/iodocs/">Mashery I/O Docs</a> are a combination of <a title="API Documentation" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=120">API documentation</a> and an <a title="API Explorer" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=209">API explorer</a>, allowing developers to make requests on an API inline while browsing the API reference materials.<p></p>
-I/O Docs provides an interactive documentation system for RESTful web APIs. By defining APIs at the resource, method and parameter levels in a JSON schema, I/O Docs will generate a JavaScript client interface. API calls can be executed directly from the documentation interface, proxied through the I/O Docs server, producing formatted responses.<p></p>
-Mashery has <a title="open-sourced a version of the I/O docs on Github" href="https://github.com/mashery/iodocs">open-sourced a version of the I/O Docs on Github</a>, for any API owner to deploy for their own documentation. This version of I/O docs runs on <a title="Node.js" href="https://github.com/joyent/node/wiki/Installation">Node.js</a> and uses <a title="Redis" href="http://redis.io/download">Redis</a> as a data store.<p></p>
-Last year Apigee launched their <a title="API consoe" href="http://apigee.com/about/products_togo.html">API console</a> which allows users to also make calls against an API, and <a title="earlier this year they made it freely available for any API owner" href="http://blog.apievangelist.com/2011/03/07/apigee-api-console-is-now-free-for-everyone-to-use/">earlier this year they made it freely available for any API owner</a> to deploy. The API console is a popular tool with developers to get up and going using an API, and build an understanding how an API works. Apigees move to make free was a significant market play, and definitely built awareness of their platform.<p></p>
-Masherys approach to API exploration reflects an alternative view from Apigees, one that integrates API discovery with API documentation, as opposed to being an entirely separate tool. Masherys move to open-source their I/O Docs on Github, is great to see. I'm sure it will definitely attract more attention to their platform and tools.<p></p>
-You can <a title="download or fork the Mashery I/O docs on Github" href="https://github.com/mashery/iodocs">download or fork the Mashery I/O Docs on Github</a>, and find necessary installation info and documentation.
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/02/mashery-open-sources-their-api-io-docs/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/02/api-stack-fulltext-search-with-indextank-api/">API Stack - Full-Text Search with IndexTank API</a></h3>
-        <span class="post-date">02 Aug 2011</span>
-        <a href="https://indextank.com/home" target="_blank"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/indextank/indextank_logo.png" alt="" align="right" /></a>The <a href="https://indextank.com/home" target="_blank">IndexTank API</a> provides full-text, website search, using a RESTFUL interface, with private URLs for security, and responses in JSON.
-<p></p>The IndexTank API provides real-time, geo &amp; social aware indexing of any website with sorting and scoring, coplete with highlights and snippets for displaying search results.
-<p></p>There are Python, Ruby, and PHP clients with Plug-Ins for Drupal, Heroku and Wordpress platforms.
-<p></p>There is a freemium package for up to 100K documents, $49.95 a month for up to 500K documents and $175 a month for up to 2M documents.
-<p></p>The <a href="https://indextank.com/home" target="_blank">IndexTank API for real-time, full-text web site indexing</a> is a perfect tool for the API stack.
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/02/api-stack-fulltext-search-with-indextank-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/01/my-3d-printed-junk-drawer/">My 3D Printed Junk Drawer</a></h3>
-        <span class="post-date">01 Aug 2011</span>
-        <p><img src="http://kinlane-productions.s3.amazonaws.com/junk-drawer.jpg" alt="" width="250" align="right" />I had a discussion yesterday with <a title="Audrey Watters" href="http://www.hackeducation.com">Audrey Watters</a>about the infamous junk drawer(s) that exists in every house. That end of the counter drawer that seems to accumulate everything from around our house that we think we may some day use.</p>
-<p>Junk drawers possess those small items that hold our lives together. Nuts, bolts, fasteners, knobs, hinges and handles as well as the tools we use to assemble the futon, bikes, shelves and other household appliances. We keep all these items because we don't want to throw them away. We will use them some day right?</p>
-<p>We all live with this delusion. I have no hard data on what we actually use from the junk drawer, but we all have them, and I'm sure many of us have just taken that entire drawer to the Goodwill, sold at a yard sale, or worse.....thrown away.</p>
-<p>Instead of having a junk drawer, what if we could take a picture of each object with our mobile devices. The mobile app would use image recognition or some sort of image scanning to identify the object. The mobile application would scan potentially millions of parts and pieces to identify this little piece of treasure in our lives. Once identified it would pull all meta data related to it, identifying it as a screw, faster for a futon or drawer handle from IKEA.</p>
-<p><img style="padding: 15 px;" src="http://kinlane-productions.s3.amazonaws.com/AutoCAD_Symbols_Fasteners.jpg" alt="" align="right" />We could create a virtual junk drawer of all these items. Once cataloged in our virtual junk drawer, we could properly dispose of in a recycling bin, Goodwill donation bag, or items in garage for the big yard sale that will make us rich. No more physical junk drawer. We could access our virtual junk drawer at any time, in an online environment.</p>
-<p>When that magical time comes, and we actually need the exact same screw, knob, fastener or obscure alan wrench we could search in our virtual junk drawer and pull up the item. Then we could either find out a local place to purchase, or even better the virtual junk drawer would pull the 3D drawing for the part and have it printed for us at the nearest 3D printer.</p>
-<p>Instead of clinging to the vision that some day we will need this part or piece, we could keep track of the parts and pieces that make up our lives, and when this day comes we could actually have recreated, and magically it appears in our lives.</p>
-<p>This would make way more sense then having a junk drawer with thousands of un-identifiable parts and pieces, and think of the valuable data you could extract from such an application.</p>
-<p>Anyways...just a thought.</p>
-<ul class="zemanta-article-ul">
-</ul>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/01/my-3d-printed-junk-drawer/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/01/how-open-should-we-be-with-our-api-roadmaps/">How Open Should We Be With Our API Road-maps?</a></h3>
-        <span class="post-date">01 Aug 2011</span>
-        <a href="http://www.twitter.com/"><img src="http://kinlane-productions.s3.amazonaws.com/Twitter-Logo.jpg" alt="" width="200" align="right" /></a>I just finished reading two great posts about battles within API ecosystems.<a href="http://www.readwriteweb.com/hack/2011/07/convoluted-tos-and-open-apis-w.php" target="_blank">Convoluted TOS and "Open" APIs Will Be the Death of Us</a> by <a href="http://twitter.com/#!/shiondev" target="_blank">Shion Deysarkar</a> and <a href="http://blog.louisgray.com/2011/07/topify-to-go-dark-as-twitter-claims.html" target="_blank">Topify to Go Dark as Twitter Claims Another Dev Victim</a> by <a href="http://twitter.com/#!/louisgray" target="_blank">Louis Gray</a>. I recommend you read, and form your own opinion.<p></p>
-I'm totally behind Shion in,<em> ..arguing that the breaching parties (i.e. the developers holding the API key) should not be held in contempt of court, as it were. </em>When it comes to terms of service disagreements, there needs to be more discussion.<p></p>
-<em></em>I also feel Topify's pain in their decision to, <em>..shut down the service, rather than chasing after Twitter's continued meandering API road-map</em>. This makes it very difficult to build a business on Twitters API.<p></p>
-I am the biggest advocate for the developer when it comes to these ecosystems battles. API developers often deliver on the promise of an API, but seldom see the reward.<p></p>
-<img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/topify_125.jpg" alt="" width="150" align="right" />However I also feel the pain of API owners. How are you supposed to have an API that delivers true value, is sustainable, makes all your developers happy, and have terms of service and a roadmap that is all knowing and sees into the future, and promises never to step on your developers toes.<p></p>
-I see both sides of the argument, however I feel much of the trouble Twitter and other API owners run into, is the result of not properly sharing its roadmap with developers. If Twitter shared its road-map <span style="text-decoration: underline;">earlier</span>, and <span style="text-decoration: underline;">more consistently</span> with its developers, and also allowed feedback periods before launching, I think there would a lot less backlash--even if the community didn't always win 100% in the resulting decision.<p></p>
-How "open" an API owner is with their road-map obviously is entirely up to them. They have trade secrets to protect, and many other considerations when managing a roadmap. However you should identify a consistent time frame in which to give the developer community a heads up about what is happening. Something they can get used to, count on.
-<img src="http://kinlane-productions.s3.amazonaws.com/APIRoadmap-FeedbackLoop.png" alt="" width="600" align="center" />
-Of course there will most likely be partners you share your road-map with before sharing it with your developer ecosystem. And don't forget to make sure to consider the press and blogosphere in this road-map release cycle. The press can be the first to bring up an issue, and ultimately end up being the bullhorn for developer grievances.<p></p>
-Also, if your platform has a accompanying web application, you will have to consider the linkage between its road-map and your API road-map. How do features you plan to release impact your developer community? When should they be informed about your companies plans for new products and features?<p></p>
-Rather than being polarized about these API ecosystem battles I hear about, I'm trying to put on my product managers hat, and find a balanced approach to solving. I don't think there is one single solution to make developers feel warm &amp; fuzzy about integrating with APIs, and each industry or API sector may be different. But I think many of these problems can be addressed through early and consistent sharing of our API road-maps, which will truly make our APIs more open.
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/01/how-open-should-we-be-with-our-api-roadmaps/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/08/01/a-market-for-selling-api-code-libraries/">A Market for Selling API Code Libraries</a></h3>
-        <span class="post-date">01 Aug 2011</span>
-        <a title="PHP code library for the Github Gist API" href="http://codecanyon.net/item/gist-api/410684"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/php-scripts-codecanon-gist-api.png" alt="" width="300" align="right" /></a>One of my Google Alerts picked up on something interesting today. A <a title="PHP code library for the Github Gist API" href="http://codecanyon.net/item/gist-api/410684">PHP code library for the Github Gist API</a>, for sale on the code marketplace <a title="CodeCanyon" href="http://codecanyon.net/">CodeCanyon</a> for $2.00.
-<p></p>I almost just closed the window, but then thought a little more about it. I think its the first time I've seen a code libraries for sale like this. I've seen more robust integrations and API clients for sale, but never a simple library for working with an API.
-<p></p>The <a title="Github Gist API" href="http://develop.github.com/p/general.html">Github Gist API</a> is well documented and there is a <a title="PHP Library for the Github API" href="https://github.com/ornicar/php-github-api">PHP library for the Github API</a> available for free on the site. It doesn't look like it has Gist API support yet, but is well written, and shows you how to exend the PHP class.
-<p></p>Seems like there is a narrow window where you could build an API code library and make money off selling it before a free library is available, or is it also possible to sell them even when there are other free libraries available?
-<p></p>I will keep watching for other API code libraries for sell on CodeCanyon and elsewhere, see if this is a growing trend. I prefer to just open source mine on <a title="Github" href="http://www.github.com">Github</a>, for the entire community to put to use.
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/08/01/a-market-for-selling-api-code-libraries/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/07/31/bootstrapped-api-management-like-the-moodstocks-api/">Bootstrapped API Management Like the Moodstocks API</a></h3>
-        <span class="post-date">31 Jul 2011</span>
-        <a title="Moodstocks" href="http://www.moodstocks.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/moodstocks/Moodstocks-Logo.png" alt="" align="right" /></a>I was reviewing the image recognition API from <a title="Moodstocks" href="http://www.moodstocks.com/">Moodstocks</a>, for a story on <a title="ProgrammableWeb" href="http://www.programmableweb.com">ProgrammableWeb</a> today, and discovered another API management story I feel should be told. Its a story about bootstrapping your API management using existing free and low cost services.<p></p>
-Before users adopt your API, it can be hard to justify costs around using paid API management services to support your developer ecosystem (because at that stage the ecosystem often doesn't exist). Moodstocks approach to its API community was a great example of bootstrapping API management until you can afford more.<p></p>
-For managing its <a title="documentation" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=120">documentation</a>, <a title="code libraries" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=125">code libraries</a>, <a title="articles" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=122">articles</a> and <a title="FAQs" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=132">FAQs</a>, Moodstocks turned to Github for help. Github provides these tools for free, and are great for delivering these API management essentials.<p></p>
-For developer support, Moodstocks uses Vanilla Forums for its <a title="forum" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=131">forum</a>, and Campfire for chat support. Moodstocks uses a nicely skinned copy of Wordpress for its <a title="blog" href="http://www.apievangelist.com/ecosystem-building-blocks-detail.php?Building_Block_ID=123">blog</a>, and has a solid social media approach using Twitter, LinkedIn, Facebook, Flickr and YouTube.<p></p>
-With this bootstrapped approach, it was up to Moodstocks to deliver its own API processes: rate limiting, security and other reporting features. But when it came to management the startup chose a nice selection of free and low cost services to delivery services to its API community.
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/07/31/bootstrapped-api-management-like-the-moodstocks-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/07/31/api-stack-image-recognition-with-moodstocks-api/">API Stack - Image Recognition with Moodstocks API</a></h3>
-        <span class="post-date">31 Jul 2011</span>
-        
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/07/31/api-stack-image-recognition-with-moodstocks-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/07/29/mailchimp-api-sees-some-serious-growth/">MailChimp API Sees Some Serious Growth</a></h3>
-        <span class="post-date">29 Jul 2011</span>
-        
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/07/29/mailchimp-api-sees-some-serious-growth/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

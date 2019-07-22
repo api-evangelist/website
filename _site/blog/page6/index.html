@@ -129,6 +129,309 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/02/21/what-is-open-banking-in-the-uk/">What Is Open Banking In The UK?</a></h3>
+        <span class="post-date">21 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-screenshot.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am profiling banks in the UK as part of an effort move forward my <a href="http://theapistack.com">API Stack</a> work, and populate the <a href="https://streamdata.io/developers/api-gallery/">Streamdata.io API Gallery</a>. One significant advantage that banks in the UK have over other countries in the EU, and even in the US, is the help of <a href="https://www.openbanking.org.uk">Open Banking</a>. To help profile the organization, I’ll just borrow from their website to define who they are and what they do.</p>
+
+<p><em>The Open Banking Implementation Entity was created by the UK’s Competition and Markets Authority to create software standards and industry guidelines that drive competition and innovation in UK retail banking.</em></p>
+
+<p>In 2016, The Competition and Markets Authority (CMA) published a report on the UK’s retail banking market which stated that older, larger banks do not have to compete hard enough for customers’ business, and smaller and newer banks were finding it difficult to grow and access the UK banking market. To solve this problem, they proposed a number of remedies including Open Banking, which defines API standards that are intended to help level that playing field.</p>
+
+<p>The role of Open Banking is to:</p>
+
+<ul>
+  <li>Design the specifications for the Application Programming Interfaces (APIs) that banks and building societies use to securely provide Open Banking</li>
+  <li>Support regulated third party providers and banks and building societies to use the Open Banking standards</li>
+  <li>Create security and messaging standards</li>
+  <li>Manage the Open Banking Directory which allows regulated participants like banks, building societies and third party providers to enroll in Open Banking</li>
+  <li>Produce guidelines for participants in the Open Banking ecosystem</li>
+  <li>Set out the process for managing disputes and complaints</li>
+</ul>
+
+<p>This approach to standardizing API definitions is the type of leadership that is needed to move API conversation forward in ALL industries. I know in the US, many enjoy viewing regulations as always bad, but this type of organizational designation can go a long way towards moving an industry forward in a concerted fashion. Doing the hard work to establish a common API definition, and play a central role in helping ensure each actor within an industry is implementing the definition as expected.</p>
+
+<p>I’d like to see more organizations emerge that reflect Open Banking’s mission, in a variety of industries. Many companies do not have the time, expertise, or desire to do the homework and understand what needs to occur on the API front. Speaking from experience, there is’t a lot of vendor-free funding to do this kind of work, and it is something that will require public sector investment. In my opinion, this doesn’t always have to be government led, but there should be industry neutral funding available to move forward the conversation in a way that benefits everyone involved, without a focus on any single product or service.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/21/what-is-open-banking-in-the-uk/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/20/relationship-between-openapi-path-summary-tags-and-asyncapi-topics/">Relationship Between OpenAPI Path, Summary, Tags and AysncAPI Topics</a></h3>
+        <span class="post-date">20 Feb 2018</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_160_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m working my way through several hundred OpenAPI definitions that I have forked from <a href="https://apis.guru/">APIs.guru</a>, <a href="https://any-api.com/">Any API</a>, and have automagically generated from API documentation scrape scripts I have developed over time. Anytime I evolve a new OpenAPI definition, I first make sure the summary, description, and tags are as meaningful as they possibly can. Sadly this work is also constrained by how much time I have to spend with each API, as well as how well designed their API is in the first place. I have a number of APIs that help me enrich this automatically, by mining the API path, applying regular expressions, but often times it takes a manual review to add tags, polish summaries, and make the OpenAPI details as meaningful as I possibly can, in regards to what an API does.</p>
+
+<p>As I’m taking a break from this work, I’m studying up on <a href="https://www.asyncapi.com/">AsyncAPI</a>, trying to get my head around how I can be crafting API definitions for the message-based, event-driven, streaming APIs I’m profiling alongside my regular API research. One of the areas the AsyncAPI team is pushing forward is around the concept of a topic–_“to create a definition that suites most use cases and establish the foundation for community tooling and better interoperability between products when using AsyncAPI.”_ or to elaborate further, <em>“a topic is a string representing where an AsyncAPI can publish or subscribe. For the sake of comparison they are like URLs in a REST API.”</em> Now I’m thinking about the relationships between the API design elements I’m wrestling with in my API definitions, and how the path, summary, and tags reflect what Async is trying to articulate with their topics discussion.</p>
+
+<p><strong>{organization}.{group}.{version}.{type}.{resources}.{event}</strong></p>
+
+<ul>
+  <li><strong>organization</strong> - the name of the organization or company.</li>
+  <li><strong>group</strong> - the service, team or department in charge of managing the message..</li>
+  <li><strong>version</strong> - the version of the message for the given service. This version number should remain the same unless changes in the messages are NOT backward compatible.</li>
+  <li><strong>type</strong> - the type of the message, e.g., is it a command or an event?. This value should always be event unless you’re trying to explicitly execute a command in another service, i.e., when using RPC.</li>
+  <li><strong>resources</strong> - resources and sub-resources, in a word (or words) describing the resource the message refers to. For instance, if you’re sending a message to notify a user has just signed up, the resource should be user. But, if you want to send a message to notify a user has just changed her full name, you could name it as user.full_name.</li>
+  <li><strong>event</strong> - an event or command name, in case message type is event, this should be a verb in past tense describing what happened to the resource, and in case message type is command, this should be a verb in infinitive form describing what operation you want to perform.</li>
+</ul>
+
+<p><strong>Example(s):</strong></p>
+
+<ul>
+  <li>hitch.accounts.1.event.user.signedup</li>
+  <li>hitch.email.1.command.user.welcome.send</li>
+</ul>
+
+<p>As I’m crafting OpenAPI definitions, and publishing them to Github, I’m using Jekyll to give me access to the large numbers of OpenAPI definitions I’ve published, and indexed using APIs.json, as Liquid objects. For each site. I can references APIs path using a dotted notation, such as site.twilio.send-sms-get. I haven’t polished my naming conventions, and simply taking the path, stripping out everything but the alpha, numeric characters for the file names, but it got me thinking about how I might want to get more structured in how I name the individual units of compute I’m publishing using OpenAPI, and often times as Postman Collections.</p>
+
+<p>As I publish these API definitions to Github, as part of my API profiling for inclusion in the Streamdata.io API, I’m looking to establish a map of the surface area, that I can potentially turn into webhooks, streamings, and other approaches to real time message delivery. This is why I’m looking to understand AsyncAPI, to help quantify the result of this work. After I map out the surface area of the APIs, and quantify the topics at play, and obtain an API key, I need a way to then map out the real time streams of messages that will get passed around. To do this, I will need a way to turn each potential API response and its resulting request into a topic definition into a well defined, measurable input or output–AsyncAPI is going to help me do this.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/20/relationship-between-openapi-path-summary-tags-and-asyncapi-topics/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/20/people-who-provide-enum-for-their-openapi-definitions-are-good-people/">People Who Provide Enum For Their OpenAPI Definitions Are Good People</a></h3>
+        <span class="post-date">20 Feb 2018</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_116_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m processing a significant amount of OpenAPI definitions currently, as well as crafting a number of them from scraped API documentation. After you work with a lot of OpenAPI definitions, aiming to achieve a specific objective, you really get to know which aspects of the OpenAPI are the most meaningful, and helpful when they are complete. <a href="http://apievangelist.com/2018/02/15/the-importance-of-the-api-path-summary-description-and-tags-in-an-openapi-definition/">I talked about the importance of summary, description, and tags last week</a>, and this week I’d like to highlight how helpful it is when the stewards of OpenAPI definitions include enum values for their parameters, and I think they are just good people. ;-)</p>
+
+<p>Enums are simply just a list of potential values for each of the parameters you outline as part of your API definition. So if you have state as a parameter for use in the request of your API, you have a list of the 50 US states as the enum. If you the parameter is color, you have just the color black, because we all know it is the only color(all the colors). ;-) If you provide a parameter that will accept a standard set of inputs, you should consider providing an enum list to help your consumers understand the potential for that parameter. Outlining the dimensions of the parameter in a simple JSON or YAML array of every single possible value.</p>
+
+<p>I can’t articulate how many times I have to go looking for a list of values. Sometimes it is present within the description for the OpenAPI, but often times I have to go back to the portal for the API, and follow a link to a page that lists out the values. That is, if an API provider decides to provide this information at all. The thoughtful ones do, the even more thoughtful ones put it in their OpenAPI definitions as enum values. Anytime I come across a list of enums that I can quickly build an array, select, and other common aspects of doing business with APIs, I’m a happy camper.</p>
+
+<p>Which is why you find me writing up enums. Boring. Boring. Boring. However, it is something that makes me happy, potentially multiple times in a single day, and imagine that multiplied by the number of developers you have, or maybe “had”, depending on how frustrating it is to find the values that can be used in your API’s parameters. In my opinion, enums add rich dimensions to what your API does, and can be as important as the overall design of your API. Depending on how you’ve designed your API, you may have invested heavily in design, or may be leaning on your API parameters to do the heavy lifting of helping you–making them even more important when it comes to documenting them as part of your API operations.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/20/people-who-provide-enum-for-their-openapi-definitions-are-good-people/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/16/insecurity-around-providing-algorithmic-transparency-and-observability-using-apis/">Insecurity Around Providing Algorithmic Transparency And Observability Using APIs</a></h3>
+        <span class="post-date">16 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/68_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><a href="https://streamdata.io/blog/benchmark-quantifying-api-performance/">I’m working on a ranking API for my partner Streamdata.io to help quantify the efficiencies they bring to the table when you proxy an existing JSON web API using their service</a>. I’m evolving an algorithm they have been using for a while, wrapping it in a new API, and applying it across the APIs I’m profiling as part of my <a href="http://theapistack.com">API Stack</a>, and the <a href="https://streamdata.io/developers/api-gallery/">Streamdata.io API Gallery</a> work. I can pass the ranking API any OpenAPI definition, and it will poll and stream the API for 24 hours, and return a set of scores regarding how real time the API is, and what the efficiency gains are when you use Streamdata.io as a proxy for the API.</p>
+
+<p>As I do this work, I find myself thinking more deeply about the role that APIs can play in helping make algorithms more transparent, observable, and accountable. My API ranking algorithm is pretty crude, but honestly it isn’t much different than many other algorithms I’ve seen companies defend as intellectual property and their secret sauce. Streamdata.io is invested in the ranking algorithm and API being as transparent as possible, so that isn’t a problem here, but each step of the process allows me to think through how I can continue to evangelize other algorithm owners to use APIs, to make their algorithms more observable and accountable.</p>
+
+<p>In my experience, most of the concerns around keeping algorithms secret stem from individual insecurities, and nothing actually technical, mathematical, or proprietary. The reasons for the insecurities are usually that the algorithm isn’t that mathematically sophisticated (I know mine isn’t), or maybe it is pretty flawed (I know mine is currently), and people just aren’t equipped to admit this (I know I am). I’ve worked for companies who venomously defend their algorithms and refuse to open them up, because in the end they know they aren’t defensible on many levels. The only value the algorithm possesses in these scenarios is secrecy, and the perception that there is magic going on behind the scenes. When in reality, it is a flawed, crude, simple algorithm that could actually be improved upon if it was opened up.</p>
+
+<p>I’m not insecure about my lack of mathematical skills, or the limitations of my algorithm. I want people to point out its flaws, and improve upon my math. I want the limitations of the algorithm to be point out. I want API providers and consumers to use the algorithm via the API (when I publish) to validate, or challenge the algorithmic assumptions being put forth. I’m not in the business of selling smoke and mirrors, or voodoo algorithmics. I’m in the business of helping people understand how inefficient their API responses are, and how they can possibly improve upon them. I’m looking to develop my own understanding of how can make APIs more event-driven, real time, and responsive. I’m not insecure about providing transparency and observability around the algorithms I develop, using APIs–all algorithm developers should be as open and confident in their own work.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/16/insecurity-around-providing-algorithmic-transparency-and-observability-using-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/16/using-jekyll-and-openapi-to-evolve-api-documentation-and-storytelling/">Using Jekyll And OpenAPI To Evolve My API Documentation And Storytelling</a></h3>
+        <span class="post-date">16 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/68_158_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m reworking my API Stack work as independent sets of <a href="https://jekyllrb.com/docs/collections/">Jekyll collections</a>. Historically I just dumped all <a href="http://apisjson.org/">APIs.json</a>, and OpenAPIs into the central data folder, and grouped them into folders by company name. Now I am breaking them out into tag based collections, using a similar structure. Further evolving how I document and tell stories using each API. I have been published a single OpenAPI for each platform, but now I’m publishing a separate OpenAPI for each API path–we will see where this goes, it might ultimately end up biting me in the ass. I’m doing this because I want to be able to talk about a single API path, and provide a definition that can be viewed, interpreted, and executed against, independent of the other paths–Jekyll+OpenAPI is helping me accomplish this.</p>
+
+<p>With each API provider possessing its own APIs.json index, and each API path having its own OpenAPI definition, I’m able to mix up how I document and tell stories around these APIs. I can list them by API provider, or by individual API path. I can filter based upon tags, and provide execute-time links that reference each individual unit of API. I have separate JavaScript functions that can be referenced if the API path is GET, POST, or PUT. I can even inherit other relevant links like API sign up or terms of service as part of its documentation. I can reference all of this as part of larger documentation, or within blog posts, and other pages throughout the website–which will be refreshed whenever I update the OpenAPI definition.</p>
+
+<p>If you aren’t familiar with how Jekyll works. It is a static content solution, that allows you do develop collections. You can put CSV, JSON, or YAML into these collections (folders), and they become objects you can reference using Liquid syntax. So if I put Twitter’s APIs.json, and OpenAPI into a folder within my social collection, I can reference as site.social.twitter which is the APIs.json for Twitter’s entire API operations, and I can reference individual APIs as site.social.twitter.search for the individual OpenAPI defining the Twitter search API path. This decouples API documentation for me, and allows me to not just document APIs, but tell stories with  API definitions, making my API portals much more interactive, and hopefully engaging.</p>
+
+<p>I just got my API stack approach refreshed using this new format. Now I just need to go through all my APIs and rebuild the underlying Github repository. I have thousands of APIs that I track on, and I’m curious how this approach holds up at scale. While <a href="http://theapistack.com">API Stack</a> is a single repository, I can essentially publish any collection of APIs I desire to any of the hundreds of repositories that make up the API Evangelist network. Allowing me to seamless tell stories using the technical details of API operations, and the individual API resources they serve up. Further evolving how I tell stories around the APIs I’m tracking on. While my API documentation has always been interactive, I think this newer, more modular approach, reflects the value each unit of value an API brings to the table, rather than just looking to document all the APIs a provider possesses.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/16/using-jekyll-and-openapi-to-evolve-api-documentation-and-storytelling/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/15/the-importance-of-the-api-path-summary-description-and-tags-in-an-openapi-definition/">The Importance of the API Path Summary, Description, and Tags in an OpenAPI Definition</a></h3>
+        <span class="post-date">15 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/15_190_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am creating a lot of OpenAPI definitions right now. <a href="http://apis.how/streamdata.io">Streamdata.io</a> is investing in me pushing forward my <a href="http://theapistack.com">API Stack</a> work, where I profile API using OpenAPI, and index their operations using APIs.json. From the resulting indexes, we are building out the <a href="https://streamdata.io/developers/api-gallery/">Streamdata.io API Gallery</a>, which shows the possibilities of providing streaming APIs on top of existing web APIs available across the landscape. The OpenAPI definitions I’m creating aren’t 100% complete, but they are “good enough” for what we are needing to do with them, and are allowing me to catalog a variety of interesting APIs, and automate the proxying of them using Streamdata.io.</p>
+
+<p>I’m finding the most important part of doing this work is making sure there is a rich summary, description, and set of tags for each API. While the actual path, parameters, and security definitions are crucial to programmatically executing the API, the summary, description, and tags are essential so that I can understand what the API does, and make it discoverable. As I list out different areas of my API Stack research, like <a href="http://market.data.apievangelist.com/">the financial market data APIs</a>, it is critical that I have a title, and description for each provider, but the summary, description, and tags are what provides the heart of the index for what is possible with each API.</p>
+
+<p>When designing an API, as a developer, I tend to just fly through writing summary, descriptions, and tags for my APIs. I’m focused on the technical details, not this “fluff”. However, this represents one of the biggest disconnects in the API lifecycle, where the developer is so absorbed with the technical details, we forget, neglect, or just don’t are to articulate what we are doing to other humans. The summary, description, and tags are the outlines in the API contract we are providing. These details are much more than just the fluff for the API documentation. They actually describe the value being delivered, and allow this value to be communicated, and discovered throughout the life of an API–they are extremely important.</p>
+
+<p>As I’m doing this work, I realize just how important these descriptions and tags are to the future of these APIs. Whenever it makes sense I’m translating these APIs into streaming APIs, and I’m taking the tags I’ve created and using them to define the events, topics, and messages that are being transacted via the API I’m profiling. I’m quantifying how real time these APIs are, and mapping out the meaningful events that are occurring. This represents the event-driven shift we are seeing emerge across the API landscape in 2018. However, I’m doing this on top of API providers who may not be aware of this shift in how the business of APIs is getting done, and are just working hard on their current request / response API strategy. These summaries, descriptions, and tags, represent how we are going to begin mapping out the future that is happening around them, and begin to craft a road map that they can use to understand how they can keep evolving, and remain competitive.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/15/the-importance-of-the-api-path-summary-description-and-tags-in-an-openapi-definition/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/15/a-really-nice-api-application-showcase-over-at-the-intrinio-market-data-api/">A Really Nice API Application Showcase Over At The Intrinio Market Data API</a></h3>
+        <span class="post-date">15 Feb 2018</span>
+        <p>I am profiling financial market data APIs currently, and as I’m doing my work profiling APIs, I’m always on the hunt for interesting elements of their API operations that I can showcase for my readers. While looking at the financial market data API from Intrinio, I found that <a href="https://intrinio.com/marketplace/apps">I really, really like their application showcase</a>, which providers a pretty attractive blueprint for how we can showcase what is being develop on top of our APIs.</p>
+
+<p>The Intrinio application showcase is just clean looking, and has the bells and whistles you’d expect like categories, search, detail or list view, and detail pages providing you all the information you need about the application, and where you can find tutorials, code, and other relevant resources.</p>
+
+<p align="center"><a href="https://intrinio.com/marketplace/apps"><img src="https://s3.amazonaws.com/kinlane-productions/intrinio/intrinio-app-showcase.png" /></a></p>
+
+<p>Another thing I really like is it isn’t just about web and mobile applications. They have spreadsheet integrations, and help walk you through how to “apply” each type of integration. This is what the application in API means to me. It isn’t always just about finished web, mobile, and device applications. It is about applying the resources available via the programmatic interfaces to some problem you have in your world.</p>
+
+<p>Anyways, the Intrinio application showcase is totally worth profiling as part of my research. It is a great blueprint for other API providers to follow when crafting their own application showcases. This post give me a single URL that I can share with folks, and reference throughout my stories, white papers, guides, and talks. I’d love to see this become the standard for how API providers showcase their applications, keeping things simple, clean, and bringing value to their consumers.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/15/a-really-nice-api-application-showcase-over-at-the-intrinio-market-data-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/15/how-big-or-small-is-an-api/">How Big Or Small Is An API?</a></h3>
+        <span class="post-date">15 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/31_156_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am working to build out <a href="https://streamdata.io/developers/api-gallery/">the API Gallery for Streamdata.io</a>, profiling a wide variety of APIs for inclusion in the directory, adding to the wealth of APIs that could be streamed using the service. As I work to build the index, I’m faced with the timeless question regarding, what is an API? Not technically what an API does, but what is an API in the context of helping people discover the API they are looking for. Is Twitter an API, or is the Twitter search/tweets path an API? My answer to this question always distills down to a specific API path, or as some call it an API endpoint. Targeting a specific implementation, use case, or value generated by a single API provider.</p>
+
+<p>Like most things in the API sector, words are used interchangeably, and depending on how much experience you have in the business, you will have much finer grained definitions about what something is, or isn’t. When I’m talking to the average business user, the Twitter API is the largest possible scope–the entire thing. In the context of API discovery, and helping someone find an API to stream or to solve a specific problem in their world, I’m going to resort to a very precise definition–in this case, it is the specific Twitter API path that will be needed. Depending on my audience, I will zoom out, or zoom in on what constitutes a unit of API. The only consistency I’m looking to deliver is regarding helping people understand, and find what they looking for–I’m not worried about always using the same scope in my definition of what an API is.</p>
+
+<p><a href="https://streamdata.io/blog/robust-market-data-apis-alphavantage/">You can see an example of this in action with the Alpha Vantage market data API I’m currently profiling</a>, and adding to the gallery. Is Alpha Vantage is a single API, or 24 separate APIs? In the context of the Streamdata.io API Gallery, it will be 24 separate APIs. In the context of telling the story on the blog, there is a single Alpha Vantage API, with many paths available. I don’t want someone searching specifically for a currency API to have to wade through all 24 Alpha Vantage paths, I want them to find specifically the path for their currency API. When it comes to API storytelling, I am fine with widening the scope of my definition, but when it comes to API discovery I prefer to narrow the scope down to a more granular unit of value.</p>
+
+<p>For me, it all comes down the definition of what an API is. It is all about applying a programmatic interface. If I’m applying in a story that targets a business user, I can speak in general terms. If I’m applying to solve a specific business problem, I’m going to need to get more precise. This precision can spin out of control if you are dealing with developers who tend to get dogmatic about programming languages, frameworks, platforms, and the other things that make their worlds go round. I’m not in the business of being “right”. I’m in the business of helping people understand, and solve the problems they have. Which gives me a wider license when it comes to defining how big or small an API can be. It is a good place to be.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/15/how-big-or-small-is-an-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/">Some Common Features Of An API Application Review Process</a></h3>
+        <span class="post-date">15 Feb 2018</span>
+        <p><a href="https://twitter.com/ktinboulder/status/961601920887607296"><img src="https://s3.amazonaws.com/kinlane-productions/kelly-taylor-app-approval-tweet.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="https://twitter.com/ktinboulder/status/961601920887607296">I received a tweet from my friend Kelly Taylor with USDS</a>, asking for any information regarding establishing an “approve access to production data” for developers. <a href="https://bluebutton.cms.gov/developers/">He is working on an OAuth + FHIR implementation for the Centers for Medicare and Medicaid Services (CMS) Blue Button API</a>. Establishing a standard approach for on-boarding developers into a production environment always makes sense, as you don’t want to give access to sensitive information without making sure the company, developer, and application has been thoroughly vetted.</p>
+
+<p>As I do with my work, I wanted to think through some of the approaches I’ve come across in my research, and share some tips and best practices. <a href="https://bluebutton.cms.gov/developers/#production-api-access">The Blue Button API team has a section published regarding how to get your application approved</a>, but I wanted to see if I can expand on, while also helping share this information with other readers. This is a relevant use case that I see come up regularly in healthcare, financial, education, and other mainstream industries.</p>
+
+<p><strong>Virtualization &amp; Sandbox</strong><br />
+The application approval conversation usually begins with ALL new developers being required to work with a sandboxed set of APIs, only providing production API access to approved developers. This requires having a complete set of virtualized APIs, mimicking exactly what would be used in production, but in a much safer, protected environment. One of the most important aspects of this virtualized environment is that there also needs to be robust sets of virtualized data, providing as much parity regarding what developers will experience when they enter the production environment. The sandbox environment needs to be as robust and reliable as the production, which is a mistake I see made over and over from providers, where the sandbox isn’t reliable, or as functional, and developers never are able to reach production status in a consistent and reliable way.</p>
+
+<p><strong>Doing a Background Check</strong><br />
+Next, as reflected in the Blue Button teams approach, you should be profiling the company and organization, as well as the individual behind each application. <a href="http://apievangelist.com/2016/03/30/best-buy-will-not-issue-api-keys-to-free-email-accounts-and-wants-to-get-to-know-your-company/">You see company’s like Best Buy refusing any API signup that doesn’t have an official company domain that can be verified</a>. In addition to requiring developers provide a thorough amount of information about who they are, and who they work for, many API providers are using background and profiling services like <a href="https://clearbit.com/">Clearbit</a> to obtain more details about a user based upon their email, IP address, and company domain. Enabling different types of access to API resources depending on the level of scrutiny a developer is put under. I’ve seen this level of scrutiny go all the way up to requiring the scanning of drivers license, and providing corporate documents before production access is approved.</p>
+
+<p><strong>Purpose of Application</strong><br />
+One of the most common filtering approaches I’ve seen centers around asking developer about the purpose of their application. The more detail the better. As we’ve seen from companies like Twitter, the API provider holds a lot of power when it comes to deciding what types of applications will get built, and it is up to the developer to pitch the platform, and convince them that their application will serve the mission of the organization, as well as any stakeholders, and end-users who will be leveraging the application. This process can really be a great filter for making sure developers think through what they are building, requiring them to put forth a coherent proposal, otherwise they will not be able to get full access to resources. This part of the process should be conducted early on in the application submission process, reducing frustrations for developers if their application is denied.</p>
+
+<p><strong>Syncing The Legal Department</strong><br />
+Also reflected in the Blue Button team’s approach is the syncing of the legal aspects of operating an API platform, and it’s applications. Making sure the application’s terms of service, privacy, security, cookie, branding, and other policies are in alignment with the platform. One good way of doing this is offering a white label edition of the platforms legal documents for use by the each application. Doing the heavy legal work for the application developers, while also making sure they are in sync when it comes to the legal details. Providing legal develop kits (LDK) will grow in prominence in the future, just like providing software development kits (SDK), helping streamline the legalities of operating a safe and secure API platform, with a wealth of applications in its service.</p>
+
+<p><strong>Live or Virtual Presentation</strong><br />
+Beyond the initial pitch selling an API provider on the concept of an application, I’ve seen many providers require an in-person, or virtual demo of the working application before it can be added to a production environment, and included in the application gallery. It can be tough for platform providers to test drive each application, so making the application owners do the hard work of demonstrating what an application does, and walking through all of its features is pretty common. I’ve participated on several judging panels that operate quarterly application reviews, as well as part of specific events, hackathons, and application challenges. Making demos a regular part of the application lifecycle is easier to do when you have dedicated resources in place, with a process to govern how it will all work in recurring batches, or on a set schedule.</p>
+
+<p><strong>Getting Into The Code</strong><br />
+As part of the application review process many API providers require that you actually submit your code for review via Github. Providing details on ALL dependencies, and performing code, dependency, and security scans before an application can be approved. I’ve also see this go as far as requiring the use of specific SDKs, frameworks, or include proxies within the client layer, and requiring all HTTP calls be logged as part of production applications. This process can be extended to include all cloud and SaaS solutions involved, limiting where compute, storage, and other resources can be operated. Requiring all 3rd party APIs in use be approved, or already on a white list of API providers before they can be put to use. This is obviously the most costly part of the application review process, but depending on how high the bar is being set, it is one that many providers will decide to invest in, ensuring the quality of all applications that run in a production environment.</p>
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions/apple-app-review.png" align="right" width="40%" style="padding: 15px;" /></p>
+
+<p><strong>Regular Review &amp; Reporting</strong><br />
+One important thing about the application review process is that it isn’t a one time process. Even once an application is accepted an added into the production environment, this process will need to be repeated for each version release of the application, along with the changes to the API. Of course the renewal process might be shorter than the initial approval workflow, but auditing and regular check-in should be common, and not forgotten. This touches on the client level SDK, and API management logging needs of the platform, and that regular reporting upon application usage and activity should be available in real time, as well as part of each application renewal. API operations is always about taking advantage the real time awareness introduced at the API consumption layer, and staying in tune with the healthy, and not so healthy patterns that emerge from logging everything an application is doing.</p>
+
+<p><strong>Business Model</strong><br />
+It is common to ask application developers about their business model. The absence of a business model almost always reflects the underlying exploitation and sale of data being access or generated as part of application’s operation. Asking developers how they will make money and sustain their operations, along with regular checkins to make sure it is truly in effect, is an easy to ensure that applications are protecting the interests of the platform, its partners, and the applications end-users.</p>
+
+<p>There are many other approaches I’ve seen API providers require before accepting an application into production. However, I think we should also be working hard to keep the process simple, and meaningful. Of course, we want a high bar for quality, but as with everything in the API world, there will always be compromises in how we deliver on the ground. Depending on the industry you are operating the bar will be made higher, or possibly lowered a little to allow for more innovation. I’ve included a list of some of the application review process I found across my research–showing a wide range of approaches across API providers we are all familiar with. Hopefully that helps you think through the application review process a little more. It is something I’ll write about again in the future as I push forward my research, and distill down more of the common building blocks I’m seeing across the API landscape.</p>
+
+<p><strong>Some Leading Application Review Processes</strong><br /></p>
+
+<ul>
+  <li><a href="https://www.instagram.com/developer/review/">Instagram</a></li>
+  <li><a href="https://developer.concur.com/manage-apps/app-certification.html">SAP Concur</a></li>
+  <li><a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/">Paypal</a></li>
+  <li><a href="https://developers.google.com/adsense/host/review_main">Adsense</a></li>
+  <li><a href="https://help.shopify.com/api/listing-in-the-app-store/app-requirements-and-success-criteria/app-review-checklist">Shopify</a></li>
+  <li><a href="https://developer.riotgames.com/application-process.html">Riot Games</a></li>
+  <li><a href="https://api.slack.com/security-review">Slack</a></li>
+  <li><a href="https://www.docusign.com/blog/dsdev-docusign-go-live-process-now-automated/">Docusign</a></li>
+  <li><a href="http://dev.splunk.com/view/app-cert/SP-CAAAE8P">Splunk</a></li>
+  <li><a href="https://go.developer.ebay.com/compatible-application-check-and-checklist-going-live">Ebay</a></li>
+  <li><a href="https://developer.apple.com/app-store/review/">Apple</a></li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/15/some-common-features-of-an-api-application-review-process/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/14/code-generating-openapi-still-prevailing-approach/">Code Generation Of OpenAPI (fka Swagger) Still The Prevailing Approach</a></h3>
+        <span class="post-date">14 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/gears-numbers-blue.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p>Over 50% of the projects I consult on still generate OpenAPI (fka Swagger) from code, rather then the other way around. When I first begin working with any API development group as an advisor, strategist, or governance architect I always ask, “are you using OpenAPI?” Luckily the answer is almost always yes. The challenge is that most of the time they don’t understand the full scope of how to use OpenAPI, and are still opting for the more costly approach–writing code, then generating OpenAPI from annotations. It has been over five years since Jakub Nesetril(@jakubnesetril) of Apiary first decoupled this way of doing API design first, but clearly we still have a significant amount of work when it comes to API definition and design literacy amongst development groups.</p>
+
+<p>When you study where API services and tooling are headed it is clear that API deployment, and the actual writing of code is getting pushed further down in the life cycle. Services like Stoplight.io, and Postman are focusing on enabling a design, mock, document, test, and iterate approach, with API definitions (OpenAPI, Postman, etc) at the core. The actual deployment of API, either using open source frameworks, API gateways, or other method, is coming into the picture more downstream. Progressive API teams are hammering out exactly the API they need without ever writing any code, making sure the API design is dialed in before the more expensive, and often permanent code gets written and sent to production.</p>
+
+<p>You will see me hammering on this line of API design first messaging on API Evangelist over the next year. Many developers still see OpenAPI (fka Swagger) about generating API documentation, not as the central contract that is used across every stop along the API lifecycle. Most do not understand that you can mock instead of deploying, and even provide mock data, errors, and other scenarios, allowing you to prototype applications on top of API designs. It will take a lot of education, and awareness building to get API developers up to speed that this is all possible, and begin the long process of changing behavior on the ground. Teams just are used to this way of thinking, but once they understand what is possible, they’ll realize what they have been missing.</p>
+
+<p>I need to come up with some good analogies for generating API definitions from code. It really is an inefficient, and a very costly way to get the job done. Another problem is that this approach tends to be programming language focused, which always leaves its mark on the API design. I’m going to be working with both Stoplight.io and Postman to help amplify this aspect of delivering APIs, and how their services and tooling helps streamline how we develop our APIs. I’m going to be working with banks, insurance, health care, and other companies to improve how they deliver APIs, shifting things towards a design-first way of doing business. You’ll hear the continued drumbeat around all of this on API Evangelist in coming months, as I try to get the attention of folks down in the trenches, and slowly shift the behavior towards a better way of getting things done.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/14/code-generating-openapi-still-prevailing-approach/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/02/14/the-growing-importance-of-github-topics-for-your-api-seo/">The Growing Importance of Github Topics For Your API SEO</a></h3>
+        <span class="post-date">14 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-topics-screenshot.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>When you are operating an API, you are always looking for new ways to be discovered. I study this aspect of operating APIs from the flip-side–how do I find new APIs, and stay in tune with what APIs are to? Historically we find APIs using ProgrammableWeb, Google, and Twitter, but increasingly Github is where I find the newest, coolest APIs. I do a lot of searching via Github for API related topics, but increasingly Github topics themselves are becoming more valuable within search engine indexes, making them an easy way to uncover interesting APIs.</p>
+
+<p><a href="https://streamdata.io/blog/robust-market-data-apis-alphavantage/">I was profiling the market data API Alpha Vantage today</a>, and one of the things I always do when I am profiling an API, is I conduct a Google, and then secondarily, a Github search for the APIs name. Interestingly, <a href="https://github.com/topics/alpha-vantage">I found a list of Github Topics while Googling for Alpha Vantage API</a>, uncovering some interesting SDKs, CLI, and other open source solutions that have been built on top of the financial data API. Showing the importance of operating your API on Github, but also working to define a set of standard Github Topic tags across all your projects, and helping encourage your API community to use the same set of tags, so that their projects will surface as well.</p>
+
+<p>I consider Github to be the most important tool in an API providers toolbox these days. I know as an API analyst, it is where I learn the most about what is really going on. It is where I find the most meaningful signals that allow me to cut through the noise that exists on Google, Twitter, and other channels. Github isn’t just for code. As I mention regularly, 100% of my work as API Evangelist lives within hundreds of separate Github repositories. Sadly, I don’t spend as much time as I should tagging, and organizing projects into meaningful topic areas, but it is something I’m going to be investing in more. Conveniently, I’m doing a lot of profiling of APIs for my partner Streamdata.io, which involves establishing meaningful tags for use in defining real time data stream topics that consumers can subscribe to–making me think a little more about the role Github topics can play.</p>
+
+<p>One of these days I will do a fresh roundup of the many ways in which Github can be used as part of API operations. I’m trying to curate and write stories about everything I come across while doing my work. The problem is there isn’t a single place I can send my readers to when it comes to applying this wealth of knowledge to their operations. The first step is probably to publish Github as its own research area on Github (mind blown), as I do with my other projects. It has definitely risen up in importance, and can stand on its own feet alongside the other areas of my work. Github plays a central role in almost every stop along the API life cycle, and deserves its own landing page when it comes to my API research, and priority when it comes to helping API providers understanding what they should be doing on the platform to help make their API operations more successful.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/14/the-growing-importance-of-github-topics-for-your-api-seo/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/02/14/summary-of-aws-api-gateway-as-an-api-deployment-and-management-solution/">A Summary Of AWS API Gateway As An API Deployment and Management Solution</a></h3>
         <span class="post-date">14 Feb 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/aws/aws-api-gateway-icon.png" align="right" width="45%" style="padding: 15px;" /></p>
@@ -1492,282 +1795,6 @@ This document defines a “health check” format using the JSON format [RFC7159
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/01/16/api-transit-basics-support/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/16/providing-a-guest-api-key/">Providing a Guest API Key</a></h3>
-        <span class="post-date">16 Jan 2018</span>
-        <p><a href="https://developer.wmata.com/Products"><img src="https://s3.amazonaws.com/kinlane-productions/washington-metro/wmata-guest-key.png" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p>I’m spending time immersed in the world of transit data and APIs lately, and found a simple, yet useful approach to helping onboard developers over at the <a href="https://developer.wmata.com/">Washington Metropolitan Area Transit Authority (WMATA) API</a>. When you you click on <a href="https://developer.wmata.com/Products">their products page</a> (not sure why they use this name), you get a guest API key which allows you try out the API, and kick the tires. Of course, you can’t use the key in production applications, as it is rate limited and can change at any time, but the concept is simple, and provides an example which other API providers might want to consider.</p>
-
-<p>In my days as the API Evangelist I’ve seen API providers do this in a variety of ways, by providing sample API URLs complete with an API key, and by embedding a key in the OpenAPI definition, so that the interactive documentation picks up the key and will allow developers to make live, interactive API calls–to name a few. No matter what your approach, providing a guest key for users to play around without signing up makes a lot of sense. Of course, you want to rotate this key regularly, or at least be monitoring it to see what IP addresses it is being called from, and maybe understand how its being used–you never know, it might reveal some interesting use cases.</p>
-
-<p>Whatever your approach, get out of the way of your consumers. Don’t expect that everyone is going to want to sign up for an account so that they can learn about what your API does. Not everyone is interested in handing over their email address, and other information just so they can test drive. If you have API management in place (which you should), it really doesn’t take much to generate test users, applications, and keys, monitor them, and rotate them on a regular basis. I recommend using them like you would marketing tags, and strategically place them into different blog posts, documentation, widgets, and other resources–you never know what other insight you might learn about how people are putting your resources to use.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/16/providing-a-guest-api-key/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/15/api-transit-basics-communication/">API Transit Basics: Communication</a></h3>
-        <span class="post-date">15 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-comment-bubbles.png" align="right" width="45%" style="padding: 15px;" /></p>
-
-<p><em>This is a series of stories I’m doing as part of <a href="http://basics.apievangelist.com/">my API Transit work</a>, trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I’m using a subway map visual, and experience to help map out the journey, which I’m calling <a href="http://basics.apievangelist.com/">API transit</a>–leveraging the verb form of transit, to describe what every API should go through.</em></p>
-
-<p>Moving further towards the human side of this API transit journey, I’d like to focus on one of the areas that I see cause the failure and stagnation of many API operations–basic communications. A lack of communication, and one way communication are the most common contributors to APIs not reaching their intended audience, and establishing much needed feedback loops that contribute to the API road map. This portion of the journey is not rocket science, it just take stepping back from the tech for a moment and thinking about the humans involved.</p>
-
-<p>When you look at Twitter, Twilio, Slack, Amazon, SalesForce, and the other leading API pioneers you see a handful of communication building blocks present across all of them. These are just a few of the communication elements that should be present in both internal, as well as external or publicly available API operations.</p>
-
-<ul>
-  <li><strong>Blogs</strong> - Make blogs a default part of ALL portals, whether partner, public, or internal. They don’t have to be grand storytelling vehicles, but can be used as part of communicating around updates within teams, groups, and for projects.</li>
-  <li><strong>Twitter</strong> - Not required for internally focused APIs, but definitely essential if you are running a publicly available API.</li>
-  <li><strong>Github</strong> - Github enables all types of communication around repos, issues, wikis, and other aspects of managing code, definitions, and content on the social coding platform.</li>
-  <li><strong>Slack</strong> - Leverage Slack for communicating around APIs throughout their life cycle, providing a history of what has occurred from start to finish.</li>
-  <li><strong>API Path IDs</strong> - Establish common DNS + API path identifiers for creating threads around each API, allowing for discussions on BitBucket, Slack, and in emails when it comes to each API.</li>
-</ul>
-
-<p>I recommend making communication a default requirement for all API owners, stewards, and evangelist who work internally, as well as externally. Ensuring that there is communication around the existence, and life cycle of an API, and helping make sure there is awareness across teams, as well as up the management chain. It’s not rocket science, but it is essential to doing business around programmatic interfaces. You don’t have to be a poet, or prolific blogger, but you do have to care about keeping your API consumers informed.</p>
-
-<p>Communication around API operations is easily overlooked, and difficult to recreate down the road. Just put it in place from the beginning, and don’t worry about activity levels. Be genuine in what you publish and share, and be responsive and open with your readers. Whenever possible make things a two-way street, allowing readers to share their thoughts. Track everything, and route it back into your road map, leveraging all communications as part of the API feedback loop.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/15/api-transit-basics-communication/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/15/can-i-resell-your-api/">Can I Resell Your API?</a></h3>
-        <span class="post-date">15 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/docks_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>Everyone wants their API to be used. We all suffer from “if we build it, they will come” syndrome in the world of APIs. If we craft a simple, useful API, developers will flock to it and integrate it into their applications. However, if you operate an API, you know that getting the attention of developers, and standing out amongst the growing number of APIs is easier said than done. Even if your API truly does bring the value you envision to the table, getting people to discover this value, and invest the time into integrating it into the platforms, products, and services takes a significant amount of work–requiring that you remove all possible obstacles and friction from any possible integration opportunity.</p>
-
-<p>One way we can remove obstacles for possible integrations is by allowing for ALL types of applications–even other APIs. If you think about it, APIs are just another type of application, and one that many API providers I’ve talked with either haven’t thought about at all, or haven’t thought about very deeply and restrict this use case, as they see it as directly competing with their interests. Why would you want to prevent someone from reselling your API, if it brings you traffic, sales, and the other value your API brings to your company, organization, institution, or government agency? If a potential API consumer has an audience, and wants to private label your API, how does that hurt your business? If you have proper API management in place, and have a partner agreement in place with them, how is it different than any other application?</p>
-
-<p>I’ve been profiling companies as part of my partnership with <a href="http://apis.how/streamdata">Streamdata.io</a>, looking for opportunities to deliver real time streaming APIs on top of existing web APIs. Ideally, API providers become a Streamdata.io customer, but we are also looking to enable other businesses to step up and resell existing APIs as a streaming version. However, in some of the conversations I’m having, people are concerned about whether or not API provider’s terms of service will allow this. These developers are worried that revenue generation through the reselling of an existing API as something that would ruffle the feathers of their API provide, and result in getting their API keys turned off. Which is a completely valid concern, and something that is spelled out in some terms of service, but I’d say is often left more as an unknown, resulting in this type of apprehension from developers.</p>
-
-<p>Reselling APIs is something I’m exploring more as part of my API partner research. Which APIs encourage reselling, white and private labeling, and OEM partnerships? Which APIs forbid the reselling of their API? As well as which APIs have not discussed it all. I’d love to hear your thoughts as an API provider, or someone who is selling their services to the API space. What are your thoughts on reselling your API, and have you had conversations with potential providers on this subject. I am going to explore this with Streamdat.io, APIMATIC, and other companies I already work with, as well as reach out to some API providers I’d like to resell as a streaming API using Streadmata.io and see what they say. It’s an interesting conversation, which I think we’ll see more discussion around in 2018.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/15/can-i-resell-your-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/15/api-transit-basics-security/">API Transit Basics: Security</a></h3>
-        <span class="post-date">15 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png" align="right" width="25%" style="padding: 15px;" /></p>
-
-<p><em>This is a series of stories I’m doing as part of <a href="http://basics.apievangelist.com/">my API Transit work</a>, trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I’m using a subway map visual, and experience to help map out the journey, which I’m calling <a href="http://basics.apievangelist.com/">API transit</a>–leveraging the verb form of transit, to describe what every API should go through.</em></p>
-
-<p>Hopefully you already have your own security practices in place, with the ability to scan for vulnerabilities, and understand where security problems might exist. If you do, I’m guessing you probably already have procedures and protocols around reporting, and handling security problems across teams. Ideally, your API security practices are more about prevention than they are about responding to a crisis, but your overall strategy should have plans in place for addressing both ends of the spectrum.</p>
-
-<p>Unfortunately in the wider API space, much of the conversation around API security has been slowed by many people feeling like their API management solutions were doing everything that is needed. Luckily, in 2017 we began to see this thaw a bit and some API security focused solutions began to appear on the market, as well as some existing players began tuning into to address the specific concerns of API security, beyond the desktop, web, and other common areas of concern.</p>
-
-<ul>
-  <li><a href="https://zaproxy.blogspot.com/2017/06/scanning-apis-with-zap.html"><strong>Scanning APIs with OWASP Zap</strong></a> - OWASP is the top place for understanding security vulnerabilities of web applications, and they are expanding their focus to include APIs.</li>
-  <li><a href="https://www.42crunch.com/"><strong>42 Crunch</strong></a> - A new, OpenAPI driven API security solution for helping deliver policies across API operations.</li>
-  <li><a href="https://www.owasp.org/index.php/REST_Security_Cheat_Sheet"><strong>OWASP REST Security Cheat Sheet</strong></a> - A checklist of considerations when it comes to API security out of OWASP.</li>
-</ul>
-
-<p>After crafting this stop along the API lifecycle I wanted to make sure and include API discovery in the conversation. API definitions like OpenAPI, and a solid API discovery strategy helps provide the details of the surface area of API operations, allowing for easier scanning and securing of existing infrastructure. Another area that significantly introduces security benefits is making logging a first class citizen, allowing the DNS, gateway, code, server, and database layers to analyzed for vulnerabilities.</p>
-
-<p>I prefer keeping this security stop short and sweet, as I know from experience that not all my readers have a strategy in place, and I want to give them a handful of options to consider as they look to get started. Many groups have been focusing on web and mobile security, but are just getting started thinking about API security. As APIs move out of the shadows behind mobile applications, and the number of threats increase, companies, institutions, and government agencies are getting more nervous, increasing the need for more API security storytelling here on my site.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/15/api-transit-basics-security/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/15/an-organized-approach-to-openapi-vendor-extensions-across-api-teams/">An Organized Approach to OpenAPI Vendor Extensions Across API Teams</a></h3>
-        <span class="post-date">15 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/containership_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>One of aspects of a project I’ve been assisting with recently involves helping define, implement, and organize the usage of OpenAPI vendor extensions across a distributed microservice development team. When I first began advising this group, I introduced them to the concept of extending the OpenAPI definition using x-extension format, expanding the teams approach to how they use the OpenAPI specification. They hadn’t heard that you can extend OpenAPI beyond what the specification brings to the table, allowing them to make it deliver exactly what they needed.</p>
-
-<p>Within this project each microservice exists in its own Github repository, with an OpenAPI definition available in the root, defining the surface area of the API. At the organizational level, I have a script that will loop through all Github repos, spider each OpenAPI looking for any x-extensions, and then it aggregates them into a single master list of OpenAPI vendor extensions that are used across all APIs. I then take the list, and add descriptions to each verified extension, and when I come across ones I haven’t seen before I reach out to microservice owners to understand what the vendor extension is used for, and ensure it is in alignment with overall API governance for the project.</p>
-
-<p>I am looking to encourage API designers, developers, and architects to extend OpenAPI. I am also looking to help them be responsible with this power, and make sure they are doing it for good reasons. I am also looking to organize, then educate across teams regarding how different groups are using OpenAPI vendor extensions, and incentivize the reuse and standardization of these extensions. I see vendor extensions as an area for potential innovation when it comes to defining what an API is capable of, as well as the relationship each microservice has with its supporting architecture. Acting for a relief valve for the often perceived constraints of the OpenAPI specification.</p>
-
-<p>This project reminded me that I need to make sure and add a reminder to pick my head up each week and spend time aggregating vendor extensions from across the API space. <a href="http://openapi.toolbox.apievangelist.com/">I have a section dedicated to them in my OpenAPI toolbox</a>, but I haven’t added anything to it recently. OpenAPI Vendor extensions are an important way to learn about how companies are extending the specification, and similar to what I’m doing for this individual project, it is important to aggregate and organize them so people in the community can learn from them, and reuse them whenever possible.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/15/an-organized-approach-to-openapi-vendor-extensions-across-api-teams/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/">Orchestrating API Integration, Consumption, and Collaboration with the Postman API</a></h3>
-        <span class="post-date">12 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>You hear me say it all the time–if you are selling services and tooling to the API sector, you should have an API. In support of this way of thinking I like to highlight the API service providers I work with who follow this philosophy, and today’s example is from (Postman](https://getpostman.com). If you aren’t familiar with Postman, I recommend getting acquainted. It is an indispensable tool for integrating, consuming, and collaborating around the APIs you depend on, and are developing. Postman is essential to working with APIs in 2018, no matter whether you are developing them, or integrating with 3rd party APIs.</p>
-
-<p>Further amplifying the usefulness of Postman as a client tool, <a href="https://docs.api.getpostman.com">the Postman API</a> reflects the heart of what Postman does as not just a client, but a complete life cycle tool. The Postman API provides five separate APIs, allowing you orchestration your API integration, consumption, and collaboration environment.</p>
-
-<ul>
-  <li><a href="https://docs.api.getpostman.com/#8ca888b7-ef54-f3b4-312f-3f3e2e2cf04e"><strong>Collections</strong></a> - The /collections endpoint returns a list of all collections that are accessible by you. The list includes your own collections and the collections that you have subscribed to.</li>
-  <li><a href="https://docs.api.getpostman.com/#a237ffbe-0444-b394-a2c4-b99f691931cf"><strong>Environments</strong></a> - The /environments endpoint returns a list of all environments that belong to you. The response contains an array of environments’ information containing the name, id, owner and uid of each environment.</li>
-  <li><a href="https://docs.api.getpostman.com/#ef6bef63-0b8e-1a70-dd88-c7c1b94f8dab"><strong>Mocks</strong></a> - This endpoint fetches all the mocks that you have created.</li>
-  <li><a href="https://docs.api.getpostman.com/#993648ea-7b28-9636-f532-1ef8a74ff093"><strong>Monitors</strong></a> - The /monitors endpoint returns a list of all monitors that are accessible by you. The response contains an array of monitors information containing the name, id, owner and uid of each monitor.</li>
-  <li><a href="https://docs.api.getpostman.com/#1ddc0a3c-d5ff-b062-d0fb-9e6086be0536"><strong>User</strong></a> - The /me endpoint allows you to fetch relevant information pertaining to the API Key being used.</li>
-</ul>
-
-<p>The user, collections, and environments APIs reflect the heart of the Postman API client, where mocks and monitors reflects its move to be a full API life cycle solution. This stack of APIs, and the Postman as a client tool reflects how API development, as well as API operation should be conducted. You should be maintaining collections of APIs that exist within many environments, and you should always be mocking interfaces as you are defining, designing, and developing them. You should then also be monitoring all the APIs you depend–whether or not the APIs are yours. If you depend on APIs, you should be monitoring them.</p>
-
-<p>I’ve long been advocating that someone development an API environment management solution for API developers, providing a single place we can define, store, and share the configuration, keys, and other aspects of integration with the APIs we depend on. The Postman collections and environment APIs is essentially this, plus you get all the added benefits of the services and tooling that already exist as part of the platform. Demonstrating why as an API service provider, you want to be following your own advice and having an API, because you never know when the core of your solution, or even one of the features could potentially become baked into other applications and services, and be the next killer feature developers can’t do without.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/12/orchestrating-api-integration-consumption-and-collaboration-with-the-postman-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/12/api-life-cycle-basics-testing/">API Life Cycle Basics: Testing</a></h3>
-        <span class="post-date">12 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-testing.png" align="right" width="35%" style="padding: 15px" /></p>
-<p>Every API should be tested to ensure it delivers what is expected of it. All code being deployed should meet required unit and code tests, but increasingly API testing is adding another layer of assurance to existing build processes, even going so far as halting CI/CD workflows if tests fail. API testing is another area where API definitions are delivering, allowing tests to be built from existing artifacts, and allowing detailed assertions to be associated with tests to add to and evolve the existing definitions.</p>
-
-<p>API testing has grown over the last couple of years to include a variety of open source solutions, as well as cloud service providers. Most of the quality solutions allow you to import your OpenAPI, and automate the testing via APIs. Here are a few of the solutions I recommend considering as you think about how API testing can be introduced into your API operations.</p>
-
-<ul>
-  <li><a href="https://www.runscope.com/">Runscope</a> - An API testing service that uses OpenAPI for importing and exporting of API tests and assertions.</li>
-  <li><a href="https://github.com/CacheControl/hippie-swagger">Hippie-Swagger</a> - An open source solution for testing your OpenAPI defined APIs.</li>
-  <li><a href="https://cloud.spring.io/spring-cloud-contract/">Spring Cloud Contract</a> - Spring Cloud Contract is an umbrella project holding solutions that help users in successfully implementing the Consumer Driven Contracts approach.</li>
-  <li><a href="https://www.getpostman.com/docs/postman/scripts/test_scripts">Postman Testing</a> - With Postman you can write and run tests for each request using the JavaScript language.</li>
-  <li><a href="https://www.frisbyjs.com/">Frisby.js</a> - Frisby is a REST API testing framework built on Node.js and Jasmine that makes testing API endpoints easy, fast, and fun.</li>
-</ul>
-
-<p>There are numerous ways to augment API testing on top of your existing testing strategy. More of these providers are integrating with Jenkins and other CI/CD solutions, allowing API testing to deeply integrate with existing pipelines. My recommendation is that the artifacts from these tests and assertions also live alongside OpenAPI and other artifacts and are used as part of the overall definition strategy, widening the meaning of “contract” to apply across all stops along the lifecycle–not just testing.</p>
-
-<p>While API testing may seem like common sense, I’d say that more than 50% of the organizations I’m talking with do not actively test all their APIs. Of the ones that do, I’d say less than half get very granular in their testing or follow test driven development philosophies. This is where service providers like Runscope deliver, helping bring the tools and expertise to the table, allowing you to get up and running in a cloud environment, building on a platform, rather than started from scratch when it comes to your API testing.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/12/api-life-cycle-basics-testing/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/12/api-life-cycle-basics-sdks/">API Transit Basics: SDKs	</a></h3>
-        <span class="post-date">12 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sdk.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>Software Development Kits (SDKs), and code libraries in a variety of programming languages have always been a hallmark of API operations. Some API pundits feel that SDKs aren’t worth the effort to maintain, and keep in development alongside the rest of API operations, while others have done well delivering robust SDKs that span very valuable API stacks–consider the AWS JavaScript SDK as an example. Amidst this debate, SDKs continue to maintain their presence, and even have been evolving to support a more continuous integration (CI) and continuous deployment (CD) approach to delivering APIs and the applications that depend on them.</p>
-
-<p>Supporting SDKs in a variety of programming languages can be difficult for some API providers. Luckily there is tooling available that help auto-generate SDKs from API definitions, helping make the SDK part of the conversation a little smoother. Of course, it depends on the scope and complexity of your APIs, but increasingly auto-generated SDKs and code as part of a CI/CD process is becoming the normal way of getting things done, whether you are just making them available to your API consumers, or you are actually doing the consuming yourself.</p>
-
-<ul>
-  <li><a href="https://github.com/swagger-api/swagger-codegen">Swagger Codegen</a> - The leading open source effort for generating SDKs from OpenAPI.</li>
-  <li><a href="https://apimatic.io/">APIMATIC</a> - The leading service for generating SDKs from OpenAPI, and including as part of existing CI/CD efforts.</li>
-  <li><a href="https://restunited.com/">RESTUnited</a> - The easiest way to generate SDKs (REST API libraries):
-PHP, Python, Ruby, ActionScript (Flash), C#, Android, Objective-C, Scala, Java</li>
-</ul>
-
-<p>Depending on your versioning and build processes, SDK generation can be done alongside all the other stops along this life cycle. When you iterate on an API, you simply auto-generate documentation, tests, SDKs, and other aspects of supporting your services. Not all providers I talk with are easily able to jump into the aspect of producing code, as their build processes aren’t as streamline, and some of their APIs are too large to expect auto-generated code to perform as expected. However, it is something they are working towards, along with other microservices, and decoupling efforts going on across their teams.</p>
-
-<p>Once you realize an API definition driven approach to delivering APIs, the line between deployment and SDKs blurs–it is all about generating code from your definitions. Sometimes the code is providing resources, and other times it is consuming them. It just comes down to whether you are deploying code server or client side. Another significant shift I’m seeing in the landscape with SDKs, are things moving beyond just programming languages, and providing platform specific libraries for managing SalesForce, AWS, Docker, and other common components of our operations–further evolving the notion of what an SDK is and does in 2018.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/12/api-life-cycle-basics-sdks/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/12/aws-has-head-start-helping-navigate-regulatory-compliance-in-the-cloud/">AWS Has Head Start Helping Navigate Regulatory Compliance In The Cloud</a></h3>
-        <span class="post-date">12 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/aws/aws-cloud-compliance.png" align="right" width="45%" style="padding 15px;" /></p>
-<p>I’m providing API guidance on a project being delivered to a government agency, as part of <a href="https://skylight.digital/">my Skylight partnership</a>, and found myself spending more time looking around <a href="https://aws.amazon.com/compliance/">the AWS compliance department</a>. You can find details on certifications, regulations, laws, and frameworks ranging from HIPPA and FERPA to FedRAMP, so that it can be used by federal government agencies in the United States, and other countries. You can find <a href="https://aws.amazon.com/compliance/services-in-scope/">a list of services that are in scope</a>, and track on their progress when it comes to compliance across this complex web of compliance rules. I’ve been primarily tracking on the progress of the AWS API Gateway which is currently in progress when it comes to FedRAMP compliance.</p>
-
-<p>When it comes to regulatory compliance, AWS has a significant leg up on its competitors, <a href="https://cloud.google.com/security/compliance">Google</a> and <a href="https://www.microsoft.com/en-us/trustcenter/compliance/default.aspx">Microsoft</a>. Both of these cloud platforms have existing regulatory efforts, but they aren’t as organized, or as far along as AWS’s approach to delivering in this area. Delivering cloud solutions that are compliant gives AWS a pretty significant advantage when it comes to first impressions with government agencies, and enterprise organizations operating within heavily regulated industries. Once this impression is made, and these groups have gotten a taste of AWS, and migrated systems, and data to their cloud, it will be hard to change their behavior.</p>
-
-<p>As this whole Internet thing grows up, regulatory compliance is unavoidable. Many companies, organizations, institutions, and government agencies we are selling to are already needing to deliver when it comes to compliance, but even for the shiny new starts breaking new ground, at some point you will have to mature and deliver within regulatory constraints. Making AWS a pretty appealing place to be publishing databases, servers, and I’m hoping pretty soon, APIs using AWS API Gateway. If you are on the AWS API Gateway team, I’d love to get an update on the status, as I have a big government project I’d love to deploy using the API Gateway, instead of another industry provider gateway solution.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/12/aws-has-head-start-helping-navigate-regulatory-compliance-in-the-cloud/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/11/api-life-cycle-basics-clients/">API Life Cycle Basics: Clients</a></h3>
-        <span class="post-date">11 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png" align="right" width="30%" style="padding: 15px;" /></p>
-<p>I broke this area of my research into a separate stops a couple years back, as I saw several new types of service providers emerging to provide a new type of web-based API client. These new tools allowed you to consume, collaborate, and put APIs to use without writing any code. I knew that this shift was going to be significant, even though it hasn’t played out as I expected, with most of the providers disappearing, or being acquired, and leaving just a handful of solutions that we see today.</p>
-
-<p>These new web API clients allow for authentication, and the ability to quickly copy and paste API urls, or the importing of API definitions to begin making requests, and seeing responses for targeted aPIs. These clients were born out of earlier API explorers and interactive API documentation, but have matured into standalone services that are doing interesting things to how we consume APIs. Here are the three web API clients I recommend you consider as part of your API life cycle.</p>
-
-<ul>
-  <li><a href="https://www.getpostman.com/"><strong>Postman</strong></a> - A desktop and web client for working with and collaborating in a team environment around APIs.</li>
-  <li><a href="https://paw.cloud/"><strong>PAW</strong></a> - Paw is a full-featured HTTP client that lets you test and describe the APIs you build or consume. It has a beautiful native macOS interface to compose requests, inspect server responses, generate client code and export API definitions.
--<a href="http://www.restfiddle.com/"><strong>RESTFddle</strong></a> - An easy-to-use platform to work with APIs. It simplifies everything from API exposure to API consumption. RESTFiddle is an Enterprise-grade API Management Platform for teams. It helps you to design, develop, test and release APIs.</li>
-</ul>
-
-<p>Using web API clients allows for APIs to be easily defined, mocked, collaborated around, and leveraged as part of an API definition driven life cycle. The approach to integration saves significant cycles by allowing APIs to be designed, developed, and integrated with before any code gets written. Plus, the team and collaboration features that many of them posses can significantly benefit the process of not just consuming APIs, but also developing them. Making API clients an essential part of any development team, no matter what you are building.</p>
-
-<p>Using API clients, bundled with an API definition-driven approach, and a healthy API mocking setup, can save you significant time and money when it comes to crafting the right API. What used to take years of development to iterate around, can take days or weeks, allowing you to define, design, mock, consume, collaborate, communicate, and iterate until exactly the right API is delivered. This approach to API development is changing how we deliver APIs, making operations much more flexible, agile, and fast moving, over the historically rigid, brittle, and slow moving approach to delivering API resources.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/11/api-life-cycle-basics-clients/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/11/the-metropolitan-transportation-authority-bus-time-api-supports-service-interface-for-real-time-information-siri/">The Metropolitan Transportation Authority (MTA) Bus Time API Supports Service Interface for Real Time Information (SIRI)</a></h3>
-        <span class="post-date">11 Jan 2018</span>
-        <p><a href="http://bustime.mta.info/wiki/Developers/SIRIIntro"><img src="https://s3.amazonaws.com/kinlane-productions/mta/mta-bus-time-siri.png" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p>The General Transit Feed Specification (GTFS) format for providing access to transit data has dominated the landscape for most of the time I have been researching transit data and APIs over the last couple of weeks. A dominance led by Google and their Google Maps, who is <a href="https://developers.google.com/transit/">the primary entity behind GTFS</a>. However the tech team at Streamdata.io brought it to my attention the other day that the Metropolitan Transportation Authority (MTA) Bus Time API Supports Service Interface for Real Time Information (SIRI), another standard out of Europe. <a href="http://bustime.mta.info/wiki/Developers/SIRIIntro">I think MTA’s introduction to Siri</a>, and the story behind their decision tells a significant tale about how standards are viewed.</p>
-
-<p>According to the MTA, <em>“<a href="http://user47094.vs.easily.co.uk/siri/overview.htm">SIRI (Service Interface for Real Time Information)</a> is a standard covering a wide range of types of real-time information for public transportation.  This standard has been adopted by the European standards-setting body CEN, and is not owned by any one vendor, public transportation agency or operator.  It has been implemented in a growing number of different projects by vendors and agencies around Europe.”</em> I feel like their thoughts about SIRI not being owned by any one vendor is an important thing to take note of. While GTFS is an open standard, it is clearly a Google-led effort, and I’d say their decision to use Protocol Buffers reflects the technology, business, and politics of Google’s vision for the transit sector.</p>
-
-<p>The MTA has evolved SIRI as part of their adoption, opting to deliver APIs as more of a RESTful interface as opposed to SOAP, and providing responses in JSON, which makes things much more accessible to a wider audience. While technologically sound decisions, I think using Protocol Buffers or even SOAP have political implications when you do not deeply consider your API consumers during the planning phases of your API. I feel like MTA has done this, and understands the need to lower the bar when it comes to the access of public transit data, ensuring that as of an audience as possible can put the real time transit data to use–web APIs, plus JSON, just equals an easier interface to work with for many developers.</p>
-
-<p>I’m getting up to speed with GTFS and GTFS Realtime, and I am also getting intimate with SIRI, and learning how to translate from GTFS into SIRI. I’m looking to lower the bar when it comes to accessing real time transit data. Something simple web APIs excel at. I’ve been able to pull GTFS and GTFS Realtime data and convert into simpler JSON. Now that MTA has introduced me to SIRI, I’m going to get acquainted with this specification, and understand how I can translate GTFS into SIRI, and then <a href="http://apis.how/streamdata">stream using Server-Sent Events (SSE) and JSON Patch using Streamdata.io</a>. Truly making these feeds available in real time, using common web standards.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/11/the-metropolitan-transportation-authority-bus-time-api-supports-service-interface-for-real-time-information-siri/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

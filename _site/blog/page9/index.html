@@ -129,6 +129,390 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/11/14/provide-me-with-api-discovery-using-an-openapi-diff/">Could I Please Get An API Discovery Tool That Evaluates An OpenAPI Diff</a></h3>
+        <span class="post-date">14 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/openapi-logo.png" align="right" width="30%" style="padding: 25px;" /></p>
+<p>I am increasingly tracking on OpenAPI definitions published to Github by leading API providers I track on. Platforms like <a href="http://apievangelist.com/2017/11/12/stripes-openapi-is-available-on-github-in-version-30/">Stripe</a>, <a href="http://apievangelist.com/2017/05/22/box-goes-all-in-on-openapi/">Box</a>, <a href="http://apievangelist.com/2017/03/01/new-york-times-manages-their-openapi-using-github/">New York Times</a> are actively managing their OpenAPI definitions using Github, making them well suited for integration into their platform operations, API consumer scenarios, and even within analyst systems like what I have going on as the API Evangelist.</p>
+
+<p>Once I have an authoritative source of an OpenAPI, meaning a public URI for an OpenAPI that is actively being maintained by the API provider, I have a pretty valuable feed into the roadmap, as well as change log for an API. I feel like we are getting to the point where there are enough authoritative OpenAPIs that we can start using as a machine readable notification and narrative tool for helping us stay in tune with one or many APIs across the landscape. Helping us stay in tune with APIs in real-time, and giving APIs an effective tool for communicating out changes to the platform–we just need more OpenAPIs, and some new tooling to emerge.</p>
+
+<p>I’m envisioning an OpenAPI client that regularly polls OpenAPIs and caches them. Anytime there is a change it does a diff, and isolated anything new. Think of an RSS reader, but for OpenAPIs, and going well beyond new entries, and actually creates a narrative based upon the additions and changes. Tell me about the new paths added, and any new headers, parameters, or maybe how the schema has grown. Provide me insights on what has changed, and possibly what has been removed, or will be removed in future editions. As an API analyst, I’d like to be able to have an OpenAPI-enabled approach to receiving push notifications when an API changes, with a short, concise summary about what has change in my inbox, via Twitter, or Github notification.</p>
+
+<p>OpenAPI already provides API discovery features through the documentation it generates, and I’m increasingly using Github to find new APIs after they publish their OpenAPIs to Github, but this type of API discovery and notification at the granular level would be something new. If there was such tooling out there, it would provide yet another incentive for API provides to publish and maintain an active, up to date OpenAPI definition. This is a concept I’d like to also see expanded to the API operational level using <a href="http://apisjson.org/">APIs.json</a>, where we can receive notifications about changes to documentation, pricing, SDKs, and other critical aspects of API integration, beyond just the surface area of the API. All of this stuff will take many years to unfold, as it has taken over five years for us to reach a critical mass of OpenAPI definitions to emerge, I suspect it will take another five to ten years for robust tooling to emerge at this level, which also depends on many API definitions to be available.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/14/provide-me-with-api-discovery-using-an-openapi-diff/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/14/added-a-simple-bulk-api-for-my-human-services-data-api/">I Added A Simple Bulk API For My Human Services Data API</a></h3>
+        <span class="post-date">14 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/open-referral/human-services-data-bulk-api.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>The core Human Services Data API allows for adding of organizations, locations, services, and contacts one by one using a single POST on the core API paths for each available resource. However, if you want to add thousands, or even hundreds of records, it can quickly become cumbersome to submit each of the calls, so I wanted to introduce a simple Human Services Bulk API for helping handle the adding of large quantity of data, on a one-time, or recurring basis. I know there job queuing solutions available out there, but my goal with this project is to focus on the API definition, as well as the backend system(s). For this round, I just want to get a simple baseline definition in place, with a simple API backend for orchestrating. I’ll update to support AWS, and other queuing solutions as part of the road-map–further hammering out a consistent <a href="http://developer.open.referral.adopta.agency/#HSDA Bulk">HSDA Bulk API</a>.</p>
+
+<p>The first dimension of this new HSDA Bulk API focuses on providing paths for POSTing large quantities of data across the core human service resources:</p>
+
+<ul>
+  <li>organizations/ - POST complete organizations JSON records as array.</li>
+  <li>locations/ - POST complete locations JSON records as array.</li>
+  <li>services/ - POST complete services JSON records as array.</li>
+  <li>contacts/ - POST complete contacts JSON records as array.</li>
+</ul>
+
+<p>You can submit as many records to each of these paths (well, within reason), including the sub-resources for each object like physical address, phones, etc. When POSTed each record doesn’t immediately go into the main HSDA database. Each entry is entered into a jobs system, which can be run on a schedule, based upon events, or maybe just wait until the middle of the night. The goal is to offload the bulk insert to a job system, which can spread things out over time, and minimize negative impact on resources strapped human services database. HSDA Bulk API runs as a separate microservice which can be run side by side with the core HSDA implementation, or possibly scaled on separate infrastructure to allow for handling of expected loads.</p>
+
+<p>The next dimension of this new HSDA Bulk API allows for importing of <a href="https://openreferral.readthedocs.io/en/latest/hsds/reference/">HSDS datapackage.json files</a>, bringing things back to basics with the Human Services Data Specification(HSDS). <a href="https://s3.amazonaws.com/kinlane-productions/open-referral/sample-datapackage/datapackage.json">The JSON file contains a list of paths to individual HSDS CSV files</a>, which are then processed as individual resources, with each record inserted as a job, for running on schedule, event, or other approach. Adding a more comprehensive approach to loading up large datasets into any human services system using an HSDA API, while also continuing to smooth out the impact of the core system using jobs.</p>
+
+<p>With both of these dimension, you can perform bulk uploads of data using the individual organizations, locations, services, and contacts page, as well as a complete datapackage.json file. Next I will be hammering on the demo API I have a bunch more, to harden the code, and see if I’m missing any details. After that I’ll started looking at switching out the custom backend I have with an AWS API Gateway managed, and possibly AWS SQS or other jobs solution. I’m trying to keep <a href="https://github.com/human-services/portal/blob/master/_data/api-commons/openapi-hsda-bulk.yaml">the HSDA Bulk API definition</a> simple, but also allow for scaling up with other more robust backend system. For now, I’d call this edition of <a href="http://developer.open.referral.adopta.agency/#HSDA Bulk">the HSDA Bulk API</a> to be a decent v1.0 start for this new HDSA microservice.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/14/added-a-simple-bulk-api-for-my-human-services-data-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/13/i-added-a-taxonomy-api-to-support-the-human-services-data-api-hsda/">I Added A Taxonomy API To Support The Human Services Data API (HSDA)</a></h3>
+        <span class="post-date">13 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/open-referral/human-services-taxonomy-api.png" align="right" width="45%" style="padding: 15px" /></p>
+<p>I have been organizing <a href="http://org.open.referral.adopta.agency/">my Human Services Data API (HSDA) specification work</a> into separate microservices as part of version 1.0 for the API definition that cities and other organizations running 211 operations can pick and choose which aspects they want to run. One service I carved off of the move from version 1.0 to 1.1 of the specification was taxonomy, and how the human services are categories and organized. I saw there was more research to be done around 211 taxonomy, and I felt it had the potential to be a separate but supporting service to augment what Open Referral is already trying to do with <a href="http://org.open.referral.adopta.agency/#Specification">the Human Services Data API (HSDA) specification</a>.</p>
+
+<p><a href="http://developer.open.referral.adopta.agency/#HSDA Taxonomy">The HSDA Taxonomy API specification provides a handful of API paths for creating, reading, updating, and deleting taxonomy used in any HSDA implementation</a>. I have populated my demo API with <a href="https://github.com/auntbertha/openeligibility">the Open Elegibility taxonomy</a> to help jumpstart folks, but any HSDA provider can populate with their own custom taxonomy, or other existing format. Then you can apply any taxonomy to any of the services stored within an HSDA database, and there is an API path for querying services by taxonomy. Next I’ll make sure you can search by taxonomy, and see the taxonomy as part of the response body for all services returned across HSDA, HSDA Search, and HSDA Taxonomy.</p>
+
+<p>HSDA Taxonomy API is a simple service, but it is one that I want to get up and running, and maturing quickly. I feel like there is a lot of opportunity around 211 taxonomy aggregation, an further standardizing and evolving on top of Open Eligibility, or establishing a separate Open Referral taxonomy that can be open source. The current 211 taxonomy dominating the landscape is the AIRS 211 format, which is a proprietary taxonomy, something that I’ll address in a separate post. Have a shared vocabulary around human services is almost as important as the data itself–if you can’t find meaningful services, in a consistent way across providers, the data itself becomes much less valuable.</p>
+
+<p><a href="http://developer.open.referral.adopta.agency/#HSDA Taxonomy">I have launched a demo copy of the API at my Human Services Demo API</a>, and next I am working on a handful of UI elements for managing, browsing, and searching for services using the HSDA Taxonomy API. My goal is to get v1.0 of the HSDA Taxonomy specification being discussed as part of the overall HSDA governance process, while I’m also hardening the API, and UI tooling via a couple of HSDA implementations I’m working on. Then I’ll circle back in a couple months and see where things are, learn more about some other taxonomies, and hopefully pull together more of a strategy around how to get people sharing 211 taxonomies, and speaking a common language about how they categorize human services, as well as store and provide access to human service organizations, locations, and services.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/13/i-added-a-taxonomy-api-to-support-the-human-services-data-api-hsda/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/12/stripes-openapi-is-available-on-github-in-version-30/">Stripes OpenAPI Is Available On Github In Version 3.0</a></h3>
+        <span class="post-date">12 Nov 2017</span>
+        <p><a href="https://github.com/stripe/openapi"><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripes-openapi-specification-on-github.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>I can’t write about every API provider who publishes their OpenAPI to Github, there are just too many. But, I can write about the rockstar API providers who do though, and showcase what they are doing, so I can help influence the API providers who have not started publishing their OpenAPIs in this way. If you are looking for a solid example of a leading API provider publishing their OpenAPI to Github, <a href="https://github.com/stripe/openapi">I recommend taking a look at the payment provider Stripe</a>.</p>
+
+<p><a href="https://github.com/stripe/openapi">Their repository contains OpenAPI specifications for Stripe’s API</a>, with multiple files available in the in the openapi/ directory:</p>
+
+<ul>
+  <li><strong>spec3.{json,yaml}</strong> - OpenAPI 3.0 spec.</li>
+  <li><strong>spec2.{json,yaml}</strong> - OpenAPI 2.0 spec. We’re continuing to generate this for now, but it will be deprecated in favor of spec3.</li>
+  <li><strong>fixtures3.{json,yaml}</strong> - Test fixtures for resources in spec3. See below for more information.</li>
+  <li><strong>fixtures2.{json,yaml}</strong> - Test fixtures for resources in spec2.</li>
+</ul>
+
+<p>It is pretty exciting to see them already embracing version 3.0. They even provide a listing of the OpenAPI vendor extensions they are using, which are specific to their API. <a href="http://openapi.toolbox.apievangelist.com/">I’ll be adding these to my OpenAPI toolbox</a> when I have the time, adding to the number of vendor extensions I have indexed. Stripe provides another pretty solid example of an API provider taking ownership of their OpenAPI spec, publishing to Github for their consumers to put tow rok, but clearly they are also using as part of their own internal workflows as well.</p>
+
+<p>Every API provider should have a Github repository with an up to date OpenAPI <a href="https://github.com/stripe/openapi">like Stripe does</a>. I know many API architects envision a hypermedia API discovery landscape, where APIs are defined and discoverable by default, but I think an OpenAPI on Github is the best we can hope for at this stage in the evolution of the space. With the momentum I’m seeing in the number API providers publishing their OpenAPIs to Github, I’m feeling like Github is going to become the continuous integration, API discovery engine we’ve all been looking for over the last decade. Allowing us to discover, integrate and orchestrate with our APIs across the API life cycle–we just need everyone to follow Stripe’s lead. ;-)</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/12/stripes-openapi-is-available-on-github-in-version-30/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/12/locking-up-any-taxonomy-is-short-sighted-in-todays-online-environment/">Locking Up Any Open Data Taxonomy Is Short Sighted In Todays Online Environment</a></h3>
+        <span class="post-date">12 Nov 2017</span>
+        <p><a href="https://211taxonomy.org/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/open-referral/211tax.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>I published a taxonomy API as part of my Human Services Data API (HSDA) work recently, and as part of the work I wanted it to support a handful of the human services taxonomies available currently. The most supported taxonomy available out there is <a href="https://211taxonomy.org/">the AIRS/211 LA County Taxonomy</a>. It is a taxonomy in use by 211 of LA County, as well as owned and licensed by them. From what I gather, it is the most common format in use, and <a href="http://211wny.org/index.php/airs-license">you can find licensing pages for it from other municipal 211 providers</a>. Before you can download a copy of the taxonomy you have to agree to the license I’ve posted at the bottom of this post, something I was unwilling to do.</p>
+
+<p>Taxonomies shouldn’t be locked up this way. Let alone taxonomies for use in open data, helping citizens at the municipal level. I understand that 211 LA will argue that they’ve put a bunch of work into the schema, and therefore they want to protect what they view their intellectual property, but in 2017 this is wrong. This isn’t the way things should be done, sorry. The AIRS taxonomy should be openly available, and reusable in a machine readable format, and evolved by an open governance process. There is no reason for this valuable taxonomy, that has the potential to make our cities better, should be locked up like this–it needs to be widely used, and adopted without any legal friction along the way.</p>
+
+<p>I understand that it takes work, and resources to keep a taxonomy meaningful, and usable, but we should not stand in the way of people finding human services, and restricting 211 providers from using the same vocabulary. There are other was to generate revenue, and evolve forward a taxonomy in an online, collaborative environment, much like we are currently doing with open source software. This kind of stuff drives me nuts, and the licensing around this important technology is something I’ll keep an eye on, and contributing whatever I can to help stimulate the discussion in favor of open sourcing. In the absence of AIRS, I have adopted <a href="https://github.com/auntbertha/openeligibility">an open source 211 taxonomy called Open Eligibility</a>, but alas it seems like an effort that has gone dormant. <a href="https://github.com/human-services/openeligibility">I have forked the specification</a>, added more simpler JSON, CSV, and JSON formats which I will be working with it alongside the rest of <a href="http://developer.open.referral.adopta.agency/#HSDA Taxonomy">my Human Services Data API (HSDA) taxonomy work</a>.</p>
+
+<p>Taxonomy licensing is another area of consideration I’ll add to <a href="http://licensing.apievangelist.com/">my API licensing research</a>, as well as for guidance around my HSDA work. I wish this type of stuff didn’t still happen in 2017. It is a relic of another time, and in a digital age, taxonomies for any aspect of public infrastructure should be openly licensed, and reusable by everyone. I would like to see <a href="http://openreferral.org/">Open Referral</a> expand its portfolio to push forward one or more taxonomies for not just human services, but also organizations, locations, and potentially other relevant schema we are pushing forward. I see Open Referral as an incubator for schema, OpenAPI definitions, as well as datasets like 211 taxonomy, helping provide a commons where 211 organizations can find what they need.</p>
+
+<hr />
+
+<p>TAXONOMY SUBSCRIPTION AGREEMENT</p>
+
+<p>CAREFULLY READ THIS TAXONOMY SUBSCRIPTION AGREEMENT BEFORE DOWNLOADING, INSTALLING OR USING THE TAXONOMY (DEFINED BELOW). TAKING ANY STEP TO DOWNLOAD, INSTALL OR USE THE TAXONOMY IN ANY WAY CONSTITUTES YOUR ASSENT TO AND ACCEPTANCE OF THIS AGREEMENT AND IS A REPRESENTATION BY YOU THAT YOU HAVE THE AUTHORITY TO ASSENT TO AND ACCEPT THIS AGREEMENT. IF YOU DO NOT AGREE WITH THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MUST NOT DOWNLOAD, INSTALL OR USE THE TAXONOMY AND YOU MUST IMMEDIATELY RETURN THE TAXONOMY (AND NOT KEEP ANY COPIES) TO 211 LA AND SO NOTIFY 211 LA OF SUCH FAILURE TO AGREE.</p>
+
+<p>Taxonomy Subscription Agreement (“Agreement”) contains the terms and conditions by which Information and Referral Federation of Los Angeles, Inc., doing business as 211 of LA County (“211 LA”) provides a subscription license to use the Taxonomy. This Agreement is a binding legal contract between you (both the individual downloading, installing and/or using the Taxonomy and, if applicable, the legal entity on behalf of which such individual is acting) (“Subscriber”) and 211 LA.</p>
+
+<p>1.Definitions</p>
+
+<p>Subscriber Database means a database of health and human services information and resources that is created and maintained by Subscriber.</p>
+
+<p>Subscriber Directory means a printed directory or electronic read-only directory of health and human services that is created and maintained by Subscriber using a Subscriber Database. As used in this definition, “read-only” means an electronic version of a directory in which the information in such directory, including the Taxonomy, cannot be modified or altered in any way.</p>
+
+<p>Subscription Order Form means the form(s) used by 211 LA for allowing subscribers to purchase or renew subscription licenses of the Taxonomy.</p>
+
+<p>Taxonomy means the Taxonomy of Human Services maintained and made generally available by 211 LA for purposes of indexing health and human services information and resources, including its terms, definitions, codes and references and any and all updates, upgrades, enhancements or other modifications that may be made available by 211 LA to Subscriber from time to time.</p>
+
+<p>Taxonomy Website means a website hosted by 211 LA through which subscription licenses for the Taxonomy can be purchased and the Taxonomy can be downloaded.</p>
+
+<p>2.Taxonomy License.</p>
+
+<p>Limited License. Subject to Subscriber’s compliance with the terms and conditions of this Agreement (including, without limitation, Sections 2.2, 2.3, 3 and 4), 211 LA hereby grants to Subscriber a limited, non-exclusive, non-transferable, non-sublicensable license to:</p>
+
+<p>access portions of the Taxonomy Website designated by 211 LA for subscribers and download the Taxonomy as made generally available thereon;</p>
+
+<p>use the Taxonomy, including its codes, terms, definitions, and references, as a classification structure for indexing health and human services information and resources in a Subscriber Database;</p>
+
+<p>include Taxonomy terms in a survey instrument prepared by Subscriber as reasonably necessary to collect information from third party organizations regarding health and human services, provided that such survey instrument may only include the Taxonomy terms that Subscriber has used to index health and human services information and resources in the Subscriber Database;</p>
+
+<p>include Taxonomy terms as an index in a Subscriber Directory distributed or otherwise made available to third parties (including over the Internet), provided that (i) the proceeds of any monetary or other consideration provided in connection with such distribution are provided to a non-profit, charitable organization and (ii) any such Subscriber Directory may only include the Taxonomy terms that Subscriber has used to index health and human services information and resources in the Subscriber Database, along with any higher level terms on the same branch that are needed to display the hierarchical structure; and</p>
+
+<p>include the Taxonomy definitions in the Subscriber Directory referenced in Section 2.1(d) above, provided that such Subscriber Directory may include only those definitions for terms that Subscriber has used to index health and human services information and resources in the Subscriber Database.</p>
+
+<p>License Restrictions. Nothing contained in this Agreement will be construed as conferring upon Subscriber, by implication, operation of law or otherwise, any license or other rights except as expressly set forth in Section 2.1. Subscriber shall not, and shall not allow any third party to: (i) copy, display or otherwise use all or any portion of the Taxonomy except as incorporated into a Subscriber Directory as permitted in Section 2.1; (ii)  transmit or otherwise distribute the Taxonomy (or any portion of the Taxonomy) as a separate product, module or material to any end user or other third party, or make the Taxonomy (or any portion of the Taxonomy) available to any end user or other third party as a downloadable file separate from a Subscriber Directory; (iii) transmit or otherwise distribute any portion of the Taxonomy for commercial purposes or otherwise for profit or other monetary gain; (iv) incorporate the Taxonomy (or any portion of the Taxonomy) into any database or software through which the Taxonomy (or any portion of the Taxonomy) can be printed, downloaded or modified; or (v) loan, lease, resell, sell, offer for sale, sublicense, adapt, translate, create derivative works of or otherwise modify or alter all or any part of the Taxonomy. Further, Subscriber acknowledges and agrees that use of the Taxonomy Website is also subject to 211 LA’s Terms of Use, as made available thereon and updated from time to time.</p>
+
+<p>Notice.</p>
+
+<p>If the Taxonomy, or any potion of the Taxonomy (including its terms, codes, definitions or references), are utilized in a Subscriber Directory that is published, transmitted, distributed or otherwise made available to third parties, by any means or medium, the Subscriber shall prominently display the following notice in such directory:</p>
+
+<p>Copyright © 1983-2007, Information and Referral Federal of Los Angeles County, Inc. All rights reserved. The index, codes and definitions of the terms contained herein are the intellectual property of Information and Referral Federal of Los Angeles, Inc. and are protected by copyright and other intellectual property laws. No part of this listing of human services terms and definitions may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electrical, mechanical, photocopying, recording or otherwise without the prior written permission of the Information and Referral Federal of Los Angeles County, Inc.</p>
+
+<p>If the Taxonomy is displayed or otherwise made available in a Subscriber Directory via the Internet, Subscriber shall prominently include a link to a copyright acknowledgement statement that 211 LA maintains online, currently located at: http://www.211la.org/Content.asp?Content=Taxonomy&amp;SubContent=Copyright.</p>
+
+<p>3.Intellectual Property Ownership.</p>
+
+<p>Ownership of the Taxonomy. As between 211 LA and Subscriber, 211 LA retains and shall own all right, title and interest in and to the Taxonomy and any derivative works or other modifications thereof, including, without limitation, all copyright, trademark, trade secret and other intellectual rights, subject only to the limited license set forth herein. Subscriber does not acquire any other rights, express or implied, in the Taxonomy. Subscriber hereby assigns, and agrees to assign, to 211 LA all right, title and interest (including all intellectual property rights) throughout the world that Subscriber has or may have in the Taxonomy (including with respect to any modifications suggested by, or other contributions made by, Subscriber), which assignment shall be deemed effective as to any future modifications or contributions immediately upon the creation thereof. Subscriber further irrevocably waives any “moral rights” or other rights with respect to attribution of authorship or integrity of any modifications suggested by, or other contributions made by, Subscriber under any applicable law under any legal theory.</p>
+
+<p>Access and Security.</p>
+
+<p>Subscriber is solely responsible for providing, installing and maintaining at Subscriber’s own expense all equipment, facilities and services necessary to access and use the Taxonomy, including, without limitation, all computer hardware and software, modems, telephone service and Internet access.</p>
+
+<p>Subscriber may be issued or otherwise assigned a user identification and/or password (collectively, “User Identifications “) to access the Taxonomy and/or Taxonomy Website as permitted hereunder. Subscriber is solely responsible for tracking all use of the User Identifications and for ensuring the security and confidentiality of all User Identifications. Subscriber acknowledges that Subscriber is fully responsible for all liabilities incurred through the use of any User Identification and that any download, transmission or transaction under a User Identification will be deemed to have been performed by Subscriber.</p>
+
+<p>Subscriber shall ensure that each of its employees complies with this Agreement, including, without limitation, the license restrictions in Section 2.2 and shall protect the Taxonomy from any use that is not permitted under this Agreement. Subscriber shall promptly notify 211 LA of any unauthorized copying, display, modification, transmission, distribution, or use of the Taxonomy of which it becomes aware.</p>
+
+<p>211 LA reserves the right at any time and without prior notice to Subscriber to change the hours of operation of the Taxonomy Website or to limit Subscriber’s access to the Taxonomy (i) in order to perform repairs or to make updates, upgrades, enhancements or other modifications or (ii) in response to unforeseen circumstances or circumstances beyond 211 LA’s reasonable control. 211 LA may add or withdraw elements of to or from the Taxonomy and/or Taxonomy Website from time to time in its sole discretion, although Subscriber acknowledges and agrees that 211 LA has no obligation to maintain or provide any updates, upgrades, enhancements, or other modifications to the Taxonomy or Taxonomy Website.</p>
+
+<p>Verification. 211 LA may, during the term of this Agreement and with seven (7) days prior notice, request and gain access to Subscriber’s premises for the limited purpose of conducting an inspection to determine and verify that Subscriber is in compliance with the terms and conditions hereof. Subscriber shall promptly grant such access and cooperate with 211 LA in the inspection; provided, however, the inspection shall be conducted in a manner not intended to disrupt unreasonably Subscriber’s business and shall be restricted in scope, manner and duration to that reasonably necessary to achieve its purpose.</p>
+
+<p>4.Payment</p>
+
+<p>Payment. In consideration for the subscription license granted under Section 2.1, Subscriber shall pay the applicable fees as set forth in the Subscription Order Form and/or Taxonomy Website. All fees are nonrefundable. Any information that you may provide in connection with obtaining the subscription (including any nonprofit and/or AIRS membership information) may be verified and your subscription license may be placed on hold or terminated in the event of inaccuracies or discrepancies.</p>
+
+<p>Taxes. In addition to all applicable fees, Subscriber shall pay all sales, use, personal property and other taxes resulting from this Agreement or any activities under this Agreement, excluding taxes based on 211 LA’s net income, unless Subscriber furnishes proof of exemption from payment of such taxes in a form reasonably acceptable to 211 LA. Further, If Subscriber is required by law to deduct or withhold any taxes, levies, imposts, fees, assessments, deductions or charges from or in respect of any amounts payable hereunder, (a) Subscriber shall pay the relevant taxation authority the minimum amounts necessary to comply with the applicable law, (b) Subscriber shall make such payment prior to the date on which interest or penalty is attached thereto, and (c) the amounts payable hereunder shall be increased as may be necessary so that after Subscriber makes all required deductions or withholdings, 211 LA shall receive amounts equal to the amounts it would have received had no such deductions or withholdings been required.</p>
+
+<p>Discounts. From time to time, and in 211 LA’s sole discretion, 211 LA may offer discounts to particular organizations (such as nonprofits, government agencies and members of the Alliance of Information and Referral Systems (AIRS)). If such a discount is offered to Subscriber, Subscriber may be required to submit proof of nonprofit status (such as a federal EIN number), a valid AIRS membership number and/or additional information in order to receive such discounts.</p>
+
+<p>Delivery. The Taxonomy is only made available electronically via download from the Taxonomy Website and, unless otherwise agreed by 211 LA in writing on a case-by-case basis, will not be delivered in any other form or via in any other method.</p>
+
+<p>5.Term and Termination</p>
+
+<p>Term. Subscriber’s rights with respect to the Taxonomy will commence on the date full payment of license fees are received and approved by 211 LA and will continue for an initial period of one (1) year, at which point Subscriber’s rights and this Agreement shall expire. If available, Subscriber may renew its subscription license via the Taxonomy Website, which renewal will be subject to and governed by 211 LA’s then-current fees and then-current terms and conditions (which may include a new or updated Taxonomy Subscription Agreement).</p>
+
+<p>Termination of Agreement. Subscriber may terminate this Agreement at any time by sending an email message addressed to taxonomy@infoline la.org, with the subject “Subscription Cancellation.” Further, if Subscriber commits any breach of any provision of this Agreement, 211 LA will have the right to terminate this Agreement (including the rights granted to Subscriber under 2.1) by written notice, unless Subscriber remedies such breach to 211 LA’s reasonable satisfaction within thirty (30) calendar days after receiving written notice from 211 LA.</p>
+
+<p>Effect of Termination.</p>
+
+<p>Upon termination or expiration, and except as expressly provided in Section 5.3(b), the rights and license granted to Subscriber hereunder shall immediately cease and Subscriber will immediately cease all use of the Taxonomy, will destroy all copies of the Taxonomy and will promptly certify such action to 211 LA in writing. Without limitation of the foregoing, 211 LA may immediately terminate Subscriber’s account and ability to access the Taxonomy via the Taxonomy Website upon any expiration or termination of this Agreement. Expiration or termination of this Agreement will not limit either party from pursuing other remedies available to it, including injunctive relief.</p>
+
+<p>The parties’ rights and obligations under Sections 2.2, 3, 4, 5.3, 6, and 7 will survive expiration or termination of this Agreement. Further, unless this Agreement has been terminated by 211 LA for breach, the rights granted to Subscriber under Sections 2.1(b) through (e), as well as the rights and obligations set forth in Section 2.3, shall survive and continue following any expiration or termination of this Agreement, but only with respect to the most recent version of the Taxonomy downloaded by Subscriber from the Taxonomy Website as of the date of expiration or termination and provided that Subscriber’s rights shall continue to be subject to termination by 211 LA under Section 5.2.</p>
+
+<p>6.Disclaimer of Warranty and Limitation of Liability.</p>
+
+<p>Disclaimer of Warranty. 211 LA does not represent that the Taxonomy will meet any expectations or specifications of Subscriber. THE TAXONOMY AND ANY OTHER INFORMATION, PRODUCTS OR SERVICES PROVIDED BY 211 LA TO SUBSCRIBER ARE PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND. 211 LA HEREBY DISCLAIMS ANY AND ALL WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING, WITHOUT LIMITATION, THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, SATISFACTORY QUALITY, ACCURACY, TITLE AND NONINFRINGEMENT, AND ALL WARRANTIES THAT MAY ARISE FROM COURSE OF PERFORMANCE, COURSE OF DEALING OR USAGE OF TRADE.</p>
+
+<p>Limitation of Liability. TO THE EXTENT PERMITTED BY APPLICABLE LAW: (I) IN NO EVENT WILL 211 LA BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR DAMAGES FOR LOSS OF PROFITS, REVENUE, BUSINESS, SAVINGS, DATA, USE OR COST OF SUBSTITUTE PROCUREMENT, INCURRED BY SUBSCRIBER OR ANY THIRD PARTY, WHETHER IN AN ACTION IN CONTRACT OR TORT, EVEN IF THE SUBSCRIBER OR THE OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR SUCH DAMAGES ARE FORESEEABLE AND (II) 211 LA’S LIABILITY FOR DAMAGES HEREUNDER WILL IN NO EVENT EXCEED THE FEES RECEIVED BY 211 LA HEREUNDER. SUBSCRIBER ACKNOWLEDGES THAT THE LIMITATIONS OF LIABILITY IN THIS SECTION 6.2 AND IN THE OTHER PROVISIONS OF THIS AGREEMENT, AND THE ALLOCATION OF RISK HEREIN, ARE AN ESSENTIAL ELEMENT OF THE BARGAIN BETWEEN THE PARTIES, WITHOUT WHICH 211 LA WOULD NOT ENTER INTO THIS AGREEMENT.</p>
+
+<p>7.Miscellaneous Provisions</p>
+
+<p>No Assignment. Subscriber may not assign, sell, transfer, delegate or otherwise dispose of, whether voluntarily or involuntarily, by operation of law or otherwise, this Agreement, or any rights or obligations under this Agreement. Any purported assignment, transfer, or delegation by Subscriber will be null and void. Subject to the foregoing, this Agreement will be binding on the parties and their respective successors and assigns.</p>
+
+<p>Relationship Between the Parties. The parties shall at all times be and remain independent contractors. Nothing in this Agreement creates a partnership, joint venture or agency relationship between the parties.</p>
+
+<p>Governing Law. This Agreement is to be construed in accordance with and governed by the internal laws of the State of California (as permitted by Section 1646.5 of the California Civil Code (or any similar successor provision)) without giving effect to any choice of law rule that would cause the application of the laws of any jurisdiction other than the internal laws of the State of California to the rights and duties of the parties. In the event of any controversy, claim or dispute between the parties arising out of or relating to this agreement, such controversy, claim or dispute may be tried solely in a state or federal court located within the County of Los Angeles, California and the parties hereby irrevocably consent to the jurisdiction and venue of such courts.</p>
+
+<p>Severability and Waiver. If any provision of this Agreement is held to be illegal, invalid, or otherwise unenforceable, such provision will be enforced to the extent possible consistent with the stated intention of the parties, or, if incapable of such enforcement, will be deemed to be severed and deleted from this Agreement, while the remainder of this Agreement will continue in full force and effect. The waiver by either party of any default or breach of this Agreement will not constitute a waiver of any other or subsequent default or breach.</p>
+
+<p>Headings. The headings used in this Agreement are for convenience only and shall not be considered in construing or interpreting this Agreement.</p>
+
+<p>No Third Party Beneficiaries. This Agreement is made and entered into for the sole protection and benefit of the parties hereto, and is not intended to convey any rights or benefits to any third Party, nor will this Agreement be interpreted to convey any rights or benefits to any person except the parties hereto.</p>
+
+<p>Entire Agreement. This Agreement, along with the Terms of Use made available on the Taxonomy Website, constitutes the complete agreement between the parties and supersedes any prior or contemporaneous agreements or representations, whether written or oral, concerning the subject matter of this Agreement. This Agreement may be changed by 211LA from time to time immediately upon notice to Subscriber (which may be achieved by posting an updated copy of this Agreement on the Taxonomy Website) or by written agreement of the parties. Continued use of the subscriber portions of the Taxonomy Website following any change constitutes acceptance of the change.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/12/locking-up-any-taxonomy-is-short-sighted-in-todays-online-environment/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/12/i-finally-have-a-weekly-email-newsletter-roundup-of-api-evangelist-posts/">I Finally Have A Weekly Email Newsletter Roundup Of API Evangelist Posts</a></h3>
+        <span class="post-date">12 Nov 2017</span>
+        <p><a href="http://apievangelist.com/#Newsletter"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-evangelist-newsletter.png" align="right" width="35%" style="padding: 15px;" /></a></p>
+<p>I’ve had people asking me for an email newsletter containing everything I’ve done over the week for quite a while now, and I finally got around to do doing it. I’m now using MailChimp to pull in the last 20 API Evangelist blog posts and send out as a digest each Monday morning. Providing a summary of everything I wrote for the previous week.</p>
+
+<p>I’m thankful for services like MailChimp which help me get up and running with things like a newsletter quickly. Then  can scale it over time, and even use their API if I want. Without service providers like this I’d never have things like a newsletter. Here is the email newsletter sign up form from MailChimp, and you can always find <a href="http://apievangelist.com/#Newsletter">on the bottom of the home page for API Evangelist</a>:</p>
+
+<!-- Begin MailChimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+</style>
+
+<div id="mc_embed_signup">
+<form action="https://apievangelist.us17.list-manage.com/subscribe/post?u=36a583d2f353a9d31387227ea&amp;id=0593412b68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required="" />
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_36a583d2f353a9d31387227ea_0593412b68" tabindex="-1" value="" /></div>
+    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" /></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+
+<p>I am not a big email person, as many of you know. However, I understand that many of you are, and I’m seeing a resurgence of readership via email newsletter over using RSS. While I still love me some RSS, I understand that many folks have moved on, often filling the void with their inboxes. After some high profile folks asked me for an email digest, because they were too busy to always remember to tune in, I had to make it happen.</p>
+
+<p>Thanks for tuning in. If there is anything else you’d like to see in the weekly round up–let me know. I’m trying to keep basic for now, but I am thinking about adding some additional thoughts, or other aspects of my API industry research in there–like links to my guides, tools, and services. Right now, I’m giving a shout out to all my sponsors in the footer, but as the list grows it might be another place I entertain sponsorship of this crazy train I call API Evangelist. Thanks for all your support.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/12/i-finally-have-a-weekly-email-newsletter-roundup-of-api-evangelist-posts/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/10/i-can-keep-evangelizing-the-same-api-stories-for-the-next-decade/">I Can Keep Evangelizing The Same API Stories For The Next Decade In Government</a></h3>
+        <span class="post-date">10 Nov 2017</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/34_33_700_500_0_max_0_1_1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><a href="https://www.fedscoop.com/events/redhatgov/2017/agenda/">I spoke on a panel at the Red Hat, Fed Scoop Government Symposium in Washington D.C. yesterday</a>. I had some great conversations with technology vendors, as well as government agencies about everything API. I enjoy being outside the Silicon Valley echo chamber when it comes to technology because I enjoy helping folks understand the basics of what is going on with the basics of APIs, over getting too excited over the latest wave of new technology, and a constant need to be moving forward before ever getting a handle on the problems on the table.</p>
+
+<p>It can be hard to to repeat some of the same stories I’ve been telling for the last seven years while in these circles, but honestly the process helps me refine what I’m saying, and continue to actively think through the sustained relevancy of the stories I’ve been telling. After this round of discussions in D.C. I feel there are a some themes in my work, I can keep refining, and crafting stories for sharing in the government space.</p>
+
+<ul>
+  <li><strong>Open</strong> - I know its a tired term, but learning to be more open with other agencies, partners, and the public is an essential component of doing APIs in the federal government.</li>
+  <li><strong>Documentation</strong> - Do not reinvent the wheel with documentation, and leverage OpenAPI to help you keep documentation usable, up to date, and valuable to developers using existing open source API documentation solution.</li>
+  <li><strong>Support</strong> - Provide email, office hours, Twitter, ticketing, Github issues, and other common support building blocks for API consumers, making sure people know they can get help when they need.</li>
+  <li><strong>Communication</strong> - Talk to your consumers. Have a blog, Twitter account, and other social channels for communicating internally, with partners, and publicly with API consumers.</li>
+  <li><strong>Experiment</strong> - See your APIs as an R&amp;D extension of an agency, and allow for experimentation with APIs, as well as the consumption of the APIs. Think about sandboxes, data virtualization, and other ways of minimizing agency risk.</li>
+  <li><strong>Education</strong> - Make sure you are reaching out, educating, and providing training for all API stakeholders, ensuring that everyone is up to speed, and making no assumptions about what people know, or do not know.</li>
+</ul>
+
+<p>None of this is technical. This is all basic API knowledge that any business or technical API stakeholder can take ownership of. These are all things that I see kill API efforts in the public, as well as private sector. These are all things that IT and developer folks scoff at and feel are unnecessary, and business users do not always see as an essential part of technical implementations. <a href="http://apievangelist.com/2017/07/27/state-of-apis-in-the-federal-government/">These are all deficient elements present across the 100 developer portals, and the 500 APIs I keep an eye on across the federal government</a>. They are common building blocks of API operations that I’ll keep beating a drum about on my blog, and in person at events I attend in D.C.</p>
+
+<p>The API environment in D.C. would frustrate your average API developer, architect, and evangelist. I get frustrated at the speed of things, and having to say the same things over and over. However, I also understand the scope of what the federal government does, and the number of people we have to get up to speed on things. The number of APIs available is actively growing, but the consistency, usability, and effectiveness of APIs isn’t keeping pace. To keep things in balance we are going to need even more evangelism around operating government in an online environment, and how APIs can help provide access to data, content, and even algorithms across all branches of government in a safe and secure ways.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/10/i-can-keep-evangelizing-the-same-api-stories-for-the-next-decade/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/10/admitting-there-is-so-much-i-do-not-know-makes-me-better-at-apis/">Admitting There Is So Much I Do Not Understand Makes Be Better At APIs</a></h3>
+        <span class="post-date">10 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-racks-clouds_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>One of the reasons I’m so good at APIs is because I embrace how little I know. This rolling realization keeps my appetite wet when it comes to learning to things, and working hard to discover, and realize sensible API practices. I am comfortable with the fact that I do not know something. I enjoy coming up against things I do not understand, eager to learn more. However, I think there is one big difference in the way I approach technology from other developers, is that I’m not confident that I will ever be able to fully understand a particular domain, let alone think that technology, or specifically APIs are a solution to a specific set of problems within every domain.</p>
+
+<p>Many developers are overly confident in what they know. They are also overly confident in their ability to learn new things. They are also overly confident that they can hammer out a technological solution that will solve all problems within a domain. I feel like many technologists aren’t in the game to learn, they are in the game to prove they have the chops to solve problems, and when they can’t they just walk away. When you approach APIs in this way you are leaving a lot of opportunity for learning and growth on the table. APIs shouldn’t be seen as simply a solution. APIs are just a tool (like the web) in a business toolbox, that should be applied when appropriate, and not applied when it doesn’t make sense.</p>
+
+<p>Beyond developers, I feel like many business users are scared off by the uncertainty in the world of APIs. They don’t thrive in an environment where there are so many possibilities, configurations, and ways to do things right and wrong. APIs give you more control over your data, content, and algorithms, allowing you to provide access to them in many ways, and reach across many client channels like the web, mobile, and other device or network implementations. I feel like many business users want this amount of control, but aren’t willing to invest the time to be able to make decisions in this environment, and own the responsibility surrounding so much uncertainty. Unlike developers, they may have the domain expertise, but aren’t willing to experiment, play around with, and bang their head on the different ways APIs can help deliver solutions.</p>
+
+<p>I feel like developers tend to suck at admitting they don’t understand things, and have to much belief in our technological toolbox when it comes to filling in the gaps. I feel like business users just aren’t confident enough with technology to thrive in environments where you perpetually do not know everything. I feel like my ability to admit I do not know, and maybe never fully understand a specific domain–coupled with my insatiable appetite for learning, puts me in a good position to be studying APIs. I can dive into new domains without thinking I’m going to save or disrupt the world. I can develop API prototypes, and help define API specifications, fully aware that I may not get it right on the first release. I know this is ok. I know that APIs are a journey, and not a destination. I know that APIs shouldn’t always be done. I know that sometimes they are a bad idea. I respect that there are domain experts in specific industries that I should be learning from. Admitting there is so much I do not know, helps me be better at what I do with APIs.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/10/admitting-there-is-so-much-i-do-not-know-makes-me-better-at-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/10/are-people-ready-for-an-online-api-driven-world-that-is-progammable/">Are People Ready For An Online API-Driven World That Is Programmable?</a></h3>
+        <span class="post-date">10 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/van-gogh-starry-night-container-bridge-2.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am struggling with helping some folks get beyond their API being just readable, and helping them understand the potential of having POST, PUT, and other writable aspects to their resources, making things much more programmable. My client has a firm grasp on the ability to GET data from their API and publish on websites. They also have the concept that they can GET other data from other 3rd party APIs, and display on their website alongside their data. Where they are struggling is that they can also add new data to their API, and update existing data they are making available via their API, and ultimately their website as well.</p>
+
+<p>This hurdle isn’t limited to any single project I’m working on. I find a number of people who seem to have a decent grasp on APIs in general, struggling with or completely avoiding conversations around making the data writeable. They are able to make the transition from web to API when it comes to retrieving data, but making the same jump when it comes to adding and updating data is proving to be more difficult. I think there will always be a cognitive load with jumping from read to write, as you have to think more about security, data quality, and other common concerns. However, beyond that, I’m trying to explore what might be the challenges people are facing. Many of the folks I’m working with are a bit shaky on their grasp of APIs, and aren’t too confident in sharing what they don’t understand.</p>
+
+<p>As I do, I’ll put it out to the universe and ask my audience what they’ve seen. On the surface, I’d say that adding or updating data into a database online is tougher to wrap your head around without some context, and some of the affordances we enjoy in the browser. Adding a Tweet through mobile application or website? No problem. POST a tweet through API, is a little tougher to envision. Updating a contact record in your administrative system? No problem. PUT via API to the /contact/ path doesn’t compute as quickly. API developers can quickly see these interfaces as programmable, but for the average business user, there is more dependence on the affordances provided in the browser, and us developers are taking the importance of these affordances for granted.</p>
+
+<p>Beyond that, I’m guessing there is a perceived lack of control. Anyone can add or update? How do we address quality control? IDK, just spitball’n here. The majority of APIs I come across are GET only, so I have to believe there are issues around control, and beliefs around ownership. I can’t believe all of these API providers don’t grasp the technical aspects of writeable APIs. It is the same in the federal government. ALL the web APIs are read only. We’ve started to see this ice break a little in recent years, but federal agencies are rightfully wary of the responsibility of letting the public write data to their databases. I almost feel like the Facebook and Twitters of the world are almost too open to allowing folks to write, without being thoughtful around privacy, security, and data ownership or stewardship–just to get their hands on the data.</p>
+
+<p>I wondering if POST, PUT, and DELETE should be 101 concepts that I’m teaching to folks. Should I be starting out with just the safer, more straightforward reading of data, content, and algorithmic resources. Then down the road introduce the ability to add, update, and delete information. I know the concept of DELETE freaks people out pretty quickly. IDK. I’m just doing my job, and questioning things at all levels, and wondering if people are even ready for a programmable online world. I think SaaS has delivered a programmable world with a wealth of affordances that help onboard people with all of this, and us API people are failing at translating the significance of an API-driven world that is programmable to our business users.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/10/are-people-ready-for-an-online-api-driven-world-that-is-progammable/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/10/you-can-lead-a-horse-to-water-but-you-cannot-make-them-drink-the-api-edition/">You Can Lead A Horse To Water But You Cannot Make Them Drink--The API Edition</a></h3>
+        <span class="post-date">10 Nov 2017</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/bluelake/clean_view/file-00_00_38_67.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I have seven years of API research available at apievangelist.com. I regularly publish short form, and long form versions of this information on my blogs on a weekly basis. I publish prototypes, demo websites and portals, and develop API training curriculum for use across a wide variety of industries. I regularly take versions of my API research, and rework, rebrand, and dial in to speak to a specific company, organizations, institution, agency, or industry. In many cases I make this information freely available, helping make sure it is available to those who need it. Despite all this work, many folks who are already doing APIs refuse to read, listen, and learn from what is already going on in the API space, and doomed to repeat the mistakes many of us have already made and learned from in our API journeys.</p>
+
+<p>Many folks don’t really understand my motivations and think I have some sort of agenda to sell them something, disrupt their current reality, or other uninformed perspective. Ultimately, not trusting what I’m putting out there. I guess viewing that the water is poised in some way. Others don’t feel they need it, either because they feel like they have all the answers, or the problems haven’t become a reality in their worlds yet, so my solutions seem irrelevant. I find it tough to argue with someone about preventative care when it comes to their API operations, when they spend their days triaging bugs, problems, and legacy technology challenges. They are fire fighters, water isn’t for drinking!</p>
+
+<p>A long standing example of this can be found in the hypermedia realm. No matter how much some very smart people, with a wealth of experience deploying and managing APIs warn about challenges with maintaining API SDKs and clients, some folks will never see it as a problem until they actually face it themselves. I can showcase endless numbers of healthy practices extract from companies like AWS, Twitter, and Twilio for people to learn from, but many folks will never see their relevance until they directly experience the problem. Most people have trouble looking forward, as well as stepping outside their own API operations and looking at them side by side with other leading API pioneers. They are different. Special. Often times, people never even engage in these thought exercises at all. There just isn’t the room in their operations for thinking proactively.</p>
+
+<p>I regularly get frustrated when my clients, or people I’m asked to speak with about healthy API practices actively ignore, criticize, and dismiss what I’m sharing. I shouldn’t. I can’t force people to trust me. I can’t force people to drink from the water I’m providing. All I can do is plant the seed in their minds that there is water over here when you get thirsty. It seems to be a chronic condition across many industries, that folks only drink when they are super thirsty, after they get dehydrated, rather than proactively drinking water regularly throughout the day. In the end, my energy is better spend doing what I do best–researching, then openly sharing what I’m learning across the API space from other people doing APIs well. My job will often involves leading a horse to water, but does not ever involve forcing anyone to drink. I considered creating a blog called API Water Boarding, but it just didn’t seem like a good idea. ;-)</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/10/you-can-lead-a-horse-to-water-but-you-cannot-make-them-drink-the-api-edition/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/09/the-impact-of-api-management-on-api-security/">The Impact Of API Management On API Security</a></h3>
+        <span class="post-date">09 Nov 2017</span>
+        <p><a href="http://apis.how/security/"><img src="https://s3.amazonaws.com/kinlane-productions/guides/security/api-security-guide-api-management.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p><em>This is a story from my latest <a href="http://security.apievangelist.com/#Guide">API Evangelist API security industry guide</a>. My partner <a href="http://apis.how/elasticbeam">ElasticBeam</a> has underwritten my API security research, allowing me to publish a formal PDF of my guide, providing business and technical users with a walk-through of the moving parts, tools, and companies doing interesting things with API security. When I publish each guide, I publish each story here on the blog, helping build awareness around my research–this is a short one on API management.</em></p>
+
+<p>API management has done an amazing job in helping companies, organizations, institutions, and government agencies make their digital resources more available on-line in a secure way. Allowing API providers to require developers to sign up, obtain keys, and tokens which need to accompany all API calls. This, along with encryption by default has gone a long way towards making data, content, and algorithms more accessible, while also being secure. However, many API providers have stopped here, and think their resources are secure, when in reality there is so much more work to be done.</p>
+
+<p>Requiring all developers obtain keys to access resources, and encryption data in transit is an important part of API security, but it is just one tool in the API security toolbox. Out of API management you also receive an enhanced set of logging, analysis, and reporting tools for how developers are putting API resources to work. When done well, this pushes the API security conversation forward, allowing API providers to balance access with security, and be proactive when it comes to limiting access, or even shutting off access when their is abuse. The problem is not all API providers are investing here, let alone going beyond what API management providers offer.</p>
+
+<p>The awareness brought to the table my API management is valuable, but there are so many aspects of API operations at the web server, DNS, and other levels that are often left out of the API management conversation. I’ll be pushing API providers to look beyond just the API management layer, and expanding API security awareness to every other stop along the API life beyond just management.</p>
+
+<p><em>You can <a href="http://security.apievangelist.com/#Guide">download or purchase my API Evangelist API security industry guide over at my API security research</a>, and if you want to point out any corrections, and share your thoughts on what is missing, feel free to submit a Github issue on the research project’s Github repository. I appreciate your support of my work, and depend on folks like you, and <a href="http://apis.how/elasticbeam">ElasticBeam</a> to make this all work.</em></p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/09/the-impact-of-api-management-on-api-security/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/11/09/apis-that-use-apis-to-manage-my-apis/">Using APIs To Manage My APIs</a></h3>
         <span class="post-date">09 Nov 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -1697,324 +2081,6 @@ Other API providers will go beyond this base level of API account functionality,
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/16/api-design-maturity-at-capital-one/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/16/adwords-api-release-and-sunset-schedule-for-2018/">AdWords API Release and Sunset Schedule For 2018</a></h3>
-        <span class="post-date">16 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/beach-rocks-currents_kand_two.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>APIs are not forever, and eventually will go away. The trick with API deprecation is to communicate clearly, and regularly with API consumers, making sure they are prepared for the future. I’ve been tracking on the healthy, and not so healthy practices when it comes to <a href="http://deprecation.apievangelist.com/">API deprecation</a> for some time now, but felt like Google had some more examples I wanted to add to our toolbox. Their approach to setting expectations around API deprecation is worthy of emulating, and making common practice across industries.</p>
-
-<p><a href="http://googleadsdeveloper.blogspot.com/2017/10/adwords-api-release-and-sunset-schedule.html">The Google Adwords API team is changing their release schedule</a>, which in turns impacts the number of APIs they’ll support, and how quickly they will be deprecating their APIs. They will be releasing new versions of the API three times a year, in February, June and September. They will also be only supporting two releases concurrently at all times, and three releases for a brief period of four weeks, pushing the pace of API deprecation alongside each release. I think that Google’s approach provides a nice blueprint that other API provides might consider adopting.</p>
-
-<p>Adopting an API release and sunset schedule helps communicate the changes on the horizon, but it also provides a regular rhythm that API consumers can learn to depend on. You just know that there will be three releases a year, and you have a quantified amount of time to invest in evolving integration before any API is deprecated. It’s not just the communication around the roadmap, it is about establishing the schedule, and establishing an API release and sunset cadence that API consumers can be in sync with. Something that can go a lot further than just publishing a road map, and tweeting things out.</p>
-
-<p>I’ll add this example to my API deprecation research.  Unfortunately the topic is one that is widely communicated around in the API space, but Google has long a strong player when it comes to finding healthy API deprecation examples to follow. I’m hoping to get to the point soon where I can publish a simple guide to API deprecation. Something API providers can follow when they are defining and deploying their APIs, and establish a regular API release and deprecation approach that API developers can depend on. It can be easy to get excited about launching a new API, and forget all about it’s release and deprecation cycles, so a little guidance goes a long way to helping API providers think about the bigger picture.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/16/adwords-api-release-and-sunset-schedule-for-2018/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/16/operating-your-api-portal-using-github/">Operating Your API Portal Using Github</a></h3>
-        <span class="post-date">16 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/jekyll/jekyllrb.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>Operating on Github is natural for me, but I am regularly reminded what a foreign concept it is for some of the API providers I’m speaking with. Github is the cheapest, easiest way to launch a public or private developer portal for your API. With the introduction of <a href="https://pages.github.com/">Github Pages</a>, each Github repository is turned into a place to host any API related project. In my opinion, every API should begin with Github, providing a place to put your API definition, portal, and other elements of your API operations.</p>
-
-<p>If you are just getting going with understand how Github can be used to support your API operations, I wanted to provide a simple checklist of the concepts at play, that will lead you being able to publish your API portal to Github.</p>
-
-<ul>
-  <li><strong>Github Account</strong> - You will need an account to be able to use Github. Anything you do on Github that is public will be free. You can do private portals on Github, but this story is about using it for a public API portal.</li>
-  <li><strong>Github Organization</strong> - I recommend starting an organization for your API operations, instead of under just a single users account. Then you can make the definition for the API the first repository, and possibly the portal your second repository you create.</li>
-  <li><strong>Github Repo</strong> - A Github repository is basically a folder on the platform which you can start the code, pages, and other content used as part of API operations.</li>
-  <li><a href="https://pages.github.com/"><strong>Github Pages</strong></a> - Each Github repository has the ability to turn on a public project site, which can be used as a hosting location for a developer portal.</li>
-  <li><a href="https://jekyllrb.com/"><strong>Jekyll</strong></a> - Github Pages allows any Github repository to become a website hosting location which you can access via your Github user account, or even provide an address using your own domain.</li>
-</ul>
-
-<p>I recommend every API provider think about hosting their API portal on Github. The learning curve isn’t that significant to get up and running, and if your portal is public, it is free. You can version control, and leverage other key aspects of Github for evolving and managing your API portal. There are a growing number of examples of <a href="https://apievangelist.com/2017/06/14/gsa-api-standards-with-working-prototype-api-and-portal/">forkable API portals like from the GSA</a>, or <a href="http://portal.apievangelist.com/2017/09/05/a-new-minimumviable-documentation-jekyll-template-for-apis/">an interesting minimum viable API documentation template</a> from my friend James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>). Demonstrating that the practice is growing, with the number of healthy examples to build on diversifying.</p>
-
-<p>If you need help understanding how to use Github for hosting your API developer portal, feel free to reach out. I am happy to see where I can help. Another thing to note is that this approach to running a Jekyll static website isn’t limited to Github. You can always start the project there, and move off to any Jekyll enabled hosting provider. I run my entire network of websites and API project this way, leveraging Github as my plan A, and AWS as my plan B, with a server image ready to go when I need. Github just provides a number of bells and whistles that make it much more usable, as well as something others can collaborate around, enjoying the network effects that come with using the platform.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/16/operating-your-api-portal-using-github/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/16/the-basics-of-api-management/">The Basics Of API Management</a></h3>
-        <span class="post-date">16 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I am developing a basic API management strategy for one of my client’s API. With each area of their API strategy I am taking what I’ve learned monitoring the API sector, but pausing for a moment to think about again, and then applying to their operations. Over the years I have separated out many aspects of API management, distilling it down to a core set of elements that reflect the evolution of API management as its evolved into a digital commodity. It helps me to think through these aspects of API operations in general, but also applying to a specific API I am working on, helping me further refine my API strategy advice.</p>
-
-<p>API management is the oldest area of my research. It has spawned every other area of the lifecycle I track on, but also is the most mature aspect of the API economy. This project I am working on gives me an opportunity to think about what is API management, and what should be spun off into separate areas of concern. I am looking to distill API management down to:</p>
-
-<ul>
-  <li><strong>Portal</strong> - A single URL to find out everything about an API, and get up and running working the resources that are available.</li>
-  <li><strong>On-Boarding</strong> - Think just about how you get a new developer to from landing on the home page of the portal to making their first API call, and then an application in production.</li>
-  <li><strong>Accounts</strong> - Allowing API consumers to sign up for an account, either for individual, or business access to API resources.</li>
-  <li><strong>Applications</strong> - Enable each account holder to register one or many applications which will be putting API resources to use.</li>
-  <li><strong>Authentication</strong> - Providing one, or multiple ways for API consumers to authenticate and get access to API resources.</li>
-  <li><strong>Services</strong> - Defining which services are available across one or many API paths providing HTTP access to a variety of business services.</li>
-  <li><strong>Logging</strong> - Every call to the API is logged via the API management layer, as well as the DNS, web server, file system, and database levels.</li>
-  <li><strong>Analysis</strong> - Understanding how APIs are being consumed, and how applications are putting API resources to use, identifying patterns across all API consumption.</li>
-  <li><strong>Usage</strong> - Quantifying usage across all accounts, and their applications, then reporting, billing, and reconciling usage with all API consumers.</li>
-  <li><strong>APIs</strong> - API access to accounts, authentication, services, logging, analysis, and usage of API resources.</li>
-</ul>
-
-<p>There are other common elements bundled with API management, but this reflects the core of what API management is about–the business of APIs. Keeping track of who has access to what, and how much they are using. There are a number of other aspects of API management that many will consider under the API management umbrella, but I’ve elevated to being their own stops along the API lifecycle. Some areas are:</p>
-
-<ul>
-  <li><strong>Documentation</strong> - Static or interactive documentation for all available API paths, parameters, headers, and other details of the request and response surface area of the API.</li>
-  <li><strong>Support</strong> - Self-service, or direct support channels that API consumers put to use to get help along the way.</li>
-  <li><strong>SDKs</strong> - The SDKs, samples, libraries, and other supporting code elements for web, mobile, or other types of applications.</li>
-  <li><strong>Road Map</strong> - Communicating what the future holds when it comes to the API.</li>
-  <li><strong>Issues</strong>  - Notification of any open issues with the available of the API.</li>
-  <li><strong>Change Log</strong> - A history of what has happened when it comes to changes to the API.</li>
-</ul>
-
-<p>These areas compliment API management, but should be approached beyond the day to day management aspects of API operations. I’d also consider authentication, logging, and analysis to be bigger than just about API management, as all three areas should cover more than just the API, but they are still very coupled to the core aspects of API management. In my definition, API management is very much about managing the consumption of resources, and not always the other aspects of API operations. This isn’t just my definition, it is what I’m seeing with the commodization of API management like we see over at Amazon Web Services.</p>
-
-<p>AWS API Gateway is really about accounts, applications, authentication, and services. The logging, analysis are delivered by AWS CloudWatch. For this particular project I’m using Github and Jekyll as the portal, and custom delivering on-boarding, usage, and supporting APIs separately. Further narrowing down my definition of just what is API management. I’d say that AWS represents this evolution in API management well, with the decoupling of concerns between AWS API Gateway and AWS CloudWatch. If you apply <a href="https://aws.amazon.com/cognito/">AWS Cognito</a> to authentication, you can separate out another. I do not see any viable solution to handling usage, billing, and what used to be the business and monetization side of API management.</p>
-
-<p>This API project I am working on is already using AWS for the backend of their operations, so I’m investing cycles into better understanding the moving parts of API management in context of the AWS platform. It makes sense to think some more about the decoupling of API management in context of AWS, since they are a major player in the commodization, and maturing of the concept. Once I’m done with AWS, I’m going to take another look at Google, then Azure, who are the other major players who are defining the future of API management.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/16/the-basics-of-api-management/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/12/bots-voice-and-conversational-apis-are-your-next-generation-of-api-clients/">Bots, Voice, And Conversational APIs Are Your Next Generation Of API Clients</a></h3>
-        <span class="post-date">12 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-conversational-interfaces.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>Around 2010, the world of APIs began picking up speed with the introduction of the iPhone, and then Android mobile platforms. Web APIs had been used for delivering data and content to websites for almost a decade at that point, but their potential for delivering resources to mobile phones is what pushed APIs into the spotlight. The API management providers pushed the notion of being multi-channel, and being able to deliver to web and mobile clients, using a common stack of APIs. Seven years later, web and mobile are still the dominant clients for API resources, but we are seeing a next generation of clients begin to get more traction, which includes voice, bot, and other conversational interfaces.</p>
-
-<p>If you deliver data and content to your customers via your website and mobile applications, the chance that you will also be delivering it to conversational interfaces, and the bots and assistants emerging via Alexa and Google Home, as well as on Slack, Facebook, Twitter, and other messaging platforms, is increasing. I’m not selling that everything will be done with virtual assistants, and voice commands in the near future, but as a client we will continue to see mainstream user adoption, and voice be used in automobiles, and other Internet connected devices emerging in our world. I am not a big fan of talking to devices, but I know many people who are.</p>
-
-<p>I don’t think Siri, Alexa, and Google Home will live up to the hype, but there is enough resources being invested into these platforms, and the devices that they are enabling, that some of it will stick. In the cracks, interesting things will happen, and some conversational interfaces will evolve and become useful. In other cases, as a consumer, you won’t be able to avoid the conversational interfaces, and be required to engage with bots, and use voice enabled devices. This will push the need to have conversationally literate APIs that can deliver data to people in bite-size chunks. Sensors, cameras, drones, and other Internet-connected devices will increasingly be using APIs to do what they do, but voice, and other types of conversational interfaces will continue to evolve to become a common API client.</p>
-
-<p>I am hoping at this point we begin to stop counting the different channels we deliver API data and content to. Despite many of the Alexa skills, and Slack bots I encounter being pretty yawn-worthy, I’m still keeping an eye on how APIs are being used by these platforms. Even if I don’t agree with all the uses of APIs, I still find the technical, business, and politics beyond them evolving worth tuning into. I tend to not emphasize to my clients that they work on voice or bot applications if they aren’t too far along their API journey, but I do make sure they understand one of the reasons they are doing APIs is to support a wide and evolving range of clients, and that at some point they’ll have to begin studying how voice, bots, and other conversational approaches will be a client they have to consider a little more in their overall strategy.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/12/bots-voice-and-conversational-apis-are-your-next-generation-of-api-clients/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/12/air-an-asthma-api/">Air, An Asthma API</a></h3>
-        <span class="post-date">12 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/propeller/air-asthma-api-text-phone-aa3.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>You don’t find me showcasing specific APIs often. I’m usually talking about an API because of their approach to the technology, business, or politics of how they do APIs. It just isn’t my style to highlight APIs, unless I think they are interesting, and delivering value that is worth talking about, or possibly reflecting a meaningful trend that is going on. In this case it is a useful API that I think brings value, but also provides an example of an API I can showcase to non-developer folks as a meaningful example of an API.</p>
-
-<p>The API I’m talking about today, is <a href="https://www.propellerhealth.com/air-by-propeller/">the Air API</a>, an asthma API from Propeller, which provides a set of free tools to help people understand current asthma conditions in their neighborhoods. The project is led by the Propeller data scientists and clinical researchers, looking to leverage Air API to help predict how asthma may be affected by local conditions, including a series of tools that share local asthma conditions, ranging from an email or text subscription, to an embeddable Air Widget for other websites.</p>
-
-<p>The Air API provides an easy to explain example of what is possible with APIs. Environmental APIs will continue to be an important aspect of doing APIs. Aggregating sensor and other data to help us understand the air, water, weather, and other critical environmental factors that impact our lives each day. I like the idea of these APIs being open and available to 3rd party developers to build tools on top of them, while the platforms using them as a marketing vehicle for their other products and services, while making sure to keep the valuable data accessible to everyone.</p>
-
-<p>I’ll put the Air API into my toolbox of APIs I use to help onboard folks with APIs. If they are impacted by asthma, or know someone who is, it helps make the personal connection, which can be important when on-boarding folks with the abstract concepts surrounding APIs. People tend to not care about technology until it makes an impact on their world. Which is one reason I think healthcare and environment APIs are going to play an important role in the sector for years to come. They provide a rich world of data, content, and algorithms, that can be exposed via APIs, and be applied in meaningful ways in people’s lives. Leaving a (hopefully) positive impression on folks about what APIs can do.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/12/air-an-asthma-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/12/everything-is-headless-in-an-api-world/">Everything Is Headless In A Decoupled API World</a></h3>
-        <span class="post-date">12 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/catacombs_copper_circuit_2.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>It is always funny how long some concepts take to fully capture my attention. Sometimes I understand a concept on the surface, but never really invest the time into thinking deeply about how it actually fits into the big picture of my API research. One of these concepts is “headless”. Most commonly applied to the “headless CMS”. The wikipedia entry for headless CMS proclaims, “<a href="https://en.wikipedia.org/wiki/Headless_CMS">a Headless CMS is a back-end only content management system (CMS) built from the ground up as a content repository that makes content accessible via a RESTful API for display on any device.</a>”</p>
-
-<p>A headless CMS is basically API-first, but instead of API being the first focus, the entire CMS, and administrative system for managing the content gets top billing, with API playing a critical supporting role. It’s what I am always prescribing as a way for API providers to consider the role between their applications, and their backend API resources. Decoupling your apps, from the backend resources. The administration interface for the content management system is one application, and each of your web, mobile, or other applications act as independent solutions. I see headless as just a business view of doing APIs, which makes sense when selling the concept to normals.</p>
-
-<p>I’m adding a research area for headless that augments <a href="http://deployment.apievangelist.com/">my API deployment research</a>. Some of the open source implementations I’ve come across like <a href="https://getdirectus.com/">Directus</a> are pretty slick. It’s a pretty quick way to go from API to something that immediately benefits the average user in as short of time as possible. Headless is just another way to frame the the API conversation in the context of delivering an internal content management system, over getting 3rd party developers to build applications on top. It is something that is still possible because their is an API behind, but it is not the primary objective in any headless implementation.</p>
-
-<p>While the main definition of headless is about having an API behind everything, I am also finding examples where Github is the backend, instead of just a RESTful API. <a href="http://prose.io/">Prose.io</a> which is actually the CMS I use for API Evangelist is considered a headless CMS, but Github acts my backend. Some of the headless CMS solutions I’ve used that depend on Github use Git as the connection, while others depend on the Github API for reading and writing data and content. This reflects how I use Github across my projects, beyond just Prose.io, except I am depending on web APIs, Github, as well as Google Sheets for the backend of Jekyll driven websites and applications.</p>
-
-<p>I have been tracking on headless CMS stories for almost two years now, but after diving a little deeper this last week, it finally clicked for me. I feel headless is a good way to help the world move past WordPress, and embrace a more decoupled way of delivering websites, mobile, and other types of applications. I’m going to deploy Directus so that I can better understand headless as an approach to deploying APIs, and see about deploying basic demo implementations that I can point to. I’m hoping to use it as a way to introduce folks to APIs where public APIs is not the first objective, allowing them to get their feet wet with a simple API and website implementation. Helping deliver value without all the immediate risk, allowing folks to learn about how APIs can drive one or many applications in a more controlled internal environment.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/12/everything-is-headless-in-an-api-world/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/12/obfuscating-the-evolving-code-behind-my-api/">Obfuscating The Evolving Code Behind My API</a></h3>
-        <span class="post-date">12 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/christianity-under-construction_copper_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I’m dialing in a set of machine learning APIs that I use to obfuscate and distort the images I use across my storytelling. The code is getting a little more hardened, but there is still so much work ahead when it comes to making sure it does exactly what I needed it to do, with only dials and controls I need–nothing more. I’m the only consumer of my APIs, which I use them daily, with updates made to the code along the way, evolving the request and response structures until they meet my needs. Eventually the APIs will be done (enough), and I’ll stop messing with them, but that will take a couple months more of pushing forward the code.</p>
-
-<p>While the code for these APIs are far from finished, I find the API helps obfuscate and diffuse the unfinished nature of things. The API maintains a single set of paths, and I might still evolve  the number of parameters it accepts, and the fields it outputs, the overall will keep a pretty tight surface area despite the perpetually unfinished backend. I like this aspect of operating APIs, and how they can be used as a facade, allowing you to maintain one narrative on the front-end, even with another occurring behind behind the scenes. I feel like API facades really fit with my style of coding. I’m not really an A grade programmer, more a B- level one, but I know how to get things to work–if I have a polished facade, things look good.</p>
-
-<p>Honestly, I’m pretty embarrassed by my wrappers for TensorFlow. I’m still figuring everything out, and finding new ways of manipulating and applying Tensor Flow models, so my code is rapidly changing, maturing, and not always complete. When it comes to the API interface I am focused on not introducing breaking changes, and maintaining a coherent request and response structure for the image manipulation APIs. Even though the code will at some point be stabilized, with updates becoming less frequent, the code will probably not see the light of day on Github, but the API might eventually be shared beyond just me, providing a simple, usable interface someone else can use.</p>
-
-<p>I wouldn’t develop APIs like this outside a controlled group of consumers, but I find being both API provider and consumer pushes me to walk a line of unfinished and evolving backend, with a stable, simple API, without any major breaking changes. The fewer fixes I have to do to my API clients, the more successful I’ve been pushing forward the backend, while keeping the API in forward motion without the friction. I guess I just feel like the API makes for a nice wrapper for code, acting as shock absorbers for ups and downs of evolving code, and getting it to do what you need. Providing a nice facade that obfuscates the evolving code behind my API.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/12/obfuscating-the-evolving-code-behind-my-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/11/provide-an-open-source-database-and-api-and-then-sell-the-data/">Provide An Open Source Threat Information Database And API Then Sell Premium Data Subscriptions</a></h3>
-        <span class="post-date">11 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/old-door-lock_copper_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I was doing some <a href="http://security.apievangelist.com">API security research</a> and stumbled across <a href="https://github.com/toolswatch/vFeed">vFeed</a>, a “<a href="https://github.com/toolswatch/vFeed">Correlated Vulnerability and Threat Intelligence Database Wrapper</a>”, providing a JSON API of vulnerabilities from the vFeed database. The approach is a Python API, and not a web API, but I think provides an interesting blueprint for open source APIs. What I found interesting (somewhat) from the vFeed approach was the fact they provide an open source API, and database, but if you want a production version of the database with all the threat intelligence you have to pay for it.</p>
-
-<p>I would say their technical and business approach needs a significant amount of work, but I think there is a workable version of it in there. First, I would create a Python, PHP, Node.js, Java, Go, Ruby version of the API, making sure it is a web API. Next, remove the production restriction on the database, allowing anyone to deploy a working edition, just minus all the threat data. There is a lot of value in there being an open source set of threat intelligence sharing databases and API. Then after that, get smarter about having a variety different free and paid data subscriptions, not just a single database–leverage the API presence.</p>
-
-<p>You could also get smarter about how the database and API enables companies to share their threat data, plugging it into a larger network, making some of it free, and some of it paid–with revenue share all around. There should be a suite of open source threat information sharing databases and APIs, and a federated network of API implementations. Complete with a wealth of open data for folks to tap into and learn from, but also with some revenue generating opportunities throughout the long tail, helping companies fund aspects of their API security operations. Budget shortfalls are a big contributor to security incidents, and some revenue generating activity would be positive.</p>
-
-<p>So, not a perfect model, but enough food for thought to warrant a half-assed blog post like this. Smells like an opportunity for someone out there. Threat information sharing is just one dimension of my API security research where I’m looking to evolve the narrative around how APIs can contribute to security in general. However, there is also an opportunity for enabling the sharing of API related security information, using APIs. Maybe also generating of revenue along the way, helping feed the development of tooling like this, maybe funding individual implementations and threat information nodes, or possibly even fund more storytelling around the concept of API security as well. ;-)</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/11/provide-an-open-source-database-and-api-and-then-sell-the-data/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/11/their-security-practices-are-questionable-but-their-communication-is-unacceptable/">Their Security Practices Are Questionable But Their Communication Is Unacceptable</a></h3>
-        <span class="post-date">11 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/status-berlin_propaganda_leaflets.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I study the API universe every day of the week, looking for common patterns in the way people are using technology. <a href="http://apievangelist.com/api-lifecycle/">I study almost 100 stops along the API lifecycle</a>, looking for healthy practices that companies, organizations, institutions, and government agencies can follow when dialing in their API operations. Along the way I am also looking for patterns that aren’t so healthy, which are contributing to many of the problems we see across the API sector, but more importantly the applications and devices that they are delivering valuable data, content, media, and algorithms to.</p>
-
-<p><a href="http://security.apievangelist.com/">One layer of my research is centered around studying API security</a>, which also includes keeping up with <a href="http://vulnerabilities.apievangelist.com/">vulnerabilities</a> and <a href="http://breaches.apievangelist.com/">breaches</a>. I also pay attention to <a href="http://cybersecurity.apievangelist.com/">cybersecurity</a>, which is a more theatrical version of regular security, with more drama, hype, and storytelling. I’ve been reading everything I can on the Equifax, Accenture, and other scary breaches, and like the other areas of the industry I track on, I’m beginning to see some common patterns emerge. It is something that starts with the way we use (or don’t use) technology, but then is significantly amplified by the human side of things.</p>
-
-<p>There are a number of common patterns that contribute to these breaches on the technical side, such as not enough monitoring, logging, and redundancy in security practices. However, there are also many common patterns emerging from the business approach by leadership during security incidents, and breaches. These companies security practices are questionable, but I’d say the thing that is the most unacceptable about all of these is the communication around these security events. I feel like they demonstrate just how dysfunctional things are behind the scenes at these companies, but also demonstrate their complete lack of respect and concern for individuals who are impacted by these incidents.</p>
-
-<p>I am pretty shocked by seeing how little some companies are investing in API security. The lack of conversation from API providers about their security practices, or lack of, demonstrates how much work we still have to do in the API space. It is something that leaves me concerned, but willing to work with folks to help find the best path forward. However, when I see companies do all of this, and then do not tell people for months, or years after a security breach, and obfuscate, and bungle the response to an incident, I find it difficult to muster up any compassion for the situations these companies have put themselves in. Their security practices are questionable, but their communication around security breaches is unacceptable.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/11/their-security-practices-are-questionable-but-their-communication-is-unacceptable/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/11/a-grpc-meetup-kit/">The gRPC Meetup Kit</a></h3>
-        <span class="post-date">11 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/grpc/grpc-logo.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p><a href="http://apievangelist.com/2017/09/29/tyk-is-conducting-api-surgery-meetups/">I wrote about Tyk’s API surgery meetups last week</a>, and adding a new approach to our API event and workshop toolbox, and next I wanted to highlight <a href="https://github.com/grpc-ecosystem/meetup-kit">the gRPC Meetup Kit</a>, a resource for creating your own gRPC event. gRPC is an approach out of Google for designing, delivering, and operating high performance APIs. If you look at the latest wave of APIs out of Google you’ll see they are all REST and/or gRPC. Most of them are dual speed, providing both REST and gRPC. gRPC is an open source initiative, but very much a Google led effort that we’ve seen picking up momentum in 2017.</p>
-
-<p>While I am keeping an eye on gRPC itself, this particular story is about the concept of providing a Meetup kit for your API related service or tooling, providing an “In a Box” solution that anyone can use to hold a Meetup. The gRPC team provides three groups of resources:</p>
-
-<h3 id="grpc-101-presentation">gRPC 101 Presentation</h3>
-<ul>
-  <li><a href="https://www.youtube.com/watch?v=UVsIfSfS6I4">Talk</a> - A 15 minute course introduction video.</li>
-  <li><a href="https://docs.google.com/presentation/d/1dgI09a-_4dwBMLyqfwchvS6iXtbcISQPLAXL6gSYOcc/edit?usp=sharing">Slides</a> - Slides that go along with the talk.</li>
-  <li><a href="https://codelabs.developers.google.com/codelabs/cloud-grpc/index.html">Codelab</a> - A 45m codelab that attendees can complete using <a href="https://cloud.google.com/shell/">Cloud Shell</a>.</li>
-</ul>
-
-<h2 id="resources-and-community">Resources and community</h2>
-<ul>
-  <li><a href="http://www.grpc.io/"><strong>gRPC Website</strong></a></li>
-  <li><strong>Codelab</strong>
-    <ul>
-      <li><a href="https://codelabs.developers.google.com/codelabs/cloud-grpc/index.html">Building a gRPC service with Node.js</a></li>
-      <li><a href="https://codelabs.developers.google.com/codelabs/cloud-grpc-csharp/index.html">Building a gRPC service with C#</a></li>
-    </ul>
-  </li>
-  <li><a href="https://github.com/grpc"><strong>GitHub Source</strong></a>
-    <ul>
-      <li><a href="https://github.com/grpc-ecosystem">Extended gRPC Ecosystem</a></li>
-      <li><a href="http://www.grpc.io/blog/">Blog</a></li>
-      <li><a href="https://www.youtube.com/channel/UCrnk1HWelWnYtF78YZX80fg">Youtube Channel</a></li>
-    </ul>
-  </li>
-  <li><strong>Ask Questions</strong>
-    <ul>
-      <li><a href="https://gitter.im/grpc/grpc">Gitter Chat</a></li>
-      <li><a href="https://groups.google.com/forum/#!forum/grpc-io">Google Group</a></li>
-      <li><a href="http://stackoverflow.com/tags/grpc/">Stack Overflow</a></li>
-    </ul>
-  </li>
-  <li><strong>Keep in Touch</strong>
-    <ul>
-      <li><a href="https://twitter.com/grpcio">Twitter</a></li>
-    </ul>
-  </li>
-</ul>
-
-<h2 id="request-support-for-your-event">Request Support for Your Event</h2>
-<ul>
-  <li><a href="https://goo.gl/forms/C3TCtFdobz4ippty2">gRPC Stickers</a></li>
-  <li><a href="https://goo.gl/forms/pvxNwWExr5ApbNst2">Sign up for office hours with gRPC team</a></li>
-</ul>
-
-<p>It provides a nice blueprint for what is needed when crafting your own Meetup Kit as well as some material you could weave into any other type of Meetup, or workshop that might contain gRPC. Maybe an API design and protocol workshop, where you cover all of the existing approaches out there today like REST, Hypermedia, gRPC, GraphQL, and others. If nothing else the gRPC Meetup Kit provides a nice forkable project, that you could use as scaffolding for your own kit.</p>
-
-<p>As I mentioned in my piece about Tyk, I don’t think Meetups are going anywhere as a tool for API providers, and API service providers to reach a developer audience. However, I think we are going to have to get more creative about how we organize, produce, and incentivize others to put them on. They are a great vehicle for brining together folks in a community to learn about technology, but we have to make sure they are delivering value for people who show up. I am guessing that a little planning, and evolving a toolkit using Github is a good way to approach putting on Meetups, workshops, and other small events around your products, services, and tooling.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/11/a-grpc-meetup-kit/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/11/the-api-coaches-at-capital-one/">The API Coaches At Capital One</a></h3>
-        <span class="post-date">11 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/21586757_10155715320589813_1876210064026688571_o.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>API evangelism and even advocacy at many organizations has always been a challenge to introduce, because many groups aren’t really well versed in the discipline, and often times it tends to take on a more marketing or even sales like approach, which can hurt its impact. I’ve worked with groups to rebrand, and change how they evangelize APIs internally, with partners, and the public, trying to ensure the efforts are more effective. While I still bundle all of this under <a href="http://evangelism.apievangelist.com/">my API evangelism research</a>, I am always looking for new approaches that push the boundaries, and evolve what we know as API evangelism, advocacy, outreach, and other variations.</p>
-
-<p>I was introduced to a new variation of the internal API evangelism concept a few weeks back while at Capital One talking with my friend Matthew Reinbold(<a href="https://twitter.com/libel_vox">@libel_vox</a>) about their approach to API governance. His team at the Capital One API Center of Excellence has the concept of the API coach, and I think Matt’s description from <a href="https://matthewreinbold.com/2017/10/03/API-Governance-Blueprint/">his recent API governance blueprint story</a> sums it up well:</p>
-
-<blockquote>
-  <p><em>At minimum, the standards must be a journey, not a destination. A key component to “selective standardization” is knowing what to select. It is one thing for us in our ivory tower to throw darts at market forces and team needs. It is entirely another to repeatedly engage with those doing the work.<br /><br />
-Our coaching effort identifies those passionate practitioners throughout our lines of business who have raised their hands and said, “getting this right is important to my teams and me”. Coaches not only receive additional training that they then apply to their teams. They also earn access to evolving our standards.<br /><br />
-In this way, standards aren’t something that are dictated to teams. Teams drive the standards. These aren’t alien requirements from another planet. They see their own needs and concerns reflected back at them. That is an incredibly powerful motivator toward acceptance and buy-in.</em></p>
-</blockquote>
-
-<p>A significant difference here between internal API evangelism and API coaching is you aren’t just pushing the concept of APIs (evangelizing), you are going the extra mile to focus on healthy practices, standards, and API governance. Evangelism is often seen as an API provider to API consumer effort, which doesn’t always translate to API governance internally across organizations who are developing, deploying, and managing APIs. API coaches aren’t just developing API awareness across organizations, they are cultivating a standardized, bottom up, as well as top down awareness around providing and consuming APIs. Providing a much more advanced look at what is needed across larger organizations, when it comes to outreach and communication.</p>
-
-<p>Another interesting aspect of Capital One’s approach to API coaching, is that this isn’t just about top down governance, it has a bottom up, team-centered, and very organic approach to API governance. It is about standardizing, and evolving culture across many organizations, but in a way that allows team to have a voice, and not just be mandated what the rules are, and required to comply. The absence of this type of mindset is the biggest contributor to a lack of API governance we see across the API community today. The is what I consider the politics of APIs, something that often trumps the technology of all of this.</p>
-
-<p>API coaching augments <a href="http://evangelism.apievangelist.com/">my API evangelism research</a> in a new and interesting way. It also dovetails with my <a href="http://design.apievangelist.com/">API design research</a>, as well as begins rounding off a new area I’ve wanted to add for some time, but just have not see enough activity in to warrant doing so–API governance. I’m not a big fan of the top down governance that was given to us by our SOA grandfathers, and the API space has largely been doing alright without the presence of API governance, but I feel like it is approaching the phase where a lack of governance will begin to do more harm than good. It’s a drum I will start beating, with the help of Matt and his teams work at Capital One. I’m going to reach out to some of the other folks I’ve talked with about API governance in the past, and see if I can produce enough research to get the ball rolling.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/11/the-api-coaches-at-capital-one/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
