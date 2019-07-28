@@ -129,6 +129,202 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2015/01/28/how-much-api-surface-area-before-it-stops-being-micro/">How Much API Surface Area Before It Stops Being Micro?</a></h3>
+        <span class="post-date">28 Jan 2015</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-map-grid.png" alt="" width="250" align="right" /></p>
+<p>I have most of the core platform that I run API Evangelist on <a href="https://kin-lane.github.io/master/">re-engineered as individual microservices</a>, defined on Github, and running using Docker instances. I&rsquo;m using <a href="http://apievangelist.com/2015/01/28/using-apisjson-for-my-microservice-navigation-and-discovery">APIs.json for discovery, navigation</a>, and to <a href="http://apievangelist.com/2015/01/28/using-swagger-as-fingerprint-for-my-microservice-docker-containers">connect swagger API definitions, to their docker backends</a>.  So far I have 18 microservices, which I define as very simple APIs, that do one thing, and focus on doing it well.</p>
+<p>I&rsquo;m very critical about any feature I add in, working hard to keep each service as micro as I can, reducing complexity, and bloat in any single API.  However, with each service I reach the point where I have to cut off feature creep, and establish an entirely new API definition--I am at this point with my link service.</p>
+<p>I have a pretty bloated link management system in the legacy version of my platform, something which handles links for functions ranging from <a href="https://pinboard.in/u:kinlane">Pinboard</a> integration, to handling linkrot on my public website. My legacy system runs using an API too, but it is a sloppily designed API, with a wide surface area, something I&rsquo;m looking to prevent in the next version.</p>
+<p>So far I&rsquo;ve broken out a single API into three separate microservices:</p>
+<ul>
+<li><strong>Link -</strong> A dead simple link management tool, allowing me to add a title, and url to a simple link data store, for future use.</li>
+<li><strong>Curated - </strong>A service to manage links I curate from many sources, including additional bells &amp; whistles, like pulling text body, taking screenshot, and much more.&nbsp;</li>
+<li><strong>Linkrot -</strong> A link storage system designed for a singe purpose&mdash;to address link rot on my public websites. The API works with a simple JS library to store, monitor, and take screenshots of websites I link to across my network.</li>
+</ul>
+<p>I have about five other simple, link related, microservices I&rsquo;m planning, but these three designs represent the main link resources I need to make API Evangelist work. All of the microservices I&rsquo;m designing will be open sourced at some point, but the linkrot implementation is one I may also be offering as a service. I&rsquo;m enjoying the feature across my sites, and is something that I think has some viability as a basic service.</p>
+<p>I&rsquo;m sure my own definition of what a microservice is--will evolve, ebb and flow, but for now the first rule of microservice club for me, is keep things doing one thing, and doing it very well&mdash;enforcing simplicity in every decision.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/01/28/how-much-api-surface-area-before-it-stops-being-micro/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2015/01/27/the-politics-marketing-and-fear-of-api-security/">The Politics, Marketing, And Fear of API Security</a></h3>
+        <span class="post-date">27 Jan 2015</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-mobile-security.png" alt="" width="150" align="right" /></p>
+<p>I cringe, when I think about the number of mobile applications out there, that people depend on in their personal and professional lives, that are using insecure APIs, allowing&nbsp;<a href="http://en.wikipedia.org/wiki/Personally_identifiable_information">personally identifiable information (PII)</a> to flow across the open Internet. I&rsquo;m a big advocate for helping <a href="http://apievangelist.com/2014/10/27/if-you-have-a-publicly-available-mobile-app-you-have-a-public-api/">mobile developers understand the important role that a public API can play in this situation</a>, but another side of the discussions that also scares me is the fear, uncertainty, and doubt (FUD) that also emerges as part of this conversation.</p>
+<p>I&rsquo;ve covered recent security and privacy involving mobile usage of APIs at <a href="http://101.apievangelist.com/2014/01/08/are-your-api-security-practices-in-better-shape-than-the-snapchat-api/">Snapchat</a>, and <a href="http://apievangelist.com/2015/01/06/another-high-profile-mobile-to-api-security-breach-this-one-at-moonpig-greeting-cards/">Moonpig</a>, and was processing the API news this morning for inclusion on <a href="http://api.report">API.Report</a>, when I came across this press release, <a href="http://api.report/2015/01/27/wandera-finds-official-nfl-app-to-be-leaking-users-personal-data-just-days-ahead-of-the-big-game/">Wandera Finds Official NFL App to be Leaking Users' Personal Data Just Days Ahead of The Big Game</a>. I can get behind the NFL securing their users personal data, but have a hard time jumping on the bandwagon when this is used as PR for a mobile security service, in the lead up to the Superbowl.</p>
+<p>Understanding how everyday mobile apps are using APIs to communicate in the cloud is important. Sharing stories about how to map out this very public surface area, and secure it properly, while giving end-users more awarness and control over their PII is critical. Doing this in the name of marketing, PR, or to ride a fear hype wave is <span style="text-decoration: underline;">not ok</span>. Yet, I fear this will become commonplace in coming months and years, as security breaches, cybersecurity, and privacy are front and center in the media.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/01/27/the-politics-marketing-and-fear-of-api-security/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2015/01/27/apis-role-in-data-security-and-privacy/">APIs Role In Data Security And Privacy</a></h3>
+        <span class="post-date">27 Jan 2015</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/api-security.png" alt="" width="175" align="right" /></p>
+<p>As we get close to wrapping up the first month in 2015, it is clear that Internet security and privacy will continue to be front and center this year. As technology continues to play a central role in our personal and business lives--security, transparency, and respect for privacy is only growing more critical.</p>
+<p>I know I'm biased in thinking that APIs will continue to take a central role in this conversation, but I feel it is true. Many of the existing conversations around security about platforms like <a href="http://apievangelist.com/2014/10/27/if-you-have-a-publicly-available-mobile-app-you-have-a-public-api/">Snapchat</a>, and <a href="http://apivoice.com/2015/01/06/another-high-profile-mobile-to-api-security-breach-this-one-at-moonpig-greeting-cards/">MoonPig</a>, are directly related to APIs, while other security scope at companies like Sony, JP Morgan Chase, and beyond could easily be reduced with a sensible API strategy.</p>
+<p>Companies are increasingly operating online, but do not act like any of information lives in an online environment. Adopting an API approach to defining company resources, helps map out this surface area, acknowledging it is available over the Internet, and works to define, secure, and monitor this surface in a healthier way.</p>
+<p>Mobile users need access to their data, and by applying an API centric approach, providing account management, data portability, and access and identity controls using oAuth, you can increase transparency, while also strengthening overall security. If your company operations is centered around customer and end-user data transactions, you should be making all data points available via an API, accompanied by a well oiled oAuth layer to help end-users manage their resources, playing a significant role in their own privacy and security.</p>
+<p>I'm not delusional in thinking that APIs provide a perfect solution for all our security and privacy woes, it doesn't, but it does set a tone for a more healthy conversation about how companies are doing business on the open Internet, and how we can better secure the online web, mobile, and device-based applications we are increasingly depending on in this new world we have created.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/01/27/apis-role-in-data-security-and-privacy/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2015/01/26/my-experiences-generating-api-server-or-client-code-using-swagger/">My Experiences Generating API Server or Client Code Using Swagger</a></h3>
+        <span class="post-date">26 Jan 2015</span>
+        <p><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gears.png" alt="" width="250" align="right" /></p>
+<p>When you start talking about generating server or client side code for APIs, using machine readable API definition formats like <a href="http://swagger.io">Swagger</a> or <a href="https://apiblueprint.org/">API Blueprint</a>, many technologists feel compelled to let you know, that at some point you will hit a wall. There is only so far you can go, when using your API definition as guide for generating server-side or clienit-side code, but in my experience you can definitely save some significant time an energy, by auto-generating code using Swagger definitions.</p>
+<p>I just finished re-designing 15 APIs that support the core of API Evangelist, and to support the work I wrote four separate code generation tools:</p>
+<ul>
+<li><strong>PHP Server - </strong>Generating a Slim PHP framework for my API, based upon Swagger definition.</li>
+<li><strong>PHP Client -</strong> Assemble a custom PHP client of my design, using Swagger definition as guide.</li>
+<li><strong>JavaScript Client -</strong>&nbsp;Assemble a custom JavaScript client of my design, using Swagger definition as guide.</li>
+<li><strong>MySQL Database - </strong>Generate a MySQL script based upon the data models available in a Swagger definition.</li>
+</ul>
+<p>Using Swagger, I can get myself 90-100% of the way for most of the common portions of the APIs I design. When writing a simple CRUD API like notes, or for links, I can auto-generate the PHP server, and a JS client, and underlying MySQL table structure, which in the end, runs perfectly with no changes.</p>
+<p>Once I needed more custom functionality, and have more unique API calls to make, I then have to get my hands dirty, and begin manually working in the code. However auto-generation of code sure gets me a long way down the road, saving me time doing the really mundane, heavy lifting in creating the skeleton code structures I need to get up an running with any new API.</p>
+<p>I&rsquo;m also exploring using <a href="http://apisjson.org">APIs.json</a>, complete with <a href="http://swagger.io">Swagger</a> references, and Docker image references to further bridge this gap. In my opinion, a Swagger definition for any API, can act as a fingerprint for which interfaces a docker image supports. I will write about this more in the future, as I produce better examples, but I'm finding that using APIs.json to bind a Swagger definition, with one or many Docker images, opens up a whole new view of how you can automate API deployment, management, and integration.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/01/26/my-experiences-generating-api-server-or-client-code-using-swagger/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2015/01/26/finished-processing-973-api-related-patents-from-2013/">Finished Processing 973 API Related Patents From 2013</a></h3>
+        <span class="post-date">26 Jan 2015</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-patents.png" alt="" width="275" align="right" /></p>
+<p>I&rsquo;m slowly processing <a href="http://patents.reedtech.com/pgrbft.php">XML files of patents from the US Patent Office</a>. You can <a href="http://apievangelist.com/2015/01/25/doing-the-research-in-preparation-for-my-patent-on-a-patent-api/">read the origin of my journey here</a>, but as of today, I finished processing 50 files of patent applications for 2013, adding 973 API related patents to the queue. I&rsquo;m still making sense of the different types of patents, and whether they are specifically for APIs, more API adjacent, or just mention API as one component in the patent definition.</p>
+<p>I figure I&rsquo;ll go back to about 1990-1995, but not 100% sure at this point. So far I&rsquo;ve identified 105 patent applications from 2015, 322 from 2014, and now 973 from 2013. I&rsquo;m still reading the title and abstract of each patent application as they come in, building my understanding of what has been submitted, and the possible motivations behind each application.</p>
+<p>Here are the current numbers that I have so far.</p>
+<p>There are <span style="text-decoration: underline;">6 patents so far that mention application programming interface or API directly in the title</span> of the patent:</p>
+<ul>
+<li>12953023 - Providing customized visualization of application binary interface/application programming interface-related information - Red Hat, Inc.</li>
+<li>11559545 - 3D graphics API extension for a shared exponent image format - Nvidia Corporation</li>
+<li>12832025 - Application programming interface, system, and method for collaborative online applications - Apple Inc.</li>
+<li>12974934 - Method and apparatus for reverse patching of application programming interface calls in a sandbox environment - Adobe Systems Incorporated</li>
+<li>13178356 - Application programming interface for identifying, downloading and installing applicable software updates - Microsoft Corporation</li>
+<li>12716022 - Secure expandable advertisements using an API and cross-domain communications - eBay Inc.</li>
+</ul>
+<p>There are <span style="text-decoration: underline;">54 patents that mention application programming interface or API directly in the abstract</span> of the patent:</p>
+<ul>
+<li>14477614 - System and method for connecting, configuring and testing wireless devices and applications - Jasper Technologies, Inc.</li>
+<li>13974635 - Information processing device, information processing method, and program - Sony Corporation</li>
+<li>13564610 - System and method for detecting errors in audio data - NVIDIA Corporation</li>
+<li>13744892 - Configuring and controlling wagering game compatibility - WMS Gaming, Inc.</li>
+<li>13858506 - Method and system for providing transparent access to hardware graphic layers - QNX Software Systems Limited</li>
+<li>11110293 - Directory features in a distributed telephony system - ShoreTel, Inc.</li>
+<li>12875132 - Lighting control system and method - Lumetric Lighting, Inc.</li>
+<li>13283872 - Unified transportation payment system - LG CNS Co., Ltd.</li>
+<li>13244694 - Apparatuses, methods and systems for a distributed object renderer - Zynga Inc.</li>
+<li>13743078 - System and method for processing telephony sessions - Twilio, Inc.</li>
+<li>13793712 - Cross-promotion API - Zynga Inc.</li>
+<li>13654798 - Declarative interface for developing test cases for graphics programs - Google </li>
+Inc.
+<li>12267828 - Method and apparatus for monitoring runtime of persistence applications - SAP AG</li>
+<li>12559750 - Graphical display of management data obtained from an extensible management server - American Megatrends, Inc.</li>
+<li>13146368 - Configuring and controlling wagering game compatibility - WMS Gaming, Inc. </li>
+<li>12957479 - User authentication system and method for encryption and decryption - Empire IP LLC</li>
+<li>12570012 - Generic user interface command architecture - Microsoft Corporation</li>
+<li>13072462 - Adaptive termination - Triune Systems, LLC</li>
+<li>12605782 - Digital broadcasting system and method of processing data in digital broadcasting system - LG Electronics Inc.</li>
+<li>13244187 - Backup systems and methods for a virtual computing environment - Vizioncore, Inc.</li>
+<li>12970873 - Shared resource discovery, configuration, and consumption for networked solutions - SAP AG</li>
+<li>12425992 - Command portal for securely communicating and executing non-standard storage subsystem commands - Siliconsystems, Inc.</li>
+<li>12535139 - Methods for determining battery statistics using a system-wide daemon - Red Hat, Inc.</li>
+<li>12940986 - Integrated repository of structured and unstructured data - Apple Inc.</li>
+<li>13354233 - Browsing or searching user interfaces and other aspects - Apple Inc.</li>
+<li>12564288 - Detecting security vulnerabilities relating to cryptographically-sensitive information carriers when testing computer software - International Business Machines Corporation</li>
+<li>12885706 - Contact picker interface - Microsoft Corporation</li>
+<li>12357979 - Computer apparatus and method for non-intrusive inspection of program behavior - Trend Micro Incorporated</li>
+<li>12512121 - Method and system for managing graphics objects in a graphics display system - Microsoft Corporation</li>
+<li>11559545 - 3D graphics API extension for a shared exponent image format - Nvidia Corporation</li>
+<li>11828957 - Apparatus, system, and method for hiding advanced XML schema properties in EMF objects - International Business Machines Corporation</li>
+<li>12829714 - Storage manager for virtual machines with virtual storage - International Business Machines Corporation</li>
+<li>13073146 - Unified onscreen advertisement system for CE devices - Sony Corporation</li>
+<li>12209267 - Method and apparatus for measuring the end-to-end performance and capacity of complex network service - AT&amp;T Intellectual Property I, LP</li>
+<li>12832025 - Application programming interface, system, and method for collaborative online applications - Apple Inc.</li>
+<li>11633851 - Method and apparatus for persistent object tool - SAP AG</li>
+<li>12889083 - Window server event taps - Apple Inc.</li>
+<li>12974934 - Method and apparatus for reverse patching of application programming interface calls in a sandbox environment - Adobe Systems Incorporated</li>
+<li>13248633 - Ecommerce marketplace integration techniques - Microsoft Corporation</li>
+<li>11899197 - Energy distribution and marketing backoffice system and method - Ambit Holdings, L.L.C.</li>
+<li>12941026 - Extended database search - Apple Inc.</li>
+<li>12209996 - Custom search index data security - Google Inc.</li>
+<li>13481814 - Apparatus and method for circuit design - Agnisys, Inc.</li>
+<li>12536363 - Seamless user navigation between high-definition movie and video game in digital medium - Warner Bros. Entertainment Inc.</li>
+<li>12271690 - Programming APIS for an extensible avatar system - Microsoft Corporation</li>
+<li>13178356 - Application programming interface for identifying, downloading and installing applicable software updates - Microsoft Corporation</li>
+<li>12716022 - Secure expandable advertisements using an API and cross-domain communications - eBay Inc.</li>
+<li>12838128 - Method and system for improving performance of a manufacturing execution system - Siemens Aktiengesellschaft</li>
+<li>12459005 - Method and system for providing internet services - Alibaba Group Holding Limited </li>
+<li>12858814 - Interaction management - 8x8, Inc.</li>
+<li>11684351 - Administrator level access to backend stores - Microsoft Corporation</li>
+<li>13048810 - Preventing malware from abusing application data - Symantec Corporation</li>
+<li>13271978 - Interfaces for high availability systems and log shipping - Microsoft Corporation</li>
+<li>12276157 - Unified storage for configuring multiple networking technologies - Microsoft Corporation</li>
+</ul>
+<p>With the other other 1231 mentioning application programming interface or API in the description of the patent. It will take time to understand the scope of role APIs play when APIs are just a metnion in the description, where patents that directly mention in title, and abstract, carry a little more weight. (at least for now)</p>
+<p>Another interesting layer so far, were the companies behind the last 2 years of API related patent activity. Here are the top 25 from the list so far.</p>
+<ul>
+<li>Microsoft Corporation with 118 patents</li>
+<li>International Business Machines Corporation with 75 patents</li>
+<li>Google Inc. with 52 patents</li>
+<li>Apple Inc. with 41 patents</li>
+<li>Amazon Technologies, Inc. with 26 patents</li>
+<li>QUALCOMM Incorporated with 23 patents</li>
+<li>SAP AG with 19 patents</li>
+<li>Research In Motion Limited with 18 patents</li>
+<li>Citrix Systems, Inc. with 17 patents</li>
+<li>Hewlett-Packard Development Company, L.P. with 17 patents</li>
+<li>BlackBerry Limited with 16 patents</li>
+<li>Adobe Systems Incorporated with 16 patents</li>
+<li>Bally Gaming, Inc. with 16 patents</li>
+<li>Oracle International Corporation with 15 patents</li>
+<li>Zynga Inc. with 15 patents</li>
+<li>Cisco Technology, Inc. with 13 patents</li>
+<li>Symantec Corporation with 12 patents</li>
+<li>Red Hat, Inc. with 12 patents</li>
+<li>AT&amp;T Intellectual Property I, L.P. with 11 patents</li>
+<li>Fujitsu Limited with 10 patents</li>
+<li>EMC Corporation with 10 patents</li>
+<li>Intel Corporation with 9 patents</li>
+<li>CommVault Systems, Inc. with 9 patents</li>
+<li>Canon Kabushiki Kaisha with 9 patents</li>
+<li>Enpulz, L.L.C. with 9 patents</li>
+</ul>
+<p>I&rsquo;m still learning, understanding, and making sense of these API related patents I&rsquo;m mining. I will work to read, and separate out the hardware related APIs, but only slightly off to the side, as I still think hardware APIs are extremely relevant with the latest IoT evolution. During the process, I&rsquo;m sure I&rsquo;ll come up with other buckets to put APIs into, but ultimately looking to understand the role that APIs are playing in the patent game.</p>
+<p>I suspect that downloading the last 20+ years of patents, processing them looking for the phrases &ldquo;application programming interface&rdquo;, or the acronym API, is just the beginning. As I read through the patents, learn about the ideas, people, and companies behind them, I&rsquo;m sure my understanding will expand greatly. I&rsquo;ll check in with more data after each import of files, and discovery of any new insights, and as always, you can find my <a href="http://patents.apievangelist.com/">patent API research repository on Github</a>.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/01/26/finished-processing-973-api-related-patents-from-2013/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2015/01/25/doing-the-research-in-preparation-for-my-patent-on-a-patent-api/">Doing The Research In Preparation For My Patent On A Patent API</a></h3>
         <span class="post-date">25 Jan 2015</span>
         <p><a href="http://patents.apievangelist.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-certificate.png" alt="" width="200" align="right" /></a></p>
@@ -1074,102 +1270,6 @@
 <p>You can find the <a href="http://theapistack.com/data/docker/docker-remote-api-swagger.json">Swagger 2.0 definition for the Docker v1.16 API on The API Stac</a>k, where <a href="https://github.com/kinlane/api-stack/tree/gh-pages/data">I publish all my Swagger definitions for the APIs</a> I integrate with, and monitor as part of my research. I&rsquo;m adding definitions all the time, so check back often, and if you have any API definitions I do not, feel free to fork the repo, and submit them via pull request. I&rsquo;m not just looking for Swagger, I'd love to have any format you generate machine readable API definitions in&mdash;it is important that all of this layer of the API space, is accessible, and machine readable, so please help make it so.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2014/12/20/swagger-20-for-the-docker-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2014/12/19/on-being-an-api-broker-for-hackathons/">On Being An API Broker For Hackathons</a></h3>
-        <span class="post-date">19 Dec 2014</span>
-        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hackathon.png" alt="" width="250" align="right" /></p>
-<p>I recently had a conversation with one of my contacts at a federal agency about a hackathon tour they are planning. The federal government doesn&rsquo;t call these events hackathons, they call them data jams, but for sake of this story I&rsquo;m going to call them hackathons, and also omit the name of the agency until they are ready to talk about the event(s) publicly.</p>
-<p>This agency had many questions about putting on a hackathon, but one I found particularly interesting, and something that is in line with other concepts I&rsquo;m exploring in the API space, was the desire to assemble a stack of resources that developers could put to use at the event, along with their own agency APIs. They were concerned about hackathon teams coming to the event and having to spend a great deal of time looking for APIs, open data-sets, and tools to use in their projects.</p>
-<p>Building on top of <a href="http://apievangelist.com/2014/10/10/exploring-the-possibilities-of-being-an-api-broker/">other stories I've told about being an API broker</a>, I will be putting some thought into how I can possibly act as an API broker for this agency and their hackathon(s). I will set up a Github repository, where I will list agency APIs, as well as bring other relevant government agencies APIs and open data sets. I won&rsquo;t stop there, I will also consider what other private sector APIs, and open tooling that would help attendees be more successful, save time and ultimately rise to the occasion.</p>
-<p>These thoughts are building on earlier ideas from Cyril Gaillard in his medium post titled "<a href="https://medium.com/@cyrilgaillard/i-dont-need-a-business-co-founder-i-need-an-api-broker-c9be536cf8fa">I don&rsquo;t need a business co-founder, I need an API broker</a>". My motivations are all about defining a new breed of evangelists who really understand the API space, and know where to find the best APIs, tools, and other resources. Then these API brokers can use Github to aggregate all relevant APIs, data sources, and tools or services into a single location, saving developers real time and money when building applications.</p>
-<p>Maybe not for these hackathons, but in other API broker scenarios I can envision the API broker also signing up for developer accounts, organizing API keys, and finding other meaningful tasks that would save time, and increase efficiencies for developers. An API Broker would be in charge of managing all resources that a development team will need to achieve their objectives, as efficiently as possible.</p>
-<p>As the number of APIs increase, I envision the concept of a single developer or API evangelist, for a single API evolving to a world where there are many API brokers, who deeply understand many APIs. Then companies, organizations, and government agencies can lean on these API brokers to help them build the best aggregate backend stack possible for projects, hackathons, and any other scenario where APIs will be put to use, potentially solving problems that these groups and individuals face on a daily basis.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2014/12/19/on-being-an-api-broker-for-hackathons/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2014/12/19/are-you-a-hypermedia-pragmatist/">Are You A Hypermedia Pragmatist?</a></h3>
-        <span class="post-date">19 Dec 2014</span>
-        <p><a href="http://hypermedia.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hypermedia.png" alt="" width="250" align="right" /></a></p>
-<p>I have been spending a lot more time in 2014 <a href="http://hypermedia.apievangelist.com">learning, discussing, and telling stories about hypermedia</a>. Early this year <a href="http://apievangelist.com/2014/01/07/what-is-a-hypermedia-api/">I identified that hypermedia was moving beyond just academic discussion</a>, and entering the mainstream consciousness of the API community. I do not consider myself a hypermedia expert, and had a lot more to learn, and by moving hypermedia further into my regular research, over time this education would come.</p>
-<p>At the end of 2014, my deep technical knowledge of hypermedia, and the nuances between each of the formats isn&rsquo;t there yet&mdash;I just do not have the production experience with any of them to know what I&rsquo;m doing. I can provide an overview of the technology, the various formats, and the people behind each movement, as well as point to some real world hypermedia implementations, but when it comes to getting down to the details I&rsquo;m just not there yet.</p>
-<p>One of my readers, from a leading tech company recently emailed me asking for a <em>&ldquo;hypermedia pragmatist&rdquo;</em>&mdash;here is an excerpt:</p>
-<blockquote><em> We have a lot of opinions in our organization about how we should implement hypermedia APIs.  I&rsquo;d like someone to discuss pros/cons of different approaches in our monthly API discussion group but don&rsquo;t want someone who only promotes one view (i.e., JSON-LD, HAL, etc.) or is extreme in their hypermedia views.<br /><br /> Do you know of anyone whom you would consider a hypermedia pragmatist?  Someone who understands the competing specs but is pragmatic about how to implement.</em></blockquote>
-<p>This describes what I&rsquo;ve set out to be for the API space in general, being a pragmatists in the tech, business, and politics of APIs, and I guess I can "almost" call myself a hypermedia pragmatists, except I just don&rsquo;t have the implementation experience. I&rsquo;m sharing this story, because I&rsquo;m getting this question at multiple companies,&nbsp;educational institutions, non-profit organizations, and government agencies I'm in talks with.</p>
-<p>Eventually I will get there, and obtain the experience in implementing each of the <a href="http://hypermedia.apievangelist.com/tools.html">leading hypermedia formats</a>, but until then I need some help. Do you consider yourself knowledgeable across the leading formats? Are you a pragmatists when it comes to understanding what is possible when it comes to API design, and the implementation? Are you nice, professional, and informative when it comes to API education, strategy, and execution?</p>
-<p>If you are a hypermedia pragmatist and open to consulting, and telling stories from your engagement, please let me know.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2014/12/19/are-you-a-hypermedia-pragmatist/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2014/12/18/do-you-know-that-hypermedia-is-a-better-solution-for-discovery-than-apisjson/">Do You Know That Hypermedia Is A Better Solution For Discovery Than APIs.json?</a></h3>
-        <span class="post-date">18 Dec 2014</span>
-        <p><a href="http://discovery.apievangelist.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png" alt="" width="200" align="right" /></a></p>
-<p>I spend a lot of time field questions from people about <a href="http://apisjson.org/">APIs.json</a>. This is something I expect to be doing for the next 10 years, and happy to field questions about exactly what it is all about, and help educate folks about exactly where APIs.json it fits in to the overall API landscape.</p>
-<p>A regular comment I get from technologists, and API savvy folks is <em>&ldquo;you know that hypermedia is a better solution for discovery than APIs.json?&rdquo; </em>To which I reply <em>&ldquo;yes I know, but hypermedia is a solution for the API world we want, and APIs.json is a solution for the world we have&rdquo;.</em> I would love it if everyone understood hypermedia, and designed and deployed their APIs with this knowledge in mind&mdash;something I&rsquo;ve spending a lot more time on in 2014, and will continue the push in 2015.</p>
-<p>In the mean time, I intend to continue stitching apitogether thousands of APIs available out there, using APIs.json, allowing them to be discovered via open source public search engines like <a href="http://apis.io">APIs.io</a>, private internal search engines, and IDE solutions like <a href="http://www.codenvy.com/">Codenvy</a>. We don&rsquo;t just need discovery solutions to find new APIs, we need ways to build collections of high value APIs, something APIs.json excels at.</p>
-<p>Another thing that APIs.json does, that I don&rsquo;t feel that hypermedia provides a solution to, is the discovery of the other technical, business, and political building blocks like the documentation, code libraries, SDKs, terms of service, and other critical elements of API operations. This an area that APIs.json was specifically defined for, allowing the discovery of these vital areas, in addition to the actual API interfaces.</p>
-<p>As I do with many of my posts, this one is crafted to be a cookie cutter response to these comments I get regularly about hypermedia vs. APIs.json, allowing me to just reply with a link to this story on my blog. Hopefully we can shift the tide of API deployments in favor of hypermedia, but the APIs we can&rsquo;t do this with, APIs.json is a healthy alternative, and I even recommend using it alongside hypermedia to provide easy access to the other critical building blocks of API operations, that technologists often overlook.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2014/12/18/do-you-know-that-hypermedia-is-a-better-solution-for-discovery-than-apisjson/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2014/12/18/api-service-idea-api-via-excel-from-within-corporate-email/">API Service Idea: API Via Excel From Within Corporate Email</a></h3>
-        <span class="post-date">18 Dec 2014</span>
-        <p><a href="/admin/blog/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email.png" alt="" width="150" align="right" /></a></p>
-<p>Most organization I&rsquo;ve worked with, the Excel spreadsheet is the central way of storing, managing and sharing data, with email being the number one way to share these data filled documents. When I was doing data inventory at the Department of Veteran Affairs (VA), as part of the White House open data initiative, almost every piece of high value data I found was housed in a spreadsheet, and the data stewards who were in charge of this data, would email it to me when I asked for it.</p>
-<p>To help data stewards go from spreadsheet to API, I<a href="https://github.com/kinlane/email-xlsx-to-csv-json-xml"> wrote an Excel to JSON converter</a>, that was available via a private email address. All you had to do to convert a spreadsheet, was create a new email, attach your spreadsheet to the email, then send it to the specific address, and when it was done processing, you&rsquo;d get an email in response, with links to a CSV, XML, and JSON version of the spreadsheet&mdash;unless it was a super complex spreadsheet of course, but this wasn&rsquo;t our target.</p>
-<p>Over the last year, this concept has simmered in my brain, and I can&rsquo;t help but think how important both Excel and email are to the onboarding the data that exists across small businesses, the enterprise, organizations, and government agencies. Imagine if you could monitor all the email that flowed within an organization, and look for spreadsheets being emailed back and forth. This would tell you a lot of about how data is stored, managed, and shared across groups. This intelligence could then be used to help direct API efforts, and open data initiatives like the one I participated in within the federal government.</p>
-<p><a href="/admin/blog/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-excel-icon.jpg" alt="" width="150" align="right" /></a></p>
-<p>I put this idea in my Evernote a couple months back, and tried writing about it a few times, and during a recent flight I added to it. You could go beyond just identifying data usage patterns across a company, you could also generate APIs from this activity. Anytime an email with a spreadsheet attached was intercepted, a reply could be sent giving them a path to an API that was created, education about how to use that API, including a spreadsheet connector for the API, so that the person could continue working in the tools they are most comfortable, but now the data would be centralized, rather than fragmented across inboxes.</p>
-<p>This idea could easily be executed upon using the <a href="http://context.io/">popular email API Context.io</a>, which would allow you to store an organization's email, and provide the index you&rsquo;d need to discovery the spreadsheets you can use to develop APIs, and identify how data is shared across an organization, then develop educational strategies for evolving behavior. I&rsquo;m pretty confident that part of the next wave of APIs will involve this layer of data, across businesses, organizations, and government agencies. I&rsquo;d like to see services like this emerge, to help organizations understand how they use data, and provide the vital intelligence needed to help change behavior for the better, evolving everyone towards an API centric way of getting business done.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2014/12/18/api-service-idea-api-via-excel-from-within-corporate-email/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2014/12/16/with-number-of-apis-continuing-to-grow-account-automation-will-be-key/">With Number Of APIs Continuing To Grow Account Automation Will Be Key</a></h3>
-        <span class="post-date">16 Dec 2014</span>
-        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-gears.png" alt="" width="250" align="right" /></p>
-<p>I personally depend on over 40 APIs, all of which I have to manage my developer account, apps, and API key access for. This can be a lot of work, and as I continue to add APIs to my stack, this work is only going to grow. Putting on my <a href="http://apievangelist.com/2014/10/10/exploring-the-possibilities-of-being-an-api-broker/">API broker</a> hat, and thinking about a future, where you will need to gather and organize potentially hundreds of APIs, across multiple companies, things are going to start breaking down if we don't do something to bridge these services.</p>
-<p><strong>Standard API Developer Accounts</strong><br /> First, API onboarding will have to always include a standard API developer account, providing a common data model, and approach to managing developer accounts. Luckily many API platforms use <a href="http://www.3scale.net/">API management providers like 3Scale</a>, so this shouldn't be too much work, but I still come across plenty of APIs who do not even have basic developer account building blocks like analytics, or billing management.  I wrote about this, <a href="http://kinlane.com/2014/06/05/google-accounts-as-blueprint-for-all-software-as-a-service-applications/">using Google as potential blueprint for how we could possibly standardize developer accounts</a>, and I know that <a href="https://auth0.com/blog/2014/12/02/using-json-web-tokens-as-api-keys/">service providers like Auth0 are working to help provide plug and play services</a> that address this as well.</p>
-<p><strong>API For Developer Accounts</strong><br /> I recently wrote about the email API Mallet, a couple of weeks back, and how they <a href="http://apievangelist.com/2014/11/12/an-api-for-developers-to-access-their-api-account-information/">have an API for their API developer accounts</a>. This allows users to manage apps, their keys, as well as stay in tune with their API usage, and able to understand when they are hitting their limits, allowing them manage their access tier, and billing information programmatically. Imagine that, an API for accessing account resources?? API providers need to follow their own lead, and make sure all accounts have API by default--all aspects of your API platform should have an API in 2014, there really is no excuse.</p>
-<p><strong>Automated Account Registration And Key Provisioning.</strong><br /> I&rsquo;m always pushing API providers to offer single sign for the creation of API developer accounts, allowing developers to sign up for API access with a single click, using their Github or Twitter accounts. This helps alleviate onboarding friction, and prevents developers from having to create yet another username and password. We have to go beyond even this approach, and begin to allow single API call, registration for API developer accounts. I want a way to just POST to example.com/auth, with my Github credentials, or other means, and have my developer account instantly setup, and my first app and keys returned. Account setup can be finished later, but this type of API account automation would speed up onboarding and the integration of applications.</p>
-<p>These are just three of the ways that I feel we need to improve on the account creation, management, automation, and interoperability, for the APIs we are increasingly depending on. Since onboarding friction has been a stumbling block for many developers, and influencing their decision of which APIs they use in the past, I predict if API providers don't continue to improve on their API developer account workflow, developers will look elsewhere.</p>
-<p>If you are an API provider, it can be easy to miss this layer of API integration, but us API consumers, and the growing number of us who are using numerous APIs, feel the pain. With the rapid growth in the industry, API account management will continue to grow as an area that needs a more sophisticated approach, and is something that makes the argument for using API infrastructure platforms like 3Scale, over hand-rolling your own API management solution.</p>
-<p><em><strong>Disclosure:</strong> 3Scale is an API Evangelist partner</em></p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2014/12/16/with-number-of-apis-continuing-to-grow-account-automation-will-be-key/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

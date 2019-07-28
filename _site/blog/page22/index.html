@@ -129,6 +129,205 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2016/10/27/tooling-to-help-aggregate-dns-across-multiple-service-providers/">Tooling To Help Aggregate DNS Across Multiple Service Providers</a></h3>
+        <span class="post-date">27 Oct 2016</span>
+        <p>Adrian Cockroft (@adrianco) turned me on to a DNS aggregation solution the other day while I was working on updating <a href="http://dns.apievangelist.com/apis/">the API definitions for the API providers that are included in my API DS research</a>. It was a very appropriate day for thinking deeply about aggregate DNS, with the DDOS attack against Dyn going on.</p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">DNS provider redundancy: the idea behind <a href="https://twitter.com/denominatorOSS">@denominatorOSS</a> - one API/tool for many providers to allow switching. /cc <a href="https://twitter.com/adrianfcole">@adrianfcole</a></p>
+&mdash; adrian cockcroft (@adrianco) <a href="https://twitter.com/adrianco/status/789467783947878400">October 21, 2016</a></blockquote>
+<p><a href="https://github.com/Netflix/denominator"><span>Denominator&nbsp;</span>is a portable Java library for manipulating DNS clouds</a>. It has pluggable backends, including AWS Route53, Neustar Ultra, DynECT, Rackspace Cloud DNS, and OpenStack Designate. Here is a good post on it from back in 2013, <a href="http://techblog.netflix.com/2013/03/denominator-multi-vendor-interface-for.html">describing it as a multi-vendor interface for DNS</a>.&nbsp;</p>
+<p><a href="https://github.com/Netflix/denominator"><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/68747470733a2f2f7261772e6769746875622e636f6d2f4e6574666c69782f64656e6f6d696e61746f722f6d61737465722f64656e6f6d696e61746f722e6a7067.jpeg" alt="" width="50%" align="center" /></a></p>
+<p>There doesn't look to be a lot of activity around the project in the last year, but it provides a good model for what I'd like to eventually see across all the major stops along the API lifecycle. I picture a wealth of aggregate tooling like Denominator that can act as a broker between API service providers&nbsp;and help switch, migrate, and sync between providers whether you are deploying, managing, testing, monitoring, or dialing in your DNS.</p>
+<p>As I read the multiple investigations into what happened with the DDOS attack on Dyn last week, it seems relevant to learn more about aggregate DNS API solutions like Denominator. I will spend some time looking for other similar open tooling that is vendor-neutral, as well as vendor-switchable. We are going to need open source circuit breakers like this to help route, switch, migrate, and sync DNS across many service providers in this volatile landscape.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/10/27/tooling-to-help-aggregate-dns-across-multiple-service-providers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/10/27/allowing-for-relationships-between-api-developers-at-the-app-level/">Allowing For Relationships Between API Developers At The App Level</a></h3>
+        <span class="post-date">27 Oct 2016</span>
+        <p><img style="padding: 5px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_26_at_9.05.40_pm.png" alt="" width="35%" align="right" /></p>
+<p>Managing developers access to an API is <a href="http://management.apievangelist.com/">API management 101</a>. Managing the relationships between developers, and allowing for multiple users associated with an API application isn't something I have seen before. <a href="https://medium.com/slack-developer-blog/build-together-with-app-collaborators-8162e31800f1#.e5cc4ci7">Slack just added the ability to add what they call app collaborators</a>--"<span>adding any existing member of your Slack team as a Collaborator, including members and&nbsp;</span><a href="https://get.slack.help/hc/en-us/articles/202518103-Multi-Channel-and-Single-Channel-Guests">Guest Accounts</a><span>."</span></p>
+<p>The functionality felt a lot like the social aspects that made Github more attractive than just Git. When it comes to developing messaging apps and bots I can see a social layer doing pretty well. "<span>Once a Collaborator is added, they&rsquo;ll receive a notification from Slackbot letting them know they now have access to your app." Smells like an opportunity for API management providers to bake into user management solution, and if you wanted to take it to the next level, add a Slack messaging layer as option.</span></p>
+<p>Its a small feature, but I think it is one of the things that made Github work, and could have a similar impact at the API management level, allowing for more engagement between users who are working together on API integration. I am going to add it as a building block for my <a href="http://management.apievangelist.com/">API management research</a>, even if I haven't seen it elsewhere. It is something I'd like to see more of, and maybe if I plant the bug, more providers will implement.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/10/27/allowing-for-relationships-between-api-developers-at-the-app-level/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/10/26/transparent-data-transfer-control-apis-at-the-iot-device-level/">Transparent Data Transfer Control APIs At The IoT Device Level</a></h3>
+        <span class="post-date">26 Oct 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-device-data.png" alt="" width="40%" align="right" /></p>
+<p class="p1">I am diving deep into the DJi drone developer platform, and one of the elements of <a href="https://developer.dji.com/guidance-sdk/documentation/introduction/index.html#api">the DJi Drone Guidance API that caught my attention was the data transfer control methods</a>. In this situation, the transfer control methods are designed for just the data being sent as part of the drone guidance systems, but I think it provides a blueprint that can be used across almost any IoT device connectivity.</p>
+<p class="p1">DJI provides four methods for managing the drone data transfer control:</p>
+<ul>
+<li><strong>Start Transfer -&nbsp;</strong>Inform guidance to start data transfer.</li>
+<li><strong>Stop Transfer -&nbsp;</strong>Inform guidance to stop data transfer.</li>
+<li><strong>Release Transfer -</strong>&nbsp;Release the data transfer thread.</li>
+<li><strong>Wait For Board Ready -</strong>&nbsp;Set callback function handler for hen data from guidance comes, it will be called by data transfer thread.</li>
+</ul>
+<p>The "wait for board ready" method acts as a sort of web hook, that can notify any application build on the API that data is now being transferred, opening up the possibilities for notifying a device owner, and operator that data is being transferred. To me, this can be a critical aspect of building trust that our devices have our best interests in mind, providing some essential transparency in the data layer of the IoT space.</p>
+<p>Data transfer control APIs for IoT devices like this will not ensure healthy data practices. This implementation is designed to provide transfer control capabilities to the developer, it is now up to the developer to include the end users in this process. Many current mobile application business models do not incentivize this type of transparency, as you do not want end users, and often times 3rd party developers involved in data gathering, and revenue generation this valuable "exhaust" of Internet-connected devices.</p>
+<p>I am hoping this evolves and changes as the Internet matures, and the number of connected devices increases. We need transparency at the device data transfer level, and we need all humans involved / impacted to be a literate, active, and will participate in the IoT data flow. I know many entrepreneurs think the end user isn't sophisticated enough to be involved, but this is more about your desire to keep any value generated for yourself&nbsp;than it is about the end-users capacity to grasp this stuff.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/10/26/transparent-data-transfer-control-apis-at-the-iot-device-level/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/10/26/potential-for-apis-to-target-us-online-by-adding-more-context/">Potential For APIs To Target Us Online By Adding More Context</a></h3>
+        <span class="post-date">26 Oct 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_25_at_1.08.16_pm.png" alt="" width="45%" align="right" /></p>
+<p>Many folks see me simply as a cheerleader for APIs&nbsp;when in reality I am more of an evangelist for the bad that can happen with APIs. I believe that sharing of data, content, and algorithms using web APIs has the potential for good, but in reality, they are often be used for doing some pretty shady shit.&nbsp;</p>
+<p>An example of this is found in my inbox this morning, and I'm sure is something everyone will encounter at some point in their daily lives. It is an email for an undelivered Fedex package, which I know better than to click on, but sadly I think it is one that many folks will fall for.</p>
+<p>Why do they fall for this? Because the email potentially has relevance, as I just ordered a handful of packages from Amazon, which were being shipped via Fedex (I do not order much online). Using the FedEx&nbsp;API, anyone can query the status of a&nbsp;package. I'm assuming that there are&nbsp;folks out there who are scanning for the presence of delivering notifications--I'm not up to speed on the details of how you can do this. I'm unsure if they can get my email alongside this information, but I don't think this matters. I think they can correlate data about where I live, and the fact I'm receiving packages--whether the email came from API, or through other forms intelligence, it doesn't matter.&nbsp;</p>
+<p>My point is more around the fact that APIs are increasingly opening up signals about our daily lives, providing a wealth of context for phishing campaigns, increasing the chance that people will fall for these attacks. My solution to this problem does not involve a knee-jerk response to providing APIs, I am just looking to just warn API providers that they should be&nbsp;monitoring for this type of behavior on top of an API, and we should help the average email users&nbsp;and Amazon&nbsp;package&nbsp;receiver that these dangers exist. Everyone should pause and think deeply about each link or file attachment we click on--no matter how relevant it might seem in our daily flow.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/10/26/potential-for-apis-to-target-us-online-by-adding-more-context/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2016/10/26/learning-the-dimensions-of-the-dji-drone-sdks-and-apis/">Learning The Dimensions Of The DJI Drone SDKs And APIs</a></h3>
+        <span class="post-date">26 Oct 2016</span>
+        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/dji_phantom_3_pro.png" alt="" width="40%" align="right" /></p>
+<p>I am going through the <a href="https://developer.dji.com/">DJi DJI drone developer area which has three distinct SDKs</a>, which allow us to leverage a variety of APIs that make the drone magic happen. I'm still wrapping my head around the intersection of drones and APIs, and this is my attempt to distil down what I'm finding in their developer area, and absorb some of what is going across the industry. This is not &nbsp;meant to be a complete list. It is meant for my learning, and hopefully yours along the way.</p>
+<p>There are a variety of devices being connected to the Internet, but other than the automobile I don't think there is another object that is as complex as the drone. I'm fascinated by what is possible with this device, and the variety of APIs it has, the interaction with the RC controller, mobile device, and with other resources the clouds. I personally fly a DJI drone, so I am going through the DJI developer area, learning about their three SDKs, as they seem to be the ecosystem furthest along in their understanding the API potential -- think Twitter for IoT.</p>
+<p class="p1"><strong><a href="https://developer.dji.com/onboard-sdk/">The DJI Onboard SDK</a></strong>&nbsp;<br />This SDK allows for communication with the DJI flight controller over a direct serial connection, to monitor and control aircraft flight behavior with the Onboard API&nbsp;while utilizing the built-in Intelligent Navigation Modes to create autonomous flight paths and maneuvers. Some of the actions for the onboard SDK are:</p>
+<ul>
+<li><strong>Activation -&nbsp;</strong><span>Before you start exploring DJI Onboard SDK functionality via our ROS examples, you will need to go through the "Activation" process.</span></li>
+<li><strong>Obtain/Release Flight Control - </strong>Managing the process to get flight control.</li>
+<li><strong>Take Off - </strong>Initiate a take-off&nbsp;for the drone.</li>
+<li><strong>Landing - </strong>Tell the device to land.</li>
+<li><strong>Go Home </strong>- Tell the device to go home.</li>
+<li><strong>Gimbal Control </strong>- Manage gimbal for camera.</li>
+<li><strong>Altitude Control -</strong> Manage the altitude for the drone.</li>
+<li><strong>Photo Taking - </strong>Allow for taking photos</li>
+<li><strong>Start/Stop Video Recording - </strong>Start and stop the video for camera.</li>
+<li><strong>Virtual RC Control - </strong>C<span>ontrol the drone through serial port by simulated channel values.</span></li>
+<li><strong>Broadcast Frequency Control -</strong> Manage which frequency drone is broadcasting on.</li>
+<li><strong>Arm/Disarm Control -</strong> Arm or disram the controls.</li>
+<li><strong>Timestamp Synchronization&nbsp;-</strong> Synchronize the timestamp -&nbsp;</li>
+<li><strong>Native Waypoint -</strong> Manage the waypoints for mission.</li>
+<li><strong>Hotpoint -</strong> Manage the hotpoint for circling.</li>
+<li><strong>Local Navigation - </strong>Go to specified local position</li>
+<li><strong>Global Navigation - </strong>Go to specified global position</li>
+<li><strong>Waypoint Navigation -</strong> Manage flying through a series of GPS coordinates)</li>
+<li><strong>WebSocket With Baidu Map (for navigation) -</strong> Real time mapping.</li>
+<li><strong>MAVLink And QGroundStation -</strong> Managing the vehicle to air communication.&nbsp;</li>
+</ul>
+<p class="p1">These are the actions that onboard SDK open up, but the SDK has other layers, that go beyond the drone itself, and is more about the space and environment around a drone, and its interaction with this world.</p>
+<p class="p1"><strong>Velodyne LiDAR<br /></strong>Light Detection and Ranging (LiDAR) sensors are for commercial UAS applications, such as 3D aerial mapping, surveying, inspection, collision avoidance, and autonomous navigation in potentially either indoor and outdoor environments. There are three distinct elements of the drones LiDAR system:</p>
+<ul>
+<li><strong>Lidar API </strong>- Supporting the computation of point cloud and logging LiDAR data in real-time into a standard LAS (LiDAR Aerial Survey) or PCAP (packet capture) file</li>
+<li><strong>Lidar Simulator -</strong> A LiDAR simulator for playing back PCAP files in real-time via the same Ethernet output as a real LiDAR for facilitating development and debugging for the system integration</li>
+<li><strong>Lidar Logging -</strong> An API based example to demonstrate how to use the API of real-time point cloud computation and LAS/PCAP logging. It can also be used for the use case of the integration of Velodyne LiDAR with M100 without the onboard SDK</li>
+</ul>
+<p>LiDAR opens up another universe within the DJI onboard SDK, allowing for access the system through API, manage the logging around activity, also simulating common navigation elements in the environment.</p>
+<p class="p1"><strong>uAvionix ADS-B Receiver</strong><br />The pingRX ADS-B receiver allows the drone to receive real-time traffic information broadcasted by other manned or unmanned aircraft, as well as temporary flight restriction (TFR) information broadcasted&nbsp;by the government. With this type of situation awareness, the onboard embedded system (OES) will be able to make some safety-critical decisions like collision avoidance or self-separation.</p>
+<p class="p2"><strong>Precision Trajectory Mission Planning</strong><br />With the Onboard SDK Precision Trajectory Mission Planning suite, DJI developers can now plan complex missions without having to use GPS waypoints. The new DJI Precision Trajectory Mission Planning library has the flexibility to deal with complicated trajectories, issues with GPS accuracy and cases when GPS is simply unavailable.&nbsp;</p>
+<ul>
+<li>Trajectory following library that can autonomously execute preplanned smooth spiral trajectories</li>
+<li>SketchUp plugin to visualize trajectories, import 3D CAD models and geolocate the scene</li>
+<li>Configurable speed, start/end radii and pitch for the spiral</li>
+<li>Start your drone from anywhere - real-time path planning to get to the trajectory's GPS location</li>
+<li>Integration with DJI Assistant 2 to visualize simulations of the drone following the trajectory in the SketchUp scene</li>
+</ul>
+<p>That is a pretty robust SDK. I'm taking the&nbsp;time to learn about each action, as well as the more communication and mission planning components separately. I can tell that they are having trouble to keep the large amounts of functionality and features coherent, and organized in the documentation, one of the reasons I'm breaking out separately here on my blog.</p>
+<p class="p1"><strong><a href="https://developer.dji.com/guidance-sdk/">DJI Guidance SDK<br /></a></strong>Guidance SDK enables allows you to develop vision-based applications, by granting you full control over drone guidance. You can access all output data for any device using the DJI Guidance SDK--they break things down into five separate groups.</p>
+<p class="p1"><strong>Initialization</strong></p>
+<ul>
+<li><strong>Reset Config -&nbsp;</strong>Clear subscribed configure, if you want to subscribe data different from last time.</li>
+<li><strong>Initialize Transfer -&nbsp;</strong><span>Initialize Guidance and create data transfer thread.</span></li>
+</ul>
+<p class="p1"><strong>Subscription Data</strong></p>
+<ul>
+<li><strong>IMU -</strong>&nbsp;Subscribe Inertia Measurement Unit (IMU) data.</li>
+<li><strong>Ultrasonic -&nbsp;</strong>&nbsp;Subscribe ultrasonic data.</li>
+<li><strong>Velocity -</strong> S<span>ubscribe velocity data, i.e. velocity of Guidance in body coordinate system.</span></li>
+<li><strong>Obstacle Distance -</strong>&nbsp;<span>Subscribe obstacle distance.</span></li>
+<li><strong>Depth Image -&nbsp;</strong><span>Subscribe rectified greyscale image.</span></li>
+<li><span><strong>Disparity Image -&nbsp;</strong><span>Subscribe disparity image, which can be filtered with functions such as filterSpeckles.</span></span></li>
+<li><span><strong>Greyscale Image -&nbsp;</strong><span>Subscribe rectified greyscale image.</span></span></li>
+<li><span><strong>Motion -</strong>&nbsp;<span>Subscribe global motion data, i.e. velocity and position of Guidance in global coordinate system.</span></span></li>
+</ul>
+<p><strong>Set Callback and Exposure</strong></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/mobile_sdk_54b1bdda33.png" alt="" width="40%" align="right" /></p>
+<ul>
+<li><span><strong>Event Handler -&nbsp;</strong><span>Set callback function handler. When data from Guidance comes, it will be called by data transfer thread.</span></span></li>
+<li><strong>Exposure Parameters -&nbsp;</strong>Get stereo calibration parameters.</li>
+</ul>
+<p class="p1"><strong>Get Data</strong></p>
+<ul>
+<li><strong>Get Online Status -</strong>&nbsp;<span>Get the online status of Guidance sensors.</span></li>
+<li><strong>Get Sterio Calibration </strong>- <span>Get stereo calibration parameters.</span></li>
+<li><strong>Get Device Type -</strong>&nbsp;<span>&nbsp;Get the type of devices. Currently only support one type of device: Guidance</span></li>
+<li><strong>Get Image Size -</strong>&nbsp;<span>Get the size of image data.</span></li>
+</ul>
+<p class="p1"><strong>Transfer Control</strong></p>
+<ul>
+<li><strong>Start Transfer -&nbsp;</strong><span>Inform guidance to start data transfer.</span></li>
+<li><strong>Stop Transfer -&nbsp;</strong><span>Inform guidance to stop data transfer.</span></li>
+<li><strong>Release Transfer -</strong>&nbsp;<span>Release the data transfer thread.</span></li>
+<li><strong>Wait For Board Ready -</strong>&nbsp;<span>Set callback function handler. When data from guidance comes, it will be called by data transfer thread.</span></li>
+</ul>
+<p>This SDK seems to be real time senses of the drone, allowing you to develop the experience you need to be in control, and guiding the device.&nbsp;</p>
+<p class="p1"><strong>Data Types<br /></strong>One of the thing that captivates me about the whole drone thing is its data collection capacity. I'm still learning about what is possible with the drone itself, but I know that much of the value generated by these flights will be based&nbsp;on the data that is gathered, as well as the images and video recorded. Here are the data points I have found so far in the DJI documentation for the DJI Guidance SDK.</p>
+<ul>
+<li><strong>Error Code -</strong> Enumerates possible error codes. When error occurs, usually an error code will be given, and the developer can reference this enum to find the error type.</li>
+<li><strong>Velocity Data - </strong>Velocity in body frame. The unit is millimeter/second and the frequency is 10 Hz.</li>
+<li><strong>Obstacle Distance Data -</strong> Obstacle distance from five Guidance Sensors. The unit is centimeter and the frequency is 20 Hz.</li>
+<li><strong>IMU Data -</strong> IMU data including accelerometer (in unit of acceleration of gravity g) and gyroscope (in quaternion format) data. The frequency is 20 Hz.</li>
+<li><strong>Motion Data - </strong>Pose and velocity data including quaternion orientation, position in the global frame, velocity in the global frame.</li>
+<li><strong>Ultrasonic Data - </strong>Outputs ultrasonic data from five Guidance Sensors, including obstacle distance (in unit of meter) and reliability of the data. The frequency is 20 Hz.</li>
+<li><strong>Greyscale Image - </strong>Outputs Greyscale images for five directions. The image size is 320*240 bytes for individual sensor. The default frequency is 20 Hz and can be scaled down using API functions.</li>
+<li><strong>Depth Image - </strong>Outputs depth images for five directions. The image size is 320*240*2 bytes for each direction. The default frequency is 20 Hz and can be scaled down using API functions.</li>
+<li><strong>Disparity Image -</strong> Outputs disparity images for five directions. This data is useful when developers want to further refine the disaprity images using functions like speckle filter.&nbsp;</li>
+</ul>
+<p>This data is generated constantly by a drone, and you have control over this transfer process through the DJI Guidance SDK. I'm thinking I need to aggregate some JSON schemas for this data, to better help me understand the depth&nbsp;and relationships in this data. There is a lot going on here, and a wealth of data to consider in a wide range of scenarios.&nbsp;</p>
+<p class="p1"><strong>DJI Drone Mobile SDK</strong><br />I use the DJI drone application to operate my two drones. The DJI Drone Mobile SDK is where you can get to work crafting your own custom application, to deliver exactly the drone operation experience you want. This is what the iPhone application was for mobile, but this is for the consumer and commercial drone world. There are a wealth of areas you can develop around in this SDK:</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/onboard_sdk_d6bc94cc85.png" alt="" width="40%" align="right" /></p>
+<ul>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-flightController.html">Flight Controller</a></strong> - The flight controller is an onboard computer that combines control information from the pilot with sensor information to adjust the thrust at each propellor and fly the aircraft as desired.</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-camera.html">Camera</a></strong> - The camera captures photos and videos. Many different modes of operation, resolutions, frame rates, exposure settings, picture settings and file types can be selected. Cameras have local storage to hold the media which will typically be an SD card, and in some cases an SSD (solid state drive).</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-gimbal.html">Gimbal</a></strong> - Cameras fixed to an aircraft will record images that pitch and roll with the aircraft as it moves. Multi rotor aircraft need to pitch and roll simply to move horizontally, and so getting a stable horizontal shot is not possible.</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-airlink.html">Airlink</a></strong> - AirLink describes the wireless link between aircraft, remote controllers, handheld cameras and mobile devices.</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-remotecontroller.html">Remote Controller</a></strong> - The remote controller allows manual flight, gimbal and camera control, and provides a robust wireless control link for aircraft. The mobile device can connect to the remote controller to communicate to the aircraft and receive the live video stream from the camera.</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-battery.html">Smart Battery </a></strong>- Smart batteries provide the energy required to run the products. Together with the flight controller, the smart battery can estimate remaining flight time and provide warnings when low battery thresholds are crossed. Batteries are easily swapped between flights, extending product use considerably.</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/component-guide-missions.html">Missions</a></strong> - Missions can be used to easily automate flight. There are many different mission types that offer different product behavior. Some missions can be uploaded to and managed by the aircraft, while other missions are managed from the mobile device.&nbsp;</li>
+<li><strong><a href="https://developer.dji.com/mobile-sdk/documentation/introduction/sdk-guide-sdkmanager.html">SDK Manager</a> -</strong> Application registration to use the DJI Mobile SDK, product connection, debugging and logging services are handled through the SDK manager class DJISDKManager.</li>
+</ul>
+<p>I think that this stack of features speaks for itself. Providing a wealth of valuable API-driven resources to think about. This blows my mind as I begin to think about the possibilities&nbsp;for developing drone applications&nbsp;but gets even better when you think about how this also applies to the rest of the IoT world. Flight controller might not apply universally, but cameras, batteries, remote control, and the network are all ubiquitous with other IoT devices, and in my world should be considered beyond just drones.</p>
+<p>I just needed to wrap my head around what programmatic resources are available to me as a DJI drone operator and developer. Next, I will be diving in and learning about some of the more interesting layers of this drone ecosystem, but first I am more interested in spending time looking through the platform API and SDK resources for other drone platforms, as well as some of the data solution providers like <a href="https://www.airmap.com/">Airmap</a>, and other physical components providers like <a href="http://www.flir.com/home/">FLIR for imaging</a>, and <a href="https://www.lumecube.com/">LumeCube for lighting</a>. I am always having to pick my battles on how deep on want to go down each rabbit hole&nbsp;or stay at the high level for a wider perspective.</p>
+<p>There is a lot going on here. I find drones fascinating from a technical perspective, and terrifying when it comes to surveillance, privacy, policing, and some of the other bad behavior we've seen recently. Like other areas of the tech space, I think APIs are important for not just managing devices and the experience, but also provide transparency, logging, auditing, and other <a href="http://apievangelist.com/2016/10/25/thinking-about-an-api-observability-stack/">observability considerations</a> when it comes to the Internet of Things space.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/10/26/learning-the-dimensions-of-the-dji-drone-sdks-and-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2016/10/26/asynchonous-conversational-interfaces-for-us-anti-social-folks/">Asynchonous Conversational Interfaces For Us Anti Social Folks</a></h3>
         <span class="post-date">26 Oct 2016</span>
         <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-anti-social.png" alt="" width="40%" align="right" /></p>
@@ -1050,131 +1249,6 @@
 <p><a href="https://krebsonsecurity.com/2016/10/who-makes-the-iot-things-under-attack/">Brian Krebs provides a wealth of insight into the attack</a>, as well as the multiple other reports I've read. Krebs provided a <a href="https://krebsonsecurity.com/wp-content/uploads/2016/10/IoTbadpass-Sheet1.csv">CSV of the devices that had compromised passwords</a>, something I am going to add the company URL and logo, as well as more product information to. This will help me learn more about the products contributing to the mayhem, as well as the companies behind them. After that, I will put some more thought into how APIs can be put to work helping make sense of this growing problem--if nothing else we can just use them to make the forensic&nbsp;details of each attack available online, so we can sift through the wreckage easier with each future event.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2016/10/12/some-key-iot-security-considerations/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/10/12/do-you-have-agencies-ready-to-develop-with-your-api/">Do You Have Agencies Ready To Develop With Your API?</a></h3>
-        <span class="post-date">12 Oct 2016</span>
-        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/google_developer_agency_program.png" alt="" width="35%" align="right" /></p>
-<p>I was doing some research on how API providers are providing certification of their developers. I want to better understand how leading API providers are developing curriculum for certifying that developers have the skills needed to integrate with their API, and how API providers are also showcasing these certified developers.</p>
-<p>As I was looking through various API programs I came across <a href="https://developers.google.com/agency/">Google's Developers Agency Program</a>, where they certify companies as competent to work with Google's APIs when developing Android applications. Google provides <a href="https://developers.google.com/agency/resources/">an eBook to help provide agencies with the resources they need to get certified</a>, the <a href="https://developers.google.com/agency/certification/">details on how to get certified</a>, as well as <a href="https://developers.google.com/agency/directory/">a page showcasing the agencies that have been certified</a>. I came across the program through a press release from one of the agencies, tooting their horn about being a Google certified agency.</p>
-<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/google_developers_agency_program_google_developers.png" alt="" width="100%" /></p>
-<p>Google's agency certification got me thinking about how this can apply to the average API provider. While API providers might not have the resources to provide an agency certification program like Google does, it might make sense to at least establish relationships with a handful of agencies, and showcase them as part of API operations. Having some pre-certified, ready to go, agency level development resources that can tackle API integrations seems like a good idea for any size API provider.</p>
-<p><a href="http://apievangelist.com/2014/08/18/how-are-dev-shops-in-chicago-using-apis-a-talk-with-bryson-pouw-at-blaze-portfolio/">I've had conversations with agencies before, discussing which APIs they put to use</a>, and they tend to be either commerce related, or social integrations with Facebook, Twitter, and Instagram. This is something I'd like to explore further. I would also like to continue looking for examples of how API providers certify and showcase development resources, whether they are individual, or agency focused like Google is doing. I'm thinking that investment in API expertise at the agency level is one of the areas that will need a lot more attention as the world of APIs continues to expand and evolve.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/10/12/do-you-have-agencies-ready-to-develop-with-your-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/10/12/apis-driving-augmented-reality-for-drones/">APIs Driving Augmented Reality For Drones</a></h3>
-        <span class="post-date">12 Oct 2016</span>
-        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/base_drone_screenshot.png" alt="" width="40%" align="right" /></p>
-<p>Now that I have API Evangelist fired back up I am spending more time with my drones, working to understand the role APIs can play in the booming industry. I have been studying how companies like <a href="http://apievangelist.com/2016/08/05/airmap-is-positioning-itself-to-be-a-critical-api-broker-for-the-drone-industry/">Airmap are working to be API brokers for the drone industry</a>, and how <a href="http://apievangelist.com/2016/08/02/direct-government-connection-into-internet-of-things-devices-like-we-are-seeing-with-drones/">government open data and APIs are being injected into the personal and commercial drone experience</a>. I want to continue this exploration, and learn more about how companies are injecting data, content, and other algorithmic resources into this experience, and brainstorm some other approaches to augmenting the world of drones with API resources.</p>
-<p>As part of my regular monitoring of the space, I am tuned into many of the examples of how drones are being used. Many of them are pretty unrealistic, but some of them have real world usage, like&nbsp;<a href="http://www.suasnews.com/2016/10/drones-augmented-reality-powerful-tools-disaster-strikes/">disaster relief</a>. Think about the potential when you being to feed in vital data about local infrastructure pulled from city open data, or maybe household data from census data. This is where augmenting the drone experience begins to get interesting for me, going beyond just telling me where I can or cannot fly.</p>
-<p>I fly a DJI Phantom 3 Professional drone (<a href="http://www.dji.com/mavic">I am eyeballing that Mavic</a>), and my drone experience is primarily through <a href="http://www.dji.com/">the DJI Go iPad application</a>, making API integration a pretty straightforward concept. My flight plan, and the latitude, longitude, elevation, and direction is shared via APIs in real-time (if there is an Internet connection), and I can share live-stream of the video to Youtube and Facebook via APIs. I also get regular updates about the flight condition, warnings of airports, forest fires, and other activity via the app--this is just the beginning.&nbsp;</p>
-<p>I want to explore what is next for APIs, based on what I am seeing emerge across the drone sector. I'm taking a series of screenshots of the DJI Go app and turn it into a transparent augmented reality template that I can use to explore what is possible. I have a number of drone scenarios that I can't replicate in the real world and need a simulation environment where I can think through examples like the disaster relief one above, or in some of the agricultural and industrial scenarios I'm reading about in the news.</p>
-<p>I'm underwhelmed by most of what I'm seeing when it comes to the Internet of Things, but the world of drones fascinates me. Partly due to <a href="http://dronerecovery.org">my experiences this summer</a>, but also because of the seemingly unlimited ways in which they are being to put use. Much of it worries me, but like many of the other ways I see API being put to use, I am just trying to understand and be aware, and once this evolves, maybe I can lend my perspective on how we can help strike a more healthy balance across the industries they are impacting.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/10/12/apis-driving-augmented-reality-for-drones/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/10/11/some-api-embeddable-best-practices-out-of-yelp/">Some API Embeddable Best Practices Out Of Yelp</a></h3>
-        <span class="post-date">11 Oct 2016</span>
-        <p><a href="https://engineeringblog.yelp.com/2016/10/embedded-reviews-at-yelp.html"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_10_at_8.08.25_pm.png" alt="" width="45%" align="right" /></a></p>
-<p><a href="https://engineeringblog.yelp.com/2016/10/embedded-reviews-at-yelp.html">Yelp has shared some of the wisdom behind how they design, deploy, and operate their embeddable reviews</a>. I like it when leading API providers share the story behind their tooling like this. This type of storytelling generates SEO for their API, educates their API consumers, and provides educational resources for other API providers (and content for analysts like me).</p>
-<p>So, what makes for a good embeddable widget, according to Yelp?</p>
-<ul>
-<li>a minimal amount of HTML code&nbsp;</li>
-<li>a consistent &amp; responsive design</li>
-<li>stay up-to-date with contextual information</li>
-<li>load fast &amp; gracefully handle traffic spikes</li>
-<li>record accurate analytics</li>
-</ul>
-<p>Yelp shares a little bit about the technical approach to achieving their definition of a good embeddable widget, which "are served as Yelp pages within iframes, adhere to the Yelp Styleguide, and show the most up-to-date review":</p>
-<ul>
-<li>iframe embeds allow for a simpler widgets.js</li>
-<li>iframe embeds make development easier</li>
-<li>iframe embeds can take advantage of HTML caching</li>
-</ul>
-<p class="p1">I've heard about lightening the load for your JavaScript, and the ease of embeddability before, from other providers. I hadn't thought about the cache-ability of using iframes before. It makes sense, allowing the user's browser to carry more of the load. They close up the post with some more interesting insight into the architectural decisions behind their embeddable(s):</p>
-<ul>
-<li>The embed HTML snippet consists of unstyled and empty elements so that the HTML snippet is minimal and durable.</li>
-<li>We use a controller loaded via script tag to create and load iframes. The controller consists of pure JavaScript and doesn&rsquo;t use any libraries. The controller communicates with the iframes using postMessage.</li>
-<li>We use a Google Analytics iframe served by Yelp to handle sending events for multiple review widget iframes on a single page. Resources served by Yelp, such as the controller and the iframes are either cached or served via CDN.</li>
-</ul>
-<p>The use of Google Analytics is another interesting aspect that I hadn't considered. It gets me thinking about what other examples are there regarding the usage Google Analytics for a tracking layer within API clients. How is Yelp layering this into their wider Google Analytics strategy? Inversely how is Google possibly expanding Google Analytics for tracking of clients beyond straightforward web consumption? All things I need to get more up to speed on.</p>
-<p>Yelp's story provides me with a number great nuggets for adding to my <a href="http://embeddable.apievangelist.com">API Embeddable research</a>. It also overlaps nicely with my <a href="http://analysis.apievangelist.com/">API analysis&nbsp;research</a>&nbsp;and even some of <a href="http://apievangelist.com/2016/10/04/increased-analytics-at-the-api-client-and-sdk-level/">my recent thoughts on the expanding analytics layer for other API clients and SDKs</a>.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/10/11/some-api-embeddable-best-practices-out-of-yelp/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/10/11/ipaas-in-your-browser-with-push-by-zapier/">iPaaS In Your Browser With Push By Zapier</a></h3>
-        <span class="post-date">11 Oct 2016</span>
-        <p><a href="https://zapier.com/blog/push-by-zapier-google-chrome-extension/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/zapier_push_icon.png" alt="" width="15%" align="right" /></a></p>
-<p><a href="https://zapier.com/blog/push-by-zapier-google-chrome-extension/">Zapier is up to more good things with the launch of Push by Zapier</a>, allowing you to trigger API driven events from your browser. The new Chrome browser extension lets anyone, even non-developers to trigger the functionality of over 700 apps from the browser toolbar--further expanding the definition of how APIs can be put to work.</p>
-<p>Allowing users to trigger API functionality from the browser adds an empowering dimension to the API conversation for non-developers. It allows the average user to access the features of any SaaS platform with an API, in their default environment--the browser. It allows the user to define, and queue up the API driven events that matter to them, where they operate the most. Zapier gave non-developers access to orchestrate the integration between the platforms they depend on, and Push by Zapier gives them even more granular level control over this world.&nbsp;</p>
-<p>Some of the API driven events Zapier highlights in their release are:</p>
-<p><a href="https://zapier.com/blog/push-by-zapier-google-chrome-extension/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/push_by_zapier.gif" alt="" width="40%" align="right" /></a></p>
-<ul>
-<li>Add Tasks to Your To-Do List</li>
-<li>Send an Email or SMS to a Specific Person</li>
-<li>Crunch Numbers and Calculate Payments</li>
-<li>Copy Data from an Unsupported Site or App and Add It to a Zapier Workflow</li>
-<li>Create Invoices with a Click</li>
-<li>Send Documents to be Signed</li>
-<li>Create a New Project or Folder</li>
-<li>Impersonate a Slack Bot</li>
-<li>Look Up Data and Use It in a Workflow</li>
-<li>Get Details from Your CRM Delivered Anywhere</li>
-<li>Translate Text</li>
-<li>Send Sales and Onboarding Emails to Potential or New Customers</li>
-<li>Set a Reminder for Yourself</li>
-<li>Create a Templated Document</li>
-<li>Push a Button to Build a Report or Pull Statistics</li>
-</ul>
-<p>All very business-centric, API-driven functionality. That is what I like about what Zapier enables. They provide meaningful API-driven functionality for the average business user, and Push just gives them another way to define what this functionality is, and when it gets executed. This transcends&nbsp;just the features and functionality that each API platform offers, it also is about end-users being API literate, and aware that they can put these granular level features to work.</p>
-<p><a href="https://zapier.com/zapbook/push/">Push by Zapier</a> provides another incentive for SaaS providers to have an API. Not all APIs will fuel the development of 3rd party web or mobile apps. Sometimes APIs are just about enabling existing users to better orchestrate, or trigger specific features and events that are important to them--when and where they want. The problem is, what do we call this type of API push service? Push Integration Platform as a Service (piPaaS)? :-) I don't care what its called, I find it easy to get behind anything that enables the average user to put APIs to work.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/10/11/ipaas-in-your-browser-with-push-by-zapier/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/10/11/i-am-stuck-on-the-datadog-integration-page/">I Am Stuck On The Datadog Integration Page</a></h3>
-        <span class="post-date">11 Oct 2016</span>
-        <p><a href="https://www.datadoghq.com/product/integrations/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_10_at_10.23.45_pm.png" alt="" width="50%" align="right" /></a></p>
-<p><a href="http://apievangelist.com/2016/10/04/an-integrations-page-for-your-api-solution/">I wrote about having an integrations page for your API service the other day</a>, and as I'm continuing to study the approach of other providers I find myself stuck on&nbsp;<a href="https://www.datadoghq.com/product/integrations/">b DataDog's integration page.</a>&nbsp;Datadog provides the monitoring layer across many of the top&nbsp;service providers in the space, making for a pretty stellar list of what solutions are being put to use across the sector.&nbsp;</p>
-<p>The Datadog integration page has been open in my browser for the last week, as I make way through each provider. Some of them I'm very familiar with, but others are entirely new to me. Integration pages like this show me what is possible with a service provider like Datadog, but also provides me an opportunity to learn about new services that I can put to use in my own operations, and what the cool kids are using.</p>
-<p>When you click on the detail for each of the potential integrations you get more information about what is possible, as well as a configuration file in YAML, and what metrics are made available when monitoring is activated. Datadog even groups their integrations by a tag, something they don't expose via the user interface very well, but is something I'll include in my suggestions for crafting an integration page for any other API.&nbsp;</p>
-<p>An integration page is definitely a building block I will be suggesting to other API providers, and I am also a big fan of sharing configuration, and other integration details like Datadog does. There are infinite learning opportunities available on this type of API integration pages, for analysts like me, for API providers, as well as service providers who sell to API providers.&nbsp;These are the types of common API building blocks that I feel contribute in a positive way to the tech sector, reflecting&nbsp;what APIs do best--enabling API integration, and API literacy all in the same motion.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/10/11/i-am-stuck-on-the-datadog-integration-page/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

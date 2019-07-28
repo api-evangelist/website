@@ -129,6 +129,153 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/03/28/data-driven-apps-at-scale-using-github-and-jekyll/">Data Driven Apps At Scale Using Github And Jekyll</a></h3>
+        <span class="post-date">28 Mar 2018</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’ve pushed my Github driven, Jekyll fueled, application delivery process to a new levels the last couple of weeks. I’ve been investing more cycles into <a href="http://theapistack.com/">my API Stack work</a>, as I build out an <a href="http://api.gallery.streamdata.io/">API Gallery for Streamdata.io</a>. All of my work as the API Evangelist has long lived as independent Github repositories, with a JSON or YAML core that drives the static Jekyll UI for my websites, applications, and API developer portals. Designed to be independent, data and API driven micro-solutions to some related aspect of my API research. I’m just turning up the volume on what already exists.</p>
+
+<p>I’m taking this to the next level with my approach to API discovery. API Stack used to be a single Github repository with huge number of APIs.json and OpenAPI definitions, but after hitting the ceiling with the size of the repository, I’ve begun to shard projects by entity, topic, and collection. So far I have <a href="https://github.com/api-stack-providers">285 entities</a>, with 9850 API paths, <a href="https://github.com/api-stack-topics">spanning 397 topics</a>. Each entity, and topic exists within its own Github repository, acting as an individual set of API definitions, including an OpenAPI, Postman Collection, and APIs.json index. Allowing me to move forward each API definition for an entity independently, and begin aggregating APIs into interesting collections by topic, industry, or other relevant area.</p>
+
+<p>There is no backend database for these projects. Well, there is a central system I use to help me orchestrate things, but each project is standalone, with everything it needs stored in the Github repository. It is something that took some engineering, and time to setup and first, but now that it is setup, managing it is actually pretty easy. The approach has also allowing me to scale it without any additional performance issues. Each entity I add becomes its own repo, and unless I hit some magic number for the number of repositories I can have within an organization, I should be able to scale to several thousand repos pretty quickly. Doing the same thing for topics, and other types of collections I’m aggregating APIs into.</p>
+
+<p>Each entity repository has the OpenAPI, and Postman Collection for its provider. I’m also breaking out each individual API path into it’s own OpenAPI definition, and considering doing the same for Postman Collections–distilling things down to its smallest possible unit of compute. The APIs.json for each repository indexes the OpenAPI, Postman collection, as well as the other elements of API operations like documentation, blog, Twitter, and Github accounts. In the future I will be publishing other machine readable artifacts here including details on plans and pricing, terms of service, monitoring, performance, and other aspects of the ranking and profiling of the API sector that I do.</p>
+
+<p>I’m getting ready to softly launch Streamdata.io’s API Gallery, but my API Stack work will continue to be my workbench for this type of API discovery work. I’ll keep harvesting, scraping, and profiling APIs and their operations, and as they come into focus I’ll sync with Streamdata.io’s API Gallery, and look at how I can help Postman with their API Network, APIs.guru with their directory, as well as other API aggregation and integration platforms like AnyAPI, APIDeck, and others. I’m just getting to the point where I feel like things are working as I want them to, and are ready for me to shift into higher gear. There are still a lot of issues with individual entities, and topics, but the process is working well–I just need to spend more time refining the API definitions themselves, and work on syncing with other efforts in the space.</p>
+
+<p>Right now I’m heavily using the Github API to make all this work, but I’m probably going to switch to relying on Git for the heaviest lifting. However, as a 30 year database person, I have admit that I am rather enjoying the scope of delivering JSON and YAML driven API-driven continuous deployment and integration projects like this that have a machine readable layer, but also a UI layer for humans to put to use. It provides me a with a very API way of driving how I profile APIs, quantify what it is they do, and begin to rank and make sense of the growing API landscape. Continuing with my way of doing things out in the open, while hopefully providing more value to the API discovery conversation, in an OpenAPI and Postman Collection driven API universe.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/28/data-driven-apps-at-scale-using-github-and-jekyll/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/27/oauth-has-many-flaws-but-it-is-the-best-we-have-at-the-moment/">OAuth Has Many Flaws But It is The Best We Have At The Moment</a></h3>
+        <span class="post-date">27 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/capital-battle_internet_numbers.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I was enjoying the REST API Notes newsletter from my friend Matthew Reinbold (<a href="https://twitter.com/libel_vox">@libel_vox</a>) today, and wanted to share my thoughts on his mention of my work while it was top of my mind. I always enjoy what Matt has to say, and regularly encourage him writing on his blog, and keep publishing his extremely thoughtful newsletter. It is important for the API sector to have many thoughtful, intelligent voices breaking down what is going on. I recommend <a href="https://tinyletter.com/RESTAPINotes/">subscribing to REST API Notes</a> if you haven’t, you won’t regret it.</p>
+
+<p>Anyways, Matt replied with the following about my Facebook response:</p>
+
+<p><em>Kin Lane did a fine job <a href="https://apievangelist.com/2018/03/26/a-regulatory-framework-for-facebook-and-other-platforms-is-already-in-place/">identifying the mechanisms most companies already have in place to mitigate the kind of bad behavior displayed by Cambridge Analytica</a>. It is a good starting point. However, I do want to challenge one of his assertions. Kin implies that OAuth consent is a sufficient control for folks to manage their data. While better than nothing, I maintain that most consumers are incapable of making informed decisions. It’s not a question of their intelligence. It is a question of complexity and incentives for the business to be deliberately opaque.</em></p>
+
+<p>I agree. To quote my other friend Mehdi Medjaoui (<a href="https://twitter.com/medjawii">@medjawii</a>), “OAuth is flawed, but it is the best we have”. I would say that “consumers are incapable of making informed decisions”, because we’ve crafted the world this way, and our profit margins depend on customers not being able to make informed decisions. It is how markets work things out, and “smart” people get ahead, and all that bullshit. You see this same thing playing out at the terms of service level as well. As a consumer of online services, I am regularly incapable of being able to make informed decisions around how my data is being used, in exchange for using a free web application. Is it because I’m not smart? No, it is because terms of service are purposefully confusing, verbose, legalize, and mind numbing. Why? So I don’t read them, understand them, and run the other way.</p>
+
+<p>This is intentional. You see this in the Tweet responses from Facebook engineers as they call all of us ignorant fools, and say that we agreed to all of this. The problem isn’t OAuth. The problem is intentional deceit and manipulation by corporations, and for some reason we keep showcasing this type of behavior as being savvy, smart, and just doing business. There is no reason that terms of service or OAuth flows can’t be helpful, informative, and in plain language. Platforms just choose to not invest in these areas, because an uninformed user means more profit for the platform, its investors, and shareholders. The lack of available startups, services, and tooling at the terms of service and privacy layer of technology sector demonstrates what a scam all of this has been. If startups cared about their users, we would have seen investment in tools and services that help us all make sense of things. Period.</p>
+
+<p><a href="http://apievangelist.com/2014/05/14/the-future-of-public-private-sector-partnerships-being-negotiated-at-the-api-oauth-scope-level/">I’ve sat in multi-day OAuth negotiation sessions on behalf of the White House</a>, negotiating OAuth scopes on behalf of power customers. I’ve seen how strong armed the corporations can be, and how little defense the average consumer has. I’ve seen technology platforms intentionally complexify things over and over. I’ve also seen plain language terms of service that actually make sense–<a href="https://slack.com/terms-of-service/api">read Slack’s for an example</a>. I’ve seen OAuth flows that protect a user’s interest, however I haven’t seen ANY investment in actually educating end-users about what is OAuth, and why it matters. You know, <a href="https://apievangelist.com/2013/10/17/api-and-oauth-literacy-is-as-important-as-financial-literacy-in-the-api-economy/">like the personal finance classes we all get in high school</a>? (I wrote that shit in 2013!!!) Why aren’t we educating the average consumer about managing their personal data and privacy? Why aren’t we setting standards for OAuth scopes, and flows for technology platforms? Good question!</p>
+
+<p>I’ve spent the last eight years trying to encourage platforms to be better citizens using their APIs. I’ve been aggregating and showcasing the healthy building blocks they can use to better serve their customers, and <a href="https://apievangelist.com/2017/07/18/diagramming-the-components-of-api-observability/">provide more observability into how they operate</a>. At this point, I feel like the tech sector has had their chance. Y’all chose to willfully ignore the interest of end-users, and get rich on all of our data. I know you all will cry foul now that the regulatory winds are starting to blow. Too bad. You had you chance. I’m going to focus all my energy and resources into educating policy and lawmakers about how they can use APIs, OAuth, and other building blocks already in use to put y’all into check. There is no reason the average consumer can’t make an informed decision around the terms of service of the platforms they depend on, and intelligently participate in conversations around access to their data using OAuth. As Matt said, “it is a question of complexity and incentives for the business to be deliberately opaque.”–regulations and policy is how we shift that.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/27/oauth-has-many-flaws-but-it-is-the-best-we-have-at-the-moment/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/27/sharing-your-api-first-principles/">Sharing Your API First Principles</a></h3>
+        <span class="post-date">27 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/zalando/zalando-screenshot.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’ve been publishing regular posts from the API design guides of API providers I’ve been studying. API providers who publish their API design guides tends to be further along in their API journey. These API providers tend to have more experience and insight, and are often worth studying further, and learning from. <a href="https://zalando.github.io/restful-api-guidelines/">I’ve bee getting a wealth of valuable information from the German fashion and technology company Zalando, who has shared some pretty valuable API first principles</a>.</p>
+
+<p>In a nutshell Zalando’s API First principles focuses on two areas:</p>
+
+<ul>
+  <li>define APIs outside the code first using a standard specification language</li>
+  <li>get early review feedback from peers and client developers</li>
+</ul>
+
+<p>By defining APIs outside the code, Zalando wants to facilitate early review feedback and also a development discipline that focus service interface design on:</p>
+
+<ul>
+  <li>profound understanding of the domain and required functionality</li>
+  <li>generalized business entities / resources, i.e. avoidance of use case specific APIs</li>
+  <li>clear separation of WHAT vs. HOW concerns, i.e. abstraction from implementation aspects — APIs should be stable even if we replace complete service implementation including its underlying technology stack</li>
+</ul>
+
+<p>Moreover, API definitions with standardized specification format also facilitate:</p>
+
+<ul>
+  <li>single source of truth for the API specification; it is a crucial part of a contract between service provider and client users</li>
+  <li>infrastructure tooling for API discovery, API GUIs, API documents, automated quality checks</li>
+</ul>
+
+<p>Their guidance continues by stating:</p>
+
+<p><em>An element of API rirst are also a review process to get early review feedback from peers and client developers. Peer review is important for us to get high quality APIs, to enable architectural and design alignment and to supported development of client applications decoupled from service provider engineering life cycle.</em></p>
+
+<p><em>It is important to learn, that API First is not in conflict with the agile development principles that we love. Service applications should evolve incrementally — and so its APIs.</em></p>
+
+<p><em>Of course, our API specification will and should evolve iteratively in different cycles; however, each starting with draft status and early team and peer review feedback. API may change and profit from implementation concerns and automated testing feedback. API evolution during development life cycle may include breaking changes for not yet productive features and as long as we have aligned the changes with the clients. Hence, API First does not mean that you must have 100% domain and requirement understanding and can never produce code before you have defined the complete API and get it confirmed by peer review.</em></p>
+
+<p><em>On the other hand, API First obviously is in conflict with the bad practice of publishing API definition and asking for peer review after the service integration or even the service productive operation has started. It is crucial to request and get early feedback — as early as possible, but not before the API changes are comprehensive with focus to the next evolution step and have a certain quality (including API Guideline compliance), already confirmed via team internal reviews.</em></p>
+
+<p>Zalando get’s at one of the reasons I’m a big advocate for a design, mock, and document API lifecycle, forcing developers to realize their API vision, get feedback, and iterate upon their designs, before they ever consider moving into a production environment. I feel like there are many views of what API first means, and many do not focus on the process, and obsess too much on just API design. I think Zalando’s API design guide reflects this, where the guide is more about API guidance, than it is just about the design of an API. It provides a wealth of wisdom and knowledge, but is still labeled as being about API design.</p>
+
+<p>Similar to pushing companies, organizations, institutions, and government agencies to do in APIs in the first place, I’m encouraging more of them to begin publishing their API design guides as part of their journey. It seems like it is an important part of being able to articulate not just the API design guidelines, but also a place to articulate the overall reasons behind doing APIs in the first place, and the principle, ethics, and process surrounding how we are doing APIs across the disparate teams that make things go around in our worlds.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/27/sharing-your-api-first-principles/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/27/government-has-benefitted-from-lack-of-oversight-at-social-api-management-layers-as-well/">Government Has Benefitted From Lack Of Oversight At The Social API Management Layers As Well</a></h3>
+        <span class="post-date">27 Mar 2018</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/76_33_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>There are many actors who have benefitted from <a href="https://apievangelist.com/2018/03/21/facebooks-business-model-is-out-of-alignment-with-their-api-management-layer/">Facebook not properly management their API platform</a>. Collecting so many data points, tracking so many users, and looking the other way as 3rd party developers put them to use in a variety of applications. Facebook did what is expected of them, and focused on generating advertising revenue from allowing their customers to target the many data points that are generated by the web and mobile applications developed on top of their platform.</p>
+
+<p>I hear a lot of complaining about this being just about democrats being upset that it was the  republicans who were doing this, when in reality there are so many camps that are complicit in this game, if you are focusing in on any single camp you are probably looking to shift attention and blame from your own camp, in my opinion. I’m all for calling everyone out, <a href="https://apievangelist.com/2017/01/09/the-api-driven-marketplace-that-is-my-digital-self/">even ourselves for being so fucking complicit in this game where we allow ourselves to be turned into a surveillance marketplace</a>. Something that benefits the Mark Zuckerbergs, Cambridge Analyticas, and the surveillance capitalist platform, but also providing a pipeline to government, and law enforcement.</p>
+
+<p>If government is going to jump on the bandwagon calling for change at Facebook, they need to acknowledge that they’ve been benefitting from the data free for all that is the Facebook API. We’ve heard stories about 3rd party developers building applications for law enforcement to target Black Lives Matters, all the way up to Peter Thiel’s (a Facebook Investor) Palantir who actively works with NSA, and other law enforcement. If we are going to shine a light on what is happening on Facebook, let’s make it a spotlight and call out ALL of the actors who have been sucking user’s data out of the API, and better understand what they have been doing. I’m all for a complete audit of how the RNC, DNC, and EVERY other election, policing, and government entity has been doing with social data they have access to.</p>
+
+<p>Let’s bring all of the activity out of the shadows. Let’s take EVERY Facebook application and publish as part of a public database, with an API for making sense of who is behind each one. Let’s require every application share the name’s of individuals and business interests behind their applications, as well as their data retention, storage, and sharing practices. Let’s make the application database observable by the public, journalists, and researchers. If we are going to understand what is going on with our data, we need to turn the lights on in the application warehouse that is built on the Facebook API. Let’s not just point the finger at one group, let’s shine a spotlight on EVERYONE, and make sure we are actually being honest at this point in time, or we are going to see this same scenario play out every fiver years or so.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/27/government-has-benefitted-from-lack-of-oversight-at-social-api-management-layers-as-well/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/27/acknowledging-why-i-do-apis-is-very-different-than-why-others-do-apis/">Acknowledging That Why I Do APIs Is Very Different Than Why Others Are Doing APIs</a></h3>
+        <span class="post-date">27 Mar 2018</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/76_16_800_500_0_max_0_1_1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>When I started doing API Evangelist in 2010 I was still very, very, very naive about why people were doing APIs. While I do not always expect everyone doing APIs to be ethical and sensible with the reasons behind doing APIs, I have been regularly surprised at how many different views there are out there regarding why we should be doing APIs in the first place. The lesson for me is to never assume that someone is doing APIs for the same reasons I am doing APIs, because rarely that will ever be the case–hopefully minimizing the chances I’ll get continue to be surprised down the road.</p>
+
+<p>After watching Salesforce, then Amazon, Flickr, Twitter, Facebook, and Google Maps doing APIs, I saw the potential for APIs to open up access to resources like never before. I also saw the potential for not just opening up these new opportunities to developers, but OAuth was beginning to give end-users a voice in how their data and content could be put to use. I saw the opportunity for a new type of partnership between platforms, developers, and end-users emerging that could change how we do business online, how government works, and much, much more. Sadly my white male privilege, and powers of denial prevented me from seeing the many other ways in which APIs were being seen as an opportunity.</p>
+
+<p>I find that the reasons people publish regarding why they are doing APIs rarely size up with the real reasons why they are actually doing APIs. Sometimes you can read between the lines by evaluating their overall business model, or lack of one. Other times you can find some telling signs present in the design of their API, as the paths, parameters, and technical details tend to tell a more accidentally honest view of what is happening behind the curtain. However, when it comes to the theater of “open APIs”, everything quickly becomes a funhouse of mirrors when it comes to trying to understand why someone is doing APIs, with the only constant being that nothing last forever–all APIs will eventually change, and go away, no matter what the reasons are behind them.</p>
+
+<p>The reasons I recommend doing APIs centers around opening up access to valuable data, content, and algorithms in a secure and observable way, that protects the privacy of everyone involved. I’m an advocate for API literacy amongst everyone involved in the API conversation, even the non-technical end-user who is most likely being impacted by their existence. I’m team API because they can bring observability into some very black box algorithms, and closed door platforms, that are increasingly governing our lives. My belief in APIs is not purely based on their technical merit, but in that some proven processes involving them have been established, which introduce some healthy balance into how we deliver web, mobile, and device-based applications. It isn’t the technology, it is how us humans are using the technology.</p>
+
+<p>Like other web-based technology, APIs have been weaponized, and identified as a valuable tool for exploitation. Platforms like Facebook and Twitter have demonstrated how they can help a platform grow and evolve, but when this growth is in the service of an advertising-focused business, they can be used to influence, nudge, and harass people in some very damaging ways. With all the exploitation, bad behavior, and looking the other way that occurs around API operations, I find it very difficult to consider representing the sector, but I do find it important that I continue making sense of what is happening. I just need to make sure that I remember that the reasons I’m doing APIs will almost always be different than why others are doing API, and I should never assume folks have the healthiest, and most meaningful intent behind operating their API platforms, and why they are reaching out to me.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/27/acknowledging-why-i-do-apis-is-very-different-than-why-others-do-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/03/26/nexmo-manages-their-openapi-30-definition-using-github/">Nexmo Manages Their OpenAPI 3.0 Definition Using Github</a></h3>
         <span class="post-date">26 Mar 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/nexmo/nexmo-api-specifications.png" width="45%" align="right" style="padding: 15px;" /></p>
@@ -2047,678 +2194,6 @@ Ok, that answers the general questions about what the Streamdata.io API Gallery 
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/02/26/the-banking-api-actors-in-the-uk/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/24/department-of-veterans-affairs-lighthouse-platform-rfi-round-two/">Round Two Of The Department of Veterans Affairs Lighthouse Platform RFI</a></h3>
-        <span class="post-date">24 Feb 2018</span>
-        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_113_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m spending some more time thinking about APIs at the Department of Veterans Affairs (VA), in response to round two of their request for information (RFI). <a href="http://apievangelist.com/2017/10/26/my-response-on-the-department-of-veterans-affairs-rfi-for-the-lighthouse-api-management-platform/">A couple months back I had responded to an earlier RFI</a>, providing as much information as I could think of, for consideration as part of their API journey. As a former VA employee, and son of two Vietnam Vets (yes two), you can say I’m always willing to invest some in APIs over at the VA.</p>
-
-<p>To provide a response, I have taken the main questions they asked, broken them out here, and provided answers to the best of my ability. In my style, the answers are just free form rants, based upon my knowledge of the VA, and the wider API space. It is up to the VA, to decide what is relevant to them, and should be included in their agency API strategy.</p>
-
-<p><strong><em>2. Current Scope<br />
-While the acquisition strategy for Lighthouse has not yet been formalized, VA envisions that the program will consist of multiple contracts.  For example, a contract for recommending policy and standards to form governance would likely be separate from an API build team.  The key high level activities below are anticipated to be included within these contracts, and VA is requesting feedback from industry on how these activities should be aligned between multiple contracts.  The list below is not inclusive of all tasks required to support this program.  Additionally, VA intends to provide the IAM solution and the provisioning of necessary cloud resources to host the proposed technology stack.  VA’s current enterprise cloud providers are Microsoft Azure and Amazon Web Services.</em></strong></p>
-
-<p><strong>Microservice Focused Operational &amp; Implementation</strong><br />
-Lighthouse should embrace a microservices way of doing things, so that the platform can avoid legacy trappings when it comes to delivering software at the VA, which have resulted in large, monolithic systems, possessing enormous budgets, and entrenched teams, that are able to develop a resistance to change and evolution. This microservices way of doing things should be adopted internally, as well as externally, then applied to the technology, business, and politics of delivering ALL Lighthouse infrastructure.</p>
-
-<p>All contracts should be defined and executed in a modular way, with the only distinction between  projects being operational, or for specific project implementations. Everything should be delivered as microservices, no matter whether it is in support of operating the Lighthouse platform, or delivering services to Lighthouse-driven applications. The technology and business of each service should be self-contained, modular, and focusing on doing one thing, and doing it well. Ensuring all services executed as part of Lighthouse operations are decoupled, working independently, allowing for easily defining, delivering, managing, evolving, and deprecating of every operational and implementational service that makes Lighthouse work.</p>
-
-<p>Operational services will be the first projects delivered via the platform, and will be used to establish and mature the Lighthouse project deliver workflow, but then going forward, every additional operational, as well as specific implementation focused service will utilize the same workflow and life cycle.</p>
-
-<ul>
-  <li><strong>Definitions</strong> - Everything begins as a set of definitions. Leveraging OpenAPI, JSON Schema, Dockerfiles, and other common definitions to provide a human, and machine readable definition of every project, which is ultimately delivered as a microservice.</li>
-  <li><strong>Github</strong> - Each microservice begins as either a public or private Github repository, with a README index of the definition of what a service will deliver. Providing a self-contained, continuously deployed and integration blueprint of what a service does.</li>
-  <li><strong>Architecture</strong> - Always providing a comprehensive outline all backend architecture used to support a specific service, including the technical, as well as the business, and security policy elements of what it takes to deliver the required service.</li>
-  <li><strong>Tooling</strong> - Always providing a comprehensive outline of any tools used as part of delivering a service, to provide what is needed from a front-end delivery and execution vantage point.</li>
-  <li><strong>Lifecycle</strong> - Establish a lifecycle, that each service will need to pass through, ensuring consistent delivery, and management of services that adhere to governance standards.
-    <ul>
-      <li><strong>define</strong> - What definitions are required for services?</li>
-      <li><strong>design</strong> - What is the API design guidance involved?</li>
-      <li><strong>mock</strong> - How are APIs and data virtualized as part of development?</li>
-      <li><strong>portal</strong> - Which portals are service published to, or will possess?</li>
-      <li><strong>document</strong> - What documentation is required and delivered?</li>
-      <li><strong>test</strong> - Where are the code, as well as interface level tests?</li>
-      <li><strong>clients</strong> - What client environment are in use for design, development, and testing?</li>
-      <li><strong>**</strong>* - Pause there, and repeat until the desired service is realized…</li>
-      <li><strong>deploy</strong> - How are services delivered as part of a containerized, continuous deployment pipeline?</li>
-      <li><strong>dns</strong> - What DNS is needed to address and route traffic to services?</li>
-      <li><strong>manage</strong> - What API management level services are in place to secure, log, limit, and report of API and service consumption?</li>
-      <li><strong>logging</strong> - What is the logging stack, how is it shipped, analyzed, and reported upon?</li>
-      <li><strong>monitor</strong> - What monitors are required and in place for each service?</li>
-      <li><strong>performance</strong> - How is performance measured and reported upon?</li>
-      <li><strong>sdk</strong> - What client libraries, SDKs, and samples in place for service integration?</li>
-      <li><strong>depenencies</strong> - What internal service, and external API dependencies are in play?</li>
-      <li><strong>licensing</strong> - What is the data, code, interface, and other licensing that apply?</li>
-      <li><strong>privacy</strong> - Are privacy policies in place, and considered for the platform, partners, developers, and end-users.</li>
-      <li><strong>terms</strong> - Are terms of service in place, and independently considered for each service?</li>
-      <li><strong>monetization</strong> - What are the operating costs, and other monetization considerations?</li>
-      <li><strong>plans</strong> - What API consumption plans, rate limits, and policies in place to govern service usage?</li>
-      <li><strong>support</strong> - What support mechanisms are in place, with relevant point of contacts?</li>
-      <li><strong>communication</strong> - What communication channels are in place, such as blogs, social, and messaging channels?</li>
-      <li><strong>observability</strong> - What is the observability of each service, from open source to monitoring, and CI/CD workflows, ensuring it can be audited?</li>
-      <li><strong>discovery</strong> - What is required to register, route, and discover an API as part of overall operations?</li>
-      <li><strong>evangelism</strong> - What is the plan for making sure a service is known, used, and evangelized amongst target audience?</li>
-    </ul>
-  </li>
-  <li><strong>Governance</strong> - How is each step along the life cycle measured, reported upon, and audited as part of governance, to understand how a service is meeting platform requirements, and evolving along a maturity path–allowing for innovation to occur, and newer ideas to flourish, but also allow more hardened, secure, and mature services to rise to the top.</li>
-</ul>
-
-<p>The OpenAPI, JSON Schema, and other definitions for each microservice will ultimately be the contract for each project. Of course, to deliver the first set of operational platform services (compute, storage, DNS, pipeline, logging, etc.) these independent contracts might need to be grouped into a single, initial contract. Something that will also occur around different groups of services being delivered at any point in the future, but each individual service should be self-contained, with its own contract definition existing in it’s Github repository core.</p>
-
-<p><em><strong>Question: API Roadmap Development (Backlog, Future)</strong></em><br />
-Each service being delivered via Lighthouse will possess its own self-contained road map as part of its definition. Providing a standardized, yet scalable way to address what is being planned, is being delivered, operated, and when anything will ultimately be deprecated.</p>
-
-<ul>
-  <li><strong>Github Issues</strong> - Each Github repository has it’s own issues for managing all conversations around the service road map. Tags and milestones can be used to designate the past, present, future, and other relevant segmentation of the road map.</li>
-  <li><strong>Micro / Macro</strong> - Each services posses micro level detail about the road map, which is available via Github APIs, in a machine readable way for inclusion at the macro level, serving governance, reporting, and higher level road map considerations.</li>
-  <li><strong>Communication</strong> - Each service owner is responsible for road map related communication, support, and management providing their piece of the overall road map puzzle.</li>
-</ul>
-
-<p>The Lighthouse platform road map should work like an orchestra, with each participant bringing their contribution, but platform operators and conductors defining the overall direction the platforms is headed. At scale, Lighthouse will be thousands of smaller units, organized by hundreds of service owners and stewards, serving millions of end-users, with feedback loops in service through the stack.</p>
-
-<p><em><strong>Question: Outreach (Internal &amp; External Parties)</strong></em><br />
-Outreach is essential to the viability of any platform, and represents the business and political challenges that lie ahead for the VA, or any government agency looking to work seamlessly with public and private sector partners, as well as the public at large. There will be many services involved with Lighthouse operations that will need to be private, but the default should always be public, allowing for as much transparency and observability as possible, which will feed platform outreach in a positive way.</p>
-
-<ul>
-  <li><strong>Github Project Pages</strong> - Each Github repository can have a public facing Github Pages static site portal and landing page. Allowing for individual service, or group portals to exist, providing a destination for all stakeholders to get involved.</li>
-  <li><strong>Github Social Framework</strong> - Github provides a wealth of outreach and communication solutions from organization and repository search, to issues and wikis, and tagging services with individual topics. All of which can be used as part of outreach and engagement in a private or public setting.</li>
-  <li><strong>Twitter</strong> - Microblogging provides a great way to publish regular updates, and provide communication around platform operations.</li>
-  <li><strong>Linkedin</strong> - Enterprise development groups, especially those in service of the government tend to use Github for establishing their profile, and maintaining their presence, which can be incorporated into all outreach efforts.</li>
-  <li><strong>Blogs</strong> - The platform should possess its own public and / or private blogs, as well as potentially more topically, service, or project based blogs that expand outreach to the long tail of platform operations.</li>
-</ul>
-
-<p>This type of outreach around platform operations is something that scares the hell out of government folks, and the majority of government APIs operation are critically deficient in the area of outreach. This has to change. If there is no feedback loop in place, and outreach doesn’t occur regularly and consistently, the platform will not succeed. This is how the API world operates.</p>
-
-<p><em><strong>Question: Management of API Request Process (Internal (VA)/External (Non-VA))</strong></em><br />
-New services will always be needed. Operational and implementation related requests should all be treated the same. Obviously there will be different prioritization mechanisms in place, but API requests should just be the birth of any new service, allowing it to begin its journey, and transit through the API lifecycle described above. Not all requests will reach deployment, and not all deployments will reach maturity, but all API requests should be treated equally.</p>
-
-<ul>
-  <li><strong>Definitions</strong> - Each API request begins with a definition. A simple description of what a service will do.</li>
-  <li><strong>Github</strong> - Each API request begins its journey as a Github repository, with a README containing its basic definition, and conversation around its viability within Github issues.</li>
-  <li><strong>JSON Schema</strong> - As part of each request, all data that will be leverage as part of service operations should be defined as JSON Schema, and included in the Github repository.</li>
-  <li><strong>OpenAPI</strong> - Additionally, the access to the service, and its underlying data and resource should be defined using a machine readable OpenaPI definition, outlining the contract of the service.</li>
-  <li><strong>Certification</strong> - Some stakeholders will have submitted API requests before, and better understand the process, and be certified owners of existing services, working as part of trusted organizations, expediting and prioritizing the request process.</li>
-  <li><strong>Template(s)</strong> - The most common service patterns to emerge should be defined as template, providing seeds and starter projects to help expedite and streamline the API request process, ensuring all the moving parts are there to make a decision, in a forkable, replicable package.</li>
-</ul>
-
-<p>New API requests should be encourage. Anyone should be able to submit a new service, replicate, or augment an existing service, or respond to a platform API RFP. The life cycle described above should be open to everyone looking to submit an API request. Allowing them to define, design, mock, and iterate their submission. Even providing a nearly usable representation of a service, even before the idea or service is accepted. Forcing everyone to flesh out their service, deliver a viable proof of concept, that will streamline the API acceptance process.</p>
-
-<p><em><strong>Question: Propose, Implement and Manage the PaaS (technology stack)</strong></em><br />
-As mentioned before, this aspect of Lighthouse should be delivered as microservices, alongside every other service being delivered via the platform. It just so happens that this portion of the stack will be the first to be delivered, and be iterated upon, evolved, and deprecated just like any other service. To put this in perspective, I will outline the AWS, and Azure infrastructure need to support management of the platform later on in this post, while considering the fact that AWS and Azure have been on the same journey that the VA is on with Lighthouse, something that has been playing out for the last decade.</p>
-
-<p>The VA wants to be the Amazon of serving veterans. They want internal groups, vendors, contractors, veteran health and service organizations, and independent developers to come build their solutions on the Lighthouse platform. The VA should uses its own services for internal service delivery, as well as supporting external projects. The operational side of Lighthouse platform should be all microservice projects, with the underlying infrastructure being Azure or AWS solutions, providing a common platform as a service stack that can be leveraged, no matter where the actual service is deployed.</p>
-
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-
-<p><em><strong>Question: DevOps Continuous Integration and Continuous Delivery (CI/CD) of APIs</strong></em><br />
-Every service in support of operations or implementations via the Lighthouse platform will exist as a self-contained Github repository, with all the artifacts needed to be included in any application pipeline. The basic DNA blueprint for each service should be crafted to support any single CI/CD service, or ideally even multiple types of CI/CD and orchestration solutions like AWS and Azure both support.</p>
-
-<ul>
-  <li><strong>Microservices</strong> - Lighthouse CI/CD will be all about microservice orchestration, and using a variety of pipelines to deliver and evolve initially hundreds, and eventually thousands of services in concert.</li>
-  <li><strong>Github</strong> - Github will the cellular component driving the Lighthouse CI/CD workflow, providing individual service “legos” that can be composed, assembled, disassembled, and delivered in any way.</li>
-  <li><strong>Definitions</strong> - Each microservice will contain all the artifacts needed for supporting the entire life cycle listed above, driven by a variety of CI/CD pipelines. Leveraging dockerfiles, build packages, OpenAPI definitions, schema, and other definitions to continuously deliver and integrate across platform operations.</li>
-</ul>
-
-<p>Both AWS and Azure provide CI/CD workflows, which can be used to satisfy the portion of the RFI. I will list out all the AWS and Azure services I think should be considered below. Additionally, Jenkins, CircleCI, or other 3rd party CI/CD could easily be brought in to deliver on this aspect of platform delivery. The microservices core can be used as part of any pipeline delivery model.</p>
-
-<p><em><strong>Question: Environment Operations &amp; Maintenance (O&amp;M)</strong></em><br />
-Again, everything operates as microservices, and gets delivered independently as services that can be configured and maintained as part of overall platform operations and maintenance, or in service of individual services, and groups of services supporting specific implementations.</p>
-
-<ul>
-  <li><strong>Microservices</strong> - Everything is available as microservices, allowing the underlying environment operations and maintainenace to be orchestration, and optimized in real time.</li>
-</ul>
-
-<p>Each of the AWS and Azure services listed below are APIs. They allow for the configuration and management of each service via API or CLI, allowing the architecture to be seamlessly managed as part of the overall API stack, as well as the CI/CD pipeline. Making environment operations and maintenance, just part of the continuous delivery cycle(s).</p>
-
-<p><em><strong>Question: Release Management</strong></em><br />
-Release occurs at the granular service level. With Github and CI/CD as the vehicle for moving release forward daily, versioning, defining, and communicating all the way. With the proper code and API level testing in place, release management can happen safely at scale.</p>
-
-<ul>
-  <li><strong>Github</strong> - Github version control, branches, and release management should  be used as part of the overall release management strategy.</li>
-  <li><strong>Versioning</strong> - Establishment of a service versioning strategy for minor and major code, and interface releases, allowing independent release management that can occur at the higher orchestration level</li>
-  <li><strong>CI/CD Pipelines</strong> - Everything should be a pipeline, broken down by logical operational, organization, and project boundaries, operating on a continuous release cycle.</li>
-  <li><strong>Microservices</strong> - Everything is operated independently, and released independently via containers, with approach dependency management as part of each release.</li>
-  <li><strong>Definitions</strong> - OpenAPI and JSON Schema are versioned and use to act as the contract for each release.</li>
-  <li><strong>Communications</strong> - Along with each release, comes a standard approach to notification, communication, and support.</li>
-</ul>
-
-<p>Release management will horizontally take a significant amount of time to wrap your head around. Moving forward hundreds, and thousands of services in concert won’t be easy. However it will be more resilient, and forgiving than moving forward a single monolith.</p>
-
-<p><em><strong>Question: API Analytics</strong></em><br />
-Awareness should be baked in by default to the Lighthouse platform, measuring everything, and reporting on it consistently, providing observability across all aspects of operations in alignment with security policies. Analysis should be its own set of operational services, that span the entire length of the Lighthouse platform.</p>
-
-<ul>
-  <li><strong>Log Shipping</strong> - The database, container, web server, management, and DNS logs for ALL services should be shipped, and centralized, for complete access and analysis.</li>
-  <li><strong>APIs</strong> - Centralized logs should be its own service, with programmatic access to logs for all platform services.</li>
-  <li><strong>Modular</strong> - Analytics should be modular, bit-size API-driven elements that can be mixed, composed, published, and visualized in reusable ways.</li>
-  <li><strong>Embeddables</strong> - Modular, embeddable UI elements should be developed as applications on top of platform analytics APIs, allowing for portable dashboard that can be remixed, reused, and evolved.</li>
-  <li><strong>Search</strong> - The logging and reporting layer of the platform should have a core search element, allowing all logs to searched, as well as the logs for how API consumers are analyzing logs (mind blown).</li>
-  <li><strong>Continouous</strong> - As with all other services, analytics, reporting, and visualizations should be continuous, and ever evolving and deployed on a day to day, week to week basis.</li>
-</ul>
-
-<p>A standard logging strategy across all services is how we achieve a higher level of API analytics, going beyond just database or web server statics, and even API management analytics, providing end to end, comprehensive platform service measurement, analysis, reporting, and visualization. Allowing platform operators, consumers, and auditors to access and understand how all service are being used, or not being used.</p>
-
-<p><em><strong>Question: Approval to Operate (ATO) Support for Environments</strong></em><br />
-Every service introduced as part of the Lighthouse platform should have all the information required to support ATO, with it baked into the governance and maturity life cycle for any service. It actually lends itself well to the maturity elements of the lifecycle above, ensuring there is ATO before anything is deployed.</p>
-
-<ul>
-  <li><strong>Definitions</strong> - All definitions are present for satisfying ATO.</li>
-  <li><strong>Github</strong> - Everything is self-contained within a single place for submission.</li>
-  <li><strong>Governance</strong> - ATO is part of the governance process, while still allowing for innovation.</li>
-  <li><strong>Micro / Macro</strong> - ATO for each individual service can be considered, as well as at the project, group levels, understanding where services fit in at macro level.</li>
-</ul>
-
-<p>ATO can be built into the templated API request and submission process discussed earlier, allowing for already approved architecture, tooling, and patterns to be used over and over, streamlining the ATO cycle. Helping service developers enjoy more certainty around the ATO process, while still allowing for innovation to occur, pushing the ATO definition and process when it makes sense.</p>
-
-<p><em><strong>Question: Build APIs including system level APIs that connect into backend VA systems</strong></em><br />
-Everything is a microservice, and there are plenty of approaches to ensure that legacy backend systems can enjoy continued use and evolution through evolved APIs. The API life cycle allows for the evolution of existing backend systems that operate in the cloud and on-premise in small, bit-size service implementations.</p>
-
-<ul>
-  <li><strong>Gateway</strong> - AWS API Gateway and Azure API management makes it easy to publish newer APIs on top of legacy backend systems.</li>
-  <li><strong>Facades</strong> - Establishing facade patterns for modernizing, and evolving legacy systems, allowing them to take on a new interface, while still maintaining existing system.</li>
-  <li><strong>OpenAPI</strong> - Map out newer APIs using OpenAPI, then importing into gateways and wiring up with backend systems.</li>
-  <li><strong>Schema</strong>- Mapping out the schema transformations from backend systems to front-end API requests and responses using JSON Path, and JSON Schema.</li>
-  <li><strong>Microservices</strong> - Delivering newer APIs on top of legacy systems in smaller, more evolvable services.</li>
-</ul>
-
-<p>From the frontend, you shouldn’t be able to tell whether a legacy VA system is in use, or newer cloud infrastructure. All applications should be using APIs, and all APIs should be delivered as individual or groups of microservices, that do one thing and does it well. As APIs evolve, the backend systems should be decoupled and evolved as well, but until that becomes possible, all consumption of data, content, and other resources will be routed through the Lighthouse API stack.</p>
-
-<p><em><strong>Question: API key management or managing third party access (authorization, throttling, etc.)</strong></em><br />
-Both theAWS API Gateway, and Azure API Management allow for the delivery of modern API management infrastructure that can be used to govern internal, partner, and 3rd party access to resources. All applications should be using APIs, and ALL APIs should be using a standardized API management approach, no matter whether the consumption is internal or external. Ensuring consistent authorization, throttling, logging, and other aspects of doing business with APIs.</p>
-
-<ul>
-  <li><strong>IAM</strong> - Leverage API keys, JWT, and OAuth in conjunction with IAM policies governing which backend resources are available to API consumers.</li>
-  <li><strong>Gateway</strong> - All API traffic is routed through the AWS API Gateway and Azure API management layers, allowing for consistent and comprehensive management across all API consumption.</li>
-  <li><strong>Management</strong> - Apply consistent logging, rate limiting, transformations, error and security at the API management level, ensuring all services behave in the same way.</li>
-  <li><strong>Plans</strong> - Establishing of a variety of API plans that dictate API levels of access, which services are accessible to different API key levels, that are in sync with backend IAM policies.</li>
-  <li><strong>Logging</strong> - Every API call is logged, and contains user and application keys, allow ALL API consumption to be audited and reported upon, and responded to in real time.</li>
-  <li><strong>Security</strong> - Providing a single point of entry, and the ability to shut down access, striking the balance between access and security which is the hallmark of doing APIs.</li>
-</ul>
-
-<p>API management is baked into the cloud. It is a discipline that has been evolving for over a decade, and is available on both the AWS and Azure platforms. The tools are there, Lighthouse just needs to establish a coherent strategy for authentication, service composition, logging, reporting, and responding to API consumption at scale in real time. Staying out of the way of consumers, while also ensuring that they only have access to the data, content, and other resources they are allowed to, in alignment with overall governance.</p>
-
-<p><em><strong>Management of API lifecycle in cloud, hybrid, and/or on premise environments</strong></em><br />
-All operational aspects of the Lighthouse platform should be developed as independent microservices, with a common API–no matter what the underlying architecture is. The DNS service API should be the same, regardless of whether it is managing AWS or Azure DNS, or possibly any other on-premise or 3rd party service–allowing for platform orchestration using a common API stack.</p>
-
-<ul>
-  <li><strong>Microservices</strong> - Each operational service is a microservice, with possibly multiple versions, depending on the backend architecture in use.</li>
-  <li><strong>Containers</strong> - Every operational service is operated as a container, allowing it to run in any cloud environment.</li>
-  <li><strong>Github</strong> - All services live as a Github repository, allowing it to be checked out and forked via any cloud platform.</li>
-</ul>
-
-<p>The modular, containerized, microservice approach to delivering the Lighthouse platform will allow for the deployment, scaling, and redundant implementation of services in any cloud environment, as well as on-premise, or hybrid scenarios. All services operate using the same microservice footprint, using containers, and a consistent API surface area, allowing for the entire platform stack to be orchestrated against no matter where the actual service resides.</p>
-
-<p>_**Question: 3. Use Case<br />
-To better provide insight into aligning activities to contracts, VA has provided the use case below. Please walk through this use case discussing each activity and the contract it would be executed under.</p>
-
-<p><strong>Veteran Verification Sample Use Case: VA has a need for a Veteran Verification API to verify a Veteran status from a number of VA backend systems to be shared internally and externally as an authoritative data source.  These backend systems potentially have conflicting data, various system owners, and varying degrees of system uptime._</strong></p>
-
-<p>This is a common problem within large organizations, institutions, and government agencies. This is why we work to decouple, modularize, and scale not just the technology of building applications on backend systems, but also the business, and politics of it all. Introducing a competitive element when it comes to data management access, and building in redundancy, resilience, and a healthier incentive model into how we provide access to critical data, content, and other resources.</p>
-
-<p>I have personal experience with this particular use case. One of the things I did while working at the VA, was conduct public data inventory, and move forward the conversation around a set of veteran benefit web services, which included asking the question–who had the authoritative record for a veteran? Many groups felt they were the authority, but in my experience, nobody actually did entirely. The incentives in this environment weren’t about actually delivering a meaningful record on a veteran, it was all about getting a significant portion of the budget. I recommend decoupling the technology, business, and politics of providing access to veterans data using a microservices approach.</p>
-
-<ul>
-  <li><strong>Microservices</strong> - Break the veterans record into separate, meaningful services.</li>
-  <li><strong>Definitions</strong> - Ensure the definitions for the schema and API are open and accessible.</li>
-  <li><strong>Discovery</strong> - Make sure that the Veteran Verification API is full discoverable.</li>
-  <li><strong>Testing</strong> - Make sure the Verification API is fully tested on a regular basis.</li>
-  <li><strong>Monitoring</strong> - Ensure that there are regular monitors for the Verification API.</li>
-  <li><strong>Redundancy</strong> - Encourage multiple implementations of the same API to be delivered and owned by separate groups in separate regions, with circuit breaker behavior in APIs and applications.</li>
-  <li><strong>Balancing</strong> - Load balance between services and regions, allowing for auto-scaled APIs.</li>
-  <li><strong>Aggregation</strong> - Encourage the development of aggregate APIs that bridge multiple source, providing aggregate versions of the veteran’s record, encouraging new service owners to improve on existing services.</li>
-  <li><strong>Reliability</strong> - Incentivize and reward reliability with Verification API owners, through revenue and priority access.</li>
-</ul>
-
-<p>There should be no single owner of any critical VA service. Each service should have redundant versions of the service, available in different regions, and managed by separate owners. Competition should be encouraged, with facade and aggregate introduced, putting pressure on core service providers to deliver quality, or their service(s) will be de-prioritized, and newer services will be given traffic and revenue priority. The same backend database can be exposed via many different APIs, with a variety of owners and incentives in place to encourage the quality of service.</p>
-
-<p>APIs, coupled with the proper terms of service in place can eliminate an environment where defensive data positions are established. If other API owners can get access to the same data, and offer a better quality API, then evangelize and gain traction with application owners, entrenched API providers will no longer flourish. Aggregate and facade APIs allow for the evolution of existing APIs, even if the API owners are unwilling to move and evolve. Shifting the definition of what is authoritative, making it much more liquid, allowing it to shift and evolve, rather than just be diluted and meaningless, as it is often seen in the current environment.</p>
-
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/69_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-
-<p>_<strong>Question: 4. Response<br />
-In addition to providing the requested content above, VA asks for vendors to respond to the following questions:</strong></p>
-
-<p><strong>Describe how you would align the aforementioned activities between contracts, and the recommended price structure for contracts?_</strong></p>
-
-<p>Each microservice would have its own technical, business, and political contract, outline how the service will be delivered, managed, supported, communicated, and versioned. These contracts can be realized individually, or grouped together as a larger, aggregate contract that can be submitted, while still allowing each individual service within that contract to operate independently.</p>
-
-<p>As mentioned before, the microservices approach isn’t just about the technical components. It is about making the business of delivering vital VA services more modular, portable, and scalable. Something that will also decouple and shift the politics of delivering critical services to veterans. Breaking things down into much more manageable chunks that can move forward independently at the contract level.</p>
-
-<ul>
-  <li><strong>Micro Procurement</strong> - One of the benefits of breaking down services into small chunks, is that the money needed to deliver the service can become much smaller, potentially allowing for a much smaller, more liquid and flowing procurement cycle. Each service has a micro definition of the monetization involved with the service, which can be aggregated by groups of services and projects.</li>
-  <li><strong>Micro Payments</strong> - Payments for service deliver can be baked into the operations and life cycle of the service. API management excels at measuring how much a service is accessed, and testing, monitoring, logging, security, and other stops along the API life cycle can all be measured, and payments can be delivered depend on quality of service, as well as volume of service.</li>
-</ul>
-
-<p>Amazon Web Services already has the model for defining, measuring, and billing for API consumption in this way. This is the bread and butter of the Amazon Web Services platform, and the cornerstone of what we know as the cloud. This approach to delivering, scaling, and ultimately billing or payment for the operation and consumption of resources, just needs to be realized by the VA, and the rest of the federal government. We have seen a shift in how government views the delivery and operation of technical resources using the cloud over the last five years, we just need to see the same shift for the business of APIs over the next five years.</p>
-
-<p>_<strong>Question: The Government envisions a managed service (ie: vendor responsible for all aspects including licenses, scaling, provisioning users, etc.) model for the entire technology stack.  How could this be priced to allow for scaling as more APIs are used?  For example, would it be priced by users, API calls, etc.?_</strong></p>
-
-<p>API management is where you start this conversation. It has been used for a decade to measure, limit, and quantify the value being exchanged at the API level. Now that API management has been baked into the cloud, we are starting to see the approach being scaled to deliver at a marketplace level. With over ten years of experience with delivering, quantifying, metering and billing at the API level, Amazon is the best example of this monetization approach in action, with two distinct ways of quantifying the business of APIs.</p>
-
-<ul>
-  <li><strong>AWS Marketplace Metering Service</strong> - SaaS style billing model which provides a consumption monetization model in which customers are charged only for the number of resources they use–the best known cloud model.</li>
-  <li><strong>AWS Contract Service</strong> - Billing customers in advance for the use of software, providing an entitlement monetization model in which customers pay in advance for a certain amount of usage, which could be used to deliver certain amount of storage per month for a year, or a certain amount of end-user licenses for some amount of time.</li>
-</ul>
-
-<p>This provides a framework for thinking about how the business of microservices can be delivered. Within these buckets, AWS provides a handful of common dimensions for thinking through the nuts and bolts of these approaches, quantifying how APIs can be monetized, in nine distinct areas:</p>
-
-<ul>
-  <li><strong>Users</strong> – One AWS customer can represent an organization with many internal users. Your SaaS application can meter for the number of users signed in or provisioned at a given hour. This category is appropriate for software in which a customer’s users connect to the software directly (for example, with customer-relationship management or business intelligence reporting).</li>
-  <li><strong>Hosts</strong> – Any server, node, instance, endpoint, or other part of a computing system. This category is appropriate for software that monitors or scans many customer-owned instances (for example, with performance or security monitoring). Your application can meter for the number of hosts scanned or provisioned in a given hour.</li>
-  <li><strong>Data</strong> – Storage or information, measured in MB, GB, or TB. This category is appropriate for software that manages stored data or processes data in batches. Your application can meter for the amount of data processed in a given hour or how much data is stored in a given hour.</li>
-  <li><strong>Bandwidth</strong> – Your application can bill customers for an allocation of bandwidth that your application provides, measured in Mbps or Gbps. This category is appropriate for content distribution or network interfaces. Your application can meter for the amount of bandwidth provisioned for a given hour or the highest amount of bandwidth consumed in a given hour.</li>
-  <li><strong>Request</strong> – Your application can bill customers for the number of requests they make. This category is appropriate for query-based or API-based solutions. Your application can meter for the number of requests made in a given hour.</li>
-  <li><strong>Tiers</strong> – Your application can bill customers for a bundle of features or for providing a suite of dimensions below a certain threshold. This is sometimes referred to as a feature pack. For example, you can bundle multiple features into a single tier of service, such as up to 30 days of data retention, 100 GB of storage, and 50 users. Any usage below this threshold is assigned a lower price as the standard tier. Any usage above this threshold is charged a higher price as the professional tier. Tier is always represented as an amount of time within the tier. This category is appropriate for products with multiple dimensions or support components. Your application should meter for the current quantity of usage in the given tier. This could be a single metering record (1) for the currently selected tier or feature pack.</li>
-  <li><strong>Units</strong> – Whereas each of the above is designed to be specific, the dimension of Unit is intended to be generic to permit greater flexibility in how you price your software. For example, an IoT product which integrates with device sensors can interpret dimension “Units” as “sensors”. Your application can also use units to make multiple dimensions available in a single product. For example, you could price by data and by hosts using Units as your dimension. With dimensions, any software product priced through the use of the Metering Service must specify either a single dimension or define up to eight dimensions, each with their own price.</li>
-</ul>
-
-<p>These dimensions reflect the majority of API services being sold out there today, we don’t find ourselves in a rut with measuring value, like just paying per API call. Allowing Lighthouse API plans to possess one or more dimensions, beyond any single use case.</p>
-
-<ul>
-  <li><strong>Single Dimension</strong> - This is the simplest pricing option. Customers pay a single price per resource unit per hour, regardless of size or volume (for example, $0.014 per user per hour, or $0.070 per host per hour).</li>
-  <li><strong>Multiple Dimensions</strong> – Use this pricing option for resources that vary by size or capacity. For example, for host monitoring, a different price could be set depending on the size of the host. Or, for user-based pricing, a different price could be set based on the type of user (admin, power user, and read-only user). Your service can be priced on up to eight dimensions. If you are using tier-based pricing, you should use one dimension for each tier.</li>
-</ul>
-
-<p>This provides a framework that Lighthouse can provide to 3rd party developers, allowing them to operate their services within a variety of business models. Derived from many of the hard costs they face, and providing additional volume based revenue, based upon how may API calls of any particular service receives.</p>
-
-<p>Beyond this basic monetization framework, I’d add in an incentive framework that would dovetail with the business models proposed, but then provide different pricing levels depending on how well the services perform, and deliver on the agreed upon API contract. There are a handful of bullets I’d consider here.</p>
-
-<ul>
-  <li><strong>Design</strong> - How well does a service meet API design guidelines set forth in governance guidance.</li>
-  <li><strong>Monitoring</strong> - Has a service consistently met its monitoring goals, delivering against an agreed upon service level agreement (SLA).</li>
-  <li><strong>Testing</strong> - Beyond monitoring, are APIs meeting granular interface testing, along a regular testing &amp; monitoring schedule.</li>
-  <li><strong>Communication</strong> - Are service owners meeting expectations around communication around a service operations.</li>
-  <li><strong>Support</strong> - Does a service meet required support metrics, making sure it is responsive and helpful.</li>
-  <li><strong>Ratings</strong> - Provide a basic set of metrics, with accompanying ratings for each service.</li>
-  <li><strong>Certification</strong> - Allowing service providers to get certified, receiving better access, revenue, and priority.</li>
-</ul>
-
-<p>All of the incentive framework is defined and enforced via the API governance strategy for the platform. Making sure all microservices, and their owners meet a base set of expectations. When you take the results and apply weekly, monthly, and quarterly against the business framework, you can quickly begin to see some different pricing levels, and revenue opportunities around all microservices emerge. You deliver consistent, reliable, highly ranked microservices, you get paid higher percentages, enjoy greater access to resources, and prioritization in different ways via the platform–if you don’t, you get paid less, and operate fewer services.</p>
-
-<p>This model is already visible on the AWS platform. All the pieces are there to make it happen for any platform, operating on top of the AWS platform. The marketplace, billing, and AWS API Gateway connection to API plans exists. When you combine the authentication and service composition available at the AWS API Gateway layer, with the IAM policy solutions available via AWS, an enterprise grade solution for delivering this model securely at scale, comes into focus.</p>
-
-<p><em><strong>Question: Is there a method of paying or incentivizing the contractor based on API usage?</strong></em><br />
-I think I hit on this with the above answer(s). Keep payments small, and well defined. Measured, reported upon, and priced using the cloud model, connecting to a clear set of API governance guidance and expectations. The following areas can support paying and incentivizing contractors based upon not just usage, but also meeting the API contract.</p>
-
-<ul>
-  <li><strong>Management</strong> - API management puts all microservices into plans, then log, meter, and track on value exchanged at this level.</li>
-  <li><strong>Marketplace</strong> - Turning the platform into a marketplace that can be occupied by a variety of internal, pattern, vendor, 3rd party, and public actors.</li>
-  <li><strong>Monetization</strong> - Granular understanding of all the resources it takes to deliver each individual service, and understand the costs associated with operating at scale.</li>
-  <li><strong>Plans</strong> - A wealth of API plans in place at the API gateway level, something that is tied to IAM policies, and in alignment with API governance expectations.</li>
-  <li><strong>Governance</strong> - Providing a map, and supporting guidance around the Lighthouse platform API governance. Understanding, measuring, and enforcing consistency across the API lifecycle–platform wide.</li>
-  <li><strong>Value Exchange</strong> - Using the cloud model, which is essentially the original API management, marketplace, and economy model. Not just measuring consumption, but used to maximize and generate revenue from the value exchanged across the platform.</li>
-</ul>
-
-<p>When you operate APIs on AWS and Azure, the platform as a service layer can utilize and benefit from the underlying infrastructure as a service monetization framework. Meaning, you can use AWS’s business model for managing the measuring, paying, and incentivizing of microservice owners. All the gears are there, they just need to be set in motion to support the management of a government API marketplace platform.</p>
-
-<p><em><strong>Based on the information provided, please discuss your possible technology stack and detail your experience supporting these technologies.</strong></em><br />
-Both Amazon Web Services and Azure provide the building blocks of what you need to execute the above. Each cloud platform has its own approach to delivering infrastructure at scale. Providing an interesting mix of API driven resources you can jumpstart any project.</p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/27_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p><strong>AWS</strong>
-First, let’s take a look at what is relevant to this vision from the Amazon Web Services side of things. These are all the core AWS solutions on the table, with dashboard, API, and command line access to get the job done.</p>
-
-<p><strong>Compute</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/ec2/?hp=tile&amp;so-exp=below">Amazon EC2</a> - Virtual Servers in the Cloud</li>
-  <li><a href="https://aws.amazon.com/ec2/autoscaling/?hp=tile&amp;so-exp=below">Amazon EC2 Auto Scaling</a> - Scale Compute Capacity to Meet Demand</li>
-  <li><a href="https://aws.amazon.com/ecs/?hp=tile&amp;so-exp=below">Amazon Elastic Container Service</a> - Run and Manage Docker Containers</li>
-  <li><a href="https://aws.amazon.com/eks/?hp=tile&amp;so-exp=below">Amazon Elastic Container Service for Kubernetes</a> - Run Managed Kubernetes on AWS</li>
-  <li><a href="https://aws.amazon.com/ecr/?hp=tile&amp;so-exp=below">Amazon Elastic Container Registry</a> - Store and Retrieve Docker Images</li>
-  <li><a href="https://aws.amazon.com/lightsail/?hp=tile&amp;so-exp=below">Amazon Lightsail</a> - Launch and Manage Virtual Private Servers</li>
-  <li><a href="https://aws.amazon.com/fargate/?hp=tile&amp;so-exp=below">AWS Fargate</a> - Run Containers without Managing Servers or Clusters</li>
-  <li><a href="https://aws.amazon.com/batch/?hp=tile&amp;so-exp=below">AWS Batch</a> - Run Batch Jobs at Any Scale</li>
-  <li><a href="https://aws.amazon.com/lambda/?hp=tile&amp;so-exp=below">AWS Lambda</a> - Run your Code in Response to Events</li>
-  <li><a href="https://aws.amazon.com/serverlessrepo/?hp=tile&amp;so-exp=below">AWS Serverless Application Repository</a> - Discover, Deploy, and Publish Serverless Applications Auto Scaling</li>
-</ul>
-
-<p><strong>Storage</strong>
-<a href="https://aws.amazon.com/s3/?hp=tile&amp;so-exp=below">Amazon S3</a> - Scalable Storage in the Cloud
-<a href="https://aws.amazon.com/ebs/?hp=tile&amp;so-exp=below">Amazon EBS</a> - Block Storage for EC2
-<a href="https://aws.amazon.com/efs/?hp=tile&amp;so-exp=below">Amazon Elastic File System</a> - Managed File Storage for EC2
-<a href="https://aws.amazon.com/glacier1/?hp=tile&amp;so-exp=below">Amazon Glacier</a> - Low-cost Archive Storage in the Cloud
-<a href="https://aws.amazon.com/storagegateway/?hp=tile&amp;so-exp=below">AWS Storage Gateway</a> - Hybrid Storage Integration</p>
-
-<p><strong>Database</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/rds/aurora/?hp=tile&amp;so-exp=below">Amazon Aurora</a> - High Performance Managed Relational Database</li>
-  <li><a href="https://aws.amazon.com/rds/?hp=tile&amp;so-exp=below">Amazon RDS</a> - Managed Relational Database Service for MySQL, PostgreSQL, Oracle, SQL Server, and MariaDB</li>
-  <li><a href="https://aws.amazon.com/dynamodb/?hp=tile&amp;so-exp=below">Amazon DynamoDB</a> - Managed NoSQL Database</li>
-  <li><a href="https://aws.amazon.com/elasticache/?hp=tile&amp;so-exp=below">Amazon ElastiCache</a> - In-memory Caching System</li>
-  <li><a href="https://aws.amazon.com/redshift/?hp=tile&amp;so-exp=below">Amazon Redshift</a> - Fast, Simple, Cost-effective Data Warehousing</li>
-</ul>
-
-<p><strong>Authentication</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/iam/?hp=tile&amp;so-exp=below">AWS Identity &amp; Access Management</a> - Manage User Access and Encryption Keys</li>
-  <li><a href="https://aws.amazon.com/cognito/?hp=tile&amp;so-exp=below">Amazon Cognito</a> - Identity Management for your Apps</li>
-  <li><a href="https://aws.amazon.com/single-sign-on/?hp=tile&amp;so-exp=below">AWS Single Sign-On</a> - Cloud Single Sign-On (SSO) Service</li>
-  <li>a href=”https://aws.amazon.com/cloudhsm/?hp=tile&amp;so-exp=below”&gt;AWS CloudHSM&lt;/a&gt; - Hardware-based Key Storage for Regulatory Compliance</li>
-</ul>
-
-<p><strong>Management</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/api-gateway/?hp=tile&amp;so-exp=below">Amazon API Gateway</a> - Build, Deploy, and Manage APIs</li>
-  <li><a href="https://aws.amazon.com/autoscaling/?hp=tile&amp;so-exp=below">AWS Auto Scaling</a> - Scale Multiple Resources to Meet Demand</li>
-  <li><a href="https://aws.amazon.com/cloudformation/?hp=tile&amp;so-exp=below">AWS CloudFormation</a> - Create and Manage Resources with Templates</li>
-</ul>
-
-<p><strong>Logging</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/cloudwatch/?hp=tile&amp;so-exp=below">Amazon CloudWatch</a> - Monitor Resources and Applications</li>
-  <li><a href="https://aws.amazon.com/cloudtrail/?hp=tile&amp;so-exp=below">AWS CloudTrail</a> - Track User Activity and API Usage</li>
-</ul>
-
-<p><strong>Network</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/vpc/?hp=tile&amp;so-exp=below">Amazon VPC</a> - Isolated Cloud Resources</li>
-  <li><a href="https://aws.amazon.com/cloudfront/?hp=tile&amp;so-exp=below">Amazon CloudFront</a> - Global Content Delivery Network</li>
-  <li><a href="https://aws.amazon.com/route53/?hp=tile&amp;so-exp=below">Amazon Route 53</a> - Scalable Domain Name System</li>
-</ul>
-
-<p><strong>Discovery</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/application-discovery/?hp=tile&amp;so-exp=below">AWS Application Discovery Service</a> - Discover On-Premises Applications to Streamline Migration</li>
-  <li><a href="https://aws.amazon.com/servicecatalog/?hp=tile&amp;so-exp=below">AWS Service Catalog</a> - Create and Use Standardized Products</li>
-</ul>
-
-<p>Migration</p>
-<ul>
-  <li><a href="https://aws.amazon.com/dms/?hp=tile&amp;so-exp=below">AWS Database Migration Service</a> - Migrate Databases with Minimal Downtime</li>
-  <li><a href="https://aws.amazon.com/server-migration-service/?hp=tile&amp;so-exp=below">AWS Server Migration Service</a> - Migrate On-Premises Servers to AWS</li>
-</ul>
-
-<p><strong>Orchestration</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/codedeploy/?hp=tile&amp;so-exp=below">AWS CodeDeploy</a> - Automate Code Deployment</li>
-  <li><a href="https://aws.amazon.com/codepipeline/?hp=tile&amp;so-exp=below">AWS CodePipeline</a> - Release Software using Continuous Delivery</li>
-  <li><a href="https://aws.amazon.com/config/?hp=tile&amp;so-exp=below">AWS Config</a> - Track Resource Inventory and Changes</li>
-  <li><a href="https://aws.amazon.com/systems-manager/?hp=tile&amp;so-exp=below">AWS Systems Manager</a> - Gain Operational Insights and Take Action</li>
-</ul>
-
-<p><strong>Monitoring</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/trustedadvisor/?hp=tile&amp;so-exp=below">AWS Trusted Advisor</a> - Optimize Performance and Security</li>
-  <li><a href="https://aws.amazon.com/premiumsupport/phd/?hp=tile&amp;so-exp=below">AWS Personal Health Dashboard</a> - Personalized View of AWS Service Health</li>
-</ul>
-
-<p><strong>Security</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/guardduty/?hp=tile&amp;so-exp=below">Amazon GuardDuty</a> - Managed Threat Detection Service</li>
-  <li><a href="https://aws.amazon.com/certificate-manager/?hp=tile&amp;so-exp=below">AWS Certificate Manager</a> - Provision, Manage, and Deploy SSL/TLS Certificates</li>
-  <li><a href="https://aws.amazon.com/shield/?hp=tile&amp;so-exp=below">AWS Shield</a> - DDoS Protection</li>
-  <li><a href="https://aws.amazon.com/waf/?hp=tile&amp;so-exp=below">AWS WAF</a> - Filter Malicious Web Traffic</li>
-</ul>
-
-<p><strong>Analytics</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/athena/?hp=tile&amp;so-exp=below">Amazon Athena</a> - Query Data in S3 using SQL</li>
-  <li><a href="https://aws.amazon.com/cloudsearch/?hp=tile&amp;so-exp=below">Amazon CloudSearch</a> - Managed Search Service</li>
-  <li><a href="https://aws.amazon.com/redshift/?hp=tile&amp;so-exp=below">Amazon Redshift</a> - Fast, Simple, Cost-effective Data Warehousing</li>
-</ul>
-
-<p><strong>Integration</strong></p>
-<ul>
-  <li><a href="https://aws.amazon.com/step-functions/?hp=tile&amp;so-exp=below">AWS Step Functions</a> - Coordinate Distributed Applications</li>
-  <li><a href="https://aws.amazon.com/sqs/?hp=tile&amp;so-exp=below">Amazon Simple Queue Service (SQS)</a> - Managed Message Queues</li>
-  <li><a href="https://aws.amazon.com/sns/?hp=tile&amp;so-exp=below">Amazon Simple Notification Service (SNS)</a> - Pub/Sub, Mobile Push and SMS</li>
-  <li><a href="https://aws.amazon.com/amazon-mq/?hp=tile&amp;so-exp=below">Amazon MQ</a> - Managed Message Broker for ActiveMQ</li>
-</ul>
-
-<p>I’m a big fan of the AWS approach. Their marketplace, and AWS API gateway provide unprecedented access to backend cloud, and on-premise resources, which can be secured using AWS IAM. Amazon Web Services products a robust infrastructure as a services, adequate enough to deliver any platform as a services solutions.</p>
-
-<p><strong>Azure</strong></p>
-
-<p>Next, let’s look at the Azure stack to see what they bring to the table. There is definitely some overlap with the AWS list of resources, but Microsoft has a different view of the landscape than Amazon does. However, similar to Amazon, most of the building blocks are here to deliver on the proposal above.</p>
-
-<p><strong>Compute</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/virtual-machines/">Virtual Machines</a> - Provision Windows and Linux virtual machines in seconds</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a> - Quickly create powerful cloud apps for web and mobile</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/functions/">Functions</a> - Process events with serverless code</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/batch/">Batch</a> - Cloud-scale job scheduling and compute management</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/container-instances/">Container Instances</a> - Easily run containers with a single command</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Service Fabric</a> - Develop microservices and orchestrate containers on Windows or Linux</li>
-  <li>a href=”https://azure.microsoft.com/en-us/services/virtual-machine-scale-sets/”&gt;Virtual Machine Scale Sets&lt;/a&gt; - Manage and scale up to thousands of Linux and Windows virtual machines</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service (AKS)</a> - Simplify the deployment, management, and operations of Kubernetes</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/cloud-services/">Cloud Services</a> - Create highly-available, infinitely-scalable cloud applications and APIs</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/virtual-machines/linux-and-open/">Linux Virtual Machines</a> - Provision virtual machines for Ubuntu, Red Hat, and more</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/">Windows Virtual Machines</a> - Provision virtual machines for SQL Server, SharePoint, and more</li>
-</ul>
-
-<p><strong>Storage</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/">Storage</a> - Durable, highly available, and massively scalable cloud storage</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/backup/">Backup</a> - Simple and reliable server backup to the cloud</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storsimple/">StorSimple</a> - Lower costs with an enterprise hybrid cloud storage solution</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/site-recovery/">Site Recovery</a> - Orchestrate protection and recovery of private clouds</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/data-lake-store/">Data Lake Store</a> - Hyperscale repository for big data analytics workloads</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/blobs/">Blob Storage</a> - REST-based object storage for unstructured data</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/unmanaged-disks/">Disk Storage</a> - Persistent, secured disk options supporting virtual machines</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/managed-disks/">Managed Disks</a> - Persistent, secured disk storage for Azure virtual machines</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/queues/">Queue Storage</a> - Effectively scale apps according to traffic</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/files/">File Storage</a> - File shares that use the standard SMB 3.0 protocol</li>
-</ul>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/27_113_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p><strong>Deployment</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/app-service/api/">API Apps</a> - Easily build and consume Cloud APIs</li>
-</ul>
-
-<p><strong>Containers</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/app-service/">App Service</a> - Quickly create powerful cloud apps for web and mobile</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/batch/">Batch</a> - Cloud-scale job scheduling and compute management</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/container-registry/">Container Registry</a> - Store and manage container images across all types of Azure deployments</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/container-instances/">Container Instances</a> - Easily run containers with a single command</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/service-fabric/">Service Fabric</a> - Develop microservices and orchestrate containers on Windows or Linux</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service (AKS)</a> - Simplify the deployment, management, and operations of Kubernetes</li>
-</ul>
-
-<p><strong>Databases</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/sql-database/">SQL Database</a> - Managed relational SQL Database as a service</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/cosmos-db/">Azure Cosmos DB</a> - Globally distributed, multi-model database for any scale</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/sql-data-warehouse/">SQL Data Warehouse</a> - Elastic data warehouse as a service with enterprise-class features</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/cache/">Redis Cache</a> - Power applications with high-throughput, low-latency data access</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/sql-server-stretch-database/">SQL Server Stretch Database</a> - Dynamically stretch on-premises SQL Server databases to Azure</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/storage/tables/">Table Storage</a> - NoSQL key-value store using semi-structured datasets</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/postgresql/">Azure Database for PostgreSQL</a> - Managed PostgreSQL database service for app developers</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/mysql/">Azure Database for MySQL</a> - Managed MySQL database service for app developers</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/database-migration/">Azure Database Migration Service</a> - Simplify on-premises database migration to the cloud</li>
-</ul>
-
-<p><strong>Authentication</strong>
-<a href="https://azure.microsoft.com/en-us/services/active-directory/">Azure Active Directory</a> - Synchronize on-premises directories and enable single sign-on
-<a href="https://azure.microsoft.com/en-us/services/multi-factor-authentication/">Multi-Factor Authentication</a> - Add security for your data and apps without adding hassles for users
-<a href="https://azure.microsoft.com/en-us/services/key-vault/">Key Vault</a> - Safeguard and maintain control of keys and other secrets
-<a href="https://azure.microsoft.com/en-us/services/active-directory-b2c/">Azure Active Directory B2C</a> - Consumer identity and access management in the cloud</p>
-
-<p><strong>Management</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/api-management/">API Management</a> - Publish APIs to developers, partners, and employees securely and at scale</li>
-</ul>
-
-<p><strong>Logging</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/log-analytics/">Log Analytics</a> - Collect, search, and visualize machine data from on-premises and cloud</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/traffic-manager/">Traffic Manager</a> - Route incoming traffic for high performance and availability</li>
-</ul>
-
-<p><strong>Monitoring</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/monitor/">Azure Monitor</a> - Highly granular and real-time monitoring data for any Azure resource</li>
-  <li><a href="https://azure.microsoft.com/en-us/features/azure-portal/">Microsoft Azure portal</a> - Build, manage, and monitor all Azure products in a single, unified console</li>
-</ul>
-
-<p><strong>Analytics</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/hdinsight/">HDInsight</a> - Provision cloud Hadoop, Spark, R Server, HBase, and Storm clusters</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/hdinsight/apache-spark/">Apache Spark for Azure HDInsight</a> - Apache Spark in the cloud for mission critical deployments</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/hdinsight/apache-storm/">Apache Storm for HDInsight</a> - Real-time stream processing made easy for big data</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/sql-data-warehouse/">SQL Data Warehouse</a> - Elastic data warehouse as a service with enterprise-class features</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/log-analytics/">Log Analytics</a> - Collect, search, and visualize machine data from on-premises and cloud</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/data-lake-store/">Data Lake Store</a> - Hyperscale repository for big data analytics workloads</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/data-lake-analytics/">Data Lake Analytics</a> - Distributed analytics service that makes big data easy</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/analysis-services/">Azure Analysis Services</a> - Enterprise grade analytics engine as a service</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/databricks/">Azure Databricks</a> - Fast, easy, and collaborative Apache Spark-based analytics platform</li>
-</ul>
-
-<p><strong>Network</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/cdn/">Content Delivery Network</a> - Ensure secure, reliable content delivery with broad global reach</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/dns/">Azure DNS</a> - Host your DNS domain in Azure</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/virtual-network/">Virtual Network</a> - Provision private networks, optionally connect to on-premises datacenters</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/traffic-manager/">Traffic Manager</a> - Route incoming traffic for high performance and availability</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/load-balancer/">Load Balancer</a> - Deliver high availability and network performance to your applications</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/network-watcher/">Network Watcher</a> - Network performance monitoring and diagnostics solution</li>
-</ul>
-
-<p><strong>Orchestration</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/scheduler/">Scheduler</a> - Run your jobs on simple or complex recurring schedules</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/automation/">Automation</a> - Simplify cloud management with process automation</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/automation-control/">Automation &amp; Control</a> - Centrally manage all automation and configuration assets</li>
-</ul>
-
-<p><strong>Integration</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/data-factory/">Data Factory</a> - Orchestrate and manage data transformation and movement</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/logic-apps/">Logic Apps</a> - Automate the access and use of data across clouds without writing code</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/event-grid/">Event Grid</a> - Get reliable event delivery at massive scale</li>
-</ul>
-
-<p><strong>Search</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/search/">Azure Search</a> - Fully-managed search-as-a-service</li>
-</ul>
-
-<p><strong>Discovery</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/active-directory-ds/">Azure Active Directory Domain Services</a> - Join Azure virtual machines to a domain without domain controllers</li>
-</ul>
-
-<p><strong>Security</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/security-center/">Security Center</a> - Unify security management and enable advanced threat protection across hybrid cloud workloads</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/security-compliance/">Security &amp; Compliance</a> - Enable threat detection and prevention through advanced cloud security</li>
-  <li><a href="https://azure.microsoft.com/en-us/services/ddos-protection/">Azure DDoS Protection</a> - Protect your applications from Distributed Denial of Service (DDoS) attacks</li>
-</ul>
-
-<p><strong>Governance</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/azure-policy/">Azure Policy</a> - Implement corporate governance and standards at scale for Azure resources</li>
-</ul>
-
-<p><strong>Monetization</strong></p>
-<ul>
-  <li><a href="https://azure.microsoft.com/en-us/services/cost-management/">Cost Management</a> - Optimize what you spend on the cloud, while maximizing cloud potential</li>
-</ul>
-
-<p><strong>Experience</strong><br />
-I have been studying Amazon full time for almost eight years. I’ve been watching Azure play catch up for the last three years. I run my infrastructure, and a handful of clients on AWS. I understand the API landscape of both providers, and how they can be woven into vision proposed so far.</p>
-
-<p>I see the AWS API stack, and the Azure API stack, as a starter set of services that can be built upon to deliver the base Lighthouse implementation. All the components are there. It just need the first set of Lighthouse services to be defined, delivering the essential building blocks  any platform needs, things like compute, storage, dns, messaging, etc. I recommend that the VA Lighthouse team take the AWS API stack, and mold it into v1 of the Lighthouse API stack. Take the momentum from AWS’s own API journey, build upon it, and set into motion the VA Lighthouse API journey.</p>
-
-<p>Enable VA services to be delivered as individual, self-contained units, that can be used as part of a larger VA orchestration of veteran services. Open up the VA and let some sunlight in. Think about what Amazon has been able to achieve by delivering its own internal operations as services, and remaking not just retail, but also touching almost every other industry with Amazon Web Services. <a href="https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/">The Amazon Web Services myth story</a> provides a powerful and compelling narrative for any company, organizations, institution, or government agency like the VA to emulate.</p>
-
-<p>This proposal is not meant to be a utopian vision for the VA. However it is meant to, as the name of the project reflects, shine a light on existing ways of delivering services via the cloud. Helping guide each service in its own individual journey, while also serving the overall mission of the platform–to help the veteran be successful in their own personal journey.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/pano-lighthouse_copper_circuit.jpg" width="100%" align="center" /></p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/24/department-of-veterans-affairs-lighthouse-platform-rfi-round-two/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/22/aws-iam-like-policies-for-aws-api-gateway-and-marketplace-billing/">AWS IAM-Like Policies For AWS API Gateway And Marketplace Billing</a></h3>
-        <span class="post-date">22 Feb 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/server-cloud1_internet_numbers.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>The primary reason I’ve been adopting more AWS solutions as part of my API stack, and using tools I have historically felt lock me into the AWS ecosystem, is the available of AWS identity and access management (IAM). I just cannot deliver secure at this level as a small business owner, and their robust solution lets me dial in exactly what I need when it comes to defining who has access to what across my API infrastructure. I can define different policies, and apply them at the API management layer using both AWS Lambda and AWS API Gateway. Keeping everything separated, yet with a single API stack as the point of entry, for all consumers and applications.</p>
-
-<p>I want all of this security goodness, but for the business of my APIs. Similar to the engine that drives the relationship between me as an AWS Marketplace user and AWS, I want a framework for applying business policies at the plan level within AWS API Gateway. I want to determine who has access to which resources, as well as what they can use, but I want to be able to meter this usage, and charge different rates. Compute, storage, and bandwidth for my partners is different than for retail API consumers, with a mix of resource and API call based metrics.</p>
-
-<p><a href="https://plans.apievangelist.com/2017/10/23/api-monetization-framework-introduced-by-aws-marketplace/">The AWS monetization policies would reflect the AWS Marketplace framework</a>, giving me a mix of metering and contract based billing, reflecting single or multi-dimensional usage across the eight areas of consumption they support currently. I want to be able to establish common monetization policies across all my microservices, and allow product managers to implement them consistently at scale using AWS API Gateway. Like security, these API product managers shouldn’t be experts in the economics of the services being offered, they should just be able to apply from a common pool of business policies, and provide feedback on how to evolve, when appropriate.</p>
-
-<p>This concept is very much in the realm of traditional API management service composition, but would possess a machine readable policy format just like IAM policies. API monetization policies could be reported upon, providing breakdown of consumption of resources at the backend system, or front-end API path level, helping translate the monetization side of our API strategy, into actual API plans that can be executed at run-time. Providing a standardized, scalable, quantifiable way to measure the value exchange that occurs at the API level. Done in a way that could be applied internally, or external with partners, and 3rd party developers. Making the business of my APIs more consistent, modular, and reusable–just like the rest of my API infrastructure.</p>
-
-<p>I think AWS has a significant advantage in this area. They have the advanced resource management infrastructure, as well as the business side of all of this from managing their own APIs, but also from slowly rolling it out as part of the AWS Marketplace. AWS API Gateway has the plan, and marketplace key, providing the beginning of the implementation. All we need is the standardized policies based upon their existing pricing framework, and the ability to measure and report upon at the AWS API Gateway plan level. The working parts are there, it just needs to be brought together. It might also be something someone could piece together from logging, and other existing outputs on the AWS platform, and create an external reporting and billing solution. IDK. Just brainstorming, what I’d like to see, and getting it here on the blog before the thought passes.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/22/aws-iam-like-policies-for-aws-api-gateway-and-marketplace-billing/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/21/provisioning-a-default-app-and-keys-for-your-api-consumers-on-signup/">Provisioning A Default App And Keys For Your API Consumers On Signup</a></h3>
-        <span class="post-date">21 Feb 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/sabre/sabre-travel-signup-keys.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I sign up for a lot of APIs. I love anything that reduces friction when on-boarding, and allows me to begin making an API call in 1-3 clicks. I’m a big fan of API providers that allow me to signup using my Github OAuth, preventing me from having to sign up for yet another account. I’m also a big fan of providers who automatically provision an application for me as part of the signup, and have my API keys waiting for me as soon as I’ve registered.</p>
-
-<p><a href="https://developer.sabre.com/member/register">While signing up for the Sabre travel API I saw that they provisioned my application as part of the API sign up process in a way that was worth showcasing</a>. Saving me the time and hassle of having to add a new application after I’ve signed up. Stuff like this might seem like a pretty small detail when developing an API on-boarding process, but when you are signing up for many different APIs, and trying to manage your time–these little details add up to be a significant time saver.</p>
-
-<p>Ideally, API providers would auto-provision a default application along with the signup, but I like the idea of also giving me the option to name my application while registering. When crafting your API registration flow, make sure you spend time signing up multiple times, and try to put yourself in your API consumers shoes. I even recommend signing up for an account each week, repeatedly experiencing what your consumers will be exposed to. I also recommend spending time signing up for other APIs on a regular basis, to experience what they offer–you will always surprised by what I find.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/21/provisioning-a-default-app-and-keys-for-your-api-consumers-on-signup/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/21/open-banking-in-the-uk-openapi-template/">An Open Banking in the UK OpenAPI Template</a></h3>
-        <span class="post-date">21 Feb 2018</span>
-        <p>After learning more about <a href="https://www.openbanking.org.uk/">what Open Banking is doing for APIs in the UK</a>, I realized that I needed an OpenAPI template for the industry specification. There are six distinct schema available as part of the project, and I wanted a complete OpenAPI to describe which paths were available, as well as the underlying response schema. I got work crafting one from the responses that were available within <a href="https://www.openbanking.org.uk/open-data-apis/">the Open Banking documentation</a>.</p>
-
-<p>Open Banking had schema available for their API definitions, but OpenAPI is the leading API and data specification out there today, so it makes sense that there should be an OpenAPI available, helping all participating banking API providers take advantage of all the tooling available within the OpenAPI community. To help support, I have published my Open Banking OpenAPI definition as a Github Gist:</p>
-
-<script src="https://gist.github.com/kinlane/57c720c18e4d0ad370ad92c0ab9613f7.js"></script>
-
-<p>I’ve applied this OpenAPI definition to the 17 banks they have listed, and will be including them in the next publishing of <a href="http://theapistack.com">my API Stack project</a>. Open Banking provides a common definition that can be used across many banks, and an OpenAPI template allows me to quickly apply the common template to each individual bank. Generating bank specific documentation, SDK and code samples, monitoring, tests, and other client tooling. Helping me put the valuable data being made available via each API to work.</p>
-
-<p>I’d like to see more organizations like Open Banking emerge. I’d also like to help ensure they all make OpenAPI templates available for any API and schema specifications they establish. The API lifecycle is increasingly OpenAPI defined, and when you make your guidance available in the OpenAPI format, you are enabling actors within any industry to quickly get up and running with designing, deploying, managing, testing, monitoring, and almost every other stop along a modern API lifecycle. Increasing the chances of adoption for any API standards you are putting out there.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/21/open-banking-in-the-uk-openapi-template/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/21/an-opportunity-around-providing-a-common-openapi-enum-catalog/">An Opportunity Around Providing A Common OpenAPI Enum Catalog</a></h3>
-        <span class="post-date">21 Feb 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/enums/bitcoin-pools.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m down in the details of the OpenAPI specification lately, working my way through hundreds of OpenAPI definitions, trying to once again make sense of the API landscape at scale. I’m working to prepare as many API path definitions as I possibly can to be runnable within one or two clicks. OpenAPI definitions, and Postman Collections are essential to making this happen, both of which require complete details on the request surface area for an API. I need to know everything about the path, as well as any headers, path, or query parameters that need to included. A significant aspect of this definition being complete includes default, and enum values being present.</p>
-
-<p>If I can’t quickly choose from a list of values, or run with a default value, when executing an API, the time to seeing a live response grows significantly. If I have to travel back to the HTML documentation, or worse, do some Googling before I can make an API call, I just went from seconds to potentially minutes or hours before I can see a real world API response. Additionally, if there are many potential values available for each API parameter, enums become critical building blocks to helping me understand all the dimensions of an API’s surface area. Something that should have been considered as part of the API’s design, but often just gets left as part of API documentation.</p>
-
-<p>When playing with a Bitcoin API with the following path /blocks/{pool_name}, I need to the list of pools I can choose from. When looking to get a stock market quote from an API with the following path, /stock/{symbol}/quote, I need a list of all the ticker symbols. Having, or not having these enum values at documentation, and execute time, are essential. Many of these lists of values are so common, developers take them for granted. Assuming that API consumers just have them laying around, and really aren’t worth including in documentation. You’d think we all have lists of states, countries, stock tickers, Bitcoin pools, and other data just laying around, but even as the API Evangelist, I often find myself coming up short.</p>
-
-<p>All of this demonstrates a pretty significant opportunity for someone to create a Github hosted, searchable, forkable list of common OpenAPI enum lists. Providing an easy place for API providers, and API consumers to discover simple, or complex lists of values that should be present in API documentation, and included as part of all OpenAPIs. I recommend just publishing each enum JSON or YAML list as a Github Gist, and then publishing as a catalog via a simple Github Pages website. If I don’t see something pop up in the next couple of months, I’ll probably begin publishing something myself. However, I need another API related project like I need a hole in the head, so I’m holding off in hopes another hero or champion steps up and owns the enum portion of the growing OpenAPI conversation.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/21/an-opportunity-around-providing-a-common-openapi-enum-catalog/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
