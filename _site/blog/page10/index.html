@@ -129,6 +129,86 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/10/20/api-developer-account-basics/">API Developer Account Basics</a></h3>
+        <span class="post-date">20 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. The first element you need to manage API access is the ability for API consumers to be able to sign up for an account, that will be used to identify, measure usage, and engage with each API consumer.</p>
+
+<p><strong>Starts With An Account</strong>
+While each company may have more details associated with each account, each account will have these basics:</p>
+
+<ul>
+  <li><strong>account id</strong> - A unique identifier for each API account.</li>
+  <li><strong>name</strong> - A first name and last name, or organization name.</li>
+  <li><strong>email</strong> - A valid email address to communicate with each user.</li>
+</ul>
+
+<p>Depending on how we enable account creation and login, there might also be a password. However, if we use existing OpenID or OAuth implementations, like Github, Twitter, Google, or Facebook, this won’t be needed. We are relying on these authentication formats as the security layer, eliminating the need for yet another password. However, we still may need to store some sort of token identifying the user, adding these two possible elements:</p>
+
+<ul>
+  <li><strong>password</strong> - A password or phrase that is unique to each user.</li>
+  <li><strong>token</strong> - An OAuth or other token issued by 3rd party provider.</li>
+</ul>
+
+<p>That provides us with the basics of each developer API developer account. It really isn’t anything different than a regular account for any online service. Where things start to shift a little specifically for APIs, is that we need some sort of keys for each account that is signing up for API access. The standard approach is to provide some sort of API key, and possibly a secondary secret to compliment it:</p>
+
+<ul>
+  <li><strong>api key</strong> - A token that can be passed with each API call.</li>
+  <li><strong>api secret</strong> - A second token, that can be passed with each API call.</li>
+</ul>
+
+<p>Many API providers just automatically issue these API keys when each account is created, allowing consumers to possibly reset and regenerate at any point. These keys are more about identification than they are about security, as each key is passed along with each API call, and provide identification via API logging, which I’ll cover in a separate post. The only security keys deliver is that API calls are rejected if keys aren’t present.</p>
+
+<p><strong>Allow For Multiple Applications</strong>
+Other API providers will go beyond this base level of API account functionality, allowing API consumers to possibly generate multiple sets of keys, sometimes associated with one or many applications. This opens up the question of whether these keys should be associated with the account, or with one or many registered applications:</p>
+
+<ul>
+  <li><strong>app id</strong> - A unique id for the application.</li>
+  <li><strong>app name</strong> - A name for the application.</li>
+  <li><strong>app description</strong> - A description of the application.</li>
+  <li><strong>api key</strong> - A token that can be passed with each API call.</li>
+  <li><strong>api secret</strong> - A second token, that can be passed with each API call.</li>
+</ul>
+
+<p>Allowing for multiple applications isn’t something every API provider will need, but does reduce the need for API consumers to signup for multiple accounts, when they need an additional API key for a separate application down the road. This is something that API providers should be considering early on, reducing the need to make additional changes down the road when needed. If it isn’t a problem, there is no reason to introduce the complexity into the API management process.</p>
+
+<p>This post doesn’t even touch on logging and usage. It is purely about establishing developer accounts, and providing what they’ll need to authenticate and identify themselves when consuming API resources. Next I’ll explore the usage, consumption, and billing side of the equation. I’m trying to keep things decoupled as much as I possibly can, as not every situation will need every element of API management. It helps me articulate all the moving parts of API management for my readers, and customers, and allows me to help them make sensible decisions, that they can afford.</p>
+
+<p>Ideally, developer accounts are not a separate thing from any other website, web or mobile application accounts. If I had my way, API developer accounts would be baked into the account management tools for all applications by default. However, I do think things should be distilled down, standardized, and kept simple and modular for API providers to consider carefully, and think about deeply when pulling together their API strategy, separate from the rest of their operations. I’m taking the thoughts from this post and applying in one project I’m deploying on AWS, with another that will delivered by custom deploying a solution that leverages Github, and basic Apache web server logging. Keeping the approach standardized, but something I can do with a variety of different services, tools, and platforms.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/20/api-developer-account-basics/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/19/the-tractor-beam-of-the-database-in-an-api-world/">The Tractor Beam Of The Database In An API World</a></h3>
+        <span class="post-date">19 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/dragon-shadows-black-white-outline.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I’m an old database person. I’ve been working with databases since my first job in 1987. Cobol. FoxPro. SQL Server. MySQL. I have had a production database in my charge accessible via the web since 1998. I understand how databases are the center of gravity when it comes to data. Something that hasn’t changed in an API driven world. This is something that will make microservices in a containerized landscape much harder than some developers will want to admit. The tractor beam of the database will not give up control to data so easily, either because of technical limitations, business constraints, or political gravity.</p>
+
+<p>Databases are all about the storage and access to data. APIs are about access to data. Storage, and the control that surrounds it is what creates the tractor beam. Most of the reasons for control over the storage of data are not looking to do harm. Security. Privacy. Value. Quality. Availability. There are many reasons stewards of data want to control who can access data, and what they can do with it. However, once control over data is established, I find it often morphs and evolves in many ways, that can eventually become harmful to meaningful and beneficial access to data. Which is usually the goal behind doing APIs, but is often seen as a threat to the mission of data stewards, and results in a tractor beam that API related projects will find themselves caught up in, and difficult to ever break free of.</p>
+
+<p>The most obvious representation of this tractor beam is that all data retrieved via an API usually comes from a central database. Also, all data generated or posted via an API, also ends up within a database. The central database always has an appetite for more data, whether scaled horizontally or vertically. Next, it is always difficult to break off subsets of data into separate API-driven project, or prevent newly established ones from being pulled in, and made part of existing database operations. Whether due to technical, business, or political reasons, many projects born outside this tractor beam will eventually be pulled into the orbit of legacy data operations. Keeping projects decoupled will always be difficult when your central databases has so much pull when it comes to how data is stored and accessed. This isn’t just a technical decoupling, this is a cultural one, that will be much more difficult to break from.</p>
+
+<p>Honestly, if your database is over 2-3 years old, and enjoys any amount of complexity, budget scope, and dependency across your organization, I doubt you’ll ever be able to decouple it. I see folks creating these new data lakes, which act as reservoirs for any and all types of data gathered and generated across operations. These lakes provide valuable opportunities for API innovators to potentially develop new and interesting ways of putting data to work, if they possess an API layer. However, I still think the massive data warehouse and database will look to consume and integrated anything structured and meaningful that evolves on the shores. Industrial grade data operations will just industrialize any smaller utilities that emerge along the fringes of large organizations. Power structures have long developed around central data stores, and no amount of decoupling, decentralizing, or blockchaining will change this any time soon. You can see this with the cloud, which was meant to disrupt this, when it just moved it from your data center to the someone else’s, and allowed it to grow at a faster rate.</p>
+
+<p>I feel like us API folks have been granted ODBC and JDBC leases for our API plantations, but rarely will we ever decouple ourselves from the mother ship. No matter what the technology whispers in our ears about what is possible, the business value, and political control over established databases will always dictate what is possible and what is not possible. I feel like this is one reason all the big database platforms have waited so long to provide native API features, and <a href="http://apievangelist.com/2017/10/05/big-data-is-not-abut-access-using-web-apis/">why next generation data streaming solutions rarely have simple, intuitive API layers</a>. I think we will continue to see the tractor beam of database culture continue to be aggressive, as well as passive aggressive to anything API, trumping access possibilities brought to the table by APIs, with outdated power and control beliefs rooted in how we store and control our data. These folks rarely understand they can be just as controlling and greedy with APIs, but they seem to be unable to get over the promises of access APIs afford, and refuse to play along at all, when it comes to turning down the volume on the tractor beam so anything can flourish.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/19/the-tractor-beam-of-the-database-in-an-api-world/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/10/19/adding-ping-events-to-my-webhooks-and-api-research/">Adding Ping Events To My Webhooks And API Research</a></h3>
         <span class="post-date">19 Oct 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-webhook-ping-events.png" align="right" width="40%" style="padding: 15px;" /></p>
@@ -1359,54 +1439,6 @@ sand before I can make my way to the beach. I felt this way over last Christmas 
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/09/29/api-design-industry-guide-graphql-a-query-language-for-apis/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/28/api-design-industry-guide-grpc-open-source-rpc-framework/">API Design Industry Guide: gRPC, Open Source RPC Framework</a></h3>
-        <span class="post-date">28 Sep 2017</span>
-        <p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p><em>This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure.</em></p>
-
-<p>gRPC is a high-performance open source remote procedure call (RPC) framework that is often used to deploy APIs across data centers that also supporting load balancing, tracing, health checks and authentication. While gRPC excels in more controlled, tightly coupled environments, it is also applicable for delivering resources to web, mobile, and other Internet connected devices.</p>
-
-<p>When crafting gRPC APIs, you begin by defining the service using Protocol Buffers, a language and toolset for binary serialization that has support across 10 leading programming languages. Protocol Buffers can be used to generate client and server stubs in these programming languages with tight API/client  coupling  — delivering a higher level of performance than your average REST API and SDK can.</p>
-
-<p>gRPC API design patterns takes advantage of HTTP/2 advances and uses authenticated bi-directional streaming to deliver APIs that can be scaled to millions of RPC calls per second. Its an effective  approach for larger, more demanding API platforms that have begun to see the performance limitations of a more RESTful API design approach. gRPC is not ideal for every API implementation, but is definitely an approach providers should consider when high volumes anticipated, especially within the data center or other tightly controlled environment.</p>
-
-<p>Google has been using gRPC internally for over a decade now, but has recently committed to delivering all their public APIs using gRPC in addition to RESTful APIs, demonstrating that the API design patterns can coexist. This approach makes it a welcome addition to any microservice style architecture. It has  the added benefit of API management features like authentication, tracing, load balancing, and health checking that are required to deliver high  performance.</p>
-
-<p>gRPC is definitely more of an industrial grade API design pattern, shifting APIs into the next gear when it comes to performance. It also leverages the next generation of the HTTP protocol, HTTP/2. While not an API design pattern that every API provider will be working with, they should be aware it exists so that they understand what it is and the role it plays in the space.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/28/api-design-industry-guide-grpc-open-source-rpc-framework/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/28/how-do-we-help-folks-understand-that-apis-are-a-journey/">How Do We Help Folks Understand That APIs Are A Journey?</a></h3>
-        <span class="post-date">28 Sep 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/path-in-the-woods-black-white.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I was hanging out with my friend Mike Amundsen (@mamund) in Colorado last month and we ended up discussing folks uncertainty with APIs. You see, many folks that he has been talking to were extremely nervous about all the unknowns in the world of APIs, and were looking for more direction regarding what they should be doing (or not doing). Not all people thrive in a world of unknown unknowns, and not even in a world of known unknowns. Many just want a world of known knowns. This is something that makes the API landscape a very scary thing to some folk, and world where they will not thrive and be successful unless we can all begin to find a way to help them understand that this is all a journey.</p>
-
-<p>I love figuring all of this API stuff out, and I know Mike does too. We like thinking about the lofty concepts, as well as figuring out how to piece all the technical elements together in ways that work in a variety of business sectors. Many folks we are pushing APIs on aren’t like us, and just want to be told what to do. They just want the technology solution to their problem. A template. A working blueprint. It freaks them out to have so many options, possibilities, patterns, and directions they take things. I feel like we are setting folks up for failure when we talk them into embarking on an API journey without the proper training, equipment, support, and guidance.</p>
-
-<p>I think about the last seven years doing this, and how much I’ve learned. Realizing this makes me want to keep doing APIs, just so I can keep learning new things. I thought I understood REST when I started. I didn’t. I thought I understand the web when I started, I didn’t (still don’t). I was missing a lot of the basics, and no matter what folks told me, or how precise their language was, I still needed to bang my head on something over and over before I got it. I was missing a significant amount of why hypermedia can be a good approach without truly understanding content negotiation, and link relations. Realizing how much I still need to explore and learn has only emboldened me on my journey, but I’m not convinced this will be the case with everyone. We are wrong to assume everyone is like us.</p>
-
-<p>As technologists and autodidacts we often overestimate our own ability, as well as what others are capable of. We realize APIs are not a destination, but a journey. However, we suck at explaining this to others. We are horrible at understanding all of the stepping stones that got us here, and recreating them for others. I put myself into this group. I think about this stuff full time, and I still regularly stumble when it comes to on-boarding folks with what API are, and properly helping them in their journey. I still do not have a proper set of on-boarding lessons for folks, <a href="http://101.apievangelist.com">beyond my API 101 stuff</a>. I talk a lot of talk about the API life cycle, the API economy, and all the business and politics of APIs, but I still can’t point folks to where the yellow brick road is. We have to get better at this if we expect folks to ever catch up.</p>
-
-<p>This is one reason I feel <a href="http://zapier.com">Zapier</a>, and other <a href="http://ipaas.apievangelist.com">iPaaS</a> providers are so important. We should be helping people understand APIs and integration in context of the problems they are trying to solve, not in terms of REST, SDKs, or any of the other technical jargon we spew. With Zapier, folks can play with Zaps (recipes) that deliver meaningful API integration that actually solve a problem in their world. They can play with what is possible, without learning all the technical pieces first. They can evolve in their business world, while also progressing on their API journey. IDK. I’m just trying to find ways to help folks better understand what APIs are. I’ll never make everything known to them, but I’m hoping that I can help make folks a little less nervous about the known unknowns, and who knows maybe some day they’ll feel brave enough, and confident in their API awareness that they’ll be able to operate in a world of the unknown unknowns, and settle in on the perpetual journey that are APIs.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/28/how-do-we-help-folks-understand-that-apis-are-a-journey/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

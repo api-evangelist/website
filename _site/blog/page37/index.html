@@ -129,6 +129,998 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2015/03/30/quantifying-the-community-around-the-swagger-api-specification/">Quantifying The Community Around The Swagger API Specification</a></h3>
+        <span class="post-date">30 Mar 2015</span>
+        <p>This post is extracted from a deep dive I've been doing into the Swagger ecosystem, as part of regular conversations I have been having with Tony Tam (@fehguy), trying to understand how we can better tell stories about Swagger. I've been tuned into things for a while now around the Swagger community, and there is a lot going on, but from the outside, some of this can be hard to see. Seeking a better understand what is the Swagger community, I wanted to take a walk through the sites, forum, and Github repositories.</p>
+<p>First let&rsquo;s start with the basics, what is Swagger? Merriam Webster defines Swaggers as: : to walk in a very confident way : to walk with a swagger. ;-) Seriously though, Swagger is a machine readable format (either JSON or YAML), for describing an API, providing a description of API operations, in a way that other applications can read, and understand. Even though Swagger is machine readable, and designed for other applications, it has also become a language for humans to describe and collaborate, around a shared, quantifiable, vision of what an API can do, throughout all stages of the API life cycle.&nbsp;</p>
+<p>If you want to learn about Swagger yourself, you can tune into these channels to learn more:</p>
+<ul>
+<li><strong><a href="http://swagger.io/">Website</a></strong></li>
+<li><strong><a href="https://twitter.com/SwaggerApi">Twitter</a></strong></li>
+<li><strong><a href="https://github.com/swagger-api">Github</a></strong></li>
+<li><strong><a href="https://groups.google.com/forum/#!forum/swagger-swaggersocket">Google Group</a></strong></li>
+</ul>
+<p>My goal with this post is evolve my understanding and awareness of what Swagger is, and hopefully along the way I can help increase yours as well. In my experience, many people have a very distorted, and limited understanding of what Swagger is, and I&rsquo;d like to take some time to evolve that. When I started this research, my objective was to help Tony deliver a new website, and on-boarding materials for Swagger, assisting people of all skill levels in finding all things Swagger. I am just taking this moment to walk through what at I have so far, and craft a more robust version 1.0 narrative about what Swagger is, something that blogging helps me work through.</p>
+<p>One of the biggest misconceptions I find when I talk with folks about Swagger, is that it is interactive documentation, when that is actually Swagger UI--when it comes to Swagger all roads start with the Swagger specification:</p>
+<ul>
+<li><strong><a href="https://github.com/swagger-api/swagger-spec)">Swagger-Spec</a> </strong>- The goal of Swagger is to define a standard, language-agnostic interface to REST APIs which allows both humans and computers to discover and understand the capabilities of the service.</li>
+</ul>
+<p><a href="https://github.com/swagger-api/swagger-spec/blob/master/versions/2.0.md">You can find version 2.0 of the spec here</a>, which is the current active version in use. The Swagger spec lets you describe all the essential aspects of API operations, with information about the operator, the host and basePath for the API, details about what type of content it produces or consumes, like JSON or XML. Most importantly it lets you describe each of the paths for an API, with details on parameters, responses, and other details of each specific API path. Swagger also provides you with the ability to describe the underlying data model definitions, describing the valuable resources being served up via APIs.</p>
+<p>To grasp the last paragraph, you have to have a pretty solid understanding of the moving parts of an API, but in short the Swagger spec gives us a language to potentially map out all of the common parts of an API. It also allows me to describe the security for each API, and tag to organize APIs into specific buckets. <a href="https://kin-lane.github.io/master/index.html">I use Swagger to describe the almost 20 APIs my business uses daily, with varying amount of detail about each resource, and the information it serves up</a>. All the 20 of the Swagger definitions provide me with a machine readable map of my own IT infrastructure&mdash;as well as a common language that almost any other developer, or potentially not developer can learn to read, and work with.</p>
+<p>With Swagger we now have a common way to communication around the APIs we develop, and also map out the public APIs we also depend on like Twilio, SendGrid, or even Twitter. Now what? Why do we do this? <a href="http://apievangelist.com/2014/06/05/what-are-the-incentives-for-creating-machine-readable-api-definitions/">There are an increasing number of incentives emerging for why you generate machine readable API definitions like Swagger</a>, which is part of the reason I&rsquo;m looking to further quantify the Swagger community, so I can add to the master list.</p>
+<p>Let&rsquo;s start with what I&rsquo;d consider to be the primary building blocks of Swagger, developed by the Swagger team, as part of the core offering:</p>
+<ul>
+<li><strong><a href="https://github.com/swagger-api/swagger-ui">swagger-ui </a>- </strong>Generation of interactive API documentation, which Swagger is often known for.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-codegen">swagger-codegen</a> -</strong> Generation of client code in a variety of languages using a Swagger definition.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-js">swagger-js</a> -</strong> A JavaScript library to connect to swagger-enabled APIs via browser or Node.js.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-socket">swagger-socket </a>- </strong>A REST over WebSocket tool for creating real-time integrations with Swagger.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-node-express">swagger-node-express</a> -</strong> Swagger module for Node.js w/express module</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-scala-module">swagger-scala-module</a> -</strong>&nbsp;Swagger support for Scala.</li>
+<li><strong><a href="https://github.com/swagger-api/swagger-editor">swagger-editor</a> -&nbsp;</strong>A visual editor for Swagger.      
+<ul>
+</ul>
+</li>
+</ul>
+<p>Those six repositories represent the core tooling that the Swagger team has evolved around the specification, providing what I&rsquo;d consider to be three stops along the API life cycle:</p>
+<ul>
+<li>Documentation</li>
+<li>Server Code</li>
+<li>Client Code</li>
+</ul>
+<p>Swagger is often known for its interactive API documentation (aka Swagger UI), but there has also been a lot of work done on the codegen platform, and editor, taking things well beyond just API documentation. This is just the beginning of what is possible with Swagger. In an effort to find out what else is being done with Swagger, and what is being built with the specification, I wanted to see what the community is up to, which platforms they are integrating it into, and what other standalone tooling is being built using Swagger.</p>
+<p>I want a better understanding of the core group of companies who have embraced the Swagger specification, and baked it into their own platform. I know there are hundreds of them out there, but finding them can be easier said than done, especially when I'm looking some sort of public announcement, blog post, press release, service description, to use as my reference. So far I have <strong><span style="text-decoration: underline;">49 companies</span></strong> that I&rsquo;m tracking on, who have pulled the Swagger spec, and incorporated into their own platform and infrastructure.</p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="http://www.3scale.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.3scale.net/"><strong>3scale</strong></a>&nbsp;(<a href="http://www.3scale.net/tag/swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.akana.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/akana-logo-formerly-soa.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.akana.com/"><strong>Akana</strong></a>&nbsp;(<a href="https://akana.com/news/press_detail/soa_software_eases_api_management_with_new_multi_api_description_language_s">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://activemq.apache.org/apollo/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-apollo-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://activemq.apache.org/apollo/"><strong>Apache Apollo</strong></a>&nbsp;(<a href="http://www.davsclaus.com/2014/09/66th-apache-camel-release-is-out-its.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://camel.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-camel.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://camel.apache.org/"><strong>Apache Camel</strong></a>&nbsp;(<a href="http://camel.apache.org/swagger.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apigee.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/apigee-logo.gif" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apigee.com/"><strong>Apigee</strong></a>&nbsp;(<a href="https://blog.apigee.com/taglist/swagge">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apigility.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apigility-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apigility.org/"><strong>Apigility</strong></a>&nbsp;(<a href="https://apigility.org/documentation/api-doc/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.apimatic.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apimatic-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.apimatic.io/"><strong>APIMATIC</strong></a>&nbsp;(<a href="https://www.facebook.com/apimatic/posts/94217215247839">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apis.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apis-io.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apis.io/"><strong>apis.io</strong></a>&nbsp;(<a href="http://apis.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apisjson.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apisdotjson.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apisjson.org/"><strong>APIs.json</strong></a>&nbsp;(<a href="http://apisjson.org/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.apitools.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apitools-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.apitools.com/"><strong>APItools</strong></a>&nbsp;(<a href="https://www.apitools.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://appnow.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/appnow-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://appnow.com/"><strong>AppNow</strong></a>&nbsp;(<a href="https://appnow.radarconline.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ardoq.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ardoq-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ardoq.com/"><strong>Ardoq</strong></a>&nbsp;(<a href="http://ardoq.com/visualizing-swagger-api-documentation/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.axway.com/vordel-products/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Axway_Logo_4_Color.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.axway.com/vordel-products/"><strong>Axway</strong></a>&nbsp;(<a href="https://www.axway.com/en/datasheet/axway-api-portal">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://beego.me/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/beego_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://beego.me/"><strong>Beego</strong></a>&nbsp;(<a href="http://beego.me/blog/beego_api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://catchsoftware.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/catch_logo.gif" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://catchsoftware.com/"><strong>Catch Software</strong></a>&nbsp;(<a href="http://catchsoftware.com/blogs/2013/08/get-your-swagger-on/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.cloud-elements.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cloud-elements-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.cloud-elements.com/"><strong>Cloud Elements</strong></a>&nbsp;(<a href="https://github.com/cloud-elements/doc-builder">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.django-rest-framework.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/django-rest-framework.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.django-rest-framework.org/"><strong>Django REST</strong></a>&nbsp;(<a href="http://www.django-rest-framework.org/topics/documenting-your-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.dreamfactory.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/dreamfactory.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.dreamfactory.com/"><strong>DreamFactory</strong></a>&nbsp;(<a href="http://blog.dreamfactory.com/blog/bid/294825/why-we-like-swagger-for-api-docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.elastic.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.elastic.io/"><strong>elastic.io</strong></a>&nbsp;(<a href="https://github.com/elasticio/sphereio-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.espressologic.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/esspresso-logic-logic.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.espressologic.com/"><strong>Espresso Logic</strong></a>&nbsp;(<a href="http://docs.espressologic.com/docs/live-api/api-docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.gluu.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/gluu-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.gluu.org/"><strong>Gluu</strong></a>&nbsp;(<a href="https://github.com/GluuFederation/gluu-flask">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apim.ibmcloud.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/bw-ibm-logo.jpeg" alt="" width="135" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apim.ibmcloud.com/"><strong>IBM</strong></a>&nbsp;(<a href="https://developer.ibm.com/answers/questions/27580/swagger-ui-import-and-export-in-api-management.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.magnolia-cms.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Magnolia-CMS-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.magnolia-cms.com/"><strong>Magnolia CMS</strong></a>&nbsp;(<a href="https://documentation.magnolia-cms.com/display/DOCS/REST+API#RESTAPI-SwaggerAPIexplorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://azure.microsoft.com/en-us/services/api-management/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/microsoft-azure-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://azure.microsoft.com/en-us/services/api-management/"><strong>Microsoft Azure</strong></a>&nbsp;(<a href="http://azure.microsoft.com/en-us/documentation/articles/api-management-howto-import-api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://neo4j.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/neo4j-logo-2015.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://neo4j.com/"><strong>Neo4J</strong></a>&nbsp;(<a href="http://neo4j-swagger.tinj.com/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://developer.netflix.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1620_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://developer.netflix.com/"><strong>Netflix</strong></a>&nbsp;(<a href="http://www.oscon.com/oscon2014/public/schedule/detail/33481">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://nomos-software.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nomos-software-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://nomos-software.com/"><strong>Nomos Software</strong></a>&nbsp;(<a href="http://nomos-software.com/blog/swagger-ui-example">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://open311.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/open311-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://open311.org/"><strong>Open311</strong></a>&nbsp;(<a href="https://github.com/open311/swagger-open311">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.opendaylight.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/opendaylight-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.opendaylight.org/"><strong>OpenDaylight Project</strong></a>&nbsp;(<a href="https://wiki.opendaylight.org/view/OpenDaylight_Controller:MD-SAL:Restconf_API_Explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.openi-ict.eu/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/openi-logo.png" alt="" width="130" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.openi-ict.eu/"><strong>OPENi</strong></a>&nbsp;(<a href="https://github.com/OPENi-ict/swagger-def">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.openshift.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/200px-OpenShift-LogoType.svg.png" alt="" width="130" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.openshift.com/"><strong>OpenShift by Red Hat</strong></a>&nbsp;(<a href="https://blog.openshift.com/visualize-openshift-api-with-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://pivotal.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pivotal-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://pivotal.io/"><strong>Pivotal</strong></a>&nbsp;(<a href="http://gemfire.docs.pivotal.io/latest/userguide/gemfire_rest/using_swagger.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.getpostman.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/postman-rest-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.getpostman.com/"><strong>Postman REST Client</strong></a>&nbsp;(<a href="http://blog.getpostman.com/index.php/2014/11/17/postman-1-0-is-out-gorgeous-dark-theme-curlramlswaggerwadl-imports-performance-improvements/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.quandl.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/220px-Quandl_Logol.svg.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.quandl.com/"><strong>Quandl</strong></a>&nbsp;(<a href="https://github.com/AnCh7/FinancialCharting">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://restunited.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/rest-united.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://restunited.com/"><strong>REST United</strong></a>&nbsp;(<a href="http://restunited.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mediawiki.org/wiki/RESTBase"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/RESTBase-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mediawiki.org/wiki/RESTBase"><strong>RESTBase</strong></a>&nbsp;(<a href="https://github.com/wikimedia/swagger-router">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.restfiddle.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/RESTFiddle-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.restfiddle.com/"><strong>RESTFiddle</strong></a>&nbsp;(<a href="http://www.restfiddle.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://apispark.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apispark-logo" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://apispark.com/"><strong>Restlet / APISpark</strong></a>&nbsp;(<a href="http://restlet.com/technical-resources/restlet-framework/guide/2.3/extensions/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://getsandbox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/get-sandbox-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://getsandbox.com/"><strong>Sandbox</strong></a>&nbsp;(<a href="https://getsandbox.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://servicestack.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/service-stack.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://servicestack.net/"><strong>Service Stack</strong></a>&nbsp;(<a href="https://github.com/ServiceStack/ServiceStack/wiki/Swagger-API">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://smartbear.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/SmartBear-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://smartbear.com/"><strong>SmartBear Software</strong></a>&nbsp;(<a href="http://smartbear.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.snaplogic.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.snaplogic.com/"><strong>SnapLogic</strong></a>&nbsp;(<a href="http://video.snaplogic.com/fL5g/the-snaplogic-swagger-snap/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://strongloop.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/strongloop-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://strongloop.com/"><strong>StrongLoop</strong></a>&nbsp;(<a href="https://strongloop.com/strongblog/enterprise-api-swagger-2-0-loopback/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.synapp.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/synapp-io-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.synapp.io/"><strong>Synapp.io</strong></a>&nbsp;(<a href="http://www.synapp.io/blog/2014/11/7/putting-the-api-in-synappio">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tibco.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tibco-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tibco.com/"><strong>TIBCO Software</strong></a>&nbsp;(<a href="https://docs.tibco.com/pub/activematrix_businessworks/6.2.0/doc/html/GUID-FDE5F1A2-D4B3-4410-B8E2-2D412C00F596.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.visualstudio.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/visual-studio-2013-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.visualstudio.com/"><strong>Visual Studio</strong></a>&nbsp;(<a href="http://blogs.msdn.com/b/visualstudio/archive/2015/03/24/introducing-the-azure-api-apps-tools-for-visual-studio-2013.aspx">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.wavemaker.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/wavemaker-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.wavemaker.com/"><strong>WaveMaker, Inc.</strong></a>&nbsp;(<a href="http://www.wavemaker.com/blog/wavemaker-api-designer-brings-api-driven-development-to-custom-built-enterprise-applications/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://wso2.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/wso2-logo-white-800X360.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://wso2.com/"><strong>WSO2</strong></a>&nbsp;(<a href="http://blog.cobia.net/cobiacomm/2013/05/31/swagger-with-wso2-api-manager/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.yelp.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/536_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.yelp.com/"><strong>Yelp</strong></a>&nbsp;(<a href="https://github.com/Yelp">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This list represents a pretty interesting mix of folks who understand the potential of Swagger, and have invested in the community by making it a core part of their operations. I know there are more of these out there (a lot more), but they haven&rsquo;t talked publicly about what they are up to. This is just what I&rsquo;ve aggregated from going through the Swagger site, group, and Github repositories, and from what I already know of the API space, from my monitoring.<br /><br />After looking at the platforms who have pulled the Swagger specification into their operations, I wanted to see if I could also begin to quantify the community of APIs who have deployed Swagger UI, providing interactive API documentation for their own API platform. Since this is what Swagger is known for, I knew I would find quite a few to showcase. So far I have found 62:<br /><br /></p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="http://population.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/world-population-project.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://population.io/"><strong>World Population Project</strong></a>&nbsp;(<a href="http://api.population.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.3scale.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/3scale-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.3scale.net/"><strong>3scale</strong></a>&nbsp;(<a href="https://support.3scale.net/reference/active-docs#/account_management_api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://scholar.acindex.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ACI_Scholarly_Blog_Index.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://scholar.acindex.com/"><strong>ACI Blog Index</strong></a>&nbsp;(<a href="http://developer.acindex.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://apievangelist.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/api-evangelist-logo-400.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://apievangelist.com/"><strong>API Evangelist</strong></a>&nbsp;(<a href="http://developer.apievangelist.com/core-apis.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.api2cart.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/api-2-cart.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.api2cart.com/"><strong>API2Cart</strong></a>&nbsp;(<a href="http://docs.api2cart.com/post/interactive-d">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://appsp.in/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/appspin_100.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://appsp.in/"><strong>AppSpin</strong></a>&nbsp;(<a href="http://docs.appsp.in/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://banckle.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/548_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://banckle.com/"><strong>Banckle</strong></a>&nbsp;(<a href="http://chat.banckle.com/api/v2.0/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.apiisn.com/betting/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/betisn-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.apiisn.com/betting/"><strong>BetISN</strong></a>&nbsp;(<a href="http://www.apiisn.com/betting/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://bitdango.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/bitdango-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://bitdango.com/"><strong>Bitdango</strong></a>&nbsp;(<a href="https://bitdango.com/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.bittitan.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/BitTitan_100.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.bittitan.com/"><strong>BitTitan</strong></a>&nbsp;(<a href="http://www.bittitan.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.callfire.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/CallFire_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.callfire.com/"><strong>CallFire</strong></a>&nbsp;(<a href="https://www.callfire.com/api-documentation/rest/version/1.1">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://carnivalmobile.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/carnival-logo-small.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://carnivalmobile.com/"><strong>Carnival Mobile</strong></a>&nbsp;(<a href="https://api.carnivalmobile.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.commercedatascience.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cdscience-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.commercedatascience.com/"><strong>CDScience</strong></a>&nbsp;(<a href="http://api.cdscience.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://citygro.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/citygro-logo-color.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://citygro.com/"><strong>CityGro</strong></a>&nbsp;(<a href="https://api.citygro.com/v1/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://citysdk.waag.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/citysdk-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://citysdk.waag.org/"><strong>CitySDK</strong></a>&nbsp;(<a href="http://dev.hel.fi/open311-test/swagger/dist/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://clarify.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/clarify-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://clarify.io/"><strong>Clarify API</strong></a>&nbsp;(<a href="http://clarify.io/docs/api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.climatechangecosts.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/textLogoClimateChange.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.climatechangecosts.com/"><strong>Climate Change Costs</strong></a>&nbsp;(<a href="http://www.climatechangecosts.com/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://getcloudify.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cloudify-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://getcloudify.org/"><strong>Cloudify</strong></a>&nbsp;(<a href="http://getcloudify.org/guide/3.0/rest-api/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.commafeed.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/commafeed-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.commafeed.com/"><strong>CommaFeed</strong></a>&nbsp;(<a href="https://www.commafeed.com/api/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.concur.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Concur_Logo_HZ_Black_500px.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.concur.com/"><strong>Concur</strong></a>&nbsp;(<a href="https://www.concursolutions.com/api/docs/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://developer.datavalidation.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/data-validation-api.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://developer.datavalidation.com/"><strong>DataValidation API</strong></a>&nbsp;(<a href="https://developer.datavalidation.com/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.datumbox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/datumbox.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.datumbox.com/"><strong>Datumbox</strong></a>&nbsp;(<a href="http://www.datumbox.com/api-sandbox/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.dreamfactory.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/dreamfactory.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.dreamfactory.com/"><strong>DreamFactory</strong></a>&nbsp;(<a href="http://www.dreamfactory.com/developers/live_API">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://dronekit.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/3dr-dronekit-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://dronekit.io/"><strong>DroneKit</strong></a>&nbsp;(<a href="http://api.3drobotics.com/swagger-ui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.evercam.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/evercam-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.evercam.io/"><strong>Evercam</strong></a>&nbsp;(<a href="http://www.evercam.io/develop/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://developer.ean.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/195_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://developer.ean.com/"><strong>Expedia</strong></a>&nbsp;(<a href="https://www.expedia.com/static/mobile/swaggerui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://fanart.tv/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/logo3.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://fanart.tv/"><strong>fanart.tv</strong></a>&nbsp;(<a href="http://hermes.fanart.tv/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://formagg.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/formaggio-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://formagg.io/"><strong>Formagg.io</strong></a>&nbsp;(<a href="http://api.formagg.io/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://transit.geotrellis.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/GeoTrellis-Transit-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://transit.geotrellis.com/"><strong>GeoTrellis</strong></a>&nbsp;(<a href="http://transit.geotrellis.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.gettyimages.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/getty-images.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.gettyimages.com/"><strong>Getty Images</strong></a>&nbsp;(<a href="https://api.gettyimages.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://groupdocs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1066_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://groupdocs.com/"><strong>GroupDocs</strong></a>&nbsp;(<a href="http://api.groupdocs.com/v2.0/spec/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.getguru.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/guru-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.getguru.com/"><strong>Guru</strong></a>&nbsp;(<a href="http://help.getguru.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://habitrpg.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/habitrpg_pixel.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://habitrpg.com/"><strong>HabitRPG</strong></a>&nbsp;(<a href="https://habitrpg.com/static/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://hapijs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/hapi-js-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://hapijs.com/"><strong>hapi.js</strong></a>&nbsp;(<a href="http://hapijs.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://kubernetes.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/kubernetes-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://kubernetes.io/"><strong>Kubernetes</strong></a>&nbsp;(<a href="http://kubernetes.io/third_party/swagger-ui/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://gameinfo.na.leagueoflegends.com/en/game-info/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/League_of_legends_logo_transparent.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://gameinfo.na.leagueoflegends.com/en/game-info/"><strong>League of Legends</strong></a>&nbsp;(<a href="http://na.lolesports.com/api/swagger#!/api">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://na.lolesports.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/league-of-legends-esports.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://na.lolesports.com/"><strong>League of Legends eSports</strong></a>&nbsp;(<a href="http://na.lolesports.com/api/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.likibu.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/likibu-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.likibu.com/"><strong>Likibu</strong></a>&nbsp;(<a href="http://api.likibu.com/doc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mobovivo.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Mobovivo_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mobovivo.com/"><strong>Mobovivo</strong></a>&nbsp;(<a href="http://swagger-intel.mobovivo.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://openbadges.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mozilla-open-badges-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://openbadges.org/"><strong>Mozilla Open Badges</strong></a>&nbsp;(<a href="http://directory.openbadges.org/developers/api-explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.muckrock.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/muckrock_medium.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.muckrock.com/"><strong>MuckRock</strong></a>&nbsp;(<a href="https://www.muckrock.com/api_doc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.getmyfox.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/myfox-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.getmyfox.com/"><strong>MyFox</strong></a>&nbsp;(<a href="https://api.myfox.me/dev/documentation">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://myneighbor.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/myneighbor-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://myneighbor.com/"><strong>MyNeighbor</strong></a>&nbsp;(<a href="http://api.myneighbor.com/docs/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.mysms.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mysms-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.mysms.com/"><strong>MySMS</strong></a>&nbsp;(<a href="https://api.mysms.com/swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://pingup.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pingup-logo-horizontal-preview.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://pingup.com/"><strong>Pingup</strong></a>&nbsp;(<a href="http://developers.pingup.com/#api-explorer">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.popuparchive.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/popuparchive-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.popuparchive.com/"><strong>Pop Up Archive</strong></a>&nbsp;(<a href="https://developer.popuparchive.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.spacexplore.it/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Project-Chronos-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.spacexplore.it/"><strong>Project Chronos</strong></a>&nbsp;(<a href="http://www.spacexplore.it/api/docs/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.ptisp.pt/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ptisp-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.ptisp.pt/"><strong>PTisp</strong></a>&nbsp;(<a href="http://api.ptisp.pt/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://puppetlabs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/puppet-labs-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://puppetlabs.com/"><strong>Puppet Labs</strong></a>&nbsp;(<a href="https://forgeapi.puppetlabs.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://qi-bench.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/qi-bench.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://qi-bench.org/"><strong>QI Bench</strong></a>&nbsp;(<a href="http://api.qi-bench.org/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.rackspace.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/rackspace-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.rackspace.com/"><strong>Rackspace</strong></a>&nbsp;(<a href="http://rackerlabs.github.io/wadl2swagger/rackspace.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://reliefweb.int/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/reliefweb-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://reliefweb.int/"><strong>ReliefWeb</strong></a>&nbsp;(<a href="http://apidoc.rwlabs.org/swagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://sensr.net/api"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/924_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://sensr.net/api"><strong>Sensr.net</strong></a>&nbsp;(<a href="https://api.sensr.net/doc/v3/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://shoeboxed.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/480_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://shoeboxed.com/"><strong>Shoeboxed</strong></a>&nbsp;(<a href="https://api.shoeboxed.com/v2/explorer/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://skimlinks.com/skimlinks"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/933_logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://skimlinks.com/skimlinks"><strong>Skimlinks</strong></a>&nbsp;(<a href="https://skimlinks-pi.3scale.net/docs">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://subledger.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/subledger.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://subledger.com/"><strong>Subledger</strong></a>&nbsp;(<a href="https://api.subledger.com/v2/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tadaweb.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tadaweb-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tadaweb.com/"><strong>TaDaweb</strong></a>&nbsp;(<a href="https://api.tadaweb.com/v1/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.taxamo.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Taxamo_logo-copy.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.taxamo.com/"><strong>taxamo</strong></a>&nbsp;(<a href="https://api.taxamo.com/swagger/ui/index.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://theresumator.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/resumator-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://theresumator.com/"><strong>The Resumator</strong></a>&nbsp;(<a href="http://www.resumatorapi.com/v1/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.gov.uk/government/organisations/uk-commission-for-employment-and-skills"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/uk-commission-for-employment-and-skills.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.gov.uk/government/organisations/uk-commission-for-employment-and-skills"><strong>UK Commission for Employment and Skills</strong></a>&nbsp;(<a href="http://api.lmiforall.org.uk/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.wordnik.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/wordnik-logo-131gihv.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.wordnik.com/"><strong>Wordnik</strong></a>&nbsp;(<a href="http://developer.wordnik.com/docs.html">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://yunohost.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/YunoHost-Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://yunohost.org/"><strong>YunoHost</strong></a>&nbsp;(<a href="http://api.yunohost.org/">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table><p>Finding websites that have implemented Swagger UI is harder than you think. There are only three search engines I could find that let you search the source code of websites for JavaScript files and code. Ultimately I ended up mostly depending on my own ability to find new APIs, and manually uncover whether or not Swagger was actually in use. I&rsquo;m working on a stack of Swagger and API Blueprint discovery search engines, but they aren&rsquo;t quite ready for this dive.<br /><br />Next I wanted to look through some of the tooling that has evolved as part of the Swagger community, which Github is definitely the place to begin this journey. <a href="https://github.com/search?utf8=%E2%9C%93&amp;q=swagger">When you search Github for the word Swagger, you get almost 1000 repositories</a>. I was going to programmatically explore these results, but found that manually browsing through them was the best path to take, allowing me to make a decision on what each developer was up to.<br /><br />The one thing I learned doing through this process&mdash;Swagger means many different things, to many different people. Most refer to Swagger, and mean Swagger UI, while others refer to it as generating server side code, or maybe client side code. Moving forward, there needs to be a lot of work done helped educate people about first, what Swagger is, a specification, and what are&nbsp; each of the areas of tooling that are built on top of the Swagger specification.<br /><br />Even after looking through the almost 1000 Swagger related Github projects, things are still very hazy for me, but I did learn a lot along the way, about what languages, frameworks and platforms developers are using Swagger, and the types of tools and integrations they are developing.</p>
+<p>The best way to look at all of these projects is by language&mdash;here is the Github breakdown.</p>
+<ul>
+<li>411 JavaScript</li>
+<li>135 Java</li>
+<li>61 Ruby</li>
+<li>41 Python</li>
+<li>32 PHP</li>
+<li>31 Scala</li>
+<li>22 C#</li>
+<li>17 Shell</li>
+<li>13 Clojure</li>
+<li>8 Groovy</li>
+</ul>
+<p>This isn&rsquo;t accurate, because many of the JavaScript repositories are actually other languages. I forget to make sure Github knows what language a repo is sometimes too. Regardless, it gives you an idea of which programming languages developers are using to work with Swagger&mdash;one layer to look consider.<br /><br />Beyond the programming languages I want to know which platforms and frameworks developers are applying Swagger. Here are 36 frameworks and platforms I&rsquo;ve identified so far.</p>
+<table id="companyListing" style="padding-left: 50px;" cellspacing="2" cellpadding="2" width="75%" align="center">
+<tbody>
+<tr>
+<td width="150" align="center"><a href="https://angularjs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/AngularJS_logo.svg.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://angularjs.org/"><strong>AngularJS</strong></a>&nbsp;(<a href="http://github.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ant.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-ant.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ant.apache.org/"><strong>Apache Ant</strong></a>&nbsp;(<a href="http://github.com/cstroe/swagger-ant-task/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://camel.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-camel.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://camel.apache.org/"><strong>Apache Camel</strong></a>&nbsp;(<a href="http://github.com/myfear/CamelEE7RestSwagger">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://maven.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apache-maven.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://maven.apache.org/"><strong>Apache Maven</strong></a>&nbsp;(<a href="http://github.com/kongchen/swagger-maven-plugin/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://wink.apache.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/Apache_Wink_Logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://wink.apache.org/"><strong>Apache Wink</strong></a>&nbsp;(<a href="http://github.com/zouzias/swagger-jaxrs-wink/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.arangodb.com/foxx"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/arangodb_logo2.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.arangodb.com/foxx"><strong>ArangoDB Foxx</strong></a>&nbsp;(<a href="http://github.com/arangodb/foxx-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.npmjs.com/package/backbone-rest"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/backbone-rest.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.npmjs.com/package/backbone-rest"><strong>BackboneREST</strong></a>&nbsp;(<a href="http://github.com/robblovell/backbone-rest-swagger-example/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://cakephp.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/cake-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://cakephp.org/"><strong>CakePHP</strong></a>&nbsp;(<a href="http://github.com/dave-newson/cakephp-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://ckan.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/ckan-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://ckan.org/"><strong>CKAN</strong></a>&nbsp;(<a href="http://github.com/deepviator/ckan-integrate-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.django-rest-framework.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/django-rest-framework.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.django-rest-framework.org/"><strong>Django REST</strong></a>&nbsp;(<a href="http://github.com/avinash240/django-rest-framework-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://django-tastypie.readthedocs.org/en/latest/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tastypie2.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://django-tastypie.readthedocs.org/en/latest/"><strong>Django Tastypie</strong></a>&nbsp;(<a href="http://github.com/concentricsky/django-tastypie-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.elasticsearch.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/1910_logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.elasticsearch.org/"><strong>elasticsearch</strong></a>&nbsp;(<a href="http://github.com/timschlechter/swagger-for-elasticsearch/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://expressjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/express-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://expressjs.com/"><strong>Express</strong></a>&nbsp;(<a href="http://github.com/krakenjs/swaggerize-express/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://feathersjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/feathers-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://feathersjs.com/"><strong>Feathers</strong></a>&nbsp;(<a href="http://github.com/Glavin001/feathers-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://flask.pocoo.org/docs/0.10/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/flask-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://flask.pocoo.org/docs/0.10/"><strong>Flask</strong></a>&nbsp;(<a href="http://github.com/martinp/flask-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/bw-github.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Flask MongoRest</strong></a>&nbsp;(<a href="http://github.com/matchbox/flask-mongorest-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://flask-restful.readthedocs.org/en/0.3.2/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/flask-restful-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://flask-restful.readthedocs.org/en/0.3.2/"><strong>Flask Restful</strong></a>&nbsp;(<a href="http://github.com/rantav/flask-restful-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/gradle.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Gradle</strong></a>&nbsp;(<a href="http://github.com/dave-ellis/gradle-swagger-plugin">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grails-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Grails</strong></a>&nbsp;(<a href="http://github.com/alvarosanchez/grails-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://intridea.github.io/grape/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grape-logo.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://intridea.github.io/grape/"><strong>Grape</strong></a>&nbsp;(<a href="http://github.com/tim-vandecasteele/grape-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://gruntjs.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/grunt-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://gruntjs.com/"><strong>Grunt</strong></a>&nbsp;(<a href="http://github.com/tmalbonph/grunt-swagger-tools/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://guzzle.readthedocs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/guzzle-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://guzzle.readthedocs.org/"><strong>Guzzle</strong></a>&nbsp;(<a href="http://github.com/oco/swizzle/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://jersey.java.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/jersey-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://jersey.java.net/"><strong>Jersey</strong></a>&nbsp;(<a href="http://github.com/salimane/java-jersey2/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://laravel.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/laravel-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://laravel.com/"><strong>Laravel</strong></a>&nbsp;(<a href="http://github.com/slampenny/Swaggervel/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.linqpad.net/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/linqpad-logo.jpg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.linqpad.net/"><strong>LINQPad</strong></a>&nbsp;(<a href="http://github.com/dylanmei/linqpad-swagger-driver/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://www.mongodb.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/mongodb.jpeg" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://www.mongodb.org/"><strong>MongDB</strong></a>&nbsp;(<a href="http://github.com/dgiul/node-swagger-express-mongodb/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://nancyfx.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/nancy-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://nancyfx.org/"><strong>Nancy</strong></a>&nbsp;(<a href="http://github.com/khellang/Nancy.Swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.pylonsproject.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/pyramid-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.pylonsproject.org/"><strong>Pyramid</strong></a>&nbsp;(<a href="http://github.com/striglia/pyramid_swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://developer.salesforce.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/salesforce-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://developer.salesforce.com/"><strong>Salesforce</strong></a>&nbsp;(<a href="http://github.com/thysmichels/force.com-swagger-rest-spring-mvc/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://swagger.apievangelist.com/external-integrations.html"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/sequelize-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://swagger.apievangelist.com/external-integrations.html"><strong>Sequelize</strong></a>&nbsp;(<a href="https://github.com/mathisonian/swaggerize">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://silex.sensiolabs.org/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/silex-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://silex.sensiolabs.org/"><strong>Silex</strong></a>&nbsp;(<a href="http://github.com/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.sinatrarb.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/sinatra-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.sinatrarb.com/"><strong>Sinatra</strong></a>&nbsp;(<a href="http://github.com/jphastings/sinatra-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://spring.io/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/spring-by-pivotal.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://spring.io/"><strong>Spring</strong></a>&nbsp;(<a href="http://github.com/wkennedy/swagger4spring-web/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://symfony.com/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/symfony-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://symfony.com/"><strong>Symfony</strong></a>&nbsp;(<a href="http://github.com/creads/api2symfony-bundle/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="http://www.tornadoweb.org/en/stable/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tornado-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="http://www.tornadoweb.org/en/stable/"><strong>Tornado-JSON</strong></a>&nbsp;(<a href="http://github.com/andyno/tornado-swagger/">reference</a>)</p>
+</td>
+</tr>
+<tr>
+<td width="150" align="center"><a href="https://github.com/ryanuber/veneer"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/veneer-logo.png" alt="" width="150" align="left" /></a></td>
+<td align="left">
+<p><a href="https://github.com/ryanuber/veneer"><strong>Veneer</strong></a>&nbsp;(<a href="http://github.com/ryanuber/veneer-swagger/">reference</a>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Beyond the programming languages, frameworks, and platform integrations I&rsquo;m looking to also understand the types of tools developers are actually building, and take Swagger beyond what the core development team, and working group could do. It is hard to understand the objectives of each of the developer projects I came across, but here are the X areas I&rsquo;ve identified so far:</p>
+<ul>
+<li>Converter</li>
+<li>Generator</li>
+<li>Parser</li>
+<li>Schema</li>
+<li>Validator</li>
+<li>Server</li>
+<li>Command-Line</li>
+<li>Powershell</li>
+<li>Client</li>
+<li>Proxy Generator</li>
+<li>Aggregator</li>
+<li>Tester</li>
+</ul>
+<p>This added a couple stops along the API life cycle for me, that Swagger is serving. I hadn&rsquo;t envisioned a Swagger powered CLI or Powershell tool. I&rsquo;ve only lightly thought about proxies, and aggregators driven by Swagger. When you bundle this with the platforms above who have integrated Swagger into their products and services, it starts to paint an even bigger picture of what is possible with Swagger.<br /><br />I think I&rsquo;m going to wrap up this dive into the Swagger ecosystem here. I still have all of the contributors, watchers, and people who have forked the core Swagger products, and well as many of the people involved in Swagger discussions via the Swagger Google Group and Twitter account to consider. Plus I think this article will flush out some other projects that are out there, being executed by my readers. Storytelling along the way is the best way to flush out hidden details in my opinion, and is one of the main reasons I&rsquo;m so transparent--I depend on people emailing and tweeting at me about stuff.<br /><br />This exercise has given me a new perspective on the Swagger community, and introduced me to some new companies, and tools. If you are doing anything cool with Swagger, please let me know, and I&rsquo;ll add it <a href="http://swagger.apievangelist.com/">to my research</a>. Remember, if you don&rsquo;t tell the story about what your are doing with APIs, nobody knows, including me&mdash;API evangelism 101. This is just my first attempt to better quantify the Swagger community, and I&rsquo;m happy to include what you are up to in future updates.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/03/30/quantifying-the-community-around-the-swagger-api-specification/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2015/03/30/amazon-echo-voice-enablement-will-be-major-api-driven-channel-in-the-future/">Amazon Echo: Voice Enablement Will Be Major API Driven Channel In The Future</a></h3>
+        <span class="post-date">30 Mar 2015</span>
+        <p><a href="https://developer.amazon.com/appsandservices/community/post/Tx1HI1N5ZFX0PEK/Sign-up-Now-for-the-Amazon-Echo-Beta-SDK"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/amazon-echo/amazon_echo_main.png" alt="" width="325" align="right" /></a></p>
+<p>I've been tracking on the potential for voice APIs since Siri was first announced, a topic that often meant telephony like from Twilio, or audio transcription from Popup Archive and Clarify. When I close my eyes and think about the the future of APIs and voice enablement, it is more akin to the Siri example, where the digital world is (supposedly) just a voice command away.</p>
+<p>Imagine making all your employee directory, company calendar, or product catalog available via voice commands. How do you do this? You do it with APIs, and a voice enablement platform in-between the application developers, and the available API resources. Much like all other voice enablement, I think we have a huge amount of work to get anywhere close to the pictures we all have in our head, when if comes to voice enablement.</p>
+<p>It is my mission to find these signs across the API landscape, and keep an eye on what they are doing. One platform that is now open for beta is <a href="https://developer.amazon.com/appsandservices/community/post/Tx1HI1N5ZFX0PEK/Sign-up-Now-for-the-Amazon-Echo-Beta-SDK">Amazon Echo</a>. Amazon says, <em>"Echo is designed around your voice. It's always on&mdash;just ask for information, music, news, weather, and more.&rdquo; </em>APIs are how we will deliver on the &ldquo;more&rdquo; part of this equation. The difference between Apple Siri, and Amazon Echo at this point, is Amazon will let you (API providers) help deliver on the &ldquo;more&rdquo; part of Amazon Echo discovery equation.</p>
+<p>I&rsquo;m <a href="https://developer.amazon.com/appsandservices/community/post/Tx1HI1N5ZFX0PEK/Sign-up-Now-for-the-Amazon-Echo-Beta-SDK">signing up for the beta</a>, and if I get access, I will share more stories. I encourage you to sign up as well, and if you have any work your doing with Amazon Echo, or know of other API driven voice-enablement platforms I should be paying attention to, let me know.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2015/03/30/amazon-echo-voice-enablement-will-be-major-api-driven-channel-in-the-future/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2015/03/28/even-more-pondering-on-my-microservice-definition/">Even More Pondering On My Microservice Definition</a></h3>
         <span class="post-date">28 Mar 2015</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-micro-definition.png" alt="" width="250" align="right" /></p>
@@ -3101,658 +4093,6 @@ This is a collection of MSS APIs that are curated by the API Evangelist, as part
 <p>This is one of the ideas I hope someone does not do, thinking it is a VC level start-up idea. It really is something that a handful of folks could bootstrap, and do very well in monetizing premium services, but if you go get VC money you will probably fuck it all up, and have to chase some unnecessary approaches to making money. If someone doesn&rsquo;t do soon, I&rsquo;m going to have to build an API focused version, because I am spending about 1-2 hours a day on this each day.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2015/03/03/some-please-build-a-true-next-generation-press-release-aggregation-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2015/03/02/weekly-apireport-for-march-2nd-2015/">Weekly API.Report For March 2nd, 2015</a></h3>
-        <span class="post-date">02 Mar 2015</span>
-        <div style="background-color:#ff4c4c; width:100%; height: 40px; padding:5px; margin-bottom: 5px;"><p align="center"><strong>Swagger is now Open API Definition Format (OADF) -- <a href="http://apievangelist.com/2015/11/05/the-swagger-spec-is-reborn-as-open-api-definition-format-oadf-after-being-put-into-open-api-initiative-oai/" style="text-decoration:none;"><strong>READ MORE</strong></a></strong></p></div>
-<p><a href="http://api.report/" target="_blank"><img style="padding: 20px;" src="https://s3.amazonaws.com/kinlane-productions/api-report/api-report-logo.png" alt="" width="325" align="right" /></a></p>
-<p>I am a couple days late on this weeks API.Report, after being sick last week, taking the weekend to recover--at least I got it done. The process is proving to very valuable to my understanding of what is going on, so I predict it will continue.&nbsp;</p>
-<p><span>The Weekly API.Report represents the best of what I've read throughout the week, and is only what I personally felt should be showcased. Each news item comes with a link, and some thoughts I had after curating the piece of API related news. I'm trying to break down stories into as coherent buckets as I can, but it remains something that is ever changing for me, but ultimately I will settle on a clear definition for each of the research areas.</span></p>
-<p>I am a big fan of any <strong><span style="text-decoration: underline;">API 101</span></strong> work out there, helping on-board new users, and industries:</p>
-<div>
-<ul>
-<li><a href="https://thecryds.wordpress.com/2015/02/25/explanations-what-is-an-api-what-it-means-for-gamers/">Explanations: What is an API? What it means for Gamers?</a></li>
-</ul>
-</div>
-<p>I thought this was interesting - around <strong><span style="text-decoration: underline;">open data and addresses</span></strong>:</p>
-<div>
-<ul>
-<li><a href="http://blog.okfn.org/2015/02/23/building-a-free-open-world-wide-address-dataset/">Building a Free &amp; Open World-wide Address Dataset</a></li>
-</ul>
-</div>
-<p>We will continue to see open data and APIs impacting <strong><span style="text-decoration: underline;">agriculture</span></strong>:</p>
-<div>
-<ul>
-<li><a href="http://www.digitalgov.gov/2015/02/25/the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis">The API Briefing: Harvesting the USDA&rsquo;s Rich Bounty of Open Data Sets for APIs</a></li>
-</ul>
-</div>
-<p>I'm working hard to push for new tooling around popular&nbsp;<strong><span style="text-decoration: underline;">API definition</span></strong> formats:</p>
-<div>
-<ul>
-<li><a href="http://apievangelist.com/2015/02/26/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions &middot;</a> </li>
-<li><a href="http://chefarchitect.github.io/swagger.ed/">Swagger APIs at a glance &ndash; swagger.ed</a> </li>
-<li><a href="http://apievangelist.com/2015/02/23/my-brain-dump-on-an-api-definition-fueled-life-cycle">My Brain Dump On An API Definition Fueled Life Cycle</a></li>
-</ul>
-</div>
-<p>Some interesting movement on several <strong><span style="text-decoration: underline;">API deployment</span></strong> fronts:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/MxWh5RIge80/27">WaveMaker Announces API Gateway for Legacy SOAP-Based to REST-Based App Conversion&nbsp;</a></li>
-<li><a href="http://googledevelopers.blogspot.com/2015/02/introducing-grpc-new-open-source-http2.html">Google Developers Blog: Introducing gRPC, a new open source HTTP/2 RPC Framework</a> </li>
-<li><a href="http://feedproxy.google.com/~r/GDBcode/~3/I-Sj9OAz1ic/introducing-grpc-new-open-source-http2.html">Introducing gRPC, a new open source HTTP/2 RPC Framework</a> </li>
-<li><a href="http://feedproxy.google.com/~r/SforceBlog/~3/NIMvAU4o7iQ/simple-data-integration-heroku-connect.html">Simple Data Integration with Heroku Connect</a> </li>
-<li><a href="http://feedproxy.google.com/~r/muleblog/~3/RIt7IVcWycc/">Making Zen of API Platform Deployment Architecture</a></li>
-</ul>
-</div>
-<p>Great advice and insight when it comes to <strong><span style="text-decoration: underline;">API design</span></strong>:</p>
-<div>
-<ul>
-<li><a href="http://apihandyman.io/the-beautiful-api-and-the-bestial-back-office/">The beautiful API and the bestial back-office | API Handyman</a> </li>
-<li><a href="http://www.bizcoder.com/don-t-design-a-query-string-you-will-one-day-regret">Bizcoder - Don't Design A Query String You Will One Day Regret</a> </li>
-<li><a href="http://feedproxy.google.com/~r/oreilly/radar/atom/~3/N_QfI9f8b_w/meta-design-the-intersection-of-art-design-and-computation.html">Meta-design: The intersection of art, design, and computation</a> </li>
-<li><a href="http://nordicapis.com/what-makes-an-agile-api/">What Makes an Agile API?</a></li>
-</ul>
-</div>
-<p>API goings on at <strong><span style="text-decoration: underline;">API conferences, and meetups</span></strong>:</p>
-<div>
-<ul>
-<li><a href="http://www.meetup.com/All-Things-API/events/220587873/">Consuming APIs with GO - All Things API with Cory LaNou - All Things API: REST, Cloud, Integrations, Mashups &amp; SaaS (Denver, CO) - Meetup</a></li>
-<li><a href="http://www.eventbrite.com/e/apidays-berlin-apistrat-europe-2015-tickets-15401044940?aff=estw">APIDays Berlin &amp; APIStrat Europe 2015- Eventbrite</a> </li>
-<li><a href="https://developer.ibm.com/api/2015/02/25/apis-at-interconnect-day-2-gaining-momentum/">APIs at Interconnect &ndash; Day 2 &ndash; Gaining Momentum</a> </li>
-<li><a href="http://www.meetup.com/API-Craft-San-Francisco/events/218708293/">February 2015 Meetup at Creative Market - API Craft San Francisco (San Francisco, CA) - Meetup</a></li>
-</ul>
-</div>
-<p>Only two <strong><span style="text-decoration: underline;">API integration</span></strong> stories worth showcasing this week:</p>
-<div>
-<ul>
-<li><a href="http://apievangelist.com/2015/02/24/driving-your-single-page-applications-and-api-cookbooks-using-api-definition-formats-like-swagger-and-api-blueprint/">Driving Your Single Page Applications And API Cookbooks Using API Definition Formats Like Swagger And API Blueprint</a></li>
-<li><a href="http://blog.runscope.com/posts/testing-email-notifications-using-runscope-and-contextio">Testing Email Notifications using Runscope and Context.IO</a></li>
-</ul>
-</div>
-<p>Lots of rich <strong><span style="text-decoration: underline;">API management</span></strong> related news stories, helping me understand how providers are operating:</p>
-<div>
-<ul>
-<li><a href="http://blog.respoke.io/post/112219769110">Libraries and SDKs: Respoke Today and the Near Future</a> </li>
-<li><a href="http://blogs.skype.com/2015/02/27/updating-the-skype-privacy-statement/">Updating the Skype Privacy Statement</a> </li>
-<li><a href="https://www.zendesk.com/blog/whats-new-zendesk-apps-marketplace">What&rsquo;s new in the Zendesk Apps Marketplace</a> </li>
-<li><a href="http://apievangelist.com/2015/02/26/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions &middot;</a> </li>
-<li><a href="http://feedproxy.google.com/~r/MendeleyBlog/~3/RN0Hcup46Ww/">Meet the Platform Team &mdash; Part II!</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ApiEvangelist/~3/lXcR1xoQjTs/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions</a> </li>
-<li><a href="http://blogs.ca.com/2015/02/25/api-management-tomorrows-superhero-today/">API Management: Tomorrow's superhero today</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/OV7bHh_N9hE/24">IBM Applies Watson Artificial Intelligence to API Management</a> </li>
-<li><a href="http://feedproxy.google.com/~r/xerolive/~3/FOOl3yT7ohY/">Xero API Developer of the Year 2014</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/ej3xIAtA3Rs/23">FieldVal Tackles Lackluster API Error Handling</a> </li>
-<li><a href="http://developer.intuit.com/blog/2015/02/17/new-developer-panel-join-now/?link=rss">New Developer Panel</a></li>
-</ul>
-</div>
-<p>This was some of my thoughts on what types of <strong><span style="text-decoration: underline;">API tooling</span></strong> I'd like to see emerge in the space:</p>
-<div>
-<ul>
-<li><a href="http://apievangelist.com/2015/02/23/developing-small-simple-meaningful-tools-that-make-an-impact-across-the-api-space">Developing Small, Simple, Meaningful Tools That Make An Impact Across The API Space</a></li>
-</ul>
-</div>
-<p>Some interesting news out of the <strong><span style="text-decoration: underline;">API driven automobile</span></strong> space:</p>
-<div>
-<ul>
-<li><a href="http://www.theverge.com/2015/2/27/8119981/electric-trucks-wrightspeed-ian-wright">Tesla co-founder says it's electric trucks, not electric cars, that matter</a> </li>
-<li><a href="http://spectrum.ieee.org/cars-that-think/transportation/self-driving/will-nissan-beat-google-and-uber-to-self-driving-taxis">Will Nissan Beat Google and Uber to Self-Driving Taxis?</a>&nbsp;</li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43cc007e/sc/18/l/0L0Snytimes0N0C20A150C0A20C270Cautomobiles0Cin0Ecar0Ecommunication0Esystems0Eare0Ea0Egrowing0Efrustration0Ejd0Epower0Estudy0Efinds0Bhtml0Dpartner0Frss0Gemc0Frss/story01.htm">In-Car Communication Systems Are a Growing Frustration, J.D. Power Study Finds</a></li>
-</ul>
-</div>
-<p>I am working on a similar report, so I was happy to see other research to stimulate the <span style="text-decoration: underline;"><strong>banking API</strong></span> conversation:</p>
-<div>
-<ul>
-<li><a href="http://bankinnovation.net/2015/02/fintech-1000-landscape-report-programmable-bank/">Fintech 1,000 Landscape Report: Programmable Bank</a></li>
-</ul>
-</div>
-<p>Mostly my own <strong><span style="text-decoration: underline;">business of APIs</span></strong> thoughts, but a couple of interesting additions to learn from:</p>
-<div>
-<ul>
-<li><a href="http://www.web-strategist.com/blog/2015/03/01/how-the-technology-of-the-collaborative-economy-all-works-together/">How the Technology of the Collaborative Economy all Works Together</a> </li>
-<li><a href="http://apievangelist.com/2015/02/26/a-peek-at-the-future-with-white-label-apis/">A Peek At The Future With White Label APIs</a></li>
-<li><a href="http://apihandyman.io/the-beautiful-api-and-the-bestial-back-office/">The beautiful API and the bestial back-office | API Handyman</a> </li>
-<li><a href="http://nordicapis.com/winter-collection-an-api-e-book-from-the-nordic-apis-team/">Winter Collection: An API E-book from the Nordic APIs Team</a> </li>
-<li><a href="http://apievangelist.com/2015/02/23/api-evangelism-sometimes-seems-similar-to-the-environmental-discussion--what-we-would-like-does-not-reflect-what-actually-happens-on-the-ground">API Evangelism Sometimes Seems Similar To The Environmental Discussion - What We Would Like, Does Not Reflect What Actually Happens On The Ground</a> </li>
-<li><a href="http://apievangelist.com/2015/02/23/looking-beyond-the-number-of-apis-or-just-new-apis-and-working-harder-to-find-only-the-most-important-apis">Looking Beyond The Number Of APIs, Or Just New APIs, And Working Harder To Find Only The Most Important APIs</a></li>
-</ul>
-</div>
-<p>An interesting <span style="text-decoration: underline;"><strong>CDN</strong></span> API story:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/0QinZXc5Pic/25">Highwinds CDN API Powers Multi-Platform Entertainment Properties</a></li>
-</ul>
-</div>
-<p>A few of my thoughts on <strong><span style="text-decoration: underline;">generating client code using API definitions</span></strong>:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ApiEvangelist/~3/lXcR1xoQjTs/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions</a></li>
-</ul>
-</div>
-<p>It is really interesting to watch the giants battle it out in the world of <span style="text-decoration: underline;"><strong>cloud computing</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/zdnet/BTL/~3/p7bbwfoNeqs/">Google Cloud Platform getting its own status dashboard</a> </li>
-<li><a href="http://azure.microsoft.com/blog/2015/02/24/announcing-the-1-0-1-alpha-preview-of-microsoft-azure-webjobs-sdk/">Announcing the 1.0.1-alpha preview of Microsoft Azure WebJobs SDK</a> </li>
-<li><a href="http://feedproxy.google.com/~r/AmazonWebServicesBlog/~3/1qORakFed-0/">AWS Cost Explorer Update &ndash; More Filtering and Grouping Dimensions</a></li>
-</ul>
-</div>
-<p>Also keeping eye on the leading, <span style="text-decoration: underline;"><strong>API driven cloud storage and document providers</strong></span>:</p>
-<div>
-<ul>
-<li><a href="https://www.box.com/blog/the-products-that-power-box-for-financial-services/">The Products that Power Box for Financial Services&nbsp;</a></li>
-<li><a href="https://www.box.com/blog/shake-box/">Shake + Box</a> </li>
-<li><a href="http://blog.gumroad.com/post/111969799023">Upload from Dropbox</a></li>
-</ul>
-</div>
-<p>I thought Matrix was interesting enough to showcase as an <strong><span style="text-decoration: underline;">API communication</span></strong> story:</p>
-<div>
-<ul>
-<li><a href="http://matrix.org/">Matrix.org | A new basis for open, distributed, real-time communication</a></li>
-</ul>
-</div>
-<p>My efforts to keep track on the latest <strong><span style="text-decoration: underline;">containerization</span></strong> stories:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ClPlBl/~3/jRwCABiowSc/container-clusters-on-vms.html">Container Clusters on VMs</a> </li>
-<li><a href="http://thoughtsoncloud.com/2015/02/thursday-thoughts-open-technology-and-the-future-of-containers/">Thursday Thoughts: Open technology and the future of containers</a> </li>
-<li><a href="http://alpha.apievangelist.com/2015/02/26/making-my-3scale-api-management-portable-with-a-containerized-microservices/">Making My 3Scale API Management Portable With A Containerized Micro-Services &middot;</a> </li>
-<li><a href="http://blog.docker.com/2015/02/announcing-docker-compose/">Announcing Docker Compose</a> </li>
-<li><a href="http://blog.docker.com/2015/02/announcing-docker-machine-beta/">Announcing Docker Machine Beta</a> </li>
-<li><a href="http://feeds.voxeo.com/~r/AllVoxeoBlogs/~3/xYLbKfrLjgc/">Announcing Tropo Connect</a> </li>
-<li><a href="http://www.diversity.net.nz/docker-talks-up-the-open-ecosystem-while-introducing-products-that-challenge-it/2015/02/26/">Docker Talks Up The Open Ecosystem, While Introducing Products That Challenge It</a> </li>
-<li><a href="http://www.infoworld.com/article/2887579/hybrid-cloud/ibm-embraces-docker-openstack-in-bluemix-hybrid-cloud-plans.html">IBM embraces Docker, OpenStack in Bluemix hybrid cloud plans</a> </li>
-<li><a href="https://gigaom.com/2015/02/26/microsoft-joins-docker-in-announcing-new-container-services/">Microsoft joins Docker in announcing new container services</a> </li>
-<li><a href="http://blog.docker.com/2015/02/orchestrating-docker-with-machine-swarm-and-compose/">Orchestrating Docker with Machine, Swarm and Compose</a> </li>
-<li><a href="https://clusterhq.com/blog/powerstrip-flocker-portable-volumes-using-just-docker-cli/">Powerstrip-flocker: Portable volumes using just the Docker CLI</a> </li>
-<li><a href="http://blog.docker.com/2015/02/scaling-docker-with-swarm/">Scaling Docker with Swarm</a> </li>
-<li><a href="https://gigaom.com/2015/02/24/kubernetes-comes-to-openstack-this-time-thanks-to-mirantis/">Kubernetes comes to OpenStack this time thanks to Mirantis</a> </li>
-<li><a href="http://www.diversity.net.nz/mirantis-joins-in-to-help-integrate-googles-kubernetes-with-openstack/2015/02/24/">Mirantis Joins In To Help Integrate Google&rsquo;s Kubernetes With OpenStack</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ClPlBl/~3/yZ6HSVZ-wfI/run-container-based-applications-on-OpenStack-with-Kubernetes.html">Run Container-based Applications on OpenStack with Kubernetes</a></li>
-</ul>
-</div>
-<p>I'd like to see more stories, and open data and API work around <strong><span style="text-decoration: underline;">crime</span></strong> resources:</p>
-<div>
-<ul>
-<li><a href="http://www.smartchicagocollaborative.org/crime-data-justice/">Crime, Data, Justice</a></li>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/25/accessing-criminal-justice-data/">There's more to criminal justice data than you think: Delve into it with Sunlight's new inventory</a></li>
-<li><a href="http://datasmart.ash.harvard.edu/news/article/harnessing-data-to-fight-crime-in-maryland-634">Harnessing Data to Fight Crime in Maryland</a></li>
-</ul>
-</div>
-<p>I'm going to have to get better at breaking out <strong><span style="text-decoration: underline;">data</span></strong>, into more meaningful categories (the list is kind of big):</p>
-<div>
-<ul>
-<li><a href="http://blog.helloreverb.com/data-tells-a-story-recruiting-better-talent-surfacing-fraud-data-mining-chicken-tikka-masala/">Data Tells a Story: recruiting better talent; surfacing fraud; data mining chicken tikka masala</a> </li>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/27/elections-the-final-frontier-of-open-data/">Elections: The final frontier of open data?</a> </li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43e168a2/sc/21/l/0L0Snytimes0N0C20A150C0A20C280Cbusiness0Cwhite0Ehouse0Eproposes0Ebroad0Econsumer0Edata0Eprivacy0Ebill0Bhtml0Dpartner0Frss0Gemc0Frss/story01.htm">White House Proposes Broad Consumer Data Privacy Bill</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/wOESPiAX7g4/26">Survata&rsquo;s Consumer Feedback API Helps Power Business Decisions</a> </li>
-<li><a href="https://datahero.com/blog/2015/02/26/art-visualizing-data-find-actionable-insights/">The Art of Visualizing Data to Find Actionable Insights</a> </li>
-<li><a href="http://www.socrata.com/blog/behind-wheel-gets-drive/">Behind the Wheel: Who Gets to Drive?</a> </li>
-<li><a href="http://blogs.worldbank.org/opendata/can-you-visualize-structure-world-economy-and-population-one-chart">Can you visualize the structure of the world economy and population in one chart?</a> </li>
-<li><a href="http://blog.datasift.com/2015/02/25/capitalizing-on-human-data/">Capitalizing on Human Data</a> </li>
-<li><a href="http://personal-data.okfn.org/2015/02/25/looking-back-our-year-in-open-data-and-privacy-work/">Looking back- our year in open data and privacy work</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/EXO55n0D_QQ/sift-science-score">Sift Science Score</a> </li>
-<li><a href="http://www.digitalgov.gov/2015/02/25/the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis">The API Briefing: Harvesting the USDA&rsquo;s Rich Bounty of Open Data Sets for APIs</a> </li>
-<li><a href="http://www.crowdflower.com/blog/the-unfriendly-skies-a-data-driven-breakdown-of-what-we-hate-about-major-airlines">The Unfriendly Skies: A Data-Driven Breakdown of What We Hate About Major Airlines</a> </li>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/25/accessing-criminal-justice-data/">There's more to criminal justice data than you think: Delve into it with Sunlight's new inventory</a> </li>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/25/were-still-looking-for-open-data-social-impact-stories/">We're still looking for open data social impact stories!</a> </li>
-<li><a href="http://www.bankingday.com/nl06_news_selected.php?stream=1&amp;selkey=18210">Thomson Reuters to open-source company data analysis tools</a> </li>
-<li><a href="http://au.okfn.org/2015/02/25/australias-open-data-census-goes-beta/">Australia&rsquo;s Open Data Census goes Beta</a> </li>
-<li><a href="http://www.smartchicagocollaborative.org/crime-data-justice/">Crime, Data, Justice</a> </li>
-<li><a href="http://messente.com/blog/2015/02/24/every-business-needs-to-know-about-data-protection/">Every business needs to know about data protection</a> </li>
-<li><a href="http://openaddresses.io/">OpenAddresses</a> </li>
-<li><a href="http://blog.okfn.org/2015/02/23/building-a-free-open-world-wide-address-dataset/">Building a Free &amp; Open World-wide Address Dataset</a> </li>
-<li><a href="http://datasmart.ash.harvard.edu/news/article/harnessing-data-to-fight-crime-in-maryland-634">Harnessing Data to Fight Crime in Maryland</a> </li>
-<li><a href="http://datasmart.ash.harvard.edu/news/article/open-data-as-an-accountability-tool-chicagos-problem-landlord-list-635">Open Data as an Accountability Tool: Chicago&rsquo;s Problem Landlord List</a> </li>
-<li><a href="http://flowingdata.com/2015/02/23/white-house-appoints-first-us-chief-data-scientist/">White House appoints first US Chief Data Scientist</a></li>
-</ul>
-</div>
-<p>So many areas of my research are interesting, and the <strong><span style="text-decoration: underline;">data center</span></strong> has central role:</p>
-<div>
-<ul>
-<li><a href="http://blogs.site24x7.com/2015/02/27/data-center-ready-internet-things/">Is Your Data Center Ready for the Internet of Things?</a></li>
-</ul>
-</div>
-<p>A few stories involving <strong><span style="text-decoration: underline;">databases</span></strong>, and the potential for deploying APis from common data connections:</p>
-<div>
-<ul>
-<li><a href="/blogs/aws/custom-odbcjdbc-drivers-and-query-visualization-for-amazon-redshift/">Custom ODBC/JDBC Drivers and Query Visualization for Amazon Redshift</a> </li>
-<li><a href="http://feedproxy.google.com/~r/SforceBlog/~3/NIMvAU4o7iQ/simple-data-integration-heroku-connect.html">Simple Data Integration with Heroku Connect</a> </li>
-<li><a href="http://feedproxy.google.com/~r/SforceBlog/~3/dLEh7KV0BMU/publish-industry-data-force-com-apps-data-services-heroku.html">Publish Industry Data to Force.com Apps with Data Services on Heroku</a></li>
-</ul>
-</div>
-<p>Interesting to better understand <span style="text-decoration: underline;"><strong>API discovery</strong></span> from Microsoft, around their office suite:</p>
-<div>
-<ul>
-<li><a href="http://www.planetsharepoint.org/page/social/9f12">Understanding the Office 365 API&rsquo;s Discovery Service</a></li>
-</ul>
-</div>
-<p>A <strong><span style="text-decoration: underline;">politics of APIs</span></strong> discussion I haven't seen before:</p>
-<div>
-<ul>
-<li><a href="http://support.brightcove.com/en/video-cloud/docs/digital-rights-management-sdks">Digital Rights Management with the SDKs</a></li>
-</ul>
-</div>
-<p><span style="text-decoration: underline;"><strong>Education</strong></span> related API stories always make me happy--there just aren't enough:</p>
-<div>
-<ul>
-<li><a href="http://www.proprofs.com/c/e-learning/the-instructional-designers-guide-to-tin-can-api/">The Instructional Designer&rsquo;s Guide to Tin Can API</a></li>
-</ul>
-</div>
-<p>Two interesting <span style="text-decoration: underline;"><strong>embeddable</strong></span> API stories this week:</p>
-<div>
-<ul>
-<li><a href="http://www.tokbox.com/blog/hardware-setup-widget-set-up-your-users-for-success/">Hardware Setup Widget: Set up your users for success | TokBox Blog</a> </li>
-<li><a href="http://feedproxy.google.com/~r/heroku/~3/gClbUuWKz64/Heroku%20Connect%20Demo%20Edition%20Now%20Available%20via%20Heroku%20Button">Heroku Connect Demo Edition Now Available via Heroku Button</a></li>
-</ul>
-</div>
-<p>Another important conversation going on in 2015 is around <span style="text-decoration: underline;"><strong>encryption</strong></span>:</p>
-<div>
-<ul>
-<li><a href="https://www.concur.com/blog/en-us/using-data-encryption-in-aws">Protecting data on AWS cloud using powerful encryption techniques</a> </li>
-<li><a href="http://www.thoughtcrime.org/blog/gpg-and-me/">Let&rsquo;s Declare GPG a Dead End for Encrypted Email</a></li>
-</ul>
-</div>
-<p>An area we need more activity is when it comes to <strong><span style="text-decoration: underline;">energy</span></strong> APIs:</p>
-<div>
-<ul>
-<li><a href="http://www.beststocks2016.com/hot-gas-utility-companies-for-2015-2.html">Hot Gas Utility Companies For 2015</a> </li>
-<li><a href="http://www.diversity.net.nz/simple-energy-helps-utilities-hyper-personalize-consumer-offers/2015/02/26/">Simple Energy Helps Utilities Hyper-Personalize Consumer Offers</a></li>
-</ul>
-</div>
-<p>Lots of momentum with APIs in the <span style="text-decoration: underline;"><strong>federal government</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43e168a2/sc/21/l/0L0Snytimes0N0C20A150C0A20C280Cbusiness0Cwhite0Ehouse0Eproposes0Ebroad0Econsumer0Edata0Eprivacy0Ebill0Bhtml0Dpartner0Frss0Gemc0Frss/story01.htm">White House Proposes Broad Consumer Data Privacy Bill</a> </li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43cb5e43/sc/46/l/0Lbits0Bblogs0Bnytimes0N0C20A150C0A20C250Cprivacy0Egroup0Efiles0Ef0Et0Ec0Ecomplaint0Eagainst0Esamsungs0Evoice0Eoperated0Etvs0C0Dpartner0Frss0Gemc0Frss/story01.htm">Bits Blog: Privacy Group Files F.T.C. Complaint Against Samsung&rsquo;s Voice-Operated TVs</a> </li>
-<li><a href="http://www.digitalgov.gov/2015/02/25/the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-api-briefing-harvesting-the-usdas-rich-bounty-of-open-data-sets-for-apis">The API Briefing: Harvesting the USDA&rsquo;s Rich Bounty of Open Data Sets for APIs</a> </li>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/25/were-still-looking-for-open-data-social-impact-stories/">We're still looking for open data social impact stories!</a> </li>
-<li><a href="http://au.okfn.org/2015/02/25/australias-open-data-census-goes-beta/">Australia&rsquo;s Open Data Census goes Beta</a> </li>
-<li><a href="http://pandodaily.com.feedsportal.com/c/35141/f/650422/s/43c0471d/sc/4/l/0Lpando0N0C20A150C0A20C240Cthe0Eftc0Ecracks0Edown0Eon0Ehealth0Eapps0Ethat0Epromise0Eto0Edetect0Ediseases0Ewithout0Eproof0C/story01.htm">The FTC cracks down on health apps that promise to detect diseases without proof</a> </li>
-<li><a href="http://flowingdata.com/2015/02/23/white-house-appoints-first-us-chief-data-scientist/">White House appoints first US Chief Data Scientist</a></li>
-</ul>
-</div>
-<p>Many layers to FinTech, and I am trying to give different views of the <span style="text-decoration: underline;"><strong>financial</strong></span> API discussion:</p>
-<div>
-<ul>
-<li><a href="http://bankinnovation.net/2015/02/fintech-1000-landscape-report-programmable-bank/">Fintech 1,000 Landscape Report: Programmable Bank</a> </li>
-<li><a href="https://www.box.com/blog/the-products-that-power-box-for-financial-services/">The Products that Power Box for Financial Services&nbsp;</a></li>
-<li><a href="http://www.socrata.com/blog/evolution-financial-transparency/">The Evolution of Financial Transparency</a></li>
-</ul>
-</div>
-<p>EH, insurance, quantified-self, and government regulation when in the <span style="text-decoration: underline;"><strong>healthcare</strong></span> industry:</p>
-<div>
-<ul>
-<li><a href="https://blog.pokitdok.com/pokitdok-partners-with-doctor-on-demand/">PokitDok Partners with Doctor on Demand</a> </li>
-<li><a href="http://www.marketwatch.com/story/vericred-introduces-first-healthcare-provider-network-benchmark-2015-02-25">Vericred Introduces First Healthcare Provider Network Benchmark</a> </li>
-<li><a href="http://pandodaily.com.feedsportal.com/c/35141/f/650422/s/43c0471d/sc/4/l/0Lpando0N0C20A150C0A20C240Cthe0Eftc0Ecracks0Edown0Eon0Ehealth0Eapps0Ethat0Epromise0Eto0Edetect0Ediseases0Ewithout0Eproof0C/story01.htm">The FTC cracks down on health apps that promise to detect diseases without proof</a> </li>
-<li><a href="http://developer.microsoftband.com/">Microsoft Band - Developers</a></li>
-</ul>
-</div>
-<p>An area I will continue to carve off the bigger IoT discussion is APIs used in the <span style="text-decoration: underline;"><strong>home</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://www.keenhome.io/">Keen Home</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/OWous9rq99I/happy-inspector">Happy Inspector</a> </li>
-<li><a href="http://www.virtual-strategy.com/2015/02/24/linq-home-launches-energy-saving-smart-vent-crowdfunding-campaign">Linq Home Launches Energy-saving Smart Vent Crowdfunding Campaign</a></li>
-<li><a href="http://hackaday.com/2015/02/23/another-garage-door-opener-this-time-with-security/">Another Garage Door Opener, This Time With Security</a></li>
-</ul>
-</div>
-<p>I'm feeling like <span style="text-decoration: underline;"><strong>HTTP/2</strong></span> is going to keep moving the ground under our feet in coming months:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/LxtITBBAG2c/27">Google Releases gRPC to Speed Up HTTP/2 Support in Applications</a> </li>
-<li><a href="http://googledevelopers.blogspot.com/2015/02/introducing-grpc-new-open-source-http2.html">Google Developers Blog: Introducing gRPC, a new open source HTTP/2 RPC Framework</a> </li>
-<li><a href="http://feedproxy.google.com/~r/GDBcode/~3/I-Sj9OAz1ic/introducing-grpc-new-open-source-http2.html">Introducing gRPC, a new open source HTTP/2 RPC Framework</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/qQDqDMtdLYM/">Firefox 36 adds HTTP/2 support and pinned tile syncing</a></li>
-</ul>
-</div>
-<p>An interesting take on <span style="text-decoration: underline;"><strong>image</strong></span> search, and I'm seeing lots of activity over at Autodesk:</p>
-<div>
-<ul>
-<li><a href="http://blog.pixlr.com/post/112165475206">Autodesk Pixlr: Now Available on the Microsoft Store</a> </li>
-<li><a href="http://thenextweb.com/creativity/2015/02/24/camfind-launches-cloudsight-api-for-multiplatform-visual-search-functionality/?awesm=tnw.to_a4hZf">CamFind Launches CloudSight API to Advance Visual Search</a></li>
-</ul>
-</div>
-<p>As the enterprise beats the IoT drum, the rhythm is focused on <strong><span style="text-decoration: underline;">industrial</span></strong> implementations:</p>
-<div>
-<ul>
-<li><a href="http://hackaday.com/2015/02/26/building-an-industrial-control-unit-with-an-industrial-control-unit/">Building an Industrial Control Unit With an Industrial Control Unit</a> </li>
-<li><a href="https://gigaom.com/2015/02/23/arm-freescale-and-ibm-offer-a-platform-for-industrial-iot/">ARM, Freescale and IBM offer a platform for industrial IoT</a></li>
-</ul>
-</div>
-<p>Some quick takes on <span style="text-decoration: underline;"><strong>API integration</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/muleblog/~3/M-Ih88Urzfc/">Anypoint Exchange: Discover and Add Integration Best Practices</a> </li>
-<li><a href="http://cloud-elements.com/data-transformations-not-block-api-integrations/">Data Transformations: How-Not-To Block API Integrations</a> </li>
-<li><a href="http://www.willowtreeapps.com/blog/developers-blog_get-web-automation-off-the-ground-with-the-helium-api/">Get Web Automation off the Ground with the Helium API</a></li>
-</ul>
-</div>
-<p>Like data, I'm going to have to get better at organizing and breaking areas of of the <strong><span style="text-decoration: underline;">Internet of Things (IoT)</span></strong> area:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/zjNwn24fJ9s/27">Canonical Starts to Build IoT Ecosystem</a> </li>
-<li><a href="http://blogs.site24x7.com/2015/02/27/data-center-ready-internet-things/">Is Your Data Center Ready for the Internet of Things?</a> </li>
-<li><a href="http://feedproxy.google.com/~r/internetofthings/~3/IWBCI7AXItg/">Let Your Plants Tweet Using Spark and ThingSpeak</a> </li>
-<li><a href="http://www.theverge.com/2015/2/27/8120359/swiss-watchmakers-smartwatches">Swiss watchmakers show off a new line of smartwatches</a> </li>
-<li><a href="http://hackaday.com/2015/02/26/building-an-industrial-control-unit-with-an-industrial-control-unit/">Building an Industrial Control Unit With an Industrial Control Unit</a> </li>
-<li><a href="https://gigaom.com/2015/02/26/can-arm-processors-move-the-mobile-network-into-the-cloud/">Can ARM processors move the mobile network into the cloud?</a> </li>
-<li><a href="http://www.bidnessetc.com/35485-ibm-and-arm-partner-up-to-sell-internet-of-things-starter-kits/">IBM and ARM Partner Up To Sell Internet Of Things Starter Kits</a> </li>
-<li><a href="https://www.twilio.com/blog/2015/02/send-sms-and-mms-from-your-arduino-yun.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=send-sms-and-mms-from-your-arduino-yun">Send SMS And MMS From Your Arduino Yun with Twilio</a> </li>
-<li><a href="http://www.digitalgov.gov/2015/02/26/the-internet-of-everything-small-business-opportunities/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=the-internet-of-everything-small-business-opportunities">The Internet of Everything &amp; Small Business Opportunities</a> </li>
-<li><a href="https://medium.com/aws-activate-startup-blog/iot-a-small-things-primer-7cb358810d77?source=tw-lo_2d851abd370e-1424913761769">IoT: A Small Things Primer &mdash; AWS Startup Collection &mdash; Medium</a> </li>
-<li><a href="http://www.keenhome.io/">Keen Home</a> </li>
-<li><a href="/blog/streaming-a-live-picture-feed-from-tessel-camera/">Streaming a Live Picture Feed from Tessel Camera</a> </li>
-<li><a href="http://feedproxy.google.com/~r/SmartBear/~3/hZslsj2D8Ew/">Testing the Internet of Things</a> </li>
-<li><a href="https://gigaom.com/2015/02/24/chip-firms-put-security-center-stage-for-the-internet-of-things/">Chip firms put security center stage for the internet of things</a> </li>
-<li><a href="http://www.virtual-strategy.com/2015/02/24/linq-home-launches-energy-saving-smart-vent-crowdfunding-campaign">Linq Home Launches Energy-saving Smart Vent Crowdfunding Campaign</a> </li>
-<li><a href="http://blog.spark.io/2015/02/25/meet-the-electron/">Meet the Electron: a cellular dev kit with a simple data plan</a> </li>
-<li><a href="http://hackaday.com/2015/02/24/piana-musical-synthesis-for-the-raspberry-pi/">Piana &ndash; Musical Synthesis For The Raspberry Pi</a> </li>
-<li><a href="http://www.pubnub.com/blog/programming-a-tessel-camera-app-with-javascript/">Programming a Tessel Camera App with JavaScript</a> </li>
-<li><a href="http://hackaday.com/2015/02/23/another-garage-door-opener-this-time-with-security/">Another Garage Door Opener, This Time With Security</a> </li>
-<li><a href="https://gigaom.com/2015/02/23/arm-freescale-and-ibm-offer-a-platform-for-industrial-iot/">ARM, Freescale and IBM offer a platform for industrial IoT</a> </li>
-<li><a href="http://www.kontron.com/about-kontron/news-events/detail/kbox-a-103">embedded world 2015 Kontron presents a new IoT capable member of the KBox...</a> </li>
-<li><a href="http://feedproxy.google.com/~r/BillingViews/~3/MtjVqHX--UM/">Enterprises are unprepared for the impact of IoT on their networks</a></li>
-</ul>
-</div>
-<p>I like to keep an eye on companies who are <span style="text-decoration: underline;"><strong>hiring for API focused roles</strong></span>, and I think the last one is really interesting, and a little scary:</p>
-<div>
-<ul>
-<li><a href="http://careerssearch.bbc.co.uk/jobs/job/Technical-Lead-API-Management/11435">Technical Lead, API Management | Jobs and careers with BBC</a> </li>
-<li><a href="http://careers.stackoverflow.com/jobs/81419/api-evangelist-hellosign">API Evangelist at HelloSign</a></li>
-<li><a href="http://www.careerbuilder.com/jobseeker/jobs/jobdetails.aspx?job_did=JHS4JY6H8H9CNQTRLWN&amp;showNewJDP=yes">Targeting Intelligence Analyst (SED-2015-107) Jobs in Hampton, VA - Applied Research Associates, Inc.</a></li>
-</ul>
-</div>
-<p>I'm guessing IBM and the Watson team will dominate the <span style="text-decoration: underline;"><strong>machine learning and AI APIs</strong></span> conversation:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/gr6vlGYZc_E/26">IBM Opens Watson Zone to Consolidate Developer Tool Access</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/asvfpludhgU/sift-science-label">Sift Science Label</a> </li>
-<li><a href="https://developer.ibm.com/watson/blog/2015/02/23/ibm-watson-personality-insights-general-availability-announcement/">IBM Watson Personality Insights General Availability Announcement</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/4kzeSqJsKn4/ibm-watson-tradeoff-analytics">IBM Watson Tradeoff Analytics</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/O4-WLFLn3uE/ibm-watson-user-modeling">IBM Watson User Modeling</a></li>
-</ul>
-</div>
-<p>Nice <span style="text-decoration: underline;"><strong>mapping</strong></span> roundup from PW:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/hZD1Sx-_s8Q/23">Top 10 Mapping APIs: Google Maps, Microsoft Bing Maps and MapQuest</a></li>
-</ul>
-</div>
-<p>Just a couple <span style="text-decoration: underline;"><strong>microservice</strong></span> related thoughts from the week:</p>
-<div>
-<ul>
-<li><a href="http://alpha.apievangelist.com/2015/02/26/making-my-3scale-api-management-portable-with-a-containerized-microservices/">Making My 3Scale API Management Portable With A Containerized Micro-Services &middot;</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ApiEvangelist/~3/038fo7Mju6k/moving-away-from-legacy-vendor-relationships-to-a-devops-microservices-way-of-life-at-nike">Moving Away From Legacy Vendor Relationships To A Devops, Micro-Services Way Of Life At Nike</a></li>
-</ul>
-</div>
-<p>A couple more big moves when it comes to <span style="text-decoration: underline;"><strong>mobile</strong></span>, from New Relic and Akamai:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/ACgjMrWmO-Q/27">New Relic Extends Real-Time Analytics Reach into Mobile Apps</a> </li>
-<li><a href="http://www.akamai.com/html/about/press/releases/2015/press-022615-1.html">Akamai Unveils Emerging Mobile Business Unit to Address Needs of Mobile Network Operators and Mobile Device Manufacturers</a> </li>
-<li><a href="https://gigaom.com/2015/02/26/can-arm-processors-move-the-mobile-network-into-the-cloud/">Can ARM processors move the mobile network into the cloud?</a> </li>
-<li><a href="http://feedproxy.google.com/~r/zdnet/BTL/~3/GUBdHq9O4nM/">Google to launch new payment API Android Pay</a> </li>
-<li><a href="http://blog.count.ly/post/112130638718">Upcoming Community Edition version: What should you expect?</a> </li>
-<li><a href="https://backendless.com/feature-49-un-throttled-api-calls-for-all-pricing-plans/">Feature 49: Un-throttled API calls for all pricing plans</a> </li>
-<li><a href="https://backendless.com/feature-48-unlimited-api-calls-for-your-backendless-mbaas-backend/">Feature 48: Unlimited API Calls for your Backendless mBaaS backend</a> </li>
-<li><a href="http://feedproxy.google.com/~r/SforceBlog/~3/YDrmP_nOkXM/mobile-it-ecosystem-jungle.html">Mapping The Mobile IT Ecosystem</a></li>
-</ul>
-</div>
-<p>Some <span style="text-decoration: underline;"><strong>API monetization</strong></span> stories, ranging from the sane to crazy over at AT&amp;T:</p>
-<div>
-<ul>
-<li><a href="http://support.brightcove.com/en/video-cloud/docs/advertising-sdks">Advertising with the SDKs</a> </li>
-<li><a href="https://backendless.com/feature-49-un-throttled-api-calls-for-all-pricing-plans/">Feature 49: Un-throttled API calls for all pricing plans</a> </li>
-<li><a href="https://www.schneier.com/blog/archives/2015/02/att_charging_cu.html">AT&amp;T Charging Customers to Not Spy on Them</a> </li>
-<li><a href="/blogs/aws/aws-cost-explorer-update-more-filtering-and-grouping-dimensions/">AWS Cost Explorer Update &ndash; More Filtering and Grouping Dimensions</a></li>
-</ul>
-</div>
-<p><span style="text-decoration: underline;"><strong>Music</strong></span> is always an important discussion when it comes to APIs:</p>
-<div>
-<ul>
-<li><a href="http://www.theverge.com/2015/3/1/8129773/bjork-oculus-rift-music-video-stonemilker">Bjork's next music video will be available for Oculus Rift</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/RvCFc3NaAds/25">Musikki API Gives Developers Access to Real-Time Music Information</a> </li>
-<li><a href="http://musicconnection.com/fans-empowered-support-musicians-directly/">Fans Empowered to Support Musicians Directly</a></li>
-</ul>
-</div>
-<p>Keeping a close eye on these data center, and <span style="text-decoration: underline;"><strong>networking</strong></span> related stories:</p>
-<div>
-<ul>
-<li><a href="https://maroskukan.wordpress.com/2015/02/23/cisco-asav-firewall-rest-api-bulk-requests/">Cisco ASAv firewall REST API: Bulk Requests</a></li>
-</ul>
-</div>
-<p>Im going to do a little hacking on Microsoft's new <span style="text-decoration: underline;"><strong>notes</strong></span> API, to see what it delivers:</p>
-<div>
-<ul>
-<li><a href="http://venturebeat.com/2015/02/24/microsoft-launches-new-onedrive-api-with-change-tracking-resumable-uploads-and-customizable-thumbnail-images/">Microsoft launches new OneDrive API with change tracking, resumable uploads, and customizable thumbnail images | VentureBeat | Dev | by Emil Protalinski</a></li>
-</ul>
-</div>
-<p>Couple of <span style="text-decoration: underline;"><strong>open source</strong></span> discussions to highlight:</p>
-<div>
-<ul>
-<li><a href="http://matrix.org/">Matrix.org | A new basis for open, distributed, real-time communication</a> </li>
-<li><a href="http://blog.count.ly/post/112130638718">Upcoming Community Edition version: What should you expect?</a></li>
-</ul>
-</div>
-<p>Keeping an eye on who is <span style="text-decoration: underline;"><strong>partnering</strong></span> across API space:</p>
-<div>
-<ul>
-<li><a href="https://blog.pokitdok.com/pokitdok-partners-with-doctor-on-demand/">PokitDok Partners with Doctor on Demand</a> </li>
-<li><a href="https://www.box.com/blog/shake-box/">Shake + Box</a></li>
-</ul>
-</div>
-<p>I'm not sure what category to put this into yet:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/I9937EIQfew/24">Algorithmia API Exposes Collective Knowledge of Developers</a></li>
-</ul>
-</div>
-<p>I think its clear that Google wants to play in payments, if they can find their footing:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/zdnet/BTL/~3/GUBdHq9O4nM/">Google to launch new payment API Android Pay</a> </li>
-<li><a href="http://feedproxy.google.com/~r/programmableweb/apis/~3/qnp_POEHHfw/coinleap">Coinleap&nbsp;</a></li>
-<li><a href="http://feedproxy.google.com/~r/zdnet/BTL/~3/OTpSsqDDaac/">Google secures deal to bring Apple Pay rival to US cell networks</a></li>
-</ul>
-</div>
-<p>Interesting usage of YouTube (which has APIs), with <span style="text-decoration: underline;"><strong>police</strong></span> story out of Seattle:</p>
-<div>
-<ul>
-<li><a href="http://www.theverge.com/2015/2/28/8125671/seattle-police-body-cameras-youtube-channel">Seattle's police department has a YouTube channel for its body camera footage</a></li>
-</ul>
-</div>
-<p>I predict lots of investment in open data and API driven tools in <span style="text-decoration: underline;"><strong>politics and elections</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://sunlightfoundation.com/blog/2015/02/27/elections-the-final-frontier-of-open-data/">Elections: The final frontier of open data?</a></li>
-</ul>
-</div>
-<p>Lots of great <span style="text-decoration: underline;"><strong>privacy</strong></span> discussions to follow this last week:</p>
-<div>
-<ul>
-<li><a href="https://gigaom.com/2015/02/27/consumer-privacy-bill-of-rights-act-draft/">Here&rsquo;s a draft of the consumer privacy &ldquo;Bill of Rights&rdquo; act Obama wants to pass</a> </li>
-<li><a href="http://blogs.skype.com/2015/02/27/updating-the-skype-privacy-statement/">Updating the Skype Privacy Statement</a> </li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43e168a2/sc/21/l/0L0Snytimes0N0C20A150C0A20C280Cbusiness0Cwhite0Ehouse0Eproposes0Ebroad0Econsumer0Edata0Eprivacy0Ebill0Bhtml0Dpartner0Frss0Gemc0Frss/story01.htm">White House Proposes Broad Consumer Data Privacy Bill</a> </li>
-<li><a href="http://feedproxy.google.com/~r/GoogleOnlineSecurityBlog/~3/FlYa2u1ciK8/safe-browsing-and-google-analytics.html">Safe Browsing and Google Analytics: Keeping More Users Safe, Together</a> </li>
-<li><a href="http://blog.datasift.com/2015/02/26/the-history-of-data-privacy-in-social-data-and-its-milestones/">The History of Data Privacy in Social Data and its Milestones</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/rZlkWvs4dUo/">Twitter is making it easier to report abuse on its service</a> </li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43cb5e43/sc/46/l/0Lbits0Bblogs0Bnytimes0N0C20A150C0A20C250Cprivacy0Egroup0Efiles0Ef0Et0Ec0Ecomplaint0Eagainst0Esamsungs0Evoice0Eoperated0Etvs0C0Dpartner0Frss0Gemc0Frss/story01.htm">Bits Blog: Privacy Group Files F.T.C. Complaint Against Samsung&rsquo;s Voice-Operated TVs</a> </li>
-<li><a href="http://personal-data.okfn.org/2015/02/25/looking-back-our-year-in-open-data-and-privacy-work/">Looking back- our year in open data and privacy work</a> </li>
-<li><a href="https://www.schneier.com/blog/archives/2015/02/att_charging_cu.html">AT&amp;T Charging Customers to Not Spy on Them</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/CBdHRph3duo/">Facebook&rsquo;s privacy policy breaches European law, says watchdog</a> </li>
-<li><a href="http://blog.datasift.com/2015/02/23/how-to-respect-user-privacy-intentions-while-still-gaining-insight-from-human-data/">How to Respect User Privacy Intentions While Still Gaining Insight from Human Data</a> </li>
-<li><a href="http://pandodaily.com.feedsportal.com/c/35141/f/650422/s/43b458dd/sc/46/l/0Lpando0N0C20A150C0A20C230Creport0Eclaims0Efacebook0Eruns0Eafoul0Eof0Ebelgian0Eprivacy0Elaws0C/story01.htm">Report claims Facebook runs afoul of Belgian privacy laws</a></li>
-</ul>
-</div>
-<p>I guess I'm still tracking on <strong><span style="text-decoration: underline;">quantified self</span></strong>, stories that catch my attention seem to be few and far between:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/s4hPthj8N74/">Microsoft&rsquo;s Band wearable gets a Web hub, biking tools, a virtual keyboard and an SDK</a></li>
-</ul>
-</div>
-<p>Pubnub rock'n <span style="text-decoration: underline;"><strong>real-time</strong></span>, with some interesting implementations:</p>
-<div>
-<ul>
-<li><a href="/blog/building-realtime-live-updating-animated-graphs-c3-js/">Building Realtime, Live-Updating Animated Graphs with C3.js</a> </li>
-<li><a href="http://www.pubnub.com/blog/programming-a-tessel-camera-app-with-javascript/">Programming a Tessel Camera App with JavaScript</a></li>
-</ul>
-</div>
-<p>Handful of <span style="text-decoration: underline;"><strong>reciprocity</strong></span> stories:</p>
-<div>
-<ul>
-<li><a href="https://zapier.com/blog/february-apps-2015/">New on Zapier: iDoneThis, FormKeep, Weather, Jumplead, Benchmark, Jumplead, You Don't Need a CRM and Mailjet</a> </li>
-<li><a href="http://feedproxy.google.com/~r/muleblog/~3/M-Ih88Urzfc/">Anypoint Exchange: Discover and Add Integration Best Practices</a> </li>
-<li><a href="http://cloud-elements.com/data-transformations-not-block-api-integrations/">Data Transformations: How-Not-To Block API Integrations</a> </li>
-<li><a href="http://www.cloveretl.com/blog/video-handy-cloveretl-features/">Video: Ten Handy CloverETL Features You Should Use</a></li>
-</ul>
-</div>
-<p>Another regulation blip from federal government, this time in healthcare:</p>
-<div>
-<ul>
-<li><a href="http://pandodaily.com.feedsportal.com/c/35141/f/650422/s/43c0471d/sc/4/l/0Lpando0N0C20A150C0A20C240Cthe0Eftc0Ecracks0Edown0Eon0Ehealth0Eapps0Ethat0Epromise0Eto0Edetect0Ediseases0Ewithout0Eproof0C/story01.htm">The FTC cracks down on health apps that promise to detect diseases without proof</a></li>
-</ul>
-</div>
-<p><span style="text-decoration: underline;"><strong>Scraping</strong></span> will continue to play big role:</p>
-<div>
-<ul>
-<li><a href="http://blog.scrapinghub.com/2015/02/24/memex/">Scrapinghub crawls the Deep Web</a></li>
-</ul>
-</div>
-<p>The API <span style="text-decoration: underline;"><strong>SDK</strong></span> conversation continues to move forward:</p>
-<div>
-<ul>
-<li><a href="http://blog.respoke.io/post/112219769110">Libraries and SDKs: Respoke Today and the Near Future</a> </li>
-<li><a href="http://apievangelist.com/2015/02/26/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions &middot;</a> </li>
-<li><a href="http://support.brightcove.com/en/video-cloud/docs/digital-rights-management-sdks">Digital Rights Management with the SDKs</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/XXwvWSQny4Y/">Pebble Time SDK preview now available for developers</a> </li>
-<li><a href="http://apievangelist.com/2015/02/24/driving-your-single-page-applications-and-api-cookbooks-using-api-definition-formats-like-swagger-and-api-blueprint/">Driving Your Single Page Applications And API Cookbooks Using API Definition Formats Like Swagger And API Blueprint &middot;</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ApiEvangelist/~3/lXcR1xoQjTs/generating-client-side-code-from-machine-readable-api-definitions">Generating Client Side Code From Machine Readable API Definitions</a> </li>
-<li><a href="http://developer.microsoftband.com/">Microsoft Band - Developers</a></li>
-</ul>
-</div>
-<p>Lots to think about on the <span style="text-decoration: underline;"><strong>security</strong></span> front:</p>
-<div>
-<ul>
-<li><a href="http://www.theverge.com/2015/2/27/8120983/venmo-security-problem-hacking-theft">Does Venmo have a security problem?</a> </li>
-<li><a href="https://www.concur.com/blog/en-us/using-data-encryption-in-aws">Protecting data on AWS cloud using powerful encryption techniques</a> </li>
-<li><a href="http://hackaday.com/2015/02/27/stumbling-upon-an-uber-vulnerability/">Stumbling Upon an Uber Vulnerability</a> </li>
-<li><a href="https://gigaom.com/2015/02/27/uber-discloses-data-breach-that-may-have-affected-50000-drivers/">Uber discloses data breach that may have affected 50,000 drivers</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/i82P4-xSBy0/">Uber security breach potentially exposes 50,000 drivers&rsquo; private information</a> </li>
-<li><a href="https://www.schneier.com/blog/archives/2015/02/everyone_wants_.html">Everyone Wants You To Have Security, But Not from Them</a> </li>
-<li><a href="http://www.thoughtcrime.org/blog/gpg-and-me/">Let&rsquo;s Declare GPG a Dead End for Encrypted Email</a> </li>
-<li><a href="http://feedproxy.google.com/~r/octopart/~3/osEu5MhdC-w/octopart-goes-https">Octopart goes HTTPS</a> </li>
-<li><a href="http://rss.nytimes.com/c/34625/f/640387/s/43cb5e43/sc/46/l/0Lbits0Bblogs0Bnytimes0N0C20A150C0A20C250Cprivacy0Egroup0Efiles0Ef0Et0Ec0Ecomplaint0Eagainst0Esamsungs0Evoice0Eoperated0Etvs0C0Dpartner0Frss0Gemc0Frss/story01.htm">Bits Blog: Privacy Group Files F.T.C. Complaint Against Samsung&rsquo;s Voice-Operated TVs</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/1Zk8Im4_G8M/25">Twilio Acquires Authy to Drive Two-Factor Authentication Adoption</a> </li>
-<li><a href="http://www.forbes.com/sites/benkepes/2015/02/24/twilio-makes-its-first-acquisition-scoops-up-authy-to-help-deliver-secure-comms/">Twilio Makes Its First Acquisition--Scoops Up Authy To Help Deliver Secure Comms - Forbes</a> </li>
-<li><a href="https://www.twilio.com/blog/2015/02/building-with-authy-and-twilio.html?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=building-with-authy-and-twilio">Building With Authy And Twilio: Keeping Conversations Open And Security Gaps Closed</a> </li>
-<li><a href="https://gigaom.com/2015/02/24/chip-firms-put-security-center-stage-for-the-internet-of-things/">Chip firms put security center stage for the internet of things</a> </li>
-<li><a href="http://messente.com/blog/2015/02/24/every-business-needs-to-know-about-data-protection/">Every business needs to know about data protection</a> </li>
-<li><a href="http://feedproxy.google.com/~r/ProgrammableWeb/~3/QhX7KGedioA/23">Google Tool Scans App Engine Apps for Security Vulnerabilities</a></li>
-</ul>
-</div>
-<p>Maybe another area I'll carve off IoT is <span style="text-decoration: underline;"><strong>smart watches</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://www.theverge.com/2015/2/27/8120359/swiss-watchmakers-smartwatches">Swiss watchmakers show off a new line of smartwatches</a> </li>
-<li><a href="http://feedproxy.google.com/~r/TheNextWeb/~3/XXwvWSQny4Y/">Pebble Time SDK preview now available for developers</a></li>
-</ul>
-</div>
-<p><span style="text-decoration: underline;"><strong>Single Page Applications (SPA)</strong></span> and APIs are getting interesting:</p>
-<div>
-<ul>
-<li><a href="http://apievangelist.com/2015/02/24/driving-your-single-page-applications-and-api-cookbooks-using-api-definition-formats-like-swagger-and-api-blueprint/">Driving Your Single Page Applications And API Cookbooks Using API Definition Formats Like Swagger And API Blueprint &middot;</a></li>
-</ul>
-</div>
-<p>I thought this was an interesting <span style="text-decoration: underline;"><strong>spreadsheets</strong></span> story, and there are lessons there for the API space:</p>
-<div>
-<ul>
-<li><a href="http://flowingdata.com/2015/02/27/spreadsheets-for-life/">Spreadsheets for life</a></li>
-</ul>
-</div>
-<p>Google making some <span style="text-decoration: underline;"><strong>terms of service (TOS)</strong></span> changes:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/GoogleAdsDeveloperBlog/~3/pPNTL7c_hrg/updated-adwords-api-terms-and.html">Updated AdWords API Terms and Conditions and New Policy Center</a></li>
-</ul>
-</div>
-<p>When I think of future of transportation, I think <span style="text-decoration: underline;"><strong>transit APIs</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://stefan.bloggt.es/2015/02/free-and-open-source-your-transit-system-now/">Free and Open Source your Transit System, Now!</a> </li>
-<li><a href="http://www.isthmus.com/isthmus/article.php?article=44574">Hacking for the common good</a> </li>
-<li><a href="http://www.socrata.com/blog/behind-wheel-gets-drive/">Behind the Wheel: Who Gets to Drive?</a></li>
-</ul>
-</div>
-<p>One of the most important aspects around the politics of APIs is <span style="text-decoration: underline;"><strong>transparency</strong></span>:</p>
-<div>
-<ul>
-<li><a href="http://datasmart.ash.harvard.edu/news/article/open-data-as-an-accountability-tool-chicagos-problem-landlord-list-635">Open Data as an Accountability Tool: Chicago&rsquo;s Problem Landlord List</a> </li>
-<li><a href="http://www.socrata.com/blog/evolution-financial-transparency/">The Evolution of Financial Transparency</a> </li>
-<li><a href="https://gigaom.com/2015/02/23/transparency-reports-on-trial-new-front-for-free-speech/">Transparency reports on trial: New front for free speech?</a></li>
-</ul>
-</div>
-<p>My thoughts about how APIs and micro-services will evolve the <span style="text-decoration: underline;"><strong>vendor</strong></span> relationship:</p>
-<div>
-<ul>
-<li><a href="http://feedproxy.google.com/~r/ApiEvangelist/~3/038fo7Mju6k/moving-away-from-legacy-vendor-relationships-to-a-devops-microservices-way-of-life-at-nike">Moving Away From Legacy Vendor Relationships To A Devops, Micro-Services Way Of Life At Nike</a></li>
-</ul>
-</div>
-<p>API driven <span style="text-decoration: underline;"><strong>visualization</strong></span> is something that keeps me excited about APIs recently:</p>
-<div>
-<ul>
-<li><a href="http://chefarchitect.github.io/swagger.ed/">Swagger APIs at a glance &ndash; swagger.ed</a> </li>
-<li><a href="/blogs/aws/custom-odbcjdbc-drivers-and-query-visualization-for-amazon-redshift/">Custom ODBC/JDBC Drivers and Query Visualization for Amazon Redshift</a></li>
-<li><a href="/blog/building-realtime-live-updating-animated-graphs-c3-js/">Building Realtime, Live-Updating Animated Graphs with C3.js</a> </li>
-<li><a href="https://datahero.com/blog/2015/02/26/art-visualizing-data-find-actionable-insights/">The Art of Visualizing Data to Find Actionable Insights</a> </li>
-<li><a href="http://blogs.worldbank.org/opendata/can-you-visualize-structure-world-economy-and-population-one-chart">Can you visualize the structure of the world economy and population in one chart?</a> </li>
-<li><a href="http://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations">I Got Swagger.ed Last Week, And Now I Am Seeing API Visualizations &middot;</a></li>
-</ul>
-</div>
-<p>In my opinion, <span style="text-decoration: underline;"><strong>wholesale APIs</strong></span> will be an important side effect of the containerization of APIs:</p>
-<div>
-<ul>
-<li><a href="http://apievangelist.com/2015/02/26/a-peek-at-the-future-with-white-label-apis/">A Peek At The Future With White Label APIs &middot;</a></li>
-</ul>
-</div>
-<p>WordPress is still an import <span style="text-decoration: underline;"><strong>platform development kit (PDK)</strong></span>, especially if Twitter is tackling themselves:</p>
-<div>
-<ul>
-<li><a href="https://blog.twitter.com/2015/twitter-plugin-wordpress">The official Twitter plugin for WordPress is here</a></li>
-</ul>
-<p>That concludes my report on what I read last week across the API space. I'm still working on pulling together a summary e-newsletter version, allowing people to get an executive summary of what I thought was important from the week--I am hoping it will be available next week. I'm also going to auto-generate some visualizations, and summary counts for each week. I'd like to see a tag cloud, and overall counts to help me understand the scope of news I cover each week.</p>
-<p>As I did last week, I'm walking away with a better awareness of what is happening across the space. It isn't enough for me to read all of this API news in isolation, it helps to see it side by side with other news, allowing me to see and understand patterns that I may have missed.&nbsp;</p>
-<p>Thanks for reading. ;-)</p>
-</div><p><strong>Updated November 27, 2015:</strong> Links were updated as part of switch from Swagger to OADF (<a href="http://apievangelist.com/2015/11/05/the-swagger-spec-is-reborn-as-open-api-definition-format-oadf-after-being-put-into-open-api-initiative-oai/" style="text-decoration:none;"><strong>READ MORE</strong></a>)
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2015/03/02/weekly-apireport-for-march-2nd-2015/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2015/03/02/visualizing-and-exploring-my-microservices-catalog-using-apisjson-with-swaggered/">Visualizing And Exploring My Microservices Catalog Using APIs.json With Swagger.ed</a></h3>
-        <span class="post-date">02 Mar 2015</span>
-        <p><a href="http://apisjson.org"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-discovery.png" alt="" width="125" align="right" /></a></p>
-<p>I'm just getting started exploring the ways to use <a href="http://apisjson.org">APIs.json</a>&nbsp;when it comes organize my new Docker fueled, micro services stack. I&rsquo;ve been <a href="http://alpha.apievangelist.com/2015/01/10/use-apisjson-to-organize-my-swagger-defined-apis-running-in-docker-containers/">using APIs.son to describe each micro service</a>, as well as define the overall collection of almost 20 micro services. I&rsquo;m using the include collection, as a <a href="http://alpha.apievangelist.com/2015/01/28/using-apisjson-for-my-microservice-navigation-and-discovery/">navigation for the loosely coupled stack of micro-services</a>, and my friend <span>Chris Spiliotopoulos (</span><a href="https://twitter.com/chefarchitect">@chefarchitect</a><span>)</span>, has done some more work with <a href="https://github.com/chefArchitect/swagger.ed">his Swagger.ed</a>, delivering some <a href="http://apisjson.org">APIs.json</a> goodness that is in alignment with where I want to take all of this.</p>
-<p>Adding to the <a href="http://apievangelist.com/2015/02/23/i-got-swaggered-last-week-and-now-i-am-seeing-api-visualizations/">discovery and visualization work he did for Swagger</a>, Chris enabled Swagger.ed to look for valid APIs.son files as well, so when you browse to any APIs.son, like the one I have for my <a href="https://kin-lane.github.io/master">micro services stack</a>, you see the little APIs.son search icon in the address bar.</p>
-<p><a href="https://kin-lane.github.io/master/apis.json"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apis-json-in-browser.png" alt="" width="90%" /></a></p>
-<p>When you click on the APIs.son search icon in the address bar, you get a very cool visualization. Its pretty basic at the moment, just a visual catalog of the APIs available in the include collection of my stack, but when you connect up with the Swagger visualization work he's already done, we could have a pretty cool API catalog for managing and exploring microservices.</p>
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apis-catalog.png" alt="" width="90%" /></p>
-<p>I have almost 20 micro-services listed, and Swagger.ed gives me the ability to navigate it in a very interactive way.  Whats next? We don&rsquo;t know&hellip;it is about exploration, and finding out the most meaningful way of exploring the APIs I deploy and aggregate into APIs.son collections.</p>
-<p>I can see having a visual catalog of all of my API design that I collect, then deploy, and evolve them as needed for various parts of my infrastructure or for my clients, into other sub-collections? Disconnected collections? Loosely coupled collections? Not sure how tight I want things, part of <a href="http://alpha.apievangelist.com/2015/01/28/how-much-api-surface-area-before-it-stops-being-micro/">the micro service definition for me</a> is the size of the network connecting the services, as well as the services theselves.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2015/03/02/visualizing-and-exploring-my-microservices-catalog-using-apisjson-with-swaggered/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
