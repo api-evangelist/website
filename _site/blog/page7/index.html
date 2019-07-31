@@ -129,6 +129,127 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/">Developing a Microservice to Orchestrate Long Running Background Server-Sent Events</a></h3>
+        <span class="post-date">19 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/68_174_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am working to understand the value that <a href="http://apis.how/streamdata">Streamdata.io</a> brings to the table, and one of the tools I am developing is a set of APIs to help me measure the difference in data received for normal API calls versus when they are proxied with Streamdata.io using Server-Sent Events (SSE) and JSON Patch. Creating an API to poll any 3rd party API I plug in is pretty easy and straightforward, but setting up a server setup to operate long running Server-Sent Events (SSE), managing for failure and keeping an eye on the results takes a little more consideration. Doing it browser side is easy, but server side removes the human aspect of the equation, which starts and stops the process.</p>
+
+<p>This post is just meant to just outline what I’m looking to build, and act as a set of project requirements for what I’m going to develop–it isn’t a guide to building it. This is just my way of working through my projects, while also getting content published on the blog ;-). I just need to work out the details of what I will need to run many different Server-Sent Events (SSE) jobs for long periods of time, or even continuously, and make sure nothing breaks, or at least minimize the breakages. Half of my project will be polling hundreds of APIs, while the other half of it will be proxy those same APIs, and making sure I’m receiving those updates continuously.</p>
+
+<p>I will need some basic APIs to operate each event stream I want to operate:</p>
+
+<ul>
+  <li><strong>Register</strong> - Register a new API URL I wish to run ongoing stream on.</li>
+  <li><strong>Start</strong> - Kick off a new stream for any single API I’m tracking on.</li>
+  <li><strong>Stop</strong> - Stop a stream from running for any single API I have streaming.</li>
+</ul>
+
+<p>Any API I deem worthy, and have successfully proxied with Streamdata.io will be registered, and operating as a long running background scripts via AWS EC2 instances I have deployed. This is the straightforward part of things. Next, I will need some APIs to monitor these long running scripts, to make sure they are doing what they should be doing.</p>
+
+<ul>
+  <li><strong>Status</strong> - Check the status of a long running script to make sure it is still running and doing what it is supposed to do.</li>
+  <li><strong>Logs</strong> - View the logs of an event that has been running to see each time it has executed, and what the request and response were.</li>
+  <li><strong>Notify</strong> - Adding a notification API to send a ping to either myself, or someone else response for a long running script to investigate further.</li>
+</ul>
+
+<p>I’m think that set of APIs should give me what I need to run these long running jobs. Each API will be executing command scripts that run in the background on Linux instances. Then I’m going to need a similar set of services to asses the payload, cache, and real time status of each API, keeping in line with <a href="http://apievangelist.com/2018/01/17/breaking-down-the-value-of-real-time-apis/">my efforts to break down the value of real time APIs</a>.</p>
+
+<ul>
+  <li><strong>Size</strong> - A service that processes each partial API response in the bucket and calculates the size of the response. If nothing changed, there was no JSON Patch response.</li>
+  <li><strong>Change</strong> - A service that determines if a partial API response has changed from the previous response from 60 seconds before, identifying the frequency of change. If nothing changed, there was no JSON Patch response.</li>
+</ul>
+
+<p>I have three goals with long running script microservice. 1) Monitor the real time dimensions of a variety of APIs over time. 2) Understand the efficiencies gained with caching and streaming over polling APIs, and 3) Potentially store the results on Amazon S3, which I will write about in a separate post. I will build an application for each of these purposes on top of these APIs, keeping the microservice doing one thing–processing long run scripts that receive Server-Sent Events (SSE) deliver via Streamdata.io proxies I’ve sent for APIs I’ve targeted.</p>
+
+<p>Next, I am going to get to work programming this service. I have a proof of concept in place that will run the long running scripts. I just need to shape it into a set of APIs that allow me to program against the scripts, and deliver these different use case applications I’m envisioning. Once I have done, I will run for a few months in beta, but then probably open it up as a Server-Sent (SSE) events as a service, that allows anyone to execute long running scripts on the server side. Others may not be interested in measuring the performance gains, but I am guessing they will be interested in storing the streams of response.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/01/18/docker-engine-api-has-openapi-download-at-top-of-their-api-docs/">Docker Engine API Has OpenAPI Download At Top Of Their API Docs</a></h3>
+        <span class="post-date">18 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/docker/docker-engine-openapi-download.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am a big fan API providers taking ownership of their OpenAPI definition, which enables API consumers to download a complete OpenAPI then import into any client tooling like Postman, using it to generate client SDKs, and getting up to speed regarding the surface area of an API. This is why I like to showcase API providers I come across who do this well, and occasionally shame API providers who don’t do it, and demonstrate to their consumers that they don’t really understand what OpenAPI definitions are all about.</p>
+
+<p>This week I am showcasing an API provider who does it well. I was on the hunt for an OpenAPI of the Docker Engine API, for use in a project I am consulting on, and was please to find that <a href="https://docs.docker.com/engine/api/v1.35/#">they have a button to download the OpenAPI for each version of the Docker Engine API right at the top of the page</a>. Making it dead simple for me, as an API consumer, to get up and running with the Docker API in my tooling. OpenAPI is about much more than just the API documentation, and something that should be a first class companion to ALL API documentation for EVERY API provider out there–whether or not you are a devout OpenAPI (fka Swgger) believer.</p>
+
+<p>The Docker API team just saved me a significant amount of time in tracking down another OpenAPI, which most likely would be incomplete. Let alone the amount of work that would be required to hand-craft one for my project. I was able to take the existing OpenAPI and publish to the team Github Wiki for a project I’m advising on. The team will be able to use the OpenAPI to import into their Postman Client and begin to learn about the Docker API, which will be used to orchestrate the containers they are using to operate their own microservices. A subset of this team will also be crafting some APIs that proxy the Docker API, and allow for localized management of each microservice’s underlying engine.</p>
+
+<p><a href="https://apievangelist.com/2018/01/08/i-created-an-openapi-for-the-hashicorp-consul-api/">I had to create the Consul OpenAPI for the team last week</a>, which took me a couple hours. I was pleased to see Docker taking ownership of their OpenAPI. This is a drum I will keep beating here on the blog, until EVERY API provider takes ownership of their OpenAPI definition, providing their consumers with a machine readable definition of their API. OpenAPI is much more than just API documentation, and is essential to making sense of what an API does, and then take that knowledge and quickly translate it into actual integration, in as short of time as possible. Don’t make integrating with your API difficult, reduce as much friction as possible, and publish an OpenAPI alongside your API documentation like Docker does.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/18/docker-engine-api-has-openapi-download-at-top-of-their-api-docs/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/01/17/five-apis-to-guide-you-on-your-way-to-the-data-dark-side/">Five APIs to Guide You on Your Way to the Data Dark Side</a></h3>
+        <span class="post-date">17 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/76_135_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I was integrating with <a href="https://dashboard.clearbit.com/docs#api-reference">the Clearbit API</a>, doing some enrichment of the API providers I track on, and I found their API stack pretty interesting. I’m just using the enrichment API, which allows me to pass it a URL, and it gives me back a bunch of intelligence on the organization behind. I’ve added a bookmarklet to my browser, which allows me to push it, and the enriched data goes directly into my CRM system. Delivering what it the title says it does–enrichment.</p>
+
+<p>Next up, I’m going to be using the Clearbit Discovery API to find some potentially new companies who are doing APIs in specific industries. As I head over the to the docs for the API, I notice the other three APIs, and I feel like they reflect the five stages of transition to the data intelligence dark side.</p>
+
+<ul>
+  <li><strong>Enrichment API</strong> - The Enrichment API lets you look up person and company data based on an email or domain. For example, you could retrieve a person’s name, location and social handles from an email. Or you could lookup a company’s location, headcount or logo based on their domain name.</li>
+  <li><strong>Discovery API</strong> - The Discovery API lets you search for companies via specific criteria. For example, you could search for all companies with a specific funding, that use a certain technology, or that are similar to your existing customers.</li>
+  <li><strong>Prospector API</strong> - The Prospector API lets you fetch contacts and emails associated with a company, employment role, seniority, and job title.</li>
+  <li><strong>Risk API</strong> - The Risk API takes an email and IP and calculates an associated risk score. This is especially useful for figuring out whether incoming signups to your service are spam or legitimate, or whether a payment has a high chargeback risk.</li>
+  <li><strong>Reveal API</strong> - Reveal API takes an IP address, and returns the company associated with that IP. This is especially useful for de-anonymizing traffic on your website, analytics, and customizing landing pages for specific company verticals.</li>
+</ul>
+
+<p>Your journey to the dark side begins innocently enough. You just want to know more about a handful of companies, and the data provided is a real time saver! Then you begin discovering new things, finding some amazing new companies, products, services, and insights. You are addicted. You begin prospecting full time, and actively working to find your latest fix. Then you begin to get paranoid, worried you can’t trust anyone. I mean, if everyone is behaving like you, then you have to be on your guard. That visitor to your website might be your competitor, or worse! Who is it? I need to know everyone who comes to my site. Then in the darkest depths of your binges you are using the reveal API and surveilling all your users. You’ve crossed to the dark side. Your journey is complete.</p>
+
+<p>Remember kids, this is all a very slippery slope. With great power comes great responsibility. One day you are a scrappy little startup, and the next your the fucking NSA. In all seriousness. I think their data intelligence stack is interesting. I do use the enrichment API, and will be using the discovery API. However, we do have to ask ourselves, do we want to be surveilling all our users and visitors. Do we want to be surveilled on every site we visit, and on every application we use? At some point we have to make sure and check how far towards the dark side we’ve gone, and ask ourselves, is this all really worth it?</p>
+
+<p><em><strong>P.S.</strong> This story reminds me I totally flaked on delivering a white paper to Clearbit on the topic of risk. Last year was difficult for me, and I got swamped….sorry guys. Maybe I’ll pick up the topic and send something your way. It is an interesting one, and I hope to have time at some point.</em></p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/17/five-apis-to-guide-you-on-your-way-to-the-data-dark-side/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/01/17/api-management-and-the-measurement-of-value-exchange/">API Management and the Measurement of Value Exchanged</a></h3>
+        <span class="post-date">17 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_500_0_max_1_1_2-0.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>The concept of API management <a href="https://apievangelist.com/2013/06/10/history-of-apis-mashery/">has been around for a decade now</a>, and is something that is now part of the fabric of the cloud with services like <a href="https://aws.amazon.com/api-gateway/">AWS API Gateway</a>. API management is about requiring all consumers of any API resource to sign up for any API access, obtain a set of keys that identify who they are, and pass these keys in with each API call they make from any application. Since every API call is logged, and every API call possesses these keys, it opens up the ability to understand exactly how your APIs are being used through reporting and analytics packages which come with all modern API management available today. This is the fundamentals of API management, allowing us to understand who is accessing our digital resources, and how they are putting them to use–in real time.</p>
+
+<p>The security of API management comes in with this balance of opening up access, being aware of who is accessing what, and being able to throttle or shut down the access of bad actors–more than it is ever about authentication, and requiring keys for all API calls. If you want access to any digital resources from a company, organization, institution, or government agency in a machine readable format, for use in any other web, mobile, or device application–you use the API. This allows ALL digital assets to be made available internally, to trusted partners, and even to the public, while still maintaining control over who has access to what, and what types of applications they are able to use them in. APIs introduce more control over our digital resources, not less–which is a persistent myth when it comes to web APIs.</p>
+
+<p>API management allows us to limit who has access to which APIs by putting each API into one or many “plans”. The concept of software as a service (SaaS) has dominated this discussion around plan access, establishing tiers of API access such as free, pro, and enterprise, or maybe bronze, silver, and platinum. Giving users different levels of access to APIs, often times depending on how much they are paying, or possibly depending upon the level of trust (ie. partners get access to more APIs, as well as higher rate limits). While this approach still persists, much of what we see lacks imagination, due to the rules of the road dictated by many API startup VC investors pulling the strings behind the scenes. When crafting API access plans you want to incentivize consumer behavior, but honestly startup culture, and VC dominance has limited API provider’s vision, and stagnated many of the conversations around what is possible with API management after a decade.</p>
+
+<p>When you are trying to scale a startup fast you need a narrow offering of API products. If you are operating a “real” business, or organization, institution, or government agency, your API plans will look much different, and you shouldn’t be emulating the startup world. We should be more concerned with value exchange between internal groups, with our partners, and potentially with 3rd party public developers. We should create API plans that incentivize, but not limit access, encouraging developers to innovate, while still generating sensible revenue around our digital resources we are making available. The reason many existing companies are struggling with their API programs is they are emulating startups, and not thinking bigger than the table Silicon Valley has set for us. API management is about measuring and rewarding value exchange, not rapidly growing your company so you can inflate your numbers, and sell your business to the highest bidder. That is so 2012!</p>
+
+<p>When you see API management being used to measure value exchange to its fullest you see all the HTTP verbs being used, and measured. Providers aren’t just providing GETs, measuring and charging for access. They are allowing for POST, PUT, and DELETE, and measuring that as well. If they are really progressive, they reward internal groups, partners, and 3rd party developers for the POSTs, PUTs, and DELETEs made. Incentivizing and then rewarding for desired behavior around valuable resources. POSTed a blog post? We’ll pay you $50.00. PUT 100 records, cleaning up addresses, we’ll pay you 50 cents per update. All you do is GET, GET, GET, well we’ll charge you accordingly, but if you also POST, and PUT, we’ll charge you a lower rate for your GETs, as well as apply credits to your account. API management shouldn’t be about three plans, and generating revenue, it should be about measuring the value exchange around ALL the data, content, media, and algorithmic exchanges that occurs on a daily basis.</p>
+
+<p>API management has done amazing things for allowing companies, organizations, institutions, and government agencies to develop an awareness around who is accessing their resources. Look at what the Census has done with their API, what Capital One is doing with their API program, and Oxford Dictionaries are doing with their API program. Noticed I didn’t mention any startups, or tech rockstars? API management isn’t just about revenue generation. Don’t let the limited imagination of the startup space dictate otherwise. Now that API management is part of the fabric of the cloud, let’s begin to realize its full potential. Let’s not restrict ourselves to just a handful of plans. Let’s use it to broadly measure the value exchange around all the digital resources we are publishing to the web, making them available internally, to our partners, and the public in a machine readable way, so that they can be used in any web, mobile, or device application.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/17/api-management-and-the-measurement-of-value-exchange/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/01/17/api-transit-basics-deprecation/">API Transit Basics: Deprecation</a></h3>
         <span class="post-date">17 Jan 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-deprecation-2.png" align="right" width="30%" style="padding: 15px;" /></p>
@@ -1395,123 +1516,6 @@ PHP, Python, Ruby, ActionScript (Flash), C#, Android, Objective-C, Scala, Java</
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/01/03/alexa-voice-skills-is-the-poster-child-for-your-enterprise-api-efforts/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/03/the-api-transit-basics-api-definitions/">API Transit Basics: API Definitions</a></h3>
-        <span class="post-date">03 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-definition.png" align="right" width="40%" style="padding: 15px;" /></p>
-
-<p><em>This is a series of stories I’m doing as part of <a href="http://basics.apievangelist.com/">my API Transit work</a>, trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I’m using a subway map visual, and experience to help map out the journey, which I’m calling <a href="http://basics.apievangelist.com/">API transit</a>–leveraging the verb form of transit, to describe what every API should go through.</em></p>
-
-<p>Defining an API is the first stop along any API journey. When I say definitions, I’m not just talking about OpenAPI (fka Swagger), and specifically definitions for the surface area of your API. I’m talking about defining your idea, your goals, and the standard aspects of doing business with APIs. By API definitions, I mean having a robust toolbox of definitions for everything that is going into your API operations, from standardized dates and currencies, to common data schema, and yes to making sure there is an active OpenAPI definition for every single one of your APIs.</p>
-
-<p>I’d say that 75% of the companies, organizations, institutions, and government agencies I’m talking with about APIs begin API development by coding. A very costly, and rigid approach to defining a solution to a problem. Many of the groups I know who are using OpenAPI in their operations still rely on it being generated from systems and code, and do not actually hand-define, or hand-craft the definitions for their APIs, which should be being applied across API operations, not just for delivering documentation. When it comes to establishing a robust API definition strategy for operations, I recommend starting with a handful of tools and concepts.</p>
-
-<ul>
-  <li><a href="https://www.openapis.org/">OpenAPI</a> - Ensuring there are OpenAPI definitions for ALL APIs / microservices.</li>
-  <li><a href="http://json-schema.org/">JSON Schema</a> - Ensuring there are robust JSON schema for all data in use.</li>
-  <li><a href="https://www.getpostman.com/docs/postman/collections/creating_collections">Postman Collections</a> - Postman’s proprietary format for defining APIs, which can be translated to and from OpenAPI.</li>
-  <li><a href="https://apimatic.io/transformer">API Transformer</a> - Opening up the ability to transform APIs across formats.</li>
-  <li>Multi-Format - Being able to speak XML, JSON, and YAML fluently and seamlessly across groups.</li>
-</ul>
-
-<p>There are many other tools to assist you in crafting, generating, managing, and evolving the definitions as part of your API operations. API definitions isn’t just one stop along this API journey, and I will be exploring ideas for how API definitions can be applied to each stop along this API journey, in a separate line of thought that runs parallel to what I consider to be my API Transit basics. These five areas represent what I think are the basics of API definitions for ANY API operations, and should be where any API provider begins their journey–by defining the moving parts of each API, and what it will do from define to deprecation.</p>
-
-<p>The biggest threat to properly defining APIs is too much automation, and thinking that they only apply to one stop of the API Transit process. OpenAPI is not just about generating documentation. JSON Schema is not just about completing your OpenAPI definition. Not all APIs are purely JSON, and teams should be multi-lingual when it comes to the definitions they use across API operations. API definitions are essential to not just delivering your APIs, but also communicating and supporting them, and evolving them as part of your road map. API definitions are essential to establishing healthy API operations, and without them, things will easily break down for a single API, and be near impossible to deliver APIs consistently at scale across any organization.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/03/the-api-transit-basics-api-definitions/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/02/my-evolving-definition-of-a-robust-and-diverse-api-toolbox/">My Evolving Definition Of A Robust And Diverse API Toolbox</a></h3>
-        <span class="post-date">02 Jan 2018</span>
-        <p>It is always telling when folks assume I mean REST when I say API. While the web dominates my definition of API, and REST is definitely a leading architectural style, these assumptions always define the people who bring them to the table, more than they ever do me. I’m in the business of studying how people are applying programmatic interfaces using the web. To reflect my research I’ve been evolving a diagram of my toolbox that I’ve been publishing as part of workshops, presentations, and some talks I’m preparing for 2018. It reflects what I’m seeing as the evolving API toolbox that I’m seeing companies working with, and a diversity in which I’m encouraging others to think about more, as we choose to ignore the polarizing forces in the API sector.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-toolbox/API+Toolbox.png" width="100%" style="padding: 15px;" /></p>
-
-<p>To set the tone for any API conversation I am participating in, I prefer to introduce the concept of the API toolbox including more tools than just REST, acknowledging that there are a growing number of tools in our API infrastructure toolbox which can be applied to different APIs, to solve a variety of problems and challenges we face. Also we need to be more honest about the fact that there are many legacy solutions still in use across large organizations, even as we consider adopting the latest in leading edge approaches to API deployment in newer projects.</p>
-
-<ul>
-  <li>HTTP - Leverage the web, and the HTTP standard across ALL API efforts.</li>
-  <li>SOAP - Acknowledging there are still a number of SOAP services in use.</li>
-  <li>RPC - Understand how and why RPC APIs still might be viable in production.</li>
-  <li>REST - Making REST, and a resource-centered approach the focus of the operations.</li>
-  <li>Microservices - Emphasis on independently deployable and module API services.</li>
-  <li>Verbs - Knowing, and putting to use HTTP verbs across API implementations.</li>
-  <li>Content-Type - Understanding the negotiation between XML, JSON, and other types.</li>
-  <li>Hypermedia - Considering how hypermedia design, and content types play a role.</li>
-  <li>GraphQL - Thinking about GraphQL when it comes to data intensive API projects.</li>
-  <li>HTTP/2 - Understanding and embracing the evolution of the HTTP standard.</li>
-  <li>gRPC - Considering two-speed APIs, and using gRPC for higher volume API implementations.</li>
-  <li>Webhooks - Seeing APIs as a two-way street, and pushing data to APIs as well as receiving.</li>
-  <li>Server-Sent Events (SSE) - Leveraging HTTP push technology to make things real time.</li>
-  <li>Websockets - Opening up two streams that allow for bi-directional API interactions.</li>
-  <li>PubSubHubbub - Considering a distributed publish-subscribe approach to API interactions.</li>
-  <li>Apache - Being aware of the Apache stack which includes Spark, Kafka, and other real time data solutions.</li>
-</ul>
-
-<p>While HTTP and REST are definitely the focal point of many API conversations I am in, SOAP and RPC are legacy realities we must accept are still getting the job done in many environments, and we shouldn’t be shaming the folks who own this infrastructure. At the same time I’m helping folks unwind this legacy infrastructure, I also find myself participating in discussions around event-driven architecture, streaming, and HTTP/2 which represent where API architecture is headed. I’m needing a toolbox that reflects this spectrum of API tooling, as well as where we’ve been, and find ourselves still supporting in 2018.</p>
-
-<p>I’m still evaluating the Apache stack, as well as GraphQL and gRPC, to better understand how they fit in my definition. This work, as well as part new partnership with <a href="http://streamdata.io">Streamdata.io</a> is pushing me to re-evaluate exactly what is real time and streaming using webhooks and server-sent events, alongside a more event-driven approach I am seeing emerge within many leading organizers. People love to say that APIs are done. I wish I could show how silly this way of thinking makes y’all look. The idea that using the web to exchange data, content, and algorithms in a machine readable formats is going anywhere is laughable. My objective is to keep tracking on the tools people are using to get this job done, and help folks ensure their toolbox is as robust and diverse as possible, not traffic in silly dogmatic fantasies about API trends and religions.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/02/my-evolving-definition-of-a-robust-and-diverse-api-toolbox/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/02/treating-all-apis-like-they-are-public/">Treating All APIs Like They Are Public</a></h3>
-        <span class="post-date">02 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/45_78_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I was talking with the Internal Revenue Service (IRS) about their internal API strategy the week before Christmas, sharing my thoughts on the strategy that they were pitching internally when it comes to the next phase of their API journey. One topic that kept coming up is the firm line of separate between public and private APIs, which you kind of get at an organization like the IRS. It isn’t really the type of organization you want to be vague about this line, making sure everyone understands where an API should be consumed, and where it should not be consumed.</p>
-
-<p>Even with that reality, I still made the suggestion that they should be treating ALL APIs like they are public. I clarified by saying you shouldn’t be getting rid of the hard line dictating whether or not an API is internal or external, but if you treat them all like they are public, and act like they are all under threat, you will be better off for it. This peaked their interest, was something they did not expect to hear from me, and was something they would be adding to their recommendations for the next version of their API strategy.</p>
-
-<p>The first benefit of treating your internal APIs like they are public is when it come to security, logging, and overall API management. You have the tools in place to catch any threats, and develop awareness regarding how an API is being used, both good and bad. While the threats might be minimized internally, developing the same awareness, and having the tools to identify who is using what, and respond accordingly will benefit operations. API security isn’t just about firewalls, it is about an awareness of who is using what.</p>
-
-<p>The next benefit is about the future of your APIs. If you treat APIs like they are public, and you ever want to make it public, you will be in much better shape. You will have proper authentication, management, logging, and security controls already in place. You can cross the line between internal and external with much less friction. When you are ready to work with partners on a project, the time to make resources available can be significantly reduced, making things more efficient and agile when it comes to working with partners.</p>
-
-<p>I get the hard line between internal and external. However I don’t get having two separate API strategies. Have one strategy. Treat everything like they are public, but then be very strict, and explicit about who has access to an API, and monitor, audit, analyze, and report on who has access to API resources in real time. These are web APIs. Let’s treat them all the same, and expect that there will be threats and misuse of varying degrees. Let’s treat all APIs equal, and reduce the chance people will become complacent with API management and security just because it is an “internal” API.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/02/treating-all-apis-like-they-are-public/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/02/the-national-transit-database-ntd-needs-to-be-an-api/">The National Transit Database (NTD) Needs To Be An API</a></h3>
-        <span class="post-date">02 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/government/federal-transit-agency/the-national-transit-database.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’ve been looking for sources of transit data as part of some research I’m doing with Streamdata.io. Like most industries I study as part of my API research, it is a mess. There is no single source of truth, lack of robust open source solutions, government PDFs acting as databases, and tech companies extracting as much value as they can, and giving as little in return as they possibly can. Todays frustration centers around the unfortunately common federal government PDF database, or more specifically, <a href="https://www.transit.dot.gov/ntd">the National Transit Database (NTD)</a>.</p>
-
-<p>In 2017, when you publish something to the web as a “database”, it should be machine readable. There is some valuable data in the agency profile reports for the 800+ transit agencies available in the database, but this information is locked up in PDFs. You can find machine readable, historic versions of this data up to 2015 in data.gov, but for 2016, and 2017, the data is only available in individual PDFs for each agency profile. To make things more difficult, the listing of transit agencies uses some Ajax voodoo for its pagination and detail pages, making it even harder to scrape, on top of rendering each agencies detail useless by storing it as a PDF.</p>
-
-<p>I understand why government is stuck in this mode. The systems they use only provide them with PDF as a their primary output. Staff hasn’t been trained on the importance of making data available in machine readable formats. People just don’t understand the negative impact they are making on the life of their data, and how it restricts people putting it to work. In some cases, people are fully aware of this, and want to limit how the data gets used, interpreted, keeping them as the definitive source of truth. I’m not saying this is what the Federal Transit Agency (FTA) is up to, but I’m saying it is the effect of their actions, which is having a chilling effect on folks like me using the valuable data to help communities served by these transit agencies.</p>
-
-<p>I emailed the FTA asking if they have a machine readable copy of the database. This information should be published by default as CSV to the agencies Github account. I’m sure the data is available in a spreadsheet somewhere, before it becomes a PDF. It wouldn’t be very hard to save this data as CSV and publish to Github, which could then be easily converted into JSON, or other machine readable formats. I’m happy with CSV. I’m just not happy with PDF being called a database. Database implies that I can put the data to work, and in its current format the National Transit Database (NTD) is’t usable as data–hence not a database. It is just too much work to get out of the PDFs and make usable again, forcing me to step away from my project to understand how communities are investing in transit–I am hoping I can find the data some other place.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/02/the-national-transit-database-ntd-needs-to-be-an-api/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

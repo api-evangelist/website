@@ -129,6 +129,103 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/11/17/my-base-yaml-for-starter-api-plans/">My Basic YAML For Starter API Plans</a></h3>
+        <span class="post-date">17 Nov 2017</span>
+        <p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_plans_pricing_tiers.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p><a href="http://plans.apievangelist.com/">I started developing a machine readable format for describing the API plans and pricing for leading API providers a few years back</a>. Eventually I’d like to see the format live alongside OpenAPI, Postman, and other machine readable API specifications within a single APIs.json index. I am looking to adequately describe the plans and pricing for APIs, which are often just as important as the technical details, in the same way we’ve describe the technical surface area of an API using OpenAPI for some years now. People love to tell me that I will never be able to do it, which only makes me want to do it more.</p>
+
+<p>I’m revisiting my work as part of work I’m doing on a clients project, which I’m also using to push forward my API portal and management toolbox. The project I’m working on has two API plans:</p>
+
+<p>1) Starter - The free level of access everyone gets when signing up for access to an API.
+2) Verified - A verified level of pay as you go usage once you have credit card on file.</p>
+
+<p>I’ve taken the common elements across these plans and described them in a YAML format which allows me to remix the elements into the two plans I currently have, while also allowing me to reuse them for possible future plans, helping keep my approach consistent.</p>
+
+<script src="https://gist.github.com/kinlane/e1bbbabe8f24c0aced4d41b45f2295d8.js"></script>
+
+<p>I’m using the plan elements in this YAML file to generate the plans and pricing page for each API. Generating two separate plan boxes, with the details, and elements of each plan. I keep all the moving parts of each plan defined as separate fields and collections so that I can reuse in any new plans. I also make use of the individual elements in comparison charts, and other pricing and plan related resources through an APIs portal. The specification isn’t perfect, but it provides me a starting point for considering how I make my API plans and pricing machine readable, and indexed as part of the <a href="http://apisjson.org/">APIs.json</a> for each of my projects.</p>
+
+<p>Next, I am taking API plan templates and auto-generating plans using AWS API Gateway. I’m going to play around with recreating some of the common plans we see for leading API providers out there using an existing gateway solution. Similar to generating the technical surface area of an API using AWS API Gateway, I’m looking to generate the business surface area of each API using the API Gateway in the same way. Definitely still a lot of work ahead of me when it comes to polishing my API plan specification format, but I feel like it is pretty good start, and after publishing a version for leading API providers, as well as some of the custom projects I’m working on, I think it will be a little more ready for prime time.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/17/my-base-yaml-for-starter-api-plans/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/16/the-three-stripe-openapi-vendor-extensions/">Three Stripe OpenAPI Vendor Extensions</a></h3>
+        <span class="post-date">16 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripes-openapi-vendor-extension.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>As part of my work on <a href="http://openapi.toolbox.apievangelist.com/">my OpenAPI toolbox</a> I am keeping an eye out for how leading API providers are using OpenAPI. One layer of this part of my research is understanding how teams are extending the OpenAPI specification, while also encouraging other companies to understand that they can extend the specification in the first place. I’m always surprised how many people I come across that say they do not use the specification because it doesn’t do everything they need. I alternatively feel like it is my responsibility to understand what the spec can do, and then bend it to do what I need it to using vendor extensions.</p>
+
+<p>I have been studying how <a href="https://github.com/stripe/openapi">payment provider Stripe has been crafting their OpenAPI</a> throughout the week, while also understanding how they are applying it across their platform operations. As part of their Github repository for managing the Stripe OpenAPI they share three vendor extensions they are using to evolve what is possible with OpenAPI:</p>
+
+<ul>
+  <li><strong>x-expandableFields</strong> - Resources include an x-expandableFields that contains a list of fields that are expandable by making an API request with an expand parameter. See expanding objects.</li>
+  <li><strong>x-polymorphicResources</strong> - Some API responses are “polymorphic” in that they might return multiple types of resources which is a case that OpenAPI can’t handle. In these cases the spec will reference a “synthetic” resource which is an aggregate of the properties common to all the possible resources. It will also include the field x-polymorphicResources which references those resources more precisely.</li>
+  <li><strong>x-resourceId</strong> - Resources include x-resourceId which is a canonical name for each resource. It can be used in conjunction with openapi/fixtures{2,3}.{json,yaml} to look up a sample representation (otherwise known as a “fixture”) of the resource.</li>
+</ul>
+
+<p>Some interesting extensions. The expandable fields, and resource id is pretty straight forward, but the polymorphic resources opens up some interesting questions when it comes to API design. It makes me want to learn more about the how and why Stripe does this with their API. Maybe it is just me, but I find OpenAPI a very useful tool for quantifying the design decisions that go into an API. I’m eager to learn more about how consistent providers are, as well as understanding where they deviated, and I find vendor extension are useful in revealing clues behind the decisions to deviate from common API design patterns.</p>
+
+<p>I am going to be spending a lot of time studying Stripe’s usage of OpenAPI. It is significant that top tier providers to share their OpenAPI on Github like Stripe does. It helps us learn more about the Stripe API, and the design and documentation decisions that have gone into the payment API. I wish more API providers would share their OpenAPI definition(s) via Github, and share any vendor extensions they have defined. A machine readable API definition on Github, with easy to find vendor extensions, across many API providers sounds like the beginning of a new generation of API discovery. One that can help drive the future of the OpenAPI Initiative (OAI) through real world usage, and shaping the OpenAPI specification road map through actively defining and sharing vendor extensions.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/16/the-three-stripe-openapi-vendor-extensions/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/16/the-information-you-get-when-allowing-developers-to-sing-up-for-api-using-github/">The Information You Get When Allowing Developers To Sign Up For An API Using Github</a></h3>
+        <span class="post-date">16 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-authentication-screenshot.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m a big Github user. I depend on Github for managing all my projects, and Github Pages for the presentation layer around all my research. When anything requires authentication, whether for accessing an API, or gaining access to any of my micro apps, I depend on Github authentication. <a href="https://gist.github.com/kinlane/00db3d871b615c8b1c43dbc60ae41f86">I have a basic script that I deploy regularly after setting up a Github OAuth application</a>, which I use to enable authentication for my API portals and applications, handling the OAuth dance, and returning me the information I need for my system.</p>
+
+<p>After a user authenticates I am left with access to the following fields: id, avatar_url, gravatar_id, url, html_url, followers_url, following_url, gists_url, starred_url, subscriptions_url, organizations_url, repos_url, events_url, received_events_url, type, site_admin, name, company, blog, location, email, hireable, bio, public_repos, public_gists, followers, following, created_at, updated_at, private_gists, total_private_repos, owned_private_repos, disk_usage, collaborators, two_factor_authentication, and plan. Not all these fields are filled out, and honestly I don’t care about most of them for my purposes, but it does provide an interesting look at what you get from Github, over a basic email and password approach to authentication.</p>
+
+<p>I’m just looking for any baseline information to validate someone is a human being when signing up. Usually a valid email is this baseline. However, I prefer some sort of active profile for a human being, and have chosen Github as the baseline. When anyone signs up I also quickly calculate some other considerations regarding how long they’ve had a Github account, how active it is, and some numbers regarding this history and activity. I don’t expect everyone to have a full blown public Github profile like I do, but if you are looking to use on of my APIs, or API-driven micro tools I’m looking for something more than just a valid email–I want some sign of life. I will be evolving this algorithm, and enforcing it in different ways at different times.</p>
+
+<p>I always hesitate using Github as the default login for my API portals and applications, but honestly I think it is a pretty low bar to expect folks to have a Github account. I feel like we should be raising the bar a little when it comes to who is accessing our resources online. The APIs and tooling I’m making available are mine, and I just want to make sure you are human, and are verifiable on some level, and I find that the links available as part of your Github profile provide me with more reliable and verifiable aspects of being human in the tech space. Making the fields returned as part of Github authentication pretty valuable for verifying humans in my self-service, and increasingly automated world.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/16/the-information-you-get-when-allowing-developers-to-sing-up-for-api-using-github/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/11/16/you-thinking-i-mean-rest-when-say-apis-is-about-your-limited-views-not-mine/">You Thinking I Mean REST When I Say API Is About Your Limited Views, Not Mine</a></h3>
+        <span class="post-date">16 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/kin-chesapeake-sun_light_dali.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m fascinated by the baggage people bring to the table when engaging in discussions around technology with me. A common opener for many conversations with season technologists centers around REST not penciling out as everyone thought, failing to be the catch-all solution, and will quickly move to how I feel about some new technology (GraphQL, gRPC, Kafka, other) making my work irrelevant. I wish I had some quick phrase to help folks understand how this line of questioning demonstrates their extremely limiting views of the tech sector, as well as my work with APIs, but alas I find silence usually does the job in these situations–allowing everyone to quickly move.</p>
+
+<p>For me, application programming interface, or API, is all about finding the right interface for programming against for a specific application. I’d say the closest things that anchors my belief system to REST, is that I tend to focus on leveraging the web when it comes to defining the web because it is low coast, usually well known, and avoids reinventing the wheel. I’m not a RESTafarian, and you will not find me online arguing the finer details of REST over other approaches. It just isn’t my style, and I leave it to ya’ll to work out these finer details, and share the stories about what is working, and what is not working in your operations.</p>
+
+<p>Your assumptions around what APIs means to me demonstrates your limited views, only partially because of the technological underpinnings. The technical details of API is only 1/3 of the equation for me, and the majority of my research and storytelling focuses on the business and politics of doing APIs, but I’m guessing you aren’t aware of this. I find that the technology definitely sets the tone for API implementations and conversations, but the ones that actually make a significant impact always transcend the technology, and help acknowledge, and understand the other aspects of operating online which is making doing APIs a good or bad thing. From your opening statements, I’m guessing our conversation won’t be transcending anything.</p>
+
+<p>I appreciate you taking a moment to share your limited view of APIs and what I do. You’ll have to excuse me for not having much to say, but after doing this for seven years I know that I will have little effect to shifting your limited views of what is API, and what it is that I do as the API Evangelist. I know that you feel pretty strongly REST APIs didn’t deliver, but I’m pretty busy helping folks understand how they can effectively manage their digital resources on the web, and securely share and provide access to their data, content, and algorithms using web technology. I don’t see the need for managing and moving our these digital bits going away anytime soon, and I find my time is better spent avoiding the political eddies that swirl at the edges of the API mainstream.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/16/you-thinking-i-mean-rest-when-say-apis-is-about-your-limited-views-not-mine/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/11/16/stripe-elements-and-how-we-organize-our-api-embeddables/">Stripe Elements And How We Organize Our API Embeddables</a></h3>
         <span class="post-date">16 Nov 2017</span>
         <p><a href="https://stripe.github.io/elements-examples/"><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripe-elements-grey-embeddable.png" align="right" width="45%" style="padding: 15px;" /></a></p>
@@ -1897,141 +1994,6 @@ application can meter for the number of users signed in or provisioned at a give
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/23/api-monetization-framework-introduced-by-aws-marketplace/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/20/api-management-dashboard-the-provider-view/">API Management Dashboard: The Provider View</a></h3>
-        <span class="post-date">20 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_atari_missle.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. I’ve taken a look at the API consumer account basics as well as their usage, and next I want to consider the view of all of this from the API provider vantage point. For both of my current projects, I’m needing to think about the UI elements that deliver on API management elements from the API provider perspective.</p>
-
-<p>To help me think though the UI elements needed for helping manage the essential elements of managing APIs I wanted to create a simple list of each screen that will be needed to get the job done. So far, I have the following X UI elements as part of my API management base:</p>
-
-<ul>
-  <li><strong>Creation</strong> - The landing page for account creation. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
-  <li><strong>Login</strong> - The page for logging back in after a user has registered. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
-  <li><strong>Dashboard</strong> - The landing page once an API provider is logged in – providing access to all aspects of API management.</li>
-  <li><strong>APIs</strong> - A list of APIs, with detail pages for managing each individual API definition.</li>
-  <li><strong>Plans</strong> - A list of API plans, with detail pages for managing each individual API plan definition.</li>
-  <li><strong>Accounts</strong> - A list of API consumer accounts, with detail pages for managing each individual API consumer.</li>
-  <li><strong>Usage</strong> -  - A list of API calls from logs, with tools for breaking down by API, plan, or consumer.</li>
-  <li><strong>Invoices</strong> - A list of all invoices that have been generated for a specific time period, across specific consumers. With a detail page for seeing individual invoice details.</li>
-</ul>
-
-<p>There may be more of these added to my current projects. Things like forgot password, and other aspects, but this gives me this visibility into the API consumer account, and usage aspects of the API management I’m trying deliver. These are the basic features any API management provider delivers, and represent the default areas of control an API provider should have over API consumption. It doesn’t have to be pretty, and have all the bells and whistles, but it should give enough to help API providers understand what is going on in real-time, and over a variety of time periods.</p>
-
-<p>My clients I refer to 3Scale, Tyk, Restlet and the other API management services that are available won’t have to reinvent the wheel here. It is my clients who are using AWS API Gateway, and developing seamless custom integrations I’m having to specify things at this level. My advice is to make use of existing providers whenever you can, but for this round of projects I’m putting AWS API Gateway to work, so I’m going to need to do a little more custom work on the API management front. When I come out of this I should have a suite of API definitions that can be imported into the AWS API Gateway, as well as some Jekyll page templates for delivering the UI functionality listed above. Augmenting the AWS API Gateway with essential API management features that should be present within any API operations.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/20/api-management-dashboard-the-provider-view/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/20/sell-your-api-gateway-api-through-the-aws-marketplace/">Selling Your AWS API Gateway Driven API Through The AWS Marketplace</a></h3>
-        <span class="post-date">20 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_diego_rivera1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I am getting intimate with AWS API Gateway. Learning about what it does, and what it doesn’t do. The gateway brings a number of essential API management elements to the table, like issuing keys, establishing plans, and enforcing rate limits. However, it also lacks many of the other active elements of API management like billing for usage, which is an important aspect of managing API consumption for API providers. With AWS, things tend to work like legos, meaning many of their services work together to deliver a larger picture, and I’ve been learning more about how AWS API Gateway works with the AWS Marketplace to deliver some of the business of API features I’m looking for.</p>
-
-<p><a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/sell-api-as-saas-on-aws-marketplace.html">Here is the blurb from the AWS API Gateway documentation regarding how you can setup AWS API Gateway to work with AWS Marketplace</a>, making your API available for sale as a SaaS service:</p>
-
-<blockquote>
-  <p>After you build, test, and deploy your API, you can package it in an API Gateway usage plan and sell the plan as a Software as a Service (SaaS) product through AWS Marketplace. API buyers subscribing to your product offering are billed by AWS Marketplace based on the number of requests made to the usage plan.<br /><br />
-To sell your API on AWS Marketplace, you must set up the sales channel to integrate AWS Marketplace with API Gateway. Generally speaking, this involves listing your product on AWS Marketplace, setting up an IAM role with appropriate policies to allow API Gateway to send usage metrics to AWS Marketplace, associating an AWS Marketplace product with an API Gateway usage plan, and associating an AWS Marketplace buyer with an API Gateway API key. Details are discussed in the following sections.<br /><br />
-To enable your customers to buy your product on AWS Marketplace, you must register your developer portal (an external application) with AWS Marketplace. The developer portal must handle the subscription requests that are redirected from the AWS Marketplace console.</p>
-</blockquote>
-
-<p>While it is not exactly the billing model I’m looking for in my API management layer currently, it provides a compelling look at selling your APIs in a marketplace setting. <a href="http://apievangelist.com/2017/09/08/cloud-marketplace-becoming-the-new-wholesale-api-discovery-platform/">There are a growing number of APIs available in the AWS marketplace</a>, but still less than a hundred from what I can tell. Smells like an opportunity for API providers to step up and publish their APIs. The linkage between AWS API Gateway usage plan and AWS Marketplace product makes a lot of sense when you think about having an APIs as a product focus for your organization. I will be writing more about this relationship in the future, as I think it reflects how we should be thinking about our API service composition, and how we craft our API usage plans.</p>
-
-<p>I’m going to setup one of my simple, more utility style APIs, like screen capture, or proper noun search, and deploy using AWS API Gateway, then publish as an AWS Marketplace product. I want to have a clear view of what it takes, and what the on-boarding process looks like for a consumer. Another thing I’m interested in doing, is how can I also offer a more wholesale version of these APIs. Meaning, I’m not metering their usage with AWS API Gateway and billing via AWS Marketplace. It will be a separate product that gets deployed in their AWS infrastructure as an EC2, RDS, and maybe AWS API Gateway, where they aren’t billed by usage, and billed by the implementation. This is a model I’ve been watching, considering, and thinking about for some time, but only now getting to where the public cloud infrastructure is able to support this type of API deployment and management. It will be interesting to see what I can make work.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/20/sell-your-api-gateway-api-through-the-aws-marketplace/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/20/api-manageent-dashboard-the-consumer-view/">API Management Dashboard: The Consumer View</a></h3>
-        <span class="post-date">20 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_constitution.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. I’ve taken a look at the API consumer account basics as well as their usage, and next I want to consider the view of all of this from the API provider vantage point. For both of my current projects, I’m needing to think about the UI elements that deliver on API management elements from both the API provider and consumer levels. I’ve already tackled the API provider view, next up is the API consumer view.</p>
-
-<p>To help me think though the UI elements needed for helping manage the essential elements of managing API consumption for developers I wanted to create a simple list of each screen that will be needed to get the job done. So far, I have the following X UI elements as part of my API management base:</p>
-
-<ul>
-  <li><strong>Creation</strong> - The landing page for developer account creation. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
-  <li><strong>Login</strong> - The page for logging back in after a developer has registered. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
-  <li><strong>Dashboard</strong> - The landing page once an API consumer is logged in – providing access to all aspects of their API access.</li>
-  <li><strong>Account</strong> - The ability to update developer account information.</li>
-  <li><strong>Key(s)</strong> - The ability to get the master set, or multiple copies of API keys.</li>
-  <li><strong>Plans</strong> - Viewing all available plans, with the ability to see which plan a consumer is part of and switch plans if relevant.</li>
-  <li><strong>Usage</strong> - See history of all API consumption by API and time period.</li>
-  <li><strong>Credit Card</strong> - The addition and updating of account credit card.</li>
-  <li><strong>Billing</strong> - See history of all invoices for API consumption.</li>
-</ul>
-
-<p>There may be more of these added to my current projects. Things like forgot password, and other aspects, but this gives me this visibility into the API consumer account, and usage aspects of the API management I’m trying deliver. These are the basic features any API management provider delivers, and represent the default areas of control an API provider should have over API consumption. It doesn’t have to be pretty, and have all the bells and whistles, but it should give each API consumer what they need to manage their access, consumption, and understand what they’ve consumed and been billed for.</p>
-
-<p>My clients I refer to 3Scale, Tyk, Restlet, and the other API management services that are available won’t have to reinvent the wheel here. It is my clients who are using AWS API Gateway, and developing seamless custom integrations which I’m having to specify things at this level. My advice is to make use of existing providers whenever you can, but for this round of projects I’m putting AWS API Gateway to work, so I’m going to need to do a little more custom work on the API management front. When I come out of this I should have a suite of API definitions that can be imported into the AWS API Gateway, as well as some Jekyll page templates for delivering the UI functionality listed above. Augmenting the AWS API Gateway with essential API management features that should be present within any coherent API operations.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/20/api-manageent-dashboard-the-consumer-view/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/20/api-developer-account-usage-basics/">API Developer Account Usage Basics</a></h3>
-        <span class="post-date">20 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. <a href="http://apievangelist.com/2017/10/20/api-developer-account-basics/">I spent some time thinking through the developer account basics</a>, and now I want to break down the aspects of API consumption and usage around these APIs and developer accounts. I want to to think about the moving parts of how we measure, quantify, communicate, and invoice as part of the API management process.</p>
-
-<p><strong>Having A Plan</strong>
-We have developers signed up, with API keys that they’ll be required to pass in with each API call they make. The next portion of API management I want to map out for my clients is the understanding and management of how API consumers are using resources. One important concept that I find many API providers, and would be API providers don’t fully grasp, is service composition. Something that requires the presence of a variety of access tiers, or API plans, which define the business contract we are making with each API providers. API plans usually have these basic elements:</p>
-
-<ul>
-  <li><strong>plan id</strong> - A unique id for the plan.</li>
-  <li><strong>plan name</strong> - A name for the plan.</li>
-  <li><strong>plan description</strong> - A description for the plan.</li>
-  <li><strong>plan limits</strong> - Details about limits of the plan.</li>
-  <li><strong>plan timeframe</strong> - The timeframe for limits applied.</li>
-</ul>
-
-<p>There can be more than one plan, and each plan can provide different types of access to different APIs. There might be plans for new users versus verified ones, as well as possibly partners. The why and how of each plan will vary from API provider to provider, but their are all essential to managing API usage. Something that needs to be well defined, in place, with APIs and consumers organized into their respective tiers. Once this is done, we can begin thinking about the next layer, logging.</p>
-
-<p><strong>Everything Is Logged</strong>
-Each call made to the API contains API key which identify the consumer, who should always be operating within a specific plan. Each API call is being logged as part of the web server, and ideally the API management layer, providing timestamped entries for every drop of APIs consumed. These logs are used across API management operations, providing a history of all usage that will be evaluated on a per API, as well as per API consumer level. If a request and response isn’t available in the API logs, then it didn’t happen.</p>
-
-<p><strong>Quantifying API Usage</strong>
-Every log entry recorded will have the keys for a specific API consumer, as well as the path of the API they are consuming. When this usage is viewed through the lens of the API plan an API consumer is operating within, you have the ability to quantify usage, and place a value on overall consumption by any time frame. This is the primary objective of API management, quantifying who is accessing API resources, and how much they are consuming. This is how valuable API resources are being secured, and in many situations monetized, using simple web APIs.</p>
-
-<p>API usage begins with quantifying what consumers have used, but then there are other dimensions that should be considered as well. For example, usage across API users for a single path, or group of paths. Also possibly usage across APIs and consumers within a particular plan. Then you can begin to look across time periods, regions, and other relevant information, providing a more complete picture of how APIs are being put to use. This awareness is why API providers are employing API management techniques, beyond what can be extracted from database logs, or just website or application analytics–providing a more wholesale view of how APIs are consumed.</p>
-
-<p><strong>Invoicing For Consumption</strong>
-Now that we have all API usage defined, and available through the lens of API plans, we have the option of invoicing for consumption. We know each call API consumers have made, and we have a rate specific for each API as part of the API plans each consumer is subscribed to. All we have to do is the math, and generate an invoice for the designated time period (ie. daily, weekly, monthly, quarterly). Invoicing doesn’t have to always be settled with cash, as consumption may be internally, with partners, and with a variety of public consumers. I’d also warn against thinking of consumption always costing the consumer, and sometimes it might be relevant to pay API some consumers for some of their usage–incentivizing a particular type of behavior that benefits a platform.</p>
-
-<p>Measuring, quantifying, and accounting for API consumption is the primary reason companies, organizations, institutions, and government agencies are implementing API management layers. It is how Amazon generates revenue from their Amazon Web Services. It is how Stripe, Twilio, Sendgrid, and other rockstar API providers generate the revenue behind their operations. It is how government agencies are understanding how the public is putting valuable public resources to work. API management is something that is baked into cloud platforms, with a variety of service providers available as well, providing a wealth of solutions for API providers to choose from.</p>
-
-<p>Next I will be looking at the API account and usage layers of API management from the view of API provider, as well as the API consumer via their developer area. Ideally, API management solutions are providing the dashboards needed for both sides of this equation, but in some of the projects I’m working on this isn’t available. There is no ready to go dashboard for API providers or consumers to look at when standing up an AWS API Gateway in front of an API, falling short when it comes to going the distance as an API management solution. You can define accounts, issue keys, establish plans and limit manage API consumption, but we need AWS CloudFront, and other services to deliver on API logging, authentication, and other common aspect of management–with API management dashboards being a custom thing when employing AWS for management. One consideration for why you might go with a more robust API management solution, beyond what an API gateway offers.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/20/api-developer-account-usage-basics/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

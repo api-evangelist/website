@@ -129,6 +129,154 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/07/10/github-serverless/">Github Serverless</a></h3>
+        <span class="post-date">10 Jul 2017</span>
+        <p><a href="https://octodex.github.com/daftpunktocat-thomas"><img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" align="right" width="30%" style="padding: 15px;" /></a></p>
+<p>I run the entire front-end of my online presence using Github. <a href="http://apievangelist.com/api-lifecycle/">All my API Evangelist research lives as open repositories on Github, with the website running Jekyll, hosted on Github Pages</a>. My front-end is all HTML, JavaScript, and CSS, that leverages YAML data, and displayed using <a href="https://shopify.github.io/liquid/">Liquid</a>. It provides me a nice way to offload the public side of my operations to Github.</p>
+
+<p>I am increasingly doing this with all of my data, by publishing it as YAML, and rendering a dynamic (static) API representation in JSON–all done with the same approach I’m using to publish my website(s). <a href="http://developer.apievangelist.com/">You can get at all of the data I use across my API research in a single API Evangelist developer portal</a>, which just aggregates all of the JSON APIs I’ve published across my network almost 100 Github repositories, and supporting sites.</p>
+
+<p>Another thing I’m experimenting with is publishing simple JavaScript functions to individual pages within Github repositories. These scripts do a range of things from pulling items I’ve curated from <a href="https://developer.feedly.com/">the Feedly API</a>, fresh data from Google Sheets that I am using as data stores, and a variety of other jobs across my network of research sites, data projects, and API tooling. Some of these scripts I’m running manually, while others I run on a variety of schedules using <a href="https://www.easycron.com">EasyCron</a>.</p>
+
+<p>The approach definitely has some significant limitations, but I find that I’m able to get quite a bit done with JavaScript by pulling data from external APIs and other feeds, and using each Github repo as storage, and the Github API as the read/write layer for this storage. I do not store any API keys, tokens, or other secrets in the Github repositories, I’m passing them all in via the URL, which isn’t the most secure, and could in theory be abducted in transit even though I’m using SSL–something I’d like to improve upon by passing a single token to unlock a private store. I have access to external systems via APIs, storage and compute via Github, and I can control everything through variety of functional JavaScripts I maintain using Github, and keep indexed using APIs.json.</p>
+
+<p>It is becoming a kind of poor man’s serverless. I’m going to keep polishing my approach. Get better with my responses, and my approach to reading and writing data schema to the data storage folder in each of my repositories, which can then be read statically using JSON APIs I’ve pushed from this data, using Liquid. It is a pretty scrappy approach to serverless, but done in a way that takes the servers out of the equation for me, offloading the front-end and back-end work for my network of sites to Github. I am not sure where I’m going with this. Sometimes I get better results from a more straightforward API implementation on my Amazon infrastructure, but I am finding some interesting use cases, and seeing another side-effect I am enjoying–it is making my serverless infrastructure forkable and usable by others.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/10/github-serverless/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/10/having-the-right-commications-pipeline-for-your-api-platform/">Having The Right Communications Pipeline For Your API Platform</a></h3>
+        <span class="post-date">10 Jul 2017</span>
+        <p><a href="https://matthewreinbold.com/2017/07/04/SiteUpdate/"><img src="https://s3.amazonaws.com/kinlane-productions/matts-blog.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>My friend Matthew Reinbold, formerly of Vox Pop, and now the Lead for the Capital One API Center of Excellence, as well as the maintainer of <a href="http://webapi.events/">web API events</a> has shifted <a href="https://matthewreinbold.com/2017/07/04/SiteUpdate/">his blogging platform to use Github, using Jekyll</a>. Ok, yawn, why is this news? Someone is shifting the underlying platform for their blog. Well, first Matt is one of the leading API practitioners in the space, who is also a storyteller. Second, his approach highlights a set of tools that other API providers should be considering for their API communications pipeline.</p>
+
+<p>Matt is using a pretty potent formula for his communications platform in my opinion, with a handful of essential ingredients:</p>
+
+<ul>
+  <li><strong><a href="https://github.com">Github</a></strong> - Using a Github repository as the open source folder for your website.</li>
+  <li><strong><a href="https://pages.github.com/">Github Pages</a></strong> - Using Github Pages to publish the front-end for your website.</li>
+  <li><strong><a href="https://jekyllrb.com/">Jekyll</a></strong> - The content management system that sits in the folder for your website.</li>
+  <li><strong><a href="https://www.cloudflare.com/">CloudFlare</a></strong> - The DNS and SSL front-end for your website, complete with analytics.</li>
+  <li><strong><a href="https://www.hover.com/">Hover</a></strong> - The registrar for the domain which you offload DNS management to CloudFlare.</li>
+</ul>
+
+<p>Matt is taking advantage of the benefits of static website development, which some of the benefits are, as Matt describes:</p>
+
+<ul>
+  <li><strong>SPEED</strong> - There’s no processing server side; posts have already been reduced to the essential atomic units of the web: HTML, Javascript, and CSS. There’s something poetic to me about that.</li>
+  <li><strong>Security</strong> - While not so much an issue with my own coded CMS, I lived in constant fear of missing a zero-day Wordpress exploit patch and finding myself, along with clients, compromised. Reducing the number of moving parts significantly decreases the places where something might go wrong.</li>
+  <li><strong>Hosting</strong> - Rather than having to find, research, and deploy to increasingly rare ColdFusion hosts (or port to another language), I can post my content to anywhere that supports HTTP/JS/CSS. hosting. This becomes very compelling given that Github Pages, one option, is free.</li>
+</ul>
+
+<p>This is the cheapest and quickest way for your API to get a blog stood up, and get publishing stories about the value your API is bringing to the table. This approach isn’t just limited to your developer portal or engineering team blog, this could be for partners, or any API related project that you are running. I publish a static Jekyll blog <a href="http://apievangelist.com/api-lifecycle/">for each area of my research</a>, and I try to always have one for each of my data, or API tooling project–telling the story of each project that is independent from the API Evangelist blog, providing a static log of everything that has happened.</p>
+
+<p>Github isn’t just a pipeline for code, it can be a pipeline for your communications and storytelling. It also can be a pipeline for your documentation, how-to-guides, and other resources. I’m happy to see Matt putting it to be use. Another thing I like about his post, other than him mentioning me ;-), is that he also mentioned the benefits of this approach over using Medium, which is something I’ve been advising API providers against for some time. In my opinion you are better off publishing your blog like Matt has, and then syndicating to Medium if you want. <a href="https://matthewreinbold.com/2017/07/04/SiteUpdate/">There is a lot more detail available on Matt’s story behind his new blog strategy</a>, I recommend heading over and learning from what he’s done.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/10/having-the-right-commications-pipeline-for-your-api-platform/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/10/being-first-with-any-technology-trend-is-hard/">Being First With Any Technology Trend Is Hard</a></h3>
+        <span class="post-date">10 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/iron-io/Iron-io-Platform_Diagram_V3-05.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><a href="https://www.iron.io/ich-bin-ein-evangelist/">I first wrote about Iron.io back in 2012</a>. The are an API-first company, and they were the first serverless platform. I’ve known the team since they first reached out back in 2011, and I consider them one of my poster children for why there is more to all of this than just the technology. Iron.io gets the technology side of API deployment, and they saw the need for enabling developers to go serverless, running small scalable scripts in the cloud, and offloading the backend worries to someone who knows what they are doing.</p>
+
+<p>Iron.io is what I’d consider to be a pretty balanced startup, slowly growing, and taking sensible amounts of funding they needed to grow their business. The primary area I would say that Iron.io has fallen short is when it comes to storytelling about what they are up to, and generally playing the role of a shiny startup everyone should pay attention to. They are great storytellers, but unfortunately the frequency and amplification of their stories has fallen short, allowing other strong players to fill the void–opening the door for Amazon to take the lion share of the conversation when it comes to serverless. Demonstrating that you can rock the technology side of things, but if you don’t also rock the storytelling and more theatrical side of things, there is a good chance you can come in second.</p>
+
+<p>Storytelling is key to all of this. I always love the folks who push back on me saying that nobody cares about these stories, the markets only care about successful strong companies–when it reality, IT IS ALL ABOUT STORYTELLING! Amazon’s platform machine is good at storytelling. Not just their serverless group, but the entire platform. They blog, tweet, publish press releases, whisper in reporter ears, buy entire newspapers, publish science fiction patents, conduct road shows, and flagship conferences. Each AWS platform team can tap into this, participate, and benefit from the momentum, helping them dominate the conversation around their particular technical niche.</p>
+
+<p>Being first with any technology trend will always be hard, but it will be even harder if you do not consistently tell stories about what you are doing, and what those who are using your platform are doing with it. Iron.io has been rocking it for five years now, and <a href="https://medium.com/travis-on-development/what-is-serverless-computing-and-why-is-it-important-3278b4ffe814">are continuing to define what serverless is all about</a>, they just need to turn up the volume a little bit, and keep doing what they are doing. I’ll own a portion of this story, as I probably didn’t do my share to tell more stories about what they are up to, which would have helped amplify their work over the years–something I’m working to correct with a little storytelling here on API Evangelist.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/10/being-first-with-any-technology-trend-is-hard/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/">Opportunity To Develop A Threat Intelligence Aggregation API</a></h3>
+        <span class="post-date">10 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/facing-cannon_copper_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I came across <a href="https://github.com/hslatman/awesome-threat-intelligence">this valuable list of threat intelligence resources</a> and think that the section on information sources should be aggregated and provided as a single threat intelligence API. When I come across valuable information repos like this my first impulse is to go through them, standardize and upload as JSON and YAML to Github, making all of this data forkable, and available via an API.</p>
+
+<p>Of course if I responded to every impulse like this I would never get any of my normal work done, and actually pay my bills. A second option for me is to put things out there publicly in hopes that a) someone will pay me to do the work, or b) someone else who has more time, and the rent paid will tackle the work. With this in mind, this list of sources should be standardized, and publish to Github and as an API:</p>
+
+<ul>
+  <li><a href="http://s3.amazonaws.com/alexa-static/top-1m.csv.zip" target="_blank">Alexa Top 1 Million sites</a> - Probable Whitelist of the top 1 Million sites from Amazon(Alexa).</li>
+  <li><a href="https://docs.google.com/spreadsheets/u/1/d/1H9_xaxQHpWaa4O_Son4Gx0YOIzlcBWMsdvePFX68EKU/pubhtml" target="_blank">APT Groups and Operations</a> - A spreadsheet containing information and intelligence about APT groups, operations and tactics.</li>
+  <li><a href="https://www.autoshun.org/" target="_blank">AutoShun</a> - A public service offering at most 2000 malicious IPs and some more resources.</li>
+  <li><a href="https://www.circl.lu/projects/bgpranking/" target="_blank">BGP Ranking</a> - Ranking of ASNs having the most malicious content.</li>
+  <li><a href="https://intel.malwaretech.com/" target="_blank">Botnet Tracker</a> - Tracks several active botnets.</li>
+  <li><a href="http://danger.rulez.sk/projects/bruteforceblocker/" target="_blank">BruteForceBlocker</a> - BruteForceBlocker is a perl script that monitors a server’s sshd logs and identifies brute force attacks, which it then uses to automatically configure firewall blocking rules and submit those IPs back to the project site, <a href="http://danger.rulez.sk/projects/bruteforceblocker/blist.php">http://danger.rulez.sk/projects/bruteforceblocker/blist.php</a>.</li>
+  <li><a href="http://osint.bambenekconsulting.com/feeds/c2-ipmasterlist.txt" target="_blank">C&amp;C Tracker</a> - A feed of known, active and non-sinkholed C&amp;C IP addresses, from Bambenek Consulting.</li>
+  <li><a href="http://cinsscore.com/list/ci-badguys.txt" target="_blank">CI Army List</a> - A subset of the commercial <a href="http://cinsscore.com/">CINS Score</a> list, focused on poorly rated IPs that are not currently present on other threatlists.</li>
+  <li><a href="http://s3-us-west-1.amazonaws.com/umbrella-static/index.html" target="_blank">Cisco Umbrella</a> - Probable Whitelist of the top 1 million sites resolved by Cisco Umbrella (was OpenDNS).</li>
+  <li><a href="https://intel.criticalstack.com/" target="_blank">Critical Stack Intel</a> - The free threat intelligence parsed and aggregated by Critical Stack is ready for use in any Bro production system. You can specify which feeds you trust and want to ingest.</li>
+  <li><a href="https://www.c1fapp.com/" target="_blank">C1fApp</a> - C1fApp is a threat feed aggregation application, providing a single feed, both Open Source and private. Provides statistics dashboard, open API for search and is been running for a few years now. Searches are on historical data.</li>
+  <li><a href="https://www.cymon.io/" target="_blank">Cymon</a> - Cymon is an aggregator of indicators from multiple sources with history, so you have a single interface to multiple threat feeds. It also provides an API to search a database along with a pretty web interface.</li>
+  <li><a href="https://intel.deepviz.com/recap_network.php" target="_blank">Deepviz Threat Intel</a> - Deepviz offers a sandbox for analyzing malware and has an API available with threat intelligence harvested from the sandbox.</li>
+  <li><a href="http://rules.emergingthreats.net/fwrules/" target="_blank">Emerging Threats Firewall Rules</a> - A collection of rules for several types of firewalls, including iptables, PF and PIX.</li>
+  <li><a href="http://rules.emergingthreats.net/blockrules/" target="_blank">Emerging Threats IDS Rules</a> - A collection of Snort and Suricata <i>rules</i> files that can be used for alerting or blocking.</li>
+  <li><a href="https://exonerator.torproject.org/" target="_blank">ExoneraTor</a> - The ExoneraTor service maintains a database of IP addresses that have been part of the Tor network.  It answers the question whether there was a Tor relay running on a given IP address on a given date.</li>
+  <li><a href="http://www.exploitalert.com/" target="_blank">Exploitalert</a> - Listing of latest exploits released.</li>
+  <li><a href="https://feodotracker.abuse.ch/" target="_blank">ZeuS Tracker</a> - The Feodo Tracker <a href="https://www.abuse.ch/" target="_blank">abuse.ch</a> tracks the Feodo trojan.</li>
+  <li><a href="http://iplists.firehol.org/" target="_blank">FireHOL IP Lists</a> - 400+ publicly available IP Feeds analysed to document their evolution, geo-map, age of IPs, retention policy, overlaps. The site focuses on cyber crime (attacks, abuse, malware).</li>
+  <li><a href="https://fraudguard.io/" target="_blank">FraudGuard</a> - FraudGuard is a service designed to provide an easy way to validate usage by continuously collecting and analyzing real-time internet traffic.</li>
+  <li><a href="http://hailataxii.com/" target="_blank">Hail a TAXII</a> - Hail a TAXII.com is a repository of Open Source Cyber Threat Intelligence feeds in STIX format. They offer several feeds, including some that are listed here already in a different format, like the Emerging Threats rules and PhishTank feeds.</li>
+  <li><a href="https://www.iblocklist.com/lists" target="_blank">I-Blocklist</a> - I-Blocklist maintains several types of lists containing IP addresses belonging to various categories. Some of these main categories include countries, ISPs and organizations. Other lists include web attacks, TOR, spyware and proxies. Many are free to use, and available in various formats.</li>
+  <li><a href="https://majestic.com/reports/majestic-million" target="_blank">Majestic Million</a> - Probable Whitelist of the top 1 million web sites, as ranked by Majestic. Sites are ordered by the number of referring subnets. More about the ranking can be found on their <a href="https://blog.majestic.com/development/majestic-million-csv-daily/" target="_blank">blog</a>.</li>
+  <li><a href="http://www.malshare.com/" target="_blank">MalShare.com</a> - The MalShare Project is a public malware repository that provides researchers free access to samples.</li>
+  <li><a href="http://www.malwaredomains.com/" target="_blank">MalwareDomains.com</a> -   The DNS-BH project creates and maintains a listing of domains that are known to be used to propagate malware and spyware. These can be used for detection as well as prevention (sinkholing DNS requests).</li>
+  <li><a href="https://www.metadefender.com/threat-intelligence-feeds" target="_blank">Metadefender.com</a> -   Metadefender Cloud Threat Intelligence Feeds contains top new malware hash signatures, including MD5, SHA1, and SHA256. These new malicious hashes have been spotted by Metadefender Cloud within the last 24 hours. The feeds are updated daily with newly detected and reported malware to provide actionable and timely threat intelligence.</li>
+  <li><a href="https://services.normshield.com" target="_blank">NormShield Services</a> -   NormShield Services provide thousands of domain information (including whois information) that potential phishing attacks may come from. Breach and blacklist services also available. There is free sign up for public services for continuous monitoring.</li>
+  <li><a href="http://www.openbl.org/lists.html" target="_blank">OpenBL.org</a> -   A feed of IP addresses found to be attempting brute-force logins on services such as SSH, FTP, IMAP and phpMyAdmin and other web applications.</li>
+  <li><a href="https://openphish.com/phishing_feeds.html" target="_blank">OpenPhish Feeds</a> - OpenPhish receives URLs from multiple streams and analyzes them using its proprietary phishing detection algorithms. There are free and commercial offerings available.</li>
+  <li><a href="https://www.phishtank.com/developer_info.php" target="_blank">PhishTank</a> - PhishTank delivers a list of suspected phishing URLs. Their data comes from human reports, but they also ingest external feeds where possible. It’s a free service, but registering for an API key is sometimes necessary.</li>
+  <li><a href="http://ransomwaretracker.abuse.ch/" target="_blank">Ransomware Tracker</a> - The Ransomware Tracker by <a href="https://www.abuse.ch/" target="_blank">abuse.ch</a> tracks and monitors the status of domain names, IP addresses and URLs that are associated with Ransomware, such as Botnet C&amp;mp;C servers, distribution sites and payment sites.</li>
+  <li><a href="https://isc.sans.edu/suspicious_domains.html" target="_blank">SANS ICS Suspicious Domains</a> - The Suspicious Domains Threat Lists by <a href="https://isc.sans.edu/suspicious_domains.html" target="_blank">SANS ICS</a> tracks suspicious domains. It offers 3 lists categorized as either <a href="https://isc.sans.edu/feeds/suspiciousdomains_High.txt" target="_blank">high</a>, <a href="https://isc.sans.edu/feeds/suspiciousdomains_Medium.txt" target="_blank">medium</a> or <a href="https://isc.sans.edu/feeds/suspiciousdomains_Low.txt" target="_blank">low</a> sensitivity, where the high sensitivity list has fewer false positives, whereas the low sensitivty list with more false positives. There is also an <a href="https://isc.sans.edu/feeds/suspiciousdomains_whitelist_approved.txt" target="_blank">approved whitelist</a> of domains. Finally, there is a suggested <a href="https://isc.sans.edu/block.txt" target="_blank">IP blocklist</a> from <a href="https://dshield.org">DShield</a>.</li>
+  <li><a href="https://github.com/Neo23x0/signature-base" target="_blank">signature-base</a> - A database of signatures used in other tools by Neo23x0.</li>
+  <li><a href="https://www.spamhaus.org/" target="_blank">The Spamhaus project</a> - The Spamhaus Project contains multiple threatlists associated with spam and malware activity.</li>
+  <li><a href="https://sslbl.abuse.ch/" target="_blank">SSL Blacklist</a> -   SSL Blacklist (SSLBL) is a project maintained by abuse.ch. The goal is to provide a list of “bad” SSL certificates identified by abuse.ch to be associated with malware or botnet activities. SSLBL relies on SHA1 fingerprints of malicious SSL certificates and offers various blacklists</li>
+  <li><a href="https://statvoo.com/dl/top-1million-sites.csv.zip" target="_blank">Statvoo Top 1 Million Sites</a> -   Probable Whitelist of the top 1 million web sites, as ranked by Statvoo.</li>
+  <li><a href="https://strongarm.io" target="_blank">Strongarm, by Percipient Networks</a> - Strongarm is a DNS blackhole that takes action on indicators of compromise by blocking malware command and control. Strongarm aggregates free indicator feeds, integrates with commercial feeds, utilizes Percipient’s IOC feeds, and operates DNS resolvers and APIs for you to use to protect your network and business. Strongarm is free for personal use.</li>
+  <li><a href="http://www.talosintelligence.com/aspis/" target="_blank">Talos Aspis</a> - Project Aspis is a closed collaboration between Talos and hosting providers to identify and deter major threat actors. Talos shares its expertise, resources, and capabilities including network and system forensics, reverse engineering, and threat intelligence at no cost to the provider.</li>
+  <li><a href="http://www.threatglass.com/" target="_blank">Threatglass</a> - An online tool for sharing, browsing and analyzing web-based malware. Threatglass allows users to graphically browse website infections by viewing screenshots of the stages of infection, as well as by analyzing network characteristics such as host relationships and packet captures.</li>
+  <li><a href="https://www.threatminer.org/" target="_blank">ThreatMiner</a> - ThreatMiner has been created to free analysts from data collection and to provide them a portal on which they can carry out their tasks, from reading reports to pivoting and data enrichment. The emphasis of ThreatMiner isn’t just about indicators of compromise (IoC) but also to provide analysts with contextual information related to the IoC they are looking at.</li>
+  <li><a href="https://virusshare.com/" target="_blank">VirusShare</a> - VirusShare.com is a repository of malware samples to provide security researchers, incident responders, forensic analysts, and the morbidly curious access to samples of malicious code. Access to the site is granted via invitation only.</li>
+  <li><a href="https://github.com/Yara-Rules/rules" target="_blank">Yara-Rules</a> -   An open source repository with different Yara signatures that are compiled, classified and kept as up to date as possible.</li>
+  <li><a href="https://zeustracker.abuse.ch/" target="_blank">ZeuS Tracker</a> -   The ZeuS Tracker by <a href="https://www.abuse.ch/" target="_blank">abuse.ch</a> tracks ZeuS Command &amp; Control servers (hosts) around the world and provides you a domain- and a IP-blocklist.</li>
+</ul>
+
+<p>Ideally, <a href="https://github.com/hslatman/awesome-threat-intelligence">each source on this list</a> would be publishing a forkable version of their data on Github and/or deploying a simple web API, but alas it isn’t the world we live in. Part of the process to standardardize and normalize the threat intelligence from all of these source would be to reach out to each provider, and take their temperature regarding working together to improve the data source by itself, as well as part of an aggregated set of data and API sources.</p>
+
+<p>Similar to what I’m trying to do across many of the top business sectors being impacted by APIs, we need to to work aggregating all the existing sources of threat intelligence, and begin identifying a common schema that any new player could adopt. We need an open data schema, API definition, as well as suite of open source server and client tooling to emerge, if we are going to stay ahead of the cybersecurity storm that has engulfed us, and will continue to surround us until we work together to push it back.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/07/07/when-json-schema-is-seen-as-power/">When JSON Schema Is Seen As Power</a></h3>
         <span class="post-date">07 Jul 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_sunday.jpg" align="right" width="40%" style="padding: 15px;" /></p>
@@ -1312,95 +1460,6 @@ Mobile</p>
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/06/16/making-your-api-available-in-marketplaces/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/16/serverless-blueprints-for-your-api/">Serverless Blueprints For Your API</a></h3>
-        <span class="post-date">16 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/lambda_find_box_blue_1.png" width="40%" align="right" style="padding: 15px" /></p>
-<p><a href="http://serverless.apievangelist.com/">Serverless</a> is spreading across the API sector, and is something that leading API providers are beginning to embrace as part of their operations. I saw an interesting example of this out of AWS and Box lately, with <a href="https://aws.amazon.com/blogs/aws/box-platform-on-aws-marketplace-lambda-blueprints-sample-code/">the announcement of Lambda blueprints and code for integrating with the Box API via the AWS platform</a>.</p>
-
-<p>The Box serverless blueprints show you how to call the Box APIs and connect a Box webhook to a Lambda function via the Amazon API Gateway–providing some pretty interesting use cases for using Box via serverless functions:</p>
-
-<ul>
-  <li><a href="https://medium.com/box-developer-blog/manage-user-authentication-with-box-platform-using-amazon-cognito-8828b5f1d1c9">Manage User Authentication with Box Platform using Amazon Cognito</a> – How to use Amazon Cognito to power a login page for application users.</li>
-  <li><a href="https://medium.com/box-developer-blog/add-deep-learning-based-image-recognition-to-your-box-app-with-amazon-rekognition-1878ab148b70">Add Deep Learning-based Image Recognition to your Box App with Amazon Rekognition</a> – How to build an image tagging application that is powered by Amazon Rekognition.</li>
-</ul>
-
-<p>They are some pretty basic use cases, but it is the approach that opens up an entirely new door for API integration for me–Serverless Development Kits (SDK). Every API providers should have a whole catalog of open source serverless scripts that are deployable to Lambda, and other serverless platforms. <a href="http://apievangelist.com/2016/09/12/where-is-the-deploy-to-aws-and-google-button/">Of course, there are one-click buttons deploy each individual script to the cloud platform of your choice</a>.</p>
-
-<p>I’m diving into the other side of this story for me, where Box is embracing a tighter coupling with the AWS platform as part of their operations. <a href="https://aws.amazon.com/marketplace/pp/B06XY1XHGV/?ref=_ptnr_awsblg">I am looking at how Box is providing a copy of the Box API for deployment on AWS</a>. This all reflects how I see things working in the future, where you can deploy individual API integration scripts, as well as deploy APIs to a serverless environment like this–empowering anyone to become both API consumer and provider via the AWS, or any other cloud ecosystem.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/16/serverless-blueprints-for-your-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/16/github-helping-set-the-bar-for-your-api-community-code-standards/">Github Helping Set The Bar For Your API Community Code Standards</a></h3>
-        <span class="post-date">16 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-community-standards.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p><a href="https://github.com/blog/2380-new-community-tools">Github has released an interesting new feature to help users better manage some of the community elements of the repositories they use to manage code, definitions, data, and content across API operations</a>. For each repository, you now have a community profile tab, where you’ll see a checklist showing how your project compares to Github recommended community standards.</p>
-
-<p>If you are lacking one of these common elements, it gives you an option to quickly add one of the missing pieces. I still have some repositories where I don’t properly have licensing dictated, even a handful without a README (I know). Almost none of my repositories have a code of conduct or contributing agreement. The new feature adds another task to my list of maintenance items I’ll be tackling to help standardize the projects I manage on Github (which is everything I do).</p>
-
-<p>I like where Github is going with this. <a href="http://portal.minimum.apievangelist.com/">It resembles what I am trying to do with API projects by identifying the common building blocks of API deployments, providing a checklist that API providers can follow when publishing their APIs–which is often done using Github</a>. One way that API providers can help standardize these common elements across groups is to create a working API portal prototype that is forkable on Github, <a href="https://apievangelist.com/2017/06/14/gsa-api-standards-with-working-prototype-api-and-portal/">similar to what the GSA is doing for the federal government with their working API prototype</a>.</p>
-
-<p>Most of the time API architects and eveloper just need a friendly reminder, or possibly a working example they can follow when it comes to standardizing how we deploy and manage the community elements of our API operations. I hope what Github is doing with their community standards baseline will keep evolving, spreading, and eventually be something that Github organizations can templatize, standardize, and define their own criteria regarding the minimum viable aspects of community operations for the repositories they have on Github.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/16/github-helping-set-the-bar-for-your-api-community-code-standards/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/15/zooming-out-to-the-100k-level-then-back-to-api-sea-level-with-openapi-and-apis-dot-json/">Zooming Out To The 100K Level Then Back To API Sea Level With OpenAPI And APIs.json</a></h3>
-        <span class="post-date">15 Jun 2017</span>
-        <p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/drone_control_sunset.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I’m wrestling with the different levels of conversations I’m having around <a href="https://openreferral.github.io/api-specification/definition/">my human services API work</a>. Some of my audience are more technical and are pushing for discussion at the granular level, while other parts of my audience are more about the business of things at the 100K. I appreciate these types of projects, but when there are many different conversations going on at many different levels, it is a lot of work to wrestle things into something coherent that everyone involved will appreciate.</p>
-
-<p>One day I’m thinking about which individual fields are required, then next I will considering how multiple human services API integrators will be syndicating and sharing information between clusters of human service API implementations. While I’m relying on Github, and Slack to facilitate conversations that going on, I am ultimately relying on <a href="https://www.openapis.org/">OpenAPI</a> and <a href="http://apisjson.org">APIs.json</a> to help me hammer out the contract that will speak to the developers at the granular level but can also communicate the business and political terms of the API contract.  It will describe which fields are required as well as describe the webhooks I need to define how to syndicate and share between implementations.</p>
-
-<p>OpenAPI is pretty focused on helping me with things happening at API sea level, but I’m exploring using APIs.json to help me organize conversations all the way up to the 100K foot level. Things like, where do I signup for my API keys, access partnership levels of access, find the terms of service, or possibly someone to contact and answer a question. Then using the OpenAPI I can publish documentation for developers to understand the surface area of the API (sea level), and while the APIs.json includes a pointer to this discussion, it also provides pointers to other discussions going on around support, communications, changes, privacy, security, so that I can generate documentation for business and partner stakeholders as well.</p>
-
-<p>I’m working on an example of doing this for <a href="https://openreferral.github.io/api-specification/definition/">my Open Referral Human Services API</a>. An APIs.json + OpenAPI that helps articulate what is happening with any single human services API implementation from sea level to 100K. The trick is I also need to articulate how this will work at scale across clusters of human services API implementations, allowing vendors and partners to syndicate and federate. With everything defined as a machine readable index (using APIs.json and OpenAPI), which can be used to generate very technical API documentation, as well as more business-friendly aspects of operations.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/15/zooming-out-to-the-100k-level-then-back-to-api-sea-level-with-openapi-and-apis-dot-json/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/15/a-community-approval-dimension-when-adding-updating-and-deleting-via-api/">A Community Approval Dimension When Adding, Updating, And Deleting Via API</a></h3>
-        <span class="post-date">15 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-community-join.png" align="right" width="30%" style="padding: 15px;" /></p>
-<p>One of the projects I’m working on as part my <a href="https://openreferral.github.io/api-specification/definition/">Human Services API</a> work is trying to define the layer that allows developers to add, update, and delete data via the API. We ultimately want to empower 3rd party developers, and external stakeholders to help curate and maintain critical human services data within a community, through trusted partners.</p>
-
-<p>The Human Services API allows for the reading and writing of organizations, locations, and services for any given area. I am looking to provide guidance on how API implementors can allow for POST, PUT, PATCH, and DELETE on their API, but require approval before any changing transaction is actually executed. Requiring the approval of an internal system administrator to ultimately give the thumbs up or thumbs down regarding whether or not the change will actually occur.</p>
-
-<p>A process which immediately begs for the ability to have multiple administrators or even possibly involving external actors. How can we allow organizations to have a vote in approving changes to their data? How can multiple data stewards be notified of a change, and given the ability to approve or disprove, logging every step along the way? Allowing any change to be approved, reviewed, audited, and even rolled back. Making public data management a community affair, with observability and transparency built in by default.</p>
-
-<p>I am doing research into different approaches to tackling this, ranging from community approaches like Wikipedia, to publish and subscribe, and other events or webhook models. I am looking for technological solutions to opening up approval to the API request and response structure, with accompanying API and webhook surface area for managing all aspects of the approval of any API changes. If you know of any interesting solutions to this problem I’d love to hear more, so that I can include in my research, future storytelling, and ultimately the specification for <a href="https://openreferral.org/">the Open Referral Human Services Data Specification and API</a>.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/15/a-community-approval-dimension-when-adding-updating-and-deleting-via-api/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

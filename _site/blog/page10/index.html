@@ -129,6 +129,141 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/10/20/api-management-dashboard-the-provider-view/">API Management Dashboard: The Provider View</a></h3>
+        <span class="post-date">20 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_atari_missle.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. I’ve taken a look at the API consumer account basics as well as their usage, and next I want to consider the view of all of this from the API provider vantage point. For both of my current projects, I’m needing to think about the UI elements that deliver on API management elements from the API provider perspective.</p>
+
+<p>To help me think though the UI elements needed for helping manage the essential elements of managing APIs I wanted to create a simple list of each screen that will be needed to get the job done. So far, I have the following X UI elements as part of my API management base:</p>
+
+<ul>
+  <li><strong>Creation</strong> - The landing page for account creation. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
+  <li><strong>Login</strong> - The page for logging back in after a user has registered. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
+  <li><strong>Dashboard</strong> - The landing page once an API provider is logged in – providing access to all aspects of API management.</li>
+  <li><strong>APIs</strong> - A list of APIs, with detail pages for managing each individual API definition.</li>
+  <li><strong>Plans</strong> - A list of API plans, with detail pages for managing each individual API plan definition.</li>
+  <li><strong>Accounts</strong> - A list of API consumer accounts, with detail pages for managing each individual API consumer.</li>
+  <li><strong>Usage</strong> -  - A list of API calls from logs, with tools for breaking down by API, plan, or consumer.</li>
+  <li><strong>Invoices</strong> - A list of all invoices that have been generated for a specific time period, across specific consumers. With a detail page for seeing individual invoice details.</li>
+</ul>
+
+<p>There may be more of these added to my current projects. Things like forgot password, and other aspects, but this gives me this visibility into the API consumer account, and usage aspects of the API management I’m trying deliver. These are the basic features any API management provider delivers, and represent the default areas of control an API provider should have over API consumption. It doesn’t have to be pretty, and have all the bells and whistles, but it should give enough to help API providers understand what is going on in real-time, and over a variety of time periods.</p>
+
+<p>My clients I refer to 3Scale, Tyk, Restlet and the other API management services that are available won’t have to reinvent the wheel here. It is my clients who are using AWS API Gateway, and developing seamless custom integrations I’m having to specify things at this level. My advice is to make use of existing providers whenever you can, but for this round of projects I’m putting AWS API Gateway to work, so I’m going to need to do a little more custom work on the API management front. When I come out of this I should have a suite of API definitions that can be imported into the AWS API Gateway, as well as some Jekyll page templates for delivering the UI functionality listed above. Augmenting the AWS API Gateway with essential API management features that should be present within any API operations.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/20/api-management-dashboard-the-provider-view/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/20/sell-your-api-gateway-api-through-the-aws-marketplace/">Selling Your AWS API Gateway Driven API Through The AWS Marketplace</a></h3>
+        <span class="post-date">20 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_diego_rivera1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am getting intimate with AWS API Gateway. Learning about what it does, and what it doesn’t do. The gateway brings a number of essential API management elements to the table, like issuing keys, establishing plans, and enforcing rate limits. However, it also lacks many of the other active elements of API management like billing for usage, which is an important aspect of managing API consumption for API providers. With AWS, things tend to work like legos, meaning many of their services work together to deliver a larger picture, and I’ve been learning more about how AWS API Gateway works with the AWS Marketplace to deliver some of the business of API features I’m looking for.</p>
+
+<p><a href="http://docs.aws.amazon.com/apigateway/latest/developerguide/sell-api-as-saas-on-aws-marketplace.html">Here is the blurb from the AWS API Gateway documentation regarding how you can setup AWS API Gateway to work with AWS Marketplace</a>, making your API available for sale as a SaaS service:</p>
+
+<blockquote>
+  <p>After you build, test, and deploy your API, you can package it in an API Gateway usage plan and sell the plan as a Software as a Service (SaaS) product through AWS Marketplace. API buyers subscribing to your product offering are billed by AWS Marketplace based on the number of requests made to the usage plan.<br /><br />
+To sell your API on AWS Marketplace, you must set up the sales channel to integrate AWS Marketplace with API Gateway. Generally speaking, this involves listing your product on AWS Marketplace, setting up an IAM role with appropriate policies to allow API Gateway to send usage metrics to AWS Marketplace, associating an AWS Marketplace product with an API Gateway usage plan, and associating an AWS Marketplace buyer with an API Gateway API key. Details are discussed in the following sections.<br /><br />
+To enable your customers to buy your product on AWS Marketplace, you must register your developer portal (an external application) with AWS Marketplace. The developer portal must handle the subscription requests that are redirected from the AWS Marketplace console.</p>
+</blockquote>
+
+<p>While it is not exactly the billing model I’m looking for in my API management layer currently, it provides a compelling look at selling your APIs in a marketplace setting. <a href="http://apievangelist.com/2017/09/08/cloud-marketplace-becoming-the-new-wholesale-api-discovery-platform/">There are a growing number of APIs available in the AWS marketplace</a>, but still less than a hundred from what I can tell. Smells like an opportunity for API providers to step up and publish their APIs. The linkage between AWS API Gateway usage plan and AWS Marketplace product makes a lot of sense when you think about having an APIs as a product focus for your organization. I will be writing more about this relationship in the future, as I think it reflects how we should be thinking about our API service composition, and how we craft our API usage plans.</p>
+
+<p>I’m going to setup one of my simple, more utility style APIs, like screen capture, or proper noun search, and deploy using AWS API Gateway, then publish as an AWS Marketplace product. I want to have a clear view of what it takes, and what the on-boarding process looks like for a consumer. Another thing I’m interested in doing, is how can I also offer a more wholesale version of these APIs. Meaning, I’m not metering their usage with AWS API Gateway and billing via AWS Marketplace. It will be a separate product that gets deployed in their AWS infrastructure as an EC2, RDS, and maybe AWS API Gateway, where they aren’t billed by usage, and billed by the implementation. This is a model I’ve been watching, considering, and thinking about for some time, but only now getting to where the public cloud infrastructure is able to support this type of API deployment and management. It will be interesting to see what I can make work.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/20/sell-your-api-gateway-api-through-the-aws-marketplace/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/20/api-manageent-dashboard-the-consumer-view/">API Management Dashboard: The Consumer View</a></h3>
+        <span class="post-date">20 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_constitution.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. I’ve taken a look at the API consumer account basics as well as their usage, and next I want to consider the view of all of this from the API provider vantage point. For both of my current projects, I’m needing to think about the UI elements that deliver on API management elements from both the API provider and consumer levels. I’ve already tackled the API provider view, next up is the API consumer view.</p>
+
+<p>To help me think though the UI elements needed for helping manage the essential elements of managing API consumption for developers I wanted to create a simple list of each screen that will be needed to get the job done. So far, I have the following X UI elements as part of my API management base:</p>
+
+<ul>
+  <li><strong>Creation</strong> - The landing page for developer account creation. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
+  <li><strong>Login</strong> - The page for logging back in after a developer has registered. Ideally, these are using OpenID / OAuth for major providers, eliminating the need for passwords.</li>
+  <li><strong>Dashboard</strong> - The landing page once an API consumer is logged in – providing access to all aspects of their API access.</li>
+  <li><strong>Account</strong> - The ability to update developer account information.</li>
+  <li><strong>Key(s)</strong> - The ability to get the master set, or multiple copies of API keys.</li>
+  <li><strong>Plans</strong> - Viewing all available plans, with the ability to see which plan a consumer is part of and switch plans if relevant.</li>
+  <li><strong>Usage</strong> - See history of all API consumption by API and time period.</li>
+  <li><strong>Credit Card</strong> - The addition and updating of account credit card.</li>
+  <li><strong>Billing</strong> - See history of all invoices for API consumption.</li>
+</ul>
+
+<p>There may be more of these added to my current projects. Things like forgot password, and other aspects, but this gives me this visibility into the API consumer account, and usage aspects of the API management I’m trying deliver. These are the basic features any API management provider delivers, and represent the default areas of control an API provider should have over API consumption. It doesn’t have to be pretty, and have all the bells and whistles, but it should give each API consumer what they need to manage their access, consumption, and understand what they’ve consumed and been billed for.</p>
+
+<p>My clients I refer to 3Scale, Tyk, Restlet, and the other API management services that are available won’t have to reinvent the wheel here. It is my clients who are using AWS API Gateway, and developing seamless custom integrations which I’m having to specify things at this level. My advice is to make use of existing providers whenever you can, but for this round of projects I’m putting AWS API Gateway to work, so I’m going to need to do a little more custom work on the API management front. When I come out of this I should have a suite of API definitions that can be imported into the AWS API Gateway, as well as some Jekyll page templates for delivering the UI functionality listed above. Augmenting the AWS API Gateway with essential API management features that should be present within any coherent API operations.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/20/api-manageent-dashboard-the-consumer-view/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/20/api-developer-account-usage-basics/">API Developer Account Usage Basics</a></h3>
+        <span class="post-date">20 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’m helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I’m looking to distill things down to the essential components needed to get the job done. <a href="http://apievangelist.com/2017/10/20/api-developer-account-basics/">I spent some time thinking through the developer account basics</a>, and now I want to break down the aspects of API consumption and usage around these APIs and developer accounts. I want to to think about the moving parts of how we measure, quantify, communicate, and invoice as part of the API management process.</p>
+
+<p><strong>Having A Plan</strong>
+We have developers signed up, with API keys that they’ll be required to pass in with each API call they make. The next portion of API management I want to map out for my clients is the understanding and management of how API consumers are using resources. One important concept that I find many API providers, and would be API providers don’t fully grasp, is service composition. Something that requires the presence of a variety of access tiers, or API plans, which define the business contract we are making with each API providers. API plans usually have these basic elements:</p>
+
+<ul>
+  <li><strong>plan id</strong> - A unique id for the plan.</li>
+  <li><strong>plan name</strong> - A name for the plan.</li>
+  <li><strong>plan description</strong> - A description for the plan.</li>
+  <li><strong>plan limits</strong> - Details about limits of the plan.</li>
+  <li><strong>plan timeframe</strong> - The timeframe for limits applied.</li>
+</ul>
+
+<p>There can be more than one plan, and each plan can provide different types of access to different APIs. There might be plans for new users versus verified ones, as well as possibly partners. The why and how of each plan will vary from API provider to provider, but their are all essential to managing API usage. Something that needs to be well defined, in place, with APIs and consumers organized into their respective tiers. Once this is done, we can begin thinking about the next layer, logging.</p>
+
+<p><strong>Everything Is Logged</strong>
+Each call made to the API contains API key which identify the consumer, who should always be operating within a specific plan. Each API call is being logged as part of the web server, and ideally the API management layer, providing timestamped entries for every drop of APIs consumed. These logs are used across API management operations, providing a history of all usage that will be evaluated on a per API, as well as per API consumer level. If a request and response isn’t available in the API logs, then it didn’t happen.</p>
+
+<p><strong>Quantifying API Usage</strong>
+Every log entry recorded will have the keys for a specific API consumer, as well as the path of the API they are consuming. When this usage is viewed through the lens of the API plan an API consumer is operating within, you have the ability to quantify usage, and place a value on overall consumption by any time frame. This is the primary objective of API management, quantifying who is accessing API resources, and how much they are consuming. This is how valuable API resources are being secured, and in many situations monetized, using simple web APIs.</p>
+
+<p>API usage begins with quantifying what consumers have used, but then there are other dimensions that should be considered as well. For example, usage across API users for a single path, or group of paths. Also possibly usage across APIs and consumers within a particular plan. Then you can begin to look across time periods, regions, and other relevant information, providing a more complete picture of how APIs are being put to use. This awareness is why API providers are employing API management techniques, beyond what can be extracted from database logs, or just website or application analytics–providing a more wholesale view of how APIs are consumed.</p>
+
+<p><strong>Invoicing For Consumption</strong>
+Now that we have all API usage defined, and available through the lens of API plans, we have the option of invoicing for consumption. We know each call API consumers have made, and we have a rate specific for each API as part of the API plans each consumer is subscribed to. All we have to do is the math, and generate an invoice for the designated time period (ie. daily, weekly, monthly, quarterly). Invoicing doesn’t have to always be settled with cash, as consumption may be internally, with partners, and with a variety of public consumers. I’d also warn against thinking of consumption always costing the consumer, and sometimes it might be relevant to pay API some consumers for some of their usage–incentivizing a particular type of behavior that benefits a platform.</p>
+
+<p>Measuring, quantifying, and accounting for API consumption is the primary reason companies, organizations, institutions, and government agencies are implementing API management layers. It is how Amazon generates revenue from their Amazon Web Services. It is how Stripe, Twilio, Sendgrid, and other rockstar API providers generate the revenue behind their operations. It is how government agencies are understanding how the public is putting valuable public resources to work. API management is something that is baked into cloud platforms, with a variety of service providers available as well, providing a wealth of solutions for API providers to choose from.</p>
+
+<p>Next I will be looking at the API account and usage layers of API management from the view of API provider, as well as the API consumer via their developer area. Ideally, API management solutions are providing the dashboards needed for both sides of this equation, but in some of the projects I’m working on this isn’t available. There is no ready to go dashboard for API providers or consumers to look at when standing up an AWS API Gateway in front of an API, falling short when it comes to going the distance as an API management solution. You can define accounts, issue keys, establish plans and limit manage API consumption, but we need AWS CloudFront, and other services to deliver on API logging, authentication, and other common aspect of management–with API management dashboards being a custom thing when employing AWS for management. One consideration for why you might go with a more robust API management solution, beyond what an API gateway offers.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/20/api-developer-account-usage-basics/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/10/20/api-developer-account-basics/">API Developer Account Basics</a></h3>
         <span class="post-date">20 Oct 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -1339,106 +1474,6 @@ sand before I can make my way to the beach. I felt this way over last Christmas 
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/02/open-api-definitions-for-entire-schema-org-vocabulary-dont-reinvent-wheel/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/29/2017-the-api-stack-for-disrupting-the-world/">The API Stack For Disrupting The World</a></h3>
-        <span class="post-date">29 Sep 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fredericksburg-downtown-flag.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I know people don’t understand why I’m so obsessed with APIs. Sometimes I ask the same question. When I began in 2010, it was 75% about my belief in the good that APIs can do, and 25% about pushing back on the bad things being done with APIs. In 2017, it is 15% about the good, and 85% about pushing back on the bad things that APIs can do. API driven platforms are being used for some pretty shady things these days, and increasingly they are a force for disruption, and not about making the world a better place.</p>
-
-<p>With this in mind, I wanted to take a moment to highlight the API stack right now that is being used to disrupt the world around us. These are the APIs that have shifted the political landscape in the U.S., and are being used to replicate, automate, and scale this disruption around the world.</p>
-
-<ul>
-  <li><strong>Facebook</strong> - The network effect is what brings the troublemakers to Facebook.They are on pace to have 2 billion active users. Something that has the potential to create quite a network effect when sharing stories and links, and when you seed that, target it, and grow it using the Facebook advertising engine–it makes for an excellent engine for disruption.</li>
-  <li><strong>Twitter</strong> - Twitter is a different beast. Less of the mainstream population than Facebook enjoys, but still a sizable, and very public audience. You can use the Twitter engine to spin things up, get people sharing, do some of the same sharing of stories and links, seeding, targeting, and growing with advertising. Often times the viral nature will spread to Facebook on take on a life of its own.</li>
-  <li><strong>Reddit</strong> - Now Reddit is entirely just an organic engine for disseminating information, which makes it great for propaganda, everything fake, and stoking the haters. The network effect that is Reddit, works very, very well will Twitter and Facebook, making for a perfect storm of virality that can spread like wildfire.</li>
-  <li><strong>WordPress</strong> - WordPress is where the news, and other websites get published. Because WordPress is an open source solution, it can be installed anywhere. It can be installed as many times as you want, with no costs beyond your hosting. Each of those installations have an API, which allow you to easily publish across hundreds or thousands of installations. When you slap advertising on these beasts, and plant your seeds across Facebook, Twitter, and Reddit, you make for a pretty efficient propaganda machine.</li>
-  <li><strong>Google</strong> - Google is the advertising engine for use on the WordPress sites. Google Adwords and Adsense are where disruptors buy the ads they need to plant seeds, but more importantly, it is how they generate revenue from the click throughs, and page views generated from the Facebook, Twitter, and Reddit network effects. Beyond advertising, the Google index provides another great way for the message to spread. All you have to do is play the SEO game, which is something that is greatly aided, and gamed, by the inbound traffic received from Facebook, Twitter, and Reddit.</li>
-</ul>
-
-<p>This is a pretty simplistic snapshot of the API surface area that is being used to mess with our realities right now, but if you break down the number API resources available for each of these platforms, you begin to see all the knobs and dials that can be turned at scale, to disrupt the world. I’ll write another post that walks through all the paths and endpoints, but I want to look at the problem from the 100K view, and point the finger at APIs. Without them, such a small group of people wouldn’t be able to do such a huge amount of damage.</p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/ellis-island-nazi-poster.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>The key driver of disruption here is the advertising engine brought to the table by Google, Facebook, and Twitter, which allows troublemakers to sew the seeds of destruction, as well as target, and grow revenue that supports their efforts. Secondarily, the network effect of Facebook, Twitter, and Reddit allow for the larger demographics to be stirred up, and mobilized, and potentially completing the loop for very disruptive memes. When advertising alone can’t drum up the attention needed, the API driven bot armies on Twitter, Facebook, and Reddit pick up the slack, get to work voting up, liking, sharing, until each platforms algorithms get triggered, and do the rest of the work. Not every message will enjoy the virality necessary to do damage, but every once in awhile the disruptors will hit the big time, and there message will take on a life of its own, with each platform doing the rest of the work for them.</p>
-
-<p>All of this would be possible without APIs. However, it would take armies of people to do. APIs are the bullhorn, the amplification, the automation needed to scale this type of disruption. In my next post I will publish a complete list of the knobs and dials that can be turned by the disruptors, to crank up the volume on their campaigns, and to direct their bot armies in support of a specific message, or to attack a target. All of the advertising and targeting engines for the platforms above have APIs, allow campaigns to be automated, and scaled for both spending, and generating revenue. WordPress APIs make the open source platform into a kind of printing press for the propaganda machine, with Facebook, Twitter, Google, and Reddit APIs acting as the messenger boys. APIs are the key element, that makes all of this seem so deafening at the moment.</p>
-
-<p>APIs are not evil, nor are they good, or even neutral. They are just a tool. They only do what the platform operators design them to do, and what the API consumer decides to put it to work doing. This is what has made APIs so interesting to me. When you set this stage, the possibilities for innovation have been great. However, recent history has shown, when advertising is the main revenue engine for both the platforms and consumers, the API providers are more than willing to ignore and look the other way at what is going on. This has made for a perfect storm of disruption at a scale we’ve never seen before, and because of the technical complexity, it is something that most people don’t even see happening. They can’t see the strings. They can’t see how their world is being disrupted. They don’t see their role in it. They don’t understand that things are being amplified and algorithmically distorted–they just think that is the way the world is.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/29/2017-the-api-stack-for-disrupting-the-world/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/29/developing-an-ability-to-repeat-the-same-api-stories-over-and-over-you-are-going-to-need-it/">Developing The Ability To Repeat The Same API Stories Over And Over</a></h3>
-        <span class="post-date">29 Sep 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/kinlane-whiteboard-api-bw-artsy.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>After seven years of telling stories on API Evangelist I’ve had to repeat myself from time to time. Honestly, I repeat myself A LOT. Hopefully I do it in a way that some of you don’t notice, or at least you are good at filtering the stories you’ve already heard from your feed timeline. My primary target audience is the waves of new folks to the world of APIs I catch with the SEO net I’m casting and working on a daily basis. Secondarily, it is the API echo chamber, and folks who have been following me for a while. I try to write stories across the spectrum, speaking to the leading edge API conversations, as well as the 101 level, and everything in between.</p>
-
-<p>Ask anyone doing API evangelism, advocacy, training, outreach, and leadership–and they’ll that you have to repeat yourself a lot. It is something you get pretty sick of, and if you don’t find ways to make things interesting, and change things up, you will burn out. To help tell the same story over and over I’m always looking for a slightly different angle. Let’s take API Meetups as an example. Writing a story about conducting an API Meetup has been done. Overdone. To write a new story about it I’ll evaluate what is happening at the Meetup that is different, or maybe the company, or the speaker. Diving into the background of what they are doing looking for interesting things they’ve done. You have to find an angle to wrap the boring in something of value.</p>
-
-<p>API documentation is another topic I cover over, and over, and over. You can only talk about static or interactive API documentation so much. Then you move into the process behind. Maybe a list of other supporting elements like code samples, visualizations, or authentication. How was the onboarding process improved? How the open source solution behind it simplifies the process. You really have to work at this stuff. You have to explore, scratch, dig through your intended topic until you find an angle that you truly care about. Sure, it has to matter to your readers, but if you don’t care about it, the chances of writing an interesting story diminishes.</p>
-
-<p>This process requires you to get to know a topic. Read other people’s writing on the topic. Study it. Spin it around. Dive into other angles like the company or people behind. Spend time learning the history of how we got here with the topic. If you do all this work, there is a greater chance you will be able to find some new angle that will be interesting. Also, when something new happens in any topical area, you have this wealth of knowledge about it, and you might find a new spark here as well. Even after all that, you still might not find what you are looking for. You still end up with many half finished stories in your notebook. It is just the way things go. It’s ok. Not everything you write has to see the light of day. Sometimes it will just be exercise for the next round of inspiration. That hard work you are experiencing to find a good story is what it takes to reach the point where you are able to discover the gems, those stories that people read, retweet, and talk about.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/29/developing-an-ability-to-repeat-the-same-api-stories-over-and-over-you-are-going-to-need-it/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/29/tyk-is-conducting-api-surgery-meetups/">Tyk Is Conducting API Surgery Meetups</a></h3>
-        <span class="post-date">29 Sep 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/tyk/tyk-api-surgery-singapore.jpeg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I was having one of my regular calls with <a href="https://tyk.io/">the Tyk team</a> as part of our partnership, discussing what they are up to these days. I’m always looking to understand their road map, and see where I can discover any stories to tell about what they are up to. A part of their strategy to build awarness around their API management solution that I found was interesting, was <a href="https://www.meetup.com/Tyk-Users-Singapore/photos/28111064/463973670/">the API Surgery event they held in Singapore last month</a>, where they brought together API providers, developers, and architects to learn more about how Tyk can help them out in their operations.</p>
-
-<p>API surgery seems like an interesting evolution in the Meetup formula. They have a lot of the same elements as a regular Meetup like making sure there was pizza and drinks, but instead of presentations, they ask folks to bring their APIs along, and they  walk them through setting up Tyk, and deliver an API management layer for their API operations. If they don’t have their own API, no problem. Tyk makes sure there are test APIs for them to use while learning about how things work. Helping them understand how to deliver API developer onboarding, documentation, authentication, rate limiting, monitoring, analytics, and the other features that Tyk delivers.</p>
-
-<p>They had about 12 people show up to the event, with a handful of business users, as well as some student developers. They even got a couple of new clients from the event. It seems like a good way to not beat around the bush about what an API service provider is wanting from event attendees, and getting down to the business at hand, learning how to secure and manage your API. I think the Meetup format still works for API providers, and service providers looking to reach an audience, but I like hearing about evolutions in the concept, and doing things that might bring out a different type of audience, and cut out some of the same tactics we’ve seen play out over the last decade.</p>
-
-<p>I could see Meetups like this working well at this scale. You don’t need to attract large audiences with this approach. You just need a handful of interested people, looking to learn about your solution, and understand how it solves a problem they have. Tyk doesn’t have to play games about why they are putting on the event, and people get the focus time with a single API service provider. Programming language meetups still make sense, but I think as the API sector continues to expand that API service provider, or even API provider focused gatherings can also make sense. I’m going to keep an eye on what Tyk is doing, and look for other examples of Meetups like this. It might reflect some positive changes out there on the landscape.</p>
-
-<p><em><strong>Disclosure:</strong> Tyk is an API Evangelist partner.</em></p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/29/tyk-is-conducting-api-surgery-meetups/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/09/29/api-design-industry-guide-graphql-a-query-language-for-apis/">API Design Industry Guide: GraphQL, A Query Language For APIs</a></h3>
-        <span class="post-date">29 Sep 2017</span>
-        <p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-graphql.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p><em>This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure.</em></p>
-
-<p>GraphQL is a query language designed by Facebook to build client applications using a flexible syntax and provide a system for describing the data requirements and interactions required by each application. GraphQL began as a Facebook project that soon began powering all their mobile applications. By 2015, became a formal specification. GraphQL provides a query language for your APIs that allows users to describe how they would like their API requests be fulfilled. The approach shifts the API design process to be more about request flexibility requiring API providers to design all API paths ahead of time. It opts for an augmented query language over investing in static schema that requires specific API paths.</p>
-
-<p>REST APIs focus on paths to your resources, but GraphQL is all about fields and data types, with everything accessed through a single API path. GraphQL does a better job of providing a more comprehensive approach access to data stored in a database by offloading design to the query layer for interpretation at query render time. The ability to define what data is returned opens up some interesting approaches to delivering resources, especially when it comes to potentially constrained network environments.</p>
-
-<p>When it comes to providing access to data used in responsive web and mobile applications, GraphQL can be successful in allowing application developers to get exactly what they need for an interface and nothing more. This can increase performance and give UI / UX designers more of a voice in what an API does. GraphQL has played a significant role in the evolution of React, Facebook’s open source framework for deploying user interfaces. React is well-known has achieved some significant traction in application development circles. This design approach to delivering data using APIs a natural fit for rapidly delivering web and mobile apps.</p>
-
-<p>GraphQL has seen some significant adoption beyond Facebook, notably at Github and Pinterest. GraphQL strengths become clear when it is used to deliver complex data stores quickly and efficiently by developers that require a greater level of control what data they need. While GraphQL is not traditional API design, it is an important design constraint to consider when planning the future of your API design practices and toolbox.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/09/29/api-design-industry-guide-graphql-a-query-language-for-apis/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
