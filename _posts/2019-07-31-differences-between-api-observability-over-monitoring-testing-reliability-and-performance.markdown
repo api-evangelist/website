@@ -10,7 +10,7 @@ tags:
   - Status
   - Performance
   - Observability
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/abe-lincoln-one-smooth-ride-file-00-00-07-91.jpg
+image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/35201856153_61bc075e4b-udnie.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 I’ve been watching the API observability coming out of Stripe, as well as Honeycomb for a couple years now. Then observability of systems is not a new concept, but it is one that progressive API providers have embraced to help articulate the overall health and reliability of their systems. In control theory, observability is a measure of how well internal states of a system can be inferred from knowledge of its external outputs. Everyone (except me) focuses only on the modern approaches for monitoring, testing, performance, status, and other common API infrastructure building blocks to define observability. I insist on adding the layers of transparency and communication, which I feel are the critical aspects of observability—-I mean if you aren’t transparent and communicative about your monitoring, testing, performance, and status, does it really matter?

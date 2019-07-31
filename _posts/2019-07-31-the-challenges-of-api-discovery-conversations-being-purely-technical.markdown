@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Discovery
   - Service Mesh
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/abe-lincoln-one-smooth-ride-file-00-00-07-91.jpg
+image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/containership-containership-blue-circuit-5.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 Ironically one of the biggest challenges facing API discovery on the web, as well as within the enterprise, is that most conversations focus purely on the technical, rather than the human and often business implications of finding and putting APIs to work. The biggest movement in the realm of API discovery in the last couple years has been part of the service mesh evolution of API infrastructure, and how your gateways “discover” and understand the health of APIs or microservices that provide vital services to applications and other systems. Don’t get me wrong, this is super critical, but it is more about satisfying a technical need, which is also being fueled by an investment wave-—it won’t contribute to much to the overall API discovery and search conversation because of it’s limited view of the landscape.
