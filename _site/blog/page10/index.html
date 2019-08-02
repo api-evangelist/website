@@ -129,6 +129,102 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/10/23/a-simple-api-with-aws-dynamodb-lambda-and-api-gateway/">A Simple API With AWS DynamoDB, Lambda, and API Gateway</a></h3>
+        <span class="post-date">23 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-dynamodb-lambda-api-gateway.png" align="right" width="45%" /></p>
+<p>I’ve setup a few Lambda scripts from time to time, but haven’t had any dedicated project time to push forward API serverless concepts. Over the weekend I had a chance to deploy a couple of APIs using AWS DynamoDB, Lambda, and API Gateway, lighting up some of the serverless API possibilities in my brain. Like most areas of the tech sector, I think the term is dumb, and there is too much hype, but I think underneath there is some interesting possibilities, at least enough to keep me playing around with things.</p>
+
+<p>Right now my primary API setup is Amazon Aurora (MysQL) backend, with API deployed on EC2, using Slim API framework in PHP. It is clean, simple, and gets the job done. I use 3Scale, or Github for the API management layer. This new approach simplifies some things for me, but definitely goes further down the AWS rabbit hole with the adoption of API Gateway and Lamdba, but also introduces some interesting enough benefits, that has me considering for use on some specific projects.</p>
+
+<p><strong>Identity and Access Management (IAM) Role</strong>
+The first thing you need to do to make the whole AWS thing work is setup a role using AWS IAM. I created a role just for this project, and added CloudWatchFullAccess, AmazonDynamoDBFullAccess, and AWSLambdaDynamoDBExecutionRole. I need this role to handle a bunch of management level things with the database, and logging. IAM is one of the missing aspects of hand crafting my APIs, and is why I am considering adopting on behalf of my customers, to help them get a handle on security.</p>
+
+<p><strong>Simple API Database Backends Using AWS DynamoDB</strong>
+I am a big fan of relational databases, mostly out of habit and experience. A client of mine is fluent in AWS DynamoDB, which is a simple NoSQL solution, so I felt compelled to ensure the backend database for their APIs spoke DynamoDB. It’s a pretty simple database, so I got to work creating an account table, and <a href="https://gist.github.com/kinlane/77d72d775dd423fa096193f836e21e4f">added a simple JSON object that contained 4 or 5 fields</a>, and fired up an index for the simple accounts database. The databases I’m creating are meant to track aspects of API management, so the tables won’t end up being too large, or have high performance requirements, regardless, DyanamoDB is a perfect backend for APIs, leaving me unsure why I don’t use the platform more often.</p>
+
+<p><strong>Using Lambda Functions Behind The API</strong>
+Instead of firing up an Amazon EC2 and hand crafting my API framework, I crafted a handful of serverless scripts in Node.js that will run as independent Lambda functions. I’m going to eventually need a whole bunch of functions, but to get me going with this new API I crafted four separate Lambda functions that I can use to drive the API:</p>
+
+<ul>
+  <li><a href="https://gist.github.com/kinlane/de34bdeaaddce336957db071773f6c1c"><strong>searchAccounts</strong></a> - Using the DynamoDB API scan method to query the table.</li>
+  <li><a href="https://gist.github.com/kinlane/56880c9282d9e8537a9a5826535c1d79"><strong>addAccount</strong></a> - Using the DynamoDB API putItem method to add a record to the table.</li>
+  <li><a href="https://gist.github.com/kinlane/d00a6698b637708d215a96d74b4ea070"><strong>updateAccount</strong></a> - Using the DynamoDB API udpateItem method to add a record to the table.</li>
+  <li><a href="https://gist.github.com/kinlane/96685141e5616f3ce0d2ea5a6eac7ea9"><strong>deleteAccount</strong></a> - Using the DynamoDB API deleteItem method to add a record to the table.</li>
+</ul>
+
+<p>Using the AWS SDK, I’m simply making calls to the DynamoDB API to get all the work done. I’m fluent in JavaScript, but not well versed in using Node.js, but it doesn’t take much energy to understand what is going on. The serverless functions are pretty utilitarian, and all that is unique is the DynamoDB method to call, and the JSON that is being sent with each call. It is something that is pretty straightforward, and easily replicated for other APIs. I will keep developing functions for my API, but now I can at least handle the basic CRUD functionality around my new database.</p>
+
+<p><strong>Publish An API Using AWS API Gateway</strong>
+The last piece of the puzzle for this story, is the API. Each Lambda function accepts and returns JSON, which is technically an API, but there is no management layer, or RESTful infrastructure present. The AWS API Gateway gives me the ability to craft API paths, with accompanying GET, POST, PUT, DELETE, and other methods. For each method I add, I’m given four options for connecting to my backend, either via HTTP call, create just a mock API, leverage other AWS service, or connect to a Lambda function. I quickly wire up a GET, POST, PUT, and DELETE to each of my functions, and add my API to an AWS API Gateway plan, requiring API keys, and limiting who can access what.</p>
+
+<p>I now have an accounts API which allows me to add, update, delete, and search for accounts using an API. My data is stored in DynamoDB, and served up via Lambda functions, through the API Gateway. It is secured. It is scalable. I can easily quantify what my database, functions, and gateway resource usage and costs will end up being. I get why folks are interested in serverless. It’s clean. It’s modular. It scales. It is very manageable. I don’t feel like it will be the answer for every API I need to deploy, but it does make sense for quickly deploying APIs for customers who are open to AWS, and need things to be secure, highly performant, and scalable.</p>
+
+<p>A serverless approach definitely takes the sysadmin load off a little bit. Especially when you depend on DynamoDB for the backend. DynamoDB, Lambda, and API Gateway offer a pretty nice stack that can auto tune and scale itself. I’m going to fire up five separate APIs using this new approach, and setup some monitoring and testing to see how it delivers, and maybe get a handle on the costs associated with operating an API like this. I still need to attach a custom domain, get a handle on logging with AWS CloudWatch, and some of the other aspects of API management using AWS API Gateway. However, it provides me with a nice look into the serverless world, and how I can use it to deploy, and manage APIs, but also use APIs to manage a serverless approach by publishing functions using the Lambda API, keeping things in tune with my API definitions stored on Github.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/23/a-simple-api-with-aws-dynamodb-lambda-and-api-gateway/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/23/api-monetization-framework-introduced-by-aws-marketplace/">API Monetization Framework As Introduced By AWS Marketplace</a></h3>
+        <span class="post-date">23 Oct 2017</span>
+        <p><a href="https://s3.amazonaws.com/awsmp-loadforms/SaaS+Seller+Integration+Guide.pdf"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-marketplace-aws-saas-seller-integration-guide.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>I am learning about <a href="https://aws.amazon.com/marketplace">the AWS Marketplace</a> through the lens of selling your API there, adding a new dimension to my <a href="http://monetization.apievangelist.com/">API monetization</a> and <a href="http://plans.apievangelist.com/">API plan</a> research. I’ve invested a significant amount of energy to try and standardize what I learn from studying the pricing and plans for the API operations of the leading API providers. As I do this work I regularly hear from folks who like to tell me how I’ll never be able to standardize and normalize this, and that it is too big of a challenge to distill down. I agree that things seem too big to tame at the current moment, but with API pioneers like AWS, who have been doing this stuff for a while, you can begin to see the future of how this stuff will play itself out.</p>
+
+<p>Amazon set into motion a significant portion of how we think about monetizing our API resources. The pay for what you use model has been popularized by Amazon, and continue to dominate conversations around how we generate revenue around our valuable digital assets. AWS has some of the most sophisticated pricing structure around their API services, as well as very mature pricing calculators, and have created markets around their resources (ie. spot instances for compute). You can see these concepts playing out in the guidance they offer software developers in their <a href="https://s3.amazonaws.com/awsmp-loadforms/SaaS+Seller+Integration+Guide.pdf">AWS Marketplace Seller Guide</a>, which helps sellers modify their SaaS products to sell them through AWS Marketplace using two models: 1) metering, or 2) contract. When you list or application in the AWS Marketplace you must choose between one of these models, but both involve thinking critically about your monetization strategy, which includes your hard costs, as well as where the value will lie with your customers–striking the balance necessary to operate a viable API business.</p>
+
+<p>According to the <a href="https://s3.amazonaws.com/awsmp-loadforms/SaaS+Seller+Integration+Guide.pdf">AWS Marketplace Seller Guide</a>, each SaaS application owner listing through AWS Marketplace has two options for listing and billing your software:</p>
+
+<ul>
+  <li>You can use the <strong>AWS Marketplace Metering Service</strong> to bill customers for SaaS application use.
+AWS Marketplace Metering Service provides a consumption monetization model in which customers are
+charged only for the number of resources they use in your application. The consumption model is similar to that for most AWS services. Customers pay as they go.</li>
+  <li>You can use the <strong>AWS Contract Service</strong> to bill customers in advance for the use of your software.
+AWS Marketplace Contract Service provides an entitlement monetization model in which customers pay
+in advance for a certain amount of usage of your software. For example, you might sell your customer a certain amount of storage per month for a year, or a certain amount of end-user licenses for some amount of time.</li>
+</ul>
+
+<p>No matter which plan you choose to deliver your API resources within, you will have to have the nuts and bolts of your API operations defined as part of your overall API monetization strategy. Each plan you offer needs to be derived from the hard costs involved with operations, but reflect the needs of your consumers. AWS gives you a handful of common dimensions for thinking through which type of plan you go with, and quantifying how you will be monetizing your API solution, in these nine areas:</p>
+
+<ul>
+  <li><strong>Users</strong> – One AWS customer can represent an organization with many internal users. Your SaaS
+application can meter for the number of users signed in or provisioned at a given hour. This category is appropriate for software in which a customer’s users connect to the software directly (for example, with customer-relationship management or business intelligence reporting).</li>
+  <li><strong>Hosts</strong> – Any server, node, instance, endpoint, or other part of a computing system. This category is appropriate for software that monitors or scans many customer-owned instances (for example, with performance or security monitoring). Your application can meter for the number of hosts scanned or provisioned in a given hour.</li>
+  <li><strong>Data</strong> – Storage or information, measured in MB, GB, or TB. This category is appropriate for software that manages stored data or processes data in batches. Your application can meter for the amount of data processed in a given hour or how much data is stored in a given hour.</li>
+  <li><strong>Bandwidth</strong> – Your application can bill customers for an allocation of bandwidth that your application provides, measured in Mbps or Gbps. This category is appropriate for content distribution or network interfaces. Your application can meter for the amount of bandwidth provisioned for a given hour or the highest amount of bandwidth consumed in a given hour.</li>
+  <li><strong>Request</strong> – Your application can bill customers for the number of requests they make. This category is appropriate for query-based or API-based solutions. Your application can meter for the number of requests made in a given hour.</li>
+  <li><strong>Tiers</strong> – Your application can bill customers for a bundle of features or for providing a suite of dimensions below a certain threshold. This is sometimes referred to as a feature pack. For example, you can bundle multiple features into a single tier of service, such as up to 30 days of data retention, 100 GB of storage, and 50 users. Any usage below this threshold is assigned a lower price as the standard tier. Any usage above this threshold is charged a higher price as the professional tier. Tier is always represented as an amount of time within the tier. This category is appropriate for products with multiple dimensions or support components. Your application should meter for the current quantity of usage in the given tier. This could be a single metering record (1) for the currently selected tier or feature pack.</li>
+  <li><strong>Units</strong> – Whereas each of the above is designed to be specific, the dimension of Unit is intended to be generic to permit greater flexibility in how you price your software. For example, an IoT product which integrates with device sensors can interpret dimension “Units” as “sensors”. Your application can also use units to make multiple dimensions available in a single product. For example, you could price by data and by hosts using Units as your dimension. With dimensions, any software product priced through the use of the Metering Service must specify either a single dimension or define up to eight dimensions, each with their own price.</li>
+</ul>
+
+<p>These dimensions reflect the majority of software services being sold out there today. Make sure you not get stuck thinking about one way of thinking, like just paying per API call. Think about how your different API plans might have one or more dimensions, beyond any single use case.</p>
+
+<ul>
+  <li><strong>Single Dimension</strong> - This is the simplest pricing option. Customers pay a single price per resource unit per hour, regardless of size or volume (for example, $0.014 per user per hour, or $0.070 per host per hour).</li>
+  <li><strong>Multiple Dimensions</strong> – Use this pricing option for resources that vary by size or capacity. For example, for host monitoring, a different price could be set depending on the size of the host. Or, for user-based pricing, a different price could be set based on the type of user (admin, power user, and read-only user). Your service can be priced on up to eight dimensions. If you are using tier-based pricing, you should use one dimension for each tier.</li>
+</ul>
+
+<p>Alll of these dimensions reflect <a href="http://plans.apievangelist.com/#BuildingBlocks">the common building blocks of API plans and pricing</a> which I’ve been tracking on for a number of years. It’s based upon Amazon selling their own APIs, as well as watching their customers price and sell their resources. Their pricing guide goes well beyond just APIs, and consider how you can generate revenue from any type of SaaS, but the dimensions they provide a place to start for ALL API providers, whether you are looking to sell them in the AWS Marketplace or not. You can find <a href="http://plans.apievangelist.com/#BuildingBlocks">even more dimensions on my API plan research</a>, but what Amazon provides will work for about 75% of the use cases out there today, and I’m looking to get you thinking critically your API monetization and plans, not provide you with too many options.</p>
+
+<p>There just aren’t too many examples like this available, when it comes to thinking through how to price your APIs. My friends over at <a href="https://algorithmia.com/">Algorithmia</a> have pushed the conversation forward some with their algorithmic API marketplace, but you just don’t see this level of maturity with the pricing of resources over at Azure, Google, or others yet. Amazon is the furthest along in this journey. They have the most experience, and the most data regarding what digital resources are worth, and how you can measure and meter access. I think it will take a number of years to mature, but I think by 2020 we will see more standardization in how we structure the pricing for the most common digital resources available online–even if it is just the APIs we are selling on Amazon.</p>
+
+<p>There will always be an infinite number of ways to charge for your APIs, but for many of the digital commodities that have become staples, we’ll see one or two common approaches stick. We’ll see less innovation in how we price the most used APIs, because those with market share will dictate the model that gets adopted, and others will emulate just so they can get a piece of the pie. As other API resources continue to mature, becoming digital commodities, we’ll see their pricing structure stabilize, and standardize to fit into market frameworks like we see emerging on the AWS platform. It will take time, but we’ll begin to see machine readable templates governing API pricing and plans, allowing cross platform markets to flourish, as API consumers figure out they can make API usage more predictable, budget-able, and orchestrate-able. We aren’t there yet, but you can see hints of this API economy over at AWS within their marketplace approach.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/23/api-monetization-framework-introduced-by-aws-marketplace/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/10/20/api-management-dashboard-the-provider-view/">API Management Dashboard: The Provider View</a></h3>
         <span class="post-date">20 Oct 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_atari_missle.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -1428,52 +1524,6 @@ sand before I can make my way to the beach. I felt this way over last Christmas 
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/02/the-ca-acquisition-of-runscope/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/02/learning-about-api-design-with-resources-that-matter-to-you/">Learning About API Design With Resources That Matter To You</a></h3>
-        <span class="post-date">02 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/hack-education/hack-education-data.png" align="right" width="35%" style="padding: 15px;" /></p>
-<p>I have been helping my partner in crime Audrey Watters (<a href="https://twitter.com/audreywatters">@audreywatters</a>) evolve her data work as part of her Columbia Spencer Education Journalism Fellowship, where she is publishing <a href="https://github.com/hack-education-data/">a wealth of ed-tech funding data to Github</a>. I worked with her to evolve the schema she is using across the Google Sheet, and YAML data stores she is using. Something that will autogenerate APIs (well dynamic JSON) based upon the filename, and the fields she chooses as part of her data stores. I just planted the seeds, and she has been cranking away creating repos, and building data stores since this last summer.</p>
-
-<p>She mentioned to me recently that she thought she had been being consistent in her naming conventions across her work, but had recently noticed some inconsistencies–realizing the importance of a consistent design and schema across the projects, something that really could become problematic at scale if she hadn’t caught. Luckily she was able to fix with some work, and was back on track. She isn’t as automated in the replication of data across her projects, but that is a good thing. It is forcing her to think more deeply about the naming and overall design of her static data APIs, which she uses across many repos, and displayed in a variety of lists, outlines, and stories she is telling around her work.</p>
-
-<p>Audrey has spent seven years listening to me talk about API design blah blah blah, but until she was working with her own data, that she cared about, she didn’t fully grasp some of the API design and implications of working with the access, reusability, and maintenance of data at scale. I’ve offered to automate more of the maintenance, replication, and standardization of data across her repos, but she’s declined. She said she finds it valuable to work with the design, and naming of her data stores, for us in different projects. She likes keeping here YAML data stores in separate repos, and then working with them individually in specific uses cases. As part of her work, she has a master ed-tech investor data store, and API of investors behind each ed-tech company, but then when she aggregates for her wider ed-tech funding, she replicates and names (or renames) it to fit that project.</p>
-
-<p>The work that she is doing is what I consider static API design, where the data is YAML or JSON on Github, but then each project dynamically generates JSON, XML, CSV, or RSS using Liquid, and then also generates HTML UI elements using Liquid as well. It’s not full blown API design, and deployment, but the same API definition, schema, and design concerns come into plays, because if she isn’t thoughtful, and consistent, she will feel the pain at some point at the client level (Liquid/Jekyll). Also, since she is doing this across so many repos, at some point she will begin feeling the pain at a pretty significant scale. However, since she actually cares about the data she is managing, it is important for her to take the time to do it right, and not always opt for automation, so that she can make sure she gets the design and schema details right. Something I wish more API data stewards would realize.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/02/learning-about-api-design-with-resources-that-matter-to-you/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/02/open-api-definitions-for-entire-schema-org-vocabulary-dont-reinvent-wheel/">OpenAPI Definitions For Entire Schema.org Vocabulary (Do Not Reinvent Wheel)</a></h3>
-        <span class="post-date">02 Oct 2017</span>
-        <p><a href="http://schema.org/"><img src="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png" align="right" width="30%" style="padding: 15px;" /></a></p>
-<p>I am preparing my Schema.org Github repo with a variety of data sources for use across my API tooling and other projects. I’m trying to get better at using a common vocabulary, and not reinventing the wheel each time I start a new project. Schema.org has the most robust vocabulary of shared schema available today–so I am using this existing work as the core of mine.</p>
-
-<p>I am slicing and dicing the schema.org vocabulary into several formats that I can use in my OpenAPI-driven editors, and other tooling. <a href="http://schema.org/docs/developers.html">I took the JSON-LD representation for Schema.org</a>, and published it as a simpler JSON schema definition format that can be applied quickly to an OpenAPI. It isn’t perfect, and you lose a lot of the semantics in the process, but I think it still provides an important base for API designers, architects, and developers to use across their OpenAPI.</p>
-
-<p>It is pretty verbose, with over 150K lines, but it provides a fairly consolidated view of Schema.org classes, in a single set of definitions:</p>
-
-<script src="https://gist.github.com/kinlane/a71967811f8ab47c15919d75107c5843.js"></script>
-
-<p>You can download a copy via the Gist, or you can find as <a href="https://github.com/api-evangelist-tools/schema-org/blob/master/_data/definitions/index.json">JSON</a> and <a href="https://github.com/api-evangelist-tools/schema-org/blob/master/_data/definitions/index.yaml">YAML</a> in my Github repository for this work. I’m going to be creating complete OpenAPI for each Schema.org class, as well as individual JSON schema files for each class. I just haven’t to figure out how to decouple them into individual files, yet containing all the relevant schema. I have the code, I just need to dial it in, when I have more time.</p>
-
-<p>I am going to use this Schema.org JSON schema as an autocomplete in my API design tooling, and using the OpenAPI as the source definition for my API deployment and testing tooling. I’ve been evolving <a href="http://org.open.referral.adopta.agency/">my Human Services Data API</a> work to easily generate server side code using OpenAPI, and I’m going to use the same code base to generate any Schema.org API, and deploy as AWS EC2 instance. I’m not looking to develop a SaaS solution, but a quick deploy solution for my own work, and projects I work on with my clients. As I work with more, I will validate that each of these definitions are 100% correct, and properly represent the Schema.org vocabulary.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/02/open-api-definitions-for-entire-schema-org-vocabulary-dont-reinvent-wheel/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

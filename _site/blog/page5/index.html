@@ -129,6 +129,186 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/04/02/the-api-stack-checklist/">The API Stack Profiling Checklist</a></h3>
+        <span class="post-date">02 Apr 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stacks.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p><a href="http://apievangelist.com/2018/04/02/my-api-stack-profiling-process/">I just finished a narrative around my API Stack profiling</a>, telling the entire story around the profiling of APIs for inclusion in the stack. To help encourage folks to get involved, I wanted to help distill down the process into a single checklist that could be implemented by anyone.</p>
+
+<p><strong>The Github Base</strong>
+Everything begins as a Github repository, and it can existing in any user or organization. Once ready, I can fork and publish as part of the API stack, or sync with an existing repository project.</p>
+
+<ul>
+  <li><strong>Create Repo</strong> - Create a single repository with the name of the API provider in plain language.</li>
+  <li><strong>Create README</strong> - Add a README for the project, articulating who the target is and the author.</li>
+</ul>
+
+<p><strong>OpenAPI Definition</strong>
+Profiling the API surface area using OpenAPI, providing a definition of the request and response structure for all APIs. <a href="https://github.com/OAI/OpenAPI-Specification">Head over to their repository if you need to learn more about OpenAPI</a>. Ideally, there is an existing OpenAPI you can start with, or other machine readable definition you can use as base–look around within their developer portal, because sometimes you can find an existing definition to start with. Next look on Github, as you never know where there might be something existing that will save you time an energy. However you approach, I’m looking for complete details on the following:</p>
+
+<ul>
+  <li><strong>info</strong> - Provide as much information about the API.</li>
+  <li><strong>host</strong> - Provide a host, or variables describing host.</li>
+  <li><strong>basePath</strong> - Document the basePath for the API.</li>
+  <li><strong>schemes</strong> - Provide any schemes that the API uses.</li>
+  <li><strong>produces</strong> - Document which media types the API uses.</li>
+  <li><strong>paths</strong> - Detail the paths including methods, parameters, enums, responses, and tags.</li>
+  <li><strong>definitions</strong> - Provide schema definitions used in all requests and responses.</li>
+</ul>
+
+<p>To help accomplish this, I often will scrape, and use any existing artifacts I can possible find. Then you just have to roll up your sleeves and begin copying and pasting from the existing API documentation, until you have a complete definition. There is never any definitive way to make sure you’ve profiled the entire API, but do your best to profile what is available, including all the detail the provider as shared. There will always be more that we can do later, as the API gets used more, and integrated by more providers and consumers.</p>
+
+<p><strong>Postman Collection</strong>
+Once you have an OpenAPI definition available for the API, import it into Postman. Make sure you have a key, and the relevant authentication environment settings you need. Then begin making API calls to each individual API path, making sure your API definition is as complete as it possibly can. This can be the quickest, or the most time consuming of the profiling, depending on the complexity and design of the API. The goal is to certify each API path, and make sure it truly reflects what has been documented. Once you are done, export a Postman Collection for the API, complimenting the existing OpenAPI, but with a more run-time ready API definiton.</p>
+
+<p><strong>Merging the Two Definitions</strong>
+Depending on how many changes occurred within the Postman portion of the profiling you will have to sync things up with the OpenAPI. Sometimes it is a matter of making minor adjustments, sometimes you are better off generating an entirely new OpenAPI from the Postman Collection using <a href="https://apimatic.io/transformer">APIMATIC’s API Transformer</a>. The goal is to make sure the OpenAPI and Postman are in sync, and working the same way as expected. Once they are in sync they can uploaded to the Github repository for the project.</p>
+
+<p><strong>Managing the Unkown Unknowns</strong>
+There will be a lot of unknowns along the way. A lot of compromises, and shortcuts that can be taken. Not every definition will be perfect, and sometimes it will require making multiple definitions because of the way an API provider has designed their API and used multiple subdomains. Document it all as Github issues in the repository. Use the Github issues for each API as the journal for what happened, and where you document any open questions, or unfinished dwork. Making the repository the central truth for the API definition, as well as the conversation around the profiling process.</p>
+
+<p><strong>Providing Central APIs.json Index</strong>
+The final step of the process is to create an APIs.json index for the API. <a href="http://apisjson.org/format.html">You can find a sample one over at the specification website</a>. When I profile an API using APIs.json I am always looking for as much detail as I possibly can, but for the purposes of API Stack profiling, I’m looking for these essential building blocks:</p>
+
+<ul>
+  <li><strong>Website</strong> - The primary website for an entity owning the API.</li>
+  <li><strong>Portal</strong> - The URL to the developer portal for an API.</li>
+  <li><strong>Documentation</strong> - The direct link to the API documentation.</li>
+  <li><strong>OpenAPI</strong> - The link to the OpenAPI I created on Github.</li>
+  <li><strong>Postman</strong> - The link to the Postman Collection I created on Github.</li>
+  <li><strong>Sign Up</strong> - Where do you sign up for an API.</li>
+  <li><strong>Pricing</strong> - A link to the plans, tiers, and pricing for an API.</li>
+  <li><strong>Terms of Service</strong> - A URL to the terms of service for an API.</li>
+  <li><strong>Twitter</strong> - The Twitter account for the API provider – ideally, API specific.</li>
+  <li><strong>Github</strong> - The Github account or organization for the API provider.</li>
+</ul>
+
+<p>If you create multiple OpenAPIs, and Postman Collections, you can add an entry for each API. If you break a larger API provider into several entity provider repositories, you can link them together using the include property of the APIs.json file. I know the name of the specification is JSON, but feel free to do them in YAML if you feel more comfortable–I do. ;-) The goal of the APIs.json is to provide a complete profile of the API operations, going beyond what OpenAPI and Postman Collections deliver.</p>
+
+<p><strong>Including In The API Stack</strong>
+You should keep all your work in your own Github organization or user account. Once you’ve created a repository you would like to include in the API Stack, and syndicate the work to the Streamdata.io API Gallery, APIs.io, APIs.guru, Postman Network, and others, then <a href="https://github.com/api-stack/api-stack/issues">just submit as a Github issue on the main repository</a>. I’m still working on the details of how to keep repositories in sync with contributors, then reward and recognize them for work their work, but for now I’m relying on Github to track all contributions, and we’ll figure this part out later. The API Stack is just the workbench for all of this, and I’m using it as a place to merge the work of many partners, from many sources, and then work to sensibly syndicate out validated API profiles to all the partner galleries, directories, and search engines.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/04/02/the-api-stack-checklist/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/04/02/my-api-stack-profiling-process/">My API Stack Profiling Process</a></h3>
+        <span class="post-date">02 Apr 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/logos/the-api-stack-entities-snapshot.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I am escalating conversations I’m having with folks regarding how I profile and understand APIs as part of my <a href="http://theapistack.com">API Stack</a> work. It is something I’ve been evolving for 2-3 years, as I struggle with different ways to attack and provide solutions within the area of API discovery. I want to understand what APIs exist out there as part of my industry research, but along the way I want to also help others find the APIs they are looking for, while also helping API providers get their APIs found in the first place. All of this has lead me to establish a pretty robust process for profiling API providers, and document what they are doing.</p>
+
+<p>As I shift my <a href="http://theapistack.com">API Stack</a> work into 2nd gear, I need to further formalize this process, articulate to partners, and execute at scale. Here is my current snapshot of what is happening whenever I’m profiling an API and adding it to my API Stack organization, and hopefully moving it forward along this API discovery pipeline in a meaningful way. It is something I’m continuing to set into motion all by myself, but I am also looking to bring in other API service providers, API providers, and API consumers to help me realize this massive vision.</p>
+
+<p><strong>Github as a Base</strong><br />
+Every new “entity” I am profiling starts with a Github repository and a README, within <a href="https://github.com/api-stack-providers">a single API Stack organization for providers</a>. Right now this is all automated, as I’m transition to this way of doing things at scale. Once in motion, each provider I’m profiling will become pretty manual. What I consider an “entity” is fluid. Most smaller API providers have a single repository, while other larger ones are broken down by line of business, to help reduce API definitions and conversation around APIs down to the smallest possible unit we can. Every API service provider I’m profiling gets its own Github repository, subdomain, set of definitions, and conversation around what is happening. Here are the base elements of what is contained within each Github repo.</p>
+
+<ul>
+  <li><strong>OpenAPI</strong> - A JSON or YAML definition for the surface are of an API, including the request, responses, and underlying schema using as part of both.</li>
+  <li><strong>Postman Collection</strong> - A JSON Postman Collection that has been exported from the Postman client after importing the complete OpenAPI definition, and full tested.</li>
+  <li><strong>APIs.json</strong> - A YAML definition of the surface area of an API’s operation, including home page, documentation, code samples, sign up and login, terms of service, OpenAPI, Postman Collection, and other relevant details that will matter to API consumers.</li>
+</ul>
+
+<p>The objective is to establish a single repository that can be continuously updated, and integrated into other API discovery pipelines. The goal is to establish a complete (enough) index of the APIs using OpenAPI, make it available in a more runtime fashion using Postman, and then indexing the entire API operations, including the two machine readable definitions of the API(s) using APIs.json. Providing a single URL in which you can ingest and use to integrate with an API, and make sense of API resources at scale.</p>
+
+<p><strong>Everything Is OpenAPI Driven</strong><br />
+My definition still involves OpenAPI 2.0, but it is something I’m looking to shift towards 3.0 immediately. Each entity will contain one or many OpenAPI definitions location in the underscore openapi folder. I’m still thinking about the naming and versioning convention I’m using, but I’m hoping to work this out over time. Each OpenAPI should contain complete details for the following areas:</p>
+
+<ul>
+  <li><strong>info</strong> - Provide as much information about the API.</li>
+  <li><strong>host</strong> - Provide a host, or variables describing host.</li>
+  <li><strong>basePath</strong> - Document the basePath for the API.</li>
+  <li><strong>schemes</strong> - Provide any schemes that the API uses.</li>
+  <li><strong>produces</strong> - Document which media types the API uses.</li>
+  <li><strong>paths</strong> - Detail the paths including methods, parameters, enums, responses, and tags.</li>
+  <li><strong>definitions</strong> - Provide schema definitions used in all requests and responses.</li>
+</ul>
+
+<p>While it is tough to define what is complete when crafting an OpenAPI definition, every path should be represented, with as much detail about the surface area of requests and responses. It is the detail that really matters, ensuring all parameters and enums are present, and paths are properly tagged based upon the resources being made available. The more OpenAPI definitions you create, the more you get a feel for what is a “complete” OpenAPI definition. Something that becomes real once you create a Postman Collection for the API definition, and begin to actually try and use an API.</p>
+
+<p><strong>Validating With A Postman Collection</strong><br />
+Once you have a complete OpenAPI definition defined, the next step is to validate your work in Postman. You simply import the OpenAPI into the client, and get to work validating that each API path actually works. You make sure you have an API key, and any other authentication requirements, and work your way through each path, validating that the OpenAPI is indeed complete. If I’m missing sample responses, the Postman portion of this API discovery journey is where I get them. Grabbing validated responses, anonymizing them, and pasting them back into the OpenAPI definition. Once I’ve worked my way through every API path, and verified it works, I then export a final Postman Collection for the API I’m profiling.</p>
+
+<p><strong>Indexing API Operations With APIs.json</strong><br />
+I upload my OpenAPI, and Postman Collection to the Github repository for the API entity I am targeting. Then I get to work on an APIs.json for the API. This portion of the process is about documenting the OpenAPI and Postman I just created, but then also doing the hard work of identifying everything else an API provider offers to support their operations, and will be needed to get up and running with API integration. Here are a handful of the essential building blocks I’m documenting:</p>
+
+<ul>
+  <li><strong>Website</strong> - The primary website for an entity owning the API.</li>
+  <li><strong>Portal</strong> - The URL to the developer portal for an API.</li>
+  <li><strong>Documentation</strong> - The direct link to the API documentation.</li>
+  <li><strong>OpenAPI</strong> - The link to the OpenAPI I created on Github.</li>
+  <li><strong>Postman</strong> - The link to the Postman Collection I created on Github.</li>
+  <li><strong>Sign Up</strong> - Where do you sign up for an API.</li>
+  <li><strong>Pricing</strong> - A link to the plans, tiers, and pricing for an API.</li>
+  <li><strong>Terms of Service</strong> - A URL to the terms of service for an API.</li>
+  <li><strong>Twitter</strong> - The Twitter account for the API provider – ideally, API specific.</li>
+  <li><strong>Github</strong> - The Github account or organization for the API provider.</li>
+</ul>
+
+<p>This list represents the essential things I’m looking for. I have almost 200 other building blocks I document as part of API operations ranging from SDKs to training videos. The presence of these building blocks tell me a lot about the motivations behind an API platform, and send off a wealth of signals that can be tuned into by humans, or programmatically to understand the viability and health of an API.</p>
+
+<p><strong>Continuously Integratable API Definition</strong><br />
+Now we should have the entire surface area of an API, and it’s operations defined in a machine readable format. The APIs.json, OpenAPI, and Postman can be used to on-board new developers, and used by API service providers looking to provides valuable services to the space. Ideally, each API provider is involved in this process, and once I have a repository setup, I will be reaching out to each provider as part of the API profiling process. Even when API providers are involved, it doesn’t always mean you get a better quality API definition. In my experience API providers often don’t care about the detail as much as some consumers and API service providers will. In the end, I think this is all going to be a community effort, relying on many actors to be involved along the way.</p>
+
+<p><strong>Self-Contained Conversations About Each API</strong><br />
+With each entity being profiled living in its own Github repository, it opens up the opportunity to keep API conversation localized to the repository. I’m working to establish any work in progress, and conversations around each APIs definitions within the Github issues for the repository. There will be ad-hoc conversations and issues submitted, but I’ll be also adding path specific threads that are meant to be an ongoing thread dedicated to profiling each path. I’ll be incorporating these threads into tooling and other services I’m working with, encouraging a centralized, but potentially also distributed conversation around each unique API path, and its evolution. Keeping everything discoverable as part of an API’s definition, and publicly available so anyone can join in.</p>
+
+<p><strong>Making Profiling A Community Effort</strong><br />
+I will repeat this process over and over for each entity I’m profiling. Each entity lives in its own Github repository, with the definition and conversation localized. Ideally API providers are joining in, as well as API service providers, and motivated API consumers. I have a lot of energy to be profiling APIs, and can cover some serious ground when I’m in the right mode, but ultimately there is more work here than any single person could ever accomplish. I’m looking to standardize the process, and distribute the crowdsourcing of this across many different Github repositories, and involve many different API service providers I’m working with to ensure the most meaningful APIs are being profiled, and maintained. Highlighting another important aspect of all of this, and the challenges to keep API definitions evolving, soliciting many contributions, while keeping them certified, rated, and available for production usage.</p>
+
+<p><strong>Ranking APIs Using Their Definitions</strong><br />
+Next, I’m ranking APIs based upon a number of criteria. <a href="http://apievangelist.com/2015/10/31/how-are-we-going-to-create-the-standard-and-poors-and-moodys-for-the-api-economy/">It is a ranking system I’ve slowly developed over the last five years</a>, and is something I’m looking to continue to refine as part of this API Stack profiling work. Using the API definitions, I’m looking to rate each API based upon a number of elements that exist within three main buckets:</p>
+
+<ul>
+  <li><strong>API Provider</strong> - Elements within the control of the API provider like the design of their API, sharing a road map, providing a status dashboard, being active on Twitter and Github, and other signals you see from healthy API providers.</li>
+  <li><strong>API Community</strong> - Elements within the control of the API community, and not always controlled by the API provider themselves. Things like forum activity, Twitter responses, retweets, and sentiment, and number of stars, forks, and overall Github activity.</li>
+  <li><strong>API Analyst</strong> - The last area is getting the involvement of API analysts, and pundits, and having them provide feedback on APIs, and get involved in the process. Tracking on which APIs are being talked about by analysts, and storytellers in the space.</li>
+</ul>
+
+<p>Most of this ranking I can automate through there being a complete APIs.json and OpenAPI definition, and machine readable sources of information present in those indexes. Signals I can tap into using blog RSS, Twitter API, Github API, Stack Exchange API, and others. However some it will be manual, as well as require the involvement of API service providers. Helping me add to my own ranking information, but also bringing their own ranking systems, and algorithms to the table. In the end, I’m hoping the activity around each APIs Github repository, also becomes its own signal, and consumers in the community can tune into, weight, or exclude based upon the signals that matter most to them.</p>
+
+<p><strong>Streamdata.io Stream Rank</strong><br />
+Adding to my ranking system, I am applying my partner <a href="https://streamdata.io/blog/benchmark-quantifying-api-performance/">Streamdata.io’s ranking system for APIs</a>, looking to determine that activity surrounding an API, and how much opportunity exists to turn an API event a real time stream, as well as identify the meaningful events that are occurring. Using the OpenAPI definitions generated for each API being profiled, I begin profiling for Stream Rank by defining the following:</p>
+
+<ul>
+  <li><strong>Download Size</strong> - What is the API response download size when I poll an API?</li>
+  <li><strong>Download Time</strong> - What is the API response download time when I poll an API?</li>
+  <li><strong>Did It Change</strong> - Did the response change from the previous response when I poll an API?</li>
+</ul>
+
+<p>I poll an API for at least 24-48 hours, and up to a week or two if possible. I’m looking to understand how large API responses are, and how often they change–taking notice of daily or weekly trends in activity along the way. The result is a set of scores that help me identify:</p>
+
+<ul>
+  <li><strong>Bandwidth Savings</strong> - How much bandwidth can be saved?</li>
+  <li><strong>Processor Savings</strong> - How much processor time can be saved?</li>
+  <li><strong>Real Time Savings</strong> - How real time an API resource is, which amplifies the savings?</li>
+</ul>
+
+<p>All of which go into what we are calling a Stream Rank, which ultimately helps us understand the real time opportunity around an API. When you have data on how often an API changes, and then you combine this with the OpenAPI definition, you have a pretty good map for how valuable a set of resources is based upon the ranking of the overall API provider, but also the value that lies within each endpoints definition. Providing me with another pretty compelling dimension to the overall ranking for each of the APIs I’m profiling.</p>
+
+<p><strong>APIMetrics CASC Score</strong><br />
+Next I’m partnering with <a href="https://apimetrics.io/2017/04/21/casc-score/">APIMetrics to bring in their CASC Scoring</a> when it makes sense. They have been monitoring many of the top API providers, and applying their CASC score to the overall API availability. I’d like to pay them to do this for ALL APIs in my API Stack work. I’d like to have every public API actively monitored from many different regions, and posses active, as well as historical data that can be used to help rank each API provider. Like the other work here, this type of monitoring isn’t easy, or cheap, so it will take some prioritization, and investment to properly bring in APIMetrics, as well as other API service providers to help me rank things.</p>
+
+<p><strong>Event-Driven Opportunity With AsyncAPI</strong><br />
+Something I’ve only just begun doing, but I wanted to include on this list, is adding a fourth definition to the stack when it makes sense. If any of these APIs possess a real time, event-driven, or message oriented API, I want to make sure it is profiled using <a href="https://www.asyncapi.com/">the AsyncAPI specification</a>. The specification is just getting going, but I’m eager to help push forward the conversation as part of my API Stack work. The format is a great sister specification for OpenAPI, and something I feel is relevant for any API that I profile with a high enough Stream Rank. Once an API possesses a certain level of activity, and has a certain level of richness regarding parameters and the request surface area, the makings for an event-driven API are there–the provider just hasn’t realized it. The map for the event-driven exists within the OpenAPI parameter enums, and tagging for each API path, all you need is the required webhooks or streaming layer to realize an existing APIs event-driven potential–this is where <a href="http://streamdata.io">Streamdata.io</a> comes in. ;-)</p>
+
+<p><strong>One Stack, Many Discovery Opportunities</strong><br />
+I am doing this work under my <a href="http://theapistack.com">API Stack</a> research. However it is all being funded by <a href="http://streamdata.io">Streamdata.io</a>. It is also being stimulated by my work with Postman, the OpenAPI Initiative, APIs.io, APIs.json, API Deck, APIs.guru, and beyond. The goal is to turn API Stack into a workbench, where anyone can contribute, as well as fork and integrate API definitions into their existing pipelines. All of this will take years, and a considerable amount of investment, but it is something I’ve already invested several years into. I’m also seeing the API discovery conversation reaching a critical mass thanks to the growth in the number of APIs, as well as adoption of OpenAPI and Postman. Making API discovery a more urgent problem. The challenge will be that most people want to extract value from these kind of effort, and not give back. While I feel strongly that API definitions should be open and freely accessible, the nature of the industry doesn’t alway reflect my vision, so I’ll have to get creative about how I incentivize folks, and reward or punish certain behaviors along the way.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/04/02/my-api-stack-profiling-process/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/03/30/the-openapi-30.gui/">The OpenAPI 3.0 GUI</a></h3>
         <span class="post-date">30 Mar 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi-gui/openapi-gui-dashboard.png" width="45%" align="right" style="padding: 15px;" /></p>
@@ -2027,52 +2207,6 @@ While API security centers around establishing a defensive perimeter around API 
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/03/01/an-observable-industry-level-directory-of-api-providers-and-consumers/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/28/an-open-banking-blueprint-api-portal/">An Open Banking API Portal Blueprint</a></h3>
-        <span class="post-date">28 Feb 2018</span>
-        <p>I have been learning all about <a href="https://www.openbanking.org.uk/">the banking API efforts out of Open Banking in the UK lately</a>. They are evolving a set of read / write account and transaction API, as well as public data APIs for some of the common information 3rd party developers are looking to get their hands on. I'm intrigued with the traction the organization has gotten, and I want to be able to fully understand what they are developing, as well help contribute where I can.</p>
-<p>To help me understand the API specification, as well as hopefully contribute to the conversation, I am publishing <a href="http://open.banking.blueprint.apievangelist.com/">an blueprint API portal for the API</a>. It is a demo portal, running on Github, which uses the API Evangelist graphical look, but I am also publishing documentation for v1.1.1 of the account and payments API, as well as v2.1 of the public data APIs. I'm looking to publish the API specification like any bank would, but it won't actually be a live API--yet. I'd like to turn it into a mock API, with some virtualized data to demonstrate what is possible.</p>
-<p align="center"><a href="http://open.banking.blueprint.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-accounts-documentation-screenshot.png" width="90%" align="center" style="padding: 15px;" /></a></p>
-<p>I've only had time to publish the overview of the project, and the documentation for each current version. I have a todo list of things I would like to invest in when I have more time. Eventually, I want it to be a complete, forkable Open Banking API portal that any bank in the UK could publish. Then I'm looking to create country specific versions to help push French, German, and other banks to push a portal. It doesn't have to be my solution that the banks use, but hopefully they'll at least use what I have provided as a blueprint. The goal isn't just to get them to use the portal, it is to get them implementing their bank's API developer portal in a standardized way--similar to the API specification from Open Banking, but this is the portal specification.</p>
-<p>I will spend time on the portal over the next couple of weeks. If there is something you'd like to see accomplished, or something I'm missing entirely, feel free to <a href="https://github.com/european-banking-apis/open-banking-blueprint/issues">submit a Github issue for the project</a>. The project repository is a little messy right now as it is in full development, so if you fork, be careful--you might want to wait.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/28/an-open-banking-blueprint-api-portal/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/28/what-we-need-to-be-machine-readable-at-api-run-time/">What We Need To Be Machine Readable At API Run Time</a></h3>
-        <span class="post-date">28 Feb 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_spagetti_accident.jpg" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I had breakfast with Mike Amundsen (<a href="https://twitter.com/mamund">@mamund</a>) and Matt McLarty (<a href="https://twitter.com/MattMcLartyBC">@MattMcLartyBC</a>) of the CA API Academy team this morning in midtown this morning. As we were sharing stories of what each other was working on, the topic of what is needed to execute an API call came up. Not the time consuming find an API, sign up for an account, figure out the terms of service and pricing version, but all of this condensed into something that can happen in a split second within applications and systems.</p>
-
-<p>How do we distill down the essential ingredients of API consumption into a single, machine readable unit that can be automated into what Mike Amundsen calls, “find and bind”. This is something I’ve been thinking a lot about lately as I work on my API discovery research, and there are a handful of elements that need to be present:</p>
-
-<ul>
-  <li><strong>Authentication</strong> - Having keys to be able to authentication.</li>
-  <li><strong>Surface Area</strong> - What is the host, base url, path, headers, and parameters for a request.</li>
-  <li><strong>Terms of Service</strong> - What are the legal terms of service for consumption.</li>
-  <li><strong>Pricing</strong> - How much does each API request cost me?</li>
-</ul>
-
-<p>We need these elements to be machine readable and easily accessible at discover and runtime. Currently the surface area of the API can be described using OpenAPI, that isn’t a problem. The authentication details can be included in this, but it means you already have to have an application setup, with keys. It doesn’t include new users into the equation, meaning, discovering, registering, and obtaining keys. I have a draft specification I call “API plans” for the pricing portion of it, but it is something that still needs a lot of work. So, in short, we are nowhere near having this layer ready for automation–which we will need to scale all of this API stuff.</p>
-
-<p>This is all stuff I’ve been beating a drum about for years, and I anticipate it is a drum I’ll be beating for a number of more years before we see come into focus. I’m eager to see Mike’s prototype on “find and bind”, because it is the only automated, runtime, discovery, registration, and execute research I’ve come across that isn’t some proprietary magic. I’m going to be investing more cycles into my API plans research, as well as the terms of service stuff I started way back when alongside my API Commons project. Hopefully, moving all this forward another inch or two, and flesh out more of the machine readable components we’ll need at this layer.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/28/what-we-need-to-be-machine-readable-at-api-run-time/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

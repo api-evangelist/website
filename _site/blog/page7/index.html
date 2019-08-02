@@ -129,6 +129,85 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/">AWS API Gateway OpenAPI Vendor Extensions</a></h3>
+        <span class="post-date">19 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I was doing some work on the AWS API Gateway, and as I was going through their API documentation I found some of <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html">the OpenAPI vendor extensions they use as part of operations</a>. These vendor extensions show up in the OpenAPI you export for any API, and reflect how AWS has extended the OpenAPI specification, making sure it does what they need it to do as part of AWS API Gateway operations.</p>
+
+<p>AWS has 20 separate OpenAPI vendor extensions as part of the OpenAPI specification for any API you manage using their gateway solution:</p>
+
+<ul>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-any-method.html">x-amazon-apigateway-any-method</a> - Specifies the Swagger Operation Object for the API Gateway catch-all ANY method in a Swagger Path Item Object. This object can exist alongside other Operation objects and will catch any HTTP method that was not explicitly declared.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-api-key-source.html">x-amazon-apigateway-api-key-source</a> - Specify the source to receive an API key to throttle API methods that require a key. This API-level property is a String type.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-authorizer.html">x-amazon-apigateway-authorizer</a> - Defines a custom authorizer to be applied for authorization of method invocations in API Gateway. This object is an extended property of the Swagger Security Definitions object.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-authtype.html">x-amazon-apigateway-authtype</a> - Specify an optional customer-defined information describing a custom authorizer. It is used for API Gateway API import and export without functional impact.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-binary-media-types.html">x-amazon-apigateway-binary-media-types</a> - Specifies the list of binary media types to be supported by API Gateway, such as application/octet-stream, image/jpeg, etc. This extension is a JSON Array.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-documentation.html">x-amazon-apigateway-documentation</a> - Defines the documentation parts to be imported into API Gateway. This object is a JSON object containing an array of the DocumentationPart instances.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.html">x-amazon-apigateway-gateway-responses</a> - Defines the gateway responses for an API as a string-to-GatewayResponse map of key-value pairs.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.gatewayResponse.html">x-amazon-apigateway-gateway-responses.gatewayResponse</a> - Defines a gateway response of a given response type, including the status code, any applicable response parameters, or response templates.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.responseParameters.html">x-amazon-apigateway-gateway-responses.responseParameters</a> - Defines a string-to-string map of key-value pairs to generate gateway response parameters from the incoming request parameters or using literal strings.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-gateway-responses.responseTemplates.html">x-amazon-apigateway-gateway-responses.responseTemplates</a> - Defines GatewayResponse mapping templates, as a string-to-string map of key-value pairs, for a given gateway response. For each key-value pair, the key is the content type; for example, “application/json”, and the value is a stringified mapping template for simple variable substitutions. A GatewayResponse mapping template is not processed by the Velocity Template Language (VTL) engine.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration.html">x-amazon-apigateway-integration</a> - Specifies details of the backend integration used for this method. This extension is an extended property of the Swagger Operation object. The result is an API Gateway integration object.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-requestTemplates.html">x-amazon-apigateway-integration.requestTemplates</a> - Specifies mapping templates for a request payload of the specified MIME types.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-requestParameters.html">x-amazon-apigateway-integration.requestParameters</a> - Specifies mappings from named method request parameters to integration request parameters. The method request parameters must be defined before being referenced.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responses.html">x-amazon-apigateway-integration.responses</a> - Defines the method’s responses and specifies parameter mappings or payload mappings from integration responses to method responses.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-response.html">x-amazon-apigateway-integration.response</a> - Defines a response and specifies parameter mappings or payload mappings from the integration response to the method response.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responseTemplates.html">x-amazon-apigateway-integration.responseTemplates</a> - Specifies mapping templates for a response payload of the specified MIME types.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-integration-responseParameters.html">x-amazon-apigateway-integration.responseParameters</a> - Specifies mappings from integration method response parameters to method response parameters. Only the header and body types of the integration response parameters can be mapped to the header type of the method response.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validator.html">x-amazon-apigateway-request-validator</a> - Specifies a request validator, by referencing a request_validator_name of the x-amazon-apigateway-request-validators Object map, to enable request validation on the containing API or a method. The value of this extension is a JSON string.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validators.html">x-amazon-apigateway-request-validators</a> - Defines the supported request validators for the containing API as a map between a validator name and the associated request validation rules. This extension applies to an API.</li>
+  <li><a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions-request-validators.requestValidator.html">x-amazon-apigateway-request-validators.requestValidator</a> - Specifies the validation rules of a request validator as part of the x-amazon-apigateway-request-validators Object map definition.</li>
+</ul>
+
+<p>I keep track of these vendor extensions as part of <a href="http://openapi.toolbox.apievangelist.com/">my OpenAPI toolbox</a>, but I also like to aggregate them, and learn from them. They tell an important story of what AWS is looking to do with the AWS API Gateway. They point to some interesting use cases for the OpenAPI specification including validation, and transforming or mapping API requests and responses, to name a few. There is always a lot to learn from API providers who are extending the OpenAPI specification.</p>
+
+<p>I encounter a number of API designers and architects who don’t know they can extend the specification. It is important that teams realize they can not just extend the specification to fit their needs, but also that they should be learning from how other API proviers are doing this. A few signs of an API provider who is further along in their API journey are 1) actively maintaining and sharing and OpenAPI definition for their APIs, and 2) actively extending and sharing the vendor extensions they use to make OpenAPI do exactly what they need.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/19/aws-api-gateway-openapi-vendor-extensions/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/01/19/a-health-check-response-format-for-http-apis/">A Health Check Response Format for HTTP APIs</a></h3>
+        <span class="post-date">19 Jan 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/irakli/health-check-response-format-for-http-apis.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>My friend Irakli Nadareishvili, <a href="https://inadarei.github.io/rfc-healthcheck/">has published a new health check response format for HTTP APIs</a> that I wanted to make sure was documented as part of my research. The way I do this is write a blog post, forever sealing this work in time, and adding it to the public record that is my API Evangelist brain. Since I use my blog as a reference when writing white papers, guides, blueprints, policies, and other aspects of my work, I need as many references to usable standards like this.</p>
+
+<p>I am going to just share the introduction from Irakli’s draft, as it says it all:</p>
+
+<blockquote>
+  <p>The vast majority of modern APIs driving data to web and mobile applications use HTTP [RFC7230] as a transport protocol. The health and uptime of these APIs determine availability of the applications themselves. In distributed systems built with a number of APIs, understanding the health status of the APIs and making corresponding decisions, for failover or circuit-breaking, are essential for providing highly available solutions.
+There exists a wide variety of operational software that relies on the ability to read health check response of APIs. There is currently no standard for the health check output response, however, so most applications either rely on the basic level of information included in HTTP status codes [RFC7231] or use task-specific formats.
+Usage of task-specific or application-specific formats creates significant challenges, disallowing any meaningful interoperability across different implementations and between different tooling.
+Standardizing a format for health checks can provide any of a number of benefits, including:</p>
+  <ul>
+    <li>Flexible deployment - since operational tooling and API clients can rely on rich, uniform format, they can be safely combined and substituted as needed.</li>
+    <li>Evolvability - new APIs, conforming to the standard, can safely be introduced in any environment and ecosystem that also conforms to the same standard, without costly coordination and testing requirements.
+This document defines a “health check” format using the JSON format [RFC7159] for APIs to use as a standard point for the health information they offer. Having a well-defined format for this purpose promotes good practice and tooling.</li>
+  </ul>
+</blockquote>
+
+<p>Here is an example JSON response, showing the standard in action:</p>
+
+<script src="https://gist.github.com/kinlane/5bea1128ccada3b26ab534b7e4bb138d.js"></script>
+
+<p>I have seen a number of different approaches to providing health checks in APIs, from a single ping path, to proxying of the Docker Engine API for the microservices Docker container. It makes sense to have a standard for this, and I’ll reference Irakli’s important work from here on out as I’m advising on projects, or implementing my own.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/01/19/a-health-check-response-format-for-http-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/">Developing a Microservice to Orchestrate Long Running Background Server-Sent Events</a></h3>
         <span class="post-date">19 Jan 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/68_174_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -1470,52 +1549,6 @@ PHP, Python, Ruby, ActionScript (Flash), C#, Android, Objective-C, Scala, Java</
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/01/03/api-life-cycle-basics-api-design/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/03/the-transit-feed-api-is-a-nice-blueprint-for-your-home-grown-api-project/">The Transit Feed API Is A Nice Blueprint For Your Home Grown API Project</a></h3>
-        <span class="post-date">03 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/transit-feeds-api/transit-feeds-api-home-page.png" align="right" width="45%" style="padding:15px;" /></p>
-<p>I look at a lot of APIs. When I land on the home page of an API portal, more often than not I am lost, confused, and unsure of what I need to do to get started. Us developers are very good at complexifying things, and making our APIs implementations as messy as our backends, and the API ideas in our heads. I suffer from this still, and I know what it takes to deliver a simple, useful API experience. It just takes time, resources, as well as knowledge to it properly, and simply. Oh, and caring. You have to care.</p>
-
-<p>I am always on the hunt for good examples of simple API implementations that people can emulate, that aren’t the API rockstars like Twilio and Stripe who have crazy amounts of resources at their disposal. One good example of a simple, useful, well presented API can be found with <a href="http://transitfeeds.com/">the Transit Feeds API, which aggregates the feeds of many different transit providers around the world</a>. When I land on the home page of Transit Feeds, I immediately know what is going on, and I go from home page to making my first API call in under 60 seconds–pretty impressive stuff, for a home grown API project.</p>
-
-<p>While there are still some rough edges, Transit Feeds has all the hallmarks of a quality API implementation. Simple UI, with a clear message about what it does on the home, but most importantly an API that does one thing, and does it well–providing access to transit feeds. The site uses Github OAuth to allow me to instantly sign up and get my API key–which is how ALL APIs should work. You land on the portal, you immediately know what they do, and you have your keys in hand, making an API call, all without having to create yet another API developer account.</p>
-
-<p>The Transit Feed API <a href="http://transitfeeds.com/api/transitfeeds-api.yaml">provides an OpenAPI for their API</a>, and uses it to drive <a href="http://transitfeeds.com/api/swagger/">their Swagger UI API documentation</a>. I wish the API documentation was embedded onto the docs page, but I’m just thankful they are using OpenAPI, and provide detailed interactive API documentations. Additionally, they have a great <a href="http://transitfeeds.com/news">updates page</a>, providing recent site, feed, and data updates across the project. To provide support they wisely <a href="https://transitfeeds.com/issues">use Github Issues to help provide a feedback loop</a> with all their API consumers.</p>
-
-<p>It isn’t rocket surgery. Transit Feed makes it look easy. They provide a pretty simple blueprint that the rest of us can follow. They have all the essential building blocks, in an easy to understand, easy to get up and running format. They leverage OpenAPI and Github, which should be the default for any public API. I’d love to see some POST and PUT methods for the API, encouraging for more engagement with users, but as I said earlier, I’m pretty happy with what is there, and just hope that the project owners keep investing in the Transit Feed API. It provides a great example for me to use when working with transit data, but also gives me a home grown example of an API project that any of my readers could emulate.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/03/the-transit-feed-api-is-a-nice-blueprint-for-your-home-grown-api-project/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/03/alexa-voice-skills-is-the-poster-child-for-your-enterprise-api-efforts/">Alexa Voice Skills Are The Poster Child For Your Enterprise API Efforts</a></h3>
-        <span class="post-date">03 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/alexa/alexa-skills.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I was sitting in an IT architectural planning meeting for a large enterprise organization the other day, and one of the presentation from one of the executives contained a complex diagram of their IT infrastructure, with a column to the right showing a simple five step Alexa conversation, asking a specific question from customer. Each question posed as part of the Alexa conversation theoretically accessed a different system, weaving a pretty complex web of IT connections, to enable this simple conversation.</p>
-
-<p>This presentation reflects why I feel that Alexa Skills development poses some interesting questions in the API world, and why the platform becomes interesting to so many business users. It reflects the end goal of why we are doing all of this (in theory), but then quickly illustrates how complicated we’ve actually made all of this, demonstrating how challenging delivering conversational interfaces will be in reality. There are many conversational challenges in enabling our system to be able to talk with humans, but I think many of the most daunting challenges companies will face in coming years will be to actually get at the right data to provide a relevant answer to questions poised in voice, bot, and other conversationally-enabled solutions.</p>
-
-<p>Being able to quickly respond to information requests is why many companies, organizations, institutions, and government agencies are doing APIs. Being able to respond to them in real time conversations is definitely a question of doing APIs, but I’m finding in most organizations it is more about solving human and political questions, than it is just a technical one. Sure, you can envision the most beautiful stack of microservices reaching into every aspect of your organization(s), and even develop a robust conversational layer for answering questions posed across that stack, but delivering it all consistently, at scale, across multiple teams of human beings will never be easy, or quick.</p>
-
-<p>I think that conversational interfaces provide an excellent exercise for companies, to help them map out the complexities of their backend systems, and try to understand how to deliver more real time solutions. Personally, I’m not a big fan of bot or voice-enablement, but I know others are. I’m more interested in them because of the technical challenges in delivering, and the business and cultural hurdles they put in front of development teams. It isn’t easy to deliver meaningful, relevant, and intelligent conversations via these new mediums, and I think the Alexa Skills framework provides a useful way for us to hang these conversations regarding our IT resources on.</p>
-
-<p>While the majority of APIs are still about delivering data and content to the web and mobile applications, I think conversational interfaces are showing the future of where things are headed. I don’t think we’ll get there as fast as we would like, or as quickly as the vendors are promising us, but I do think we will make movements towards delivering more meaningful conversational interfaces in coming years. Mostly it will be due to the availability of API resources. If we can get at the data and content, we can usually answer questions regarding that data content. The problem will be that not everything is digitized, and easily accessible. Despite the promises of artificial intelligence, and voice-enabled platforms like Alexa, humans will prove to be the biggest obstacle to realizing the visions of business leaders to answer even the most basic questions we are looking to answer.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/03/alexa-voice-skills-is-the-poster-child-for-your-enterprise-api-efforts/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

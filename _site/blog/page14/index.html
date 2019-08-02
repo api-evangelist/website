@@ -129,6 +129,118 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/">Microservice Discovery Using Pivio</a></h3>
+        <span class="post-date">03 Aug 2017</span>
+        <p><a href="http://pivio.io/"><img src="https://s3.amazonaws.com/kinlane-productions/pivio/pivio-microservice-documentation-for-your-platform.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>I’m finally feeling the ground move in the area of <a href="http://discovery.apievangelist.com/">API discovery</a> a little bit. It is an area I’m perpetually trying to create my own seismic activity with <a href="http://apisjson.org">APIs.json</a>, but it always makes me happy to see other folks contributing to the conversation in a significant way. My friend Erik Wilde (<a href="https://twitter.com/dret">@dret</a>) turned me onto <a href="http://pivio.io/">Pivio for microservice discovery</a>, providing a machine readable approach to API discovery that resembles what I’ve been trying to do with APIs.json, but has several very interesting service-centric characteristics.</p>
+
+<p>According to the project website Pivio is a “description in your source code with all the metadata of your service describing itself. This can be as simple as the name, owner and VCS information as well as useful information about runtime environment, used licenses and service dependencies. Pivio is a service registry for humans.” Pivio is a microservice discovery schema, and a web platform for uploading, searching, and viewing your catalog of microservices. It is in alpha version, but already provides a very interesting take on discovery from the microservices perspective.</p>
+
+<p>Pivio begins with a common set of mandatory fields:</p>
+
+<ul>
+  <li>id - Unique id in pivio. You can ask the pivio service for a unique id.</li>
+  <li>name - The name of the artifact. This is intended for humans.</li>
+  <li>short_name - A very brief name for the service.</li>
+  <li>type - The type of this artifact. Values could be service, library or mobile_app.</li>
+  <li>owner - Which team is responsible for this artifact.</li>
+  <li>description - What does this service do?</li>
+</ul>
+
+<p>Next Pivio begins to break out some interesting collections:</p>
+
+<ul>
+  <li>contact - Who should be contacted if one has a question.</li>
+  <li>vcs - Where is the location of source code that runs this service.</li>
+  <li>tags - Add tags for organizing each service as part of larger collection.</li>
+  <li>lifecycle - In which lifecycle is this component? Only in development, in production or out of service.</li>
+  <li>links - All sort of links which might be interesting. Candidates are homepage, buildchain, api docs</li>
+</ul>
+
+<p>Then Pivio breaks out some very useful service-focused collections:</p>
+
+<ul>
+  <li>Provides - What and where does this artifact provides services? description Should be a human readable description. service_name is the unique identification of the particular interface. port, protocol and transport_protocol are self describing.</li>
+  <li>Dependences
+    <ul>
+      <li>internal - To which other service_name (from provides) services does this service talk?</li>
+      <li>external - To which external target needs this artifact to talk to? This is meant to show if 		this service talks to another one outside of your system, like a public API of another service 		provider ‘in the cloud’.</li>
+    </ul>
+  </li>
+  <li>Service Context
+    <ul>
+      <li>belongs_to_bounded_context - General rule is that every service belongs to a bounded context.</li>
+      <li>visibility
+  	- private: intended usage is only by the owner
+        <ul>
+          <li>public: exposes an api for other owners.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Runtime
+    <ul>
+      <li>cpu - the size of the processor
+        <ul>
+          <li>ram - how much memory it has</li>
+        </ul>
+      </li>
+      <li>disk - what is the size of disk</li>
+      <li>host_type - metal, vm, docker</li>
+      <li>network_zone - dmz, backend, core, database</li>
+      <li>environment - development, test, production</li>
+    </ul>
+  </li>
+  <li>Software Dependencies - Name, versions, licensing of the software behind each of the services.</li>
+  <li>Custom extensions - Have your own keys in this configuration you can simply add your own key word/yaml file.</li>
+</ul>
+
+<p>There are overlapping elements of Pivio and API.json, and you can accomplish man similar things with both API discovery formats, but Pivio brings to the table a serious technical view of APIs through a microservice lens. I am really interested in the context, dependencies, and like the runtime, and extension part as well. I think the lifecycle, VCS, and CI/CD aspects of the Pivio schema points to a more meaningful discovery approach in coming years.</p>
+
+<p>Pivio has several supporting open source tools built on the microservices discovery schema which are available from the Github repository at: https://github.com/pivio/:</p>
+
+<ul>
+  <li>Client: https://github.com/pivio/pivio-client</li>
+  <li>Server: https://github.com/pivio/pivio-server</li>
+  <li>Web: https://github.com/pivio/pivio-web</li>
+</ul>
+
+<p>I’m not that interested in the client, server, and web applications just yet. I’d like to think more about the context, dependencies, lifecycle, VCS, CI/CD, and the search mechanism they are employing. I’m also going to spend some cycles this week getting up to speed on <a href="https://tools.ietf.org/html/draft-nottingham-json-home-03">JSON Home</a>, as well as Pivio. I’ve been trying to make some time to learn more about JSON Home lately, but just haven’t had the time. Now that I have Pivo on my desk, I’m kind of forced to make sure I can speak intelligenctly to both of these API discovery specification formats.</p>
+
+<p>It is pretty easy to reference a pivio.yaml discovery document from within an APIs.json, and vice versa. They both allow for extensibility using links. After thinking about JSON Home a little bit, I want to try and establish some sort of Venn diagram of JSON Home, Pivio, and APIs.json to better understand where and when you’d want to use each format, and how they can overlap and work together. I feel like the world of APIs is finally maturing to a point where discovery is a growing pain point, so we are going to see more investment in a variety of approaches to helping make it easier to discover, and maintain rich catalogs of microservices and APIs.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/08/03/microservice-discovery-using-pivio/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/08/02/understanding-global-api-performance-at-the-multi-cloud-level/">Understanding Global API Performance At The Multi-Cloud Level</a></h3>
+        <span class="post-date">02 Aug 2017</span>
+        <p><a href="http://apimetrics.io/google-location-map/">APIMetrics has a pretty addictive map showing the performance of API calls between multiple cloud providers, spanning many global regions</a>. The cloud location latency map “shows relative performance of a standard, reference GET request made to servers running on all the Google locations and via the Google global load balancer. Calls are made from AWS, Azure, IBM and Google clouds and data is stored for all steps of the API call process and the key percentiles under consideration.”</p>
+
+<p align="center"><a href="http://apimetrics.io/google-location-map/"><img src="https://s3.amazonaws.com/kinlane-productions/api-metrics/apimetrics-cloud-location-performance-map.png" align="center" width="80%" style="padding: 15px;" /></a></p>
+
+<p>It is interesting to play with the destination of the API calls, changing the region, and visualizing how API calls begin to degrade to different regions. It really sets the stage for how we should start thinking about the deployment, monitoring, and testing of our APIs. Region, by region, getting to know where our consumers are, and making sure APIs are deployed within the cloud infrastructure that delivers the best possible performance. It’s not just testing your APIs in a single location from many locations, it is also rethinking where your APIs are deployed, leveraging a multi-cloud reality and using all the top cloud provider, while also making API deployment by region a priority.</p>
+
+<p>I’m a big fan of what APIMetrics is doing with the API performance visualizations and mapping. However, I think their approach to using HTTPbin is a significant part of this approach to monitoring and visualizing API performance at the multi-cloud level, while also making much of the process and data behind it all public. I want to put some more thought into how they are using HTTPbin behind this approach to multi-cloud API performance monitoring. I feel like there is potential her for applying this beyond just API performance, and think about other testing, security, and critical aspects of reliability and doing business online with APIs today.</p>
+
+<p>After thinking where else this HTTPbin approach to data gathering could be applied, I want to think more about how the data behind APIMetrics cloud location latency map can be injected into other conversations, when it comes where we are deploying APIs, and running our API tests. Eventually I would like to see this type of multi-cloud API performance data alongside data for security and privacy compliance data, and even the regulations of each country as they apply to specific industries. Think about a time when we can deploy our APIs exactly where we want them based upon performance, privacy, security, regulations, and other critical aspects of doing business in the Internet age.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/08/02/understanding-global-api-performance-at-the-multi-cloud-level/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/08/02/learning-about-real-time-advertising-bidding-transparency-using-ads-txt/">Learning About Real-Time Advertising Bidding Transparency Using Ads.txt</a></h3>
         <span class="post-date">02 Aug 2017</span>
         <p><a href="https://iabtechlab.com/ads-txt/"><img src="https://s3.amazonaws.com/kinlane-productions/ads-txt/ads.txt-about.png" align="right" width="40%" style="padding: 15px;" /></a></p>
@@ -2624,52 +2736,6 @@ It takes a lot of work provide a reliable API that people can depend on. Somethi
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/07/11/when-you-publish-a-google-sheet-to-the-web-it-als-becomes-an-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/07/11/either-you-own-the-conversation-around-your-apis-or-someone-else-will/">Either You Own The Conversation Around Your APIs Or Someone Else Will</a></h3>
-        <span class="post-date">11 Jul 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/rogue/tinder-api-google-search.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I was looking at how many of the top mobile applications in the iTunes story actually had a public API presence, and was finding it very telling what came up in the Google search results for each company when I searched [company name] + API. It tells a lot about how a company sees the world, when they don’t have a public API presence, but they have a very public mobile application that uses APIs.</p>
-
-<p>An example of this is with Tinder, where the top listings are all Github rogue API repositories, when you Google “Tinder API”. Tinder doesn’t own the conversation when it comes to their own APIs. While the Tinder APIs are public, and well documented, Tinder prefers acting like they are private–they aren’t. Pinterest uses SSL pinning, but <a href="https://ritcsec.wordpress.com/2016/12/11/bypassing-certificate-pinning-on-tinder/">there is even a good amount of information out there at how to get around that</a>, making the mapping out and documenting of Tinder APIs a pretty doable thing.</p>
-
-<p>Honestly, I don’t care about Tinder’s APIs. They are just an easy example to point a finger at and use as a poster child. I don’t even expect them to have fully public APIs that any developer could use without permission. Sure, lock that shit down, but provide a sandbox, and make sure every application gets approval before they can more access to live data. Make sure that you own the API conversation by having a developers portal, and provide information regarding what it takes to get access, and maybe some day actually become an approved partner.</p>
-
-<p>I’m not saying that every company should have freely available public APIs. I’m saying every company should own the public conversation around their APIs, no matter what their strategy for developing applications around a platform’s APIs. Have a presence. Own the conversation. Have a door for application developers to walk, even if there is a waiting room. Not all applications will be competing with your own web, mobile, device, or network applications. Some will be about enabling data portability for you users, or maybe provide useful access aggregate data for use in visualizations–you never know what folks will be bringing to the table, why keep the door closed?</p>
-
-<p>I understand. You may not be all team API like I am, but you are using APIs to drive your mobile experience. I just don’t get why you wouldn’t want to own the conversation around these APIs. You are leaving so much on the table. If your mobile app is finding success, people will want access to the goodness going on behind it–<a href="http://apievangelist.com/2011/02/08/instagram-launches-api/">a rogue API is what kickstarted the Instagram API in the early days</a>. It is pretty easy to reverse engineer any mobile application, and map out the surface area of the API behind, as well as the authentication in play. Either you own the conversation around your API, or someone will step up and do it for you in todays online world.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/07/11/either-you-own-the-conversation-around-your-apis-or-someone-else-will/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/07/11/locking-down-drones-and-iot-devices-by-manufacturers/">Locking Down Drones And IoT Devices By Manufacturers</a></h3>
-        <span class="post-date">11 Jul 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/drones/drone-rock-outdoors.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I have been following stories about, as well as personally experiencing DJI restricting where their drones can fly, going beyond just warning you about restricted areas and actually locking down or restricting your drone capabilities. <a href="https://motherboard.vice.com/en_us/article/3knkgn/dji-is-locking-down-its-drones-against-a-growing-army-of-diy-hackers">So it was interesting to also read a post in Motherboard about the company also locking down drones to prevent against hacking, modifying, and tweaking your DJI drones as you wish</a>. Drones for me are a poster child for the entire Internet of Things (IoT), and I think DJI’s approach is a sign of what is to come for all Internet connected devices.</p>
-
-<p>In coming years, there will be a lot that the IoT community can learn from the drone space. From the technical to regulatory, drones will be pushing forward conversations about our networks, cameras, security, privacy, surveillance, and corporate and government control over us, and our devices. Drones stimulate some interesting emotions within people associated with the industry, but more importantly people who know nothing about drones, and will be weighing in on regulation at the municipal, all the way up to the federal and international levels.</p>
-
-<p>I thought it was interesting when DJI began enforcing the recommendations I get in the dashboard for my drones, and requiring that I update my drones, RC controller, and mobile applications to reduce their liability regarding what I an actually doing with my devices. However, locking down drones so people can’t modify, augment, or fix their own drones is a whole other layer to this discussion that isn’t just about stopping ISIS from strapping bombs to their drones, it is also about maintaining sovereignty over their creations, and limiting what we can do as owners when it comes to fixing our devices. <a href="https://www.theguardian.com/environment/2017/mar/06/nebraska-farmers-right-to-repair-john-deere-apple">We already see the right to fix conversation bubble up in the John Deere ecosystem</a>, but it is something we will continue to see showing up in IoT ecosystems across many different business sectors.</p>
-
-<p><a href="http://kinlane.com/2017/01/26/the-digital-things-that-happen-in-the-privacy-of-our-homes/">The bold entry into our homes and lives that IoT device manufacturers are making amazes me</a>, but what amazes me even more is how consumers allow this to happen with little resistance. This is another outcome from the drone sector I believe we’ll see more of, is drone operators standing up to defend their right to fix, as well as push back own data, content, an algorithmic ownership over what is produced using devices. Sadly consumers do not understand the value of their data, but hobbyists and commercial operators of drones, and hopefully other devices, do see the value of it, and will begin to shift the balance when it comes to who is profiting off the data our devices are generating.</p>
-
-<p>There will be many technical, business, and political lessons to be learned from the drone space in coming years. I’m strangely thankful that my <a href="http://dronerecovery.org">Drone Recovery project</a> happened, because before that summer I really was not interested in drones, but now I’m not just interested, I own three drones, and have an active interest in understanding what manufacturers like DJI are doing. I’m feel that what DJI is doing with their platform will set a precedent (good and bad) for other IoT operators to follow–something I’ll be keeping a close eye on.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/07/11/locking-down-drones-and-iot-devices-by-manufacturers/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
