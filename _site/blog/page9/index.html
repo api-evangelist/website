@@ -129,6 +129,29 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/11/27/multi-region-apis-using-aws-api-gateway/">Multi-Region APIs Using AWS API Gateway</a></h3>
+        <span class="post-date">27 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/amazon-api-gateway-regions.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’ve been deploying two project using AWS API Gateway, Lambda, and Amazon RDS lately. I’ve become so sold on this approach to deploying APIs as part of this work, that I am evolving my own internal API process to use the same approach. The technical aspect of serverless plus the gateway definitely convinced me of the potential, but it was also the usage of AWS IAM which sealed the deal for me. I’m all too aware of how much my API security lacks as a one person shop, something that I also see reflected in my client operations, and I’d rather be offloading security to AWS than ending up taking the hit on it down the road.</p>
+
+<p>While deploying my project using AWS API Gateway, and Lambda, I was faced with the question regarding which zone I should be deploying the APIs in. It is the first time I’ve been faced with the opportunity to deploy my APIs into multiple zones. Sure, I could have deployed my servers into any AWS zone before, but for some reason now that I’m doing with AWS API Gateway, and Lambda, the opportunity seemed more of a possibility. I’ve pitched it to my client to consider an east as well as a west coast API deployment, so that we can give developers the choice in the documentation to choose which availability zone they’d like to use in their application. Before I make the proposal I’m going to deploy some prototypes, and do some benchmark testing, and see what the benefits are.</p>
+
+<p>Even if I end up publishing APIs into separate regions, I still have the backend database to content with. Where do I put the database, and how to I replicate between zones. Amazon RDS gives me the tools to tackle this, but historically I would only do this just for backup, not for actual redundancy, as well as performance gains. Amazon zones have been a staple of the cloud since early days, but I still have many clients who only operate in the east coast region. I’m thinking I will begin to push for a multi-region approach, and see if I can’t convince some of them to start thinking bigger. Getting to know where their customers are, and delivering infrastructure closer where the resources are needed.</p>
+
+<p>I’m rolling out some new APIs as part of my own infrastructure. Most of my APIs are retail, as well as wholesale APIs. Meaning you can use the APIs I’ve published, or I’ll deploy them specifically for you, in your own AWS account. I think I’m going to make east / west an option for my retail APIs, and ALL the AWS regions an option for the wholesale APIs. I’m seeing geographical region as another consideration when I’m thinking about how I should be breaking down my APIs, into smaller more bite-size chunks. I see geographical region as a variable in the host for my APIs, just like I’d add any other variable in the path. Opening up a whole new set of possibilities when it comes to not just API deployment, but also API reliability and performance.</p>
+
+<p>As I continue to drink the AWS Kool-Aid I’m questioning my increased dependence on the platform. However, it gets harder to deny when they bring security to the table, and increased performance, availability, and reliability to my API stack, and the APIs I’m delivering for my clients. There is no way I could afford to do APIs at scale, across multiple regions without AWS. I think back to the day when I would secure my own T1s, colo-facility, and servers. Even with the threat of vendor lock-in, I do not want to ever go back to that world. I enjoy the benefits of AWS. I’m just going to try and keep things as well defined as simple, microservice APIs, so that I can migrate to Google, Azure, or if necessary my own infrastructure. As much as I’d like to reduce my dependencies on major cloud providers, in the current online environment I just can’t. Being able to operate in any region around the globe is a pretty significant benefit to doing business online.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/27/multi-region-apis-using-aws-api-gateway/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/11/27/hints-of-banking-api-regulations-from-cfpb-with-consumer-authorized-financial-data-sharing-and-aggregation-rules/">Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules</a></h3>
         <span class="post-date">27 Nov 2017</span>
         <p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/"><img src="https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png" align="right" width="45%" style="padding: 15px;" /></a></p>
@@ -1878,27 +1901,6 @@ That was a title more work than I anticipated. I had scheduled about six hours t
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/25/i-am-talking-about-jekyll-as-a-hypermedia-client-at-apistrat-in-portland-next-week/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/25/helping-business-users-get-over-perceived-technical-gaps-when-it-comes-to-api-design/">Helping Business Users Get Over Perceived Technical Gaps When It Comes To API Design</a></h3>
-        <span class="post-date">25 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/photos/cactus-flower.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>Every single API project I’m working on currently has one or more business users involved, or specifically leading the work. With every business user, no matter how fearless they are, there is always a pretty heavy perception that some things are over their head. I see this over and over when it comes to API design, and the usage of OpenAPI to define an API. I’ve known a handful of folks who aren’t programmers, and have learned OpenAPI fluently, but for the most part, all business users tend to put up a barrier when it comes to learning OpenAPI–it lives in the realm of code, and exists beyond what they are capable of.</p>
-
-<p>I get that folks are turned off by being exposed to code. Learning to read code takes a significant amount of time, and with the more framework, libraries, and other layers, you can find yourself pretty lost, pretty quickly. However, with OpenAPI, everything I do tends to be YAML, making it much more readable to humans. While there are rules and structure to things, I don’t feel it is out of the realm of the average user to study, learn, and eventually bring into focus. Along with the OpenAPI rules, there are a good deal of HTTP literacy required to fully understand what is going on, but I feel like the API design process is a much more forgiving environment to learn these things for both developers and business users.</p>
-
-<p>I put the ownership of everything technical being complicated squarely on the shoulders of IT and developer folks. We’ve gone out of our way to make this stuff difficult to access, and out of reach of the average person. We’ve spent decades keeping people we didn’t see fit from having a seat at the table. However, increasingly I also feel like there is a significant amount of ownership to be given to business users who are willing to put up walls when there really is not reason. I think the API design layer is one place aspect of doing business with APIs where the average business user throws up unnecessary bluster around technical complexity, where it doesn’t actually exist. The definition of an API is simply a contract, no more complicated than a robust word document or spreadsheet, completely within the realm of understanding for any engaged user.</p>
-
-<p>There is a pretty big opportunity to narrow the gap that exists between technical and business users with APIs. The challenge will be that many technologists want to keep things closed off to business users so they can charge for, and generate revenue when it comes to bridging the gap. We also have to figure out how to help business users better understand where the technical line is, and the importance that they become OpenAPI fluent, and have a stake in the API design conversation. Once I get back to my API training work, I’m going to think about a version of my API design curriculum, specifically for non-developer users. My goal is to figure out what it takes to onboard more business users to the world of APIs design, and make sure we balance out who is at the table when we are defining API solutions.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/25/helping-business-users-get-over-perceived-technical-gaps-when-it-comes-to-api-design/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

@@ -129,6 +129,37 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/07/13/quantifying-the-difference-between-human-services-data-specification-hsds-and-its-api/">Quantifying The Difference Between Human Services Data Specification (HSDS) And Its API</a></h3>
+        <span class="post-date">13 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/openapi-spec/openapi-spec-icon.png" align="right" width="25%" style="padding: 15px;" /></p>
+<p>To help quantify the move from version 1.0 to 1.1 of the Human Services Data API (HSDA) definition I took the existing Ohana API and created an OpenAPI definition to describe what was present in version 1.0 of the HSDA. Then I took <a href="http://openreferral.readthedocs.io/en/latest/reference/#organization">version 1.1 of the Human Services Data Specification (HSDS)</a> and made sure as much of HSDS was returned as part of API responses, as well as allowing adding, updating, and deleting across the schema.</p>
+
+<p>During the vendor API review portion of our process I took the documentation for four of the vendors APIs and created OpenAPI for each of them. I then laid all the vendor OpenAPIs alongside <a href="https://openreferral.github.io/api-specification/definition/">the current draft I had of the HSDA definition</a>. I then consider each path, the parameters, body, and responses for inclusion as part of the HSDA definition. This allowed me to consider the existing vendor API implementations that are already serving human service implementations.</p>
+
+<p>OpenAPI plays a central role in defining what is, what might be, while opening up a forum for having a conversation about the specific detail of the HSDS/A definition. I’m using OpenAPI to establish a definition of what both HSDS and HSDA are. It will be the contract that gets hammered out as part of the Open Referral governance process, so you will see me use it regularly to articulate specific aspects of what is going. With this in mind, I’d like to use a distilled OpenAPI, articulated just a single API path for GET /organizations.</p>
+
+<script src="https://gist.github.com/kinlane/b44af277c9ad8948e82215ee31a7e195.js"></script>
+
+<p>I won’t go into to much detail on the OpenAPI, <a href="https://github.com/OAI/OpenAPI-Specification">I recommend learning more about the specification on the GitHub repository</a>, and at <a href="https://www.openapis.org/">the OpenAPI Initiative (OAI)</a>. What I’d like to articulate for this story is to help quantity the separation and connection between the Human Services Data Specification (HSDA), and the Human Services Data API (HSDA), using this single OpenAPI, describing a single HSDA path–organizations.</p>
+
+<p>When you take the schemes: located at line 7, and combine it with host: at line 5, basePath: at line 6, and the path for /organizations/ at line 12 you get http://api.open.referral.adopta.agency/organizations/, which when you load in a browser will give you a JSON listing of many organizations. Line 13-29 describes how to make an API request, and line 30-36 describes what you can expect as a response.</p>
+
+<p>Lines 1-38 is HSDA, and 42-71 is HSDS. Line 36 is the link between HSDA, and HSDS, providing a reference that binds the API request, with the API response. HSDS is the valid schema being returned–HSDA is not the schema, it is the surface of the API that lets you send, and in this case received valid HSDS. This is a line that we honestly haven’t had the level of detail, or even the acronyms before now to even articulate HSDS/A at this level. So don’t worry if what I said doesn’t quite make sense–it will come. ;-)</p>
+
+<p>The first reason I’m writing this story is to help myself better articulate the difference between HSDS, and HSDA, and the relationship between them. The second portion is to help other folks participating in the HSDS/A governance conversation see the separate layers between the schema and API, but also understand how they work together. I’d say a third portion is about helping folks understand the value of using OpenAPI to facilitate these types of conversations.</p>
+
+<p>It might take a couple times reading this post and/or having a conversation directly with me about OpenAPI, but there is nothing in this OpenAPI definition that any engaged users can learn to work with–developers, and non-developers. I’ll keep producing simple lessons like this to better articulate aspects of the HSDS/A contract using OpenAPI. I’d love to hear any feedback on how I can better articulate the great work we are doing around the Human Services Data Specification and it’s API.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/13/quantifying-the-difference-between-human-services-data-specification-hsds-and-its-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/07/13/moving-the-human-services-api-specification-from-version-11-to-12/">Moving The Human Services API Specification From Version 1.1 to 1.2</a></h3>
         <span class="post-date">13 Jul 2017</span>
         <p><a href="http://developer.open.referral.adopta.agency/documentation/"><img src="https://s3.amazonaws.com/kinlane-productions/open-referral/hsda-organizations-documentation.png" align="right" width="40%" style="padding: 15px;" /></a></p>
@@ -1555,56 +1586,6 @@ Mobile</p>
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/06/20/tight-coupling-to-our-mobile-phones/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/20/unknown-unknown-with-api-security/">The Unknown Unknowns Of API Security</a></h3>
-        <span class="post-date">20 Jun 2017</span>
-        <p><a href="http://security.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-security-unknown.png" align="right" width="25%" style="padding: 15px;" /></a></p>
-<p>I am trying to wrap my head around the next steps in the evolution of <a href="http://security.apievangelist.com/">API security</a>. I am trying to help separate some of the layers of what we collectively call API security, into some specific building blocks I can reference in my storytelling. I’m ramping up my API security research as I onboard a new API service provider partner, and will have more resources to invest in the API security discussion.</p>
-
-<p>Let’s start with the easy “Known Knowns”:</p>
-
-<ul>
-  <li>Encryption - Using encryption across all aspects of API operations from portal to base URL.</li>
-  <li>API Keys - Making sure everyone who is accessing an API is keying up and passing along with each request.</li>
-  <li>OAuth - Getting more granular with access by applying OAuth when there is access to 3rd party data and content.</li>
-  <li>Rate Limiting - Limiting how much of a resource any single API consumer can access using rate limiting.</li>
-</ul>
-
-<p>These are the first things that come to mind when the topic of API security is brought up. I’d say most conversation begin with encryption, but as someone progresses on their API journey they begin to understand how they can key things up, using OAuth, rate limiting, and other aspects of API management to secure their API operations.</p>
-
-<p>Next, I want to think about some the “Known Unknowns”, things like:</p>
-
-<ul>
-  <li>Freeloaders - People with multiple accounts, and generally aren’t healthy consumers.</li>
-  <li>Errors - Errors, misconfigured, and malformed requests, responses, and anything that generally gums up the gears of operations.</li>
-  <li>Vulnerabilities - Making sure all known software and hardware vulnerabilities are patched and communicated as part of operations.</li>
-  <li>Attacks - Defending against the known attacks, staying in tune with OWASP and other groups who are actively identifying, studying, and sharing attacks.</li>
-</ul>
-
-<p>These are the things we might not totally understand or have implemented, but they are known(ish). With the right amount of resources and expertise, any API team should be able to mitigate against these areas of security. There is always a lot of work to turn the unknowns into knowns in this area, but they are doable.</p>
-
-<p>Now I want to think a little about the “Unknown Unknowns”, likes like:</p>
-
-<ul>
-  <li>DNS - What is happening at the DNS level as it pertains to my API security?</li>
-  <li>Relationship - Relationship between requests, even if they are using different keys, IP addresses, and other elements–where is the overlap?</li>
-  <li>Threats - What information is available to me regarding new and emerging threats that I’m only beginning to see, or maybe my partners and others in same space are seeing?</li>
-  <li>Sharing - Are there opportunities to share information and see a bigger picture when it comes to vulnerabilities and threats?</li>
-</ul>
-
-<p>These are just a handful of my initial thoughts on what the unknown unknowns might be. Things that are currently off the radar of my known API security practices. API management seems to dominate and in some cases terminate the API security conversation, but I have the feeling there are numerous other considerations out there that we are not seeing. I’m just looking to begin defining this new bucket of security considerations so I can keep adding items to it as I’m doing my research.</p>
-
-<p>From your perspective, what are the biggest threats out there for API security that many API providers are completely unaware of? I’m looking to keep expanding on this frontline of API security and turn up the heat beneath <a href="http://security.apievangelist.com">my research</a> while I have the resources to do so. I feel like the API security conversation has kind of stagnated after the last wave of API management growth, leaving many providers thinking they have everything covered.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/20/unknown-unknown-with-api-security/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
