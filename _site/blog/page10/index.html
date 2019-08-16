@@ -129,6 +129,256 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/10/25/a-suite-of-human-services-api-definitions-using-openapi/">A Suite Of Human Services API Definitions Using OpenAPI</a></h3>
+        <span class="post-date">25 Oct 2017</span>
+        <p><img src="http://org.open.referral.adopta.agency/images/openreferral-expanded.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I’m needing to quantify some of the work that has occurred around <a href="http://org.open.referral.adopta.agency/">my Human Services Data Specification work</a> as part of a grant we received from Stanford. The grant shas helped us push forward almost three separate revisions of the API definition for working with human services data, and one of the things I’m needing to do is quantify the work that has occurred specifically around the OpenAPI definitions. At this point the specification is pretty verbose, and is now spanning multiple documents, making it difficult to quantify and share within an executive summary. To help support I wanted to craft some language that could help introduce the value that has been created to a non-technical audience.</p>
+
+<p>The Human Services Data Specification (HSDS) provides the common schema for accessing, storing, and sharing of human data, providing a machine readable definition that human service practitioners can follow in their implementations. The Human Services Data API (HSDA) takes this schema, and provides an API definition for accessing, as well as adding, updating, and deleting data using a web API. While there are a growing number of code projects emerging that support HSDS/A, the center of the project is a set of OpenAPI definitions that outline the finer details of working with human services data via a web API.</p>
+
+<p>With the assistance of the grant from Stanford, Open Referral was able to move forward the HSDA specification from version 1.0, to 1.1, 1.2, and now we are looking at delivering version 1.3 of the specification before end of 2017. The core OpenAPI definition for HSDA provides guidance for the design of human services APIs, with a focus on the core set of resources needed to operate a human services project. There are the handle of core resources defined as part of what is called HSDA core:</p>
+
+<ul>
+  <li><strong>Organizations</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda.yaml">OpenAPI Definition</a>) - Providing a framework for adding, updating, reading, and deleting organizational data. Describing the paths, parameters, and HSDS schema required to effectively communicate around organizations delivering human services.</li>
+  <li><strong>Locations</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda.yaml">OpenAPI Definition</a>) - Providing a framework for adding, updating, reading, and deleting location data. Describing the paths, parameters, and HSDS schema required to effectively communicate around specific locations that provide human services.</li>
+  <li><strong>Services</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda.yaml">OpenAPI Definition</a>) - Providing a framework for adding, updating, reading, and deleting services data. Describing the paths, parameters, and HSDS schema required to effectively communicate around specific human services.</li>
+  <li><strong>Contacts</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda.yaml">OpenAPI Definition</a>) - Providing a framework for adding, updating, reading, and deleting contact data. Describing the paths, parameters, and HSDS schema required to effectively communicate around contacts associated with organizations, locations, and services delivering human services.</li>
+</ul>
+
+<p>This is considered to be the HSDA core specification, focusing on exactly what is needed to manage organizations, locations, services, and contacts involved with human services, and nothing more. As of version 1.2 of the specification we have spun off several additional specifications, which support the HSDA core specification, but are meant to reduce the complexity of the core specification. Here are seven additional projects we’ve managed to accomplish as part of our recent work:</p>
+
+<ul>
+  <li><strong>HSDA Search</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-search.yaml">OpenAPI Definition</a>) - A machine readable API definition for searching across organizations, location, services, and contacts, as well as their sub-resources.</li>
+  <li><strong>HSDA Bulk</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-bulk.yaml">OpenAPI Definition</a>) - A machine readable API definition dictating how bulk operations around organizations, location, services, and contacts can occur, minimizing the impact of core systems.</li>
+  <li><strong>HSDA Meta</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-meta.yaml">OpenAPI Definition</a>) - A machine readable API definition describing all the meta data in use as part of any HSDA implementation, providing a history of everything that has occurred.</li>
+  <li><strong>HSDA Taxonomy</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-taxonomy.yaml">OpenAPI Definition</a>) - A machine readable API definition for managing one or more taxonomies in use, and how these taxonomies are applied to core organizations, locations, services, and contacts.</li>
+  <li><strong>HSDA Management</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-management.yaml">OpenAPI Definition</a>) - A machine readable API definition for the management level details of operating an HSDA implementation, providing guidance for user access, application management, service usage, and authentication and logging for the HSDA meta system.</li>
+  <li><strong>HSDA Orchestration</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-orchestration.yaml">OpenAPI Definition</a>) - A machine readable API definition for orchestration data exchanges between HSDA implementations, allowing for schedule or event based integrations to be executed, involving one or many HSDA implementations.</li>
+  <li><strong>HSDA Validation</strong> (<a href="https://github.com/openreferral/api-specification/blob/master/_data/api-commons/openapi-hsda-utility.yaml">OpenAPI Definition</a>) - A machine readable API definition for validating an HSDA implementation follows the API and data schema, providing a validation API that can be used keep any platform compliant.</li>
+</ul>
+
+<p>The Stanford grant has allowed us to move forward HSDA three separate versions, but has also given us the time to properly break down HSDA into sensible, pragmatic services that do one thing, and does it well. The OpenAPI specifications provide a machine readable blueprint that can be used by any city, county, or other organization to define, implement, and manage their human services implementation, keeping it in sync with Open Referrals guidance. Each of the OpenAPI definitions provide a distilled down version of Open Referral guidance that anyone can follow within individual operations–designed for both business and technical users to adopt.</p>
+
+<p>The HSDA specification is defined using <a href="https://www.openapis.org/">OpenAPI</a>, which is an open source specification format for defining web APIs, which is now part of the Linux Foundation. OpenAPI allows us to define HSDA using JSON Schema, but then also allows us to define how that schema is used as part of API requests and responses. It provides a YAML or JSON definition of the HSDA core, as well as each individual project. These definitions are then used to design, deploy, and manage individual API implementations, including providing documentation, code libraries, testing, and other essential aspects of operating an API that supports web, mobile, device, voice, spreadsheet, and other types of applications.</p>
+
+<p>Hopefully this breaks down how the HSDA OpenAPI specifications are central to what Open Referral is doing. It provides the guidance that other human service providers can follow, going beyond just the data schema, and actually helping ensure access across many different implementations can work in concert. The HSDA OpenAPIs act as a set of rules that can guide individual implementations, while also ensuring their interoperability. When each human services provider adopts one of the HSDA specifications they are establishing a contract with their API consumers and application developers, promising they’ll deliver against this set of rules, ensuring their API will speak the same language as other human service APIs that also speak HSDA. This is the objective of Open Referral, and why we use OpenAPI as the central definition for everything we do.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/25/a-suite-of-human-services-api-definitions-using-openapi/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/24/some-new-api-evangelist-art/">Some New API Evangelist Art</a></h3>
+        <span class="post-date">24 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-butterfly-vertical.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>When I first started API Evangelist I spent two days trying to create a logo. I then spent another couple days trying to find a service to create something. Unhappy with everything I produced, I resorted to what I considered a temporary logo, where I just typed a JSON representation of the logo, mimicking what a JSON response for calling a logo through an API might look like. Seven years later, the logo has stuck, resulting in me never actually invested any more energy into my logo.</p>
+
+<p>The API Evangelist imagery is long overdue for an overhaul. I stopped wearing the logo on my signature black t-shirts a couple years back, and I do not want to reach the 10 year mark before I actually do anything new. My logo, and the other artwork I’ve accumulated over the last several years played their role, but I’m stoked to finally begin the process of evolving some artwork for API Evangelist. To help me move the needle I’ve began working with my friend Bryan Mathers (<a href="https://twitter.com/BryanMMathers">@BryanMMathers</a>), where I have experienced <a href="https://visualthinkery.com/">his Visual Thinkery induced journey</a>, where he generates image ideas by engaging in a series of conversations. Producing some whimsical, colorful, and entertaining images for anything he can imagine out of our discussions. It is something I’ve experienced as part of our parent company <a href="http://contrafabulists.com/">Contrafabulists</a>, and stoked to experience as part of my API Evangelist work.</p>
+
+<p>Bryan doodled the butterfly image while we were talking, and didn’t anticipate it would be the one I’d choose to be the logo. Honestly, at first I didn’t think it was logo quality, but after spending time looking and thinking about, I feel it suits what I’m doing very well. It still has the technical elements in the brackets in the wing outline, and the digital or pixel nature of the color in the wings, but is moving beyond the tech and represents the natural, more human side of things I would like to emphasize. The logo represents my API Evangelist ideas, and what I want them to be when I put them out there on my blog, and in my other work.</p>
+
+<p>At first, a butterfly didn’t feel like Kin Lane, but I’m not creating a Kin Lane logo. I am creating an API Evangelist logo. When you think about the caterpillar to a butterfly evolution, and even the butterfly effect, it isn’t a stretch to apply all of this to what I work to do as the API Evangelist. I’m just looking to plant ideas in people’s heads with my work. I want my ideas to grow, expand, and take flight on their own. Making an impact on the world. I enjoy seeing my ideas fluttering around, adding color, adding motion, and presence around the API community. At the moment where I couldn’t imagine any image to represent API Evangelist, Bryan was able to extract a single image that I think couldn’t better represent what it is I do. #VisualThinkery</p>
+
+<p>Bryan has created a horizontal, and vertical logo for me, using the butterfly. He’s also created a handful of stamps, and supporting images for my work. I will be sharing these other elements out as part of my storytelling, and see if I can find places for them to live more permanently somewhere on my network of site(s). Luckily, my website is pretty minimal, and the change of logo works well with it. I’m pretty happy with the change, and the introduction of color. Thanks Bryan for the work. I’m a little sad to retire my other logo, but it has run its course. I’ll still use it as a backdrop / background in some of my social profiles, and other work, as I think it reflects the history of API Evangelist. However, I am pretty stoked to finally have some new art for API Evangelist, that adds some new color to my work.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/24/some-new-api-evangelist-art/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/24/the-api-portal-outline-for-a-project-i-am-working-on/">The API Portal Outline For A Project I Am Working On</a></h3>
+        <span class="post-date">24 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/portal/api-portal-forkable.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am working through a project for a client, helping them deliver a portal for their API. As I do with any of my recommendations with my clients, I take my existing API research, and refine it to help craft a strategy to meets their specific needs. Each time I do this it gives me a chance to rethink some of my recommendations I’ve already gathered, as well as learn from new types of projects. I’ve taken the building blocks from my <a href="http://portal.apievangelist.com">API portal</a>, as well as my <a href="http://portal.apievangelist.com">API management</a> research, and have taken a crack at organizing them into an outline that I can use to guide my current project.</p>
+
+<p>Here is a walk through of the outline I’m recommending as part of a basic API portal implementation, to support a simple public API:</p>
+
+<ul>
+  <li><strong>Overview</strong> - / - Everything starts with a landing page, with a simple overview of what an API does.</li>
+</ul>
+
+<p>Then you need some basics to help make on-boarding as frictionless as possible, providing everything an API consumer needs to get going:</p>
+
+<ul>
+  <li><strong>Getting Started</strong> - /getting-started/ - Handful of steps with exactly what is needed to get started.</li>
+  <li><strong>Authentication</strong> - /authentication/ - An overview of what type of authentication is used.</li>
+  <li><strong>Documentation</strong> - /documentation/ - Documentation for the APIs that are available.</li>
+  <li><strong>FAQ</strong> - /faq/ - Answer the most common questions.</li>
+  <li><strong>Code</strong> - /code/ - Provide code samples, libraries, and SDKs to get going.</li>
+</ul>
+
+<p>Then get API consumers signed up, or able to login and get at their API keys as quickly as you possibly can:</p>
+
+<ul>
+  <li><strong>Sign Up</strong> - /developer/ - Provide a simple sign up for a developer account.</li>
+  <li><strong>Login</strong> - /developer/ - Allow users to quickly log back in after they have account.</li>
+</ul>
+
+<p>Next, provide a wealth of communication and support mechanisms, helping make sure developers are aware of what is going on:</p>
+
+<ul>
+  <li><strong>Blog</strong> - /blog/ - A simple blog dedicated to sharing stories about the API.</li>
+  <li><strong>Support</strong> - /support/ - Offer up a handful of support channels like email and tickets.</li>
+  <li><strong>Road Map</strong> - /road-map/ - Provide a road map of what the future will hold for the API.</li>
+  <li><strong>Issues</strong> - /issues/ - Share what the known issues are for the API platform.</li>
+  <li><strong>Change Log</strong> - /change-log/ - Publish a log of everything that has changed with the platform.</li>
+  <li><strong>Status</strong> - /status/ - Provide a status page showing the availability of API services.</li>
+  <li><strong>Security</strong> - /security/ - Publish an overview of what security practices are in place.</li>
+</ul>
+
+<p>Make sure your consumers know how to get involved at the right level, making plans, pricing, and partnership opportunities easy to find:</p>
+
+<ul>
+  <li><strong>Plans</strong> - /plans/ - Offer a single page with API access plans and pricing information.</li>
+  <li><strong>Partners</strong> - /partners/ - Share what the partnership opportunities are, as well as existing partners.</li>
+</ul>
+
+<p>Then let’s take care of the legal side of things, making sure API consumers are fully aware of the TOS, and other aspects of operations:</p>
+
+<ul>
+  <li><strong>Terms of Service</strong> - /terms-of-service/ - Make the terms of service easy to find.</li>
+  <li><strong>Privacy</strong> - /Privacy/ - Publish a privacy statement for all API consumers.</li>
+  <li><strong>Licensing</strong> - /Licensing/ - Share the licensing for API, code, data, and other assets.</li>
+</ul>
+
+<p>I also wanted to make sure I took care of the basics for the developer accounts, flushing out the common building blocks developers will need to be successful:</p>
+
+<ul>
+  <li><strong>Dashboard</strong> - /developer/dashboard/ - Provide a simple, comprehensive dashboard for developers.</li>
+  <li><strong>Account</strong> - /developer/account/ - Allow API consumers to change their account information.</li>
+  <li><strong>Applications</strong> - /developer/applications/ - Allow API consumers to add multiple applications, and receive API keys for each application.</li>
+  <li><strong>Plans</strong> - /developer/plans/ - If there are multiple plans, allow developers to change plans.</li>
+  <li><strong>Usage</strong> - /developer/usage/ - Show history of all API usage for API consumers.</li>
+  <li><strong>Billing</strong> - /developer/billing/ - Allow API consumers to add, update, and remove billing information.</li>
+  <li><strong>Invoices</strong> - /developer/invoices/ - Share a listing, as well as detail of all invoices for use.</li>
+</ul>
+
+<p>Then I had a handful of other looser items that I wanted to make sure were here. Some of these will be for the second phase of developoment, but I want to make sure is on the list:</p>
+
+<ul>
+  <li><strong>Branding</strong> - /branding/ - Providing a logo, branding guidelines, and requirements.</li>
+  <li><strong>Embeddable</strong> - /embeddable/ - Share a handful of butts and widgets for use by consumers.</li>
+  <li><strong>Webhooks</strong> - /Webhooks/ - Publish details on how to setup and manage webhook notifications.</li>
+  <li><strong>iPaaS</strong> - /ipaas/ - Information on Zapier, and other iPaaS integration solutions that are available.</li>
+  <li><strong>Spreadsheets</strong> - /spreadsheets/ - Share any spreadsheet plugins or connectors that are available for integration.</li>
+</ul>
+
+<p>That concludes what I’d consider to be the essential building blocks for an API. Sure, there are some more minor APIs that can operate on a bare bones version of this list, but for any API looking to conduct business at scale, I’d recommend considering everything on this list. It reflects what I find across the leading providers like Stripe and Twilio, and reflect what I like to see from an API provider when I am getting up and running using any API.</p>
+
+<p>I have Jekyll templates for each of these building blocks, which use the Bootstrap UI for the layout. I am updating it for this project, then I will publish again as a set of forkable tools that anyone can implement. I’m going to publish a new API portal that runs as an interactive outline of essential building blocks, then creates new Github repository for a user, and publishes each of the selected components to the repo. Providing a buffet of API developer portal tools anyone can put to work for their API without much work.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/24/the-api-portal-outline-for-a-project-i-am-working-on/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/24/aws-api-gateway-export-in-openapi-and-postman/">AWS API Gateway Export In OpenAPI and Postman Formats</a></h3>
+        <span class="post-date">24 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-api-gateway-export.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><a href="http://apievangelist.com/2017/10/19/importing-openapi-definition-to-create-api-with-aws-gateway/">I wrote about being able to import an OpenAPI into the AWS API Gateway to jumpstart your API the other day</a>. OpenAPI definitions are increasingly used for every stop along the API life cycle, and being able to import an OpenAPI to start a new API, or update an existing in your API gateway is a pretty important feature for streamlining API operations. OpenAPI is great for defining the surface area of deploying and managing your API, as well as potentially generate client SDKs, and interactive API documentation for your API developer portal.</p>
+
+<p>Another important aspect of this API lifecycle is being able to get your definitions out in a machine readable format as well. All service providers should be making API definitions a two-way street, just like Amazon does with the AWS API Gateway. Using the AWS Console you can export an OpenAPI definition for any API. What makes things interesting is you can also export an OpenAPI complete with all the OpenAPI extensions they use to customize each API within the API Gateway. Also, they provide an export to OpenAPI, but with Postman specific extensions, allowing you to use use in the desktop client tooling when developing as well as integrating with any API.</p>
+
+<p>I’ve said it before, and I’ll say it again. Every API service provider should allow for the importing and exporting of common API definition formats like OpenAPI and Postman. If you are selling services and tooling to API designers, developers, architects, and providers, you should ALWAYS provide a way for them to generate a static definition of what is going on–bonus, if you allow them to publish API definitions to Github. I know some API service providers like to allow for API import, but worry about customers abandoning their service if there is an export. Too bad, offer better services, and affordable pricing models, and people will stick around.</p>
+
+<p>Beyond selling services to folks with day jobs, having the ability to import and export an OpenAPI allows me to play aorund with tools more. Using the AWS API Gateway I am setting up a number of APIs, then exporting them, and saving the blueprints for when I need to tell as part of a story, or use in a clients project. Having the ability to import and export an OpenAPI helps me better deliver actual APIs, but it also helps me tell better stories around what is possible with an API service or tool. If I can’t get in there and actually test drive, play with and see how things work, it is unlikely I will be telling stories about it, or have in my toolbox when I come across a project where I’ll need to apply a specific service or tool.</p>
+
+<p>If you are having trouble making your API service or tool speak  OpenAPI, Postman, or other formats, make sure and check out <a href="https://apimatic.io/transformer">API Transformer</a>, which provides an API you can use to convert between the format. So if you can support one format, you can support them all. They even have the ability to take a .har file and generate an OpenAPI. I recommend natively supporting the importing and exporting of OpenAPI, then using API Transformer you can also allow for the importing and exporting in other formats. When you handle the import, you’ll always just make sure it speaks OpenAPI before you ingest. When a service supports OpenAPI import and export, it is much more likely I’m going to play with more, as well as increases the chance I’m going to be baking it into the life cycle for one of the projects I’m working on for a client. I’m sure other folks are thinking along the same lines, and are grateful when they can get their API definitions in and out of your platform.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/24/aws-api-gateway-export-in-openapi-and-postman/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/24/your-api-road-map-helps-others-tell-their-story-about-your-api/">Your API Road Map Helps Others Tell Stories About Your API</a></h3>
+        <span class="post-date">24 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/los-angeles-downtow-freeway_blue_circuit_5.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p>There are many reasons you want to have a road map for your API. It helps you communicate with your API community where you are going with your API. It also helps you have a plan in place for the future, which increases the chances you will be moving things forward in a predictable and stable way. When I’m reviewing and API I don’t see a public API road map available, I tend to give them a ding on the reliability and communication for their operations. One of the reasons we do APIs is to help us focus externally with our digital resources, which communication plays an important role, and when API providers aren’t communicating effectively with their community, there are almost always other issues right behind the scenes.</p>
+
+<p>A road map for your API helps you plan, and think through how and what you will be releasing for the foreseeable future. Communicating this plan externally helps force you think about your road map in context of your consumers. Having a road map, and successfully communicating about it via a blog, on Twitter, and other channels helps keep your API consumers in tune with what you doing. In my opinion, an API road map is an essential building block for all API providers, because it has direct value on the health of API operations, but because it also provides an external sign of the overall health of a platform.</p>
+
+<p>Beyond the direct value of having an API road map, there are other reasons for having one that will go beyond just your developer community. <a href="https://searchengineland.com/google-posts-can-now-automated-new-api-support-284842">In a story in Search Engine Land about Google Posts</a>, the author directly references the road map as part of their storytelling. <em>“In version 4.0 of the API, Google <a href="https://developers.google.com/my-business/content/change-log">noted</a> that “you can now create Posts on Google directly through the API.” The <a href="https://developers.google.com/my-business/content/change-log">changelog</a> include a bunch of other features, but the Google Posts is the most notable.”</em> Adding another significant dimension to the road map conversation, and helping out with SEO, and other API marketing efforts.</p>
+
+<p>As you craft your road map you might not be thinking about the fact that people might be referencing it as part of stories about your platform. I wouldn’t sweat it too much, but you should at least make sure you are having a conversation about it with your team, and maybe add an editorial cycle to your road map publishing process. Making sure what you publish will speak to your API consumers, but also make for quotable nuggets that other folks can use when referencing what you are up to. This is all just a thought I am having as I’m monitoring the space, and reading about what other APIs are are up to. I find road maps to be a critical piece of the API communication, and support, and I depend on them to do what I do as the API Evangelist. I just wanted to let you know how important your API road map is, so you don’t forget to give it some energy on a regular basis.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/24/your-api-road-map-helps-others-tell-their-story-about-your-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/23/apis-reduce-everything-to-a-transaction/">APIs Reduce Everything To A Transaction</a></h3>
+        <span class="post-date">23 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/reduce+everything+to+a+transaction_tr.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>My partner in crime Audrey Watters crafted a phrase that I use regularly, that “APIs reduce everything to a transaction”. She first said it jokingly a few years back, but is something I regularly repeat, and think about regularly, as I feel it profoundly describes the world I study. I like the phrase because of its dual meaning to me. If I say it with a straight face, in different company, I will get different responses. Some will be positive, and others will be negative. Which I think represents the world of APIs in a way that show how APIs are neither good, bad, or neutral.</p>
+
+<p>If you are an API believer, when I describe how APIs reduce everything to a transaction, you probably see this as a positive. You are enabling something. You are distilling down aspects of our personal and business worlds down into a small enough representation, so that it can be transmitted via an API. Enabling payments, messages, likes, shares, and other aspects of our digital economy. Your work as an API believer is all about reducing things down to a transaction, so that you can make people’s lives better, and enable some kind of functionality that will deliver value online, and via our mobile phones. API transactions are enablers, and by using APIs, you are working to make the world a better place.</p>
+
+<p>If you aren’t an API believer, when I describe how APIs reduce everything to a transaction, you are probably troubled, and left asking why I would want to do this. Not everything can or should be distilled down into a single transaction. Shifting something to be a transaction opens it up for being bought and sold. This is the nature of transactions. Even if you are delivering value to end-users by reducing a piece of their world to a transaction, now that it is a transaction, it is vulnerable to other market forces. It is these unintended consequences, and side effects of technology that many of us geeks do not anticipate, but market forces see as an opportunity, and benefit greatly from mindless technologists like us doing the hard work to transform the world into transactions that they can get their greedy little hands on.</p>
+
+<p>Our desire to purchase a product is reduced to a transaction. Nothing bad here, right? Our conversations, images we take, videos we watch, and our location becomes a transaction. Getting a little scarier. Then our healthcare, education, and personal thoughts are turned into transactions. They are being bought and sold online, and via our mobile phones. What we buy, photos of our children, health records, and our most personal thoughts are all being reduced to a transaction so they can be transmitted via web and mobile applications. Secondarily, because it has been reduced to a transaction, it can be bought and sold on data markets, and become a transaction in the surveillance economy. Fulfilling the darker side of what we know as reducing everything to a transaction.</p>
+
+<p>This is one of the reasons I’m fascinated with APIs. My technologist brain is attracted to the process of reducing things to a transaction, so they can be transmitted via APIs for use in web, mobile, and device applications. I’m obsessed with reducing everything to a transaction. Along this journey I’m also fascinated by our collective lack of awareness regarding how these transactions can be used for harm. I’m intrigued by our inability to think through this as technologists, and even become annoyed when it is pointed out. I’m fascinated by our lack of accountability as technologists when the transactions we are responsible for are used to harm people, exploit individuals, and are bought and sold on the open market like we are cattle. We seem unable to stop or slow what we have set in motion, and must keep reducing everything to a transaction at all cost.</p>
+
+<p>Why do we need photos of our children to be transactions? Why do we need our DNA to be transactions? Why do we need every moment, every thought, every impulse in our day to be a digital transaction? Once anything is reduced to a transaction in our world, why do we then feel compelled to measure it? The steps we take? The calories we consume? The hours we sleep? These are all aspects of our lives that have been reduced to transactions. Why? For our benefit? To improve our life? Or is it just so that someone can sell us something, or even worse, just sell this little piece of us. This is why everything is being reduced to a transaction. The reasoning behind is always about making our lives better, and improving the quality of our daily life, but the real reason is always about distilling down a piece of who we are into something that can be bought and sold–transacted.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/23/apis-reduce-everything-to-a-transaction/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/10/23/budget-api-management-using-github/">Budget API Management Using Github</a></h3>
+        <span class="post-date">23 Oct 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-oauth-api-management.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I am always looking for the cheapest, easiest ways to get things done in the world of APIs. As a small business owner I’m always on the hunt for hacks to get done what I need, and hopefully make things easier for my users, while keeping things free, or at least minimally priced for my business. When it comes to my simplest of APIs, where I’m not looking to fully manage, but I do want anyone using them to authenticate, and pass in API keys, so that I can track on their use. In some cases I’m going to bill against this usage, but for the most part I just want to secure, and quantify their consumption.</p>
+
+<p>The quickest and dirtiest way I will enable authentication for any API is using Github. First thing you do is create a Github OAuth application, which is available under settings for your Github user or organization. Then I add a JavaScript icon and login link, and then paste a PHP script at another location, where it will be handling the login. All you have to do is update the URLs in both scripts, and when someone clicks on icon, they’ll be authenticated and then dropped back on the original page with username, and valid OAuth token–which then at this point you have a validated user, and valid token.</p>
+
+<p>In some situations I just require that the appid and appkey be passed in with each API call. I do not rate limit, or bill against usage. I am just looking to identify consumers. Other projects I’m actively billing against consumption, but I’m doing this by processing the web server logs for the API. Again, bare bones operations. For the next level up, in the login PHP script I’m actually adding a user to a specific plan I’ve setup for an API using the AWS API Gateway, and adding their key to the gateway. Now a user has access to APIs, and the platform has (limited) access to their Github account, and a way to identify all their API usage.</p>
+
+<p>I use this approach to account authentication for reading and writing to the underlying Github repository I’m using for API developer portals, and other applications. I’m also using these accounts to access API resources I’m serving up across a variety of projects. The combination allows for some pretty easy, but powerful engagement with API consumers via Github. The best part is I can rely on Github security and accounts for this layer of my API management. Next, I like that I can extend the features of their account using the AWS API Gateway. Extending the API management capabilities for specific projects when I have higher needs.</p>
+
+<p><a href="http://github.oauth.apievangelist.com/">You can find the scripts for this on Github</a>. If you don’t want to host the server side portion of this, I recommend checking out OAuth.io, as they have a simple SaaS version of this that will work beyond just Github. However, if you are looking for quick and dirty solution, this one should work just fine.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/10/23/budget-api-management-using-github/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/10/23/a-simple-api-with-aws-dynamodb-lambda-and-api-gateway/">A Simple API With AWS DynamoDB, Lambda, and API Gateway</a></h3>
         <span class="post-date">23 Oct 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-dynamodb-lambda-api-gateway.png" align="right" width="45%" /></p>
@@ -1314,216 +1564,6 @@ In this way, standards aren’t something that are dictated to teams. Teams driv
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/04/letting-go-in-an-api-world-is-hard-to-do/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/04/sharing-top-sections-from-your-api-documentation-as-part-of-your-communications-strategy/">Sharing Top Sections From Your API Documentation As Part Of Your Communications Strategy</a></h3>
-        <span class="post-date">04 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/top-aws-iam-documentation-pages-so-far-in-2017.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I’m always learning from the API communication practices from out of the different AWS teams. From <a href="http://communications.apievangelist.com/2016/10/04/amazon-alexa-as-an-example-when-it-comes-to-api-communications/">the regular storytelling coming out of the Alexa team</a>, to the <a href="https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/">mythical tales of leadership at AWS that have contributed to the platform’s success</a>, the platform provides a wealth of examples that other API providers can emulate.</p>
-
-<p>As I talked about last week, <a href="http://apievangelist.com/2017/09/29/developing-an-ability-to-repeat-the-same-api-stories-over-and-over-you-are-going-to-need-it/">finding creative ways to keep publishing interesting content to your blog as part of your API evangelism and communications strategy is hard</a>. It is something you have to work at. One way I find inspiration is by watching the API leaders, and learning from what they do. An interesting example I recently found out of the AWS security team, <a href="https://aws.amazon.com/blogs/security/the-top-20-aws-iam-documentation-pages-so-far-in-2017/">was their approach to showcasing the top 20 AWS IAM documentation pages so far in 2017</a>. It is a pretty simple, yet valuable way to deliver some content for your readers, that can also help you expose the dark corners of your API documentation, and other resources on your blog.</p>
-
-<p>The approach from the AWS security team is a great way to generate content without having to come up with good ideas, but also will help with your SEO, especially if you can cross publish, or promote through other channels. It’s pretty basic content stuff, that helps with your overall SEO, and if you play it right, you could also get some SMM juice by tweeting out the store, as well as maybe a handful of the top links from your list. It is pretty listicle type stuff, but honestly if you do right, it will also deliver value. These are the top answers, in a specific category, that your API consumers are looking for answers in. Helping these answers rise to the top of your blog, search engine, and social media does your consumers good, as well as your platform.</p>
-
-<p>One more tool for the API communications and evangelism toolbox. Something you can pull out when you don’t have any storytelling mojo. Which is something you will need on a regular basis as an API provider, or service provider. It is one of the tricks of trade that will keep your blog flowing, you readers reading, and hopefully your valuable API, products, services, and stories floating to the top of the heap. And that is what all of this is about–staying on top of the pile, keeping things relevant, valuable, and useful. If we can’t do that, it is time to go find something else to do.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/04/sharing-top-sections-from-your-api-documentation-as-part-of-your-communications-strategy/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/03/clearly-designate-api-bot-automation-accounts/">Clearly Designate API Bot Automation Accounts</a></h3>
-        <span class="post-date">03 Oct 2017</span>
-        <p><a href="https://www.shieldsquare.com/good-bots-and-bad-bots/"><img src="https://s3.amazonaws.com/kinlane-productions/shieldsquare/good-v-bad-bots.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p>I’m continuing <a href="http://apievangelist.com/2017/07/17/bot-observability-for-every-platform/">my research into bot platform observability</a>, and <a href="http://apievangelist.com/2017/08/15/which-platforms-have-control-over-the-conversations-around-their-bots/">how API platforms are handling (or not handling) bot automation on their platforms</a>, as I try to make sense of each <a href="http://apievangelist.com/2017/10/02/the-waves-of-api-driven-bots-invading-our-shores/">wave of the bot invasion on the shores of the API sector</a>. It is pretty clear that Twitter and Facebook aren’t that interested in taming automation on their platforms, unless there is more pressure applied to them externally. I’m looking to make sure there is a wealth of ideas, materials, and examples of how any API driven platform can (are) control bot automation on their platform, as the pressure from lawmakers, and the public intensifies.</p>
-
-<p>Requiring users clearly identify automation accounts is a good first place to start. <a href="https://api.slack.com/bot-users">Establishing a clear designation for bot users has its precedents</a>, and requiring developers to provide an image, description, and some clear check or flag that identifies an account as automated just makes sense. <a href="https://medium.com/slack-developer-blog/the-bot-rulebook-a442d9fb21cb">Providing a clear definition of what a bot is, with articulate rules for what bots should and shouldn’t be doing</a> is next up on the checklist for API platforms. Sure, not all users will abide by this, but it is pretty easy to identify automated traffic versus human behavior, and having a clear separation allows accounts to automatically turned off when they fit a particular fingerprint, until a user can pass a sort of platform Turing test, or provide some sort of human identification.</p>
-
-<p>Automation on API platforms has its uses. However, unmanaged automation via APIs has proven to be a problem. Platforms need to step up and manage this problem, or the government eventually will. Then it will become yet another burdensome regulation on business, and there will be nobody to blame except for the bad actors in the space (cough Twitter &amp; Facebook, cough, cough). Platforms tend to not see it as a problem because they aren’t the targets of harassment, and it tends to boost their metrics and bottom line when it comes to advertising and eyeballs. Platforms like Slack have a different business model, which dictates more control, otherwise it will run their paying customers off. The technology, and practices already exist for how to manage bot automation on API platforms effectively, they just aren’t ubiquitous because of the variances in how platforms generate their revenue.</p>
-
-<p>I am going to continue to put together a bot governance package based upon <a href="http://bots.apievangelist.com/">my bot API research</a>. Regardless of the business model in place, ALL API platforms should have a public bot automation strategy in place, with clear guidelines for what is acceptable, and what is not. I’m looking to provide API platforms with a one-stop source for guidance on this journey. It isn’t rocket science, and it isn’t something that will take a huge investment if approached early on. Once it gets out of control, and you have congress crawling up your platforms ass on this stuff then it probably is going to get more expensive, and also bring down regulatory hammer on everyone else. So, as API platform operators let’s be proactive and take the problem of bot automation on directly, and learn from Twitter and Facebook’s pain.</p>
-
-<p><em><strong>Photo Credit:</strong> <a href="https://www.shieldsquare.com/good-bots-and-bad-bots/">ShieldSquare</a></em></p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/03/clearly-designate-api-bot-automation-accounts/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/03/looking-at-the-37-apached-data-projects/">Looking At The 37 Apache Data Projects</a></h3>
-        <span class="post-date">03 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/apache/apache-logo.png" align="right" width="30%" style="padding: 15px;" /></p>
-<p>I’m spending time investing in <a href="http://data.apievangelist.com">my data</a>, as well as <a href="http://database.apievangelist.com">my database API research</a>. I’ll have guides, with accompanying stories coming out over the next couple weeks, but I want to take a moment to publish some of the raw research that I think paints an interesting picture about where things are headed.</p>
-
-<p>When studying what is going on with data and APIs you can’t do any search without stumbling across an Apache project doing something or other with data. <a href="https://projects.apache.org/projects.html?category">I found 37 separate projects at Apache that were data related</a>, and wanted to publish as a single list I could learn from.</p>
-
-<ul>
-  <li><a href="https://projects.apache.org/project.html?airavata"><strong>Airvata</strong>**</a> - Apache Airavata is a micro-service architecture based software framework for executing and managing computational jobs and workflows on distributed computing resources including local clusters, supercomputers, national grids, academic and commercial clouds. Airavata is dominantly used to build Web-based science gateways and assist to compose, manage, execute, and monitor large scale applications (wrapped as Web services) and workflows composed of these services.</li>
-  <li><a href="https://projects.apache.org/project.html?ambari"><strong>Ambari</strong></a> - Apache Ambari makes Hadoop cluster provisioning, managing, and monitoring dead simple.</li>
-  <li><a href="https://projects.apache.org/project.html?apex"><strong>Apex</strong></a> - Apache Apex is a unified platform for big data stream and batch processing. Use cases include ingestion, ETL, real-time analytics, alerts and real-time actions. Apex is a Hadoop-native YARN implementation and uses HDFS by default. It simplifies development and productization of Hadoop applications by reducing time to market. Key features include Enterprise Grade Operability with Fault Tolerance, State Management, Event Processing Guarantees, No Data Loss, In-memory Performance &amp; Scalability and Native Window Support.</li>
-  <li><a href="https://projects.apache.org/project.html?avro"><strong>Avro</strong></a> - Apache Avro is a data serialization system.</li>
-  <li><a href="https://projects.apache.org/project.html?beam"><strong>Beam</strong></a> - Apache Beam is a unified programming model for both batch and streaming data processing, enabling efficient execution across diverse distributed execution engines and providing extensibility points for connecting to different technologies and user communities.</li>
-  <li><a href="https://projects.apache.org/project.html?bigtop"><strong>Bigtop</strong></a> - Bigtop is a project for the development of packaging and tests of the Apache Hadoop ecosystem. The primary goal of Bigtop is to build a community around the packaging and interoperability testing of Hadoop-related projects. This includes testing at various levels (packaging, platform, runtime, upgrade, etc…) developed by a community with a focus on the system as a whole, rather than individual projects. In short we strive to be for Hadoop what Debian is to Linux.</li>
-  <li><a href="https://projects.apache.org/project.html?bookkeeper"><strong>BookKeeper</strong></a> - BookKeeper is a reliable replicated log service. It can be used to turn any standalone service into a highly available replicated service. BookKeeper is highly available (no single point of failure), and scales horizontally as more storage nodes are added.</li>
-  <li><a href="https://projects.apache.org/project.html?calcite"><strong>Calcite</strong></a> - Calcite is a framework for writing data management systems. It converts queries, represented in relational algebra, into an efficient executable form using pluggable query transformation rules. There is an optional SQL parser and JDBC driver. Calcite does not store data or have a preferred execution engine. Data formats, execution algorithms, planning rules, operator types, metadata, and cost model are added at runtime as plugins.</li>
-  <li><a href="https://projects.apache.org/project.html?couchdb"><strong>CouchDB</strong></a> - Apache CouchDB is a database that completely embraces the web. Store your data with JSON documents. Access your documents with your web browser, via HTTP. Query, combine, and transform your documents with JavaScript. Apache CouchDB works well with modern web and mobile apps. You can even serve web apps directly out of Apache CouchDB. And you can distribute your data, or your apps, efficiently using Apache CouchDB’s incremental replication. Apache CouchDB supports master-master setups with automatic conflict detection.</li>
-  <li><a href="https://projects.apache.org/project.html?crunch"><strong>Crunch</strong></a> - The Apache Crunch Java library provides a framework for writing, testing, and running MapReduce pipelines. Its goal is to make pipelines that are composed of many user-defined functions simple to write, easy to test, and efficient to run.</li>
-  <li><a href="https://projects.apache.org/project.html?datafu"><strong>DataFu</strong></a> - Apache DataFu consists of two libraries: Apache DataFu Pig is a collection of useful user-defined functions for data analysis in Apache Pig. Apache DataFu Hourglass is a library for incrementally processing data using Apache Hadoop MapReduce. This library was inspired by the prevalence of sliding window computations over daily tracking data. Computations such as these typically happen at regular intervals (e.g. daily, weekly), and therefore the sliding nature of the computations means that much of the work is unnecessarily repeated. DataFu’s Hourglass was created to make these computations more efficient, yielding sometimes 50-95% reductions in computational resources.</li>
-  <li><a href="https://projects.apache.org/project.html?drill"><strong>Drill</strong></a> - Apache Drill is a distributed MPP query layer that supports SQL and alternative query languages against NoSQL and Hadoop data storage systems. It was inspired in part by Google’s Dremel.</li>
-  <li><a href="https://projects.apache.org/project.html?edgent"><strong>Edgent</strong></a> - Apache Edgent is a programming model and micro-kernel style runtime that can be embedded in gateways and small footprint edge devices enabling local, real-time, analytics on the continuous streams of data coming from equipment, vehicles, systems, appliances, devices and sensors of all kinds (for example, Raspberry Pis or smart phones). Working in conjunction with centralized analytic systems, Apache Edgent provides efficient and timely analytics across the whole IoT ecosystem: from the center to the edge.</li>
-  <li><a href="https://projects.apache.org/project.html?falcon"><strong>Falcon</strong></a> - Apache Falcon is a data processing and management solution for Hadoop designed for data motion, coordination of data pipelines, lifecycle management, and data discovery. Falcon enables end consumers to quickly onboard their data and its associated processing and management tasks on Hadoop clusters.</li>
-  <li><a href="https://projects.apache.org/project.html?flink"><strong>Flink</strong></a> - Flink is an open source system for expressive, declarative, fast, and efficient data analysis. It combines the scalability and programming flexibility of distributed MapReduce-like platforms with the efficiency, out-of-core execution, and query optimization capabilities found in parallel databases.</li>
-  <li><a href="https://projects.apache.org/project.html?flume"><strong>Flume</strong></a> - Apache Flume is a distributed, reliable, and available system for efficiently collecting, aggregating and moving large amounts of log data from many different sources to a centralized data store</li>
-  <li><a href="https://projects.apache.org/project.html?giraph"><strong>Giraph</strong></a> - Apache Giraph is an iterative graph processing system built for high scalability. For example, it is currently used at Facebook to analyze the social graph formed by users and their connections.</li>
-  <li><a href="https://projects.apache.org/project.html?hama"><strong>Hama</strong></a> - The Apache Hama is an efficient and scalable general-purpose BSP computing engine which can be used to speed up a large variety of compute-intensive analytics applications.</li>
-  <li><a href="https://projects.apache.org/project.html?helix"><strong>Helix</strong></a> - Apache Helix is a generic cluster management framework used for the automatic management of partitioned, replicated and distributed resources hosted on a cluster of nodes. Helix automates reassignment of resources in the face of node failure and recovery, cluster expansion, and reconfiguration.</li>
-  <li><a href="https://projects.apache.org/project.html?ignite"><strong>Ignite</strong></a> - Apache Ignite In-Memory Data Fabric is designed to deliver uncompromised performance for a wide set of in-memory computing use cases from high performance computing, to the industry most advanced data grid, in-memory SQL, in-memory file system, streaming, and more.</li>
-  <li><a href="https://projects.apache.org/project.html?kafka"><strong>Kafka</strong></a> - A single Kafka broker can handle hundreds of megabytes of reads and writes per second from thousands of clients. Kafka is designed to allow a single cluster to serve as the central data backbone for a large organization. It can be elastically and transparently expanded without downtime. Data streams are partitioned and spread over a cluster of machines to allow data streams larger than the capability of any single machine and to allow clusters of co-ordinated consumers. Kafka has a modern cluster-centric design that offers strong durability and fault-tolerance guarantees. Messages are persisted on disk and replicated within the cluster to prevent data loss. Each broker can handle terabytes of messages without performance impact.</li>
-  <li><a href="https://projects.apache.org/project.html?knox"><strong>Knox</strong></a> - The Apache Knox Gateway is a REST API Gateway for interacting with Hadoop clusters. The Knox Gateway provides a single access point for all REST interactions with Hadoop clusters. In this capacity, the Knox Gateway is able to provide valuable functionality to aid in the control, integration, monitoring and automation of critical administrative and analytical needs of the enterprise.</li>
-  <li><a href="https://projects.apache.org/project.html?lens"><strong>Lens</strong></a> - Lens provides an Unified Analytics interface. Lens aims to cut the Data Analytics silos by providing a single view of data across multiple tiered data stores and optimal execution environment for the analytical query. It seamlessly integrates Hadoop with traditional data warehouses to appear like one.</li>
-  <li><a href="https://projects.apache.org/project.html?metamodel"><strong>MetaModel</strong></a> - With MetaModel you get a uniform connector and query API to many very different datastore types, including: Relational (JDBC) databases, CSV files, Excel spreadsheets, XML files, JSON files, Fixed width files, MongoDB, Apache CouchDB, Apache HBase, Apache Cassandra, ElasticSearch, OpenOffice.org databases, Salesforce.com, SugarCRM and even collections of plain old Java objects (POJOs). MetaModel isn’t a data mapping framework. Instead we emphasize abstraction of metadata and ability to add data sources at runtime, making MetaModel great for generic data processing applications, less so for applications modeled around a particular domain.</li>
-  <li><a href="https://projects.apache.org/project.html?oozie"><strong>Oozie</strong></a> - Oozie is a workflow scheduler system to manage Apache Hadoop jobs. Oozie is integrated with the rest of the Hadoop stack supporting several types of Hadoop jobs out of the box (such as Java map-reduce, Streaming map-reduce, Pig, Hive, Sqoop and Distcp) as well as system specific jobs (such as Java programs and shell scripts).</li>
-  <li><a href="https://projects.apache.org/project.html?orc"><strong>ORC</strong></a> - ORC is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly. Storing data in a columnar format lets the reader read, decompress, and process only the values that are required for the current query.</li>
-  <li><a href="https://projects.apache.org/project.html?parquet"><strong>Parquet</strong></a> - Apache Parquet is a general-purpose columnar storage format, built for Hadoop, usable with any choice of data processing framework, data model, or programming language.</li>
-  <li><a href="https://projects.apache.org/project.html?phoenix"><strong>Phoenix</strong></a> - Apache Phoenix enables OLTP and operational analytics for Apache Hadoop by providing a relational database layer leveraging Apache HBase as its backing store. It includes integration with Apache Spark, Pig, Flume, Map Reduce, and other products in the Hadoop ecosystem. It is accessed as a JDBC driver and enables querying, updating, and managing HBase tables through standard SQL.</li>
-  <li><a href="https://projects.apache.org/project.html?reef"><strong>REEF</strong></a> - Apache REEF (Retainable Evaluator Execution Framework) is a development framework that provides a control-plane for scheduling and coordinating task-level (data-plane) work on cluster resources obtained from a Resource Manager. REEF provides mechanisms that facilitate resource reuse for data caching, and state management abstractions that greatly ease the development of elastic data processing workflows on cloud platforms that support a Resource Manager service.</li>
-  <li><a href="https://projects.apache.org/project.html?samza"><strong>Samza</strong></a> - Apache Samza provides a system for processing stream data from publish-subscribe systems such as Apache Kafka. The developer writes a stream processing task, and executes it as a Samza job. Samza then routes messages between stream processing tasks and the publish-subscribe systems that the messages are addressed to.</li>
-  <li><a href="https://projects.apache.org/project.html?spark"><strong>Spark</strong></a> - Apache Spark is a fast and general engine for large-scale data processing. It offers high-level APIs in Java, Scala and Python as well as a rich set of libraries including stream processing, machine learning, and graph analytics.</li>
-  <li><a href="https://projects.apache.org/project.html?sqoop"><strong>Sqoop</strong></a> - Apache Sqoop(TM) is a tool designed for efficiently transferring bulk data between Apache Hadoop and structured datastores such as relational databases.</li>
-  <li><a href="https://projects.apache.org/project.html?storm"><strong>Storm</strong></a> - Apache Storm is a distributed real-time computation system. Similar to how Hadoop provides a set of general primitives for doing batch processing, Storm provides a set of general primitives for doing real-time computation.</li>
-  <li><a href="https://projects.apache.org/project.html?tajo"><strong>Tajo</strong></a> - The main goal of Apache Tajo project is to build an advanced open source data warehouse system in Hadoop for processing web-scale data sets. Basically, Tajo provides SQL standard as a query language. Tajo is designed for both interactive and batch queries on data sets stored on HDFS and other data sources. Without hurting query response times, Tajo provides fault-tolerance and dynamic load balancing which are necessary for long-running queries. Tajo employs a cost-based and progressive query optimization techniques for optimizing running queries in order to avoid the worst query plans.</li>
-  <li><a href="https://projects.apache.org/project.html?tez"><strong>Tez</strong></a> - Apache Tez is an effort to develop a generic application framework which can be used to process arbitrarily complex directed-acyclic graphs (DAGs) of data-processing tasks and also a reusable set of data-processing primitives which can be used by other projects.</li>
-  <li><a href="https://projects.apache.org/project.html?vxquery"><strong>VXQuery</strong></a> - Apache VXQuery will be a standards compliant XML Query processor implemented in Java. The focus is on the evaluation of queries on large amounts of XML data. Specifically the goal is to evaluate queries on large collections of relatively small XML documents. To achieve this queries will be evaluated on a cluster of shared nothing machines.</li>
-  <li><a href="https://projects.apache.org/project.html?zeppelin"><strong>Zeppelin</strong></a> - Zeppelin is a modern web-based tool for the data scientists to collaborate over large-scale data exploration and visualization projects.</li>
-</ul>
-
-<p>There is a serious amount of overlap between these projects. Not all of these projects have web APIs, while some of them are all about delivering a gateway or aggregate API across projects. There is a lot to process here, but I think listing them out provides an easier way to understand the big data explosion of projects over at Apache.</p>
-
-<p>It is tough to understand what each of these do without actually playing with them, but that is something I just don’t have the time to do, so next up I’ll be doing independent searches for these project names, and finding stories from across the space regarding what folks are doing with these data solutions. That should give me enough to go on when putting them into specific buckets, and finding their place in my data, and database API research.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/03/looking-at-the-37-apached-data-projects/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/03/temporal-logic-of-actions-for-apis/">Temporal Logic of Actions For APIs</a></h3>
-        <span class="post-date">03 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/status-berlin_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I’m evolving forward my thoughts on algorithmic <a href="http://apievangelist.com/2017/02/28/a-checklist-for-api-observability/">observability</a> and <a href="http://apievangelist.com/2016/08/04/pushing-for-more-algorithmic-transparency-using-apis/">transparency</a> using APIs, and <a href="https://en.wikipedia.org/wiki/TLA%2B">I was recently introduced to TLA+, or the Temporal Logic of Actions</a>. It is the closest I’ve come to what I’m seeing in my head when I think about how we can provide observability into algorithms through existing external outputs (APIs). As I do with all my work here on API I want to process TLA+ as part of my API research, and see how I can layer it in with what I already know.</p>
-
-<p>TLA+ is a formal specification language developed by Leslie Lamport, which can be used to design, model, document, and verify concurrent systems. It has been described as exhaustively-testable pseudocode which can provide a blueprint for software systems. In the context of design and documentation, TLA+ can be viewed as informal technical specifications. However, since TLA+ specifications are written in a formal language of logic and mathematics it can be used to uncover design flaws before system implementation is underway, and are amenable to model checking for finding all possible system behaviours up to some number of execution steps, and examines them for violations. TLA+ specifications use basic set theory to define safety (bad things won’t happen) and temporal logic to define liveness (good things eventually happen).</p>
-
-<p>TLA+ specifications are organized into modules.Although the TLA+ standard is specified in typeset mathematical symbols, existing TLA+ tools use symbol definitions in ASCII, using several terms which require further definition:</p>
-
-<ul>
-  <li><strong>State</strong> - an assignment of values to variables</li>
-  <li><strong>Behaviour</strong> - a sequence of states</li>
-  <li><strong>Step</strong> - a pair of successive states in a behavior</li>
-  <li><strong>Stuttering Step</strong> - a step during which variables are unchanged</li>
-  <li><strong>Next-State Rlation</strong> - a relation describing how variables can change in any step</li>
-  <li><strong>State Function</strong> - an expression containing variables and constants that is not a next-state relation</li>
-  <li><strong>State Predicate</strong> - a Boolean-valued state function</li>
-  <li><strong>Invariant</strong> - a state predicate true in all reachable states</li>
-  <li><strong>Temporal Formula</strong> - an expression containing statements in temporal logic</li>
-</ul>
-
-<p>TLA+ is concerned with defining the correct system behavior, providing with a set of operators for working through what is going on, as well as working with data structures. There is tooling that has been developed to support TLA+ including an IDE, model checker, and proof system. It is all still substantially over my head, but I get what is going on enough to warrant moving forward, and hopefully absorbing more on the subject. As with most languages and specifications I come across it will just take some playing with, and absorbing the concepts at play, before things will come into focus.</p>
-
-<p>I’m going to pick up some of my previous work around <a href="http://apievangelist.com/2016/10/06/adding-behaviordriven-development-assertions-to-my-api-research/">behavior driven assertions</a>, and how <a href="http://apievangelist.com/2016/04/08/the-api-assertions-we-make-believe-in-and-require-for-our-business-contracts/">assertions can be though of in terms of the business contracts APIs put forward</a>, and see where TLA+ fits in. It’s all still fuzzy, but API assertions and TLA+ feels like where I want to go with this. I’m thinking about how we can wrap algorithms in APIs, write assertions for them, and validate across the entire surface area of an algorithm, or stack of API exposed algorithms using TLA+. Maybe I’m barking up the wrong tree, but if nothing else it will get me thinking more about this side of my API research, which will push forward my thoughts on algorithmic transparency, and audit-able observability.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/03/temporal-logic-of-actions-for-apis/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/03/database-to-database-then-api-instead-of-directly-to-api/">Database To Database Then API, Instead Of Directly To API</a></h3>
-        <span class="post-date">03 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/database-to-database-api.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I am working with a team to expose a database as an API. With projects like this there can be a lot of anxiety in exposing a database directly as an API. Security is the first one, but in my experience, most of the time security is just cover for anxiety about a messy backend. The group I’m working with has been managing the same database for over a decade, adding on clients, and making the magic happen via a whole bunch of databases and table kung fu. Keeping this monster up and running has been priority number one, and evolving, decentralizing, or decoupling has never quite been a priority.</p>
-
-<p>The database team has learned the hard way, and they have the resources to keep things up and running, but never seem to have them when it comes to refactoring it and thinking differently, let alone tackling the delivery of a web API on top of things. There will need to be a significant amount of education and training around REST, and doing APIs properly before we can move forward, something there really isn’t a lot of time or interest in doing. To help bridge the gap I am suggesting that we do an entirely new API, with it’s own database, and we focus on database to database communication, since that is what the team knows. We can launch an Amazon RDS instance, with an EC2 instance running the API, and the database team can work directly with RDS (MySQL) which they are already familiar with.</p>
-
-<p>We can have a dedicated API team handle the new API and database, and the existing team can handle the syncing from database to database. This also keeps the messy, aggregate, overworked database out of reach of the new API. We get an API. The database team anxiety levels are lowered. It balances things out a little. Sure there will still be some work between databases, but the API can be a fresh start, and it won’t be burdened by the legacy. The database to database connection can carry this load. Maybe once this pilot is done, the database team will feel a little better about doing APIs, and be a little more involved with the next one.</p>
-
-<p>I am going to pitch this approach in coming weeks. I’m not sure if it will be well received, but I’m hoping it will help bridge the new to the old a little bit. I know the database team likes to keep things centralized, which is one reason they have this legacy beast, so there might be some more selling to occur on that front. Doing APIs isn’t always about the technical. It is often about the politics of how things get done on the ground. Many organizations have messy databases, which they worry will make them look bad when any of it is exposed as an API. I get it, we are all self-conscious about the way our backends look. However, sometimes we still need to find ways to move things forward, and find compromise. I hope this database to database, then to API does the trick.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/03/database-to-database-then-api-instead-of-directly-to-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/02/the-waves-of-api-driven-bots-invading-our-shores/">The Waves Of API Driven Bots Invading Our Shores</a></h3>
-        <span class="post-date">02 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beach-rocks-currents_blue_circuit_5.jpg" align="right" width="40%" style="padding: 15p;" /></p>
-<p>As each wave of technology comes crashing on the shores of the API space you’ll mostly find me silent, listening and watching what is happening. Occasionally you’ll hear me grumble about the aggressiveness of a single wave, or how unaware each wave is of the rest of the beach, or of the waves that came before them. Mostly I am just yelling back to the waves that claim, “we are going to change the beach forever”, and “we are the wave that matters, better than all the waves that came before us”. Mostly, it is the hype, and the unrealistic claims being made by each wave that bothers me, not the waves themselves.</p>
-
-<p>I do not think that technology won’t have an impact on the beach. I just think that us technologists tend to over-hype, and over-believe in the power each wave of technology, and that we do not consider the impact on the wider beach, and the amount of sand that ends up in everything. I don’t doubt that there will be some gems found in the sand, and that geologically speaking that the ocean plays a significant role in how the coastline is shaped. I’m just choosing to sit back on the bluff and enjoy my time on the beach, and not choosing to be a three year old playing in each of the waves, super excited by the sound each crash makes on the beach. I’m not saying that playing in the waves is wrong, I’m just choosing to look at the bigger picture from up here on the bluff.</p>
-
-<p>You can see one such canvas being painted over the last couple of years with what has become to be known as “bots”. Little automated nuggets of tech goodness, or evil, depending on your location on the beach. People love saying that bots will change everything. They’ll be your assistant. They’ll do everything for you. They’ll automate your life. Take care of your parking tickets. Buy your groceries. Raise your children. Feed hungry people in Africa. When in reality, they tend to be annoying, harassing, and can be mess up an entire election kind of bad. They can DDoS. They can threaten to kill and rape you. But, hey, let’s keep investing in them, and building platforms that support them, without ever acknowledging the negative consequences they have on our beautiful beach.</p>
-
-<p>Some days when I’m swimming in the bot waves I’ll be completely consumed. The undertow grabs me, spins me around, and I don’t know which way is up, and I end up with a mouth and ass-crack full of
-sand before I can make my way to the beach. I felt this way over last Christmas as I tried to make sense of the fake news engine, and what was coming out of Russia. Other days I feel like I’m walking on the beach collecting agates, finding some polished glass, but occasionally also finding some really beautiful agates. Today is one of those days, and I seem to be finding more bots that are actually useful, and do one thing well, without all the bullshit, and hype. Showing me the potential of this technology, and the specs of usefulness it can bring to our silicon beach.</p>
-
-<p>I’m finding useful bots that will convert a file for me. Transcribe a audio file. Notify me of a changes within my domain(s), which happens to be beach front real estate. Amidst all the sand and gravel I am seeing meaningful bot implementations. They aren’t anywhere near the automation we have been promised, but they are providing some value. Today I have a handful of these agates in the palm of my hand. We’ll see if I’m actually able to use these in my day to day world. Maybe hang one from the window by a string. Mount one in a piece of jewelry that will be worn infrequently. Who knows, maybe one will become something I hold in my regularly, rubbing, soothing me as I do what I do as the API Evangelist each day.</p>
-
-<p>Even with all of this (potential) usefulness I am finding in today’s bot waves, I’m still reminded of the power of the ocean. The dangers of sneaker waves while I’m heads down looking for agates. The power of the undertow while swimming on a sunny day. The ability for thousands of waves to come in and take away the beach, the bluff, and destroy the house I’ve built, as well as my neighbors. I’m reminded that no matter how shiny each gem is that I find in the waves, or how much I love the sound each wave crashing on the beach, but I can never stop thinking about the power of the ocean at scale. I mean, as our president recently point out, we are all “Surrounded by water. Big water. Ocean water.” Let’s not be distracted by each wave, and make sure we are always paying attention to the bigger picture. I feel like we have to do this for the “kids” as well, so the waves don’t sneak up on them.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/02/the-waves-of-api-driven-bots-invading-our-shores/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/02/the-ca-acquisition-of-runscope/">The CA Acquisition Of Runscope</a></h3>
-        <span class="post-date">02 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/runscope/ca-runscope-acquisitions.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>You won’t find me talking about the acquisition of API startups very often. I’m just not a fan of the game. I am not anti-venture capital, but I find the majority of investment in the API startup ecosystem works against everything we are trying to do with APIs. In my opinion, VC investment shouldn’t be the default, it should be an exception. There are other ways to build a business, and I see too many useful API tools get ruined while playing this game. With that said, I tend to not cover the topic, unless I get really pissed off, or the occasional investment or acquisition that I feel will result in a positive result.</p>
-
-<p><a href="https://blog.runscope.com/posts/301">Last week we saw the Runscope acquisition by CA</a>. This is an acquisition that doesn’t leave me concerned. Runscope is a partner of mine, run by people I know and care about, and they offer a tool that is useful in the API sector. If they’d had been acquired by many other bigcos I would have been more concerned, or even upset (if it had been certain ones). However, I have experience with CA, and while they are an enterprise beast, I’ve seen them make acquisitions before that weren’t damaging to the services and tooling they acquired. I trust that CA isn’t acquiring Runscope to just eliminate a strong player from the sector, and that they are actually interested in what Runscope does.</p>
-
-<p>I have seen CA’s role in the API space through <a href="http://www.apiacademy.co/">the lens of the API Academy team,</a> as well as through public and private conversations with other CA employees, on a variety of other teams. I’ve gone on-site and participated in API training session, and I have seen evidence that CA is invested in helping evolve their enterprise to be an API aware organization. Something that you can see reflected in how they approach doing business with their customers. I’m currently working to help move forward some API curriculum with the API academy team, which wouldn’t be happening if I didn’t feel they were committed to helping invest in API literacy across the API space.</p>
-
-<p>The CA acquisition of Runscope doesn’t leave me nervous. I feel like it is a good match. Also, despite the CEO of Runscope, John Sheehan and I often butting heads about startup and VC culture, I feel like he has played the game in an honest and respectful way. He’s made the best choices he could have as a CEO in this game. He cares about making a high quality, useful API product. He genuinely cares about the API space. Even though I think he loves the startup and investment game a little more than he should. All of this leaves me without the indigestion that API startup investment and acquisitions usually leaves in my stomach. I don’t feel like we are losing yet another valuable tool. I feel like CA will be a good steward of Runscope, and the team will actually get the opportunity to evolve, grow, and do better things.</p>
-
-<p>Nice work y’all! Here is to everything being 200 OK!</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/02/the-ca-acquisition-of-runscope/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

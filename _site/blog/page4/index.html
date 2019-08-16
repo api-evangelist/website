@@ -129,6 +129,644 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/">VA API Landscape Analysis and Roadmapping Project Report</a></h3>
+        <span class="post-date">18 Jun 2018</span>
+        <p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/lighthouse.png" width="90%" align="center" /></p>
+
+<p>This report summarizes Skylight’s evaluation of the VA’s public datasets, which exist within the <a href="https://va.gov/">va.gov</a> web domain, as well as an analysis of what types of data representatives of the Veteran community expressed would be most useful and valuable to Veterans and their supporters if made more digitally accessible and available by the VA. This report also outlines potential resources that can be turned into application programming interfaces (APIs) as part of the VA’s Lighthouse platform initiative, and actions the VA should consider to move forward successfully.</p>
+
+<h2 id="landscape-analysis">Landscape analysis</h2>
+
+<h3 id="the-purpose">The purpose</h3>
+
+<p>APIs are the next evolution in the web, and shouldn’t be thought of as the latest tech trend or vendor solution. The first phase of the web was about delivering data and content to humans using a browser. The second phase of the web is about delivering that same data and content to other applications and algorithms using APIs.</p>
+
+<p>With that said, the purpose of this landscape analysis is, in effect, to assist the VA in evaluating the data and content that they’ve made available during the first phase of the web. This, in turn, will help set the stage for the VA to make smart investments in phase two of their web presence.</p>
+
+<p>The VA has already signaled they’re committed to investing in the second phase of their web presence with the announcement of the <a href="https://www.oit.va.gov/developer/">Lighthouse API platform initiative</a>. Our landscape analysis will help ensure that the Lighthouse program is aware of what types of data and content that the VA has already identified as important to serving the Veteran community. This visibility will allow the Lighthouse program to bring these resources into alignment with the development and operation of their API platform.</p>
+
+<h3 id="the-process">The process</h3>
+
+<p>To help the VA evaluate the landscape that defines their web presence, we employed a “low-hanging-fruit” process that involved identifying the resources that exist across their web properties. That process relied on a spidering script, which we ran for two weeks (and continue to run). To begin the process, we seeded the script by giving it the root URL for the va.gov domain. The script then proceeded to:</p>
+
+<ul>
+  <li>
+    <p>Parse every URL on the page and store it in a database;</p>
+  </li>
+  <li>
+    <p>Count every table on the page, and the number of rows that exist in the table;</p>
+  </li>
+  <li>
+    <p>Count every form that exists on the page; and</p>
+  </li>
+  <li>
+    <p>Extract the title from the meta tags for each page.</p>
+  </li>
+</ul>
+
+<p>The script then iterated and repeated this for every URL it found on any web page, working to identify each of the following types of data resources:</p>
+
+<ul>
+  <li>
+    <p>HTML table with more than 10 rows</p>
+  </li>
+  <li>
+    <p>HTML form</p>
+  </li>
+  <li>
+    <p>CSV file</p>
+  </li>
+  <li>
+    <p>XML file</p>
+  </li>
+  <li>
+    <p>JSON file</p>
+  </li>
+  <li>
+    <p>XLS/XLSX file</p>
+  </li>
+</ul>
+
+<p>The script ignored any URLs external to the seed domain (va.gov) and many common web objects (for example, images, Word docs, and videos).</p>
+
+<p>As each page was processed, the script tried to identify potential data resources to deliver as an API by parsing several elements from them:</p>
+
+<ul>
+  <li>
+    <p>The title of the page a file was published on,</p>
+  </li>
+  <li>
+    <p>The name of the file itself, and</p>
+  </li>
+  <li>
+    <p>Occasionally a sample of the data.</p>
+  </li>
+</ul>
+
+<p>We took the list of words extracted from this process, and sorted and grouped them by the number of times the word appeared, helping us understand the overall presence of each potential resource. Sometimes this produced a lot of meaningless words, but we worked to filter those out, leaving only the meaningful data resources.</p>
+
+<p>After running the script for a couple of weeks, we spidered nearly 1/3 of the URLs (out a total of 4M+) targeted for processing. That was enough progress to start painting an interesting picture of the VA’s web presence and existing data resources, as described in the sections that follow.</p>
+
+<h3 id="vas-web-presence">VA’s web presence</h3>
+
+<p>The VA has a sprawling web presence, spanning multiple domains and subdomains. We focused our analysis on everything within the va.gov domain. In the future, we can extend the analysis to other domains, but for now we focused on the core VA web presence.</p>
+
+<h4 id="domain-sprawl">Domain sprawl</h4>
+
+<p>The VA’s web presence is spread across a mix of domain levels, including top-level domain and subdomain levels — program, state/region, and city. Domains play a role in providing addresses in the browser so that users can find the resources they need, as well as providing similar addressing for applications to find the resources they need via APIs. The VA domain sprawl reflects the growth of the VA’s web presence, and the lack of overall strategy when it comes to providing web address and routing to all VA resources. The current strategy (or lack thereof) represents the need for location- and program-related resource discovery, whether it’s in the browser, or for other applications via APIs.</p>
+
+<p>We assume there are other domains that haven’t been indexed by our spider, as we were only able to index less than 1/3 of the targeted URLs during our two-week timebox. We can continue indexing and updating numbers beyond this period in order to paint an even more complete picture. Ideally, this would extend beyond the core va.gov domain. Domain and subdomains play an important role in determining how APIs will be accessed, and have a downstream impact on the overall API design, affecting both API path and parameter design. This makes domain and subdomains a top-level consideration early on in the VA’s API journey.</p>
+
+<h4 id="program-domains">Program domains</h4>
+
+<p>After the top-level domains of va.gov and www.va.gov, the most common approach to defining domains is by program, providing the addressing needed for organizing information by relevant programs. We have identified <a href="https://api-evangelist.github.io/va-api-landscape/domains/programs-tag-list/">133 individual program-related domains</a>.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-programs.png" width="90%" align="center" /></p>
+
+<p>While there aren’t consistent naming conventions used in crafting these subdomains, it does demonstrate the prominence of programs, research, and other related groupings used across the VA web presence for organizing resources.</p>
+
+<h4 id="state-domains">State domains</h4>
+
+<p>Beyond program-related domains, state/region level domains are being used to organize data and content for presentation to consumers. Only <a href="https://api-evangelist.github.io/va-api-landscape/domains/state-tag-list/">22 subdomains</a> are represented currently, but the practice demonstrates the prominence of these locations when it comes to organizing information.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-state.png" width="90%" align="center" /></p>
+
+<p>Some states are just paths within the top-level VA domains, while others exist within regional subdomains, with the rest possessing their own subdomain. This demonstrates the importance of states and regions, but also the inconsistency of how domains or paths are used to organize information.</p>
+
+<h4 id="city-domains">City domains</h4>
+
+<p>Lastly, you find many city-related subdomains being used to organize data and content, providing another dimension on how resources are being organized, while demonstrating the dominance of specific cities. We have identified <a href="https://api-evangelist.github.io/va-api-landscape/domains/city-tag-list/">120 individual city-related domains</a>.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/domains-city.png" width="90%" align="center" /></p>
+
+<p>Like states, there isn’t a consistent pattern in which cities have their own subdomain, with others existing as a path within state subdomains or top-level domains. The approach to using cities as part of subdomain DNS addressing further demonstrates the importance of location when it comes to the organization of data and content.</p>
+
+<h3 id="website-outline">Website outline</h3>
+
+<p>As part of the spidering the va.gov domain across the 278 subdomains that exist, over 4M individual URLs were identified, with slightly less than 1/3 of these URLs evaluated for potential data sources to-date. Across these URLs, we took the base path and grouped them by the number of pages and data files that exist.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/path.png" width="90%" align="center" /></p>
+
+<p>While there are many other paths in use across the VA websites, these paths reflect the top paths in use to deliver data and content. Providing a look at what the most relevant resources are when it comes to providing web access to data and content, which is something that should be considered when delivering the same data and content to other applications.</p>
+
+<h4 id="data-vocabulary">Data vocabulary</h4>
+
+<p>After assessing the titles of HTML pages and the names of files, it’s clear there’s no consistent vocabulary in use across VA resources. This, combined with the use of key phrases, acronyms, and singular and plural variances, make it difficult to cleanly identify resources. We opted to use just keywords over phrases and to not expand acronyms as part of the process due to the difficulty in consistently identifying resources.</p>
+
+<p>Even with the difficulties in identifying some resources, we were still able to paint a fairly compelling picture of the resources being exposed as common data formats across VA web properties. That’s because we were able to isolate, group, and identify words that are most commonly associated with resources. From there, we were able to establish some resource lists, which we have organized visually as tag clouds and tag lists.</p>
+
+<h3 id="data-resources">Data resources</h3>
+
+<p>Data is available across VA websites in a variety of formats. We focused on a handful of easy to identify formats, reflecting the low-hanging-fruit aspect of this landscape analysis. While there’s data locked up in simple text files and zipped packages, we chose to look for the easiest to identify and the easiest to publish data sources. Data that’s published by humans usually take the form of CSV files, spreadsheets, and HTML tables. Data that’s published by systems usually take the form of JSON and XML.</p>
+
+<h4 id="data-formats">Data formats</h4>
+
+<p>Each of type of format that we targeted provides a different story as to the type of resources being published. Publication implies that those resources carry some level of value and importance to VA stakeholders, and, potentially, to Veterans, their supporters, and other consumers of this information. We worked to harvest all the data available from several formats, but also worked to identify the top resources available from each type.</p>
+
+<h4 id="csv-files">CSV files</h4>
+
+<p>We discovered <a href="https://api-evangelist.github.io/va-api-landscape/csv/">534 CSV files</a> containing a variety of data. By parsing the titles of the web pages these CSV files were linked from, and the names of some of the files, we identified handful of top resource types present across these files.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/csv.png" width="90%" align="center" /></p>
+
+<p>CSV files tell a particular story because they were most likely published by people working at the VA, who exported the files from spreadsheets and made them available on the website for a reason. This makes them relevant to the VA’s API conversation. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/csv/tag-list/">list of CSV resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/csv/">complete list of CSV files</a> on the GitHub repository.</p>
+
+<h4 id="xlsxlsx-files">XLS/XLSX files</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/xls/">6,077 spreadsheets</a> containing a variety of data. After parsing these files for semantic meaning, we identified handful of top resource types present across these files.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xls.png" width="90%" align="center" /></p>
+
+<p>Similar to CSV files, the presence of spreadsheets tell a very human story. Spreadsheets are the #1 source of data on the web, and reflects the data management and publishing practices across the VA. After evaluating what types of resources are available across these spreadsheets, we have been considering the use of spreadsheets as a data source, as well as a data publishing tool. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/xls/tag-list/">list of XLS/XLSX resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/xls/">complete list of XLS/XLSX files</a> on the GitHub repository.</p>
+
+<h4 id="json-files">JSON files</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/json/">467 JSON files</a> containing a variety of data. Unlike the CSV and spreadsheet data sources, JSON files likely represent a more modern systems approach to publishing data and a whole another set of data sources, which should be considered when deploying APIs.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/json.png" width="90%" align="center" /></p>
+
+<p>JSON reflects the latest evolution of data publishing at the VA. But they are only a small subset of the data being made available across VA web properties. This implies they have only become a recent priority when it comes to publishing data in a format that is consumable by developers and computers. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/json/tag-list/">list of JSON resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/json/">complete list of JSON files</a> on the GitHub repository.</p>
+
+<h4 id="xml-files">XML files</h4>
+
+<p>We found <a href="https://api-evangelist.github.io/va-api-landscape/xml/">3,099 XML files</a> containing a variety of data. Like JSON files, XML files represent system-generated publication of data. Unlike JSON, however, XML reflects an older systems approach to data publication. And are likely being generated by legacy systems that’ll be important to interface with over the course of the VA’s API journey.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/xml.png" width="90%" align="center" /></p>
+
+<p>XML represents a large portion of the data being published across VA web properties. This list of priority resources represents a significant part of the system-based publishing of data occurring at the VA. And provides a large snapshot of the systems that should be evolved as part of the deployment of APIs. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/xml/tag-list/">list of XML resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/xml/">complete list of XML files</a> on the GitHub repository.</p>
+
+<h4 id="html-tables">HTML tables</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/table/">8,393 pages that had tables on them with over 10 rows</a>. These tables represent potentially valuable data and should be considered as part of the VA’s API deployment conversations.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/table.png" width="90%" align="center" /></p>
+
+<p>While HTML tables tell a story about top resources that VA stakeholders thought website users needed access to, these tables also represent data that was published with potential search engine optimization (SEO) in mind. In other words, someone wanted the data to be indexed by search engines in order to make it more readily accessible. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/table/tag-list/">list of table resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/table/">complete list of pages containing tables</a> on the GitHub repository.</p>
+
+<h4 id="html-forms">HTML forms</h4>
+
+<p>We identified <a href="https://api-evangelist.github.io/va-api-landscape/form/">9,439 pages with more than one form present</a>, which is usually just a basic search. Similar to HTML tables, these forms provide a window into how the VA is making data available for users to search, explore, and consume in the browser. This, in turn, tells another story of what types of resources are published to VA websites.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/form.png" width="90%" align="center" /></p>
+
+<p>HTML forms often times provide a search mechanism for other table, CSV, JSON, XML, and spreadsheet resources, many of which are listed in the sections above. HTML forms tell their own story as to how and why data are being published across VA websites. And offer another source of resources that are being made available and should be considered as part of the VA’s API deployment efforts.</p>
+
+<h4 id="datagov">Data.gov</h4>
+
+<p>The only external source of data that we analyzed was data.gov, which hosts a number of VA data resources. While somewhat out-of-date, the VA datasets on data.gov tell an important part of the story that should be considered as part of the Lighthouse efforts. There are a lot of lessons to be learned from how data.gov has been used, beyond just understanding what resources have been published there.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/tag-cloud/data-gov.png)" width="90%" align="center" /></p>
+
+<p>The resources published to data.gov reflect the VA’s recent past when it comes to making data resources available and accessible via manual downloads and APIs. We think that the most important lesson that the VA should take away from its experience with data.gov is that the VA should own all the data and API resources and syndicate them as part of other external efforts. That way the VA owns the full scope of the effort, which will ultimately result in the VA being more invested in API operations. You can view a <a href="https://api-evangelist.github.io/va-api-landscape/data-gov/tag-list/">list of data.gov resources</a>, as well as a <a href="https://api-evangelist.github.io/va-api-landscape/data-gov/">complete list of data files</a> on the GitHub.</p>
+
+<h3 id="humanizing-the-data">Humanizing the data</h3>
+
+<p>To give us a more human perspective on what types of data resources are most valuable to Veterans and their supporters, <a href="https://www.eventbrite.com/e/veterans-data-needs-prioritization-workshop-tickets-46761726583">we facilitated a series of online workshops</a> using <a href="https://mural.co/">Mural</a>. About 50 people total participated across all three workshops, with about 40% reporting as Veterans and 60% non-Veterans. During these workshops, we employed the <a href="https://articles.uie.com/kj_technique/">KJ technique</a> for establishing group priorities. The KJ technique relies on a focus question to drive the results of the workshop. We used the following focus question:</p>
+
+<p>“What types of data, content, and other resources would be most useful to Veterans and their supporters if the VA could make them more available and accessible on the web, mobile devices, and other platforms?”</p>
+
+<p>The following images capture the results of each workshop:</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-1-results.png" width="90%" align="center" /></p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-2-results.png" width="90%" align="center" /></p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/veteran-data-needs-prioritization-workshop-3-results.png" width="90%" align="center" /></p>
+
+<p>The yellow cards represent all the ideas, in response to the focus question, that everyone brainstormed. As you can see, these yellow cards were organized into like groups. The blue cards represent descriptive labels that participants gave to each group. The black circles with numbers represent the votes that the participants casted when asked which group labels they thought best answered the focus question. We weighted Veteran votes 2x more heavily than votes from non-Veterans.</p>
+
+<p>You may notice things that seem out of place in the final results (for example, yellow cards that look like they belong to another category). This is largely due to the timeboxed nature of the activities. In other words, not everything could be made perfect, but that doesn’t detract from the overall usefulness of the results.</p>
+
+<p>Given the fact that the results were spread across three different workshop sessions, we took the additional step of normalizing the groupings and merging the votes.</p>
+
+<ol>
+  <li>
+    <p>Directory of Services/Resources – <strong>34 votes</strong></p>
+  </li>
+  <li>
+    <p>Mental Health – <strong>21 votes</strong></p>
+  </li>
+  <li>
+    <p>Personal Healthcare Data – <strong>20 votes</strong></p>
+  </li>
+  <li>
+    <p>Personalized Self-Service Portal – <strong>20 votes</strong></p>
+  </li>
+  <li>
+    <p>Benefits – <strong>13 votes</strong></p>
+  </li>
+  <li>
+    <p>Peer Support Networking – <strong>8 votes</strong></p>
+  </li>
+  <li>
+    <p>Family Support Networking – <strong>9 votes</strong></p>
+  </li>
+  <li>
+    <p>Real-Time Status – <strong>8 votes</strong></p>
+  </li>
+  <li>
+    <p>Patient Experience Data – <strong>7 votes</strong></p>
+  </li>
+  <li>
+    <p>Military-to-Civilian Transition – <strong>7 votes</strong></p>
+  </li>
+  <li>
+    <p>Ratings and Calculators – <strong>6 votes</strong></p>
+  </li>
+  <li>
+    <p>Appointments – <strong>6 votes</strong></p>
+  </li>
+  <li>
+    <p>Medical Healthcare – <strong>5 votes</strong></p>
+  </li>
+  <li>
+    <p>Housing Assistance – <strong>5 votes</strong></p>
+  </li>
+  <li>
+    <p>Public Accountability and Awareness – <strong>4 votes</strong></p>
+  </li>
+  <li>
+    <p>Service History Data – <strong>4 votes</strong></p>
+  </li>
+  <li>
+    <p>Veteran Status Verification – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Statistical Analysis and Machine Learning – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Metadata Support – <strong>0 votes</strong></p>
+  </li>
+  <li>
+    <p>Documentation – <strong>0 votes</strong></p>
+  </li>
+</ol>
+
+<p>It’s entirely possible that these groupings could be further normalized, or even some of the ideas within the original groups split out into separate groups. Some groupings could even be disregarded as irrelevant (for example, Metadata Support). However, we didn’t want to dilute the results of what the participants came up with. Somewhat surprising is the low number of votes for Medical Health. That may be a result of lacking the right type of participant representation in the workshops, at least for that particular category.</p>
+
+<h3 id="summary-of-the-landscape-analysis"><strong>Summary of the landscape analysis</strong></h3>
+
+<p>The landscape analysis, which only processed about 1/3 of the URLs targeted for spidering over the course of a two-week period, revealed about 20,216 data files. This work produced a lot of data to wrangle and make sense of. Each of the data formats made available tell their own story about what types of data has been published to VA websites and why. The number of times a resource has been published using a particular data format (CSV, XML, JSON, XLS/XLSX, etc.) serves as a vote for making that resource available and accessible on the web.</p>
+
+<p>Despite the huge amount of information to work with, we believe that our analysis provides valuable insight into some of the most relevant data resources, based on years of publication to VA websites. The top resources identified from all of the URLs, file formats, tables, and forms all point to data resources that should be considered turning into APIs. If these data resources were considered a priority when publishing to the VA’s websites, then there’s a good chance that they should be considered priorities when it comes to publishing via APIs as part of the Lighthouse initiative.</p>
+
+<h2 id="lighthouse-program-considerations-moving-forward">Lighthouse program considerations moving forward</h2>
+
+<h3 id="resources-to-prioritize">Resources to prioritize</h3>
+
+<p>After spending time with all of the data uncovered during the landscape analysis, we began to see patterns emerge from across all the resources being published to the VA’s web properties, as well as those resources identified by people during our facilitated workshops. So based on analysis of the available data, we recommend that the VA Lighthouse program give consideration to prioritizing the following 25 resources:</p>
+
+<ol>
+  <li>
+    <p><strong>Healthcare Facilities –</strong> Up-to-date information on hospitals, clinics, and other healthcare facilities.</p>
+  </li>
+  <li>
+    <p><strong>Organizations –</strong> Details on any type of organization that services Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Services –</strong> Services being offered by the VA, healthcare facilities, and other organizations.</p>
+  </li>
+  <li>
+    <p><strong>Programs –</strong> Programs being offered by the VA, healthcare facilities, and other organizations.</p>
+  </li>
+  <li>
+    <p><strong>Resources –</strong> Content, video, and other resources providing healthcare, outpatient, and other relevant content.</p>
+  </li>
+  <li>
+    <p><strong>Schedules –</strong> The schedules of healthcare facilities, organizations, services, and programs being offered.</p>
+  </li>
+  <li>
+    <p><strong>Events –</strong> Calendar and details of relevant events that service Veterans around the country.</p>
+  </li>
+  <li>
+    <p><strong>Benefits –</strong> Details of the benefits being offered to Veterans, including elements of the process involved.</p>
+  </li>
+  <li>
+    <p><strong>Performance –</strong> Performance details for the healthcare facilities, organizations, services, and programs.</p>
+  </li>
+  <li>
+    <p><strong>Insurance –</strong> Home, auto, and healthcare insurance information that Veterans can take advantage of.</p>
+  </li>
+  <li>
+    <p><strong>Loans –</strong> Information on home, auto, and other types of loans available to Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Grants –</strong> Grants for education, businesses, projects, and other Veteran-focused efforts.</p>
+  </li>
+  <li>
+    <p><strong>Education –</strong> Educational opportunities and information available to Veterans and their families.</p>
+  </li>
+  <li>
+    <p><strong>Training –</strong> Specific training opportunities available that Veterans can take advantage of.</p>
+  </li>
+  <li>
+    <p><strong>Jobs –</strong> Job postings that Veterans can apply to and use to guide their career.</p>
+  </li>
+  <li>
+    <p><strong>Human Resources –</strong> VA human resources and related information in support of VA employees and Veterans.</p>
+  </li>
+  <li>
+    <p><strong>Forms –</strong> Directory, access, and management of forms and the data that’s stored within them.</p>
+  </li>
+  <li>
+    <p><strong>Budgets –</strong> Budget information on healthcare facilities, organizations, programs, and services.</p>
+  </li>
+  <li>
+    <p><strong>Statistics –</strong> Statistics and data on all aspects of VA operations, and anything that impacts Veterans.</p>
+  </li>
+  <li>
+    <p><strong>Cemeteries –</strong> Details of the cemeteries, and the Veterans who are laid to rest at all locations.</p>
+  </li>
+  <li>
+    <p><strong>News –</strong> News that impacts Veterans from across any source and is relevant to the community.</p>
+  </li>
+  <li>
+    <p><strong>Press –</strong> Press releases from the VA and related organizations and programs.</p>
+  </li>
+  <li>
+    <p><strong>Research –</strong> Information and other resources produced as part of specific Veteran-related research.</p>
+  </li>
+  <li>
+    <p><strong>Surveys –</strong> Centralized organization, access to, and the results of Veteran and program-related surveys.</p>
+  </li>
+  <li>
+    <p><strong>FOIA –</strong> Process and information related to Freedom of Information Act (FOIA) efforts occurring at VA.</p>
+  </li>
+</ol>
+
+<p>These resources represent what was harvested and analyzed as part of our landscape analysis, merging many of the patterns present across individual datasets. They’re organized using a REST-centric approach to turning data into API resources, which allows for data access via HTTP. Many of the keywords identified as part of the landscape analysis have been rolled-up into higher level areas — such as PTSD, mental health, and suicide — would exist across services, programs, and resources.</p>
+
+<p>These suggested resources are derived from about 65% of the top-level resources identified across all the top paths, file formats, tables, and forms. They represent a nice cross-section of resources across all the data formats, but also reflect the general web presence of the VA. Our list also provides a coherent stack of resources that could be developed, deployed, and maintained in support of the central veteran APIs, offering personalized and generalized data experiences that would benefit Veterans and their families.</p>
+
+<h3 id="centralize-focus-on-the-veteran">Centralize focus on the Veteran</h3>
+
+<p>From a data perspective, the most important resource above all is the Veteran and their personal data. Therefore, the identity and healthcare record of a Veteran should be at the front and center of any API deployed as part of the Lighthouse API platform initiative. This requires full knowledge and accurate information about a Veteran. In others words, in order for the Lighthouse’s APIs to work well, there must be a robust identity and access management in place, as well as detailed, layered, portable, and usable Veteran profiles.</p>
+
+<h3 id="increase-personalization">Increase personalization</h3>
+
+<p>One thing that became evident during our work is the need for greater personalization of data across almost every resource that we identified. Where there’s value in having general information available (for example, medical facilities), this data becomes exponentially more valuable when it’s personalized, localized, and made more relevant to the Veteran who is browsing, searching, engaging. Therefore, there are two types of engagement models with the resources that we propose: (1) general access without knowledge of the Veteran and (2) personalized knowledge of the Veteran via custom configuration settings that determine the relevancy of the data and content when these are made available via APIs and within applications.</p>
+
+<p>There are existing portal efforts such as <a href="https://www.vets.gov/">vets.gov</a> that are available as part of the VA’s online presence. The personalization efforts occurring there should be reflected across the design and operation of the Lighthouse’s APIs. By designing APIs to operate in generalized or personalized mode, this would empower API developers to act on behalf of a Veteran using OAuth tokens. If a token’s present, each API will act in a more personalized manner and allow for localization based upon a Veteran’s preferences and history of interactions. This personalization layer should act as a bridge between the core healthcare record of a Veteran and the other resources that we outlined above.</p>
+
+<h3 id="writing-not-just-reading-data">Writing, not just reading data</h3>
+
+<p>Many of the resources that we identified represent read-only access to data and content. It’s important to note that getting access to data and content is useful; however, a significant portion of the resources that we harvested and gathered through conversations with the community will require the ability to write information via APIs. Forms, surveys, and other feedback loops will need to allow for APIs that not only GET data, but also POST and PUT data as part of their operations. This additional operations will round-off the Lighthouse’s stack of resources, helping to ensure that services provide a two-way street for engaging with the VA community.</p>
+
+<p>In addition to reading, the ability to write data and content will be a deciding factor in whether applications built on top of the APIs will deliver meaningful value to Veterans and their supporters. If information is only being pushed outwards, many applications will be seen as having little to no value to users, developers, and operators of the Lighthouse API platform. To help ensure meaningful value is delivered to everyone involved, all applications should be capable of sharing usage data and feed analytics and support feedback loops between users and the platform operators. With the ability to write data, the APIs will lack meaning and substance, and will contribute to lack of adoption and integration.</p>
+
+<h3 id="focus-on-the-source-of-the-data">Focus on the source of the data</h3>
+
+<p>A common misconception in conducting a landscape analysis such as the one we performed is to assume that the data discovered can be published via any APIs that are deployed as part of the next phase of work. That’s rarely the situation, because most of the discovered data is just published snapshots derived from existing data sources. This is certainly the case with the VA. Much of the data we discovered is unusable in its current state due to lack of normalization, duplication, being out of date, and other noise and clutter. Many of the XML and JSON files identified provider a much cleaner option for transforming into web APIs. However, with any resource identified, it’s more desirable to integrate the original source of data than relying on published snapshots.</p>
+
+<p align="center"><img src="https://api-evangelist.github.io/va-api-landscape/images/api-landscape-layers.png" width="90%" align="center" /></p>
+
+<p>Even after coming to a consensus on the data resources to transform into APIs, the next phase of work should focus on identifying the data sources for each of the targeted resource areas, and not relying on published data that already exist across websites. While it’s tempting, and sometimes necessary to rely on published data for the source of API data, it increases the chance that an API will eventually become dormant, out-of-date, and cause many of the issues that we’ve seen play out with the existing VA datasets. Our landscape analysis came at the resource prioritization from an external, public perspective. We recommend a subsequent, more internal landscape analysis to identify the data sources for important resource types emerging from this landscaping effort.</p>
+
+<h3 id="improve-domain-management">Improve domain management</h3>
+
+<p>Moving forward, it’d be logical to have a standardized approach to naming subdomains for both web and API properties in support of VA operations. Establishing a common approach to naming city, state, regional, program, research, and other resource areas would provide human- and machine-readable access to these resources. This might be difficult to do for web properties with so much legacy infrastructure, but the API platform provides an opportunity to establish a standardized approach moving forward.</p>
+
+<h3 id="leverage-common-data-formats">Leverage common data formats</h3>
+
+<p>Our landscape analysis revealed a lack of a consistency when it comes to vocabulary, schema, and data formats. Most of the data published is derived from an existing system or represents a human-directed process. There’s a significant amount of fluff and noise surrounding these valuable data and a lack of consistent naming and field types.</p>
+
+<p>Based upon the resources that we’ve identified for your consideration, there are a handful of existing data formats the VA should consider. Some of these are already underway, while others are not currently reflected in the Lighthouse’s efforts, but are used by other government entities to publish data in a consistent manner.</p>
+
+<ul>
+  <li>
+    <p><strong>Fast Healthcare Interoperability Requirements (FHIR) –</strong> FHIR is already in-motion at the VA, but worth highlighting here. FHIR provides an anchor for why common data schema formats are relevant to other resources beyond Veteran healthcare records.</p>
+  </li>
+  <li>
+    <p><strong>Open Referral (211) –</strong> Open Referral is a common schema and API specification for defining human services, including organizations, locations, and services, along with all the supporting information and metadata that goes with this core set of resources.</p>
+  </li>
+  <li>
+    <p><strong>Open311 –</strong> Open311 is a common data format for reporting problems and issues at the municipal level, but can easily be adopted for establishing feedback loops at any level of government. It provides a common schema for how large volumes of information get submitted via API infrastructure.</p>
+  </li>
+  <li>
+    <p><strong>Schema.org –</strong> A common schema vocabulary that provides object definitions for almost every resource identified throughout this landscape analysis, and the recommended list of resources above.</p>
+  </li>
+</ul>
+
+<p>There are undoubtedly other open data formats that can be leveraged. Common microformats and other RFCs should also be considered, but these can be addressed during the define and design stages of the API development lifecycle, once individual resources have been decided upon. Common formats help ensure resources are interoperable and reusable across VA groups; they also help bring teams together to speak in a common language, using a common dictionary, which will go a long ways to standardizing how data is published and consumed.</p>
+
+<h3 id="improve-analytical-information">Improve analytical information</h3>
+
+<p>We had hoped there would have been more analytical information available to help rank the resource data that we identified. We did incorporate the ranking information available from data.gov as an input into our resource prioritization. However, we relied mostly on publication frequency and the overall occurrence of each keyword to help weight relevance. The existence of a word in a path, title, and file name gives it a weight, which can be amplified for every occurrence, providing us with adequate levels of prioritization, grouping, and organization to help us understand each topics importance. If a topic exists frequently across VA web properties, and exists as a sectional grouping, and title of data file, it has importance and relevance.</p>
+
+<p>The lack of analytics, or access to current analytics, across existing VA data sources demonstrates the importance of having a consistent and comprehensive analytics strategy across the VA’s data. There should be download counts for all machine-readable files. And, more importantly, real-time analytics for the consumption of this data via simple web APIs. There should be regional- and program-related ata. We should have personalized data that reflects what’s most important to Veterans. We should understand what’s relevant what isn’t through strategically-designed analytics across web and API operations. The lack of analytics is why we’re working to identify relevant data sources, so those can be made more available and analytics become the default — not an afterthought.</p>
+
+<h3 id="continue-refining-the-landscape-analysis">Continue refining the landscape analysis</h3>
+
+<p>Our landscape analysis produced a lot of information that was messy and difficult to work with. We can continue to make another pass, which would involve refining indexes, optimizing title and filename parsing, and developing key phrase, plural word, and other dictionaries to make the results much more refined.</p>
+
+<p>There was a lot of data to harvest, process, and make sense of in a two-week sprint. However, we feel that we were able to do a good job of making sense of what was captured. Another sprint could easily be spent sorting through all of the data targeted, separating quality datasets from the more messier ones. Creating a dictionary to translate words and rehydrate acronyms would be very useful to help make further sense of what’s available in CSV, XLS/XLSX, JSON, and XML files. More work could also be done around forms: identifying the types available; defining their search mechanisms; defining what input parameters they allow (whether GET or POST); and unlocking further details on how they store data. Form and table data often have a direct connection to backend databases, which make them more valuable than some of the published data files.</p>
+
+<p>All of the data from the landscape analysis has been published to GitHub, minus the primary index of harvested and processed URLs. Those are too big to publish as JSON to GitHub, but we’ll evaluate how best to provide access to each site index using a solution such as Amazon AMI. We also started experimenting with a secondary spider solution in order to generate an index of the VA website and can publish those indexes as separate GitHub repositories within a single GitHub repository when completed. We feel like these newer indexes could provide a much richer approach to understanding the data and content across the VA’s web properties. And allow for other researchers and analysts to fork and work to make sense of the data that they contain.</p>
+
+<h3 id="incorporate-user-research">Incorporate user research</h3>
+
+<p>It’s critical that any further landscape analysis focused on uncovering valuable data resources from across the VA’s web presence is combined with user research activities, such as the series of design workshops that we conducted. Doing so will provide a human perspective on what’s most important to Veterans and their supporters.</p>
+
+<p>We strongly encourage the Lighthouse program to conduct a similar workshop activity to the one that we ran, leveraging the VA’s much stronger outreach capability in order to attract an even larger and more diversified representation of the Veteran community’s data resource needs.</p>
+
+<p>We also recommend that the Lighthouse program consider using the <a href="https://en.wikipedia.org/wiki/Service_blueprint">service blueprinting technique</a> as a way to help identify and prioritize specific APIs for deployment. For example, a service blueprint could be created for a specific interaction that Veterans have with the VA, such as trying to find information on healthcare facilities. It’s likely that any service blueprints you want to create could be acquired by chunking the work into multiple micro-purchases. At the very least, we recommend trying to do at least one as an experiment. Once specific APIs are identified, you could then map them against a 2x2 prioritization matrix, based on how high they score against two main criteria: Veteran Experience Impact (y-axis) and Readiness to Execute (x-axis).</p>
+
+<h2 id="conclusion-this-journey-is-just-beginning">Conclusion: this journey is just beginning</h2>
+
+<p>The landscape analysis for the VA doesn’t end here. Just like the resulting API effort, the evaluation of the VA’s web presence should be an ongoing process. Work should continue to help identify what datasets are being published to the VA’s web properties, and to incorporate these datasets into API operations or to replace them with API-driven solutions. In the long term, there shouldn’t be any tables, forms, CSV files, JSON files, XML files, or XLS/XLSX files without a direct connection to the API platform. Eventually all data should be derived from a federated, but standardized, set of API platforms that are designed, deployed, and managed consistently as part of the VA Lighthouse effort.</p>
+
+<p>Hopefully the work conducted here provides a base of resources for the Lighthouse program to consider as it moves forward. Ideally, everything uncovered as part of this work eventually becomes an API, or part of a suite of APIs. We understand that this won’t be a reality anytime soon, but we worked diligently to uncover the most valuable resources and to provide a concise list of data resources that could be turned into APIs and used to begin driving web, mobile, and desktop applications that serve Veterans and their families. There’s a wealth of resources available to Veterans across the VA’s websites. The challenge now is how do we ensure these resources deliver value consistently across many platforms? A simple, consistent, and usable API stack is the answer.</p>
+
+<h2 id="lessons-to-share">Lessons to share</h2>
+
+<p>This project is one of the VA’s first experiments using the microconsulting model in support of the Lighthouse initiative. Sharing what went well, what didn’t, and what could we have been done better — all in the name of continuous improvement — is the responsibility of everyone involved in order to make not only the Lighthouse initiative a success, but the microconsulting model as well. With that said, here’s what we have to share:</p>
+
+<ul>
+  <li>
+    <p>We thoroughly enjoyed working on this as a micro-project. We felt that the short-timeboxed, tightly-scoped nature of the work focused our efforts on executing only the most essential activities, giving even more meaning to inherently impactful work. As <a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">Parkinson’s Law</a> states, “work expands so as to fill the time available for its completion.”</p>
+  </li>
+  <li>
+    <p>Looking back, our approach to this project involved some known unknowns (and some unknown unknowns) from a technical standpoint. In particular, the question of how well our spidering process could scale to handle the VA’s enormous web footprint. It would have been best to propose conducting an <a href="http://agiledictionary.com/209/spike/">agile “spike”</a> activity as a small micro-project in order to gain risk-reducing knowledge.</p>
+  </li>
+  <li>
+    <p>For micro-projects under a tight schedule and for which there are external dependencies (for example, scheduling interviews or workshops with external participants), some lead time may be necessary before formally kicking off the project.</p>
+  </li>
+  <li>
+    <p>Those people who participated in our facilitated workshops expressed extreme gratitude for the opportunity to contribute to the progress of the Lighthouse program. Working in the open and co-creating with the public will not only foster an engaged community of supporters, but will also lead to better quality outcomes.</p>
+  </li>
+  <li>
+    <p>While our workshop activities were extremely valuable in giving us a human perspective on our landscape analysis, we felt that there could have been even greater representation from the Veteran community. We should have been more proactive about leveraging the VA’s outreach capability to draw in an even more dense and diverse group of Veterans and their supporters.</p>
+  </li>
+</ul>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/18/va-lighthouse-landscape-analysis-and-roadmapping-project-report/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/18/the-importance-of-openapi-tooling/">The Importance Of OpenAPI Tooling</a></h3>
+        <span class="post-date">18 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/OpenAPI_Pantone.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>In my world, OpenAPI is always a primary actor, and the tooling and services that put it to work are always secondary. However, I’d say that 80% of the people I talk with are the opposite, putting OpenAPI tooling in a primary role, and the OpenAPI specification in a secondary role. This is the primary reason that many still see Swagger tooling as the value, and haven’t made the switch to the concept of OpenAPI, or understand the separation between the specification and the tooling.</p>
+
+<p>Another way in which you can see the importance of OpenAPI tooling is the slow migration of OpenAPI 2.0 to 3.0 users. Many folks I’ve talked to about OpenAPI 3.0 tell me that they haven’t made the jump because of the lack of tooling available for the specification. This isn’t always about the external services and tooling that supports OpenAPI 3.0, it is also about the internal tooling that supports it. It demonstrates the importance of tooling when it comes to the evolution, and adoption of OpenAPI. It demonstrates the need for the OAI community to keep investing in the development and evangelism of tooling for the latest version.</p>
+
+<p>I am going to work to invest more time into rounding up OpenAPI tooling, and getting to know the developers behind them, as I prepare APIStrat in Nashville, TN. I’m also going to invest in my own migration to OpenAPI 3.0. The reason I haven’t evolved isn’t because of lack tooling, it is because of a lack of time, and the cognitive load involved with thinking new ways. I fully grasp the differences between 2.0 and 3.0, but I just don’t have intuitive knowledge of 3.0 in the way I do for 2.0. I’ve spent hundreds of hours developing around 2.0, and I just don’t have the time in my schedule to make similar investment in 3.0–soon!</p>
+
+<p>If you need to get up to speed on the latest when it comes to OpenAPI 3.0 tooling I recommend checking out <a href="http://openapi.tools/">OpenAPI.Tools</a> from Matt Trask (<a href="https://twitter.com/matthewtrask">@matthewtrask</a>) and Crashy McCiderface (aka Phil Sturgeon) (<a href="https://twitter.com/philsturgeon">@philsturgeon</a>). It is the best source of OpenAPI tooling out there right now. If you are still struggling with the migration from 2.0 to 3.0, or would like to see a specific solution developed on top of OpenAPI 3.0, I’d love to hear from you. I’m working to help shape the evolution of the OpenAPI tooling conversation, as well as tell stories about what tools are available, or should be available, and how they are can be put to work on the ground at companies, organizations, institutions, and government agencies.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/18/the-importance-of-openapi-tooling/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/08/people-still-think-apis-are-about-giving-away-your-data-for-free/">People Still Think APIs Are About Giving Away Your Data For Free</a></h3>
+        <span class="post-date">08 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/adam-smith_dali_three.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>After eight years of educating people about sensible API security and management, I’m always amazed at how many people I come across who still think public web APIs are about giving away access to your data, content, and algorithms for free. I regularly come across very smart people who say they’d be doing APIs, but they depend on revenue from selling their data and content, and wouldn’t benefit from just putting it online for everyone to download for free.</p>
+
+<p>I wonder when we stopped thinking the web was not about giving everything away for free? It is something I’m going to have to investigate a little more. For me, it shows how much education we still have ahead of us when it comes to informing people about what APIs are, and how to properly manage them. Which is a problem, when many of the companies I’m talking to are most likely doing APIs to drive internal systems, and public mobile applications. They are either unaware of the APIs that already exist across their organization, or think that because they don’t have a public developer portal showcasing their APIs, that they are much more private and secure than if they were openly offering them to partners and the public.</p>
+
+<p>Web API management has been around for over a decade now. Requiring ALL developers to authenticate when accessing any APIs, and the ability to put APIs into different access tiers, limit that the rate of consumption, while logging and billing for all API consumption isn’t anything new. Amazon has been extremely public about their AWS efforts, and the cloud isn’t a secret. The fact that smart business leaders see all of this and do not see that APIs are driving it all represents a disconnect amongst business leadership. It is something I’m going to be testing out a little bit more to see what levels of knowledge exist across many fortune 1000 companies, helping paint of picture of how they view the API landscape, and help me quantify their API literacy.</p>
+
+<p>Educating business leaders about APIs has been a part of my mission since I started API Evangelist in 2010. It is something that will continue to be a focus of mine. This lack of awareness is why we end up with damaging incidents like the Equifax breach, and the Cambridge Analytica / Facebook scandal. Its how we end up with so many trolls on Twitter, and an out of balance API ecosystems across federal, state, and municipal governments. It is a problem that we need to address in the industry, and work to help educate business leaders around common patterns for securing and managing our API resources. I think this process always begins with education and API literacy, but is a symptom of the disconnect around storytelling about public vs private APIs, when in reality there are just APIs that are secured and managed properly, or not.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/08/people-still-think-apis-are-about-giving-away-your-data-for-free/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/04/the-rockstar-commitees-we-have-assembled-to-make-apistrat-nashville-rock/">The Rockstar Committees We Have Assembled To Make APIStrat Nashville Rock!!</a></h3>
+        <span class="post-date">04 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/apistrat/apistrat-nashville-header.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>It is APIStrat time again! This time it is in Nashville, Tennessee! We are in the early stages of the event, but we are getting close to the deadline of the call for papers. We’ve assembled another rockstar ensemble for this round to help us steer the event, and review talk submissions once the CFP process has closed. I just wanted to take a moment and recognize the folks who are helping out and make sure they get the recognition they deserve.</p>
+
+<p>First up are the six members of the APIStrat steering committee, playing different leadership roles in the conference, making sure everything gets done by September:</p>
+
+<ul>
+  <li>Darrel Miller (<a href="https://twitter.com/darrel_miller">@darrel_miller</a>)– Workshop Chair - <a href="https://www.microsoft.com">Microsoft</a></li>
+  <li>Erin McKean (<a href="https://twitter.com/emckean">@emckean</a>) – Program Chair - <a href="https://www.ibm.com/">IBM</a></li>
+  <li>Kin Lane (<a href="https://twitter.com/kinlane">@kinlane</a>) – Marketing Chair - <a href="https://apievangelist.com">API Evangelist</a></li>
+  <li>Lorinda Brandon (<a href="https://twitter.com/lindybrandon">@lindybrandon</a>) – Community Chair - <a href="https://developer.capitalone.com/">Capital One DevExchange</a></li>
+  <li>Steven Willmott (<a href="https://twitter.com/njyx">@njyx</a>) – Chair - <a href="https://www.redhat.com">Red Hat</a>.</li>
+  <li>Tim Burks (<a href="https://twitter.com/timburks">@timburks</a>) – Program Vice Chair - <a href="https://www.google.com/">Google</a></li>
+</ul>
+
+<p>Then we have assembled nineteen folks on the program committee who will be reviewing your talk submissions before you can get on stage at APIStrat in Nashville:</p>
+
+<ul>
+  <li>Amy Palamountain (<a href="https://twitter.com/ammeep">@ammeep</a>) - <a href="https://github.com/">GitHub</a></li>
+  <li>Ash Hathaway (<a href="https://twitter.com/Ash_Hathaway">@Ash_Hathaway</a>) - <a href="https://pivotal.io/">Pivotal</a></li>
+  <li>Carly Thelander (<a href="https://twitter.com/CarlyNThelander">@CarlyNThelander</a>) - <a href="https://localmilkrun.com/">MilkRun</a></li>
+  <li>David Biesack (<a href="https://twitter.com/davidbiesack">@davidbiesack</a>) - <a href="https://www.apiture.com/">Apiture</a></li>
+  <li>Gail Frederick (<a href="https://twitter.com/screaminggeek">@screaminggeek</a>) - <a href="https://www.ebay.com/">eBay</a></li>
+  <li>George Atala (<a href="https://twitter.com/gmatala">@gmatala</a>) - <a href="https://quanterocapital.com/">Quantero Capital</a></li>
+  <li>Glenn Block (<a href="https://twitter.com/gblock">@gblock</a>) - <a href="">Auth0 https://auth0.com/</a></li>
+  <li>Gregory Koberger (<a href="https://twitter.com/gkoberger">@gkoberger</a>) - <a href="https://readme.io/">ReadMe</a></li>
+  <li>James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>) - <a href="https://launchany.com">LaunchAny</a></li>
+  <li>Jennifer Riggins (<a href="https://twitter.com/jkriggins">@jkriggins</a>) - <a href="http://ebranding.ninja/">the eBranding Ninja</a></li>
+  <li>Joey French (<a href="https://twitter.com/josephtfrench">@josephtfrench</a>) - <a href="https://intrinio.com/">Intrinio</a></li>
+  <li>Kyle Dallaire (<a href="https://twitter.com/kyledallaire">@kyledallaire</a>) - <a href="https://recruitingdigital.capitalone.com/">Capital One Digital</a></li>
+  <li>Melissa Jurkoic (<a href="https://twitter.com/melissa_jurkoic">@melissa_jurkoic</a>) - <a href="https://www.amadeus-hospitality.com/">Amadeus Hospitality</a></li>
+  <li>Phil Sturgeon (<a href="https://twitter.com/philsturgeon">@philsturgeon</a>) - <a href="https://www.wework.com">WeWork</a></li>
+  <li>Sai Vennam (<a href="https://twitter.com/sai_vennam">@sai_vennam</a>) - <a href="">IBM https://www.ibm.com/</a></li>
+  <li>Shelby Switzer (<a href="https://twitter.com/switzerly">@switzerly</a>) - <a href="https://www.healthify.us/">Healthify</a></li>
+  <li>Skip Hovsmith (<a href="https://twitter.com/skiphovsmith">@skiphovsmith</a>) - <a href="https://www.approov.io">Critical Blue</a></li>
+  <li>Taylor Barnett (<a href="https://twitter.com/taylor_atx">@taylor_atx</a>) - <a href="https://stoplight.io/">Stoplight</a></li>
+  <li>Tessa Mero (<a href="https://twitter.com/TessaMero">@TessaMero</a>) - <a href="https://www.cisco.com/">Cisco</a></li>
+  <li>Yina Arenas (<a href="https://twitter.com/yina_arenas">@yina_arenas</a>) - <a href="https://developer.microsoft.com/en-us/graph">Microsoft Graph</a></li>
+</ul>
+
+<p>Than you to everyone for helping do the hard work of making sure APIStrat not only continues, but continues to represent the wider API community. Everyone is doing this work because they care about the community, and want to make the event as good as, or better than it has been in the past. This is the 9th edition of APIStrat, spanning New York, San Francisco, Amsterdam, Chicago, Berlin, Austin, Boston, Portland, and now Nashville! It has been a pretty wild ride.</p>
+
+<p>While we have everyone we need for these committees, we still need help in other areas. First, get your talk submitted before the CFP closes next week. Second, we need your financial support, so make sure you consider sponsoring APIStrat, and help make sure Nashville rocks. Beyond that we can use some help spreading the word. We are looking to grow the event beyond the usual 500 threshold, helping expand participation in the event, as well as the OpenAPI Initiative. If you want to help, feel free to ping me anytime, and I’ll see you in Nashville.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/04/the-rockstar-commitees-we-have-assembled-to-make-apistrat-nashville-rock/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/04/i-will-be-discussing-the-government-api-lifecycle-at-devnationfederal-in-dc-tuesday-afternoon/">I Will Be Discussing The Government API Lifecycle At DevNation Federal In DC Tuesday Afternoon</a></h3>
+        <span class="post-date">04 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/talks/devnation-federal.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’m kicking off a busy week of travel and <a href="https://devnationfederal.org/">talks this week in DC with a discussion about delivering microservices at federal agencies at DevNation Federal on Tuesday, June 5th, 2018</a>. I was invited by <a href="https://www.redhat.com/en">Red Hat</a> to come speak about the work I’m doing as API Evangelist across federal agencies. You can find me in the afternoon lineup, sharing my stories title “The Tech, Business, and Politics of APIs In Federal Government”. Focusing on information gathered as part of my research, workshops, and consulting across the public and private sector.</p>
+
+<p>My talk reflects my work to motivate federal agencies to do APIs over the last five years, and help pollinate the ideas and practices I gather from across the private sector, and understand which ones will work in the public sphere. Not everything about doing APIs at startups and in the enterprise translates perfectly to delivering APIs in the federal government, but there are many practices that will help agencies better serve the people. My goal is to open up discussion with government employees and contractors, to help figure out what works and what doesn’t–sharing stories along the way.</p>
+
+<p>Let me know if you are going to be at <a href="https://devnationfederal.org/">DevNation Federal</a> let me know. I am happy to make some time to talk, and hear what you are up to with APIs. I depend on these hallway conversations to populate my blog with stories. I’ll be in town around noon, and there until around 5 or so until I head over to the DC API Meetup for my second talk of the day. Thanks to <a href="https://www.redhat.com/en">Red Hat</a> for having me out. I enjoy doing talks for Red Hat events, as they tend to reflect more of the audience I’m looking for, with a focus on more open source, and a little less proprietary focus when it comes to delivering government technology. I’ll see you in Washington D.C. on Tuesday!</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/04/i-will-be-discussing-the-government-api-lifecycle-at-devnationfederal-in-dc-tuesday-afternoon/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/04/catch-me-at-dc-api-meetup-in-washington-dc-tuesday-evening/">Catch Me At The DC API User Group in Washington DC This Tuesday Evening</a></h3>
+        <span class="post-date">04 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/talks/dc-api-user-group.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>After I speak at DevNation Federal in Washington DC this Tuesday, I am going to give a similar talk at <a href="https://www.meetup.com/DC-Web-API-User-Group/">the DC API API User Group</a> that evening. I love going to the Meetups in DC, partly because my good friend Gray Brooks runs the event, but also because <a href="https://apievangelist.com/2012/08/18/api-craft-washington-dc/">I’ve been working to jumpstart API conversations in Washington DC since 2012 when I held the first DC edition of API Craft</a>. I was on a mission to jumpstart API Craft gatherings around the country that year, and it makes me happy to see the API Meetup culture continuing to thrive in DC, where other places it has died out.</p>
+
+<p>At the DC API Meetup I’ll be giving a variation of my talk that I’m giving earlier that day at DevNation Federal. Talking about the technology, business, and politics of doing APIs, with an emphasis on a consistent and repeatable API lifecycle. I’ll be reworking my regular material in light of current projects I’m working on at the federal level including with the VA, FDIC, HHS, and beyond. Sharing stories about how a microservice approach can help make government services more agile, flexible, and delivered in smaller more bite sized chunks–helping move the IT conversation forward across federal agencies.</p>
+
+<p>If you can’t make it to DevNation Federal, I recommend you head out <a href="https://www.meetup.com/DC-Web-API-User-Group/">to the DC API User Group later that evening</a>. I’d love to get a chance to hang out with you and talk about APIs. I’m always impressed with the folks who turn out for the DC API Meetup, consistently providing a fresh opportunity to discuss APIs and the impact they are making across the federal government. Organizer Gray Brooks has his finger on the pulse of what is going on across agencies, way beyond what I am capable of from the outside-in. I look forward to hanging out in DC, and hope you can make it out Tuesday to talk some APIs with me.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/04/catch-me-at-dc-api-meetup-in-washington-dc-tuesday-evening/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/06/04/making-connections-at-the-api-management-layer/">Making Connections At The API Management Layer</a></h3>
+        <span class="post-date">04 Jun 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-connect-plug.png" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’ve been evaluating API management providers, and this important stop along the API lifecycle in which they serve for eight years now. It is a space that I’m very familiar with, and have enjoyed watching it mature, evolve, and become something that is more standardized, and lately more commoditized. I’ve enjoyed watching the old guard (3Scale, Apigee, and Mashery) be acquired, and API management be baked into the cloud with AWS, Azure, and Google. I’ve also had fun learning about Kong, Tyk, and the next generation API management providers as they grow and evolve, as well as some of the older players like Axway as they work to retool so that they can compete and even lead the charge in the current environment.</p>
+
+<p>I am renewing efforts to study what each of the API management solutions provide, pushing forward my ongoing API management research, understanding what the current capacity of the active providers are, and potentially they are pushing forward the conversation. One of the things I’m extremely interested in learning more about is the connector, plugin, and extensibility opportunities that exist with each solution. Functionality that allows other 3rd party API service providers to inject their valuable services into the management layer of APIs, bringing other stops along the API lifecycle into management layer, allowing API providers to do more than just what their API management solution delivers. Turning the API management layer into much more than just authentication, service plan management, logging, analytics, and billing.</p>
+
+<p>Over the last year I’ve been working with <a href="https://www.elasticbeam.com/">API security provider ElasticBeam</a> to help make sense of what is possible at the API management layer when it comes to securing our APIs. ElasticBeam can analyze the surface area of an API, as well as the DNS, web, API management, web server, and database logs for potential threats, and apply their machine learning models in real time. Without direct access at the API management layer, ElasticBeam is still valuable but cannot respond in real-time to threats, shutting down keys, blocking request, and other threats being leveraged against our API infrastructure. Sure, you can still respond after the fact based upon what ElasticBeam learns from scanning all of your logs, but without being able to connect directly into your API management layer, the effectiveness of their security solution is significantly diminished.</p>
+
+<p>Complimenting, but also contrasting ElasticBeam, I’m also working with <a href="http://streamdata.io">Streamdata.io</a> to help understand how they can be injected at the API management layer, adding an event-driven architectural layer to any existing API. The first part of this would involve turning high volume APIs into real time streams using Server-Sent Events (SSE). With future advancements focused on topical streaming, webhooks, and WebSub enhancements to transform simple request and response APIs into event-driven streams of information that only push what has changed to subscribers. Like ElasticBeam, Streamdata.io would benefit being directly baked into the API management layer as a connector or plugin, augmenting the API management layer with a next generation event-driven layer that would compliment what any API management solution brings to the table.</p>
+
+<p>Without an extensible connector or plugin layer at the API management layer you can’t inject additional services like security with ElasticBeam, or event-driven architecture like Streamdata.io. I’m going to be looking for this type of extensibility as I profile the features of all of the active API management providers. I’m looking to understand the core features each API management provider brings to the table, but I’m also looking to understand how modern these API management solutions are when it comes to seamlessly working with other stops along the API lifecycle, and specifically how these other stops can be serviced by other 3rd party providers. Similar to my regular rants about API service providers always having APIs, you are going to hear me rant more about API service providers needing to have connector, plugin, and other extensibility features. API management service providers can put their APIs to work driving this connector and plugin infrastructure, but it should allow for more seamless interaction and benefits for their customers, that are brought to the table by their most trusted partners.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/06/04/making-connections-at-the-api-management-layer/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/05/31/when-the-right-api-solutions-is-not-always-the-sensible-one/">When The Right API Solution Is Not Always The Sensible One</a></h3>
         <span class="post-date">31 May 2018</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/art-museum_light_dali.jpg" width="45%" align="right" style="padding: 15px;" /></p>
@@ -1306,310 +1944,6 @@ I get a regularly stream of requests from organizations who have already embarke
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/04/09/details-of-the-api-evangelist-partner-program/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/09/creating-a-productive-api-industry-partner-program/">Crafting A Productive API Industry Partner Program</a></h3>
-        <span class="post-date">09 Apr 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I struggle with partner relationships. I’ve had a lot of partners operating API Evangelist over the years. Some good. Some not so good. And some amazing! You know who you are. It’s tough to fund what I do as the API Evangelist. It’s even harder to fund who I am as Kin Lane. I’ve revamped my approach to partnering several times now trying to find the right formula for me, my partners, and for my readers. As the partner requests pile up, and I fall short for some of my existing partners, while delivering as expected for others, it is time for me to take another crack at shaping my partner program.</p>
-
-<p><strong>A Strong Streamdata.io Partnership Base</strong><br />
-A cornerstone of my new approach to partnering is based upon my relationship with Streamdata.io. They are my primary partner, and supporter of API Evangelist. They have not just helped provide me with the financial base I need to live and operate API Evangelist, they are investing in, and helping grow my existing API lifecycle and <a href="http://theapistack.com">API Stack</a> work. We are also working in concert to formalize my API lifecycle work into a growing consultancy, and pushing forward my API Stack research, syndicating it as the Streamdata.io API Gallery, and refining the my ranking system for both API providers, and API service providers. Without Streamdata.io this latest round of API Evangelist wouldn’t be happening.</p>
-
-<p><strong>Difficulties With The Current Mode Of Partnering</strong><br />
-One of the biggest challenges I have right now with partnering is that my partners want me to produce content about them. Writing stories for pay just isn’t a good idea for their brand, or for mine. I know it is what people want, but it just doesn’t work. The other challenge I have is people tend to want predictable stories on a schedule. I know it seems like I’m a regular machine, churning out content, but honestly when it flows, it all works. When it doesn’t flow, it doesn’t work. I schedule things out ahead enough that the bumps are smoothed out. I love writing. The anxiety I get from writing on a deadline, or for expected topics isn’t conducive to producing good content, and storytelling. This applies to both my short form (blog posts), and my long form (white papers). I’ll still be producing both of these things, but I can’t do it for money any longer.</p>
-
-<p><strong>Diffciulties With Incentivizing Partner Behavior</strong><br />
-I have no shortage of people who’d like to partner and get exposure from what I do, but incentivizing what I’d like to see from these partners is difficult. I’m not just looking for money from them, I’m looking to incentivize companies to build interesting products and services, tell stories that are valuable to the community, and engage with the API space in a meaningful way. I want to leverage my partners to behave as good citizens, give back to the space, and yes, get new users and generate revenue from their activity. I’ve seen too many partnerships exclusively be about the money involved, or just be about the press release, with no meaningful substance actually achieved in between. This type of hollow, meaningless, partnership masturbation does no good for anyone, and honestly is a waste of my time. I don’t expect ALL partnerships to bear fruit, but there should be a high bar for defining what partnership means, and we should be working to making it truly matter for everyone involved.</p>
-
-<p><strong>There Are Three Dimensions To Creating Partner Value</strong><br />
-As I see it, there are three main dimensions to establishing a productive API industry partnership program. There is partner A, and partner B, but then there is potential customer. If a partnership isn’t benefiting all three of these actors equally, then it just won’t work. I understand that as a company you are looking to maximize the value generation and extraction for your business, but there is enough to go around, and one of the core tenets of partnerships is that this value is shared, with the customer and community in mind. Not all companies get this. It is my role to make sure they are reminded of it, and push for balanced partnerships that are healthy, active, fruitful, but also benefit the community. We will all benefit from this, despite many shortsighted, self-centered approaches to doing business in API-land that I’ve encountered over my eight years operating as the API Evangelist. To help me balance my API partnership program, I’m going to be applying mechanism I’ve used for years to help me define and understand who my true partners are, and whoever rises to the top will see the most benefits from the program.</p>
-
-<p><strong>Tuning Into API Service Provider Partner Signals</strong><br />
-When it comes to quantifying my partners, who they are, and what they do, I’m looking at a handful of signals to make sure they are contributing not just to the partnership, but to the wider community. I’m looking to incentivize API service providers to deliver as much value to the community than they are extracting as part of the partnership. Here is what I’m looking for to help quantify the participation of any partner on the table:</p>
-
-<ul>
-  <li><strong>Blog</strong> - The presence of an active blog with and RSS / Atom feed. Allowing me to tune into what is happening, and help share the interesting things that are happening via their platform and community. If something good is being delivered, and the story isn’t told, it didn’t happen. An active blog is one of the more important signals I can tune into as the API Evangelist – also I need a feed!!!</li>
-  <li><strong>Github</strong> - The presence of an active Github account. Possessing a robust number of repositories for a variety of API ecosystem projects from API definitions to SDKs. I’m tuning into all the Github signals including number of repos, stars, commits, forks, and other chatter to understand the activity and engagement levels occurring within a community. Github is the social network for API providers–make sure you are being active, observable, and engaging.</li>
-  <li><strong>Twitter</strong> - The presence of an active, dedicated Twitter account. Because of it’s public nature, Twitter provides a wealth of signals regarding what is happening via any platform, and provides one of the most important ways in which a service provider can be engaging with their customers, and the wider APIs pace. I understand that not everyone excels at Twitter engagements, but using as an information and update sharing channel, and general support and feedback loop is within the realm of operation for EVERYONE.</li>
-  <li><strong>Search</strong> - I’m always looking for a general, and hopefully wide search engine presence for API service providers. I have alerts setup for all the API service providers I monitor, which surfaces relevant stories, conversations, and information published by each platform. SEO isn’t hard, but takes a regular, concerted effort, and it is easy to understand how much a service provider is investing in their presence, or not.</li>
-  <li><strong>Business Model</strong> - The presence of, or lack of a business model, as well as investment is an important signal I keep an eye on, trying to understand where each API service provider in their evolution. How new a company is, how far along their runway they are, and what the exit and long term strategy for an API service provider is. Keeping an eye on Crunchbase and other investment, pricing plans, and revenue signals coming out of a platform will play a significant role in understand the value an API service is bringing to the table.</li>
-  <li><strong>Integrations</strong> - I’m also tracking on the integrations any service provider offers, ensuring that their API service providers are investing in, and encouraging interpretability with other platforms by default. API service providers that do not play well with others, often do not make good partners, insisting on all roads leading to their platform. I’m always on the hunt for a dedicated integrations and plugin page for any API service provider I’m partnering with.</li>
-  <li><strong>Partnerships</strong> - Beyond integrations I want to see the all the other partnerships one of my partners is engaging with. The relationships they are engaging in tell a lot about how well they will partner with me, and define what signals they are looking to send to the community. Partnerships tell a lot of story about the motivations behind a companies own partner program, and how it will benefit and impact my own partner program.</li>
-  <li><strong>API</strong> - I am always looking for whether or not an API service provider has an API. If a company is selling services, products, and tooling to the API sector, but doesn’t have a public facing API, I’m always skeptical of what they are up to. I get it, it can often not be a priority to operate your own program, but in reality, can anyone trust an API service provider to help deliver on their own program, if they don’t have the same experience operating their own API program? This is one of my biggest pet peeves with API service providers, and a very telling sign about what is happening behind the scenes.</li>
-  <li><strong>API Definitions</strong> - If you have an API as an API service provider then they should have an OpenAPI and Postman Collections available for their API. The presence of API definitions, as well as robust portal, docs, and other API building blocks is essential for any API service provider.</li>
-  <li><strong>Story Ideas</strong> - I’m very interested in the number of story ideas submitted by API service providers, pointing me to interesting stories I should cover, as well as the interesting things that are occurring via their platform. Ideally, these are referenced by public blog posts, Tweets, and other signals sent by the API service provider, but they also count when received via direct message, email, and carrier pigeon (bonus points for pigeon).</li>
-</ul>
-
-<p>There are other signals I’m looking for from my partners, but that is the core of what I’m looking for. I know it sounds like a lot, but it really isn’t. It is the bar that defines a quality API service provider, based upon eight years of tracking on them, and watching them come and go. The API service providers who are delivering in these areas will float up in my automated ranking system, and enjoy more prominence in my storytelling, and across the API Evangelist network.</p>
-
-<p><strong>Tuning Into The API Community Signals</strong><br />
-Beyond the API service providers themselves I’m always tuned into what the community is saying about companies, products, services, and tooling. While there is always a certain level of hype around what is happening in the API sector, you can keep your finger on the pulse of what is going on through a handful of channels. Sure, many of the signals present on these channels can be gamed by the API service providers, but others are much more difficult, and will take a lot of work to game. Which can be a signal on its own. Here is what I’m looking for to understand what the API community is tuning into:</p>
-
-<ul>
-  <li><strong>Blogs</strong> - I’m tuning into what people across the space are writing about on their personal, and company blogs. I’m regularly curating stories that reference tools, services, and the products offered by API service providers. If people are writing about specific companies, I want to know about it.</li>
-  <li><strong>Twitter</strong> - Twitter provides a number of signals to understand what the community thinks about an API service provider, including follows, and retweets. The conversation volume initiated and amplified by the community tells a significant story about what an API service provider is up to.</li>
-  <li><strong>Github</strong> - Github also provides one of the more meaningful platforms for harvesting signals about what API service providers are up to. The stars, forks, and discussion initiated and amplified by the community on the Github repos and organizations of API services providers tell an important story.</li>
-  <li><strong>Search</strong> - Using the Google and Talkwalker alerts setup for each API service provider, I curate the Reddit, Hacker news, and other search indexed conversations occurring about providers, tracking on the overall scope of conversation around each API service provider.</li>
-</ul>
-
-<p>There are other signals I’m developing to understand the general tone of the API community, but these reflect the proven ones I’ve been using for years, and provide a reliable measure of the impact an API service provider is making, or not. One important aspect of this search and social media exhaust is in regards to sentiment, which can be good or bad, depending on the tone the API service provider is setting within the community.</p>
-
-<p><strong>Generating My Own Signals About What Is Happening</strong><br />
-This is the portion of the partner relationship where I’m held accountable. These are the things that I am doing that deliver value to my partners, as well as the overall API community. These items are the signals partners are looking for, but also the things I’m measuring to understand the role an API service provider plays in my storytelling, speaking, consulting, and research. Each of these areas reflect how relative an API service, their products, services, and tooling is to the overall API landscape as it pertains to my work. Here is what I’m tracking on:</p>
-
-<ul>
-  <li><strong>Short Form Storytelling</strong> - Tracking on how much I write about an API service provider in my blog posts on API Evangelist, Streamdata.io, and other places I’m syndicated like DZone. If I’m talking about a company, they are doing interesting an relevant things, and I want to be showcasing their work. I can’t just write about someone because I’m paid, it is because they are relevant to the story I’m telling.</li>
-  <li><strong>Long Form Storytelling</strong> - Understanding how API service providers are referenced in my guides and white papers. Similar to the short form references, I’m only referencing companies when they are doing relevant things to the stories I’m telling. My guides used to be comprehensive when it came to mentioning ALL API service providers, but going forward they will only reference those that float to the top, and rank high in my overall API partner ranking.</li>
-  <li><strong>Story Ideas</strong> - I’m regularly writing down story ideas, and aggregating them into lists. Not everything ever turns into a story, but still the idea demonstrates something that grabbed my attention. I tend to also share story ideas with other content producers, and publications, providing the seeds for interesting stories that I may not have the time to write about myself. Providing rich, and relevant materials for others to work from.</li>
-  <li><strong>My In-Person Talks</strong> - Throughout the talks I give at conferences, Meetups, and in person within companies, organizations, institutions, and government I am referencing tools and service to accomplish a specific API related task–I need the best solutions to reference as part of these talks. I carefully think about which providers I will reference, and I keep track of which ones I reference.</li>
-  <li><strong>API Lifecycle</strong> - My API lifecycle work is build upon my research across the API stack, what I learn from the public API providers I study, as well as what I learn as part of my consulting work. All of this knowledge and research goes back into my API lifecycle and governance strategy, and becomes part of my outreach and strategy which gets implemented on the ground as part of my consulting. Across the 68+ stops along the API there are always API service providers I need to reference, and refer to as part of my work.</li>
-  <li><strong>API Stack</strong> - My API Stack work is all about profiling publicly available APIs out there and understanding the best practices at work when it comes to operating their APIs. When I notice that a service or tool is being put to use I take note of it. I use these references as part of my overall tracking and understanding of what is being put to use across the industry.</li>
-  <li><strong>Website Logos</strong> - There are four logos for partners to sponsor across the network of API Evangelist sites. While I’m not weighting these in my ranking, when someone is present on the site like that they are part of my consciousness. I recognize this, and acknowledge that it does influence my overall view of the API sector.</li>
-  <li><strong>Conversations</strong> - I’m regularly engaging in conversations with my partners, learning about their roadmaps, and staying in tune with what they are working on. These conversations have a significant impact on my view of the space, and help me understand the value that API service providers bring to the table.</li>
-  <li><strong>Referrals</strong> - Now is where we start getting to the money part of this conversation. When I refer clients to some of my partners, there are some revenue opportunities available for me. Not every referral is done because I’m getting paid, but there are partners who do pay me when I send business their way. This influences the way that I see the landscape, not because I’m getting paid, but because someone I’m talking to chose to use a service, and this will influence how I see the space.</li>
-  <li><strong>Deals Made</strong> - I do make deals, and bring in revenue based upon the business I send to my partners. This isn’t why I do what I do, but it does pay the bills. I’m not writing and telling stories about companies because I have relationships with them. I write and tell stories about them because they do interesting things, and provide solutions for my audience. I’m happy to be transparent about this side of my business, and always work to keep things out in the open.</li>
-</ul>
-
-<p>This is the core the signals I’m generating that tell me which API service providers are making an impact on the API sector. Everything I do reinforces who the most relevant API service providers are. If I’m telling stories about them, then I’m most likely telling more stories. If I’m referring API service providers to my readers and clients, then it just pushes me to read more about what they are doing, and tell more stories about them. The more an API service providers floats up in my world, the more likely they will stay there.</p>
-
-<p><strong>Partnerships Balanced Across Three Dimensions</strong><br />
-My goal with all of this is to continue applying my ranking of API service providers across three main dimensions. Things that are within their control. Things that are within the communities control. Then everything weighted and influenced by my opinion. While money does influence this, that isn’t what exclusively drives which API service providers show up across my work. If I take money to write content, then its hard to say that content is independent. The content is what drives the popularity and readership of API Evangelist, so I don’t want to negatively impact this work. It is easy to say that my storytelling and research is influenced by referral fees and deals I make with partners, but I find this irrelevant if my list of partners is ranked by a number of other elements, within the API service providers control, but also due to signals that are not.</p>
-
-<p><strong>The Most Relevant Partners Rise To The Top</strong><br />
-Everything on API Evangelist is YAML driven. The stories, the APIs, API service providers, and the partners that show across the stories I tell, and the talks I give. I used to drive the listings of APIs and API service providers using my ranking, floating the most relevant to the top. I’m going to start doing that again. I’ve been slowly turning back on my automated monitoring, and updating the ranking for APIs and API service providers. When an API service providers shows up on the list of services or tools I showcase, only the highest rank will float to the top. If API service providers are active, the community is talking about them, and I’m tuned into what they are doing, then they’ll show up in more work more frequently. Keeping the most relevant services and tooling available across the API space, and my research, being showcased in my storytelling, talks, and consulting.</p>
-
-<p>My objective with this redefining of my partner program is to take what I’ve learned over the years, and retool my partnership to deliver more value, help keep my website up and running, but most importantly get out of the way of what I do best–research and storytelling around APIs. I can’t have my partnerships slow or redirect my storytelling. I can’t let my partnerships dilute or discredit my brand. However, I still need to make a living. I still need partners. They still need value to be generated by me, and I want to help ensure that they bring value to the table for me, my readers, as well as the wider API community. This is my attempt to do that. We’ll see how it goes. I will update each month and see what I can do to continue dialing it in. If you have any comments, questions, concerns, or would like to talk about partnering–let me know.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/09/creating-a-productive-api-industry-partner-program/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/05/nest-branding-and-marketing-guidelines/">Nest Branding And Marketing Guidelines</a></h3>
-        <span class="post-date">05 Apr 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/nest/nestreview-workswithnest.png" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I’m always looking out for examples of API providers who have invested energy into formalizing process around the business and politics of API operations. I’m hoping to aggregate a variety of approaches that I can aggregate into a single blueprint that I can use in my API storytelling and consulting. The more I can help API providers standardize what they do, the better off the API sector will be, so I’m always investing in the work that API providers should be doing, but doesn’t always get prioritized.</p>
-
-<p>The other day <a href="https://streamdata.io/blog/streaming-nest-api/">while profiling the way that Nest uses Server-Sent Events (SSE) to stream activity via thermostats, cameras, and the other devices they provide</a>, and <a href="https://developers.nest.com/documentation/cloud/marketing-guide">I stumbled across their branding policies</a>. It provides a pretty nice set of guidance for Nest developers in respect to the platform’s brand, and something you don’t see with many other API providers. I always say that branding is the biggest concern for new API providers, but also the one that is almost never addressed by API providers who are in operation–which doesn’t make a whole lot of sense to me. If I had a major corporate brand, I’d work to protect it, and help developers understand what is important.</p>
-
-<p>The Nest marketing program is intended to qualify applications, and then allow them to use the “Works with Nest” branding in your marketing and social media. To get approved you have submit your product or service for review. As part of the review process verifies that you are in compliance with all of their branding policies, including:</p>
-
-<ul>
-  <li><a href="https://developers.nest.com/documentation/cloud/ui-guide">User interface guide</a></li>
-  <li><a href="https://developers.nest.com/documentation/cloud/ux-guide">User experience guide</a></li>
-  <li><a href="https://developers.nest.com/documentation/cloud/brandguide-tm">Trademark policy</a></li>
-</ul>
-
-<p>To apply for the program you have to email them with all the following details regarding the marketing efforts our your product or service where you will be using the “Works with Nest” branding:</p>
-
-<ul>
-  <li>Description of your marketing program</li>
-  <li>Description of your intended audience</li>
-  <li>Planned communication (list all that apply): Print, Radio, TV, Digital Advertising, OOH, Event, Email, Website, Blog Post, Email, Social Post, Online Video, PR, Sales, Packaging, Spec Sheet, Direct Mail, App Store Submission, or other (please specify)</li>
-  <li>High resolution assets for the planned communication (please provide URL for file download); images should be at least 1000px wide</li>
-  <li>Planned geography (list all that apply): Global, US, Canada, UK, or other (please specify)</li>
-  <li>Estimated reach: 1k - 50k, 50k- 100k, 100k - 500k, or 500k+</li>
-  <li>Contact Information: First name, last name, email, company, product name, and phone number</li>
-</ul>
-
-<p>Once submitted, Nest says they’ll provide feedback or approval of your request within 5 business days, and if all is well, they’ll approve your marketing plan for that Works with Nest product. If they find any submission is not in compliance with their branding policies, they’ll ask you to make corrections to your marketing, so you can submit again. I don’t have too many examples of marketing and branding submission process as part of <a href="http://branding.apievangelist.com/">my API branding research</a>. I have the user interface guide, and trademark policy as building blocks, but the user experience guide, and the details of the submission process are all new entries to my research.</p>
-
-<p>I feel like API providers should be able to defend the use of their brand. I do not feel API providers can penalize and cut-off API consumers access unless there are clear guidelines and expectations presented regarding what is healthy, and unhealthy behavior. If you are concerned about how your API consumers reflect your brand, then take the time to put together a program like Nest has. You can look at <a href="http://branding.apievangelist.com/">my wider API branding research</a> if you need other examples, or I’m happy to dive into the subject more as part of a consulting arrangement, and help craft an API branding strategy for you. Just let me know.</p>
-
-<p><em><strong>Disclosure:</strong> I do not “Work with Nest” – I am just showcasing the process. ;-)</em></p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/05/nest-branding-and-marketing-guidelines/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/">Seamless API Lifecycle Integration With Github, Gitlab, And BitBucket</a></h3>
-        <span class="post-date">05 Apr 2018</span>
-        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
-<p><em>This is a story, in a series of stories that I’m doing as part of the version 3.0 release of the <a href="https://next.stoplight.io/">Stoplight.io platform</a>. Stoplight.io is one the few API service providers I’m excited about what when it comes to what they are delivering in the API space, so I jumped at the opportunity to do some paid work for them. As I do, I’m working to make these stories about the solutions the provide, and refrain from focusing on just their product, hopefully maintaining my independent stance as the API Evangelist, and keeping some of the credibility I’ve established over the years.</em></p>
-
-<p>Github, Gitlab, and Bitbucket have taken up a central role in the delivery of the valuable API resources we are using across our web, mobile, and device-based applications. These platforms have become integral parts of our development, and software build processes, with Github being the most prominent player when it comes to defining how we deliver not just applications, but increasingly API-driven applications on the web, our mobile phones, and common Internet connected objects becoming more ubiquitous across our physical worlds.</p>
-
-<p><strong>A Lifecycle Directory Of Groups and Users</strong>
-These social coding platforms come with the ability to manage different groups, projects, as well as the users involved with moving project forward. While version control isn’t new, Github is credited with making this aspect of managing code a very social endeavor which can be done publicly, or privately within select groups. Providing a rich environment for defining who is involved with each microservice that is being moved along the API lifecycle, allowing teams to leverage the existing organization and user structure provided by these platforms as part of their API lifecycle organizational structure.</p>
-
-<p><strong>Repositories As A Wrapper For Each Service</strong>
-Five years ago you would most likely find just code within a Github repository. In 2018, you will find schema, documentation, API definitions, and numerous artifacts stored and evolved within individual repositories. The role of the code repository in the API lifecycle when it comes to helping to move forward an API from design, to mocking, to documentation, testing, and other stops along the lifecycle can’t be understated. The individual repository has become synonymous with a single unit of value in microservices, containerization, and continuous deployment and integration conversations, making it the logical vehicle for the API lifecycle.</p>
-
-<p><strong>Knowing the Past And Seeing The Future Of The API Lifecycle</strong>
-The API lifecycle has a beginning, an end, as well as many stops along the way. Increasingly the birth of an API begins in a repository, with a simple README file explaining its purpose. Then the lifecycle becomes defined through a series of user-driven submissions via issues, comments, and commits to the repository. Which are then curated, organized and molded into a road map, list of currently known issues, and a resulting change log of everything that has occurred. Making seamless integration for individual repositories, as well as across all of an organization’s API-centric repositories pretty critical to moving along the API lifecycle in an efficient manner.</p>
-
-<p><strong>Providing A Single Source Voice And Source Of Truth</strong>
-With the introduction of Jekyll, and other static page solutions to the social coding realm, the ability for a repository to become a central source of information, communications, notifications, and truth has been dramatically elevated. The API lifecycle is being coordinated, debated, and published using the underlying Git repository, becoming a platform for delivering the code, definitions, and other more technical elements. We are increasingly publishing documentation along side code and OpenAPI definition updates, and aggregating issues, milestones, and other streams generated at the repository level to provide a voice for the API lifecycle.</p>
-
-<p><strong>Seamless Integration With Lifecycle Tooling Is Essential</strong>
-Version control in its current form is the movement we experience across the API lifecycle. The other supporting elements for organizational, project, and user management provide the participation layer throughout the lifecycle. The communication and notification layers give the life cycle a voice, keeping everyone in sync and moving forward in concert. For any tool or service to contribute to the API lifecycle in a meaningful way, it has to seamless integrate with Git, as well as the underlying API for these software development, version control, devops, and social coding platforms. Successful API service providers will integrate with our existing software lifecycle(s), serving one or many stops, and helping us all move beyond a single, walled garden platform mentality.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/05/seamless-api-lifecycle-integration-with-github-gitlab-and-bitbucket/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/05/helping-stoplight-io-get-the-word-out-about-version-30/">Helping Stoplight.io Get The Word Out About Version 3.0</a></h3>
-        <span class="post-date">05 Apr 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/stoplight/stoplight-logo.png" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I’ve been telling stories about what the <a href="https://next.stoplight.io/">Stoplight.io</a> team has been building for a couple of years now. They are one of the few API service provider startups left that are doing things that interest me, and really delivering value to their API consumers. In the last couple of years, as things have consolidated, and funding cycles have shifted, there just hasn’t been the same amount of investment in interesting API solutions. So when Stoplight.io approached me to do some storytelling around their version 3.0 release, I was all in. Not just because I’m getting paid, but because they are doing interesting things, that I feel are worth talking about.</p>
-
-<p>I’ve always categorized Stoplight.io as an API design solution, but as they’ve iterated upon the last couple of versions, I feel they’ve managed to find their footing, and are maturing to become one of the few truly API lifecycle solutions available out there. They don’t serve every stop along the API lifecycle, but they do focus on a handful of the most valuable stops, and most importantly, they have adopted OpenAPI as the core of what they do, allowing API providers to put Stoplight.io to work for them, as well as any other solutions that support OpenAPI at the core.</p>
-
-<p>As far as the stops along the API lifecycle that they service, here is how I break them down:</p>
-
-<ul>
-  <li><strong>Definitions</strong> - An OpenAPI driven way of delivering APIs, that goes beyond just a single definition, and allows you to manage your API definitions at scale, across many teams, and services.</li>
-  <li><strong>Design</strong> - One of the most advanced API design GUI solutions out there, helping you craft and evolve your APIs using the GUI, or working directly with the raw JSON or YAML.</li>
-  <li><strong>Virtualization</strong> - Enabling the mocking and virtualization of your APIs, allowing you to share, consume, and iterate on your interfaces long before you have deliver more costly code.</li>
-  <li><strong>Testing</strong> - Provides the ability to not just test your individual APIs, but define and automate using detailed tests, assertions, and deliver a variety of scenarios to ensure APIs are doing what they should be doing.</li>
-  <li><strong>Documentation</strong> - Allows for the publishing of simple, clean, but interactive documentation that is OpenAPI driven, and share with your team, and your API community through a central portal.</li>
-  <li><strong>Discovery</strong> - Tightly integrated with Github, and maximizing an OpenAPI definition in a way that makes the entire API lifecycle discoverable by default.</li>
-  <li><strong>Governance</strong> - Allows for teams to get a handle on the API design and delivery lifecycle, while working to define and enforce API design standards, and enforce a certain quality of service across the lifecycle.</li>
-</ul>
-
-<p>They may describe themselves a little differently, but in terms of the way that I tag API service providers, these are the stops they service along the API lifecycle. They have a robust API definition and design core, with an attractive easy to use interface, which allows you to define, design, virtualize, document, test, and collaborate with your team, community, and other stakeholders. Which makes them a full API lifecycle service provider in my book, because they focus on serving multiple stops, and they are OpenAPI driven which allows every other stop to also be addressed using any other tools and service that supports OpenAPI–which is how you do business with APIs in 2018.</p>
-
-<p>I’ve added API governance to what they do, because they are beginning to build in much of what API teams are going to need to begin delivering APIs at scale across large organizations. Not just design governance, but the model and schema management you’ll need, combined with mocking, testing, documentation, and the discovery that comes along with delivering APIs like Stoplight.io does. They reflect not just where the API space is headed with delivering APIs at scale, but what organizations need when it comes to bringing order to their API-driven, software development lifecycle in a microservices reality.</p>
-
-<p>I have five separate posts that I will be publishing over the next couple weeks as Stoplight.io releases version 3.0 of their API development suite. Per my style I won’t always be directly about their product, but I’ll be talking about the solutions it deliver, but occasionally you’ll hear me mention them directly, because I can’t help it. Thanks to Stoplight.io for supporting what I do, and thanks to you my readers for <a href="https://next.stoplight.io/">checking out what Stoplight.io brings to the table</a>. I think you are going to dig what they are up to.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/05/helping-stoplight-io-get-the-word-out-about-version-30/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/03/openapi-is-the-contract-for-your-microservice/">OpenAPI Is The Contract For Your Microservice</a></h3>
-        <span class="post-date">03 Apr 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/OpenAPI_Pantone.png" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I’ve talked about how <a href="http://apievangelist.com/2018/02/14/code-generating-openapi-still-prevailing-approach/">generating an OpenAPI (fka Swagger) definition from code is still the dominate way that microservice</a> owners are producing this artifact. This is a by-product of developers seeing it as just another JSON artifact in the pipeline, and from it being primarily used to create API documentation, often times using Swagger UI–which is also why it is still called Swagger, and not <a href="https://www.openapis.org/">OpenAPI</a>. I’m continuing my campaign to help the projects I’m consulting on be more successful with their overall microservices strategy by helping them better understand how they can work in concert by focus in on OpenAPI, and realizing that it is the central contract for their service.</p>
-
-<p><strong>Each Service Begins With An OpenAPI Contract</strong><br />
-There is no reason that microservices should start with writing code. It is expensive, rigid, and time consuming. The contract that a service provides to clients can be hammered out using OpenAPI, and made available to consumers as a machine readable artifact (JSON or YAML), as well as visualized using documentation like Swagger UI, Redocs, and other open source tooling. This means that teams need to put down their IDE’s, and begin either handwriting their OpenAPI definitions, or being using an open source editor like <a href="https://editor.swagger.io/">Swagger Editor</a>, <a href="https://github.com/Apicurio">Apicurio</a>, <a href="https://github.com/Mermade/openapi-gui">API GUI</a>, or even within the Postman development environment. The entire surface area of a service can be defined using OpenAPI, and then provided using mocked version of the service, with documentation for usage by UI and other application developers. All before code has to be written, making microservices development much more agile, flexible, iterative, and cost effective.</p>
-
-<p><strong>Mocking Of Each Microservice To Hammer Out Contract</strong><br />
-Each OpenAPI can be used to generate a mock representation of the service using Postman, Stoplight.io, or other OpenAPI-driven mocking solution. There are a number of services, and tooling available that takes an OpenAPI, an generates a mock API, as well as the resulting data. Each service should have the ability to be deployed locally as a mock service by any stakeholder, published and shared with other team members as a mock service, and shared as a demonstration of what the service does, or will do. Mock representations of services will minimize builds, the writing of code, and refactoring to accommodate rapid changes during the API development process. Code shouldn’t be generated or crafted until the surface area of an API has been worked out, and reflects the contract that each service will provide.</p>
-
-<p><strong>OpenAPI Documentation Always AVailable In Repository</strong><br />
-Each microservice should be self-contained, and always documented. Swagger UI, Redoc, and other API documentation generated from OpenAPI has changed how we deliver API documentation. OpenAPI generated documentation should be available by default within each service’s repository, linked from the README, and readily available for running using static website solutions like Github Pages, or available running locally through the localhost. API documentation isn’t just for the microservices owner / steward to use, it is meant for other stakeholders, and potential consumers. API documentation for a service should be always on, always available, and not something that needs to be generated, built, or deployed. API documentation is a default tool that should be present for EVERY microservice, and treated as a first class citizen as part of its evolution.</p>
-
-<p><strong>Bringing An API To Life Using It’s OpenAPI Contract</strong><br />
-Once an OpenAPI contract has been been defined, designed, and iterated upon by service owner / steward, as well as a handful of potential consumers and clients, it is ready for development. A finished (enough) OpenAPI can be used to generate server side code using a popular language framework, build out as part of an API gateway solution, or common proxy services and tooling. In some cases the resulting build will be a finished API ready for use, but most of the time it will take some further connecting, refinement, and polishing before it is a production ready API. Regardless, there is no reason for an API to be developed, generated, or built, until the OpenAPI contract is ready, providing the required business value each microservice is being designed to deliver. Writing code, when an API will change is an inefficient use of time, in a virtualized API design lifecycle.</p>
-
-<p><strong>OpenAPI-Driven Monitoring, Testing, and Performance</strong><br />
-A read-to-go OpenAPI contract can be used to generate API tests, monitors, and deliver performance tests to ensure that services are meeting their business service level agreements. The details of the OpenAPI contract become the assertions of each test, which can be executed against an API on a regular basis to measure not just the overall availability of an API, but whether or not it is actually meeting specific, granular business use cases articulated within the OpenAPI contract. Every detail of the OpenAPI becomes the contract for ensuring each microservice is doing what has been promised, and something that can be articulated and shared with humans via documentation, as well as programmatically by other systems, services, and tooling employed to monitor and test accordingly to a wider strategy.</p>
-
-<p><strong>Empowering Security To Be Directed By The OpenAPI Contract</strong><br />
-An OpenAPI provides the entire details of the surface area of an API. In addition to being used to generate tests, monitors, and performance checks, it can be used to inform security scanning, fuzzing, and other vital security practices. There are a growing number of services and tooling emerging that allow for building models, policies, and executing security audits based upon OpenAPI contracts. Taking the paths, parameters, definitions, security, and authentication and using them as actionable details for ensuring security across not just an individual service, but potentially hundreds, or thousands of services being developed across many different teams. OpenAPI quickly is becoming not just the technical and business contract, but also the political contract for how you do business on web in a secure way.</p>
-
-<p><strong>OpenAPI Provides API Discovery By Default</strong><br />
-An OpenAPI describes the entire surface area for the request and response of each API, providing 100% coverage for all interfaces a services will possess. While this OpenAPI definition will be generated mocks, code, documentation, testing, monitoring, security, and serving other stops along the lifecycle, it provides much needed discovery across groups, and by consumers. Anytime a new application is being developed, teams can search across the team Github, Gitlab, Bitbucket, or Team Foundation Server (TFS), and see what services already exist before they begin planning any new services. Service catalogs, directories, search engines, and other discovery mechanisms can use OpenAPIs across services to index, and make them available to other systems, applications, and most importantly to other humans who are looking for services that will help them solve problems.</p>
-
-<p><strong>OpenAPI Deliver The Integration Contract For Client</strong><br />
-OpenAPI definitions can be imported in Postman, Stoplight, and other API design, development, and client tooling, allowing for quick setup of environment, and collaborating with integration across teams. OpenAPIs are also used to generate SDKs, and deploy them using existing continuous integration (CI) pipelines by companies like <a href="https://apimatic.io/">APIMATIC</a>. OpenAPIs deliver the client contract we need to just learn about an API, get to work developing a new web or mobile application, or manage updates and version changes as part of our existing CI pipelines. OpenAPIs deliver the integration contract needed for all levels of clients, helping teams go from discovery to integration with as little friction as possible. Without this contract in place, on-boarding with one service is time consuming, and doing it across tens, or hundreds of services becomes impossible.</p>
-
-<p><strong>OpenAPI Delivers Governance At Scale Across Teams</strong><br />
-Delivering consistent APIs within a single team takes discipline. Delivering consistent APIs across many teams takes governance. OpenAPI provides the building blocks to ensure APIs are defined, designed, mocked, deployed, documented, tested, monitored, perform, secured, discovered, and integrated with consistently. The OpenAPI contract is an artifact that governs every stop along the lifecycle, and then at scale becomes the measure for how well each service is delivering at scale across not just tens, but hundreds, or thousands of services, spread across many groups. Without the OpenAPI contract API governance is non-existent, and at best extremely cumbersome. The OpenAPI contract is not just top down governance telling what they should be doing, it is the bottom up contract for service owners / stewards who are delivering the quality services on the ground inform governance, and leading efforts across many teams.</p>
-
-<p>I can’t articulate the importance of the OpenAPI contract to each microservice, as well as the overall organizational and project microservice strategy. I know that many folks will dismiss the role that OpenAPI plays, but look at <a href="https://www.openapis.org/membership/members">the list of members who govern the specification</a>. Consider that Amazon, Google, and Azure ALL have baked OpenAPI into their microservice delivery services and tooling. OpenAPI isn’t a WSDL. An OpenAPI contract is how you will articulate what your microservice will do from inception to deprecation. Make it a priority, don’t treat it as just an output from your legacy way of producing code. Roll up your sleeves, and spend time editing it by hand, and loading it into 3rd party services to see the contract for your microservice in different ways, through different lenses. Eventually you will begin to see it is much more than just another JSON artifact laying around in your repository.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/03/openapi-is-the-contract-for-your-microservice/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/03/github-is-you-asynchronous-microservice-showroom/">Github Is Your Asynchronous Microservice Showroom</a></h3>
-        <span class="post-date">03 Apr 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg" width="30%" align="right" style="padding: 15px;" /></p>
-<p>When you spend time looking at a lot of microservices, across many different organizations, you really begin to get a feel for the ones who have owners / stewards that are thinking about the bigger picture. When people are just focused on what the service does, and not actually how the service will be used, the Github repos tend to be cryptic, out of sync, and don’t really tell a story about what is happening. Github is often just seen as a vehicle for the code to participate in a pipeline, and not about speaking to the rest of the humans and systems involved in the overall microservices concert that is occurring.</p>
-
-<p><strong>Github Is Your Showroom</strong><br />
-Each microservices is self-contained within a Github repository, making it the showcase for the service. Remember, the service isn’t just the code, and other artifacts buried away in the folders for nobody to understand, unless you understand how to operate the service or continuously deploy the code. It is a service. The service is part of a larger suite of services, and is meant to be understood and reusable by other human beings in the future, potentially long after you are gone, and aren’t present to give a 15 minute presentation in a meeting. Github is your asynchronous microservices showroom, where ANYONE should be able to land, and understand what is happening.</p>
-
-<p><strong>README Is Your Menu</strong><br />
-The README is the centerpiece of your showroom. ANYONE should be able to land on the README for your service, and immediately get up to speed on what a service does, and where it is in its lifecycle. README should not be written for other developers, it should be written for other humans. It should have a title, and short, concise, plain language description of what a service does, as well as any other relevant details about what a service delivers. The README for each service should be a snapshot of a service at any point in time, demonstrating what it delivers currently, what the road map contains, and the entire history of a service throughout its lifecycle. Every artifact, documentation, and relevant element of a service should be available, and linked to via the README for a service.</p>
-
-<p><strong>An OpenAPI Contact</strong><br />
-Your OpenAPI (fka Swagger) file is the central contract for your service, and the latest version(s) should be linked to prominently from the README for your service. This JSON or YAML definition isn’t just some output as exhaust from your code, it is the contract that defines the inputs and outputs of your service. This contract will be used to generate code, mocks, sample data, tests, documentation, and drive API governance and orchestration across not just your individual service, but potentially hundreds or thousands of services. An update to date, static representation of your services API contract should always be prominently featured off the README for a service, and ideally located in a consistent folder across services, as services architects, designers, coaches, and governance people will potentially be looking at many different OpenAPI definitions at any given moment.</p>
-
-<p><strong>Issues Dirven Conversation</strong><br />
-Github Issues aren’t ust for issues. It is a robust, taggable, conversational thread around each individual service. A github issues should be the self-contained conversation that occurs throughout the lifecycle of a service, providing details of what has happened, what the current issues are, and what the future road map will hold. Github Isuses are designed to help organize a robust amount of conversational threads, and allow for exploration and organization using tags, allowing any human to get up to speed quickly on what is going on. Github issues should be an active journal for the work being done on a service, through a monologue by the service owner / steward, and act as the feedback loop with ALL OTHER stakeholders around a service. Github issues for each service will be be how the antrhopolgists decipher the work you did long after you are gone, and should articulate the entire life of each individual service.</p>
-
-<p><strong>Services Working In Concert</strong><br />
-Each microservice is a self-contained unit of value in a larger orchestra. Each microservice should do one thing and do it well. The state of each services Github repository, README, OpenAPI contract, and the feedback loop around it will impact the overall production. While a service may be delivered to meet a specific application need in its early moments, the README, OpenAPI contract, and feedback loop should attract and speak to any potential future application. A service should be able to reused, and remixed by any application developer building internal, partner, or some day public applications. Not everyone landing on your README will have been in the meetings where you presented your service. Github is your service’s showroom, and where you will be making your first, and ongoing impression on other developers, as well as executives who are poking around.</p>
-
-<p><strong>Leading Through API Governance</strong><br />
-Your Github repo, README, and OpenAPI contract is being used by overall microservices governance operations to understand how you are designing your services, crafting your schema, and delivering your service. Without an OpenAPI, and README, your service does nothing in the context of API governance, and feeding into the bigger picture, and helping define overall governance. Governance isn’t scripture coming off the mountain and telling you how to operate, it is gathered, extracted, and organized from existing best practices, and leadership across teams. Sure, we bring in outside leadership to help round off the governance guidance, but without a README, OpenAPI, and active feedback loop around each service, your service isn’t participating in the governance lifecycle. It is just an island, doing one thing, and nobody will ever know if it is doing it well.</p>
-
-<p><strong>Making Your Github Presence Count</strong><br />
-Hopefully this post helps you see your own microservice Github repository through an external lens. Hopefully it will help you shift from Github being just about code, for coders, to something that is part of a larger conversation. If you care about doing microservices well, and you care about the role your service will play in the larger application production, you should be investing in your Github repository being the showroom for your service. Remember, this is a service. Not in a technical sense, but in a business sense. Think about what good service is to you. Think about the services you use as a human being each day. How you like being treated, and how informed you like to be about the service details, pricing, and benefits. Now, visit the Github repositories for your services, think about the people who who will be consuming them in their applications. Does it meet your expectations for a quality level of service? Will someone brand new land on your repo and understand what your service does? Does your microservice do one thing, and does it do it well?</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/03/github-is-you-asynchronous-microservice-showroom/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/04/02/openapi-dependencies-vendor-extension/">An OpenAPI Service Dependency Vendor Extension</a></h3>
-        <span class="post-date">02 Apr 2018</span>
-        <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/71_113_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
-<p>I’m working on a healthcare related microservice project, and I’m looking for a way to help developers express their service dependencies within the OpenAPI or some other artifact. At this point I’m feeling like the OpenAPI is the place to articulate this, adding a vendor extension to the specification that can allow for the referencing of one or more other services any particular service is dependent on. Helping make service discovery more machine readable at discovery and runtime.</p>
-
-<p>To help not reinvent the wheel, I am looking at <a href="https://apievangelist.com/2018/03/02/thoughts-on-the-schema-org-webapi-type-extension/">using the Schema.org Web API type including the extensions put forth by Mike Ralphson and team.</a> I’d like the x-api-dependencies collection to adopt a standardized schema, that was flexible enough to reference different types of other services. I’d like to see the following elements be present for each dependency:</p>
-
-<ul>
-  <li>versions (OPTIONAL array of thing -&gt; Property -&gt; softwareVersion). It is RECOMMENDED that APIs be versioned using [semver]</li>
-  <li>entryPoints (OPTIONAL array of Thing -&gt; Intangible -&gt; EntryPoint)</li>
-  <li>license (OPTIONAL, CreativeWork or URL) - the license for the design/signature of the API</li>
-  <li>transport (enumerated Text: HTTP, HTTPS, SMTP, MQTT, WS, WSS etc)&lt;/p&gt;</li>
-  <li>apiProtocol (OPTIONAL, enumerated Text: SOAP, GraphQL, gRPC, Hydra, JSON API, XML-RPC, JSON-RPC etc)</li>
-  <li>webApiDefinitions (OPTIONAL array of EntryPoints) containing links to machine-readable API definitions</li>
-  <li>webApiActions (OPTIONAL array of potential Actions)</li>
-</ul>
-
-<p>Using the Schema.org Web type would allow for a pretty robust way to reference dependencies between services in a machine readable way, that can be indexed, and even visualized in services and tooling. When it comes to evolving and moving forward services, having dependency details baked in by default make a lot of sense, and ideally each dependency definition would have all the details of the dependency, as well as potential contact information, to make sure everyone is connected regarding the service road map. Anytime a service is being deprecated, versioned, or impacted in any way, we have all the dependencies needed to make an educated decision regarding how to progress with the least amount of friction as possible.</p>
-
-<p>I’m going to go ahead and create a draft OpenAPI vendor extension specification for x-service-dependencies, and use <a href="https://pending.schema.org/WebAPI">the Schema.org WebAPI type</a>, complete with <a href="https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types">the added extensions</a>. Once I start using it, and have successfully implemented it for a handful of services I will publish and share a working example. I’m also on the hunt for other examples of how teams are doing this. I’m not looking for code dependency management solutions, I am specifically looking for API dependency management solutions, and how teams are making these dependencies discoverable in a machine readable way. If you know of any interesting approaches, please let me know, I’d like to hear more about it.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/04/02/openapi-dependencies-vendor-extension/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

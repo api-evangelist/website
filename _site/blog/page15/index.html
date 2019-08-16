@@ -129,6 +129,334 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/07/13/moving-the-human-services-api-specification-from-version-11-to-12/">Moving The Human Services API Specification From Version 1.1 to 1.2</a></h3>
+        <span class="post-date">13 Jul 2017</span>
+        <p><a href="http://developer.open.referral.adopta.agency/documentation/"><img src="https://s3.amazonaws.com/kinlane-productions/open-referral/hsda-organizations-documentation.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>I am preparing for the recurring governance meeting for the Open Referral Human Services Data API standard–which I’m the technical lead for. I need to load up every detail of my Human Services Data API work into my brain, and writing stories is how I do this. I need to understand where the definition is with v1.1, and encourage discussion around a variety of topics when it comes to version 1.2.</p>
+
+<h3 id="constraints-from-version-10-to-v11">Constraints From Version 1.0 To v1.1</h3>
+<p>I wasn’t able to move as fast as I’d like from 1.0 to 1.1, resulting in me leaving out a number of features. The primary motivation to make sure as much of the version 1.1 of Human Services Data Specification (HSDS) was covered as possible–something I ended up doing horizontally with new API paths, over loading up the core paths of /organizations, /locations, and /services. There were too many discussion on the table regarding the scope and filtering of data, and schema for these core paths. Something which led to a discussion, about /search–resulting in me pushing off API design discussions on how to expand vertically at the core API path level to future versions.</p>
+
+<p>There were just too many decisions to make at the API request and response level for me to make a decision in all the areas–warranting more discussion. Additionally, there were other API design discussion regarding operational, validation, and more utility APIs to discuss for inclusion in future versions expanding the scope and filtering discussions to the API path, and now API project level. In preparation for our regular governance meeting I wanted to run through all of the open API design issues, as well as additional projects the community needs to be thinking about.</p>
+
+<h2 id="api-design">API Design</h2>
+<p>As part of my Human Services Data API (HSDA) work we have opened up a pretty wide API design conversation regarding where the API definition could (should) be going. I’ve tried to capture the conversations going on across the Slack, and Google Group using GitHub issues for the HSDA GitHub repository. I will be focusing in on 16 of these issues for the current community discussions.</p>
+
+<h3 id="versioning"><a href="https://github.com/openreferral/api-specification/issues/8">Versioning</a></h3>
+<p>We are moving forward the version of the API specification from 1.0 to 1.1. This version describes the API definition, to help quantify the compliance of any single API implementation. This is not guidance regarding how API providers should version their API–each implementation can articulate their compliance using an OpenAPI definition, or just in operation by being compliant. I purposely dodged providing versioning guidance of specific API implementations–until I could open up discussion around this subject.</p>
+
+<p>If you need a primer on API versioning I recommend <a href="https://www.troyhunt.com/your-api-versioning-is-wrong-which-is/">Troy Hunt’s piece</a> which helps highlight:</p>
+
+<ul>
+  <li>URL: We put the API version into the URL: https://example.com/api/v1.1/organizations/</li>
+  <li>Custom request header: Using a header such as “api-version: 1.1”</li>
+  <li>Accept header: Using the accept header to specify the version “Accept: application/vnd.hsda.v1.1+json - which relates to content negotiation discussions.</li>
+  <li>No Versioning - We do not offer any versioning guidance and let each API implementation decide for themselves with no version being a perfectly acceptable answer.</li>
+</ul>
+
+<p>API versioning discussions are always hot topics, and there is no perfect answer. If we are to offer API versioning guidance for HSDA compliant API providers I recommend putting it in the URL, not because it is the right answer, but it is the right answer for this community. It is easy to implement, and easy to understand. Although I’m not 100% convinced we should be offering guidance at all.</p>
+
+<p>I would like to open it up to the community, and get more feedback from vendors, and implementors. I’m curious what folks prefer when they are building applications. This decision was one that was wrapped up with potential content negotiation, hypermedia, and schema scope discussions to make without more discussion.</p>
+
+<h3 id="paths"><a href="https://github.com/openreferral/api-specification/issues/27">Paths</a></h3>
+<p>The API definition provides some basic guidance for HSDA implementations when it comes to naming API paths, providing a core set or resources, as well as sub-resources. There are a number of other API designs waiting in the wings to be hammered out, making more discussion around this relevant. How do we name additional API paths? Do we keep evolving a single stack of resources (expanding horizontally), or do we start grouping them and evolve using more sub-resources (expanding vertically)?</p>
+
+<p>Right now, we are just sticking with a core set of paths for /contacts, /locations, /organizations, and /services, with /search somewhat of an outlier, or I guess wrapper. We have moved forward with sub-resource guidance, but should standard API design guidance when it comes to crafting new paths, as well as sub-paths, including the actions discussion below. This will be an ongoing discussion when it comes to API design across future versions, making it an evergreen thread that will just keep growing as the HSDA definition matures.</p>
+
+<h3 id="verbs"><a href="https://github.com/openreferral/api-specification/issues/26">Verbs</a></h3>
+<p>HTTP verbs usage was another aspect of the evolution of the HSDA specification from v1.0 to v1.1–the new specification uses its verbs. Making sure POST, PUT, and DELETE were used across all core resources, as well as sub-resources, making the entire schema open for reading and writing at all levels. This further expanded the surface of the API definition, making it manageable at all levels.</p>
+
+<p>Beyond this expansion we need to open up the discussion regarding OPTIONS, and PATCH. Is there a need to provide partial updates using PATCH, and providing guidance on using OPTION for providing requirements associated with a resource, and the capabilities of the server behind the API. Also we should be having honest conversations about which verbs are available for sub-resources, especially when it comes to taking specific actions using HSDA paths. There is a lot more to discuss when it comes to HTTP verb usage across the HSDA specification.</p>
+
+<h3 id="actions"><a href="https://github.com/openreferral/api-specification/issues/24">Actions</a></h3>
+<p>I want to prepare for the future when we have more actions to be taken, and talk about how we approach API design in the service of taking action against resources. Right now HTTP verbs are taking care of the CRUD features for all resources and sub-resources. While I don’t have any current actions in the queue to discus, we may want to consider this as part of the schema scope and filtering discussion–allowing API consumers to request partial, and complete representations of API resources using action paths. For example: /organization/simple, or /organizations/complete.</p>
+
+<p>As the HSDA specification matures this question will come up more and more, as vendors, and implementations require more specialized actions to be taken against resources. Ideally, we are keeping resources very resource oriented, but from experience I know this isn’t always the case. Sometimes it becomes more intuitive for API developers to take action with simple, descriptive API paths, than adding more complexity with parameters, headers, and other aspects of the APIs design. I will leave this conversation open to help guide future versions, as well as the schema scope and filtering discussions.</p>
+
+<h3 id="parameters"><a href="https://github.com/openreferral/api-specification/issues/24">Parameters</a></h3>
+<p>Currently the numbers parameters in use for any single endpoint is pretty minimal. The core resources allow for querying, and sorting, but as of version 1.1, parameters are still pretty well-defined and minimal. The only path that has an extensive set of parameters is /search, which possesses category, email, keyword, language, lat_lng, location, org_name, page, per_page, radius, service_area, and status. I’d like to to continue the discussion about which parameters should be added to other paths, as well as used to help filter the schema, and other aspects of the API design conversation.</p>
+
+<p>I’d like to open up the parameter discussion across all HSDA paths, but I’d also like to establish a way to regularly quantify how many paths are available, as well as how loaded they are with default values, and enumerators. I’d like to feed this into overall API design guidance, helping keep API paths reflecting a microservices approach to delivering APIs. Helping ensure HSDA services do one thing, and do it well, with the right amount of control over the surface area of the request and response of each API path.</p>
+
+<h3 id="headers"><a href="https://github.com/openreferral/api-specification/issues/5">Headers</a></h3>
+<p>Augmenting the parameter discussion I want to make sure headers are an equal part of the discussion. They have the potential to play a role across several of these API design questions from versioning to schema filtering. They also will continue to emerge in authentication, management, security, and even sorting and content negotiation discussions.</p>
+
+<p>It is common for there to be a lack of literacy in developer circles when it comes to HTTP headers. A significant portion of the discussion around header usage should always be whether of not we want to invest in HTTP literacy amongst implementors, and their developer communities, over leveraging other non-header approaches to API design. HTTP Headers are an important building block of the web that developers should understand, but educating developers around their use can be time intensive and costly when it comes to guidance.</p>
+
+<h3 id="body"><a href="https://github.com/openreferral/api-specification/issues/25">Body</a></h3>
+<p>There is an open discussion around how the body will be used across HSDA compliant implementations. Currently the body is default for POST and PUT, aka add and update. This body usage has been extended across all core resources, as well as sub-resource, requiring the complete, or sub resource representation to be part of each POST or PUT request.</p>
+
+<p>There is no plan for any other APIs that will deviate from this approach, but we should keep this thread open to make sure we think about when the usage of the body is appropriate and when it might not be. We need to make sure that developers are able to effectively use the body, alongside headers, as well as parameters to get the desired results they are looking for.</p>
+
+<h3 id="data-scope--filtering"><a href="https://github.com/openreferral/api-specification/issues/22">Data Scope / Filtering</a></h3>
+<p>Currently the only filtering beyond pagination that is available is the query parameter available on /contact, /organizations, /locations, and /services resources. After that search is where the heaviest data scope and filtering can be filtered and defined. We need to discuss the future of this. Should the core resources have similar capabilities to /search, or should /search be a first class citizen with the majority of the filtering capabilities?</p>
+
+<p>There needs to be more discussion around how data will be available bia default, and how it will be filtered as part of each API request. Will search be carrying most of the load, or will each core resource be given some control when it comes to filtering data. Whatever the approach it needs to be standardized across all existing paths, as well as applied to new API designs, keeping data filtering consistent across all HSDA designs. As this comes into focus I will be making sure there is a guide that provides guidance when it comes to data filtering practices in play.</p>
+
+<h3 id="schema-scope--filtering"><a href="https://github.com/openreferral/api-specification/issues/21">Schema Scope / Filtering</a></h3>
+<p>This is one of the top issues being discussed as part of the migration from v1.1 to v1.2, regarding how to not just filter data that is returned as part of API responses, but how do you filter what schema gets returned as part of the response. When it came to v1.0 to v1.1 I didn’t want to shift the response structure so that I can reduce any breaking changes for existing Ohana implementations, and open up with the community regarding the best approach for allowing schema filtering.</p>
+
+<p>My current recommendation when it comes to the filtering of how much or how little of the schema to return with each request is to allow for schema templates to be defined and named, then enable API consumers to specify which template they’d like returned. This should be specified through either through a <a href="https://apievangelist.com/2017/05/24/considering-http-prefer-header-instead-of-field-filtering-for-my-api/">prefer header</a>, as part of the path structure as an action, or possibly through a parameter–all would accept the name of a schema template they desire (ie. simple, complete, etc.).</p>
+
+<p>This approach to enabling schema templating could be applied at the GET, and could be also applied to POST or PUT requests. I personally recommend using a <a href="https://apievangelist.com/2017/05/24/considering-http-prefer-header-instead-of-field-filtering-for-my-api/">prefer header</a>, but I also emphasize the ease of use, and ease of defining the usage as part of documentation, and the OpenAPI definition–which it might make sense to allow for schema enablement as pat of the path name as an action. I’ll leave it to the community to ultimately decide, as with the rest of this API design and project list, I’m just looking to provide guidance, and direction, built on the feedback of the community.</p>
+
+<h3 id="path-scope--filtering"><a href="https://github.com/openreferral/api-specification/issues/38">Path Scope / Filtering</a></h3>
+<p>Next up in the scope and filtering discussion is regarding how we define, group, and present all available API paths included in the HSDA specification. With the current specification I see three distinct groups of API paths emerging: 1) core resources (/contacts, /organizations, /locations, /services), and 2) sub resources (/physical-address, /postal-address, /phones, and more), then the more utility aspects of meta data, taxonomy, and eventually webhooks.</p>
+
+<p>When a new user lands on the API documentation, they should see the core resources, and not be burdened with the cognitive load associated sub resources or the more utility aspects of HSDA consumption. However, once ready more advanced API paths are available. The grouping and filtering of the API paths can be defined as part of the OpenAPI definitions for the API(s), as well as the APIs.json index for the site. This path grouping will allow for API consumers to limit scope and filter which API paths are available in the documentation, and possibly with SDKs, testing, and other aspects of integration.</p>
+
+<p>There are additional API projects on the table that might warrant the addition of new API groups, beyond core resources, sub resources, and utility paths. The approval, feedback, and messaging discussions might require their own group, allowing them to be separated in documentation, code, testing, and other areas–reducing the load for new users, while expanding the opportunities for more advanced consumers. Eventually there might be a one to one connection between API path groups, and the API projects in the queue, allowing for different groups of APIs to be moved forward at different rates, and involve different groups of API consumers and vendors in the process.</p>
+
+<h3 id="project-scope--filtering"><a href="https://github.com/openreferral/api-specification/issues/40">Project Scope / Filtering</a></h3>
+<p>Adding the fourth dimension to this scope / filtering discussion, I’m proposing we discuss how projects are defined and isolated, which can allow them to move forward at different rates, and be reflected in documentation, code, and other resources–allowing for filtering by consumers. This will drive the path filtering described above, but apply beyond just the API, and influencing documentation, SDKs, testing, monitoring, validation, and other aspects of API operations.</p>
+
+<p>With this tier I am looking to decouple API projects from one another, and from the core specification. I want the core HSDS/A specification to stay focused on doing one thing well, but I’d like to establish a clear way to move forward complimentary groups of API definitions, and supporting tooling independently of the core specification. As we prepare to begin the journey from version 1.1 to 1.2, there are a number of significant projects on the table, and we need a way to isolate and decouple each additional API project in the same we we do with individual API resources–keeping them clearly defined, focused on specific problem set, and a buffet of resources that the community can choose where they’d like to participate.</p>
+
+<h3 id="pagination"><a href="https://github.com/openreferral/api-specification/issues/10">Pagination</a></h3>
+<p>This is the discussion around how results will be paginated, allowing for efficient or complete requests to be requested, and navigate through large volumes of human services data. We need to be discussing how we will evolve the current approach to using page= and per_page= to articulate pagination. This approach is a common, well understood way to allow developers to paginate, but we need to keep discussion open as we answer some of the other API design questions on the table.</p>
+
+<p>The pagination topic overlaps with the hypermedia and response structure discussion. Eventually we may offer pagination as part of a response envelope, or relational links provided as part of the response when using JSON API, HAL, or other media type. Right now we will leave pagination as it is, but we should be thinking about how it will evolve alongside all other API design conversations in this list.</p>
+
+<h3 id="sorting"><a href="https://github.com/openreferral/api-specification/issues/12">Sorting</a></h3>
+<p>According to the current Ohana API implementation, which is the HSDA v1.0 definition, the guidance for sorting availability is as follows:</p>
+
+<blockquote>
+  <p>Except for location-based and keyword-based searches, results are sorted by location id in ascending order. Location-based searches (those that use the lat_lng or location parameter) are sorted by distance, with the ones closest to the search query appearing first. keyword searches are sorted by relevance since they perform a full-text search in various fields across various tables.</p>
+</blockquote>
+
+<p>This guidance follows the API definition from version 1.0 to 1.2, but for future versions we should be considering providing further guidance regarding sorting of results. I’d like to get more feedback from the community on how they are providing data sorting capabilities for API consumes, or even as part of web and mobile applications.</p>
+
+<h3 id="response-structure"><a href="https://github.com/openreferral/api-specification/issues/6">Response Structure</a></h3>
+<p>Right now the API responses for HSDA are pretty flat, like the schema. As part of the move from version 1.1 to 1.2 we need to be expanding on them, allowing for sub-resources to be included. This conversation will be heavily influenced by the schema filtering conversation above, as well as potentially the hypermedia and content negotiation discussions below. If we are gong to expand on the the schema being returned with API response we should be discussing all possible changes to the schema at once.</p>
+
+<p>This conversation is meant to bring together the API schema filtering, hypermedia, and content negotiation conversations into a single discussion regarding the overall structure of a response, by default, as well as through filtering at the path, parameter, or header levels. I’d like to see  HSDA responses expand to accommodate sub resources, but also the relationships between resources, as well as assisting with pagination, sorting, and other aspects of data, schema, and path filtering. I am looking to make sure the expansion of the response structure be more inclusive beyond just talk of sub resource access.</p>
+
+<h3 id="hypermedia"><a href="https://github.com/openreferral/api-specification/issues/7">Hypermedia</a></h3>
+<p>I really want to see a hypermedia fork in the HSDA definition, allowing more advanced users to negotiate and hypermedia version of the specification, instead of the more simpler, or even advanced default versions of the API. I recommend the adoption of HAL, Siren, or JSON API, as an alternate edition of an HSDA implementation. This expansion of the design of the HSDA specification would not impact the current version, but would allow for another dimension of API consumption and integration.</p>
+
+<p>The relationships between human services data, and the semantic nature of the data really begs for a hypermedia solution. It would allow more meaningful API responses, and defining of relationships between resources, and emphasis of the taxonomy. I will be encouraging a separate, but complimentary version of HSDA that uses one of the leading hypermedia media types. I’d like to ensure there is community awareness of the potential of this approach, and support for investing in this as part of the HSDA design strategy.</p>
+
+<h3 id="status-codes"><a href="https://github.com/openreferral/api-specification/issues/3">Status Codes</a></h3>
+<p>One of the areas of design around version 1.1 of the HSDA specification that was put off until future versions is guidance when it comes to API response status and error codes. Right now the OpenAPI definition for version 1.1 of the HSDA specification only suggests a 200 successful response, returning a reference to the appropriate HSDS schema. A project needs to be started that would provider further guidance for 300, 400, and 500 series status codes, as well as error responses.</p>
+
+<p>Each HSDA path should provide guidance on all relevant HTTP Status Codes, but should also provide guidance regarding the error object schema returned as part of every possible API response. Helping standardize how errors are communicated, and provide further guidance on how to help API consumers navigate a solution. Currently there is no guidance when it comes to HTTP responses and errors, something that should be considered in version 1.2 or 1.3, depending on available resources.</p>
+
+<h3 id="content-negotiation"><a href="https://github.com/openreferral/api-specification/issues/39">Content Negotiation</a></h3>
+<p>Augmenting other conversations around schema filtering, API response structure, and hypermedia, I want to make sure content negotiation stays part of the conversation. This aspect of API design will significantly impact API integration, and the evolution of the API specification. I want to make sure vendors, and other key actors are aware of it as an option, and can participate in the conversation regarding the different content types.</p>
+
+<p>This conversation should begin with making CSV and HTML representations of the data available as part of the API response structure alongside the current JSON representations. API consumers should have the option to get raw HTML, CSV, and JSON through content negotiation–with JSON remaining as the default. Then the conversation should evolve to consider HSDA specific content type designation, as well as implementation of a leading hypermedia media type like JSON API, HAL, or Siren.</p>
+
+<p>Content negotiation plays an important role in versioning the HSDA specification, as well as providing different dimensions for dealing with more complex integrations, as well as other aspects of operations like pagination, sorting, access to sub resources, other actions and even data, schema, and path filtering. Like headers, the mainstream developer community tends to not all be aware of content negotiation, but the benefits of adopting far outweigh the overhead involved with bringing developers up to speed.</p>
+
+<p>That concludes the list of API design conversations that are occurring as part of the move from version 1.0 to 1.1, and will set the stage for the move towards 1.2, and beyond. It is a lot to consider, but it is a manageable amount for the community to think about as part of the version 1.1 feedback cycle. Allowing us to make a community informed decision regarding what should be focused on with each release–delivering what matters to the community.</p>
+
+<h2 id="api-projects">API Projects</h2>
+<p>As the version 1.0 to 1.1 migration occurred several projects were identified, or suggested for consideration. I want to make sure all these projects are on the table as part of the evolution of HSDA, beyond just the current API design discussion occurring. These are the projects we added to the specification that are moving forward but will have varying degrees of impact on the core API definition.</p>
+
+<h3 id="taxonomy"><a href="https://github.com/openreferral/api-specification/issues/19">Taxonomy</a></h3>
+<p>There are two objects included in version 1.1 of the Human Services Data Specification (HSDS) that deal with taxonomy, the service_taxonomy object, and the core taxonomy object. I purposely left these aspects of the schema out of version 1.1 of HSDA. I wanted to see more discussion regarding taxonomy before we included in the specification. This is one of the first areas that influenced the above discussions regarding path scope and filtering, as well as project scope and filtering.</p>
+
+<p>I’d like to see taxonomy exist as a separate set of paths, as a separate project, and out of the core specification. In addition to further discussion about what is HSDA taxonomy, I’d like to see  more consideration regarding what exactly is acceptable levels of HSDA compliant taxonomy. Ideally, the definition allows for multiple taxonomy, and possibly even a direct relationship between the available content types and a taxonomy, allowing for a more meaningful API response.</p>
+
+<p>I will leave open a Github issue to discuss taxonomy, and either move forward as entirely separate schema, or inclusion in version 1.2, 1.3 of the core HSDA definition. One aspect of this delay is to ensure that my awareness of available taxonomies is up to snuff to help provide guidance. I’m just not aware of everything out there, as well as an intimacy the leading taxonomies in use–I need to hear more from vendors and implementors on this subject before I feel confident in making any decision.</p>
+
+<h3 id="metadata"><a href="https://github.com/openreferral/api-specification/issues/28">Metadata</a></h3>
+<p>The metadata, and the meta_table_description objects v1.1 of HSDA were two elements I also left out of version 1.1 of HSDA. I felt like there should be more discussion around API management, logging, and other aspects of API operations that feed into this area, before we settled in on an API design to satisfy the HSDA metadata conversation. I’d like to hear more from human services implementors regarding what metadata they desire before we connect the existing schema to the API.</p>
+
+<p>The metadata conversation overlaps with the approval and feedback project. There are aspects of logging and meta data collection and storage that will contribute to the transactional nature of any approval and feedback solution. There is also conversation going on regarding privacy concerns around API access to HSDS data, and logging, auditing that occurs at the metadata level. This thread covers these conversations, and is looking to establish a separate group of API paths, and separate project to drive documentation, and other aspects of API operations.</p>
+
+<h3 id="approval--feedback"><a href="https://github.com/openreferral/api-specification/issues/34">Approval &amp; Feedback</a></h3>
+<p>One of the projects that came up recently was about working to define the layer that allows developers to add, update, and delete data via the API. Eventually through the HSDA specification we to encourage 3rd party developers, and external stakeholders to help curate and maintain critical human services data within a community, through trusted partners.</p>
+
+<p>HSDA allows for the reading and writing of organizations, locations, and services for any given area. I am looking to provide guidance on how API implementors can allow for POST, PUT, PATCH, and DELETE on their API, but require approval before any changing transaction is actually executed. Requiring the approval of an internal system administrator to ultimately give the thumbs up or thumbs down regarding whether or not the change will actually occur.</p>
+
+<p>A process which immediately begs for the ability to have multiple administrators or even possibly involving external actors. How can we allow organizations to have a vote in approving changes to their data? How can multiple data stewards be notified of a change, and given the ability to approve or disprove, logging every step along the way? Allowing any change to be approved, reviewed, audited, and even rolled back. Making public data management a community affair, with observability and transparency built in by default.</p>
+
+<p>I am doing research into different approaches to tackling this, ranging from community approaches like Wikipedia, to publish and subscribe, and other events or webhook models. I am looking for technological solutions to opening up approval to the API request and response structure, with accompanying API and webhook surface area for managing all aspects of the approval of any API changes. If you know of any interesting solutions to this problem I’d love to hear more, so that I can include in my research, future storytelling, and ultimately the specification for the Open Referral Human Services Data Specification and API.</p>
+
+<h3 id="universal-unique-ids"><a href="https://github.com/openreferral/api-specification/issues/35">Universal Unique IDs</a></h3>
+<p>How will we allow for a universal unique ID system for all organizations, locations, and services, providing some provenance on the origin of the record. There is a solid conversation started about how to approach a universal ID system to live alongside, or directly as part of the core HSDA specification–depending on how we decide to approach project scope. Ideally, a universal ID system isn’t pat of being compliant, but could add a healthy layer of certification for some leading providers.</p>
+
+<p>More research needs to be done regarding how universal IDs are handled in other industries. An exhaustive search needs to be conducted regarding any existing standards and guidance that can help direct this discussion. This approach to handling identifiers will have a significant impact on individual API implementations, as well as the overall HSDA definition. More importantly, it will set the stage for future HSDA aggregation and federation, allowing HSDA implementations to work together more seamlessly, and better serve end-uses.</p>
+
+<h3 id="messaging"><a href="https://github.com/openreferral/api-specification/issues/37">Messaging</a></h3>
+<p>I separated this project out of the approval and feedback project. I am suggesting that we isolate the messaging guidance for APIs, setting a standard for how you communicate within a single implementation as well across implementations. There are a number of messaging API standards and best practices available out there, as well as existing messaging APIs that are already in use by human services practitioners, including social channels like Facebook and Twitter, but also private channels like Slack.</p>
+
+<p>HSDA compliant messaging channels should live as a separate project, and set of API path specifications. It should augment the core HSDA definition, overlaying with existing contact information, but it should also be dovetailed with new projects like approval and feedback system. More research needs to be conducted on existing messaging API standards, and leading channels that existing human services implementations and their software vendors are already using.</p>
+
+<h3 id="webhooks"><a href="https://github.com/openreferral/api-specification/issues/35">Webhooks</a></h3>
+<p>I want to begin separate project for handling an important aspect of any API operations, and not just being their to receive requests, but can also push information externally, and respond to scheduled, or event driven aspects of API operations. Webhooks will play a role in the approval and feedback system, as well as the metadata, and messaging projects–eventually touching all aspects of the core HSDA resources, and separate projects.</p>
+
+<p>Alongside the approval and feedback, universal id, and messaging projects, webhooks will set the stage for the future of HSDA, where individual city and regional implementations can work together, share information, federate and share responsibility in updates and changes. Webhooks will be how each separate implementation will work in concert, making the deliver of human services more real time, and orchestrated across providers, achieving API the vision of Open Referral founder Greg Bloom.</p>
+
+<h2 id="what-is-next">What Is Next?</h2>
+<p>We have a lot on the table to discuss currently. We need to settle some pretty important API design discussions that will continue to have an impact on API operations for a long time. I want to help push forward the conversation around these API design discussions, and get these API projects moving forward in tandem. I need more input from the vendors, and the community around some of the pressing discussions, and then I’m confident we can settle in on what the final version 1.1 of the API specification should be, and what work we want to tackle as part of 1.2 and beyond. I’m feeling like with a little discussion we can find a path forward to reach 1.2 in the fall of 2017.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/13/moving-the-human-services-api-specification-from-version-11-to-12/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/12/challenges-when-aggregating-data-from-across-the-years/">Challenges When Aggregating Data Published Across Many Years</a></h3>
+        <span class="post-date">12 Jul 2017</span>
+        <p><a href="http://funding.hackeducation.com/"><img src="https://s3.amazonaws.com/kinlane-productions/hack-education/ed-tech-investment-research.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="http://funding.hackeducation.com/">My partner in crime is working on a large data aggregation project regarding ed-tech funding</a>. She is publishing data to Google Sheets, and I’m helping her develop Jekyll templates she can fork and expand using Github when it comes to publishing and telling stories around this data across her network of sites. Like API Evangelist, <a href="https://github.com/hackeducation/">Hack Education runs as a network of Github repositories</a>, with a common template across them–we call the overlap between API Evangelist, <a href="http://contrafabulists.com/">Contrafabulists</a>.</p>
+
+<p>One of the smaller projects she is working on as part of her ed-tech funding research involves pulling the grants made by the Gates Foundation since the 1990s. Similar to my story a couple weeks ago about my friend David Kernohan, <a href="https://apievangelist.com/2017/06/28/i-have-two-interesting-apis-and-i-am-not-a-developer-what-do-i-do/">where he was wanting to pull data from multiple sources</a>, and aggregate into a single, workable project. Audrey is looking to pull data from a single source, but because the data spans almost 20 years–it ends up being a lot like aggregating data from across multiple sources.</p>
+
+<p>A couple of the challenges she is facing trying to gather the data, and aggregate as a common dataset are:</p>
+
+<ul>
+  <li><strong>PDF</strong> - The enemy of any open data advocate is the PDF, and a portion of her research data data is only available in PDF format which translates into a good deal of manual work.</li>
+  <li><strong>Search</strong> - Other portions of the data is available via the web, but obfuscated behind search forms requiring many different searches to occur, with paginated results to navigate.</li>
+  <li><strong>Scraping</strong> - The lack of APIs, CSV, XML, and other machine readable results raises the bar when it comes to aggregating and normalizing data across many years, making scraping a consideration, but because of PDFs, and obfuscated HTML pages behind a search, even scraping will have a significant costs.</li>
+  <li><strong>Format</strong> - Even once you’ve aggregated data from across the many sources, there is a challenge with it being in different formats. Some years are broken down by topic, while others are geographically based. All of this requires a significant amount of overhead to normalize and bring into focus.</li>
+  <li><strong>Manual</strong> - Ultimately Audrey has a lot of work ahead of her, manually pulling PDFs and performing searches, then copying and pasting data locally. Then she’ll have to roll up her sleeves to normalize all the data she has aggregated into a single, coherent vision of where the foundation has put its money.</li>
+</ul>
+
+<p>Data research takes time, and is tedious, mind numbing work. I encounter many projects like hers where I have to make a decision between scraping or manually aggregating and normalizing data–each project will have it’s own pros and cons. I wish I could help, but it sounds like it will end up being a significant amount of manual labor to establish a coherent set of data in Google Sheets. Once, she is done though, she has all the tools in place to publish as YAML to Github, and get to work telling stories around the data across her work using Jekyll and Liquid. I’m also helping her make sure she has a JSON representation of each of her data projects, allowing others to build on top of her hard work.</p>
+
+<p>I wish all companies, organizations, institutions, and agencies would think about how they publish their data publicly. It’s easy to think that data stewards will have ill intentions when it comes to publishing data in a variety of formats like they do, but more likely it is just a change of stewardship when it comes to managing and publishing the data. Different folks will have different visions of what sharing data on the web needs to look like, and have different tools available to them, and without a clear strategy you’ll end up with a mosaic of published data over the years. Which is why I’m telling her story. I am hoping to possibly influence one or two data stewards, or would-be data stewards when it comes to the importance of pausing for a moment and thinking through your strategy for standardizing how you store and publish your data online.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/12/challenges-when-aggregating-data-from-across-the-years/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/12/20k-40k-60k-and-80k-foot-levels-of-industry-api-design-guidance/">20K, 40K, 60K, and 80K Foot Levels Of Industry API Design Guidance</a></h3>
+        <span class="post-date">12 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/definition-of-high-altitude.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><a href="http://org.open.referral.adopta.agency/">I am moving my Human Services Data API (HSDA) work</a> forward and one of the top items on the list to consider as part of the move from version 1.1 to 1.2 is all around the scope of the API design portion of the standard. We are at a phase where the API design still very much reflects the Human Services Data Specification (HSDS)–basically a very CRUD (Create, Read, Update and Delete) API. With version 1.2 I need to begin considering the needs of API consumers a little more, looking to vendors and real world practitioners to help understand what the next version(s) of the API definition will/should contain.</p>
+
+<p>The most prominent discussion in the move from version 1.1 to 1.2 centers around scope of API design at four distinct levels of this work, where we are looking to move forward a variety of API design concerns for a large group of API consumers:</p>
+
+<ul>
+  <li><a href="https://github.com/openreferral/api-specification/issues/22">Data Scope / Filtering</a> - Discussions around how to filter data, allowing API consumers to search across the contents of any HSDA implementation, getting exactly the data they need, no more, no less.</li>
+  <li><a href="https://github.com/openreferral/api-specification/issues/21">Schema Scope / Filtering</a> - Considering the design of simple, standard, or full schema responses that can specified using a prefer header, parameter, or path levels.</li>
+  <li><a href="https://github.com/openreferral/api-specification/issues/38">Path Scope / Filtering</a> - How are API paths going to be group and organized, allowing a large surface area to be shared via documentation (APIs.json) in a way that new API consumers can start simple, advanced users can get what they need, and serving as many needs in between as we can.</li>
+  <li><a href="https://github.com/openreferral/api-specification/issues/40">Project Scope / Filtering</a> - Adding the fourth dimension to this scope / filtering discussion, I’m proposing we discuss how projects are defined and isolated, which can allow them to move forward at different rates, and be reflected in documentation, code, and other resources–allowing for filtering by consumers, as  well as prioritization by vendors involved in the API design discussion.</li>
+</ul>
+
+<p>In short I have a large number of desires put on the table by vendors and practitioners. There is a mix of desire to load up as much functionality and API design guidance as we can at the single path level–meaning /organizations, /locations, and /services will allow you to get as much, or as little, as you desire. In this same conversation I have to defend the interests of newcomers, allowing them to easily learn about, and get what they need from these three distinct API paths, without loading them up with too much functionality. While also defend the long tail of needs for mobile, voice, and other leading edge application developers.</p>
+
+<p>I’m looking at this discussion in these four dimensions, but I am trying to apply a horizontal or vertical approach in all four dimensions. Meaning, do I access or filter the amount of data I receive vertically with parameters or headers at the single API path level, or do I access and filter the amount of data I want horizontally across many separate API paths. The same logic applies to the API schema level with accessing vertically at the same path, by adding many subpaths, or do we approach horizontally with new paths. This continues at the API path, and project levels–how do discuss, develop, evolve, and allow API consumers to filter and only get at the API paths and projects they need–limiting the scope for new users, but meeting the demand of vendors, implementors, analysts, and other power consumers.</p>
+
+<p>Aight, ok. Phew. I just needed to get that out. Not 100% sure it makes sense, but it is a framework I’m running with for a group conversation I’m having tomorrow–so we’ll see how it goes. One significant difference in this API design process from others is that it is not about any single API implementation. It is focused on moving forward a single API definition, or in the case of this discussion, many little API definition discussions, with lots of overlap, and under a single umbrella–to support thousands of API implementations. I’ll be publishing another piece shortly which zooms out to the 100K level of my HSDA work, where I’d consider this to be a little 20K (data), 40K (schema), 60K (path), and 80K (project) levels. I just needed to get a handle on this piece–if you actually read this far in the post, you are pretty geeky, and probably need a hobby (HSDA is mine).</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/12/20k-40k-60k-and-80k-foot-levels-of-industry-api-design-guidance/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/12/providing-solid-examples-that-api-consumers-can-learn-from-like-slack-app-blueprints/">Providing Solid Examples That API Consumers Can Learn From Like Slack App Blueprints</a></h3>
+        <span class="post-date">12 Jul 2017</span>
+        <p><a href="https://api.slack.com/best-practices/blueprints"><img src="https://s3.amazonaws.com/kinlane-productions/slack/slack-app-blueprints.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>People often learn through example. Before I’d ever consider myself a software engineer, I’d consider myself a reverse software engineer. 93% of what I know has been extracted from the work of others. Even with 7% being of my own creation, it is always heavily influenced by the work of others. People emulate what they know, what they see, and use. This is why as an API provider you should be showcasing best practices, positive examples, and healthy blueprints of what API consumers could (should) be doing.</p>
+
+<p><a href="https://api.slack.com/best-practices/blueprints">You can see this in action with Slack’s best practice blueprints page</a>, where they provide six blueprints of applications that API consumers should be learning from. Slack doesn’t just provide a title, description and image of example applications, it is truly a blueprint–providing diagrams, links to documentation, code samples, and other essential knowledge you will need to successfully develop an application on Slack. Providing six solid examples that anyone can reverse engineer to understand how Slack application development could (should) work.</p>
+
+<p>Slack app blueprints is just one component of <a href="https://api.slack.com/slack-apps">a pretty sophisticated getting started section offered as part of the Slack API ecosystem</a>. I am adding application blueprint as a building block to my <a href="http://getting-started.apievangelist.com/">getting started API research</a>, and adding it as a dimension to my <a href="http://documentation.apievangelist.com/">API documentation</a> &amp; <a href="http://sdk.apievangelist.com/">SDK research</a>–the overlap in these areas seem like it should be strong to me. Coming across Slack app blueprints, and writing this story has reminded me that I also need to write another piece on the Slack ecosystem, and generate an outline of all the building blocks they are using in their API ecosystem, and create an updated blueprint for successful API operations that other API providers can emulate.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/12/providing-solid-examples-that-api-consumers-can-learn-from-like-slack-app-blueprints/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/12/a-zapier-advocate-and-dedicated-api-resources-page-for-your-company/">A Zapier Advocate And Dedicated API Resources Page For Your Company</a></h3>
+        <span class="post-date">12 Jul 2017</span>
+        <p><a href="ttps://zapier.com"><img src="https://s3.amazonaws.com/kinlane-productions/zapier/zapier-icons.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p>I am spending time going through some of the most relevant APIs I know of online today, working to create some 101 training materials for average folks to take advantage of. I’m looking through these APIs: Twitter, Google Sheets, Github, Flickr, Instagram, Facebook, YouTube, Slack, Dropbox, Paypal, Weather Underground, Spotify, Google Maps, Reddit, Pinterest, NY Times, Twilio, Stripe, SendGrid, Algolia, Keen, Census, Yelp, Walgreens. I feel they are some of the most useful solutions in the average business person who is API curious.</p>
+
+<p>With these new lessons I’m trying to continue my work evangelizing APIs amongst the normals, helping them understand what APIs are, and what is possible when you put them to work. Once I introduce folks to each API I’m left with the challenge of how do I actually onboard them with each API when they aren’t actually a programmer. The number one way I’m helping alleviate this problem is by including <a href="https://zapier.com">Zapier</a> examples with each of my API lessons, helping folks understand that they can quickly get up and running with each API using the Zapier integration platform as a service (iPaaS). I will be including one or more Zapier examples along with each of my API 101 lessons, helping normal folk put what they’ve learned about APIs to use–hopefully making each lesson a little more sticky.</p>
+
+<p>One of the primary targets for my lessons is the average worker at small, medium, and enterprise businesses, trying to help them understand that APIs aren’t just for developers, and that they can be putting APIs to use in their world. I tried to pick a handful of APIs that are relevant and useful in their daily lives, and helping them become aware of useful Zapier recipes they can adopt in their daily work. I’m looking to encourage users to become more API-literate, and begin connecting and orchestrating using APIs in their daily work. I’m hoping that eventually they will become confident enough by leverage APIs using Zapier that they will eventually become an advocate within their companies and organizations.</p>
+
+<p>In my opinion, each company could really use a Zapier advocate. To help incentivize this behavior I’m  going to show folks how they can become an advocate for APIs and Zapier at their company, and provide them with some templates for how they can publish API training material on a page dedicated to Zapier within the company firewewall, or on some sort of company portal that the rest of the company has access to. Similar to how <a href="http://apievangelist.com/2014/03/13/api-management-adding-reciprocity-building-blocks/">I’ve been advocating API providers to publish an integration page in their developer portals</a>, I’m looking to also encourage business users to publish a similar page of useful Zaps involving API that are relevant to their company–allowing other folks at a company to learn, explore, and implement useful recipes that can help them be more successful  in their work.</p>
+
+<p>A significant portion of my work as API Evangelist is dedicated to pushing forward the conversation around APIs, telling stories about the leading and bleeding edge of APIs, but I’m trying to not forget my roots, and my original mission to help non-developers understand the API potential. I feel that a wealth of <a href="http://101.apievangelist.com">API 101 materials</a>, combined with examples of Zapier advocacy and storytelling, and pages dedicated to sharing Zapier recipes (Zaps) will help go a long ways to help encourage adoption amongst business users. My first API 101 lessons are rolling off the assembly line, and the next step is to create an example page where these lessons can be published, including other resources and recipes for using Zapier to exercise each lessons learned. If you would like to learn how to become a <a href="https://zapier.com">Zapier</a> advocate at your company please drop me a line, I’m looking for a few beta users to help me push forward this work in a meaningful way.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/12/a-zapier-advocate-and-dedicated-api-resources-page-for-your-company/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/11/each-airtable-datastore-comes-with-complete-api-and-developer-portal/">Each Airtable Datastore Comes With Complete API and Developer Portal</a></h3>
+        <span class="post-date">11 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/airtable/airtable-api-for-or2.png" width="40%" style="padding: 15px;" align="right" /></p>
+<p>I see a lot of tools come across my desk each week, and I have to be honest I don’t alway fully get what they are and what they do. There are many reasons why I overlook interesting applications, but the most common reason is because I’m too busy and do not have the time to fully play with a solution. One application I’ve been keeping an eye on as part of my work is <a href="https://airtable.com">Airtable</a>, which I have to be honest, I didn’t get what they were doing, or really I just didn’t notice because I was too busy.</p>
+
+<p>Airtable is part spreadsheet, part database, that operates as a simple, easy to use web application, which with a push of a button, you can publish an API from. You don’t just get an API by default with each Airtable, you get a pretty robust developer portal for your API complete with  good looking API documentation. Allowing you to go from an Airtable (spreadsheet / database) to API and documentation–no coding necessary. Trust me. Try it out, anyone can create an Airtable and publish an API that any developer can visit and quickly understand what is going on.</p>
+
+<p>As a developer, API deployment still feels like it can be a lot of work. Then, once I take off my programmers hat, and put on my business user hat, I see that there are some very easy to use solutions like <a href="https://airtable.com">Airtable</a> available to me. Knowing how to code is almost slowing me down when it comes API deployment. Sure, the APIs that Airtable publishes aren’t the perfectly designed, artisanally crafted API I make with my bare hands, but they work just as well as mine. Most importantly, they get business done. No coding necessary. Something that anyone can do without the burden of programming.</p>
+
+<p><a href="https://airtable.com">Airtable provides me another solution</a> that I can recommend that my readers and clients should consider using when managing their data, which will also allow them to easily deploy an API for developers to build applications against.<a href="https://airtable.com/integrations">I also notice that Airtable has a whole API integration part of their platform, which allows you to integrate your Airtables into other APIs</a>–something I will have to write about separately in a future post. I just wanted to make sure and take the time to properly add Airtable to my research, and write a story about them so that they are in my brain, available for recall when people are asking me for easy to use solutions that will help them deploy an API.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/11/each-airtable-datastore-comes-with-complete-api-and-developer-portal/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/11/when-you-publish-a-google-sheet-to-the-web-it-als-becomes-an-api/">When You Publish A Google Sheet To The Web It Also Becomes An API</a></h3>
+        <span class="post-date">11 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/google-sheets/google-sheets-icon.jpg" align="right" width="30%" style="padding: 15px;" /></p>
+<p>When you take any Google Sheet and choose to publish it to the web, you immediately get an API. Well, you get the HTML representation of the spreadsheet (shared with the web), and if you know the right way to ask, you also can get the JSON representation of the spreadsheet–which gives you an interface you can program against in any application.</p>
+
+<p>Articles I curate, the companies, institutions, organizations, government agencies, and everything else I track on lives in Google Sheets that are published to the web in this way. When you are viewing any Google Sheet in your browser you are viewing it using a URL like:</p>
+
+<p>https://docs.google.com/spreadsheets/d/[sheet_id]/edit</p>
+
+<p>Of course, [sheet_id] is replaced with the actual id for your sheet, but the URL demonstrates what you will see. Once you publish your Google sheet to the web you are given a slight variation on that url:</p>
+
+<p>https://docs.google.com/spreadsheets/d/[sheet_id]/pubhtml</p>
+
+<p>This is the URL you will share with the public, allowing them to view the data you have in your spreadsheet in their browsers. In order to get at a JSON representation of the data you just need to learn the right way to craft the URL using the same sheet id:</p>
+
+<p>https://spreadsheets.google.com/feeds/list/[sheet_id]/default/public/values?alt=json</p>
+
+<p>Ok, one thing I have to come clean on is that the JSON available for each Google sheet is not the most intuitive JSON you will come across, but once you learn what is going on you can easily consume the data within a spreadsheet using any programming languages. Personally, I use a <a href="https://github.com/jsoma/tabletop">JavaScript library called tabletop.js</a> that quickly helps you make sense of a spreadsheet and get to work using the data in any (JavaScript) application.</p>
+
+<p>The fastest, lowest cost way to deploy an API is to put some data in a Google Sheet, and hit publish to the web. Ok, its not a full blown API, it’s just JSON available at a public URL, but it does provide an interface you can program against when developing an application. I take all the data I have in spreadsheets and publish to Github as YAML, and then make static APIs available using that YAML in XML, CSV, JSON, Atom, or any other format that I need. Taking the load of Google, creating a cached version at any point in time that runs on Github, in a versioned repository that anyone can fork, or integrate into any workflow.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/11/when-you-publish-a-google-sheet-to-the-web-it-als-becomes-an-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/07/11/either-you-own-the-conversation-around-your-apis-or-someone-else-will/">Either You Own The Conversation Around Your APIs Or Someone Else Will</a></h3>
         <span class="post-date">11 Jul 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/rogue/tinder-api-google-search.png" align="right" width="40%" style="padding: 15px;" /></p>
@@ -1277,198 +1605,6 @@ Mobile</p>
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/06/20/unknown-unknown-with-api-security/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/20/the-general-services-administration-api-strategy-considers-how-to-generate-revenue/">The General Services Administration API Strategy Considers How To Generate Revenue</a></h3>
-        <span class="post-date">20 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/gsa/gsa-api-strategy-diagram.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p><a href="https://tech.gsa.gov/assets/downloads/GSAAPIStrategy.pdf">The General Services Administration(GSA) has an API strategy</a>, which describes “GSA’s future direction for agency­wide API management including design, development, architecture, operations, and support, and security.” Ok, let’s pause there. I want to point out that this isn’t just an API design guide. That is a portion of it, but it also touches on some of the most obvious (deployment), and the most critical aspects (security) of API operation–important stuff.</p>
-
-<p>The objectives for the GSA crafting an API strategy are:</p>
-
-<p>­* Harness API management to maximize customer value and technical efficiencies.
-­* Adopt industry best practices with API design, development, and management.
-­* Consider opportunities for revenue through API offerings.</p>
-
-<p>I always enjoy seeing federal agencies talk about efficiencies and best practices, but it gives me hope that all of this might actually work when I see federal agencies actually “considering opportunities for revenue through API offerings”. Especially at the GSA, who provides technical guidance to the other 400+ federal agencies, as well as at the state and municipal level. I am not excited about our government charging money for digital resources, I am excited about our government exploring how it will generate revenue to sustain itself in the future.</p>
-
-<p>I know there are a lot of open data advocates who can’t wrap their mind around this, but this is how the government will generate needed tax revenue to operate in the future–using APIs. Our government currently generates a portion of its revenue from the sale of physical resources like timber, mining, and agriculture, why should things be different when it comes to taxing and regulating digital resources being made available via the web, mobile, and device applications. While there is still lots to figure out on this front, I am glad to see the GSA putting some thought into the role APIs will play in the future of funding the government services we all depend on each day.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/20/the-general-services-administration-api-strategy-considers-how-to-generate-revenue/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/20/idks-are-always-first-step-in-api-integration/">IDK Is Always The First Step To API Integration</a></h3>
-        <span class="post-date">20 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-question-shared.png" align="right" width="35%" style="padding: 15px;" /></p>
-
-<p>I spend a lot of time trying to figure out what technology does. I read press releases, pitch emails, documentation, and marketing materials trying to get an idea of what is possible. While many of the APIs I come across are intuitive, and just make sense there is still a significant portion of them that leave me scratching my head regarding what it even does.</p>
-
-<p>As developers, it can be easy to think about the SDKs you will need to support API integration with your API, but I think you are making a lot of assumptions about your consumers when you focus your initial energy here. The first step in any API integration begins with IDK and not the SDK. When a potential API consumer comes across your API, the first question to be answered is: what does this API do? If the answer is I Don’t Know (IDK), we have a problem. A problem no amount of SDKs will solve, no matter how many languages you create them in.</p>
-
-<p>Every API begins with an IDK. What does the Twilio API do? What does the Stripe API do? The answer to this initial question for your API cannot be IDK! As soon as I read your press release, land on the home page of your developer area, I should know what your API does in 5 seconds or less. If I walk away from our first interaction with an IDK, the chances I’ll be coming back are pretty slim. Make sure you always address the IDK, before you get to work on your SDK, for your API(s).</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/20/idks-are-always-first-step-in-api-integration/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/19/the-six-dimensions-of-api-patents-I-dwell-on/">The Six Dimensions Of API Patents I Dwell On</a></h3>
-        <span class="post-date">19 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-statues.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p>Each story I publish about API patents will usually get a comment, Tweet, LinkedIn, or other comments letting me know that the owner of the patent is only doing it in a defensive pattern. I fully grasp that this is the predominant stance when it comes to defending a patent portfolio, but I prefer seeing six dimensions to this discussion–looking beyond this single position.</p>
-
-<p>When thinking about why a patent exists I see it in six dimensions:</p>
-
-<ul>
-  <li><strong>Idea</strong> - That someone has an idea, thinks it is theirs and feels that this should exist as a patent.</li>
-  <li><strong>Patent</strong>- That some have the resources to craft the patent application, and file it with the patent office.</li>
-  <li><strong>Filing</strong> - That the patent authority thinks an idea is patent-worthy, and something that should be approved.</li>
-  <li><strong>Litigation</strong> - When someone wields a patent as part of litigation, either in an offensive, or defensive stance.</li>
-  <li><strong>Public Deals</strong> - When patent shows up as part of an acquisition, partnership, and wielded publicly as part of some deal.</li>
-  <li><strong>Backroom Deals</strong> - When patents are leveraged as part of backroom deals when negotiating with companies and investors, and sizing up the value on the table.</li>
-</ul>
-
-<p>We only have insight into the middle four dimensions. We really don’t have any view into the individual reasons behind a patent, and we do not get access to how they are wielded and leveraged behind closed doors. I think that defending yourself as part of any court case makes sense, but I’m discussing API patents to help shine a light and understand what is happening within the other dimensions.</p>
-
-<p>Overall I find that the existence of patents to speak volumes about a company’s motivations. The way they showcase or do not showcase their API portfolio contributes to this conversation in important ways. Sadly we will never get a full picture of the individual and backroom aspects of how API patents are used. However, I’m confident I can extract enough meaning from the existence of a patent, the information within the application, and any litigation that has occurred to paint a pretty clear picture of the motivations behind having a patent on your API(s).</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/19/the-six-dimensions-of-api-patents-I-dwell-on/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/19/three-rules-of-my-api-communication-strategy/">Three Rules Of My API Communication Strategy</a></h3>
-        <span class="post-date">19 Jun 2017</span>
-        <p><a href="http://communications.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/three-rules-for-a-communication-strategy.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p>Communicating effectively around API operations is the number one illness I see across the API space. Engineers are good at writing code and devopping their way to a usable API, but often fall short when it comes to telling the story of what the API does, and consistently beating this drum until people become familiar with what is going on.</p>
-
-<p>An effective API communication strategy is more art than it is science, and I’d like to share three of my rules when it comes to telling stories on the API Evangelist platform.</p>
-
-<ul>
-  <li><strong>Honesty</strong> - Be honest with yourself, you’re readers, and those you are writing about. If you can’t find a way to be honest in your writing go find a new job–it won’t be sustainable.</li>
-  <li><strong>Consistent</strong> - Communicate every day. Ok, maybe every other day. Regardless of frequency, make sure you are communicating on a consistent basis, setting the tone for what your audience can expect.</li>
-  <li><strong>Compelling</strong> - Make it compelling. No, not every single post will be compelling, but make it your primary goal to tell a compelling story that you would read yourself, if it was on someone else’s blog.</li>
-</ul>
-
-<p>That is it. Don’t sweat all the technical details. Just write on the blog, spend the time on Twitter, participate in threads on Github, and regularly dive into the bowels of the Slack. Don’t spend all your time worrying about your communication strategy, just make sure you give it a sensible amount of time, and follow these three rules–the rest will come.</p>
-
-<p>As of this moment, there are 2,680 blog posts on API Evangelist, with the first entry in September 2010. These three rules have kept me on track when I was taking money from bigcos like Intel and Mulesoft, and kept me from losing my shit when I was traveling and drinking too heavily. These three rules are what keep me doing this effectively after seven years.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/19/three-rules-of-my-api-communication-strategy/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/19/i-would-like-to-see-more-api-test-drives/">I Would Like To See More API Test Drives</a></h3>
-        <span class="post-date">19 Jun 2017</span>
-        <p><a href="https://azure.microsoft.com/en-us/blog/azure-marketplace-test-drive/?v=17.23h"><img src="https://s3.amazonaws.com/kinlane-productions/c627d90c-1615-4750-b45c-9658b45596bc.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p><a href="https://azure.microsoft.com/en-us/blog/azure-marketplace-test-drive/?v=17.23h">The Azure Marketplace has the ability to test drive anything that is deployed in the Azure Marketplace</a>. As someone who has to sign up for an endless number of new accounts to be able to play with APIs and API services, I’m a big fan of the concept of a test drive–not just for web applications, or backend infrastructure, but specifically for individual APIs and microservices.</p>
-
-<p>From the Azure site:  <em>Test Drives are ready to go environments that allow you to experience a product for free without needing an Azure subscription. An additional benefit with a Test Drive is that it is pre-provisioned - you don’t have to download, set up or configure the product and can instead spend your time on evaluating the user experience, key features, and benefits of the product.</em></p>
-
-<p>I like it. I want more of these. I want to be able to test drive, then deploy any API I want. I don’t want to sign up for an account, enter my credit card details, talk to sales, or signup for 30 day trial–I want to test drive. I want it to have data in it, and be pre-configured for a variety of use cases. Helping me understand what is possible.</p>
-
-<p>I want all the friction between me finding an API (discovery via marketplace) understanding what an API does, test driving, then deployment of the API in any cloud I want. I think we are still a little bit off from this being as frictionless as I envision in my head, but I hope with enough nudging we will get there very soon.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/19/i-would-like-to-see-more-api-test-drives/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/19/unknown-unknown-with-api-security/">The Unknown Unknowns Of API Security</a></h3>
-        <span class="post-date">19 Jun 2017</span>
-        <p><a href="http://security.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-security-unknown.png" align="right" width="25%" style="padding: 15px;" /></a></p>
-<p>I am trying to wrap my head around the next steps in the evolution of <a href="http://security.apievangelist.com/">API security</a>. I am trying to help separate some of the layers of what we collectively call API security, into some specific building blocks I can reference in my storytelling. I’m ramping up my API security research as I onboard a new API service provider partner, and will have more resources to invest in the API security discussion.</p>
-
-<p>Let’s start with the easy “Known Knowns”:</p>
-
-<ul>
-  <li>Encryption - Using encryption across all aspects of API operations from portal to base URL.</li>
-  <li>API Keys - Making sure everyone who is accessing an API is keying up and passing along with each request.</li>
-  <li>OAuth - Getting more granular with access by applying OAuth when there is access to 3rd party data and content.</li>
-  <li>Rate Limiting - Limiting how much of a resource any single API consumer can access using rate limiting.</li>
-</ul>
-
-<p>These are the first things that come to mind when the topic of API security is brought up. I’d say most conversation begin with encryption, but as someone progresses on their API journey they begin to understand how they can key things up, using OAuth, rate limiting, and other aspects of API management to secure their API operations.</p>
-
-<p>Next, I want to think about some the “Known Unknowns”, things like:</p>
-
-<ul>
-  <li>Freeloaders - People with multiple accounts, and generally aren’t healthy consumers.</li>
-  <li>Errors - Errors, misconfigured, and malformed requests, responses, and anything that generally gums up the gears of operations.</li>
-  <li>Vulnerabilities - Making sure all known software and hardware vulnerabilities are patched and communicated as part of operations.</li>
-  <li>Attacks - Defending against the known attacks, staying in tune with OWASP and other groups who are actively identifying, studying, and sharing attacks.</li>
-</ul>
-
-<p>These are the things we might not totally understand or have implemented, but they are known(ish). With the right amount of resources and expertise, any API team should be able to mitigate against these areas of security. There is always a lot of work to turn the unknowns into knowns in this area, but they are doable.</p>
-
-<p>Now I want to think a little about the “Unknown Unknowns”, likes like:</p>
-
-<ul>
-  <li>DNS - What is happening at the DNS level as it pertains to my API security?</li>
-  <li>Relationship - Relationship between requests, even if they are using different keys, IP addresses, and other elements–where is the overlap?</li>
-  <li>Threats - What information is available to me regarding new and emerging threats that I’m only beginning to see, or maybe my partners and others in same space are seeing?</li>
-  <li>Sharing - Are there opportunities to share information and see a bigger picture when it comes to vulnerabilities and threats?</li>
-</ul>
-
-<p>These are just a handful of my initial thoughts on what the unknown unknowns might be. Things that are currently off the radar of my known API security practices. API management seems to dominate and in some cases terminate the API security conversation, but I have the feeling there are numerous other considerations out there that we are not seeing. I’m just looking to begin defining this new bucket of security considerations so I can keep adding items to it as I’m doing my research.</p>
-
-<p>From your perspective, what are the biggest threats out there for API security that many API providers are completely unaware of? I’m looking to keep expanding on this frontline of API security and turn up the heat beneath <a href="http://security.apievangelist.com">my research</a> while I have the resources to do so. I feel like the API security conversation has kind of stagnated after the last wave of API management growth, leaving many providers thinking they have everything covered.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/19/unknown-unknown-with-api-security/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/19/idks-are-always-first-step-in-api-integration/">IDK Is Always The First Step To API Integration</a></h3>
-        <span class="post-date">19 Jun 2017</span>
-        <p><img src="­https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-question-mark.png" align="right" width="20%" style="padding: 15px;" /></p>
-<p>I spend a lot of time trying to figure out what technology does. I read press releases, pitch emails, documentation, and marketing materials trying to get an idea of what is possible. While many of the APIs I come across are intuitive, and just make sense there is still a significant portion of them that leave me scratching my head regarding what it even does.</p>
-
-<p>As developers, it can be easy to think about the SDKs you will need to support API integration with your API, but I think you are making a lot of assumptions about your consumers when you focus your initial energy here. The first step in any API integration begins with IDK and not the SDK. When a potential API consumer comes across your API, the first question to be answered is: what does this API do? If the answer is I Don’t Know (IDK), we have a problem. A problem no amount of SDKs will solve, no matter how many languages you create them in.</p>
-
-<p>Every API begins with an IDK. What does the Twilio API do? What does the Stripe API do? The answer to this initial question for your API cannot be IDK! As soon as I read your press release, land on the home page of your developer area, I should know what your API does in 5 seconds or less. If I walk away from our first interaction with an IDK, the chances I’ll be coming back are pretty slim. Make sure you always address the IDK, before you get to work on your SDK, for your API(s).</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/19/idks-are-always-first-step-in-api-integration/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

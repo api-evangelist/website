@@ -129,6 +129,151 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2014/01/08/dwolla-api-is-switching-dates-to-utc-are-yours/">Dwolla API Is Switching Dates to UTC, Are Yours?</a></h3>
+        <span class="post-date">08 Jan 2014</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/timezone_UTC.png" alt="" width="250" align="right" /></p>
+<p>The <a href="https://www.dwolla.com/developers">Dwolla API</a> sent out an email to developers today, letting us know that, "Effective January 21, 2014, all timestamps returned by REST API endpoints will be in UTC format.&rdquo;  Dwolla is looking to fix the issue of ambiguous timestamps, where the time zone is&nbsp;variable and not indicated in the timestamp.</p>
+<p>Currently the timestamps look like: <em>9/20/2013 12:45:07 AM</em></p>
+<p>After the switch to UTC they will look like: <em>2010-11-12T13:14:15Z</em></p>
+<p>Formatted according to the <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601 standard</a>. This is a much cleaner, internationalized approach. I&rsquo;ve seen this mistake a lot, and still do it myself on some new systems. As an self-centered american, we tend to think the world evolves around us, and we don&rsquo;t think about these scaling issues ahead of time.</p>
+<p>Are your API data formats in UTC? No? Maybe it is something you want to change before you grow too big and get too many developers on your API.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/08/dwolla-api-is-switching-dates-to-utc-are-yours/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/08/benefits-of-treating-your-private-api-like-a-public-one/">Benefits Of Treating Your Private API Like a Public One</a></h3>
+        <span class="post-date">08 Jan 2014</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-padlock.png" alt="" width="150" align="right" /></p>
+<p>I stopped counting the number of successful applications that have had their private APIs reversed engineered by some savvy users,&nbsp;<a title="Snapchat API reverse engineered" href="http://apivoice.com/2014/01/08/are-your-api-security-practices-in-better-shape-than-the-snapchat-api/">Most recently Snapchat</a>, and famously the <a href="http://blog.programmableweb.com/2010/12/15/the-full-featured-unpublished-instagram-api/">original rogue Instagram API</a> was developed this way, and even auto maker <a href="http://www.teslamotors.com/forum/forums/flaws-rest-api-authentication">Tesla had their API reverse engineered</a>.</p>
+<p>This is fresh on my my mind because of the <a title="Snapchat security breach" href="http://apivoice.com/2014/01/08/are-your-api-security-practices-in-better-shape-than-the-snapchat-api/">Snapchat security breach</a>, in which this savvy tech user notified Snapchat back in August, and the company instituted rate limiting, but still left the API exposed for further attack, which the user took full advantage of in December by scraping all users after documenting and expoiting the private API.</p>
+<p>If you are developing a mobile application, you are building an API. Even if you never intend on making this API public, there are huge benefits of going through the motions of pretending like it is&mdash;you will learn a lot! Every application API I&rsquo;ve seen reverse engineered was clearly developed in a rush, thinking that security through obscurity was a solid production strategy.</p>
+<p>When you are planning your apps API, stop! Consider what you will need to make this publicly available. The exercise is healthy. Allow for registration of developers and apps, even if it will just be your team signing up. Put in place rate limits, analytics, etc. There are a ton of features that have evolved in the public API space that are transferrable to private APIs.</p>
+<p><a title="API Infrastructure Providers" href="http://bit.ly/13esk6Q">API infrastructure providers like 3Scale</a> have been working at this for years. You can sign up for a free account, get started without any extra work from your dev team, and you can save any resources for making sure you monitor your API stats on a daily basis and responding to not just security threats, but find tuning how your apps are using your own API.</p>
+<p>Don&rsquo;t make the mistake that the Snapchat, Instagram and Teslas of the world have made. Treat your API like it is public, even if you never intend to open it up publicly. You will think differently and be ahead of the curve when it comes to monitoring and security.</p>
+<p><em>Disclosure: 3Scale is an API Evangelist partner</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/08/benefits-of-treating-your-private-api-like-a-public-one/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/08/are-your-api-security-practices-in-better-shape-than-the-snapchat-api/">Are Your API Security Practices In Better Shape Than The Snapchat API?</a></h3>
+        <span class="post-date">08 Jan 2014</span>
+        <p><a title="snapchat" href="http://www.snapchat.com/" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/snapchat.png" alt="" width="200" align="right" /></a></p>
+<p>If you weren't following the news over the holidays, a rogue group released <a href="http://www.snapchatdb.info/">SnapchatDB</a>, containing the 4.6 million <a title="snapchat" href="http://www.snapchat.com/" target="_blank">Snapchat</a> user profiles, after exploiting the poorly secured mobile application API.</p>
+<p>There are opposing views of what's happened, but apparently the group contacted Snapchat in August 2013 letting them know of a potential vulnerability in their API, in which Snapchat claims they responded by instituting rate limiting to address the problem.</p>
+<p>Apparently the actual vulnerability wasn't addressed, and in December the group mapped the private API, the company uses for their mobile app. They don't officially have an API, but like most mobile applications, it is right beneath the surface.</p>
+<p>After mapping the interface the group proceeded to suck all the data, organized and publish as SnapchatDB, in an effort to raise awareness of the issue and point out that Snapchat was to slow in responding to the exploit.</p>
+<p>Regardless of the exact facts, it is clear that Snapchat was lax on security. API rate limiting and other common security measures are pretty common place. <a title="API infrastructure provider" href="http://bit.ly/13esk6Q">API providers like 3Scale have been around for years delivering plug and play infrastructure</a> to help you deal with this. There is no reason to be caught with your pants down.</p>
+<p>It doesn't matter whether your API is public, private or just for partners, you need to have your security practices tight. You owe it to your users and developers.</p>
+<p><em>Disclosure: 3Scale is an API Evangelist partner.</em></p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/08/are-your-api-security-practices-in-better-shape-than-the-snapchat-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/07/will-internet-of-things-and-the-sdk-push-out-rest/">Will Internet of Things And The SDK Push Out REST?</a></h3>
+        <span class="post-date">07 Jan 2014</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-internet-of-things.png" alt="" width="250" align="right" /></p>
+<p>After watching the API space evolve, I've learned one thing, that there are lots of factors that influence the industry, and that the best solution doesn't always win.</p>
+<p>As I'm studying the rise of Internet enabled devices, also known as Internet of Things (IoT), you see some devices embrace a RESTful approach to integration with their devices, but often times you see APIs released, but they are wrapped with SDKs.</p>
+<p>I'm not making any assumption that SDKs or REST is better when it comes to IoT devices, technically an SDK may or may not provide a stronger solution. However within this approach I think it is easy to pave over the API, making it an after thought--stifling potential innovation that can occur around open endpoints.</p>
+<p>When it comes to developing APIs for IoT I don't think engineers are consciously pushing out REST and web APIs, I think they stick with what they know. Without proper education around the larger potential of APIs + SDK, vs SDK only, engineers with go the path of least resistance, and the one they are familiar with.</p>
+<p>As the space expands, we need to make sure there are sufficient stories available for IoT engineers to discover, making them aware of the potential of keeping their APIs front and center when integrating their devices to the Internet.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/07/will-internet-of-things-and-the-sdk-push-out-rest/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/07/what-is-a-hypermedia-api/">What Is A Hypermedia API?</a></h3>
+        <span class="post-date">07 Jan 2014</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-hypermedia.png" alt="" width="200" align="right" /></p>
+<p>The time has come. In 2014 I will be spending a lot more energy, helping you understand what a Hypermedia API is, and if you should be considering it as part of your own API strategy. I won&rsquo;t be in the business of telling you Hypermedia is always the answer, or that it is bad, I will be working to better understand myself, and along the way hopefully I can share some knowledge with you.</p>
+<p>As I do with other technical issues that surround APIs, I will work to simplify, to help reach a wider audience, beyond the development community. If you are a developer and looking to understand Hypermedia APIs I recommend Googling, and exploring other resources (there are plenty). I want to help business leaders understand the potential, not sell developers on the concept.</p>
+<p>In my mind, there are two key things that make hypermedia APIs different from common web APIs:</p>
+<ul class="mainlist">
+<li>Shared, common way that developers can communicate with the API</li>
+<li>Guiding developers with what actions they can take along the way</li>
+</ul>
+<p>There are plenty of other differentiators, but these are the two that stand out to me. So let&rsquo;s apply. Say you have a product API. A common web API approach might be to return a product, in a JSON format, which will probably be just a list of fields from the database where the products are stored, with the JSON structured in a way that makes sense to you and your development team. It is now up to the developer to interpret how the API responses are structured, and how to integrate into their application. Pretty standard stuff, right?</p>
+<p>Now with a Hypermedia API, the API will use a registered media type such as&nbsp;<a title="HAL" href="http://stateless.co/hal_specification.html">HAL</a>&nbsp;or&nbsp;<a title="Collection-JSON" href="http://amundsen.com/media-types/collection/">Collection-JSON</a>, providing a common framework for developers to communicate with the API&mdash;reducing the unknowns in API integration. With the product request, you will get get the same details on the product, but along with the product details you will also get a list of links, providing key insight into what you can actually do with the products returned.</p>
+<p>Providing developers with a common way to understand how to communicate with an API, as well as the actions they can take with resources that are available via an API, will increase the chances an API will get used, as well as ensure that the APIs is used in ways that are in alignment with the API providers overall business goals.</p>
+<p>Let me know if you have any questions about Hypermedia APIs, let me know, I&rsquo;m happy to address particular topics as I explore this fascinating area of APIs.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/07/what-is-a-hypermedia-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/07/a-wholesale-onpremise-version-of-my-api-for-sale/">A Wholesale On-Premise Version Of My API For Sale</a></h3>
+        <span class="post-date">07 Jan 2014</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-scraper.jpg" alt="" width="100" align="right" /></p>
+<p>I was doing some research in the area of harvesting and scraping APs. I was taking another look at <a href="http://webscrapemaster.com/" target="_blank">Web Scrape Master</a>, a simple scraping API that allows you to pass it a URL and it harvests structured data and content from the page.</p>
+<p>The Web Scrape Master is a pretty dead simple API, with a purpose. It does one thing and it does it well. What I found really interesting though, was the fact that lower on the page, below the API documentation the API was for sale. You could buy a copy of the server side of the API and client side tooling as a bundle.</p>
+<p>It is a pretty interesting approach, especially for these utility style APIs. You can either use the API provided as a service or you can download, install and use it within your own infrastructure, adding the API to your own stack.</p>
+<p>While this isn't possible for all APIs, I think it has promise for many API providers, delivering a sort of on-premise version of their API. I'm getting in the habit of publishing server side code for many of my API designs, I'm will consider some APIs for possible sale in the future as well.</p>
+<p>When you think about the growth of containers like <a title="Docker" href="https://www.docker.io/">Docker</a> and the PaaS solutions like <a title="OpenShift" href="https://www.openshift.com/">OpenShift</a>, it makes the possibility of rapidly deployment of utility APIs much more of a reality.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/07/a-wholesale-onpremise-version-of-my-api-for-sale/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2014/01/06/what-is-next-for-the-us-government-api-strategy/">What Is Next For The US Government API Strategy</a></h3>
+        <span class="post-date">06 Jan 2014</span>
+        <p><a href="http://federal-government.apievangelist.com/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Building-a-21st-century-platform-to-better-serve-the-american-people-1.png" alt="" width="250" align="right" /></a></p>
+<p>I was asked to provides some thoughts on what is next for the US Government API strategy.  I've been thinking about it during my work and travels over the last couple months, and I keep coming back to one thought:&nbsp;<strong>Strengthen What We Have!</strong></p>
+<p>I wish I had some new technology or platform for the next wave of government APIs that would ensure success with APIs in Washington, but in reality we need to do what we've been doing, but do it at scale, and get organized and collaborative about how we do it.</p>
+<p><strong>Release More Data Sets</strong><br /> There are thousands of data sets available via <a href="http://data.gov">Data.gov</a>, across 176 agencies and numerous categories. We need more. When any content or data is published via a government website, that data needs to also made available via agencies data repositories and Data.gov. Agencies need to understand that releasing open data sets it not something you do every once in a while to meet a mandate or deadline--it is something you do always, forever.</p>
+<p><strong>Refine Existing Data Sets</strong><br /> There is a lot of data available currently. However much of it is in various formats, inconsistent data models and isn't always immediately available for use in spreadsheets, applications, visualizations or analysis. There is a great deal of work to be done in cleaning, normalizing and refining of existing data, as well as deploying APIs around open data that would increase adoption and the chances it will be put to use.</p>
+<p><strong>Refine Existing APIs</strong><br /> Like open data, there are many existing APIs across the federal government, and these APis could use a lot of work to make them more usable by developers. With a little elbow grease, existing APIs could be standardized by generating common API definitions like Swagger, API blueprint and RAML, which would help quantify all APIs, but also generate interactive documentation, code samples and provide valuable discovery tools for helping understand where interfaces are and what they offer. The mission up until now for agencies is to deploy APIs, and while this remains true, the need to evolve and refine APIs will go a long way towards building those valuable case studies to get to the next level.</p>
+<p><strong>Robust /developer Areas</strong><br /> There are over 50 agencies who have successful launched a /developer area to support open data and API efforts. Much like open data and the APIs themselves, they represent a mishmash of approaches, and provide varied amounts of resources and necessary support materials. <a href="http://www.howto.gov/mobile/apis-in-government">HowTo.gov already provides some great information on how to evolve an agencies developer area</a>, we just need some serious attention spent on helping each agency make it so. It doesn't matter how valuable the open data or APIs are, if they are published without proper documentation, support and communication resources, they won't be successful. Robust developer areas are essential to federal agencies finding success in their API iniatives.</p>
+<p><strong>Dedicated Evangelist</strong><br /> Every successful API initiative in the private sector from Amazon to Twilio has employed evangelists to spread the word and engage developers, helping them achieve success in putting API resources to use. Each federal agency needs their own evangelist, to help work with internal stakeholders, making sure open data is published regularly, new APIs are deployed and existing resources are kept operational and up to date. Evangelists should have counterparts at <a href="http://www.whitehouse.gov/administration/eop/ostp">OSTP</a> / <a href="http://www.whitehouse.gov/omb">OMB</a> / <a href="http://www.gsa.gov/">GSA</a> levels providing feedback and guidance, as well as regular engagement with evangelists in the private sector. Evangelism is the glue that will hold things together across agency, as well as provide the critical outreach to the private sector to increase adoption of government open data and APis.</p>
+<p><strong>Build Public / Private Sector Partnerships</strong><br /> Opening up data and APIs by the federal government is about sharing the load with the private sector and the public at large. Open data and APIs represents the resources the private sector will need to build applications, sites, fuel industry growth, and stimulate job creation. A new type of public / private sector partnerships need to be defined, allowing for companies and non-profit groups to access and use government services and resources in a self-service, scalable way. Companies should be able to build businesses around government Internet services, much like the <a title="ecosystem that has grown from the IRS e-File system" href="https://github.com/kinlane/irs-modernized-efile-blueprint">ecosystem that has grown from the IRS e-File system</a>, with applications like TurboTax that reaches millions of US citizens and allows corporations to help government share the load while also generating necessary revenue.</p>
+<p><strong>Establish The Meaningful Case Studies</strong><br /> When it comes to open data and APIs nothing gets people on board more than solid examples of successfel applications that have been build on open data, APIs. Open government proponents use weather data and GPS as solid examples of open data and technology impacting not just government, but also the private sector. We need to fold the IRS e-file ecosystem into this lineage, but also work towards establishing numerous other case studies we can showcase and tell stories about why open data and APIs are important--in ways that truly matter to everyone, not just tech folks.</p>
+<p><strong>Educate &amp; Tell Stories Within Government</strong><br /> In order to take open data and APIs to the next level in government there needs to an organized and massive effort to educate people within government about the opportunities around open data and APis, as well as the pitfalls. Regular efforts to educate people within government about the technology, business and politics of APIs needs to be scaled, weaving in relevant stories and case studies as they emerge around open data and APIs. Without regular, consistent education efforts and sharing of success stories across agencies, open data and APIs will never become part of our federal government DNA.</p>
+<p><strong>Inspire &amp; Tell Stories Outside Government</strong><br /> As within government, the stories around government open data and APIs needs to be told outside the Washington echo chamber, educating citizens and companies about the availability of open data and APIs, and inspire them to take action by sharing successful stories of other uses of open data and APIs in development of applications.  The potential of using popular platforms like Amazon and Twitter spread through the word of mouth amongst developer and power user communities, the same path needs to be taken with government data and api resources.</p>
+<p>The next 2-3 years of the API strategy for the US government will be about good ol fashioned hard work, collaboration and storytelling.  We have  blueprints for what agencies should be doing when it comes to opening up data, deploying APIs and enticing the private sector to innovate around government data, we just need to repeat and scale until we reach the next level.</p>
+<p>How do we know when we've reached the next level? When the potential of open data and APIs is understand across all agencies, and the public instinctively knows that you can go to any government domain /developer, and find the resources they need, whether they are individual or a company looking to develop a business around government services.</p>
+<p>The only way we will get here is by achieving a solid group of strong case studies showing that we are making change in government using open data and APIs. Think of the IRS e-file system, and how many citizens this ecosystem reaches, and the value generated through commercial partnerships with tax professionals. We need 10-25 of similar stories of how APIs impact people's lives, strengthened the economy and has made government more efficient, before we consider getting to the next level.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2014/01/06/what-is-next-for-the-us-government-api-strategy/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2014/01/06/state-of-apis-in-journalism-the-guardian/">State of APIs In Journalism: The Guardian</a></h3>
         <span class="post-date">06 Jan 2014</span>
         <p><a href="http://www.theguardian.com/open-platform" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/guardian/guardian-open-platform.jpg" alt="" width="250" align="right" /></a></p>
@@ -1078,234 +1223,6 @@
 <p>Then I will have the different custom parts decoupled from each other, all centered around an API definition and data model which I can publish in <a href="http://bit.ly/1e27KIc">API Commons</a> and evolve in an open, collaborative environment where everyone can benefit, and contribute to my API work.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2013/11/12/common-data-sources-to-api-definition/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/12/9-essential-languages-for-your-api-code-libraries/">9 Essential Languages For Your API Code Libraries</a></h3>
-        <span class="post-date">12 Nov 2013</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/google-drive/bw-google-drive-icon.png" alt="" width="100" align="right" /></p>
-<p>I was working with Google APIs over the last couple days while building <a href="http://apievangelist.com/2013/11/12/deploy-api-private-google-spreadsheet-to-api/">Google Spreadsheet to API tools</a>. It gave me a chance to look around the <a href="https://developers.google.com">Google Developers Area</a> and rediscover some of the positive approaches the API pioneer brings to the table.</p>
-<p>In this post I wanted to highlight the <a title="Google Drive Code Libraries" href="https://developers.google.com/drive/downloads">Google Drive Code Libraries</a>. While the Google approach isn't perfect, I think it sets a good bar for what can be achieved by API providers when delivering their own API code libraries.</p>
-<p><a title="Google Drive Code Libraries" href="https://developers.google.com/drive/downloads"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/google-drive/google-drive-code-samples-2.png" alt="" width="550" /></a></p>
-<p>I think the languages represented are the baseline for any modern API, and all API providers should consider providing the following languages:</p>
-<ul class="mainlist">
-<li>.NET</li>
-<li>Go</li>
-<li>Java</li>
-<li>JavaScript</li>
-<li>Node.js</li>
-<li>Objective-C</li>
-<li>PHP</li>
-<li>Python</li>
-<li>Ruby</li>
-</ul>
-<p>Languages like Go and Node.js are definitely forward leaning, but represent very fast growing areas of the API integration space.</p>
-<p>Java and Objective-C represent the mobile space, something API providers can't be ignoring in 2013.</p>
-<p>If your target audience is the enterprise, you have to have .NET and Java as part of your API library.</p>
-<p>PHP, Python and Ruby are the web staples, that are default for any API that is catering to general web developers.</p>
-<p>It should get easier to generate code libraries automatically for API providers who have developed some sort of API definition for their APIs, but for others you will still have eto hand-roll your own code lbiraries.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/12/9-essential-languages-for-your-api-code-libraries/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/08/dwolla-open-sources-mobile-payment-app/">Dwolla Open Sources Mobile Payment App</a></h3>
-        <span class="post-date">08 Nov 2013</span>
-        <p><a href="http://blog.dwolla.com/for-developers-an-open-source-mobile-wallet-built-on-the-dwolla-network/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/dwolla/dwolla-open-source-iphone-app.png" alt="" width="175" align="right" /></a></p>
-<p>Every API provider should provide code samples in a variety of languages, helping developers get up and running as fast as possible.</p>
-<p>Dwolla is taking this one step further and <a href="http://blog.dwolla.com/for-developers-an-open-source-mobile-wallet-built-on-the-dwolla-network/">providing a fully functional iOS app that developers can fork, tweak and use</a> as they wish.</p>
-<p>I've talked about what I call "starter kits" before, when I <a href="http://apievangelist.com/2011/09/17/providing-code-libraries-is-not-enough-for-your-api/">showcased Google+ sample social applications in a variety of languages</a>, but it is still something I don't see from very many API providers.</p>
-<p>Complete mobile applications is a great way to showcase what a complete API integration will look like, helping developers see the end goal clearly, while also teaching them best practices.</p>
-<p>Do you have any applications you could open source and allow developers to reverse engineer? Or maybe an app you could developer to show developers what is possible!</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/08/dwolla-open-sources-mobile-payment-app/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/08/automatic-rest-api-for-databases-as-complete-amazon-machine-image/">Automatic REST API for Databases As Complete Amazon Machine Image</a></h3>
-        <span class="post-date">08 Nov 2013</span>
-        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/slashdb/slashdb-logo.png" alt="" width="125" align="right" /></p>
-<p><a title="SlashDB" href="http://www.slashdb.com/">SlashDB</a> aka /db, has recently been added to the Amazon Marketplace, providing a <a title="complete database to API solution as an Amazon Machine Image (AMI)" href="https://aws.amazon.com/marketplace/pp/B00FFKW0GC/ref=vdr_rf#product-details">complete database to API solution as an Amazon Machine Image (AMI)</a>.</p>
-<p>Companies can use the /db Amazon image to automatically <a title="generate REST APIs from common relational databases" href="http://apievangelist.com/2013/03/18/database-to-api-with-slashdb/">generate REST APIs from common relational databases</a> like Microsoft SQL Server, Oracle, MySQL, PostGreSQL, which includes Amazon RDS.</p>
-<p>/db charges based upon the number of databases you launch and the number of users that are using the API for the database, and you will have to pay for the regular charges for any Amazon EC2 instances.</p>
-<p>I like the idea of building API solutions and launching as Amazon Machine Images. I think ready-to-go platform solutions like this for AWS, Google, Heroku and other top cloud platforms are good for potential API providers.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/08/automatic-rest-api-for-databases-as-complete-amazon-machine-image/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/07/apis-ongithub/">APIs Ongithub</a></h3>
-        <span class="post-date">07 Nov 2013</span>
-        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-on-github/api-on-github-logo.png" alt="" width="250" align="right" /></p>
-<p>I've created a new playground for some of my work. Pretty much everything at <a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a> runs on Github, and each new project I produce starts its life as a Github repository.  To support this work I established a new domain called ongithub.</p>
-<p>My first series in the ongithub realm is based upon an approach I'm using to deploy very simple APIs, while also introducing and educating people about APIs. I have a handful of simple API designs from working in the government, so I married them with data models derived from <a href="http://schema.org">schema.org</a>, and publish over 10 very simple API design patterns.</p>
-<p>Every one of these demo APIs began as a simple <a title="swagger" href="https://developers.helloreverb.com/swagger/">Swagger specification</a>, which I quickly spun into a web API using the <a title="SLIM REST Framework" href="http://www.slimframework.com/">Slim REST Framework</a>, then generated a simple API microsite complete with interactive documentation.</p>
-<p>These Swagger specifications were the seed of the recent <a href="http://techcrunch.com/2013/11/05/3scale-launches-api-commons-to-allow-developers-to-share-apis-under-creative-commons-licenses/">API Commons that 3Scale and API Evangelist just launched</a>. I have plenty of other API designs laying around, but this seemed like a good way to seed the <a title="API Commons" href="http://apicommons.org">API Commons</a> with some simple and common designs.</p>
-<p>You can find the following 11 designs at <a title="api.ongithub.com" href="http://api.ongithub.com">api.ongithub.com</a>:</p>
-<p>&nbsp;</p>
-<table id="api-listing" style="padding-left: 25px;" width="100%">
-<tbody>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/businesses/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-business-icon.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/businesses/" target="_blank"><strong>Businesses</strong></a></td>
-<td align="left">This is a simple API specification for a listing of businesses.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/events/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-calendar.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/events/" target="_blank"><strong>Events</strong></a></td>
-<td align="left">This is a simple API specification for a listing of events.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/images/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-camera.jpg" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/images/" target="_blank"><strong>Images</strong></a></td>
-<td align="left">This is a simple API specification for a listing of photos and images.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/jobs/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-job.jpg" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/jobs/" target="_blank"><strong>Jobs</strong></a></td>
-<td align="left">This is a simple API specification for a listing of jobs.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/offices/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-office.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/offices/" target="_blank"><strong>Offices</strong></a></td>
-<td align="left">This is a simple API specification for a listing of offices.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/places/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-places.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/places/" target="_blank"><strong>Places</strong></a></td>
-<td align="left">This is a simple API specification for a listing of places.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/people/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-people.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/people/" target="_blank"><strong>People</strong></a></td>
-<td align="left">This is a simple API specification for a listing of people.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/press/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-news-icon.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/press/" target="_blank"><strong>Press</strong></a></td>
-<td align="left">This is a simple API specification for a listing of news and press releases.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/products/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-products.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/products/" target="_blank"><strong>Products</strong></a></td>
-<td align="left">This is a simple API specification for a listing of products.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/programs/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-programs.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/programs/" target="_blank"><strong>Programs</strong></a></td>
-<td align="left">This is a simple API specification for a listing of programs.</td>
-</tr>
-<tr>
-<td width="15%" align="center"><a href="http://ongithub.github.io/videos/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-video.png" alt="" width="50" align="left" /></a></td>
-<td align="left"><a href="http://ongithub.github.io/videos/" target="_blank"><strong>Videos</strong></a></td>
-<td align="left">This is a simple API specification for a listing of videos.</td>
-</tr>
-</tbody>
-</table>
-<p>&nbsp;</p>
-<p>If there are any API designs you'd like to see published to api.ongithub.com, let me know.  If you'd prefer a Ruby, Python or Node.js API backend, also let me know.</p>
-<p>I will be playing with as many API design patterns here as I can fit in. I encourage you to fork any of my work and make sure to submit any of your own work to API Commons.  If you have a design you think would fit in well with api.ongithub.com let me know, and I am happy to list.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/07/apis-ongithub/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/06/putting-the-open-in-api-with-the-api-commons/">Putting The Open In API With The API Commons</a></h3>
-        <span class="post-date">06 Nov 2013</span>
-        <p><a href="http://apicommons.org"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-commons/api-commons-logo.png" alt="" width="275" align="right" /></a></p>
-<p>Steve Willmott(<a href="https://twitter.com/njyx">@njyx</a>) from API infrastructure provider <a title="API infrastructure provider" href="http://3scale.net">3Scale</a> and API Evangelist launched a new partner project yesterday at <a href="http://defragcon.com/">Defrag</a>, that we are calling <a href="http://apicommons.org">API Commons</a>.  The mission with API commons is to provide a simple and transparent mechanism for the copyright free sharing and collaborative design of API specifications, interfaces and data models.</p>
-<p>For a space that is about open access and interoperability the API industry has been very closed about their API designs, and after <a href="http://apievangelist.com/2013/06/02/helping-eff-urge-the-courts-to-block-copyright-claims-in-oracle-v-google-api-fight/">helping the EFF urge the courts to block copyright claims in the Oracle v. Google API fight</a>, Steve and I thought it would be a good idea to introduce an API commons that would help put the "open" into API designs and data models, and back into the API space in gernal.</p>
-<p>API Commons is build entirely on Github and is meant to act as a common index of API definitions and data models that <a href="http://apicommons.org/add-apis.html">anyone can add by generating what we are calling an API Commons Manifest</a> that points to your API definition(s). Using the existing layers of Github, anyone can fork, favorite or follow the best API design patterns and eventually help establish some clear best practices across any government or business sector.</p>
-<p>Everything you need to get going is on the site at <a title="apicommons.org" href="http://apicommons.org">apicommons.org</a>. You can join the discussion on the <a href="https://groups.google.com/forum/?hl=en#!forum/api-commons">Google Group</a> or by <a href="https://twitter.com/apicommons">following us on Twitter</a>. We are in early stages, but will be dedicating a great deal of time over the holidays to get more API definitions in the commons.</p>
-<p>3Scale and I strongly believe that API Commons is what the API industry needs to help deal with some of the clutter in the number of API designs, incentivize the development of open and common tooling around the best API designs and bring reuse, collaboration and copyright concerns out into the open.</p>
-<p>Also check out some of the great news coverage of API Commons over the last 24 hours:</p>
-<ul class="mainlist">
-<li><a href="http://techcrunch.com/2013/11/05/3scale-launches-api-commons-to-allow-developers-to-share-apis-under-creative-commons-licenses/">New API Commons Platform Allows Developers To Share APIs Under Creative Commons Licenses</a></li>
-<li><a href="http://blog.programmableweb.com/2013/11/05/api-commons-launched-share-your-api-code/">API Commons Launched: Share Your API Code</a></li>
-<li><a href="http://www.zdnet.com/at-last-an-api-commons-7000022849/">At last, an API Commons</a></li>
-<li><a href="http://www.forbes.com/sites/benkepes/2013/11/05/solving-the-tragedy-of-the-api-commons/">Solving The Tragedy Of The API Commons</a></li>
-<li><a href="http://www.wired.com/wiredenterprise/2013/11/api-commons/">Oracle Sued Google Over Android. But There&rsquo;s Hope For the Future</a></li>
-</ul>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/06/putting-the-open-in-api-with-the-api-commons/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/11/06/open-data-and-api-efforts-rendered-useless-when-privacy-is-ignored/">Open Data And API Efforts Rendered Useless When Privacy Is Ignored</a></h3>
-        <span class="post-date">06 Nov 2013</span>
-        <p><a href="http://www.opengovpartnership.org/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/federal-government/open-government-partnership.png" alt="" width="150" align="right" /></a></p>
-<p><a href="http://www.opengovpartnership.org/"> </a></p>
-<p><a href="http://www.opengovpartnership.org/">On the second anniversary of the </a><a href="http://www.opengovpartnership.org/">Open Government Partnership (OGP)</a>, where we are celebrating a "<a href="http://www.whitehouse.gov/the-press-office/2013/10/31/fact-sheet-marking-progress-second-anniversary-open-government-partnersh">global effort to encourage transparent, effective, and accountable governance</a>", and that:</p>
-<p style="padding-left: 30px;"><em>OGP has grown to 60 countries that have made more than 1000 commitments to improve the governance of more than two billion people around the globe.  OGP is now a global community of government reformers, civil society leaders, and business innovators working together to develop and implement ambitious open government reforms and advance good governance.</em></p>
-<p>That is some pretty significant platform growth! While reading this I'm reminded of how any amount of perceived growth and value delivered via an "open data or API platform" can be immediately muted by the omission of very fundamental building blocks like privacy.</p>
-<p>Let's review the building blocks of the Open Government Alliance:</p>
-<ul class="mainlist">
-<li><strong>Expand Open Data -&nbsp;</strong>Open Data fuels innovation that grows the economy and advances government transparency and accountability.  Government data has been used by journalists to uncover variations in hospital billings, by citizens to learn more about the social services provided by charities in their communities, and by entrepreneurs building new software tools to help farmers plan and manage their crops.  Building upon the successful implementation of open data commitments in the first U.S. National Action Plan, the new Plan will include commitments to make government data more accessible and useful for the public, such as reforming how Federal agencies manage government data as a strategic asset, launching a new version of Data.gov, and expanding agriculture and nutrition data to help farmers and communities.</li>
-<li><strong>Modernize the Freedom of Information Act (FOIA) -&nbsp;</strong>The FOIA encourages accountability through transparency and represents a profound national commitment to open government principles.  Improving FOIA administration is one of the most effective ways to make the U.S. Government more open and accountable.  Today, the United States announced a series of commitments to further modernize FOIA processes, including launching a consolidated online FOIA service to improve customers&rsquo; experience and making training resources available to FOIA professionals and other Federal employees.</li>
-<li><strong>Increase Fiscal Transparency -&nbsp;</strong>The Administration will further increase the transparency of where Federal tax dollars are spent by making federal spending data more easily available on USASpending.gov; facilitating the publication of currently unavailable procurement contract information; and enabling Americans to more easily identify who is receiving tax dollars, where those entities or individuals are located, and how much they receive.</li>
-<li><strong>Increase Corporate Transparency -&nbsp;</strong>Preventing criminal organizations from concealing the true ownership and control of businesses they operate is a critical element in safeguarding U.S. and international financial markets, addressing tax avoidance, and combatting corruption in the United States and abroad.  Today we committed to take further steps to enhance transparency of legal entities formed in the United States.</li>
-<li><strong>Advance Citizen Engagement and Empowerment -&nbsp;</strong>OGP was founded on the principle that an active and robust civil society is critical to open and accountable governance.  In the next year, the Administration will intensify its efforts to roll back and prevent new restrictions on civil society around the world in partnership with other governments, multilateral institutions, the philanthropy community, the private sector, and civil society.  This effort will focus on improving the legal and regulatory framework for civil society, promoting best practices for government-civil society collaboration, and conceiving of new and innovative ways to support civil society globally.</li>
-<li><strong>More Effectively Manage Public Resources -&nbsp;</strong>Two years ago, the Administration committed to ensuring that American taxpayers receive every dollar due for the extraction of the nation&rsquo;s natural resources by committing to join the Extractive Industries Transparency Initiative (EITI).  We continue to work toward achieving full EITI compliance in 2016.  Additionally, the U.S. Government will disclose revenues on geothermal and renewable energy and discuss future disclosure of timber revenues.</li>
-</ul>
-<p>How can you argue with that? Its very sensible set of open government platform building blocks right? However, when you look at the bigger picture you realize there is a significant building block, that us in the tech sector have realized is essential to a healthy platform ecosystem missing:</p>
-<ul class="mainlist">
-<li><strong>Citizen Data Privacy -</strong> Ensuring that government respects the online privacy of each and every U.S. citizen, preventing unwanted harvesting of private data or meta data that exists in cloud environments, computer and mobile devices as well as transported across telecommunications infrastructure locally or abroad. When privacy is compromised in the name of law enforcement or national security, the laws, rules and procedures around these accepted situations are made publicly accessible.</li>
-</ul>
-<p>It is great that our government is committed to expanding open data, increasing transparency and efficiently engaging citizens, and sensibly manage public resources. However if our government wants to act as an open platform, just like any private sector platform, they must respect user privacy.</p>
-<p>Without ensuring privacy for users, it doesn't matter how forward thinking your open data, information and API strategy is. Privacy and security are essential building blocks any private or public sector entity looking to build an open platform.</p>
-<p>Nice work around the Open Government Partnership, but without addressing the privacy of citizens it is rendered pretty useless.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/11/06/open-data-and-api-efforts-rendered-useless-when-privacy-is-ignored/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2013/10/22/deploy-api-public-google-spreadsheet-to-api/">Deploy API: Public Google Spreadsheet to API</a></h3>
-        <span class="post-date">22 Oct 2013</span>
-        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-google-docs.png" alt="" width="150" align="right" /></p>
-<p>I'm working on a series of simple scripts that help people deploy APIs from some of the most common data sources. I'm starting with a series of PHP scripts, and next up is a public Google Spreadsheet to API, using JSON stored in Github.</p>
-<p>For this PHP implementation, I'm using the <a href="http://www.slimframework.com/">SLIM framework</a>, which provides a dead simple REST framework you can use to deploy an API from a variety of data sources.   To begin deploying an API from your Google Spreadsheet datastore, download the REST library and upload to your server that runs PHP.</p>
-<p>Slim is pretty straightforward to work with, to add each API endpoint you just add a single PHP file under methods. For this how-to guide we are going to add a simple endpoint from our JSON products data store.</p>
-<script src="https://gist.github.com/kinlane/7104824.js"></script>
-<p>Next you just add an include reference in the index page for your slim implementation:</p>
-<script src="https://gist.github.com/kinlane/7104830.js"></script>
-<p>This API just uses ID, Name, Price and Description of the product, and queries by a simple query parameter. You can use this as a template for your own product database, adding and removing fields as you need, or completely retrofitting for any database table.  That is it, now you have a simple product API that pulls a list of products from a Google Spreadsheet data store.</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2013/10/22/deploy-api-public-google-spreadsheet-to-api/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

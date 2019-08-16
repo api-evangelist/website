@@ -129,6 +129,472 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/03/06/capital-one-devexchange-provides-an-important-banking-api-blueprint/">Capital One DevExchange Provides An Important Banking API Blueprint</a></h3>
+        <span class="post-date">06 Mar 2018</span>
+        <p><a href="https://developer.capitalone.com"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-banking-home-page.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>When you take a look at the banking API landscape in the United States, there is one clear leader in the game–Capital One. Their <a href="https://developer.capitalone.com/">DevExchange</a> program is miles ahead of every one of their competitors, giving them a significant head start when it comes to the banking API economy. Their approach to delivering APIs meets all of my minimum requirements for any successful API platform, and even exceeds it, providing what I’d consider to be a leading example blueprint that all banking API providers should be following.</p>
+
+<p>The Capital One DevExchange begins as any API operation should, with a dedicated portal located at developer.[domain]:</p>
+
+<ul>
+  <li><a href="https://developer.capitalone.com/">developer.capitalone.com</a></li>
+</ul>
+
+<p>After landing on the home page for the Capital One DevExchange you get everything you need to get up and running with the APIs they have:</p>
+
+<ul>
+  <li><a href="https://developer.capitalone.com/platform-documentation/getting-started/">Getting started</a></li>
+  <li><a href="https://developer.capitalone.com/platform-documentation/authorization-with-oauth-20/">Authentication</a></li>
+  <li><a href="https://developer.capitalone.com/platform-documentation/">Documentation</a></li>
+  <li><a href="https://developer.capitalone.com/platform-documentation/errors/">Errors</a></li>
+  <li><a href="https://developer.capitalone.com/sign-in/">Login</a></li>
+  <li><a href="https://developer.capitalone.com/sign-up">Registration</a></li>
+</ul>
+
+<p>The Capital One DevExchange provides four main groups of public APIs currently, started with access to account information in the following areas:</p>
+
+<ul>
+  <li>Retrieve account products - /deposits/account-products (GET)</li>
+  <li>Retrieve account product details - /deposits/account-products/{productId} (GET)</li>
+  <li>Create new account application - /deposits/account-applications (POST)</li>
+  <li>Retrieve out of wallet questions - /deposits/account-applications/{applicationId}/out-of-wallet (GET)</li>
+  <li>Answer out of wallet questions - /deposits/account-applications/{applicationId}/out-of-wallet (PUT)</li>
+  <li>Retrieve account application details - /deposits/account-applications/{applicationId} (GET)</li>
+</ul>
+
+<p>As well as some credit card offers, showcasing the products they have available:</p>
+
+<ul>
+  <li>Retrieve product listings - /credit-offers/products (GET)</li>
+  <li>Retrieve card products - /credit-offers/products/cards (GET)</li>
+  <li>Retrieve card products - /credit-offers/products/cards (GET)</li>
+  <li>Retrieve card products by type - /credit-offers/products/cards/{cardType} (GET)</li>
+  <li>Retrieve card product details - /credit-offers/products/cards/{cardType}/{productId} (GET)</li>
+</ul>
+
+<p>Which you can actually sign up for and do a pre-qualification via APIs:</p>
+
+<ul>
+  <li>Create prequalification check - /credit-offers/prequalifications (POST)</li>
+  <li>Create prequalification acknowledgment - /credit-offers/prequalifications/{prequalificationId} (POST)</li>
+  <li>Create applicant key - /credit-offers/applicant-details POST</li>
+</ul>
+
+<p>Get access to Capital One rewards via APIs:</p>
+
+<ul>
+  <li>Retrieve rewards accounts - /rewards/accounts (GET)</li>
+  <li>Retrieve rewards account details - /rewards/accounts/{rewardsAccountReferenceId} (GET)</li>
+</ul>
+
+<p>And details about merchants involved in transactions:</p>
+
+<ul>
+  <li>Retrieve merchant data - /merchant-insights/merchants (GET)</li>
+  <li>Refresh merchant details - /merchant-insights/merchants/{merchantId} (GET)</li>
+</ul>
+
+<p>This version of the API is available in a sandbox and production environments:</p>
+
+<ul>
+  <li><a href="https://developer.capitalone.com/platform-documentation/using-the-sandbox/">Sandbox</a></li>
+</ul>
+<p><a href="http://api.reimaginebanking.com/"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-hackathon-api.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>You can tell Capital One is moving cautiously with their public APIs, but they are definitely further along than other banks. Beyond what is publicly available in their sandbox and production environment they have another exploratory set of APIs coming from a project they call Nessie, <a href="http://api.reimaginebanking.com/">Capital One’s Hackathon API</a> that gives you access to a multitude of real public-facing data, such as ATM and bank branch locations, complete with mock customer account data. This set of APIs was used as part of a hackathon put on by the bank, but are worth showcasing as an example of where the bank is headed with their API road map.</p>
+
+<p>By providing a pretty robust stack of API paths for working with accounts:</p>
+
+<ul>
+  <li>Get all accounts - /accounts (GET)</li>
+  <li>Delete a specific existing account - /accounts/{id} (DELETE)</li>
+  <li>Get account by id - /accounts/{id} (GET)</li>
+  <li>Update a specific existing account - /accounts/{id} (PUT)</li>
+  <li>Get customer that owns the specified account - /accounts/{id}/customer (GET)</li>
+  <li>Get accounts by customer id - /customers/{id}/accounts (GET)</li>
+  <li>Create an account - /customers/{id}/accounts (POST)</li>
+</ul>
+
+<p>As well as bills that are associated with accounts:</p>
+
+<ul>
+  <li>Get all bills for a specific account - /accounts/{id}/bills (GET)</li>
+  <li>Create a bill - /accounts/{id}/bills (POST)</li>
+  <li>Delete a specific existing bill - /bills/{billId} (DELETE)</li>
+  <li>Get bill by id - /bills/{billId} (GET)</li>
+  <li>Update a specific existing bill - /bills/{billId} (PUT)</li>
+  <li>Get bills by customer id - /customers/{id}/bills (GET)</li>
+</ul>
+
+<p>Then API paths for managing deposits:</p>
+
+<ul>
+  <li>Get all deposits - /accounts/{id}/deposits (GET)</li>
+  <li>Create a deposit - /accounts/{id}/deposits (POST)</li>
+  <li>Delete a specific existing deposit - /deposits/{id} (DELETE)</li>
+  <li>Get deposit by id - /deposits/{id} (GET)</li>
+  <li>Update a specific existing deposit - /deposits/{id} (PUT)</li>
+</ul>
+
+<p>And for any details on loans:</p>
+
+<ul>
+  <li>Get all loans - /accounts/{id}/loans (GET)</li>
+  <li>Create a loan - /accounts/{id}/loans (POST)</li>
+  <li>Delete a specific existing loan - /loans/{id} (DELETE)</li>
+  <li>Get loan by id - /loans/{id} (GET)</li>
+  <li>Update a specific existing loan - /loans/{id} (PUT)</li>
+</ul>
+
+<p>Then providing insight into all purchases:</p>
+
+<ul>
+  <li>Get all purchases - /accounts/{id}/purchases (GET)</li>
+  <li>Create a purchase - /accounts/{id}/purchases (POST)</li>
+  <li>Get all purchases by account and merchant - /merchants/{id}/accounts/{accountId}/purchases (GET)</li>
+  <li>Get all purchases by merchant - /merchants/{id}/purchases (GET)</li>
+  <li>Delete a specific existing purchase - /purchases/{id} (DELETE)</li>
+  <li>Get purchase by id - /purchases/{id} (GET)</li>
+  <li>Update a specific existing purchase - /purchases/{id} (PUT)</li>
+</ul>
+
+<p>As well as bank account transfers:</p>
+
+<ul>
+  <li>Get all transfers - /accounts/{id}/transfers (GET)</li>
+  <li>Create a transfer - /accounts/{id}/transfers (POST)</li>
+  <li>Delete a specific existing transfer - /transfers/{transferId} (DELETE)</li>
+  <li>Get transfer by id - /transfers/{transferId} (GET)</li>
+  <li>Update a specific existing transfer - /transfers/{transferId} (PUT)</li>
+</ul>
+
+<p>And withdrawals:</p>
+
+<ul>
+  <li>Get all withdrawals - /accounts/{id}/withdrawals (GET)</li>
+  <li>Create a withdrawal - /accounts/{id}/withdrawals (POST)</li>
+  <li>Delete a specific existing withdrawal - /withdrawals/{id} (DELETE)</li>
+  <li>Get withdrawal by id - /withdrawals/{id} (GET)</li>
+  <li>Update a specific existing withdrawal - /withdrawals/{id} (PUT)</li>
+</ul>
+
+<p>Details about banking customers:</p>
+
+<ul>
+  <li>Get all customers - /customers (GET)</li>
+  <li>Create a customer - /customers (POST)</li>
+  <li>Get customer by id - /customers/{id} (GET)</li>
+  <li>Update a specific existing customer - /customers/{id} (PUT)</li>
+</ul>
+
+<p>As well as available merchants:</p>
+
+<ul>
+  <li>Get all merchants - /merchants (GET)</li>
+  <li>Create a merchant - /merchants (POST)</li>
+  <li>Get merchant by id - /merchants/{id} (GET)</li>
+  <li>Update a specific existing merchant - /merchants/{id} (PUT)</li>
+</ul>
+
+<p>Available ATMS:</p>
+
+<ul>
+  <li>Get all ATMs - /atms (GET)</li>
+  <li>Get ATM by id - /atms/{id} (GET)</li>
+</ul>
+
+<p>And Bank Branches:</p>
+
+<ul>
+  <li>Get all branches - /branches (GET)</li>
+  <li>Get branch by id - /branches/{id} (GET)</li>
+</ul>
+
+<p>I am not sure what Capital One’s intentions are with introducing these APIs to the main stack of public APIs, but they are still available within a separate Hackathon sandbox environment:</p>
+
+<ul>
+  <li><a href="http://api.reimaginebanking.com/">Hackathon API</a></li>
+</ul>
+
+<p>Beyond the sandbox, hackathon, and production APIs available, Capital One provides all the expected support and communication channels that you expect out of an active API program:</p>
+
+<ul>
+  <li><a href="https://developer.capitalone.com/support/">Support</a></li>
+  <li><a href="https://developer-support.capitalone.com/apex/DXSearchArticles">Knowledgebase</a></li>
+  <li><a href="https://developer.capitalone.com/blogs/">Blog</a></li>
+  <li><a href="https://twitter.com/CapitalOneDevEx">Twitter</a></li>
+</ul>
+
+<p>As well as not forgetting the required elements present from the legal department, helping set the tone for API engagements:</p>
+
+<ul>
+  <li><a href="https://www.capitalone.com/identity-protection/privacy/statement">Privacy policy</a></li>
+  <li><a href="https://developer.capitalone.com/single/terms-and-conditions/">Terms of service</a></li>
+</ul>
+
+<p><a href="https://developer.capitalone.com/open-source/"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-open-source.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p>Where the Capital One API program really begins to impress is with their usage of Github, and providing of open source solutions:</p>
+
+<ul>
+  <li><a href="https://github.com/capitalone">Capital One Github</a></li>
+  <li><a href="https://github.com/CapitalOne-DevExchange">Capital One Devexchange Github</a></li>
+  <li><a href="https://developer.capitalone.com/open-source/">Open Source</a></li>
+</ul>
+
+<p>It isn’t easy doing Open Source in a highly regulated industry, and Capital One not only is doing it, <a href="https://developer.capitalone.com/blog-post/open-source-in-a-regulated-environment-lessons-learned-on-our-open-source-journey-at-capital-one/">they actually share some of the story behind their struggle</a>. The open source projects they have been releasing, and the stories they’ve told about them on the blog tell just as important of a story as each of their APIs do. Further externalizing how the bank delivers technology at the bank, as well as with partners and 3rd party developers.</p>
+
+<p>The Capital One DevExchange is what ALL US banks should be emulating. This isn’t just about publicly available APIs. This is about being able to deliver APIs consistently, in ways that are in sync with your lines of business. The more you can deliver this publicly, tell the story of it, and release open source code that demonstrates the value it brings, the more you will be able to do this internally, across groups, and amongst your partners. The biggest mistake any bank can be making in 2018 is thinking doing APIs is purely about retail banking. It is really about how agile and effective your bank will be leverage web technology internally, and externally within your company.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/06/capital-one-devexchange-provides-an-important-banking-api-blueprint/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/05/serverless-like-microservices-is-about-understanding-our-dependencies-and-constraints/">Serverless, Like Microservices Is About Understanding Our Dependencies And Constraints</a></h3>
+        <span class="post-date">05 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/death-valley-national-park_dali_three_just_road.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I am not buying into all the hype around the recent serverless evolution in compute. However, like most trends I study, I am seeing some interesting aspects of how people are doing it, and some positive outcomes for teams who are doing it sensibly. I am not going all in on serverless when it comes to deploying or integrating with APIs, but I am using it for some projects, when it makes sense. I find AWS Lambda to be a great way to get in between the AWS API Gateway and backend resources, in order to conduct a little transformation. Keeping serverless as just one of many tools in my API deployment and integration toolbox, yet never going overboard with any single solution.</p>
+
+<p>I put serverless into the same section of my toolbox as I do microservices. Serverless is all about decoupling how I deploy my APIs, helping me keep things doing small, meaningful things behind each of my API paths. Serverless forces me to think through how I am decoupling my backend, and pushes me to identify dependencies, acknowledge constraints, and get more creative in how I write code in this environment. To do one thing, and do it well, I need an intimate understanding of where my data and other backend resources are, and how I can distill a unit of compute down to the smallest unit as I possibly can. Identifying, reducing, and being honest about what my dependencies are is essential to serverless working or not working for me.</p>
+
+<p>The challenge I’m having with serverless at the moment is that it can be easy to ignore many of the benefits I get from dependencies, while just assuming all dependencies are bad. Specifically around the frameworks I deploy as part of my API solutions. When coupled with AWS API Gateway this isn’t much of a problem, but all by itself, AWS Lambda doesn’t have all fo the other HTTP, transformation, header, request, and response goodness I enjoy from the API frameworks I’ve historically depend on. Showing me that understanding our dependencies is important, both good and bad. Not all dependencies are bad, as long as I am aware of them, have a knowledge of what they bring to the table, and it is a stable, healthy, and regularly evaluated relationships. This is a challenge I also come across regularly in microservices as well as serverless journeys, that we just throw things out for the sake of size, without thinking deeply about why we are doing something, and whether or not it is worth it.</p>
+
+<p>I can see plenty of scenarios where I will be thinking that a serverless approach is good, but after careful evaluation of dependencies and constraints, I abandon this path as an option. I’m guessing we’ll see a goldilocks style of serverless emerge that helps us find this sweet spot. Similar to what we are finding with the microservices evolution, in that micro isn’t always about small–it is often just about finding the sweet spot between big and small, hot and cold, dependent and independent. Being sensible about how we use the tools in our API toolbox, and realizing most of these approaches are more about the journey, than they are about the actual tool.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/05/serverless-like-microservices-is-about-understanding-our-dependencies-and-constraints/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/05/an-openapi-rules-engine/">An OpenAPI-Driven, API Governance Rules Engine</a></h3>
+        <span class="post-date">05 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/rules/9968073905_95ce575233_z.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>Phil Sturgeon (<a href="https://twitter.com/philsturgeon">@philsturgeon</a>) alerted me to a pretty cool project he is cooking up, called <a href="https://github.com/wework/speccy">Speccy</a>. Which provides a rules engine for validating your OpenAPI definitions. “Taking off from where <a href="https://twitter.com/PermittedSoc/">Mike Ralphson</a> started with linting in <a href="https://github.com/Mermade/swagger2openapi/">swagger2openapi</a>, Speccy aims to become the <a href="https://github.com/bbatsov/rubocop">rubocop</a> or <a href="https://eslint.org/">eslint</a> of OpenAPI”, and to “sniff your files for potentially bad things. “Bad” is objective, but you’ll see validation errors, along with special rules for making your APIs better.” Helping make sure your API definitions are as consistent as they possibly can be, and deliver on your API governance strategy (you have one right?)</p>
+
+<p>With Speccy, there are a default set of rules, things like ensuring you have a summary or a description for each API path:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"name": "operation-summary-or-description",
+	"object": "operation",
+	"enabled": true,
+	"description": "operation should have summary or description",
+	"or": ["summary", "description"]
+}
+</code></pre></div></div>
+
+<p>Or making sure you add descriptions to your parameters:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"name": "parameter-description",
+	"object": "parameter",
+	"enabled": true,
+	"description": "parameter objects should have a description",
+	"truthy": "description"
+}
+</code></pre></div></div>
+
+<p>Or making sure you include tags for each aPI path:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"name": "operation-tags",
+	"object": "operation",
+	"enabled": true,
+	"description": "operation should have non-empty tags array",
+	"truthy": "tags",
+	"skip": "isCallback"
+}
+</code></pre></div></div>
+
+<p>Then you can get more strict by requiring contact information:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"name": "contact-properties",
+	"object": "contact",
+	"enabled": true,
+	"description": "contact object should have name, url and email",
+	"truthy": [ "name", "url", "email" ]&lt;br /&gt;
+}
+</code></pre></div></div>
+
+<p>And make sure youi have a license applied to your API:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+	"name": "license-url",
+	"object": "license",
+	"enabled": true,
+	"description": "license object should include url",
+	"truthy": "url"
+}
+</code></pre></div></div>
+
+<p>Speccy is available <a href="https://www.npmjs.com/package/speccy">as a Node package</a>, which you can easily run at the command line. Speccy is definitely what is needed out there right now, helping us validate the growing number of OpenAPI definitions in our life. As many companies are thinking about how they can apply API governance across their operations, they should be looking at contributing to <a href="https://github.com/wework/speccy">Speccy</a>. It is something I’ve been talking with API service providers about for some time, but haven’t seen an open source answer emerge, that can help us develop rules for what we expect of our OpenAPI definitions.</p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/openapi-logo.png" align="right" width="25%" style="padding: 15px;" /></p>
+<p>My only feedback right now, is that we need lots of people using it, and helping contribute rules. Oh, and wrap it in an API, and make it available as an easy to use, and deploy containerized microservice. Then lets get to work on the Github Gist-driven marketplace of rules, where I can publish the rules I develop across the projects I’m working on, and of the clients I consult with. Let’s get to work making sure there are a wealth of rules, broken down into different categories for API providers to choose from. Then let’s get API tooling and service providers to begin baking a Speccy rules engine into their solutions, and allow for the import and management of open source rules.</p>
+
+<p>Speccy only works with OpenAPI 3.0, which makes sense if we are going to be moving forward with this conversation. Spreccy is how we will validate that banking APIs are PSD2 compliant. It is how we will ensure healthcare APIs support the FHIR specification. I have other suggestions for the CLI and API usage of Speccy, but I’d rather see investment in the available rules, before I make too many functional suggestions. I think the rules are where we will begin to define what we are looking for in an OpenAPI rules engine, and that should drive the Speccy features which end up on the road map.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/05/an-openapi-rules-engine/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/05/people-seem-to-want-lego-kits-and-not-a-bucket-of-lego-blocks/">People Seem to Want Lego Kits and Not a Bucket of Lego Blocks When It Comes To Doing APIs</a></h3>
+        <span class="post-date">05 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/legos/lego-millenium-falcon-instructions.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p>While I wish everyone saw the modular potential of APIs and microservices like I do, I’ve come to the realization that most people are just interested in ready to go kits that walk them through every detail of doing APIs, rather than actually playing, learning, evolving, and learning to be productive with a big bucket of APIs. I’m not just focusing on business users here, I am talking about a significant portion of the developers I come across, who really don’t seem that interested in learning to apply API concepts, and understanding when and where to use them, they just want a set of instructions that walk them through each step of deploying an API.</p>
+
+<p>I actually am a proponent of there being more boxed, lego style API kits that teach you how to build the product API, task API, press release API, and other common implementations. Robust, detailed, ready-to-go API implementations that would walk people through each and every step of defining, designing, deploying, managing, monitoring, testing, and documenting their API. I feel like this would significantly help folks think through what are healthy API practices, and be introduced to different ways of thinking around APIs. However, I do not want people to become reliant on only being able to operate within this paradigm, and not actually be able to fix, evolve, and deliver their own custom API solutions, using the healthy practices they are being introduced to.</p>
+
+<p>People seem to just want shortcuts, and things done for them. People want the solutions packaged and delivered to their doorstep. They seem unable to be able to find the solutions on their own, or even be able to absorb a lesson delivered via a packaged solution. I’m not sure what the cure for this condition is. It is hard to tell whether it is vendor induced, or (would be) API provider induced. Have people been conditioned by vendors to just be spoon fed solutions? Or are people just lazy, and not interested in truly learning, truly tackling their technical debt, and finding a new path forward? IDK. I’m feeling like it is probably a little of both, feeding off of each other.</p>
+
+<p>I get why the pre-built, ready-to-go Lego API kit is appealing. Everyone wants to have a full-blown millennium falcon when they are done working on a project, and not some blocky mcsquare flying machine. However, it takes time before you are able to deliver at that scope. You need to practice building smaller implementations, and yes playing with other pre-built kits, doing some reverse engineering, in addition to some forward engineering. I’m guessing this all comes down to if you truly want to know and understand, or if you are just looking for solutions. If you are just looking for solutions, I’m guessing in 5 years you’ll be eagerly buying the next solution for the API mess you are putting into place currently. It is the natural evolution of how technology gets bought and sold.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/05/people-seem-to-want-lego-kits-and-not-a-bucket-of-lego-blocks/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/05/the-need-for-standardized-api-plans-and-pricing-to-compete-with-cloud-providers/">The Need for Standardized API Plans and Pricing to Compete with Cloud Providers</a></h3>
+        <span class="post-date">05 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/docks_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><a href="https://cloudplatform.googleblog.com/2018/02/introducing-Cloud-Billing-Catalog-API-GCP-pricing-in-real-time.html">Google launched their Cloud Billing Catalog API, providing access to thee pricing for their cloud API catalog</a> the other day. <a href="https://docs.microsoft.com/en-us/azure/billing/">Azure has their billing API</a>, and <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/Welcome.html">AWS has their cost explorer API service</a>, showing that programmatic access to what API resources cost, as well as management of usage, billing, invoicing, and other aspects of doing business with APIs is becoming the normal mode of operating an API platform.</p>
+
+<p>I’ve long used AWS, Google, and increasingly Azure as a blueprint for what us smaller API providers should be doing. They are full of positive and negative lessons for any API provider. However, I’m starting to see what they are doing as not just a blueprint, but potentially something that will force many of us API providers out of businesses if we cannot emulate what they are doing at scale. The tractor beam that is the cloud providers is strong. They bring a lot of benefits to the table. So much so, it is getting harder and harder for independent API providers to compete. Offering benefits to consumers that will become deal breakers with using other 3rd party API providers services, pushing API consumers to stay within their chosen cloud platform walled garden.</p>
+
+<p>As a developer, if I can programmatically manage the plans, pricing, and billing for ALL the APIs I use via AWS, Google, and Azure, but I have to manually manage this across many different 3rd party providers, I am going to be hesitant when it comes to adopting any new services that aren’t within my cloud domain. As I depend on more APIs, the benefits of being able to programmatically manage the business of my API consumption is becoming increasingly critical. If the individual 3rd party API providers I use don’t begin to offer APIs for managing the business of my API consumption, and adopting a standardized interface across all the APIs I depend on, I’m going to favor my cloud native API solutions over the 3rd party, and custom ones–giving cloud providers a significant advantage.</p>
+
+<p>It is something that smaller API providers are going to have to start thinking about, and stop being special little snowflakes, and consider how they can start standardizing and being interoperable. Otherwise the cloud API providers are going to continue to gain marketshare, and everyone will just use the APIs available to use in the cloud. Reducing the competition, diversity, and utility that the API sector has become known for. We will just use Amazon, Google, and Azure APIs, and if they don’t have it, it probably won’t be done. Innovation will only occur within the cloud marketplaces, and be way less vibrant than the API sector we’ve enjoyed over the last decade.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/05/the-need-for-standardized-api-plans-and-pricing-to-compete-with-cloud-providers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/02/thoughts-on-the-schema-org-webapi-type-extension/">Thoughts On The Schema.Org WebAPI Type Extension</a></h3>
+        <span class="post-date">02 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png" width="30%" align="right" style="padding: 15px;" /></p>
+<p>I’m putting some thought into <a href="https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types">the Schema.Org WebAPI Type Extension proposal</a> by Mike Ralphson (Mermade Software) and Ivan Goncharov (APIs.guru), to “facilitate better automatic discovery of WebAPIs and associated machine and human-readable documentation”. It’s an interesting evolution in how we define APIs, in terms of API discovery, but I would also add potentially at “execute time”.</p>
+
+<p>Here is what a base WebAPI type schema could look like:</p>
+
+<p>```{</p>
+
+<p>“@context”: “http://schema.org/”,</p>
+
+<p>“@type”: “WebAPI”,</p>
+
+<p>“name”: “Google Knowledge Graph Search API”,</p>
+
+<p>“description”: “The Knowledge Graph Search API lets you find entities in the Google Knowledge Graph. The API uses standard schema.org types and is compliant with the JSON-LD specification.”,</p>
+
+<p>“documentation”: “https://developers.google.com/knowledge-graph/”,</p>
+
+<p>“termsOfService”: “https://developers.google.com/knowledge-graph/terms”,</p>
+
+<p>“provider”: {</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@type": "Organization",
+
+"name": "Google Inc."   } }```
+</code></pre></div></div>
+
+<p>Then the proposed extensions could include the following:</p>
+
+<ul>
+  <li><strong>versions</strong> (OPTIONAL array of <a href="https://schema.org/Thing">thing</a> -&gt; <a href="http://meta.schema.org/Property">Property</a> -&gt; <a href="http://schema.org/softwareVersion">softwareVersion</a>). It is RECOMMENDED that APIs be versioned using [semver]</li>
+  <li><strong>entryPoints</strong> (OPTIONAL array of <a href="https://schema.org/Thing">Thing</a> -&gt; <a href="https://schema.org/Intangible">Intangible</a> -&gt; <a href="https://schema.org/EntryPoint">EntryPoint</a>)</li>
+  <li><strong>license</strong> (OPTIONAL, <a href="http://schema.org/CreativeWork">CreativeWork</a> or <a href="http://schema.org/URL">URL</a>) - the license for the design/signature of the API</li>
+  <li><strong>transport</strong> (enumerated <a href="http://schema.org/Text">Text</a>: HTTP, HTTPS, SMTP,  MQTT, WS, WSS etc)&lt;/p&gt;</li>
+  <li><strong>apiProtocol</strong> (OPTIONAL, enumerated <a href="http://schema.org/Text">Text</a>:  SOAP, GraphQL, gRPC, Hydra, JSON API, XML-RPC, JSON-RPC etc)</li>
+  <li><strong>webApiDefinitions</strong> (OPTIONAL array of <a href="http://schema.org/EntryPoint">EntryPoints</a>) containing links to <a data-link-type="dfn" href="#machine-readable-api-definition" id="ref-for-machine-readable-api-definition-1">machine-readable API definition</a>s</li>
+  <li><strong>webApiActions</strong> (OPTIONAL array of potential <a href="http://schema.org/Action">Actions</a>)</li>
+</ul>
+
+<p>The webApiDefinitions (EntryPoint) contentType property contains a reference to one of the following conten types:</p>
+
+<ul>
+  <li><strong>OpenAPI / Swagger in JSON</strong> - application/openapi+json or application/x-openapi+json</li>
+  <li><strong>OpenAPI / Swagger in YAML</strong> - application/openapi</li>
+  <li><strong>RAML</strong> - application/raml+yaml</li>
+  <li><strong>API Blueprint in markdown</strong> - text/vnd.apiblueprint</li>
+  <li><strong>API Blueprint parsed in JSON</strong> - application/vnd.refract.parse-result+json</li>
+  <li><strong>API Blueprint parsed in YAML</strong> - application/vnd.refract.parse-result+yaml</li>
+</ul>
+
+<p>Then the webApiActions property brings a handful of actions to the table, with the following being suggested:</p>
+
+<ul>
+  <li><strong>apiAuthentication</strong> - Links to a resource detailing authentication requirements. Note this is a human-readable resource, not an authentication endpoint</li>
+  <li><strong>apiClientRegistration</strong> - Links to a resource where a client may register to use the API</li>
+  <li><strong>apiConsole</strong> - Links to an interactive console where API calls may be tested</li>
+  <li><strong>apiPayment</strong> - Links to a resource detailing pricing details of the API</li>
+</ul>
+
+<p>I fully support extending the Schema.org WebAPI vocabulary in this way. It adds all the bindings needed to make the WebAPI type executable at runtime, as well as it states at discovery time. I like the transport and protocol additions, helping ensure the WebAPI vocabulary is as robust as it possibly can. webApiDefinitions provides all the technical details regarding the surface area of the API we need to actually engage with it at runtime, and webApiActions begins to get at some of the business of APIs friction that exists at runtime. Making for an interesting vocabulary that can be used to describe web APIs, which also becomes more actionable by providing everything you need to get up and running.</p>
+
+<p>The suggestions are well thought out and complete. If I was to add any elements, I’d say it also needs a support link. There will be contact information embedded within the API definitions, but having a direct link along with registration, documentation, terms of service, authentication, and payment would help out significantly. I would say that the content type to transport and protocol coverage is deficient a bit. Meaning you have SOAP, but not referencing WSDL. I know that there isn’t a direct definition covering every transport and protocol, but eventually it should be as comprehensive as it can. (ie. adding AsyncAPI, etc. in the future)</p>
+
+<p>The WebAPI type extensions reflect what we have been trying to push forward with our <a href="http://apisjson.org">APIs.json</a> work, but comes at it from a different direction. I feel there are significant benefits to having all these details as part of the Schema.org vocabulary, expanding on what you can describe in a common way. Which can then also be used as part of each APIs requests, responses, and messages. I don’t see APIs.json as part of a formal vocabulary like this–I see it more as the agile format for indexing APIs that exist, and building versatile collections of APIs which could also contain a WebAPI reference.</p>
+
+<p>I wish I had more constructive criticism or feedback, but I think it is a great first draft of suggestions for evolving the WebAPI type. There are other webApiActions properties I’d like to see based upon my APIs.json work, but I think this represents an excellent first step. There will be some fuzziness between documentation and apiConsole, as well as gaps in actionability between apiAuthentication, and apiClientRegistration–thinks like application creation (to get keys), and opportunities to have Github, Twitter, and other OpenID/OAuth authentication, but these things can be worked out down the road. Sadly there isn’t much standardization at this layer currently, and I see this extension as a first start towards making this happen. As I said, this is a good start, and we have lots of work ahead as we see more adoption.</p>
+
+<p>Nice work Mike and Ivan! Let me know how I can continue to amplify and get the word out. We need to help make sure folks are describing their APIs using Schema.org. I’d love to be able to automate the discovery of APIs, using existing search engines and tooling–I know that you two would like to see this as well. API discovery is a huge problem, which there hasn’t been much movement on in the last decade, and having a common vocabulary that API providers can use to describe their APIs, which search engines can tune into would help move us further down the road when it comes to having more robust API discovery.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/02/thoughts-on-the-schema-org-webapi-type-extension/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2018/03/01/an-observable-industry-level-directory-of-api-providers-and-consumers/">An Observable Industry Level Directory Of API Providers And Consumers</a></h3>
+        <span class="post-date">01 Mar 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/vancouver_diego_rivera1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’ve been breaking down the work on banking APIs coming out of <a href="http://apievangelist.com/2018/02/21/what-is-open-banking-in-the-uk/">Open Banking in the UK</a> lately. I recently took all their <a href="http://open.banking.blueprint.apievangelist.com/">OpenAPI definitions and published as a demo API developer portal</a>. Bringing the definitions out of the shadows a little bit, and showing was is possible with the specification. Pushing the project forward some more today I published <a href="http://open.banking.blueprint.apievangelist.com/#Open Banking - Directory APIs">the Open Banking API Directory specification to the project</a>, showing the surface area of the very interesting, and important component of open banking APIs in the UK.</p>
+
+<p>The Open Banking Directory provides a pretty complete, albeit rough and technical approach to delivering observability for <a href="http://apievangelist.com/2018/02/26/the-banking-api-actors-in-the-uk/">the UK banking industry API ecosystem actor layer</a>. Everyone involved in the banking API ecosystem in UK has to be registered in the directory. It provides profiles of the banks, as well as any third party players. It really provides an unprecedented, industry level look at how you can make API ecosystems more transparent and observable. This thing doesn’t exist at the startup level because nobody wants to be open with the number of developers, or much else regarding the operation of their APIs. Making any single, or industry level API ecosystem, operate as black boxes–even if they claim to be an “open API”.</p>
+
+<p>Could you imagine if API providers didn’t handle their own API management layer, and an industry level organization would handle the registration, certification, directory, and dispute resolution between API providers and API consumers? Could you imagine if we could see the entire directory of Facebook and Twitter developers, understand what businesses and individuals were behind the bots and other applications? Imagine if API providers couldn’t lie about the number of active developers, and we knew how many different APIs each application developers used? And it was all public data? An entirely different API landscape would exist, with entirely different incentive models around providing and consuming gAPIs.</p>
+
+<p>The Open Banking Directory is an interesting precedent. It’s not just an observable API authentication and management layer. It also is an API. Making the whole thing something that can be baked into the industry level, as well as each individual application. I’m going to have to simmer on this concept some more. I’ve thought a lot about collective API developer and client solutions, but never anything like this. I’m curious to see how this plays out in a heavily regulated country and industry, but also eager to think about how something like this might work (or not) in government API circles, or even in the private sector, within smaller, less regulated industries.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/03/01/an-observable-industry-level-directory-of-api-providers-and-consumers/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/02/28/an-open-banking-blueprint-api-portal/">An Open Banking API Portal Blueprint</a></h3>
         <span class="post-date">28 Feb 2018</span>
         <p>I have been learning all about <a href="https://www.openbanking.org.uk/">the banking API efforts out of Open Banking in the UK lately</a>. They are evolving a set of read / write account and transaction API, as well as public data APIs for some of the common information 3rd party developers are looking to get their hands on. I'm intrigued with the traction the organization has gotten, and I want to be able to fully understand what they are developing, as well help contribute where I can.</p>
@@ -2128,302 +2594,6 @@ API is not REST. It is one tool in my toolbox. API deployment and integration is
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2018/02/03/api-is-not-just-rest/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/02/03/a-regulatory-subway-map-for-psd2/">A Regulatory Subway Map For PSD2</a></h3>
-        <span class="post-date">03 Feb 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/talks/api-days-paris-2018/api-days-paris-2018-a-regulatory-subway-map-for-psd2.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p><em>This is one of my talks from <a href="http://www.apidays.io/events/paris-2017">APIDays Paris 2018</a>. Here is the abstract: Understanding the PSD2 regulations unfolding for the banking industry is a daunting challenge for banks, aggregators, and regulators, let alone when you are an average user, journalist, or analyst trying to make sense of things. As the API Evangelist I have used a common approach to mapping out transit systems using the universally recognized subway map introduced by Harry Beck in London in the early 20th century. I’m taking this mapping technique and applying it to the PSD2 specification, helping provide a visual, and interactive way to navigating this new regulatory world unfolding in Europe. Join me for an exploration of API regulations in the banking industry, and how we can use a subway and transit map to help us quickly understand the complexities of PSD2, and learn what takes to get up and running with this new definition for the API economy.</em></p>
-
-<p><strong>Using Transit As API Analogy</strong><br />
-I’ve been fascinated with transit systems and subway maps for most of my adult life. Recently I’ve begin thinking about the parallels between complex municipal transit systems, and complex API infrastructure. Beginning in 2015, I started working to see if I could apply the concept of a subway map to the world of APIs, not just as a visualization of complex API systems, but as a working interface to discover, learn about, and even govern hundreds, or even thousands of APIs working in concert. While very much a physical world thing, transit systems still share many common elements with API infrastructure, spanning multiple disparate systems, operated by disparate authorities, possessing legacy as well as modern infrastructure, and are used by many people for work and in their personal lives.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/paris-metro.png" width="100%" /></p>
-
-<p>While the transit system isn’t a perfect analogy for modern API infrastructure, there is enough there to keep me working to find a way to apply the concept, and specifically the transit map to helping us make sense of our API-driven systems. I’ve called my work API Transit, leaning on both the noun definition of transit, “the carrying of people, goods, or materials from one place to another”, as well as the verb, “pass across or through (an area)”. The noun portion reflects the moving of our digital bits around the web using APIs, while the verb dimension helps us understand what is often called the API lifecycle, but more importantly the governance that each API should pass through as it matures, and continues to move our important digital bits around.</p>
-
-<p><strong>The History of Subway Maps</strong><br />
-The modern approach to mapping transit systems can be traced back to Henry Beck who created the now iconic map of the London Underground in 1933. The methodology was decoupled from earlier ways of mapping and communicating around transit resources, in a way that was focused on how the resources would be experienced by end-users, evolving beyond a focus on the transit resources themselves, and their location in our physical world. At the beginning of the 20th century, subway maps were still being plotted along roads and rivers, leaving them coupled to legacy elements, and ways of thought. By 1915, public transit engineers like Henry Beck were beginning to rethink how they mapped the transit infrastructure, in a way that helped them better communicate their increasingly complex infrastructure internally, but most importantly, in a way that helped them communicate externally to the public.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/talks/november-2015/Beck_Map_1933.jpg" width="100%" /></p>
-
-<p>This is what I’m looking to do with applying 20th century transit infrastructure mapping while applying it to 21st century digital API transit infrastructure. We are needing to get people(s) bits, and digital goods and materials around the web, while also understanding how to develop, discover, operate and manage this infrastructure in a consistent, and intuitive way. However, API infrastructure is rapidly growing, and with the introduction of microservices becoming increasingly complex, and difficult to logically map out the increasingly evolving, shifting, and moving API landscape. I’m hoping to suspend reality a little bit as Henry Beck did, and take utilize the same visual cues to begin to visualize API infrastructure in a way that is familiar to not just developers, but hopefully regulators, and average consumers. Much like the transit system of any major city, initially an API transit system will seem overwhelming, and confusing, but with time and experience it will come into focus, and become a natural part of our daily lives.</p>
-
-<p><strong>API Transit Applied To Governance</strong><br />
-Over the last two years I have been actively working to apply the API transit model to the concept of API governance. Beginning with API design, I have been looking for a way to help us understand how to consistently craft APIs that meet a certain level of quality set by a team, company, or even an entire industry. I’ve pushed this definition to include many of the almost 100 stops along the API lifecycle I track on as part of my work as the API Evangelist. Allowing API governance transit maps to be crafted, which can be used to help understand API governance efforts, but also help be applied to actually executing against this governance framework. Delivering the verb dimension of API transit, to “pass across or through (an area)”, allowing each API or microservice to regularly pass through each area, line, or stop of each API Transit governance map.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/api-governance-subway-map.png" width="100%" /></p>
-
-<p>API Transit began as a way to define and visualize the API lifecycle for me, acknowledging that the lifecycle is rarely ever a straight line. Often times it begins as that, but then over time it can become a mashup of different areas, lines, and stops that will need to be realized on a regular basis, on a one time basis, or any other erratic combination our operations can conceive of. With API Transit applied as an API governance model, I wanted to push the analogy even further, and see if I can push it to accommodate an individual API definition, or even a complex set of microservices working in concert. I began playing with a variety of existing API implementations, looking for one that could be used to tell a bigger story of how the transit model could be use beyond mapping how buses, trains, and other transit vehicles operate.</p>
-
-<p><strong>API Transit For PSD2 Landscape</strong><br />
-To push the API transit concept further, I took the Payment Services Directive 2 (PSD2) governing banking APIs in Europe, to see what might be possible when it comes to mapping out API infrastructure in a impactful way. I was able to easily map out lines for some of the most common aspects of PSD2, visualizing accounts, transactions, customers, and then eventually every other stop I wanted to include. The trick now, is how to I articulate shared stops, transfer stations, and other common patterns that exist as part of the PSD2 specification. I didn’t want to just visualize the banking regulations, I want to create an interactive visualization that can be experienced by developers, regulators, and even end-users.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/psd2-transit.png" width="100%" /></p>
-
-<p>The HTML Canvas transit map solution I’m using allows me to plot each line, and stop, and give each stop a label as well as a link. This allows me to provide much more detail about each stop, allowing someone exploring the specification to obtain much more information about each aspect of how the PSD2 specification is put to use. The resulting API transit map for the PSD2 landscape is pretty crude, and not very attractive. It will take much more work to bring each line in alignment, and allowing for overlap and redundancy to exist across lines. The reasons behind each line and stop will be different than a physical transit map, but there are still existing constraints I need to consider as a craft each transit map. The process is very rewarding, and helps me better understand each intimate detail of the PSD2 specification, something I’m hoping will eventually be passed on visually, and experimentally to each map user.</p>
-
-<p><strong>API Transit Is OpenAPI Defined</strong><br />
-As part of my rendering of the API Transit map for the PSD2 landscape, I was able to generate the HTML5 Canvas using the OpenAPI for the PSD2 API. Each line was created by the tags applied across APIs, and each stop was created to reflect each individual API method available. Providing a machine readable set of instructions to quantify what the structure of the landscape should be. I feel that the tagging of each API method can be improved, and used as the key driver of the how each API transit map is rendered. Something that will be used to make sense of complex renderings, as well as deliver on much more simplified, distilled versions to help make the landscape more accessible to non-developers.</p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/openapi-psd2.png" width="75%" /></p>
-
-<p>The details present as part of each PSD2 API path, method, parameters, responses, and schema can be rendered as part of the information provided with each stop. Providing a clear, but detailed representation of each stop within the API Transit system, from a machine readable core which will be used to make the API Transit map more interactive, as well as part of a larger continuous deployment and integration experience. While each stop along each PSD2 line will not always be linear in nature, this approach allows for stops to be organized in a meaningful order, driven by a set of common machine readable rules that can be versioned, evolved over time, and used throughout the API Transit system, and tooling that is deployed to keep the API Transit system operational.</p>
-
-<p><strong>API Transit Has Hypermedia Engine</strong><br />
-With the ability to map out an overall API governance system, as well as a set of microservices that meet a specific industry objective, I needed a way to put in all into motion, so it could work together as a complete API transit system. I chose hypermedia to be the engine for the interaction layer, and OpenAPI to be the definition for each individual API. Hypermedia is used as a scaffolding for each area, line, and stop along the transit system, allowing each API to be navigated, but in a way that each API could also navigate any overall API governance model. Introducing the concept that an API could be experienced by any human, and any API governance model could be experienced by an API–again, allowing it to “pass across or through (an area)”, thus API Transit.</p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/psd2-hypermeida-engine.png" width="75%" /></p>
-
-<p>Each API has a machine readable OpenAPI definition allowing requests and responses to be made against the surface area of the API as it is explored via the API Transit experience, much like interactive documentation provides already. However, the same OpenAPI definition allows the API to also be validated against overall API governance practices, ensuring certain design standards are met. I’m also playing with the use a machine readable APIs.json index for each API, in addition to the OpenAPI definition, allowing governance to be easily expanded to other API governance lines like management, documentation, pricing, support, terms of service, and other aspects of API operations not defined in an OpenAPI, but could be indexed within an APIs.json document.</p>
-
-<p><strong>API Transit Runs As Github Repository</strong><br />
-To continue evolving on the API Transit experience, I’ve begun deploying the API Transit map, with OpenAPI core, and hypermedia engine to Github for continuous deployment, and hosting of the API Transit map using Github Pages. Github, combined with Github Pages, and the static CMS solution Jekyll introduces an interesting opportunity for bringing each API Transit map to life. Jekyll transforms the hypermedia engine, and each API definition into a collection of objects which can be referenced with the API Transit map using the Liquid syntax. This allows each area, line, and stop to be easily traveled, moving from stop to stop, transferring between lines, and consuming rich information all along the way.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/talks/apistrat-portland/jekyll-plus-github.png" width="100%" /></p>
-
-<p>Running each API Transit map makes exploring an interactive experience, but it also makes the experience easily part of any continuous integration or deployment pipeline, using Git or the Github API to engage with, or evolve the API Transit definition. This makes each API definition seamlessly integrated with actual deployment workflows, while also making API governance also part of these workflows, helping realize API testing, monitoring, validation, and other elements of the build process. With seamless integration as part of existing continuous deployment and integration workflows, I can easily envision a future where API Transit maps aren’t just interactive, but they are continually changing, streaming, and visually updated in real time.</p>
-
-<p><strong>Each Stop Filled With Information</strong><br />
-Each stop along an API Transit line is defined by its OpenAPI path, and navigated to by the hypermedia engine, but that is just the beginning. The hypermedia object for each stop contains the basics like the name and description of the stop, as well as the reference to the path, method, parameters, responses, and schema in the OpenAPI, but it also can possess other fields, images, video, audio, and links that deliver rich information about each individual stop. The hypermedia engine allows us to define and evolve these over time without breaking the client, which is the API Transit map. Providing an huge opportunity to educate as well as implement governance at each stop along the API Transit line(s).</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/multi-modal-ddot.jpg" width="100%" /></p>
-
-<p>Since a stop can be along an API governance line, or along an individual API line, the opportunity for education is enormous. We can educate developers about healthy API design practices, or we can educate a developer about a specific API method, where the healthy API design practices can be fully realized. With this approach to using Github Pages, Jekyll, and a hypermedia engine as an interactive CMS, there is a pretty significant opportunity to make the API Transit experience educational and informative for anyone exploring. Each developer, aggregator, regulator, and even end-users can take control over which aspects of the PSD2 specification they wish to engage with and learn about, allowing for the PSDS API Transit to serve as wide of an audience possible.</p>
-
-<p><strong>Map Progress Of Individual Banks</strong><br />
-While there is an OpenAPI, and now API Transit map for the overall PSD2 specification. I will be using the approach to track on the evolution of each individual bank in Europe being impacted by the regulation. Ideally each bank will actively maintain and publish their own OpenAPI definition, something I will be actively advocating for, but ultimately I know the way things end up working in the real world, and I’ll have to maintain an OpenAPI definition for many of the banks, scraping them from the documentation each bank provides, and SDKs available on Github. I will use this as a literal map of the progress for each individual bank, and how compliant they are with EU regulation.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/psd2/bank-single.png" width="100%" /></p>
-
-<p>Each individual bank PSD2 API Transit map will allow me to navigate the APIs for each bank, including URLs, and other information that is unique to each provider. I will be using APIs.json to track index API operations, which I will work to bring out as visual elements through the API Transit map experience. In theory, each banks APIs will be an exact copy of the master PSD2 specification, but I’m guessing more often than not, when you overlay the master PSD2 API Transit with each individual bank’s API Transit map, you are going to see some differences. Some differences will be positive, but most will demonstrate deficiencies and deviation from the overall guidance provided by EU regulatory agencies.</p>
-
-<p><strong>Compare Over PSD2 To Individual Banks</strong><br />
-I am using the hypermedia engine for the API Transit map to crawl each individual banks implementation to deliver the overlap map I discussed. I’m working on a way to show the differences between the master PSD2 specification, and one or many individual PSD2 API implementations. I’m not just looking to create an overlay map for visual reference, I will actually crawl the OpenAPI for each individual bank and output a checklist of which paths, parameters, and schema they do not support, ensuring their definition matches the master PSD2 specification. The first approach to doing this will be about comparing OpenAPI definitions, with a second dimension actually running assertions against the API for those that I have access to.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/psd2/bank-comparison.png" width="100%" /></p>
-
-<p>There will be too much information to show on a single API Transit map, especially if we are comparing multiple banks at once. There will need to be a report format, accompanying a PSD2 API Transit map overlay showing the differences at the overall line and stop level. The programmatic comparison between the master PSD2 API and each of the banks will be easy to accomplish using the hypermedia engine, as well as the detailed OpenAPI definition. What will prove to be more challenging, is to create a meaningful representation of that map that allows the differences to be visualized, as well as the detail that is missing or present to be navigated via an aggregate Github repository.</p>
-
-<p><strong>Apply Governance To Individual Banks</strong><br />
-In addition to comparing the OpenAPI definitions of individual banks against the master PSD2 OpenAPI definition, I’m using the API Transit hypermedia engine to compare each individual API against the overall API governance. At first the API governance will just be about the API design elements present in the OpenAPI definition for each bank’s API. I will be looking for overall design considerations that may or may not be present in the master PSD2 specification, as well as beginning to add in additional API governance areas like testing, monitoring, performance, documentation, and other areas I mentioned earlier, which will be tracked via an APIs.json index.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/api-governance-subway-map.png" width="100%" /></p>
-
-<p>There are a number of details I’d like to see banks provide that isn’t covered as part of the PSD2 guidance. Having an API is only the beginning of usable banking solution for 3rd party applications. There needs to be documentation, support, and other elements present, or a well designed, and PSD2 compliant doesn’t mean much. I’m using API Transit to take the governance of PSD2 implementations beyond what the EU has put into motion. Taking what I know from the wider API sector and getting to work to map out, validate, and rank banking APIs regarding how easy to use, responsive, and usable their PSD2 APIs are. Making sure 3rd party developers, aggregators, and regulators can get at the APIs that are supposed to be defining their compliance.</p>
-
-<p><strong>Use to Map Out Countries &amp; Regions</strong><br />
-Using API Transit, I will be aso zooming out and mapping out the PSD2 landscape for individual countries, and regions. Creating separate transit maps that allow each country to be navigated, using the API Transit hypermedia engine to crawl each banks API Transit system map, and eventually provide aggregate comparison tools to see how different banks compare. With a machine readable index of each country, as well as individual indexes of each bank, the entire PSD2 regulatory landscape will become explorable via a series of API transit maps, as well as programmatically using the hypermedia engine present for each individual bank API implementation.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/psd2/coountries.png" width="100%" /></p>
-
-<p>API Transit is meant to help map out the complexity of individual API systems, as well as the overall API governance in place. It will also enable the mapping of the complexity of many implementations across cities, regions, and countries. Allowing for regulatory tooling to eventually be developed on top of the thousands of Github repositories that will be created, housing each individual banks API Transit maps. Leveraging the Github API, Git, and the hypermedia and OpenAPI core of each individual API Transit implementation. Allowing for searching, reporting, auditing, and other essential aspects of making sure PSD2 is working.</p>
-
-<p><strong>Making Sense Of Complex API Landscapes</strong><br />
-The goal of API Transit is to make sense of complex API landscape. Tracking the details of thousands of API operations across the EU countries who are required to be compliant in 2018. Providing machine readable blueprints of the regulation, as well as each individual bank that is required to be compliant, and each individual detail of what that compliance means.  Then tying it all together with a hypermedia engine that allows it to be explored by any system or tooling, with a familiar transit map on top of it all–providing a way for humans to explore and navigate this very complex banking API landscape.</p>
-
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/losangelescloudy/blue_circuit/file-00_00_35_50.jpg" width="100%" /></p>
-
-<p>As I am evolving the process of creating API Transit maps, the API Transit hypermedia engine allows for the development of a gradual awareness of a very complex and technical landscape. It all feels the same as when I land in any new city and begin understand the local transit system. At first, I am overwhelmed, and confused, but the more time I spend exploring the transit maps, riding the subway and buses, developing a familiarity with each system, the easier it all becomes. There is a reason transit maps are used to provide access to complex municipal transit systems, as they help provide a comprehensive view of the landscape, that allows you to find your way around, and use as a reference as you develop an awareness–this is what I’m looking to build with API Transit for the banking sector.</p>
-
-<p><strong>Tours For Individual Roles</strong><br />
-One of the benefits of an API Transit map client that is built on a hypermedia engine is that you can take advantage of the ability to change the map, and experience depending on who you are targeting. The concept of the transit maps allows us to suspend realities of the physical world, and the hypermedia client for the API Transit map can suspend realities of the virtual world, allowing for the creation of unique tours and experiences depending on who the end user is. The complete API Transit map for each bank’s implementation will still exist, but the ability to suspend some details to distill down complexity into more simpler experiences will be possible.</p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-people.JPG" width="75%" /></p>
-
-<p>The objective of individual API Transit tours and experiences will allow for onboarding new developers, business users, or possibly regulator oversight looking at just a specific dimension of the PSD2 guidance. Allowing for the ability to zoom in just at the customer experience layer, or possible just the transactional capabilities across many banking API providers or even a city, region, or country. Think of how a city might have separate transit maps for the subway, buses, and other systems, but still have the overall system map. We can do the same with API Transit, further reducing complexity, and helping users make sense of the complex banking API systems.</p>
-
-<p><strong>Interactive Industry API Governance</strong><br />
-For API governance to be effective it needs to be understood by everyone being impacted, and are required to participate. It has to be able to measured, quantified, tested, audited, and visualized in real time, to understand how it is working, and not working. Modern API operations excel at doing this at the company, organization, institutional, and government level, and we should be using API solutions and tooling to help us understand how governance is being applied. There should be machine readable definitions, and common media types, as well as API driven tooling for educating, implementing, and measuring API governance–completing the API loop.</p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/psd2-eu.png" width="60%" /></p>
-
-<p>This is another reason why the transit analogy is working so well for me when it comes to making API governance an interactive experience. I’m able to develop not just linear experiences where participants can click next, next, next and walk through everything. They can choose their own paths, experience the lines they feel need attention, while allowing managers, auditors, and regulators to understand how well each implementation is responding, evolving, and interacting with regulations. Making API governance at the industry level interactive not just for the banks and the EU regulatory body, but also for every other participant in between trying to make sense of what is happening with PSD2 in 2018.</p>
-
-<p><strong>Continuously Deployed And Integrated</strong><br />
-As I mentioned before, API Transit runs 100% on Github, within a Github repository. The API Transit map client is unaware of each individual banks API implementation. The uniqueness for each implementation resides in a series of Siren hypermedia, OpenAPI, and APIs.json files, that provide a machine readable snapshot of the implementation. The combination of Github, and the machine readable YAML core of each API Transit instance makes it all able to be integrated into continuous integration and deployment pipelines. Evolving each API Transit instance, as each actual banks API implementation is built and released–hopefully ensuring they are kept in sync with the reality on the ground at each bank.</p>
-
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/continuous/continuous-bw.png" width="75%" /></p>
-
-<p>At this point, API Transit has become another application being developed upon the banking APIs that PSD2 are designed to expose. It ultimately will be an aggregated application that uses not just one banking API, but all the banking APIs. The difference from other aggregators is API Transit is not interested in the data each bank possesses. It is interested in continuously understanding how well each banks API is when it comes to complying with PSD2 regulations, while also continuously helping developers, aggregators, regulators, and anyone else make sense of the complexities of banking APIs and the PSD2 regulations.</p>
-
-<p><strong>Mapping Technology, Business, &amp; Politics</strong><br />
-While API Transit seems very technical at first look, the solution is meant to help make sense of the business and politics around the PSD2 rollout. The first part of the conversation might seem like it is about ensuring each bank has a compliant API, but it is more about ensuring they have common operational level components of API operations like a developer portal, documentation, support, and other business aspects of doing business with APIs. Next, it will be about ensuring all the technical aspects of PSD2 compliant APIs in place, validating each API path, as well as it’s responses, schema, and other components.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/tech-business-politics-03-2014.png" width="100%" /></p>
-
-<p>While we need to make sure 100% of the PSD2 OpenAPI definition is represented with each bank, we also need to make sure that API is accessible, secure, and usable, otherwise none of this matters. If a bank plays politics by making their API unusable to aggregators and 3rd party developers, yet appear on the surface to have a functioning API that is compliant with the PSD2 specification, we need to be able to identify that this is the case, make sure we are testing for these scenarios on a recurring basis, and be able to visualize and report upon it to regulators. Properly addressing the technical, as well as the business, and politics of API operations.</p>
-
-<p><strong>Making API Regulation More Familiar</strong><br />
-The main reason I’m using the transit map approach is because it is familiar. Secondarily, because the concept continues to work after two years of pushing forward the concept. Everyone I have shown it to immediately responds with, “well the trick will be to not make things too overwhelming and complicated”. Which I response with, “do you remember the first time you used the transit system in your city? How did you feel?” Overwhelmed, and thinking this was complicated–because it is. However, because there is a familiar, universal map that helps you navigate this complexity, eventually you begin to learn more about the complexity of the city you live in, or are visiting. Helping bridge the complexity, making it all a little more familiar over time.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/paris-metro.png" width="100%" /></p>
-
-<p>The transit map concept is universal and familiar. It is in use across hundreds of transit systems around the globe. The transit map is familiar, but it also has the ability to help make a complex system more familiar with a little exploration, and over the course of time. This is why I’m extending the transit approach to the world of APIs, and using it to make complex API systems like the PSD2 banking API regulation more familiar. Banking APIs aren’t easy. Banking regulations aren’t easy. We need a map to help us navigate this world, and be able to make sense of the complexity, even as it continues to evolve over time–API Transit is that.</p>
-
-<p><strong>Helping API Regulation Be More Consistent</strong><br />
-API Transit is machine readable, driven by existing specifications, including Siren a hypermedia media type, OpenAPI, and APIs.json. The first machine readable definition I started with was the OpenAPI definition for the PSD2 regulation. This was the seed, then I generated the hypermedia engine from that, and took the API governance engine I had been working on for the last couple of years and built it into the existing API Transit core. The objective of all of this work is to use the framework to introduce more consistency into how I am mapping out the rollout of PSD2 across the European banking landscape. This is something that is too big to do manually, and something that requires a machine readable, API driven approach to get the job done properly.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/map-of-moscow-metro-underground2.gif" width="100%" /></p>
-
-<p>The PSD2 OpenAPI definition provides a way to consistently measure, and report on whether each banks APIs are in compliance with PSD2 regulations. The APIs.json is meant to make sure each bank’s APIs are in compliance with API Evangelists guidelines for API operations. The Siren hypermedia engine is meant to enable the consistent crawling and auditing of everything as it evolves over time by other systems and applications, and when combined with the HTML5 Canvas API Transit map, it allows humans to explore, navigate, and visual banking APIs, and the PSD2 regulations in a more consistent, and organized fashion.</p>
-
-<p><strong>Seeing PSD2 In Motion In A Visual Way</strong><br />
-Ultimately, API Transit is about being able to see API operations across an industry in a visual way, where you can see everything in motion. Applying it to the PSD2 landscape is meant to help  visualize and understand everything happening. It has taken me many hours of work to get intimate with the core OpenAPI definition for PSD2. Learning about all the paths and schema that make up the regulation. As I work to evaluate the compliance of hundreds of banks across France and UK, I’m quickly realizing that it will be beyond my capacity to be able to see everything that is going on. API Transit helps me see the PSD2 landscape in a way that I can be regularly updated, revisited, and experienced as the landscape evolves.</p>
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions/subway/london_underground2.gif" width="100%" /></p>
-
-<p>The PSD2 API Transit application is just getting started. The methodology has been proven, and I’ve begun profiling banks, and collecting OpenAPI definitions for any APIs that I find, and profiling the wider presence of their API operations using APIs.json. Then I will begin improving on the mapping capabilities of the API Transit map client, making for a more visually pleasing experience. Along the way I am working with partners to better monitor the availability and performance of each banks APIs. Within a couple of months I expect a clearer picture to begin to come into focus regarding how the PSD2 landscape is unfolding in 2018, and by the end of the year, it will become clear which banks have emerged as competitive leaders within the API economy.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/02/03/a-regulatory-subway-map-for-psd2/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/26/shifting-gears-between-the-technology-and-politics-of-apis/">Shifting Gears Between the Technology and Politics of APIs</a></h3>
-        <span class="post-date">26 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/80_87_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’ve been working on two talks for <a href="http://www.apidays.io/events/paris-2017">API Days in Paris next week</a>. These talks are at two opposite ends of the API spectrum for me. The first one, API Is Not Just REST, is rooted in the technology of APIs, but then touches lightly on the business and politics of APIs. The second one, a regulatory subway map for PSD2, is all about the politics of APIs, but then touches lightly on the business and technology of APIs. I have the outlines for both talks done, and I’m working on the narrative and slides for each, along the way I’m really caught by how different each end of the spectrum are, and require me to use a different part of my brain–something I think really defines the yin and yang of APIs.</p>
-
-<p>When I’m down at the protocol level of APIs, thinking about the details of HTTP, TCP, and the nuance of how headers are used, and the messages we pass back and forth, the politics of APIs do not matter to me. My developer and architect brain is absorbed with the technical details, and the human or political consequences of my decisions really do not matter all that much. As long as things are technically correct, and my responses and requests are doing what is expected, I am good. It is easy for me to be railroaded within this technical silo, and I wouldn’t ever need to be concerned for the business and politics of it all, if my work as API Evangelist didn’t force me out of my comfort zone.</p>
-
-<p>Inversely, when I’m thinking about the politics of how this all works, and the intention and impact of regulatory guidance like PSD2 in Europe, the technical details of HTTP, headers, and what messages I’m using feel less important. Sure, they still matter to what I’m trying to do, but the strictness in which I define my protocols, headers, data formats, schema, and other gears of API operations takes a looser form. When you look at banks who have NO PUBLIC API, just getting them up an running seems much more important than ensuring each HTTP response status code is present, and each schema is perfectly represented. Eventually, I will need to make sure all my technical i’s are dotted, and t’s are crossed, but I have bigger battles to wage at the moment.</p>
-
-<p>As I’m pulled back and forth between the technical and the politics of APIs, I find myself becoming very, very aware of the business of APIs, and how the complexity of both technology and the politics are wielded for business gain. Seeing how technology is used as a competitive advantage, as well as leveraging politics to get ahead in the game. You see this in the rhetoric around PSD2, where invoking the bogey man can be very telling of a company’s position, just as much as the company’s who are proactively jumping on the PSD2 bandwagon, and getting ahead of the game, or even being a leader when it comes to defining implementations. Competitive edges can be sharpened by embracing political shifts, as well as through the adoption of leading edge technologies present across the API space (Kafka, OpenAPI, etc.)–it really depends on your organizations approach to the API game, and how up to speed you are on how it is played.</p>
-
-<p>While I don’t feel it should be everyone’s role to be exposed to the all the extremes of the API sector, I do feel like we do a poor job of exposing developers and architects to the business and politics of it all in a meaningful way. I also feel like we spend too much time either hiding from or protecting business users from the technical details. I find that I learn a lot being pulled back and forth to either end of the spectrum, something I’m hoping to share as part of my talks next week in France, as well as the conversations I have in the hallways at the conference, and meeting rooms before and after the event. I look forward to seeing you all in Paris, and Grenoble next week.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/26/shifting-gears-between-the-technology-and-politics-of-apis/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/24/where-am-i-in-the-sales-funnel-for-your-api/">Where Am I In The Sales Funnel For Your API?</a></h3>
-        <span class="post-date">24 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_light_dali.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’m signing up for a large number of new APIs lately as part of a project I am working on. It is pretty normal for me to sign up for a couple new APIs a week, or 10-20 within a month, but right now I’m signing up for hundreds, setting up an application and getting keys for each service. I’ll share more about what I’m working on in future stories, but I wanted to talk more about the on-boarding practices of some of these APIs. It is pretty clear from the on-boarding processes that I don’t rank very high in some of these API provider’s sales funnels, making me not deserving of self-service access, or even a sales call–which is a separate topic I will talk about in a future post.</p>
-
-<p>I’ve registered with a number of high value API providers who have more of an enterprise focus, but also have a seemingly self-service, public API available. After signing up for access, it becomes very clear that APIs are anything but self-service, and there is a sales funnel in play, and I’ve been ranked, tagged, and identified where I am in this sales funnel, and what value I bring as a potential small business–which is not much by usual measurements. I’m pretty well versed in how company’s set up their sales strategy, and have seen many companies think it is a good idea to translate these practies to their API operations. Only targeting the high value customers, and not really giving a shit about the rest of them. It just isn’t worth the resources to go after them, they don’t have the spending capacity of customers you want in your funnel.</p>
-
-<p>I get it. You are right. I don’t have a lot of money to buy your services, and will not become a high value customers. However, I have many readers who are high value customers, and trust my opinion about which services are worthy paying attention to. And guess what? I’m not going to write about your service. I’m not going to include you in my prime time storytelling, and when I do reference your API as part of my research, it will be in the club of shame, and APIs that really aren’t worth your time playing with. My enterprise readers, growing startups, university IT leadership, and government project owners with big budgets won’t ever know about your API, all because you didn’t see me as being worth your time, and your API on-boarding practices are out dated.</p>
-
-<p>In a self-service API world you don’t need to be high touch with the long tail of your API consumers. This is why we have API management in place, with sensibly priced access tiers, requiring monthly levels of access, all requiring credit cards on file. While it frustrates me when companies don’t have a free tier of access for me to kick the tires, I get it. What makes a situation untenable is when I put in a credit card, and I am willing to spend a couple hundred bucks to write a story, build a prototype, or publish a landscape guide or white paper, and I still can’t get access to your resources and understand what is going on. It’s ok. I’m guessing they probably weren’t worth sharing with my readers anyways, and you belong right where you should belong in my API research that gets read by business and IT leadership around the globe.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/24/where-am-i-in-the-sales-funnel-for-your-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/24/helping-understand-that-stream-line-data-io-is-more-than-just-real-time-streaming/">Helping Define Stream(Line)Data.io As More Than Just Real Time Streaming</a></h3>
-        <span class="post-date">24 Jan 2018</span>
-        <p><a href="http://apis.how/streamdata"><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/containership_dali_three.jpg" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p>One aspect of my partnership with <a href="http://apis.how/streamdata">Streamdata.io</a> is about helping define what it is that Streamdata.io does–internally, and externally. When I use any API technology I always immerse myself in what it does, and understand every detail regarding the value it delivers, and I work to tell stories about this. This process helps me refine not just how I talk about the products and services, but also helps influence the road map for what the products and services deliver. As I get intimate with what Streamdata.io delivers, I’m beginning to push forward how I talk about the company.</p>
-
-<p>The first thoughts you have when you hear the name Streamdata.io, and learn about how you can proxy any existing JSON API, and begin delivering responses via Server-Sent Events (SSE) and JSON Patch, are all about streaming and real time. While streaming of data from existing APIs is the dominant feature of the service, I’m increasingly finding that the conversations I’m having with clients, and would be clients are more about efficiencies, caching, and streamlining how companies are delivering data. Many API providers I talk to tell me they don’t need real time streaming, but at the same time they have rate limits in place to keep their consumers from polling their APIs too much, increasing friction in API consumption, and not at all about streamlining it.</p>
-
-<p>These experiences are forcing me to shift how I open up conversations with API providers. Making real time and streaming secondary to streamlining how API providers are delivering data to their consumers. Real time streaming using Server-Sent Events (SSE) isn’t always about delivering financial and other data in real time. It is about delivering data using APIs efficiently, making sure only what what has been updated and needed is delivered when it is needed. The right time. This is why you’ll see me increasingly adding (line) to the Stream(line)data.io name, helping focus on the fact that we are helping streamline how companies, organizations, institutions, and government agencies are putting data to work–not just streaming data in real time.</p>
-
-<p>I really enjoy this aspect of getting to know what a specific type of API technology delivers, combined with the storytelling that I engage in. I was feeling intimidated about talking about streaming APIs with providers who clearly didn’t need it. I’m not that kind of technologist. I just can’t do that. I have to be genuine in what I do, or I just can’t do it. So I was pleasantly surprised to find that conversations were quickly becoming about making things more efficient, over actually ever getting to the streaming real time portion of things. It makes what I do much easier, and something I can continue on a day to day basis, across many different industries.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/24/helping-understand-that-stream-line-data-io-is-more-than-just-real-time-streaming/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/24/i-want-to-be-able-to-post-and-put-and-receive-credits-on-my-api-bill/">I Want to Be Able to POST and PUT and Receive Credits on My API Bill</a></h3>
-        <span class="post-date">24 Jan 2018</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/69_120_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p><a href="http://apievangelist.com/2018/01/17/api-management-and-the-measurement-of-value-exchange/">I’ve been thinking about the potential for measuring value exchange at the API management level a lot more lately</a>, and while I’m working on a project to profile banks that are needing to comply with the PSD2 regulations in Europe, I’m thinking about the missed opportunities for the API providers I’m using to fuel my research to leverage the value I’m generating. I’m using a variety of data enrichment APIs for helping add to the contact data, corporate profiles, images, documents, patents, and other valuable data to what I’m doing as part of my wider research into the API space. While these APIs have valuable services that I am paying for, all of the APIs are just using one HTTP verb–GET.</p>
-
-<p>On a regular basis I come across incorrect, or incomplete data, and as part of my work I dive in and correct the data, and continue to connect the dots. I often find better copies of logos, add in relevant business profile data, and I always provide very detailed information regarding a company’s API–which I find to be some of the most telling aspects of what a company does, or doesn’t do. I’m thankful for the services that the 3rd party APIs I utilize, but I think they are missing out on a pretty big opportunity for trusted partners like me to be able to POST or PUT the data I am gathering back to their systems.</p>
-
-<p>I would love to be able to POST and PUT back information to the APIs I am GETting my data from, and receive credits to my API bill for these contributions. It would benefit API providers by helping ensure the data they are providing is complete and acurate, and it would benefit me by helping me keep my API bills as low as possible. I understand that it would some work on the provider side to ensure I’m a trusted partner, and being able to verify the POST and PUT API calls I am making actually add value, but with a proper queue, and a little bit of human power, it wouldn’t take that much. At first it may seem like the investment would be more than the value, but all you’d have to do is find a handful of partners like me who would significantly contribute to the data you provide via your APIs.</p>
-
-<p>When it comes to the value exchanged via APIs, and it always seems to be the heavily dominated user generated content platforms like Facebook and Twitter, or the GET only data providers, without a lot in between. Most providers I talk with are nervous about the quality of data, and the overhead with managing contributions. Which is definitely true if the flood gates are wide open, but with the proper approach to API management, and sensible access tiers for partners, you could easily identify who the most valuable API consumers were. Do not miss out on the opportunity to allow trusted partners like me to POST and PUT, and receive credits on my bill, making API management, and the value exchange that occurs via your platform a two-way street.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/24/i-want-to-be-able-to-post-and-put-and-receive-credits-on-my-api-bill/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/23/the-role-of-european-banking-authority-eba-in-regards-to-psd2/">The Role of European Banking Authority (EBA) When It Comes To PSD2</a></h3>
-        <span class="post-date">23 Jan 2018</span>
-        <p><a href="http://www.eba.europa.eu/"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/european-banking-authority-eba.jpg" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p>As part of my continued effort to break down <a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en">the Payment Services Directive 2 (PSD2) in Europe</a>, and develop my awareness of how the regulations are intended, as well as the reality on the ground within the industry, I am working to map out all of the players involved. This post is about understanding the role of the European Banking Authority (EBA), and clearly understanding when and where they come into the conversation.</p>
-
-<p>First, what is the <a href="http://www.eba.europa.eu/">European Banking Authority (EBA)</a>? They are the regulatory agency for the European Union, who is in charge of conducting stress tests on European banks and increasing transparency in the European financial system and identifying weaknesses in banks’ capital structures. When it comes to PSD2, their role is to:</p>
-
-<ul>
-  <li>develop a publicly accessible central register of authorised payment institutions, which shall be kept up to date by the national authorities</li>
-  <li>assist in resolving disputes between national authorities</li>
-  <li>develop regulatory technical standards on strong customer authentication and secure communication channels with which all payment service providers must comply</li>
-  <li>develop cooperation and information exchange between supervisory authorities</li>
-</ul>
-
-<p>The catalyst for this post was because I was looking for the <em>“central register of authorized payment institutions”</em>, and could not find it. Something that will be critical to this effort working, and evolving. I’m also on the hunt for more details regarding how they will be addressing authentication for all 3rd party API access, which will also be something that makes or breaks this effort. And, of course, as the API Evangelist I’m looking to help anyone in the position of helping <em>“develop cooperation and information exchange”</em>–it is what I do.</p>
-
-<p>When it comes to PSD2, I have gotten to know <a href="https://github.com/api-evangelist/psd2/blob/master/_data/psd2/openapi.yaml">the API definition (OpenAPI)</a>, and I am making my way through the actual set of laws, but I’m still working to understand who all the players are. I’ll keep profiling every type participant in the PSD2 theater that is unfolding across Europe in 2018, until each of the actors makes sense in my head, and I can speak to all of them intelligently. Then I’m hoping to compare notes with my research regarding banking in the United States, and see how it all looks. I’ll be spending next week in France talking with bankers about PSD2, and giving a talk on API governance at this level. So for now, I’m going to be all about EU banking, but I’m engaged in several conversations here in the states with major banks as well, which will all make for some great financial API storytelling over the next couple of months.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/23/the-role-of-european-banking-authority-eba-in-regards-to-psd2/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2018/01/22/key-points-from-the-payment-services-directive-2-psd2/">Key Points From The Payment Services Directive 2 (PSD2)</a></h3>
-        <span class="post-date">22 Jan 2018</span>
-        <p><a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/psd2-eu.png" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p>I’m immersed in studying <a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en">the Payment Services Directive 2 (PSD2) in Europe</a>, which includes an API definition to help enable the interoperability they are looking to achieve as part of the regulation. I’m working to break down the directive into bit such chunks to help be digest, and understand exactly what it does. The PSD2 laws seeks to improve the existing EU rules for electronic payments (hence the 2), and takes into account emerging approaches to payment services, such as Internet and mobile payments, with APIs at the hear.</p>
-
-<p>The directive sets out rules concerning:</p>
-
-<ul>
-  <li>strict security requirements for electronic payments and the protection of consumers’ financial data, guaranteeing safe authentication and reducing the risk of fraud</li>
-  <li>the transparency of conditions and information requirements for payment services</li>
-  <li>the rights and obligations of users and providers of payment services</li>
-</ul>
-
-<p>Additionally, “the directive is complemented by <a href="http://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:32015R0751">Regulation (EU) 2015/751</a> which puts a cap on interchange fees charged between banks for card-based transactions. This is expected to drive down the costs for merchants in accepting consumer debit and credit cards.” Which can be one of the most frustrating aspects of banking today, where you have no expectations regarding the fees you can be charged around every turn, as you are just trying to make ends meet.</p>
-
-<p>You will be seeing a lot more posts about PSD2 as I work to absorb the regulations, and the technical guidance set forth regarding banking APIs. I’m playing around with the OpenAPI definition for PSD2, and crafting a version of my API Transit subway map to represent the technical guidance present. I’m also working to understand the business, and political aspects of PSD2, which involves me breaking down the directive into this small, digestible stories, here on API Evangelist.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2018/01/22/key-points-from-the-payment-services-directive-2-psd2/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
