@@ -129,6 +129,964 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/07/17/making-all-sub-resources-available-within-the-core-set-of-human-service-apis/">Making All Sub-Resources Available Within The Core Set Of Human Service APIs</a></h3>
+        <span class="post-date">17 Jul 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/open-referral/hsds-organization.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I had recently taken <a href="http://openreferral.readthedocs.io/en/latest/reference/">the Human Services Data Specification (HSDS)</a> and exposed it as a set of API paths that provide access to about 95% of the schema, which we are calling the <a href="https://openreferral.github.io/api-specification/definition/">Human Services Data API (HSDA)</a>. When you make a call to the /organizations/ path, you receive an array collection of organizations that each match the HSDA organization schema. The same applies when you make a call to the /locations, /contacts, and /services, opening up access to the entire schema–minus three objects I pushed off until future releases.</p>
+
+<p>After the core set of API paths /organization, /service, /location, /contact, there are a set of sub-resources available across those as it makes sense–including /phone, /programs, /physical_address, /postal_address, /regular_schedule, /holiday_schedule, /funding, /eligibility, /service_area, /required_document, /payment_accepted, /language, /accessiblity_for_disabilities, and /service_at_location_id. I took the HSDA schema, and published API paths for each sub-resource so that it exactly returned, and accepted HSDA compliant schema–making all aspects of the schema accessible via an API, with POST and PUT requests accepting compliant schema, and GET returning compliant schema.</p>
+
+<p>One of the “stoppers” we received from several folks in the HSDS community during the feedback cycle going from version 1.0 of the API to version 1.1, was that the design was overly complex, and that it would serve any of the human services use cases on the table currently, unless you could get at all the sub resources directly with each core API path, eliminating the need for making additional call(s) to each sub-resource. You could get at everything about an /organization, /service, /location, and /contact in a single API URL.</p>
+
+<p>Currently the core four API paths accept and return the following schema:</p>
+
+<p><strong>Organization</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string (uuid)</td>
+<td>Each organization must have a unique identifier.</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>The official or public name of the organization.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>alternate_name</td>
+<td>string</td>
+<td>Alternative or commonly used name for the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>A brief summary about the organization. It can contain markup such as HTML or Markdown.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>string (email)</td>
+<td>The contact e-mail address for the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>string (url)</td>
+<td>The URL (website address) of the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>tax_status</td>
+<td>string</td>
+<td>Government assigned tax designation for for tax-exempt organizations.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>tax_id</td>
+<td>string</td>
+<td>A government issued identifier used for the purpose of tax administration.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>year_incorporated</td>
+<td>date (%Y)</td>
+<td>The year in which the organization was legally formed.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>legal_status</td>
+<td>string</td>
+<td>The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Service</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each service must have a unique identifier.</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>The identifier of the organization that provides this service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>program_id</td>
+<td>string</td>
+<td>The identifier of the program this service is delivered under.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>The official or public name of the service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>alternate_name</td>
+<td>string</td>
+<td>Alternative or commonly used name for a service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>A description of the service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>string (url)</td>
+<td>URL of the service</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string (email)</td>
+<td>Email address for the service</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>The current status of the service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>interpretation_services</td>
+<td>string</td>
+<td>A description of any interpretation services available for accessing this service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>application_process</td>
+<td>string</td>
+<td>The steps needed to access the service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>wait_time</td>
+<td>string</td>
+<td>Time a client may expect to wait before receiving a service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>fees</td>
+<td>string</td>
+<td>Details of any charges for service users to access this service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>accreditations</td>
+<td>string</td>
+<td>Details of any accreditations. Accreditation is the formal evaluation of an organization or program against best practice standards set by an accrediting organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>licenses</td>
+<td>string</td>
+<td>An organization may have a license issued by a government entity to operate legally. A list of any such licenses can be provided here.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>taxonomy_ids</td>
+<td>string</td>
+<td>(Deprecated) A comma separated list of identifiers from the taxonomy table. This field is deprecated in favour of using the service_taxonomy table.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Location</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each location must have a unique identifier</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>Each location entry should be linked to a single organization. This is the organization that is responsible for maintaining information about this location. The identifier of the organization should be given here. Details of the services the organisation delivers at this location should be provided in the services_at_location table.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>The name of the location</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>alternate_name</td>
+<td>string</td>
+<td>An alternative name for the location</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>A description of this location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>transportation</td>
+<td>string</td>
+<td>A description of the access to public or private transportation to and from the location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>latitude</td>
+<td>number</td>
+<td>Y coordinate of location expressed in decimal degrees in WGS84 datum.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>longitude</td>
+<td>number</td>
+<td>X coordinate of location expressed in decimal degrees in WGS84 datum.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Contact</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each contact must have a unique identifier</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>The identifier of the organization for which this is a contact</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>service_id</td>
+<td>string</td>
+<td>The identifier of the service for which this is a contact</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>service_at_location_id</td>
+<td>string</td>
+<td>The identifier of the &#8216;service at location&#8217; table entry, when this contact is specific to a service in a particular location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>The name of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>The job title of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>department</td>
+<td>string</td>
+<td>The department that the person is part of</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string (email)</td>
+<td>The email address of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+</tbody>
+</table>
+
+<p>To ensure that all sub-resource area available as part of each of the requests and responses for all core API paths, we are going to have to evolve the HSDS schema to be:</p>
+
+<p><strong>Organization</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string (uuid)</td>
+<td>Each organization must have a unique identifier.</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>The official or public name of the organization.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>alternate_name</td>
+<td>string</td>
+<td>Alternative or commonly used name for the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>A brief summary about the organization. It can contain markup such as HTML or Markdown.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>string (email)</td>
+<td>The contact e-mail address for the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>string (url)</td>
+<td>The URL (website address) of the organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>tax_status</td>
+<td>string</td>
+<td>Government assigned tax designation for for tax-exempt organizations.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>tax_id</td>
+<td>string</td>
+<td>A government issued identifier used for the purpose of tax administration.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>year_incorporated</td>
+<td>date (%Y)</td>
+<td>The year in which the organization was legally formed.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>legal_status</td>
+<td>string</td>
+<td>The legal status defines the conditions that an organization is operating under; e.g. non-profit, private corporation or a government organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>services</td>
+<td>array</td>
+<td>Returns a collection of services for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>locations</td>
+<td>array</td>
+<td>Returns a collection of locations for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>contacts</td>
+<td>array</td>
+<td>Returns a collection of contacts for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>    
+<tr class="row-odd"><td>phones</td>
+<td>array</td>
+<td>Returns a collection of phones for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>programs</td>
+<td>array</td>
+<td>Returns a collection of programs for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>fundings</td>
+<td>array</td>
+<td>Returns a collection of fundings for each organization</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+</tbody>
+</table>
+
+<p><strong>Service</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each service must have a unique identifier.</td>
+<td>True</td>
+<td>True</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>The identifier of the organization that provides this service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>program_id</td>
+<td>string</td>
+<td>The identifier of the program this service is delivered under.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>The official or public name of the service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>alternate_name</td>
+<td>string</td>
+<td>Alternative or commonly used name for a service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>description</td>
+<td>string</td>
+<td>A description of the service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>url</td>
+<td>string (url)</td>
+<td>URL of the service</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string (email)</td>
+<td>Email address for the service</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>status</td>
+<td>string</td>
+<td>The current status of the service.</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>interpretation_services</td>
+<td>string</td>
+<td>A description of any interpretation services available for accessing this service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>application_process</td>
+<td>string</td>
+<td>The steps needed to access the service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>wait_time</td>
+<td>string</td>
+<td>Time a client may expect to wait before receiving a service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>fees</td>
+<td>string</td>
+<td>Details of any charges for service users to access this service.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>accreditations</td>
+<td>string</td>
+<td>Details of any accreditations. Accreditation is the formal evaluation of an organization or program against best practice standards set by an accrediting organization.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>licenses</td>
+<td>string</td>
+<td>An organization may have a license issued by a government entity to operate legally. A list of any such licenses can be provided here.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>taxonomy_ids</td>
+<td>string</td>
+<td>(Deprecated) A comma separated list of identifiers from the taxonomy table. This field is deprecated in favour of using the service_taxonomy table.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>contacts</td>
+<td>array</td>
+<td>Returns a collection of contacts for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>phones</td>
+<td>array</td>
+<td>Returns a collection of phones for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>regular_schedules</td>
+<td>array</td>
+<td>Returns a collection of regular schedules for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>holiday_schedules</td>
+<td>array</td>
+<td>Returns a collection of holiday schedules for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>    
+<tr class="row-odd"><td>fundings</td>
+<td>array</td>
+<td>Returns a collection of fundings for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>eligibilities</td>
+<td>array</td>
+<td>Returns a collection of eligibilities for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>service_areas</td>
+<td>array</td>
+<td>Returns a collection of service areas for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>required_documents</td>
+<td>array</td>
+<td>Returns a collection of required documents for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>payments_accepted</td>
+<td>array</td>
+<td>Returns a collection of payments accepted for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>languages</td>
+<td>array</td>
+<td>Returns a collection of languages for each service.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+</tbody>
+</table>
+
+<p><strong>Location</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each location must have a unique identifier</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>Each location entry should be linked to a single organization. This is the organization that is responsible for maintaining information about this location. The identifier of the organization should be given here. Details of the services the organisation delivers at this location should be provided in the services_at_location table.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>The name of the location</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>alternate_name</td>
+<td>string</td>
+<td>An alternative name for the location</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>string</td>
+<td>A description of this location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>transportation</td>
+<td>string</td>
+<td>A description of the access to public or private transportation to and from the location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>latitude</td>
+<td>number</td>
+<td>Y coordinate of location expressed in decimal degrees in WGS84 datum.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>longitude</td>
+<td>number</td>
+<td>X coordinate of location expressed in decimal degrees in WGS84 datum.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>phones</td>
+<td>array</td>
+<td>Returns a collection of phones for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>physical_addresses</td>
+<td>array</td>
+<td>Returns a collection of physical addresses for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>    
+<tr class="row-odd"><td>postal_addresses</td>
+<td>array</td>
+<td>Returns a collection of postal addresses for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>regular_schedules</td>
+<td>array</td>
+<td>Returns a collection of regular schedules for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>   
+<tr class="row-odd"><td>holiday_schedules</td>
+<td>array</td>
+<td>Returns a collection of holiday schedules for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+<tr class="row-odd"><td>languages</td>
+<td>array</td>
+<td>Returns a collection of languages for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>    
+<tr class="row-odd"><td>accessiblity_for_disabilities</td>
+<td>array</td>
+<td>Returns a collection of accessiblity_for_disabilities for each location.</td>
+<td>False</td>
+<td>False</td>
+</tr>    
+</tbody>
+</table>
+
+<p><strong>Contact</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="17%" />
+<col width="50%" />
+<col width="8%" />
+<col width="8%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Field Name</th>
+<th class="head">Type (Format)</th>
+<th class="head">Description</th>
+<th class="head">Required?</th>
+<th class="head">Unique?</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>string</td>
+<td>Each contact must have a unique identifier</td>
+<td>True</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>organization_id</td>
+<td>string</td>
+<td>The identifier of the organization for which this is a contact</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>service_id</td>
+<td>string</td>
+<td>The identifier of the service for which this is a contact</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>service_at_location_id</td>
+<td>string</td>
+<td>The identifier of the &#8216;service at location&#8217; table entry, when this contact is specific to a service in a particular location.</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>string</td>
+<td>The name of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>title</td>
+<td>string</td>
+<td>The job title of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-even"><td>department</td>
+<td>string</td>
+<td>The department that the person is part of</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>email</td>
+<td>string (email)</td>
+<td>The email address of the person</td>
+<td>False</td>
+<td>False</td>
+</tr>
+<tr class="row-odd"><td>phones</td>
+<td>array</td>
+<td>Returns a collection of phones for each contact</td>
+<td>False</td>
+<td>False</td>
+</tr>  
+</tbody>
+</table>
+
+<p>Once we add all relevant sub-resources added as arrays to the HSDS schema, we can allow API consumers to POST and PUT, or GET using as little, or as much of the schema using the path, header, or parameter. Allowing for reading and writing HSDS at the granular level, or everything at once using a single path.</p>
+
+<p>Next we need to consider this updated schema as part of the 1.2 release of HSDS. If we update HSDA to allow for filtering the schema across /organization, /service, /location, and /contact, and return each sub-resource as part of the API request or response, it will be out of sync with HSDS. Ideally, both HSDS, and HSDA move forward in sync with each version. I’m curious why this expanded schema became such an issue once we got to the API phase–it seems like it should have been part of v1.1 of HSDS, making the schema drive the API instead of the other way around.</p>
+
+<p>I’m guessing that these concerns about schema don’t come into focus until we start talking about access to the schema, and data. <a href="http://apievangelist.com/2017/07/13/quantifying-the-difference-between-human-services-data-specification-hsds-and-its-api/">Making the separation and relationships between HSDS and HSDA all the more important</a>, providing a framework to move the schema forward in a way that is rooted in how it will actually be accessed. Which is why we do APIs…</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/17/making-all-sub-resources-available-within-the-core-set-of-human-service-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2017/07/16/learning-more-about-amazon-alexas-approach-to-apis-and-skills-development/">Learning More About Amazon Alexas Approach to APIs And Skills Development</a></h3>
+        <span class="post-date">16 Jul 2017</span>
+        <p><a href="https://developer.amazon.com/alexa"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png" align="right" width="40%" style="padding 15px" /></a></p>
+<p>I have had <a href="https://developer.amazon.com/alexa">Amazon Alexa</a> in my cross hairs for some time now. I regularly digest stories about what Amazon is up to with Alexa, but haven’t had the time to think deeply about voice enablement, and their approach to developing what they call “skills”. I’m not 100% convinced voice enablement is the future of human compute interfaces, but I do see the role they can play in some situations, for some people. Plus, all the actions involved with Alexa and it’s ecosystem are all driven using APIs, which will almost always make me perk up, and pay a little more attention–I have a serious problem.</p>
+
+<p>The Amazon Alexa platform centers around two specific areas of development:</p>
+
+<ul>
+  <li><strong>Alexa Voice Service</strong> - The actual voice enablement, and baking Alex voice into applications, devices, your home, car, and other physical objects in our world.</li>
+  <li><strong>Alexa Skills Kit</strong> - The things that you can say to your Alex that will tigger specific actions, which make calls to APIs, and return something useful (or not).</li>
+</ul>
+
+<p>Its all about baking Alex Voice Service baked into as many devices you possibly can, and develop the catalog of skills that the voice enabled application can put to use. Ok. Well, my next question(s) are 1) what is a skill, and 2) what can you actually do with skills? Amazon provides some resources to help with the basics:</p>
+
+<ul>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-different-types-of-skills"><strong>Understanding the Different Types of Skills</strong></a></li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-how-users-interact-with-skills"><strong>Understanding How Users Interact with Skills</strong></a></li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/requirements-to-build-a-skill"><strong>Requirements to Build a Skill</strong></a></li>
+</ul>
+
+<p>Ok, helps me grasp what is their definition of a skill a little bit, and how it delivers their view of a voice enabled user interaction. Next, what can a skill really do? Or, what types of “skills” does Amazon want you to build? They start with the lofty perspective of “anything”, or “<a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-custom-skills">custom  skills</a>”, to hook us technologists who like to think about at this level and fill in the gaps with our magical technological skills–a fundamental building block of API culture.</p>
+
+<ul>
+  <li>Look up information from a web service</li>
+  <li>Integrate with a web service to order something (order a car from Uber, order a pizza from Domino’s Pizza)</li>
+  <li>Interactive games</li>
+</ul>
+
+<p>This is API Evangelism 101. You start with everything and anything is possible, and work your way down from there. After lighting the imagination with custom skills, the focus in on a couple of specific types of actions, serving very specific purposes:</p>
+
+<ul>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-the-smart-home-skill-api">Smart Home Skill API</a>
+    <ul>
+      <li>Turn lights on and off</li>
+      <li>Change the brightness of dimmable lights</li>
+      <li>Change the color or color temperature of a tunable light</li>
+      <li>Change the temperature on a thermostat</li>
+      <li>Query a lock to see if it is currently locked</li>
+      <li>Ask for a smart home camera feed</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/building-smart-home-skills-for-entertainment-devices">Entertainment Device Control in the Smart Home Skill API</a>
+    <ul>
+      <li>Change the volume</li>
+      <li>Change the channel</li>
+      <li>Pause, rewind or fast forward music or video content</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-video-skill-api">Video Skills API</a>
+    <ul>
+      <li>Play a movie</li>
+      <li>Find a TV show</li>
+      <li>Change a channel</li>
+      <li>Pause, rewind, or fast forward video content</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-flash-briefing-skill-api">Flash Briefing Skill API</a></li>
+</ul>
+
+<p>Now the concept of a skill comes into focus a little more for me. Amazon really wants to encourage developers to develop features that deliver in a home environment, entertaining us. Alexa performance and entertainment skills. So far I have just pulled references from Amazon Alexa’s documentation, if you want to see what has been developed by the community, you can head over <a href="https://www.amazon.com/b?node=13727921011">to the Alex skills catalog</a>. I also recommend <a href="https://github.com/dale3h/alexa-skills-list">checking out a pretty robust 3rd party skills list</a>, which gives a view of skills from the outside-in.</p>
+
+<p>Alexa Voice Service and Skills Kit are the two core services, but when you browse the documentation, you see there is a 3rd area given just as much prominence–the <a href="https://developer.amazon.com/alexa-fund">Alexa Fund</a>, which “provides up to $100 million in investments to fuel voice technology innovation”. This is an important aspect of the skills development conversation, an opportunity to get funding to support the creation of skills. While Slack doesn’t use the word skills, <a href="https://slack.com/developers/fund">they also have a fund for investing in conversational interfaces</a> (messaging, chat, and bot). One thing to note here, <a href="https://developer.amazon.com/public/solutions/alexa/rewards-for-skill-developers">Amazon has additional rewards program where developers can earn rewards when developing specially game skills for the Alexa platform</a>–providing another glimpse into their strategy.</p>
+
+<p>I am writing this post to support our Contrafabulist podcast, but I’m also doing it to feed my wider voice research as the API Evangelist. So I have to highlight some of the common building blocks of the Alexa approach to API management, helping me better understand Amazon’s approach to this set of API resources.</p>
+
+<ul>
+  <li><strong>Glossary</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-glossary</li>
+  <li><strong>Forum</strong> - http://forums.developer.amazon.com/forums/category.jspa?categoryID=60</li>
+  <li><strong>FAQs</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/docs/alexa-voice-service-developer-preview</li>
+  <li><strong>Blog</strong> - https://developer.amazon.com/blogs/alexa/tag/AVS</li>
+  <li><strong>Terms of Service</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/support/terms-and-agreements</li>
+</ul>
+
+<p>Beyond the common building blocks for operating their developer portal, supporting their APIs, they have some interesting design elements available for developers. Helping direct Alex developers to develop skills and voice-enabled applications that fit in with their objectives:</p>
+
+<ul>
+  <li><strong>Designing for AVS</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/designing-for-the-alexa-voice-service</li>
+  <li><strong>Functional Design Guide</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/alexa-voice-service-functional-design-guide</li>
+  <li><strong>UX Design Guidelines</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/alexa-voice-service-ux-design-guidelines</li>
+  <li><strong>Marketing Brand Guidelines</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/marketing-brand-guidelines</li>
+</ul>
+
+<p>These design elements tell an interesting story regarding how Amazon is aligning the concept of skills development with their voice enabled API strategy. It also provides an interesting approach to design guides that other API providers might want to consider. After the design guides, Amazon provides some interesting code and hardware to help developers, providing starter kits to get going developing skills as well as actual physical voice integration:</p>
+
+<ul>
+  <li><strong>Projects and Sample Code</strong> - https://github.com/alexa/alexa-avs-sample-app</li>
+  <li><strong>API and Reference</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/avs-api-overview</li>
+  <li><strong>Development Kits for AVS</strong> - https://developer.amazon.com/dev-kits</li>
+  <li><strong>Development Kits (Hardware)</strong> - https://developer.amazon.com/alexa-voice-service/dev-kits</li>
+</ul>
+
+<p>There are three different stories going on here for me which I think are relevant to how we think about, and approach our usage of technology. I’m really interested in Amazon Alexa because of:</p>
+
+<ul>
+  <li><strong>Voice Enablement</strong> - How do you enable voice applications using APIs? What role will voice play in the wider conversational API landscape?</li>
+  <li><strong>Skills Concept</strong> - I am fascinated by the concept of a skill and how it applies to not just voice enablement, and conversational interface, but also representing a unit of compute or a transaction that occurs in API land (serverless, microservices, containers, etc.)</li>
+  <li><strong>API Management</strong> - How do you manage a set of APIs that serve conversational interfaces and voice-enablement? What is different than regular API management, and what can others learn from their approach?</li>
+</ul>
+
+<p>As I said in the opening, I’m not 100% convinced that voice interfaces will be the future for everyone. I depend on the intimacy that exists between my fingers and the keyboard to make the magic happen each day–which might be a little noisy, but it doesn’t involve me rambling on, talking to a device. Even though I’m not into voice interfaces, and much of a talker, I am interested in the motivations behind, and the approach that Amazon is taking with their conversational interfaces. It is something i’m comparing with my research into Twitter, Slack, as well as Facebook. These companies are investing a lot into their ecosystems–you can see the signs of it over at Amazon with <a href="https://www.amazon.jobs/en/teams/alexa-skills?base_query=&amp;loc_query=&amp;job_count=10&amp;result_limit=10&amp;sort=relevant&amp;team_category%5B%5D=alexa-skills&amp;cache">the 137 job openings for their Alex team</a>.</p>
+
+<p>Audrey and I are going to talk about Amazon Alexa on our Contrafabulists podcast this week, so you can tune in to get more thoughts of mine regarding Alexa, and voice enablement APIs. I’ll probably continue the exploration of my thoughts about this approach to interfaces, and particularly the development of “skills”. Which I think has an interesting overlap with APIs, and the modularization we are seeing as a result of compute (ie. containers, microservices, devops), as well as the impact APIs are having on labor (ie. Uber, Mechanical Turk, Task Rabbit). I feel like there is a lot more going on here than just developing fun skills for having conversations with Alexa in your home.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/16/learning-more-about-amazon-alexas-approach-to-apis-and-skills-development/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/07/13/quantifying-the-difference-between-human-services-data-specification-hsds-and-its-api/">Quantifying The Difference Between Human Services Data Specification (HSDS) And Its API</a></h3>
         <span class="post-date">13 Jul 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/openapi-spec/openapi-spec-icon.png" align="right" width="25%" style="padding: 15px;" /></p>
@@ -2790,45 +3748,6 @@ You can find the article here: <a href="http://sdkbridge.cmail20.com/t/r-l-yuhuk
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/06/02/api-documention-width-sdk-bridge/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/02/the-github-repo-stripe-users-to-manage-their-openapi/">The Github Repo Stripe Uses To Manage Their OpenAPI</a></h3>
-        <span class="post-date">02 Jun 2017</span>
-        <p>I’m beating a drum every time I find a company managing their OpenAPI on Github, like we would the other code elements of our API operations. Today’s drumbeat comes from my friend Nicolas Grenié (<a href="https://twitter.com/picsoung">@picsoung</a>), who posted Stripe’s Github repository for their OpenAPI in our Slack channel for the super cool API Evangelists in the sector. ;-)</p>
-
-<p>Along with the <a href="http://apievangelist.com/2017/03/01/new-york-times-manages-their-openapi-using-github/">New York Times</a>, <a href="http://apievangelist.com/2017/05/22/box-goes-all-in-on-openapi/">Box</a>, and other API providers, <a href="https://github.com/stripe/openapi">Stripe has a dedicated Github repo for managing their OpenAPI definition</a>. This opens up the Stripe API for easily loading in client tools <a href="https://restlet.com/modules/client/">like Restlet Client</a>, and <a href="https://www.getpostman.com/">Postman</a>, as we as generating code samples and SDKs using services like APIMATIC. Most importantly, it allows for developers to easily understand the surface area of the Stripe API, in a way that is machine-readable, and portable.</p>
-
-<p>It makes me happy to see leading API providers manage their own OpenAPI using Github like this. The API sector will be able to reach new heights when every single API provider manages their API definitions like this. I know, I know hypermedia folks–everyone should just do hypermedia. Yes, they should. However, we need some initial steps to occur before that is possible, and API providers being able to effectively communicate their API surface area to API consumers in a way that scales and can be used across the API lifecycle is an important part of this evolution. With each OpenAPI I find like this, I get more optimistic that we are getting closer to the future that RESTafarians and hypermedia folks envision–providers are doing the hard work of thinking about the definitions used in their APIs in the context of the entire API lifecycle, and the API consumers who exist along the way.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/02/the-github-repo-stripe-users-to-manage-their-openapi/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/02/centers-for-medicare-and-medicaid-services-api-for-quality-payment-program-measures/">Centers for Medicare & Medicaid Services API for Quality Payment Program Measures</a></h3>
-        <span class="post-date">02 Jun 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/cms/cms-quality-payment-program.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I am regularly using APIs to slice and dice large datasets to help make sense of what is contained within the database behind in a way that other folks can then develop visualizations, reporting, and other applications for use by folks who are closest to the problem we are trying to solve–this opportunity is one of the reasons I have been evangelizing APIs at all level of government over the last seven years.</p>
-
-<p>After many years of hard work in the federal government by <a href="https://18f.gsa.gov/">smart folks at 18F</a>, and at the agencies they serve, we are beginning to see some tools emerge that begin to help us make sense of the overwhelming amount of data that comes out of the government on a regular basis. You can see this in action with <a href="https://qpp.cms.gov/api/">the API for Quality Payment Program Measures, out of the Centers for Medicare &amp; Medicaid Services (CMS)</a>–helping make sense of how spending is working, or not working when it comes to healthcare.</p>
-
-<p>It has taken years for projects like this to get approved and rolled out. It represents the future of how we make sense of big government, and begin to understand where the waste is, while still also understanding the good that it is occurring. Sadly, as I tell the story, and we see this first wave of APIs coming out of government, the current administration is slashing the budgets behind this type of work. In 2017 I am very concerned for projects like this, as well as future iterations of these API efforts, at a time where we need increased investment in important areas like APIs cracking open health care spending.</p>
-
-<p>If you are in healthcare, make sure and spend some time playing with the API, providing CMS with feedback on what works and what doesn’t. If you have the skills, and the resources, maybe you can also invest in developing some visualizations, applications, or other storytelling around the CMA API for Quality Payment Program Measures, helping to demonstrate the value in understanding how our healthcare dollars are being spent, and the value of APIs helping us slice and dice what both the good and the bad of the impact government has in our world. If you do, make sure and reach out to me so I can tell the story along the way.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/02/centers-for-medicare-and-medicaid-services-api-for-quality-payment-program-measures/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

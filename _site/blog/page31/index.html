@@ -129,6 +129,84 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2012/01/16/atts-new-cloud-api-platform/">AT&T's new Cloud API Platform</a></h3>
+        <span class="post-date">16 Jan 2012</span>
+        <p>
+     <a href="http://developer.att.com/"><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/att/ATT-API-Platform.png" alt="" align="right" /></a>
+</p>
+<p>
+     <em>This is a guest post by <a title="Travis Spencer" href="http://travisspencer.com/">Travis Spencer</a>, a Software engineer specializing in federation, SSO, cloud computing, Web services, &amp; enterprise architecture.</em>
+</p>
+<p>
+     This week, <a href="http://www.attinnovationspace.com/innovation/story/a7779618">AT&amp;T announced</a> the release of a <a href="http://developer.att.com/">new API platform</a> that is made up of various components designed to simplify mobile Web application development and utilize resources only available through them. Specifically, the new offering is made up of the following:
+</p>
+<ul class="mainlist">
+     <li>
+          <span>A number of RESTful cloud services such as device location, MMS, digital signing, and direct carrier billing</span>
+     </li>
+     <li>An application marketplace and distribution channel
+     </li>
+     <li>A hosting environment for the HTML5 and server-side components used by applications running on the platform
+     </li>
+     <li>SDKs for common development environments such as C#, PHP, Ruby, and Java that can be used to call the API
+     </li>
+     <li>An HTML5 client-side SDK built atop Sencha Touch that abstract away the various mobile UI differences of Android, iOS, Blackberry and others while simultaneously simplifying the integration w/ their new cloud services
+     </li>
+</ul>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/att/att-1.png" alt="" align="right" />
+</p>
+<p>
+     <span>These are complimented by extensive samples, documentation, forums, on-line support, and a non-production environment where you can create an unlimited number of test applications.</span>
+</p>
+<p>
+     <span>After</span> <a href="https://developer.att.com/developer/urlRouter.jsp?referer=callToAction"><span>joining the developer program</span></a><span>, you can use the portal to create applications. When you do so, you specify which services your application will use (as shown in the adjacent screenshot). If you are developing a mobile Web application w/ HTML5, the SDK for that platform greatly simplifies the process and reduces the effort required.</span>
+</p>
+<p>
+     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/att/att-2.png" alt="" align="left" />
+</p>
+<p>
+     <span>It does this using the architecture shown in the following figure. As depicted, an HTML5 application calls the new cloud API via a proxy (possibly hosted by AT&amp;T). This intermediary hides the security of the API in a Sencha plug-in, simplifying the programming model clients must follow.</span>
+</p>
+<p>
+     <span>This JavaScript library ensures that a user has authorized an application to access her AT&amp;T resources without having to share a username or password. It does this using a standard security protocol called OAuth, which many other APIs</span> <a href="/blog/tag.php?Search_Tag=OAuth"><span>discussed previously on this blog</span></a> <span>also use. Because all calls to the API go through this proxy, the fact that the user has authorized the application can be maintained, ensuring that this step is only done once (or at least on an infrequently basis). After this initial call, the proxy will tack on a token to subsequent ones, proving the user has granted the application the right to use their resources. (See my other blog post for a</span> <a href="http://travisspencer.com/blog/2012/01/atts_use_of_oauth_in_new_api_p"><span>deeper dive into the security of the API</span></a><span>.)</span>
+</p>
+<p>
+     <span>Once the application is done, you can deploy it into production. After doing so, you can monitor it in the same management portal. The available reports show you API response time, number of MMS and SMS messages sent, the number of errors encountered, the number of payments made, and more. This type of data will help measure ROI, optimize future releases, and better design other applications. Once the app is live, it can also be submitted to the AppCenter (though not through the portal). This widget presents applications to AT&amp;T subscribers right on their devices, helping market your inventions.</span>
+</p>
+<p>
+     <span>After digging into and toying w/ this new platform for a bit, I have to say I’m impressed. Not every mobile network operator could pull this off, especially to the extent and quality AT&amp;T has done. Their use of an industry standard like OAuth, a common architectural paradigm like REST, and an extension to a popular framework like Sencha is very modern and appealing, which is unexpected coming from an industry where the opposite is often the case. These things together w/ the fact that the API exposes resources only available from the carrier itself, certainly make the API worth checking out.</span>
+</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2012/01/16/atts-new-cloud-api-platform/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
+        <h3><a href="https://apievangelist.com/2012/01/13/email-as-a-content-api/">Email as a Content API</a></h3>
+        <span class="post-date">13 Jan 2012</span>
+        <p><img style="padding: 1px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/ifthisthenthat/ifthisthenthat-api-evangelist-to-tumblr.png" alt="" width="300" align="right" /></p>
+<p>I think email is highly underrated as a content API.  I know its not what we traditionally think of as an API, but has a lot of potential as a basic interface into an application.</p>
+<p>An example of this is <a title="If This Then That" href="http://ifttt.com/">If This Then That (iftt)</a>. I use iftt to syndicate content to some of my blog platforms.  As part of my blogging strategy I want posts I publish on API Evangelist, to also show up on my <a title="Blogger" href="http://kinlane.blogspot.com/">Blogger</a>, <a title="Posterous" href="http://kinlane.posterous.com/">Posterous</a>, <a title="Tumblr" href="http://kinlane.tumblr.com/">Tumblr</a> and <a title="Wordpress" href="http://kinlane.posterous.com/">Wordpress</a>.</p>
+<p>Using iftt you can setup tasks that get triggered on certain events.  One such trigger is a new post to an RSS feed.  So when a new blog posts shows up in the <a title="API Evangelist RSS Feed" href="http://feeds.feedburner.com/ApiEvangelist">API Evangelist RSS</a> feed I can have iftt pull the title and body and push to a channel.  iftt provides channels for Posterous and Tumblr, allowing me to automatically syndicate using their APIs. &nbsp;</p>
+<p><img style="padding: 1px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/ifthisthenthat/ifthisthenthat-api-evangelist-to-wordpress-via-email.png" alt="" width="300" align="right" /></p>
+<p>There are no channels for Blogger and Wordpress, so I use their Gmail channel in conjunction with the post by email features on Blogger and Wordpress.  So instead of using an API to syndicate my content, I use email as an interface for these blogging platforms.</p>
+<p>Using email as a content API is obviously not for every situation, but for some application processes, it might just work for moving content from one application to another, without much overhead.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2012/01/13/email-as-a-content-api/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/">The Secret to Amazon's Success--Internal APIs</a></h3>
         <span class="post-date">12 Jan 2012</span>
         <p>
@@ -4264,50 +4342,6 @@ For example, MIAME (minimum information about a microarray experiment; see Brazm
 <p>The Mimeo Connect Flyer &amp; Brochure  API for large format printing is a perfect tool for the API stack.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2011/09/05/api-stack-single-sheet-printing-with-the-mimeo-connect-flyer-brochure-printing-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/09/05/api-stack-large-format-printing-with-the-mimeo-connect-poster-printing-api/">API Stack - Large Format Printing with the Mimeo Connect Poster Printing API</a></h3>
-        <span class="post-date">05 Sep 2011</span>
-        <p>
-     <img src="http://kinlane-productions.s3.amazonaws.com/mimeo/posters-sample.png" alt="" align="right" />The Mimeo Connect Poster Printing API allows developers to submit high resolution PDF files, and order commercially printed posters with different sizes, paper, lamination and mounting from within your web and mobile applications.
-</p>
-<p>
-     The Poster Printing API provides a RESTful interface, using application keys for authentication, with responses in XML or JSON.  There are seven API methods for getting proofs, quotes, shipping options, place order and retrieve poster print order status.
-</p>
-<p>
-     The Mimeo Connect Poster Printing API for large format printing is a perfect tool for the API stack.
-</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/09/05/api-stack-large-format-printing-with-the-mimeo-connect-poster-printing-api/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2011/09/05/api-stack-card-printing-with-the-mimeo-connect-card-printing-api/">API Stack - Card Printing with the Mimeo Connect Card Printing API</a></h3>
-        <span class="post-date">05 Sep 2011</span>
-        <p>
-     <img class="c1" src="http://kinlane-productions.s3.amazonaws.com/mimeo/card-sample-image.png" alt=" alt=" align="right" />The Mimeo Connect Card Printing API allows developers to submit PDF files, and order commercially printed cards in different sizes, paper and coatings from within your web and mobile applications.
-</p>
-<p>
-     The Card Printing Printing API provides a RESTful interface, using application keys for authentication, with responses in XML or JSON.  There are seven API methods for getting proofs, quotes, shipping options, place order and retrieve print order status.
-</p>
-<p>
-     The Mimeo Connect Card Printing API for card printing is a perfect tool for the API stack.
-</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2011/09/05/api-stack-card-printing-with-the-mimeo-connect-card-printing-api/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
