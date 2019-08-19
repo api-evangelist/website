@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Client
   - Definition
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-gears-numbers-blue.jpg
+image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-beach-rocks-currents-internet-numbers.jpg
 ---
 <img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 I fully surfed the first wave of API management. API Evangelist began by researching what Mashery, Apigee, and 3Scale had set into motion. API Evangelist continued to has exist through funding from 3Scale, Mulesoft, WSO2, and continues to exist because of the support of next generation providers like Tyk. I intimately understand what API management is, and why it is valuable to both API providers and consumers. API management is so relevant as infrastructure it is now baked into the AWS, Azure, and Google Clouds. However, if you listen to technological winds blowing out there, you will mostly hear that the age of API management is over with, but in reality it is just getting started. The folks telling these tales are purely seeing the landscape from an investment standpoint, and not from an actual boots on the ground within mainstream enterprise perspective—something that is going to burn them from an investment standpoint, because they are going to miss out on the second wave of API management that is going on.
