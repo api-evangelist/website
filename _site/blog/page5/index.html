@@ -129,6 +129,33 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/11/29/asyncapi-is-a-specification-format-for-message-driven-apis/">AsyncAPI Is A Specification Format For Message-Driven APIs</a></h3>
+        <span class="post-date">29 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-editor-sample.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>I’ve been learning about a new API definition format called AsyncAPI that allows you to define message-driven APIs in a machine-readable format. It is protocol-agnostic, which means you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, and other real-time, and Internet of Things focused APIs. The specification format mirrors OpenAPI, making it pretty easy to get up to speed understanding what is going on.</p>
+
+<p>There are two primary concepts at play with the AsyncAPI:</p>
+
+<ol>
+  <li>Messages - Consumer(s) communicate with your API via messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want to trigger a command. Technically speaking the events and actions will always be sent in the same way. These are just messages, and their content can be anything. So when we talk about the difference between events and actions, this is only a semantic differentiation of message’s content. We do not enforce you to make any difference between them, although we encourage you to do it. A message can contain headers and a payload. However, both are optional. The specification allows you to define any header, to remain as much protocol-agnostic as possible.</li>
+  <li>Topics -  Message-driven protocols usually contain something called topic (MQTT), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.
+There’s no standard way of naming topics, so we recommend you to have a look at our proposal here.</li>
+</ol>
+
+<p>I don’t have any APIs I can apply AsyncAPI to, so I have to just learn from the examples and any other work I come across. It makes me happy to see folks developing API specifications like this, going beyond what OpenAPI is doing, but also keeping so closely in alignment with the existing work out of the OAI. I’m always hearing folks say that the OpenAPI specification doesn’t do what they want it to do, yet they don’t invest in vendor extensions, or even augment the work that is going on with a complimentary set of specifications. Good to see people just make it happen!</p>
+
+<p>I’m adding AsyncAPI to <a href="http://definitions.apievangelist.com/">my API definition research</a> so I can keep in tune with where it goes. I’m talking with some folks regarding how it should viewed by the OAI. In my opinion, the OAI is going to have to begin considering how it will embrace specs that go beyond what it can do, as well as <a href="http://apievangelist.com/2017/09/25/considering-the-future-of-the-openapi-initiative/">begin to adopt industry specific OAI implementations that may require acknwoledging some vendor extensions that may never get brought into the core specification</a>. Anyways, it’s good to see movement in this area. Nice work <a href="https://twitter.com/fmvilas">Fran</a>, <a href="https://twitter.com/bpedro">Bruno</a>, and <a href="https://twitter.com/PermittedSoc">Mike</a>–you guys are rocking it.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/29/asyncapi-is-a-specification-format-for-message-driven-apis/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/11/29/api-deployment-is-about-publishing-them-wherever-they-are-needed/">API Deployment Is About Publishing Them Wherever They Are Needed</a></h3>
         <span class="post-date">29 Nov 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-database-deployment.png" align="right" width="45%" style="padding: 15px;" /></p>
@@ -3329,40 +3356,6 @@ In this way, standards aren’t something that are dictated to teams. Teams driv
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/05/teaching-my-client-three-approaches-to-modular-ui-design-using-their-apis/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/05/how-api-evangelist-works/">How API Evangelist Works</a></h3>
-        <span class="post-date">05 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/crypto-machine-bletchley_copper_circuit.png" align="right" width="40%" style="padding: 15px;" /></p>
-<p>I’ve covered this topic several times before, but I figured I’d share again for folks who might have just become readers int he last year. Providing an overview of how API Evangelist works, to help eliminate confusion as you are navigating around my site, as well as to help you find what you are looking for. First, API Evangelist was started in the summer of 2010 as a research site to help me better understand what is going on in the world of APIs. In 2017, it is still a research site, but it has grown and expanded pretty dramatically into a network of websites, driven by a data and a content core.</p>
-
-<p>The most import thing to remember is that <a href="https://github.com/api-evangelist">all my sites run on Github</a>, which is my workbench in the the API Evangelist workshop. apievangelist.com is the front door of the workshop, with each area of my research existing as its own Github repository, at its own subdomain with the apievangelist domain. An example of this can be found in my API design research, where you will find at <a href="http://design.apievangelist.com/">design.apievangelist.com</a>. As I do my work each day, I publish my research to each of my domains, in the form of YAML data for one of these areas:</p>
-
-<ul>
-  <li><strong>Organizatons</strong> - Companies, organizations, institutions, programs, and government agencies doing anything interesting with APIs.</li>
-  <li><strong>Individuals</strong> - The individual people at organizations, or independently doing anything interesting with APIs.</li>
-  <li><strong>News</strong> - The interesting API related, or other news I curate and tag daily in my feed reader or as I browse the web.</li>
-  <li><strong>Tools</strong> - The open source tooling I come across that I think is relevant to the API space in some way.</li>
-  <li><strong>Building Blocks</strong> - The common building blocks I find across the organizations, and tooling I’m studying, showing the good and the bad of doing APIs.</li>
-  <li><strong>Patents</strong> - The API related patents I harvest from the US Patent Office, showing how IP is impacting the world of APIs.</li>
-</ul>
-
-<p>You can find the data for each of my research areas in the _ data folder for each repository. Which is then rendered as HTML for each subdomain using Liquid via each Jekyll CMS driven website. All of this is research. It isn’t meant to be perfect, or a comprehensive directory for others to use. If you find value in it–great!! However, it is just my research laying on my workbench. It will change, evolve, and be remixed and reworked as I see fit, to support my view of the API sector. You are always welcome to learn from this research, or even fork and reuse it in your own work. You are also welcome to submit pull requests to add or update content that you come across about your organization or open source tool.</p>
-
-<p>The thing to remember about API Evangelist is it exist primarily for me. It is about me learning. I take what I learn and publish as blog posts to API Evangelist. This is how I work through what I’m discovering as part of my research each day, and use as a vehicle to move my understanding of APIs forward. This is where it starts getting real. After seven years of doing this I am reaching 4K to 7K page views per day, and clearly other folks find value in reading, and sifting through my research. Because of this I have four partners, <a href="http://apis.how/ake3nxbapm">3Scale</a>, <a href="http://apis.how/5ytnitnakm">Restlet</a>, <a href="http://apis.how/8nlsropidv">Runscope</a>, and <a href="http://apis.how/zflfesymzk">Tyk</a> who pay me money to have their logo on the home page, in the navigation, and via a footer toolbar. Runscope also pays me to place a re-marketing tag on my site so they can show advertising to my users on other websites, and Facebook. This is how I pay my rent, an how I eat each month.</p>
-
-<p>Beyond this base, I take my research and create API Evangelist industry guides. <a href="http://definitions.apievangelist.com/#Guide">API Definitions</a>, and <a href="http://design.apievangelist.com/#Guide">API Design</a> are the two most recent editions. I’m currently working on one for data, database, as well as deployment, and management. These guides are sometimes underwritten by my partners, but mostly they are just the end result of my API research. I also spend time and energy taking what I know and craft API strategy and white papers for clients, and occasionally I actually create APIs for people–mostly in the realm of human services, or other social good efforts. I’m not really interested in building APIs for startups, or in service of the Silicon Valley machine. Even tough I enjoy watching, studying, and learning from this world, because there are endless lessons regarding how we can use technology in this community, as well as how we should not be using technology.</p>
-
-<p>That is a pretty basic walk through of API Evangelist works. It is important to remember I am doing this research for myself. To learn, and to make a living. API Evangelist is a production, a persona I created to help me wade through the technology, business, and politics of APIs. It reflects who I am, but honestly is increasingly more bullshit than it is reality, kind of like the API space. I hope you enjoy this work. I enjoy hearing from my readers, and hearing how my research impacts your world. It keeps me learning each day, and from ever having to go get a real job. It is always a work in progress and never done. Which I know frustrates some, but I find endlessly interesting, and is something that reflects the API journey, something you have to get used to if you are going to be successful doing APIs in this crazy world.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/05/how-api-evangelist-works/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

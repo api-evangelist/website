@@ -1,11 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>API Evangelist</title>
-  <updated>2019-08-20T02:00:00Z</updated>
+  <updated>2019-08-21T02:00:00Z</updated>
   <link rel="self" href="https://apievangelist.com/atom.xml"/>
   <author><name>Kin Lane</name></author>
   <id>https://apievangelist.com/atom.xml</id>
 	<entry>
+    <title>Multiple Overlapping API Life Cycle(s)</title>
+    <link href="http://apievangelist.com/2019/08/21/multiple-overlapping-api-life-cycles/"/>
+    <updated>2019-08-21T02:00:00Z</updated>
+    <content><![CDATA[
+One of the toughest parts about teaching people about APIs is that there are many different views of what the API life cycle can be depending on who you are, and what your intentions are. As an advocate or evangelist for a single API you are speaking externally to the API consumption life cycle, but internally you are focused on the API delivery life cycle. As an API Evangelist for many APIs, targeting providers, consumers, and anyone else who comes along, I find it a constant challenge to properly speak to my intended audience. One problematic part of my storytelling I regularly see emerge is that I speak of a single API life cycle, where in reality there are many overlapping life cycles. So, to help me think through all of this I wanted to explore what these overlapping tracks might be—coming up with four distinct iterations of overlapping API building blocks.
+
+The API Delivery Life Cycle 
+The most common way we refer to the API life cycle is from the perspective of the API provider, where it is all about delivering an API. Referencing the stops along the life cycle that are most relevant to someone who is  delivering a new API, or might be moving an API forward as part of the evolution of an existing resource. From my vantage point, I consider these to be the most common stops along the API delivery life cycle.
+
+
+  Definitions - Defining what an API does, crafting the JSON schema, OpenAPI, AsyncAPI, and other machine readable definitions of what is potentially being delivered, initializing the contract that will guide an API through the life cycle.
+  Design - Stepping back and considering the healthiest API Design practices to apply, working from a diverse API toolbox, and ensuring you have a good handle on who your audience is, and the design patterns they’ll respond to.
+  Mocking - Generating a mock instance of an API using the contract to test out design patterns, and begin socializing amongst technical and business stakeholders so that they can begin providing critical feedback on the design.
+  Documentation - Making sure there is auto-generated documentation available for all providers and consumers from the agreed upon API contract definition, ensuring there is machine and human readable documentation available at all times.
+  Testing - As the API contract stabilizes, tests can be generated to ensure that the contract is not veering of the intended course, providing guardrails that can be regularly rebuilt from the API contract, and ultimately used in production.
+  Deployment - Publishing of an API either using an open source framework, gateway, or through hand coding of the interfaces, providing a production ready instance of an individual API contract that was defined early on.
+  Management - Making sure an API requires proper authentication, has access levels and rate limits defined, as well as logging enabled, so that its access can be properly quantified, managed, and reported upon for provider and consumer.
+  Monitoring - Ensuring that each API is being monitored in real time from multiple regions, ensuring that an API is up and available, as well as passing all tests that have been defined as part of the development of each API contract.
+  Security - Knowing that requiring authentication will not be enough, and that all APIs are regularly scanned, probed, and pushed for any potential vulnerabilities, providing regular accounting of the security of al APIs in operation.
+
+
+I can quickly add on another 10-20 stops along the API delivery life cycle, but I want to highlight the core building blocks of delivering an API, not exhaustively document every possible building block. These are the primary steps any API provider will need to master before they can begin competently delivering API resources for consumption internally, or externally to partners and the general public. Providing a basic checklist that can be use to flesh out the details needed before an API can be called production-ready, then begin it’s life as the back-end for web, mobile, device, and network applications.
+
+API Consumption Life Cycle
+
+Next, I wanted to explore the flip side of the API life cycle, and the view from the position of the API consumer. This is the second most common way I talk about the API life cycle, but I find that I often get things mixed up between provider and consumer, and I know from experience that I do not always ensure that things are made clear. To help me put myself into the shoes of API consumers, I wanted to explore what some of the stops along the API life cycle from purely a consumption standpoint—here are a few that I’m thinking about today.
+
+
+  Discovery - Before you can consume an API you have to be able to find it, and be able to get what need to get up and running.
+  Documentation - You will have to be able to understand the details of what an API does, and ultimately what it delivers via documentation.
+  Plans - Once you understand what an API does, you will need to have a grasp on the tiers of access, and what you can afford to use.
+  Account - After you decide to use an API you will need to be able to signup and obtain an account and credentials that will allow for access.
+  Authentication - Now that you have keys, you will need to understand how you can use them as part of authentication for the APIs you need.
+  Clients - There should always be client tooling that helps consumers get up and running without writing code, with as little friction as possible.
+  Software Development Kits (SDK) - There should be SDKs available in a variety of programming languages allow consumers to seamlessly integrate.
+  Command Line Interface (CLI) - Some developers will prefer using a CLI to integrate and automate using an API as part of their systems.
+  Integration - Now we reach the point where we actually integrate with an API, something not all developers will successfully achieve as part of their own consumption life cycle.
+  Support - Now that a consumer has integrated they will need to know where they can receive support as part of their application, and ongoing use of API resources.
+  Engagement - There should be further opportunities for engagement beyond just the initial integration of an API, encouraging the deepening of the provider and consumer relationship.
+
+
+This provides me with a simple slice of the API consumption side of things to focus on in my storytelling. Having simple, organized groups of API building blocks like this, wrapped in a variety of contexts helps me be more consistent in my writing and speaking. Using consistent wording combined with repetition is important, and thoughtfully defining the API life cycle from the provider, and well as consumer side, in ways that everyone can easily understand is very important to me.
+
+API Maintenance Life Cycle
+We aren’t done with APIs once they are delivered and being consumed. There are regular maintenance tasks that should occur, and these are things that won’t necessarily be handed by the same team that delivers the APIs. Opening up a whole other dimension of the API life cycle that cannot be ignored, otherwise we run the risk of offering a less than quality experience for our consumers. Here are the maintenance portions of the API life cycle that I am considering, and documenting as part of this work.
+
+
+  Communication - An API is up and running and communication between provider and consumer is critical to ensure everyone is operating and doing what they need to be doing.
+  Support - Making sure all of the consumers are supported and getting the attention they need, providing the critical feedback loop between provider and consumer.
+  Issues - Publishing a real time accounting of open issues that exist to help API consumers understand the current status of the system, while also helping minimize support requests for known issues.
+  Monitoring - Understanding the overall health and status of all APIs, and making sure all monitors, tests, and the platform is meeting their SLA when it comes providing APIs.
+  Performance - Going beyond the monitoring and testing, and making sure a certain quality of service bar is met, and we have a complete grasp of how our customers experience API access.
+  Security - Reviewing security practices, and auditing authentication, usage, logging, scanning, and other dimensions of security across all APIs in operation.
+  Reporting - Staying in tune with API consumption, errors, and general access and usability across all API consumers, making sure an awareness is developed in how digital resources are used.
+  Road Map - Publishing an accounting of what the future will hold for API consumers, regularly thinking about what future plans, or lack of future plans will have on API consumers.
+  Evangelism - What is being doing to get the word out about the value APIs deliver, establishing a strategy for how you evangelize internally, with partners, and the public and help achieve platform goals.
+
+
+Abandoned APIs that do not have anyone in the drive seat are the most common type of API I come across. It is pretty easy to tell when an API provider has moved on, and just left the API up and running. In other cases, teams are just under resourced, and do not have the bandwidth available to invest in the API maintenance portion of the API life cycle. We all get excited about the design and delivery of a new API, but few of us like doing the mundane aspects of API management—this is why you should invest in a good API management solution, because nobody should be reinventing the wheel in this area.
+
+API Governance Life Cycle 
+
+Lastly, and one of the most under-developed portions of the API life cycle, is the governance and oversight of things. This is the portion of the API life cycle where you go beyond the tactical day to day stuff and work to establish a strategy for how you deliver, consume, and maintain APIs. Getting formal about how we do what we do, and make sure all stakeholders, especially consumers have a good grasp on API policy, and how things get done. Here are some of the building blocks I consider at the API governance stops along the API life cycle.
+
+
+  Definition - Which definitions are used? Where are the OpenAPI, schema, and other relevant patterns.
+  Design - What design patterns are in play across the API definitions, and what is the meaning behind the design of all APIs.
+  Deployment - What does deployment look like on-premise, in the cloud, and from region to region.
+  Management - Quantify the standard approaches to managing APIs from on-boarding to analysis and reporting.
+  Plans - How are access tiers and plans defined, providing 3rd party access to APIs, including that of aggregators and application developers.
+  Monitoring - What does monitoring of web APIs look like, and how is data aggregated and shared.
+  Testing - What does testing of web APIs look like, and how is data aggregated and shared.
+  Performance - What does performance evaluation of web APIs look like, and how is data aggregated and shared.
+  Security - What are the security practices in place for all APIs, and what is the current status of security.
+  Breaches - When there is a breach, what is the protocol, and practices surrounding what should happen–where is the historical data as well.
+  Terms of Service - What does terms of service across many APIs look like.
+  Privacy Policy - How is privacy protected across API operations, and how is this impacting operations.
+  Support - What are all the expected support channels, where are they located, and what the current metrics are.
+  Training - A detailed training walk-through for anyone looking to understand governance.
+  Certification - Providing certification for API publishers as well as API consumers when it comes to their platform participation.
+  Executive - A robust walk-through of the concepts at play for an executive from the 100K view of things.
+
+
+Your API delivery, consumption, and management house needs to be in order before you can begin realizing governance across everything. For many API providers it can be difficult to step back and look at things from the 100K level. However, increasingly it will become critical to make time to invest in API governance, otherwise you end up dealing with lower level fires that could have been addressed with a little more planning and coordination.
+
+Many API Life Cycle(s)
+I’ve historically visualized the API lifecycle as a set of linear stops along a single life cycle, however over the years, as the world of APIs have come into better focus, I’m seeing the life cycle as a set of many different life cycles that work in concert for API provider as well as API consumers—cause, we all should really be both. I acknowledge that there are many different possible iterations upon the different types of API life cycles that will exist across companies, organizations, institutions, and government agencies. It will all depend on the expertise, services, tooling, and resources groups have when it comes to delivering, consuming, managing, and governing the APIs they depend on. However, I’m at least looking to define at least a handful of templates that can be used to guide API operators who are wanting to see the bigger picture.
+
+Next, I will work on a visual to go with these API lifecycle templates. I’m going to be sticking with my transit map approach to defining the API landscape, and plot these different API life cycles as different lines within the same overall landscape map. Working to show how they overlap and interact. My biggest challenge in all of this is to be able to articulate that this lifecycle is applied across many different APIs, and potentially many different teams publishing APIs, as well as many different types of consumers putting them to work. Historically I have tried to auto-generate these API transit maps, but for this work I think I will just hand-craft the maps to reflect the API life cycles I have defined. Providing a more universal way in which to help articulate, visualize, explore and learn more about how the API life cycle(s) work.
+]]></content>
+    <id>http://apievangelist.com/2019/08/21/multiple-overlapping-api-life-cycles/</id>
+  </entry><entry>
     <title>The API Conferences I Am Tracking On For The Fall</title>
     <link href="http://apievangelist.com/2019/08/20/the-api-conferences-i-am-tracking-on-for-the-fall/"/>
     <updated>2019-08-20T02:00:00Z</updated>
@@ -850,31 +942,5 @@ These are the fundamentals of API management, however API keys and tokens seem t
 There is much more that can be done in the name of API security. This is just a list of the elements of API management that contribute to API security, which are often neglected. Having API management does not equal API security. Properly applying API management contributes to API security, it is never API security by itself. If you aren’t doing API management properly, you are more likely to fall for the next generation of API security providers who are machine learning focused, promising to do the hard work of managing awareness for you, so you don’t have to. Your unwillingness to do the work in the first place, and properly understand the role that awareness of your traffic, makes you a ripe target for selling the next wave of API security solutionism. Good luck with that!
 ]]></content>
     <id>http://apievangelist.com/2019/07/22/the-role-having-awareness-of-your-api-traffic-plays-in-api-security/</id>
-  </entry><entry>
-    <title>Happy Path API Testing Bias</title>
-    <link href="http://apievangelist.com/2019/07/22/happy-path-api-testing-bias/"/>
-    <updated>2019-07-22T02:00:00Z</updated>
-    <content><![CDATA[
-I see a lot of happy path bias when it comes to the development of APIs, but specifically when it comes to crafting testing to ensure APIs are delivering as expected. Happy path is a term used in testing to describe the desired outputs a developer and product owner is looking for. Making the not so happy path being about testing for outcomes that a developer and product owner is not wanting to occur. When it comes to API development most developers and product owners are only interested in the happy path, and will almost always cut corners, minimize the investment in, or completely lack an imagination when it comes to less than happy path API testing.
-
-There are many reasons why someone will have a bias towards the happy path when developing an API. Every API provider is invested in achieving the happy path for delivering, providing, and consuming an API. This is what generates revenue. However, in this quest for revenue, we often become our own worst enemy. Shining a spotlight on the happy path, while being completely oblivious to what the not so happy paths will look like for end users. Why do we do this?
-
-
-  Greed - We are so interested in getting an API up and running, used in our applications, and generating behavioral surplus, we are more than willing to ignore all other possible scenarios if we can easily meet our revenue goals by ignoring the unhappy path and there are no consequences.
-  Tickets - Most development occurs using JIRA or other software development “tickets”, which tell developers what they are supposed to do to meet the requirements of their employment—tickets are written with the happy path in mind, and developers are rarely willing to do more.
-  Imagination - While many of us technologists think we are imaginative creatures, most of us are pretty stuck in a computational way of thinking, and elaborating, iterating, and exploring beyond the initial happy path design of our API just does not exist.
-  Use Software - Most of us developers do not actually use the platform we are developing, setting the stage for where we really don’t understand the problem being solve, further siloing us into seeing only the happy path that have been handed to us as part of initial product vision.
-  White Male - The majority of us API developers are white men, or developers who report to white men, leaving entire shadows regarding how our APIs will be used and abused—when you are privileged, the happy path is always easier to see and walk on.
-  Apathy - The majority of us are just doing our jobs, and we really do not have any excitement, passion, or interest in our jobs. We are just doing what we are told, and if our bosses do not specifically point out every single unhappy path, we don’t care.
-  Velocity - Things move fast at almost any company delivering APIs, and it is easy to not have time to be able to step back and sufficiently think about what the happy paths might be when we are delivering APIs that deliver some functionality amidst a fast pace environment.
-  Experience - Another reason for overlooking unhappy paths is we just do not have the experience to know about them. Startups and many technology focused companies like hiring young, low pay developers to get the job done, and they won’t always have the experience to see in the shadows.
-  By Design - The product owners do not want the less than happy or unhappy paths patched, as they are there by design, and support the overall business model, which is usually advertising. Encouraging abuse, and exploitation of APIs, or at least ensuring they are much lower priorities.
-
-
-There are few incentives to develop quality software these days. Revenue drives much of why we are delivering APIs, and incentivizing developers to think out of the box when it comes to API testing just doesn’t exist. Plus, it takes a lot of work to write first class tests alongside your code. Most developers are conditioned to see tests as secondary, and the thing you do only when you have the time. Making quality unhappy and less than happy path API testing always left on the cutting room floor, never making it into the final product.
-
-You can see this bias playing out in the APIs behind Facebook, Twitter, and other advertising driven platforms. The abuse of APIs are often overlooked if it generates clicks, traffic, and increases the eyeballs. Secondarily I’d say that the consequences for when unhappy paths are identified for APIs is almost non-existent. There is no accountability for poorly designed APIs, or APIs that allow for uses beyond their intended purpose. In this environment, most API providers will never prioritize API testing, and incentivize developers to properly explore how an API can be misused, abused, or just not deliver the functionality promised. Ensuring that much of API usage exists on the unhappy path by design.
-]]></content>
-    <id>http://apievangelist.com/2019/07/22/happy-path-api-testing-bias/</id>
   </entry>
 </feed>

@@ -129,6 +129,39 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/07/18/http-status-codes-are-an-essential-part-of-api-design-and-deployment/">HTTP Status Codes Are An Essential Part Of API Design And Deployment</a></h3>
+        <span class="post-date">18 Jul 2017</span>
+        <p><a href="https://www.runscope.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg" alt="" align="right" width="40%" /></a>
+It takes a lot of work provide a reliable API that people can depend on. Something your consumers can trust, and will provide them with consistent, stable, meaningful, and expected behavior. There are a lot of affordances built into the web, allowing us humans to get around, and make sense of the ocean of information on the web today. These affordances aren’t always present with APIs, and we need to communicate with our consumers through the design of our API at every turn.</p>
+
+<p>One area I see IT and developer groups often overlook when it comes to API design and deployment are <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes">HTTP Status Codes</a>. That standardized list of meaningful responses that come back with every web and API request:</p>
+
+<ul>
+  <li><strong>1xx Informational</strong> - An informational response indicates that the request was received and understood. It is issued on a provisional basis while request processing continues.</li>
+  <li><strong>2xx Success</strong> - This class of status codes indicates the action requested by the client was received, understood, accepted, and processed successfully.</li>
+  <li><strong>3xx Redirection</strong> - This class of status code indicates the client must take additional action to complete the request. Many of these status codes are used in URL redirection.</li>
+  <li><strong>4xx Client errors</strong> - This class of status code is intended for situations in which the client seems to have errored.</li>
+  <li><strong>5xx Server error</strong> - The server failed to fulfill an apparently valid request.</li>
+</ul>
+
+<p>Without HTTP Status codes, application won’t every really know if their API request was successful or not, and even if an application can tell there was a failure, it will never understand why. HTTP Status Codes are fundamental to the web working with browsers, and apis working with applications. HTTP Status Codes should never be left on the API development workbench, and API providers should always go beyond just 200 and 500 for every API implementation. Without them, NO API platform will ever scale, and support any number of external integrations and applications.</p>
+
+<p>The most important example I have of the importance of HTTP Status Codes I have in my API developers toolbox is when <a href="http://apievangelist.com/2012/06/02/tracking-federal-agencies-progress-on-api-deployment/">I was working to assist federal government agencies in becoming compliant with the White House’s order for all federal agencies to publish a machine readable index of their public data inventory of their agency website</a>. As agencies got to work publishing JSON and XML (an API) of their data inventory, I got to work building an application that would monitor their progress, indexing the available inventory, and providing a dashboard the the GSA and OMB could use to follow their progress (or lack of).</p>
+
+<p>I would monitor the dashboard in real time, but weekly I would also go through many of the top level cabinet agencies, and some of the more prominent sub agencies, and see if there was a page available in my browser. There were numerous agencies who I found had published their machine readable public data inventory, but had returned a variety of HTTP status codes other than 200-resulting in my monitoring application to consider the agency not compliant. <a href="http://kinlane.com/2013/11/06/knowing-your-http-status-codes-in-federal-government/">I wrote several stories about HTTP Status Codes</a>, in which the GSA, and White House groups circulated with agencies, but ultimately I’d say this stumbling block was one of the main reasons that cause this federated public data API project to stumble early on, and never gain proper momentum–a HUGE loss to an open and more observable federal government. ;-(</p>
+
+<p>HTTP Status Codes aren’t just a nice to have thing when it comes to APIs, they are essential. Without HTTP  Status Codes each application will deliver unreliable results, and aggregate or federated solutions that are looking to consume many APIs will become much more difficult and costly to develop. Make sure you prioritize HTTP Status Codes as part of your API design and deployment process. At the very least make sure all five layers of HTTP Status Codes are present in your release. You can always get more precise and meaningful with specific series HTTP status codes later on, but ALL APIs should be employing all five layers of HTTP Status Codes by default, to prevent friction and instability in every application that builds on top of your APIs.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/07/18/http-status-codes-are-an-essential-part-of-api-design-and-deployment/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/07/17/writing-api-stories-that-speak-to-my-audience-but-also-influences-their-view-of-technology/">Writing API Stories That Speak To But Also Influences Their View Of Technology</a></h3>
         <span class="post-date">17 Jul 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-storytelling.png" align="right" width="40%" style="padding: 15px;" /></p>
@@ -3719,25 +3752,6 @@ Owner: CA, Inc.</p>
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/06/05/patent-determining-trustworthiness-of-api-requests/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/06/05/the-number-one-api-example-you-should-be-following/">An API You Should Consider Emulating When Crafting Your SaaS / API Business</a></h3>
-        <span class="post-date">05 Jun 2017</span>
-        <p><a href="https://blog.pinboard.in/2017/06/pinboard_acquires_delicious/"><img src="https://s3.amazonaws.com/kinlane-productions/pinboard/pinboard-buys-delicious.png" align="right" width="35%" /></a></p>
-<p>The <a href="https://pinboard.in/u:kinlane">social bookmarking API Pinboard</a> is my favorite API. I feel like it is a model we should all be considering crafting our API-focused businesses. I’ve used Pinboard to curate what I do as the API Evangelist ever since 2011, and it has been one of the most stable and versatile APIs in my stack, doing one thing, and doing it well, reflecting everything that is API from a business perspective.</p>
-
-<p>I feel that Pinboard provides entrepreneurs with a positive model for not just a SaaS business, and API operations, but showing startups that you don’t always need to scale to achieve success. <a href="https://blog.pinboard.in/2017/06/pinboard_acquires_delicious/">Pinboard acquired their rival Delicious bookmarking site</a> this last week, which has been bought and sold five times now, demonstrating the volatility of startup culture, as well as the viability and potential stability a well-run API business can bring to the table. Providing a model that won’t necessary work in all business scenarios, but does provide us with plenty to consider for our API ideas that probably aren’t VC scale.</p>
-
-<p>I know there will always be startups who are obsessed with the VC model for launching, scaling, and selling a business. I am fine with dealing with some of the volatility brought by these types of companies, but I feel like the lion share of the actual API business will be conducted on the shoulders of giants like Amazon, Google, and Microsoft, and via smaller operators like Pinboard. I’m going to make Pinboard into a textbook example of how to do APIs, helping entrepreneurs understand what healthy patterns already exist out there, providing them with something they can emulate when crafting their SaaS / API business.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/06/05/the-number-one-api-example-you-should-be-following/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

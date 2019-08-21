@@ -129,6 +129,24 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2016/09/20/a-trusted-github-authentication-layer-for-api-management/">A Trusted Github Authentication Layer For API Management</a></h3>
+        <span class="post-date">20 Sep 2016</span>
+        <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png" alt="" width="40%" align="right" /></p>
+<p>I am reworking the management layer for my APIs. For the last couple of years, I had aspirations of running my APIs with a retail layer generating revenue for API Evangelist--something which required a more comprehensive API management layer. In 2016, I'm not really interested in generating revenue from the APIs I operate, I'm just looking to put them to work in my own business, and if others want access I'm happy to open things up and broker some volume deals.</p>
+<p>To accomplish this I really do not need heavy security or service composition for my APIs, I'm just needed to limit who has access so they aren't just 100% public, and identify those who are using, and how much they are actually consuming. To facilitate this I am just going to use Github as a trusted layer for authentication. Using an OAuth proxy, I'll let my own applications authenticate using their respective Github user, and identify themselves using a Github OAuth token when making calls to each API.&nbsp;</p>
+<p>Each application I have operating on top of my APIs have its own Github account. Once they do the OAuth dance with my proxy, my system will then have a Github token identifying who they are. I won't need to validate the token is still good with each call, something I'll verify each hour or day, and cache locally to improve API performance. Anytime an unidentified token comes through, I'll just make a call to Github, and get the Github users associated, and check them against a trusted list of Github users who I have approved for accessing my APIs.</p>
+<p>I'm not really interested in securing access to all the content, data, and algorithms I'm exposing using APIs. I'm only looking to identify which applications are putting them to work&nbsp;and evaluate their amount of usage each day and month. This way I can monitor my own API consumption, while still opening things up to partners or any other 3rd party developer that I trust--if they are using too much, I can drop them a message to have a conversation about next steps.</p>
+<p>I'm still rolling out this system out, but it got me thinking about API access in general, and the possibilities that a trusted list of Github accounts could be used to expedite API registration, application setup, and the obtaining keys. Imagine if as a developer I could just ping any API, do an OAuth dance with my Github credentials, and get back my application id and secret keys for making API calls--all in a single flow. As an API provider I could just maintain a single trusted list of Github users, as well as consult other lists maintained by companies or individuals I trust, and reduce friction when onboarding, or automatically&nbsp;approve developers for higher levels of access and consumption.</p>
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2016/09/20/a-trusted-github-authentication-layer-for-api-management/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2016/09/19/putting-the-concept-of-the-public-api-to-rest-as-a-dominant-narrative/">Putting The Concept Of The Public API To Rest As A Dominant Narrative</a></h3>
         <span class="post-date">19 Sep 2016</span>
         <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dominant-narrative.png" alt="" width="40%" align="right" /></p>
@@ -6405,24 +6423,6 @@
 <p>With the shrinkage of freemium these days in the API space and the tightening down on free trials, an anonymous layer is compelling. It isn't something that would work for all API service providers, but it is at least something to consider as you are working to define the layers like Stoplight.io has been doing.</p>
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2016/08/19/providing-an-anonymous-layer-to-your-api-provider-service-like-stoplightio/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2016/08/19/i-know-it-is-hard-when-you-are-just-getting-started-but-please-make-your-pricing-page-public/">I Know It Is Hard When You Are Just Getting Started, But Please Make Your Pricing Page Public</a></h3>
-        <span class="post-date">19 Aug 2016</span>
-        <p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Banners_and_Alerts_and_StopLight.png" alt="" width="45%" align="right" /></p>
-<p>I received an email from <a href="https://stoplight.io/">Stoplight.io</a> about their version updates, which included the phasing out of the free beta period--makes sense. I clicked on the "you can view pricing, and setup billing, on your <span class="s2"><a href="https://via.intercom-mail.com/e?ob=Fzn1KX8qpL4Tj%2Bdj7ZqP4%2BlJKxWc1o2l%2BxKdttdR9g2KcFuIc3J7XXtd8SOATo00&amp;h=f74d2415ba4e11a5e1feb8d86c27010cced7c5c4-5693065993">account billing page</a>" in the email, and was taken to the register page.&nbsp;</span></p>
-<p>To clarify a little bit, I have an account with Stoplight.io, which I registered using my @kinlane Github account. I'm logged in as my @apievangelist Github account presently as I'm doing some work with multiple repos, and I really didn't want to log out of @apievangelist and log in with my @kinlane just to see the pricing.</p>
-<p>So I head directly to the public website of Stoplight.io to look for pricing--which I can't find within 30 seconds (standard approach). When this happens I will then Google for the [API name] + "pricing"--nothing. Ultimately I did log with my @kinlane Github so that I can see the pricing because I genuinely want to keep my account, as Stoplight.io made it into the highly useful tool category for my world.</p>
-<p>I just wanted to articulate the friction I experienced, so Stoplight.io can consider, but also so that the rest of you can consider. My preference is that you always make your pricing page public. I understand that this is difficult for startups that are just getting going, are in beta phase, etc., but I feel like in 2016 it should be the default practice for API providers, as well as service providers.</p>
-<p>Even if your service is in beta, and you aren't charging for it yet, you should have a dedicated page to explaining this, and keep it updated as you evolve. Please do not make me log in just to review your service, understand what it does, and find your&nbsp;pricing. This is bad for helping analysts like me understand what you are up to (no I don't want a briefing), and is bad for your customers who are trying to understand where their accounts stand, and whether we can afford to move forward.&nbsp;</p>
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2016/08/19/i-know-it-is-hard-when-you-are-just-getting-started-but-please-make-your-pricing-page-public/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				

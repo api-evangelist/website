@@ -129,6 +129,31 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2018/02/06/keeping-api-schema-simple-for-wider-adoption/">Keeping API Schema Simple For Wider Adoption</a></h3>
+        <span class="post-date">06 Feb 2018</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csv.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p>One aspect of <a href="http://apievangelist.com/2018/02/03/api-is-not-just-rest/">my talk at APIDays Paris this last week</a>, included a slide about considering to allow API consumers to negotiate CSV responses from our API. Something that would probably NEVER occur to most API providers, and probably would make many even laugh at me. I’m used to it, and don’t care. While not something that every API provider should be considering, depending on the data you are serving up, and who your target API consumer ares, it is something that might make sense. Allowing for the negotiation of CSV responses represents lowering the bar for API consumption, and widening the audience who can put our APIs to work.</p>
+
+<p>I was doing more work around public data recently, and was introduced to an interesting look at some lessons from developing open data standards. I’m doing a deep dive into municipal data lately as part of my partnership with <a href="http://apis.how/streamdata">Streamdata.io</a>, and I found <a href="http://www.opennorth.ca/2017/12/21/from-development-to-adoption-lessons-from-three-open-standards.html">the lessons they published interesting</a>, and something that reflects my stance on API content negotiation.</p>
+
+<blockquote>
+  <p><em>From the development and maintenance of the API, it quickly became clear that adjusting scripts after every election (and by-election) and website modification, was quickly becoming unsustainable. To address this issue, a simple CSV schema was developed to encourage standardisation of this data from the outset. The schema was designed to be as simple and easy to understand and implement as possible. Comprised of just 21 fields, 7 of which are recommended fields, the schema does not have hierarchical relationships between terms and can be implemented in a single CSV file. By making the standard this simple, we were able to get a number of adopters onboard and outputting their lists of elected representatives on their own open data portals.</em></p>
+</blockquote>
+
+<p>When it comes to APIs, simplicity rules. The simpler you can make your API, the more impact you will make. Allowing for the negotiation of CSV responses from your API when possible allows API consumers to go from API to a spreadsheet in just one or two clicks. This is huge when it comes to on boarding business users with the concepts of APIs, and what they do, and allows them to easily put valuable data resources to work in their native environment–the spreadsheet. This is something many API consumers won’t understand, but when it comes to seeking meaningful API adoption, it is something that expand the reach of any API beyond the developer class, putting it within reach of business users.</p>
+
+<p>I am a big fan of pushing our APIs to allow for the negotiation of CSV. XML, and JSON by default, whenever possible. I’m also a fan of delivering richer experiences by allowing for the negotiation of hypermedia media types. While delivering hypermedia takes a significant amount of thought and investment, allowing for the negotiation of CSV, XML, and JSON doesn’t take a lot of work. When delivering your APIs, I highly recommend thinking about who your API consumers are, and whether offering CSV responses might shift the landscape even a little bit, making your valuable data resources a little more usable by business users who won’t necessarily be delivering web or mobile applications.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2018/02/06/keeping-api-schema-simple-for-wider-adoption/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2018/02/05/api-quota-api-webhooks-and-server-sent-events-sse/">API Quota API, Webhooks, and Server-Sent Events (SSE)</a></h3>
         <span class="post-date">05 Feb 2018</span>
         <p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/goldsilverfalls/creativity/file-00_00_40_84.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -3094,33 +3119,6 @@ The RTS specifies the contingency safeguards that banks shall put in place if th
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/11/29/sorry-your-api-effort-falls-a-little-short-of-the-apis-I-cover/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/11/29/asyncapi-is-a-specification-format-for-message-driven-apis/">AsyncAPI Is A Specification Format For Message-Driven APIs</a></h3>
-        <span class="post-date">29 Nov 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-editor-sample.png" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I’ve been learning about a new API definition format called AsyncAPI that allows you to define message-driven APIs in a machine-readable format. It is protocol-agnostic, which means you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, and other real-time, and Internet of Things focused APIs. The specification format mirrors OpenAPI, making it pretty easy to get up to speed understanding what is going on.</p>
-
-<p>There are two primary concepts at play with the AsyncAPI:</p>
-
-<ol>
-  <li>Messages - Consumer(s) communicate with your API via messages. A message is a piece of information two or more programs exchange. Most of the times to notify the other end(s) that, either an event has occurred or you want to trigger a command. Technically speaking the events and actions will always be sent in the same way. These are just messages, and their content can be anything. So when we talk about the difference between events and actions, this is only a semantic differentiation of message’s content. We do not enforce you to make any difference between them, although we encourage you to do it. A message can contain headers and a payload. However, both are optional. The specification allows you to define any header, to remain as much protocol-agnostic as possible.</li>
-  <li>Topics -  Message-driven protocols usually contain something called topic (MQTT), routing key (AMQP), destination (STOMP), etc. To some extent, they can compare to URLs in HTTP APIs. So, when you send a message to your API, it will be routed depending on the topic you published on. This feature allows you to create APIs that subscribe to specific topics and publish to other ones.
-There’s no standard way of naming topics, so we recommend you to have a look at our proposal here.</li>
-</ol>
-
-<p>I don’t have any APIs I can apply AsyncAPI to, so I have to just learn from the examples and any other work I come across. It makes me happy to see folks developing API specifications like this, going beyond what OpenAPI is doing, but also keeping so closely in alignment with the existing work out of the OAI. I’m always hearing folks say that the OpenAPI specification doesn’t do what they want it to do, yet they don’t invest in vendor extensions, or even augment the work that is going on with a complimentary set of specifications. Good to see people just make it happen!</p>
-
-<p>I’m adding AsyncAPI to <a href="http://definitions.apievangelist.com/">my API definition research</a> so I can keep in tune with where it goes. I’m talking with some folks regarding how it should viewed by the OAI. In my opinion, the OAI is going to have to begin considering how it will embrace specs that go beyond what it can do, as well as <a href="http://apievangelist.com/2017/09/25/considering-the-future-of-the-openapi-initiative/">begin to adopt industry specific OAI implementations that may require acknwoledging some vendor extensions that may never get brought into the core specification</a>. Anyways, it’s good to see movement in this area. Nice work <a href="https://twitter.com/fmvilas">Fran</a>, <a href="https://twitter.com/bpedro">Bruno</a>, and <a href="https://twitter.com/PermittedSoc">Mike</a>–you guys are rocking it.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/11/29/asyncapi-is-a-specification-format-for-message-driven-apis/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
