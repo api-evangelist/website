@@ -129,6 +129,34 @@
 	 	
     
 			
+        <h3><a href="https://apievangelist.com/2017/11/30/licensing-over-dc-transit-data/">Troubling Terms of Service Changes From Washington Metropolitan Area Transit Authority (WMATA) Data APIs</a></h3>
+        <span class="post-date">30 Nov 2017</span>
+        <p><img src="https://s3.amazonaws.com/kinlane-productions/transit/wmata-transit-terms-of-service.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p><a href="https://technical.ly/dc/2017/11/22/developers-upset-wmatas-new-data-terms-use/">I was turned onto a developing problem within the Washington Metropolitan Area Transit Authority (WMATA) around a recent terms of service change made around the transit data API by Technically DC</a>. While the transit authority is saying the changes are business as usual and make sense for the platform, some of the developers, specifically one of the biggest API users <a href="https://dcmetrohero.com/">MetroHero</a> says the changes are targeting them specifically.</p>
+
+<p>MetroHero presented what they feel are the unreasonable changes to the WMATA API terms of service in a WMATA Board Meeting recently, focusing on four main areas:</p>
+
+<ul>
+  <li>That no user or developer can mention “WMATA” in press releases without letting WMATA first review it.</li>
+  <li>That WMATA can gain access to any user’s applications that use the data, can audit personnel information for anyone working on those applications, and WMATA can also create their own version at any time.</li>
+  <li>That WMATA forbids users from claiming their data is accurate, complete or timely, or claiming it is more so than WMATA’s data.</li>
+  <li>That the transit agency may now charge users in the future for using their data.</li>
+</ul>
+
+<p>These are all common changes I’ve seen made to API terms of service before, and are usually signs that a platform operator that is pretty out of touch with what it is like to be an API consumer, and with their own API community. It is a sign of a broken or pernicious feedback loop which leads to API providers making decisions that do lasting damage to their communities like this. These types of changes <a href="https://www.wired.com/2012/09/twitters-new-rules-of-the-road-means-some-apps-are-roadkill/">reflects the “rules of road” terms of service changes Twitter made to back in 2012</a>. Which didn’t fully kill off the Twitter API, but set such a bad tone in the community, the company is still working to dig out of it five years later. I know platform operators feel they need to assert this level of control, but in an API community you need to learn to let go a little, communicate, and work with your community, not against them.</p>
+
+<p>I’m going to work through all of these bullet points as separate stories, and try to help other API providers, as well as the WMATA understand how they might be able to handle these types of requests better. Doing it in a way that doesn’t cause irreparable damage to their communities, and still achieves their objectives. However, I will emphasize that I think if WMATA spent more time actually communicating with their developers, especially the leading ones like MetroHero, you’d probably see how ridiculous your requests area in the first place. APIs are not just about you opening up access to your data, it is about opening up access to your processes, and feedback loops, and collaborating with your community. It isn’t about command and control, and broadcasting the rules of the road for you platform–Twitter showed us this does not work well in todays environment.</p>
+
+        <ul class="actions" style="text-align: center;">
+          <li><a href="https://apievangelist.com/2017/11/30/licensing-over-dc-transit-data/" class="button big">Details</a></li>
+        </ul>
+      	<center><hr style="width: 75%;" /></center>
+				
+    
+  
+	 	
+    
+			
         <h3><a href="https://apievangelist.com/2017/11/29/sorry-your-api-effort-falls-a-little-short-of-the-apis-I-cover/">Sorry Your API Effort Falls A Little Short For The APIs I Cover</a></h3>
         <span class="post-date">29 Nov 2017</span>
         <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-judgement.jpg" align="right" width="45%" style="padding: 15px;" /></p>
@@ -3326,32 +3354,6 @@ In this way, standards aren’t something that are dictated to teams. Teams driv
 
         <ul class="actions" style="text-align: center;">
           <li><a href="https://apievangelist.com/2017/10/06/the-api-management-landscape-looks-different-than-i-anticipated/" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				
-    
-  
-	 	
-    
-			
-        <h3><a href="https://apievangelist.com/2017/10/06/a-couple-more-questions-for-the-equifax-ceo-about-their-breach/">A Couple More Questions For The Equifax CEO About Their Breach</a></h3>
-        <span class="post-date">06 Oct 2017</span>
-        <p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/digital-bits-capital-dc-flag-side-view.jpg" align="right" width="40%" style="padding: 15px;" /></p>
-<p><a href="https://www.theverge.com/2017/10/3/16410806/equifax-ceo-blame-breach-patch-congress-testimony">Speaking to the House Energy and Commerce Committee, former Equifax CEO Richard Smith pointed the finger at a single developer who failed to patch the Apache Struts vulnerability</a>. Saying that protocol was followed, and a single developer was responsible, shifting the blame away from leadership. It sounds like a good answer, but when you operate in the space you understand that this was a systemic failure, and you shouldn’t be relying on a single individual, or even a single piece of scanning software to verify the patch was applied. You really should have many layers in place to help prevent breaches like we saw with Equifax.</p>
-
-<p>If I was interviewing the CEO, I’d have a few other questions for him, getting at some of the other systemic and process failures based upon his lack of leadership, and awareness:</p>
-
-<ul>
-  <li><strong>API Monitoring &amp; Testing</strong> - You say the scanner for the Apache Struts vulnerability failed, but what about other monitoring and testing. The plugin in questions was a REST plugin, that allowed for API communication with your systems. Due to the vulnerability, extra junk information was allowed to get through. Where were your added API request and response integrity testing and monitoring process? Sure you were scanning for the vulnerability, but are you keeping an eye on the details of the data being passed back and forth? API monitoring &amp; testing has been around for many years, and service providers like <a href="http://apis.how/8nlsropidv">Runscope</a> do this for a living. What other layers of monitoring and testing were in place?</li>
-  <li><strong>API Management</strong> - When you expose APIs like you did from Apache Struts, what does the standardized management approach look like? What sort of metering, logging, rate limiting, and analysis occurs on each endpoint, and verification occurs, ensuring that only required clients should have access? API management has been standard procedure for over a decade now for exposing APIs like this both internally and externally. Why didn’t your API management process stop this sort of breach after only a couple hundred record went out? API management is about awareness regarding access to all your resources. You should have a dashboard, or at least some reports that you view as a CEO on this aspect of operations.</li>
-</ul>
-
-<p>These are just two examples of systems and processes that should have been in place. You should not be depending on a single person, or a single tool to catch this type of security incident There should be many layers in place, with security triggers, and notifications in place. Your CTO should be in tune with all of these layers, and you as the CEO should be getting briefed on how they work, and have a hand in making sure they are in place. I’m guessing that your company is doing APIs, but is dramatically behind the times when it comes to commonplace API management practices. This is your fault as the CEO. This is not the fault of a single employee, or any group of employees.</p>
-
-<p>I am guessing that as a CEO you are more concerned with the selling of this data, than you are of securing it in storage, or transit. I’m guessing you are intimately aware of the layers that enable you to generate revenue, but you are barely investing in the technology and processes to do this securely, while respecting the privacy of your users. They are just livestock to you. They are just products on a shelf. It shows your lack of leadership to point the finger at a single person, or single piece of technology. There should have been many layers in place to catch this type of breach beyond a single vulnerability. It demonstrates your lack of knowledge regarding modern trends in how we secure and provide access to data, and you should never have been put in charge of such a large data brokerage company.</p>
-
-        <ul class="actions" style="text-align: center;">
-          <li><a href="https://apievangelist.com/2017/10/06/a-couple-more-questions-for-the-equifax-ceo-about-their-breach/" class="button big">Details</a></li>
         </ul>
       	<center><hr style="width: 75%;" /></center>
 				
