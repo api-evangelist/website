@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
   <html>
-  <title>Doing A Diff Between Available Web, Mobile and Public APIs</title>
+  <title>Benefits Of Treating My API Infrastructure As API-First</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -84,20 +84,20 @@
 
     <meta property="og:url" content="">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Doing A Diff Between Available Web, Mobile and Public APIs | API Evangelist">
+    <meta property="og:title" content="Benefits Of Treating My API Infrastructure As API-First | API Evangelist">
     <meta property="og:site_name" content="API Evangelist">
     <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-copper-servers.jpg">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-square-23-160-800-500-0-max-0--5--1-square.jpg">
 
     <meta name="twitter:url" content="">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Doing A Diff Between Available Web, Mobile and Public APIs | API Evangelist">
+    <meta name="twitter:title" content="Benefits Of Treating My API Infrastructure As API-First | API Evangelist">
     <meta name="twitter:site" content="API Evangelist">
     <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
     
       <meta name="twitter:creator" content="@apievangelist">
     
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-copper-servers.jpg">
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-square-23-160-800-500-0-max-0--5--1-square.jpg">
 
 
 </head>
@@ -118,27 +118,29 @@
   </ul>
 </header>
 
-    	        <h2>Doing A Diff Between Available Web, Mobile and Public APIs</h2>
-<p><span class="post-date">22 Aug 2019</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-copper-servers.jpg" width="45%" align="right" style="padding: 15px;" />
-I spend a lot of time running web and mobile applications through a proxy to reverse engineer their APIs. I generally use Charles Proxy for routing my desktop, web, and mobile traffic through, which then automatically saves a JSON dump of sessions every five minutes, and syncs with Dropbox via my shared folders. From there I have a schedule service that will look in the shared Dropbox folder every hour, sift through the Charles Proxy JSON dump, and look for JSON, XML, CSV, and other common machine readable formats—which are then converted into OpenAPI definitions. Allowing me to reverse engineer desktop, web, and mobile applications as I use them, and map the API surface area for these targeted applications.</p>
+    	        <h2>Benefits Of Treating My API Infrastructure As API-First</h2>
+<p><span class="post-date">26 Aug 2019</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-square-23-160-800-500-0-max-0--5--1-square.jpg" width="45%" align="right" style="padding: 15px;" />
+Most API providers I speak with see the value of consistently delivering API infrastructure to power desktop, web, mobile, device, and network applications. Less than 10% of these providers see the API infrastructure that powers their APIs, and ultimately their applications as APIs. Meaning, these providers do not view every stop along the API lifecycle as a set of APIs, ensuring that your API definitions, design, mocking, deployment, management, monitoring, testing, orchestration, security, and documentation all have APIs, and are able to be governed programmatically. Mostly it is because they are just getting started on their API journey and / or they just don’t have the bandwidth to be able to step back and look holistically at what they are trying to accomplish.</p>
 
-<p>Recently I started playing with doing the same thing as part of my use of Postman. You can use the <a href="https://learning.getpostman.com/docs/postman/sending_api_requests/capturing_http_requests/#using-the-postman-built-in-proxy">built-in proxy in the Postman native apps</a> or use the <a href="https://learning.getpostman.com/docs/postman/sending_api_requests/interceptor_extension">Interceptor extension for the Postman app</a>. Postman walks you through how to configure your laptop, mobile, and Postman application, and ultimately capture HTTP requests and save them to history or as a Postman Collection. Doing essentially the same thing I’m doing, but doing it with the Postman application, and leveraging collections instead of OpenAPI. I’d say there are pros and cons to both approaches, but Postman gives me the ability to manage environments, workspaces, and other essential concepts that would help take my API profiling work to the next level.</p>
+<p>In this truly API-first world, every architectural decision begins with a README in a Git repo, and the business, architectural, and development teams working together to hammer out a simple name, description, and list of capabilities for each individual architectural component. Once in agreement, then they can then get to work hammering out a contract for the schema, and the interfaces that are available for potential consumers. Once again, working between business, architecture, and development teams to come up with the simplest, most useful, and durable contract possible. One that will work for all stakeholders, and best represent the architectural capabilities of each component you will need to successfully operate each stop along your API life cycle.</p>
 
-<p>One of the benefits of working with Postman collections is you get all the benefits of using the Postman app. Things like the built-in proxy for capturing traffic, but also the history, generate, fork, merge, and diff collections. My work profiling APIs is all about reverse engineering desktop, web, and mobile applications, as well as quickly translating API documentation in machine readable API definitions, like OpenAPI and Postman. When profiling an API, most of the time I have the API documentation open in one browser window, and my Postman application open—-operating them both in split screen. I’ll just take the paths and parameters from the documentation and enter them into my Postman application, and fidget with things until I make a successful API call. Then I repeat for every single path until I have a complete Postman Collection for a single APIs. Merging my more automated proxy profiling with my manual API documentation profiling makes a lot of sense—-then I can manage Postman Collections as part of Postman workspaces, complete with Postman environment definitions.</p>
+<p>Once there is an overview and contract in place for each architectural component, you can begin mocking, testing, and documenting it for wider potential consumption by other stops along the API life cycle. With all stakeholders in agreement over the capabilities of each architecture component, and how it will work, you can begin wiring up specific back-end capabilities which might be as simple as data and content storage, or as complex as API management, monitoring, and testing. Leveraging 3rd party services, open source solutions, or custom artisan code to fully realize each architectural component you are defining, and now developing to deliver a specific aspect of how you do APIs. Making sure you treat your API infrastructure as an API, while also abstracting way specific solutions with your own layer that allows you swap out backend solutions as you need or desire.</p>
 
-<p><a href="https://blog.getpostman.com/2019/01/16/forking-merging-a-conflict-resolution-solution/">Postman gives me forking, merging, diff, and conflict resolution for Postman Collections</a>. This is essential for mapping out the API landscape for a single API provider over time, but I find it is also useful for doing a diff between available web, mobile, and public APIs. Helping me paint a complete picture of a platform’s APIs by reverse engineering their APIs behind their web and mobile, then taking their own Postman Collection, OpenAPI definition, or manually create a Postman Collection from their API documentation, allowing me to create a diff between each of their channels. Painting a complete picture of a provider’s public API infrastructure, but also be showing the prioritization of resources when it comes to the different channels. I find this to be a pretty compelling way to paint a picture of not just tech companies, but almost any company in 2019 who has a web, mobile, and public API infrastructure. Wait, does having an API make you a tech company? IDK. We’ll answer that question another time.</p>
+<p>To help demonstrate what I am talking about, I am working on a series of stories that help me think about an API-first architectural approach to managing my API definitions. This is the most important stop along the API life cycle, and is something that touches every other stop, no matter where your journey might take you. I’ll be thinking through through how I create, store, manage, and evolve my API definitions using APIs. I have had an API for my APIs for some years now, but as I move from Swagger 2.0 to OpenAPI 3.0, and be more thoughtful about how I define event-driven APIs using AsyncAPI, as well as manage JSON Schema is use across these formats, my API API is overdue for a reworking. Additionally, I am augmenting the HTTP 1.1 layer of all of this with a Postman Collection and Environment management and automation layer, further pushing me to rethink how I’m doing things.</p>
 
-<p>I enjoy learning new ways to accomplish existing tasks I’m working on daily. Sometimes it helps me to shift my view to a new service or tool so that I can gain a few new bells and whistles, but also the process forces me to look at things differently. This shift can push me into entirely new territory when it comes to understanding more about the technology, business, or politics of operating APIs. There are a lot of games played in the world of APIs, and even more being played in the shadows behind web and mobile applications. I need as much help as I can to help me shine a light into these dark corners of the web, which reside directly behind the desktop, web, browser, mobile, and device applications we are using in our personal and professional lives. Having a diff of the various APIs in use behind these channels goes a long way towards helping us understand the motivations of the companies behind these applications, pushing us be more aware of who the good or bad actors potentially are.</p>
+<p>Next steps are to create an OpenAPI for my new OpenAPI and JSON Schema defined API contracts. Once I have this contract, I’ll spend some time thinking about the automation and programmability of the API design stop along the API lifecycle–ensuring that my APIs follows a cadre of API Design patterns I have already established. After that I will move on to mocking, testing, documenting, and development deployment and management. The goal is to actually deliver my next generation API API, but also define the APIs that drive the underlying infrastructure I am using to deliver and operate my APIs. Luckily there is a lot of markdown and YAML work as part of all of this, and it is something that I can do within a README, and here on my blog over the course of a couple weeks. The process provides me with a pretty low cost way to plan out, then ultimately deliver and communicate with others around what this API actually does.</p>
+
+<p>Being able to work through every technical detail of my API infrastructure is one of the main benefits of treating my API infrastructure as an API. I can take the APIs of services and tooling I am using to deliver my API and use them as a seed for my own API abstraction layer. Taking GitHub, Postman, APIMATIC, ReDoc, Tyk, and other infrastructure providers I depend on and deliver my own API infrastructure, while also ensuring that I can orchestrate it all with my own API layer. Providing all the functionality I will need across the API life cycle as individual API capabilities that I can use to automate my API operations. Seeing my API infrastructure as just another set of API resources has changed how I view the landscape, and will has forever impacted how I interpret what an “application” is.  Once I introduced the recursive loop of APIs being APIs, then “application” doesn’t mean how I apply API resources on the desktop, web, mobile, device, and networks, it also speaks to how I apply APIs to APIs–leveling up with the benefits that APIs bring to the table.</p>
 
 <hr />
 <ul class="pagination" style="text-align: center;">
 	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2019/08/22/an-api-policy-domain-specialist-at-twitter/" class="button disabled"><< Prev</a></li>
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/08/22/doing-a-diff-between-available-web-mobile-and-public-apis/" class="button disabled"><< Prev</a></li>
 	
 		<li style="width: 75%"><span></span></li>
 	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2019/08/26/benefits-of-treaing-my-infrastructure-as-api-first/" class="button">Next >></a></li>
+		<li style="text-align:right;"></li>
 	
 </ul>
 
