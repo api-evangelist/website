@@ -1,4 +1,4 @@
-# API Evangelist
+# Amazing API Evangelist
 
 Working to make sense of the technology, business and politics of APIs.
 
