@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Exploring The Possibilities of Being An API Broker</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/10/10/exploring-the-possibilities-of-being-an-api-broker/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Exploring The Possibilities of Being An API Broker | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-broker.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/10/10/exploring-the-possibilities-of-being-an-api-broker/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Exploring The Possibilities of Being An API Broker | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-broker.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Exploring The Possibilities of Being An API Broker</h2>
+<p><span class="post-date">10 Oct 2014</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/api-broker.png" alt="" width="275" align="right" /></p>
+<p>I&rsquo;m playing around with different ways of building API collections using <a href="http://apisjson.org/">APIs.json</a>, and building on a concept I saw introduced by <a href="https://medium.com/@cyrilgaillard/i-dont-need-a-business-co-founder-i-need-an-api-broker-c9be536cf8fa">Cyril Gaillard&rsquo;s story titled "I don&rsquo;t need a business co-founder, I need an API broker</a>", something which was expanded on by Patricio Robles (<a href="https://twitter.com/probles">@probles</a>) on <a href="http://www.programmableweb.com/news/would-your-company-benefit-having-api-broker/analysis/2014/09/29">ProgrammableWeb with "would your company benefit from having an API broker</a>?"</p>
+<p>The concept of an API broker is interesting. If you had talked to me a year ago, I would have framed my thoughts on API brokering in a more algorithmic way, but after reading these posts, I am looking to merge in my thoughts around API evangelism, taking more of a human approach to API brokering. While I think API brokering in the future might look like more like high speed trading with algorithms doing the heavy lifting, I&rsquo;m thinking for right now it is something we need humans to bridge, bringing a more personal approach during the wild wild west days of APIs.</p>
+<p>To push forward my thoughts on API brokering, I&rsquo;m playing around with describing various APIs using <a href="http://swagger.io/">Swagger 2.0</a>, then building a collection of these APIs using APIs.json, and publishing it all to a Github project&mdash;which for now I&rsquo;m calling the <a href="http://utility-stack.apievangelist.com/">Utility Stack</a>. In this exercise I&rsquo;m organizing 10 separate APIs that provide me with a very useful stack of API resources. I&rsquo;m not quite sure what I will be building with all of this, but the current stack reflects what I&rsquo;m already using to manage the API Evangelist network, so I know they are useful.</p>
+<p>Here are the 10 APIs I&rsquo;m working with:</p>
+<ul class="mainlist">
+<li>AlchemyAPI Author Extraction API</li>
+<li>AlchemyAPI Keyword &amp; Term Extraction API</li>
+<li>AlchemyAPI Text Extraction API</li>
+<li>Angellist Startup API</li>
+<li>Bitly URL Data API</li>
+<li>FullContact Location Normalization API</li>
+<li>FullContact Name Normalization API</li>
+<li>Pinboard Bookmark API</li>
+<li>Wordnik Word Lists API</li>
+<li>Wordnik Words API</li>
+</ul>
+<p>These are all API resources that provide some very useful elements in my operations. I use them to pull details about blog posts, look-up start-ups, shorten URLs, organize bookmarks, and other very utilitarian functions that I perform across my platform. I use these APIs for my own purposes, but for this project I&rsquo;m looking to assemble them potentially as a collection that can be used in the development of a specific application, or for ongoing development within specific company or group.</p>
+<p><a href="http://swagger.io/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/swagger/swaggerLogo360.png" alt="" width="150" align="right" /></a></p>
+<p>I&rsquo;m using Swagger version 2.0 to describe these APIs, and publishing all of it to Github, using APIs.json as an index of the collection. This allows me to generate interactive documentation for each API in the collection, which makes the entire stack accessible via a <a href="http://utility-stack.apievangelist.com/">single development portal</a>. I&rsquo;m still working on the authentication across all of these resources, some of which are basic API keys, and other are BasicAuth or oAuth. Its all doable though, and based upon work I&rsquo;ve done before I can easily store API keys, and oAuth credentials in the master branch of the Github repository which I keep as private.</p>
+<p>To summarize this exercise, as an API broker I could easily find the resources my clients will need to build a specific web or mobile application, or accomplish a specific system integration. I could setup all of the accounts for each of the resources in a central, private configuration file that can be used by the developer hub I&rsquo;ve setup so developers can explore using interactive documentation, as well as use directly within an application.</p>
+<p>Think of this applied to Cyri&rsquo;s vision of needing an API broker, or possibly something that every company would have as Patricio suggests in his ProgrammableWeb post. With this project, I&rsquo;m not deploying any APIs, I&rsquo;m merely aggregating and brokering a machine readable collection across numerous other API resources. This exercise has also shown me that I can easily identify gaps within any stack I&rsquo;m working on, and make suggestions for new APIs that help developers accomplish a specific project objective.</p>
+<p><a href="http://apisjson.org/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/apis-json/apisdotjson.png" alt="" width="275" align="right" /></a></p>
+<p>Imagine if I needed to add an image stack, like my <a href="http://screen-capture.apievangelist.com/">screen capture API</a>, or my <a href="http://image.manipulation.apievangelist.com/">image manipulate API</a>? I could easily added in other features, and resources that developers are needing, allowing them to do what they do best, building applications, and delivering on system integrations. As a broker I can do the legwork of finding the resources they need, and aggregating into a single developer hub.</p>
+<p>The fun in all of this is that I have each of these API definitions in a central system, allowing me to orchestrate collections like this <a href="http://utility-stack.apievangelist.com/">utility stack</a>, or possibly <a href="http://apievangelist.com/2014/10/10/launching-25-apis-to-assemble-a-single-poem-for-each-day/">API stacks like my poem of the times</a> that all work towards a single objective, no matter whether its for developing a specific mobile application, single page application, or any other system integration you can imagine&mdash;even just writing a simple poem each day.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/10/09/the-publicly-available-private-target-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/10/10/launching-25-apis-to-assemble-a-single-poem-for-each-day/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

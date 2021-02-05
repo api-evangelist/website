@@ -1,0 +1,19 @@
+---
+layout: post
+title: 'Deploy Secure API: JSON to API'
+source: http://apievangelist.com/2013/11/16/deploy-secure-api-json-to-api/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-json-data-store.png
+---
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-json-data-store.png" alt="" width="150" align="right" /></p>
+<p>I'm working on a series of simple scripts that help people deploy APIs from some of the most common data sources. I'm starting with a series of PHP scripts, and a couple weeks ago I did a JSON to API demo, and this week I want to show how to secure access to the API by requiring an AppID and AppKey which will allow you to track on who has access to the API.</p>
+<p>For this PHP implementation, I'm using the <a href="http://www.slimframework.com/">SLIM framework</a>, which provides a dead simple REST framework you can use to deploy an API from a variety of data sources.   To begin deploying an API from your JSON datastore, download the REST library and upload to your server that runs PHP.</p>
+<p>Slim is pretty straightforward to work with, to add each API endpoint you just add a single PHP file under methods. For this how-to guide we are going to add a simple endpoint from our JSON products data store.</p>
+<script src="https://gist.github.com/kinlane/7095348.js"></script>
+<p>Next you just add an include reference in the index page for your slim implementation. Everything up until now was the same as the open JSON to API solution, but not on the index page we will wrap the entry point to the API, with a <a href="http://bit.ly/1cHBhd5">3Scale API Management</a> layer. 3Scale is free to sign up and you pay as you scale, so all it takes to get going is register for a 3Scale account and choose the base account, and under your account settings you will find your key to link this code to your account.</p>
+<script src="https://gist.github.com/kinlane/7509687.js"></script>
+<p>This API just uses ID, Name, Price and Description of the product, and queries by a simple query parameter. You can use this as a template for your own product database, adding and removing fields as you need, or completely retrofitting for any database table.&nbsp;</p>
+<p>There are any number of reasons you would want to secure an API driven from a JSON file, to offer advanced search, filtering or just to track on who is accessing resources. This solution just uses 3Scale to secure the API interface, requiring an AppID and Appkey to use the API.&nbsp;</p>
+<p>Hopefully that demonstrates a simple approach to securing an API that is driven from a JSON file.</p>
+<p><em>Disclosure: 3SCale is an API Evangelist Partner</em></p>

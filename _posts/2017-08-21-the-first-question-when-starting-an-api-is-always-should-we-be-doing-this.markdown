@@ -1,0 +1,18 @@
+---
+published: true
+layout: post
+title: 'The First Question When Starting An API Is Always: Should We Be Doing This?'
+date: 2017-08-21T16:00:00.000Z
+tags:
+  - API Evangelist
+  - Definitions
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-statues.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-statues.jpg" align="right" width="40%" style="padding: 15px;" /></p>I was doing some more work on my list of potential female speakers from the API space. I have some slots to fill for @APIStrat, and I saw another API event was looking for suggestions when it came to speakers. A perfect time to invest some more cycles into finding female API talent. Twitter and Github is always where I go for discovery. I picked up where I left off working on this last time, turned on my search tools that use the Twitter and Github API, and got to work enriching the algorithm that drives my API talent search.
+
+Next up on my task list was to [deploy a name microservice,](https://api-evangelist-data.github.io/names/) that would help me filter Twitter and Github users by gender. I'm interested in API folks of all type, but for this round I need to be able to weight by female. [I found a list of the top names from the United States which had them broken down by gender](http://names.mongabay.com/). I copied and pasted into a Google Sheet, fired up a Github repository, and published the spreadsheet of data to Github as YAML--giving me a [male.yaml](https://github.com/api-evangelist-data/names/blob/master/_data/male.yaml), and [female.yaml](https://github.com/api-evangelist-data/names/blob/master/_data/female.yaml) listing of names. I will be be use these names in a variety of web and API applications, but I wanted to be able to help filter any search results by a female name for this project. I understand the limitations of this approach, but it is good enough for what I am looking to accomplish today.
+
+Next, I use [my new name microservice](https://github.com/api-evangelist-data/names/blob/master/_data/female.yaml) as a filter for any Twitter or Github account I'm paying attention to as part of my API monitoring. Quickly giving me a list of accounts to look through as I am developing my list of women doing interesting things with APIs. Once I'm done I have a list of Twitter accounts, and Github accounts, I prepare them as a Google Sheet, then get ready to publish the YAML within a Github repository as my API women microservice. Then I pause. Should I be doing this? In this current online environment do I want to be building out lists of women, without their consent? Sure their Twitter and Github accounts are public, but should I be singling them out in an easy to access list? IDK.
+
+I am doing this work for my @APIStrat conference, and I want to share the information easily with other conference folks. I also want to showcase women doing interesting things in the API space. However, I don't want to help automate the targeting and harassment of these women. By publishing a machine readable list of their Twitter and Github accounts I'm doing the heavy lifting for any potential online troll. I'm going to simmer on this one for a week. Luckily I can easily publish the list as a private repository, and share with anyone who asks using Github, by just adding them as collaborator on the repository. This situation has reminded me that with each microservice that I publish I should be pausing and always asking myself if I should be doing this in the first place. What are the possibilities for abuse? Am I potentially making someone unsafe with the service I publishing?

@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: API Education Is Needed But Rarely Prioritized In The Current Environment
+date: 2017-09-11T13:00:00.000Z
+tags:
+  - API Evangelist
+  - Training
+  - Education
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/facebook/facebook-blueprint-screenshot.png
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/facebook/facebook-blueprint-screenshot.png" align="right" width="40%" style="padding: 15px;" /></p>[I wrote about this in a mean way during my rant week](http://apievangelist.com/2017/08/31/your-lack-of-investment-in-api-education-will-be-the-end-of-your-api-service/), but I wanted to bring up the topic of education and training when it comes to APIs in a more constructive way this week. Amidst the regular requests I get for API architects, developers, product managers, and evangelists I am reminding many companies that they will often need to hire for these roles internally, training and grooming existing employees, as finding seasoned veterans in any of these areas will prove to be difficult. I wish I had my own API school, where I was helping train waves of qualified employees, but sadly most of the folks with existing skills are employed.
+
+The challenge of investing in API training and education doesn't stop with your immediate team, this is something that needs to occur in most cases company-wide. I've talk with several groups about developing internal workshops, and training, but I find most of them aren't truly interested in the investment needed, and are often looking for some free content, or someone they can get to come and speak for free or very low pay. It shows me that many companies aren't quite ready to make the investment it will take to ensure their staff are ready for the work that lies ahead, and don't value making sure their workers have the skills they'll need to be successful in the API-driven world we are finding ourselves in.
+
+This isn't something I've just encountered at SMB, SME, and the enterprise. Government agencies are always cashed strapped, under-resourced, and lacking in the skills needed for the next wave. This is also a problem I'm seeing across startups. I've had discussions with startup groups selling tools and services to the API space, who are hitting significant challenges once they start selling their solutions outside the mainstream tech ecosystem. Many folks at large companies, small businesses, and government agencies just don't have some of the basics when it comes the web, and how modern approaches to APIs work. To become an active customer, they are going to need some investment to get their customers up to speed, something I find the investors behind startups are rarely keen on spending money on.
+
+I am working on a workshop series for a health care group in October, and I'm working real hard to develop some structure to help make sure I cover the fundamentals of why APIs are important, beginning with the web and HTTP. I'm trying to show the space from not just the API provider perspective, but also from the API consumer view, because everyone should be both. I'm also working on more stories to help educate why companies, investors, institutions, and government agencies should be investing more into the area of API education. Not just understanding how to provide and consume them, but how to secure them, understand that they are driving everything mobile, and can help securely open up their operations to allow for assistant by 3rd party providers. Humans will be the number one challenge you face when it comes to doing APIs in your organization, so make sure you are investing wisely. I'd love to hear more about the challenges you are facing, or how you are finding success when it comes to educating your staff or customers about everything API.

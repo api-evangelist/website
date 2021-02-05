@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Multiple Overlapping API Life Cycle(s)</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Multiple Overlapping API Life Cycle(s) | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-downtheline-dali-three.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Multiple Overlapping API Life Cycle(s) | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-downtheline-dali-three.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Multiple Overlapping API Life Cycle(s)</h2>
+<p><span class="post-date">21 Aug 2019</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-downtheline-dali-three.jpg" width="45%" align="right" style="padding: 15px;" />
+One of the toughest parts about teaching people about APIs is that there are many different views of what the API life cycle can be depending on who you are, and what your intentions are. As an advocate or evangelist for a single API you are speaking externally to the API consumption life cycle, but internally you are focused on the API delivery life cycle. As an API Evangelist for many APIs, targeting providers, consumers, and anyone else who comes along, I find it a constant challenge to properly speak to my intended audience. One problematic part of my storytelling I regularly see emerge is that I speak of a single API life cycle, where in reality there are many overlapping life cycles. So, to help me think through all of this I wanted to explore what these overlapping tracks might be—coming up with four distinct iterations of overlapping API building blocks.</p>
+
+<h2 id="the-api-delivery-life-cycle">The API Delivery Life Cycle </h2>
+<p>The most common way we refer to the API life cycle is from the perspective of the API provider, where it is all about delivering an API. Referencing the stops along the life cycle that are most relevant to someone who is  delivering a new API, or might be moving an API forward as part of the evolution of an existing resource. From my vantage point, I consider these to be the most common stops along the API delivery life cycle.</p>
+
+<ul>
+  <li><strong>Definitions</strong> - Defining what an API does, crafting the JSON schema, OpenAPI, AsyncAPI, and other machine readable definitions of what is potentially being delivered, initializing the contract that will guide an API through the life cycle.</li>
+  <li><strong>Design</strong> - Stepping back and considering the healthiest API Design practices to apply, working from a diverse API toolbox, and ensuring you have a good handle on who your audience is, and the design patterns they’ll respond to.</li>
+  <li><strong>Mocking</strong> - Generating a mock instance of an API using the contract to test out design patterns, and begin socializing amongst technical and business stakeholders so that they can begin providing critical feedback on the design.</li>
+  <li><strong>Documentation</strong> - Making sure there is auto-generated documentation available for all providers and consumers from the agreed upon API contract definition, ensuring there is machine and human readable documentation available at all times.</li>
+  <li><strong>Testing</strong> - As the API contract stabilizes, tests can be generated to ensure that the contract is not veering of the intended course, providing guardrails that can be regularly rebuilt from the API contract, and ultimately used in production.</li>
+  <li><strong>Deployment</strong> - Publishing of an API either using an open source framework, gateway, or through hand coding of the interfaces, providing a production ready instance of an individual API contract that was defined early on.</li>
+  <li><strong>Management</strong> - Making sure an API requires proper authentication, has access levels and rate limits defined, as well as logging enabled, so that its access can be properly quantified, managed, and reported upon for provider and consumer.</li>
+  <li><strong>Monitoring</strong> - Ensuring that each API is being monitored in real time from multiple regions, ensuring that an API is up and available, as well as passing all tests that have been defined as part of the development of each API contract.</li>
+  <li><strong>Security</strong> - Knowing that requiring authentication will not be enough, and that all APIs are regularly scanned, probed, and pushed for any potential vulnerabilities, providing regular accounting of the security of al APIs in operation.</li>
+</ul>
+
+<p>I can quickly add on another 10-20 stops along the API delivery life cycle, but I want to highlight the core building blocks of delivering an API, not exhaustively document every possible building block. These are the primary steps any API provider will need to master before they can begin competently delivering API resources for consumption internally, or externally to partners and the general public. Providing a basic checklist that can be use to flesh out the details needed before an API can be called production-ready, then begin it’s life as the back-end for web, mobile, device, and network applications.</p>
+
+<h2 id="api-consumption-life-cycle">API Consumption Life Cycle</h2>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/subway-subway-internet-numbers.jpg" width="45%" align="right" style="padding: 15px;" />
+Next, I wanted to explore the flip side of the API life cycle, and the view from the position of the API consumer. This is the second most common way I talk about the API life cycle, but I find that I often get things mixed up between provider and consumer, and I know from experience that I do not always ensure that things are made clear. To help me put myself into the shoes of API consumers, I wanted to explore what some of the stops along the API life cycle from purely a consumption standpoint—here are a few that I’m thinking about today.</p>
+
+<ul>
+  <li><strong>Discovery</strong> - Before you can consume an API you have to be able to find it, and be able to get what need to get up and running.</li>
+  <li><strong>Documentation</strong> - You will have to be able to understand the details of what an API does, and ultimately what it delivers via documentation.</li>
+  <li><strong>Plans</strong> - Once you understand what an API does, you will need to have a grasp on the tiers of access, and what you can afford to use.</li>
+  <li><strong>Account</strong> - After you decide to use an API you will need to be able to signup and obtain an account and credentials that will allow for access.</li>
+  <li><strong>Authentication</strong> - Now that you have keys, you will need to understand how you can use them as part of authentication for the APIs you need.</li>
+  <li><strong>Clients</strong> - There should always be client tooling that helps consumers get up and running without writing code, with as little friction as possible.</li>
+  <li><strong>Software Development Kits (SDK)</strong> - There should be SDKs available in a variety of programming languages allow consumers to seamlessly integrate.</li>
+  <li><strong>Command Line Interface (CLI)</strong> - Some developers will prefer using a CLI to integrate and automate using an API as part of their systems.</li>
+  <li><strong>Integration</strong> - Now we reach the point where we actually integrate with an API, something not all developers will successfully achieve as part of their own consumption life cycle.</li>
+  <li><strong>Support</strong> - Now that a consumer has integrated they will need to know where they can receive support as part of their application, and ongoing use of API resources.</li>
+  <li><strong>Engagement</strong> - There should be further opportunities for engagement beyond just the initial integration of an API, encouraging the deepening of the provider and consumer relationship.</li>
+</ul>
+
+<p>This provides me with a simple slice of the API consumption side of things to focus on in my storytelling. Having simple, organized groups of API building blocks like this, wrapped in a variety of contexts helps me be more consistent in my writing and speaking. Using consistent wording combined with repetition is important, and thoughtfully defining the API life cycle from the provider, and well as consumer side, in ways that everyone can easily understand is very important to me.</p>
+
+<h2 id="api-maintenance-life-cycle">API Maintenance Life Cycle</h2>
+<p>We aren’t done with APIs once they are delivered and being consumed. There are regular maintenance tasks that should occur, and these are things that won’t necessarily be handed by the same team that delivers the APIs. Opening up a whole other dimension of the API life cycle that cannot be ignored, otherwise we run the risk of offering a less than quality experience for our consumers. Here are the maintenance portions of the API life cycle that I am considering, and documenting as part of this work.</p>
+
+<ul>
+  <li><strong>Communication</strong> - An API is up and running and communication between provider and consumer is critical to ensure everyone is operating and doing what they need to be doing.</li>
+  <li><strong>Support</strong> - Making sure all of the consumers are supported and getting the attention they need, providing the critical feedback loop between provider and consumer.</li>
+  <li><strong>Issues</strong> - Publishing a real time accounting of open issues that exist to help API consumers understand the current status of the system, while also helping minimize support requests for known issues.</li>
+  <li><strong>Monitoring</strong> - Understanding the overall health and status of all APIs, and making sure all monitors, tests, and the platform is meeting their SLA when it comes providing APIs.</li>
+  <li><strong>Performance</strong> - Going beyond the monitoring and testing, and making sure a certain quality of service bar is met, and we have a complete grasp of how our customers experience API access.</li>
+  <li><strong>Security</strong> - Reviewing security practices, and auditing authentication, usage, logging, scanning, and other dimensions of security across all APIs in operation.</li>
+  <li><strong>Reporting</strong> - Staying in tune with API consumption, errors, and general access and usability across all API consumers, making sure an awareness is developed in how digital resources are used.</li>
+  <li><strong>Road Map</strong> - Publishing an accounting of what the future will hold for API consumers, regularly thinking about what future plans, or lack of future plans will have on API consumers.</li>
+  <li><strong>Evangelism</strong> - What is being doing to get the word out about the value APIs deliver, establishing a strategy for how you evangelize internally, with partners, and the public and help achieve platform goals.</li>
+</ul>
+
+<p>Abandoned APIs that do not have anyone in the drive seat are the most common type of API I come across. It is pretty easy to tell when an API provider has moved on, and just left the API up and running. In other cases, teams are just under resourced, and do not have the bandwidth available to invest in the API maintenance portion of the API life cycle. We all get excited about the design and delivery of a new API, but few of us like doing the mundane aspects of API management—this is why you should invest in a good API management solution, because nobody should be reinventing the wheel in this area.</p>
+
+<h2 id="api-governance-life-cycle">API Governance Life Cycle </h2>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-supreme-court-judgement.jpg" width="45%" align="right" style="padding: 15px;" />
+Lastly, and one of the most under-developed portions of the API life cycle, is the governance and oversight of things. This is the portion of the API life cycle where you go beyond the tactical day to day stuff and work to establish a strategy for how you deliver, consume, and maintain APIs. Getting formal about how we do what we do, and make sure all stakeholders, especially consumers have a good grasp on API policy, and how things get done. Here are some of the building blocks I consider at the API governance stops along the API life cycle.</p>
+
+<ul>
+  <li><strong>Definition</strong> - Which definitions are used? Where are the OpenAPI, schema, and other relevant patterns.</li>
+  <li><strong>Design</strong> - What design patterns are in play across the API definitions, and what is the meaning behind the design of all APIs.</li>
+  <li><strong>Deployment</strong> - What does deployment look like on-premise, in the cloud, and from region to region.</li>
+  <li><strong>Management</strong> - Quantify the standard approaches to managing APIs from on-boarding to analysis and reporting.</li>
+  <li><strong>Plans</strong> - How are access tiers and plans defined, providing 3rd party access to APIs, including that of aggregators and application developers.</li>
+  <li><strong>Monitoring</strong> - What does monitoring of web APIs look like, and how is data aggregated and shared.</li>
+  <li><strong>Testing</strong> - What does testing of web APIs look like, and how is data aggregated and shared.</li>
+  <li><strong>Performance</strong> - What does performance evaluation of web APIs look like, and how is data aggregated and shared.</li>
+  <li><strong>Security</strong> - What are the security practices in place for all APIs, and what is the current status of security.</li>
+  <li><strong>Breaches</strong> - When there is a breach, what is the protocol, and practices surrounding what should happen–where is the historical data as well.</li>
+  <li><strong>Terms of Service</strong> - What does terms of service across many APIs look like.</li>
+  <li><strong>Privacy Policy</strong> - How is privacy protected across API operations, and how is this impacting operations.</li>
+  <li><strong>Support</strong> - What are all the expected support channels, where are they located, and what the current metrics are.</li>
+  <li><strong>Training</strong> - A detailed training walk-through for anyone looking to understand governance.</li>
+  <li><strong>Certification</strong> - Providing certification for API publishers as well as API consumers when it comes to their platform participation.</li>
+  <li><strong>Executive</strong> - A robust walk-through of the concepts at play for an executive from the 100K view of things.</li>
+</ul>
+
+<p>Your API delivery, consumption, and management house needs to be in order before you can begin realizing governance across everything. For many API providers it can be difficult to step back and look at things from the 100K level. However, increasingly it will become critical to make time to invest in API governance, otherwise you end up dealing with lower level fires that could have been addressed with a little more planning and coordination.</p>
+
+<h2 id="many-api-life-cycles">Many API Life Cycle(s)</h2>
+<p>I’ve historically visualized the API lifecycle as a set of linear stops along a single life cycle, however over the years, as the world of APIs have come into better focus, I’m seeing the life cycle as a set of many different life cycles that work in concert for API provider as well as API consumers—cause, we all should really be both. I acknowledge that there are many different possible iterations upon the different types of API life cycles that will exist across companies, organizations, institutions, and government agencies. It will all depend on the expertise, services, tooling, and resources groups have when it comes to delivering, consuming, managing, and governing the APIs they depend on. However, I’m at least looking to define at least a handful of templates that can be used to guide API operators who are wanting to see the bigger picture.</p>
+
+<p>Next, I will work on a visual to go with these API lifecycle templates. I’m going to be sticking with my transit map approach to defining the API landscape, and plot these different API life cycles as different lines within the same overall landscape map. Working to show how they overlap and interact. My biggest challenge in all of this is to be able to articulate that this lifecycle is applied across many different APIs, and potentially many different teams publishing APIs, as well as many different types of consumers putting them to work. Historically I have tried to auto-generate these API transit maps, but for this work I think I will just hand-craft the maps to reflect the API life cycles I have defined. Providing a more universal way in which to help articulate, visualize, explore and learn more about how the API life cycle(s) work.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/08/20/the-api-conferences-i-am-tracking-on-for-the-fall/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/08/22/an-api-policy-domain-specialist-at-twitter/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

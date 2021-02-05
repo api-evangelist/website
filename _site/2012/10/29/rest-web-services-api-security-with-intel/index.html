@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>REST Web Services &amp; API Security with Intel</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2012/10/29/rest-web-services--api-security-with-intel/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="REST Web Services &amp;amp; API Security with Intel | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Intel-IESG-Logo.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2012/10/29/rest-web-services--api-security-with-intel/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="REST Web Services &amp;amp; API Security with Intel | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Intel-IESG-Logo.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>REST Web Services &amp; API Security with Intel</h2>
+<p><span class="post-date">29 Oct 2012</span></p>
+<p><a title="REST Web Services &amp; API Security" href="http://cloudsecurity.intel.com/solutions/rest-web-services-api-security"><img src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/intel/Intel-IESG-Logo.png" alt="" align="right" /></a></p>
+<p>When it comes to <a title="API Service Providers" href="http://apievangelist.com/2012/06/15/api-service-provider-roundup-for-2012/">API service providers</a>, there is one brand that I would say is widely known, but when we are talking about APIs, often gets overlooked.  That company is Intel.</p>
+<p>In addition to a whole suite of SOA and Cloud Middleware, all with an emphasis on security--<a title="REST Web Services &amp; API Security" href="http://cloudsecurity.intel.com/solutions/rest-web-services-api-security">Intel has a REST Web Services Gateway</a>.   This provides a simple solution to the number concern I get from potential API owners:  <strong><em>How do I secure my API?</em></strong></p>
+<p>The Intel REST Web Services Gateway provides:</p>
+<ul class="mainlist">
+<li>Invoke Security Token Service credential mapping or validation</li>
+<li>Ensure throttling and SLAs by REST service</li>
+<li>Extend Enterprise audit and compliance to WOA and REST</li>
+<li>Detailed XML threat prevention and payload inspection</li>
+<li>Service virtualization, proxy, and abstraction as a policy enforcement point</li>
+<li>REST API security and management</li>
+</ul>
+<p>You can find a <a href="http://cloudsecurity.intel.com/white-papers/enterprise-security-for-rest-soap/">summary of the product</a>, a&nbsp;<a href="http://cloudsecurity.intel.com/data-sheets/expressway-service-gateway/">full data sheet</a>, as well as some video tutorials over at <a href="http://cloudsecurity.intel.com/solutions/rest-web-services-api-security">Intel</a>.</p>
+<p><a title="REST Web Services &amp; API Security" href="http://cloudsecurity.intel.com/solutions/rest-web-services-api-security"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/intel/intel-rest-security.gif" alt="" width="500" /></a></p>
+<p>If you would like to know more, or have questions make sure and come to <a href="http://www.apistrategyconference.com/">API Strategy &amp; Practice</a> this week in NYC.  Intel will have a session on their approach to APIs, as well as be on a panel that I&rsquo;ll be moderating on API service providers. &nbsp;Intel is also a <a href="http://www.apistrategyconference.com/sponsors.php">gold sponsor of API Strategy &amp; Practice</a>--the event wouldn't be happing if it wasn't for Intel. &nbsp;Thanks!</p>
+<p>If that isn&rsquo;t enough!  I will also be doing some workshops with Intel at the <a href="http://www.gartner.com/technology/summits/na/applications/">Gartner AADI conference in Las Vegas</a>, the end of November. &nbsp;So you will have another opportunity to speak with both of us.</p>
+<p>If you can&rsquo;t make to either New York or Las Vegas, drop me an email and I&rsquo;ll get you in touch with Intel.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2012/10/29/api-developer-login-using-github/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2012/10/30/postponing-api-strategy-and-practice-in-nyc-due-to-sandy/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

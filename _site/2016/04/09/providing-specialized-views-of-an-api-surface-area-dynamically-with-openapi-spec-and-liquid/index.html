@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Providing Specialized Views Of An API Surface Area Dynamically With OpenAPI Spec And Liquid</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/04/09/providing-specialized-views-of-an-api-surface-area-dynamically-with-openapi-spec-and-liquid/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Providing Specialized Views Of An API Surface Area Dynamically With OpenAPI Spec And Liquid | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/04/09/providing-specialized-views-of-an-api-surface-area-dynamically-with-openapi-spec-and-liquid/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Providing Specialized Views Of An API Surface Area Dynamically With OpenAPI Spec And Liquid | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Providing Specialized Views Of An API Surface Area Dynamically With OpenAPI Spec And Liquid</h2>
+<p><span class="post-date">09 Apr 2016</span></p>
+<p><a href="http://adopta-agency.github.io/open-referral-api/">I just published the OpenAPI Spec I just created for the Human Services Data Specification (HSDS) into one of my default portals</a>, which once the OpenAPI Spec is indexed via the portals API.json, I get a ready to go landing page, documentation, and other tooling for supporting the API. I have been pushing forward my API documentation, beyond the (now) standard issue Swagger UI, keeping the OpenAPI Spec core, but evolving the UI portion using Jekyll and Liquid.&nbsp;</p>
+<p><a href="http://adopta-agency.github.io/open-referral-api/documentation/">I have a default API docs implementation, which loops through all OpenAPI Spec included within a project, and renders HTML documentation for each path, verb, etc.</a> I'm still working on how I recreate the dynamic functionality brought to the table by Swagger UI, but so far I'm really, really enjoying the flexiblity with the user interface, and overall experience I get using this approach--I know the interactive portion will come.</p>
+<p>One of the things I'm enjoying being able to do, is apply additional, external elements to the OpenAPI Spec, by augmenting them with independent, APIs.json defined schema. <a href="http://adopta-agency.github.io/open-referral-api/apis.json">One example of this I am calling API filters, a simple filter collection defined in both YAML and JSON, that is indexed along with the OpenAPI Spec, within the APIs.json index</a>. For the Open Referral API I wanted to provide the complete documentation, but also play around with other different, filtered views of the API -- designed for specific audiences.</p>
+<p>The first entry I made into API filters, I called "learn the basics", only showing the core resources that were available via the Open Referral API, eliminating all of the noise.</p>
+<table style="padding-top: 10px;" border="0" width="100%">
+<tbody>
+<tr>
+<td>
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr style="background-color: #d3d3d3;">
+<td style="font-size: 18px; font-weight: bold; padding: 10px;" align="left">Open Referral API - Learn the Basics</td>
+<td style="padding: 10px;" align="right"><a style="font-size: 16px; font-weight: normal;" title="View OpenAPI Spec" href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json" target="_blank">OpenAPI Spec</a></td>
+</tr>
+<tr id="methods-for-openapi-spec">
+<td colspan="2">
+<table style="margin-left: 15px; margin-right: 15px;" border="0" width="95%">
+<tbody>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong></strong></td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Categories</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get all categories</td>
+<td style="font-size: 12px;">/categories</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Contacts</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Contacts</td>
+<td style="font-size: 12px;">/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Contact</td>
+<td style="font-size: 12px;">/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Locations</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Locations</td>
+<td style="font-size: 12px;">/locations</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Location</td>
+<td style="font-size: 12px;">/locations</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Metadata</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Metadata</td>
+<td style="font-size: 12px;">/metadata</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add New Metadata</td>
+<td style="font-size: 12px;">/metadata</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Organizations</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Locations</td>
+<td style="font-size: 12px;">/organizations</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create a new organization</td>
+<td style="font-size: 12px;">/organizations</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Search</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get locations that match certain criteria.</td>
+<td style="font-size: 12px;">/search</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Services</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Service</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This API docs view, gives me just the handful of core endpoints, filtering out the other 60+ APIs that someone who is just learning about the Open Referral API do not need to be bothered with when they are learning. Next, I wanted to focus in on a specific area of the API, like services, and only show the summary elements, that most people will care about when it comes to these services. I'm calling this one "services summary":</p>
+<table style="padding-top: 10px;" border="0" width="100%">
+<tbody>
+<tr>
+<td style="margin-left: 90px; margin-right: 90px;" align="center">
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr style="background-color: #d3d3d3;">
+<td style="font-size: 18px; font-weight: bold; padding: 10px;" align="left">Open Referral API - Services Summary</td>
+<td style="padding: 10px;" align="right"><a style="font-size: 16px; font-weight: normal;" title="View OpenAPI Spec" href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json" target="_blank">OpenAPI Spec</a></td>
+</tr>
+<tr id="methods-for-openapi-spec">
+<td colspan="2">
+<table style="margin-left: 15px; margin-right: 15px;" border="0" width="95%">
+<tbody>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong></strong></td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Services</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Service</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Categories</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Update a service&rsquo;s categories</td>
+<td style="font-size: 12px;">/services/:service_id/categories</td>
+<td style="padding: 5px; width: 75px; background-color: #ff0080; font-weight: bold; font-size: 11px; color: #fff;" align="center">PUT</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Contacts</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Contacts</td>
+<td style="font-size: 12px;">/services/:service_id/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Contact</td>
+<td style="font-size: 12px;">/services/:service_id/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Eligibility</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Eligibility</td>
+<td style="font-size: 12px;">/services/:service_id/eligibility/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Eligibility</td>
+<td style="font-size: 12px;">/services/:service_id/eligibility/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Fees</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Fees</td>
+<td style="font-size: 12px;">/services/:service_id/fees/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Fees</td>
+<td style="font-size: 12px;">/services/:service_id/fees/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Funding</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Funding</td>
+<td style="font-size: 12px;">/services/:service_id/funding/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Funding</td>
+<td style="font-size: 12px;">/services/:service_id/funding/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Holiday Schedule</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Holiday Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/holiday_schedule/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Holiday Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/holiday_schedule/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Interpretation Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Interpretation Services</td>
+<td style="font-size: 12px;">/services/:service_id/intepretation_services/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Interpretation Services</td>
+<td style="font-size: 12px;">/services/:service_id/intepretation_services/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Languages</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Languages</td>
+<td style="font-size: 12px;">/services/:service_id/languages/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Languages</td>
+<td style="font-size: 12px;">/services/:service_id/languages/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Payment Accepted</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Payment Accepted</td>
+<td style="font-size: 12px;">/services/:service_id/payment_accepted/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Payment Accepted</td>
+<td style="font-size: 12px;">/services/:service_id/payment_accepted/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Phones</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Phones</td>
+<td style="font-size: 12px;">/services/:service_id/phones</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Phone</td>
+<td style="font-size: 12px;">/services/:service_id/phones</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Regular Schedule</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Regular Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/regular_schedule</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Regular Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/regular_schedule</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Required Document</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Required Document</td>
+<td style="font-size: 12px;">/services/:service_id/required_document/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Required Document</td>
+<td style="font-size: 12px;">/services/:service_id/required_document/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Areas</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Service Area</td>
+<td style="font-size: 12px;">/services/:service_id/service_area/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Service Area</td>
+<td style="font-size: 12px;">/services/:service_id/service_area/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Liquid driven HTML API docs are the same for the <a href="https://github.com/adopta-agency/open-referral-api/edit/gh-pages/documentation/index.html">full documentation</a>, for <a href="https://github.com/adopta-agency/open-referral-api/blob/gh-pages/documentation/services-summary/index.html">learn the basics</a>, or for the <a href="https://github.com/adopta-agency/open-referral-api/blob/gh-pages/documentation/learn-the-basics/index.html">services summary</a>. All three documentation elements are also all <a href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json">driven from the same OpenAPI Spec</a>. The only thing I did, was specify one of the API Filters by name, in the top of each specialized docs page -- the Liquid template handles the rest. Its still pretty crude, and I'm sure it will need a lot of polishing, but it provides me with a simple, machine readable way to filter out the endpoints I do not need, accomplishing what I set out to do.</p>
+<script src="https://gist.github.com/kinlane/f073d9a8d1bec151b16a9c8e7f8cd335.js"></script>
+<p>I am using schema approaches like this more lately. An approach that when indexed along with the OpenAPI Spec, in an API.json file gives me other layers, and dimension that I can apply for not just documentation, but almost any other stop along the life cycle. To me, and important part of this is that these elements do not live embedded within the OpenAPI Spec, living independent of the the machine readable definition of the API. Each one lives its own schema file, and when indexed alongside each API definition, within the APIs.json, interesting things happen--all without cluttering up the OpenAPI Spec, keeping it purely about the API.</p>
+<p>My goal in this work, is to provide me with a way that I can equip the other less technical advocates for the Open Referral format, with a toolbox of documentation, visualizations, and other snippets that will help them articulate what the API can do. Since all of these API documentation snippets are APIs.json, and OpenAPI Spec driven, using Liquid, and Jekyll to render, they are something that anyone could put to use, for any API.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/04/09/playing-with-one-possible-openapi-spec-for-the-human-services-data-specification-hsds/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/04/10/using-apis-to-provide-building-blocks-for-still-and-motion-uav-imagery-media-applications/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Is Your Monetization Rooted In The Resource Or Experience Side Of Your API Operations?</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/07/30/is-your-monetization-rooted-in-the-resource-or-experience-side-of-your-api-operations/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Is Your Monetization Rooted In The Resource Or Experience Side Of Your API Operations? | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-monetization.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/07/30/is-your-monetization-rooted-in-the-resource-or-experience-side-of-your-api-operations/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Is Your Monetization Rooted In The Resource Or Experience Side Of Your API Operations? | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-monetization.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Is Your Monetization Rooted In The Resource Or Experience Side Of Your API Operations?</h2>
+<p><span class="post-date">30 Jul 2015</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-monetization.png" alt="" width="250" align="right" /></p>
+<p>I had another one of my regular check-ins with Anne and Bailey over at <a href="https://www.popuparchive.com/">Popup Archive</a>&nbsp;today, with a focus around the monetization strategy for their <a href="https://www.audiosear.ch/developer">AudioSear.ch API</a>. I thoroughly enjoy my conversations with the team, because they have worked really hard on their audio API solutions, and are extremely open to discussion, and sharing the stories of their API journey.</p>
+<p>During our talk, they tuned me into where they were at with their road-map, which includes now having <a href="https://www.audiosear.ch/developer">a solid set of API resources that provide access to the episodes, people, and shows involved in podcasts across the Internet</a>. They talked about how they have been iterating on these core API resources, with more experience focused endpoints including relatedness, trending, and tastes, to name a few. All of this really demonstrates that the company are well along in their API journey, moving beyond just the definition of core aPI resources, and actually getting in tune with how these resources will actually be put to work.</p>
+<p>Next they walked me through some of the core use cases for their podcast API, ranging from radio stations looking to provide better recommendations, to advertisers who want to better understand the exploding world of podcasts, and understand where the opportunity is. Audiosear.ch is working to quantify the world of podcasting, by indexing not just the metadata surrounding audio files, but also its contents, and relationships between them--busting open a brand new realm in cyberspace, that like video, that is poised for explosive growth, and will be ripe with opportunities.</p>
+<p>Now that AudioSear.ch can crack open, index, and develop awareness around the contents of podcasts, which includes the episodes and people involved with shows, they are also faced the hard part of actually defining, and delivering APIs that developers will need, and actually pay for. Meaning which API endpoints do we provide, and what do we charge for them? The number one conversation I am having with companies who have embarked on their own API journey.</p>
+<p>These conversation always begin with discussion the hard costs: what did we invest in developer hours? what are our licensing costs? what does compute cost? what does our storage cost? what does our bandwidth cost? All of these costs are rooted in the resource side of the conversation. Where do the data, content, and other resource originate? How much work have we put into? How do we perceive the value of our own resources? Leaving every API provider trying to figure out what people will pay, and calculating their margins--resource-based monetization strategy.</p>
+<p>Resource-based API monetization strategies are where all API operations begin when they trying to figure things out. Once you are further along in your API journey like Anne and Bailey are, you need to start thinking about more experienced based pricing, something that will be more closely aligned with how API consumers actually see things. As an API provider, you tend to be too closely aligned with your resources, focused on an API design derived from this view, and a monetization strategy that looks to cover the costs, while also bringing home a potentially good margin. When you are rooted in this way of thinking you are always chained to your core resource-based assumptions, which is often very distant from what will be important to your customers.&nbsp;</p>
+<p>When you<a href="https://www.audiosear.ch/developer"> look at how Audiosear.ch is iterating with the more experience based API designs like /trends, /relatedness, and /tastes for podcasts</a>, you see how they are beginning to uncover what is actually valuable to end-users. As they keep iterating on these experience based API endpoints, driven by API consumer needs, you can't have your pricing solely anchored to the resource, it needs to also reflect the value perceived by the consumer. You never know when you will find just the right endpoint for a resource, that has high perceived value to end-user, but relatively low costs associated with actually delivering--add entirely new dimensions to your margins.</p>
+<p>Approaching API monetization based upon how resources will be experience, decoupling from just a resource based approach, will first and foremost increase the chance that anyone will purchase API access for any sustained period, but secondly opens up a whole new world for price increases (or reductions) based upon demand (think AWS). These are just some initial thoughts from our conversation, something I will be thinking about more in coming weeks, and hopefully provide some other more concrete examples of this in the wild.&nbsp;</p>
+<p>I just needed to work through some initial thoughts as I got out of the Google Hangout--thanks Anne and Bailey #GoodTimes</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/07/30/going-beyond-just-data-apis-with-code-endpoints-at-apitite/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/07/30/providing-a-web-scraping-toolkit-on-github-to-jumpstart-the-api-conversation-at-the-university-of-toronto/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

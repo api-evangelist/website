@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>That Point Where API Session Management Become API Surveillance</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="That Point Where API Session Management Become API Surveillance | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/border-traffic.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="That Point Where API Session Management Become API Surveillance | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/border-traffic.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>That Point Where API Session Management Become API Surveillance</h2>
+<p><span class="post-date">21 Sep 2017</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/border-traffic.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><a href="https://www.youtube.com/watch?v=i7YUymQkZ_8&amp;feature=youtu.be">I was talking to my friends TC2027 Computer and Information Security class at Tec de Monterrey via a Google hangout today</a>, and one of the questions I got was around managing API sessions using JWT, which was spawned from a <a href="https://blog.websecurify.com/2017/02/hacking-json-web-tokens.html">story about security JWT</a>. A student was curious about managing session across API consumption, while addressing securing concerns, making sure tokens aren’t abused, and there isn’t API consumption from 3rd parties who shouldn’t have access going unnoticed.</p>
+
+<p>I feel like there are two important, and often competing interests occurring here. We want to secure our API resources, making sure data isn’t leaked, and prevent breaches. We want to make sure we know who is accessing resources, and develop a heightened awareness regarding who is accessing what, and how they are putting them to use. However, the more we march down the road of managing session, logging, analyzing, tracking, and securing our APIs, we are also simultaneously ramping up the surveillance of our platforms, and the web, mobile, network, and device clients who are putting our resources to use. Sure, we want to secure things, but we also want to think about the opportunity for abuse, as we are working to manage abuse on our platforms.</p>
+
+<p>To answer the question around how to track sessions across API operations I recommended thinking about that identification layer, which includes JWT and OAuth, depending on the situation. After that you should be looking other dimensions for identifying session like IP address, timestamps, user agent, and any other identifying characteristics. An app or user token is much more about identification, than it ever provides actual security, and to truly identify a valid session you should have more than one dimension beyond that key to acknowledge valid sessions, as well as just session in general. Identifying what healthy sessions look like, as well as unhealthy, or unique sessions that might be out of the realm of normal operations.</p>
+
+<p>To accomplish all of this, I recommend implementing a modern API management solution, but also pulling in logging from all other layers including DNS, web server, database, and any other system in the stack. To be able to truly identify healthy and unhealthy sessions you need visibility, and synchronicity across all logging layers of the API stack. Does the API management logs reflect DNS, and web server, etc. This is where access tiers, rate limits, and overall consumption awareness  really comes in, and having the right tools to lock things down, freeze keys and tokens, as well as being able to identify what healthy API consumption looks like, providing a blueprint for what API sessions should, or shouldn’t be occurring.</p>
+
+<p>At this point in the conversation I also like to point out that we should be stopping and considering at what point all of this API authentication, security, logging, analysis, and reporting and session management becomes surveillance. Are we seeking API security because it is what we need, or just because it is what we do. I know we are defensive about our resources, and we should be going the distance to keep data private and secure, but at some point by collecting more data, and establishing more logging streams, we actually begin to work against ourselves. I’m not saying it isn’t worth it in some cases, I am just saying that we should be questioning our own motivations, and the potential for introducing more abuse, as we police, surveil, and secure our APIs from abuse.</p>
+
+<p>As technologists, we aren’t always the best at stepping back from our work, and making sure we aren’t introducing new problems alongside our solutions. This is why I have my <a href="http://surveillance.apievangelist.com/">API surveillance research</a>, alongside my API <a href="http://authentication.apievangelist.com/">authentication</a>, <a href="http://security.apievangelist.com/">security</a>, <a href="http://logging.apievangelist.com/">logging</a>, and other management research. We tend to get excited about, and hyper focused on the tech for tech’s sake. The irony of this situation is that we can also introduce exploitation and abuse around our practices for addressing exploitation and abuse around our APIs. Let’s definitely keep having conversations around how we authenticate, secure, and log to make sure things are locked down, but let’s also make sure we are having sensible discussions around how we are surveilling our API consumers, and end users along the way.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/09/21/the-concept-of-api-management-has-expanded-so-much-the-concept-should-be-retired/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/09/22/i-am-a-professional-in-my-industry-where-should-i-begin-with-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>The Basics Of API Management</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="The Basics Of API Management | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="The Basics Of API Management | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>The Basics Of API Management</h2>
+<p><span class="post-date">16 Oct 2017</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p>I am developing a basic API management strategy for one of my client’s API. With each area of their API strategy I am taking what I’ve learned monitoring the API sector, but pausing for a moment to think about again, and then applying to their operations. Over the years I have separated out many aspects of API management, distilling it down to a core set of elements that reflect the evolution of API management as its evolved into a digital commodity. It helps me to think through these aspects of API operations in general, but also applying to a specific API I am working on, helping me further refine my API strategy advice.</p>
+
+<p>API management is the oldest area of my research. It has spawned every other area of the lifecycle I track on, but also is the most mature aspect of the API economy. This project I am working on gives me an opportunity to think about what is API management, and what should be spun off into separate areas of concern. I am looking to distill API management down to:</p>
+
+<ul>
+  <li><strong>Portal</strong> - A single URL to find out everything about an API, and get up and running working the resources that are available.</li>
+  <li><strong>On-Boarding</strong> - Think just about how you get a new developer to from landing on the home page of the portal to making their first API call, and then an application in production.</li>
+  <li><strong>Accounts</strong> - Allowing API consumers to sign up for an account, either for individual, or business access to API resources.</li>
+  <li><strong>Applications</strong> - Enable each account holder to register one or many applications which will be putting API resources to use.</li>
+  <li><strong>Authentication</strong> - Providing one, or multiple ways for API consumers to authenticate and get access to API resources.</li>
+  <li><strong>Services</strong> - Defining which services are available across one or many API paths providing HTTP access to a variety of business services.</li>
+  <li><strong>Logging</strong> - Every call to the API is logged via the API management layer, as well as the DNS, web server, file system, and database levels.</li>
+  <li><strong>Analysis</strong> - Understanding how APIs are being consumed, and how applications are putting API resources to use, identifying patterns across all API consumption.</li>
+  <li><strong>Usage</strong> - Quantifying usage across all accounts, and their applications, then reporting, billing, and reconciling usage with all API consumers.</li>
+  <li><strong>APIs</strong> - API access to accounts, authentication, services, logging, analysis, and usage of API resources.</li>
+</ul>
+
+<p>There are other common elements bundled with API management, but this reflects the core of what API management is about–the business of APIs. Keeping track of who has access to what, and how much they are using. There are a number of other aspects of API management that many will consider under the API management umbrella, but I’ve elevated to being their own stops along the API lifecycle. Some areas are:</p>
+
+<ul>
+  <li><strong>Documentation</strong> - Static or interactive documentation for all available API paths, parameters, headers, and other details of the request and response surface area of the API.</li>
+  <li><strong>Support</strong> - Self-service, or direct support channels that API consumers put to use to get help along the way.</li>
+  <li><strong>SDKs</strong> - The SDKs, samples, libraries, and other supporting code elements for web, mobile, or other types of applications.</li>
+  <li><strong>Road Map</strong> - Communicating what the future holds when it comes to the API.</li>
+  <li><strong>Issues</strong>  - Notification of any open issues with the available of the API.</li>
+  <li><strong>Change Log</strong> - A history of what has happened when it comes to changes to the API.</li>
+</ul>
+
+<p>These areas compliment API management, but should be approached beyond the day to day management aspects of API operations. I’d also consider authentication, logging, and analysis to be bigger than just about API management, as all three areas should cover more than just the API, but they are still very coupled to the core aspects of API management. In my definition, API management is very much about managing the consumption of resources, and not always the other aspects of API operations. This isn’t just my definition, it is what I’m seeing with the commodization of API management like we see over at Amazon Web Services.</p>
+
+<p>AWS API Gateway is really about accounts, applications, authentication, and services. The logging, analysis are delivered by AWS CloudWatch. For this particular project I’m using Github and Jekyll as the portal, and custom delivering on-boarding, usage, and supporting APIs separately. Further narrowing down my definition of just what is API management. I’d say that AWS represents this evolution in API management well, with the decoupling of concerns between AWS API Gateway and AWS CloudWatch. If you apply <a href="https://aws.amazon.com/cognito/">AWS Cognito</a> to authentication, you can separate out another. I do not see any viable solution to handling usage, billing, and what used to be the business and monetization side of API management.</p>
+
+<p>This API project I am working on is already using AWS for the backend of their operations, so I’m investing cycles into better understanding the moving parts of API management in context of the AWS platform. It makes sense to think some more about the decoupling of API management in context of AWS, since they are a major player in the commodization, and maturing of the concept. Once I’m done with AWS, I’m going to take another look at Google, then Azure, who are the other major players who are defining the future of API management.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/10/12/bots-voice-and-conversational-apis-are-your-next-generation-of-api-clients/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/10/16/operating-your-api-portal-using-github/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Introducing API.Report, A Community API News Site</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/09/29/introducing-apireport-a-community-api-news-site/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Introducing API.Report, A Community API News Site | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-report/api-report-logo.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/09/29/introducing-apireport-a-community-api-news-site/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Introducing API.Report, A Community API News Site | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-report/api-report-logo.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Introducing API.Report, A Community API News Site</h2>
+<p><span class="post-date">29 Sep 2014</span></p>
+<p><a href="http://api.report/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-report/api-report-logo.png" alt="" width="275" align="right" /></a></p>
+<p>I curate a lot of interesting stories across the API space from my RSS feeds, the Twittersphere, and my overactive email inbox each day. Only a small percentage of these stories ever make it to my <a href="http://apievangelist.com">business of API analysis site apievangelist.com</a>, or my <a href="http://apivoice.com">politics of APIs analysis at apivoice.com</a>.</p>
+<p>Over the summer, this got me thinking, and while wandering around Detroit after <a href="http://api-craft.org/">API-Craft Detroit</a> this last July, Steve Willmott (<a href="https://twitter.com/njyx">@njyx</a>) and I were talking about the rapidly expanding API space, and both felt there was a gap in the news reporting for the API sector. <a href="http://www.programmableweb.com/">ProgrammableWeb</a>&nbsp;(PW)&nbsp;does a good job of providing API news and analysis for the space, but because of my monitoring of the space, I know there is a lot more news that never sees the light of day.</p>
+<p>Steve and I both aggreed that PW is the tip of the API news iceberg, and while API Evangelist, and API Voice provide some added analysis, there was no straight news site that showcased all of the news across the thousands of companies doing interesting things in 2014. Beyone PW,&nbsp;<a href="http://apiscene.com/">APIScene</a> and <a href="http://apicodex.3scale.net/content/Welcome">API Codex</a> are aggregating stories from across the blogosphere, providing access to the best stories across the blogosphere, but still do not reflect the wealth of stories I see being published by both API providers, and consumers.</p>
+<p><a href="http://api.report/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-report/api-report-news.png" alt="" width="325" align="right" /></a></p>
+<p>Out of this conversation, the <a href="http://api.report/">API.Report</a> was born. The API.Report is a Github Pages hosted API news site, that anyone can post short, concise blog posts that are no more than 500 words, with supporting links to additional sources of information. There are two ways you can post:</p>
+<ul class="mainlist">
+<li><strong>Fork and Post to Github -</strong> The <a href="https://github.com/kinlane/api-report">entire site runs on Github</a>, and if you understand how Jekyll works you can easily publish your own story to the _posts folder, and submit a pull request to have added to the daily stream of stories. </li>
+<li><strong>Email Your Story - </strong>If you don't want to use Github, you can easily email a story, and supporting image to <a href="mailto:info@apievangelist.com">info@apievangelist.com</a> and I will post the story for you. Stories on Github will get priority, but emails will be processed as I have time.</li>
+</ul>
+<p>It will take a couple of weeks before the site will get up to a regular pace, as I'm the only one writing for the blog at the moment, but as more writers step up, the number of stories should increase. I&rsquo;m going to play around with a couple of other features, like a list of all companies who are referenced in news stories each week, and rolling out a custom advertising network for the news site, allowing people to purchase monthly advertising slots.</p>
+<p>If you want to become an author, or would like to advertise on the <a href="http://api.report/">API.Report</a>, feel free to <a href="mailto:info@apievangelist.com">email</a> or <a href="https://twitter.com/kinlane">tweet</a> at me, and I'll get you plugged in. If you have any feedback, you can use the <a href="https://github.com/kinlane/api-report/issues">issue management for the site</a>, and I&rsquo;ll work to incorporate your ideas into the site.  While the <a href="http://api.report/">API.Report</a> is part of the API Evangelist network, I consider it a community site, and would like for you become part of the storytelling for the API space.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/09/29/extract-knowledge-from-audio-and-video-using-the-clarify-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/09/29/thank-you-3scale-for-investing-in-the-community-with-apistrat/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

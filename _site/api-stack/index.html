@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Stack Research</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Stack Research | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Stack Research | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>API Stack Research</h2>
+<p>I have looked at thousands of APIs conducting my API lifecycle research over the last seven years. Many of these APIs aren't worth noting, but the ones that are get included in my API Stack research, where I dive deeper into understanding the common building blocks of their operations, and spend more time profiling their APIs, and supporting operations.</p>
+<p>You will find that I tend to study and research APIs I find interesting, or are beneficial to the world of technology. I tend to give equal time understanding organizational, instutions, government agencies, as well as the startups, SMB, SME, and enterprises that seem to dominate the conversation. While I do invest considerable resources in API definitions and discovery, and provide a rich catalog, I'm more interested in this work feeding my wider research and storytelling over actually being an API search engine or directory.</p>
+<section>
+  <div class="features">
+    
+    
+      
+        <article>
+          <p><a href="http://theapistack.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stacks.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://theapistack.com" target="_blank">The API Stack</a></h3>
+            <p>The API Stack is an interactive, published list of companies that I'm watching in the API space. I regularly go through my list of companies in my CRM and high grade them, and promote or demote them on my monitoring list. The API Stack is meant to be a reflection of this research, published in a way that others can browse, and fork.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://university.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/priorities/university-of-api.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://university.stack.network" target="_blank">University</a></h3>
+            <p>My tracking on how APIs are being used in education across universities. This is one project area that overlaps with my girlfriends (@audreywatters) work on Hack Education. I'm looking to understand who the key insitutions are, what they are up to by aggregating news, analysis, companies and technology in a single project.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://stack.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stacks.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://stack.apievangelist.com" target="_blank">My API Stack</a></h3>
+            <p>This is where I track on the APIs that I depend on.<span style=\white-space: pre;\"> "</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://accountng.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-accounting.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://accountng.stack.network" target="_blank">Accounting</a></h3>
+            <p>There are a handful of interesting accounting software solutions out there doing APIs, making it an area I want to pay closer attention to. This is my work to map out the landscape when it comes to accounting APIs.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://advertising.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-advertising.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://advertising.stack.network" target="_blank">Advertising</a></h3>
+            <p>I'm not a big fan of advertising, but it does power the web, and generated needed revenue for a number of projects I like. It is an important part of the ecosystem, making it something I want to know more about when it comes to APIs. This is my project dedicated to advertising APIs.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://audio.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-audio.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://audio.stack.network" target="_blank">Audio</a></h3>
+            <p>This is where I am paying attention to everything related to audio APIs, trying to understand the different types of approaches to making audio available via APis. There are a lot of things that can fall under the umbrealla of audio, so I'll keep organizing trying to make sense of it.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://automobile.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-car.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://automobile.apievangelist.com" target="_blank">Automobile</a></h3>
+            <p>My research into the opportunities for APIs in the automobile, ranging from our personal vehicles, to rental cars and commercial fleets. I'm looking to understand who the key players are, what they are up to as well as where the opportunities lie.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://band.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-band.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://band.stack.network" target="_blank">Band</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://businesses.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-businesses.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://businesses.stack.network" target="_blank">Business</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://city.government.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/priorities/bw-city-skyline.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://city.government.stack.network" target="_blank">City Government</a></h3>
+            <p>Tracking on how APIs are being used by city governments around the globe. In the US a handful of cities are actively adopting API practices and I'm looking to aggregate relevant news, analysis, technology and approaches in a single research project.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://commerce.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-commerce.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://commerce.stack.network" target="_blank">Commerce</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://compute.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-compute.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://compute.stack.network" target="_blank">Compute</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://content.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-content-2.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://content.stack.network" target="_blank">Content</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://documents.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-documents.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://documents.stack.network" target="_blank">Documents</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://drones.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-drone.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://drones.stack.network" target="_blank">Drones</a></h3>
+            <p>Drones were coming up in my monitoring so much, I had to start tracking on it. While not completely API related (yet), drones represent one possible dystopian universe for the whole Internet of Things API expansion. I'm betting that very few folks opt for API layers in their drone operations. Well, not APIs as we know them in the public space. They will use APIs, and try to remain as secretive as possible, but like many other layers of the IoT space, their APIs will become their achilles heel. This is purely a monitoring channel for me, so I can keep a close eye on the Drone space, and try to understand what is going on.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://education.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/tag-cloud-education.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://education.stack.network" target="_blank">Education</a></h3>
+            <p>My tracking on how APIs are being used in education across elementary, secondary and pos-secondary. This is one project area that overlaps with my girlfriends (@audreywatters) work on Hack Education. I'm looking to understand who the key players are, what they are up to by aggregating news, analysis, companies and technology in a single project.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://email.stack.network/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-email-at.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://email.stack.network/" target="_blank">Email</a></h3>
+            <p>I find the email API space a fascinating area to research when it comes to APIs. If you think about it, email APIs are kind of ironic, because email is based upon some pretty solid standards like SMTP, POP, and IMAP, where APIs are nothing more than just a philosophy, and a kind of wild west when it comes to standardization. Yet you see some pretty interesting approaches to providing email infrastructure which employs, and often resemble the email standards, but put web APIs to work to actually do the heavy lifting.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://engergy.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-energy.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://engergy.stack.network" target="_blank">Energy</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://environment.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-environment.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://environment.stack.network" target="_blank">Environment</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://events.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-events.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://events.stack.network" target="_blank">Events</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://financial.news.stack.network/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-news-financial-icon.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://financial.news.stack.network/" target="_blank">Financial News</a></h3>
+            <p>I started doing research into the news space, and quickly carved off a number of platforms that were specific just to financial data, and more specifically financial news. After I profiled the news API space I began doing the same for financial news providers, but quickly found that most of them did not meet my standard for an API. It doesn't take much to make my list. I showcase some pretty poor APIs, but when I started through the financial news API providers, more APIs got cut then made the list.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://city.government.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-government.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://city.government.stack.network" target="_blank">Government - City</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://federal.government.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-government.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://federal.government.stack.network" target="_blank">Government - Federal</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://state.government.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-government.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://state.government.stack.network" target="_blank">Government - State</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://healthcare.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/caduceus.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://healthcare.stack.network" target="_blank">Healthcare</a></h3>
+            <p>My tracking on how APIs are being used in healthcare. I'm looking to understand who the key players are, and what they are up to by aggregating news, analysis, companies and technology in a single research project.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://home.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://home.stack.network" target="_blank">Home</a></h3>
+            <p>My research into the opportunities for APIs in our homes. I'm looking to understand who the key players are, what they are up to as well as where the opportunities lie when it comes to Internet enabled homes and the devices we depend on.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://images.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-images.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://images.stack.network" target="_blank">Images</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://language.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-language.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://language.stack.network" target="_blank">Language</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://libraries.apievangelist.com" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/att/universal-library-sign.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://libraries.apievangelist.com" target="_blank">Library</a></h3>
+            <p>My tracking on how APIs are being used in libraries. I'm looking to understand who the key players are, and what they are up to by aggregating news, analysis, companies and technology in a single research project.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://links.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-links.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://links.stack.network" target="_blank">Links</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://mapping.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-mapping.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://mapping.stack.network" target="_blank">Mapping</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://messaging.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-messaging.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://messaging.stack.network" target="_blank">Messaging</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://mms.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-mms-2.jpg" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://mms.stack.network" target="_blank">MMS</a></h3>
+            <p>MMS for me can't be evaluated without looking at side by side with SMS. SMS is the evolution of messaging as a doorway to the Internet that I mention in my SMS research, with images, video, and audio files providing an experience that mobile users can access, and share with their networks. Like SMS, MMS is an essential compost of not just mobile, but now because of MMS APIs also the web, and Internet of Things experience, employing MMS as a transport.</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://movies.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-movies.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://movies.stack.network" target="_blank">Movies</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://music.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-music.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://music.stack.network" target="_blank">Music</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://payments.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dollar-sign.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://payments.stack.network" target="_blank">Payments</a></h3>
+            <p></p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://photos.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-photos.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://photos.stack.network" target="_blank">Photos</a></h3>
+            <p>This is a research project dedicated to mapping out platforms that offer photo APIs, allowing users to put valuable photo API data, content, and other resources to work in any application or system.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://places.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-places.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://places.stack.network" target="_blank">Places</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://search.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-search.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://search.stack.network" target="_blank">Search</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://sharing.economy.stack.network" target="_blank"><img src="NULL" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://sharing.economy.stack.network" target="_blank">Sharing Economy</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://shipping.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-search.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://shipping.stack.network" target="_blank">Shipping</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://sms.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-sms.jpg" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://sms.stack.network" target="_blank">SMS</a></h3>
+            <p>SMS owes more to the telecom industry, and mobile phones, more than the API space, but when it comes to reducing valuable assets to its smallest possible unit of value, the SMS space is well suited for evolution via the API. I think think that are many lessons for API providers when it comes to the SMS API space, and I enjoy spending time research how companies are innovating when it comes to the SMS, using APIs.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://social.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-social.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://social.stack.network" target="_blank">Social</a></h3>
+            <p>This is my research into social APIs, and how the leaders are handling their API operations. I will aggregate any information I use in my research here in this repository, for use across my writing, research, and guides.</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://space.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-space.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://space.stack.network" target="_blank">Space</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://storage.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-storage.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://storage.stack.network" target="_blank">Storage</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://travel.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-travel.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://travel.stack.network" target="_blank">Travel</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://users.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-users.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://users.stack.network" target="_blank">Users</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://videos.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-video.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://videos.stack.network" target="_blank">Videos</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://voice.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-voice.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://voice.stack.network" target="_blank">Voice</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+        <article>
+          <p><a href="http://wearables.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-wearables.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://wearables.stack.network" target="_blank">Wearables</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <article>
+          <p><a href="http://weather.stack.network" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-stack/icons/bw-weather.png" width="150" style="padding: 15px;" align="center" /></a></p>
+          <div class="content">
+            <h3><a href="http://weather.stack.network" target="_blank">Weather</a></h3>
+            <p>NULL</p>
+          </div>
+        </article>
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</section>
+<p>Each of these projects exists on Github, and can be forked, or integrated with directly via the YAML and JSON data stores that drive each area of my research.</p>
+
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

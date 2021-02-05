@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Transparency In Police Access To Social Platforms Using OAuth And APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/10/14/transparency-in-police-access-to-social-platforms-using-oauth-and-apis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Transparency In Police Access To Social Platforms Using OAuth And APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/facebook_instagram_and_twitter_provided_data_access_for_a_surveillance_product_marketed_to_target_activists_of_color__american_civil_liberties_union.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/10/14/transparency-in-police-access-to-social-platforms-using-oauth-and-apis/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Transparency In Police Access To Social Platforms Using OAuth And APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/facebook_instagram_and_twitter_provided_data_access_for_a_surveillance_product_marketed_to_target_activists_of_color__american_civil_liberties_union.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Transparency In Police Access To Social Platforms Using OAuth And APIs</h2>
+<p><span class="post-date">14 Oct 2016</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/facebook_instagram_and_twitter_provided_data_access_for_a_surveillance_product_marketed_to_target_activists_of_color__american_civil_liberties_union.png" alt="" width="40%" align="right" /></p>
+<p><a href="https://www.aclu.org/blog/free-future/facebook-instagram-and-twitter-provided-data-access-surveillance-product-marketed">I was learning about&nbsp;Geofeedia providing law enforcement access to social media data from Twitter, Facebook, and Instagram via their API(s) this week</a>. Geofeedia was making money by selling surveillance services to law enforcement build on top of these social APIs and is something that I guess Facebook and Instagram have cut-off access, but they could still have Twitter access through a reseller (Gnip?).&nbsp;</p>
+<p><span>This isn't something that will just go away. If law enforcement wants access to user's data on Facebook, Twitter, and Instagram, they are going to get it. I am guessing that the rules regarding what law enforcement can or can't do aren't clear (I will have to learn more), and something that is just left up to platforms to enforce via their terms of service. It is a problem that modern approaches to API authentication, management, and analytics are well designed to help make sense of--we just have to come up with a new layer defined specifically for law enforcement.</span></p>
+<p><span>Law enforcement should be able to fire up any standard, or customized solution they desire to search against social media data via APIs. However, they should be required to obtain an application key, and obtain the OAuth tokens that any other developer would need to. Rather than law enforcement being the customer of companies like Geofeedia, they should each get their own app id and keys, providing an identifying&nbsp;application that represents a specific law enforcement agency. They can still buy the software from providers, they just need the unique identifier when it comes to API consumption.</span></p>
+<p><span>Along with this access, we also need to begin to define an auditable or regulatory layer, where other government agencies or 3rd party auditors can get access to the access logs for all applications registered to law enforcement&nbsp;agencies. A kind of real time FOIA access to the API management layer, allowing for a window into how law enforcement agencies are searching and putting social media data to use.</span></p>
+<p><span>Of course, there will be special considerations regarding the OAuth interactions at play. At what point are end-users notified that their data is being accessed by law enforcement, and at what point do other government agencies and 3rd party auditors have access to API access to log file APIs for the law enforcement applications that are consuming Facebook, Instagram, Twitter, and other APIs.&nbsp;</span></p>
+<p>There is a lot of work ahead to define how law enforcement can put social data to work via APIs, but the tools are there. Modern API infrastructure excels at this when done right. We can give law enforcement access to the data they need, while also enabling transparency in the process, making the platform operators like Twitter and Facebook feel better, while also respecting the privacy of US citizens. We need to just hammer out the OAuth scopes for these relationships similar to how we do it for <a href="http://partners.apievangelist.com/2014/05/14/the-future-of-public-private-sector-partnerships-being-negotiated-at-the-api-oauth-scope-level/">energy</a>, <a href="http://openid.bitbucket.org/HEART/openid-heart-fhir-oauth2.html">healthcare</a>, and other vital data being served up via APIs.</p>
+<p><span>This is a problem that will keep popping up. We can't just rely on groups like ACLU to find the companies who are acting as brokers&nbsp;and waiting for the platforms to play whack a mole when these companies are singled out. We need a formal definition to guide how law enforcement&nbsp;is obtaining access to increasingly vital social media and network data via APIs. We need some transparency and consistency in the process, something that APIs do well when executed properly.</span></p>
+<p><span>While it makes cringe think about. I predict that many companies will be required to have API access in the future--specifically for this purpose. My hope is that there is also some transparency and consistency baked into this approach, leverage what web APIs do best. Allowing law enforcement to get what they legally need, allowing other government agencies, watchdog groups, and journalist to get self-service, predefined access to understanding what law enforcement is up to when it comes to surveillance using online services.</span></p>
+<p><span>I will spend more time on this subject. Mapping out how it might work across the top platform like Twitter, Facebook, and Instagram. I'm hoping that we can make some movement in this area before too many other episodes occur.</span></p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/10/14/the-monitoring-layer-of-the-devops-aggregation-api-platform/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/10/17/convert-openapi-spec-to-slate-shins-markdown-api-docs/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

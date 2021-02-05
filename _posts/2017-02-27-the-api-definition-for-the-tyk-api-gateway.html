@@ -1,0 +1,71 @@
+---
+layout: post
+title: 'The API Definition For The Tyk API Gateway'
+source: http://apievangelist.com/2017/02/27/the-api-definition-for-the-tyk-api-gateway/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_02_25_at_9.00.37_pm.png
+atomdate: 2017-02-27T12:00:00-08:00
+---
+<p>If you are selling a service you should have an API. It is something you hear me talk about a lot here on the blog. I push on this subject because it is important, and there are numerous API service providers out there who do not have an API&nbsp;or choose to not make them available. In a DevOps,&nbsp;continuous integration world, we need the entire stack to have APIs--making our API platforms programmatic, just like the data, content, and algorithms we are making available via the APIs we are deploying.</p>
+<p>If you need an example of this in the wild, <a href="http://tyk.management.apievangelist.com/">you don't have to look much further than my partner in crime Tyk</a>, who have a simple API for their API gateway--no matter where you deploy the gateway, you can manage it using it's APIs. The&nbsp;Tyk&nbsp;API Gateway API provides you with a base set of paths for you to manage your gateway.</p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/tyk_io_logo.png" alt="" width="150" align="left" /></p>
+<p>An open source, lightweight, fast and scalable API Gateway. Set rate limiting, request throttling, and auto-renewing request quotas to manage how your users access your API. Tyk supports access tokens, HMAC request signing, basic authentication and OAuth 2.0 to integrate old and new services easily. Tyk can record and store detailed analytics which can be segmented by user, error, endpoint and client ID across multiple APIs and versions. Integrate your existing or new applications with Tyk using a simple REST API, Tyk even support hot-reloads so you can introduce new services without downtime.</p>
+<table style="padding-top: 0px;" border="0" width="100%">
+<tbody>
+<tr>
+<td style="margin-left: 25px; margin-right: 25px;" colspan="3" align="center">
+<ul style="list-style: none; display: inline;">
+<li style="display: inline; padding-left: 15px; padding-right: 15px;"> <a href="http://tyk.io/"> <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.jpg" alt="" width="32" align="center" /> </a> </li>
+<li style="display: inline; padding-left: 15px; padding-right: 15px;"> <a href="https://tyk.io/news-2/"> <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-blog-icon.png" alt="" width="27" align="center" /> </a> </li>
+<li style="display: inline; padding-left: 15px; padding-right: 15px;"> <a href="/admin/blog/"> <img src="https://s3.amazonaws.com/kinlane-productions/building-blocks/x-signup.png" alt="" width="45" align="center" /> </a> </li>
+<li style="display: inline; padding-left: 15px; padding-right: 15px;"> <a href="/admin/blog/"> <img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bug.png" alt="" width="38" align="center" /> </a> </li>
+<li style="display: inline; padding-left: 15px; padding-right: 15px;"> <a href="/admin/blog/"> <img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-terms-conditions.png" alt="" width="33" align="center" /></a></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<table style="padding-top: 5px; border-bottom: 1px solid #000;" border="0" width="100%">
+<tbody>
+<tr>
+<td style="margin-left: 90px; margin-right: 90px;" align="center">
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr style="background-color: #fff;">
+<td style="font-size: 16px; font-weight: bold; padding: 10px;" align="left">Tyk API Management Paths Available</td>
+<td style="padding: 10px;" align="right">(<a href="https://raw.githubusercontent.com/kinlane/tyk-api-management/master/_data/api-commons/tyk/tyk-api-management-openapi-spec.json">OpenAPI Spec</a>)</td>
+</tr>
+<tr id="methods-for-tyk.tyk-api-management-openapi-spec">
+<td colspan="2">
+<ul>
+<li style="font-size: 11px;"><strong>/tyk/apis/ -- Get APIs </strong> [GET] - Gets a list of *API Definition* objects that are currently live on the gateway</li>
+<li style="font-size: 11px;"><strong>/tyk/apis/ -- Create API </strong> [POST] - Create an *API Definition* object</li>
+<li style="font-size: 11px;"><strong>/tyk/apis/{apiID} -- Delete API </strong> [DELETE] - Deletes an *API Definition* object, if it exists</li>
+<li style="font-size: 11px;"><strong>/tyk/apis/{apiID} -- Get API </strong> [GET] - Gets an *API Definition* object, if it exists</li>
+<li style="font-size: 11px;"><strong>/tyk/apis/{apiID} -- Update API </strong> [PUT] - Updates an *API Definition* object, if it exists</li>
+<li style="font-size: 11px;"><strong>/tyk/health/ -- Check Health </strong> [GET] - Gets the health check values for an API if it is being recorded</li>
+<li style="font-size: 11px;"><strong>/tyk/keys/ -- Get Keys </strong> [GET] - Gets a list of *key* IDs (will only work with non-hashed installations)</li>
+<li style="font-size: 11px;"><strong>/tyk/keys/create -- Create Key </strong> [POST] - Create a new *API token* with the *session object* defined in the body</li>
+<li style="font-size: 11px;"><strong>/tyk/keys/{keyId} -- Remove Key </strong> [DELETE] - Remove this *API token* from the gateway, this will completely destroy the token and metadata associated with the token and instantly stop access from being granted</li>
+<li style="font-size: 11px;"><strong>/tyk/keys/{keyId} -- Add Custom Key </strong> [POST] - Add a pre-specified *API token* with the *session object* defined in the body, this operatin creates a custom token that dsoes not use the gateway naming convention for tokens</li>
+<li style="font-size: 11px;"><strong>/tyk/keys/{keyId} -- Update Key </strong> [PUT] - Update an *API token* with the *session object* defined in the body, this operatin overwrites the existing object</li>
+<li style="font-size: 11px;"><strong>/tyk/oauth/authorize-client/ -- OAuth Authorize Client </strong> [POST] - The final request from an authorising party for a redirect URI during the Tyk OAuth flow</li>
+<li style="font-size: 11px;"><strong>/tyk/oauth/clients/create -- OAuth Create Client </strong> [POST] - Create a new OAuth client</li>
+<li style="font-size: 11px;"><strong>/tyk/oauth/clients/{apiId} -- OAuth Get Clients </strong> [GET] - Get a list of OAuth clients bound to this back end</li>
+<li style="font-size: 11px;"><strong>/tyk/oauth/clients/{apiId}/{clientId} -- Delete Client </strong> [DELETE] - Delete the OAuth client</li>
+<li style="font-size: 11px;"><strong>/tyk/oauth/refresh/{keyId} -- Invalidate Key </strong> [DELETE] - Invalidate a refresh token</li>
+<li style="font-size: 11px;"><strong>/tyk/reload/ -- Reload Gateway </strong> [GET] - Will reload the targetted gateway</li>
+<li style="font-size: 11px;"><strong>/tyk/reload/group -- Reload Group </strong> [GET] - Will reload the cluster via the targeted gateway</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Tyk&nbsp;API Gateway provides a base set of API management features that can be deployed in the cloud, on-premise, or on-device. Making the key ingredients for API management programmable.</p>
+<p><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_02_25_at_9.00.37_pm.png" alt="" width="75%" align="center" /></p>
+<p>Tyk's&nbsp;API Gateway represents just one component in any API operation's toolbox. <a href="https://github.com/TykTechnologies/tyk-swagger-definitions/blob/master/tyk_gateway_api.yml">Tyk also provides an OpenAPI for the API gateway</a>&nbsp;making things much more plug and play as part of any API life cycle--something <a href="https://raw.githubusercontent.com/kinlane/tyk-api-management/master/_data/api-commons/tyk/apis.json">I've made even more discoverable using APIs.json</a>. Their approach provides a nice blueprint that all API providers should be following--well-defined APIs for all your services (open source if you can ;-).</p>
+<p>I track on any service or tool I include in my research like it has an API. If it does have an API, I profile it like I did with Tyk. If it doesn't, I will harass them until they have an API. If you are building tools, or selling services to the API space, you should have an API, as well as provide OpenAPI and APIs.json definitions for all your goods.</p>

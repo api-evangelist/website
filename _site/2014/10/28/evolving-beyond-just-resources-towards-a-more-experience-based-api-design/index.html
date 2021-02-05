@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Evolving Beyond Just Resources Towards A More Experience Based API Design</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/10/28/evolving-beyond-just-resources-towards-a-more-experience-based-api-design/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Evolving Beyond Just Resources Towards A More Experience Based API Design | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-design.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/10/28/evolving-beyond-just-resources-towards-a-more-experience-based-api-design/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Evolving Beyond Just Resources Towards A More Experience Based API Design | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-design.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Evolving Beyond Just Resources Towards A More Experience Based API Design</h2>
+<p><span class="post-date">28 Oct 2014</span></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-experience-design.png" alt="" width="325" align="right" /></p>
+<p>I really love the thought process around API design, and I am always looking for ways to push forward my craft. Telling stories is one way I do this, forcing me to make what I&rsquo;m doing understandable to a wider audience, which is also the exact thing I&rsquo;m trying to do with my API designs&mdash;mind blown!</p>
+<p>An example of this in action is with my link API, which I use in multiple places across my API monitoring system. The Link API has a pretty basic design, that reflect the resource, and its underlying database structure:</p>
+<ul class="mainlist">
+<li>/link/ (GET, POST, PUT, DELETE)</li>
+<li>Title, Description, and URL</li>
+</ul>
+<p>I use this API in numerous ways, the original API design is very much based upon the resource that it is, a link. As a developer who understands REST, and very much comes from a world of databases, this works just fine. However much of the magic around my usage of links is defined in my code, and not in my API interface, something I&rsquo;d like to change.</p>
+<p>After having two separate conversations with folks about my link API, I experienced two very different motivations on using said link system, and came with very different perspectives on how to use mu ink API, that had nothing to do with the database or resource this API was born from.</p>
+<p><strong>Archival Motivations</strong> <br />One person I discussed my link API with wants to use it for archiving a link. When they pass the link to an API, if it isn't already recorded it logs the URL, and then grabs a screenshot of the page, as well as stores any HTML content present. This could be a one time archive, or they could also pass a parameter that would set up a daily, weekly or monthly archive to occur.</p>
+<p><strong>Harvesting Desires <br /></strong>The second person I discussed my link API with wants to use for harvesting of specific things from the page, and in this particular conversation it was to harvest all other links available on the page. You would pass the URL to the API, and get back a list of URLs available on the page. The only setting was to filter and return only URLs that contained the base URL of the URL being passed to the API (mouthful of URL).</p>
+<p><strong>Pushing My Resources To Deliver Experiences </strong><br />This story reflects why I feel that companies should hurry up and begin their API journey, so they can begin moving beyond just APIs designed based upon the resources as they exist, to more of an experience based focus, designing APIs that deliver &nbsp;the solutions that people desire. Both of these folks I talked to were not programmers, and only understand APIs enough to be dangerous. They understand the basic CRUD abilities I gave with my resource design, but it doesn't excite them or really mean anything. What really motivates them was satisfying a specific need that fits in with their experiences.</p>
+<p>I&rsquo;m still working on what this new set of APIs will look like based upon these thoughts, but I wanted to tell the story of this slight shift in my API design thinking. It is extremely difficult to see API design this way unless you are actively on your API journey, having discussions with people who want to use your APIs. It is easy for us developers to get caught up in perfectly defining our API resources from the technical perspective, when in reality the most important part of the journey seems to me is all about learning to craft APIs that deliver meaningful experiences, not serving up just services&mdash;experience oriented architecture over service oriented architecture.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/10/28/another-view-of-the-api-vs-data-download-model/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/10/29/api-discovery-continues-its-move-into-the-ide-with-eclipse-che/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'Taking A Look At The API Licensing Stack'
+source: http://apievangelist.com/2014/08/13/taking-a-look-at-the-api-licensing-stack/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-onion.png
+atomdate: 2014-08-13T20:42:52-07:00
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-onion.png" alt="" width="250" align="right" /></p>
+<p>One of the byproducts of the <a href="http://apievangelist.com/2014/05/10/where-will-your-api-stand-in-the-oracle-v-google-api-copyright-debate/">Oracle vs Google API copyright case</a>, was a realization that many API providers and consumer do not understand the layers of the API stack, let alone the potential licensing considerations for each layer of the API onion. I wouldn't just blame API providers, and consumers, I&rsquo;m still getting a grasp on all of this, which is why I'm blogging about the subject.</p>
+<p>Let&rsquo;s take a quick crack at defining the layers to the potential API licensing onion:</p>
+<ul class="mainlist">
+<li><strong>Data</strong> - What is the licensing for the actual data returned and collected by an API? I&rsquo;m still learning about the ways to license your data, and the <a href="http://opendatacommons.org/faq/licenses/">Open Data Commons provides some guidance in this area</a>, while others feel that your data can just as be easily licensed using <a href="http://creativecommons.org/">Creative Commons</a> licensing.</li>
+<li><strong>Data Model </strong>- The separation between data and its data model can be hard to see, where in reality end-users may own their data, but the order and structure of it can be owned by the originating application. If this layer is a concern, <a href="http://creativecommons.org/">Creative Commons</a>, or other copyright options should be considered. </li>
+<li><strong>Server</strong> - Server side API code is the core of any API operations, and should be licensed accordingly using <a href="http://opensource.org/licenses">common open source software licens</a><span style="text-decoration: underline;">es</span>&nbsp;when appropriate. However I would add that this is the one layer in the API stack where a proprietary licensing could make sense, but the rest of the stack should always be licensed as open as possible.</li>
+<li><strong>Interface</strong> - The separation between the API and its surface area is important, and is something that is just becoming relevant with the Oracle v Google copyright case. Understanding the importance of an openly licensed surface area, is essential to the health of any API stack, and should be kep as open as possible, even when associated with a proprietary API backend. This is why we started <a href="http://apicommons.org">API commons</a>, to help API providers take a stance on the license of the surface area of the API stack.</li>
+<li><strong>Clients</strong> - As with server side code, you should apply<a href="http://opensource.org/licenses"> common open source software licensing</a>&nbsp;to client code when appropriate, but your client code samples, libraries and SDKs should never be licensed in a proprietary way, encouraging implementation for any commercial integration.</li>
+</ul>
+<p>In this scenario we are talking about a purely data API, if you are serving up some sort of programmatic resource, things might be different. My goal is to just try and understand the separation between the API layers, and apply some thoughts on how licenses can be applied to open, or possibly close access and constraint an APIs operation.</p>
+<p>Much like other political building blocks of the API ecosystem, licensing in the aPI stack can be good, bad, or neutral. In the end, regardless of your stance I think it is important to have an open conversation about how our API stack is licensed, so that your consumers can better understand what they are in for.</p>

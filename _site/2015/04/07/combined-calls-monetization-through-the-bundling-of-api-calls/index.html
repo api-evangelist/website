@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Combined Calls: Monetization Through The Bundling Of API Calls </title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/04/07/combined-calls-monetization-through-the-bundling-of-api-calls-/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Combined Calls: Monetization Through The Bundling Of API Calls  | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/alchemy/alchemy-api-ibm-version.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/04/07/combined-calls-monetization-through-the-bundling-of-api-calls-/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Combined Calls: Monetization Through The Bundling Of API Calls  | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/alchemy/alchemy-api-ibm-version.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Combined Calls: Monetization Through The Bundling Of API Calls </h2>
+<p><span class="post-date">07 Apr 2015</span></p>
+<p><a href="http://www.alchemyapi.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/alchemy/alchemy-api-ibm-version.png" alt="" width="225" align="right" /></a></p>
+<p>I was doing my regular monitoring, and found myself on the <a href="http://www.alchemyapi.com/">AlchemyAPI</a> site. Not exactly sure how I got there, but I stumbled across their <a href="http://www.alchemyapi.com/api/combined/htmlc.html">HTMLGetCombinedData</a>&nbsp;API, which can be used for analysis on HTML content, and is one of 3 separate APIs, AlchemyAPI is calling "combined calls".</p>
+<p>If you aren&rsquo;t familiar with AlchemyAPI, the company has a number of valuable APIs, which you can use to make sense of content and data from on, or offline source. I use AlchemyAPI for API Evangelist, to pull keywords, and the content out of blog posts, helping me shed the overall look of a site, and any advertisements--getting down to the raw content. What I thought was particularly interesting about this API, was their approach combined calls, and specifically their approach to monetizing these aggregated API calls.</p>
+<p>There are three specific APIs they are considering "combined calls":</p>
+<ul>
+<li><strong><a href="http://www.alchemyapi.com/api/combined/urls.html">URLGetCombinedData</a></strong> - Used for performing analysis on a publicly-accessible Internet web pages.</li>
+<li><strong><a href="http://www.alchemyapi.com/api/combined/htmlc.html">HTMLGetCombinedData</a></strong> - Used for performing analysis on uploaded HTML content.</li>
+<li><strong><a href="http://www.alchemyapi.com/api/combined/textc.html">TextGetCombinedData</a></strong> - Used for performing analysis on uploaded text content.</li>
+</ul>
+<p>These three APIs are only available in the AlchemyAPI&nbsp;<a href="http://www.alchemyapi.com/products/pricing">pro and enterprise packages</a>, which for me makes see this aa a potentially new approach to <a href="http://monetization.apievangelist.com/">API monetization</a>. I don&rsquo;t see it as something that works for all API providers, but when you have numerous decoupled APIs, which developers may also be implemented several of them at a time, or daisy chaining them together&mdash;a combined API call, might save some developers valuable time.</p>
+<p>Combined API calls also seem like a potential opportunity for API platform developers themselves. If an API platform, provides tools for developers to aggregate, and stitch together multiple APIs, and publish their recipes, it is something that could produce some interesting patterns, that may better deliver solutions to the problems developers actually face during integration. At the very least, allowing developers to publish SDKs that accomplish the same thing, might achieve the same thing.</p>
+<p>I am just looking to share my thoughts on AlchemyAPIs approach to aggregating their API calls, and specifically the focus on monetization, adding the concept to my research. Maybe it is something others can for their API platforms, or maybe API developers, could provide aggregated API recipes, for specific API platforms, or across multiple platforms.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/04/06/weekly-apireport-for-april-6th-2015/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/04/07/i-wish-api-providers-published-their-developer-portals-on-github-so-i-could-submit-pull-requests/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

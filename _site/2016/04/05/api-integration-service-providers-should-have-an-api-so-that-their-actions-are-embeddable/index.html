@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>API Integration Service Providers Should Have An API So That Their Actions Are Embeddable</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/04/05/api-integration-service-providers-should-have-an-api-so-that-their-actions-are-embeddable/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="API Integration Service Providers Should Have An API So That Their Actions Are Embeddable | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/bw-embeddable.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/04/05/api-integration-service-providers-should-have-an-api-so-that-their-actions-are-embeddable/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="API Integration Service Providers Should Have An API So That Their Actions Are Embeddable | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/bw-embeddable.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>API Integration Service Providers Should Have An API So That Their Actions Are Embeddable</h2>
+<p><span class="post-date">05 Apr 2016</span></p>
+<p><a href="http://embeddable.apievangelist.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/bw-embeddable.png" alt="" width="150" align="right" /></a></p>
+<p><a href="http://apievangelist.com/2016/03/31/hello-pinboard-customers-from-linden-tibbets-the-ceo-of-ifttt/">During the latest IFTTT flareup</a>, I realized how much I haven't written about my feelings surrounding API integratio service providers, iPaas, or whatever else you call it. Something that always frustrates me in the future, as I am unable to reference my earlier thoughts with a specific URL. So while I am ranting about <a href="http://apievangelist.com/2016/04/05/the-api-integration-providers-who-have-api-access-to-actions-will-be-successful-in-bot-environments/">the lack of APIs for these integration platform as a service (iPaaS) provider</a>, let me add to my list of critical elements I feel are missing from the space: Embeddability!</p>
+<p>As a user of your service, provide me an API, so I can embed your API recipes into any website, web and mobile application. While the fact that Zapier does have a public API, where IFTTT does not have one at all, the Zapier API doesn't not provide me any access to what API integration recipes (Zaps) are available (ie, core business value). I cannot automatically search for all the Google Spreadsheet integrations. I cannot search for all the Twitter API integrations. Let alone embed the actions enabled by these recipes on any of my website.&nbsp;</p>
+<p>When preparing any list of meaningful actions you can take with APIs, <a href="http://kinlane.github.io/university-api-workshop/apis/">like I did for my university workshop a couple weeks ago</a>, I have to manually go to Zapier, search for actions, and then craft my own link to the detail page (which isn't public BTW). The response from Zapier to why there is no API for this, each time I ask, is that nobody has ever asked for that? Which is starting to smell more and more like business lock-in to me, in the wake of the IFTTT / Pinboard shitstorm.&nbsp;</p>
+<p><a href="http://apievangelist.com/2015/12/19/button-to-run-this-api-in-the-http-api-client-of-my-choice/">It isn't like the concept of an API driven, embeddable button is anything new</a>. Facebook Share, Twitter Tweet? I just can't buy the fact that nobody has asked for a Run Zapier Zap button? I'm just guessing that folks aren't seeing the embed opportunity, when they are down in the weeds, <a href="https://dzone.com/articles/button-to-run-this-api-in-the-http-api-client-of-m">like with the Run in Postman button</a>&nbsp;was. It just takes time for it to happen, a process I am always looking for ways to expedite. ;-)</p>
+<p>Anyways. If you are running an API integration service provider, please:</p>
+<ol>
+<li>Pay APIs forward by having an API for your platform.</li>
+<li>Make all aspects of your service available via API.</li>
+<li>Provide embeddable buttons, and linkable hooks at any point in the action.</li>
+</ol>
+<p>If you do this, your service will become more than just a destination for discovering and enabling API driven recipes. With a complete API, your platform can become baked into the API enabled fabric of our web, and mobile world(s). As an API integration platform as a service (iPass) provider, it is your responsibility to pay the API concept forward (hear the laughter of my haterz), and not terminate, and capture all the value generated via APIs. The reasons for this are much more than the altruistic visions you may think I'm speaking of, and touch on real world business advantages that you are missing.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/03/31/hello-pinboard-customers-from-linden-tibbets-the-ceo-of-ifttt/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/04/05/apis-needs-to-augment-my-world-with-a-tangible-benefit-in-order-to-achieve-relevance/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

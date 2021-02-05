@@ -1,0 +1,28 @@
+---
+layout: post
+title: 'Continous Integration Platform As A Service At The Command Line'
+source: http://apievangelist.com/2017/04/20/continous-integration-platform-as-a-service-at-the-command-line/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_04_17_at_12.55.54_pm.png
+atomdate: 2017-04-20T09:00:00-07:00
+---
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2017_04_17_at_12.55.54_pm.png" alt="" width="40%" align="right" /></p>
+<p>Integration platform as a service (iPaaS) provider Zapier <a href="https://zapier.com/engineering/zapier-command-line-interface/">recently launched a command line tool for managing your integrations</a>, adding an interesting dimension to the platform--leaning in what feels like a continuous integration direction. The integration platform has long had a web builder for managing your integrations with over 750 API-driven services, using their APIs, but the command line interface feels like it's begging to be embedded into your development workflow and life cycle.&nbsp;</p>
+<p>Zapier is catering to engineers by allowing them to:</p>
+<ul>
+<li><strong>Bring your Node libraries.</strong> Zapier CLI Apps are made entirely of Node JS code. Use whichever libraries from NPM that you like. You can control every aspect of how Zapier interacts with your API, and our schema defines how authentication, Triggers, Actions, and Searches work.</li>
+<li><strong>Run your tests before you deploy</strong>. We believe unit testing is the best way to ensure high-quality code. You can use Mocha or another Node testing framework to feel confident in the code you deploy to Zapier.</li>
+<li><strong>Your app can live in source control.</strong> Every aspect of your integration&mdash;and every change you make&mdash;is written in code. That means you can track changes with Git or other source control like you do on other projects.</li>
+<li><strong>Version your app.</strong> You work in releases or sprints for the rest of your projects, why not do the same with your Zapier app? Turn your app updates into versions, then migrate some or all of your users to the latest version.</li>
+<li><strong>Collaborate with teammates.</strong> You don&rsquo;t need to go it alone with your Zapier integration. A CLI app can be owned by more than one Zapier account, with new members quickly added using the tool. That way, the whole team can deploy updates to your Zapier app.</li>
+</ul>
+<p>Here are the benefits of the Zapier CLI over the current web builder:</p>
+<ul>
+<li><strong>Coding locally.</strong> As mentioned above, you build CLI Apps on your local machine&mdash;not on Zapier's website.</li>
+<li><strong>Improved control over authentication flow. </strong>CLI Apps give you control over the API calls needed to set up authentication. This is particularly helpful if your API uses a slightly different flow for OAuth2 than what the Web Builder assumes. Now, you can determine the necessary calls and store whatever info your API needs.</li>
+<li><strong>Improved Custom Fields. </strong>When setting input fields, you can define static fields as well as functions to compute fields dynamically. These dynamic fields can be the result of API calls, or they can be computed based on the value of a static field.</li>
+<li><strong>Middleware.</strong> Tired of including a function call to add a header to each request? Or a call to parse out the responses? Now you can define middleware that runs before requests or after responses to process calls in a standard way.</li>
+<li><strong>Resources.</strong> You can define a single resource like a &ldquo;Contact&rdquo; and the methods allowed on that resource&mdash;like &ldquo;get, list, create.&rdquo; From this resource definition, Zapier can automatically generate Triggers and Actions, reusing some of the meta information defined on the resource.</li>
+</ul>
+<p>First, I see this significantly benefiting companies and organizations when it comes to the orchestration of internal and partner APIs--your engineering team should be developing Zapier applications for your most important business functions. Second,&nbsp;I see this significantly benefiting companies and organizations when it comes to empowering&nbsp;internal business and technical folks with a complete library of workflows for all the 3rd party services you depend on, like SalesForce, Google, Facebook, Twitter, and other leading SaaS providers.</p>
+<p>Providing a Command Line Interface (CLI) alongside an Application Programming Interface (API) seems to be coming back into popularity, partly due to continuous integration (CI) trends. Amazon has always had a CLI alongside their APIs, but it is something other API providers, as well as API service providers like Zapier, seem to be tapping into. I'm going to make some time to build a stack of API Evangelist Zapier apps so I can define some of my most common integrations, and explore further automation as part of my own internal continuous integration workflow.</p>

@@ -1,0 +1,23 @@
+---
+layout: post
+title: 'What is ALPS?'
+source: http://apievangelist.com/2015/03/10/what-is-alps/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/alps-io-logo.png
+---
+
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/alps-io-logo.png" alt="" width="200" align="right" /></p>
+<p>I was watching an <a href="https://groups.google.com/forum/#!topic/api-craft/mSFq__019ik">open thread around ALPS over at API Craft</a>, something that is on my working list to better understand, apply more in my world, and tell the story all along the way. ALPS author, and API visionary (;-) Mike Amundsen (<a href="/admin/blog/mamund">@mamund</a>) responded to the thread with a nice overview, which I wantd to repost and share with you.</p>
+<p>So, what is <a href="http://alps.io/">ALPS</a>?</p>
+<ul>
+<li>ALPS is not a runtime format like HTML or HAL</li>
+<li>ALPS is not a designtime format like RAML or Swagger</li>
+</ul>
+<p>ALPS is a Profile format for describing the bounded context of a service.  ALPS can be used as source material for designtime formats like RAML, WADL, Swagger, WSDL, etc. on the server side.</p>
+<p>ALPS can also be used as source material for client-side frameworks like Ember.js, Angular, etc on the client side.</p>
+<p>ALPS describes the operations (actions) and data elements of a service. that's all. that description is the same no matter the designtime tooling, protocol, or message format used. that description is the same whether you are implementing code on the client-side or server-side.</p>
+<blockquote><em>"Hence state is maintained SERVER SIDE by mapping the URL's when it is implemented... correct?"</em></blockquote>
+<p>ALPS has nothing to say about how or where state is maintained. You can do whatever you wish when you implement the bounded context ALPS describes.</p>
+<p>ALPS tells you the WHAT of the service, not the HOW.</p>
+<p>For example, you can use the ALPS document to implement a services that employs your API Chaining on the server side. Or you can use the same ALPS document to implement a classic hypermedia-driven service using Cj or some other hypermedia-rich format. You can also use the same ALPS document to implement a simple JSON-object CRUD-style service.</p>
+<p>When you use ALPS as the "shared bounded context" you can be confident that each of the services, regardless of their local implementation choices are supporting the same bounded context. this is especially handy when you want to provide the same operations using different implementations (e.g. JSON-object CRUD for mobile, HTML for browser, etc.).</p>

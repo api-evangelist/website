@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Adding Four New Building Building Blocks Providing An API Management API Blueprint</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/03/04/adding-four-new-building-building-blocks-providing-an-api-management-api-blueprint/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Adding Four New Building Building Blocks Providing An API Management API Blueprint | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/03/04/adding-four-new-building-building-blocks-providing-an-api-management-api-blueprint/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Adding Four New Building Building Blocks Providing An API Management API Blueprint | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Adding Four New Building Building Blocks Providing An API Management API Blueprint</h2>
+<p><span class="post-date">04 Mar 2015</span></p>
+<p><a href="http://management.apievangelist.com/building-blocks.html"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-building-blocks-design.png" alt="" width="200" align="right" /></a></p>
+<p>I am adding four new building blocks, to my list of suggested <a href="http://management.apievangelist.com/building-blocks.html">building blocks that API providers should consider when crafting their API management strategy</a>. These four building blocks, are based upon several things I&rsquo;ve seen in the space, and how some current deficiencies I&rsquo;ve identified that could slow things, and hold us back.</p>
+<p>These new building blocks are all about API providers practicing what they preach, and making the account for API consumers, and developers, programmatic through an <span style="text-decoration: underline;">API management API</span>. As I was profiling the <a href="http://dev.mailjet.com/email-api/v3/metadata/">Maijet API</a> as part of my <a href="http://email.apievangelist.com/">email API research</a>, I noticed <a href="http://apievangelist.com/2014/11/12/an-api-for-developers-to-access-their-api-account-information/">they had an API for their developer accounts</a>, and with the growth in the number of APIs being consumed, <a href="http://apievangelist.com/2014/12/16/with-number-of-apis-continuing-to-grow-account-automation-will-be-key/">the need for account automation is only going to incease</a>, something that is only getting even more critical when you think about the <a href="http://apievangelist.com/2015/02/02/api-management-infrastructure-and-service-composition-is-key-to-orchestration-with-microservices-in-a-containerized-world/">API service composition overhead needed to support the containerization and micro-services movement.</a> To help stimulate this area, and encourage API providers to automate their API accounts, I&rsquo;m adding these four separate APIs building blocks, providing an overall blueprint for how API providers can launch a developer account API for their own API.</p>
+<p>I used Mailjet&rsquo;s approach as a base model, but quickly began looking at <a href="https://support.3scale.net/reference/active-docs">3Scale own API design</a>. 1) I use 3Scale, so I&rsquo;m familiar with their approach to user management 2) Their API was simple, robust, and clearly a proven approach that was working.  I broke 3Scale&rsquo;s own endpoints down into four logical groups for v1 of this API management API blueprint. There were a number of features they had, that I wanted in there, but figured it was better to start out simple, and meet most of the common needs I'm seeing from my own experiences.</p>
+<p>Here is what I came up with, after taking a look at 3Scale&rsquo;s active docs.</p>
+<p><strong>API Management API - User Management<br /></strong>Allow API API consumers to manage their own accounts via an API management API, enabling users to create, read, update, and delete information associated with their account--fields may vary, depending on what information each API requires for user accounts.</p>
+<ul>
+<li>User Create</li>
+<li>User Read</li>
+<li>User Update</li>
+<li>User Delete</li>
+</ul>
+<p><strong>API Management API - Account Management</strong><br />Beyond the user profile, allow API consumers to manage the billing related account information, enable the programmatic adjustment of credit cards, and being able to check in on invoices, and payments through the API management API.</p>
+<ul>
+<li>Account Set Credit Card</li>
+<li>Account Delete Credit Card</li>
+<li>Invoice By Account</li>
+<li>Invoice Line Item List</li>
+<li>Invoice Payment Transaction List</li>
+</ul>
+<p><strong>API Management API - Service Management</strong><br />Enable API consumers to retrieve information about plans available for a specific API, or stack of APIs. Allow for listing of plans, and the features available for each plan. Also recommend considering the ability to set default plan for an account, enabling smooth application management.</p>
+<ul>
+<li>Service Plan List</li>
+<li>Service Plan Feature List</li>
+<li>Service Plan Set To Default</li>
+</ul>
+<p><strong>API Management API - Application Management</strong><br />Ideally each user can have multiple applications, consuming API resources at various rates. This allows for the most flexibility in API consumption, but may vary depending on what API management infrastructure employed. This API should allow for management of all applications, with secure control over application keys. Additionally, there should be analytics available, with a short, simple, but robust list of metrics.</p>
+<ul>
+<li>Application Plan List (per isolated service)</li>
+<li>Application List</li>
+<li>Application Create</li>
+<li>Application Read</li>
+<li>Application Update</li>
+<li>Application Change Plan</li>
+<li>Application Key List</li>
+<li>Application Key Create</li>
+<li>Application Key Delete</li>
+<li>Application Usage by Metric</li>
+</ul>
+<p>This represents the v1 stack I&rsquo;d like to see every API provider offer, as well for my own portable stack of API management APIs. I don't just want my core APIs to have these features, <a href="http://alpha.apievangelist.com/2015/02/26/making-my-3scale-api-management-portable-with-a-containerized-microservices/">I want every wholesale API I deploy in other companies infrastructure to be equipped with the same basic stack</a>. I can add in more features later, but I think this represents the minimum viable stack for automating API consumption at this point.</p>
+<p>Next up, I&rsquo;ll build a docker image for deploying this API management infrastructure, alongside other APIs as a single virtual stack of loosely coupled micro-services, when bundled with the service composition 3Scale affords me, it will give me an unprecedented ability to orchestrate my API infrastructure.  Hopefully it can also provide a blueprint for others to use, and evolve beyond what I can do on my own.</p>
+<p><em><strong>Disclosure:</strong> 3Scale is an API Evangelist partner.</em></p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/03/03/you-can-feel-it-when-an-api-evangelist-is-the-real-deal/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/03/04/making-sure-my-api-roundup-stories-are-machine-readable-by-designing-them-as-apisjson-collections/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

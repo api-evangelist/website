@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Sunlight Congress API - [Developer Review]</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2011/02/12/sunlight-congress-api--developer-review/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sunlight Congress API - [Developer Review] | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2011/02/12/sunlight-congress-api--developer-review/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sunlight Congress API - [Developer Review] | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Sunlight Congress API - [Developer Review]</h2>
+<p><span class="post-date">12 Feb 2011</span></p>
+<a href="http://sunlightfoundation.com/" target="_blank"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/sunlight-labs/sunlight-lab-congress.png" alt="" width="250" align="right" /></a><a href="http&lt;/strong&gt; - //sunlightlabs.com/blog/2011/the-real-time-congress-api/" target="_blank">Sunlight Labs has released an API</a> that will help address the <a href="http://sunlightfoundation.com/" target="_blank">Sunlight Foundation's</a> mission - making information about government more open and transparent.<p></p>
+The <a href="http&lt;/strong&gt; - //services.sunlightlabs.com/docs/Sunlight_Congress_API/" target="_blank">Sunlight Congress API</a> provides an interface for developers to pull Members of Congress's information, including name, party, location, email addresses, website information, and much more.<p></p>
+The <a href="http&lt;/strong&gt; - //services.sunlightlabs.com/docs/Sunlight_Congress_API/" target="_blank">Sunlight Congress API</a> is a RESTful API that returns JSON or XML, and uses an application key for authentication.<p></p>
+The URL looks like:
+<ul class="mainlist">
+	<li><a href="http&lt;/strong&gt; - //services.sunlightlabs.com/api/api.method.format?apikey=YOUR_API_KEY&amp;params">http://services.sunlightlabs.com/api/api.method.format?apikey=YOUR_API_KEY&amp;params</a></li>
+</ul>
+The Sunlight Congress API provides the following methods:<p></p>
+<strong>Legislator</strong>
+<ul class="mainlist">
+	<li><strong>legislators.get</strong> - get all information on a single legislator</li>
+	<li><strong>legislators.getList</strong> - get information on all legislators meeting certain requirements</li>
+	<li><strong>legislators.search</strong> - fuzzy name search against legislators</li>
+	<li><strong>legislators.allForZip</strong> - get information on all legislators that represent some portion of a given zip code (typically 2 senators + 1 or more representatives)</li>
+	<li><strong>legislators.allForLatLong</strong> - get information on all legislators that represent a given latitude/longitude</li>
+</ul>
+<img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/sunlight-labs/sunlight-labs-112th-congress.jpg" alt="" width="250" align="right" /> <strong>District</strong>
+<ul class="mainlist">
+	<li><strong>districts.getDistrictsFromZip</strong> - get district(s) that a given zip code falls within</li>
+	<li><strong>districts.getZipsFromDistrict</strong> - get zip codes that fall within a given district</li>
+	<li><strong>districts.getDistrictFromLatLong</strong> - get district that contains a location identified by a latitude/longitude</li>
+</ul>
+<strong>Committee</strong>
+<ul class="mainlist">
+	<li><strong>committees.getList</strong> - get list of committees matching certain criteria</li>
+	<li><strong>committees.get</strong> - get details on a committee including its subcommittees and members</li>
+	<li><strong>committees.allForLegislator</strong> - get all committees that a given legislators serves on</li>
+</ul>
+Sunlight Labs provides official code libraries in <a href="http://github.com/sunlightlabs/python-sunlightapi/" target="_blank">Python</a> and <a href="http://sunlight.rubyforge.org/" target="_blank">Ruby</a> and gives links to other PHP and Java code libraries.<p></p>
+In addition to using the API, you can also <a href="http://github.com/sunlightlabs/apidata/raw/master/legislators/legislators.csv" target="_blank">download a full dump of all the congressional data</a>, as well as photos of the <a class="zem_slink" title="112th United States Congress" rel="wikipedia" href="http://en.wikipedia.org/wiki/112th_United_States_Congress">112th Congress</a>.
+<h6 class="zemanta-related-title" style="font-size: 1em;">Related articles</h6>
+<ul class="zemanta-article-ul">
+	<li class="zemanta-article-ul-li"><a href="http://www.readwriteweb.com/hack/2011/02/sunlight-foundation-releases-real-time-api.php">Sunlight Foundation Releases Real Time Congress API</a> (readwriteweb.com)</li>
+	<li class="zemanta-article-ul-li"><a href="http://blog.programmableweb.com/2010/12/16/sunlight-labs-needs-your-help-to-keep-the-fires-burning/">Sunlight Labs Needs Your Help to Keep the Fires Burning</a> (programmableweb.com)</li>
+	<li class="zemanta-article-ul-li"><a href="http://blog.apievangelist.com/2011/02/10/history-of-apis-birth-through-social/">History of APIs - Birth through Social</a> (apievangelist.com)</li>
+</ul>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2011/02/12/api-status-dashboard-with-pingdom/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2011/02/13/api-technology-basic-auth/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

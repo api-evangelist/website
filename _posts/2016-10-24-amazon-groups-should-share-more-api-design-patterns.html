@@ -1,0 +1,20 @@
+---
+layout: post
+title: 'Amazon Groups Should Share More API Design Patterns'
+source: http://apievangelist.com/2016/10/24/amazon-groups-should-share-more-api-design-patterns/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/squirrelbin_arch.png
+atomdate: 2016-10-24T09:00:00-07:00
+---
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/squirrelbin_arch.png" alt="" width="40%" align="right" /></p>
+<p>The sharing of common API design patterns is something we are really bad at in the API space. I'm not a believer that there is one API design pattern to rule them all, but I am a believer in learning from what works, consuming other people's APIs, and sharing design tips over the cubicle wall. I don't believe that everyone should be 100% REST-compliant in the crafting of their APIs, but you should be picking your head up from time to time, and learning from what the rest of the world is up to, especially across the other groups within your own company.</p>
+<p>I tend to shy away on critiquing companies on API design, and prescribing any specific approach, but I can't help but point out inconsistencies in any approach, when it is clear that they aren't tuning into some of the common patterns out there, especially between their own internal groups. An example of this can be found at one of the API gods, Amazon Web Services. Amazon isn't known for their RESTful APIs, which is something I can overlook, but&nbsp;when it comes to their lack consistency between their different APIs, I think there are lessons for all of us to learn from.</p>
+<p>I have not hacked against all of the Amazon APIs, but here are the four distinct patterns I've seen:</p>
+<ul>
+<li><strong><a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketOps.html">S3</a>&nbsp;- </strong>/?{method}</li>
+<li><strong><a href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2</a>&nbsp;- </strong>/?Action={method}</li>
+<li><strong><a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_Operations_Amazon_Route_53.html">Route 53</a>&nbsp;-</strong> /2013-04-01/{methodname}</li>
+<li><strong><a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_Operations_Amazon_Route_53_Domains.html"></a><a href="http://docs.aws.amazon.com/Route53/latest/APIReference/API_Operations_Amazon_Route_53_Domains.html">Route 53 Domains</a>&nbsp;-</strong>&nbsp;route53domains.us-east-1.amazonaws.com/ header: x-amz-target:Route53Domains_v20140515.{method}</li>
+</ul>
+<p>There might be additional patterns employed over at other Amazon APIs, but these are the four that I'm exposed to in my own integrations. The presence of two separate patterns within the Route 53 team was what prompted me to write this post. While I'm not a fan of the action={method} approach, which is the most common AWS pattern I have seen used, the passing of method as part of custom header just seems even wackier to me.&nbsp;</p>
+<p>I do not get dogmatic about specific API design patterns, but I do think that a lack of awareness of common patterns, especially across groups within the same company is counterproductive. I think Amazon has done amazing things as a pioneer in the space, forever changing how we deliver data, content, and algorithmic resources online, but I think they would benefit from a company-wide API design campaign. <a href="http://design.apievangelist.com/tools/design-guides/">Something like Microsoft, Paypal, and others have done, to help standardize how they design APIs across all internal groups</a>.</p>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Tooling To Help Aggregate DNS Across Multiple Service Providers'
+source: http://apievangelist.com/2016/10/27/tooling-to-help-aggregate-dns-across-multiple-service-providers/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/68747470733a2f2f7261772e6769746875622e636f6d2f4e6574666c69782f64656e6f6d696e61746f722f6d61737465722f64656e6f6d696e61746f722e6a7067.jpeg
+atomdate: 2016-10-27T15:00:00-07:00
+---
+<p>Adrian Cockroft (@adrianco) turned me on to a DNS aggregation solution the other day while I was working on updating <a href="http://dns.apievangelist.com/apis/">the API definitions for the API providers that are included in my API DS research</a>. It was a very appropriate day for thinking deeply about aggregate DNS, with the DDOS attack against Dyn going on.</p>
+<blockquote class="twitter-tweet">
+<p dir="ltr" lang="en">DNS provider redundancy: the idea behind <a href="https://twitter.com/denominatorOSS">@denominatorOSS</a> - one API/tool for many providers to allow switching. /cc <a href="https://twitter.com/adrianfcole">@adrianfcole</a></p>
+&mdash; adrian cockcroft (@adrianco) <a href="https://twitter.com/adrianco/status/789467783947878400">October 21, 2016</a></blockquote>
+<p><a href="https://github.com/Netflix/denominator"><span>Denominator&nbsp;</span>is a portable Java library for manipulating DNS clouds</a>. It has pluggable backends, including AWS Route53, Neustar Ultra, DynECT, Rackspace Cloud DNS, and OpenStack Designate. Here is a good post on it from back in 2013, <a href="http://techblog.netflix.com/2013/03/denominator-multi-vendor-interface-for.html">describing it as a multi-vendor interface for DNS</a>.&nbsp;</p>
+<p><a href="https://github.com/Netflix/denominator"><img style="padding: 15px; display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/68747470733a2f2f7261772e6769746875622e636f6d2f4e6574666c69782f64656e6f6d696e61746f722f6d61737465722f64656e6f6d696e61746f722e6a7067.jpeg" alt="" width="50%" align="center" /></a></p>
+<p>There doesn't look to be a lot of activity around the project in the last year, but it provides a good model for what I'd like to eventually see across all the major stops along the API lifecycle. I picture a wealth of aggregate tooling like Denominator that can act as a broker between API service providers&nbsp;and help switch, migrate, and sync between providers whether you are deploying, managing, testing, monitoring, or dialing in your DNS.</p>
+<p>As I read the multiple investigations into what happened with the DDOS attack on Dyn last week, it seems relevant to learn more about aggregate DNS API solutions like Denominator. I will spend some time looking for other similar open tooling that is vendor-neutral, as well as vendor-switchable. We are going to need open source circuit breakers like this to help route, switch, migrate, and sync DNS across many service providers in this volatile landscape.</p>

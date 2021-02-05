@@ -1,0 +1,32 @@
+---
+layout: post
+title: 'Some API Embeddable Best Practices Out Of Yelp'
+source: http://apievangelist.com/2016/10/11/some-api-embeddable-best-practices-out-of-yelp/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_10_at_8.08.25_pm.png
+atomdate: 2016-10-11T11:00:00-07:00
+---
+<p><a href="https://engineeringblog.yelp.com/2016/10/embedded-reviews-at-yelp.html"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_10_at_8.08.25_pm.png" alt="" width="45%" align="right" /></a></p>
+<p><a href="https://engineeringblog.yelp.com/2016/10/embedded-reviews-at-yelp.html">Yelp has shared some of the wisdom behind how they design, deploy, and operate their embeddable reviews</a>. I like it when leading API providers share the story behind their tooling like this. This type of storytelling generates SEO for their API, educates their API consumers, and provides educational resources for other API providers (and content for analysts like me).</p>
+<p>So, what makes for a good embeddable widget, according to Yelp?</p>
+<ul>
+<li>a minimal amount of HTML code&nbsp;</li>
+<li>a consistent &amp; responsive design</li>
+<li>stay up-to-date with contextual information</li>
+<li>load fast &amp; gracefully handle traffic spikes</li>
+<li>record accurate analytics</li>
+</ul>
+<p>Yelp shares a little bit about the technical approach to achieving their definition of a good embeddable widget, which "are served as Yelp pages within iframes, adhere to the Yelp Styleguide, and show the most up-to-date review":</p>
+<ul>
+<li>iframe embeds allow for a simpler widgets.js</li>
+<li>iframe embeds make development easier</li>
+<li>iframe embeds can take advantage of HTML caching</li>
+</ul>
+<p class="p1">I've heard about lightening the load for your JavaScript, and the ease of embeddability before, from other providers. I hadn't thought about the cache-ability of using iframes before. It makes sense, allowing the user's browser to carry more of the load. They close up the post with some more interesting insight into the architectural decisions behind their embeddable(s):</p>
+<ul>
+<li>The embed HTML snippet consists of unstyled and empty elements so that the HTML snippet is minimal and durable.</li>
+<li>We use a controller loaded via script tag to create and load iframes. The controller consists of pure JavaScript and doesn&rsquo;t use any libraries. The controller communicates with the iframes using postMessage.</li>
+<li>We use a Google Analytics iframe served by Yelp to handle sending events for multiple review widget iframes on a single page. Resources served by Yelp, such as the controller and the iframes are either cached or served via CDN.</li>
+</ul>
+<p>The use of Google Analytics is another interesting aspect that I hadn't considered. It gets me thinking about what other examples are there regarding the usage Google Analytics for a tracking layer within API clients. How is Yelp layering this into their wider Google Analytics strategy? Inversely how is Google possibly expanding Google Analytics for tracking of clients beyond straightforward web consumption? All things I need to get more up to speed on.</p>
+<p>Yelp's story provides me with a number great nuggets for adding to my <a href="http://embeddable.apievangelist.com">API Embeddable research</a>. It also overlaps nicely with my <a href="http://analysis.apievangelist.com/">API analysis&nbsp;research</a>&nbsp;and even some of <a href="http://apievangelist.com/2016/10/04/increased-analytics-at-the-api-client-and-sdk-level/">my recent thoughts on the expanding analytics layer for other API clients and SDKs</a>.</p>

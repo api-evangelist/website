@@ -1,0 +1,20 @@
+---
+published: true
+layout: post
+title: 'Explore, Download, API, And Share Data'
+date: 2017-10-10T15:00:00.000Z
+tags:
+  - API Evangelist
+  - Data
+  - Collaboration
+  - Embeddable
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/nyc-open-data/nyc-opendata-explore-download-api.png
+---
+<p><a href="https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9"><img src="https://s3.amazonaws.com/kinlane-productions/nyc-open-data/nyc-opendata-explore-download-api.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm regularly looking through API providers, service providers, and open data platforms looking for interesting ways in which folks are exposing APIs. I have written about [Kentik exposing the API call behind each dashboard visualization for their networking solution](http://apievangelist.com/2017/10/05/show-that-api-call-behind-that-dashboard-visualization/), as well as [CloudFlare providing an API link for each DNS tool available via their platform](https://apievangelist.com/2016/10/24/the-api-behind-every-feature-in-the-user-interface/). All demonstrating healthy way we can show how APIs are right behind everything we do, and [today's example of how to provide API access is out of New York Open Data, providing access to 311 service requests made available via the Socrata platform](https://nycopendata.socrata.com/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9).
+
+The page I'm showcasing provides access 311 service requests from 2010 to present, with all the columns and meta data for the dataset, complete with a handy navigation toolbar that lets you view data in Carto or Plot.ly, download the full dataset, access via API, or simply share via Twitter, Facebook, or email. It is a pretty simple example of offering up multiple paths for data consumers to get what they want from a dataset. Not everyone is going to want the API. Depending on who you are you might go straight for the download, or opt to access via one of the visualization and charting tools. Depending on who you are targeting with your data, the list of tools might vary, but the NYC OpenData example via Socrata provides a nice example to build upon. With the most important message being do not provide only the options you would choose--get to know your consumers, and deliver solutions they will also need.
+
+It provides a different approach to making APIs behind available to users than the Kentik or CloudFlare approaches do, but it adds to the number of examples I have to show people how APIs and API enabled integration can be exposed through the UI, helping educate the massess about what is possible. I could see standardized buttons, drop downs, and other embeddable tooling emerge for helping deliver solutions like this for providers. Something like we are seeing with [the serverless webhooks out Auth0 Extensions](https://apievangelist.com/2017/06/05/extending-your-apps-using-embeddable-serverless-webhooks/). Some sort of API-enabled goodness that triggers something, and can be easily embedded directly into any existing web or mobile application, or possibly a browser toolbar--opening up API enabled solutions to the average user.
+
+One of the reasons I keep showcasing examples like this is that I want to keep pushing back on the notion that APIs are just for developers. Simple, useful, and relevant APIs are not beyond what the average web application user can grasp. They should be present behind every action, visualization, and dataset made available online. When you provide useful integration and interoperability examples that make sense to the average user, and give them easy to engage buttons, drop downs, and workflows for implementing, more folks will experience the API potential in their world. The reasons us developers and IT folk keep things complex, and outside the realm of the normal folk is more about us, our power plays, as well as our inability to simplify things so that they are accessible beyond those in the club.

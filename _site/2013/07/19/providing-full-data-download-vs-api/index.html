@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Providing Full Data Download vs API</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2013/07/19/providing-full-data-download-vs-api/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Providing Full Data Download vs API | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/download.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2013/07/19/providing-full-data-download-vs-api/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Providing Full Data Download vs API | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/download.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Providing Full Data Download vs API</h2>
+<p><span class="post-date">19 Jul 2013</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/download.png" alt="" width="250" align="right" /></p>
+<p>I've had so many discussions on this topic, I felt like I had written a post on it, but when the topic came up again today, I realized I hadn't.  This is a regular conversation I get into with open data folks, regarding whether you should deploy open data as download vs an API.</p>
+<p>I'll spare you having to read my entire rant, the answer is if you can, both. You should always provide a full data download, and additionally API access when the resources are available. There is no versus argument, there are scenarios where both are valuable and offer benefits over the other.</p>
+<p>As a developer, I just want quick, complete access to data. I'm always in a hurry to just get to work, and I have the skills to parse, store, transform this data for whatever reason I will need. So let's just get to work.  Give me a download and get the hell out of my way. Pretty straight forward logic.  This is all true, but it is a very short-sighted, narrowly focused perspective and shouldn't impede larger, long term goals around data acquisition, management and access.</p>
+<p>Taking your data, keying it up, and asking users to request a key and access via an API, might be a wall for the eager alpha dev, but there are many that could benefit from well thought out API end points, search &amp; filtering tools and the ability to offload all operations to someone else. Not all developers will be equipped to deal with the overhead of a full download.</p>
+<p>Looking at it from a different vantage point, as a steward of data, an API can provide you with some very granular analytics on how people are using your data or even, not properly using your data. This valuable insight can provide an extreme amount of value in the future of how you gather your data, organize and make accessible. This is something you will never get from a single bulk download.</p>
+<p>Many data folks argue that you can just rely on forums, IRC, Twitter to get feedback on this, no API needed.  Again this is the single perspective from an alpha developer who will actively participate in these channels and offer insight. In reality, this is a small percentage of any ecosystem, and in my experience users don't usually offer feedback.</p>
+<p>Secondarily if you are dealing with large datasets and large user bases, dealing with human feedback channels are expensive, something that can also done with API analytics in a cost effective, scalable way. And don't think I'm arguing for not using these channels, I'm saying don't overburden them unnecessarily. They are still very important.</p>
+<p>The best example of this, that I use in the wild, is with U.S. Census Data. A couple years ago I had conversations with database folk at the Census, and asked them their thoughts on how innovators like Google are using census data for flu tracking, and news outlets are merging with their data to track on politics, immigration and other relevant issues. The response was, "we are familiar with some of this, but honestly haven't heard of many of these usage scenarios".</p>
+<p>I asked why they don't launch an API alongside of downloads, require developers to get a key, then utilize API analytics to provide insight into other use cases around census data. You still don't have visibility into all use cases, but you'd get another group of interesting integrations.</p>
+<p>The response was quickly, NO! The Census has to balance the trust of being gatherers and keepers of this data, we can't lock it up or apply any interpretation on top of the data. We need to remain a neutral party. (They now have an API, but that is another story)</p>
+<p>Ok. I get that.  But don't you want to make the census a more efficient process? Possibly completely digital? Or be able to gather new data points that could help people better understand health, educational, race or other issues that are reflected in our society?  An API isn't always about control (it can be), an API can be about understanding and empower sensible stewardship of data, providing the insight you might need to make the process better.</p>
+<p>Every person I've had this discussion with is coming from an alpha developers perspective, who quickly wants access to data and has the skills and resources to get it done. They are not thinking about the rest of developers, or the stewards of this data and the lifelong process that goes into making data acquisition, transformation and publishing better for everyone involved.</p>
+<p>So when you are thinking about data download vs. API, remember, if you have the resources, you should do both. A download is a great place to start, but the overall health of your data will be better off if you can introduce the more granular level access and the measurement that an API can deliver.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2013/07/19/a-glimpse-at-the-future-of-api-driven-analytics/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2013/07/19/take-that-data-dump-access-to-your-organizations-database-and-build-your-api/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+---
+layout: post
+title: 'Storing API Keys In The Private Master Github Repository For Use In My Github Pages'
+source: http://apievangelist.com/2015/01/14/storing-api-keys-in-the-private-master-github-repository-for-use-in-my-github-pages/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key.png
+---
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-key.png" alt="" width="150" align="right" /></p>
+<p>My <a href="http://kinlane.com/2013/01/02/all-side-projects-are-now-hosted-on-github/">public websites have been running on Github Pages for almost two years now</a>, and slowly the private management tools for my platform are moving there as well. Alongside my public websites, I&rsquo;m adding administrative functions for each projects. Most of the content is API driven already, so it makes sense to put some of the management tools side by side with the content or data that I&rsquo;m publishing.</p>
+<p>These management tools are simple JavaScript, that use the Github API to manage HTML, and JSON files that I have stored either publicly or privately within repositories. I use Github oAuth to work with the Github API, but to work with other APIs I need a multitude of other API keys, including <a href="http://3scale.net">3Scale generated API keys</a> I use to access my own API infrastructure.</p>
+<p>My solution is to store a simple api-keys.json file in the root of my private master repository, and then again using Github oAuth, and the Github API, I access this file, read the content of the JSON file into a temporary array I can use wthin my management tools. If you do not have access to the Github repository, you won&rsquo;t be able to read the contents of api-keys.json, rendering the management tools useless.</p>
+<p>I will develop a centralized solution to helping manage API keys across all my projects, allowing me to re-use keys for different projects, and easily update, or remove outdated API keys. This approach to storing API keys in my private Github repository is allowing me to easily access keys in client-side apps I run on Github Pages, as well as via server-side applications and APIs&mdash;something that I&rsquo;m hoping will give me more flexibility in how I put multiple APIs across my infrastructure.</p>

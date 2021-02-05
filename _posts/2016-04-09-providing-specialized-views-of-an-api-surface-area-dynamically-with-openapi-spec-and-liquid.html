@@ -1,0 +1,328 @@
+---
+layout: post
+title: 'Providing Specialized Views Of An API Surface Area Dynamically With OpenAPI Spec And Liquid'
+source: http://apievangelist.com/2016/04/09/providing-specialized-views-of-an-api-surface-area-dynamically-with-openapi-spec-and-liquid/
+domain: apievangelist.com
+image: 
+---
+<p><a href="http://adopta-agency.github.io/open-referral-api/">I just published the OpenAPI Spec I just created for the Human Services Data Specification (HSDS) into one of my default portals</a>, which once the OpenAPI Spec is indexed via the portals API.json, I get a ready to go landing page, documentation, and other tooling for supporting the API. I have been pushing forward my API documentation, beyond the (now) standard issue Swagger UI, keeping the OpenAPI Spec core, but evolving the UI portion using Jekyll and Liquid.&nbsp;</p>
+<p><a href="http://adopta-agency.github.io/open-referral-api/documentation/">I have a default API docs implementation, which loops through all OpenAPI Spec included within a project, and renders HTML documentation for each path, verb, etc.</a> I'm still working on how I recreate the dynamic functionality brought to the table by Swagger UI, but so far I'm really, really enjoying the flexiblity with the user interface, and overall experience I get using this approach--I know the interactive portion will come.</p>
+<p>One of the things I'm enjoying being able to do, is apply additional, external elements to the OpenAPI Spec, by augmenting them with independent, APIs.json defined schema. <a href="http://adopta-agency.github.io/open-referral-api/apis.json">One example of this I am calling API filters, a simple filter collection defined in both YAML and JSON, that is indexed along with the OpenAPI Spec, within the APIs.json index</a>. For the Open Referral API I wanted to provide the complete documentation, but also play around with other different, filtered views of the API -- designed for specific audiences.</p>
+<p>The first entry I made into API filters, I called "learn the basics", only showing the core resources that were available via the Open Referral API, eliminating all of the noise.</p>
+<table style="padding-top: 10px;" border="0" width="100%">
+<tbody>
+<tr>
+<td>
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr style="background-color: #d3d3d3;">
+<td style="font-size: 18px; font-weight: bold; padding: 10px;" align="left">Open Referral API - Learn the Basics</td>
+<td style="padding: 10px;" align="right"><a style="font-size: 16px; font-weight: normal;" title="View OpenAPI Spec" href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json" target="_blank">OpenAPI Spec</a></td>
+</tr>
+<tr id="methods-for-openapi-spec">
+<td colspan="2">
+<table style="margin-left: 15px; margin-right: 15px;" border="0" width="95%">
+<tbody>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong></strong></td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Categories</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get all categories</td>
+<td style="font-size: 12px;">/categories</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Contacts</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Contacts</td>
+<td style="font-size: 12px;">/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Contact</td>
+<td style="font-size: 12px;">/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Locations</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Locations</td>
+<td style="font-size: 12px;">/locations</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Location</td>
+<td style="font-size: 12px;">/locations</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Metadata</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Metadata</td>
+<td style="font-size: 12px;">/metadata</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add New Metadata</td>
+<td style="font-size: 12px;">/metadata</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Organizations</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Locations</td>
+<td style="font-size: 12px;">/organizations</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create a new organization</td>
+<td style="font-size: 12px;">/organizations</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Search</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get locations that match certain criteria.</td>
+<td style="font-size: 12px;">/search</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Services</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Service</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>This API docs view, gives me just the handful of core endpoints, filtering out the other 60+ APIs that someone who is just learning about the Open Referral API do not need to be bothered with when they are learning. Next, I wanted to focus in on a specific area of the API, like services, and only show the summary elements, that most people will care about when it comes to these services. I'm calling this one "services summary":</p>
+<table style="padding-top: 10px;" border="0" width="100%">
+<tbody>
+<tr>
+<td style="margin-left: 90px; margin-right: 90px;" align="center">
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr style="background-color: #d3d3d3;">
+<td style="font-size: 18px; font-weight: bold; padding: 10px;" align="left">Open Referral API - Services Summary</td>
+<td style="padding: 10px;" align="right"><a style="font-size: 16px; font-weight: normal;" title="View OpenAPI Spec" href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json" target="_blank">OpenAPI Spec</a></td>
+</tr>
+<tr id="methods-for-openapi-spec">
+<td colspan="2">
+<table style="margin-left: 15px; margin-right: 15px;" border="0" width="95%">
+<tbody>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong></strong></td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Services</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Create New Service</td>
+<td style="font-size: 12px;">/services</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Categories</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Update a service&rsquo;s categories</td>
+<td style="font-size: 12px;">/services/:service_id/categories</td>
+<td style="padding: 5px; width: 75px; background-color: #ff0080; font-weight: bold; font-size: 11px; color: #fff;" align="center">PUT</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Contacts</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Contacts</td>
+<td style="font-size: 12px;">/services/:service_id/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Contact</td>
+<td style="font-size: 12px;">/services/:service_id/contacts</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Eligibility</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Eligibility</td>
+<td style="font-size: 12px;">/services/:service_id/eligibility/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Eligibility</td>
+<td style="font-size: 12px;">/services/:service_id/eligibility/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Fees</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Fees</td>
+<td style="font-size: 12px;">/services/:service_id/fees/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Fees</td>
+<td style="font-size: 12px;">/services/:service_id/fees/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Funding</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Funding</td>
+<td style="font-size: 12px;">/services/:service_id/funding/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Funding</td>
+<td style="font-size: 12px;">/services/:service_id/funding/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Holiday Schedule</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Holiday Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/holiday_schedule/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Holiday Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/holiday_schedule/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Interpretation Services</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Interpretation Services</td>
+<td style="font-size: 12px;">/services/:service_id/intepretation_services/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Interpretation Services</td>
+<td style="font-size: 12px;">/services/:service_id/intepretation_services/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Languages</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Languages</td>
+<td style="font-size: 12px;">/services/:service_id/languages/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Languages</td>
+<td style="font-size: 12px;">/services/:service_id/languages/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Payment Accepted</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Payment Accepted</td>
+<td style="font-size: 12px;">/services/:service_id/payment_accepted/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Payment Accepted</td>
+<td style="font-size: 12px;">/services/:service_id/payment_accepted/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Phones</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Phones</td>
+<td style="font-size: 12px;">/services/:service_id/phones</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Phone</td>
+<td style="font-size: 12px;">/services/:service_id/phones</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Regular Schedule</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Regular Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/regular_schedule</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Regular Schedule</td>
+<td style="font-size: 12px;">/services/:service_id/regular_schedule</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Required Document</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Required Document</td>
+<td style="font-size: 12px;">/services/:service_id/required_document/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Required Document</td>
+<td style="font-size: 12px;">/services/:service_id/required_document/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+<tr>
+<td style="padding-top: 10px;" colspan="3"><strong>Service - Areas</strong></td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Get Service Area</td>
+<td style="font-size: 12px;">/services/:service_id/service_area/</td>
+<td style="padding: 5px; width: 75px; background-color: #009900; font-weight: bold; font-size: 11px; color: #fff;" align="center">GET</td>
+</tr>
+<tr>
+<td style="padding-left: 20px; font-size: 12px;">Add Service Area</td>
+<td style="font-size: 12px;">/services/:service_id/service_area/</td>
+<td style="padding: 5px; width: 75px; background-color: #0000ff; font-weight: bold; font-size: 11px; color: #fff;" align="center">POST</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>The Liquid driven HTML API docs are the same for the <a href="https://github.com/adopta-agency/open-referral-api/edit/gh-pages/documentation/index.html">full documentation</a>, for <a href="https://github.com/adopta-agency/open-referral-api/blob/gh-pages/documentation/services-summary/index.html">learn the basics</a>, or for the <a href="https://github.com/adopta-agency/open-referral-api/blob/gh-pages/documentation/learn-the-basics/index.html">services summary</a>. All three documentation elements are also all <a href="http://adopta-agency.github.io/open-referral-api/api-commons/openapi-spec.json">driven from the same OpenAPI Spec</a>. The only thing I did, was specify one of the API Filters by name, in the top of each specialized docs page -- the Liquid template handles the rest. Its still pretty crude, and I'm sure it will need a lot of polishing, but it provides me with a simple, machine readable way to filter out the endpoints I do not need, accomplishing what I set out to do.</p>
+<script src="https://gist.github.com/kinlane/f073d9a8d1bec151b16a9c8e7f8cd335.js"></script>
+<p>I am using schema approaches like this more lately. An approach that when indexed along with the OpenAPI Spec, in an API.json file gives me other layers, and dimension that I can apply for not just documentation, but almost any other stop along the life cycle. To me, and important part of this is that these elements do not live embedded within the OpenAPI Spec, living independent of the the machine readable definition of the API. Each one lives its own schema file, and when indexed alongside each API definition, within the APIs.json, interesting things happen--all without cluttering up the OpenAPI Spec, keeping it purely about the API.</p>
+<p>My goal in this work, is to provide me with a way that I can equip the other less technical advocates for the Open Referral format, with a toolbox of documentation, visualizations, and other snippets that will help them articulate what the API can do. Since all of these API documentation snippets are APIs.json, and OpenAPI Spec driven, using Liquid, and Jekyll to render, they are something that anyone could put to use, for any API.</p>

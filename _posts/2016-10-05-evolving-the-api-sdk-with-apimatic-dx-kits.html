@@ -1,0 +1,62 @@
+---
+layout: post
+title: 'Evolving The API SDK With APIMATIC DX Kits'
+source: http://apievangelist.com/2016/10/05/evolving-the-api-sdk-with-apimatic-dx-kits/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png
+atomdate: 2016-10-05T15:00:00-07:00
+---
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apimatic-logo.png" alt="" width="20%" align="right" /></a></p>
+<p>I've been a big supporter of <a href="http://apimatic.io">APIMATIC</a> since they started, so I'm happy to see them continuing to evolve their approach to delivering SDKs&nbsp;using machine readable API definitions. I got a walkthrough of their new DX Kits the other day, something that feels like an evolutionary step for SDKs, and contributing to API providers making onboarding and integration as frictionless as possible for developers.</p>
+<p>Let's walk through what APIMATIC already does, then I'll talk more about some of the evolutionary steps they are taking when auto-generating SDKs. It helps to see the big picture of where APIMATIC fits into the larger API lifecycle to assist you in getting beyond any notion of them simply being just an SDK generation service.</p>
+<p><strong>API Definitions</strong><br />What makes APIMATIC such an important service, in my opinion, is that they just don't speak using modern API definition formats, they speak in all of the API definition formats, allowing anyone to generate SDKs from the specification of your choice:&nbsp;</p>
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_transformer.png" alt="" width="22%" align="right" /></a></p>
+<ul>
+<li>API Blueprint</li>
+<li>Swagger 1.0 - 1.2</li>
+<li>Swagger 2.0 JSON</li>
+<li>Swagger 2.0 YAML</li>
+<li>WADL - W3C 2009</li>
+<li>Google Discovery</li>
+<li>RAML 0.8</li>
+<li>I/O Docs - Mashery</li>
+<li>HAR 1.2</li>
+<li>Postman Collection</li>
+<li>APIMATIC Format</li>
+</ul>
+<p>As any serious API service provider should do be doing, <a href="https://apitransformer.com/">APIMATIC then opened up their API definition transformation solution as a standalone service and API</a>. This allows this type ofAPI &nbsp;transformations to occur&nbsp;and be baked in, at every stop along a modern API lifecycle,&nbsp;by anyone.</p>
+<p><strong>API Design</strong><br />Being so API definition driven focused, APIMATIC needed a practical way to manage API definitions, and allow their customers to add, edit, delete, and manipulate the definitions that would be driving the SDK auto generation process. APIMATIC provides one of the best API design interfaces I've found across the API service providers that I monitor, allowing customers to manage:</p>
+<ul>
+<li>Endpoints</li>
+<li>Models</li>
+<li>Test Cases</li>
+<li>Errors</li>
+</ul>
+<p>Because APIMATIC is so heavily invested in having a complete API definition, one that it will result in a successful SDK, they've had to bake healthy API design practices into their API design interface--helping developers craft the best API possible. #Winning</p>
+<p><strong>SDK Auto Generation</strong><br />Now we get to the valuable, and time-saving portion of what APIMATIC does best--generate SDKs in 10 separate programming language and platform environments. Once your API definition validates, you can select to generate in their preferred language.</p>
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_04_at_4.45.42_pm.png" alt="" width="35%" align="right" /></a></p>
+<ul>
+<li><strong>Visual Studio </strong>- A class library project for Portable and Universal Windows Platform</li>
+<li><strong>Eclipse</strong> - A compatible maven project for Java 5 and above</li>
+<li><strong>Android Studio -</strong> A compatible Gradle project for Android Gingerbread and above</li>
+<li><strong>XCode</strong> - A project based on CoCoaPods for iOS 6 and above</li>
+<li><strong>PSR-4 </strong>- A compliant library with Composer dependency manager</li>
+<li><strong>Python</strong> - A package compatible with Python 2 and 3 using PIP as the dependency manager</li>
+<li><strong>Angular </strong>- A lightweight SDK containing injectable wrappers for your API</li>
+<li><strong>Node.js -</strong> A client library project in Node.js as an NPM package</li>
+<li><strong>Ruby </strong>- A project to create a gem library your API based on Ruby&gt;=2.0.0</li>
+<li><strong>Go</strong> - A client library project for Go language (v1.4)</li>
+</ul>
+<p>APIMATIC takes their SDKs seriously. They make sure they aren't just&nbsp;low-quality auto-generated&nbsp;code. I've seen the overtime they put into make sure the code they produce matches the styling and the reality on the ground for each language and environment being depoyed.</p>
+<p><strong>Github Integration</strong><br />Deploying your API SDKs to Github is nothing new, but being able to autogenerate your SDK from a variety of API definition languages, and then publish to Github opens up a whole new world of possibilities. This is when Github can become a sort of API definition driven engine that can be installed into not just the API life cycle, but also every web, mobile, device, bot, voice, or any other client that puts an API to use.</p>
+<p>This is where we start moving beyond SDK for me, into the realm of what APIMATIC is calling a DX Kit. APIMATIC isn't just dumping some auto-generated code into the Github repo of your choice. They are publishing the code, and now complete documentation for the SDK to a Github README, so that any human can come along and learn about what it does, as well as any other system can also come along and put the API definition auto-generated code to work.</p>
+<p><strong>Continuous Integration</strong><br />The evolution of the SDK continues with...well, continuous integration, and orchestration. If you go under the settings for your API in APIMATIC, you now also have the option to publish configuration files for four leading CI solutions:</p>
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png" alt="" width="45%" align="right" /></a></p>
+<ul>
+<li><label class="small-label-thin"><strong>Generate Appveyor</strong> -&nbsp;</label><label class="small-label-light" for="GenerateAppveyorConfig">Generate Appveyor configuration file?</label></li>
+<li><label class="small-label-thin"><strong>Generate CircleCI </strong>-&nbsp;</label><label class="small-label-light" for="GenerateCircleConfig">Generate CircleCI configuration file?</label></li>
+<li><label class="small-label-thin"><strong>Generate Jenkins</strong> -&nbsp;</label><label class="small-label-light" for="GenerateJenkinsConfig">Generate Jenkins configuration file?</label></li>
+<li><strong><label class="small-label-thin">Generate Travis -&nbsp;</label></strong><label class="small-label-light" for="GenerateTravisConfig">Generate Travis CI configuration file?</label></li>
+</ul>
+<p>APIMATIC had already opened up beyond just doing SDKs with the release of their API Transformer solution, and their introduction of detailed documentation for each kit (SDK) on Github. Now they are pushing into API testing and orchestration areas by allowing you to publish the required config files for the CI platform of your choosing.</p>
+<p>I feel like their approach represents the expanding world of API consumption. Providing an API and SDK is not enough anymore. You have to provide and encourage healthy documentation, testing, and continuous integration practices as well. APIMATIC is aiming to&nbsp;"simplify API Consumption", with their DX Kits, which is a very positive thing for the API space, and worth highlighting as part of <a href="http://sdk.apievangelist.com/">my API SDK research</a>.</p>

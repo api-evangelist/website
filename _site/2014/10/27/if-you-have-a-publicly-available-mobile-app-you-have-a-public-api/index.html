@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>If You Have A Publicly Available Mobile App You Have a Public API</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2014/10/27/if-you-have-a-publicly-available-mobile-app-you-have-a-public-api/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="If You Have A Publicly Available Mobile App You Have a Public API | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/snapchat/snapchat-logo-transparent.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2014/10/27/if-you-have-a-publicly-available-mobile-app-you-have-a-public-api/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="If You Have A Publicly Available Mobile App You Have a Public API | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/api-evangelist/snapchat/snapchat-logo-transparent.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>If You Have A Publicly Available Mobile App You Have a Public API</h2>
+<p><span class="post-date">27 Oct 2014</span></p>
+<p><a href="http://blog.snapchat.com/post/99998266095/third-party-applications-and-the-snapchat-api"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/snapchat/snapchat-logo-transparent.png" alt="" width="220" align="right" /></a></p>
+<p>I&rsquo;ve had several browser tabs open around the <a href="http://www.reuters.com/article/2014/10/14/us-snapchat-future-security-idUSKCN0I32UJ20141014">recent Snapchat security breach</a>, hoping to craft an API-centric story around the whole affair. I think <a href="http://blog.smartbear.com/apis/readyapi/security-lessons-courtesy-of-snapchat/">SmartBear covers the security lesson around the Snapchat breach well</a>, my motivation in writing a story would be more about incentivizing popular mobile platforms like Snapchat to establish a robust approach to APIs, and provide a platform for everyone discuss the tech, business, and politics of application integration, rather than keeping it all in the dark.</p>
+<p><strong>Your Application Programming Interface Surface Is Publicly Available</strong><br /> As I <a href="http://apievangelist.com/2014/08/07/mapping-the-world-of-internal-apis-via-rogue-api-registry/">play with tools like Charles</a>, <a href="https://www.runscope.com/">Runscope</a>, <a href="https://www.apitools.com/">API tools</a>, and other proxy and application traffic management tools, I can easily map out the surface area of any iPhone application I have installed&mdash;providing me with a blueprint of an API, and potentially its underlying data model. If I can do this for your mobile app, you have a public API, regardless of how you view the world.</p>
+<p><strong>Bring More Awareness, Control, Security, And Stability To Platform</strong><br /> The benefits of have a public API approach to delivering a public mobile application gives you a new layer to understand how not just your mobile app is using resources, it gives you a central channel for al mobile, web, and Internet of Things apps to use. An API focus gives you a central point to log how resources are being access and put to use, introduce analytics, monitoring, and other vital security components into operations. There are a wealth of API management services available on the Internet, and having an API management strategy can open up a company to a wealth of vital resources across an application's lifecycle.</p>
+<p><strong>Legitimize 3rd Party Developers With A Modern API Platform</strong><br /> The 3rd party developer who was responsible for the latest Snapchat breach was not given official access to Snapchat APIs, because there is not formal API program. If there was a Snapchat API platform program, users could request access, and the platform could still deny acess to anyone they wished, and all applications would have to adhere to a standardized approach to dealing with identity, and access management for all resources. With a modern approach to API management, developers can be legitimized, while also providing a more secure perimeter to keep rogue applications from gaining access, and compromising privacy and security.</p>
+<p><strong>Empower End-Users With Identity And Access Control (oAuth)</strong><br /> If you have a public mobile app available today, you owe it to your end-users to provide them with the latest in account management, and tools for managing who has access to their data. If you need a model for where the bar should be set, <a href="http://kinlane.com/2014/06/05/google-accounts-as-blueprint-for-all-software-as-a-service-applications/">go look at what Google does</a>. Modern approaches to API management, along with a common approach to using oAuth, provides the tools all mobile application users should have, allowing them to help contribute to their own security.  End-users need to be aware that they should only use mobile applications that provide API access, and oAuth controls, allowing them to take control over their digital footprint, and play an active role.</p>
+<p>APIs are not a cure-all. I'm not prescribing APIs because they fix everything. I&rsquo;m prescribing APIs because it provides a layer where a platform, its users, 3rd party developers, and the public can come together and make sure any platform is seriously addressing security and privacy. APIs aren't just about innovation and all that bullshit you hear from us in Silicon Valley, they are about providing the access, and tools necessary to strike a balance in providing remote access (aka mobile) to wide variety of partners, 3rd party developers, all in support of end-users.</p>
+<p><a href="http://blog.snapchat.com/post/99998266095/third-party-applications-and-the-snapchat-api">Snapchat issued a response to all the API discussion on their blog</a>:</p>
+<blockquote><em>It takes time and a lot of resources to build an open and trustworthy third-party application ecosystem. That&rsquo;s why we haven&rsquo;t provided a public API to developers and why we prohibit access to the private API we use to provide our service. Don't get us wrong - we're excited by the interest in developing for the Snapchat platform - but we're going to take our time to get it right. Until then, that means any application that isn't ours but claims to offer Snapchat services violates our Terms of Use and can&rsquo;t be trusted.</em></blockquote>
+<p>It does take time to build an open and trustworthy third-party application ecosystem, but with the proven blueprints already in existence, and a growing number of API service providers, it doesn't take a lot of resource. What Snapchat and other mobile providers lack is a healthy awareness of not just the tech of APIs, but also the critical business and political aspects of API operations, and just putting their head in the sand and pretending like these issues do not exist.</p>
+<p><a href="http://management.apievangelist.com"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/services/api-management.png" alt="" width="200" align="right" /></a></p>
+<p>If you have a publicly available mobile application, you have a publicly available API, and you should possess a modern API management strategy to protect the privacy and security of your end-users. How open you make access to this API is up to you, but I encourage you to make it as open as possible, providing transparency into security, and platform operations.  I don't feel like this is something state or federal government should be enforcing, but is something that should be the acceptable approach to delivering public applications, something that is enforced by end-users be educated about avoiding web and mobile applications that do not have an API, and this transparent approach, demonstrating they have each users privacy and security in mind.</p>
+<p>What has happened to Snapchat will continue to happen to other companies, with an increased frequency. You can greatly mitigate the risks of having a public web or mobile application, with a formal API strategy, and <a href="http://blog.smartbear.com/apis/readyapi/security-lessons-courtesy-of-snapchat/">listening to security advice from providers like SmartBear</a>, as well as protecting the interests of your end-users.  If you do not have the expertise on staff at your company or organization, let me know, I can help point you in the right direction to find the resources you will need.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2014/10/26/reducing-the-api-stack-down-from-830-to-690/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2014/10/28/another-view-of-the-api-vs-data-download-model/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

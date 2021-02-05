@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Building Your Business Around Google or Any Other APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Building Your Business Around Google or Any Other APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Building Your Business Around Google or Any Other APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Building Your Business Around Google or Any Other APIs</h2>
+<p><span class="post-date">28 May 2011</span></p>
+I'm reading all the starred items in my Google Reader about <a title="Goog'es latest closing of APIs" href="http://googlecode.blogspot.com/2011/05/spring-cleaning-for-some-of-our-apis.html">Google's latest closing of APIs</a>, most notably <a title="Google Language APIs" href="http://code.google.com/apis/language/">Google Translate API</a>. There are some pretty sensational headlines:<img class="c1" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist/pitchforks-torches-mob.jpg" alt="" width="250" align="right" />
+<ul class="mainlist">
+     <li>
+          <a title="Google pulls the rug out from under web service API developers, nixes Google Translate and 17 others" href="http://www.zdnet.com/blog/burnette/google-pulls-the-rug-out-from-under-web-service-api-developers-nixes-google-translate-and-17-others/2284">Google pulls the rug out from under web service API developers, nixes Google Translate and 17 others</a>
+     </li>
+     <li>
+          <a title="Google is not your daddy or long term reliance on APIs is as bad as outsourcing" href="http://www.webiphany.com/2011/05/27/google-is-not-your-daddy-or-long-term-reliance-on-apis-is-as-bad-as-outsourcing/">GOOGLE IS NOT YOUR DADDY (OR LONG TERM RELIANCE ON APIS IS AS BAD AS OUTSOURCING)</a>
+     </li>
+     <li>
+          <a title="Google Translate aPI to Go Kaputt in December" href="http://blog.programmableweb.com/2011/05/27/google-translate-api-to-go-kaputt-in-december">Google Translate API to Go Kaputt in December</a>
+     </li>
+</ul>I don't feel the need to defend Google here, I wish to only defend APIs against people blaming them for what is the fault or responsibility of developers and API owners. I see this same line of attacks on APIs anytime an API company makes a change in their strategy, and developers freak out!
+<p></p><strong>First</strong>, let's start with the claims that developers are having the rug pulled out from under them, and you can't build a business on APIs!
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/TweetDeck-Screenshot.png" alt="" width="250" align="right" />This week I was fortunate enough to hear <a title="Mark Suster" href="http://www.youtube.com/watch?v=04AG3UHUIJE">Mark Suster of GRP Partners</a> talk at <a title="Glue Conference Mark Suster" href="http://gluecon.com/2011/?page_id=16">Gluecon on Cloud Computing: Challenges and Opportunities over the Next Five Years</a>. One important point he made about business platforms and startups (ie. TweetDeck) is <strong><span class="c2">you need to have multiple data sources</span></strong>. Without expanding to LinkedIn, Buzz, and Facebook TweetDeck would have been left with only a single data source, and left completely vulnerable.
+<p></p>This is a pretty basic concept when it comes to business. If I start a corner deli, and buy my food from a single food distribution company that delivers every Thursday by truck. Then one Thursday the truck doesn't come, and i'm left for the weekend without any food for my restaurant. Is it valid for me to claim that food distribution companies are no way to build a restaurant?
+<p></p>Even in the case of TweetDeck, using a very unique API (ie. Twitter), they had to diversify with other services. If your building a business around Google Translate API, what sort of plan B and C do you have built into your code? Are you using any of the free or paid solutions out there like <a title="Translated.net" href="http://www.translated.net/en/translation-api">Translated.net</a>, <a title="Wordlingo" href="http://www.worldlingo.com/en/products/worldlingo_api.html">WordLingo</a>, <a title="Microsoft Translator" href="http://www.microsofttranslator.com/dev/">Microsoft Translator</a>, <a title="Apertium" href="http://wiki.apertium.org/wiki/Apertium_web_service">Apertium</a>, or <a title="ICanLocalize" href="http://www.icanlocalize.com/site/">ICanLocalize</a>?
+<p></p>Please don't blame APIs because developers don't have a business strategy, or because bloggers are looking for a sensational headline.
+<p></p><strong>Second</strong>, let's take a look at Google's approach to Google Translate API. The primary reason Google gave for depracting Google Translate API was:
+<blockquote>
+     <em>Due to the substantial economic burden caused by extensive abuse, the number of requests you may make per day will be limited and the API will be shut off completely on December 1, 2011.</em>
+</blockquote>I can't help but think, this problem could have been curbed, by bringing Google Translate API under metered billing using the <a title="Google Console" href="http://blog.apievangelist.com/2011/05/21/google-apis-console/">Google Console</a>,as other APIs appear to be heading. This would give a low ceiling of free daily calls on the API, then make users pay for more access.
+<p></p>Except I really don't think Google wants to make its money from translation services, they are focused on where translation supports their core business. World Domination! Wait, no maybe it is search.
+<p></p>If you notice translation is still available in other areas like Google Docs API for translating documents on upload, and in Gmail for translating emails, and Chrome for translating web pages. And of course you can still use the <a title="web interface for Google Translate" href="http://translate.google.com/">web interface for Google Translate</a>.
+<p></p><img class="c1" src="http://kinlane-productions.s3.amazonaws.com/google/google-translate.png" alt="" width="200" align="right" />So you will still see Google Translate in use where it supports Google's core business. I can see just about any other business making a similar decision.
+<p></p>Also, Google did reach out to communicate the impending deprecation, they called my girlfriend <a title="Audrey Watters" href="http://www.hackeducation.com">Audrey Watters</a>, and briefed her on the plan. I assume they reached out to others as well.
+<p></p>I would add, that Google could do a better job of communicating their roadmap of various APIs and how they will work to support the core Google set of services, or be offered as a service by themselves. As I watch the Google API ecosystem being pulled together and organized, I still can't quite tell whether the vision is to purely serve the primary Google vision, or provide a wide set of APIs that developers can build businesses on, as recent moves with Google Console might suggest.
+<h6 class="zemanta-related-title c3">
+     Related articles
+</h6>
+<ul class="zemanta-article-ul">
+     <li class="zemanta-article-ul-li">
+          <a href="http://blog.apievangelist.com/2011/05/27/google-api-house-cleaning/">Google API House Cleaning</a> (apievangelist.com)
+     </li>
+     <li class="zemanta-article-ul-li">
+          <a href="http://code.google.com/intl/de-DE/apis/language/translate/overview.html">The Google Translate API has been officially deprecated</a> (code.google.com)
+     </li>
+</ul>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2011/05/27/with-seevl-music-discovery-the-website-is-the-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2011/05/28/you-think-there-are-a-lot-of-apis-now-wait-until-evrythng-has-an-api/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Delivering Value For Developers Is First When It Comes To The Census Bureau APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2013/08/22/delivering-value-for-developers-is-first-when-it-comes-to-the-census-bureau-apis/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Delivering Value For Developers Is First When It Comes To The Census Bureau APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/census.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2013/08/22/delivering-value-for-developers-is-first-when-it-comes-to-the-census-bureau-apis/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Delivering Value For Developers Is First When It Comes To The Census Bureau APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/census.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Delivering Value For Developers Is First When It Comes To The Census Bureau APIs</h2>
+<p><span class="post-date">22 Aug 2013</span></p>
+<p><a href="http://www.census.gov/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/digital-strategy/logos/census.png" alt="" align="right" /></a></p>
+<p>I wrote a piece about <a title="providing a full download vs. API" href="http://apievangelist.com/2013/07/19/providing-full-data-download-vs-api/">providing a full download vs. API</a> last month, where I used the <a href="http://www.census.gov/developers/" target="_blank">Census Bureau API</a> as an example. The post got the attention of the folks at the Census, and they invited me out for a discussion yesterday about their API strategy.</p>
+<p>The Census Bureau API team asked me what I thought of their <a href="http://www.census.gov/developers/" target="_blank">API developer area</a>, and while I have lots of suggestions of where they could do, I first focused on what they have already delivered.</p>
+<p>I don't know if you understand the size of the census, but it is a massive undertaking, resulting in data at a scope that we are only seeing matched in the last few years, with the Google's and Twitters of the world--the only difference is the census has been going on since 1790. it gives you an ideas of the serious big data potential behind the Census Bureau API.</p>
+<p>Faced with data at this scope, I understand that delivering a simple, web API is not easy. I was impressed with the teams efforts before I came to D.C., but now I'm really impressed that such a simple, web API could be delivered out of such a large government entity. Many other agencies are still trying to even learn what an API is, and even if they do attempt at delivering APIs, the result is often the much more technical cousin of web APIs, SOAP web services.</p>
+<p>I totally respect the simple start to the Census Bureau API. The current API landing gives you brief introduction to the API, shows you how to access the data via the URL endpoints, gives you example responses, error codes and addresses what you need to use the APIs in JavaScript.  They also give you quick access to getting API keys, a developer forum, application gallery and of course you still get full access to Census downloads.</p>
+<p>What a great start. So simple. Giving developers exactly what they need to get going.</p>
+<p>Then before I gave my feedback on where they could go next with the APis, the Census team gave me a quick overview of the API road-map, to make sure I wasn't going to suggest anything they were already working on.</p>
+<p>I was pleased to hear the Census Bureau API road-map centered around making sure all the public survey data at the Census was accessible via the API for developers. After that, the focus was on making it easier for developers to access, filter and work with all data via the APIs. One of the biggest challenges is that there are hundreds of thousands of fields developers can use when querying the API, and potentially millions of fields when all of it is made available. Opening up the question, how do you educate users that these fields exist, let alone put these fields to use.</p>
+<p>I think the Census Bureau API road-map reflects the mission of the Census Bureau, with a focus on:</p>
+<ul class="mainlist">
+<li>Complete Data Downloads</li>
+<li>Simple API Interfaces</li>
+<li>Access to All Public Data</li>
+<li>Usability for Developers</li>
+</ul>
+<p>This approach totally satisfies my number one requirement for all APIs--deliver value. If you focus on delivering value, the rest will work out. Developers will come, and build on that value.  The Census team is on the right track with their road-map, dovetailing with any feedback I had brought with me to the meeting:</p>
+<ul class="mainlist">
+<li><strong>Value</strong> - Keep focusing on providing value to developers. Make the data they desire available, make it as easy to access as possible.</li>
+<li><strong>Simplicity</strong> - The key to success will be to keep building on the simple interfaces you've created. Complexity will slow API adoption for developers.</li>
+<li><strong>Interactive</strong> - Look at Swagger, I/O Docs and API Blueprint for approaches to make learning about Census APIs interactive, exploratory and hands-on for developers.</li>
+<li><strong>JavaScript</strong> - Keep up the good work on providing JavaScript resources for integrating with the developers, this will help encourage embeddable tools, single page apps and meaningful visualizations.</li>
+<li><strong>Spreadsheets</strong> - Consider providing spreadsheet integration resources for using Census APIs in Excel and Google Spreadsheets, allowing spreadsheet packages complete with built in graphs, charts and other visualizations. This is a growing trend in the API space and will meet the needs of non-developer users, which will mean massive new adoption.</li>
+<li><strong>Landing Page -</strong> Keep the home page simple, but consider surfacing other valuable resources, making everything a developer needs to get started is one click away.</li>
+</ul>
+<p>I do not want to overload the Census team with too many ideas, I want to keep my feedback as simple as their initial approach to their API. I had feedback loop on my list before arriving, but the team walked me through their existing feedback loop of partners, advisory groups, conferences, forums, list serves and Twitter. Add me coming by the office regularly, I think they have the feedback loop covered! :-)</p>
+<p>In 2013, we are all excited about the potential of big data. I'm excited to see the OG Big Data provider, stepping up to the plate in such a meaningful way. There are some seriously smart people at the Census, and I'm really excited to see what they have coming down the pipeline, and I'm honored that they respect my opinions enough to have me out to the office.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2013/08/21/time-tracking-platform-harvest-moves-api-docs-and-app-showcase-to-github/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2013/08/22/to-the-audrey-watters-haters/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

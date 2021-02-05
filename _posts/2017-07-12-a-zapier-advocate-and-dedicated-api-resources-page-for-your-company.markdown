@@ -1,0 +1,22 @@
+---
+title: A Zapier Advocate And Dedicated API Resources Page For Your Company
+date: 2017-07-12T09:00:00.000Z
+published: true
+layout: post
+tags:
+  - API Evangelist
+  - iPaaS
+  - Zapier
+  - 101
+image: 'https://s3.amazonaws.com/kinlane-productions/zapier/zapier-icons.png'
+---
+<p><a href="ttps://zapier.com"><img src="https://s3.amazonaws.com/kinlane-productions/zapier/zapier-icons.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+I am spending time going through some of the most relevant APIs I know of online today, working to create some 101 training materials for average folks to take advantage of. I'm looking through these APIs: Twitter, Google Sheets, Github, Flickr, Instagram, Facebook, YouTube, Slack, Dropbox, Paypal, Weather Underground, Spotify, Google Maps, Reddit, Pinterest, NY Times, Twilio, Stripe, SendGrid, Algolia, Keen, Census, Yelp, Walgreens. I feel they are some of the most useful solutions in the average business person who is API curious.
+
+With these new lessons I'm trying to continue my work evangelizing APIs amongst the normals, helping them understand what APIs are, and what is possible when you put them to work. Once I introduce folks to each API I'm left with the challenge of how do I actually onboard them with each API when they aren't actually a programmer. The number one way I'm helping alleviate this problem is by including [Zapier](https://zapier.com) examples with each of my API lessons, helping folks understand that they can quickly get up and running with each API using the Zapier integration platform as a service (iPaaS). I will be including one or more Zapier examples along with each of my API 101 lessons, helping normal folk put what they've learned about APIs to use--hopefully making each lesson a little more sticky.
+
+One of the primary targets for my lessons is the average worker at small, medium, and enterprise businesses, trying to help them understand that APIs aren't just for developers, and that they can be putting APIs to use in their world. I tried to pick a handful of APIs that are relevant and useful in their daily lives, and helping them become aware of useful Zapier recipes they can adopt in their daily work. I'm looking to encourage users to become more API-literate, and begin connecting and orchestrating using APIs in their daily work. I'm hoping that eventually they will become confident enough by leverage APIs using Zapier that they will eventually become an advocate within their companies and organizations.
+
+In my opinion, each company could really use a Zapier advocate. To help incentivize this behavior I'm  going to show folks how they can become an advocate for APIs and Zapier at their company, and provide them with some templates for how they can publish API training material on a page dedicated to Zapier within the company firewewall, or on some sort of company portal that the rest of the company has access to. Similar to how [I've been advocating API providers to publish an integration page in their developer portals](http://apievangelist.com/2014/03/13/api-management-adding-reciprocity-building-blocks/), I'm looking to also encourage business users to publish a similar page of useful Zaps involving API that are relevant to their company--allowing other folks at a company to learn, explore, and implement useful recipes that can help them be more successful  in their work.
+
+A significant portion of my work as API Evangelist is dedicated to pushing forward the conversation around APIs, telling stories about the leading and bleeding edge of APIs, but I'm trying to not forget my roots, and my original mission to help non-developers understand the API potential. I feel that a wealth of [API 101 materials](http://101.apievangelist.com), combined with examples of Zapier advocacy and storytelling, and pages dedicated to sharing Zapier recipes (Zaps) will help go a long ways to help encourage adoption amongst business users. My first API 101 lessons are rolling off the assembly line, and the next step is to create an example page where these lessons can be published, including other resources and recipes for using Zapier to exercise each lessons learned. If you would like to learn how to become a [Zapier](https://zapier.com) advocate at your company please drop me a line, I'm looking for a few beta users to help me push forward this work in a meaningful way.

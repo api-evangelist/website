@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: 'Not Everyone Needs API Scale, Some Just Need API'
+date: 2017-09-22T12:00:00.000Z
+tags:
+  - API Evangelist
+  - Business of APIs
+  - Politics of APis
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/old-yellow-house.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/old-yellow-house.jpg" align="right" width="40%" style="padding: 15px;" /></p>I know that catering to the enterprise is where the money is at. I know that playing with all the cool new containerized, event sourcing, continuously integrated and deployed solutions are where you can prove you know your stuff. However, in my world I come across so many companies, organizations, and government agencies that just need things to work. They don't have the skills, resources, or time to play with everything cool, and really could just use some better access to their data and content across their business, with trusted partners, and maybe solicit the help of 3rd party developers to help carry the load.
+
+Many of the conversation I am having within startup and tech circles often focus on scale, and the latest tech. I get that this is the way things work in alpha tech circles, and this is applicable in your worlds, always moving forward, pushing the scope of what we are doing, and making sure we are playing with the latest tools is how it's done. However, not everyone has this luxury, and many companies can't afford to hire the talent needed, or pay the cost associated with doing things the most modern approach, or even the right way. Remember, when you are talking about Kafka, Kuburnetes, Docker, GraphQL, and other leading edge solutions, you are talking from a place of privilege. Meaning you probably have the time, resources, and space to implement the most modern approach, and have the team to do it right.
+
+I'm not trying to stop you from having fun, and doing what you do. I am just trying to share what I'm seeing on the ground at companies, organizations, and government agencies I'm talking to. I'm spending a lot of time trying to help get folks up to speed on everything I'm seeing, and many of them are intimidated by the pace at which things move, the scope of implementations they are reading about across tech blogs, and insecure about what they don't know. I'm finding that I'm helping folks think through their basic usage of the cloud, over containerization, and helping them understand basic APIs and webhooks, over evented architecture and modern approaches to messaging. They just aren't ready for much of what I'm reading and tracking on in my monitoring of the API space.
+
+I guess I'm just asking for some help. If you are writing about tech, maybe reach out to small businesses and organizations outside the tech bubble and ask them what their challenges are, over writing about yet another startup, or cool new tech. Maybe take a portion of that investment you just got and establish some grants for nonprofits, students, or others to spend some time learning about new technology (not yours), and pay a contractor to help them solve a single, small problem--enjoying a little micro procurement assist, on your dime. Maybe rather than disrupting an industry, you could reach out to some smaller companies in the space and mentor them? IDK. I'm just spitballin here. I just feel like the gap is widening when it comes to technology on the ground in your average city, over what I see in the Bay Area, and other major tech hubs. If we don't work to close this gap, it is going to bite us all in the ass at some point, if it already isn't.

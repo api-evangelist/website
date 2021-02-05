@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Extracting As Much Value From Your API Developers As You Can, Then Screwing Them Over in The End</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/02/26/extracting-as-much-value-from-your-api-developers-as-you-can-then-screwing-them-over-in-the-end/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Extracting As Much Value From Your API Developers As You Can, Then Screwing Them Over in The End | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-extraction.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/02/26/extracting-as-much-value-from-your-api-developers-as-you-can-then-screwing-them-over-in-the-end/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Extracting As Much Value From Your API Developers As You Can, Then Screwing Them Over in The End | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-extraction.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Extracting As Much Value From Your API Developers As You Can, Then Screwing Them Over in The End</h2>
+<p><span class="post-date">26 Feb 2016</span></p>
+<p><img style="padding: 20px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-extraction.png" alt="" width="35%" align="right" />I often <a href="http://apievangelist.com/2016/01/29/parse-shutting-down-maybe-we-should-lower-our-expectations-of-tech-just-a-little-bit/">push back against API consumers</a> when they complain about the deprecation of API platform, focusing on the fact that we cannot depend on APIs to be around forever. I also push back against API providers when they express concern around having to support developers forever, for fear of revolt in the community. I think the rational folks in the space understand that a balance is needed in these situations, but alas, there are always new incidents that make us go WTF?? <a href="http://techcrunch.com/2016/02/26/how-not-to-run-a-platform/">I was reading about Venmo halting new developer access to its API from Techcrunch today</a>, which left me shaking my head, saying damn, damn, damn.</p>
+<p>I know a lot of you are invested in the startup game, and in all honesty, I am too. A lot of my income comes from startsup, who have taken VC money. I want to believe there can be an ethical path forward in all of this, and it is not all just gambling by a bunch rich white dudes who don't give a shit, but it is getting harder and harder to do. Venmo gained a lot of traction with the support of its API and its developer community, and to just turn off the spigot after riding on the backs of its API and community is just exploitation. I'm not saying they can't shut down their program--I am saying the are obligated to communicate better.&nbsp;</p>
+<p>In several conversations with folks today, the topic of a ranking system for API providers came up again, with some sort of rating for good and providers, as well as some sort of warning system to alert developers ahead of time, that an API is stumbling. This is something I've been working on for a while, and will keeping working on, with my partners. While I think such a system could help us identify some bad actors early, and incentivize others to think through their approach to API operations, and how they communicate with their community--it won't be a complete solution for this type of exploitation.</p>
+<p>Many more waves of startups will come in the future, beginning with lots of passion and excitement, opening up APIs and encouraging developers to build, build, build! The momentum will build, traction will occur, and investment will come. Soon, the startup leaders will not need the API community. They have seen the traction they desired, acquisitions was made, and any blame can be transferred to acquiring organizations, and VCS who are very skilled at shielding themselves from any liability. Maximum value was achieved with the help of the community, it was properly extracted, with the lionshare of value going to acquirers and startup founders, and the majority of the risk left with the developer community.&nbsp;</p>
+<p>While it gets harder nd harder for some of us to showcase new companies with the same passion and trust that they'll do right. There will always be future waves of new startup worshipers, and <a href="http://blog.venmo.com/venmo-api-hackathon">developers to show up at hackathons</a>, building prototypes, engineering applications, and businesses on top of available APIs. New waves of startup founders will be ignorant of what possible future lies ahead, with the other more senior players caring less about the impact this behavior has on the overall health of the API ecosystem--this is how business is conducted, fuck APIs.</p>
+<p>In the end it just sucks. APIs when done right, can make a significant impact, and there are ways to invest in, and reward the best developers in an API ecosystem. However APIs can just as easily be used for exploitation, building sharecropping communities, where developers come and work for free, and building value on top of APIs. API consumers are just looking for a stable vendor to deliver the resources they need, and many API startups promise the moon and stars to keep them believing in them. Many even believe what they say, and are willing to do whatever it takes to win in the startup game--at any cost.</p>
+<p>While I feel pretty confident that I can tell when an API platform is going to go away because some of the usual signals, like blog, Twitter, and Github go silent. There is one set of signals I think can help us start identifying the bad actors earlier on. <a href="http://apievangelist.com/2016/02/13/my-tooling-and-api-for-gathering-and-organizing-the-details-of-the-plans-and-pricing-for-apis/">I've been working on a machine readable approach to map out the pricing, rate limits, tiers, and plans for many API platforms</a>, I'm simply calling <a href="http://apievangelist.com/2016/02/13/my-tooling-and-api-for-gathering-and-organizing-the-details-of-the-plans-and-pricing-for-apis/">API plans</a>. There are key data signals available in a platforms communication strategy, but I think there are also many telltale signs available in their monetization and business strategies, that we aren't seeing.</p>
+<p>In one conversation I had today, I jokingly said I should just email API providers regularly, asking them if they were planning on screwing over their developers anytime soon. While I was joking, I may actually start emailing some providers as part of the rating system I'm ever-evolving. I doubt anyone will ever answer truthfully, but maybe their response time to my question can be used a signal, and if nothing else it just sends a regular reminder to API providers to not fuck over their developers, and give as much lead time as possible before they decide to go away.</p>
+<p>I understand that Venmo is keeping the service up for their existing developers (please don't tell me this), and changed their tune about it only being about new developers, but my point is more about communication and the sharing of the road map, holding API providers to a higher bar, and in this situation Venmo, and Paypal should have been a little more transparent in this process, and shared their plans more publicly.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/02/25/what-is-apisjson-and-what-is-next-for-the-api-discovery-format/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/02/29/a-simple-needs-assessment-to-kick-off-an-api-integration-and-automation-journey/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+---
+published: true
+layout: post
+title: 'Regulations Creeping In On AI, ML, Cognitive, And Other Fronts'
+date: 2017-09-15T15:00:00.000Z
+tags:
+  - API Evangelist
+  - Regulations
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-judgement.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-judgement.jpg" align="right" width="40%" style="padding: 15px;" /></p>I wrote an piece earlier today about not fearing AI, but possessing a significant amount of concern when it comes to the people behind. I figured I'd continue with the trend on this Friday afternoon, and talk about the coming regulations when it comes to artificial intelligence (AI), machine learning (ML), and everything cognitive, intelligent, and algorithmic. I am not fully a believer in regulations being the only solution, but I know they are the solutions that bigcos tend to pay attention to. Which is why they spend so much money to distort, and bend them to what they want to see in their industries.
+
+We are entering a phase of the Internet where there are going to an increased number of calls for regulations. Whether it's privacy, security, breaches, or specifically on technology like drones, artificial intelligence, bots, and machine learning, expect more government involvement in the future. This isn't because government is inheriently bad, and is looking to suffocate business, it is primarily because these areas of technology are being defined by the worst among us. When you bundle with the not so bad folks, and even many of the good folks refusing to reign in their industry partners, and fellow technologists, you end up with more regulations imposed to stablize things. If the tech space was more willing to step up and take the lead regarding acceptable practices, this wouldn't be necessary. 
+
+Algorithms are making more decisions in our lives. After seeing what Facebook and Twitter have done during the last US election, and seeing AI and ML continue being applied to important aspects of our lives, there will be more inquirires by the government, and calls for the government to step in. I know that platforms don't want to be regulated, and with very libertarian stances in much of Silicon Valley, there is a significant undertow of anti-regulatory, and anti-government sentiment. However, if you believe in the wisdom of the crowds, you have to acknowledge your role in determining how the crowds behave. You are developing the platforms that we can automate with bots. You are providing the platforms for deploying the next generation of AI and ML. In many cases, these existing tech players are also investing in the next wave of startups. If you don't set the tone for what acceptable practices are, the federal government eventually will. 
+
+When this happens I'm going to be here to point at APIs as one possible regulatory solution. I'm going to have years of blog posts on the subject, with plenty of evidence about how APIs, and API management can be provide observability into how platforms, and algorithms operate. I'm not doing this because this is the future I want. I'm doing this because this is the future you all have set the stage for. I get that you don't want to reign in your startup co-founders, trusted partners, or investors. The system is designed to punish you if you do. However, if you let the worst of the worst lead the conversation when it comes to AI, ML, algorithms, and other tech trends, regulations will be the only answer. So, put on your seatbelt, and get ready for the government stepping up to dictate the rules of the road, because it seems to be the only thing many of you will actually respond to, whether you like it or not.

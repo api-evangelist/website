@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Recap Of APIs At Dept of Education, And The FAFSA API</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/02/04/recap-of-apis-at-dept-of-education-and-the-fafsa-api/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Recap Of APIs At Dept of Education, And The FAFSA API | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/federal-government/ed/fafsa-form.jpg">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/02/04/recap-of-apis-at-dept-of-education-and-the-fafsa-api/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Recap Of APIs At Dept of Education, And The FAFSA API | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/federal-government/ed/fafsa-form.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Recap Of APIs At Dept of Education, And The FAFSA API</h2>
+<p><span class="post-date">04 Feb 2015</span></p>
+<p><a href="https://ed-data.github.io/fafsa-api/"><img src="https://s3.amazonaws.com/kinlane-productions/federal-government/ed/fafsa-form.jpg" alt="" width="325" align="right" /></a></p>
+<p>My work on <a href="http://ed-data.github.io/developer/">APIs for the Department of Education</a>, and the <a href="http://ed-data.github.io/fafsa-api/">FAFSA API</a> began while I was working in Washington DC as a Presidential Innovation Fellow. Shortly after leaving DC, I was informed that conversations around an API for the FAFSA had been put on back-burner, and in response I developed a prototype FAFSA API to help jumpstart the conversation.</p>
+<p>In December 2013, I went to one of the two data jams put on my the White House and Dept of Education, up in Palo Alto, CA at Stanford. Then, in January 2014 I heard there was talk at the secretary level, about officially pursuing a FAFSA API. Yay! By February I got an email that there was an opportunity for funding such an initiative, if there was a technical specification available. Three days layer <a href="http://ed-data.github.io/developer/2014/02/20/fafsa-api-technical-specification-draft-raw/">I finished a couple of options</a>, which ultimately resulted in a <a href="http://ed-data.github.io/developer/2014/02/21/fafsa-api-technical-specification-draft/">draft technical proposal for a possible FAFSA API</a>.</p>
+<p>I&rsquo;ve heard nothing about the outcome of these efforts. I provided some thoughts on <a href="http://ed-data.github.io/developer/2014/06/02/my-response-to-how-can-the-department-of-education-increase-innovation-transparency-and-access-to-data/">APIs in general, in June of 2014, in repose to their RFI</a>, but beyond that it has been radio silence at Department of Education when it comes to a FAFSA API. Granted, I&rsquo;m not pursuing this, but when it comes to FAFSA API discussion, I own the SEO conversation, so if it came up, I&rsquo;m sure someone would ping me.</p>
+<p>I have no confidence that the Department of Education will pursue a FAFSA API. My motivations around contributing to the conversations stem from a desire to jumpstart investment from both the public, and the private sector. While jumpstarting conversations in the federal government, I was hoping I could also jumpstart the development, and deployment of a federated FAFSA API, which in turn would apply pressure on the federal government to participate. Doing this is not trivial, and a cause that needs a champion or full time evangelist&mdash;I&rsquo;m not your man.</p>
+<p>The FAFSA API is an excellent example of the technology, business, and politics of APIs, something that is more art, than science. If it is going to become a thing, I think it has to happen inversely to the way the IRS ecosystem has occurred, from the outside in. I just don&rsquo;t have confidence that the Department of Education can own this one, I think multiple leaders from the private sector have to make it happen, get private sector buy-in, then convince the Department of Ed to play nicely in a federated FAFSA API ecosystem.</p>
+<p>Which is no small task.</p>
+<p><em><strong>P.S. </strong>This post is meant to help several groups understand where I am at with the FAFSA API. I just posted a round of updates directly to my <a href="http://ed-data.github.io/fafsa-api/">FAFSA API research</a>, as well as my overall <a href="http://ed-data.github.io/developer/">Dept of Education research</a>.</em></p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/02/04/i-see-an-opportunity-in-paying-attention-to-other-types-of-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/02/04/what-do-i-mean-when-i-say-apis-are-just-the-next-step-in-the-evolution-of-the-web/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>You Gotta Keep Em Separated: Breaking Down APIs Into Smaller Swagger Files</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2015/06/13/you-gotta-keep-em-separated-breaking-down-apis-into-smaller-swagger-files/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="You Gotta Keep Em Separated: Breaking Down APIs Into Smaller Swagger Files | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-puzzle-piece-two.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2015/06/13/you-gotta-keep-em-separated-breaking-down-apis-into-smaller-swagger-files/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="You Gotta Keep Em Separated: Breaking Down APIs Into Smaller Swagger Files | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-puzzle-piece-two.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>You Gotta Keep Em Separated: Breaking Down APIs Into Smaller Swagger Files</h2>
+<p><span class="post-date">13 Jun 2015</span></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-puzzle-piece-two.png" alt="" width="250" align="right" /></p>
+<p>As I work to chase an elusive answer to the question, <a href="http://apievangelist.com/2015/06/06/how-do-you-know-when-a-swagger-api-definition-is-complete/">what is a complete API Swagger definition</a>, I'm also faced with what I know John Musser (<a href="https://twitter.com/johnmusser">@johnmusser</a>)&nbsp;would agree is the age old question, what exactly constitutes an API? Is it the <a href="https://dev.twitter.com/rest/public">Twitter API</a>, or is it the Twitter account, status, friends, media, etc. APIs? While this has been a tough question, facing anyone who considers API discovery, I think it is a question that is evolving as part of the current microservices conversation.&nbsp;</p>
+<p>One layer of the microservices onion is focused on breaking down services into their smallest possible unit of value (at least this is one of my takeaways). Doing this is an enabler all the other orchestration, devops, voodoo magic that represent the other architectural layers of the microservices onion. As I work to <a href="http://theapistack.com/">define Swagger definitions for the almost 1000+ companies in my API Stack</a>, I'm working to employ this line of thought, and actively breaking down each API I profile, into the smallest unit possible, using <a href="http://swagger.io">Swagger</a>.</p>
+<p>An example of this in the wild, is with the messaging API from <a href="http://www.tigertext.com/">TigerText</a>, which could easily be a single API Swagger definition called <a href="http://www.tigertext.com/tigerconnect/">TigerConnect API</a>, but after breaking things down I'm left with six separate Swagger files:</p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td align="left">TigerConnect Events API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-events-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Group API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-group-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TIgerConnect Message API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-message-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Metadata API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-metadata-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect Roster API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-roster-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+</tr>
+<tr>
+<td align="left">TigerConnect User API</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/tigertext/tigerconnect-user-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a><br /><br /></td>
+</tr>
+</tbody>
+</table>
+<p>Ultimately this is more work for me, but from an API discovery perspective, I'm looking to identify the small, most unique unit of value possible, which allows me to discovery, and organize APIs into extremely precise, yet powerful <span style="text-decoration: underline;">API menus</span>. Right now this is a very manual process, but I'm developing tooling that will help me to "explode" existing Swagger definitions based upon unique API paths--we will see how that goes.</p>
+<p>Now I can evaluate TigerText's approach to user APIs, or metadata APIs, without wading through the actual messaging side of the coin. I am not in the business of creating at database of APIs, where my metric is number of APIs--my objective is a database of high quality APIs, where my metric is number of companies, with complete API definitions for resources they provide, and as complete profile of overall API operations as possible.&nbsp;</p>
+<p>We'll see how I feel about this after doing another 500 APIs (I've done almost 500 so far) :-) My tune may change, but I'm hoping to have more tooling that helps me throughout the process. I will never be able to fully automate the creation, or fine tuning of API definitions, but I feel I can automate certain aspects--greasing the gears.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2015/06/13/swagger-represents-the-api-value-possible-postman-is-unit-readied-as-transaction-and-har-could-be-evidence-of-value-actually-having-occurred/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2015/06/14/dreamfactory-deploying-apis-in-docker-containers-is-how-the-api-economy-will-scale/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

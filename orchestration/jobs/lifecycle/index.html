@@ -1,0 +1,22 @@
+---
+layout: page
+title: API Evangelist Projects
+---
+
+<h2>API Evangelist - Core Research</h2>
+<section id="banner">
+  <table width="100%">
+    {% assign projects = site.data.projects.index | sort: 'view_sort' %}
+    {% for project in projects %}
+      {% if project.category == 'Core Research' %}
+        <tr>
+          <td width="25%">{{ project.name }}</a></td>
+          <td width="10%" align="center">
+            <a href="http://job.api.kinlane.com/job/feedly-pull-by-tag/?tag={{ project.name }}&org={{ project.githuborg }}&repo={{ project.githubrepo }}&branch={{ project.githubbranch }}" target="_blank">Curated</a> (<a href="http://working.laneworks.net/laneworks/publish-curated-to-github.php?org={{ project.githuborg }}&repo={{ project.githubrepo }}&branch={{ project.githubbranch }}&tag={{ project.name }}&table=curated">legacy</a>)
+          </td>
+          <td width="10%" align="center"><a href="http://job.api.kinlane.com/job/blog-pull-from-working-publish-to-github/?org={{ project.githuborg }}&branch={{ project.githubbranch }}&repo={{ project.githubrepo }}&tag={{ project.name | downcase }}" target="_blank">Blog</a></td>
+        </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+</section>

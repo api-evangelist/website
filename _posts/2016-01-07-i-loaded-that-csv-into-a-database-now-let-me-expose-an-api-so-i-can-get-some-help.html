@@ -1,0 +1,31 @@
+---
+layout: post
+title: 'I Loaded That CSV Into A Database, Now Let Me Expose An API So I Can Get Some Help'
+source: http://apievangelist.com/2016/01/07/i-loaded-that-csv-into-a-database-now-let-me-expose-an-api-so-i-can-get-some-help/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-help.png
+---
+
+<p><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-help.png" alt="" width="35%" align="right" /></p>
+<p>I have been working to clean up the the web presence for the <a href="http://apistrat.com">API Strategy &amp; Practice conference</a>. We concluded the 6th edition of <a href="http://austin2015.apistrat.com/">@APIStrat in Austin this last november</a> (<a href="https://www.youtube.com/user/apistrat">check out the videos</a>), and in addition to this events website, I have five other sites to maintain, and make sure remain accessible. The first three sites have a custom database back-end, the next two had a WordPress + MySQL back-end, and the last edition uses Jekyll + YAML as its back-end(?).&nbsp;</p>
+<p>As part of this round of housecleaning I aggregated the schedule of speakers from all six events into a single spreadsheet, which ended up on my desktop as a CSV file. As I was talking this morning with the rest of the @APIStrat team about the 2016 schedule, I shared the CSV in Slack, as I also uploaded to a MySQL database (yeah I'm new / old school like that). I was talking with my partner in crime Nicolas Greni&eacute; (<a href="https://twitter.com/picsoung?lang=en">@picsoung</a>) shortly after, and he wanted to help me push forward the list of speakers, expand the speaker and company info, as well as connect it up with sponsor info.</p>
+<p>I then responded, as Steve Willmott (@njyx) points out on Twitter (is nothing private these days!!!):</p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en">APIer's at work <a href="https://twitter.com/kinlane">@kinlane</a> "I may take you up on that sir. loaded into DB. Let me expose an API on it I&rsquo;ll ping you for some help" <a href="https://twitter.com/picsoung">@picsoung</a></p>
+&mdash; Steven Willmott (@njyx) <a href="https://twitter.com/njyx/status/685165771203461121">January 7, 2016</a></blockquote>
+<script src="http://platform.twitter.com/widgets.js"></script>
+<p>I went ahead and exposed an API of all of the 351 speakers who have participated in @APIStrat since <a href="http://newyork2013.apistrat.com/">the first edition in New York in February 2013</a>--you can access the endpoints, publicly at:</p>
+<ul>
+<li><a href="http://api.apistrat.com/speakers/">http://api.apistrat.com/speakers/</a></li>
+</ul>
+<p>I also added the ability to pull a single speaker as well:</p>
+<ul>
+<li><a href="http://api.apistrat.com/speakers/aO6zItrUhKEUexi7zNiUjOzzJ1230Rfno9P123DJRHNEuh4117/">http://api.apistrat.com/speakers/aO6zItrUhKEUexi7zNiUjOzzJ1230Rfno9P123DJRHNEuh4117/</a></li>
+</ul>
+<p>All you have to do is put in the speaker_id for each of the speakers. Now, anyone can pull the information on 351 of the speakers who have helped make @APIStrat a thing. Next I also want <a href="https://twitter.com/picsoung?lang=en">@picsoung</a>&nbsp;to be able to help me build upon the list of speakers. This is where APIs rock at making the web not just consumable, but also something anyone can program.&nbsp;</p>
+<p><a href="ttp://apistrat.com/"><img style="padding: 15px;" src="http://www.3scale.net/wp-content/uploads/2014/08/apistrat-logo.jpg" alt="" width="45%" align="right" /></a></p>
+<p>Using the two paths provided above, I then added a POST, PUT, and DELETE for the @APIStrat speaker resource. I want <a href="https://twitter.com/picsoung?lang=en">@picsoung</a> to help me add, update, and delete from the speaker list. Now he can help me make sure all the information available is up to date. <a href="http://3scale.net">Since I have 3Scale API infrastructure in place</a>, and since <a href="https://twitter.com/picsoung?lang=en">@picsoung</a> is established as a "partner in crime", he has an API key which allows him to not just GET (which anyone can do), he can also POST, PUT, and DELETE--making my speakers resource programmable to only myself, and @picsoung, or anyone else who has "partner in crime" level access to the @APIStrat API.</p>
+<p>I know my work isn't done, but I will hand-off to @picsoung for some feedback before I go any further. Steve's tweet reminded me of the potential for APIs to empower collaboration like this. I have a CSV list of speakers across six editions of @APIStrat, which I've uploaded to a database, and I need help improving. So...I published an API providing access to the list, but then using <a href="http://3scale.net">3Scale I am able to also add add, update, and delete capabilities, in a secure way</a>.&nbsp;</p>
+<p>Uploading the CSV to the database, exposing a read / write API, and crafting an OpenAPI Spec for the API (below), is about all I have time for today. I will hand off to <a href="https://twitter.com/picsoung?lang=en">@picsoung</a> for feedback, and then I can spend some time thinking about whats next. We want to add more details on the companies the speakers work for, and the APIs that exist behind this diverse spectrum of speakers.</p>
+<p>As APIs should be, the speakers API for @APIStrat is a work in progress. We are just going to be a little more transparent about the journey. BTW....if you want some "partner in crime" API access, let me know. ;-)</p>
+<script src="https://gist.github.com/kinlane/ccd957a3f56287ac6072.js"></script>

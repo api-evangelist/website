@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Prototype API Design Guide Builder Developed On Top Of API Stylebook</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/10/24/prototype-api-design-guide-builder-developed-on-top-of-api-stylebook/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Prototype API Design Guide Builder Developed On Top Of API Stylebook | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_23_at_10.59.54_pm.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/10/24/prototype-api-design-guide-builder-developed-on-top-of-api-stylebook/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Prototype API Design Guide Builder Developed On Top Of API Stylebook | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_23_at_10.59.54_pm.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Prototype API Design Guide Builder Developed On Top Of API Stylebook</h2>
+<p><span class="post-date">24 Oct 2016</span></p>
+<p><a href="https://api-evangelist-tools.github.io/api-design-guide/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_23_at_10.59.54_pm.png" alt="" width="45%" align="right" /></a></p>
+<p>I was pretty happy when my friend Arnaud Lauret&nbsp;(<a href="https://twitter.com/arno_di_loreto?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">@arno_di_loreto</a>) developed&nbsp;<a href="http://apistylebook.com/">API Stylebook</a>. I want to see his work expand and grow into someday containing hundreds or thousands of API design guides. To help contribute to his work I took the&nbsp;<a href="https://github.com/arno-di-loreto/apistylebook-api/blob/master/design/topics.yaml">YAML core of the design topics</a>&nbsp;he's aggregated and began developing <a href="https://api-evangelist-tools.github.io/api-design-guide/">an API design guide builder that runs 100% on </a><a href="https://api-evangelist-tools.github.io/api-design-guide/">Github</a>, allowing anyone to fork, and use to build their own API Stylebook on top of Arnaud's work.</p>
+<p>Currently, I have two screens for API design guide builder:</p>
+<ul>
+<li><a href="https://api-evangelist-tools.github.io/api-design-guide/edit/">Editor</a>&nbsp;- Allows for the editing of the YAML API Design Stylebook stored in the Github repository.</li>
+<li><a href="https://api-evangelist-tools.github.io/api-design-guide/view/">View</a>&nbsp;- Allows you to view the API Design Stylebook stored in the Github repository.</li>
+</ul>
+<p>I'm a big fan of this approach to developing little machine readable (YAML / JSON) micro tools that are simply HTML, CSS, and JavaScript, with a data core. In this scenario, Arnaud's design topics act's as the machine readable YAML core. I just developed the self-contained editor, and viewer, allowing anyone to fork and use to manage their own API design guide.</p>
+<p>This is just a prototype. I am just getting started. I am looking to add autocomplete suggestions based on the other API design guides that Arnaud has aggregated in his API Stylebook. I am adding this, and some other features to the&nbsp;<a href="https://github.com/api-evangelist-tools/api-design-guide/issues">Github issues for the project</a>, if you have any feedback or suggestions feel free to submit an issue to the Github repository.&nbsp;</p>
+<p>My objective here is to allow anyone to quickly fork, and build their own corporate or project API design guide, built on top of the existing best practices out there. I envision a future where every company, organization, institution, and an agency has their own API design guide, building on the best approaches available. Arnaud can continue to aggregate and merge the best practices (using Github) out there, and API providers can keep forking, and building on top of the best practices of the APIs they look up to across the landscape (another feature I want to add).</p>
+<p>I really like what Arnaud has done with the&nbsp;<a href="http://apistylebook.com/">API Stylebook</a>. It reflects my own building block approach across <a href="http://apievangelist.com">my 70+ API research projects</a>, where I'm looking distil down what is happening&nbsp;across each stop along the API life cycle. I will be forking the API Stylebook design topics, and API design guides they have indexed, and adding to my own <a href="http://design.apievangelist.com">API design research</a>. I am having fun building on top of his work&nbsp;and look forward to what other folks build on top of it as well.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/10/24/preserving-the-twitter-api-field-guide/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/10/24/the-api-behind-every-feature-in-the-user-interface/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

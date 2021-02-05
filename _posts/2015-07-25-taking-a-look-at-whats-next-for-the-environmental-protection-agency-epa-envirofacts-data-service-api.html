@@ -1,0 +1,286 @@
+---
+layout: post
+title: 'Taking A Look At Whats Next For The Environmental Protection Agency (EPA) Envirofacts Data Service API'
+source: http://apievangelist.com/2015/07/25/taking-a-look-at-whats-next-for-the-environmental-protection-agency-epa-envirofacts-data-service-api/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/280px-Environmental_Protection_Agency_logo.svg.png
+---
+
+<p><a href="http://www.epa.gov/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/280px-Environmental_Protection_Agency_logo.svg.png" alt="EPA" width="200" align="right" /></a></p>
+<p>I was asked by folks at the <a href="http://www.epa.gov/enviro/facts/services.html">Environmental Protection Agency (EPA)</a> to provide some feedback on the <a href="http://www.epa.gov/enviro/facts/services.html">Envirofacts Data Service API</a>, as they prepare to work on the next iteration. I took a quick glance at the landing page for their service, I saw a simple URL layout showing how to make API calls, and made an estimate that it would take me probably an hour or two (at the most) to profile the API.</p>
+<p>As I dug into the process of profiling the&nbsp;Envirofacts Data Service API one evening in May, I realized I was wrong about the scope of the API, and became unsure how long it would actually take me. Then this work got lost in the shuffle of my summer, and is something I only recently picked up. I'm not happy if I can't provide an agency with some direction on where to go next, and after about 12 hours of work, I think I have some valuable feedback that they can run with.</p>
+<p><a href="http://www.epa.gov/enviro/facts/services.html">The&nbsp;Envirofacts Data Service API program consists of a single landing page</a>, with an overview of how to use the API, and a myriad of pages below, that explain the underlying data model put to use. <a href="http://apievangelist.com/2015/07/22/an-example-of-resource-based-api-design-over-at-the-envirofacts-data-service-api/">The API is what I consider a very resource driven API design, meaning it reflects the database resource it came from, and not much emphasis on how the API driven resources will be used</a>.</p>
+<p>While the API does use the URL, it uses few of the other HTTP components that make some RESTful. I can see how the design would make sense to a database engineer, but will be a little confusing for API developers.</p>
+<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/epa-envirofacts-api-base-url.gif" alt="" width="100% /&gt;&lt;/p&gt; &lt;p&gt;Once you get to know the interface, it starts to get a little more coherent, but lacks the intuitive aspects of a modern web API. Once you get familiar, you start to realize the number of tables available as part of the&nbsp;Envirofacts Data Service, and realize at the same time the wealth of data available, as well as the volume of work it will take to fully understand and profile the API.&nbsp;&lt;/p&gt; &lt;p&gt;Initially there are 20 separate groupings of tables, but I was only able to really identify actual API I could profile for 13 of them. &lt;a href=" /><a href="http://developer.epa.gov/">After looking beyond this portal I have since found other possible APIs,</a> but honestly they are often even more incoherent than the&nbsp;Envirofacts Data Service API. I'm not trying to review the entire EPA API efforts, and will be specifically focusing on the resources available in the&nbsp;Envirofacts Data Service API for this round.</p>
+<table border="0" width="100%">
+<tbody>
+<tr>
+<td width="50" align="center"><a id="home-logo-link-11217" href="http://www.epa.gov/"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/280px-Environmental_Protection_Agency_logo.svg.png" alt="" width="70" align="left" /></a></td>
+<td align="left"><a id="home-name-link-11217" href="http://www.epa.gov/"><strong>Environmental Protection Agency</strong></a></td>
+<td width="50" align="center"><a id="home-icon-11217" title="Website" href="http://www.epa.gov/" target="_blank"><img id="home-icon-img-11217" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="35" align="middle" /></a></td>
+<td width="50" align="center"><a id="portal-icon-11217" title="Portal" href="http://www.epa.gov/developer/" target="_blank"><img id="portal-icon-img-11217" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-portal-developers.jpg" alt="" width="40" align="middle" /></a></td>
+<td width="50" align="center"><a id="apisjson-icon-11217" title="APIs.json" href="http://theapistack.com/data/environmental-protection-agency/apis.json" target="_blank"><img id="apisjson-icon-img-11217" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-a.png" alt="" width="45" align="middle" /></a></td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Air Facility System (AFS) API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/afs/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/afs/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-air-facility-system-afs-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Biennial Report API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/br/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/br/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-biennial-report-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Comprehensive Environmental Response, Compensation, and Liability Information System API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/cerclis/model.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/html/fii/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a>&nbsp;</td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-comprehensive-environmental-response-compensation-and-liability-information-system-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Facility Registry System API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/html/fii/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/html/fii/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-facility-registry-system-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Greenhouse Gas API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/ghg/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/ghg/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-greenhouse-gas-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Integrated Grants Management System API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/igms/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/igms/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-integrated-grants-management-system-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Locational information API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/html/locational/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/html/locational/lrt/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-locational-information-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Permit Compliance System API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/pcs-icis/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/pcs-icis/pcsmodel.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-permit-compliance-system-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Radiation Ambient Monitoring API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/radnet/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/radnet/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-radiation-ambient-monitoring-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Radiation Information Database API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/radinfo/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/radinfo/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-radiation-information-database-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Resource Conservation and Recovery Act Information API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/rcrainfo/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/rcrainfo/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-resource-conservation-and-recovery-act-information-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Safe Drinking Water Information System API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/sdwis/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/sdwis/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-safe-drinking-water-information-system-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+<tr>
+<td width="50" align="center">&nbsp;</td>
+<td align="left">EPA Toxics Release Inventory API</td>
+<td width="50" align="center"><a title="Website" href="http://www.epa.gov/enviro/facts/tri/" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-home-icon.jpeg" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Documentation" href="http://www.epa.gov/enviro/facts/tri/model.html" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="25" /></a></td>
+<td width="50" align="center"><a title="Swagger" href="http://theapistack.com/data/environmental-protection-agency/epa-toxics-release-inventory-api-swagger.json" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="25" /></a></td>
+<td width="50" align="center">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>After I discovered the 411 tables across these 13 groups, and learned the common URL pattern for querying, I decided to define each table as its own endpoint, rather than relying on each table to be included via a {table} path parameter, I opted to hard code it. Even though most of them are incoherent, some still articulate a little bit more about what they resource might do, and once you make a request, you get an even better idea. All of this can go a long way towards helping people understand what is going on.</p>
+<p>It wouldn't take much to apply a coherent summary&nbsp; to each endpoint that describes what is stored in the table for use. Once I had a list of all tables, I went ahead and made a call to each of the 411 endpoints in the 13 areas, and generated a Swagger API definition for each. <a href="http://apievangelist.com/2015/06/21/parsing-charles-proxy-exports-to-generate-swagger-definitions-while-also-linking-them-to-each-path/">Using Charles Proxy I was able to generate the underlying data model for each</a>, which is necessary for generating SDKs, and can be used as a central truth throughout other aspects of API integration. The current API design also allows you pass in a field, and apply an operator against it when searching--I opted to leave this out of this iteration, until I had a clear diction of endpoints, and the underlying data model defined for each.&nbsp; The API is perfectly usable without this.</p>
+<p><strong>Keeping Things Simple</strong><br />My recommendation for any future API release out of the EPA team would be focused on just simplifying things. When you land on the home page, you get the idea there is an API present, but you do not grasp the depth of the resource. A simple list of the various API groups is important. A list that I hydrated from the acronyms, to better demonstrate what lies beneath. Calling things by their actual names just makes things more intuitive. You need to reach out of your government silos. I had to really work hard to make sense of the data model at play, I was sure there would be a meta API or download allowing me to quickly understand things, but I couldn't find it. By creating Swagger definitions for all API endpoints, complete with associated definitions for the data model, I can now easily build querying, filtering, and other mechanisms into my clients.&nbsp;</p>
+<p><strong>Speaking In Plain English</strong><br />While FRS_PROGRAM_FACILITY&nbsp;may had made sense to the database administrator when naming the original, it does not adequately describe the resource it is serving up. A big part of the next version for these APIs needs to focus on renaming towards more meaningful endpoints over the cryptic table names, and more descriptive fields for each of the underlying data definitions. After crafting the Swagger definitions for these APIs I am blown away by the amount of information in here, obfuscated by the cryptic database naming conventions.</p>
+<p><strong>Wrap In A Clean Portal</strong><br />The current landing page for the Envirofacts API is fairly cluttered, and ultimately doesn't say much--it made me work to hard to get what I need. My goal was to distill down the 13 APIs I found buried in the Envirofacts API page, and expose exactly what you need to understand and get to work using any of the 13 APIs and the over 400 endpoints--nothing more. &nbsp;<a href="http://epa-envirofacts.apievangelist.com/">I started with a simple Github Pages hosted template, with a single APIs.json home page, and interactive documentation for each of the APIs</a> (which you can fork).</p>
+<table border="0" cellspacing="2" cellpadding="3" width="100%">
+<tbody>
+<tr>
+<td id="apisjsonHeaderCell" colspan="3" align="left" valign="top"><a title="Environmental Protection Agency" href="http://theapistack.com/environmental-protection-agency/apis.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/280px-Environmental_Protection_Agency_logo.svg.png" alt="" width="100" align="left" /></a><strong><a title="Environmental Protection Agency" href="http://theapistack.com/environmental-protection-agency/apis.json">Environmental Protection Agency</a>&nbsp;(<a title="Environmental Protection Agency" href="http://theapistack.com/environmental-protection-agency/apis.json">apis.json</a>)</strong><br />The United States Environmental Protection Agency (EPA or sometimes USEPA) is an agency of the U.S. federal government which was created for the purpose of protecting human health and the environment by writing and enforcing regulations based on laws passed by Congress. The EPA was proposed by President Richard Nixon and began operation on December 2, 1970, after Nixon signed an executive order. The order establishing the EPA was ratified by committee hearings in the House and Senate. The agency is led by its Administrator, who is appointed by the president and approved by Congress. The current administrator is Gina McCarthy. The EPA is not a Cabinet department, but the administrator is normally given cabinet rank.</td>
+</tr>
+<tr>
+<td colspan="2"><strong>APIs</strong></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/afs/model.html">EPA Air Facility System (AFS) API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-air-facility-system-afs-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-air-facility-system-afs-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/br/model.html">EPA Biennial Report API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-biennial-report-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-biennial-report-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/cerclis/model.html">EPA Environmental Response, Compensation, and Liability Information API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-comprehensive-environmental-response-compensation-and-liability-information-system-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-comprehensive-environmental-response-compensation-and-liability-information-system-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/html/fii/model.html">EPA Facility Registry System API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-facility-registry-system-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-facility-registry-system-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/ghg/model.html">EPA Greenhouse Gas API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-greenhouse-gas-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-greenhouse-gas-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/igms/model.html">EPA Integrated Grants Management System API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-integrated-grants-management-system-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-integrated-grants-management-system-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/html/locational/lrt/model.html">EPA Locational information API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-locational-information-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-locational-information-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/pcs-icis/pcsmodel.html">EPA Permit Compliance System API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-permit-compliance-system-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-permit-compliance-system-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/radnet/model.html">EPA Radiation Ambient Monitoring API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-radiation-ambient-monitoring-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-radiation-ambient-monitoring-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/radinfo/model.html">EPA Radiation Information Database API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-radiation-information-database-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-radiation-information-database-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/rcrainfo/model.html">EPA Resource Conservation and Recovery Act Information API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-resource-conservation-and-recovery-act-information-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-resource-conservation-and-recovery-act-information-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/sdwis/model.html">EPA Safe Drinking Water Information System API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-safe-drinking-water-information-system-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-safe-drinking-water-information-system-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+<tr>
+<td><strong><a href="http://www.epa.gov/enviro/facts/tri/model.html">EPA Toxics Release Inventory API</a></strong></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/docs.html?swagger=/swagger/epa-toxics-release-inventory-api-swagger.json"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-list.png" alt="" width="35" /></a></td>
+<td><a href="http://epa-envirofacts.apievangelist.com/swagger/epa-toxics-release-inventory-api-swagger.json"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-swagger-round.png" alt="" width="35" /></a></td>
+</tr>
+<tr>
+<td colspan="3">
+<hr />
+</td>
+</tr>
+</tbody>
+</table>
+<p>With my new portal, you get the overview of the EPA API, with link to each API, but I also use the Swagger definition to generate Swagger interactive documentation, rather than sending you to the EPA data model page. This is just the start. I can also use Swagger to generate sandbox environments, cloning APIs, and maybe allowing for updates and changes. I could also use the Swagger to generate client libraries for EPA APIs using <a href="https://apimatic.io/">APIMATIC</a>. <a href="http://epa-envirofacts.apievangelist.com/roadmap/">I'll add all of this to the roadmap, I think I have done enough work for now, and ready to hand things back to EPA</a>.</p>
+<p>I'd like to see EPA consider some of the <a href="http://management.apievangelist.com/building-blocks.html">common building blocks</a> I recommend as part of <a href="http://api-portal.apievangelist.com/">my default developer portal</a>. You don't have to do everything, but the more you do to engage the public around your API, the more chances they will actually use it. Additionally if you go through all APIs, and translate everything from databaseze to English, the potential someone will build on it will exponentially increase.</p>
+<p><strong>Continue On The API Journey At EPA</strong><br />Beyond the portal, and better describing the APIs, my advice is to just continue on the API journey at EPA--this is where the learnings come from. On the current Envirofacts API page, there is another API in addition to the&nbsp;Envirofacts Data Service API, the UV Index API. I can tell the thinking that went into this, are the beginning steps of more experience based API design, focusing on how the API will be used. There is still a lot of the same design mistakes in crafting URLs for this API, but I can tell the desire is there to continue improving on the original design.</p>
+<p>When you look at the <a href="http://www.epa.gov/enviro/facts/multisystem.html">Envirofacts Multi-system Search</a>, and the <a href="http://www.epa.gov/enviro/facts/widgets.html">widgets that are present</a>, you also see some serious thought put into usability--this needs to be applied to the API design. The API is for other developers, but you can assist them in better understanding the potential through better API design.</p>
+<p>I haven't changed anything with the current EPA&nbsp;Envirofacts Data Service API, I just worked to understand how it works, profiled each service I found as a Swagger definition, <a href="http://epa-envirofacts.apievangelist.com/apis.json">and then brought them all together as a single APIs.json driven collection</a>. This process helped me understand the 13 APIs and 400+ endpoints, while also distilling this definition into a set of machine readable index, that I use to <a href="http://epa-envirofacts.apievangelist.com/">drive the Github Page developer portal I launched</a>. APIs.json drives the home page, and each APIs Swagger definition drives its associated interactive documentation.</p>
+<p>When it comes to the next iteration of the EPA&nbsp;Envirofacts Data Service API, I'd focus on a simple, concise portal for supporting developers, complete with the common building blocks found in other leading API platforms. I would also focus on taking the API definitions I've created, and get to work humanizing the design of these 13 APIs, and 400+ endpoints. Make the endpoints intuitive, standardize your approach to query, and pagination based upon other leading approaches established by API architects. Then do the dirty work of humanizing the underlying definitions, field names, and descriptions. Think deeply about both the request and response structure, and make it speak to developers--your simple, intuitive portal, with the right building blocks will provide a potential feedback look for this cycle (if you do it right).</p>
+<p>If you do this, then get to work generating some SDKs, setup some monitors with <a href="http://apiscience.com">API Science</a> or <a href="http://runscope.com">Runscope</a>, and provide <a href="https://www.getpostman.com/docs/collections">Postman Collections</a> for your API consumers, and&nbsp; get busy evangelizing that these APIs even exist--the API will get used. There is a lot of value present here, it just needs to be brought out, polished, and presented in a way that showcases the hard work going on at EPA.</p>

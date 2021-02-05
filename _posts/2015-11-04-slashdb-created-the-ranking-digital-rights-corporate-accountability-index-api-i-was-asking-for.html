@@ -1,0 +1,34 @@
+---
+layout: post
+title: '@SlashDB Created The Ranking Digital Rights Corporate Accountability Index API I Was Asking For'
+source: http://apievangelist.com/2015/11/04/slashdb-created-the-ranking-digital-rights-corporate-accountability-index-api-i-was-asking-for/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/slashdb-new-logo-sideways-medium.png
+---
+
+<p><a href="http://www.slashdb.com/"><img style="padding: 20px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/slashdb-new-logo-sideways-medium.png" alt="" width="250" align="right" /></a></p>
+<p>I read a lot of blog posts, and press releases about open data these days, and when I find a dataset I think offers a lot of value, or is just interesting enough to help push forward, I either try to incorporate into my <a href="http://adopta.agency/">Adopta open data work</a>, or I just put it out to my followers to see if anyone can help.</p>
+<p>As I was monitoring the space yesterday I came across the&nbsp;<a href="https://rankingdigitalrights.org/">Ranking Digital Rights 2015 Corporate Accountability Index</a>, which <em>"evaluates 16 of the world&rsquo;s most powerful Internet and telecommunications companies on their disclosed commitments, policies, and practices that affect users&rsquo; freedom of expression and privacy."</em>--<a href="https://rankingdigitalrights.org/index2015/download/">I saw there was an excel and CSV versions of the report</a>, but I didn't see an API, so I tweeted out:</p>
+<p><span><br /></span></p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en">Done <a href="https://twitter.com/kinlane">@kinlane</a> <a href="https://t.co/f69iFoYgDJ">https://t.co/f69iFoYgDJ</a></p>
+&mdash; SlashDB (@slash_db) <a href="https://twitter.com/slash_db/status/661790951749386240">November 4, 2015</a></blockquote>
+<script src="http://platform.twitter.com/widgets.js"></script>
+<p>Victor Olex (<a href="https://twitter.com/agilevic">@agilevic</a>) from <a href="http://www.slashdb.com/">SlashDB</a>, turned around an API endpoint in a matter of a couple of hours. Here is what Victor sent me:</p>
+<p class="p1" style="padding-left: 30px;"><em><span class="s1">I took your Twitter challenge and created the API for Ranking Digital Rights data. The data model does not include scores for individual lines of business, but it does have all qualitative data needed to make sense of it. I did not write any data aggregation queries, but we can add those later. The whole thing works off a MySQL database model, which I designed and fed with data from the spreadsheet.</span></em></p>
+<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/slashdb-ranking-digital-rights-diagram" alt="" width="100%" /></p>
+<p>Using SlashDB, Victor quickly generated the following endpoints for quick access to the digital rights data behind the report:</p>
+<ul>
+<li><span class="s1">Root API endpoint -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr.html">http://demo.slashdb.com/db/rdr.html</a></li>
+<li><span class="s1">Privacy indicators -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/indicator/category_cd/P.html">http://demo.slashdb.com/db/rdr/indicator/category_cd/P.html</a></li>
+<li><span class="s1">All privacy grades -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/indicator/category_cd/P/grade.html">http://demo.slashdb.com/db/rdr/indicator/category_cd/P/grade.html</a></li>
+<li><span class="s1">American companies' grade on C1 (Commitment - Policy and Leadership) -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/company/country_cd/US/grade/indicator_cd/C1.html">http://demo.slashdb.com/db/rdr/company/country_cd/US/grade/indicator_cd/C1.html</a></li>
+<li><span class="s1">Companies, which scored at least 75% on at least privacy indicator -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/indicator/category_cd/P/grade/value/0.75..1/company.html">http://demo.slashdb.com/db/rdr/indicator/category_cd/P/grade/value/0.75..1/company.html</a></li>
+<li><span class="s1">All grades in Telecom -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/industry/industry_cd/TELCO/company/grade.html">http://demo.slashdb.com/db/rdr/industry/industry_cd/TELCO/company/grade.html</a></li>
+<li><span class="s1">As above, but pull in company and indicator details too -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/industry/industry_cd/TELCO/company/grade.json?depth=1">http://demo.slashdb.com/db/rdr/industry/industry_cd/TELCO/company/grade.json?depth=1</a></li>
+<li><span class="s1">All grades with company and indicator data inline -&nbsp;</span><a href="http://demo.slashdb.com/db/rdr/grade.json?depth=1">http://demo.slashdb.com/db/rdr/grade.json?depth=1</a></li>
+</ul>
+<p>These are very resource oriented API endpoints, meaning they look like the raw resource they are generated from, but it demonstrates the value of using cloud services like SlashDB to do a lot of the heavy lifting for you when deploying an API. Getting an API up and running, so that you can start building web, mobile, data visualizations, and other tooling is an important first step--then you can also start iterating on, and begin the process of defining the next generation endpoints.</p>
+<p>As you can see the SlashDB interface allows me to dill down using the URL, referencing the databases, relationships, and other resources that are exposed. What I like about SlashDB, is it lets you navigate the resources and relationships through the generated HTML pages, and then retrieve the XML or JSON you will need.&nbsp;</p>
+<p>Next steps for me, is I'd like to craft a simple Github Pages hosted landing page, and define a base set of meaningful API endpoints that would allow potential API consumers to quickly understand what is contained in the the&nbsp;<a href="https://rankingdigitalrights.org/">Ranking Digital Rights 2015 Corporate Accountability Index</a>, and hopefully incentivize someone building something cool on top of it.</p>
+<p>Thanks to&nbsp;Victor Olex (<a href="https://twitter.com/agilevic">@agilevic</a>) and&nbsp;<a href="http://www.slashdb.com/">SlashDB</a>&nbsp;more doing this important work--you guys rock!!</p>

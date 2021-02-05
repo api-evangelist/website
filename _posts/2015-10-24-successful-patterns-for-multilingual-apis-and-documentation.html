@@ -1,0 +1,38 @@
+---
+layout: post
+title: 'Successful Patterns For Multi-Lingual APIs and Documentation'
+source: http://apievangelist.com/2015/10/24/successful-patterns-for-multilingual-apis-and-documentation/
+domain: apievangelist.com
+image: 
+---
+
+<p>I had a follower tweet out an interesting question about successful patterns for multi-linguarl APIs, which I thought was interesting enough to share as a story, adding to my research, and helping me tune into the topic better.&nbsp;</p>
+<p>As the API economy unfolds, and APIs make their way into more countries around the globe, the need to standardize how we internationalize different layers of our API operations is only going to increase--making these types of conversation starters very important.</p>
+<p>Here is the Twitter thread:</p>
+<blockquote class="twitter-tweet" lang="en">
+<p dir="ltr" lang="en"><a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> <a href="https://twitter.com/kinlane">@kinlane</a> The Accept-Language header is a good start. <a href="https://t.co/Gt6TuUUSB2">https://t.co/Gt6TuUUSB2</a></p>
+&mdash; pete gamache (@gamache) <a href="https://twitter.com/gamache/status/656930408785932288">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/gamache">@gamache</a> <a href="https://twitter.com/kinlane">@kinlane</a> Root of my Q is headers vs. endpoints, e.g., /en/ &amp; situations where document is avail in one lang but not another</p>
+&mdash; Phillip Smith (@phillipadsmith) <a href="https://twitter.com/phillipadsmith/status/656931500844150784">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> <a href="https://twitter.com/kinlane">@kinlane</a> I&rsquo;d advocate for a query string, e.g. ?lang=en, rather than a URL path. The server can choose a fallback language.</p>
+&mdash; pete gamache (@gamache) <a href="https://twitter.com/gamache/status/656932949577867264">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/gamache">@gamache</a> <a href="https://twitter.com/kinlane">@kinlane</a> Pondering... So, /documents/?lang=ar might return documents in fallback language if not available in Arabic, for example?</p>
+&mdash; Phillip Smith (@phillipadsmith) <a href="https://twitter.com/phillipadsmith/status/656937403148472320">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> <a href="https://twitter.com/kinlane">@kinlane</a> More or less. I&rsquo;d imagine /documents/?lang=en would return a list of docs in English (1/2)</p>
+&mdash; pete gamache (@gamache) <a href="https://twitter.com/gamache/status/656970362186563584">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> <a href="https://twitter.com/kinlane">@kinlane</a> And /documents/123?lang=en would return doc 123 in either English or a fallback language.</p>
+&mdash; pete gamache (@gamache) <a href="https://twitter.com/gamache/status/656970546173878272">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/gamache">@gamache</a> <a href="https://twitter.com/kinlane">@kinlane</a> What if a collection of documents only exist in Arabic, and not English?</p>
+&mdash; Phillip Smith (@phillipadsmith) <a href="https://twitter.com/phillipadsmith/status/656971844755439616">October 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet" lang="en" data-conversation="none">
+<p dir="ltr" lang="en"><a href="https://twitter.com/phillipadsmith">@phillipadsmith</a> <a href="https://twitter.com/kinlane">@kinlane</a> Then Arabic becomes the fallback language for that doc, and the response carries the header Content-Language: ar.</p>
+&mdash; pete gamache (@gamache) <a href="https://twitter.com/gamache/status/656972659973095424">October 21, 2015</a></blockquote>
+<script src="http://platform.twitter.com/widgets.js"></script>
+<p>I see two key building block that I can extract from this conversation. One being&nbsp;Accept-Language for dictating which language your API should be speaking, and two, using a query string lang= to tell your documentation what language it should be speaking. I've added both as <a href="http://design.apievangelist.com/building-blocks.html">API design building blocks</a>, and the documentation reference to my <a href="http://management.apievangelist.com/building-blocks.html">API management building blocks</a>.</p>
+<p>I love questions like this, because it puts these topics on my radar, and after writing a post about it, and adding as some common building blocks, the chances I will explore further dramatically increases. This is the side of my research that keeps me getting up and sitting down at the pooter each day.</p>

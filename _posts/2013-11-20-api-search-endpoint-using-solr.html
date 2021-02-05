@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'API Search Endpoint Using Solr'
+source: http://apievangelist.com/2013/11/20/api-search-endpoint-using-solr/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/apache-solr-logo.png
+---
+
+<p><a href="http://lucene.apache.org/solr/" target="_blank"><img class="c1" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/apache-solr/apache-solr-logo.png" alt="" width="225" align="right" /></a></p>
+<p>I was going through the <a href="https://www.courtlistener.com/api/rest-info/#search-endpoint">Free Law Project Court Opinion API</a> today, playing with the API and data, while developing some server and client side tooling.  All the API endpoints are pretty consistence because they used their Django model and the <a href="http://django-tastypie.readthedocs.org/en/latest/">Tastypie framework</a> to generate most of the API.</p>
+<p>There is one endpoint that is radically different from the rest of the opinion API: the /search endpoint. The Free Law Project used <a href="http://lucene.apache.org/solr/">Apache Solr</a> to generate the /search endpoint results and instead of directly hitting just the database for information it utilized Solr index to do the heavy lifting.</p>
+<p>Using Solr opens up a whole world of search by introducing common concepts like AND, OR, NOT, fielded queries, wildcards, fuzzy searches and much more when it comes to searching for court opinions.</p>
+<p>While the on-boarding of Solr newbies to an endpoint like this takes some education, and the opinion API /search endpoint docs could use a little more polishing to  make it easier to start using, but the concept of a Solr driven endpoint is still very interesting.</p>
+<p>Using Solr like this might not work for all API providers, but for some who are heavily using data stores that include document repositories as well, it might be a good idea.&nbsp;</p>
+<p>While <a title="Have A Bunch Of Documents? Launch An API With Apache Solr" href="http://apievangelist.com/2013/08/13/have-a-bunch-of-documents-launch-an-api-with-apache-solr/">I have advocated for using Solr to generate an API before</a>, this is the first time I've seen it bundled alongside another API offering so seamlessly, just to drive the search endoint.  I'll be keeping an eye out for others during my regular monitoring.</p>

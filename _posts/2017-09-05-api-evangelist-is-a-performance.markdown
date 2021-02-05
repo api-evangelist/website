@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: API Evangelist Is A Performance
+date: 2017-09-05T11:00:00.000Z
+tags:
+  - API Evangelist
+  - Evangelism
+  - Politics of APIs
+image: >-
+  http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png
+---
+<p><img src="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" align="right" width="30%" style="padding: 15px;" /></p>I think I freaked a couple of folks out last week, so I wanted to take a moment and remind folks that API Evangelist is a performance. Sure, it is rooted in my personality, and I keep it as true to my view of the world of APIs as I can, but it is just a performance I do daily. When I sit down at the keyboard and research the world of APIs I am truly (mostly) interested in the technology, but when I craft the words you read here on the blog I am performing a dance that is meant to be interesting to the technology community in a way that draws them in, but then also gives them a swift kick in the pants when it comes to ethics of the technology, business, and politics of doing all of this.
+
+Sure, my personality shines through all of this, and I'm being genuine when I talk about my own battles with mental illness, and other things, but please remember API Evangelist is a performance. It is a performance that is meant to counteract the regular stream of fake news that comes out of the Silicon Valley funded technology machine. [API Evangelist is a Contrabulist production](http://contrafabulists.com/), pushing back on the often exploitative nature of APIs. Not that APIs are exploitative, it is the people who are doing APIs are exploitative. Back in 2010, I saw that APIs were providing a peek behind the increasingly black box nature of web technology that was invading our lives through our mobile devices, and jumped at the opportunity to jam my foot in the door, even as the VC power brokers continue to look to look for ways to close this door.
+
+In 2011, I found my voice as the API Evangelist explaining APIs to the normals, making these often abstract things more accessible. Along the way, I also developed the tone of this voice pushing back on the politics of doing APIs, calling out the illnesses I see in the space. These are the two areas I hear the most praise from my readers, something that has significantly shaped my performance over the last seven years. I have a pantheon of API characters in my head when I tell stories on API Evangelist, speaking to specific groups, while showcasing as many of the best practices from the space as I possibly can. I'm looking to shine a light on the good, first and foremost, but I'm also never going to shy away from showcasing the illnesses in the space as I have nothing to lose. I'm never looking to get VC funding, or do any technology startup, so throwing myself against the machine doesn't ever worry me--I will keep doing it until I grow weary of this production.
+
+I just wanted to take the time to help folks understand that all of this is a show. Sure, my rant last week was rooted in my own dark personal thoughts, but it was meant to be a reflection of the space (your darkness). I'm touched at the folks who reached out to me with concern, but I'm fine. If I am ranting on the Internet you can always be sure I'm fine. It is when I go silent for any sustained amount of time is when you should have concern. When I'm in my dark place I have NO interest in performing as API Evangelist, and increasingly I have little interest in Internet technology when I feel this way. If you are reading this, thank you for tuning into my little production. I enjoy doing it because it keeps me learning each day. It keeps me writing and telling stories each day. Hopefully along the way some of you also get some value from the stories I tell, whether their are positive, or a little dark like they were last week.

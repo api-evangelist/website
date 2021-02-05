@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Standardizing API Documentation For Use Across The API Lifecycle</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="http://apievangelist.com/2016/09/16/standardizing-api-documentation-for-use-across-the-api-lifecycle/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Standardizing API Documentation For Use Across The API Lifecycle | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png">
+
+    <meta name="twitter:url" content="http://apievangelist.com/2016/09/16/standardizing-api-documentation-for-use-across-the-api-lifecycle/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Standardizing API Documentation For Use Across The API Lifecycle | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Standardizing API Documentation For Use Across The API Lifecycle</h2>
+<p><span class="post-date">16 Sep 2016</span></p>
+<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/swagger_ui_petstore.png" alt="" width="40%" align="right" /></p>
+<p><a href="http://apievangelist.com/2014/06/25/if-i-could-design-my-perfect-api-design-editor/">I've been pushing for better API design tooling for some time now</a>, something that significantly overlaps with <a href="http://apievangelist.com/2015/02/02/we-need-better-api-documentation-and-ui-deployment-options/">movements I would also like to see around API documentation as well</a>. In my opinion, we have made significant strides with the introduction of Swagger UI, as well as pushed the API documentation conversation to be part of the API design process by Apiary. This is something that was further re-enforced with the evolution of Swagger UI to be part of the Swagger Editor toolkit--where Swagger UI was used in real-time as part of the API design process, not just later down the road as API documentation for consumers.</p>
+<p>This demonstrates for me the importance of API documentation, not just in helping API consumers understand what an API does at integration time, but also for API providers at design, mock, test, and any other time during the API lifecycle. Functional, attractive looking, and often interactive documentation that describes what an API does is needed from design to deprecation, and is an area of the API world that I feel is pretty underserved at the moment.</p>
+<p>Swagger UI is a 100% client side JavaScript solution, which if you've ever cracked open the code, know that it cannot be used as a base template to move this&nbsp;conversation forward. The more <a href="https://github.com/lord/slate">attractive Slate solution</a> is appealing right up <a href="http://apievangelist.com/2015/06/25/we-should-be-generating-slate-from-swagger-so-we-maintain-a-machine-readable-core/">until you realize it doesn't perpetuate the machine readable API core</a> we will need to successfully integrate with every other stop along the API lifecycle. I haven't seen any movement out <a href="http://apievangelist.com/2015/06/25/we-should-be-generating-slate-from-swagger-so-we-maintain-a-machine-readable-core/">the efforts to make an OpenAPI Spec driven Slate</a>, but I am pleased with the movements by <a href="http://apievangelist.com/2016/01/25/a-new-open-source-interactive-api-documentation-from-folks-over-at-lucybot/">Lucybot in their Lucybot Console</a>. These are moving the needle a little bit&nbsp;but won't get us far down the road when it comes to API documentation that can be used across all stops along the lifecycle without friction.</p>
+<p>We will need API documentation that can be published in web, mobile, and &nbsp;desktop solutions that are serving the API community. It needs to be easily embeddable, on any platform, and help API designers, architects, consumers, analysts, and anyone else with a stake in the outcome &nbsp;understand what the hell is going on. We need our API documentation to be plug and play in our API portals like Swagger UI has been. We need API documentation to be a driver of the API design and mock conversations like Apiary has injected. We need it to drive other areas of API management like Gelato and Readme are doing, or other areas of the API lifecycle like APIMATIC is doing for helping us managing SDKs.</p>
+<p>We need a 100% client-side solution, as well as a diverse range of supercharged server and desktop solutions, that can be used across the API life cycle, whether supporting creation or consumption. We need an open source solution run by a benevolent dictator (not it), who will help ensure its platform agnostic, and has a fully customizable UI and styling, which can be embedded into leading API services and tooling, helping standardize the documentation for each area of the API lifecycle. We need the next steps in the evolution of API documentation, and visualization to be set into motion in 2016.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2016/09/16/learning-from-the-success-of-swagger-ui/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2016/09/19/a-twilio-process-to-emulate-within-your-own-api-operations/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+---
+layout: post
+title: 'Guidance On Versioning Your API From Google'
+source: http://apievangelist.com/2017/03/09/guidance-on-versioning-your-api-from-google/
+domain: apievangelist.com
+image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-version.png
+atomdate: 2017-03-09T09:00:00-08:00
+---
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-version.png" alt="" width="20%" align="right" /></p>
+<p>I always enjoy learning about how companies are versioning their APIs. The topic is always one of the most discussed areas when we do APIStrat workshops, and is an aspect of the API space that I think there is never a 100% right way of doing things. Making it an area I recommend learning as many different approaches as you can, then decide on the right solution for your particular situation.</p>
+<p>To help you in your journey, and mine, I try to document any official versioning strategies published by API providers I research. Today I have one from Google, providing some very interesting insight into how they version their APIs. Google uses&nbsp;<a href="http://semver.org/">Semantic Versioning</a>, which follows this approach to each version number MAJOR.MINOR.PATCH, incrementing the:</p>
+<ol>
+<li><code>MAJOR</code>&nbsp;version when you make incompatible API changes,</li>
+<li><code>MINOR</code>&nbsp;version when you add functionality in a backwards-compatible manner,</li>
+<li><code>PATCH</code>&nbsp;version when you make backwards-compatible bug fixes.</li>
+</ol>
+<p>When it comes to their REST APIs Google puts the version in URL, and I'm still learning more about their approach to how it's applied to the proto package for gRPC APIs. They also have some good advice when it comes to what is breaking and non-breaking changes.</p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-broken-gears.png" alt="" width="35%" align="right" /></p>
+<p>Backwards-compatible (non-breaking) changes:</p>
+<ul>
+<li>Adding an API interface to an API service definition</li>
+<li>Adding a method to an API interface</li>
+<li>Adding an HTTP binding to a method</li>
+<li>Adding a field to a request message</li>
+<li>Adding a field to a response message</li>
+<li>Adding a value to an enum</li>
+<li>Adding an output-only resource field</li>
+</ul>
+<p>Backwards-incompatible (breaking) changes:</p>
+<ul>
+<li>Removing or renaming a service, field, method or enum value</li>
+<li>Changing an HTTP binding</li>
+<li>Changing the type of a field</li>
+<li>Changing a resource name format</li>
+<li>Changing visible behavior of existing requests</li>
+<li>Changing the URL format in the HTTP definition</li>
+<li>Adding a read/write field to a resource message</li>
+</ul>
+<p><a href="https://cloud.google.com/apis/design/versioning">This Google API versioning advice comes from their API design guide</a>. I also f<a href="https://cloud.google.com/endpoints/docs/versioning-an-api">ound some versioning advice from them as part of the Google Cloud Endpoints documentation</a>, which provides some easier to follow advice for REST APIs. It also includes some advice for handling as part of your OpenAPI definition, something I will be investigating further.</p>
+<p>I am just looking to add semantic versioning approach, the example of putting the version in the URL, and the advice on backwards-compatibility to my API research. It helps me keep my work full of healthy examples, and URL references to how specific API providers are documenting their own APIs, as well as offering guidance to customers who are using their services to design, deploy, and manage their APIs.</p>

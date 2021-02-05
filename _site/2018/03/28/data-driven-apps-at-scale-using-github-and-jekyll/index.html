@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Data Driven Apps At Scale Using Github And Jekyll</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Data Driven Apps At Scale Using Github And Jekyll | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Data Driven Apps At Scale Using Github And Jekyll | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Data Driven Apps At Scale Using Github And Jekyll</h2>
+<p><span class="post-date">28 Mar 2018</span></p>
+<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p>I’ve pushed my Github driven, Jekyll fueled, application delivery process to a new levels the last couple of weeks. I’ve been investing more cycles into <a href="http://theapistack.com/">my API Stack work</a>, as I build out an <a href="http://api.gallery.streamdata.io/">API Gallery for Streamdata.io</a>. All of my work as the API Evangelist has long lived as independent Github repositories, with a JSON or YAML core that drives the static Jekyll UI for my websites, applications, and API developer portals. Designed to be independent, data and API driven micro-solutions to some related aspect of my API research. I’m just turning up the volume on what already exists.</p>
+
+<p>I’m taking this to the next level with my approach to API discovery. API Stack used to be a single Github repository with huge number of APIs.json and OpenAPI definitions, but after hitting the ceiling with the size of the repository, I’ve begun to shard projects by entity, topic, and collection. So far I have <a href="https://github.com/api-stack-providers">285 entities</a>, with 9850 API paths, <a href="https://github.com/api-stack-topics">spanning 397 topics</a>. Each entity, and topic exists within its own Github repository, acting as an individual set of API definitions, including an OpenAPI, Postman Collection, and APIs.json index. Allowing me to move forward each API definition for an entity independently, and begin aggregating APIs into interesting collections by topic, industry, or other relevant area.</p>
+
+<p>There is no backend database for these projects. Well, there is a central system I use to help me orchestrate things, but each project is standalone, with everything it needs stored in the Github repository. It is something that took some engineering, and time to setup and first, but now that it is setup, managing it is actually pretty easy. The approach has also allowing me to scale it without any additional performance issues. Each entity I add becomes its own repo, and unless I hit some magic number for the number of repositories I can have within an organization, I should be able to scale to several thousand repos pretty quickly. Doing the same thing for topics, and other types of collections I’m aggregating APIs into.</p>
+
+<p>Each entity repository has the OpenAPI, and Postman Collection for its provider. I’m also breaking out each individual API path into it’s own OpenAPI definition, and considering doing the same for Postman Collections–distilling things down to its smallest possible unit of compute. The APIs.json for each repository indexes the OpenAPI, Postman collection, as well as the other elements of API operations like documentation, blog, Twitter, and Github accounts. In the future I will be publishing other machine readable artifacts here including details on plans and pricing, terms of service, monitoring, performance, and other aspects of the ranking and profiling of the API sector that I do.</p>
+
+<p>I’m getting ready to softly launch Streamdata.io’s API Gallery, but my API Stack work will continue to be my workbench for this type of API discovery work. I’ll keep harvesting, scraping, and profiling APIs and their operations, and as they come into focus I’ll sync with Streamdata.io’s API Gallery, and look at how I can help Postman with their API Network, APIs.guru with their directory, as well as other API aggregation and integration platforms like AnyAPI, APIDeck, and others. I’m just getting to the point where I feel like things are working as I want them to, and are ready for me to shift into higher gear. There are still a lot of issues with individual entities, and topics, but the process is working well–I just need to spend more time refining the API definitions themselves, and work on syncing with other efforts in the space.</p>
+
+<p>Right now I’m heavily using the Github API to make all this work, but I’m probably going to switch to relying on Git for the heaviest lifting. However, as a 30 year database person, I have admit that I am rather enjoying the scope of delivering JSON and YAML driven API-driven continuous deployment and integration projects like this that have a machine readable layer, but also a UI layer for humans to put to use. It provides me a with a very API way of driving how I profile APIs, quantify what it is they do, and begin to rank and make sense of the growing API landscape. Continuing with my way of doing things out in the open, while hopefully providing more value to the API discovery conversation, in an OpenAPI and Postman Collection driven API universe.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2018/03/27/oauth-has-many-flaws-but-it-is-the-best-we-have-at-the-moment/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2018/03/28/a-decade-later-twitters-api-plan-slowly-bgins-to-take-shape/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

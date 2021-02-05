@@ -1,0 +1,68 @@
+---
+layout: post
+title: 'A Wicked (Good) Open Source API Deployment And Management Stack'
+source: http://apievangelist.com/2016/08/24/a-wicked-good-open-source-api-deployment-and-management-stack/
+domain: apievangelist.com
+image: http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wicked-logo-140.png
+atomdate: 2016-08-24T09:00:00-07:00
+---
+<p><a href="http://wicked.haufe.io/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wicked-logo-140.png" alt="" width="25%" align="right" /></a></p>
+<p>I was introduced to a new <a href="http://wicked.haufe.io/index.html">open source, Dockerized API operations solution called Wicked</a>, that was developed by the integrated cloud and desktop solutions provider, the <a href="http://haufe.com">Haufe Group</a>. There are <a href="http://apievangelist.com/2014/10/05/taking-a-fresh-look-at-what-open-source-api-management-architecture-is-available/">a number of open source API management solutions out there</a>, and an even greater number of <a href="http://deployment.apievangelist.com/tools/framework/">API frameworks that can help you deploy your APIs</a>, but Wicked is the first to span several areas of the API life cycle including <a href="http://dns.apievangelist.com">DNS</a>,&nbsp;<a href="http://deployment.apievangelist.com">deployment</a>, <a href="http://containers.apievangelist.com">containers</a>, <a href="http://authentication.apievangelist.com">authentication</a>, <a href="http://management.apievangelist.com/">management</a>, and&nbsp;<a href="http://documentation.apievangelist.com">documentation</a>,</p>
+<p><strong>Built On Existing Open Source API Gateway</strong><br />The Haufe Group built the core of Wicked on top of an existing open source API management solution, further augmenting, evolving, and improving on an existing solution:</p>
+<ul>
+<li><strong><a href="https://github.com/Mashape/kong">Kong API Gateway</a></strong> - Use Mashape Kong to protect and proxy your backend APIs</li>
+</ul>
+<p>Why reinvent the wheel? It makes sense to build on existing solutions for API management, developing on top of what is already being used by API architects and developers.</p>
+<ul>
+</ul>
+<p><strong>Simple Developer Onboarding<br /></strong>Wicked employs the latest approaches to allowing developers to onboard with an API, sticking to what is already working for API providers, and what developers expect:&nbsp;</p>
+<ul>
+<li><strong>Authenticate with email and password - </strong>Let your users sign up with their email address and a password. Email addresses will be automatically validated by sending out verification emails.</li>
+<li><strong>Authentication with GitHub or Google - </strong>You may also configure signup and login using OAuth2 with GitHub and/or Google. These identities will be treated as 'verified' automatically.</li>
+</ul>
+<p>I like that they let you use Github or Google on top of the standard email and password setup. I've been aggregating all my personal API developer accounts under my single @kinlane Github account, and when I set up a business account I authenticate using my @apievangelist Github account--more API providers should offer this, to help us all organize our accounts.</p>
+<ul>
+</ul>
+<p><strong>Using Modern API Authentication<br /></strong>There are a handful of proven approaches out there for allowing developers to authenticate against an API, and Wicked allows for two of the most common&nbsp;approaches:</p>
+<ul>
+<li><strong>API Key or OAuth 2 -</strong> Out of the box, wicked enables fast securing of your API using API Key authentication or OAuth 2 Client Credentials Flow.</li>
+</ul>
+<p>Allowing for either API key or OAuth will cover 75% of the use cases companies are looking for when securing their digital resources. Most public resources will just need an API key which acts as the identifier, but for personally identifiable information, OAuth is essential.</p>
+<p><strong>Enabling API Service Composition<br /></strong>Every successful API provider knows that you don't provide the same access for all developers, and <a href="http://apievangelist.com/2015/12/03/what-is-api-service-composition/">service composition</a> is an essential way to approach this--Wicked provides the essentials in this area:&nbsp;</p>
+<ul>
+<li><strong>Implement Rate Limiting -</strong> Using Mashape Kong's rich functionality, implement rate limiting for your APIs, wherever needed.</li>
+<li><strong>Subscription Plans - </strong>API definitions can be associated with subscription plans, which can carry additional settings, e.g. different rate limits for different users.</li>
+<li><strong>Group based rights to APIs -</strong> Define custom user groups and assign those groups to users in order to limit access to specific APIs to specific groups. The Admin group can also be assigned.</li>
+<li><strong>Group based rights to custom content -</strong> The content section also supports group-based access, e.g. to How-tos or tutorials.</li>
+<li><strong>Subscription Approval Workflow - </strong>API Plans can be configured to require an approval of subscription; you will be sent an email to a predefined email address to the approval request.</li>
+</ul>
+<p><a href="http://wicked.haufe.io/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/wicked-architecture-components.png" alt="" width="40%" align="right" /></a></p>
+<p>While I am not a big fan of API approval workflows, as I prefer resources to be self-service, I was intrigued by the email approval feature, allowing for a (hopefully) frictionless onboarding flow that can add an additional layer of security for our most valuable of API resources.</p>
+<p><strong>Providing The Necessary Application Mangement<br /></strong>APIs are all about developing applications, and Wicked allows for the identification of apps, and the incorporation of these apps into the service composition workflow:&nbsp;</p>
+<ul>
+<li><strong>Application Concept -</strong> In order to subscribe to an API, a user needs to create an application (which is the client of the API); APIs are coupled with applications, not users.</li>
+<li><strong>Application Owner Roles -</strong> Applications can be shared among users, using different roles on the application: Admin/Owner, Collaborator, and Reader.</li>
+</ul>
+<p>Users may have one or many apps which integrate with one or many APIs. This many to many relationships provide a robust way to manage API consumers, and potentially the multiple applications which they will develop.</p>
+<ul>
+</ul>
+<p><strong>Interactive API Documentation<br /></strong>No API in 2016 is complete unless it has interactive documentation, and Wicked sticks with what works in this area and provides documentation for APIs using <a href="https://github.com/swagger-api/swagger-ui">Swagger UI</a> and <a href="https://github.com/OAI/OpenAPI-Specification">OpenAPI Spec</a>.&nbsp;</p>
+<ul>
+<li><strong>Swagger UI Integration </strong>- In order to view the APIs in more detail, wicked has integrated Swagger UI, with configurable direct access to the backend services.</li>
+</ul>
+<p>Using open API definitions like OpenAPI Spec, as well as providing up-to-date interactive API documentation is pretty much much the new baseline for APIs these days, and Wicked keeps up.</p>
+<ul>
+</ul>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist-site/blog/docker-swarm-hero2.png" alt="" width="35%" align="right" /></p>
+<p><strong>Scalable Deployment<br /></strong>Next, as if that wasn't enough, you get te scalable deployment of APIs using Docker. Wicked weaves together the DNS, deployment, and management of your APIs, and allows for modular deploy with Docker, and scaling with Docker Compose:</p>
+<ul>
+<li><strong>Docker Deployment -</strong> The entire APIm solution is deployed using docker; everything runs in docker, enabling deployments to whatever infrastructure supports it.</li>
+<li><strong>Scaling With Docker Compose -</strong> By using docker-compose, the deployment of your API Management solution can be easily scaled to use multiple instances of Kong, behind a powerful HAproxy.</li>
+</ul>
+<p>This type of API deployment is how all APIs will be deployed in the future. We have a lot of work ahead of us when it comes to decoupling our legacy infrastructure, but Wicked gives us the tools we need to get this done--providing a fuller open source stack which we can more confidently bake into our infrastructure.</p>
+<ul>
+</ul>
+<p>There are two things that stand out for me about Wicked. 1) It spans deployment and management in a scalable way 2) It is built using the best of breed open source tooling, specifications, and standards available out there right now--Kong, HAproxy, OpenAPI Spec, Swagger UI, and Docker.</p>
+<p>I'm just getting going with Wicked. It makes me happy to see API operations solutions like this come together. I'm just getting going reviewing the stack, and <a href="http://dev.haufe.com/state-of-our-api-strategy/">I am really liking the&nbsp;motivations behind why they did it</a>, and how they are doing it--more to come.</p>
+<ul>
+</ul>

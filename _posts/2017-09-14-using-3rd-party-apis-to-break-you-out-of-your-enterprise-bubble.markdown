@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: Using 3rd Party APIs To Break You Out Of Your Enterprise Bubble
+date: 2017-09-14T11:00:00.000Z
+tags:
+  - API Evangelist
+  - Enterprise
+  - Politics of APIs
+  - Hackathons
+image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bubbles.png'
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bubbles.png" align="right" width="40%" style="padding: 15px;" /></p>I'm participating in a hackathon in Princeton, New Jersey as part of [my work on the Human Services Data API (HSDA)](http://org.open.referral.adopta.agency/). We are at a large enterprise financial group's office, as part of a three day social good hackathon / code sprint. Everybody participating is taking time off from their normal day job as back-end or front-end programmer, and business analyst, to build something for the greater good. Since it is an enterprise developer group the concept of a hackathon is somewhat new to them, and is the first time they've worked on external projects, instead of an internally focused hackathon event.
+
+I'm enjoying watching the two teams working on human services projects be forced out of their bubble. One of the projects has three separate 3rd party APIs to work with. 1) Simple spreadsheet deployed web API, 2) government agency published web API, and 3) HSDA API operated by a municipal organization. I am sitting here watching them get exposed to the variety of implementations, quality of data and interface, and wrestle with establishing their project requirements. After being pulled from their bubble trying to understand the APIs, they are also finding themselves pulled out of their local development world, having to potentially use 3rd party tools, services, and even reverse engineering a library or codebase in a language they are not familiar with.
+
+This is all very, very healthy. No matter what gets built at this hackathon, the fact that they are being pulled out of their bubbles, will benefit their world. They are thinking outside their governance bubble. They are forced to learn about the API best or worst practices of other organizations. They are having to use services, tools, and programming languages they aren't familiar with. All with the motivation of potentially building something for good. They are exercising their skills and knowledge in ways that they won't encounter in the routine, and highly structured worlds they exist in. Another layer of all of this is that a portion of the team members are from an external group, and have never even met in person--I just watched two of them introduce themselves, and make the connection that they've worked together on many projects, but never met in person. #win
+
+This isn't just startup style thinking for a hackathon. The objective of this event is to build on top of existing tooling, improve existing processes, and add value to existing non-profit organizations. Even with these objectives, the most value is the exhaust from the conversations, planning, and what folks are learning along the way. Also, getting these folks out of their bubble tackling meaningful problems, pulling them away from their routine, and feeling like they are making a change. The hackathon format is part of this, but the API(s) are really a catalyst for change, and a vehicle for helping pull folks out of their carefully crafted environments. The APIs are helping these enterprise developers, project managers, and business analysts think differently, and consider other approaches to getting things done. Hopefully something that will stick with them in the future.

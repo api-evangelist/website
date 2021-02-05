@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Learning More About Amazon Alexas Approach to APIs And Skills Development</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Learning More About Amazon Alexas Approach to APIs And Skills Development | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Learning More About Amazon Alexas Approach to APIs And Skills Development | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+  <ul class="icons">
+    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+  </ul>
+</header>
+
+    	        <h2>Learning More About Amazon Alexas Approach to APIs And Skills Development</h2>
+<p><span class="post-date">16 Jul 2017</span></p>
+<p><a href="https://developer.amazon.com/alexa"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png" align="right" width="40%" style="padding 15px" /></a></p>
+<p>I have had <a href="https://developer.amazon.com/alexa">Amazon Alexa</a> in my cross hairs for some time now. I regularly digest stories about what Amazon is up to with Alexa, but haven’t had the time to think deeply about voice enablement, and their approach to developing what they call “skills”. I’m not 100% convinced voice enablement is the future of human compute interfaces, but I do see the role they can play in some situations, for some people. Plus, all the actions involved with Alexa and it’s ecosystem are all driven using APIs, which will almost always make me perk up, and pay a little more attention–I have a serious problem.</p>
+
+<p>The Amazon Alexa platform centers around two specific areas of development:</p>
+
+<ul>
+  <li><strong>Alexa Voice Service</strong> - The actual voice enablement, and baking Alex voice into applications, devices, your home, car, and other physical objects in our world.</li>
+  <li><strong>Alexa Skills Kit</strong> - The things that you can say to your Alex that will tigger specific actions, which make calls to APIs, and return something useful (or not).</li>
+</ul>
+
+<p>Its all about baking Alex Voice Service baked into as many devices you possibly can, and develop the catalog of skills that the voice enabled application can put to use. Ok. Well, my next question(s) are 1) what is a skill, and 2) what can you actually do with skills? Amazon provides some resources to help with the basics:</p>
+
+<ul>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-different-types-of-skills"><strong>Understanding the Different Types of Skills</strong></a></li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-how-users-interact-with-skills"><strong>Understanding How Users Interact with Skills</strong></a></li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/requirements-to-build-a-skill"><strong>Requirements to Build a Skill</strong></a></li>
+</ul>
+
+<p>Ok, helps me grasp what is their definition of a skill a little bit, and how it delivers their view of a voice enabled user interaction. Next, what can a skill really do? Or, what types of “skills” does Amazon want you to build? They start with the lofty perspective of “anything”, or “<a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-custom-skills">custom  skills</a>”, to hook us technologists who like to think about at this level and fill in the gaps with our magical technological skills–a fundamental building block of API culture.</p>
+
+<ul>
+  <li>Look up information from a web service</li>
+  <li>Integrate with a web service to order something (order a car from Uber, order a pizza from Domino’s Pizza)</li>
+  <li>Interactive games</li>
+</ul>
+
+<p>This is API Evangelism 101. You start with everything and anything is possible, and work your way down from there. After lighting the imagination with custom skills, the focus in on a couple of specific types of actions, serving very specific purposes:</p>
+
+<ul>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/overviews/understanding-the-smart-home-skill-api">Smart Home Skill API</a>
+    <ul>
+      <li>Turn lights on and off</li>
+      <li>Change the brightness of dimmable lights</li>
+      <li>Change the color or color temperature of a tunable light</li>
+      <li>Change the temperature on a thermostat</li>
+      <li>Query a lock to see if it is currently locked</li>
+      <li>Ask for a smart home camera feed</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/building-smart-home-skills-for-entertainment-devices">Entertainment Device Control in the Smart Home Skill API</a>
+    <ul>
+      <li>Change the volume</li>
+      <li>Change the channel</li>
+      <li>Pause, rewind or fast forward music or video content</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-video-skill-api">Video Skills API</a>
+    <ul>
+      <li>Play a movie</li>
+      <li>Find a TV show</li>
+      <li>Change a channel</li>
+      <li>Pause, rewind, or fast forward video content</li>
+    </ul>
+  </li>
+  <li><a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/understanding-the-flash-briefing-skill-api">Flash Briefing Skill API</a></li>
+</ul>
+
+<p>Now the concept of a skill comes into focus a little more for me. Amazon really wants to encourage developers to develop features that deliver in a home environment, entertaining us. Alexa performance and entertainment skills. So far I have just pulled references from Amazon Alexa’s documentation, if you want to see what has been developed by the community, you can head over <a href="https://www.amazon.com/b?node=13727921011">to the Alex skills catalog</a>. I also recommend <a href="https://github.com/dale3h/alexa-skills-list">checking out a pretty robust 3rd party skills list</a>, which gives a view of skills from the outside-in.</p>
+
+<p>Alexa Voice Service and Skills Kit are the two core services, but when you browse the documentation, you see there is a 3rd area given just as much prominence–the <a href="https://developer.amazon.com/alexa-fund">Alexa Fund</a>, which “provides up to $100 million in investments to fuel voice technology innovation”. This is an important aspect of the skills development conversation, an opportunity to get funding to support the creation of skills. While Slack doesn’t use the word skills, <a href="https://slack.com/developers/fund">they also have a fund for investing in conversational interfaces</a> (messaging, chat, and bot). One thing to note here, <a href="https://developer.amazon.com/public/solutions/alexa/rewards-for-skill-developers">Amazon has additional rewards program where developers can earn rewards when developing specially game skills for the Alexa platform</a>–providing another glimpse into their strategy.</p>
+
+<p>I am writing this post to support our Contrafabulist podcast, but I’m also doing it to feed my wider voice research as the API Evangelist. So I have to highlight some of the common building blocks of the Alexa approach to API management, helping me better understand Amazon’s approach to this set of API resources.</p>
+
+<ul>
+  <li><strong>Glossary</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/alexa-skills-kit-glossary</li>
+  <li><strong>Forum</strong> - http://forums.developer.amazon.com/forums/category.jspa?categoryID=60</li>
+  <li><strong>FAQs</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/docs/alexa-voice-service-developer-preview</li>
+  <li><strong>Blog</strong> - https://developer.amazon.com/blogs/alexa/tag/AVS</li>
+  <li><strong>Terms of Service</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/support/terms-and-agreements</li>
+</ul>
+
+<p>Beyond the common building blocks for operating their developer portal, supporting their APIs, they have some interesting design elements available for developers. Helping direct Alex developers to develop skills and voice-enabled applications that fit in with their objectives:</p>
+
+<ul>
+  <li><strong>Designing for AVS</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/designing-for-the-alexa-voice-service</li>
+  <li><strong>Functional Design Guide</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/alexa-voice-service-functional-design-guide</li>
+  <li><strong>UX Design Guidelines</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/alexa-voice-service-ux-design-guidelines</li>
+  <li><strong>Marketing Brand Guidelines</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/marketing-brand-guidelines</li>
+</ul>
+
+<p>These design elements tell an interesting story regarding how Amazon is aligning the concept of skills development with their voice enabled API strategy. It also provides an interesting approach to design guides that other API providers might want to consider. After the design guides, Amazon provides some interesting code and hardware to help developers, providing starter kits to get going developing skills as well as actual physical voice integration:</p>
+
+<ul>
+  <li><strong>Projects and Sample Code</strong> - https://github.com/alexa/alexa-avs-sample-app</li>
+  <li><strong>API and Reference</strong> - https://developer.amazon.com/public/solutions/alexa/alexa-voice-service/content/avs-api-overview</li>
+  <li><strong>Development Kits for AVS</strong> - https://developer.amazon.com/dev-kits</li>
+  <li><strong>Development Kits (Hardware)</strong> - https://developer.amazon.com/alexa-voice-service/dev-kits</li>
+</ul>
+
+<p>There are three different stories going on here for me which I think are relevant to how we think about, and approach our usage of technology. I’m really interested in Amazon Alexa because of:</p>
+
+<ul>
+  <li><strong>Voice Enablement</strong> - How do you enable voice applications using APIs? What role will voice play in the wider conversational API landscape?</li>
+  <li><strong>Skills Concept</strong> - I am fascinated by the concept of a skill and how it applies to not just voice enablement, and conversational interface, but also representing a unit of compute or a transaction that occurs in API land (serverless, microservices, containers, etc.)</li>
+  <li><strong>API Management</strong> - How do you manage a set of APIs that serve conversational interfaces and voice-enablement? What is different than regular API management, and what can others learn from their approach?</li>
+</ul>
+
+<p>As I said in the opening, I’m not 100% convinced that voice interfaces will be the future for everyone. I depend on the intimacy that exists between my fingers and the keyboard to make the magic happen each day–which might be a little noisy, but it doesn’t involve me rambling on, talking to a device. Even though I’m not into voice interfaces, and much of a talker, I am interested in the motivations behind, and the approach that Amazon is taking with their conversational interfaces. It is something i’m comparing with my research into Twitter, Slack, as well as Facebook. These companies are investing a lot into their ecosystems–you can see the signs of it over at Amazon with <a href="https://www.amazon.jobs/en/teams/alexa-skills?base_query=&amp;loc_query=&amp;job_count=10&amp;result_limit=10&amp;sort=relevant&amp;team_category%5B%5D=alexa-skills&amp;cache">the 137 job openings for their Alex team</a>.</p>
+
+<p>Audrey and I are going to talk about Amazon Alexa on our Contrafabulists podcast this week, so you can tune in to get more thoughts of mine regarding Alexa, and voice enablement APIs. I’ll probably continue the exploration of my thoughts about this approach to interfaces, and particularly the development of “skills”. Which I think has an interesting overlap with APIs, and the modularization we are seeing as a result of compute (ie. containers, microservices, devops), as well as the impact APIs are having on labor (ie. Uber, Mechanical Turk, Task Rabbit). I feel like there is a lot more going on here than just developing fun skills for having conversations with Alexa in your home.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/07/13/quantifying-the-difference-between-human-services-data-specification-hsds-and-its-api/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/07/17/making-all-sub-resources-available-within-the-core-set-of-human-service-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+              
+<footer>
+  <hr>
+  <div class="features">
+    
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+      
+      <article>
+        <div class="content">
+          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+        </div>
+      </article>
+      
+    
+  </div>
+  <hr>
+  <p align="center">
+    relevant work:
+    <a href="http://apievangelist.com">apievangelist.com</a> |
+    <a href="http://adopta.agency">adopta.agency</a>
+  </p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="http://101.apievangelist.com/">101</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
+    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
+    <li><a href="/search/">Search</a></li>
+    <li><a href="/newsletters/">Newsletters</a></li>
+    <li><a href="/images/">Images</a></li>
+    <li><a href="/archive/">Archive</a></li>
+  </ul>
+</nav>
+
+              <section>
+  <div class="mini-posts">
+    <header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+    
+    
+      
+        <article style="display: inline;">
+          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+      
+        <article style="display: inline;">
+          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
+        </article>
+      
+    
+  </div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>
