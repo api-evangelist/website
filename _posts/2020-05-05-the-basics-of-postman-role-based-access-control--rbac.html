@@ -1,0 +1,61 @@
+---\nlayout: post\ntitle: 'The Basics of Postman Role Based Access Control  (RBAC)'/nsource: http://apievangelist.com/2020/05/05/the-basics-of-postman-role-based-access-control--rbac//ndomain: apievangelist.com/nimage: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/api_roles_postman.png/n---/n<p><a href="https://learning.postman.com/docs/postman/collaboration/roles-and-permissions/"><img style="padding: 15px;" src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/api_roles_postman.png" alt="" width="40%" align="right" /></a></p>
+<p class="p3">I am working up towards a loftier piece on the importance of RBAC to the API life cycle, and as part of my research I was going through all of the documentation postman has <a href="https://learning.postman.com/docs/postman/collaboration/roles-and-permissions/">for roles and permission at the team, workspace, api, and collection levels</a>. RBAC is one of those layers of the API discussion that touches on almost every other layer, making it an area you have to not just think about at the microscopic levels within workspaces, but also at the macro level thinking about organizational and team level impact. I&rsquo;m feeling like I am going to need to flesh out several dimensions of what is RBAC here on the blog, as well as the other critical factors of what influences RBAC across operations.</p>
+<h3>The Basic Building Blocks of Postman RBAC</h3>
+<p class="p3">To get a handle on things I wanted to think deeply about the core building blocks of Postman RBAC, and consider the roles, as well as the objects in which access is being controlled, but also the downstream effects of how RBAC gets applied or not. When you browse the Postman Learning Center under <a href="https://learning.postman.com/docs/postman/collaboration/roles-and-permissions/">roles and permissions</a>&nbsp;you get the following breakdown:</p>
+<ul class="ul1">
+<li class="li3"><strong>Team Role</strong> 
+<ul>
+<li>Admin: manage team members and team settings</li>
+<li>Billing: manage team plan and payments</li>
+<li>Developer: access team resources and workspaces</li>
+</ul>
+</li>
+<li class="li3"><strong>Workspace Roles</strong> 
+<ul>
+<li>Admin: manage workspace details and members</li>
+<li>Collaborator: work on team resources in a workspace</li>
+</ul>
+</li>
+<li class="li3"><strong>API Roles</strong> 
+<ul>
+<li>Editor: edit APIs directly</li>
+<li>Viewer: view, fork, and export APIs</li>
+</ul>
+</li>
+<li class="li3"><strong>Collection Roles</strong> 
+<ul>
+<li>Editor: edit collections directly</li>
+<li>Viewer: view, fork, and export collections</li>
+</ul>
+</li>
+</ul>
+<p class="p3">That represents nine individual roles defined by the API resources in which they are applied. Postman does a good job of breaking out the control each role has in each of the respective areas, but the overall effectiveness of RBAC will be determined by how solid of a strategy you have for defining and managing each of these areas&mdash;meaning you are going to to have a strategy in place, and being willing to invest the energy in managing each area:</p>
+<ul class="ul1">
+<li class="li3"><strong>Teams</strong> - If team members of all of your AIP development staff isn&rsquo;t well defined, controlling access will be challenging.</li>
+<li class="li3"><strong>Workspaces</strong> - Without a formal approach how workspaces are create and how they are used controlling will be difficult.</li>
+<li class="li3"><strong>APIs</strong> - In the absence of a strategy for how APIs are defined, synced, and leveraged you won&rsquo;t be able to nail down access.</li>
+<li class="li3"><strong>Collections</strong> - There has to be a method to the madness of how collections are created and evolved or control will fall short.</li>
+</ul>
+<p class="p3">It is difficult to control access to a moving and ever evolving target. Sure, teams, workspaces, apis, and collections will always be evolving, but you have to contract some sort of scaffolding for governing how teams, workspaces, apis, and collections are created, versioned, and shared, establishing a strategy for managing change across all types of roles.<span>&nbsp;</span></p>
+<h3>Downstream API Life Cycle Effects of RBAC</h3>
+<p class="p3">Since Postman collections are used to define, power, and publish other stops along the API life cycle you have to have some observability and plan behind how collections are used across the API life cycle, as well as how workspaces are defined to support the development, sustainment, and general operations of all APIs. The downstream API life cycle effects are hard to quantify if you do not have a solid strategy for defining how APIs and collections are used for each stop along the API lifecycle, including, but not limited to:</p>
+<ul class="ul1">
+<li class="li3"><strong>Mocks</strong> - How are mock servers defined, created, used, maintained, and torn down as part of the API life cycle.</li>
+<li class="li3"><strong>Docs</strong> - Which collections are used purely for supporting documentation and how are they evolved and put to use.</li>
+<li class="li3"><strong>Tests</strong> - Which collections and APIs are used as part of performance, contract, integration, and other test suites.</li>
+<li class="li3"><strong>Code</strong> - When it comes to code generation there should a clear vision of which artifacts are being used to deliver.</li>
+</ul>
+<p class="p3">If you don&rsquo;t have a clear understanding of how you are powering each stop along the API life cycle it can be difficult to control access to the teams, workspaces, roles, and collections behind each individual stop. Meaning you can&rsquo;t properly prevent changes being made to the documentation for an API if you don&rsquo;t have a clear picture of which collections power docs, and which workspaces that collections exists in. To do right, you need step back and look at the big picture.</p>
+<h3>Considering the Bigger Picture</h3>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stalin-time-border-crossing-through-fence.jpg" alt="" width="45%" align="right" /></p>
+<p class="p3">In addition to the roles and resources we are controlling access to and the downstream effects of RBAC being applied well or not, there are numerous other dimensions to think about. Too many for just a single post, requiring me to spend time digging, scratching, and working to make sense of what the big picture of API RBAC looks like across the entire API life cycle. Here are just a few of the areas I am thinking about in addition to what I have listed above, making for the seeds of future blog posts here on API Evangelist.<span>&nbsp;</span></p>
+<ul class="ul1">
+<li class="li3"><strong>Activity</strong> - How is the activity of team members evaluated to better understand the need for tightening or loosening RBAC.</li>
+<li class="li3"><strong>History</strong> - How is the history of collections usage evaluated and understood to help paint a clear picture of how RBAC is applied.</li>
+<li class="li3"><strong>Auditing</strong> - Regularly auditing RBAC looking for how it is being applied or not being applied across an organization.</li>
+<li class="li3"><strong>Monitoring</strong> - Considering how monitoring can be enabled to better understand the effectiveness of RBAC across teams.</li>
+<li class="li3"><strong>Automation</strong> - Looking to automate some of the implementation of RBAC to help realize the housekeeping needed for RBAC.</li>
+<li class="li3"><strong>Observability</strong> - Producing output from RBAC activity so that there is as much observability as possible into how access is controlled.</li>
+</ul>
+<p class="p3">Like most aspects of API operations there is so much that can go wrong with RBAC if you don&rsquo;t have other areas in order. I would say that there has to be other dimensions I am not considering. These six areas reflect the output from RBAC being applied across the API life cycle. I&rsquo;ll have to step back a bit and simmer on the roles and resources involved with RBAC, as well as how this trickles down to mocks, docs, testing, and code, while also looking to quantify it all along the way. I am guessing there are other dimensions like SSO and GitHub sync which will significantly impact the success or failure of RBAC in ways I can&rsquo;t see right now&mdash;I will keep scratching.</p>
+<p class="p3">This is the first time that I have had a tool that would even begin to touch on the complexity of organizational change across API operations, so a lot of this is new territory for me. This isn&rsquo;t RBAC for a single API, which I&rsquo;ve done numerous times. This is RBAC for the API life cycle. Most places I&rsquo;ve worked do not have a formal definition of what the API life cycle means, so controlling access across the life cycle based upon well defined roles represents a pretty big opportunity to move the API conversation forward across large organizations. Anyways, I will keep simmering on this stuff, and dive into other dimensions, eventually arriving at some point with a stronger view of what RBAC looks like for the entire API life cycle so that I can write something a little smarter for the Postman blog.</p>\n
