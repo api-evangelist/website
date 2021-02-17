@@ -1,0 +1,50 @@
+---
+published: true
+layout: post
+title: 'An OpenAPI Vendor Extension For Defining Your API Audience'
+image: http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg
+---
+
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg" width="45%" align="right" style="padding: 15px;" />
+<p>The clothing marketplace Zalando has an interesting approach to classifying their APIs based upon who is consuming them. It isn’t just about APIs being published publicly, or privately, they actually have standardized their definition, and have established an OpenAPI vendor extension, so that the definition is machine readable and available via their OpenAPI.
+
+<p><a href="https://zalando.github.io/restful-api-guidelines/index.html#219">According to the Zalando API design guide</a>, “<em>each API must be classified with respect to the intended target audience supposed to consume the API, to facilitate differentiated standards on APIs for discoverability, changeability, quality of design and documentation, as well as permission granting. We differentiate the following API audience groups with clear organisational and legal boundaries.</em>”
+
+<ul>
+  <li><strong>component-internal</strong> - The API consumers with this audience are restricted to applications of the same functional component (internal link). All services of a functional component are owned by specific dedicated owner and engineering team. Typical examples are APIs being used by internal helper and worker services or that support service operation.</li>
+  <li><strong>business-unit-internal</strong> - The API consumers with this audience are restricted to applications of a specific product portfolio owned by the same business unit.</li>
+  <li><strong>company-internal</strong> - The API consumers with this audience are restricted to applications owned by the business units of the same the company (e.g. Zalando company with Zalando SE, Zalando Payments SE &amp; Co. KG. etc.)</li>
+  <li><strong>external-partner</strong> - The API consumers with this audience are restricted to applications of business partners of the company owning the API and the company itself.</li>
+  <li><strong>external-public</strong> - APIs with this audience can be accessed by anyone with Internet access.</li>
+</ul>
+
+<p><em><strong>Note:</strong> a smaller audience group is intentionally included in the wider group and thus does not need to be declared additionally. The API audience is provided as API meta information in the info-block of the Open API specification and must conform to the following specification</em>:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#/info/x-audience:
+  type: string
+  x-extensible-enum:
+    - component-internal
+    - business-unit-internal
+    - company-internal
+    - external-partner
+    - external-public
+  description: |
+    Intended target audience of the API. Relevant for standards around
+    quality of design and documentation, reviews, discoverability,
+    changeability, and permission granting.
+</code></pre></div></div>
+<p><em><strong>Note:</strong> Exactly one audience per API specification is allowed. For this reason a smaller audience group is intentionally included in the wider group and thus does not need to be declared additionally. If parts of your API have a different target audience, we recommend to split API specifications along the target audience — even if this creates redundancies (rationale).</em>
+
+<p>Here is an example of the OpenAPI vendor extension in action, as part of the info block:
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>swagger: '2.0'
+info:
+  x-audience: company-internal
+  title: Parcel Helper Service API
+  description: API for &lt;...&gt;
+  version: 1.2.4
+</code></pre></div></div>
+<p>Providing a pretty interesting way of establishing the scope and reach of each API in a way that makes each API owner think deeply about who they are / should be targeting with the service. Done in a way that makes the audience focus machine readable, and available as part of it’s OpenAPI definition which can be then used across discovery, documentation, and through API governance and security.
+
+<p>I like the multiple views of who the audience could be, going beyond just public and private APIs. I like that it is an OpenAPI vendor extension. I like that they even have a schema crafted for the vendor extension–another interesting concept I’d like to see more of. Overall, making for a pretty compelling approach to define the reach of our APIs, and quantifying the audience we are looking to reach with each API we publish.
+
+
+
