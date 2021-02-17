@@ -1,247 +1,22 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>API Design Industry Guide: gRPC, Open Source RPC Framework</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'API Design Industry Guide: gRPC, Open Source RPC Framework'
+image: https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png" align="right" width="40%" style="padding: 15px;" /></a>
+<p><em>This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure.</em>
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>gRPC is a high-performance open source remote procedure call (RPC) framework that is often used to deploy APIs across data centers that also supporting load balancing, tracing, health checks and authentication. While gRPC excels in more controlled, tightly coupled environments, it is also applicable for delivering resources to web, mobile, and other Internet connected devices.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+<p>When crafting gRPC APIs, you begin by defining the service using Protocol Buffers, a language and toolset for binary serialization that has support across 10 leading programming languages. Protocol Buffers can be used to generate client and server stubs in these programming languages with tight API/client  coupling  — delivering a higher level of performance than your average REST API and SDK can.
 
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+<p>gRPC API design patterns takes advantage of HTTP/2 advances and uses authenticated bi-directional streaming to deliver APIs that can be scaled to millions of RPC calls per second. Its an effective  approach for larger, more demanding API platforms that have begun to see the performance limitations of a more RESTful API design approach. gRPC is not ideal for every API implementation, but is definitely an approach providers should consider when high volumes anticipated, especially within the data center or other tightly controlled environment.
 
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
+<p>Google has been using gRPC internally for over a decade now, but has recently committed to delivering all their public APIs using gRPC in addition to RESTful APIs, demonstrating that the API design patterns can coexist. This approach makes it a welcome addition to any microservice style architecture. It has  the added benefit of API management features like authentication, tracing, load balancing, and health checking that are required to deliver high  performance.
 
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="API Design Industry Guide: gRPC, Open Source RPC Framework | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="API Design Industry Guide: gRPC, Open Source RPC Framework | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png">
+<p>gRPC is definitely more of an industrial grade API design pattern, shifting APIs into the next gear when it comes to performance. It also leverages the next generation of the HTTP protocol, HTTP/2. While not an API design pattern that every API provider will be working with, they should be aware it exists so that they understand what it is and the role it plays in the space.
 
 
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>API Design Industry Guide: gRPC, Open Source RPC Framework</h2>
-<p><span class="post-date">28 Sep 2017</span></p>
-<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-grpc-open-source-rpc-framework.png" align="right" width="40%" style="padding: 15px;" /></a></p>
-<p><em>This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure.</em></p>
-
-<p>gRPC is a high-performance open source remote procedure call (RPC) framework that is often used to deploy APIs across data centers that also supporting load balancing, tracing, health checks and authentication. While gRPC excels in more controlled, tightly coupled environments, it is also applicable for delivering resources to web, mobile, and other Internet connected devices.</p>
-
-<p>When crafting gRPC APIs, you begin by defining the service using Protocol Buffers, a language and toolset for binary serialization that has support across 10 leading programming languages. Protocol Buffers can be used to generate client and server stubs in these programming languages with tight API/client  coupling  — delivering a higher level of performance than your average REST API and SDK can.</p>
-
-<p>gRPC API design patterns takes advantage of HTTP/2 advances and uses authenticated bi-directional streaming to deliver APIs that can be scaled to millions of RPC calls per second. Its an effective  approach for larger, more demanding API platforms that have begun to see the performance limitations of a more RESTful API design approach. gRPC is not ideal for every API implementation, but is definitely an approach providers should consider when high volumes anticipated, especially within the data center or other tightly controlled environment.</p>
-
-<p>Google has been using gRPC internally for over a decade now, but has recently committed to delivering all their public APIs using gRPC in addition to RESTful APIs, demonstrating that the API design patterns can coexist. This approach makes it a welcome addition to any microservice style architecture. It has  the added benefit of API management features like authentication, tracing, load balancing, and health checking that are required to deliver high  performance.</p>
-
-<p>gRPC is definitely more of an industrial grade API design pattern, shifting APIs into the next gear when it comes to performance. It also leverages the next generation of the HTTP protocol, HTTP/2. While not an API design pattern that every API provider will be working with, they should be aware it exists so that they understand what it is and the role it plays in the space.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2017/09/28/how-do-we-help-folks-understand-that-apis-are-a-journey/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2017/09/29/api-design-industry-guide-graphql-a-query-language-for-apis/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

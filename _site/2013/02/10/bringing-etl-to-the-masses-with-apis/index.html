@@ -1,333 +1,108 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Bringing ETL to the Masses with APIs</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Bringing ETL to the Masses with APIs'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Automation.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2013/02/10/bringing-etl-to-the-masses-with-apis/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Bringing ETL to the Masses with APIs | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Automation.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2013/02/10/bringing-etl-to-the-masses-with-apis/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Bringing ETL to the Masses with APIs | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-API-Automation.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Bringing ETL to the Masses with APIs</h2>
-<p><span class="post-date">10 Feb 2013</span></p>
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/Tag-Cloud-API-Automation.png" alt="" width="325" align="right" /></p>
-<p>I&rsquo;m spending a lot of time lately thinking about <a title="emerging trends in API usage" href="http://apievangelist.com/trends/">emerging trends in API usage</a>. One area I&rsquo;m tracking on, is around companies that are offering simple services that provide interoperability and automation between cloud platforms, using APIs.   The best known examples are from companies like <a title="IFTTT" href="http://ifttt.com">If This Then That (IFTTT)</a> and <a href="http://zapier.com">Zapier</a>, who provide end users with simple icon based tools for defining  tasks that move data between SaaS platforms.</p>
-<p>Its tough to define this space, which in enterprise speak is really just <a href="http://en.wikipedia.org/wiki/Extract,_transform,_load">Extract Transform Load (ETL)</a>, which is historically a process to migrate information between systems in an enterprise, using data sources and web services.  But with the popularity of web APIs, we need to rethink ETL in the context of the cloud and update how we approach interoperability between the growing number of API driven platforms.</p>
-<p>Mike Reich of Seabourne, and I were discussing this last time I was in Washington D.C., and he currently has a great blog post on <a title="rethinking ETL in the API age" href="http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/">rethinking ETL for the API age</a>.  If you don&rsquo;t know <a title="Seabourne" href="http://seabourneinc.com/">Seabourne</a>, they are behind high profile government projects like <a title="MyFCC" href="http://my.fcc.gov/">MyFCC</a> and <a title="GovInfo" href="http://govinfo.io/">GovInfo</a>.  They have been doing a lot of thinking about how to acquire, process and publish content with APIs.</p>
-<p>To better help <span style="text-decoration: underline;">me</span>&nbsp;better understand the space, I&rsquo;m watching 12 service providers that I&rsquo;m putting in a bucket of what I consider the next generation of ETL providers:</p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/Tag-Cloud-API-Automation.png" alt="" width="325" align="right" />
+<p>I&rsquo;m spending a lot of time lately thinking about <a title="emerging trends in API usage" href="http://apievangelist.com/trends/">emerging trends in API usage</a>. One area I&rsquo;m tracking on, is around companies that are offering simple services that provide interoperability and automation between cloud platforms, using APIs.   The best known examples are from companies like <a title="IFTTT" href="https://ifttt.com">If This Then That (IFTTT)</a> and <a href="https://zapier.com">Zapier</a>, who provide end users with simple icon based tools for defining  tasks that move data between SaaS platforms.
+<p>Its tough to define this space, which in enterprise speak is really just <a href="https://en.wikipedia.org/wiki/Extract,_transform,_load">Extract Transform Load (ETL)</a>, which is historically a process to migrate information between systems in an enterprise, using data sources and web services.  But with the popularity of web APIs, we need to rethink ETL in the context of the cloud and update how we approach interoperability between the growing number of API driven platforms.
+<p>Mike Reich of Seabourne, and I were discussing this last time I was in Washington D.C., and he currently has a great blog post on <a title="rethinking ETL in the API age" href="http://seabourneinc.com/2013/02/08/rethinking-etl-for-the-api-age/">rethinking ETL for the API age</a>.  If you don&rsquo;t know <a title="Seabourne" href="http://seabourneinc.com/">Seabourne</a>, they are behind high profile government projects like <a title="MyFCC" href="http://my.fcc.gov/">MyFCC</a> and <a title="GovInfo" href="http://govinfo.io/">GovInfo</a>.  They have been doing a lot of thinking about how to acquire, process and publish content with APIs.
+<p>To better help <span style="text-decoration: underline;">me</span>&nbsp;better understand the space, I&rsquo;m watching 12 service providers that I&rsquo;m putting in a bucket of what I consider the next generation of ETL providers:
 <table border="0" cellspacing="3" cellpadding="3" width="100%" align="center">
 <tbody>
 <tr>
-<td width="25%" align="center"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png" alt="" width="100" /></td>
+<td width="25%" align="center"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png" alt="" width="100" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Cloudwork" href="http://cloudwork.com/"><strong>Cloudwork</strong></a> - Cloudwork is a service that allows users to automate tasks between Google Apps, Salesforce, Evernote, Zoho, Twitter, Freshbooks, MailChimp, Zendesk, Dropbox, WordPress and others.</td>
 </tr>
 <tr>
 <td width="25%" align="center">
-<p>&nbsp;</p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="150" /></p>
-<p>&nbsp;</p>
+<p>&nbsp;
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="150" />
+<p>&nbsp;
 </td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Elastic.io" href="http://elastic.io/"><strong>Elastic.io</strong></a> - elastic.io helps you to automate routine operations and connect multiple cloud APIs.</td>
 </tr>
 <tr>
 <td width="25%" align="center">
-<p>&nbsp;</p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png" alt="" width="150" /></p>
-<p>&nbsp;</p>
+<p>&nbsp;
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png" alt="" width="150" />
+<p>&nbsp;
 </td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Foxweave" href="http://www.foxweave.com/"><strong>Foxweave</strong></a> - FoxWeave is a Cloud-Based Data Integration Platform that lets you easily migrate and synchronize data across all your Cloud and On-Premise applications and databases, without having to write any code.</td>
 </tr>
 <tr>
 <td width="25%" align="center">
-<p>&nbsp;</p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg" alt="" width="150" /></p>
-<p>&nbsp;</p>
+<p>&nbsp;
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg" alt="" width="150" />
+<p>&nbsp;
 </td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="If This Then That (IFTTT)" href="https://ifttt.com/"><strong>If This Then That (IFTTT)</strong></a> - IFTTT is a service that enables customers to connect channels (i.e. Facebook, Evernote, Weather, Dropbox, etc.) with personally created or publicly shared Recipes.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png" alt="" width="100" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png" alt="" width="100" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="itDuzzit" href="http://cloud.itduzzit.com/"><strong>itDuzzit</strong></a> - itDuzzit is a cloud integration platform like no other; simple enough for non-technical users, yet powerful enough to support the most complex integration.</td>
 </tr>
 <tr>
 <td width="25%" align="center">
-<p>&nbsp;</p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg" alt="" width="150" /></p>
-<p>&nbsp;</p>
+<p>&nbsp;
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg" alt="" width="150" />
+<p>&nbsp;
 </td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="MashableLogic" href="http://www.mashablelogic.com/"><strong>MashableLogic</strong></a> - MashableLogic is a mashup development platform that provides a system for leveraging API's by turning them into re-usable components that can be combined to compose software solutions.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Rules.io" href="https://www.rules.io/"><strong>Rules.io</strong></a> - Overwhelmed with too much data and too many metrics? &nbsp;The rules.io team drills into your data with you, giving you a concrete idea of which users you should talk to and how to engage them.At the core of rules.io is a rules and segmentation engine which captures user-centric data such as usage and behavior, purchases, and technical problems, and allows you to act on this information in real-time or via triggered automation.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="SnapLogic" href="http://www.snaplogic.com/"><strong>SnapLogic</strong></a> - SnapLogic's modern web architecture, "containerized" Snaps, and thriving SnapStore ecosystem make it the only practical way to continually connect your company to the burgeoning number and diversity of data sources and cloud applications.&nbsp;</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="SortMyBox" href="http://www.sortmybox.com/"><strong>SortMyBox</strong></a> - Like e-mail filters, for your files in the cloud. SortMyBox is a magic folder that moves files to folders based on your rules.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Wappwolf" href="http://wappwolf.com/dropboxautomator/"><strong>Wappwolf</strong></a> - Wappwolf is focused on deconstructing the barriers of the Cloud, by connecting your Evernote, Facebook, Flickr, and other web services / apps to Dropbox, allowing users to drag &amp; drop files into a predefined folder on Dropbox and automatically convert and sync to your favorite places.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/yahoo-pipes-logo.jpg" alt="" width="150" /></td>
-<td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Yahoo Pipes" href="http://pipes.yahoo.com/pipes/"><strong>Yahoo Pipes</strong></a> - Pipes is a composition tool to aggregate, manipulate, and mashup content from around the web. Like Unix pipes, simple commands can be combined together to create output that meets your needs.</td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/yahoo-pipes-logo.jpg" alt="" width="150" /></td>
+<td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Yahoo Pipes" href="https://pipes.yahoo.com/pipes/"><strong>Yahoo Pipes</strong></a> - Pipes is a composition tool to aggregate, manipulate, and mashup content from around the web. Like Unix pipes, simple commands can be combined together to create output that meets your needs.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Zapier" href="https://zapier.com"><strong>Zapier</strong></a> - Zapier lets SaaS users create integrations that push data between hundreds of best-in-breed web applications without having to write any code or wrangle APIs.</td>
 </tr>
 </tbody>
 </table>
-<p>I feel that this new group of ETL providers are focused sufficiently on the new world of API driven platforms, beyond just "data sources" and "web services".  There are more providers like <a href="http://apatar.com/">Apatar</a> and <a href="http://www.jitterbit.com/Solutions/etl-data-integration">Jitterbit</a>, but I feel these providers are more ETL than, than reflecting new breed of API interoperability providers (which I don&rsquo;t have proper name for yet).  One characteristic I&rsquo;m looking for is ease of use.  I think this new breed should be more for end-users, SaaS users and ultimately empowering the masses--not IT, which I feel ETL is designed for.</p>
-<p>This new generation of <a href="http://apievangelist.com/trends/interoperability.php">interoperability providers</a> should be about solving the problems average users face when operating online and in the cloud, and not just extracting, transforming and loading--making ETL something anyone can understand and put to use. &nbsp;Further democratizing IT resources, which is a common theme with SaaS, APIs, etc.</p>
-<p>I think the new players like Zapier and IFTTT have to be concerned with getting too complex for everyday users, become more ETL, than being about solving end-user problems.  I think we will need very specialized, niche implementations--much like we are seeing with <a href="http://apievangelist.com/trends/baas.php">BaaS</a> and the emergence of specialized versions like <a href="http://apievangelist.com/2013/02/01/new-open-source-backend-as-a-services-platform-for-game-developers/">BaaS for gaming</a>.  Very niche versions of ETL like <a title="SortMyBox" href="http://www.sortmybox.com/">SortMyBox</a> and <a href="http://wappwolf.com/dropboxautomator/">WapWolf Dropbox Automator</a>, which focus only on solving file management problem users are facing, will be successful, because they are easy for users to understand and put to work.</p>
-<p>I think there is an opportunity to quickly build the next generation ETL solutions that solve a set of automation, integration and interoperability problems for a niche audience using the simple icon based format we are seeing from providers like IFTT and <a title="Elastic.io" href="http://elastic.io/">Elastic.io</a>.  If you are considering building one of these new solutions, make sure and evaluate existing open source ETL solutions like:</p>
+<p>I feel that this new group of ETL providers are focused sufficiently on the new world of API driven platforms, beyond just "data sources" and "web services".  There are more providers like <a href="http://apatar.com/">Apatar</a> and <a href="http://www.jitterbit.com/Solutions/etl-data-integration">Jitterbit</a>, but I feel these providers are more ETL than, than reflecting new breed of API interoperability providers (which I don&rsquo;t have proper name for yet).  One characteristic I&rsquo;m looking for is ease of use.  I think this new breed should be more for end-users, SaaS users and ultimately empowering the masses--not IT, which I feel ETL is designed for.
+<p>This new generation of <a href="http://apievangelist.com/trends/interoperability.php">interoperability providers</a> should be about solving the problems average users face when operating online and in the cloud, and not just extracting, transforming and loading--making ETL something anyone can understand and put to use. &nbsp;Further democratizing IT resources, which is a common theme with SaaS, APIs, etc.
+<p>I think the new players like Zapier and IFTTT have to be concerned with getting too complex for everyday users, become more ETL, than being about solving end-user problems.  I think we will need very specialized, niche implementations--much like we are seeing with <a href="http://apievangelist.com/trends/baas.php">BaaS</a> and the emergence of specialized versions like <a href="http://apievangelist.com/2013/02/01/new-open-source-backend-as-a-services-platform-for-game-developers/">BaaS for gaming</a>.  Very niche versions of ETL like <a title="SortMyBox" href="http://www.sortmybox.com/">SortMyBox</a> and <a href="http://wappwolf.com/dropboxautomator/">WapWolf Dropbox Automator</a>, which focus only on solving file management problem users are facing, will be successful, because they are easy for users to understand and put to work.
+<p>I think there is an opportunity to quickly build the next generation ETL solutions that solve a set of automation, integration and interoperability problems for a niche audience using the simple icon based format we are seeing from providers like IFTT and <a title="Elastic.io" href="http://elastic.io/">Elastic.io</a>.  If you are considering building one of these new solutions, make sure and evaluate existing open source ETL solutions like:
 <table border="0" cellspacing="1" cellpadding="1" width="100%" align="center">
 <tbody>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="AutomateIt" href="http://automateit.org/"><strong>AutomateIt</strong></a> - AutomateIt is an open source tool for automating the setup and maintenance of servers, applications and their dependencies, providing a way to manage files, packages, services, networks, accounts, roles, templates and more.&nbsp;</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="CloverETL" href="http://www.cloveretl.com/"><strong>CloverETL</strong></a> - CloverETL is open source data integration platform based on Java. It can be used for data migration, data cleansing and other data transformation tasks.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Pentaho - Kettle" href="http://kettle.pentaho.com/"><strong>Pentaho - Kettle</strong></a> - Delivers powerful Extraction, Transformation and Loading (ETL) capabilities using an innovative, metadata-driven approach. With an intuitive, graphical, drag and drop design environment, and a proven, scalable, standards-based architecture, Pentaho Data Integration is increasingly the choice for organizations over traditional, proprietary ETL or data integration tools.</td>
 </tr>
 <tr>
-<td width="25%" align="center"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png" alt="" width="150" /></td>
+<td width="25%" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png" alt="" width="150" /></td>
 <td style="padding-left: 5px; vertical-align: middle;" width="75%" align="left"><a title="Talend" href="http://www.talend.com/"><strong>Talend</strong></a> - Talend offers open source middleware solutions that address big data integration, data management and application integration needs for businesses of all sizes.</td>
 </tr>
 </tbody>
 </table>
-<p>Don&rsquo;t reinvent the wheel, by rolling out your own ETL framework if at all possible.  This will allow you to focus on the specific acquire, transform and publish needs of your niche audience.  Even some of the new breed of providers are providing open source tools, like the <a href="https://github.com/rulesio/geekier/wiki">Geekier project</a> from <a href="https://rules.io/">Rules.io</a>, so do your homework. Also consider putting existing API aggregation providers like <a title="Singly" href="http://singly.com">Singly</a> to use, providing faster acquire and publish API connections with popular APIs, while also standardizing the objects across all platforms.</p>
-<p>I can envision video, photo, quantified-self and other niche services emerge that will empower any user to put APIs to use and acquire, transform and publish the valuable data, information and other content that are central to our increasingly fragmented online lives.  These new solutions will be framed in easy to understand terms that speak to specific audiences,  putting valuable API resources within reach of the masses.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2013/02/07/which-baas-pricing-model-is-better/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2013/02/12/facebook-launches-a-new-video-channel-for-developers/" class="button">Next >></a></li>
-	
-</ul>
+<p>Don&rsquo;t reinvent the wheel, by rolling out your own ETL framework if at all possible.  This will allow you to focus on the specific acquire, transform and publish needs of your niche audience.  Even some of the new breed of providers are providing open source tools, like the <a href="https://github.com/rulesio/geekier/wiki">Geekier project</a> from <a href="https://rules.io/">Rules.io</a>, so do your homework. Also consider putting existing API aggregation providers like <a title="Singly" href="http://singly.com">Singly</a> to use, providing faster acquire and publish API connections with popular APIs, while also standardizing the objects across all platforms.
+<p>I can envision video, photo, quantified-self and other niche services emerge that will empower any user to put APIs to use and acquire, transform and publish the valuable data, information and other content that are central to our increasingly fragmented online lives.  These new solutions will be framed in easy to understand terms that speak to specific audiences,  putting valuable API resources within reach of the masses.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

@@ -1,246 +1,21 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>How Open Should We Be With Our API Road-maps?</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'How Open Should We Be With Our API Road-maps?'
+image: http://kinlane-productions2.s3.amazonaws.com/Twitter-Logo.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2011/08/01/how-open-should-we-be-with-our-api-roadmaps/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="How Open Should We Be With Our API Road-maps? | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2011/08/01/how-open-should-we-be-with-our-api-roadmaps/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="How Open Should We Be With Our API Road-maps? | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>How Open Should We Be With Our API Road-maps?</h2>
-<p><span class="post-date">01 Aug 2011</span></p>
-<a href="http://www.twitter.com/"><img src="http://kinlane-productions.s3.amazonaws.com/Twitter-Logo.jpg" alt="" width="200" align="right" /></a>I just finished reading two great posts about battles within API ecosystems.<a href="http://www.readwriteweb.com/hack/2011/07/convoluted-tos-and-open-apis-w.php" target="_blank">Convoluted TOS and "Open" APIs Will Be the Death of Us</a> by <a href="http://twitter.com/#!/shiondev" target="_blank">Shion Deysarkar</a> and <a href="http://blog.louisgray.com/2011/07/topify-to-go-dark-as-twitter-claims.html" target="_blank">Topify to Go Dark as Twitter Claims Another Dev Victim</a> by <a href="http://twitter.com/#!/louisgray" target="_blank">Louis Gray</a>. I recommend you read, and form your own opinion.<p></p>
-I'm totally behind Shion in,<em> ..arguing that the breaching parties (i.e. the developers holding the API key) should not be held in contempt of court, as it were. </em>When it comes to terms of service disagreements, there needs to be more discussion.<p></p>
-<em></em>I also feel Topify's pain in their decision to, <em>..shut down the service, rather than chasing after Twitter's continued meandering API road-map</em>. This makes it very difficult to build a business on Twitters API.<p></p>
-I am the biggest advocate for the developer when it comes to these ecosystems battles. API developers often deliver on the promise of an API, but seldom see the reward.<p></p>
-<img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/topify_125.jpg" alt="" width="150" align="right" />However I also feel the pain of API owners. How are you supposed to have an API that delivers true value, is sustainable, makes all your developers happy, and have terms of service and a roadmap that is all knowing and sees into the future, and promises never to step on your developers toes.<p></p>
-I see both sides of the argument, however I feel much of the trouble Twitter and other API owners run into, is the result of not properly sharing its roadmap with developers. If Twitter shared its road-map <span style="text-decoration: underline;">earlier</span>, and <span style="text-decoration: underline;">more consistently</span> with its developers, and also allowed feedback periods before launching, I think there would a lot less backlash--even if the community didn't always win 100% in the resulting decision.<p></p>
+<a href="https://www.twitter.com/"><img src="https://kinlane-productions2.s3.amazonaws.com/Twitter-Logo.jpg" alt="" width="200" align="right" /></a>I just finished reading two great posts about battles within API ecosystems.<a href="http://www.readwriteweb.com/hack/2011/07/convoluted-tos-and-open-apis-w.php" target="_blank">Convoluted TOS and "Open" APIs Will Be the Death of Us</a> by <a href="https://twitter.com/#!/shiondev" target="_blank">Shion Deysarkar</a> and <a href="http://blog.louisgray.com/2011/07/topify-to-go-dark-as-twitter-claims.html" target="_blank">Topify to Go Dark as Twitter Claims Another Dev Victim</a> by <a href="https://twitter.com/#!/louisgray" target="_blank">Louis Gray</a>. I recommend you read, and form your own opinion.<p>
+I'm totally behind Shion in,<em> ..arguing that the breaching parties (i.e. the developers holding the API key) should not be held in contempt of court, as it were. </em>When it comes to terms of service disagreements, there needs to be more discussion.<p>
+<em></em>I also feel Topify's pain in their decision to, <em>..shut down the service, rather than chasing after Twitter's continued meandering API road-map</em>. This makes it very difficult to build a business on Twitters API.<p>
+I am the biggest advocate for the developer when it comes to these ecosystems battles. API developers often deliver on the promise of an API, but seldom see the reward.<p>
+<img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/topify_125.jpg" alt="" width="150" align="right" />However I also feel the pain of API owners. How are you supposed to have an API that delivers true value, is sustainable, makes all your developers happy, and have terms of service and a roadmap that is all knowing and sees into the future, and promises never to step on your developers toes.<p>
+I see both sides of the argument, however I feel much of the trouble Twitter and other API owners run into, is the result of not properly sharing its roadmap with developers. If Twitter shared its road-map <span style="text-decoration: underline;">earlier</span>, and <span style="text-decoration: underline;">more consistently</span> with its developers, and also allowed feedback periods before launching, I think there would a lot less backlash--even if the community didn't always win 100% in the resulting decision.<p>
 How "open" an API owner is with their road-map obviously is entirely up to them. They have trade secrets to protect, and many other considerations when managing a roadmap. However you should identify a consistent time frame in which to give the developer community a heads up about what is happening. Something they can get used to, count on.
-<img src="http://kinlane-productions.s3.amazonaws.com/APIRoadmap-FeedbackLoop.png" alt="" width="600" align="center" />
-Of course there will most likely be partners you share your road-map with before sharing it with your developer ecosystem. And don't forget to make sure to consider the press and blogosphere in this road-map release cycle. The press can be the first to bring up an issue, and ultimately end up being the bullhorn for developer grievances.<p></p>
-Also, if your platform has a accompanying web application, you will have to consider the linkage between its road-map and your API road-map. How do features you plan to release impact your developer community? When should they be informed about your companies plans for new products and features?<p></p>
+<img src="https://kinlane-productions2.s3.amazonaws.com/APIRoadmap-FeedbackLoop.png" alt="" width="600" align="center" />
+Of course there will most likely be partners you share your road-map with before sharing it with your developer ecosystem. And don't forget to make sure to consider the press and blogosphere in this road-map release cycle. The press can be the first to bring up an issue, and ultimately end up being the bullhorn for developer grievances.<p>
+Also, if your platform has a accompanying web application, you will have to consider the linkage between its road-map and your API road-map. How do features you plan to release impact your developer community? When should they be informed about your companies plans for new products and features?<p>
 Rather than being polarized about these API ecosystem battles I hear about, I'm trying to put on my product managers hat, and find a balanced approach to solving. I don't think there is one single solution to make developers feel warm &amp; fuzzy about integrating with APIs, and each industry or API sector may be different. But I think many of these problems can be addressed through early and consistent sharing of our API road-maps, which will truly make our APIs more open.
 
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2011/08/01/a-market-for-selling-api-code-libraries/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2011/08/01/my-3d-printed-junk-drawer/" class="button">Next >></a></li>
-	
-</ul>
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

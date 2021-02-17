@@ -1,257 +1,32 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Virtual Containers, Stacks, APIs And Application Management</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Virtual Containers, Stacks, APIs And Application Management'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/lego_docker.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2013/07/15/virtual-containers-stacks-apis-and-application-management/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Virtual Containers, Stacks, APIs And Application Management | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/lego_docker.jpg">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2013/07/15/virtual-containers-stacks-apis-and-application-management/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Virtual Containers, Stacks, APIs And Application Management | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/lego_docker.jpg">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Virtual Containers, Stacks, APIs And Application Management</h2>
-<p><span class="post-date">15 Jul 2013</span></p>
-<p>I've been trying to organize my thoughts around emerging trends in using virtualized app containers, that are providing a much more modular approach to deploying and managing application backends. This is an evolution of earlier thoughts I've had around <a title="virtualized API stacks" href="http://apievangelist.com/2013/01/28/virtualized-api-stacks/">virtual API stacks</a>.</p>
-<p>From the last week, I'm looking at three separate approaches to application and API management using virtualized containers:</p>
-<p><a href="http://docker.io" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/docker/docker-logo.gif" alt="" width="150" align="right" /></a></p>
-<p><strong><a href="http://www.docker.io/">Docker - The Linux Container Engine</a></strong><br />Docker is an open-source engine which automates the deployment of applications as highly portable, self-sufficient containers. Docker containers are both hardware-agnostic and platform-agnostic, allowing them to run anywhere, freeing you from having to use a particular language, framework or packaging system--making them great building blocks for deploying and scaling web apps, databases and backend services without depending on a particular stack or provider.</p>
-<p><a href="http://heroku.com" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/heroku/heroku-logo.png" alt="" width="150" align="right" /></a></p>
-<p><strong><a href="https://blog.heroku.com/archives/2013/7/10/heroku-pipelines-beta">Heroku - Application Instances with Portable Features and Dependencies</a></strong><br />Heroku fork lets you create unique, running instances of existing applications in a single command, making it fast and simple to set up homogenous development, staging and production environments. Heroku pipelines then lets you define the relationship between apps and easily promote  from one app to another using what is known as a "slug". On Heroku, a slug is a bundle of your source, fetched dependencies, the language runtime, and compiled/generated output of the build system, ready for execution in development or production environments.</p>
-<p><a href="http://stackmob.com" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/stackmob/stackmob-logo.png" alt="" width="150" align="right" /></a></p>
-<p><strong><a href="https://blog.stackmob.com/2013/07/ready-set-deploy-with-stackmob-apps/">StackMob - BaaS Development and Production Workflows</a></strong><br /> StackMob has its own unique approach application development workflow which includes use integrated SDKs, and custom configuration for establishing an applications separate development and production environments. Then using this separate environment, Stackmob offers multiple concurrent APIs in production through the use of API snapshots which ensures backwards compatibility of your app over time.</p>
-<p>Docker, definitely offers the widest opportunity for what I'm talking about because it is an open source container solution. But it is interesting to see how Heroku is applying this concept to app management at the PaaS level, and how Stackmob is providing a very portable, flexible and backwards compatible API stack for use at the BaaS level.</p>
-<p>While we have a long way to go, I think we are getting closer to being able to easily define, meaningful stacks of API resources. I envision a future where I can set out to build an app, bring together exactly the API driven resources I will need from private and public resources, into a single virtualized stack.</p>
+<p>I've been trying to organize my thoughts around emerging trends in using virtualized app containers, that are providing a much more modular approach to deploying and managing application backends. This is an evolution of earlier thoughts I've had around <a title="virtualized API stacks" href="http://apievangelist.com/2013/01/28/virtualized-api-stacks/">virtual API stacks</a>.
+<p>From the last week, I'm looking at three separate approaches to application and API management using virtualized containers:
+<p><a href="https://docker.io" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/docker/docker-logo.gif" alt="" width="150" align="right" /></a>
+<p><strong><a href="https://www.docker.io/">Docker - The Linux Container Engine</a></strong><br />Docker is an open-source engine which automates the deployment of applications as highly portable, self-sufficient containers. Docker containers are both hardware-agnostic and platform-agnostic, allowing them to run anywhere, freeing you from having to use a particular language, framework or packaging system--making them great building blocks for deploying and scaling web apps, databases and backend services without depending on a particular stack or provider.
+<p><a href="https://heroku.com" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/heroku/heroku-logo.png" alt="" width="150" align="right" /></a>
+<p><strong><a href="https://blog.heroku.com/archives/2013/7/10/heroku-pipelines-beta">Heroku - Application Instances with Portable Features and Dependencies</a></strong><br />Heroku fork lets you create unique, running instances of existing applications in a single command, making it fast and simple to set up homogenous development, staging and production environments. Heroku pipelines then lets you define the relationship between apps and easily promote  from one app to another using what is known as a "slug". On Heroku, a slug is a bundle of your source, fetched dependencies, the language runtime, and compiled/generated output of the build system, ready for execution in development or production environments.
+<p><a href="http://stackmob.com" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/stackmob/stackmob-logo.png" alt="" width="150" align="right" /></a>
+<p><strong><a href="https://blog.stackmob.com/2013/07/ready-set-deploy-with-stackmob-apps/">StackMob - BaaS Development and Production Workflows</a></strong><br /> StackMob has its own unique approach application development workflow which includes use integrated SDKs, and custom configuration for establishing an applications separate development and production environments. Then using this separate environment, Stackmob offers multiple concurrent APIs in production through the use of API snapshots which ensures backwards compatibility of your app over time.
+<p>Docker, definitely offers the widest opportunity for what I'm talking about because it is an open source container solution. But it is interesting to see how Heroku is applying this concept to app management at the PaaS level, and how Stackmob is providing a very portable, flexible and backwards compatible API stack for use at the BaaS level.
+<p>While we have a long way to go, I think we are getting closer to being able to easily define, meaningful stacks of API resources. I envision a future where I can set out to build an app, bring together exactly the API driven resources I will need from private and public resources, into a single virtualized stack.
 <table cellpadding="5" align="center">
 <tbody>
 <tr>
-<td><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/docker/lego_docker.jpg" alt="" width="500" /></td>
+<td><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/docker/lego_docker.jpg" alt="" width="500" /></td>
 </tr>
 <tr>
-<td style="text-align: center;"><a href="http://docker.io">Borrowed from Docker Site</a></td>
+<td style="text-align: center;"><a href="https://docker.io">Borrowed from Docker Site</a></td>
 </tr>
 </tbody>
 </table>
-<p>As a developer I will be able to deploy this stack in development or production environments, take advantage of single application authentication approach without having to go out to each API and get separate application tokens.</p>
-<p>Virtualized API resource stacks will have all the monitoring, versioning, scalability I will need allowing me to run them in any environment, helping me keep track of changes and evolution not just in the stack of resources, but also my applications.</p>
-<p>These virtualized stacks can be designed for web, mobile or tablets as well as any Internet of Things implementation providing me with instant, secure, modular backends for home, car, sensor and any Internet connected object we can dream up in the future.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2013/07/15/dropbox-as-default-file-storage-api-for-apps/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2013/07/16/stories-are-essential-to-success-of-open-data-in-government/" class="button">Next >></a></li>
-	
-</ul>
+<p>As a developer I will be able to deploy this stack in development or production environments, take advantage of single application authentication approach without having to go out to each API and get separate application tokens.
+<p>Virtualized API resource stacks will have all the monitoring, versioning, scalability I will need allowing me to run them in any environment, helping me keep track of changes and evolution not just in the stack of resources, but also my applications.
+<p>These virtualized stacks can be designed for web, mobile or tablets as well as any Internet of Things implementation providing me with instant, secure, modular backends for home, car, sensor and any Internet connected object we can dream up in the future.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

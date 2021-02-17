@@ -1,129 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>My API Design Checklist For This Version Of The Human Services Data API</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'My API Design Checklist For This Version Of The Human Services Data API'
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-design-checklist.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-design-checklist.png" align="right" width="25%" style="padding: 15px;" />
+<p>I am going through my <a href="http://design.apievangelist.com">API design</a> checklist for the <a href="https://openreferral.github.io/api-specification/">Human Services Data API</a> work I am doing. I’m trying to make sure I’m not forgetting anything before I propose a v1.1 OpenAPI draft, so I pulled together a simple checklist I wanted to share with other stakeholders, and hopefully also help keep me focused.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="My API Design Checklist For This Version Of The Human Services Data API | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design-checklist.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="My API Design Checklist For This Version Of The Human Services Data API | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design-checklist.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>My API Design Checklist For This Version Of The Human Services Data API</h2>
-<p><span class="post-date">24 May 2017</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design-checklist.png" align="right" width="25%" style="padding: 15px;" /></p>
-<p>I am going through my <a href="http://design.apievangelist.com">API design</a> checklist for the <a href="https://openreferral.github.io/api-specification/">Human Services Data API</a> work I am doing. I’m trying to make sure I’m not forgetting anything before I propose a v1.1 OpenAPI draft, so I pulled together a simple checklist I wanted to share with other stakeholders, and hopefully also help keep me focused.</p>
-
-<p>First, to support my API design work I got to work on these areas for defining the HSDS schema and the HSDA definition:</p>
+<p>First, to support my API design work I got to work on these areas for defining the HSDS schema and the HSDA definition:
 
 <ul>
   <li><strong>JSON Schema</strong> - I generated a JSON Schema from the <a href="https://openreferral.readthedocs.io/en/latest/reference/#objects-and-fields">HSDS documentation</a>.</li>
@@ -131,7 +16,7 @@
   <li><strong>Github Repo</strong> - I published it all in a Github repository for sharing with stakeholders, and programmatic usage across any tooling and applications being developed.</li>
 </ul>
 
-<p>Then I reviewed the core elements of my API design to make sure I had everything I wanted to cover in this cycle, with the resources we have:</p>
+<p>Then I reviewed the core elements of my API design to make sure I had everything I wanted to cover in this cycle, with the resources we have:
 
 <ul>
   <li><strong>Domain(s)</strong> - Right now I’m going with api.example.com, and developer.example.com for the portal.</li>
@@ -153,7 +38,7 @@
   <li><strong>Media Types</strong> - While not a requirement, I would like to encourage implementors to offer four default media types: application/json, application/xml, text/csv, and text/html.</li>
 </ul>
 
-<p>After being down in the weeds I wanted to step back and just think about some of the common sense aspects of API design:</p>
+<p>After being down in the weeds I wanted to step back and just think about some of the common sense aspects of API design:
 
 <ul>
   <li><strong>Granularity</strong> - I think the API provides a very granular approach to getting at the HSDS schema. If I just want a phone number for a location, and I know its location id I can get it. It’s CRUD, but it’s a very modular CRUD that reflects the schema.</li>
@@ -162,119 +47,9 @@
   <li><strong>Relationships</strong> - There really isn’t much sophistication in the relationships present in the HSDA. Organizations, locations, and services are related, but you need to construct your own paths to navigate these relationships. I intentionally kept the schema flat, as this is a minor release. Hypermedia and other design patterns are being considered for future releases–this is meant to be a basic API to get at the entire HSDS schema.</li>
 </ul>
 
-<p><a href="http://developer.open.referral.adopta.agency/documentation/">I have a functioning demo of this v1.1 release</a>, reflecting most of the design decisions I listed above. While not a complete API design list, it provides me with a simple checklist to apply to this iteration of the Human Services Data API (HSDA). Since this design is more specification than actual implementation, this API design checklist can also act as guidance for vendors and practitioners when designing their own APIs beyond the HSDS schema.</p>
+<p><a href="http://developer.open.referral.adopta.agency/documentation/">I have a functioning demo of this v1.1 release</a>, reflecting most of the design decisions I listed above. While not a complete API design list, it provides me with a simple checklist to apply to this iteration of the Human Services Data API (HSDA). Since this design is more specification than actual implementation, this API design checklist can also act as guidance for vendors and practitioners when designing their own APIs beyond the HSDS schema.
 
-<p>Next, I’m going to tackle some of the API management, portal, and other aspects of operating a human services API. I’m looking to push <a href="http://developer.open.referral.adopta.agency/documentation/">my prototype</a> to be a living blueprint for providers to go from schema and OpenAPI to a fully functioning API with monitoring, documentation, and everything else you will need. The schema and OpenAPI are just the seeds to be used at every step of a human services API life cycle.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2017/05/23/thinking-about-privacy-and-security-of-public-data/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2017/05/24/considering-http-prefer-header-instead-of-field-filtering-for-my-api/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>Next, I’m going to tackle some of the API management, portal, and other aspects of operating a human services API. I’m looking to push <a href="http://developer.open.referral.adopta.agency/documentation/">my prototype</a> to be a living blueprint for providers to go from schema and OpenAPI to a fully functioning API with monitoring, documentation, and everything else you will need. The schema and OpenAPI are just the seeds to be used at every step of a human services API life cycle.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

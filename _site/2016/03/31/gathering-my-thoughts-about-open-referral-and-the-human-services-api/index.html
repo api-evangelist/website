@@ -1,133 +1,18 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Gathering My Thoughts About Open Referral And The Human Services API</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Gathering My Thoughts About Open Referral And The Human Services API'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/ohana-api.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2016/03/31/gathering-my-thoughts-about-open-referral-and-the-human-services-api/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Gathering My Thoughts About Open Referral And The Human Services API | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ohana-api.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2016/03/31/gathering-my-thoughts-about-open-referral-and-the-human-services-api/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Gathering My Thoughts About Open Referral And The Human Services API | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ohana-api.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Gathering My Thoughts About Open Referral And The Human Services API</h2>
-<p><span class="post-date">31 Mar 2016</span></p>
-<p><a href="https://openreferral.org/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/icarol-screenshot.png" alt="" width="40%" align="right" /></a></p>
-<p>I am working on several very rewarding API efforts lately, but one I'm particularly psyched about is <a href="https://openreferral.org/">Open Referral</a>. I'm working with them to help apply the open API format in a handful of implementations, but to also share some insight on what the platform could be in the future. I have been working to carve out the time for about it, and finally managed to do so this week, resulting in what I am hoping will be some rewarding API work.</p>
-<p>As i do, I wanted to explore the project, work to understand all the moving parts, as well as what is needed for the future, using my blog. I am not recommending that Open Referral tackle of all this work right now, I am just trying to pull together a framework to think about some of the short, and long terms areas we can invest in together. I intend to continue working with Greg, and the Open Referral team to help spread the awareness of the open API specification, and help build the community.</p>
-<p>Open Referral is all about being an open specification, dedicated to helping humans find services, and even more humans to help other humans to find the services they need--I can't think of a more worthy implementation of an API. In my opinion, this is what APIs are all about -- providing open access to information, while also allowing for commercial activity. To help prime the pump, let's take a look at the specification, and think more about where I can help, when it comes to the Open Referral organization and eventually, the Open Referral platform.</p>
-<p><a name="human-services-data-specification"></a></p>
-<p><strong>Human Services Data Specification (HSDS)</strong></p>
-<p>"The Human Services Data Specification (HSDS) defines content that provides the minimum set of data for Information and Referral (I&amp;R) applications as well as specialized service directory applications." &nbsp;Which represents a pretty huge opportunity to help deliver vital information around public services, to those who need them, where they need them, using an open API approach.</p>
-<p>Currently there is an existing definition for HSDS available on Github, but I'd like to see the presence of HSDS elevated, showcasing it independently of any single implementation of the API, or the web, and mobile applications that are built on top of it. It is important that new people, who are just learning about HSDS understand that it is a format, and independent of any single instance. Here is a break down of the HSDS presence I'd like to see.</p>
+<p><a href="https://openreferral.org/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/icarol-screenshot.png" alt="" width="40%" align="right" /></a>
+<p>I am working on several very rewarding API efforts lately, but one I'm particularly psyched about is <a href="https://openreferral.org/">Open Referral</a>. I'm working with them to help apply the open API format in a handful of implementations, but to also share some insight on what the platform could be in the future. I have been working to carve out the time for about it, and finally managed to do so this week, resulting in what I am hoping will be some rewarding API work.
+<p>As i do, I wanted to explore the project, work to understand all the moving parts, as well as what is needed for the future, using my blog. I am not recommending that Open Referral tackle of all this work right now, I am just trying to pull together a framework to think about some of the short, and long terms areas we can invest in together. I intend to continue working with Greg, and the Open Referral team to help spread the awareness of the open API specification, and help build the community.
+<p>Open Referral is all about being an open specification, dedicated to helping humans find services, and even more humans to help other humans to find the services they need--I can't think of a more worthy implementation of an API. In my opinion, this is what APIs are all about -- providing open access to information, while also allowing for commercial activity. To help prime the pump, let's take a look at the specification, and think more about where I can help, when it comes to the Open Referral organization and eventually, the Open Referral platform.
+<p><a name="human-services-data-specification"></a>
+<p><strong>Human Services Data Specification (HSDS)</strong>
+<p>"The Human Services Data Specification (HSDS) defines content that provides the minimum set of data for Information and Referral (I&amp;R) applications as well as specialized service directory applications." &nbsp;Which represents a pretty huge opportunity to help deliver vital information around public services, to those who need them, where they need them, using an open API approach.
+<p>Currently there is an existing definition for HSDS available on Github, but I'd like to see the presence of HSDS elevated, showcasing it independently of any single implementation of the API, or the web, and mobile applications that are built on top of it. It is important that new people, who are just learning about HSDS understand that it is a format, and independent of any single instance. Here is a break down of the HSDS presence I'd like to see.
 <ul>
 <li><strong>Website</strong>&nbsp;- Establish a simple, dedicated website for just the specification.</li>
 <li><strong>Twitter</strong>&nbsp;- Establish a dedicated Twitter account for the specification.</li>
@@ -141,7 +26,7 @@
 </li>
 <li><strong>Data Definition(S)</strong> 
 <ul>
-<li><strong><a href="http://json-schema.org/">JSON Schema</a></strong>&nbsp;- Establish a set of JSON Schema for HSDS</li>
+<li><strong><a href="https://json-schema.org/">JSON Schema</a></strong>&nbsp;- Establish a set of JSON Schema for HSDS</li>
 <li><strong><a href="https://github.com/apiaryio/mson">MSON</a></strong>&nbsp;- Establish a set of MSON definitions for HSDS</li>
 </ul>
 </li>
@@ -152,19 +37,19 @@
 <li><strong>Change Log </strong>- What is the change log for the specification?</li>
 <li><strong>Licensed</strong>&nbsp;-&nbsp;<a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 License</a></li>
 </ul>
-<p>I want to help make sure HSDS is highly available as an OpenAPI Specification, as well as the API Blueprint format. Both of these formats will enable anyone looking to put HSDS to work, to use the definition as a central reference for their API implementation, that can drive API documentation, code samples, testing, and much more.</p>
-<p>I do not know about you, but having an open standard for finding and managing open data about human services, that can be used across cities, regions, and countries, seems like a pretty vital API design pattern--one that could make a significant impact in people's lives. When you are talking about helping folks find food and health services, making sure the disparate systems all speak the language matters, and could be the difference between life and death, or at least just make your life suck a little less.</p>
-<p>While Open Referral, and HSDS was born out of Code For America, there is an organization in place, to use as a base for evolving the format, and building a community of implementations around the important specification. I wanted to take some time and organize some of the existing moving parts of the Open Referral organization, while also exporting what elements that I feel be needed to help evolve it into a platform.&nbsp;</p>
-<p><a name="the-open-referral-organization"></a></p>
-<p><strong>The Open Referral Organization</strong><br />As I mentioned, there is an organization already setup to guide the effort, "the Open Referral initiative is developing common formats and open platforms for the sharing of community resource directory data &mdash; i.e., information about the health, human and social services that are available to people in need." -- You can count me in, helping with that. Right up my alley.</p>
-<p>Right now Open Referral is a nice website, with some valuable information about where things are today. The "common formats" portion of that vision is in place, but how do help scale Open Referral toward being an open platform, while also enabling others to also deploy their own open platform, in support of their own human services project(s). Some of these projects will be open civic projects by government and non-governmental agencies, while some will be commercial efforts -- both approaches are acceptable when it comes to Open Referral, and HSDS.</p>
-<p>Let's explore what is currently available for the Open Referral organization, and what is needed to help evolve it towards being a platform enabler. Here is what I have outlined so far:</p>
-<p><strong>Organizational<br /></strong>There is already a basic web presence for the organization, it just needs a little help to look as modern as it possibly can, and assume the lead role in getting folks aware, and involved with Open Referral and HSDS as possible.</p>
+<p>I want to help make sure HSDS is highly available as an OpenAPI Specification, as well as the API Blueprint format. Both of these formats will enable anyone looking to put HSDS to work, to use the definition as a central reference for their API implementation, that can drive API documentation, code samples, testing, and much more.
+<p>I do not know about you, but having an open standard for finding and managing open data about human services, that can be used across cities, regions, and countries, seems like a pretty vital API design pattern--one that could make a significant impact in people's lives. When you are talking about helping folks find food and health services, making sure the disparate systems all speak the language matters, and could be the difference between life and death, or at least just make your life suck a little less.
+<p>While Open Referral, and HSDS was born out of Code For America, there is an organization in place, to use as a base for evolving the format, and building a community of implementations around the important specification. I wanted to take some time and organize some of the existing moving parts of the Open Referral organization, while also exporting what elements that I feel be needed to help evolve it into a platform.&nbsp;
+<p><a name="the-open-referral-organization"></a>
+<p><strong>The Open Referral Organization</strong><br />As I mentioned, there is an organization already setup to guide the effort, "the Open Referral initiative is developing common formats and open platforms for the sharing of community resource directory data &mdash; i.e., information about the health, human and social services that are available to people in need." -- You can count me in, helping with that. Right up my alley.
+<p>Right now Open Referral is a nice website, with some valuable information about where things are today. The "common formats" portion of that vision is in place, but how do help scale Open Referral toward being an open platform, while also enabling others to also deploy their own open platform, in support of their own human services project(s). Some of these projects will be open civic projects by government and non-governmental agencies, while some will be commercial efforts -- both approaches are acceptable when it comes to Open Referral, and HSDS.
+<p>Let's explore what is currently available for the Open Referral organization, and what is needed to help evolve it towards being a platform enabler. Here is what I have outlined so far:
+<p><strong>Organizational<br /></strong>There is already a basic web presence for the organization, it just needs a little help to look as modern as it possibly can, and assume the lead role in getting folks aware, and involved with Open Referral and HSDS as possible.
 <ul>
 <li><a href="https://openreferral.org/">Website</a>&nbsp;- Having a simple, modern web presence for the Open Referral organization.</li>
 </ul>
-<p>OpenReferral.org is the tip of the platform, but if we want to increase the reach of the organization, and take the conversation to where people already exist, we'll need to think more multi-channel when it comes to the organizational presence.</p>
-<p><strong>Communications<br /></strong>There is already a great presence in place, an active blog, Twitter, and Google Group. Based upon the approach of other open formats, and software efforts, there are a number of other platforms we should be looking to spread the Open Referral presence to.</p>
+<p>OpenReferral.org is the tip of the platform, but if we want to increase the reach of the organization, and take the conversation to where people already exist, we'll need to think more multi-channel when it comes to the organizational presence.
+<p><strong>Communications<br /></strong>There is already a great presence in place, an active blog, Twitter, and Google Group. Based upon the approach of other open formats, and software efforts, there are a number of other platforms we should be looking to spread the Open Referral presence to.
 <ul>
 <li><a href="https://twitter.com/Open_Referral">Twitter</a>&nbsp;- Managing an active, human presence on Twitter.</li>
 <li>LinkedIn&nbsp;- Managing an active, human presence on LinkedIn.</li>
@@ -172,13 +57,13 @@
 <li><a href="https://openreferral.org/category/blog/">Blog</a>- Having an active, informative, blog available.</li>
 <li><a href="https://openreferral.org/feed/">Blog RSS</a>&nbsp;- Providing a machine readable feed from blog.</li>
 <li>Medium - Publishing regularly to Medium as well as blog.</li>
-<li><a href="http://groups.google.com/forum/#!forum/openreferral">Google Group</a>&nbsp;- Maintaining community and discussion on Google Groups.</li>
+<li><a href="https://groups.google.com/forum/#!forum/openreferral">Google Group</a>&nbsp;- Maintaining community and discussion on Google Groups.</li>
 <li>Newsletter - Provide a dedicated partner newsletter.</li>
 </ul>
-<p>So far we are just talking about marketing, and social media basics for any organization. We will need to make sure the overall organizational presence for Open Referral dovetails seamlessly with the more technical side of things, establishing a very non-developer friendly, yet still a little more technical, developer, and IT focused audience.</p>
-<p><a name="open-referral-developer-portal"></a></p>
-<p><strong>Open Referral Developer Portal<br /></strong>I suggest following the lead of other successful open standard, and software efforts, and establish a dedicated portal for the platform at&nbsp;<a href="http://developer.openreferral.org">http://developer.openreferral.org</a>. This central portal will not provide access to a working implementation of the API, but focus instead on the community resources it will take to help ensure the widespread adoption of HSDS.</p>
-<p>Right now, there is only the Ohana API, and supporting client tools that have been developer by Code for America. This is a great start, but Open Referral needs to evolve, making sure there are a wealth of language and platform formats available for supporting any implementation. I went to town thinking through what is possible with the Open Referral developer portal, based upon other open API, specification, and software platforms I have studied. Not everything here is required to get started, with a minimum viable developer portal, but provides some food for thought around what could be.</p>
+<p>So far we are just talking about marketing, and social media basics for any organization. We will need to make sure the overall organizational presence for Open Referral dovetails seamlessly with the more technical side of things, establishing a very non-developer friendly, yet still a little more technical, developer, and IT focused audience.
+<p><a name="open-referral-developer-portal"></a>
+<p><strong>Open Referral Developer Portal<br /></strong>I suggest following the lead of other successful open standard, and software efforts, and establish a dedicated portal for the platform at&nbsp;<a href="http://developer.openreferral.org">http://developer.openreferral.org</a>. This central portal will not provide access to a working implementation of the API, but focus instead on the community resources it will take to help ensure the widespread adoption of HSDS.
+<p>Right now, there is only the Ohana API, and supporting client tools that have been developer by Code for America. This is a great start, but Open Referral needs to evolve, making sure there are a wealth of language and platform formats available for supporting any implementation. I went to town thinking through what is possible with the Open Referral developer portal, based upon other open API, specification, and software platforms I have studied. Not everything here is required to get started, with a minimum viable developer portal, but provides some food for thought around what could be.
 <ul>
 <li><strong>Landing Page&nbsp;-</strong>&nbsp;A simple, distilled representation of everything available.</li>
 <li><strong>HSDS Specification&nbsp;</strong>- Link to separate site dedicated to the specification.</li>
@@ -235,11 +120,11 @@
 </ul>
 </li>
 </ul>
-<p>The Open Referral developer portal really is just a project website which organizes links, and meta information about any valuable code that is developed, that uses HSDS as its core. The ultimate goal is to provide a rich marketplace of server, client-side, platform, and language resources that can be applied anywhere. Some of it will be officially platform support, while other will be partner and Open Referral community supported. The central portal is purely to help organize all the valuable resources that are generated from the community, and easy to find by the community.</p>
-<p><a href="/admin/blog/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/ohana-api.png" alt="" width="40%" align="right" /></a></p>
-<p><a name="open-referral-demo-portal"></a></p>
-<p><strong>Open Referral Demo Portal<br /></strong>I'd like to see a dedicated demo portal for the platform available at&nbsp;<a href="http://developer.openreferral.org">http://demo.openreferral.org</a>, which can be forked and launched as a new project if necessary. Maybe there can be multiple demo portals available, meant for different languages and platforms? I'd like to see a forkable, HTML, CSS, and JavaScript version available, that can be used as a base, with some of the more dynamic aspects done in specific languages, or via specific platforms.</p>
-<p>I have assembled this outline, based upon the portal presence of leading API platforms like Twitter, Twilio, and Stripe. As with every other area, not all these elements will be in the first iteration of the Open Referral demo portal, but we should consider what the essentials should be in a minimum viable definition for an Open Referral demo portal.&nbsp;</p>
+<p>The Open Referral developer portal really is just a project website which organizes links, and meta information about any valuable code that is developed, that uses HSDS as its core. The ultimate goal is to provide a rich marketplace of server, client-side, platform, and language resources that can be applied anywhere. Some of it will be officially platform support, while other will be partner and Open Referral community supported. The central portal is purely to help organize all the valuable resources that are generated from the community, and easy to find by the community.
+<p><a href="/admin/blog/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/ohana-api.png" alt="" width="40%" align="right" /></a>
+<p><a name="open-referral-demo-portal"></a>
+<p><strong>Open Referral Demo Portal<br /></strong>I'd like to see a dedicated demo portal for the platform available at&nbsp;<a href="http://developer.openreferral.org">http://demo.openreferral.org</a>, which can be forked and launched as a new project if necessary. Maybe there can be multiple demo portals available, meant for different languages and platforms? I'd like to see a forkable, HTML, CSS, and JavaScript version available, that can be used as a base, with some of the more dynamic aspects done in specific languages, or via specific platforms.
+<p>I have assembled this outline, based upon the portal presence of leading API platforms like Twitter, Twilio, and Stripe. As with every other area, not all these elements will be in the first iteration of the Open Referral demo portal, but we should consider what the essentials should be in a minimum viable definition for an Open Referral demo portal.&nbsp;
 <ul>
 <li><strong>Landing Page -</strong>&nbsp;A simple, distilled down version of portal into a single page.</li>
 <li><strong>Getting Started</strong> 
@@ -343,9 +228,9 @@
 </ul>
 </li>
 </ul>
-<p>This base portal design will act as a demo implementation, with an actual functional API operating behind it. It could also be potentially forked, and used in other Open Referral API implementations, as a forkable base, that can be customized, and built on for each individual deployment. Github, using Github Pages, along with Jekyll pages allows for the easy design, development, and then forkability of an open portal blueprint. I'd like to see all the project sites that support the Open Referral effort operate in this similar fashion, which isn't unique to Github, and can run on Amazon S3, Dropbox, and almost any other hosting environment.</p>
-<p><a name="partner-program"></a></p>
-<p><strong>Partner Program<br /></strong>One of the strengths of the Open Referral organization, and is essential to evolve into a platform is the availability of a formal partner program to help manage a variety of different partners who will be contributing in different ways. I suggest operating a site dedicated to the Open Referral partner program, located at the sub domain&nbsp;<a href="http://partner.openreferral.org">http://partner.openreferral.org</a>. This provides a clear location to visit to see who is helping building out the Open Referral platform, and get involved when it makes sense.</p>
+<p>This base portal design will act as a demo implementation, with an actual functional API operating behind it. It could also be potentially forked, and used in other Open Referral API implementations, as a forkable base, that can be customized, and built on for each individual deployment. Github, using Github Pages, along with Jekyll pages allows for the easy design, development, and then forkability of an open portal blueprint. I'd like to see all the project sites that support the Open Referral effort operate in this similar fashion, which isn't unique to Github, and can run on Amazon S3, Dropbox, and almost any other hosting environment.
+<p><a name="partner-program"></a>
+<p><strong>Partner Program<br /></strong>One of the strengths of the Open Referral organization, and is essential to evolve into a platform is the availability of a formal partner program to help manage a variety of different partners who will be contributing in different ways. I suggest operating a site dedicated to the Open Referral partner program, located at the sub domain&nbsp;<a href="http://partner.openreferral.org">http://partner.openreferral.org</a>. This provides a clear location to visit to see who is helping building out the Open Referral platform, and get involved when it makes sense.
 <ul>
 <li><strong>Overview</strong>&nbsp;- An overview of the Open Referral partner program.</li>
 <li><strong>Showcase</strong> 
@@ -393,11 +278,11 @@
 </ul>
 </li>
 </ul>
-<p>Formalizing the partner program for Open Referral will help in organizing for operation, but also provide a public face to the program, lending credibility to the platform, as well as to its trusted partners. Not all partnerships need to be publicized, but it will lend some potential exposure to those that want. Not every detail of Open Referral partnerships needs to be present, but operating in the open, being as transparent as possible will help build trust in a potentinally competitive environment.</p>
-<p>There will be some HSDS API implementations, as well as potentially web or mobile applications that are developed by Open Referral, with some developed and operated by partners. Whenever possible, being transparent about this will help build trust, and reduce speculation around the organizational mission. Formalizing the approach to platform partnerships, that help set a positive tone for the community, and go from just site, to community, to a true platform.</p>
-<p><a name="service-needs"></a></p>
-<p><strong>Service Needs<br /></strong>I wanted to explore some of the services that will be needed in support of the Open Referral format specification, open source software development, as well as specific implementations. Not all of these services will be executed by Open Referral, with partners being leveraged at every turn, but it will also be important for Open Referral to develop internally capacity to support all areas, and as many types of implementations as possible. This internal capacity will be necessary to help move the specification forward in a meaningful way.</p>
-<p>Here are some of the main areas I identified that would be be needed to help support core API implementations, as well as some of the web and mobile applications implementations that will use HSDS.</p>
+<p>Formalizing the partner program for Open Referral will help in organizing for operation, but also provide a public face to the program, lending credibility to the platform, as well as to its trusted partners. Not all partnerships need to be publicized, but it will lend some potential exposure to those that want. Not every detail of Open Referral partnerships needs to be present, but operating in the open, being as transparent as possible will help build trust in a potentinally competitive environment.
+<p>There will be some HSDS API implementations, as well as potentially web or mobile applications that are developed by Open Referral, with some developed and operated by partners. Whenever possible, being transparent about this will help build trust, and reduce speculation around the organizational mission. Formalizing the approach to platform partnerships, that help set a positive tone for the community, and go from just site, to community, to a true platform.
+<p><a name="service-needs"></a>
+<p><strong>Service Needs<br /></strong>I wanted to explore some of the services that will be needed in support of the Open Referral format specification, open source software development, as well as specific implementations. Not all of these services will be executed by Open Referral, with partners being leveraged at every turn, but it will also be important for Open Referral to develop internally capacity to support all areas, and as many types of implementations as possible. This internal capacity will be necessary to help move the specification forward in a meaningful way.
+<p>Here are some of the main areas I identified that would be be needed to help support core API implementations, as well as some of the web and mobile applications implementations that will use HSDS.
 <ul>
 <li><strong>Server Side</strong> 
 <ul>
@@ -449,8 +334,8 @@
 </ul>
 </li>
 </ul>
-<p>In some of these areas I want to offer API Evangelist assistance as a partner, while in others I will be looking for partners to step up. I will also be looking at what cloud services, or open source software can assist in augmenting needs in these service areas. These are all areas that Open Referral will not be able to ignore, with many projects needing a variety of assistance in any number of these areas. Ideally Open Referral develops enough internal capacity to play a role in as many implementations as possible, even if it is just part of the platform storytelling, or support process.</p>
-<p><strong>Service Providers<br /></strong>What service providers will be used as part of operations? Throughout this project exploration I've mentioned the usage of Github, a potentially free, and paid solution to multiple service areas. I've listed some of the other common service providers I recommend as part of my API research, and would be using to help deliver some of my contributions to the platform, and specific projects.</p>
+<p>In some of these areas I want to offer API Evangelist assistance as a partner, while in others I will be looking for partners to step up. I will also be looking at what cloud services, or open source software can assist in augmenting needs in these service areas. These are all areas that Open Referral will not be able to ignore, with many projects needing a variety of assistance in any number of these areas. Ideally Open Referral develops enough internal capacity to play a role in as many implementations as possible, even if it is just part of the platform storytelling, or support process.
+<p><strong>Service Providers<br /></strong>What service providers will be used as part of operations? Throughout this project exploration I've mentioned the usage of Github, a potentially free, and paid solution to multiple service areas. I've listed some of the other common service providers I recommend as part of my API research, and would be using to help deliver some of my contributions to the platform, and specific projects.
 <ul>
 <li><strong>Github</strong>&nbsp;- Github is used for managing code, content, and project sites.</li>
 <li><strong>Amazon</strong>&nbsp;- AWS is used as part of database, hosting, and storage.</li>
@@ -460,28 +345,28 @@
 <li><strong>API Science&nbsp;</strong>- A service that can be used as part of API monitoring.</li>
 <li><strong>APIMATIC</strong>&nbsp;- A service that can be used to generate SDKs.</li>
 </ul>
-<p>For a well balanced approach I recommend that Open Referral strike a balance in the number of services it uses to operate the platform, and what it suggests for partners, and specific implementations. If possible, it would be nice to have one or more cloud services identified, as well as some potentially open source tooling that might be able to help deliver in the specific area.&nbsp;</p>
-<p><strong>Open Source Tooling<br /></strong>What tools will be used as part of operations? Complementing the services showcased above, let's explore some of the open source tooling that will be used as part of Open Referral platform operations. This should be a growing list, hopefully outweighing the number of cloud services listed above, providing low cost options to tackle much of what is needed to stand up, and operate an Open Referral, HSDS driven solution.</p>
+<p>For a well balanced approach I recommend that Open Referral strike a balance in the number of services it uses to operate the platform, and what it suggests for partners, and specific implementations. If possible, it would be nice to have one or more cloud services identified, as well as some potentially open source tooling that might be able to help deliver in the specific area.&nbsp;
+<p><strong>Open Source Tooling<br /></strong>What tools will be used as part of operations? Complementing the services showcased above, let's explore some of the open source tooling that will be used as part of Open Referral platform operations. This should be a growing list, hopefully outweighing the number of cloud services listed above, providing low cost options to tackle much of what is needed to stand up, and operate an Open Referral, HSDS driven solution.
 <ul>
 <li><strong>Swagger UI</strong>&nbsp;- An open source, interactive JavaScript UI for OpenAPI Spec.</li>
 <li><strong>Slate</strong>&nbsp;- A static, presentation friendly version of API documentation.</li>
 <li><strong>Jekyll</strong>&nbsp;- An open source content management systems used for project sites.</li>
 <li><strong>D3.js</strong>&nbsp;- An open visualization toolkit, to build interactive solutions using JavaScript.</li>
 </ul>
-<p>I have only gotten started here. There are no doubt other open tools already in use, as well as some we should be targeting. What are these, what will they be used for, and do their licensing and support reflect the Open Referral mission. Each of these solutions should be forked, and maintained alongside other organizational developed or managed software.</p>
-<p><strong>Open Definitions<br /></strong>HSDS is an open definition, built on the back of, and supporting other existing open definition formats. Let's showcase this heart of what Open Referral, and HSDS is, by providing an update to date list of all open definition formats, and standards in use.</p>
+<p>I have only gotten started here. There are no doubt other open tools already in use, as well as some we should be targeting. What are these, what will they be used for, and do their licensing and support reflect the Open Referral mission. Each of these solutions should be forked, and maintained alongside other organizational developed or managed software.
+<p><strong>Open Definitions<br /></strong>HSDS is an open definition, built on the back of, and supporting other existing open definition formats. Let's showcase this heart of what Open Referral, and HSDS is, by providing an update to date list of all open definition formats, and standards in use.
 <ul>
 <li><strong>OpenAPI Spec -</strong>&nbsp;An open source, JSON API definition format for describing web APIs.</li>
 <li><strong>APIBlueprint&nbsp;-&nbsp;</strong>An open source, Markdown API definition format for describing web APIs.</li>
 <li><strong>MSON</strong>&nbsp;- An open source, markdown data schema format.</li>
 <li><strong>JSON Schema&nbsp;&nbsp;-&nbsp;</strong>An open source, JSON data schema format.</li>
 <li>The Alliance of Information and Referral Systems<a href="http://www.airs.org/i4a/pages/index.cfm?pageid=3363">&nbsp;XSD</a>&nbsp;and<a href="http://www.airs.org/i4a/pages/index.cfm?pageid=3386">&nbsp;211 Taxonomy</a></li>
-<li><strong>Schema.org</strong>&nbsp;- Civic Services Schema (<a href="http://www.w3.org/wiki/WebSchemas/CivicServices">at the W3C</a>)</li>
-<li>The National Information Exchange Model - via<a href="http://www.acf.hhs.gov/initiatives-priorities/interoperability">&nbsp;the National Human Services Information Architecture</a>&nbsp;- logic model<a href="http://https//raw.github.com/hserv/open-human-services/master/doc/NHSIA_conceptual_data_model.jpeg">&nbsp;here</a>.</li>
+<li><strong>Schema.org</strong>&nbsp;- Civic Services Schema (<a href="https://www.w3.org/wiki/WebSchemas/CivicServices">at the W3C</a>)</li>
+<li>The National Information Exchange Model - via<a href="https://www.acf.hhs.gov/initiatives-priorities/interoperability">&nbsp;the National Human Services Information Architecture</a>&nbsp;- logic model<a href="http://https//raw.github.com/hserv/open-human-services/master/doc/NHSIA_conceptual_data_model.jpeg">&nbsp;here</a>.</li>
 </ul>
-<p>Open source software, and open definitions are the core of Open Referral. The goal is to provide open formats, APIs, data, and tools that can be easily replicated by cash strapped municipalities, government agencies, and other organizations. However software development, and operation takes money, and resources, so there will be a monetization aspect to Open Referral, which will need to be explored, and planned for.</p>
-<p><a name="platform-monetization"></a></p>
-<p><strong>Platform Monetization<br /></strong>I wanted to take what I've learned in the API sector, and put towards the evolution of a monetization framework that can applied across the Open Referral platform, down to the individual project level. Most monetization planning will be at the project level, with some of these considerations when it comes to thinking of generating revenue.</p>
+<p>Open source software, and open definitions are the core of Open Referral. The goal is to provide open formats, APIs, data, and tools that can be easily replicated by cash strapped municipalities, government agencies, and other organizations. However software development, and operation takes money, and resources, so there will be a monetization aspect to Open Referral, which will need to be explored, and planned for.
+<p><a name="platform-monetization"></a>
+<p><strong>Platform Monetization<br /></strong>I wanted to take what I've learned in the API sector, and put towards the evolution of a monetization framework that can applied across the Open Referral platform, down to the individual project level. Most monetization planning will be at the project level, with some of these considerations when it comes to thinking of generating revenue.
 <ul>
 <li><strong>Acquisition</strong>&nbsp;- What does it cost to get everything together for a project from first email, right before development starts.</li>
 <li><strong>Development</strong>&nbsp;- What person hours, and other costs associated with development of a project.</li>
@@ -510,11 +395,11 @@
 </ul>
 </li>
 </ul>
-<p>Most of these areas will be applied to each project, but no doubt will need to be rolled up and reported, and understand across projects, as well as by other areas listed above. Open Referral will not be a profit driven platform, but will be looking to revenue generation to not just develop the open specification further, but also push for the development of open tooling, and other resources.</p>
-<p>Monetization strategies applied to Open Referral will heavily drive the plans for API access that are applied to each individual implementation. While not everything will be standard across HSDS supporting implementations, there should be a base set of plans for how partners can operate, and generate their own revenue to support operations.</p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/open-referral/pricing-mapbox.png" alt="" width="100%" /></p>
-<p><a name="platform-api-plans"></a></p>
-<p><strong>Platform API Plans<br /></strong>What are the details of API engagement plans offered as part of operations? I wanted to explore the many ways that leading API platforms open up access to their resources, and hand pick the ones that made sense for a minimum set of plans that could be inherited by default, within each implementation. Of course, each potential implementation might be different, but these are some of the essential platform plan considerations.</p>
+<p>Most of these areas will be applied to each project, but no doubt will need to be rolled up and reported, and understand across projects, as well as by other areas listed above. Open Referral will not be a profit driven platform, but will be looking to revenue generation to not just develop the open specification further, but also push for the development of open tooling, and other resources.
+<p>Monetization strategies applied to Open Referral will heavily drive the plans for API access that are applied to each individual implementation. While not everything will be standard across HSDS supporting implementations, there should be a base set of plans for how partners can operate, and generate their own revenue to support operations.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/open-referral/pricing-mapbox.png" alt="" width="100%" />
+<p><a name="platform-api-plans"></a>
+<p><strong>Platform API Plans<br /></strong>What are the details of API engagement plans offered as part of operations? I wanted to explore the many ways that leading API platforms open up access to their resources, and hand pick the ones that made sense for a minimum set of plans that could be inherited by default, within each implementation. Of course, each potential implementation might be different, but these are some of the essential platform plan considerations.
 <ul>
 <li><strong>Elements</strong> 
 <ul>
@@ -562,8 +447,8 @@
 </ul>
 </li>
 </ul>
-<p>While it is ideal that HSDS implementations provide public access to the vital resources being made available, it is not a requirement, and some implementations might severely lock down the public access elements of the platform. Regardless, all of the items listed should be considered, when one to five separate API access plans. The plans should cover hard infrastructure costs like compute, storage, and bandwidth, while also providing other commercialization opportunities that support revenue generation as well.</p>
-<p><strong>Resources<br /></strong>These are mostly the resources that currently exist on the public website, but I wanted to also make sure and provide other details about the organization, the team behind the efforts. &nbsp; These are a few other resources that shouldn't be forgotten.</p>
+<p>While it is ideal that HSDS implementations provide public access to the vital resources being made available, it is not a requirement, and some implementations might severely lock down the public access elements of the platform. Regardless, all of the items listed should be considered, when one to five separate API access plans. The plans should cover hard infrastructure costs like compute, storage, and bandwidth, while also providing other commercialization opportunities that support revenue generation as well.
+<p><strong>Resources<br /></strong>These are mostly the resources that currently exist on the public website, but I wanted to also make sure and provide other details about the organization, the team behind the efforts. &nbsp; These are a few other resources that shouldn't be forgotten.
 <ul>
 <li><strong><a href="https://openreferral.org/faq/">FAQ</a></strong>&nbsp;- Providing an organized list of the frequently asked questions for the platform.</li>
 <li><strong><a href="https://openreferral.org/about/history/">History</a></strong>&nbsp;- Provide the history necessary to understand the background of the project.</li>
@@ -577,123 +462,13 @@
 </ul>
 </li>
 </ul>
-<p>I can keep adding to this list, but I think this represents a pretty significant v2 presence for Open Referral, as well as the&nbsp;Human Services Data Specification (HSDS) format. This isn't just a suggested proposal. I needed to think about what was needed, and what is next to help support projects on table, and proposals that in the works for specific implementations. I couldn't think about any single project without exploring the big picture.&nbsp;</p>
-<p><a href="http://ohanapi.org/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/icarol-screenshot.png" alt="" width="40%" align="right" /></a></p>
-<p>Now I'm going to share this with Greg Bloom, the passionate champion behind Open Referral, and HSDS. I just needed to make sure everything was in my head, in support of our discussion in person tomorrow. We'll be looking to move the needle forward on this vision, in conjunction with the implementations on the table. Exploring the big picture on my blog, is how I put my experience on the table, working through all of its moving parts, and make sure I've covered all the ground I need to discuss.</p>
-<p><strong>What Does The Road Map Look Like?</strong><br />Greg and crew are in charge of the road map. I just need to get more intimate with the specification. I have already created a v1 draft, scraped from the Slate documentation for the existing Ohana API implementation, using OpenAPISpec. I have the PDF documentation for an Open Referral partner to convert to a machine readable OpenAPI Spec as well. The process will help me further build awareness around the specification itself. This post has helped me see the 100K view, crafting the OpenAPI Spec will help me dive deep down into the weeds of how to deliver a human services API using the HSDS standard.</p>
-<p>Since PHP is my primary language, I'll get to work on a PHP / Slim Framework implementation of HSDS, providing a working prototype. I'll use the Ohana API generated OpenAPI Spec as my guide for the server side API code, the documentation, as well as some client code in both PHP and JavaScript. I'll push forward with some of the aspects of the demo portal implementation above, as well as completing some of the PHP code needed for server, and client side in the process. After all of this, I should have a pretty solid view of the details of what is possible with a human services API.</p>
-<p><strong>A Model For Human Services API And Hopefully Other Public API Services</strong><br />I'm pretty stoked with the potential for working on Open Referral, and honored Greg has invited me to participate. This is just a first draft, tailored for what I would like to see considered for Open Referral / HSDS API, and for a couple of immediate implementations. However the model is something I will keep evolving alongside this project, as well as a more generic blueprint for how public service APIs could possibly be implemented.</p>
-<p>There are several other API implementations that have come across my desk, which I've felt a model like this should be applied. I was thinking about applying this to the&nbsp;<a href="http://ed-data.github.io/developer/index.html">FAFSA API</a>, to help develop a student aid API community. I also thought it could be applied around the deployment of the <a href="http://apievangelist.com/2015/01/21/the-next-steps-for-the-the-recreation-information-database-ridb-api/">RIDB API</a>, in support of our national park system. In both of these environments a centralized, common, open API definition, with supporting schema and dictionaries, and a healthy selection of of open source server, and client side web or mobile app implementations, would have gone a long ways.</p>
-<p>Anyways, I have what I need in my head so that I can talk with Greg, and coherently discuss what could be next.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2016/03/30/where-do-i-start-with-apis-the-independent-liberal-arts-college-edition/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2016/03/31/hello-pinboard-customers-from-linden-tibbets-the-ceo-of-ifttt/" class="button">Next >></a></li>
-	
-</ul>
+<p>I can keep adding to this list, but I think this represents a pretty significant v2 presence for Open Referral, as well as the&nbsp;Human Services Data Specification (HSDS) format. This isn't just a suggested proposal. I needed to think about what was needed, and what is next to help support projects on table, and proposals that in the works for specific implementations. I couldn't think about any single project without exploring the big picture.&nbsp;
+<p><a href="http://ohanapi.org/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/icarol-screenshot.png" alt="" width="40%" align="right" /></a>
+<p>Now I'm going to share this with Greg Bloom, the passionate champion behind Open Referral, and HSDS. I just needed to make sure everything was in my head, in support of our discussion in person tomorrow. We'll be looking to move the needle forward on this vision, in conjunction with the implementations on the table. Exploring the big picture on my blog, is how I put my experience on the table, working through all of its moving parts, and make sure I've covered all the ground I need to discuss.
+<p><strong>What Does The Road Map Look Like?</strong><br />Greg and crew are in charge of the road map. I just need to get more intimate with the specification. I have already created a v1 draft, scraped from the Slate documentation for the existing Ohana API implementation, using OpenAPISpec. I have the PDF documentation for an Open Referral partner to convert to a machine readable OpenAPI Spec as well. The process will help me further build awareness around the specification itself. This post has helped me see the 100K view, crafting the OpenAPI Spec will help me dive deep down into the weeds of how to deliver a human services API using the HSDS standard.
+<p>Since PHP is my primary language, I'll get to work on a PHP / Slim Framework implementation of HSDS, providing a working prototype. I'll use the Ohana API generated OpenAPI Spec as my guide for the server side API code, the documentation, as well as some client code in both PHP and JavaScript. I'll push forward with some of the aspects of the demo portal implementation above, as well as completing some of the PHP code needed for server, and client side in the process. After all of this, I should have a pretty solid view of the details of what is possible with a human services API.
+<p><strong>A Model For Human Services API And Hopefully Other Public API Services</strong><br />I'm pretty stoked with the potential for working on Open Referral, and honored Greg has invited me to participate. This is just a first draft, tailored for what I would like to see considered for Open Referral / HSDS API, and for a couple of immediate implementations. However the model is something I will keep evolving alongside this project, as well as a more generic blueprint for how public service APIs could possibly be implemented.
+<p>There are several other API implementations that have come across my desk, which I've felt a model like this should be applied. I was thinking about applying this to the&nbsp;<a href="https://ed-data.github.io/developer/index.html">FAFSA API</a>, to help develop a student aid API community. I also thought it could be applied around the deployment of the <a href="http://apievangelist.com/2015/01/21/the-next-steps-for-the-the-recreation-information-database-ridb-api/">RIDB API</a>, in support of our national park system. In both of these environments a centralized, common, open API definition, with supporting schema and dictionaries, and a healthy selection of of open source server, and client side web or mobile app implementations, would have gone a long ways.
+<p>Anyways, I have what I need in my head so that I can talk with Greg, and coherently discuss what could be next.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

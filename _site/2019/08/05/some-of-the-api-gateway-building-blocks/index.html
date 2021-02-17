@@ -1,131 +1,16 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Some Of The API Gateway Building Blocks</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Some Of The API Gateway Building Blocks'
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-IMG_8312.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-IMG_8312.jpg" width="45%" align="right" style="padding: 15px;" />
+The inspiration for this post wasn’t fully mine, I’m borrowing and building upon what Sukanya Santhanam (@SukanyaSanthan1) <a href="https://twitter.com/SukanyaSanthan1/status/1151424256300859392">tweeted out the other day</a>. It is a good idea, and something that should be open sourced and moved forward. I’ve been studying with API management since 2010, and using gateways for over 15 years. I’ve watched gateways evolve, and partnered regularly with API management and gateway providers (Shout out to Tyk). Modern API gateways aren’t your grandfather’s SOA tooling, they’ve definitely gone through several iterations. While I still prefer hand rolling and forging my APIs out back in my woodshed on an anvil, I find myself working with a lot of different API gateways lately.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>I’ve kept feeling like I needed to map out the layers of what I’d consider to be a modern API gateway, and begin providing links to the most relevant API gateways out there, and the most common building blocks for an API gateway. Now that you can find API gateways baked into the fabric of the cloud, it is time that we work to standardize the definition of what they can deliver. I’m not looking to change what already is. Actually, I’m looking to just document and build on what already is. As with every other stop along the API lifecycle I’m looking to just map out the common building blocks, and establish a blueprint going forward the might influence existing API gateway providers, as well as any newcomers.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Some Of The API Gateway Building Blocks | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-IMG_8312.jpg">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Some Of The API Gateway Building Blocks | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-IMG_8312.jpg">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Some Of The API Gateway Building Blocks</h2>
-<p><span class="post-date">05 Aug 2019</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-IMG_8312.jpg" width="45%" align="right" style="padding: 15px;" />
-The inspiration for this post wasn’t fully mine, I’m borrowing and building upon what Sukanya Santhanam (@SukanyaSanthan1) <a href="https://twitter.com/SukanyaSanthan1/status/1151424256300859392">tweeted out the other day</a>. It is a good idea, and something that should be open sourced and moved forward. I’ve been studying with API management since 2010, and using gateways for over 15 years. I’ve watched gateways evolve, and partnered regularly with API management and gateway providers (Shout out to Tyk). Modern API gateways aren’t your grandfather’s SOA tooling, they’ve definitely gone through several iterations. While I still prefer hand rolling and forging my APIs out back in my woodshed on an anvil, I find myself working with a lot of different API gateways lately.</p>
-
-<p>I’ve kept feeling like I needed to map out the layers of what I’d consider to be a modern API gateway, and begin providing links to the most relevant API gateways out there, and the most common building blocks for an API gateway. Now that you can find API gateways baked into the fabric of the cloud, it is time that we work to standardize the definition of what they can deliver. I’m not looking to change what already is. Actually, I’m looking to just document and build on what already is. As with every other stop along the API lifecycle I’m looking to just map out the common building blocks, and establish a blueprint going forward the might influence existing API gateway providers, as well as any newcomers.</p>
-
-<p>After going through my <a href="http://gateway.apievangelist.com/">API gateway research</a> for a while, I quickly sketched out these common building blocks for helping deploy, manage, monitor, and secure your APIs:</p>
+<p>After going through my <a href="http://gateway.apievangelist.com/">API gateway research</a> for a while, I quickly sketched out these common building blocks for helping deploy, manage, monitor, and secure your APIs:
 
 <ul>
   <li><strong>Paths</strong> - Allowing many different API paths to exist.</li>
@@ -192,119 +77,9 @@ The inspiration for this post wasn’t fully mine, I’m borrowing and building 
   </li>
 </ul>
 
-<p>I’m going to add these to my API gateway research. I’m sure there are other building blocks out there, but I think this is a good start. It reflects what I think makes API gateways different from API management. It has the design, deployment, and backend integration portion of the conversation, as well as the key API management features expected. I see API gateways as a Venn diagram of API lifecycle features. Providing a single blueprint, tooling, and appliance that will help you deliver, manage, distribute, and scale your API infrastructure.</p>
+<p>I’m going to add these to my API gateway research. I’m sure there are other building blocks out there, but I think this is a good start. It reflects what I think makes API gateways different from API management. It has the design, deployment, and backend integration portion of the conversation, as well as the key API management features expected. I see API gateways as a Venn diagram of API lifecycle features. Providing a single blueprint, tooling, and appliance that will help you deliver, manage, distribute, and scale your API infrastructure.
 
-<p><a href="https://github.com/api-evangelist/api-gateway-blueprint">You can find this outline published over at GitHub</a>. I will me managing it as a living document and opening up to feedback via GitHub issues. I’m going to evolve this as a core API gateway specification—eventually defining APIs and schema for each layer of the stack. This will take some time because I will have to profile several of the existing API gateway APIs and mine them for logical patterns. Borrowing from their API designs, and schema, layering them together to create a common set of building blocks. I’m going to also begin iterating upon what I’d call an observable regulatory set of API gateway building blocks to augment this existing list. Establishing my vision of not just an API gateway standard, which can be used internally, as well as openly as part of an industry-wide effort to deliver consistent APIs for a collective purpose.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2019/08/05/a-look-at-behavioral-api-patents/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2019/08/15/an-api-platform-reliability-engineer-at-stripe/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p><a href="https://github.com/api-evangelist/api-gateway-blueprint">You can find this outline published over at GitHub</a>. I will me managing it as a living document and opening up to feedback via GitHub issues. I’m going to evolve this as a core API gateway specification—eventually defining APIs and schema for each layer of the stack. This will take some time because I will have to profile several of the existing API gateway APIs and mine them for logical patterns. Borrowing from their API designs, and schema, layering them together to create a common set of building blocks. I’m going to also begin iterating upon what I’d call an observable regulatory set of API gateway building blocks to augment this existing list. Establishing my vision of not just an API gateway standard, which can be used internally, as well as openly as part of an industry-wide effort to deliver consistent APIs for a collective purpose.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

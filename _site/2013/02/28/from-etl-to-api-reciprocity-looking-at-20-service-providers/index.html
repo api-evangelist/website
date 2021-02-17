@@ -1,216 +1,101 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>From ETL to API Reciprocity, Looking at 20 Service Providers</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'From ETL to API Reciprocity, Looking at 20 Service Providers'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2013/02/28/from-etl-to-api-reciprocity-looking-at-20-service-providers/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="From ETL to API Reciprocity, Looking at 20 Service Providers | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2013/02/28/from-etl-to-api-reciprocity-looking-at-20-service-providers/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="From ETL to API Reciprocity, Looking at 20 Service Providers | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/reciprocity-trends.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>From ETL to API Reciprocity, Looking at 20 Service Providers</h2>
-<p><span class="post-date">28 Feb 2013</span></p>
-<p><a href="http://apievangelist.com/trends/reciprocity.php"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/trends/reciprocity-trends.png" alt="" width="300" align="right" /></a></p>
-<p>I spent time this week looking at 20, of what I&rsquo;m calling <a href="/trends/reciprocity.php">API reciprocity providers</a>, who are providing a new generation of what is historically known as ETL in the enterprise, to connect, transfer, transform and push data and content between the cloud services we are increasingly growing dependent on.</p>
-<p>With more and more of our lives existing in the cloud and via mobile devices, the need to migrate data and content between services will only grow more urgent.  While ETL has all the necessary tools to accomplish the job, the cloud democratized IT resources, and the same will occur to ETL, making these tools accessible by the masses.</p>
-<p>There are quite a few ETL solutions, but I feel there are 3 solutions that are starting to make a migration towards an easier to understand and implement vision of ETL:</p>
+<p><a href="http://apievangelist.com/trends/reciprocity.php"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/trends/reciprocity-trends.png" alt="" width="300" align="right" /></a>
+<p>I spent time this week looking at 20, of what I&rsquo;m calling <a href="/trends/reciprocity.php">API reciprocity providers</a>, who are providing a new generation of what is historically known as ETL in the enterprise, to connect, transfer, transform and push data and content between the cloud services we are increasingly growing dependent on.
+<p>With more and more of our lives existing in the cloud and via mobile devices, the need to migrate data and content between services will only grow more urgent.  While ETL has all the necessary tools to accomplish the job, the cloud democratized IT resources, and the same will occur to ETL, making these tools accessible by the masses.
+<p>There are quite a few ETL solutions, but I feel there are 3 solutions that are starting to make a migration towards an easier to understand and implement vision of ETL:
 <table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
-<td align="center"><a title="CloverETL" href="/serviceproviders/cloveretl.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png" alt="" width="160" /> </a></td>
-<td align="center"><a title="SnapLogic" href="/serviceproviders/snaplogic.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="CloverETL" href="/serviceproviders/cloveretl.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloveretl-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="SnapLogic" href="/serviceproviders/snaplogic.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/snaplogic-logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="Talend" href="/serviceproviders/talend.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Talend" href="/serviceproviders/talend.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/talend-logo.png" alt="" width="160" /> </a></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
-<p>These providers are more robust, and provide much of the classic ETL tools the enterprise is used to, but also have the new emphasis on API driven services.  But there are 10 new service providers I&rsquo;m calling reciprocity platforms, that demonstrate the potential with offering very simple tasks, triggers and actions that can provide interaction between two or more API services:</p>
+<p>These providers are more robust, and provide much of the classic ETL tools the enterprise is used to, but also have the new emphasis on API driven services.  But there are 10 new service providers I&rsquo;m calling reciprocity platforms, that demonstrate the potential with offering very simple tasks, triggers and actions that can provide interaction between two or more API services:
 <table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
-<td align="center"><a title="If This Then That (IFTTT)" href="/serviceproviders/if_this_then_that_(ifttt).php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg" alt="" width="160" /> </a></td>
-<td align="center"><a title="Factor.io" href="/serviceproviders/factor.io.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/factor-io-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="If This Then That (IFTTT)" href="/serviceproviders/if_this_then_that_(ifttt).php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/IFTTT-logo.jpeg" alt="" width="160" /> </a></td>
+<td align="center"><a title="Factor.io" href="/serviceproviders/factor.io.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/factor-io-logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="Zapier" href="/serviceproviders/zapier.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png" alt="" width="160" /> </a></td>
-<td align="center"><a title="Temboo" href="/serviceproviders/temboo.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Temboo-Logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Zapier" href="/serviceproviders/zapier.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/zapier-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Temboo" href="/serviceproviders/temboo.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/Temboo-Logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="Foxweave" href="/serviceproviders/foxweave.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png" alt="" width="160" /> </a></td>
-<td align="center"><a title="Elastic.io" href="/serviceproviders/elastic.io.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Foxweave" href="/serviceproviders/foxweave.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/foxweave-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Elastic.io" href="/serviceproviders/elastic.io.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/elasticio_logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="Rules.io" href="/serviceproviders/rules.io.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg" alt="" width="200" /> </a></td>
-<td align="center"><a title="itDuzzit" href="/serviceproviders/itduzzit.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png" alt="" width="110" /> </a></td>
+<td align="center"><a title="Rules.io" href="/serviceproviders/rules.io.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/rules-io-logo.jpeg" alt="" width="200" /> </a></td>
+<td align="center"><a title="itDuzzit" href="/serviceproviders/itduzzit.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/itduzzit-logo.png" alt="" width="110" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="WeWiredWeb" href="/serviceproviders/wewiredweb.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/We-Wired-Web-Logo.png" alt="" width="200" /> </a></td>
-<td align="center"><a title="RITC" href="/serviceproviders/ritc.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Ritc-logo.png" alt="" width="120" /></a></td>
+<td align="center"><a title="WeWiredWeb" href="/serviceproviders/wewiredweb.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/We-Wired-Web-Logo.png" alt="" width="200" /> </a></td>
+<td align="center"><a title="RITC" href="/serviceproviders/ritc.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/Ritc-logo.png" alt="" width="120" /></a></td>
 </tr>
 </tbody>
 </table>
-<p>I consider reciprocity an evolution of ETL, because of three significant approaches:</p>
+<p>I consider reciprocity an evolution of ETL, because of three significant approaches:
 <ul class="mainlist">
 <li><strong>Simplicity</strong> - Simple, meaningful connections with transfer and tranformations that are meaningful to end users, not just a wide array of ETL building blocks an IT architect has to implement</li>
 <li><strong>API</strong> - Reciprocity platforms expose meaningful connections users have the cloud services they depend on.  While you can still migrate from databases or file locations as with classic ETL, reciprocity platforms focus on APIs, while maintaining the value for end-users as well as the originating or target platforms</li>
 <li><strong>Value</strong> - Reciprocity focus on not just transmitting data and content, but identifying the value of the payload itself and the relationships, and emotions in play between users and the platforms they depend on</li>
 </ul>
-<p>This new generation of ETL providers began the migration online with <span style="text-decoration: underline;"><a title="Yahoo Pipes" href="http://pipes.yahoo.com/">Yahoo Pipes</a></span>.  Which resonated with the alpha developers looking to harvest, migrate, merge, mashup and push data from RSS, XML, JSON and other popular API sources--except Yahoo lacked the simplicity necessary for wider audience appeal.</p>
-<p>While I feel the 10 reciprocity providers isted above represent this new wave, there are six others incumbents trying to solve the same problem:</p>
+<p>This new generation of ETL providers began the migration online with <span style="text-decoration: underline;"><a title="Yahoo Pipes" href="https://pipes.yahoo.com/">Yahoo Pipes</a></span>.  Which resonated with the alpha developers looking to harvest, migrate, merge, mashup and push data from RSS, XML, JSON and other popular API sources--except Yahoo lacked the simplicity necessary for wider audience appeal.
+<p>While I feel the 10 reciprocity providers isted above represent this new wave, there are six others incumbents trying to solve the same problem:
 <table cellspacing="5" cellpadding="5" width="100%">
 <tbody>
 <tr>
-<td align="center"><a title="AutomateIt" href="/serviceproviders/automateit.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png" alt="" width="160" /> </a></td>
-<td align="center"><a title="Cloudwork" href="/serviceproviders/cloudwork.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="AutomateIt" href="/serviceproviders/automateit.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/automateit-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Cloudwork" href="/serviceproviders/cloudwork.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/cloudwork-logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="MashableLogic" href="/serviceproviders/mashablelogic.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg" alt="" width="160" /> </a></td>
-<td align="center"><a title="Pentaho - Kettle" href="/serviceproviders/pentaho_-_kettle.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="MashableLogic" href="/serviceproviders/mashablelogic.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/mashablelogic-logo.jpeg" alt="" width="160" /> </a></td>
+<td align="center"><a title="Pentaho - Kettle" href="/serviceproviders/pentaho_-_kettle.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/pentaho-logo.png" alt="" width="160" /> </a></td>
 </tr>
 <tr>
-<td align="center"><a title="SortMyBox" href="/serviceproviders/sortmybox.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png" alt="" width="160" /> </a></td>
-<td align="center"><a title="Wappwolf" href="/serviceproviders/wappwolf.php" target="_blank"> <img style="padding: 30px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="SortMyBox" href="/serviceproviders/sortmybox.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/sortmybox-logo.png" alt="" width="160" /> </a></td>
+<td align="center"><a title="Wappwolf" href="/serviceproviders/wappwolf.php" target="_blank"> <img style="padding: 30px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/wappwolf-logo.png" alt="" width="160" /> </a></td>
 </tr>
 </tbody>
 </table>
-<p>While studying the approach of these 20 reciprocity providers, it can be tough to identify a set of common identifiers to refer to the value created. &nbsp;Each provider has their own approach and potentially identifying terminology.  For my understanding, I wanted to try and establish a common way to describe how reciprocity providers are redefining ETL. &nbsp;While imperfect, it will give me a common language to use, while also being a constant work in progress.</p>
-<p>For most reciprocity providers, it starts with some ecompassing wrapper in the form of an <span style="text-decoration: underline;">assembly</span> which describes the overall recipe, formula or wrapper that contains all the moving ETL parts.</p>
-<p>Within this assembly, you can execute on workflows, usually in a single flow, but with some of the providers you can daisy chain together multiple (or endless) workflows to create a complex series of processes.</p>
-<p>Each workflow has a defining trigger which determines the criteria that will start the workflow such as new RSS post or new tweet, and with each trigger comes a resulting action which is the target of the workflow, publishing the RSS post to a syndicated blog or adds the tweet to a Google Spreadsheet or Evernote, or any other combination of trigger and action a user desires.</p>
-<p>Triggers and actions represent the emotional connections that are the underpinnings of ETL&rsquo;s evolution into a more meaningful, reciprocation of value that is emerging in the clouds.  These new providers are connecting to the classic lineup of ETL interfaces to get things done:</p>
+<p>While studying the approach of these 20 reciprocity providers, it can be tough to identify a set of common identifiers to refer to the value created. &nbsp;Each provider has their own approach and potentially identifying terminology.  For my understanding, I wanted to try and establish a common way to describe how reciprocity providers are redefining ETL. &nbsp;While imperfect, it will give me a common language to use, while also being a constant work in progress.
+<p>For most reciprocity providers, it starts with some ecompassing wrapper in the form of an <span style="text-decoration: underline;">assembly</span> which describes the overall recipe, formula or wrapper that contains all the moving ETL parts.
+<p>Within this assembly, you can execute on workflows, usually in a single flow, but with some of the providers you can daisy chain together multiple (or endless) workflows to create a complex series of processes.
+<p>Each workflow has a defining trigger which determines the criteria that will start the workflow such as new RSS post or new tweet, and with each trigger comes a resulting action which is the target of the workflow, publishing the RSS post to a syndicated blog or adds the tweet to a Google Spreadsheet or Evernote, or any other combination of trigger and action a user desires.
+<p>Triggers and actions represent the emotional connections that are the underpinnings of ETL&rsquo;s evolution into a more meaningful, reciprocation of value that is emerging in the clouds.  These new providers are connecting to the classic lineup of ETL interfaces to get things done:
 <ul class="mainlist">
 <li>Databases</li>
 <li>Files</li>
 <li>Messaging</li>
 <li>Web Service</li>
 </ul>
-<p>While also providing the opportunity for development of <span style="text-decoration: underline;">open connectors</span> to connect to any custom database, file, messages and web services.  But these connectors are not described in boring IT terms, they are wrapped in the emotion and meaning derived from the cloud service--which could have different meanings for different users. This is where one part of the promise of reciprocity comes into play, by empowering average problem owners and every day users to define and execute against these types of API driven agreements.</p>
-<p>All of these actions, tasks, formulas, jobs or other types of process require the ability to plan, execute and audit the processes, with providers offering:</p>
+<p>While also providing the opportunity for development of <span style="text-decoration: underline;">open connectors</span> to connect to any custom database, file, messages and web services.  But these connectors are not described in boring IT terms, they are wrapped in the emotion and meaning derived from the cloud service--which could have different meanings for different users. This is where one part of the promise of reciprocity comes into play, by empowering average problem owners and every day users to define and execute against these types of API driven agreements.
+<p>All of these actions, tasks, formulas, jobs or other types of process require the ability to plan, execute and audit the processes, with providers offering:
 <ul class="mainlist">
 <li>Scheduling</li>
 <li>History / Logging</li>
 <li>Monitoring</li>
 </ul>
-<p>With data being the lifeblood of much of these efforts, of course we will see &ldquo;big data&rdquo; specific tools as well:</p>
+<p>With data being the lifeblood of much of these efforts, of course we will see &ldquo;big data&rdquo; specific tools as well:
 <ul class="mainlist">
 <li>Synchronization </li>
 <li>Data Quality</li>
 <li>Big Data</li>
 <li>Analytics</li>
 </ul>
-<p>While many reciprocity providers are offering interoperability between two specific services, moving data and resource from point a to b, others are bringing in classic ETL transformations:</p>
+<p>While many reciprocity providers are offering interoperability between two specific services, moving data and resource from point a to b, others are bringing in classic ETL transformations:
 <ul class="mainlist">
 <li>Reformat</li>
 <li>Aggregate</li>
@@ -223,41 +108,41 @@
 <li>Split</li>
 <li>Convert</li>
 </ul>
-<p>After the trigger and before the action, there is also an opportunity for other things to happen, with providers offering:</p>
+<p>After the trigger and before the action, there is also an opportunity for other things to happen, with providers offering:
 <ul class="mainlist">
 <li>Push</li>
 <li>Events</li>
 </ul>
-<p>During trigger, action or transformation there are plenty of opportunities for custom scripting and transofrmations, with several approaches to custom programming:</p>
+<p>During trigger, action or transformation there are plenty of opportunities for custom scripting and transofrmations, with several approaches to custom programming:
 <ul class="mainlist">
 <li>Custom Scripts</li>
 <li>JavaScript</li>
 <li>Command Line</li>
 <li>API</li>
 </ul>
-<p>In some cases the reciprocity provider also provides a <span style="text-decoration: underline;">key value store</span> allowing the storage of user specified data extracted from trigger or action connections or during the transformation process.  Introducing a kind of memory store during the reciprocal cycle.</p>
-<p>With the migration of critical resources, many of the leading providers are offering tools for testing the process before live execution:</p>
+<p>In some cases the reciprocity provider also provides a <span style="text-decoration: underline;">key value store</span> allowing the storage of user specified data extracted from trigger or action connections or during the transformation process.  Introducing a kind of memory store during the reciprocal cycle.
+<p>With the migration of critical resources, many of the leading providers are offering tools for testing the process before live execution:
 <ul class="mainlist">
 <li>Test</li>
 <li>Debugger</li>
 <li>Sandbox</li>
 <li>Production</li>
 </ul>
-<p>With any number of tasks or jobs in motion, users will need to understand whether the whole apparatus is working, with platforms offering tools for:</p>
+<p>With any number of tasks or jobs in motion, users will need to understand whether the whole apparatus is working, with platforms offering tools for:
 <ul class="mainlist">
 <li>Performance</li>
 <li>Monitoring</li>
 <li>Optimization</li>
 </ul>
-<p>While there are a couple providers offering completely <span style="text-decoration: underline;">open source</span> solutions, there are also several providing <span style="text-decoration: underline;">OEM</span> or <span style="text-decoration: underline;">white label solutions</span>, which allow you to deploy a reciprocity platform for your partners, clients or other situations that would require it to branded in a custom way.</p>
-<p>One area that will continue to push ETL into this new category of reciprocity providers is <span style="text-decoration: underline;">security</span>.  Connectors will often use <span style="text-decoration: underline;">OAuth</span>, respecting a users already established relationship with platform either on the trigger or action sides, ensureing their existing relationship is upheld.  Beyond this providers are offering <span style="text-decoration: underline;">SSL</span> to provide secure transmissions, but in the near future we will see other layers emerge to keep agreements in tact, private and maintain the value of not just the payload but the relationships between platforms, users and reciprocity providers.</p>
-<p>Even though reciprocity providers focus on the migration of resources in this new API driven, cloud-based world, several of them still offer dual solutions for deploying solutions in both environments:</p>
+<p>While there are a couple providers offering completely <span style="text-decoration: underline;">open source</span> solutions, there are also several providing <span style="text-decoration: underline;">OEM</span> or <span style="text-decoration: underline;">white label solutions</span>, which allow you to deploy a reciprocity platform for your partners, clients or other situations that would require it to branded in a custom way.
+<p>One area that will continue to push ETL into this new category of reciprocity providers is <span style="text-decoration: underline;">security</span>.  Connectors will often use <span style="text-decoration: underline;">OAuth</span>, respecting a users already established relationship with platform either on the trigger or action sides, ensureing their existing relationship is upheld.  Beyond this providers are offering <span style="text-decoration: underline;">SSL</span> to provide secure transmissions, but in the near future we will see other layers emerge to keep agreements in tact, private and maintain the value of not just the payload but the relationships between platforms, users and reciprocity providers.
+<p>Even though reciprocity providers focus on the migration of resources in this new API driven, cloud-based world, several of them still offer dual solutions for deploying solutions in both environments:
 <ul class="mainlist">
 <li>Cloud </li>
 <li>On-Premise</li>
 </ul>
-<p>There is not one approach either in the cloud, or on premise that will work for everyone and all their needs.  Some data will be perfectly find moving around the cloud, while others will require a more sensitive on-premise approach.  It will be up to problem owners to decide.</p>
-<p>Many of this new breed of providers are in beta and pricing &nbsp;isn&rsquo;t available.  A handful have begun to apply cloud based pricing models, but most are still trying to understand the value of this new service and what market will bear.  So far I&rsquo;m seeing pricing based upon:</p>
+<p>There is not one approach either in the cloud, or on premise that will work for everyone and all their needs.  Some data will be perfectly find moving around the cloud, while others will require a more sensitive on-premise approach.  It will be up to problem owners to decide.
+<p>Many of this new breed of providers are in beta and pricing &nbsp;isn&rsquo;t available.  A handful have begun to apply cloud based pricing models, but most are still trying to understand the value of this new service and what market will bear.  So far I&rsquo;m seeing pricing based upon:
 <ul class="mainlist">
 <li>Seat</li>
 <li>Assembly</li>
@@ -268,119 +153,9 @@
 <li>Support</li>
 <li>Training</li>
 </ul>
-<p>Much like IaaS, PaaS SaaS and now BaaS, reciprocity providers will have a lot of education and communication with end users before they&rsquo;ll fully understand what they can charge for their services--forcing them to continue to define and differentiate themselves in 2013.</p>
-<p>One of the most important evolutionary areas, I&rsquo;m only seeing with one or two providers, is a <span style="text-decoration: underline;">marketplace</span> where reciprocity platform users can browse and search for assemblies, connectors and tasks that are created by 3rd party providers for specific reciprocity approaches.  A marketplace will prove to be how reciprocity platforms serve the long tail and niches that will exist within the next generation of ETL.  Marketplaces will provide a way for developers to build solutions that meet specific needs, allowing them to monetize their skills and domain expertise, while also bringing in revenue to platform owners.</p>
-<p>I understand this is all a lot of information.  If you are still ready this, you most likely either already understand this space, or like me, feel it is an important area to understand and help educate people about.   Just like with API service providers and BaaS, I will continue to write about my research here, while providing more refined materials as Github repos for each research area.</p>
-<p>Let me know anything I'm missing or your opinions on the concept of API reciprocity.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2013/02/28/continue-with-my-api-service-as-a-guest/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2013/03/01/api-deployment-as-a-service/" class="button">Next >></a></li>
-	
-</ul>
+<p>Much like IaaS, PaaS SaaS and now BaaS, reciprocity providers will have a lot of education and communication with end users before they&rsquo;ll fully understand what they can charge for their services--forcing them to continue to define and differentiate themselves in 2013.
+<p>One of the most important evolutionary areas, I&rsquo;m only seeing with one or two providers, is a <span style="text-decoration: underline;">marketplace</span> where reciprocity platform users can browse and search for assemblies, connectors and tasks that are created by 3rd party providers for specific reciprocity approaches.  A marketplace will prove to be how reciprocity platforms serve the long tail and niches that will exist within the next generation of ETL.  Marketplaces will provide a way for developers to build solutions that meet specific needs, allowing them to monetize their skills and domain expertise, while also bringing in revenue to platform owners.
+<p>I understand this is all a lot of information.  If you are still ready this, you most likely either already understand this space, or like me, feel it is an important area to understand and help educate people about.   Just like with API service providers and BaaS, I will continue to write about my research here, while providing more refined materials as Github repos for each research area.
+<p>Let me know anything I'm missing or your opinions on the concept of API reciprocity.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

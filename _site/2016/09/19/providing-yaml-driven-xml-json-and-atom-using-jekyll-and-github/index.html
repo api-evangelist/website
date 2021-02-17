@@ -1,253 +1,28 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Providing YAML driven XML, JSON, and Atom using Jekyll And Github</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Providing YAML driven XML, JSON, and Atom using Jekyll And Github'
+image: https://gist.github.com/kinlane/325b2f3ca761b5deaf52666f78117b5d.js
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2016/09/19/providing-yaml-driven-xml-json-and-atom-using-jekyll-and-github/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Providing YAML driven XML, JSON, and Atom using Jekyll And Github | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2016/09/19/providing-yaml-driven-xml-json-and-atom-using-jekyll-and-github/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Providing YAML driven XML, JSON, and Atom using Jekyll And Github | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Providing YAML driven XML, JSON, and Atom using Jekyll And Github</h2>
-<p><span class="post-date">19 Sep 2016</span></p>
-<p>The power of Jekyll on Github Pages as a data management solutions is not a very widely held concept. I'm always amazed at how technologists and programmers don't understand <a href="http://jekyllrb.com/">Jekyll</a>, let alone how it can be used as a data engine--maybe I can help a little by sharing my own usage. As I develop examples of this in action, I want to publish them as <a href="http://xml.son.yaml.jekyll.apievangelist.com/">Github repositories that anyone can fork and reverse engineer to use in their own work</a>.</p>
-<p>While it was not love at first sight for me, I'm increasingly becoming a fan of using YAML for storing and managing a significant portion of the data I use across my business. Part of the reasons I'm using YAML is its readability. The other reasons stem from the augmented benefits of using Jekyll and Github Pages to store and syndicate machine readable YAML for use across my storytelling--when you put YAML data into the _data folder for any Jekyll site, it opens up a new world of possibilities.</p>
+<p>The power of Jekyll on Github Pages as a data management solutions is not a very widely held concept. I'm always amazed at how technologists and programmers don't understand <a href="https://jekyllrb.com/">Jekyll</a>, let alone how it can be used as a data engine--maybe I can help a little by sharing my own usage. As I develop examples of this in action, I want to publish them as <a href="http://xml.son.yaml.jekyll.apievangelist.com/">Github repositories that anyone can fork and reverse engineer to use in their own work</a>.
+<p>While it was not love at first sight for me, I'm increasingly becoming a fan of using YAML for storing and managing a significant portion of the data I use across my business. Part of the reasons I'm using YAML is its readability. The other reasons stem from the augmented benefits of using Jekyll and Github Pages to store and syndicate machine readable YAML for use across my storytelling--when you put YAML data into the _data folder for any Jekyll site, it opens up a new world of possibilities.
 <script src="https://gist.github.com/kinlane/325b2f3ca761b5deaf52666f78117b5d.js"></script>
-<p>Any YAML data I put into the _data folder immediately become objects I can work with across any HTML page within a Jekyll site, <a href="https://shopify.github.io/liquid/">using Liquid</a>. Where this really starts to impact my world is when I started dynamically generating other formats of data stored as YAML.</p>
-<p>First up is JSON. Here is the file I am using to generate a JSON representation of my central YAML file stored in _data folder.</p>
+<p>Any YAML data I put into the _data folder immediately become objects I can work with across any HTML page within a Jekyll site, <a href="https://shopify.github.io/liquid/">using Liquid</a>. Where this really starts to impact my world is when I started dynamically generating other formats of data stored as YAML.
+<p>First up is JSON. Here is the file I am using to generate a JSON representation of my central YAML file stored in _data folder.
 <script src="https://gist.github.com/kinlane/470db918abe87ac309c373c998e7a1c1.js"></script>
-<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.json">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate JSON representation</a>:</p>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.json">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate JSON representation</a>:
 <script src="https://gist.github.com/kinlane/01a280996ba007a6806852ae312ef26b.js"></script>
-<p>Next up is XML. Here is the file I am using to generate a XML representation of my central YAML file stored in _data folder.</p>
+<p>Next up is XML. Here is the file I am using to generate a XML representation of my central YAML file stored in _data folder.
 <script src="https://gist.github.com/kinlane/37f5a98f29869dce1f243ea5a9a4ba7d.js"></script>
-<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate XML representation</a>:</p>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/products.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website&nbsp;I get a separate XML representation</a>:
 <script src="https://gist.github.com/kinlane/4abec529e89e4b87a558a6e15986d8a3.js"></script>
-<p>Next up is Atom. Maybe I may want a feed of the latest products added to the catalog, so here is the file I am using to generate an Atom XML representation of my central YAML file stored in _data folder.</p>
+<p>Next up is Atom. Maybe I may want a feed of the latest products added to the catalog, so here is the file I am using to generate an Atom XML representation of my central YAML file stored in _data folder.
 <script src="https://gist.github.com/kinlane/48fbdd576049d25257b2efafba7e0738.js"></script>
-<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/atom.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website, I get a separate Atom XML representation</a>:</p>
+<p><a href="http://xml.son.yaml.jekyll.apievangelist.com/data/atom.xml">Which when I view in my browser, via the Jekyll driven, Github Pages published website, I get a separate Atom XML representation</a>:
 <script src="https://gist.github.com/kinlane/c4ecdeadf80622c2b54e040355745f2b.js"></script>
-<p>From a single YAML file, I just generated a JSON, XML, and Atom representation of the same list of products. <a href="https://github.com/kinlane/xml-json-using-yaml-jekyll">It is all stored in a Github repository, and published as a Jekyll website hosted using Github Pages</a>. This particular Github repo is meant to just be a demonstration of what is possible using Jekyll, YAML, and Github Pages. I will use this work as a base in a variety of other projects, where I use these various formats to drive web and mobile applications, as well as visualizations and analytics used across my API storytelling.</p>
-<p>There are a wealth of reasons why I conduct this type of work. First, it is work I will use in my own research and storytelling, which all operates using Github and Jekyll. Second, doing my work out in the open, using open source tools and definitions, published as Github repositories making my work forkable, and reusable by others. There is a learning curve involved with unpacking what is happening here, but I feel pretty strongly that these are reusable modules that anyone can put to use--not just developers.</p>
-<p>I will publish other examples of this in action as I develop them. When I need the Liquid scripts to generate JSON, XML, or Atom feeds in any of my projects I will just visit this repo, and copy / paste. When I develop new ones I will generalize and publish here for everyone to use as well.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2016/09/19/my-forkable-minimum-api-portal-definition/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2016/09/19/putting-the-concept-of-the-public-api-to-rest-as-a-dominant-narrative/" class="button">Next >></a></li>
-	
-</ul>
+<p>From a single YAML file, I just generated a JSON, XML, and Atom representation of the same list of products. <a href="https://github.com/kinlane/xml-json-using-yaml-jekyll">It is all stored in a Github repository, and published as a Jekyll website hosted using Github Pages</a>. This particular Github repo is meant to just be a demonstration of what is possible using Jekyll, YAML, and Github Pages. I will use this work as a base in a variety of other projects, where I use these various formats to drive web and mobile applications, as well as visualizations and analytics used across my API storytelling.
+<p>There are a wealth of reasons why I conduct this type of work. First, it is work I will use in my own research and storytelling, which all operates using Github and Jekyll. Second, doing my work out in the open, using open source tools and definitions, published as Github repositories making my work forkable, and reusable by others. There is a learning curve involved with unpacking what is happening here, but I feel pretty strongly that these are reusable modules that anyone can put to use--not just developers.
+<p>I will publish other examples of this in action as I develop them. When I need the Liquid scripts to generate JSON, XML, or Atom feeds in any of my projects I will just visit this repo, and copy / paste. When I develop new ones I will generalize and publish here for everyone to use as well.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

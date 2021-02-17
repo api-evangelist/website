@@ -1,247 +1,22 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Bot Observability For Every Platform</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Bot Observability For Every Platform'
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-showcase.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><a href="http://bots.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-showcase.png" align="right" width="45%" style="padding: 15px" /></a>
+<p><a href="http://bots.apievangelist.com/">I lightly keep an eye on the world of bots, as APIs are used to create them</a>. In my work I see a lot of noise about bots usually in two main camps: 1) pro-bot - bots are the future, and 2) anti-bot - they are one of the biggest threats we face on the web. This is a magical marketing creating formula, which allows you to sell products to both sides of the equation, making money off of bot creation, as well as bot identification and defense–it is beautiful (if you live by disruption).
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>From my vantage point, I’m wondering why platforms do not provide more bot observability as a part of platform operations. There shouldn’t be services that tell us which accounts are bots, the platform should tell us by default, which users are real and which are automated (you know you know). Platforms should embrace automation and providing services and tooling to assist in their operation, which includes actual definitions of what is acceptable, and what unacceptable bot behavior. Then actually policing this behavior, and being observable in your actions around bot management and enforcement.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+<p>It feels like this is just another layer of technology that is being bastardized by the money that flow around technology so easily. Investment in lots of silly useless bots. Investment in bot armies that inflate customer numbers, advertising, and other ways of generating attention (to get investment), and generate revenue. It feels like Slack is the only leading bot platform that has fully embraced the bot conversation. Facebook and Twitter lightly reference the possibilities, and have made slight motions when it comes to managing the realities of bots, but when you Google “Twitter Bots” or “Facebook Bots”, neither of them dominate the conversation around what is happening–which very telling around how they view the world of bots.
 
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+<p>Slack has <a href="https://openreferral.slack.com/apps/category/At0MQP5BEF-bots">a formal bots directory</a>, and has <a href="https://api.slack.com/bot-users">defined the notion of a bot user</a>, separating them from users–setting an example for bot developers to disclose who is bot, and who is not. They talk about <a href="https://medium.com/slack-developer-blog/hard-questions-about-bot-ethics-4f80797e34f0">bot ethics</a>, and <a href="https://medium.com/slack-developer-blog/the-bot-rulebook-a442d9fb21cb">rules for building bots</a>, and <a href="https://slackhq.com/a-beginner-s-guide-to-your-first-bot-97e5b0b7843d">do a lot of storytelling about their vision for bots</a>. Providing a pretty strong start towards getting a handle on the explosion of bots on their platform–taking the bull by the horns, owning the conversation, and setting the tone.
 
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
+<p>I’d say that Slack has a clearer business model for bots–not that people are actually going to pay for your bot (they aren’t), but a model is present. You can some smell of revenue strategies on Facebook, but it just feels like all roads lead to Facebook, and advertising partners there. I’d say Twitter has no notion of a botlike business model for developers. This doesn’t mean that Facebook and Twitter bots don’t generate revenue for folks targeting Facebook and Twitter, or play a role in influencing how money flows when it comes to eyeballs and clicks. Indirectly, Twitter and Facebook bots are making folks lots of money, it is just that platforms have chosen not to observable when it comes their bot practices and ecosystems.
 
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Bot Observability For Every Platform | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-showcase.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Bot Observability For Every Platform | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-showcase.png">
+<p>Platform observability makes sense for not just platform, and bot developers, as Slack demonstrates it makes sense for end-users. Incentivizing bots generating value, instead of mayhem. I’m guessing advertising-driven Facebook and Twitter have embraced the value of mayhem–with advertising being the framework for generating their revenue. Slack has more of a product, with customers they want to make happy. With Facebook and Twitter the end-users are the product, so the bot game plays to a different tune.
 
 
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Bot Observability For Every Platform</h2>
-<p><span class="post-date">17 Jul 2017</span></p>
-<p><a href="http://bots.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-showcase.png" align="right" width="45%" style="padding: 15px" /></a></p>
-<p><a href="http://bots.apievangelist.com/">I lightly keep an eye on the world of bots, as APIs are used to create them</a>. In my work I see a lot of noise about bots usually in two main camps: 1) pro-bot - bots are the future, and 2) anti-bot - they are one of the biggest threats we face on the web. This is a magical marketing creating formula, which allows you to sell products to both sides of the equation, making money off of bot creation, as well as bot identification and defense–it is beautiful (if you live by disruption).</p>
-
-<p>From my vantage point, I’m wondering why platforms do not provide more bot observability as a part of platform operations. There shouldn’t be services that tell us which accounts are bots, the platform should tell us by default, which users are real and which are automated (you know you know). Platforms should embrace automation and providing services and tooling to assist in their operation, which includes actual definitions of what is acceptable, and what unacceptable bot behavior. Then actually policing this behavior, and being observable in your actions around bot management and enforcement.</p>
-
-<p>It feels like this is just another layer of technology that is being bastardized by the money that flow around technology so easily. Investment in lots of silly useless bots. Investment in bot armies that inflate customer numbers, advertising, and other ways of generating attention (to get investment), and generate revenue. It feels like Slack is the only leading bot platform that has fully embraced the bot conversation. Facebook and Twitter lightly reference the possibilities, and have made slight motions when it comes to managing the realities of bots, but when you Google “Twitter Bots” or “Facebook Bots”, neither of them dominate the conversation around what is happening–which very telling around how they view the world of bots.</p>
-
-<p>Slack has <a href="https://openreferral.slack.com/apps/category/At0MQP5BEF-bots">a formal bots directory</a>, and has <a href="https://api.slack.com/bot-users">defined the notion of a bot user</a>, separating them from users–setting an example for bot developers to disclose who is bot, and who is not. They talk about <a href="https://medium.com/slack-developer-blog/hard-questions-about-bot-ethics-4f80797e34f0">bot ethics</a>, and <a href="https://medium.com/slack-developer-blog/the-bot-rulebook-a442d9fb21cb">rules for building bots</a>, and <a href="https://slackhq.com/a-beginner-s-guide-to-your-first-bot-97e5b0b7843d">do a lot of storytelling about their vision for bots</a>. Providing a pretty strong start towards getting a handle on the explosion of bots on their platform–taking the bull by the horns, owning the conversation, and setting the tone.</p>
-
-<p>I’d say that Slack has a clearer business model for bots–not that people are actually going to pay for your bot (they aren’t), but a model is present. You can some smell of revenue strategies on Facebook, but it just feels like all roads lead to Facebook, and advertising partners there. I’d say Twitter has no notion of a botlike business model for developers. This doesn’t mean that Facebook and Twitter bots don’t generate revenue for folks targeting Facebook and Twitter, or play a role in influencing how money flows when it comes to eyeballs and clicks. Indirectly, Twitter and Facebook bots are making folks lots of money, it is just that platforms have chosen not to observable when it comes their bot practices and ecosystems.</p>
-
-<p>Platform observability makes sense for not just platform, and bot developers, as Slack demonstrates it makes sense for end-users. Incentivizing bots generating value, instead of mayhem. I’m guessing advertising-driven Facebook and Twitter have embraced the value of mayhem–with advertising being the framework for generating their revenue. Slack has more of a product, with customers they want to make happy. With Facebook and Twitter the end-users are the product, so the bot game plays to a different tune.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2017/07/17/making-all-sub-resources-available-within-the-core-set-of-human-service-apis/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2017/07/17/writing-api-stories-that-speak-to-my-audience-but-also-influences-their-view-of-technology/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

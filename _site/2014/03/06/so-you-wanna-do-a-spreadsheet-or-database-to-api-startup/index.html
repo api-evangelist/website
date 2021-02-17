@@ -1,248 +1,23 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>So You Wanna Do a Spreadsheet or Database To API Startup</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'So You Wanna Do a Spreadsheet or Database To API Startup'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/bw-spreadsheet-db.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2014/03/06/so-you-wanna-do-a-spreadsheet-or-database-to-api-startup/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="So You Wanna Do a Spreadsheet or Database To API Startup | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-spreadsheet-db.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2014/03/06/so-you-wanna-do-a-spreadsheet-or-database-to-api-startup/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="So You Wanna Do a Spreadsheet or Database To API Startup | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-spreadsheet-db.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>So You Wanna Do a Spreadsheet or Database To API Startup</h2>
-<p><span class="post-date">06 Mar 2014</span></p>
-<p><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/bw-spreadsheet-db.png" alt="" width="220" align="right" /></p>
-<p>A question I get regularly at API Evangelist is around the need for spreadsheet to API, and database to API services. Every couple weeks I get DMs and emails from someone who ask what tools are available, and that they were thinking about developing a solution. Right now I have three separate people asking this, and rather than just reply in email I figured I&rsquo;d write a piece to respond, based upon my experience.</p>
-<p>First, let me state that there is a need for simple spreadsheet to API solution. Much of the worlds data is locked up in spreadsheets, and in control of data stewards who don't access to API deployment resources. However, I'm not sure there is a lot of money to be made in providing this as a service, i feels like something that should just be default for all spreadsheet operations&mdash;you know like Google Spreadsheet.</p>
-<p>Google Spreadsheet allows XML and JSON access to spreadsheets by default. in addition to the full blown <a href="https://developers.google.com/google-apps/spreadsheets/">Google Spreadsheet API</a>.&nbsp;The only problem is with Google Spreadsheet you have some size limitations that make it a solution for only the simplest of data sources. I have written several posts on deploying APIs from Google Docs for both <a href="http://apievangelist.com/2013/10/22/deploy-api-public-google-spreadsheet-to-api/">public</a> and <a href="http://apievangelist.com/2013/11/12/deploy-api-private-google-spreadsheet-to-api/">private</a> spreadsheets, and have received numerous requests for a cloud version of this functionality, that would allow anyone to quickly deploy APIs from Google Spreadsheet sources.</p>
-<p>I think the fact that Google Spreadsheet is free to use, and has API access to is spreadsheets, make this a real tough space to make money in, even if you do smooth out the process. To further convince people to not reinvent the wheel, there is already the &ldquo;Wordpress&rdquo; for data management, called <a href="http://ckan.org/">CKAN</a>, which is, "a powerful data management system that makes data accessible &ndash; by providing tools to streamline publishing, sharing, finding and using data.&rdquo; CKAN is open source, and a tool that city, state, county and federal governments around the globe are downloading and deploying in growing numbers.</p>
-<p>Even with the availability of Google Spreadsheet and its API, and data portal solutions like CKAN, this is still a problem I try to tackle from time to time, when I get the same itch as the people who have triggered this post. I&rsquo;ve created what I call my OnGithub solutions, which allows for data management via Github, and API deployment using simple AWS hosted API framework.</p>
+<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/bw-spreadsheet-db.png" alt="" width="220" align="right" />
+<p>A question I get regularly at API Evangelist is around the need for spreadsheet to API, and database to API services. Every couple weeks I get DMs and emails from someone who ask what tools are available, and that they were thinking about developing a solution. Right now I have three separate people asking this, and rather than just reply in email I figured I&rsquo;d write a piece to respond, based upon my experience.
+<p>First, let me state that there is a need for simple spreadsheet to API solution. Much of the worlds data is locked up in spreadsheets, and in control of data stewards who don't access to API deployment resources. However, I'm not sure there is a lot of money to be made in providing this as a service, i feels like something that should just be default for all spreadsheet operations&mdash;you know like Google Spreadsheet.
+<p>Google Spreadsheet allows XML and JSON access to spreadsheets by default. in addition to the full blown <a href="https://developers.google.com/google-apps/spreadsheets/">Google Spreadsheet API</a>.&nbsp;The only problem is with Google Spreadsheet you have some size limitations that make it a solution for only the simplest of data sources. I have written several posts on deploying APIs from Google Docs for both <a href="http://apievangelist.com/2013/10/22/deploy-api-public-google-spreadsheet-to-api/">public</a> and <a href="http://apievangelist.com/2013/11/12/deploy-api-private-google-spreadsheet-to-api/">private</a> spreadsheets, and have received numerous requests for a cloud version of this functionality, that would allow anyone to quickly deploy APIs from Google Spreadsheet sources.
+<p>I think the fact that Google Spreadsheet is free to use, and has API access to is spreadsheets, make this a real tough space to make money in, even if you do smooth out the process. To further convince people to not reinvent the wheel, there is already the &ldquo;Wordpress&rdquo; for data management, called <a href="http://ckan.org/">CKAN</a>, which is, "a powerful data management system that makes data accessible &ndash; by providing tools to streamline publishing, sharing, finding and using data.&rdquo; CKAN is open source, and a tool that city, state, county and federal governments around the globe are downloading and deploying in growing numbers.
+<p>Even with the availability of Google Spreadsheet and its API, and data portal solutions like CKAN, this is still a problem I try to tackle from time to time, when I get the same itch as the people who have triggered this post. I&rsquo;ve created what I call my OnGithub solutions, which allows for data management via Github, and API deployment using simple AWS hosted API framework.
 <ul>
 <li><strong><a href="http://data.ongithub.com/">Data.OnGithub.com</a></strong> - My attempt at providing users with a free (if publicly licensed) place to upload and manage their open data that originates in spreadsheets and CSVs within Github repositories.  The entire app runs on Github Pages, using HTML, CSS ad JavaScript for core functionality, making it something that can be forked and implemented by anyone.</li>
 <li><strong><a href="http://api.ongithub.com/">API.OnGithub.com</a></strong> - My attempt to provide the API layer on top of data.ongithub.com, separating the data management from the API deployment. This application runs as simple PHP API framework, deployed on Linux on AWS.</li>
 </ul>
-<p><a href="http://www.socrata.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/api-service-providers/socrata/socrata-vertical.jpeg" alt="" width="175" align="right" /></a></p>
-<p>While this work was interesting, it still didn&rsquo;t solve the problem of allowing the average data steward to easily manage their data that is warehoused in spreadsheets, and deploy APIs with no technical experience required.  However it was a fun exercise to see what is possible for developing open tooling around this problem.</p>
-<p>When it actually comes to deploying services that address data management I&rsquo;ve watched providers like <a href="http://www.infochimps.com/">InfoChimps</a> try and end up pivoting, and others such as Kasabi and Emergent One try, then go out of business. There are successful providers like <a href="http://www.slashdb.com/">SlashDB</a>, <a href="http://www.junar.com/">Junar</a>, and <a href="http://www.socrata.com/">Socrata</a>, who focus on providing open data platforms, whether it originates from a database or a spreadsheet. In 2014 I predict we will continue to see new startups emerge that promise to solve this problem, but will run into walls when it comes to monetization. There is money to be made in delivering APIs from spreadsheets, there just won&rsquo;t be VC level money to be made when it comes to converting spreadsheets to APIs, but if you want to provide some open tooling and provide professional services, I think you can make an acceptable living.</p>
-<p>The moral of this story is that if you want to do a startup, get funding and offer a data solution, you better demonstrate you have something really new and innovative, otherwise don&rsquo;t bother, the space is saturated. If you want to develop some open tools, or use existing open tools and help organizations tackle their open data problems, I think there is plenty of opportunity to make both significant change, but also make some money offering sensible consulting services.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2014/03/06/jumpstarting-the-automobile-api-conversation-with-carvoyant/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2014/03/07/a-better-understanding-of-government-apis-and-their-consumers-before-considering-charging-for-use/" class="button">Next >></a></li>
-	
-</ul>
+<p><a href="http://www.socrata.com/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/api-service-providers/socrata/socrata-vertical.jpeg" alt="" width="175" align="right" /></a>
+<p>While this work was interesting, it still didn&rsquo;t solve the problem of allowing the average data steward to easily manage their data that is warehoused in spreadsheets, and deploy APIs with no technical experience required.  However it was a fun exercise to see what is possible for developing open tooling around this problem.
+<p>When it actually comes to deploying services that address data management I&rsquo;ve watched providers like <a href="http://www.infochimps.com/">InfoChimps</a> try and end up pivoting, and others such as Kasabi and Emergent One try, then go out of business. There are successful providers like <a href="http://www.slashdb.com/">SlashDB</a>, <a href="http://www.junar.com/">Junar</a>, and <a href="http://www.socrata.com/">Socrata</a>, who focus on providing open data platforms, whether it originates from a database or a spreadsheet. In 2014 I predict we will continue to see new startups emerge that promise to solve this problem, but will run into walls when it comes to monetization. There is money to be made in delivering APIs from spreadsheets, there just won&rsquo;t be VC level money to be made when it comes to converting spreadsheets to APIs, but if you want to provide some open tooling and provide professional services, I think you can make an acceptable living.
+<p>The moral of this story is that if you want to do a startup, get funding and offer a data solution, you better demonstrate you have something really new and innovative, otherwise don&rsquo;t bother, the space is saturated. If you want to develop some open tools, or use existing open tools and help organizations tackle their open data problems, I think there is plenty of opportunity to make both significant change, but also make some money offering sensible consulting services.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

@@ -1,248 +1,23 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Playing With Concepts Around Simplifying The API Docs That Are Generated Using API Definitions</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Playing With Concepts Around Simplifying The API Docs That Are Generated Using API Definitions'
+image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist/sms-api-organization-listing.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p>I am building on my conversation with&nbsp;<span>Abhinav Asthana (</span><a href="https://twitter.com/a85">@a85</a><span>), the&nbsp;Co-founder and CEO&nbsp;of&nbsp;</span><a href="https://www.postman.com/">Postman</a>, around <a href="http://apievangelist.com/2016/03/07/it-would-be-nice-to-have-some-simpler-interactive-api-documentation-in-addition-to-what-we-have-now/">how we can simplify the API documentation we are providing to our API consumers</a>. As part of my work to profile the <a href="http://apievangelist.com">50+ stacks of APIs I list on my home page</a>, I am playing with different ways of listing APIs, sharing the valuable endpoints available within, and other key aspects with users. All this work is being driven by <a href="http://apisjson.org">APIs.json</a>, and <a href="https://github.com/OAI/OpenAPI-Specification">Open API Spec</a> listings.
+<p>First I've rewritten <a href="http://sms.stack.network/apis/">my main API listing page using Liquid, running in Jekyll</a>, which uses a _data folder full of APIs.json, and OpenAPI Specs published as part of each of <a href="http://apievangelist.com">my API life cycle, or API stack research</a>. To operate, this listing just mounts the _data folder, and loops through all APIs.json files it contains, then parses each property present, giving special attention to OpenAPI Spec, and API plan formats.
+<p><a href="http://sms.stack.network/apis/"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/sms-api-organization-listing.png" alt="" width="100%" /></a>
+<p><a href="http://liquidmarkup.org/">Liquid</a> + <a href="https://jekyllrb.com/">Jekyll</a>, running on <a href="https://pages.github.com/">Github Pages</a> gives me a simple, static way of representing the machine readable indexes I generate for any of my research areas using APIs.json, OpenAPI Spec, and my new API plan format. Jekyll gives me the entire contents of the API definitions I'm storing in my _data folder, as a single Liquid object which I can loop through, to generate the static HTML for my listing of APIs. Using this approach gives me a machine readable index of all the moving parts of any single, or multiple API collection.&nbsp;
+<p><a href="http://sms.stack.network/apis/">The list of SMS APIs in this research is pretty verbose</a>. I'm not even listing out the parameters, headers, and other details of each API, and the listings are pretty involved--further backing up&nbsp;Abhinav thoughts around simplifying the API documentation that we are generating. To help me push forward my Liquid skills, and the possibilities around breaking up the properties of each API defined using APIs.json, I took the same code and generated a separate, <a href="http://sms.stack.network/plans/">trimmed down version which only shows the APIs overview, and the details of their API plans, leaving out the details of each API endpoint</a>.
+<p><a href="http://sms.stack.network/plans/"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/nexmo-api-plans.png" alt="" width="100%" /></a>
+<p>While the static approach to generating HTML, using Liquid, Jekyll, and APIs.json, OpenAPI Spec, and API plan, has given me a lot of control, and I will keep pushing forward a toolbox of Liquid, Jekyll + JSON modules, I wanted to also push forward a JavaScript solution as well. Using Jquery, I basically recreated what I was doing with Liquid, giving me JavaScript array containing the APIs.json index of APIs. Now I know I can loop through, and share all the API details just as I listed above, but using JS I wanted to go beyond the Liquid representation, and make smaller, more embeddable API documentation solutions, that wouldn't be bound to a Jekyll site, if you didn't want them to be.
+<p><a href="http://sms.stack.network/apisjson/bycollection/"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/sms-apis-by-collection.png" alt="" width="45%" align="right" /></a>
+<p><a href="http://sms.stack.network/">In my SMS research, I am profiling nine separate APIs</a>, which each have its own APIs.json indexing each of the APIs, there is also a root APIs.json for the SMS research, which includes each of the sub API collections. I wanted to start here, and share a simple list of the API endpoints contained within each collection.
+<p>This gives me a nice, potentially human readable,&nbsp; list of the API endpoints available within any single API collection. I wanted to see what else I could do, and instead of using each APIs.json collection as the anchor point, I focused on the tags that were being applied to each API, within its Open API Spec, grouping all the endpoints by tag.
+<p>This gives me to quick, alternate vantage points of my API collections. While I like browsing the entire collection in detail via the main page, I can see the potential in understanding these resources on a new level, when I break them down by provider, or tags applied. One thing this brought to the surface for me, is how poorly, and inconsistently some of the API definitions are, but once I clean up the summaries and tags across these APIs, I'm thinking it could be some pretty powerful JuJu.
+<p><a href="http://sms.stack.network/apisjson/bytag/"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/sms-api-by-tag.png" alt="" width="45%" align="right" /></a>
+<p>Ok, so WTF am I doing here? Why does it matter? I am decoupling the benefits that API definition driven, interactive documentation like Swagger UI, Apiary, and Lucybot Console have brought us. None of this is functional like Swagger UI is, I am just focusing on the decoupling of the surface area of any API, or collections of API, next I will play around with making things minimally interactive, like being able to make a simple GET call for an API, or maybe a POST as well--it will come with time.
+<p>I want to see some simple, embeddable, and easy to read and use API documentation, which could potentially have ALL the moving parts of an API, or a collection of APIs, but might also give you a sub, or cross section of the details of the API(s), and the value that is contained within. Not sure where all of this is going, I just wanted to play with Liquid and JavaScript driven APIs.json tooling, while also thinking further about what&nbsp;Abhinav and I talked about. Eventually I'd love to see a wealth of open, API definition driven modules, that API providers can use across their portals, but also API service providers like&nbsp;Abhinav can use in their API tooling, like Postman.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2016/03/08/playing-with-concepts-around-simplifying-the-api-docs-that-are-generated-using-api-definitions/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Playing With Concepts Around Simplifying The API Docs That Are Generated Using API Definitions | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2016/03/08/playing-with-concepts-around-simplifying-the-api-docs-that-are-generated-using-api-definitions/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Playing With Concepts Around Simplifying The API Docs That Are Generated Using API Definitions | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Playing With Concepts Around Simplifying The API Docs That Are Generated Using API Definitions</h2>
-<p><span class="post-date">08 Mar 2016</span></p>
-<p>I am building on my conversation with&nbsp;<span>Abhinav Asthana (</span><a href="https://twitter.com/a85">@a85</a><span>), the&nbsp;Co-founder and CEO&nbsp;of&nbsp;</span><a href="http://www.getpostman.com/">Postman</a>, around <a href="http://apievangelist.com/2016/03/07/it-would-be-nice-to-have-some-simpler-interactive-api-documentation-in-addition-to-what-we-have-now/">how we can simplify the API documentation we are providing to our API consumers</a>. As part of my work to profile the <a href="http://apievangelist.com">50+ stacks of APIs I list on my home page</a>, I am playing with different ways of listing APIs, sharing the valuable endpoints available within, and other key aspects with users. All this work is being driven by <a href="http://apisjson.org">APIs.json</a>, and <a href="https://github.com/OAI/OpenAPI-Specification">Open API Spec</a> listings.</p>
-<p>First I've rewritten <a href="http://sms.stack.network/apis/">my main API listing page using Liquid, running in Jekyll</a>, which uses a _data folder full of APIs.json, and OpenAPI Specs published as part of each of <a href="http://apievangelist.com">my API life cycle, or API stack research</a>. To operate, this listing just mounts the _data folder, and loops through all APIs.json files it contains, then parses each property present, giving special attention to OpenAPI Spec, and API plan formats.</p>
-<p><a href="http://sms.stack.network/apis/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/sms-api-organization-listing.png" alt="" width="100%" /></a></p>
-<p><a href="http://liquidmarkup.org/">Liquid</a> + <a href="https://jekyllrb.com/">Jekyll</a>, running on <a href="https://pages.github.com/">Github Pages</a> gives me a simple, static way of representing the machine readable indexes I generate for any of my research areas using APIs.json, OpenAPI Spec, and my new API plan format. Jekyll gives me the entire contents of the API definitions I'm storing in my _data folder, as a single Liquid object which I can loop through, to generate the static HTML for my listing of APIs. Using this approach gives me a machine readable index of all the moving parts of any single, or multiple API collection.&nbsp;</p>
-<p><a href="http://sms.stack.network/apis/">The list of SMS APIs in this research is pretty verbose</a>. I'm not even listing out the parameters, headers, and other details of each API, and the listings are pretty involved--further backing up&nbsp;Abhinav thoughts around simplifying the API documentation that we are generating. To help me push forward my Liquid skills, and the possibilities around breaking up the properties of each API defined using APIs.json, I took the same code and generated a separate, <a href="http://sms.stack.network/plans/">trimmed down version which only shows the APIs overview, and the details of their API plans, leaving out the details of each API endpoint</a>.</p>
-<p><a href="http://sms.stack.network/plans/"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/nexmo-api-plans.png" alt="" width="100%" /></a></p>
-<p>While the static approach to generating HTML, using Liquid, Jekyll, and APIs.json, OpenAPI Spec, and API plan, has given me a lot of control, and I will keep pushing forward a toolbox of Liquid, Jekyll + JSON modules, I wanted to also push forward a JavaScript solution as well. Using Jquery, I basically recreated what I was doing with Liquid, giving me JavaScript array containing the APIs.json index of APIs. Now I know I can loop through, and share all the API details just as I listed above, but using JS I wanted to go beyond the Liquid representation, and make smaller, more embeddable API documentation solutions, that wouldn't be bound to a Jekyll site, if you didn't want them to be.</p>
-<p><a href="http://sms.stack.network/apisjson/bycollection/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/sms-apis-by-collection.png" alt="" width="45%" align="right" /></a></p>
-<p><a href="http://sms.stack.network/">In my SMS research, I am profiling nine separate APIs</a>, which each have its own APIs.json indexing each of the APIs, there is also a root APIs.json for the SMS research, which includes each of the sub API collections. I wanted to start here, and share a simple list of the API endpoints contained within each collection.</p>
-<p>This gives me a nice, potentially human readable,&nbsp; list of the API endpoints available within any single API collection. I wanted to see what else I could do, and instead of using each APIs.json collection as the anchor point, I focused on the tags that were being applied to each API, within its Open API Spec, grouping all the endpoints by tag.</p>
-<p>This gives me to quick, alternate vantage points of my API collections. While I like browsing the entire collection in detail via the main page, I can see the potential in understanding these resources on a new level, when I break them down by provider, or tags applied. One thing this brought to the surface for me, is how poorly, and inconsistently some of the API definitions are, but once I clean up the summaries and tags across these APIs, I'm thinking it could be some pretty powerful JuJu.</p>
-<p><a href="http://sms.stack.network/apisjson/bytag/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/sms-api-by-tag.png" alt="" width="45%" align="right" /></a></p>
-<p>Ok, so WTF am I doing here? Why does it matter? I am decoupling the benefits that API definition driven, interactive documentation like Swagger UI, Apiary, and Lucybot Console have brought us. None of this is functional like Swagger UI is, I am just focusing on the decoupling of the surface area of any API, or collections of API, next I will play around with making things minimally interactive, like being able to make a simple GET call for an API, or maybe a POST as well--it will come with time.</p>
-<p>I want to see some simple, embeddable, and easy to read and use API documentation, which could potentially have ALL the moving parts of an API, or a collection of APIs, but might also give you a sub, or cross section of the details of the API(s), and the value that is contained within. Not sure where all of this is going, I just wanted to play with Liquid and JavaScript driven APIs.json tooling, while also thinking further about what&nbsp;Abhinav and I talked about. Eventually I'd love to see a wealth of open, API definition driven modules, that API providers can use across their portals, but also API service providers like&nbsp;Abhinav can use in their API tooling, like Postman.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2016/03/08/new-icons-for-helping-me-communicate-how-open-or-closed-an-api-is/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2016/03/08/while-it-does-suck-parse-went-away-i-wish-every-service-that-shutdown-left-behind-the-same-page/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

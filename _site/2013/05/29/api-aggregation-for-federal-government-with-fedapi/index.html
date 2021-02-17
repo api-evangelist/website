@@ -1,250 +1,25 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>API Aggregation For Federal Government with FedAPI</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'API Aggregation For Federal Government with FedAPI'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Fed-API-Logo-2.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2013/05/29/api-aggregation-for-federal-government-with-fedapi/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="API Aggregation For Federal Government with FedAPI | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed-API-Logo-2.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2013/05/29/api-aggregation-for-federal-government-with-fedapi/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="API Aggregation For Federal Government with FedAPI | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Fed-API-Logo-2.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>API Aggregation For Federal Government with FedAPI</h2>
-<p><span class="post-date">29 May 2013</span></p>
-<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/serviceproviders/Fed-API-Logo-2.png" alt="" width="200" align="right" /></a></p>
-<p>I've been tracking on what I call API aggregation for some time now.  I started seeing the <a href="/2010/11/19/universal-apis/" target="_blank">API aggregation trends in 2010</a>, then I saw this pick up in 2011 with the emergence of providers like <a href="http://aggregation.apievangelist.com/companies-detail.html?id=34" target="_blank">Singly</a> and <a href="http://aggregation.apievangelist.com/companies-detail.html?id=35" target="_blank">Adigami</a>.</p>
-<p>While many new companies provide you with interoperability and automation between multiple APIs, I consider aggregators to be about bringing together multiple APIs into a single aggregated end-point for developers to use, then also providing potentially new APIs that are only possible, because of the aggregation.</p>
-<p>Last year, after I started spending more time in Washington DC, I met a talented group of folks who were playing around with the idea of an aggregate API for federal government.  In the last couple weeks it looks like they were serious about it, and launched the debut version of <a href="http://fedapi.com/">Fed{API}</a>.</p>
-<p>Fed{API} is looking to make government data more accessible and reusable by taking data from multiple sources, some easy to pull and some much more difficult, then collect, correlate and catalog into a single, aggregate API stack that developers can put to use.</p>
-<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px; display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-1.png" alt="" width="500" /></a></p>
-<p>I'm a big fan of <a href="http://aggregation.apievangelist.com/">API Aggregation</a>.  I think this is the future of standardizing APIs and data across many sources, but as I'm watching providers tackle this, you begin to realize what a massive undertaking it will be.  And FedAPI is looking to do this by opening up federal government data, which by itself is a massive challenge.  So FedAPI is tackling two pretty massive problems, as a core business model.</p>
-<p>Even with the massive challenge ahead, I will be supporting FedAPI 100%, and doing what I can to make sure their initiative is successful. To do so, I think they will have to get two other groups involved:</p>
+<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/serviceproviders/Fed-API-Logo-2.png" alt="" width="200" align="right" /></a>
+<p>I've been tracking on what I call API aggregation for some time now.  I started seeing the <a href="/2010/11/19/universal-apis/" target="_blank">API aggregation trends in 2010</a>, then I saw this pick up in 2011 with the emergence of providers like <a href="http://aggregation.apievangelist.com/companies-detail.html?id=34" target="_blank">Singly</a> and <a href="http://aggregation.apievangelist.com/companies-detail.html?id=35" target="_blank">Adigami</a>.
+<p>While many new companies provide you with interoperability and automation between multiple APIs, I consider aggregators to be about bringing together multiple APIs into a single aggregated end-point for developers to use, then also providing potentially new APIs that are only possible, because of the aggregation.
+<p>Last year, after I started spending more time in Washington DC, I met a talented group of folks who were playing around with the idea of an aggregate API for federal government.  In the last couple weeks it looks like they were serious about it, and launched the debut version of <a href="http://fedapi.com/">Fed{API}</a>.
+<p>Fed{API} is looking to make government data more accessible and reusable by taking data from multiple sources, some easy to pull and some much more difficult, then collect, correlate and catalog into a single, aggregate API stack that developers can put to use.
+<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px; display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/fedapi/fedapi-1.png" alt="" width="500" /></a>
+<p>I'm a big fan of <a href="http://aggregation.apievangelist.com/">API Aggregation</a>.  I think this is the future of standardizing APIs and data across many sources, but as I'm watching providers tackle this, you begin to realize what a massive undertaking it will be.  And FedAPI is looking to do this by opening up federal government data, which by itself is a massive challenge.  So FedAPI is tackling two pretty massive problems, as a core business model.
+<p>Even with the massive challenge ahead, I will be supporting FedAPI 100%, and doing what I can to make sure their initiative is successful. To do so, I think they will have to get two other groups involved:
 <ul class="mainlist">
 <li><strong>Other API Aggregate Providers</strong> - FedAPI needs to make sure and reach out to Singly, Temboo, Adigami and the other API aggregators and see what they can learn, share knowledge and wisdom.  Aside from FedAPI, all these providers need to work together and not re-invent the wheel when it comes to Auth and API connectors</li>
 <li><strong>Public At Large</strong> - FedAPI has to introduce tools that allow figure everyday Joe and Jane citizen into the equation.  Some users are going to be very knowledgable and passionate about specific areas, and there has to be ways to share the load and let them help clean and verify data, and other meaningful tasks</li>
 </ul>
-<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/fedapi/fedapi-capital.png" alt="" width="200" align="right" /></a></p>
-<p>I don't think that API Aggregation is the answer to all the problems that plague API integration, but I think API aggregators will play a major role in helping standardize API interfaces, data formats and provide critical cross-provider, inter-agency knowledge and wisdom--something individual API providers may never be able to deliver alone.</p>
-<p>One thing I want to lend a hand with, when it comes to FedAPI, is help create the blueprint of which federal agencies already have APIs and open data sets, and where these exists.  I can also be the aggregator of news, analysis and best practices across the federal API landscape.</p>
-<p>I'm on board FedAPI, let's make this happen.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2013/05/28/the-api-stack-for-may-20th-2013/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2013/05/29/have-you-checked-out-webshell-lately/" class="button">Next >></a></li>
-	
-</ul>
+<p><a href="http://fedapi.com/" target="_blank"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/fedapi/fedapi-capital.png" alt="" width="200" align="right" /></a>
+<p>I don't think that API Aggregation is the answer to all the problems that plague API integration, but I think API aggregators will play a major role in helping standardize API interfaces, data formats and provide critical cross-provider, inter-agency knowledge and wisdom--something individual API providers may never be able to deliver alone.
+<p>One thing I want to lend a hand with, when it comes to FedAPI, is help create the blueprint of which federal agencies already have APIs and open data sets, and where these exists.  I can also be the aggregator of news, analysis and best practices across the federal API landscape.
+<p>I'm on board FedAPI, let's make this happen.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

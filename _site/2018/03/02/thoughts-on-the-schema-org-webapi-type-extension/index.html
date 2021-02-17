@@ -1,302 +1,42 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Thoughts On The Schema.Org WebAPI Type Extension</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
-
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Thoughts On The Schema.Org WebAPI Type Extension | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Thoughts On The Schema.Org WebAPI Type Extension | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Thoughts On The Schema.Org WebAPI Type Extension</h2>
-<p><span class="post-date">02 Mar 2018</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png" width="30%" align="right" style="padding: 15px;" /></p>
-<p>I’m putting some thought into <a href="https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types">the Schema.Org WebAPI Type Extension proposal</a> by Mike Ralphson (Mermade Software) and Ivan Goncharov (APIs.guru), to “facilitate better automatic discovery of WebAPIs and associated machine and human-readable documentation”. It’s an interesting evolution in how we define APIs, in terms of API discovery, but I would also add potentially at “execute time”.</p>
-
+---
+published: true
+layout: post
+title: 'Thoughts On The Schema.Org WebAPI Type Extension'
+image: https://s3.amazonaws.com/kinlane-productions2/schema-org/schema-org.png
+---
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/schema-org/schema-org.png" alt="" width="30%" align="right" /></p>
+<p>I&rsquo;m putting some thought into <a href="https://webapi-discovery.github.io/rfcs/rfc0001.html#content-types">the Schema.Org WebAPI Type Extension proposal</a> by Mike Ralphson (Mermade Software) and Ivan Goncharov (APIs.guru), to &ldquo;facilitate better automatic discovery of WebAPIs and associated machine and human-readable documentation&rdquo;. It&rsquo;s an interesting evolution in how we define APIs, in terms of API discovery, but I would also add potentially at &ldquo;execute time&rdquo;.</p>
 <p>Here is what a base WebAPI type schema could look like:</p>
-
-<p>```{</p>
-
-<p>“@context”: “http://schema.org/”,</p>
-
-<p>“@type”: “WebAPI”,</p>
-
-<p>“name”: “Google Knowledge Graph Search API”,</p>
-
-<p>“description”: “The Knowledge Graph Search API lets you find entities in the Google Knowledge Graph. The API uses standard schema.org types and is compliant with the JSON-LD specification.”,</p>
-
-<p>“documentation”: “https://developers.google.com/knowledge-graph/”,</p>
-
-<p>“termsOfService”: “https://developers.google.com/knowledge-graph/terms”,</p>
-
-<p>“provider”: {</p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"@type": "Organization",
-
-"name": "Google Inc."   } }```
-</code></pre></div></div>
-
+<script src="https://gist.github.com/kinlane/7f86f8e667f991e0164241aed7c659ea.js"></script>
 <p>Then the proposed extensions could include the following:</p>
-
 <ul>
-  <li><strong>versions</strong> (OPTIONAL array of <a href="https://schema.org/Thing">thing</a> -&gt; <a href="http://meta.schema.org/Property">Property</a> -&gt; <a href="http://schema.org/softwareVersion">softwareVersion</a>). It is RECOMMENDED that APIs be versioned using [semver]</li>
-  <li><strong>entryPoints</strong> (OPTIONAL array of <a href="https://schema.org/Thing">Thing</a> -&gt; <a href="https://schema.org/Intangible">Intangible</a> -&gt; <a href="https://schema.org/EntryPoint">EntryPoint</a>)</li>
-  <li><strong>license</strong> (OPTIONAL, <a href="http://schema.org/CreativeWork">CreativeWork</a> or <a href="http://schema.org/URL">URL</a>) - the license for the design/signature of the API</li>
-  <li><strong>transport</strong> (enumerated <a href="http://schema.org/Text">Text</a>: HTTP, HTTPS, SMTP,  MQTT, WS, WSS etc)&lt;/p&gt;</li>
-  <li><strong>apiProtocol</strong> (OPTIONAL, enumerated <a href="http://schema.org/Text">Text</a>:  SOAP, GraphQL, gRPC, Hydra, JSON API, XML-RPC, JSON-RPC etc)</li>
-  <li><strong>webApiDefinitions</strong> (OPTIONAL array of <a href="http://schema.org/EntryPoint">EntryPoints</a>) containing links to <a data-link-type="dfn" href="#machine-readable-api-definition" id="ref-for-machine-readable-api-definition-1">machine-readable API definition</a>s</li>
-  <li><strong>webApiActions</strong> (OPTIONAL array of potential <a href="http://schema.org/Action">Actions</a>)</li>
+<li><strong>versions</strong> (OPTIONAL array of <a href="https://schema.org/Thing">thing</a> -&gt; <a href="https://meta.schema.org/Property">Property</a> -&gt; <a href="https://schema.org/softwareVersion">softwareVersion</a>). It is RECOMMENDED that APIs be versioned using [semver]</li>
+<li><strong>entryPoints</strong> (OPTIONAL array of <a href="https://schema.org/Thing">Thing</a> -&gt; <a href="https://schema.org/Intangible">Intangible</a> -&gt; <a href="https://schema.org/EntryPoint">EntryPoint</a>)</li>
+<li><strong>license</strong> (OPTIONAL, <a href="https://schema.org/CreativeWork">CreativeWork</a> or <a href="https://schema.org/URL">URL</a>) - the license for the design/signature of the API</li>
+<li><strong>transport</strong> (enumerated <a href="https://schema.org/Text">Text</a>: HTTP, HTTPS, SMTP,  MQTT, WS, WSS etc) </li>
+<li><strong>apiProtocol</strong> (OPTIONAL, enumerated <a href="https://schema.org/Text">Text</a>:  SOAP, GraphQL, gRPC, Hydra, JSON API, XML-RPC, JSON-RPC etc)</li>
+<li><strong>webApiDefinitions</strong> (OPTIONAL array of <a href="https://schema.org/EntryPoint">EntryPoints</a>) containing links to <a href="#machine-readable-api-definition">machine-readable API definition</a>s</li>
+<li><strong>webApiActions</strong> (OPTIONAL array of potential <a href="https://schema.org/Action">Actions</a>)</li>
 </ul>
-
 <p>The webApiDefinitions (EntryPoint) contentType property contains a reference to one of the following conten types:</p>
-
 <ul>
-  <li><strong>OpenAPI / Swagger in JSON</strong> - application/openapi+json or application/x-openapi+json</li>
-  <li><strong>OpenAPI / Swagger in YAML</strong> - application/openapi</li>
-  <li><strong>RAML</strong> - application/raml+yaml</li>
-  <li><strong>API Blueprint in markdown</strong> - text/vnd.apiblueprint</li>
-  <li><strong>API Blueprint parsed in JSON</strong> - application/vnd.refract.parse-result+json</li>
-  <li><strong>API Blueprint parsed in YAML</strong> - application/vnd.refract.parse-result+yaml</li>
+<li><strong>OpenAPI / Swagger in JSON</strong> - application/openapi+json or application/x-openapi+json</li>
+<li><strong>OpenAPI / Swagger in YAML</strong> - application/openapi</li>
+<li><strong>RAML</strong> - application/raml+yaml</li>
+<li><strong>API Blueprint in markdown</strong> - text/vnd.apiblueprint</li>
+<li><strong>API Blueprint parsed in JSON</strong> - application/vnd.refract.parse-result+json</li>
+<li><strong>API Blueprint parsed in YAML</strong> - application/vnd.refract.parse-result+yaml</li>
 </ul>
-
 <p>Then the webApiActions property brings a handful of actions to the table, with the following being suggested:</p>
-
 <ul>
-  <li><strong>apiAuthentication</strong> - Links to a resource detailing authentication requirements. Note this is a human-readable resource, not an authentication endpoint</li>
-  <li><strong>apiClientRegistration</strong> - Links to a resource where a client may register to use the API</li>
-  <li><strong>apiConsole</strong> - Links to an interactive console where API calls may be tested</li>
-  <li><strong>apiPayment</strong> - Links to a resource detailing pricing details of the API</li>
+<li><strong>apiAuthentication</strong> - Links to a resource detailing authentication requirements. Note this is a human-readable resource, not an authentication endpoint</li>
+<li><strong>apiClientRegistration</strong> - Links to a resource where a client may register to use the API</li>
+<li><strong>apiConsole</strong> - Links to an interactive console where API calls may be tested</li>
+<li><strong>apiPayment</strong> - Links to a resource detailing pricing details of the API</li>
 </ul>
-
 <p>I fully support extending the Schema.org WebAPI vocabulary in this way. It adds all the bindings needed to make the WebAPI type executable at runtime, as well as it states at discovery time. I like the transport and protocol additions, helping ensure the WebAPI vocabulary is as robust as it possibly can. webApiDefinitions provides all the technical details regarding the surface area of the API we need to actually engage with it at runtime, and webApiActions begins to get at some of the business of APIs friction that exists at runtime. Making for an interesting vocabulary that can be used to describe web APIs, which also becomes more actionable by providing everything you need to get up and running.</p>
-
-<p>The suggestions are well thought out and complete. If I was to add any elements, I’d say it also needs a support link. There will be contact information embedded within the API definitions, but having a direct link along with registration, documentation, terms of service, authentication, and payment would help out significantly. I would say that the content type to transport and protocol coverage is deficient a bit. Meaning you have SOAP, but not referencing WSDL. I know that there isn’t a direct definition covering every transport and protocol, but eventually it should be as comprehensive as it can. (ie. adding AsyncAPI, etc. in the future)</p>
-
-<p>The WebAPI type extensions reflect what we have been trying to push forward with our <a href="http://apisjson.org">APIs.json</a> work, but comes at it from a different direction. I feel there are significant benefits to having all these details as part of the Schema.org vocabulary, expanding on what you can describe in a common way. Which can then also be used as part of each APIs requests, responses, and messages. I don’t see APIs.json as part of a formal vocabulary like this–I see it more as the agile format for indexing APIs that exist, and building versatile collections of APIs which could also contain a WebAPI reference.</p>
-
-<p>I wish I had more constructive criticism or feedback, but I think it is a great first draft of suggestions for evolving the WebAPI type. There are other webApiActions properties I’d like to see based upon my APIs.json work, but I think this represents an excellent first step. There will be some fuzziness between documentation and apiConsole, as well as gaps in actionability between apiAuthentication, and apiClientRegistration–thinks like application creation (to get keys), and opportunities to have Github, Twitter, and other OpenID/OAuth authentication, but these things can be worked out down the road. Sadly there isn’t much standardization at this layer currently, and I see this extension as a first start towards making this happen. As I said, this is a good start, and we have lots of work ahead as we see more adoption.</p>
-
-<p>Nice work Mike and Ivan! Let me know how I can continue to amplify and get the word out. We need to help make sure folks are describing their APIs using Schema.org. I’d love to be able to automate the discovery of APIs, using existing search engines and tooling–I know that you two would like to see this as well. API discovery is a huge problem, which there hasn’t been much movement on in the last decade, and having a common vocabulary that API providers can use to describe their APIs, which search engines can tune into would help move us further down the road when it comes to having more robust API discovery.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2018/03/01/an-observable-industry-level-directory-of-api-providers-and-consumers/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2018/03/05/the-need-for-standardized-api-plans-and-pricing-to-compete-with-cloud-providers/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+<p>The suggestions are well thought out and complete. If I was to add any elements, I&rsquo;d say it also needs a support link. There will be contact information embedded within the API definitions, but having a direct link along with registration, documentation, terms of service, authentication, and payment would help out significantly. I would say that the content type to transport and protocol coverage is deficient a bit. Meaning you have SOAP, but not referencing WSDL. I know that there isn&rsquo;t a direct definition covering every transport and protocol, but eventually it should be as comprehensive as it can. (ie. adding AsyncAPI, etc. in the future)</p>
+<p>The WebAPI type extensions reflect what we have been trying to push forward with our <a href="http://apisjson.org">APIs.json</a> work, but comes at it from a different direction. I feel there are significant benefits to having all these details as part of the Schema.org vocabulary, expanding on what you can describe in a common way. Which can then also be used as part of each APIs requests, responses, and messages. I don&rsquo;t see APIs.json as part of a formal vocabulary like this&ndash;I see it more as the agile format for indexing APIs that exist, and building versatile collections of APIs which could also contain a WebAPI reference.</p>
+<p>I wish I had more constructive criticism or feedback, but I think it is a great first draft of suggestions for evolving the WebAPI type. There are other webApiActions properties I&rsquo;d like to see based upon my APIs.json work, but I think this represents an excellent first step. There will be some fuzziness between documentation and apiConsole, as well as gaps in actionability between apiAuthentication, and apiClientRegistration&ndash;thinks like application creation (to get keys), and opportunities to have Github, Twitter, and other OpenID/OAuth authentication, but these things can be worked out down the road. Sadly there isn&rsquo;t much standardization at this layer currently, and I see this extension as a first start towards making this happen. As I said, this is a good start, and we have lots of work ahead as we see more adoption.</p>
+<p>Nice work Mike and Ivan! Let me know how I can continue to amplify and get the word out. We need to help make sure folks are describing their APIs using Schema.org. I&rsquo;d love to be able to automate the discovery of APIs, using existing search engines and tooling&ndash;I know that you two would like to see this as well. API discovery is a huge problem, which there hasn&rsquo;t been much movement on in the last decade, and having a common vocabulary that API providers can use to describe their APIs, which search engines can tune into would help move us further down the road when it comes to having more robust API discovery.</p>
+

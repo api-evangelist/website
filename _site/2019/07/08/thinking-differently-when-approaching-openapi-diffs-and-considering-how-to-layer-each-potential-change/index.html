@@ -1,129 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change'
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg" width="45%" align="right" style="padding: 15px;" />
+I have a lot of OpenAPI definitions, covering about 2,000 separate entities. For each entity, I often have multiple OpenAPIs, and I am finding more all the time. One significant challenge I have in all of this centers around establishing a master “truth” OpenAPI, or series of definitive OpenAPIs for each entity. I can never be sure that I have a complete definition of any given API, so I want to keep vacuuming up any OpenAPI, Swagger, Postman, or other artifact I can, and compare it with the “truth” copy” I have on indexed. Perpetually layering the additions and changes I come across while scouring the Internet for signs of API life. This perpetual update of API definitions in my index isn’t easy, and any tool that I develop to assist me will be in need constant refinement and evolution to be able to make sense of the API fragments I’m finding across the web.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Thinking Differently When Approaching OpenAPI Diffs And Considering How To Layer Each Potential Change</h2>
-<p><span class="post-date">08 Jul 2019</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg" width="45%" align="right" style="padding: 15px;" />
-I have a lot of OpenAPI definitions, covering about 2,000 separate entities. For each entity, I often have multiple OpenAPIs, and I am finding more all the time. One significant challenge I have in all of this centers around establishing a master “truth” OpenAPI, or series of definitive OpenAPIs for each entity. I can never be sure that I have a complete definition of any given API, so I want to keep vacuuming up any OpenAPI, Swagger, Postman, or other artifact I can, and compare it with the “truth” copy” I have on indexed. Perpetually layering the additions and changes I come across while scouring the Internet for signs of API life. This perpetual update of API definitions in my index isn’t easy, and any tool that I develop to assist me will be in need constant refinement and evolution to be able to make sense of the API fragments I’m finding across the web.</p>
-
-<p>There are many nuances of API design, as well as the nuances of how the OpenAPI specification is applied when quantifying the design of an API, making the process of doing a “diff” between two OpenAPI definitions very challenging. Rendering common “diff” tools baked into GitHub, and other solutions ineffective when it comes to understanding the differences between two API definitions that may represent a single API. These are some of the things I’m considering as I’m crafting my own OpenAPI “diff” tooling:</p>
+<p>There are many nuances of API design, as well as the nuances of how the OpenAPI specification is applied when quantifying the design of an API, making the process of doing a “diff” between two OpenAPI definitions very challenging. Rendering common “diff” tools baked into GitHub, and other solutions ineffective when it comes to understanding the differences between two API definitions that may represent a single API. These are some of the things I’m considering as I’m crafting my own OpenAPI “diff” tooling:
 
 <ul>
   <li><strong>Host</strong> - How the host is stored, defined, and applied across sandbox, production, and other implementations injects challenges.</li>
@@ -148,119 +33,9 @@ I have a lot of OpenAPI definitions, covering about 2,000 separate entities. For
   <li><strong>Scope</strong> - The size of the OpenAPI snippet being applied as part of a “diff” helps narrow what needs to be considered by a human or machine.</li>
 </ul>
 
-<p>This reflects the immediate concerns I have approaching the development of a custom “diff” tool for OpenAPI. First I am just trying to establish a strategy for stripping back the layers of OpenAPI definitions, and established a sort of layered user interface for me to manually accept or reject changes to an OpenAPI. An interface that will also allow me to define a sort of rules vocabulary for increasingly automating the decision making process. I’d love it if eventually the diff tool would show me just a single diff, present me with the change it thinks I should make, and allow me to just agree and move to the next “diff”. I have a lot of work to get things to this point.</p>
+<p>This reflects the immediate concerns I have approaching the development of a custom “diff” tool for OpenAPI. First I am just trying to establish a strategy for stripping back the layers of OpenAPI definitions, and established a sort of layered user interface for me to manually accept or reject changes to an OpenAPI. An interface that will also allow me to define a sort of rules vocabulary for increasingly automating the decision making process. I’d love it if eventually the diff tool would show me just a single diff, present me with the change it thinks I should make, and allow me to just agree and move to the next “diff”. I have a lot of work to get things to this point.
 
-<p>Like API search, I feel like API diff is something I have to reduce to its basics, and then fumble my way towards finding an acceptable solution. I don’t feel there is a single “diff” tool for JSON or YAML that will have the eye that I demand for analyzing, presenting, and either manually or automatically merging a diff. Like the other layers of my API search engine, diff is something I need to think through, iterate upon, and repeat until I come up with something that helps me merge “diffs” efficiently across thousands of APIs, and hopefully eventually automates and abstract away the most common differences between the APIs that I am spidering and indexing. Like every other area it is something I’m only working on when I have time, but something I will eventually come out the other end with a usable OpenAPI diff tool, that can help me make sense of all the API definitions I’m bombarded with on a daily basis.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2019/07/05/why-the-open-data-movement-has-not-delivered-as-expected/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2019/07/09/The-details-of-my-api-rating-formula/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>Like API search, I feel like API diff is something I have to reduce to its basics, and then fumble my way towards finding an acceptable solution. I don’t feel there is a single “diff” tool for JSON or YAML that will have the eye that I demand for analyzing, presenting, and either manually or automatically merging a diff. Like the other layers of my API search engine, diff is something I need to think through, iterate upon, and repeat until I come up with something that helps me merge “diffs” efficiently across thousands of APIs, and hopefully eventually automates and abstract away the most common differences between the APIs that I am spidering and indexing. Like every other area it is something I’m only working on when I have time, but something I will eventually come out the other end with a usable OpenAPI diff tool, that can help me make sense of all the API definitions I’m bombarded with on a daily basis.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

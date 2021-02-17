@@ -1,133 +1,18 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Breaking Down The Value Of Real Time APIs</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Breaking Down The Value Of Real Time APIs'
+image: http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-5.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" />
+<p>I am working to evolve an algorithm for Streamdata.io that helps measure the benefits of their streaming service. There are a couple layers to what they offer as a company, but as I dive into this algorithm, there are also multiple dimensions to what we all perceive as real time, and adding more complexity to the discussion, it is something that can significantly shift from industry to industry. The Streamdata.io team was working to productize this algorithm for quantifying the value their service delivers, but I wanted to take some time to break it down, lay it out on the workbench and think about it before they moved to far down this path.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>Ok. To help me get my brain going, I wanted to work my way through the dictionary sites, exploring what is real time?  Real time often seems to describe a human rather than a machine sense of time. It is about communicating, showing, or presenting something at the time it actually happens, where there is no notable delay between the action and its effect or consequence. All of this is relative to the human receiving the real time event, as well as defining exactly when something truly happens / happened. Real time in banking is different than real time in stock trading, and will be different than media. All requiring their own perception of what is real time, and what the effects, consequences, and perceptions are.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+<p>When it comes to the delivery or streaming of real time events, it isn’t just about the delivering of the event, message, or transaction. It is about doing it efficiently. The value of real time gets ruined pretty quickly when you have to wade through too much information, or you are given too many updates of events, messages, and transactions that are not relevant. Adding an efficient element to the concept of what is real time. Real time, streaming updates of EVERYTHING are not as meaningful as streaming updates of only what just happened, staying truer to the concept of real time, in my opinion. Making the caching, and JSON Patch aspect of what Streamdat.io relevant to delivering a true real time experience–you only get what has changed in real time, not everything else.
 
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Breaking Down The Value Of Real Time APIs | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-5.jpg">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Breaking Down The Value Of Real Time APIs | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-5.jpg">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Breaking Down The Value Of Real Time APIs</h2>
-<p><span class="post-date">17 Jan 2018</span></p>
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_168_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>
-<p>I am working to evolve an algorithm for Streamdata.io that helps measure the benefits of their streaming service. There are a couple layers to what they offer as a company, but as I dive into this algorithm, there are also multiple dimensions to what we all perceive as real time, and adding more complexity to the discussion, it is something that can significantly shift from industry to industry. The Streamdata.io team was working to productize this algorithm for quantifying the value their service delivers, but I wanted to take some time to break it down, lay it out on the workbench and think about it before they moved to far down this path.</p>
-
-<p>Ok. To help me get my brain going, I wanted to work my way through the dictionary sites, exploring what is real time?  Real time often seems to describe a human rather than a machine sense of time. It is about communicating, showing, or presenting something at the time it actually happens, where there is no notable delay between the action and its effect or consequence. All of this is relative to the human receiving the real time event, as well as defining exactly when something truly happens / happened. Real time in banking is different than real time in stock trading, and will be different than media. All requiring their own perception of what is real time, and what the effects, consequences, and perceptions are.</p>
-
-<p>When it comes to the delivery or streaming of real time events, it isn’t just about the delivering of the event, message, or transaction. It is about doing it efficiently. The value of real time gets ruined pretty quickly when you have to wade through too much information, or you are given too many updates of events, messages, and transactions that are not relevant. Adding an efficient element to the concept of what is real time. Real time, streaming updates of EVERYTHING are not as meaningful as streaming updates of only what just happened, staying truer to the concept of real time, in my opinion. Making the caching, and JSON Patch aspect of what Streamdat.io relevant to delivering a true real time experience–you only get what has changed in real time, not everything else.</p>
-
-<p>To help me break down the algorithm for measuring the value delivered by Streamdata.io, I’ve started with creating three simple APIs.</p>
+<p>To help me break down the algorithm for measuring the value delivered by Streamdata.io, I’ve started with creating three simple APIs.
 
 <ul>
   <li><strong>Poll API</strong> - A service for polling any API I give it. I can adjust the settings, but the default is that it polls it every 60 seconds, until I tell it to stop. Storing every response on a private Amazon S3 bucket.</li>
@@ -135,7 +20,7 @@
   <li><strong>API Change</strong> - A service that determines if an API response has changed from the previous response from 60 seconds before, identifying the frequency of change.</li>
 </ul>
 
-<p>This gives me a baseline of information I need to set the stage for what is real time. I am trying to understand what changes, and potentially what the value is of precise updates, rather than sending everything over the wire with each API response. After I set this process into motion for each API, I have another set of APIs for turning on the Streamdata.io portion, which reflects the other side of the coin.</p>
+<p>This gives me a baseline of information I need to set the stage for what is real time. I am trying to understand what changes, and potentially what the value is of precise updates, rather than sending everything over the wire with each API response. After I set this process into motion for each API, I have another set of APIs for turning on the Streamdata.io portion, which reflects the other side of the coin.
 
 <ul>
   <li><strong>Stream API</strong> - This service proxies an API with Streamdata.io and begins to send updates every 60 seconds. Similar to the previous set of services, I am storing the initial request, as well as every incremental update on Amazon S3.</li>
@@ -143,9 +28,9 @@
   <li><strong>API Change</strong> - A service that determines if a partial API response has changed from the previous response from 60 seconds before, identifying the frequency of change. If nothing changed, there was no JSON Patch response.</li>
 </ul>
 
-<p>This gives me all the raw data I need to calculate the value which Streamdata.io delivers for any single API. However, it also gives me the raw data I need to begin calculating what is real time, and the value of it. We are tagging APIs that we catalog, allowing us to break down by common areas like finance, banking, media, transit, etc. This will allow us to start looking at how often things change within different sectors, and begin to look at how we can measure the value brought to the table when events, messages, and transactions are efficiently delivered in real time.</p>
+<p>This gives me all the raw data I need to calculate the value which Streamdata.io delivers for any single API. However, it also gives me the raw data I need to begin calculating what is real time, and the value of it. We are tagging APIs that we catalog, allowing us to break down by common areas like finance, banking, media, transit, etc. This will allow us to start looking at how often things change within different sectors, and begin to look at how we can measure the value brought to the table when events, messages, and transactions are efficiently delivered in real time.
 
-<p>I am going to build me a dashboard to help me work with this data. I need to look at it for a couple of months, and run a number of different APIs through until I will know what dimensions I want to add next. I’m guessing I’m going to want some sort of freshness score on this, to see if something really truly is a new event, message, or transaction, or possibly being recirculated, duplicated, or some other anti-pattern. IDK. I’m guessing there are a number of new questions I will have about this data before I will truly be able to feel comfortable that the algorithm defines a meaningful vision of real time. Right now the algorithm sets to compute a couple meaningful efficiency gains.</p>
+<p>I am going to build me a dashboard to help me work with this data. I need to look at it for a couple of months, and run a number of different APIs through until I will know what dimensions I want to add next. I’m guessing I’m going to want some sort of freshness score on this, to see if something really truly is a new event, message, or transaction, or possibly being recirculated, duplicated, or some other anti-pattern. IDK. I’m guessing there are a number of new questions I will have about this data before I will truly be able to feel comfortable that the algorithm defines a meaningful vision of real time. Right now the algorithm sets to compute a couple meaningful efficiency gains.
 
 <ul>
   <li><strong>Client Bandwidth (BW) Savings</strong> - What efficiencies are realized when working with data in the client.</li>
@@ -153,123 +38,13 @@
   <li><strong>Server CPU Savings</strong> - What efficiencies are realized on the service in CPU savings.</li>
 </ul>
 
-<p>You can see this calculated for <a href="http://apievangelist.com/2017/12/11/cost-savings-analysis-for-washington-metropolitan-area-transit-authority-wmata-data-apis/">the Washington Metropolitan Area Transit Authority (WMATA) Data APIs in a story I wrote last year</a>. I want to be able to calculate these efficiency gains, but I want to be able to do it over time, and begin to try and understand the real time dimension of savings, not just what is introduced through caching. These three calculations speak to the caching aspect of what Streamdata.io delivers, not the real time benefits of the service. Something that won’t be as straightforward to quantify, but I want to give it a try regardless.</p>
+<p>You can see this calculated for <a href="http://apievangelist.com/2017/12/11/cost-savings-analysis-for-washington-metropolitan-area-transit-authority-wmata-data-apis/">the Washington Metropolitan Area Transit Authority (WMATA) Data APIs in a story I wrote last year</a>. I want to be able to calculate these efficiency gains, but I want to be able to do it over time, and begin to try and understand the real time dimension of savings, not just what is introduced through caching. These three calculations speak to the caching aspect of what Streamdata.io delivers, not the real time benefits of the service. Something that won’t be as straightforward to quantify, but I want to give it a try regardless.
 
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_174_800_500_0_max_0_-5_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_174_800_500_0_max_0_-5_-5.jpg" align="right" width="45%" style="padding: 15px;" />
 
-<p>I want the algorithm to measure these efficiency gains, but I want to be able to capture the real time value of an API, both in quantifying the real time value delivered by the APIs, as well as the real time value delivered by Streamdata.io–establishing a combined real time ranking. This moves the algorithm into territory where it isn’t just describing the value delivered by Streamdata.io to their clients, but also quantifying the value delivered by the combination of the clients API, and Streamdata.io working together. This is where I think things will start to get interesting, especially as we begin to move Streamdata.io services, and our algorithm into new industries, and adding new dimensions and perceptions to the discussion.</p>
+<p>I want the algorithm to measure these efficiency gains, but I want to be able to capture the real time value of an API, both in quantifying the real time value delivered by the APIs, as well as the real time value delivered by Streamdata.io–establishing a combined real time ranking. This moves the algorithm into territory where it isn’t just describing the value delivered by Streamdata.io to their clients, but also quantifying the value delivered by the combination of the clients API, and Streamdata.io working together. This is where I think things will start to get interesting, especially as we begin to move Streamdata.io services, and our algorithm into new industries, and adding new dimensions and perceptions to the discussion.
 
-<p>This is when things will start to get interesting I feel. By the time we get to this point, the tagging structure I will have applied to different APIs will have evolved, and become more precise as well. Allowing me to further refine the algorithm to apply a real time value ranking to specific streams within a single provider, or even in aggregate across providers. Allowing consumers to subscribe to the most precise real time streams of events, messages, and transactions, and cutting out the noise and redundancy. This is when we can move things beyond just large volumes of data in real time, but precise volumes of data in real time. Consuming only what is needed, training our machine learning models on exactly what is required, and keeping them updating in real time, allowing us to deliver real time artificial intelligence streams that are updated by the second, or minute, producing the most relevant models possible.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2018/01/16/api-transit-basics-training/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2018/01/17/api-transit-basics-deprecation/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>This is when things will start to get interesting I feel. By the time we get to this point, the tagging structure I will have applied to different APIs will have evolved, and become more precise as well. Allowing me to further refine the algorithm to apply a real time value ranking to specific streams within a single provider, or even in aggregate across providers. Allowing consumers to subscribe to the most precise real time streams of events, messages, and transactions, and cutting out the noise and redundancy. This is when we can move things beyond just large volumes of data in real time, but precise volumes of data in real time. Consuming only what is needed, training our machine learning models on exactly what is required, and keeping them updating in real time, allowing us to deliver real time artificial intelligence streams that are updated by the second, or minute, producing the most relevant models possible.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

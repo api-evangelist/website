@@ -1,267 +1,42 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Having An API Deprecation Page Like EVRYTHNG Does</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Having An API Deprecation Page Like EVRYTHNG Does'
+image: https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg" width="45%" align="right" style="padding: 15px;" />
+<p>The API providers I talk to regularly are rarely proactive when it comes to addressing API deprecation. Most API providers aren’t thinking about shutting down any service they deliver until they’ve actually encountered the need down the road. Many just begin their API journey, assuming their APIs will be a success, and they will have to support every version forever. However, once they encounter what it will take to support older versions, they begin to change their tune, something that often comes as an unexpected surprise to consumers.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>Shutting down old APIs will never be easy, but the process can be made easier with a little proactive communication. One example of this practice in action can be found over at <a href="https://developers.evrythng.com/docs/deprecation">the Internet of Things provider Evrythng, with their API deprecation page</a>. Which provides a pretty simple layout for an API deprecation page, beyond just a title and description of what the future might hold.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+<p><em>API Status</em>
 
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+<p><em>The following status labels are applicable to APIs, features, or SDK versions depending on their current support status:</em>
 
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Having An API Deprecation Page Like EVRYTHNG Does | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Having An API Deprecation Page Like EVRYTHNG Does | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Having An API Deprecation Page Like EVRYTHNG Does</h2>
-<p><span class="post-date">20 Aug 2018</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg" width="45%" align="right" style="padding: 15px;" /></p>
-<p>The API providers I talk to regularly are rarely proactive when it comes to addressing API deprecation. Most API providers aren’t thinking about shutting down any service they deliver until they’ve actually encountered the need down the road. Many just begin their API journey, assuming their APIs will be a success, and they will have to support every version forever. However, once they encounter what it will take to support older versions, they begin to change their tune, something that often comes as an unexpected surprise to consumers.</p>
-
-<p>Shutting down old APIs will never be easy, but the process can be made easier with a little proactive communication. One example of this practice in action can be found over at <a href="https://developers.evrythng.com/docs/deprecation">the Internet of Things provider Evrythng, with their API deprecation page</a>. Which provides a pretty simple layout for an API deprecation page, beyond just a title and description of what the future might hold.</p>
-
-<p><em>API Status</em></p>
-
-<p><em>The following status labels are applicable to APIs, features, or SDK versions depending on their current support status:</em></p>
-
-<p>_- Preview - May change at any time.</p>
+<p>_- Preview - May change at any time.
 <ul>
   <li>Stable - Fully released and stable. Will not change at short notice.</li>
   <li>Deprecated - No longer supported (and may have been replaced), and may be removed in the future at an announced date. Use not encouraged.</li>
   <li>Removed - Removed, and no longer supported or available._</li>
 </ul>
 
-<p><em>Communication</em></p>
+<p><em>Communication</em>
 
-<p><em>When a deprecation is announced, the details and any relevant migration information will be available on the following channels:</em></p>
+<p><em>When a deprecation is announced, the details and any relevant migration information will be available on the following channels:</em>
 
-<p>_- The Developer Blog.</p>
+<p>_- The Developer Blog.
 <ul>
   <li>The @evrythngdev Twitter account.</li>
   <li>The relevant feature page on the Developer Hub.</li>
   <li>Enterprise customers may receive information by email to their specified EVRYTHNG contact, if applicable._</li>
 </ul>
 
-<p><em>Customers using one our SLAs can read <a href="https://evrythng.com/legal/sla/">the General section</a> for more information.</em></p>
+<p><em>Customers using one our SLAs can read <a href="https://evrythng.com/legal/sla/">the General section</a> for more information.</em>
 
-<p>Evrythng provides us with some important building blocks for using as part of our overall API deprecation strategy. Something that EVERY API provide should be considering as they prepare to launch a new API. API deprecation shouldn’t be an afterthought, and if we communicate open and honestly about it from the beginning, our API consumers will be more forgiving. Surprising consumers down the road is the quickest way to piss people off, and get the tech blogosphere publishing those pitchfork and torches type of stories we see so often about API providers.</p>
+<p>Evrythng provides us with some important building blocks for using as part of our overall API deprecation strategy. Something that EVERY API provide should be considering as they prepare to launch a new API. API deprecation shouldn’t be an afterthought, and if we communicate open and honestly about it from the beginning, our API consumers will be more forgiving. Surprising consumers down the road is the quickest way to piss people off, and get the tech blogosphere publishing those pitchfork and torches type of stories we see so often about API providers.
 
-<p>I just finished sharing some API deprecation awareness as part of the API strategy for a federal government agency–they just hadn’t had an open discussion about it. API deprecation is one of those uncomfortable subjects, we all have to get used to discussing early on, whether we like it or not. It is something that will always be difficult, and leave some API consumers unhappy, but if done well, it can help reduce a lot of friction. You can visit <a href="http://deprecation.apievangelist.com/">my API deprecation research and storytelling</a> for more examples of how to do it right, and how you can avoid doing it wrong–bringing this important subject out into the open.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2018/08/13/it-isnt-just-because-you-have-pdf-api-docs-it-is-that-it-demonstrates-you-do-not-use-other-apis/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2018/08/20/microservicing-like-a-unicorn-with-envoy-istio-kubernets-with-christian-post-of-red-hat-at-apistrat-in-nashville/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>I just finished sharing some API deprecation awareness as part of the API strategy for a federal government agency–they just hadn’t had an open discussion about it. API deprecation is one of those uncomfortable subjects, we all have to get used to discussing early on, whether we like it or not. It is something that will always be difficult, and leave some API consumers unhappy, but if done well, it can help reduce a lot of friction. You can visit <a href="http://deprecation.apievangelist.com/">my API deprecation research and storytelling</a> for more examples of how to do it right, and how you can avoid doing it wrong–bringing this important subject out into the open.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

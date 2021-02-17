@@ -1,129 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>An Introduction To Github For API Providers</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'An Introduction To Github For API Providers'
+image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/github_guides.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2017/04/10/an-introduction-to-github-for-api-providers/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="An Introduction To Github For API Providers | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/github_guides.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2017/04/10/an-introduction-to-github-for-api-providers/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="An Introduction To Github For API Providers | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/github_guides.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>An Introduction To Github For API Providers</h2>
-<p><span class="post-date">10 Apr 2017</span></p>
-<p><a href="https://guides.github.com/"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/github_guides.png" alt="" width="50%" align="right" /></a></p>
-<p>I have had a number of requests from folks lately to write more about Github, and how they can use the social coding platform as part of their API operations. As I work with more companies outside of the startup echo chamber on their API strategies I am encountering more groups that aren't Github fluent&nbsp;and could use some help getting started. It has also been a while since I've thought deeply about how API providers should be using Github&nbsp;so it will allow me to craft some fresh content on the subject.</p>
-<p><strong>Github As Your Technical Social Network</strong><br />Think of Github as a more technical version of Facebook, but instead of the social interactions being centered around wall posts, news links, photos, and videos, it is focused on engagement with repositories. A repository is basically a file folder that you can make public or private, and put anything you want into it. While code is the most common thing put into Github repositories, they often contain data file, presentations, and other content, providing a beneficial way to manage many aspects of API operations.</p>
-<p><strong>The Github Basics</strong><br />When putting Github to use as part of your API operations, start small. Get your profile setup, define your organization, and begin using it to manage documentation or other simple areas of your operations--until you get the hang of it. Set aside any pre-conceived notions about Github being about code, and focus on the handful of services it offers to enable your API operations.</p>
+<p><a href="https://guides.github.com/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/github_guides.png" alt="" width="50%" align="right" /></a>
+<p>I have had a number of requests from folks lately to write more about Github, and how they can use the social coding platform as part of their API operations. As I work with more companies outside of the startup echo chamber on their API strategies I am encountering more groups that aren't Github fluent&nbsp;and could use some help getting started. It has also been a while since I've thought deeply about how API providers should be using Github&nbsp;so it will allow me to craft some fresh content on the subject.
+<p><strong>Github As Your Technical Social Network</strong><br />Think of Github as a more technical version of Facebook, but instead of the social interactions being centered around wall posts, news links, photos, and videos, it is focused on engagement with repositories. A repository is basically a file folder that you can make public or private, and put anything you want into it. While code is the most common thing put into Github repositories, they often contain data file, presentations, and other content, providing a beneficial way to manage many aspects of API operations.
+<p><strong>The Github Basics</strong><br />When putting Github to use as part of your API operations, start small. Get your profile setup, define your organization, and begin using it to manage documentation or other simple areas of your operations--until you get the hang of it. Set aside any pre-conceived notions about Github being about code, and focus on the handful of services it offers to enable your API operations.
 <ul>
 <li><strong>Users </strong>- Just like other online services, Github has the notion of a user, where you provide a photo, description, and other relevant details about yourself. Avoid making a user accounts for your API, making sure you show the humans involved in API operations. It does make sense to have a testing, or other generic platform Github users accounts, but make sure your API team each have their own user profile, providing a snapshot of everyone involved. &nbsp;</li>
 <li><strong>Organizations -</strong> You can use Github organizations to group your API operations under a single umbrella. Each organization has a name, logo, and description, and then you can add specific users as collaborators, and build your team under a single organization. Start with a single repository for your entire API operations, then you can consider the additional organization to further organize your efforts such as partner programs, or other aspects of internal API operations.</li>
@@ -133,7 +18,7 @@
 <li><strong><a href="https://pages.github.com/">Pages</a></strong> - Use Github Pages for your project websites. It is the quickest way to stand up a web page to host API documentation, code samples, or the entire portal for your API effort.</li>
 <li><strong><a href="https://developer.github.com/v3/">API</a> - </strong>Everything on the Github platform is available through the Github API. Making all aspects of your API operations available via an API, which is the way it should be.</li>
 </ul>
-<p><strong>Managing API Operations With Github</strong><br />There are a handful of ways I encourage API providers to consider using Github as part of their operations. I prefer to use Github for all aspects of API operations, but not every organization is ready for that--I encourage you to focus in these areas when you are just getting going:</p>
+<p><strong>Managing API Operations With Github</strong><br />There are a handful of ways I encourage API providers to consider using Github as part of their operations. I prefer to use Github for all aspects of API operations, but not every organization is ready for that--I encourage you to focus in these areas when you are just getting going:
 <ul>
 <li><strong>Developer Portal -</strong> You can use Github Pages to host your API developer portal--I recommend taking a look at <a href="http://portal.minimum.apievangelist.com/">my minimum viable API portal definition</a> to see an example of this in action.</li>
 <li><strong>Documentation</strong> - Whether as part of the entire portal or just as a single repository, it is common for API providers to publish API documentation to Github. <a href="https://github.com/Rebilly/ReDoc">Using solutions like ReDoc</a>, it is easy to make your API documentation look good, while also easily keeping them up to date.</li>
@@ -144,117 +29,7 @@
 <li><strong>Road Map</strong> - Also use <strong>Github Issues</strong> to help aggregate, collaborate, and evolve the road map for API operations, encouraging consumers to be involved.</li>
 <li><strong>Change Log</strong> - When anything on the roadmap is achieved flag it for inclusion in the change log, providing a list of changes to the platform that API consumers can use as a reference.</li>
 </ul>
-<p>Github is essential to API operations. There is no requirement for Github users to possess developer skills. Many types of users put Github to use in managing the technical aspects of projects&nbsp;to take advantage of the network effect, as well as the version control and collaboration introduced by the social platform. It's common for non-technical folks to be intimidated by Github, ad developers often encourage this, but in reality, Github is as easy to use as any other social network--it just takes some&nbsp;time to get used to and familiar it.</p>
-<p>If you have questions about how to use Github, feel free to reach out. I'm happy to focus on specific uses of Github for API operations in more detail. I have numerous examples of how it can be used, I just need to know where I should be focusing next. Remember, there are no stupid questions. I am an advocate for everyone taking advantage of Github&nbsp;and I fully understand that it can be difficult to understand how it works when you are just getting going.&nbsp;</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2017/03/31/taking-a-look-at-the-stoplight-api-spec-editor/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2017/04/10/my-oxford-dictionaries-talk-about-the-world-of-apis/" class="button">Next >></a></li>
-	
-</ul>
+<p>Github is essential to API operations. There is no requirement for Github users to possess developer skills. Many types of users put Github to use in managing the technical aspects of projects&nbsp;to take advantage of the network effect, as well as the version control and collaboration introduced by the social platform. It's common for non-technical folks to be intimidated by Github, ad developers often encourage this, but in reality, Github is as easy to use as any other social network--it just takes some&nbsp;time to get used to and familiar it.
+<p>If you have questions about how to use Github, feel free to reach out. I'm happy to focus on specific uses of Github for API operations in more detail. I have numerous examples of how it can be used, I just need to know where I should be focusing next. Remember, there are no stupid questions. I am an advocate for everyone taking advantage of Github&nbsp;and I fully understand that it can be difficult to understand how it works when you are just getting going.&nbsp;
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

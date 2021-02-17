@@ -1,249 +1,24 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Open Sourcing Hack Weekends Using Github</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Open Sourcing Hack Weekends Using Github'
+image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hack-Weekends-Github.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2012/12/08/open-sourcing-hack-weekends-using-github/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Open Sourcing Hack Weekends Using Github | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hack-Weekends-Github.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2012/12/08/open-sourcing-hack-weekends-using-github/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Open Sourcing Hack Weekends Using Github | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Tag-Cloud-Hack-Weekends-Github.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Open Sourcing Hack Weekends Using Github</h2>
-<p><span class="post-date">08 Dec 2012</span></p>
-<p><a href="http://hackweekends.com/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/hackweekends/Tag-Cloud-Hack-Weekends-Github.png" alt="" width="350" align="right" /></a></p>
-<p>I&rsquo;ve been maintaining a calendar of hackathons for all of 2012.  Originally it was just a section off of <a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a>, but eventually the site needed to be its own project.  Up until now its just been a blog and calendar of events I curate from Eventbrite, Twitter, Google, Eventful and event organizers.</p>
-<p>I spend about 8-12 hours a week curating the events and stories for blog posts, and with the increase in the number hackathons over 2012, so does the time I need to maintain.  I was adding an API so other users can add to calendar or event guest post, then I decided I would like to also have databases of hackathon organizers, sponsors, vendors, venues and other key building blocks of hackathons.</p>
-<p>My goal is to create an information hub for the hackathon community.  But an &ldquo;open API&rdquo; didn&rsquo;t seem like enough.  I wanted everything about it to be open and accessible, as well as community owned.  I decided to publish&nbsp;<a title="Hack Weekends" href="http://hackweekends.com/index.html">Hack Weekends on Github</a> and run it like an open source project.</p>
-<p>I launched the site using <a title="Github Pages" href="http://pages.github.com/">Github Pages</a> with <a title="Jekyll" href="https://github.com/mojombo/jekyll">Jekyll</a>.  These run the pages and blog for Hack Weekends. &nbsp;But, I needed something to run the calendar, and other systems.   I wanted them to be simple--I went with <a href="http://mustache.github.com/">Mustache Templates</a> + JSON stores.</p>
-<p>The implementation isn't perfect.   I had problems getting search and sort tools to work, so I scaled back to a minimal viable implementation.  I got the following areas up:</p>
+<p><a href="http://hackweekends.com/index.html" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions2/hackweekends/Tag-Cloud-Hack-Weekends-Github.png" alt="" width="350" align="right" /></a>
+<p>I&rsquo;ve been maintaining a calendar of hackathons for all of 2012.  Originally it was just a section off of <a title="API Evangelist" href="http://apievangelist.com">API Evangelist</a>, but eventually the site needed to be its own project.  Up until now its just been a blog and calendar of events I curate from Eventbrite, Twitter, Google, Eventful and event organizers.
+<p>I spend about 8-12 hours a week curating the events and stories for blog posts, and with the increase in the number hackathons over 2012, so does the time I need to maintain.  I was adding an API so other users can add to calendar or event guest post, then I decided I would like to also have databases of hackathon organizers, sponsors, vendors, venues and other key building blocks of hackathons.
+<p>My goal is to create an information hub for the hackathon community.  But an &ldquo;open API&rdquo; didn&rsquo;t seem like enough.  I wanted everything about it to be open and accessible, as well as community owned.  I decided to publish&nbsp;<a title="Hack Weekends" href="http://hackweekends.com/index.html">Hack Weekends on Github</a> and run it like an open source project.
+<p>I launched the site using <a title="Github Pages" href="https://pages.github.com/">Github Pages</a> with <a title="Jekyll" href="https://github.com/mojombo/jekyll">Jekyll</a>.  These run the pages and blog for Hack Weekends. &nbsp;But, I needed something to run the calendar, and other systems.   I wanted them to be simple--I went with <a href="https://mustache.github.com/">Mustache Templates</a> + JSON stores.
+<p>The implementation isn't perfect.   I had problems getting search and sort tools to work, so I scaled back to a minimal viable implementation.  I got the following areas up:
 <ul class="mainlist">
 <li><strong>Hackathon Calendar </strong>- Listing of hackathons global, sorted by city (for now)</li>
 <li><strong>Cities Hackathon Directory</strong> - Breakdown of hackathons by cities</li>
 <li><strong>Hack Weekends Blog</strong> - Blog running on Jekyll, which I edit using prose.io</li>
 <li><strong>Hack Weekends News </strong>- Curated, relevant hackathon links from my pinboard</li>
 </ul>
-<p>I will get all the bells and whistles in there soon. Before that, I&rsquo;m working on a basic Github template for planning and executing a basic hackathon.  I would like to see hackathon organizers using a common, open approach to planning and delivering hackathons around the globe.  I&rsquo;m hoping it will work in conjunction with an open approach to Hack Weekends and other hackathon community sites.</p>
-<p>Hack Weekends is a work in progress.  I went ahead and made it live, as its about 85% of what I had on the previous version.  Having it running as a completely client-side and static site on Github will force me to learn to approaches to manage my content and data in a way that is open and machine readable by default. &nbsp;</p>
-<p>Feel free to fork <a href="https://github.com/kinlane/hack-weekends">Hack Weekends</a> and make contributions. &nbsp;You can add blog posts, news or calendar events. &nbsp;I will be building other client side tools for interacting with the site as time goes on. &nbsp;</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2012/12/07/the-secret-to-a-successful-api-is-internal-apidays/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2012/12/09/some-thoughts-for-the-enterprise-embracing-web-apis/" class="button">Next >></a></li>
-	
-</ul>
+<p>I will get all the bells and whistles in there soon. Before that, I&rsquo;m working on a basic Github template for planning and executing a basic hackathon.  I would like to see hackathon organizers using a common, open approach to planning and delivering hackathons around the globe.  I&rsquo;m hoping it will work in conjunction with an open approach to Hack Weekends and other hackathon community sites.
+<p>Hack Weekends is a work in progress.  I went ahead and made it live, as its about 85% of what I had on the previous version.  Having it running as a completely client-side and static site on Github will force me to learn to approaches to manage my content and data in a way that is open and machine readable by default. &nbsp;
+<p>Feel free to fork <a href="https://github.com/kinlane/hack-weekends">Hack Weekends</a> and make contributions. &nbsp;You can add blog posts, news or calendar events. &nbsp;I will be building other client side tools for interacting with the site as time goes on. &nbsp;
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

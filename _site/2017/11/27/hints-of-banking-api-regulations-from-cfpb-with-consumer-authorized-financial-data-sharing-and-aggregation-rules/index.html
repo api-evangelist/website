@@ -1,131 +1,16 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules'
+image: https://s3.amazonaws.com/kinlane-productions2/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/"><img src="https://s3.amazonaws.com/kinlane-productions2/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png" align="right" width="45%" style="padding: 15px;" /></a>
+<p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/">The Consumer Finance Protection Bureau (CFPB) has started laying out some consumer-authorized data sharing and aggregation rules to begin moving forward the banking data scraping conversation in (hopefully) a more production way</a>. It is common knowledge that many financial focused (Fintech) companies regularly access consumers account data using their credentials, so that they scrape relevant account information from their bank, for use in a wide variety of 3rd party tools. This is a common practice that everyone in the industry knows about, understands is a potential security and privacy risk, but everyone looks the other way because it adds value to the consumer ecosystem.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+<p>In a perfect world each bank would have a public API portal where Fintech aggregators could come and sign up for application keys, and get the authorization of users via OAuth, and obtain access to their banking data in a secure, and accountable way. However, as we are well aware, we do not live in a perfect world, and banks are pretty resistant to change, so the scraping continues. At some point we are going to see the landscape begin to shift, and I’m guessing it will be at the regulatory level where we finally begin to see this behavior changed–making the CFPB’s rules announcement a reflection of what is coming down the pipes when it comes to banking API regulation.
 
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Hints of Banking API Regulations From CFPB With Consumer Authorized Financial Data Sharing And Aggregation Rules</h2>
-<p><span class="post-date">27 Nov 2017</span></p>
-<p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/"><img src="https://s3.amazonaws.com/kinlane-productions/cfpb/cfpb-outlines-principles-for-consumer-authorized-financial-data-sharing-and-aggregation.png" align="right" width="45%" style="padding: 15px;" /></a></p>
-<p><a href="https://www.consumerfinance.gov/about-us/newsroom/cfpb-outlines-principles-consumer-authorized-financial-data-sharing-and-aggregation/">The Consumer Finance Protection Bureau (CFPB) has started laying out some consumer-authorized data sharing and aggregation rules to begin moving forward the banking data scraping conversation in (hopefully) a more production way</a>. It is common knowledge that many financial focused (Fintech) companies regularly access consumers account data using their credentials, so that they scrape relevant account information from their bank, for use in a wide variety of 3rd party tools. This is a common practice that everyone in the industry knows about, understands is a potential security and privacy risk, but everyone looks the other way because it adds value to the consumer ecosystem.</p>
-
-<p>In a perfect world each bank would have a public API portal where Fintech aggregators could come and sign up for application keys, and get the authorization of users via OAuth, and obtain access to their banking data in a secure, and accountable way. However, as we are well aware, we do not live in a perfect world, and banks are pretty resistant to change, so the scraping continues. At some point we are going to see the landscape begin to shift, and I’m guessing it will be at the regulatory level where we finally begin to see this behavior changed–making the CFPB’s rules announcement a reflection of what is coming down the pipes when it comes to banking API regulation.</p>
-
-<p><a href="http://files.consumerfinance.gov/f/documents/cfpb_consumer-protection-principles_data-aggregation.pdf">The consumer protection principles for consumer-authorized financial data sharing and aggregation</a> announcement focuses on:</p>
+<p><a href="http://files.consumerfinance.gov/f/documents/cfpb_consumer-protection-principles_data-aggregation.pdf">The consumer protection principles for consumer-authorized financial data sharing and aggregation</a> announcement focuses on:
 
 <ul>
   <li><strong>Access</strong> - Consumers are able, upon request, to obtain information about their ownership or use of a financial product or service from their product or service provider. Such information is made available in a timely manner. Consumers are generally able to authorize trusted third parties to obtain such information from account providers to use on behalf of consumers, for consumer benefit, and in a safe manner. Financial account agreements and terms support safe, consumer-authorized access, promote consumer interests, and do not seek to deter consumers from accessing or granting access to their account information. Access does not require consumers to share
@@ -143,119 +28,9 @@ unauthorized access to receive appropriate remediation. Parties responsible for 
   <li><strong>Efficient and Effective Accountability Mechanisms</strong> -  The goals and incentives of parties that grant access to, access, use, store, redistribute, and dispose of consumer data align to enable safe consumer access and deter misuse. Commercial participants are accountable for the risks, harms, and costs they introduce to consumers. Commercial participants are likewise incentivized and empowered effectively to prevent, detect, and resolve unauthorized access and data sharing, unauthorized payments conducted in connection with or as a result of either authorized or unauthorized data sharing access, data inaccuracies, insecurity of data, and failures to comply with other obligations, including the terms of consumer authorizations.</li>
 </ul>
 
-<p>Smells like a PSD2-esque set of API standards are on the horizon for the U.S. Ideally this is something the banks would see as an opportunity, rather than a regulatory thing, but I understand how hard-headed they are. I’m spending some time over the next month or two getting up to speed more on where we stand with the PSD2 rollout, as well as the GDPR rollout in the EU. Both of these efforts provide us with a blueprint to follow here in the US. Obviously it is a much different regulatory and banking environment here, but there are still plenty of lessons to consider, and think about as agencies like the CFPB get to work on this topic.</p>
+<p>Smells like a PSD2-esque set of API standards are on the horizon for the U.S. Ideally this is something the banks would see as an opportunity, rather than a regulatory thing, but I understand how hard-headed they are. I’m spending some time over the next month or two getting up to speed more on where we stand with the PSD2 rollout, as well as the GDPR rollout in the EU. Both of these efforts provide us with a blueprint to follow here in the US. Obviously it is a much different regulatory and banking environment here, but there are still plenty of lessons to consider, and think about as agencies like the CFPB get to work on this topic.
 
-<p>All nine aspects of this latest announcement from the CFPB reflect what APIs are all about. We have the blueprint for tackling this problem head on in use across the tech sector already. This isn’t a technology problem, this is a business and politics problem. It would make sense for a savvy bank (cough, cough Capital One) to get ahead of this one and be the Amazon Web Services of the banking space and set the standard for how data aggregation and sharing occurs. Define the open blueprint for how consumer data is accessed and put to work in the banking ecosystem, gain teh competitive advantage when it comes to Fintech tooling servicing the space, and make all the other banks play catch up. As usual, I’ll keep an eye on what the banks are up to (not much), and look out for more movement from the federal government on this issue, and report back anything I find.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2017/11/27/making-sure-you-operate-in-the-cloud-marketplaces-as-an-api-service-provider/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2017/11/27/multi-region-apis-using-aws-api-gateway/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>All nine aspects of this latest announcement from the CFPB reflect what APIs are all about. We have the blueprint for tackling this problem head on in use across the tech sector already. This isn’t a technology problem, this is a business and politics problem. It would make sense for a savvy bank (cough, cough Capital One) to get ahead of this one and be the Amazon Web Services of the banking space and set the standard for how data aggregation and sharing occurs. Define the open blueprint for how consumer data is accessed and put to work in the banking ecosystem, gain teh competitive advantage when it comes to Fintech tooling servicing the space, and make all the other banks play catch up. As usual, I’ll keep an eye on what the banks are up to (not much), and look out for more movement from the federal government on this issue, and report back anything I find.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

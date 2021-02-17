@@ -1,129 +1,14 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>My Primary API Search Engines</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'My Primary API Search Engines'
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png" width="45%" align="right" style="padding: 15px;" />
+I am building out several prototypes for the moving parts of an API search engine I want to build, pushing my usage of APIs.json and OpenAPI, but also trying to improve how I define, store, index, and retrieve valuable data about thousands of APIs through a simple search interface. I’m breaking out the actual indexing and search into their own areas, with rating system being another separate dimension, but even before I get there I have to actually develop the primary engines for my search prototypes, feeding the indexes with fresh signals of where APIs exist across the online landscape. There isn’t an adequate search engine out there, so I’m determined to jumpstart the conversation with an API search engine of my own. Something that is different from what web search engines do, and tailored to the unique mess we’ve created within the API industry.
 
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="My Primary API Search Engines | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png">
-
-    <meta name="twitter:url" content="">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="My Primary API Search Engines | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>My Primary API Search Engines</h2>
-<p><span class="post-date">12 Jul 2019</span></p>
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png" width="45%" align="right" style="padding: 15px;" />
-I am building out several prototypes for the moving parts of an API search engine I want to build, pushing my usage of APIs.json and OpenAPI, but also trying to improve how I define, store, index, and retrieve valuable data about thousands of APIs through a simple search interface. I’m breaking out the actual indexing and search into their own areas, with rating system being another separate dimension, but even before I get there I have to actually develop the primary engines for my search prototypes, feeding the indexes with fresh signals of where APIs exist across the online landscape. There isn’t an adequate search engine out there, so I’m determined to jumpstart the conversation with an API search engine of my own. Something that is different from what web search engines do, and tailored to the unique mess we’ve created within the API industry.</p>
-
-<p>My index of APIs.json and OpenAPI definitions, even with a slick search interface is just a catalog, directory, or static index of a small piece of the APIs that are out there. I see a true API search engine as three parts</p>
+<p>My index of APIs.json and OpenAPI definitions, even with a slick search interface is just a catalog, directory, or static index of a small piece of the APIs that are out there. I see a true API search engine as three parts
 
 <ol>
   <li>The Humans Searching for APIs - Providing humans with web application to search for new and familiar APIs.</li>
@@ -131,9 +16,9 @@ I am building out several prototypes for the moving parts of an API search engin
   <li>Other Systems Searching For APIs - Providing an API for other systems to search for new and familiar APIs.</li>
 </ol>
 
-<p>Without the ability for the search engine to actually seek out new APIs, it isn’t a search engine in my opinion—-it is a search application. Without an API for searching for APIs, in my opinion, it isn’t an API search engine. It takes all three of these areas to make an application a true API search engine, otherwise we just have another catalog, directory, marketplace, or whatever you want to call it.</p>
+<p>Without the ability for the search engine to actually seek out new APIs, it isn’t a search engine in my opinion—-it is a search application. Without an API for searching for APIs, in my opinion, it isn’t an API search engine. It takes all three of these areas to make an application a true API search engine, otherwise we just have another catalog, directory, marketplace, or whatever you want to call it.
 
-<p>To help me put the engine into my API search engine, I’m starting with a handful of sources I’ve cultivated over the last five years studying the API industry. Providing me with some seriously rich sources of information when it comes to identifying new APIs:</p>
+<p>To help me put the engine into my API search engine, I’m starting with a handful of sources I’ve cultivated over the last five years studying the API industry. Providing me with some seriously rich sources of information when it comes to identifying new APIs:
 
 <ul>
   <li><strong>GitHub Code Search API</strong> - I have a vocabulary I use for uncovering artifacts that provide clues to where APIs exist. I can also expand this search to topics, repos, and other dimensions of GitHub search, but I’m going to make sure I’m exhausting and optimizing core search for all I can before I move on.  GitHub provides me with a handful of nuggets when it comes to finding APIs:
@@ -177,119 +62,9 @@ I am building out several prototypes for the moving parts of an API search engin
   </li>
 </ul>
 
-<p>These four areas represent the primary engines for my API search engine. I currently have these engines running on AWS, processing GitHub and Bing searches, and I’m currently refining my existing Twitter, and relevant domain harvesting engines. While Bing and GitHub are harvesting API signals, and indexing API artifacts like OpenAPI, Postman, and others, I’m going to overhaul my Twitter and domain approaches. Twitter has always been a treasure trove of API signals, but like on GitHub, it is getting harder to obtain these API signals at scale—-as their value increases, things are getting tighter with API access. Also, running a proper domain harvesting campaign across thousands of domains isn’t easy, and will require some refactoring to do at the scale I need for this type of effort.</p>
+<p>These four areas represent the primary engines for my API search engine. I currently have these engines running on AWS, processing GitHub and Bing searches, and I’m currently refining my existing Twitter, and relevant domain harvesting engines. While Bing and GitHub are harvesting API signals, and indexing API artifacts like OpenAPI, Postman, and others, I’m going to overhaul my Twitter and domain approaches. Twitter has always been a treasure trove of API signals, but like on GitHub, it is getting harder to obtain these API signals at scale—-as their value increases, things are getting tighter with API access. Also, running a proper domain harvesting campaign across thousands of domains isn’t easy, and will require some refactoring to do at the scale I need for this type of effort.
 
-<p>While I have two of these up and running, indexing new APIs, I still have a significant amount of work to invest in each engine. What I have now is purely of prototype. It will take several cycles until I get each engine performing as desired, and then I’m expecting ongoing tweaks, adjustments, and refinements to be made daily, weekly, and monthly to get the results I’m looking for. There are many areas of deficiency in the API sector that bother me, but not having a simple way to search for new and existing APIs is one are I cannot tolerate any longer. I am happy that ProgrammableWeb has been around all these years, but they haven’t moved the needle in the right way. I also get why people do API marketplaces, but I’m afraid they aren’t moving the needle in a positive direction either. I’d say that APIs.Guru (https://apis.guru/openapi-directory/) is the most progressive vision when it comes to API search in the last decade–with all the innovation supposedly going on, that is just sad. I am guessing that venture capital does not always equal meaningful things we need will get built.</p>
-
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2019/07/11/taking-a-fresh-look-at-the-nuance-of-api-search/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2019/07/15/what-is-an-api-contract/" class="button">Next >></a></li>
-	
-</ul>
-
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
+<p>While I have two of these up and running, indexing new APIs, I still have a significant amount of work to invest in each engine. What I have now is purely of prototype. It will take several cycles until I get each engine performing as desired, and then I’m expecting ongoing tweaks, adjustments, and refinements to be made daily, weekly, and monthly to get the results I’m looking for. There are many areas of deficiency in the API sector that bother me, but not having a simple way to search for new and existing APIs is one are I cannot tolerate any longer. I am happy that ProgrammableWeb has been around all these years, but they haven’t moved the needle in the right way. I also get why people do API marketplaces, but I’m afraid they aren’t moving the needle in a positive direction either. I’d say that APIs.Guru (https://apis.guru/openapi-directory/) is the most progressive vision when it comes to API search in the last decade–with all the innovation supposedly going on, that is just sad. I am guessing that venture capital does not always equal meaningful things we need will get built.
 
 
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+

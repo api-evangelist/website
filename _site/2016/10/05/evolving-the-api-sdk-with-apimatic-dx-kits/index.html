@@ -1,130 +1,15 @@
-<!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  <html>
-  <title>Evolving The API SDK With APIMATIC DX Kits</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="/assets/css/main.css" />
-  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
-  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
-  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+---
+published: true
+layout: post
+title: 'Evolving The API SDK With APIMATIC DX Kits'
+image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png
+---
 
-  <!-- Icons -->
-  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
-
-  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
-  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
-
-  <!-- JQuery -->
-  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Github.js - http://github.com/michael/github -->
-  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
-
-  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
-  <script src="/js/cookies.js"></script>
-
-  <!-- D3.js http://github.com/d3/d3 -->
-  <script src="/js/d3.v3.min.js"></script>
-
-  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
-  <script src="/js/js-yaml.min.js"></script>
-
-  <script src="/js/subway-map-1.js" type="text/javascript"></script>
-
-  <style type="text/css">
-
-    .gist {width:100% !important;}
-    .gist-file
-    .gist-data {max-height: 500px;}
-
-    /* The main DIV for the map */
-    .subway-map
-    {
-        margin: 0;
-        width: 110px;
-        height: 5000px;
-        background-color: white;
-    }
-
-    /* Text labels */
-    .text
-    {
-        text-decoration: none;
-        color: black;
-    }
-
-    #legend
-    {
-    	border: 1px solid #000;
-        float: left;
-        width: 250px;
-        height:400px;
-    }
-
-    #legend div
-    {
-        height: 25px;
-    }
-
-    #legend span
-    {
-        margin: 5px 5px 5px 0;
-    }
-    .subway-map span
-    {
-        margin: 5px 5px 5px 0;
-    }
-
-    </style>
-
-    <meta property="og:url" content="http://apievangelist.com/2016/10/05/evolving-the-api-sdk-with-apimatic-dx-kits/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Evolving The API SDK With APIMATIC DX Kits | API Evangelist">
-    <meta property="og:site_name" content="API Evangelist">
-    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    <meta property="og:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png">
-
-    <meta name="twitter:url" content="http://apievangelist.com/2016/10/05/evolving-the-api-sdk-with-apimatic-dx-kits/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Evolving The API SDK With APIMATIC DX Kits | API Evangelist">
-    <meta name="twitter:site" content="API Evangelist">
-    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
-    
-      <meta name="twitter:creator" content="@apievangelist">
-    
-    <meta property="twitter:image" content="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png">
-
-
-</head>
-
-  <body>
-
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
-
-              <header id="header">
-  <a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
-  <ul class="icons">
-    <li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://www.linkedin.com/organization/1500316/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
-  </ul>
-</header>
-
-    	        <h2>Evolving The API SDK With APIMATIC DX Kits</h2>
-<p><span class="post-date">05 Oct 2016</span></p>
-<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/apimatic-logo.png" alt="" width="20%" align="right" /></a></p>
-<p>I've been a big supporter of <a href="http://apimatic.io">APIMATIC</a> since they started, so I'm happy to see them continuing to evolve their approach to delivering SDKs&nbsp;using machine readable API definitions. I got a walkthrough of their new DX Kits the other day, something that feels like an evolutionary step for SDKs, and contributing to API providers making onboarding and integration as frictionless as possible for developers.</p>
-<p>Let's walk through what APIMATIC already does, then I'll talk more about some of the evolutionary steps they are taking when auto-generating SDKs. It helps to see the big picture of where APIMATIC fits into the larger API lifecycle to assist you in getting beyond any notion of them simply being just an SDK generation service.</p>
-<p><strong>API Definitions</strong><br />What makes APIMATIC such an important service, in my opinion, is that they just don't speak using modern API definition formats, they speak in all of the API definition formats, allowing anyone to generate SDKs from the specification of your choice:&nbsp;</p>
-<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_transformer.png" alt="" width="22%" align="right" /></a></p>
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/company/logos/apimatic-logo.png" alt="" width="20%" align="right" /></a>
+<p>I've been a big supporter of <a href="http://apimatic.io">APIMATIC</a> since they started, so I'm happy to see them continuing to evolve their approach to delivering SDKs&nbsp;using machine readable API definitions. I got a walkthrough of their new DX Kits the other day, something that feels like an evolutionary step for SDKs, and contributing to API providers making onboarding and integration as frictionless as possible for developers.
+<p>Let's walk through what APIMATIC already does, then I'll talk more about some of the evolutionary steps they are taking when auto-generating SDKs. It helps to see the big picture of where APIMATIC fits into the larger API lifecycle to assist you in getting beyond any notion of them simply being just an SDK generation service.
+<p><strong>API Definitions</strong><br />What makes APIMATIC such an important service, in my opinion, is that they just don't speak using modern API definition formats, they speak in all of the API definition formats, allowing anyone to generate SDKs from the specification of your choice:&nbsp;
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/api_transformer.png" alt="" width="22%" align="right" /></a>
 <ul>
 <li>API Blueprint</li>
 <li>Swagger 1.0 - 1.2</li>
@@ -138,17 +23,17 @@
 <li>Postman Collection</li>
 <li>APIMATIC Format</li>
 </ul>
-<p>As any serious API service provider should do be doing, <a href="https://apitransformer.com/">APIMATIC then opened up their API definition transformation solution as a standalone service and API</a>. This allows this type ofAPI &nbsp;transformations to occur&nbsp;and be baked in, at every stop along a modern API lifecycle,&nbsp;by anyone.</p>
-<p><strong>API Design</strong><br />Being so API definition driven focused, APIMATIC needed a practical way to manage API definitions, and allow their customers to add, edit, delete, and manipulate the definitions that would be driving the SDK auto generation process. APIMATIC provides one of the best API design interfaces I've found across the API service providers that I monitor, allowing customers to manage:</p>
+<p>As any serious API service provider should do be doing, <a href="https://apitransformer.com/">APIMATIC then opened up their API definition transformation solution as a standalone service and API</a>. This allows this type ofAPI &nbsp;transformations to occur&nbsp;and be baked in, at every stop along a modern API lifecycle,&nbsp;by anyone.
+<p><strong>API Design</strong><br />Being so API definition driven focused, APIMATIC needed a practical way to manage API definitions, and allow their customers to add, edit, delete, and manipulate the definitions that would be driving the SDK auto generation process. APIMATIC provides one of the best API design interfaces I've found across the API service providers that I monitor, allowing customers to manage:
 <ul>
 <li>Endpoints</li>
 <li>Models</li>
 <li>Test Cases</li>
 <li>Errors</li>
 </ul>
-<p>Because APIMATIC is so heavily invested in having a complete API definition, one that it will result in a successful SDK, they've had to bake healthy API design practices into their API design interface--helping developers craft the best API possible. #Winning</p>
-<p><strong>SDK Auto Generation</strong><br />Now we get to the valuable, and time-saving portion of what APIMATIC does best--generate SDKs in 10 separate programming language and platform environments. Once your API definition validates, you can select to generate in their preferred language.</p>
-<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_04_at_4.45.42_pm.png" alt="" width="35%" align="right" /></a></p>
+<p>Because APIMATIC is so heavily invested in having a complete API definition, one that it will result in a successful SDK, they've had to bake healthy API design practices into their API design interface--helping developers craft the best API possible. #Winning
+<p><strong>SDK Auto Generation</strong><br />Now we get to the valuable, and time-saving portion of what APIMATIC does best--generate SDKs in 10 separate programming language and platform environments. Once your API definition validates, you can select to generate in their preferred language.
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2016_10_04_at_4.45.42_pm.png" alt="" width="35%" align="right" /></a>
 <ul>
 <li><strong>Visual Studio </strong>- A class library project for Portable and Universal Windows Platform</li>
 <li><strong>Eclipse</strong> - A compatible maven project for Java 5 and above</li>
@@ -161,128 +46,18 @@
 <li><strong>Ruby </strong>- A project to create a gem library your API based on Ruby&gt;=2.0.0</li>
 <li><strong>Go</strong> - A client library project for Go language (v1.4)</li>
 </ul>
-<p>APIMATIC takes their SDKs seriously. They make sure they aren't just&nbsp;low-quality auto-generated&nbsp;code. I've seen the overtime they put into make sure the code they produce matches the styling and the reality on the ground for each language and environment being depoyed.</p>
-<p><strong>Github Integration</strong><br />Deploying your API SDKs to Github is nothing new, but being able to autogenerate your SDK from a variety of API definition languages, and then publish to Github opens up a whole new world of possibilities. This is when Github can become a sort of API definition driven engine that can be installed into not just the API life cycle, but also every web, mobile, device, bot, voice, or any other client that puts an API to use.</p>
-<p>This is where we start moving beyond SDK for me, into the realm of what APIMATIC is calling a DX Kit. APIMATIC isn't just dumping some auto-generated code into the Github repo of your choice. They are publishing the code, and now complete documentation for the SDK to a Github README, so that any human can come along and learn about what it does, as well as any other system can also come along and put the API definition auto-generated code to work.</p>
-<p><strong>Continuous Integration</strong><br />The evolution of the SDK continues with...well, continuous integration, and orchestration. If you go under the settings for your API in APIMATIC, you now also have the option to publish configuration files for four leading CI solutions:</p>
-<p><a href="http://apimatic.io"><img style="padding: 15px;" src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png" alt="" width="45%" align="right" /></a></p>
+<p>APIMATIC takes their SDKs seriously. They make sure they aren't just&nbsp;low-quality auto-generated&nbsp;code. I've seen the overtime they put into make sure the code they produce matches the styling and the reality on the ground for each language and environment being depoyed.
+<p><strong>Github Integration</strong><br />Deploying your API SDKs to Github is nothing new, but being able to autogenerate your SDK from a variety of API definition languages, and then publish to Github opens up a whole new world of possibilities. This is when Github can become a sort of API definition driven engine that can be installed into not just the API life cycle, but also every web, mobile, device, bot, voice, or any other client that puts an API to use.
+<p>This is where we start moving beyond SDK for me, into the realm of what APIMATIC is calling a DX Kit. APIMATIC isn't just dumping some auto-generated code into the Github repo of your choice. They are publishing the code, and now complete documentation for the SDK to a Github README, so that any human can come along and learn about what it does, as well as any other system can also come along and put the API definition auto-generated code to work.
+<p><strong>Continuous Integration</strong><br />The evolution of the SDK continues with...well, continuous integration, and orchestration. If you go under the settings for your API in APIMATIC, you now also have the option to publish configuration files for four leading CI solutions:
+<p><a href="http://apimatic.io"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png" alt="" width="45%" align="right" /></a>
 <ul>
 <li><label class="small-label-thin"><strong>Generate Appveyor</strong> -&nbsp;</label><label class="small-label-light" for="GenerateAppveyorConfig">Generate Appveyor configuration file?</label></li>
 <li><label class="small-label-thin"><strong>Generate CircleCI </strong>-&nbsp;</label><label class="small-label-light" for="GenerateCircleConfig">Generate CircleCI configuration file?</label></li>
 <li><label class="small-label-thin"><strong>Generate Jenkins</strong> -&nbsp;</label><label class="small-label-light" for="GenerateJenkinsConfig">Generate Jenkins configuration file?</label></li>
 <li><strong><label class="small-label-thin">Generate Travis -&nbsp;</label></strong><label class="small-label-light" for="GenerateTravisConfig">Generate Travis CI configuration file?</label></li>
 </ul>
-<p>APIMATIC had already opened up beyond just doing SDKs with the release of their API Transformer solution, and their introduction of detailed documentation for each kit (SDK) on Github. Now they are pushing into API testing and orchestration areas by allowing you to publish the required config files for the CI platform of your choosing.</p>
-<p>I feel like their approach represents the expanding world of API consumption. Providing an API and SDK is not enough anymore. You have to provide and encourage healthy documentation, testing, and continuous integration practices as well. APIMATIC is aiming to&nbsp;"simplify API Consumption", with their DX Kits, which is a very positive thing for the API space, and worth highlighting as part of <a href="http://sdk.apievangelist.com/">my API SDK research</a>.</p>
-<hr />
-<ul class="pagination" style="text-align: center;">
-	
-		<li style="text-align:left;"><a href="https://apievangelist.com/2016/10/05/considering-a-web-api-ecosystem-through-featurebased-reuse/" class="button disabled"><< Prev</a></li>
-	
-		<li style="width: 75%"><span></span></li>
-	
-		<li style="text-align:right;"><a href="https://apievangelist.com/2016/10/05/github-as-the-api-life-cycle-engine/" class="button">Next >></a></li>
-	
-</ul>
+<p>APIMATIC had already opened up beyond just doing SDKs with the release of their API Transformer solution, and their introduction of detailed documentation for each kit (SDK) on Github. Now they are pushing into API testing and orchestration areas by allowing you to publish the required config files for the CI platform of your choosing.
+<p>I feel like their approach represents the expanding world of API consumption. Providing an API and SDK is not enough anymore. You have to provide and encourage healthy documentation, testing, and continuous integration practices as well. APIMATIC is aiming to&nbsp;"simplify API Consumption", with their DX Kits, which is a very positive thing for the API space, and worth highlighting as part of <a href="http://sdk.apievangelist.com/">my API SDK research</a>.
 
-              
-<footer>
-  <hr>
-  <div class="features">
-    
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://www.getpostman.com/post-con-2019/" target="_blank"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-      
-      <article>
-        <div class="content">
-          <p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://apievangelist.com/images/tyk-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
-        </div>
-      </article>
-      
-    
-  </div>
-  <hr>
-  <p align="center">
-    relevant work:
-    <a href="http://apievangelist.com">apievangelist.com</a> |
-    <a href="http://adopta.agency">adopta.agency</a>
-  </p>
-</footer>
-
-
-            </div>
-          </div>
-
-          <div id="sidebar">
-            <div class="inner">
-
-              <nav id="menu">
-  <header class="major">
-    <h2>Menu</h2>
-  </header>
-  <ul>
-    <li><a href="/">Homepage</a></li>
-    <li><a href="http://101.apievangelist.com/">101</a></li>
-    <li><a href="/blog/">Blog</a></li>
-    <li><a href="http://history.apievangelist.com/">History of APIs</a></li>
-    <li><a href="/#api-lifecycle">API Lifecycle</a></li>
-    <li><a href="/search/">Search</a></li>
-    <li><a href="/newsletters/">Newsletters</a></li>
-    <li><a href="/images/">Images</a></li>
-    <li><a href="/archive/">Archive</a></li>
-  </ul>
-</nav>
-
-              <section>
-  <div class="mini-posts">
-    <header>
-			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
-		</header>
-    
-    
-      
-        <article style="display: inline;">
-          <a href="https://www.getpostman.com/post-con-2019/" class="image"><img src="https://apievangelist.com/images/300x250-postcon-2019.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-      
-        <article style="display: inline;">
-          <a href="https://tyk.io/" class="image"><img src="https://apievangelist.com/images/tyk-logo.png" alt="" width="50%" style="padding: 15px; border: 1px solid #000;" /></a>
-        </article>
-      
-    
-  </div>
-</section>
-
-
-            </div>
-          </div>
-
-      </div>
-
-<script src="/assets/js/skel.min.js"></script>
-<script src="/assets/js/util.js"></script>
-<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-<script src="/assets/js/main.js"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-1119465-51');
-</script>
-
-
-</body>
-</html>
+
