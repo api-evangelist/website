@@ -3,7 +3,7 @@
 layout: post
 title: 'History of APIs - Twitter'
 image: http://kinlane-productions2.s3.amazonaws.com/twitter/Twitter-Introducing-The-Twitter-API.png
----
+---
 
 <p><a href="https://blog.twitter.com/2006/09/introducing-twitter-api.html" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/twitter/Twitter-Introducing-The-Twitter-API.png" alt="" width="300" align="right" /></a>On September 20, 2006&nbsp;<a href="https://blog.twitter.com/2006/09/introducing-twitter-api.html" target="_blank">Twitter introduced the Twitter API to the world</a>.
 <p>Much like the&nbsp;<a href="http://blog.apievangelist.com/2011/01/26/history-of-apis-ebay/" target="_blank">release of the eBay API</a>, Twitter's API release was in response to the growing usage of Twitter by those scraping the site or creating&nbsp;<a href="http://www.kinlane.com/2010/09/rogue-api-development/" target="_blank">rogue APIs</a>.
@@ -12,4 +12,4 @@
 <p>In four short years Twitters API has become the center of countless desktop clients,&nbsp;<a href="http://www.kinlane.com/category/mobile/">mobile</a>&nbsp;applications, web apps, and businesses -- even by Twitter itself, in its IPhone, IPad, Android apps via its public website.
 
 
-
+

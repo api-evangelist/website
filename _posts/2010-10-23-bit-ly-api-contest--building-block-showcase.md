@@ -3,8 +3,7 @@
 layout: post
 title: 'bit.ly API contest - Building Block Showcase'
 image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist/bitly-logo.png
----
-
+---
 <img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/bitly-logo.png" alt="" width="275" align="right" />Holding an API contest is a great way to spur innovation around your API and its community.<p>
 <a href="https://bit.ly" target="_blank">bit.ly</a> is a popular URL shortening service that offers an API as part of its core software-as-a-service.<p>
 In January 2009 it held a successful API contest and is looking to do it again with a new <a href="http://blog.bit.ly/post/1307062006/its-a-bit-ly-api-contest" target="_blank">bit.ly API contest</a>.<p>
@@ -17,6 +16,3 @@ The prizes offered::
 <a href="https://bit.ly" target="_blank">bit.ly</a> encourages developer to be creative and come up with unexpected uses, but it also plants a few ideas that the company woul'd like to see developers work on.<p>
 There are a lot of developers that may know about your API, but not actively involved.  Your developers may need a little bit of motivation to get them working.<p>
 An API contest is a great way to light the fire under your development community, stimulate innovative uses of your API, and generate some buzz around your API community.
-
-
-

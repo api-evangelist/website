@@ -3,8 +3,7 @@
 layout: post
 title: 'Managing API Code Projects &amp; Libraries'
 image: http://kinlane-productions2.s3.amazonaws.com/github-logo.png
----
-
+---
 Having a framework for managing your API code samples and libraries is essential to providing partners and developers with relevant, useful and functional code they can use to integrate with your API.
 <a href="https://github.com" target="_blank"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/github-logo.png" alt="" width="150" align="right" /></a>
 First start by breaking down your code into relevant projects that address specific types of integration with your API.<p>
@@ -20,4 +19,4 @@ Publishing your code to GitHub and Google Project hosting will also provide adde
 Make sure and spend time to choose the proper <a href="https://en.wikipedia.org/wiki/Open-source_license" target="_blank">open source licensing model</a> for your code projects.<p>
 Now you have a solid process for managing all your API code that makes them accessible in popular developer communities, your <a href="http://www.apievangelist.com/">API</a> area, and widely available on the open Internet.
 
-
+
