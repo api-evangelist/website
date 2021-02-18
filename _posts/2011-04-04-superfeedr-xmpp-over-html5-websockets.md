@@ -1,14 +1,0 @@
----
-published: true
-layout: post
-title: '"Superfeedr XMPP over HTML5 WebSockets"'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist/superfeedr-logo.png
----
-
-<a title="Superfeedr" href="http://superfeedr.com"><img class="c1" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/superfeedr-logo.png" alt="" width="250" align="right" /></a><a title="Superfeedr" href="http://superfeedr.com">Superfeedr</a> keeps showing what a pioneer they are when it comes to web, API and feed technology, with a <a title="release of an Ejabber module that builds Websocks into an XMPP server" href="http://blog.superfeedr.com/xmpp-over-websockets/">release of an Ejabber module that builds WebSockets into an XMPP server</a>.
-<p>XMPP provides identity, authentication, presence, and notifications for APIs and other feeds, and with the growing adoption of HTML5, the <a title="HTML5 WebSockets API" href="https://dev.w3.org/html5/websockets/">WebSockets API</a> is the perfect built-in browser client to interact with APIs and feeds in the browser.
-<p>The <a title="Superfeedr Ejabber Module" href="https://github.com/superfeedr/ejabberd-websockets">Superfeedr Ejabber module</a> is written in Erlang and available over at <a title="Github" href="https://github.com/superfeedr/ejabberd-websockets">Github</a>. They recommend you use the module with <a title="SropheJS" href="https://github.com/metajack/strophejs">Strophejs</a>, an XMPP library written in Javascript.
-<p>XMPP is growing in popularity as a protocol for providing real-time API and feed updates, while increasing the efficiency of API networks by minimizing polling of API endpoints.
-
-
-

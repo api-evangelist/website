@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: 'Patent US 8997069: API Descriptions'
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-definition.png
+---
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-definition.png" align="right" width="25%" style="padding: 15px;" />
+<p>There are so many API patents out there, I’m going to have to start posting one a day just to keep up. Lucky for you I begin to get really depressed by all the API patents I lose interest in reading them and begin to work harder looking for positive examples of API in the world, but until then here is today’s depressing as fuck API patent.
+
+<p>Title: <a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&amp;Sect2=HITOFF&amp;p=1&amp;u=/netahtml/PTO/search-bool.html&amp;r=1&amp;f=G&amp;l=50&amp;d=PALL&amp;RefSrch=yes&amp;Query=PN/8997069">API descriptions</a>
+Number: US 8997069
+Owner: Microsoft Technology Licensing, LLC
+Abstract: API description techniques are described for consumption by dynamically-typed languages. In one or more implementations, machine-readable data is parsed to locate descriptions of one or more application programming interfaces (APIs). The descriptions of the one or more application programming interfaces are projected into an alternate form that is different than a form of the machine-readable data.
+
+<p>I don’t mean to be a complete dick here, but why would you think this is a good idea? I get that companies want their employees to develop a patent portfolio, but this one is patenting an essential ingredient that makes APIs work. If you enforce this patent it will be worthless because this whole API thing won’t work, and if you don’t enforce it, it will be worthless because it does nothing–money well spent on the filing fee.
+
+<p>I just need to file my patent on patenting APIs and end all of this nonsense. I know y’all think I’m crazy for my beliefs that APIs shouldn’t be patented, but every time I dive into my patent research I can’t help but think y’all are the crazy ones, and I’m actually sane. I just do not understand how this patent is going to help anyone and represents any of the value that APIs and even a patent can bring to the table.
+

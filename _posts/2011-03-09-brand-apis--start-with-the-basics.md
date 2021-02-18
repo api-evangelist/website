@@ -1,25 +1,0 @@
----
-published: true
-layout: post
-title: 'Brand APIs - Start with the Basics'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist/brand-kitchen.jpg
----
-
-<img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/brand-kitchen.jpg" alt="" width="275" align="right" />I have been thinking about<a title="Adam Kleinberg" href="https://www.linkedin.com/in/adamkleinberg">Adam Kleinbergs</a> recent posts,<a title="Why Every Brand Needs an Open API for Developers" href="https://mashable.com/2011/01/04/brand-open-api-developers/">Why Every Brand Needs an Open API for Developers</a> and<a title="Digging Deeper on Brand APIs" href="http://www.tractionco.com/blog/63-digging-deeper-on-brand-apis">Digging deeper on Brand APIs</a>.<p>
-He's right.  The pace of <a title="API Development Skyrocketed in 2010" href="http://blog.programmableweb.com/2011/03/08/3000-web-apis/">API development skyrocketed in 2010</a>, and will continue in 2011.<p>
-Brands that don't have an API will be left behind.<p>
-When companies consider an API for their brand, they should start with the basics
-<ul class="mainlist">
-	<li><a title="Product Information" href="http://blog.apievangelist.com/2011/03/09/brand-apis-starter-product-data/"><strong>Product Informatio</strong>n</a> - Core information about your products.</li>
-	<li><strong><a title="Supporting Product Information" href="http://blog.apievangelist.com/2011/03/09/brand-api-starter-supporting-product-data/">Supporting Product Information</a></strong> - Additional supporting information about your products like documents, videos, reviews, etc.</li>
-	<li><strong><a title="Location and Geo" href="http://blog.apievangelist.com/2011/03/09/brand-apis-starter-location-geo/">Location and Geo</a></strong> - Location of where to get your products.</li>
-</ul>
-With proper API terms and conditions, brand guidelines, and requiring all developers to register a company can monitor and protect the quality of their brand.
-<img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/start.jpg" alt="" width="250" align="right" />
-By starting small, companies can get familiar with having an API and supporting the community that goes with it.<p>
-I recommend engaging with an API service provider like <a href="http://www.mashery.com/">Mashery</a>, <a href="https://apigee.com/">Apigee</a> or <a href="https://www.3scale.net/">3Scale</a> when planning an API.<p>
-If you have your own in-house developers and want to keep development internally I recommend taking a look at <a href="http://www.mashape.com/">Mashape</a>.<p>
-Brands have to start somewhere.  By starting with an API that serves up your core product data, you can take control of what information is available for your brand, while also learning more about building an <a href="http://www.apievangelist.com/">API Community</a>.<p>
-Once you have a simple <a href="http://blog.apievangelist.com/2011/01/30/api-technology-rest/">RESTful</a> API that provides product and location information, an API support area, and an awareness of what your developer community wants;  you can then start innovating more around your brand API.
-
-

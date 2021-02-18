@@ -1,0 +1,24 @@
+---
+published: true
+layout: post
+title: 'Sports Data API Simulations From SportRadar'
+image: https://s3.amazonaws.com/kinlane-productions2/sportradar/sportradar-simulations.png
+---
+
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/sportradar/sportradar-simulations.png" width="45%" align="right" style="padding: 15px;" />
+<p>I’m a big fan of API sandboxes, labs, and other virtualization environments. <a href="https://streamdata.io/blog/sandbox-default-feature-banking-apis/">API sandboxes should be default in heavily regulated industries like banking</a>. I also support the virtualization of schema and data used across API operations, <a href="http://apievangelist.com/2018/05/01/synthetic-healthcare-records-for-your-api-using-synthea/">like I am doing at the Department of Veterans Affairs (VA), with synthetic healthcare data</a>. I’m very interested in anything that moves forward the <a href="http://virtualization.apievangelist.com/">API virtualization</a> conversation, so I found <a href="https://developer.sportradar.com/files/indexFootball.html#nfl-official-api-v2-simulations">the live sporting API simulations over at SportRadar</a> very interesting.
+
+<p>SportRadar’s <em>“live simulations give you the opportunity to test your code against a simulation of live data before the preseason starts or any time! Our simulation system replays select completed games allowing you to view our API feeds as if they were happening live.”</em> Here are the details of their NFL Official API simulations that run every day:
+
+<ul>
+  <li>11:00 am - Data is reset for the day’s simulations.</li>
+  <li>1:00 pm - PST week 1 games will run – Oakland at Houston, Detroit at Seattle, Miami at Pittsburgh, and New York at Green Bay</li>
+  <li>2:00 pm – PST week 2 games will run - Seattle at Atlanta, Houston at New England, Green Bay at Dallas, and Pittsburgh at Kansas City</li>
+  <li>3:00 pm – PST week 3 games will run – Green Bay at Atlanta and Pittsburgh at New England</li>
+  <li>4:00 pm – PST week 4 games will run – New England vs Atlanta</li>
+</ul>
+
+<p>Providing a pretty compelling evolution in the concept API virtualization when it comes to event data, or data that will happen on a schedule. I wanted to write up this story to make sure I bookmarked this as part of my API virtualization research. If I don’t write about it, it doesn’t happen. As I’m working to include API sandboxes, lab environments, and other API virtualization approaches in my consulting, I’m keen to add new dimensions like API simulation, which provide great material for workshops, presentations, and talks.
+
+<p>I feel like ALL APIs should have some sort of sandbox to play in while developing. Not just heavily regulated industries, or those with sensitive production data and content. It can be stressful to have to develop against a live environment, and having a realistic sandbox, labs, and simulations which provide complete copies of production APIs, along with real world synthetic data can help developers be more successful in getting up and running. I’ll keep profiling interesting approaches like this one out of SportRadar, and add to <a href="http://virtualization.apievangelist.com/">my API virtualization research</a>, helping round off my toolbox when it comes to helping API providers develop their sandbox environments.
+

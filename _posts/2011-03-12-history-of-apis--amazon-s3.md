@@ -1,15 +1,0 @@
----
-published: true
-layout: post
-title: 'History of APIs - Amazon S3'
-image: http://kinlane-productions2.s3.amazonaws.com/AWS_LOGO_CMYK.jpg
----
-
-<p><img src="https://kinlane-productions2.s3.amazonaws.com/AWS_LOGO_CMYK.jpg" alt="" width="250" align="right" />In March, 2006&nbsp;<a title="Amazon Launched New Web Service" href="https://aws.amazon.com/about-aws/whats-new/2006/03/13/announcing-amazon-s3---simple-storage-service/">Amazon launched a new web service</a>, something completely different from the&nbsp;<a title="Amazon Bookseller and E-Commerce" href="https://www.amazon.com">Amazon bookseller and e-commerce</a>&nbsp;site we've come to know. This was a new endeavor for Amazon: a storage web service called&nbsp;<a title="Amazon S3" href="https://aws.amazon.com/s3/">Amazon S3</a>.
-<p><a title="Amazon S3" href="https://aws.amazon.com/s3/">Amazon S3</a>&nbsp;provides a simple interface that can be used to store and retrieve any amount of data, at any time, from anywhere on the web. It gives developers access to the same highly scalable, reliable, fast, inexpensive data storage infrastructure that Amazon uses to run its own global network of websites.
-<p>Amazon S3 or Simple Storage Service was initially just an API. There was no Web interface or mobile app. It was just a RESTful API allowing PUT and GET requests with objects or files.
-<p>Developers using the Amazon S3 API were charged $0.15 a gigabyte per month for storing files in the cloud.
-<p>With this new type of API and billing model, Amazon ushered in a new type of computing we now know as cloud computing.
-<p>This also meant that APIs were no longer just for data or simple functionality. Now they could be used to deliver computing infrastructure.
-
-

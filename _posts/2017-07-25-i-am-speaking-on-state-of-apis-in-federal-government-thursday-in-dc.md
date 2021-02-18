@@ -1,31 +1,0 @@
----
-published: true
-layout: post
-title: 'I Am Speaking On State Of APIs In Federal Government Thursday In DC'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg
----
-
-<p><img src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg" align="right" width="40%" style="padding: 15px;" />
-<p><a href="http://redhatapievents.com/dc">I am joining my friend Steve Willmott in DC this week to talk about federal government APIs</a>. We will  be gathering at Tysons’ Biergarten between 1:30 and 5:00 PM this Thursday to talk APIs. Both Steve and I will be speaking individually, with some QA, and a happy hour afterwards as an opportunity for more discussion.
-
-<p>I am looking forward for the opportunity to hanging with my friend Steve, as the last time we’ve hung out and spoke together was APIStrat in Boston, but at APIStat we are always running a conference, and not actually focused on our views of the APIs space. So, I am eager to learn more detail about what 3Scale is up to as part of the Red Hat machine, and specifically some of the containerization, microservices, and virtualization discussions they are leading lately.
-
-<p>Anyways, I will be in DC all day Thursday. Come join the conversation. I won’t have much time in DC, so the gathering will be the best opportunity to grab a moment of my time. I’ll be talking about the state of APIs in federal government, something I’m reminded during my research and preparation for my talk is probably the most important discussion we should be having in the API space right now.
-
-<p>Looking forward to seeing you all in DC. Thanks to <a href="redhat.com">Red Hat</a> for bringing me out to DC, and making this conversation possible. I’ll see you Thursday.
-
-<p><strong>Event Details:</strong>
-<strong>Date:</strong> Thursday, July 27, 2017
-
-<p><strong>Time:</strong> 1:30 p.m. – 5:00 p.m.
-<strong>Registration:</strong> 1:30 – 2:00 p.m.
-<strong>Presentations:</strong> 2:00 – 3:30 p.m.
-<strong>Happy Hour:</strong> 3:30 – 5:00 p.m.
-
-<p><strong>Location:</strong>
-Tysons’ Biergarten
-8346 Leesburg Pike
-Tysons, VA 22182
-
-
-

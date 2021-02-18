@@ -1,13 +1,0 @@
----
-published: true
-layout: post
-title: 'A New API Programming Language SDK Icon Set'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/devicon_all_programming_languages_and_development_tools_related_icons_font.png
----
-
-<p><a href="http://devicon.fr/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/devicon_all_programming_languages_and_development_tools_related_icons_font.png" alt="" width="40%" align="right" /></a>
-<p>I was working on a&nbsp;<a href="http://portal.minimum.apievangelist.com/">forkable definition of my API portal</a>&nbsp;and I wanted to evolve the icons that I usually use as part of my API storytelling. I primarily use the <a href="http://api.thenounproject.com/">Noun Project API</a>, to associate simple black and white icons which represent&nbsp;the stories I tell, companies I showcase, and topics I cover. One area I find the Noun Project deficient&nbsp;is when it comes to icons for specific technologies, so while working on my project I wanted to find a new source. I fired up the Googles and got to work.
-<p>I quickly came across <a href="http://devicon.fr/">Devicon,&nbsp;a set of icons representing programming languages</a>, designing &amp; development tools which you can use as a font or with&nbsp;SVG code. <a href="https://github.com/konpa/devicon">At the Github repo for the project</a>, it says they have&nbsp;78 icons with over 200 versions total. I used a set of the icons to d<a href="http://portal.minimum.apievangelist.com/code/">isplay API SDKs on my API portal prototype</a>, allowing anyone who forks to turn on and off which programming languages they offer SDKs for.
-<p>Being pretty graphically challenged, as you can tell by my logo, I'm a big fan of projects like <a href="http://devicon.fr/">Devicon</a>--especially when they make it so simple, and so good looking, all at the same time. If you are needing icons for your API portal I recommend taking a look at what they are doing. They have images for all the technology that cool kids are using these days, and they seem open to crafting more if you find something missing.
-
-

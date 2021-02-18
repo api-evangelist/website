@@ -1,17 +1,0 @@
----
-published: true
-layout: post
-title: 'Flattr - API Launch'
-image: http://kinlane-productions2.s3.amazonaws.com/flattr_logo.jpg
----
-
-<a href="https://flattr.com/" target="_blank"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/flattr_logo.jpg" alt="" width="150" align="right" /></a><a href="http://blog.flattr.net/2011/01/public-rest-api/" target="_blank">Flattr the social micro-payment site, made their API public today</a>.<p>
-The API comes in two flavors.
-<ul class="mainlist">
-	<li><a href="https://flattr.com/support/integrate/js" target="_blank">Javascript API</a></li>
-	<li><a href="http://developers.flattr.net/" target="_blank">REST API</a></li>
-</ul>
-Flattr provides <a href="http://developers.flattr.net/doku.php/register_your_application" target="_blank">application registration</a> and <a href="http://developers.flattr.net/doku.php/about_oauth" target="_blank">authentication with oAuth</a>.<p>
-They also have a <a href="http://forum.flattr.net/" target="_blank">Flattr developers forum</a> to support the community.
-
-

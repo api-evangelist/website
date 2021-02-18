@@ -1,0 +1,279 @@
+---
+published: true
+layout: post
+title: 'Standardizing My API Life Cycle Governance'
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-copper-circuit.jpg
+---
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-copper-circuit.jpg" alt="" width="40%" align="right" /></p>
+<p>I am working on redesigning all of my base APIs, as well as produce a mess of new ones. As part of the process I am determined to be more thoughtful and consistent in how I design and deliver the APIs. API governance always begins with using API definitions, as you can't govern something you can't measure and track, so having machine readable artifacts is essential. After that, the design of the API is the first place to look when it comes to standardizing each of the APIs coming off the assembly line. Then I am looking to do my best to begin defining, measuring, and standardizing how I do many other areas of API operations, hleping me keep track of the many moving parts of doing microsservices.&nbsp;</p>
+<p>To help me govern the life cycle for each API, I am going to be quantifying and measuring as many of the follow areas as I can. These are what I consider to be the essential building blocks of each API that I deliver, and since I'm using Postman to not just interact with these APIs once they are in production, I will be using Postman to also deliver and govern each stop along the API life cycle. Using Postman collections to define, deliver, and govern each of these areas, using scripts, runners, and monitors to automate the enforcement of standards and consistency across the APIs I am delivering on a regular basis.&nbsp;</p>
+<p><strong>Definitions</strong></p>
+<ul>
+<li><strong>OpenAPI</strong> - There is an OpenAPI for each individual API.</li>
+<li><strong>Collection</strong> - This is a Postman collection for each individual API.</li>
+<li><strong>JSON Schema</strong> - There is a JSON schema for each individual schema.</li>
+</ul>
+<ul>
+</ul>
+<ul>
+</ul>
+<p><strong>Design</strong></p>
+<ul>
+<li><span><strong>Requests</strong></span> 
+<ul>
+<li><strong>Base</strong> - Ensure the base path is planned.</li>
+<li><strong>Versioning</strong>&nbsp;- Define how APIs are versioned.</li>
+<li><strong>Resource</strong>&nbsp;- Evaluate each resource published.</li>
+<li><strong>Sub-Resources&nbsp;</strong>- Evaluate each sub-resource published.</li>
+</ul>
+<ul>
+<li><strong>Methods</strong>&nbsp;- Ensure common use of HTTP methods.</li>
+<li><strong>Actions</strong>&nbsp;- Determine how actions are taken beyond methods.</li>
+<li><strong>Path Parameters </strong>-&nbsp;Establish common approach for path parameters.</li>
+<li><strong>Query Parameters</strong>&nbsp;- Establish common approach for query parameters.</li>
+<li><strong>HTTP Headers</strong>&nbsp;- Evaluate what headers are in use.</li>
+<li><strong>Body</strong>&nbsp;- Define how request bodies are being put to use.</li>
+<li><strong>Filtering</strong>&nbsp;- Enure there are common approaches to querying and filtering.</li>
+<li><strong>Field Selection</strong>&nbsp;- Determine how and if fields can be selected.</li>
+<li><strong>Date Selection</strong>&nbsp;- Establish common approach to using dates.</li>
+<li><strong>Time Selection</strong>&nbsp;- Establish common approach to using times.</li>
+<li><strong>Sorting</strong>&nbsp;- Establish common approach to how sorting is done.</li>
+<li><strong>Pagination</strong>&nbsp;- Establish common approach to pagination of results.</li>
+<li><strong>Granularity</strong>&nbsp;- Evaluate the size, scope, and potential granularity of requests.</li>
+<li><strong>Content Negotiation</strong>&nbsp;- Provide the ability to negotiate different content types.</li>
+</ul>
+</li>
+<li><span><strong>HTTP Methods</strong></span> 
+<ul>
+<li><strong>GET</strong>&nbsp;- Use of GET properly across all APIs.</li>
+<li><strong>POST</strong>&nbsp;-&nbsp;Use of POST properly across all APIs.&nbsp;</li>
+<li><strong>PUT</strong>&nbsp;-&nbsp;Use of PUT properly across all APIs.</li>
+<li><strong>PATCH</strong>&nbsp;-&nbsp;Use of PATCH properly across all APIs.</li>
+<li><strong>DELETE</strong>&nbsp;-&nbsp;Use of DELETE properly across all APIs.</li>
+<li><strong>OPTIONS</strong>&nbsp;-&nbsp;Use of OPTIONS properly across all APIs.</li>
+</ul>
+</li>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-blue-circuit.jpg" alt="" width="40%" align="right" /></p>
+<li><span><strong>Response</strong></span> 
+<ul>
+<li><strong>HTTP Headers&nbsp;</strong>- Ensure the common usage of standard or custom HTTP headers</li>
+<li><strong>Status Codes&nbsp;</strong>- Learn about, and use HTTP status codes in a consistent way across all API operations.</li>
+<li><strong>Error Handling&nbsp;</strong>- Establish a single error handling strategy, and apply consistently across all API operations.</li>
+<li><strong>Rate Limits&nbsp;</strong>- Establish a single approach to rate limiting of API resources, and apply consistently across all API operations.</li>
+<li><strong>Caching</strong>&nbsp;- Learn about common approaches to caching, and make sure it is applied through API operations.</li>
+<li><strong>Request-Ids&nbsp;</strong>- Employ Request-Ids if possible providing added details for logging, auditing, and reporting on API usage.</li>
+<li><strong>UTF-8</strong>&nbsp;- UTF-8 is a character encoding capable of encoding all possible characters, or code points.</li>
+<li><strong>CORS</strong>&nbsp;- Enable CORS for your API endpoints, providing the most flexibility possible in making API calls.</li>
+<li><strong>JSONP</strong>&nbsp;- Provide JSONP if you are unable to enable CORS, allowing for easier integrations.</li>
+<li><strong>Compression</strong>&nbsp;- Gzip or other compression format for API responses.</li>
+</ul>
+</li>
+<li><span><strong>Success</strong></span> 
+<ul>
+<li><strong>200 OK&nbsp;-</strong> Standard response for successful HTTP requests. The actual response will depend on the request method used.</li>
+<li><strong>201 Created&nbsp;-</strong> The request has been fulfilled, resulting in the creation of a new resource.</li>
+<li><strong>202 Accepted&nbsp;-</strong> The request has been accepted for processing, but the processing has not been completed. The request might or might not be eventually acted upon, and may be disallowed when processing occurs.</li>
+<li><strong>204 No Content&nbsp;- </strong>The server successfully processed the request and is not returning any content.</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>Redirection</strong></li>
+<li> 
+<ul>
+<li><strong>301 Moved Permanently&nbsp;</strong>- This and all future requests should be directed to the given URI.</li>
+<li><strong>302 Found</strong>&nbsp;- Common way of performing URL redirection. An HTTP response with this status code will additionally provide a URL in the location header field. The user agent (e.g. a web browser) is invited by a response with this code to make a second, otherwise identical, request to the new URL specified in the location field.</li>
+<li><strong>303 See Other&nbsp;</strong>- The response to the request can be found under another URI using a GET method. When received in response to a POST (or PUT/DELETE), the client should presume that the server has received the data and should issue a redirect with a separate GET message.</li>
+<li><strong>304 Not Modified</strong>&nbsp;- Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match. In such case, there is no need to retransmit the resource since the client still has a previously-downloaded copy.</li>
+</ul>
+</li>
+<li><span><strong>User Error</strong></span> 
+<ul>
+<li><strong>400 Bad Request&nbsp;-</strong> The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, too large size, invalid request message framing, or deceptive request routing).</li>
+<li><strong>401 Unauthorized</strong>&nbsp;- Similar to 403 Forbidden, but specifically for use when authentication is required and has failed or has not yet been provided. The response must include a WWW-Authenticate header field containing a challenge applicable to the requested resource.</li>
+<li><strong>403 Forbidden&nbsp;</strong>- The request was a valid request, but the server is refusing to respond to it. The user might be logged in but does not have the necessary permissions for the resource.</li>
+<li><strong>404 Not Found&nbsp;</strong>- The requested resource could not be found but may be available in the future. Subsequent requests by the client are permissible.</li>
+<li><strong>405 Method Not Allowed&nbsp;</strong>- A request method is not supported for the requested resource; for example, a GET request on a form which requires data to be presented via POST, or a PUT request on a read-only resource.</li>
+<li><strong>406 Not Acceptable&nbsp;</strong>- The requested resource is capable of generating only content not acceptable according to the Accept headers sent in the request.</li>
+<li><strong>408 Request Timeout&nbsp;</strong>- The server timed out waiting for the request. According to HTTP specifications: The client did not produce a request within the time that the server was prepared to wait. The client MAY repeat the request without modifications at any later time.</li>
+<li><strong>409 Conflict&nbsp;-</strong> Indicates that the request could not be processed because of conflict in the request, such as an edit conflict between multiple simultaneous updates.</li>
+<li><strong>410 Gone&nbsp;-</strong> Indicates that the resource requested is no longer available and will not be available again. This should be used when a resource has been intentionally removed and the resource should be purged. Upon receiving a 410 status code, the client should not request the resource in the future. Clients such as search engines should remove the resource from their indices. Most use cases do not require clients and search engines to purge the resource, and a 404 Not Found may be used instead.</li>
+<li><strong>411 Length Required&nbsp;-</strong> The request did not specify the length of its content, which is required by the requested resource.</li>
+<li><strong>412 Precondition Failed&nbsp;- </strong>The server does not meet one of the preconditions that the requester put on the request.</li>
+<li><strong>415 Unsupported Media Type&nbsp;-</strong> The request entity has a media type which the server or resource does not support. For example, the client uploads an image as image/svg+xml, but the server requires that images use a different format.</li>
+<li><strong>422 Unprocessable Entity&nbsp;-</strong> The request was well-formed but was unable to be followed due to semantic errors.</li>
+<li><strong>423 Locked&nbsp;-</strong> The resource that is being accessed is locked.</li>
+<li><strong>428 Precondition Required&nbsp;-</strong> The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.</li>
+<li><strong>429 Too Many Requests&nbsp;- </strong>The user has sent too many requests in a given amount of time. Intended for use with rate-limiting schemes.</li>
+</ul>
+</li>
+<li><span><strong>Server Error</strong></span> 
+<ul>
+<li><strong>500 Internal Server Error&nbsp;-</strong> A generic error message, given when an unexpected condition was encountered and no more specific message is suitable.</li>
+<li><strong>501 Not Implemented&nbsp;- </strong>The server either does not recognize the request method, or it lacks the ability to fulfill the request. Usually this implies future availability (e.g., a new feature of a web-service API).</li>
+<li><strong>503 Service Unavailable&nbsp;- </strong>The server is currently unavailable (because it is overloaded or down for maintenance). Generally, this is a temporary state.</li>
+</ul>
+</li>
+<li><strong>Error Handling</strong> 
+<ul>
+<li><strong>Error Format</strong>&nbsp;- Having a common approach to delivering errors to API consumers.</li>
+<li><strong>Problem Details for HTTP APIs</strong>&nbsp;- Leveraging RFC 7807 for machine readable details of errors in a HTTP response.</li>
+</ul>
+</li>
+<li><strong>Media Types</strong> 
+<ul>
+<li><strong>application/json&nbsp;</strong>- Provide JSON media types for API responses.</li>
+<li><strong>application/xml&nbsp;-</strong> Provide XML media types for API responses.</li>
+<li><strong>application/csv&nbsp;-</strong> Provide CSV media types for API responses.</li>
+<li><strong>text/html&nbsp;-</strong> Provide HTML media types for API responses.</li>
+<li><strong>application/atom+xml&nbsp;-</strong> Provide ATOM media types for API responses.</li>
+</ul>
+</li>
+<li><strong>Schema</strong> 
+<ul>
+<li><strong>Name</strong>&nbsp;- Establishing a common approach to naming schema in use across APIs.</li>
+<li><strong>Description</strong>&nbsp;- Have a clear description for each schema.</li>
+<li><strong>Property Names&nbsp;</strong>- Establish common practices for how schema properties are named.</li>
+<li><strong>Property Description&nbsp;</strong>- Ensure that all schema properties have descriptions.</li>
+<li><strong>Property Types&nbsp;</strong>- Establish common practices for which property types are used.</li>
+<li><strong>Property Requirements&nbsp;</strong>- Ensure that all properties are defined as required or not required.</li>
+<li><strong>JSON Schema&nbsp;- </strong>Provide JSON schema represenations for all schema in use.</li>
+<li><strong>Schema.org&nbsp;</strong>- Consider using Schema.org representations for common data elements.</li>
+</ul>
+</li>
+</ul>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-purp-paper.jpg" alt="" width="40%" align="right" /></p>
+<p><strong>Mock</strong></p>
+<ul>
+<li><strong>API</strong> - Provide a virtualized endpoint for each individual API.</li>
+<li><strong>Data</strong>&nbsp;- Provide virtualized data for each individual API.</li>
+<li><strong>Versions</strong> - There are mocks available for each version of an API.</li>
+<li><strong>Coverage</strong> - Ensure that I have 100% coverage of all APIs.</li>
+</ul>
+<p><strong>Portal</strong></p>
+<ul>
+<li><strong>GitHub Repo -</strong>&nbsp;There is a GitHub repository for each indiviudal API.</li>
+</ul>
+<p><strong>Documentation</strong></p>
+<ul>
+<li><strong>Documentation</strong>&nbsp;- There is documentation published with URL available.</li>
+<li><strong>Versions</strong> - There is documentation available for each version of an API.</li>
+</ul>
+<p><strong>Testing</strong></p>
+<ul>
+<li><strong>Assertions</strong> - Ensure there are assertions available for each API.</li>
+<li><strong>Monitor</strong>&nbsp;- There is an testing monitor in place from multiple regions.</li>
+<li><strong>Results</strong>&nbsp;- I have the monitoring results published somewhere for evaluation.</li>
+</ul>
+<p><strong>Database</strong></p>
+<ul>
+<li><strong>Script</strong> - A script is available to create the database for each API.</li>
+<li><strong>Platform</strong> - There is a common database platform for each API.</li>
+<li><strong>Billing</strong> - What does it cost me to run each database for each API.</li>
+<li><strong>Backup</strong> - Each database is backed up as part of regular process.</li>
+<li><strong>Restore</strong> - There is a process for easily restoring the database.</li>
+</ul>
+<p><strong>Compute</strong></p>
+<ul>
+<li><strong>Platform</strong>&nbsp;- There is a common compute platform for each API.</li>
+<li><strong>Billing</strong>&nbsp;- What does it cost me to run each database for each API.</li>
+<li><strong>Setup</strong> - There is automation in place to setup and configure the compute.</li>
+<li><strong>Backup</strong>&nbsp;- All code and configuration is backed up as part of regular process.</li>
+<li><strong>Restore</strong>&nbsp;- There is a process for easily restoring the compute layer.</li>
+</ul>
+<p><strong>Storage</strong></p>
+<ul>
+<li><strong>Platform</strong>&nbsp;- There is a common storage platform for each API.</li>
+<li><strong>Billing</strong>&nbsp;- What does it cost me to run each database for each API.</li>
+<li><strong>Backup</strong>&nbsp;- All storage is backed up as part of regular process.</li>
+<li><strong>Restore</strong>&nbsp;- There is a process for easily restoring the storage.</li>
+</ul>
+<p><strong>Pipeline</strong></p>
+<ul>
+<li><strong>Platform</strong> - All pipeliens are delivered using common CI/CD platform.</li>
+<li><strong>Tests</strong> - Run the required tests at the pipeline level to ensure quality.</li>
+</ul>
+<p><strong>Management</strong></p>
+<ul>
+<li><strong>Platform</strong>&nbsp;- There is a common database platform for each API.</li>
+<li><strong>Billing</strong> - What does it cost me to manage each individual API.</li>
+<li><strong>Plan</strong> - There is a plan in place for each individual API.</li>
+<li><strong>Activity</strong> - Track all activity of API consumption at the management layer.</li>
+</ul>
+<p><strong>Logging</strong></p>
+<ul>
+<li><strong>Shipped</strong> - All logs are shipped to central location for evaluation and auditing.</li>
+<li><strong>Reporting</strong> - There is reporting in place for each of the APIs log files.</li>
+</ul>
+<p><strong>Encryption</strong></p>
+<ul>
+<li><strong>Certificate</strong>&nbsp;- Establish and manage certificate for APIs.</li>
+<li><strong>Default</strong>&nbsp;- Enforce encryption for all APIs beind delivered.</li>
+</ul>
+<p><strong>DNS</strong></p>
+<ul>
+<li><strong>Mock Host&nbsp;</strong>- Ensure there is a mock host for each API.</li>
+<li><strong>Development Host</strong>&nbsp;- Ensure there is a mock host for each API.</li>
+<li><strong>Production Host&nbsp;</strong>- Ensure there is a mock host for each API.</li>
+</ul>
+<p><strong>Authentication</strong></p>
+<ul>
+<li><strong>API Key</strong> - Mock, development, and production instances all require an API key to use.</li>
+</ul>
+<p><strong>Road Map</strong></p>
+<ul>
+<li><strong>Add</strong> - I can easily add items to the road map for each API.</li>
+<li><strong>Listing</strong> - There is a listing of road map entries for each API.</li>
+<li><strong>Version</strong> - The road map is organized by version.</li>
+<li><strong>Activity</strong> - Track the planning activity around the road map.</li>
+</ul>
+<p><strong>Issues</strong></p>
+<ul>
+<li><strong>Add</strong>&nbsp;- I can easily add items to the road map for each API.</li>
+<li><strong>Listing</strong>&nbsp;- There is a listing of road map entries for each API.</li>
+<li><strong>Version</strong>&nbsp;- The road map is organized by version.</li>
+<li><strong>Activity</strong> - Track any acitivity when it comes to issues.</li>
+</ul>
+<p><strong>Change Log</strong></p>
+<ul>
+<li><strong>Add</strong>&nbsp;- I can easily add items to the road map for each API.</li>
+<li><strong>Listing</strong>&nbsp;- There is a listing of road map entries for each API.</li>
+<li><strong>Version</strong>&nbsp;- The road map is organized by version.</li>
+<li><strong>Activity</strong> - Track the change log activity.</li>
+</ul>
+<p><strong>Monitoring</strong></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-atari-asteroids.jpg" alt="" width="40%" align="right" /></p>
+<p><strong>Mock</strong></p>
+<ul>
+<li><strong>Monitor</strong> - There is an uptime and availablility monitor in place for multiple regions.</li>
+<li><strong>Results</strong> - The monitoring results published somewhere for evaluation.</li>
+</ul>
+<p><strong>Performance</strong></p>
+<ul>
+<li><strong>Monitor</strong>&nbsp;- There is an performance monitor in place for multiple regions.</li>
+<li><strong>Results</strong>&nbsp;- The performance results published somewhere for evaluation.</li>
+</ul>
+<p><strong>Security</strong></p>
+<ul>
+<li><strong>Monitor</strong>&nbsp;- There is an security monitor in place</li>
+<li><strong>Results</strong>&nbsp;- The security results published somewhere for evaluation.</li>
+</ul>
+<p><strong>Support</strong></p>
+<ul>
+<li><strong>Contact</strong> - There is an owner for each API responsible for supporting it.</li>
+<li><strong>Ticket</strong> - There is an ability to submit and manage tickets for support.</li>
+<li><strong>Email</strong> - An email exists for supporting each individual API.</li>
+<li><strong>Activity</strong> - Track the support activity for each API.</li>
+</ul>
+<p><strong>Communication</strong></p>
+<ul>
+<li><strong>Update</strong> - A message, Tweet, or other update is pushed for any activity.</li>
+<li><strong>Blog</strong> - A blog post is written with each release of an API or other activity.</li>
+<li><strong>Activity</strong>&nbsp;- Track the communication activity for each API.</li>
+</ul>
+<p><strong>Discovery</strong></p>
+<ul>
+<li><strong>APIs.json </strong>- An APIs.json index is created for each API, and included in other indexes.</li>
+</ul>
+<p>I am working to establish a single Postman request for each entry in this outline, operating as a single, or suite of collections that I can run as a monitor, or manually against each individual API I am developing--helping keep me honest. <a href="https://github.com/stoplightio/spectral">I'd like to standardize the rules around Spectral, building upon what already exists out in the API space, contributing to a common approach to defining API design governance</a>. My only concern is how to I use Spectral for governing non API design elements, but I'm optimistic that I will be able to use it on OpenAPI, AsyncAPI, JSON Schema, Postman Collections, as well as APIs.json--allowing me to cover all my bases when it comes to API governance.</p>
+<p><a href="https://github.com/postman-api-governance/default">To help me manage this effort I have created a GitHub repository to manage all the details, issues, and help me move things forward</a>. I need to spend some time playing with Spectral before I invest more time into the Postman collection, and writing scripts for the governance. I already have some scripting down, but it was just proof of concept stuff, and I'd rather standardize my approach using an open source format, and set of JavaScript libraries. Then I will go ahead and publish some of my APIs and begin moving them through the process I've laid out here, helping me establish some of the artifacts and metrics I will need to actually realize this list. While most of the API design elements I can rely on the OpenAPI truth for each API, but for some of the other API life cycle elements I am going to have to get creative using APIs.json, and totally inventing other artifacts to get the job done--eventually getting me where I need to be when it comes to governance.</p>

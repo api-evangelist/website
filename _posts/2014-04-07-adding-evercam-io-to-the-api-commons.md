@@ -1,17 +1,0 @@
----
-published: true
-layout: post
-title: 'Adding Evercam.io To The API Commons'
-image: https://s3.amazonaws.com/kinlane-productions2/api-evangelist/evercam/evercam-logo.png
----
-
-<p><a href="http://www.evercam.io/"><img style="padding: 10px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/evercam/evercam-logo.png" alt="" width="225" align="right" /></a>
-<p>The <a href="http://www.evercam.io/">Internet of things (Iot), and security camera API platform evercam.io</a> has submitted the API definition for their camera API to the <a href="http://apicommons.org/apis.html">API Commons</a>.
-<p>I&rsquo;ve been impressed with the amount of leadership that is coming out of this new startup in a potentially very political, and inevitable aspect of the API economy&mdash;cameras.
-<p>Marco Herbst (<a href="https://twitter.com/marcoherbst">@marcoherbst</a>) of evercam.io approached me during <a href="http://www.apistrategyconference.com/2014Amsterdam/index.php">#APIStrat in Amsterdam</a> and expressed interest in submitting their <a href="https://api.evercam.io/v1/swagger.json">Swagger API definition</a> into the commons, and this last weekend we created the API Commons manifest and published to the commons.
-<p><a href="https://bit.ly/1e27KIc" target="_blank"><img style="border: 0px solid #000;" src="https://s3.amazonaws.com/kinlane-productions2/api-commons/api-commons-icon.png" alt="" width="100" align="right" /></a>
-<p>When I spoke with Marco several months ago about API Commons, he took the importance of submitting an API definition to heart. By doing so evercam.io is saying that their API definition is significant in their industry, and something that others in the industry should follow.
-<p>This type of stance in an industry like Iot is going to become crucial in encouraging not just manufacturers to adhere to a common format, but also saving application developers and data scientists time when their are building Iot solutions.
-<p>Thanks evercam.io for sharing your API definition with the world, and taking your role and responsibility in defining an interface to a very important layer of the API economy, so seriously.
-
-

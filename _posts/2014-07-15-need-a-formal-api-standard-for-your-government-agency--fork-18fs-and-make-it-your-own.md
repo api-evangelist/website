@@ -1,21 +1,0 @@
----
-published: true
-layout: post
-title: 'Need A Formal API Standard For Your Government Agency?  Fork 18Fs, And Make It Your Own!'
-image: https://s3.amazonaws.com/kinlane-productions2/federal-government/18f/18F_logo.png
----
-
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/federal-government/18f/18F_logo.png" alt="" width="200" align="right" />
-<p>The elite technology group at the <a href="http://www.gsa.gov/">GSA</a>, <a href="https://18f.gsa.gov/">known as 18F</a>, has released the latest copy of&nbsp;<a href="https://github.com/18F/api-standards">API guidance for federal government agencies</a> to follow when designing their own APIs.
-<p>Using 18F&rsquo;s own description:
-<blockquote><em>This document captures 18F's view of API best practices and standards. We aim to incorporate as many of them as possible into our work.<br /><br />APIs, like other web applications, will vary greatly in implementation and design, depending on the situation and the problem the application is solving. </em></blockquote>
-<p>I like the mix of info that is delivered as well:
-<ul class="mainlist">
-<li>High level design guidance that individual APIs interpret to meet their needs.</li>
-<li>Low level web practices that most modern HTTP APIs use.</li>
-</ul>
-<p>To top it off, <a href="https://github.com/18F/api-standards">the API Standards is hosted on Github</a>, in its own repository, and as Gray Brooks from 18F says:
-<blockquote><em> "Want a formal API Standards for your agency to adopt?  Fork ours, add your name to the top, and make it your own." </em></blockquote>
-<p>Simple guidance like this goes a long way in helping, sometimes even very experienced developers, understand the best practices when it comes to designing, simple, modern APIs&mdash;a world where consistency and simplicity goes a long way!
-
-

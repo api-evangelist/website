@@ -1,21 +1,0 @@
----
-published: true
-layout: post
-title: 'The Basics of Working with the Postman API'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/postman_api_docs_get_all_collections.png
----
-<img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/postman_api_docs_get_all_collections.png" width="40%" align="right" style="padding: 15px;" /><p class="p1">It is pretty easy to think of Postman as the platform where you engage with your internal APIs, as well as other 3rd party APIs. It doesn’t always occur to developers that <a href="https://docs.api.postman.com/?version=latest">Postman has an API as well</a>. Most everything you can do through the Postman interface you can do via the Postman API. Not surprisingly, the Postman API also has a Postman collection, providing you with quick and easy access to your Postman collections, workspaces, teams, mocks, and other essential elements of the Postman platform and client tooling. Providing you with the same automation opportunities you have come to expect from other APIs.</p>
-<p class="p1">API access, integration, and automation should be the default with everything you do online—desktop, web, mobile, and device applications all use APIs. Your API infrastructure is no different. Postman takes this seriously, and works to make sure that anything you can do through the desktop or web interfaces, that you can also do via <a href="https://docs.api.postman.com/?version=latest">the Postman API</a>--allowing API providers and consumers to seamlessly integrate and automate the Postman platform into their operations by leveraging the following APIs.</p>
-<ul>
-<li><strong>Collections</strong> - Being able to programmatically create and manage Postman API collections in use.</li>
-<li><strong>Environments</strong> - Adding and managing the details of the environments applied across Postman collections.</li>
-<li><strong>Mocks</strong> - Creating, retrieving, and deleting mocks APIs that are generated from Postman collections.</li>
-<li><strong>Monitors</strong> - Create, update, retrieve, delete, and run monitors that execute Postman collections.</li>
-<li><strong>Workspaces</strong> - Creating, retrieving, updating, and deleting the workspaces that collections are organized in.</li>
-<li><strong>Users</strong> - Provides a /me endpoint that allows for pulling of information about the API key being used.</li>
-<li><strong>Import</strong> - Allowing for the import of Swagger, OpenAPI, and RAML API definitions into Postman.</li>
-<li><strong>API</strong> - Programmatically creating and managing APIs, including version, schema, and its link relations.</li>
-</ul>
-<p class="p1">These eight API paths give you full control over managing the full API life cycle of APIs you are developing, and the integration and automation of the APIs you are consuming. Allowing for tighter integration with other services and tools you are using to define, design, develop, support, and evolve your API infrastructure, acknowledging the critical role that Postman plays in the enterprise life cycle, while also being just one of many tools developers are putting to work to deliver critical API infrastructure. Ensuring that Postman places nicely with the variety of tools in our API development toolbox, and acting as a Swiss army knife that will work with any existing and diverse API life cycle workflow.</p>
-<p class="p1">Postman has evolved from hits humble roots as simply a browser plugin and desktop API client to become a full featured API platform, and platforms depend on APIS to operate at scale. The Postman APIs are how API development and governance groups can scale and automate the API development life cycle, while also being able to audit and engage with the life cycle across teams and the workspace they are using to organize operations. If you are looking to take your API life cycle to the next level, take a look at the Postman API collection and documentation, and begin brainstorming ways in which you can automate and streamline how APIs are delivered, seamlessly integrating your existing workflows with how your developers are already using Postman on the ground across your organization.</p>
-

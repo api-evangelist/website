@@ -1,24 +1,0 @@
----
-published: true
-layout: post
-title: 'Adding Three APIMATIC OpenAPI Extensions To The OpenAPI Toolbox'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png
----
-
-<p><a href="https://apimatic.io/"><img src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/apimatic_dx_kits.png" align="right" width="40%" style="padding: 15px;" /></a>
-<p>I’ve added three OpenAPI extensions from <a href="https://apimatic.io/">APIMATIC</a> to my <a href="http://openapi.toolbox.apievangelist.com/">OpenAPI Toolbox</a>, adding to the number of extensions I’m tracking on that service providers and tooling developers are using as part of their API solutions. <a href="https://apimatic.io/">APIMATIC provides SDK code generation services</a>, so their OpenAPI extensions are all about customizing how you deploy code as part of the integration process.
-
-<p>These are the three OpenAPI extensions I am adding from them:
-
-<ul>
-  <li>x-codegen-settings - These settings are globally applicable to all operations and schema definitions.</li>
-  <li>x-operation-settings - These settings can be specified inside an "operation" object.</li>
-  <li>x-additional-headers - These headers are in addition to any headers required for authentication or defined as parameters.</li>
-</ul>
-
-<p>If you have ever used APIMATIC you know that you can do a lot more than just “SDK generation”, which often has a bad reputation. APIMATIC provides some interesting ways you can use OpenAPI to dial in your SDK, script, and code generation as part of any continuous integration lifecycle.
-
-<p>Providing another example of how you don’t have to live within the constraints of the current OpenAPI spec. Anyone can augment, and extend the current specification to meet your unique needs. Then who knows, maybe it will become useful enough, and something that might eventually be added to the core specification. Which is part of the reason I’m aggregating these specifications, and including them in <a href="http://openapi.toolbox.apievangelist.com/">the OpenAPI Toolbox</a>.
-
-
-

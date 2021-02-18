@@ -1,12 +1,0 @@
----
-published: true
-layout: post
-title: 'SSL Required for Twitter Streaming API by End of Month'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Twitter-Logo.jpg
----
-
-<img src="https://kinlane-productions2.s3.amazonaws.com/Twitter-Logo.jpg" alt="" width="200" align="right" />On September 29th, <a title="Twitter will be making the Streaming API support only SSL" href="https://dev.twitter.com/blog/streaming-api-turning-ssl-only-september-29th">Twitter will be making the Streaming API support only SSL</a>. The Twitter Streaming API currently supports HTTPS requests, but will completely discontinue HTTP support by the end of the month.<p>
-Along with the SSL switch they are letting developers know they will also be eventuallydeprecatingBasic Auth for the <a title="Twitter Streaming API" href="https://dev.twitter.com/docs/streaming-api">Twitter Streaming API</a>, and encouraging everyone to use OAuth.<p>
-SSL and OAuth are fast becoming standards for APIs, and it seems wise to implement with the first version of the API, rather than having to force developers to switch down the road.
-
-

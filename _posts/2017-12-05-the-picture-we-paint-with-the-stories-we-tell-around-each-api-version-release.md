@@ -1,25 +1,0 @@
----
-published: true
-layout: post
-title: 'The Picture We Paint With The Stories We Tell Around Each API Version Release'
-image: https://s3.amazonaws.com/kinlane-productions2/facebook/facebook-version-211-release.png
----
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions2/facebook/facebook-version-211-release.png" align="right" width="45%" style="padding: 15px;" />
-<p>I fell down the rabbit hole of the latest Facebook version release, trying to understand the deprecation of their User Insights API. The story of the deprecation of the API isn’t told accurately as part of the the regular release process, so I found myself thinking more deeply about how we tell stories (or don’t) around each step forward of our APIs. I have dedicated areas of my API research for the <a href="http://road-map.apievangelist.com/">road map</a>, <a href="http://issues.apievangelist.com/">issues</a>, and <a href="http://change-log.apievangelist.com/">change log</a> for API operations, because their presence tell a lot about the character of an API, and their usage I feel paints and accurate painting of each moment in time for an API.
-
-<p><a href="https://developers.facebook.com/docs/graph-api/changelog">Facebook has a dedicated change log for their API platform</a>, as well as an <a href="https://developers.facebook.com/status/dashboard/">active status</a> and <a href="https://developers.facebook.com/status/issues/">issues</a> pages, but they do not share much about what their road map looks like. They provide a handful of elements with each releases change log:
-
-<ul>
-  <li><strong>New Features</strong> — New products or services, including new nodes, edges, and fields.</li>
-  <li><strong>Changes</strong> — Changes to existing products or services (not including Deprecations).</li>
-  <li><strong>Deprecations</strong> — Existing products or services that are being removed.</li>
-  <li><strong>90-Day Breaking Changes</strong> — Changes and deprecations that will take effect 90 days after the version release date.</li>
-</ul>
-
-<p>The presence, or lack of presence, of a road map, change log, status and issue pages for an API paints a particular picture of a platform in my mind. Also, the stories they tell, or do not tell with each release paint an evolving picture of where a platform is headed, and whether or not we want to participating in the journey. Facebook does better than most platforms I track on when it comes to storytelling, by also releasing a blog post telling the story of each release, providing separate posts for <a href="https://developers.facebook.com/blog/post/2017/11/07/graphapi-v2.11/">the Graph API</a>, as well as <a href="https://developers.facebook.com/ads/blog/post/2017/11/07/marketing-api-v211/">the Marketing API</a>. It is too bad that <a href="https://developers.facebook.com/ads/blog/post/2017/11/07/marketing-api-v211/">they omitted the deprecation of the Audience Insight API</a>, which occurred at the time of this story.
-
-<p>While I consider the presence of building blocks like a change log, road map, issues and status page a positive sign for platforms. It still always requires reading between the lines, and staying in tune with each release to really get a feel for how well a platform puts these building blocks to work for the platform. Regardless, I think these building blocks do adequately paint a picture of the current state of a platform, it just usually happens to be the picture that platform wants you to see, not necessary the picture the platform consumers would like to see.
-
-
-

@@ -1,10 +1,0 @@
----
-published: true
-layout: post
-title: 'Blackberry Messenger Apps Hackathon'
-image: 
----
-
-
-
-

@@ -1,25 +1,0 @@
----
-published: true
-layout: post
-title: 'Making An Impact On Environment With Building Management APIs'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/panoptix-appcloud.png
----
-
-<p><a href="http://whatspossible.johnsoncontrols.com/community/panoptix" target="_blank"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/panoptix/panoptix-appcloud.png" alt="" width="300" align="right" /></a>
-<p>I had a chance to talk with the <a href="http://www.johnsoncontrols.com/content/us/en.html">Johnson Controls</a>, <a title="Panoptix API" href="https://developer.panoptix.com/">Panoptix API</a> team this last week.  The <a href="http://whatspossible.johnsoncontrols.com/community/panoptix">Panoptix&reg; community</a>&nbsp;offers:
-<blockquote><em>a combination of software and services that easily and cost-effectively helps customers see more so they can do more to achieve optimized building performance and energy efficiency</em></blockquote>
-<p>To understand what Panoptix enables...imagine if all of our buildings:
-<ul class="mainlist">
-<li>Thought for themselves</li>
-<li>Teach us to reduce energy consumption</li>
-<li>Diagnose problems in real-time</li>
-<li>Self correct when necessary</li>
-<li>Call a service provider when they need repair or tuning</li>
-</ul>
-<p>Panoptix starts with a cloud-hosted platform that enables buildings to collect and manage data, along with tools for automating operations at the building and space levels providing metering for electricity, water, gas oil steam, carbon and weather--with very granular level reporting up to overall trends of energy use.
-<p>To grow Panoptix, Johnson Controls introduced a <a title="marketplace" href="http://whatspossible.johnsoncontrols.com/community/panoptix/apps">marketplace of apps</a> combined with supporting news, information, resources and entire community dedicated to building performance and efficiency management.
-<p>This marketplace and community is driven by an&nbsp;<a href="https://developer.panoptix.com/">API developer area</a>, allowing anyone to <a href="https://developer.panoptix.com/signup/">sign up</a> and get to work developing apps and start selling them in the Panoptix marketplace.  The Panoptix API is free to use for anyone looking to developer one app, allowing you to collect 70% of revenue from app sales in the marketplace (an essential ingredient for developer success).
-<p>I like Johnson Controls approach to building a community around building management applications, data and resources--complete with a API driven developer area.&nbsp;It&rsquo;s great to see a 125 year old company open up their hardware and software with such an innovative approach.
-<p>I&rsquo;ll be digging further into how <a href="http://www.johnsoncontrols.com/content/us/en.html">Johnsons Controls</a> deployed the Panoptix API, with further entries to this blog series, and a full case study on their approach to delivering their API driven building management platform.
-
-

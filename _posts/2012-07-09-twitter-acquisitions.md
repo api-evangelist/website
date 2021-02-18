@@ -1,23 +1,0 @@
----
-published: true
-layout: post
-title: 'Twitter Acquisitions'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/twitter-bird-blue-on-white.png
----
-
-<p><a title="Twitter" href="https://www.twitter.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/twitter/twitter-bird-blue-on-white.png" alt="" width="150" align="right" /></a>
-<p>Acquisition of technology startups by companies is a regular part of business today, providing a way for these companies to get the technology, talent, as well as user and market share they need to be successful. These acquisitions play an important part of API ecosystems, with API owners hoping developers build the next killer feature that users will love, something they can invest in, and developers dream API owners will notice their work and purchase their &ldquo;startup&rdquo;.
-<p>Looking back at the acquisitions made by a company can function as a sort of &ldquo;tea leaves&rdquo;, allowing us to interpret the companies motivations, possibly telling us where they are headed and who they might acquire next. As part of my&nbsp;<a title="Twitter research" href="http://twitter.apivoice.com/">Twitter research</a>&nbsp;I wanted to look at the acquisitions made by Twitter over its six year history:
-<table cellspacing="5" cellpadding="5" width="90%" align="center">
-<tbody>
-<tr>
-<td style="background-color: #ccc;" colspan="2" align="left"><strong>2008</strong></td>
-</tr>
-<tr>
-<td width="150" align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/twitter/acquisitions/summize-logo.png" alt="" width="150" /></td>
-<td>07/2008 -&nbsp;<strong><a title="Summize" href="http://www.crunchbase.com/company/summize">Summize</a></strong>&nbsp;- Social Search</td>
-</tr>
-<tr>
-<td colspan="2" align="center">
-
-

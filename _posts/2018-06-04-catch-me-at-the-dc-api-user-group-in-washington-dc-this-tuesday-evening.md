@@ -1,16 +1,0 @@
----
-published: true
-layout: post
-title: 'Catch Me At The DC API User Group in Washington DC This Tuesday Evening'
-image: https://s3.amazonaws.com/kinlane-productions2/talks/dc-api-user-group.png
----
-
-<p><img src="https://s3.amazonaws.com/kinlane-productions2/talks/dc-api-user-group.png" width="45%" align="right" style="padding: 15px;" />
-<p>After I speak at DevNation Federal in Washington DC this Tuesday, I am going to give a similar talk at <a href="https://www.meetup.com/DC-Web-API-User-Group/">the DC API API User Group</a> that evening. I love going to the Meetups in DC, partly because my good friend Gray Brooks runs the event, but also because <a href="https://apievangelist.com/2012/08/18/api-craft-washington-dc/">I’ve been working to jumpstart API conversations in Washington DC since 2012 when I held the first DC edition of API Craft</a>. I was on a mission to jumpstart API Craft gatherings around the country that year, and it makes me happy to see the API Meetup culture continuing to thrive in DC, where other places it has died out.
-
-<p>At the DC API Meetup I’ll be giving a variation of my talk that I’m giving earlier that day at DevNation Federal. Talking about the technology, business, and politics of doing APIs, with an emphasis on a consistent and repeatable API lifecycle. I’ll be reworking my regular material in light of current projects I’m working on at the federal level including with the VA, FDIC, HHS, and beyond. Sharing stories about how a microservice approach can help make government services more agile, flexible, and delivered in smaller more bite sized chunks–helping move the IT conversation forward across federal agencies.
-
-<p>If you can’t make it to DevNation Federal, I recommend you head out <a href="https://www.meetup.com/DC-Web-API-User-Group/">to the DC API User Group later that evening</a>. I’d love to get a chance to hang out with you and talk about APIs. I’m always impressed with the folks who turn out for the DC API Meetup, consistently providing a fresh opportunity to discuss APIs and the impact they are making across the federal government. Organizer Gray Brooks has his finger on the pulse of what is going on across agencies, way beyond what I am capable of from the outside-in. I look forward to hanging out in DC, and hope you can make it out Tuesday to talk some APIs with me.
-
-
-

@@ -1,29 +1,0 @@
----
-published: true
-layout: post
-title: 'Studying How Providers Are Supporting Batch API Requests'
-image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bulk-requests.png
----
-
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bulk-requests.png" align="right" width="35%" />
-
-<p>A recent addition to my API research is the concept of making batch API requests. I was reminded of this during <a href="http://resources.cloud-elements.com/presentations-2/the-state-of-api-integration-webinar-slides">a webinar I did with Cloud Elements when they cited batch API requests as an area needing improvement in their State of API Integration report</a>. I had also recently come across several batch APIs while profiling the Google API stack, so I already had the topic in my notebook, but Cloud Element pushed me to add the topic to my research.
-
-<p>Here are a handful of batch API implementations I am working through, to better understand how providers are approaching the problem:
-
-<p><a href="https://developers.facebook.com/docs/graph-api/making-multiple-requests">Facebook Graph API</a>
-[Google Cloud Storage](https://cloud.google.com/storage/docs/json_api/v1/how-tos/batch
-<a href="https://www.fullcontact.com/developer/docs/batch/">Full Contact</a>
-<a href="https://developer.zendesk.com/blog/from-100-requests-to-1-introducing-our-new-bulk-and-batch-apis">Zendesk</a>
-<a href="https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/requests_composite_batch.htm">SalesForce</a>
-<a href="https://dev.office.com/sharepoint/docs/sp-add-ins/make-batch-requests-with-the-rest-apis">Microsoft Office</a>
-<a href="https://docs.aws.amazon.com/AWSECommerceService/latest/DG/BatchandMultipleOperationRequests.html">Amazon</a>
-<a href="https://developer.mailchimp.com/documentation/mailchimp/guides/how-to-use-batch-operations/">MailChimp</a>
-<a href="https://www.meetup.com/meetup_api/docs/batch/">Meetup</a>
-
-<p>As I do, in my approach to API research, I will process the common patterns I come across in each of these implementations, then add as building blocks in my <a href="http://design.apievangelist.com/">API design research</a>, hopefully providing some details API providers can consider early on in the API lifecycle. I’m not looking to tell people how to deliver batch APIs–I am just looking to shine a light on how the successful APIs are already doing it.
-
-<p>I feel like batch APIs are a response to more APIs, and less direct database access or full data download availability. While modular, simple APIs that do one thing well works in many situations, sometimes you need to move large amounts of resources around and make API requests that do more than just update a single resource or database record. I’ll file this research under <a href="http://design.apievangelist.com/">API design</a>, but I’ll migrate make a mention of it at the <a href="http://database.apievangelist.com/">database</a> and other levels, as I identify the variances in how bulk API requests are being made and the solutions they are providing.
-
-
-

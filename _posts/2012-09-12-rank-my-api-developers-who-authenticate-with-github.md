@@ -1,18 +1,0 @@
----
-published: true
-layout: post
-title: 'Rank My API Developers Who Authenticate With Github'
-image: http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/singly-twitter-linkedin-github-facebook-authentication.png
----
-
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/singly/singly-twitter-linkedin-github-facebook-authentication.png" alt="" width="150" align="right" />
-<p>I&rsquo;m updating the login and authentication for my content management system, APIs and other tools to provide authentication using Twitter, Facebook, LinkedIn and Github by default. I&rsquo;m using <a href="https://singly.com/">Singly as an authentication provider</a>, because their aggregation of API authentication, endpoints and objects across these providers is easy and most efficient way I know to get this accomplished.
-<p>In addition to it being easy, I&rsquo;m using Singly for another advantage.  Each service Singly provides has a discovery endpoint, which provides me with metadata and the other endpoints each service provides.  I want to use this meta data to derive a quick snapshot ranking of my authenticating user.
-<p>For example, when a user authenticates via <a href="https://github.com/">Github Using Singly</a>, I get the following meta data and endpoints:
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/singly/Singly-Github-Meta-Endpoints.png" alt="" width="550" />
-<p>Singly gives me 6 endpoints with data from the user&rsquo;s activity in these areas.  I&rsquo;m looking to create an algorithm that will provide me with some quick ranking score based upon the number of repositories, followers and following a user has.
-<p>Right now I'm just going to add these up, take average across all my users that have logged in via Github.  I&rsquo;m sure I will evolve the design of the algorithm as I progress, but it should work for now.
-<p>My goal is to provide a little more insight into what type of user is signing up for my service, API or otherwise and possibly take different courses of action based upon their overall activity levels on Github.  I mean, if they are Github superstar I want to know it, and also know if they aren&rsquo;t very active at all.
-<p>I&rsquo;ll explore the same algorithm for <a href="https://www.singly.com/docs/twitter">Twitter</a>, <a href="https://www.singly.com/docs/facebook">Facebook</a> and <a href="https://www.singly.com/docs/linkedin">LinkedIn</a> authentication, but probably take different values into consideration for those social networks.
-
-

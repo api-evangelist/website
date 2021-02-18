@@ -1,13 +1,0 @@
----
-published: true
-layout: post
-title: 'Reworking My API 101 Content And First Up Is The 100K View'
-image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-101.png
----
-
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-101.png" alt="" width="300" align="right" />
-<p>The <a href="http://apievangelist.com/index.html">home page of API Evangelist</a> has always been my API 101 page, where any new visitor can land, not know a thing about APIs, read the page, and walk away understanding at least what an API is, and hopefully also a greater understanding of how it impacts their world. From the beginning the API Evangelist home page always had a lean toward API providers, and over time I've added information about consuming APIs, as well as trends in the API space I'm seeing.
-<p>In my opinion my 101 content has become too lengthy, and not properly onboarding people to the multiple areas of APIs like <a href="http://apievangelist.com/provide/">providing APIs</a> vs <a href="http://apievangelist.com/consume/">consuming APIs</a>. I think it is time to overhaul my 101 section, and produce some newer, more relevant API 101 content for 2014. To support this, I'm working on a series of 15 API 101 segments, with each one having a story version, as well as a slideshow edition, complete with audio.&nbsp;
-<p>I finished the first one, which is my 100K view, API 101 introduction. I'm still working on the slideshow version. Once I'm done I"ll move on to providing APIs, and as I finish each one I'll hang on the homepage, as well as publish out via the blog, and Twitterz.
-
-

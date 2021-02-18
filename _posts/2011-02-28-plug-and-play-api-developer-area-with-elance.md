@@ -1,33 +1,0 @@
----
-published: true
-layout: post
-title: 'Plug and Play API Developer Area with Elance'
-image: http://kinlane-productions2.s3.amazonaws.com/elance/elance-api-developer-area-screenshot.png
----
-
-One way to make sure your API has qualified and reputable developers from day one is to tap into an existing freelance developer community.<p>
-Popular freelance sites like Elance provide existing communities of developers with the skills an API owner or partner is looking for.<p>
-Elance provides access to their developer communities via a RESTful API.<p>
-Using the Elance API, I have built a plug and play API developer community.<p>
-My API Evangelist, <a title="Elance API Developer Community" href="http://elance.apievangelist.com/" target="_blank">API Developer Community </a>prototype provides an example of what is possible when tapping into existing developer communities to satisfy the development needs of a new API community.<p>
-My API developer community provides the following tools:<img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/elance/elance-api-developer-area-screenshot.png" alt="" width="300" align="right" />
-<ul class="mainlist">
-	<li><strong>Browse Developers (by tag) </strong>- Allows users to browse developers by categories (tags) that are predefined.  Settings to allow API owner to only display the type of developers, skills and tags that are relevant.</li>
-	<li><strong>All Developers Listing -</strong> Provides a paged results of all developers for an API area.</li>
-	<li><strong>Search Developer (by Name, Details, Tag) -</strong> A single keyword search textbox that provides a search results of Elance Providers.</li>
-	<li><strong>Developer Detail / Profile Page -</strong> Displays a single user profile page with selected fields by API owner.</li>
-	<li><strong>Featured Developer (Single Widget) -</strong> Displays a single random and/or highest rated developer profile.</li>
-</ul>
-The goal of my <a title="Elance API Developer Community" href="http://elance.apievangelist.com/" target="_blank">developer community powered by Elance</a> is to show what is possible when integrating an API community with other freelance developer communities like Elance.<p>
-The plug and play API developer community is written in PHP, uses the <a title="Elance API" href="https://www.elance.com/p/api" target="_blank">Elance API</a> for all of its data, and will be available on Github shortly.
-<table style="padding-bottom: 20px;" cellspacing="5" cellpadding="5" width="100%">
-<tbody>
-<tr>
-<td align="left"><strong><strong><a title="Provide High Quality, Professional API Developers with Elance" href="http://blog.apievangelist.com/2011/02/28/provide-high-quality-professional-api-developers-with-elance/" target="_blank">&lt;&lt; Previous</a></strong>
-</strong></td>
-<td align="right"><a title="Develop an Elance Skills Test for Your API Area" href="http://blog.apievangelist.com/2011/02/28/develop-an-elance-skills-test-for-your-api-area/" target="_blank"><strong>Next</strong> &gt;&gt;</a></td>
-</tr>
-</tbody>
-</table><p>
-
-
