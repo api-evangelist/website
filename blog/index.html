@@ -7,39 +7,27 @@ layout: default
 		<h3>The API Evangelist Blog</h3>
 
 	  {% for post in paginator.posts %}
-		  <div align="left" style="width:325px; height:250px; overflow:hidden; float: left; padding: 12px; margin-bottom: -25px;"><img src="{{ post.image }}" alt="API Evangelist" width="250" align="left" /></div>
+		  <div align="left" style="width:325px; height:250px; overflow:hidden; float: left; padding: 12px;"><img src="{{ post.image }}" alt="API Evangelist" width="325" align="left" /></div>
 			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
 			<p><em>{{ post.date | date_to_string }}</em></p>
 			<p>{{ post.content | strip_html | truncatewords: 325 }}[<a href="{{ post.url }}">Read More</a>]</p>
 			<p><hr /></p>
 	  {% endfor %}
 
-		<!-- Pagination links -->
-		<table width="100%">
-			<tr>
-				<td align="left" width="33%">
-				  {% if paginator.previous_page %}
-				    <a href="{{ paginator.previous_page_path }}" class="previous">
-				      &#8592; Previous
-				    </a>
-				  {% else %}
-				    <span class="previous">Previous</span>
-				  {% endif %}
-			</td>
-			<td align="center" width="33%">
-			  <span class="page_number ">
-			    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-			  </span>
-			</td>
-			<td align="right" width="33%">
-		  {% if paginator.next_page %}
-		    <a href="{{ paginator.next_page_path }}" class="next">Next &#8594;</a>
-		  {% else %}
-		    <span class="next ">Next</span>
-		  {% endif %}
-			</tr>
-			</tr>
-		</table>
+		<hr />
+		<ul class="pagination" style="text-align: center;">
+			{% if paginator.previous_page %}
+				<li style="text-align:left;"><a href="{{ paginator.previous_page_path }}" class="button"><< Prev</a></li>
+			{% else %}
+				<li style="text-align:left;"><a href="{{ paginator.previous_page_path }}" class="button disabled"><< Prev</a></li>
+			{% endif %}
+				<li style="width: 75%"><span></span></li>
+			{% if paginator.next_page %}
+				<li style="text-align:right;"><a href="{{ paginator.next_page_path }}" class="button">Next >></a></li>
+			{% else %}
+				<li style="text-align:right;"><a href="{{ paginator.next_page_path }}" class="button disabled">Next >></a></li>
+			{% endif %}
+		</ul>
 
   </div>
 </section>
