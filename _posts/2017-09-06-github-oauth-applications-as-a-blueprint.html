@@ -1,4 +1,10 @@
----published: truelayout: posttitle: 'Github OAuth Applications As A Blueprint'image: https://s3.amazonaws.com/kinlane-productions2/github/github-oauth-application.png---
+---
+published: true
+layout: post
+title: 'Github OAuth Applications As A Blueprint'
+image: https://s3.amazonaws.com/kinlane-productions2/github/github-oauth-application.png
+---
+
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-oauth-application.png" align="right" width="20%" style="padding: 15px;" />
 <p>I was creating a very light-weight API management solution for one of my projects the other day, and I wanted to give my API consumers a quick and dirty way to begin making calls against the API. Most of the API paths are publicly available, but there were a handful of POST, PUT, and DELETE paths I didn’t want to just have open to the public. I didn’t feel like this situation warranted a full blown API management solution like <a href="http://apis.how/zflfesymzk">Tyk</a> or <a href="http://apis.how/ake3nxbapm">3Scale</a>, but if I could just let people authenticate with their existing Github account, it would suffice.
 
@@ -10,4 +16,3 @@
 
 <p>Once a user is authenticated they can use their Github user name as the appid, and the valid Github OAuth token as the appkey, which are both passed through as headers, leveraging encryption in transport. I’m not overly worried about security of my APIs, this is more about a first line of defense and identifying consumers, however I will be validating the token with particular API calls. I’m also considering publishing API consumption data to Github repository created within each users accounts as part of API activity, publishing it as YAML, with a simple dashboard for view (authenticated with Github of course). I’ve had this model in my head for some time, and have written about it before, but I’m just now getting around to having a project to implement it in. I’m calling it my poor man’s API management, and something that can be done on a budget (FREE), but if my needs grow any further I will be using a more professional grade solution like <a href="http://apis.how/ake3nxbapm">3Scale</a> or <a href="http://apis.how/zflfesymzk">Tyk</a>.
 
-

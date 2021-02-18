@@ -1,4 +1,10 @@
----published: truelayout: posttitle: 'Long Running API Requests And Differential API Responses'image: http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg---
+---
+published: true
+layout: post
+title: 'Long Running API Requests And Differential API Responses'
+image: http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg
+---
+
 <p><img src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg" width="45%" align="right" style="padding: 15px;" />
 <p>I am shifting my long running API operations from a PHP / EC2 based implementation to a more efficient Node.js / Lambda based solution, and I promised James Higginbotham (<a href="https://twitter.com/launchany">@launchany</a>) that I’d share a breakdown of my process with him a month or so back. I’m running 100+, to bursts of 1000+ long running API requests for a variety of purposes, and it helps me to tell the narrative behind my code, introducing some coherence into the why and how of what I’m doing, while also sharing with others along the way. <a href="http://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/">I had covered my earlier process a little bit in a story a few months ago</a>, but as I was migrating the process, I wanted to further flesh out, and make sure I wasn’t mad.
 
@@ -12,4 +18,3 @@
 
 <p>I am relying heavily on Streamdata.io for the long running / streaming layer on top of any existing JSON API, as well as doing the differential heavy lifting. Every time I trigger a long running API request, I’ll have to do a diff between it’s initial response, and the previous one, but every incremental update for the next 4:59 is handled by Streamdata.io. Then AWS Lambda is doing the rest of the triggering, scaling, logging, scheduling, and event management in a way more efficient way than I was previously with my long running PHP scripts running as background jobs on a Linux EC2 server. It is a significant step up in efficiency and scalability for me, allowing me to layer on an event-driven layer on top of existing 3rd party API infrastructure I am depending on to keep me informed of what is going on, and keep my network of API Evangelist research moving forward.
 
-
