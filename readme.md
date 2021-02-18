@@ -1,7 +1,6 @@
 # API Evangelist
 
-Working to make sense of the technology, business and politics of APIs - feel free to submit a PR.
+This is my blog for making sense of the technology, business, and politics of APIs. It all runs here on Github, so feel free to submit any pull requests of changes you'd like to see.
 
-URL: http://apievangelist.com
-Twitter: @apievangelist
-Github: @apievangelist
+- URL: http://apievangelist.com
+- Twitter: @apievangelist
