@@ -1,10 +1,138 @@
----
-published: true
-layout: post
-title: 'gRPCs Potentially Fatal Weakness'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-old-broken-piano-street.jpg
----
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-old-broken-piano-street.jpg" alt="" width="40%" align="right" /></p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Grpcs Potentially Fatal Weakness</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Grpcs Potentially Fatal Weakness | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Grpcs Potentially Fatal Weakness | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Grpcs Potentially Fatal Weakness</h2>
+<p><span class="post-date">02 Dec 2019</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘gRPCs Potentially Fatal Weakness’</p>
+
+<p>image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-old-broken-piano-street.jpg</p>
+
+<hr />
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-old-broken-piano-street.jpg" alt="" width="40%" align="right" /></p>
 <p class="p1">I was reading <a href="https://devblogs.microsoft.com/aspnet/grpc-vs-http-apis/">an article on Microsofts DevBlog about gRPC vs HTTP APIs</a>. It makes the usual arguments of how gRPC compares with HTTP APIs. While the arguments for gRPC are definitely compelling, I find the weaknesses of gRPC in this moment in time even more interesting, for two reasons, 1) they are something we can overcome with the right tooling and services, and 2) they reflect our challenge between the human and machine readablity of all of this, which many of us technologists really suck at, leaving me concerned whether or not we will be able to get this right&mdash;as I think we underestimated this characteristic of HTTP APIs, and have missed the full potential of this opportunity even as we are faced with this next step.</p>
 <p class="p1">Here is what was said the blog post, highlighting two distinct weaknesses of gRPC, but which I view as more about systemic illnesses in the wider view of the API landscape, and our inability to understand the important role that humans play in all of this:</p>
 <blockquote>
@@ -20,4 +148,118 @@
 <p class="p2">Both of these weaknesses reflect the importance of humans still playing such a critical role in not just developing APIs, but also consuming them. We like to focus on the machine readability, automation, orchestration, and other ways in which APIs allow us to scale, but none of this happens without a human setting it into motion. If this activity is just limited to a small subset of technological wizards, it will only take us so far. Taking us back to my first point, we can get to work on providing client tooling for working with gRPC APIs&mdash;this will alleviate a lot of friction. However, we have to ask ourselves, with each additional step we take forward with APIs, or I guess even steps sideways, why aren&rsquo;t we investing more in the approaches being more human readable by default?</p>
 <p class="p1">Like hypermedia, GraphQL, we will need to find ways to reduce the cognitive load with understanding what an API does, and minimize on-boarding friction with evolution in API tooling and services. However, this will still only get us part of the way there when it comes to on-boarding the masses of enterprise and startup developers who don&rsquo;t always care about learning all the technical details, and doing the heavy lifting to understand best practice when providing and consuming APIs. I know that somehow we think eventually we will be able to automate the human out of the equation. I mean c&rsquo;mon, gRPC does a whizz bang job of generating client libraries! But, in the end we are always going to need humans involved when providing and consuming APIs, and we need the APIs themselves to still be accessible to these human beings, even if everything is machine readable.</p>
 <p class="p1">In my opinion there are two forces here: 1) business leaders and investors blind belief in technology and the faith that we will be able to automate out the human in this equation, which is the most costliest and problematic, and achieve some sort of capitalist nirvana, and 2) technologists lack of understanding of what it takes to operate business at scale, the human capital it takes, and our own lack of faith in human beings&mdash;both sides blindly believe the technology will get us out of the mess we find ourselves in. In the end, this allows us to overlook the importance of APIs being simple, human readable, and accessible to the widest possible developer and business audience as possible. Something that has been front and center with HTTP APIs, but with GraphQL, gRPC, and event-driven approaches we seem still overlook and underestimate&mdash;that humans are the essential ingredient in everything we do with APIs.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/12/01/i-am-heading-to-vegas-for-aws-reinvent/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/12/02/mock-aws-services-using-postman-collections-with-examples/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

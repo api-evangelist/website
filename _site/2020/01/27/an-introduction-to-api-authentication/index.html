@@ -1,10 +1,138 @@
----
-published: true
-layout: post
-title: 'An Introduction to API Authentication'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-new-old-door-lock-smoking-cigarette.jpg
----
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-new-old-door-lock-smoking-cigarette.jpg" alt="" width="40%" align="right" /></p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>An Introduction To Api Authentication</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="An Introduction To Api Authentication | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="An Introduction To Api Authentication | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>An Introduction To Api Authentication</h2>
+<p><span class="post-date">27 Jan 2020</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘An Introduction to API Authentication’</p>
+
+<p>image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-new-old-door-lock-smoking-cigarette.jpg</p>
+
+<hr />
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-new-old-door-lock-smoking-cigarette.jpg" alt="" width="40%" align="right" /></p>
 <p class="p1">APIs operate using the web, but like web applications, many API require some sort of authentication or authorization before you can access the valuable resources available within each API path. When you open up your APIs on the web you aren&rsquo;t just giving away access to your resources to anyone who comes along. API providers employ a number of different authentication mechanisms to ensure only the applications and systems who should have access are actually able to make a successful API call. To help refresh the types of authentication available across the API landscape, while also demonstrating the reach of Postman as an API client, I wanted to take a fresh look at authentication to help my readers understand what is possible.</p>
 <p class="p1">Depending on the API provider, platform, and the types of resources being made available you will encounter a number of different authentication methods&mdash;here are the 11 that Postman supports, reflecting 90% of the APIs you will come across publicly, as well as within the enterprise organization. Refelecting what the API sector employs for authentication of their APIs, as well as what Postman supports as an API client.</p>
 <ul>
@@ -22,4 +150,118 @@
 </ul>
 <p>No authentication, API key, and OAuth are the most common authentication mechanisms you will find in place for publicly available APIs, but Postman has worked hard to support as wide of a spectrum of authentication mechanisms by listening to the community and supporting what they need. I always recommend that API providers, especially public API providers standardize the authentication for their APIs, ensuring that the wider API ecosystem reflects this list, but Postman will continue to follow the latest trends and make sure we are always supporting what is most needed by developers&mdash;helping reduce friction for them whenever we can.</p>
 <p class="p1">Hopefully this authentication overview introduces you API authentication in use by API providers and also supported by Postman. It should demonstrate that publishing APIs using the isn&rsquo;t about freely and publicly making data, content, media, and other resources available on the open web, and that there are a strong set standards in place for securing our digital assets. We see authentication much like consumer and business banking, in that everyone should have a light understanding of how things work. In banking, you don&rsquo;t have to understand the inner workings of the banking industry, but you should definitely understand who has access to your accounts. API authentication is the same&mdash;you don&rsquo;t have to understand all the technical details, but you need to have a understanding of how your digital resources are access, and who has access to what.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2020/01/23/profiling-adobe-apis/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2020/01/27/secrets-and-personally-identifiable-information-pii-across-our-api-definitions/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

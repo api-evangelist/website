@@ -3,7 +3,7 @@
 layout: post
 title: 'Gathering My Thoughts on API Discovery'
 image: https://kinlane-productions2.s3.amazonaws.com/postman-network.png
----
+---
 <p>I am working to load up all my API discovery experiences into my head for some upcoming conversations. So I sat down and pulled together a summary of my API discovery research to date to help refresh my memory of what has happened and how we got here. API discovery is the one of the few layers of the API space that I am personally committed to helping move things forward and being able to see all the moving parts together helps me keep doing this. Let’s take a stroll through my memory of the evolution of API discover over the last fifteen years so that I can speak more coherently about all of this with a variety of folks.</p>
 
 <h3>ProgrammableWeb</h3>

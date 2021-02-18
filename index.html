@@ -15,31 +15,26 @@ title: API Evangelist
 	</div>
 </section>
 
-{% assign switch = true %}
-{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-{% for post in site.posts %}
- 	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-  {% if post.title != null %}
-		{% if posttime < nowunix %}
-			{% if switch == true %}
-				<section id="banner">
-					<div class="content">
-						<header>
-							<h2>Latest From Blog: {{ post.title }}</h2>
-							<p><em>{{ post.date | date_to_string }}</em></p>
-						</header>
-						{{ post.content }}
-						<ul class="actions" style="text-align: center;">
-							<li><a href="/blog/" class="button big">Read The Blog</a></li>
-						</ul>
-					</div>
-				</section>
-				{% assign switch = false %}
+<section id="banner">
+	<div class="content">
+		<header>
+			<h2>Latest Posts</h2>
+		</header>
+		{% for post in site.posts limit:5 %}
+		  {% if post.title != null %}
+					<table width="100%">
+						<tr>
+							<td align="center" valign="middle" width="30%">
+								{{ post.image }}
+								<img src="{{ post.image }}" width="350" style="padding: 15px;">
+							</td>
+							<td>
+								<h4>{{ post.title }}</h4>
+								<p>{{ post.content.body }}</p>
+							</td>
+						</tr>
+					</table>
 			{% endif %}
-		{% endif %}
-	{% endif %}
-{% endfor %}
-
-<section>
-	{% include partner-fma.html %}
+		{% endfor %}
+	</div>
 </section>

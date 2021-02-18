@@ -1,14 +1,256 @@
----
-published: true
-layout: post
-title: 'API Lifecycle Service Providers Instead Of Walled Gardens'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/walled_garden_blue_gray_circuit.jpg
----
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Api Lifecycle Service Providers Instead Of Walled Gardens</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
 
-<img src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/walled_garden_blue_gray_circuit.jpg" width="40%" align="right" style="padding: 15px;" /><p>It is a common tactic of older software companies to offer open source, services, and tools in a way that all roads just lead into their walled garden. There are many ways to push vendor lock-in and the big software vendors from 2000 through 2010 have mastered how to route you back to their walled gardens and make sure you stay there. Web APIs have set into motion a shift in how we architect our web, mobile, and device applications, as well as providing services to the life cycle that are behind the operation of these web APIs. While this change has the potential to positive it often it can be very difficult to tell apart the newer breed of software companies from the legacy version, amidst all the hype around technology and startups.
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Api Lifecycle Service Providers Instead Of Walled Gardens | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Api Lifecycle Service Providers Instead Of Walled Gardens | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Api Lifecycle Service Providers Instead Of Walled Gardens</h2>
+<p><span class="post-date">16 Feb 2017</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘API Lifecycle Service Providers Instead Of Walled Gardens’</p>
+
+<p>image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/walled_garden_blue_gray_circuit.jpg</p>
+
+<hr />
+
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/walled_garden_blue_gray_circuit.jpg" width="40%" align="right" style="padding: 15px;" />&lt;p&gt;It is a common tactic of older software companies to offer open source, services, and tools in a way that all roads just lead into their walled garden. There are many ways to push vendor lock-in and the big software vendors from 2000 through 2010 have mastered how to route you back to their walled gardens and make sure you stay there. Web APIs have set into motion a shift in how we architect our web, mobile, and device applications, as well as providing services to the life cycle that are behind the operation of these web APIs. While this change has the potential to positive it often it can be very difficult to tell apart the newer breed of software companies from the legacy version, amidst all the hype around technology and startups.</p>
 <p><a href="http://apievangelist.com/2017/02/14/api-lifemiddlewarecycle-api/">I've been having conversations recently which are pushing me to think more about middleware</a>, or what I'd refer to as API life cycle tooling. In my opinion, these are companies who are selling services and tools to the API life cycle, which in turn is fueling our web, mobile, device, and other applications. In my opinion, as a server provider, you should be selling to a company and API provider's life cycle needs, not your walled garden needs. I understand that you want all of a companies business, and you want to lock them into your platform, but that was how we did business 10 years ago.
 <p>The API service providers I'm shining a light on in 2017 are servicing one or <a href="http://apievangelist.com">many stops along the API life cycle</a>, supporting API definitions, and providing value without getting in the way, or locking customers in. They do this on-premise, or in the cloud of your choice, and allow you to seamless overlap many different API service providers providing a variety of solutions across the API life cycle. You will notice this patterns in the companies I partner with like <a href="http://apimatic.io">APIMATIC</a>, <a href="http://restlet.com/">Restlet</a>, <a href="http://apis.how/zflfesymzk">Tyk</a>, and <a href="http://apis.how/bgdteovduo">Dreamfactory</a>. I find I have a lot more patience when it comes to the whole startup thing if your service is plug and play and us API providers can choose where and when we want to put your tools and services to use.
 <p>I want my API service providers to behave just like they recommend to their customers--modular, flexible, agile, and providing a mix of valuable API resources I can use across my own API lifecycle. You'll find me doing more highlighting of what I consider to be API life cycle service providers who bring value to the API life cycle, with API definitions like the OpenAPI Spec as the center of their operations.
 
 
-
+
+</p></p></p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2017/02/14/box039s-seamless-approach-to-api-documentation/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2017/02/16/trying-to-define-api-awareness/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

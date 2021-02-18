@@ -1,10 +1,138 @@
----
-published: true
-layout: post
-title: 'Producing a Postman Collection for Mulesoft API Manager and Platform'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_07_29_at_9.20.45_pm.png
----
-<p class="p1">I am making my way through all of the partner conversation I am having, publishing stories for each of the conversations to help me move each one forward. Today I am focusing on API management providers because I am looking to define a baseline set of resources across all providers to consider for deeper integration, and of course storytelling. I&rsquo;ve been talking with the Mulesoft folks since last year, working to find some ways we can partner and provide value for both of our customers. As with every other partnership, and especially API lifecycle partners, everything begins as a collection. If I can&rsquo;t get at the APIs behind a service, create an OpenAPI and Postman collection for the API, then it isn&rsquo;t an API lifecycle capability I can think about for deeper integration, and further storytelling. But Mulesoft isn&rsquo;t messing around, and <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/">they have Swagger and RAML available for all of their API lifecycle services and tooling</a>&nbsp;</p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Producing A Postman Collection For Mulesoft Api Manager And Platform</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Producing A Postman Collection For Mulesoft Api Manager And Platform | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Producing A Postman Collection For Mulesoft Api Manager And Platform | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Producing A Postman Collection For Mulesoft Api Manager And Platform</h2>
+<p><span class="post-date">29 Jul 2020</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘Producing a Postman Collection for Mulesoft API Manager and Platform’</p>
+
+<p>image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_07_29_at_9.20.45_pm.png</p>
+
+<hr />
+
+<p class="p1">I am making my way through all of the partner conversation I am having, publishing stories for each of the conversations to help me move each one forward. Today I am focusing on API management providers because I am looking to define a baseline set of resources across all providers to consider for deeper integration, and of course storytelling. I&rsquo;ve been talking with the Mulesoft folks since last year, working to find some ways we can partner and provide value for both of our customers. As with every other partnership, and especially API lifecycle partners, everything begins as a collection. If I can&rsquo;t get at the APIs behind a service, create an OpenAPI and Postman collection for the API, then it isn&rsquo;t an API lifecycle capability I can think about for deeper integration, and further storytelling. But Mulesoft isn&rsquo;t messing around, and <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/">they have Swagger and RAML available for all of their API lifecycle services and tooling</a>&nbsp;</p>
 <p class="p1">I downloaded the generated Swagger 2.0 definitions Mulesoft provides for their API manager and API platform. There are some other interesting APIs available there that I would like to see live as Postman collections. Honestly, I&rsquo;d like to see all of the APIs they have published via <a href="https://anypoint.mulesoft.com/exchange/portals/anypoint-platform/">the Mulesoft // Dev catalog</a> in the Postman API network, as well as Postman collection added to the dropdown list Mulesoft provides for each API, allowing it&rsquo;s definition to be downloaded as RAML, Swagger, or Postman Collection. As with the other API management service providers I am profiling as part of this work, I created a Postman workspace for managing Mulesoft APIs.</p>
 <p class="p1"><img style="padding: 5px;" src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_07_29_at_9.20.45_pm.png" alt="" width="100%" align="center" /></p>
 <p class="p1">With the Swagger 2.0 and Postman collections for the Mulesoft API Manager and API Platform I can begin to break down the individual capabilities that the API management solution provides. Then I can pick from the most common of these API management building blocks and get to work developing some collections that help API providers automate and orchestrate the management of their APIs.</p>
@@ -23,4 +151,118 @@
 </ul>
 <p class="p1">I was able o get an idea of the types of resources available across the Mulesoft Manager and Platform APIs. The collections will take some additional work to polish and organize, so that they could potentially be published to <a href="https://explore.postman.com/">the Postman API Network</a>, but provide me with a good start to understand what is possible. Right now I am just looking to define what is possible when it comes to automating and orchestrating Mulesoft API management using APIs. It will take more work to actually identify the most common management workflows involved with Mulesoft when it comes to managing APIs.</p>
 <p class="p1">The goal of this work is to increase the number of API management service providers available in the API network, and laying the groundwork for a suite of collections that can be used to expose more data to Postman customers who use Mulesoft Management or Platform. The goal is to be able to expose insights from the API management layer directly in Postman. But before we can do this we need to have the functionality defined as individual collections. Helping establish modules of API management capabilities that API providers and consumers can tap into while working within Postman. Providing more details with each individual API response, helping developers better troubleshoot and debug what is going on beneath the surface.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2020/07/29/developing-a-reference-openapi-and-collection-for-the-moesif-analytics-api-so-that-i-can-build-an-api-management-collection/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2020/07/29/understanding-how-shipengine-manages-their-apis-using-moesif/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

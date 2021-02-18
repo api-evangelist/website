@@ -1,13 +1,255 @@
----
-published: true
-layout: post
-title: 'API Providers Should Maintain Their Own API Definitions'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stalin-time-construction-crane-city.jpg
----
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stalin-time-construction-crane-city.jpg" alt="" width="40%" align="right" /></p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Api Providers Should Maintain Their Own Api Definitions</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Api Providers Should Maintain Their Own Api Definitions | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Api Providers Should Maintain Their Own Api Definitions | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Api Providers Should Maintain Their Own Api Definitions</h2>
+<p><span class="post-date">23 Dec 2019</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘API Providers Should Maintain Their Own API Definitions’</p>
+
+<p>image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stalin-time-construction-crane-city.jpg</p>
+
+<hr />
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stalin-time-construction-crane-city.jpg" alt="" width="40%" align="right" /></p>
 <p class="p1"><a href="https://github.com/api-evangelist/index">I am working my way through 2K+ API providers</a>, refreshing my view of the API landscape, and the data I use to tune into the API economy. As I refresh the profile of each API provider, one of the main things I&rsquo;m doing is looking for an OpenAPI or Postman collection. While the profiling of their API operations using APIs.json is critical, having a machine readable definition for each API is kind of the most important part of this process. Having an OpenAPI or Postman collection gives me a machine readable list of the value that each API delivers, and allows me (and others) to more easily integrate an API into other applications and systems. Sadly, not every API provider understands the need, or is able to invest the resources to produce an API definition.</p>
 <p class="p1">While profiling an API provider the most ideal situation I can come across is when an OpenAPI already exists in service of API documentation, or the API provider just gets the struggle of their API consumers and they have a Postman collection already published. Ideally, the OpenAPI is publicly available and I don&rsquo;t have dig it out from behind the documentation, or they have the Run in Postman button clearly published on their website. In the best situations, API providers have their OpenAPI and / or their Postman collections published to GitHub, and are actively maintaining their API definitions using Git, which allows other API consumers and API service providers to depend on an authoritative source of truth when it comes to API definitions for each API they use. I wish every API provider would maintain their own API definitions in this way, sadly very few do.</p>
 <p class="p1">The majority APIs I come across do not have documentation driven by OpenAPI and do not have Postman collections. When I encounter one of these API providers I spend usually about 60 seconds googling for Swagger, OpenAPI, and Postman + their name in hopes I will find some community generated specs. If I come up empty I will email the API provider asking them if they have an OpenAPI or Postman collection. The responses I get range from silence to not knowing what either of these API definitions formats are. From there, I try to gauge the value and complexity of the API and whether or not it would be worth it for me to create a Postman collection, and autogenerate an OpenAPI from that. If the documentation is standardized I can also scrape and generate a Postman from the HTML, but it all comes down to the value of the API and if it is worth my time. The quickest way for me to create a valuable API definition is within Postman where I get to actually make an API call to each API path, and see the response from each resource.</p>
 <p class="p1">I&rsquo;d prefer for API providers to invest the resources into creating their own API definitions. It is their resources and they should own the work. However, not all of them understand the importance of their being a machine readable API definition. My goal is to convince them of the value of having an API definition beyond just documentation, and help them see that they&rsquo;ll see more integrations with iPaaS and other service providers if there is a ready to go, certified, Postman collection for their API available in the Postman API network. If there is a complete Postman collection I can add an API to my API Evangelist network within minutes, and other service providers I know can do the same. The challenge is that most API providers to not see this layer of the API economy and often need to be convinced that API definitions aren&rsquo;t just about documentation. It is a lot of work to reach out to each provider and engage with them, but I think it is worth it. At some point we are going to reach a tipping point in the number of API provider who understand having an OpenAPI and Postman collection is the default mode of operating, and then the word will be out and I won&rsquo;t have to do as much work.</p>
 <p class="p1">All API providers should maintain their own API definitions. They should publish both an OpenAPI and Postman collection to a common location, preferably in a GitHub repository for easy integration into CI/CD workflows. However, this doesn&rsquo;t mean that there is not value in the community creating API definitions, and publishing what I consider to be API fan fiction. I find that sometimes the workflow Postman collections created by the community are actually of more valuable than the OpenAPI or Postman collections that comes out of the API providers efforts. While the API providers API definitions may be more authoritative and complete, I find that API consumers usage of an API can possess more creativity than the provider behind the API. Are you an API provider? Do you have an OpenAPI or Postman collection for our API? Are you on my list? If so, you&rsquo;ll be hearing from me over the holidays, because I am <a href="https://github.com/api-evangelist/index">checking my list twice</a>, and making a determination of who is naughty and who is nice when it comes to providing API definitions for their API consumers.<span>&nbsp;</span></p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/12/20/where-does-the-exhaust-for-your-api-operations-end-up-being-stored/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/12/23/applying-an-apifirst-approach-to-understanding-the-pacific-northwest-mushroom-industry/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

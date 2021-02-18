@@ -1,9 +1,251 @@
----
-published: true
-layout: post
-title: 'Publishing Your Early Canary (Beta) APIs In Their Own API Workspace'
-image: https://kinlane-productions2.s3.amazonaws.com/birds/canary-on-branch.jpg
----
-<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/birds/canary-on-branch.jpg" alt="" width="40%" align="right" /></p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Publishing Your Early Canary Beta Apis In Their Own Api Workspace</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Publishing Your Early Canary Beta Apis In Their Own Api Workspace | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Publishing Your Early Canary Beta Apis In Their Own Api Workspace | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Publishing Your Early Canary Beta Apis In Their Own Api Workspace</h2>
+<p><span class="post-date">20 Sep 2019</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘Publishing Your Early Canary (Beta) APIs In Their Own API Workspace’</p>
+
+<p>image: https://kinlane-productions2.s3.amazonaws.com/birds/canary-on-branch.jpg</p>
+
+<hr />
+
+<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/birds/canary-on-branch.jpg" alt="" width="40%" align="right" /></p>
 <p>Providing early access to your APIs is nothing new. It is something that all API providers should do whether they are publishing their APIs publicly or keeping them private for internal or partner use. However, I feel that the concept of API workspaces introduced by Postman provides you with an opportunity to segment off your APIs using different collections and make them available to an invite only audience. Realizing the concept of API workspaces allows you to easily create a working area dedicated to providing trusted users have access to early versions of your latest APIs. Leveraging the Postman platform as a conduit for engaging with your developers, and getting feedback on the designs and functionality of your APIs before they ever are generally released to the public.<br /><br />Think of Postman workspaces as a separate namespace where as you are already developing your APIs, but now you can just turn on access to collections containing all the technical details of your API, including variables and authentication in an environment&mdash;allowing beta users to make calls to each API, and play around with the new functionality. All you will have to do is produce one or more Postman collections for your new beta APsIs, create a new workspace, and share your collections to the workspace. You can also publish API documentation for your collections if you want, or you can just begin with one or more Postman collections that provide everything developers will need to get up and running. Establishing special access to your APIs, without all the overhead of having to manage your beta program&mdash;you just rely on the functionality that Postman already delivers.<br /><br />You might even consider publishing your early API collections and include a mock API if you don&rsquo;t have the API fully baked yet. Moving forward the timeline when you can get an API into your beta users hands, and begin getting early feedback on what is going on. This can be done with internal users, your partners, or your most passionate users from your public API community. Before users get access to the canary workspace you can make sure they are in agreement with your terms of service, and other guidelines governing the beta releases of your APIs, ensuring nothing you are developing ends up on the open web. Further reducing the feedback loop when it comes to whether or not your APIs will be meeting the needs of your customers.<br /><br />Once you have your canary program setup using Postman workspaces and collections, you ca also solicit feedback on the APIs directly within the Postman interface, leverage the comments feature to establish a feedback loop with your beta users. Putting all the existing features of Postman to work when it comes to building the foundation of your beta program and the feedback loop that comes with it. Demonstrating why it is fruitful to go API first, because it can shorten the cycles of your feedback loop and significantly reduces costs associated with each iteration of each version of your API. The longer you wait, the more your API designs is baked into code on both the server and client side, making beta programs more about efficiency and cost saving than it is about just giving developers an early look at what is coming down the pipes.<br /><br />I&rsquo;ll work on some real world prototypes of how this can be done. I&rsquo;ll create some prototype canary workspaces with some APIs I&rsquo;m developing, and work through the workflow as part of some stories here on the blog. I know that having an early beta or canary user program is something that many API teams I&rsquo;m working with aspire to, but few have the budgets and resources to actually make happen. So actually having an easy and free (or low cost) way to implement with just a handful of users, using tooling that teams are already using is pretty attractive. It is one of those little changes you can make with your API program that will have a big impact on how you design and deliver your APIs, but also something that will dramatically help with your bottom line when it comes to the lifetime cost of delivering your API infrastructure.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/09/20/going-outside-the-api-echo-chamber-with-your-api-services-and-tooling/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/09/23/an-open-source-sitemap-api-for-every-domain/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

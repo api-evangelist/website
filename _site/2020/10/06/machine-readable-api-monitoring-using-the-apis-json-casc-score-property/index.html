@@ -1,14 +1,257 @@
----
-published: true
-layout: post
-title: 'Machine Readable API Monitoring Using the  APIs.json CASC Score Property'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_10_06_at_1.30.32_pm.png
----
-<p class="p1">I have been working with my friends over at <a href="https://apimetrics.io/">APIMetrics</a> on the <a href="https://postman-toolboxes.github.io/covid-19/">COVID-19</a> and <a href="https://postman-toolboxes.github.io/us-2020-elections/">U.S. Election</a>&nbsp;resource centers we launched recently. These API resource centers are all powered by an <a href="http://apisyaml.org/">APIs.yaml</a> index, providing a machine readable core that is used to power each API resource center single page application. <a href="https://github.com/postman-toolboxes/covid-19/blob/master/_data/apis.yaml">Providing an index of a variety of COVID-19 and election related resources that powers the website</a>, but also can be used in other applications and systems to pull the OpenAPI, Postman Collections, and other artifacts that are being made available. One of the artifacts I am layering into the listing for each API is a <a href="https://www.api.expert/about/casc/">CASC score</a>, showing the uptime and availability across all of the resources being made available, helping me float the best APIs to the top of each API resource center.&nbsp;</p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Machine Readable Api Monitoring Using The  Apis Json Casc Score Property</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Machine Readable Api Monitoring Using The  Apis Json Casc Score Property | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Machine Readable Api Monitoring Using The  Apis Json Casc Score Property | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Machine Readable Api Monitoring Using The  Apis Json Casc Score Property</h2>
+<p><span class="post-date">06 Oct 2020</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘Machine Readable API Monitoring Using the  APIs.json CASC Score Property’</p>
+
+<p>image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_10_06_at_1.30.32_pm.png</p>
+
+<hr />
+
+<p class="p1">I have been working with my friends over at <a href="https://apimetrics.io/">APIMetrics</a> on the <a href="https://postman-toolboxes.github.io/covid-19/">COVID-19</a> and <a href="https://postman-toolboxes.github.io/us-2020-elections/">U.S. Election</a>&nbsp;resource centers we launched recently. These API resource centers are all powered by an <a href="http://apisyaml.org/">APIs.yaml</a> index, providing a machine readable core that is used to power each API resource center single page application. <a href="https://github.com/postman-toolboxes/covid-19/blob/master/_data/apis.yaml">Providing an index of a variety of COVID-19 and election related resources that powers the website</a>, but also can be used in other applications and systems to pull the OpenAPI, Postman Collections, and other artifacts that are being made available. One of the artifacts I am layering into the listing for each API is a <a href="https://www.api.expert/about/casc/">CASC score</a>, showing the uptime and availability across all of the resources being made available, helping me float the best APIs to the top of each API resource center.&nbsp;</p>
 <p class="p1">First, to make sure everyone is up to speed, <a href="http://apisjson.org/">APIs.json</a> / <a href="http://apisyaml.org/">APIs.yaml</a> is a simple machine readable index for defining collections of APIs, and mapping out API operations. In this scenario I am using APIs.json as the core of an <a href="https://github.com/postman-toolboxes">API toolbox</a> that runs 100% on GitHub using Jekyll and Github Pages. In addition to indexing the documentation and Postman collections for each API, I am adding a property for a CASC Score which looks like this:</p>
 <script src="https://gist.github.com/kinlane/7f5021ee05ae77181bcd5557b26d8f4f.js"></script>
+
 <p class="p1">CASC Score is a way to understand the reliability and maturity of an API from my friends over at APIMetrics. I just took their data and created a machine readable APIs.yaml property that I could then use to display the CASC score for each of my COVID-19 and U.S. Election APIs. Using the property to sort and display the CASC score as part of each listing.</p>
 <p><a href="https://postman-toolboxes.github.io/covid-19/"><img style="padding: 15px;" src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_10_06_at_1.30.32_pm.png" alt="" width="95%" align="center" /></a></p>
 <p class="p1">I needed a way to float the cream of each API resource center to the top, and the CASC score is one thing I consider when it comes to ranking each of the community contributed APIs. I am looking at other metrics, which I will also publish as APIs.yaml properties in the near future, but understanding the overall availability and reliability of the API from many different geographic regions over time is a pretty key indicator of whether an API is something I want to be recommending to developers.</p>
 <p class="p1">Using the APIMetrics CASC score to helping me monitor and ultimately rank COVID-19 and U.S. Election APIs is just the beginning of this renewed work around APIs.json / APIs.yaml. I am working on a number of other human and machine readable properties for a variety of APIs. Helping me map out different layers of the API universe from COVID-19 to banking, and back again. If you have any questions about <a href="http://apisjson.org/">APIs.json</a> / <a href="http://apisyaml.org/">APIs.yam</a>l head over to the website to learn more, and if you have any questions about the approach to delivering API resource centers then head over to <a href="https://github.com/postman-toolboxes">the GitHub repo for each of the repositories I have setup to power each of them</a>. Feel free to fork and play with any of the projects, or <a href="https://github.com/postman-toolboxes/home">visit the home repo for my API toolbox prototypes</a> to suggest new types of resource centers, or industry API catalogs.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2020/10/05/talking-about-the-importance-of-api-specifications-with-marjukka-niinioja-mniinioja/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2020/10/06/providing-source-metadata-as-part-of-the-api-json-index-for-data-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

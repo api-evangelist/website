@@ -1,10 +1,138 @@
----
-published: true
-layout: post
-title: 'How I Profile The TypeForm API'
-image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/profile_type_form_import.png
----
-<p class="p1">I was being asked for more information about how I profile APIs, and deal with the many differences I come across. It isn&rsquo;t easy navigating the differences between different APIs, and come out with a standard API definition (OpenAPI or Postman collection) that you can use across different stops along the API life cycle. I&rsquo;m pretty agile and flexible in how I approach profiling different APIs, with a variety of tools and tricks I use to vacuum up as much details as I possibly can with as little manual labor as I possibly can. The example for profiling that was thrown at me was the TypeForm API, which is a pretty sophisticated API, but will still need some massaging to create an acceptable set of API definitions.</p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>How I Profile The Typeform Api</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="How I Profile The Typeform Api | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How I Profile The Typeform Api | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>How I Profile The Typeform Api</h2>
+<p><span class="post-date">20 Dec 2019</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘How I Profile The TypeForm API’</p>
+
+<p>image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/profile_type_form_import.png</p>
+
+<hr />
+
+<p class="p1">I was being asked for more information about how I profile APIs, and deal with the many differences I come across. It isn&rsquo;t easy navigating the differences between different APIs, and come out with a standard API definition (OpenAPI or Postman collection) that you can use across different stops along the API life cycle. I&rsquo;m pretty agile and flexible in how I approach profiling different APIs, with a variety of tools and tricks I use to vacuum up as much details as I possibly can with as little manual labor as I possibly can. The example for profiling that was thrown at me was the TypeForm API, which is a pretty sophisticated API, but will still need some massaging to create an acceptable set of API definitions.</p>
 <p class="p1">First thing I do is search for an OpenAPI definition, hopefully published to GitHub or prominently linked off their documentation, but I will settle having to sniff out from behind an APIs documentation. TypeForm doesn&rsquo;t have an OpenAPI or Swagger available (from what we can tell). Next, I go looking for a Postman collection. Boom!! <a href="https://developer.typeform.com/get-started/postman-collection/">Typeform has a Postman collection</a>.&nbsp;The question now is why hasn&rsquo;t Typeform published their Postman collection to <a href="https://explore.postman.com/">the Postman Network</a>? I will Tweet at them. Ok, now I have a machine readable definition for the Typeform API that I can import into my API monitoring system&mdash;which is just an API that I use in Postman to import a Postman collection (head explodes).</p>
 <p class="p1"><img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/profile_type_form_import.png" alt="" width="100%" /></p>
 <p class="p1">My Postman collection import API grabs as many elements from the Postman collection definition as it can, normalizing the paths, parameters, and other details for an API. I am always adding to what my API is capable of, but it does a pretty good job of giving me what I need to begin to profile the surface area of an API.</p>
@@ -21,4 +149,118 @@
 </ul>
 <p class="p1">For now, <a href="https://github.com/api-evangelist/typeform/issues/2">I have added an issue to the GitHub repository</a> for my Typeform work. <a href="https://github.com/api-evangelist/typeform/issues/2"><span class="s1">https://github.com/api-evangelist/typeform/issues/2</span></a> I am happy to have the Typeform API in my index, and published as part my research. I can continue fleshing out my profile for Typform, and <a href="http://apievangelist.com/network/providers/typeform/"><span class="s3">publish as part of my API Evangelist Network</span></a>, at a later date in the future. Or maybe someone comes along and adds the JSON schema to the GitHub repository&mdash;doing the work for me. ;-) This is why I am publishing all of my API definitions to GitHub. So that we can all stop creating our own API definitions, and we can start sharing our work. I am going to better work at attribution and keeping in sync with existing efforts like <a href="https://apis.guru/openapi-directory/">APIs.guru</a>, helping build on the existing hard work other folks have already done. Hopefully folks can already build on top of the work I have done as I continue to publish what I have in my database to GitHub as part of my API Evangelist Network research.</p>
 <p class="p1">My goal here is to keep layering on the API definitions I&rsquo;ve come across and producing a &ldquo;complete enough&rdquo; API definition for the APIs I&rsquo;m profiling and including in my research. It is also to continue convincing API providers to take ownership over their own API definitions. I&rsquo;m happy to accept pull requests from API providers, give them administrator access to my repositories, or simply keep in sync from an authoritative set of OpenAPI and Postman collections. However, I feel it is pretty important to do this out in the open, encourage other API service providers and community members to also contribute and help define the APIs available across the public API commons. Helping community-source the discovery, profiling, and deprecation of APIs that are available on the web, and going beyond what each API provider is capable of, ensuring there is human and machine readable resources available for each industry that is being impacted by APIs today.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/12/19/what-else-has-influenced-apis-over-the-last-50-years/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2019/12/20/openapi-is-the-static-truth-and-postman-collections-are-real-world-derivatives-of-that-truth/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

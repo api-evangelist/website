@@ -1,10 +1,138 @@
----
-published: true
-layout: post
-title: 'Pulling Your Twitter Bookmarks Via The Twitter API'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/nazi-invasion-border-crossing-through-fence.jpg
----
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/nazi-invasion-border-crossing-through-fence.jpg" alt="" width="40%" align="right" /></p>
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Pulling Your Twitter Bookmarks Via The Twitter Api</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Pulling Your Twitter Bookmarks Via The Twitter Api | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pulling Your Twitter Bookmarks Via The Twitter Api | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Pulling Your Twitter Bookmarks Via The Twitter Api</h2>
+<p><span class="post-date">30 Dec 2019</span></p>
+<hr />
+
+<p>published: true</p>
+
+<p>layout: post</p>
+
+<p>title: ‘Pulling Your Twitter Bookmarks Via The Twitter API’</p>
+
+<p>image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/nazi-invasion-border-crossing-through-fence.jpg</p>
+
+<hr />
+
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/nazi-invasion-border-crossing-through-fence.jpg" alt="" width="40%" align="right" /></p>
 <p><a href="http://apievangelist.com/2019/12/29/pulling-links-from-those-tweets-you-have-favorited/">I created two Twitter API capabilities the other day to help someone pull a list of their Twitter favorites using the Twitter API</a>. They said they wanted bookmarks and I assumed they used favorites in the same way I do (as bookmarks), and created one Postman collection for pulling API favorites, and another to parse the URLs present in the body. I use Twitter public likes as a way of bookmarking, then I harvest those via the Twitter API--something I've done for over a decade. I had heard of Twitter bookmarks, and seen them in the desktop and mobile apps, but hadn't really made the shift in my brain. So I assumed they were talking about likes. DOH! Anyways, they tweeted back at me and helped me realize misconception. Ok, so how do we still get them their bookmarks? After some quick investigation there is no Twitter API for your private bookmarks, making the pulling of your data a little more challenging, but not impossible.</p>
 <p>This is where I began helping people not just understand the technology of APIs, but also the politics of API operations. Meaning Twitter has an API for your bookmarks, they just don't want you to get at it via the public API (I am not sure why). Anyways, in this scenario I can't make a ready to go Postman collection for you to use, I am going to have to teach you a little bit more Postman Kung Fu, and teach you how to sniff out the APIs that exist behind everything you do each day. It is still something you can do without programming, and with Postman you can still get at your data in the same way we did for the public Twitter favorites API. You just have to be curious enough to not turn away as I pull back the curtain of the world of APIs a little bit more, with a simple walk through. Something that will ultimately give you more control over your data, and how you take control over your digital presence.</p>
 <p>First, a couple of assumptions I am making here -- let's get these out of the way upfront this time, rather than after the fact.</p>
@@ -41,10 +169,125 @@
 <p><img src="https://kinlane-productions2.s3.amazonaws.com/postman-tutorials/twitter-bookmarks/12-postman-collections-json-response.png" alt="" width="100%" /></p>
 <p>As we did with the other two collections, we want to craft a script that will sift through the JSON and pull out the links we are wanting for each of the bookmarked Tweets. Since I can't create a collection as part of this project, here is the script you will need to paste in Postman.</p>
 <script src="https://gist.github.com/kinlane/4445917dcdd28a1be958545f41e2caa3.js"></script>
+
 <p>Go ahead and copy / paste the content of this script then go back to Postman and click on the tests tab for your Twitter bookmark request. The script will take the results from the Twitter API, and render it to the visualizer for us.</p>
 <p><img src="https://kinlane-productions2.s3.amazonaws.com/postman-tutorials/twitter-bookmarks/13-postman-collections-test-tab.png" alt="" width="100%" /></p>
 <p>Once we have added the script to our Postman request, we can click send again, making the call to the Twitter bookmark API, parsing the JSON with our script, and publishing to the Postman Visualizer tab, rendering only our Tweets and the URLs we bookmarked.</p>
 <p><img src="https://kinlane-productions2.s3.amazonaws.com/postman-tutorials/twitter-bookmarks/14-postman-collection-visualizer.png" alt="" width="100%" /></p>
 <p>That is it. Phew. Hopefully it wsn't too many steps for. It is a little more involved than <a href="https://github.com/api-evangelist/capabilities">our other API capabilities</a>, but once you master this one you should be a little more equipped for reverse engineering the web applications you depend on each day. Depending on how many bookmarks you will be pulling, you may need to tweak your request, and eventually your authorization tokens will expire and you will need to recreate your request using the Postman Interceptor. Sorry, there is no way around it until Twitter adds the bookmark API to their public API--right now your Twitter developer tokens will not work for Twitter bookmarks. ;-(</p>
 <p>I didn't expect to go from 101 level to 201 level API stuff as a next step, but there isn't any alternative in this situation. I feel like simple capability-driven Postman API collections are within reach of developers and non-developers alike. I also feel like proxying your web traffic, and sifting through the resulting exhaust for API gems is something within reach too. Postman isn't just for developers and APIs aren't either. If you use the web, you should have have some sort of awareness of what is happening behind the curtain of the web applicatons you use daily. Postman + Interceptor allow you to do this without writing code, or really understanding how it all works. Hopefully it provides a quick glimpse at what is going on behind the scenes, and wets your appetite enough to convince you play around a little more.</p>
-
+
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2019/12/29/pulling-links-from-those-tweets-you-have-favorited/" class="button disabled"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2020/01/02/a-postman-collection-for-managing-the-life-cycles-of-my-apis/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+	<hr>
+	<p align="center">
+		relevant work:
+		<a href="http://apievangelist.com">apievangelist.com</a> |
+		<a href="http://adopta.agency">adopta.agency</a>
+	</p>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Homepage</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>
