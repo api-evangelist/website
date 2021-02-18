@@ -4,26 +4,42 @@ layout: default
 <section>
 	<div class="content">
 
-	<h3>The API Evangelist Blog</h3>
-	<p>This blog is dedicated to understanding the world of APIs, exploring a wide range of topics from design to deprecation, and spanning the technology, business, and politics of APIs. <a href="https://github.com/kinlane/api-evangelist" target="_blank">All of this runs on Github, so if you see a mistake, you can either fix by submitting a pull request, or let us know by submitting a Github issue for the repository</a>.</p>
-	<center><hr style="width: 75%;" /></center>
-	{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
-  {% for post in paginator.posts %}
-	 	{% capture posttime %}{{post.date | date: '%s'}}{% endcapture %}
-    {% if post.title != null %}
-			{% if posttime < nowunix %}
-        <h3><a href="{{ site.production_url }}{{ post.url }}">{{ post.title }}</a></h3>
-        <span class="post-date">{{ post.date | date_to_string }}</span>
-        {{ post.content }}
-        <ul class="actions" style="text-align: center;">
-          <li><a href="{{ site.production_url }}{{ post.url }}" class="button big">Details</a></li>
-        </ul>
-      	<center><hr style="width: 75%;" /></center>
-				{% endif %}
-    {% endif %}
-  {% endfor %}
+		<h3>The API Evangelist Blog</h3>
 
-<p align="center"><a href="http://apievangelist.com/archive/"><strong>View Previous Posts Via Archives</strong></a></p>
+	  {% for post in paginator.posts %}
+		  <div align="left" style="width:325px; height:250px; overflow:hidden; float: left; padding: 20px;"><img src="{{ post.image }}" alt="API Evangelist" width="250" align="left" /></div>
+			<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+			<p><em>{{ post.date | date_to_string }}</em></p>
+			<p>{{ post.content | strip_html | truncatewords: 325 }}[<a href="{{ post.url }}">Read More</a>]</p>
+			<p><hr /></p>
+	  {% endfor %}
+
+		<!-- Pagination links -->
+		<table width="100%">
+			<tr>
+				<td align="left" width="33%">
+				  {% if paginator.previous_page %}
+				    <a href="{{ paginator.previous_page_path }}" class="previous">
+				      &#8592; Previous
+				    </a>
+				  {% else %}
+				    <span class="previous">Previous</span>
+				  {% endif %}
+			</td>
+			<td align="center" width="33%">
+			  <span class="page_number ">
+			    Page: {{ paginator.page }} of {{ paginator.total_pages }}
+			  </span>
+			</td>
+			<td align="right" width="33%">
+		  {% if paginator.next_page %}
+		    <a href="{{ paginator.next_page_path }}" class="next">Next &#8594;</a>
+		  {% else %}
+		    <span class="next ">Next</span>
+		  {% endif %}
+			</tr>
+			</tr>
+		</table>
 
   </div>
 </section>

@@ -8,32 +8,17 @@ title: API Evangelist
 		<header>
 			<h2>API Evangelist</h2>
 		</header>
-		<p align="right"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-red-seal.png" alt="API Evangelist" width="12%" align="right" /></p>
-		<p>API Evangelist is about making sense of the world of application programming interfaces, or simple APIs. APIs have become part of every layer of our Internet connected world over the last 20 years, and this is my research project into understanding what is happening. As of 2019 I am also the Chief Evangelist for Postman, but I still use this site in the same I have since 2010, as a scratch pad for what I am working on, and stories about I see APIs being used.</p>
-		<p>This isn't meant to be a blog in the traditional sense of the word, and you should think of it as Kin Lane's personal notebook that he is fine with others reading. If you have any comments about my work feel free to take it to Twitter and engage with me there, or if you feel like you'd like to talk to me personally, feel free to email info@apievangelist.com.</p>
-		<p>
-	</div>
-</section>
-
-<section id="banner">
-	<div class="content">
-		<header>
-			<h2>Latest Posts</h2>
-		</header>
-		{% for post in site.posts limit:5 %}
+		<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-red-seal.png" alt="API Evangelist" width="250" align="right" /></p>
+		<p>API Evangelist is about making sense of the world of application programming interfaces, or simple APIs. APIs have become part of every layer of our Internet connected world over the last 20 years, and this is my research project into understanding what is happening. As of 2019 I am also the Chief Evangelist for Postman, but I still use this site in the same way I have since 2010, as a workbench for what I am working on each day. Providing me with a very public way to work through my projects, while helping others see the world of APIs in different ways, and hopefully learn more about how APIs are being applied across our world</p>
+		<p>This isn't meant to be a blog in the traditional sense of the word, and you should think of it as Kin Lane's personal notebook that he is fine with others reading. Once you spend time reading my work you will better understand that this is my souning board, helping me work through my ideas, and I am not doing this for page views, audience size, or other metric. However, after over ten years of doing this I tend to have a regular group of folks who are tuning in and providing commentary via Twitter, GitHub, and other channels.</p>
+		<h2>Latest Posts</h2>
+		{% for post in site.posts limit:7 %}
 		  {% if post.title != null %}
-					<table width="100%">
-						<tr>
-							<td align="center" valign="middle" width="30%">
-								{{ post.image }}
-								<img src="{{ post.image }}" width="350" style="padding: 15px;">
-							</td>
-							<td>
-								<h4>{{ post.title }}</h4>
-								<p>{{ post.content | strip_html | truncatewords: 250 }}</p>
-							</td>
-						</tr>
-					</table>
+			  <div align="left" style="width:325px; height:250px; overflow:hidden; float: left; padding: 20px;"><img src="{{ post.image }}" alt="API Evangelist" width="250" align="left" /></div>
+				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+				<p><em>{{ post.date | date_to_string }}</em></p>
+				<p>{{ post.content | strip_html | truncatewords: 325 }}[<a href="{{ post.url }}">Read More</a>]</p>
+				<p><hr /></p>
 			{% endif %}
 		{% endfor %}
 	</div>
