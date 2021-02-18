@@ -1,0 +1,69 @@
+---published: truelayout: posttitle: 'A High Level Look At API Specifications'image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png---<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png" alt="" width="40%" align="right" /></p>
+<p class="p1">I am having an increasing number of conversations around how the leading API specifications work together, and what the role of each are when it comes to various stops along the API lifecycle. To help drive conversations I wanted to create a single blog post I can link to, while also loading up all of my fresh thoughts about API specs into my old brain. All of these API specifications are continuing to see massive adoption across API providers and consumers, and they are all in forward motion being iterated upon by the specification owners, so it helps to pause once or twice a year and take a look at what is going on, and work to understand how all of these API specifications work together (or don&rsquo;t).</p>
+<h3>What Are The Leading API Specifications</h3>
+<p class="p1">There are a handful of API specifications that are relevant to delivering APIs in 2020, helping provide a vocabulary for stakeholders in the process to use when describing what each API does, so that a common definition can be applied through the API lifecycle, consistently delivering API infrasture across many teams. Here are the API specifications I am focusing on as part of my API Specification Toolbox conversations.</p>
+<ul>
+<li><strong><a href="https://www.openapis.org/">OpenAPI</a></strong> - A specification for defining the surface area of HTTP 1.1 web APIs using JSON or YAML.</li>
+<li><strong><a href="https://www.asyncapi.com/">AsyncAPI</a></strong> - A specification for defining the surface area of HTTP 1.1, HTTP/2, HTTP/3, TCP, MQTT, and AMQP APIs using JSON or YAML.</li>
+<li><strong><a href="https://json-schema.org/">JSON Schema</a></strong> - A specification for defining the underlying models in use for APIs, adopted by both OpenAPI and AsyncAPI.</li>
+<li><strong><a href="https://www.postman.com/collection/">Postman Collections</a></strong> - A specification for defining executable collections of HTTP 1.1 web APIs for running in services and tooling</li>
+<li><strong><a href="https://learning.postman.com/docs/sending-requests/managing-environments/">Postman Environments</a></strong> -<span>&nbsp;A specification for defining key / value pairs that get applied across collections at execute time.</span></li>
+<li><strong><a href="https://raml.org/">RAML</a></strong> - A YAML format for describing the surface area of your HTTP 1.1 APIs, and the the underlying objects.</li>
+<li><strong><a href="https://graphql.org/">GraphQL</a></strong> - A query language for APIs and a runtime for fulfilling queries on top of data and content.</li>
+<li><strong><a href="https://en.wikipedia.org/wiki/SOAP">SOAP</a></strong><span>&nbsp; </span>- A messaging protocol specification for exchanging structured information across web services.&nbsp;</li>
+</ul>
+<p class="p1">SOAP has been around for a number of years, but OpenAPI, AsyncAPI, JSON Schema, RAML, and GraphQL have emerged within the latest decade. OpenAPI, AsyncAPI, and JSON Schema have all evolved in concert with each other, where RAML, GraphQL, and SOAP developed in isolation. I am including all of these because I think they need to be discussed in relationship to each other, and we need to work harder to understand the overlapping layers of how we deliver APIs, as well as the common needs when it comes to the lifecycle usage of these API specifications(ie. design, documentation, testing). The success of OpenAPI ,AsyncAPI, and JSON Schema is largely due to overlapping, sharing, and reuse across the specifications, which sets a tone for how things should work we move forward and iterate upon each of these specifications, or introduce new ones.</p>
+<h3>Reasons Why Each Specification Sees Adoption</h3>
+<p class="p1">There are a number of reasons why API providers and API service providers adopt each of these specifications, but here are a few of the most common reasons why you will find these API specification in use across the enterprise. Hopefully these help you make a decision between what specification you are using.&nbsp;</p>
+<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/aws-s3-stories-docks-copper-circuit.jpg" alt="" width="40%" align="right" /></p>
+<p class="p1"><strong>OpenAPI</strong></p>
+<ul class="ul1">
+<li class="li1">Leading API specification for HTTP1.1 web APIs.</li>
+<li class="li1">Wide service and tooling support for the specification.</li>
+<li class="li1">Has adopted JSON schema for modeling of objects.</li>
+</ul>
+<p class="p1"><strong>AsyncAPI</strong></p>
+<ul class="ul1">
+<li class="li1">Leading API specification for non HTTP1.1 web APIs.</li>
+<li class="li1">Helps define event and message driven approaches.</li>
+<li class="li1">Is a sister specification to the OpenAPI specification.</li>
+<li class="li1">Has adopted JSON schema for modeling of objects.</li>
+</ul>
+<p class="p1"><strong>JSON Schema&nbsp;</strong></p>
+<ul class="ul1">
+<li class="li1">You need to validate objects you use across your APIs.</li>
+<li class="li1">You need to define a common catalog of all your objects.</li>
+<li class="li1">You need to generate examples for all of your APIs.</li>
+</ul>
+<p class="p1"><strong>Postman Collections</strong></p>
+<ul class="ul1">
+<li class="li1">You need to mock your APIs and provide different sets of examples behind HTTP 1.1 APIs.</li>
+<li class="li1">You need to documentation your APIs, and need to augment with markdown and examples for HTTP 1.1 APIs.</li>
+<li class="li1">You need to test the request, response, and surface area of your HTTP 1.1 APIs</li>
+<li class="li1">You need to execute workflows and business use cases across many different APIs.</li>
+</ul>
+<p class="p1"><strong>Postman Environments</strong></p>
+<ul class="ul1">
+<li class="li1">You have multiple API base URLs that need to be applied against the same HTTP 1.1 API collection</li>
+<li class="li1">You have multiple API authentication identities that need to be applied against the same HTTP 1.1 API collection</li>
+<li class="li1">You have multiple API variables (key / values) that need to be applied against the same HTTP 1.1 API collection</li>
+</ul>
+<p class="p1"><strong>RAML</strong></p>
+<p><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/aws-s3-stories-machine-road-copper-circuit.jpg" alt="" width="40%" align="right" /></p>
+<ul class="ul1">
+<li class="li1">You are heavily using the Mulesoft API ecosystem.</li>
+<li class="li1">You are modeling centered in your API design</li>
+</ul>
+<p class="p1"><strong>GraphQL</strong></p>
+<ul class="ul1">
+<li class="li1">You possess very data and content centered APIs</li>
+<li class="li1">Your schema is very large and expansive</li>
+<li class="li1">APIs are primarily driving single page app development</li>
+</ul>
+<p class="p1"><strong>SOAP</strong><span>&nbsp;</span></p>
+<ul class="ul1">
+<li class="li1">You posses large amounts of legacy enterprise infrastructure that needs supporting</li>
+<li class="li1">You work in heavily regulated industries that do not move as fast as other industries</li>
+</ul>
+<p class="p1">Of course, there are many other reasons why developers are adopting these API specifications, but this covers the primary reasons behind API providers and consumers are choosing to adopt each one. While there are other specifications that are relevant to the conversation, to help keep some immediate conversations focused, these are the API specifications that are dominating the conversation today, and for me are relevant to what I am doing as part of the evolution of the Postman platform.<span>&nbsp;</span></p>
+<p class="p1">The majority of folks I am talking to are producing OpenAPI, JSON Schema, and Postman collections as part of their regular API operations. These are the API specifications I am most concerned with fleshing out, as well as mapping to a modern API lifecycle. I&rsquo;ll be producing more storytelling around each of these specifications as I work to flesh out each of their ecosystems and audiences, and work to move some balls forward within the realm of each specification. The next decade is going to be pretty active when it comes to moving these specifications forward, but more importantly, developing the most meaningful services and tooling that help move APIs forward across the API lifecycle which supports each of these API specifications.</p>

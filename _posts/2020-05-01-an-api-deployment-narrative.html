@@ -1,0 +1,133 @@
+---published: truelayout: posttitle: 'An API Deployment Narrative'image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-new-van-gogh-starry-night-container-bridge-2.jpg---<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-new-van-gogh-starry-night-container-bridge-2.jpg" alt="" width="40%" align="right" /></p>
+<p class="p3"><em>This is the narrative from one of the last webinars I did for Postman oin my API-first e-commerce reference implementation Union Fashion. I always try to write what I am going to be saying furing a webinar so that it is loaded up in my brain in a natural way---think Neo learning Kung Fu before sparring with Morpheus. Anyways, here is the narrative, with accompanying video embedded below, helping share the narrative behind how I am building Union Fashion, trying to learn, grow, and expand how I use APIs out in the open, so that others can learn along the way.</em></p>
+<p class="p3">Jeff Jones the VP of Engineering at Union Fashion has been working to get more organized about how they deliver applications using APIs at the company. <a href="https://www.youtube.com/watch?v=Op1Xep0j5s0&amp;t=71s">In our last webinar episode we looked at how Union Fashion was building and testing APIs, moving their operations towards an API first way of delivering application infrastructure</a>. The <a href="https://github.com/union-fashion/home/blob/master/planning/build-and-test-planning.md">build and test planning session</a> was all about ensuring Jeff could lay the foundation for organizational change at Union Fashion by making sure his teams had the proper planning, and everyone was in agreement on an API-first way of delivering APIs behind the web and mobile applications they were needing to run their business&mdash;investing in the following areas to help define how they build and test APIs before actually building them:</p>
+<ul class="ul1">
+<li class="li3"><strong>Organizational</strong> - Making sure the team was well defined, including having dedicated workspaces for each API.</li>
+<li class="li3"><strong>APIs</strong> - We are making sure that common API definitions at the center of the conversation for each API being developed.</li>
+<li class="li3"><strong>Collections</strong> - Being very structured in how collections are define and used to power different stops along the API life cycle.</li>
+<li class="li3"><strong>Environments</strong> - We made sure secrets and some key value pairs were abstracted away from each of the API collections.</li>
+<li class="li3"><strong>Mocks</strong> - Mock servers are published from all APIs, using a specific collection, making each API being developed more tangible.</li>
+<li class="li3"><strong>Documentation</strong> - Documentation is also published for each API from the beginning making it more accessible and usable.</li>
+<li class="li3"><strong>Tests</strong><span>&nbsp; </span>- Establish contract tests for each API, making sure that each API is properly tested to meet its design requirements.</li>
+<li class="li3"><strong>Feedback Loops</strong> - Establishing feedback loops around each API, ensuring there is proper feedback and communication.</li>
+</ul>
+<p class="p3">This allows the team at Union Fashion to employ an API design first approach to developing APIs, defining, mocking, documenting, testing, and iterating upon<span>&nbsp;</span>each API before it is ever actually deployed. Allowing teams to be more efficient when it comes to how APIs are brought to life, while making sure APIs better meet the needs of stakeholders as early on as possible, including those who are building applications and other integrations using each potential API. The build and test approach Union Fashion has been developing is a great way to bring each API to life but eventually we will need to actually deploy each API, so that it can be put to work within applications and system integrations.</p>
+<p class="p2"><strong>Deploying and Monitoring Union Fashion APIs</strong></p>
+<p class="p3">Using our build and test API first methodology we have established five OpenAPI definitions reflecting the core commerce services we will be needing, including products, baskets, orders, users, and search. There will be other APIs that will emerge along the way, but in this first sprintd we were able to define a robust build and test strategy for developing APIs in a consistent way without writing code, while actually producing the first version of five APIs we will need. Now we need to actually deploy the APIs we designed using a standardized, consistent, and scalable way for standing each API up, and making available to consumers using common cloud infrastructure.<span>&nbsp;</span></p>
+<p class="p3">To help lay the groundwork for <a href="https://github.com/union-fashion/home/blob/master/planning/deploy-and-monitor-planning.md">our deploy and monitor strategy</a> we got to work on defining a set of processes which developers can put to use when deploying an API into any stage of delivery, from development to staging to production. Laying the foundation for Union Fashion&rsquo;s official deploy and monitors strategy, helping formalize how APIs are delivered across the organization. Making sure API infrastructure at Union Fashion all follows the healthiest and most widely agreed upon patterns for delivering consistent and reliable APIs.<span>&nbsp;</span></p>
+<p class="p3"><strong>Ensuring Each API is Versioned</strong></p>
+<p class="p3">Union Fashion employs Semantic versioning (<a href="https://semver.org/"><span class="s1">https://semver.org/</span></a><span class="s2">)</span> for each API definition, ensuring that each API is evolved in a way that is fully documented, but also helps ensure backward compatibility, and easy reuse across the organization by making sure each version is available within the repository for each API being developed.</p>
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>API Version</strong>&nbsp;- Making sure to iterate the version of each API and derivative collection, managing change across APIs.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Version Tag</strong> - Applying vision tagging to each of the collections associated with the API being moved forward.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Change Log</strong>&nbsp;- Evaluate change log activity for each service, making sure you are in tune with what has been happening across an API.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Major Version Sync </strong>&nbsp;- Ensure that latest version is synced to GitHub, keeping all changes made in Postman or on GitHub reflected in both locations.</li>
+</ul>
+<p class="p3">Managing change for each of the APIs we are delivering as part of Union Fashion is critical to ensuring the reliability of each of the APIs we are making available to consumers.<span>&nbsp;</span>Having a plan for managing change rather than responding to it after it has already occurred.</p>
+<p class="p3"><strong>Actual Deployment of Each API</strong></p>
+<p class="p3">With each of our APIs well defined using OpenAPI, with supporting documentation and testing to ensure the API operates as intended, we have reached the point in the evolution of our API resource where we need to actually bring the&nbsp; to life using common cloud infrastructure. Union Fashion currently has <a href="https://github.com/union-fashion/home/blob/master/planning/deploy-and-monitor-planning.md">two blueprints for delivering APIs using AWS</a>, providing a basic, and more robust &ldquo;serverless&rdquo; model for delivering API infrastructure in a consistent and repeatable way that is contract-driven and fully tested to ensure each API is living up to its intended contract.</p>
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong><a href="https://documenter.postman.com/view/10394726/Szf6XTqp?version=latest">Basic NoSQL (AWS)</a> </strong>- Providing a standardized and repeatable way to deploy basic NoSQL backed API resources.       
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>OpenAPI</strong> - Leveraging the OpenAPI contract to define, prepare, and build each API being deployed.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Table</strong> - Pulling the table name from the schema available as part of the OpenAPI definition from the API.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Publish</strong> - Publishing the OpenAPI definition to the AWS API Gateway, using it as the truth for deployment.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Deploy</strong> - Actually deploying the API published to the AWS API Gateway into a specific stage of development.</li>
+</ul>
+</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong><a href="https://documenter.postman.com/view/10394726/Szf6X8Wd?version=latest">Serverless SQL (AWS)</a> </strong>- Providing a standardized and repeatable way to deploy basic serverless SQL backed API resources.       
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>OpenAPI</strong> - Leveraging the OpenAPI contract to define, prepare, and build each API being deployed.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Table</strong> - Pulling the table name from the schema available as part of the OpenAPI definition from the API.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Layers</strong> - Pulling and deploying the AWS Lambda layers package needed to satisfy Node.js dependencies.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Scripts</strong> - Dynamically generating JavaScript for each API method that is defined as part of the OpenAPI.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Packages</strong> - Pulling, zipping, and publishing AWS Lambda deployment packages for each OpenAPI method.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Functions</strong> - Deploying the package for each OpenAPI method and publishing individual AWS Lambda functions.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Publish</strong> - Publishing the OpenAPI definition to the AWS API Gateway, using it as the truth for deployment.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Deploy</strong> - Actually deploying the API published to the AWS API Gateway into a specific stage of development.<strong>&nbsp;</strong></li>
+</ul>
+</li>
+</ul>
+<p class="p3">There are additional deployment patterns being developed, providing delivering more functional and algorithmic APIs, as well as to replicate these patterns across additional cloud platforms, including Azure and Google. Deployment collections can be executed incrementally or collectively running API deployment collections for each of the patterns listed, deploying APIs individually, or as part of a wider API life cycle process.</p>
+<p class="p3"><strong>Management of Each API</strong></p>
+<p class="p3">Each API requires a minimal level of management ensuring that each one is properly secured, and requires an API key to access. Each API should have its own usage plan with the AWS API Gateway, and be configured with a rate limit for the consumption of each API, limiting what consumers can access per second, minute, day, or other metrics.</p>
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>Usage Plan</strong> - Publishing a usage plan with access limitations defined, governing each API being deployed.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>API Key </strong>- Generating an API key and associated it with the plan, allowing each API to be securely accessed.</li>
+</ul>
+<p class="p3">Each API should have a default API usage plan with associated key, then each additional consumer should have their API keys associated with the APIs plan, keeping each individual API within its own definition of operation&mdash;defined by the API management layer. Ensuring that each API is properly protected from access by unknown actors, but also limits the amount any one consumer can access of each API resource, during a particular time frame.</p>
+<p class="p3"><strong>Establishing Environments</strong></p>
+<p class="p3">Each API needs an environment to define each stage of its evolution, including a mock representation for each stage. Providing a place to store key / value pairs that are needed to define individual API as they move through each stage of development. Ensuring that there is a snapshot of the environment need to operate each version and stage of an API.</p>
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>Stage</strong> 
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>Name</strong> - Publishing of an environment for managing the deployment of the API, naming for the stage.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>BaseURL - </strong>Provide a key / value for the base_url , which will be used when deploying and testing of the deployed API.</li>
+</ul>
+</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>Mock</strong> 
+<ul class="ul2">
+<li class="li3"><span class="s3">&nbsp;</span><strong>Name</strong> - Publishing of an environment for managing the mock for thi API, naming for the stage.</li>
+<li class="li3"><span class="s3">&nbsp;</span><strong>BaseURL - </strong>Provide a key / value for the base_url , which will be used when working with the mock.</li>
+</ul>
+</li>
+</ul>
+<p class="p3">The presence of an environment for each stage of an APIs development reflect the maturity and evolution of each API within its workspace. Providing the definition of how far along it has moved from from design to development to production. Providing a machine readable map of each stage of evolution, for each version of an API.<span>&nbsp;</span></p>
+<p class="p3"><strong>Monitoring API Contract and Performance</strong></p>
+<p class="p3">Each API should possess a monitor for each of its test collections. Making sure that contract and performance testing occurs on a regular basis. Taking the tests established as part of the build and test process cycle and running them against each API deployed as part of development, staging, and production environments. Ensuring that all APIs are regularly monitored to ensure they are living up to expectations and meeting the agreed upon service level agreement (SLA).</p>
+<ul class="ul2">
+<li class="li3"><strong>Contract Testing</strong> 
+<ul class="ul2">
+<li class="li3"><strong>Name</strong> - Apply name to the monitor matching it with the API and type of testing being implemented.</li>
+<li class="li3"><strong>Version </strong>- Make sure the monitor has the proper version tag applied associated it with current version.</li>
+<li class="li3"><strong>Environment</strong> - Using the proper environment stage for the API contract being tested and monitored.</li>
+<li class="li3"><strong>Schedule </strong>- Applying the required schedule for the monitoring of the API contract testing.</li>
+<li class="li3"><strong>Region </strong>-<span>&nbsp; </span>Monitoring the contract of each API from the required geographic regions.</li>
+</ul>
+</li>
+<li class="li3"><strong>Performance Testing</strong> 
+<ul class="ul2">
+<li class="li3"><strong>Name</strong> - Apply name to the monitor matching it with the API and type of testing being implemented.</li>
+<li class="li3"><strong>Version </strong>- Make sure the monitor has the proper version tag applied associated it with current version.</li>
+<li class="li3"><strong>Environment</strong> - Using the proper environment stage for the API performance being tested and monitored.</li>
+<li class="li3"><strong>Schedule </strong>- Applying the required schedule for the monitoring of the API performance testing.</li>
+<li class="li3"><strong>Region </strong>-<span>&nbsp; </span>Monitoring the performance of each API from the required geographic regions.</li>
+</ul>
+</li>
+<li class="li3"><strong>Service Level Agreement</strong>&nbsp;- Establish benchmarks for contract and performance testing.       
+<ul class="ul2">
+<li class="li3"><strong>Results</strong> - Ensure that the results of contract and performance testing are being stored in the environment.</li>
+<li class="li3"><strong>Publish</strong> - Publishing of contract and performance testing results to the GitHub repository for each API.</li>
+</ul>
+</li>
+</ul>
+<p class="p3">Additional test suites, and integration testing will be developed, but basic contract and performance testing is mandatory for all Union Fashion APIs being deployed. Making sure each API lives up to its contract, meets the level of service needed, and does this across every geographic region that matters in an ongoing way, maintaining a consistent level of service across all APIs, no matter what teams are delivering them.</p>
+<p class="p3"><strong>Mocking of Each API Being Deployed</strong></p>
+<p class="p3">There should be a mock server for each stage of API evolution, ensuring that there is a mock representation for use during testing, as well as safe and easy playing with by consumers as they are learning what an API does, without having to be exposed to live data&mdash;providing a virtualized instance of each API for quick access and use.</p>
+<ul class="ul2">
+<li class="li3"><strong>Deploy</strong>&nbsp;- Establish a mock representation of the current stage, providing a mocked server for this version.</li>
+<li class="li3"><strong>Share</strong>&nbsp;- Share the URL of mock server with rest of team, making sure it is know that there is a separate mock.</li>
+<li class="li3"><strong>Environment</strong> - Add the mock URL and keys to the environment, ensuring the mocked version can be accessed.</li>
+</ul>
+<p class="p3">Mock APIs reduce the overhead on development, staging, and production environments, while helping alleviate anxiety with consumers when it comes to working with live data, or event development and staging data that might be needed for testing. Ensuring there is always a sandbox present for API consumers and making it easier for consumers to play around with each API.</p>
+<p class="p3"><strong>Ensuring There Is Always Up to Date Documentation</strong></p>
+<p class="p3">There should always be up to date documentation published for each API, making sure the collection behind documentation has proper name, description, and examples of the value each API request delivers. With each stage of an APIs development, the following elements should be addressed as soon as any stage of an API is deployed.</p>
+<ul class="ul2">
+<li class="li3"><strong>Publish</strong>&nbsp;- Publish documentation for each service being developed, making sure the document is up to date.</li>
+<li class="li3"><strong>Environment</strong> - Make sure there is an environment available for each stage of an APIs development.</li>
+<li class="li3"><strong>Share</strong>&nbsp;- Share the URL of documentation with team members, making sure everyone has the link they need.</li>
+</ul>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-cargo-ship_36587814601_o.jpg" alt="" width="45%" align="right" /></p>
+<p class="p3">The publishing of API documentation for each stage of an APIs development should be a deliberate step at the end of the deployment cycle. Making sure that documentation represents the current state of any fully deployed and monitored API, keeping the visual representation for each API is always up to date and providing the most value possible.</p>
+<p class="p3"><strong>Establish Feedback Loops for Each API</strong></p>
+<p class="p3">There should be an independent feedback loop in place for each API being deployed, allowing for stakeholders in the deliver of each API can comment on the API contract, as well as the derivative collections used behind documentation, mock servers, and tests. Ensuring API consumers have a channel to provide feedback, that can be considered as part of the evolution of each API.</p>
+<ul class="ul2">
+<li class="li3"><strong>API Comments</strong>&nbsp;- Tune into comments available for each API, helping keep discussions self-contained for each API being developed.</li>
+<li class="li3"><strong>Collection Comments</strong>&nbsp;- Tune into comments available for each collection, helping keep discussions self-contained for each API derivative.</li>
+<li class="li3"><strong>Issues</strong>&nbsp;- Tune into GitHub issues for each service, leveraging the repository issues as public and private communication cycles.</li>
+</ul>
+<p class="p3">The feedback loop for each API should be used to stay in tune with what is happening as each API is being deployed, ensuring that all the concerns and feedback of stakeholders have been considered before an API is deployed. It should also be regularly visited upon a well established schedule, making sure all feedback has been considered, and if possible, the comments and issues should be automatically tracked for evaluation of feedback lop activity and engagement across teams.</p>
+<p class="p3"><strong>A Standardized and Repeatable Way to Deliver API Infrastructure</strong></p>
+<p class="p3">We now have a standardized way of deploying APIs at Union Fashion. This process will evolve with each API that is delivered using the process, but it also provides us with a base approach for delivering the infrastructure we need to operate online as a business. Combined with our API-First approach to building and testing APIs, our approach to deploying and monitoring APIs will make sure the API contracts defined are delivered as intended using common cloud infrastructure. Helping stabilize the infrastructure Union Fashion uses behind its web and mobile applications, and system integrations.</p>
+<p class="p3">This concludes the deploy and monitor portion of our API develop life cycles. This process will help us move APIs from idea to production more efficiently, and will set that stage for us to bring our API to market, no matter whether they are strictly for internal use, access by trusted partners, or for the general public. This process is meant to show what is possible when it comes to quantifying how we deploy and monitor our API infrastructure, but can and should be evolved to consider the needs of future APIs that will be delivered. Continuing to push how we move APIs forward by making sure each individual step of the process is as well through out and planned as we possibly can. Allowing us to be more flexible, efficient, and scalable in how we deliver our API-driven application infrastructure.</p>
+<div><iframe src="https://www.youtube.com/embed/jO2M_kqb-jo" width="560" height="315"></iframe></div>
