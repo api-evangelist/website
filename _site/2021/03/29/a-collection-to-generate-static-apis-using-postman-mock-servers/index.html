@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>A Collection To Generate Static APIs Using Postman Mock Servers</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="A Collection To Generate Static APIs Using Postman Mock Servers | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://kinlane-productions2.s3.amazonaws.com/a-collection-to-generate-static-apis-using-postman-mock-servers-1.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="A Collection To Generate Static APIs Using Postman Mock Servers | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://kinlane-productions2.s3.amazonaws.com/a-collection-to-generate-static-apis-using-postman-mock-servers-1.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>A Collection To Generate Static APIs Using Postman Mock Servers</h2>
+<p><span class="post-date">29 Mar 2021</span></p>
+<p>I have a lot of little datasets I am organizing for use across a variety of projects. Since Postman has replace Github as my place where I begin all of my API projects, I figured that it could also be used host all of my data projects as APIs. Postman collections often times resemble an OpenAPI definition in that it provides a reference of an API, but in practice collections go much further, allowing you to store example data so that it can be better used in documentation, mocks, testing, and other types of purposes. You can store examples in OpenAPI, but Postman really allows you to go the distance when it comes to actually bringing those examples to life as a documented static API using Postman collections and mock server.</p>
+
+<p>An example of this in action can be found with [my Fortune 500 public workspace](https://api-evangelist.postman.co/workspace/Fortune-500~08e01ed9-6906-47a0-a81e-369948912ef4/overview). I needed a list of 2020 Fortune 500 companies so that I can use it a variety of data mining and automation projects. I can easily download the data and publish a proper API, but it is so easy for me to use Postman collection in conjunction with the mock feature to publish simple mock APIs for each of my datasets. Using Postman as a sort of poor mans API hosting, which I won’t be opening up for public use, but will be using across a number of my API Projects. However, just because I won’t be sharing the URLs of my static (mock) APIs, I will be sharing all the collections I have developed around this work, beginning with my collection for generating my static (mock) data API from a CSV.</p>
+
+<p align="center"><a href="https://api-evangelist.postman.co/workspace/Fortune-500~08e01ed9-6906-47a0-a81e-369948912ef4/documentation/35240-04f42a0a-be66-4351-9793-f6d057aebd4e"><img src="https://kinlane-productions2.s3.amazonaws.com/a-collection-to-generate-static-apis-using-postman-mock-servers-1.png" width="90%" align="center" style="padding: 15px;"></a></p>
+
+<p>This is just a first version of my collection for pulling any CSV, converting the CSV to JSON, creating a collection, adding the JSON as an example, and then publishing my collection to my public workspace. Next I will be adding an option for adding JSON converted from CSV to an existing collection, and also auto-generation of the mock server and environment with the URL published. It provides me with a quick way to pull any CSV file and quickly generate a collection that I can then share, export, mock, and make available for us in other workflows and orchestrations. The results provides me with a simple static API for all the Fortune 500 companies for both 2019 and 2020.</p>
+
+<p align="center"><a href="https://api-evangelist.postman.co/workspace/Fortune-500~08e01ed9-6906-47a0-a81e-369948912ef4/documentation/35240-c62c073c-fea0-40ee-9994-352d7c072302"><img src="https://kinlane-productions2.s3.amazonaws.com/a-collection-to-generate-static-apis-using-postman-mock-servers-2.png" width="90%" align="center" style="padding: 15px;"></a></p>
+
+<p>This isn’t a normal usage of Postman collections and mock servers, but it does provide a quick and dirty way to generate static APIs from common datasets, then reuse that data across a variety of workflows and orchestrations. It reflects how I have used Github for the last 8 years, as a static host for all of my data. Now that I have Postman workspaces for all my data and API storage, I am converting all my data stores to be static APIs in this way. With Postman monitors and pre-request and post-request scripts in Postman, I am able to go a lot further with using this data as part of meaningful business workflows, going much further than what I could do on Github.</p>
+
+<p>I started this work by creating [a CSV to JSON file conversion collection](https://apievangelist.com/2021/03/29/a-csv-to-json-file-conversion-postman-collection/), which I evolved into being [my collection for generating static APIs using Postman collections and mock server](https://api-evangelist.postman.co/workspace/Fortune-500~08e01ed9-6906-47a0-a81e-369948912ef4/documentation/35240-04f42a0a-be66-4351-9793-f6d057aebd4e). My goal is to maintain a robust set of collections I can use to publish open data to public workspaces using Postman, but then also expose static (mock) APIs for all of this data, so that I can weave it into my daily work. Because all of my work is public by default I am sharing all of my data collections, as well as the collections I used to generate them in public workspaces. I am keen on sharing this approach with folks, because I realize that once people understand the different ways in which you can twist and use the Postman platform they are going to come up with more innovative approaches that I never thought of—which is what APIs are all about.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2021/03/28/targeting-the-enterprise-and-ignoring-developer-s-needs-around-a-specific-stop-along-the-api-lifecycle/" class="button"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2021/03/29/a-csv-to-json-file-conversion-postman-collection/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Home Page</a></li>
+    <li><a href="/blog/">The Blog</a></li>
+    <li><a href="https://101.apievangelist.com/">API 101</a></li>
+    <li><a href="http://history.apievangelist.com">History of APIs</a></li>
+    <li><a href="https://women-in-tech.apievangelist.com/">Women in Technology</a></li>    
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>Evolving API Deployment to Be More Defined and Observable Using APIs</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Evolving API Deployment to Be More Defined and Observable Using APIs | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://kinlane-productions2.s3.amazonaws.com/evolving-api-deployment-to-be-more-defined-and-observable-using-apis.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Evolving API Deployment to Be More Defined and Observable Using APIs | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://kinlane-productions2.s3.amazonaws.com/evolving-api-deployment-to-be-more-defined-and-observable-using-apis.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>Evolving API Deployment to Be More Defined and Observable Using APIs</h2>
+<p><span class="post-date">10 Mar 2021</span></p>
+<p>I love it when someone realizes that APIs have APIs during one of my talks or reading of of my stories. I find that people are so heads down in their daily jobs they don’t have much time to sit back and contemplate the bigger picture, which is something that might lead them to see APIs behind their API infrastructure, but also consider how it fits into the overall API lifecycle. Since 2014 I have been on a journey to produce a machine readable artifact from every stop along the API lifecycle, and the “API deployment” is one of the stops I’ve been very keen to lock down with a set of API-driven deployment blueprints that would help define, standardize, automate, and allow us to measure the deployment of our APIs. I am looking to turn <a href="http://apisjson.org/">APIs.json</a> / <a href="http://apisyaml.org/">APIs.yaml</a> into a machine readable blueprint for API operations, and to be able to do that I need the API deployment process to be more defined and observable—something I am going to do with APIs.</p>
+
+<p>API deployment is one of the toughest stops along the lifecycle to nail down because there are so many different ways in which an API an be deployed. Pick your programming language, framework, platform, gateway, service, or open source tooling, and get the job done. It is something that doesn’t always lend itself to defining and standardizing because the landscape is so define by vendor pressure and developer dogma, but I am determined to bring some order to how I define and deploy APIs using a variety of common approaches. The first API deployment blueprint I’d like to share is my collection for deploying a simple API to AWS API Gateway backed by DynamoDB—-here is a walkthrough of how the API deployment blueprint collection works.</p>
+
+<div align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/bTq38QBLE28" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
+<p>This is a very simple approach to API deployment. The blueprint won’t handle very complex schema, and there is no layer for business logic. But for a simple one dimensional schema, it provides a pretty quick and dirty way to deploy an API in 10 steps. The blueprint can use more work making it a little more robust on search, filtering, performance, and other areas, but he gives me a series of known API requests for turning an OpenAPI specification into a real world read and write API that requires an API key to access. <a href="https://www.postman.com/api-evangelist/workspace/deployment/documentation/35240-900aeb90-7c7a-4a1c-bf9d-998657048312">My simple API deployment process is defined by a 10 step collection that is documented and can be run manually</a>, scheduled via a monitor, or as part of a pipeline using <a href="https://www.npmjs.com/package/newman">Newman</a>. Providing a set of known inputs and outputs for the API deployment stop along a known API lifecycle.</p>
+
+<p>Every time I run this collection <a href="https://www.postman.com/api-evangelist/workspace/deployment/environment/35240-03592644-d24d-4fd7-bc02-de5147d48f96">it stores the state of the API deployment in a Postman environment</a>>a. This concept pushes the boundaries of what you use Postman environments for, but it works well for providing me a machine readable snapshot of the deployment stop along the API lifecycle. Providing me with timestamps for deployment, evidence of a plan for API management, and how an API is being secured using keys, further making things observable using API management and logging provided by AWS API Gateway. Now I can share this blueprint with other developers, allowing them to fork the collection and make it work for deploying simple APIs defined using OpenAPI, and submit pull requests for any enhancements to the API deployment blueprint. Next I will share the serverless version of my API deployment blueprint, using RDS instead of DynamoDB as the database, and adding a layer of logic using AWS Lambda. Pushing forward the blueprint for how I not just deploy my APIs, but how I define and observe the API deployment process as part of a wider API governance strategy, all <a href="https://www.postman.com/api-evangelist/workspace/deployment/overview">demonstrated via a Postman public workspace</a>.</p>
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2021/03/08/turning-environmental-data-into-a-more-usable-api/" class="button"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2021/03/10/using-postman-testing-for-api-governance/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Home Page</a></li>
+    <li><a href="/blog/">The Blog</a></li>
+    <li><a href="https://101.apievangelist.com/">API 101</a></li>
+    <li><a href="http://history.apievangelist.com">History of APIs</a></li>
+    <li><a href="https://women-in-tech.apievangelist.com/">Women in Technology</a></li>    
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>

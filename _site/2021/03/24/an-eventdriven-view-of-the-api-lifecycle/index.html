@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+  <html>
+  <title>An Event-Driven View of the API Lifecycle</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!--[if lte IE 8]><script src="/assets/js/ie/html5shiv.js"></script><![endif]-->
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css" />
+  <!--[if lte IE 9]><link rel="stylesheet" href="/assets/css/ie9.css" /><![endif]-->
+  <!--[if lte IE 8]><link rel="stylesheet" href="/assets/css/ie8.css" /><![endif]-->
+
+  <!-- Icons -->
+  <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
+
+  <link rel="alternate" type="application/rss+xml" title="API Evangelist Blog - RSS 2.0" href="https://apievangelist.com/blog.xml" />
+  <link rel="alternate" type="application/atom+xml" title="API Evangelist Blog - Atom" href="https://apievangelist.com/atom.xml">
+
+  <!-- JQuery -->
+  <script src="/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/js/utility.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Github.js - http://github.com/michael/github -->
+  <script src="/js/github.js" type="text/javascript" charset="utf-8"></script>
+
+  <!-- Cookies.js - http://github.com/ScottHamper/Cookies -->
+  <script src="/js/cookies.js"></script>
+
+  <!-- D3.js http://github.com/d3/d3 -->
+  <script src="/js/d3.v3.min.js"></script>
+
+  <!-- js-yaml - http://github.com/nodeca/js-yaml -->
+  <script src="/js/js-yaml.min.js"></script>
+
+  <script src="/js/subway-map-1.js" type="text/javascript"></script>
+
+  <style type="text/css">
+
+    .gist {width:100% !important;}
+    .gist-file
+    .gist-data {max-height: 500px;}
+
+    /* The main DIV for the map */
+    .subway-map
+    {
+        margin: 0;
+        width: 110px;
+        height: 5000px;
+        background-color: white;
+    }
+
+    /* Text labels */
+    .text
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    #legend
+    {
+    	border: 1px solid #000;
+        float: left;
+        width: 250px;
+        height:400px;
+    }
+
+    #legend div
+    {
+        height: 25px;
+    }
+
+    #legend span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    .subway-map span
+    {
+        margin: 5px 5px 5px 0;
+    }
+    
+    .container {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+    .video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }    
+
+    </style>
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="An Event-Driven View of the API Lifecycle | API Evangelist">
+    <meta property="og:site_name" content="API Evangelist">
+    <meta property="og:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    <meta property="og:image" content="https://kinlane-productions2.s3.amazonaws.com/an-eventdriven-view-of-the-api-lifecycle.png">
+
+    <meta name="twitter:url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="An Event-Driven View of the API Lifecycle | API Evangelist">
+    <meta name="twitter:site" content="API Evangelist">
+    <meta name="twitter:description" content="A network of research sites dedicated to the technology, business, and politics of APIs.">
+    
+      <meta name="twitter:creator" content="@apievangelist">
+    
+    <meta property="twitter:image" content="https://kinlane-productions2.s3.amazonaws.com/an-eventdriven-view-of-the-api-lifecycle.png">
+
+
+</head>
+
+  <body>
+
+			<div id="wrapper">
+					<div id="main">
+						<div class="inner">
+
+              <header id="header">
+	<a href="http://apievangelist.com" class="logo"><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" width="75%" /></a>
+	<ul class="icons">
+		<li><a href="https://twitter.com/apievangelist" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+		<li><a href="https://github.com/api-evangelist" class="icon fa-github"><span class="label">Github</span></a></li>
+		<li><a href="https://www.linkedin.com/company/api-evangelist/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+		<li><a href="http://apievangelist.com/atom.xml" class="icon fa-rss"><span class="label">RSS</span></a></li>
+	</ul>
+</header>
+
+    	        <h2>An Event-Driven View of the API Lifecycle</h2>
+<p><span class="post-date">24 Mar 2021</span></p>
+<p>I am continuing my quest to define and visualize the API lifecycle across a diverse API toolbox. I am talking to anyone and everyone I possibly can when it comes getting their take on what the API lifecycle is, and what are the ways in which we can make more visible and tangible. I am meeting regularly with the <a href="https://solace.com">Solace</a> team to define the API lifecycle across a request and response, as well as an event-driven world. As part of our discussions Jonathan Schabowsky (<a href="https://twitter.com/jschabowsky">@jschabowsky</a>) shared <a href="https://solace.com/blog/event-driven-architecture-demands-event-lifecycle-management/">his earlier vision of how he sees the event-driven API lifecycle</a> which I though was worth documenting and including the visualization as part of my wider research.</p>
+
+<p align="center"><img src="https://kinlane-productions2.s3.amazonaws.com/an-eventdriven-view-of-the-api-lifecycle.png" width="55%" align="center" style="padding: 15px;"></p>
+
+<p>Jonathan breaks things down into four main areas or top level groups of the stops along his event-driven API lifecycle, but I think his outline provides a pretty interesting look at the API lifecycle from the view of an event-driven API service providers.</p>
+<ul>
+<li><strong>Discover</strong></li><ul>
+<li>Event Streams: Search and locate events which are of interest</li>
+<li>Relationships: Understand the relationship between events, their sources and who is consuming them</li></ul>
+<li><strong>Define</strong></li><ul>
+<li>Use Case: Determine desired business outcome</li>
+<li>Schema: Create business objects that represent the event context</li>
+<li>Event: Construct event metadata including addressing (topic) and headers</li>
+<li>Specify Application: link events as inputs and outputs to the business logic</li></ul>
+<li><strong>Develop</strong></li><ul>
+<li>Generate code: Use code generators to create application “scaffolding” based on the application specification</li>
+<li>Add business logic: Create application which performs the required function</li></ul>
+<li><strong>Operate</strong></li><ul>
+<li>Secure: Enforce authentication and authorization policies</li>
+<li>Deploy: Start and connect to the runtime event broker</li>
+<li>Audit: Determine if there are any runtime vs. design time violations</li>
+<li>Monitor: Understand the utilization of events, schemas and applications based on historical and real-time metrics</li>
+<li>Improve: Enhance applications, events and schemas; deprecate events that aren’t being utilized</li></ul>
+</ul>
+<p>Anytime I look at someone else’s definition of the API lifecycle I immediately see things that are missing, but then I always check myself knowing that my bias is always towards my perspective and view of the API lifecycle at the 500K view. I am not down in the trenches of API operations, although I have visibility into many different types of API operations. I strongly identify with his four areas, and think his individual stops along the lifecycle are simple and purposeful, representing both reality on the ground, but also lean towards having a strategy—-not just responding to what is happening.</p>
+
+<p>I am adding Solace’s view of the API lifecycle to my notebook. The outline and the visual. I am coming closer to establishing a baseline definition for what I’d consider to be a modern API lifecycle, but my biggest challenge is ensuring my definition is simple and relatable to the widest possible audience. I am notorious for providing TOO MUCH INFORMATION, and will lay out over 100 stops along the API lifecycle, which is not what folks need at any point in their journey. My mission is to get more precise in how I talk about the API lifecycle and distill things down to a simple vocabulary that I can then also work to visualize. Ultimately I am looking to get a little more grounded when it comes to how I talk about the API lifecycle, and stop being all over the place, while also work to make sure my definition works for a diverse API toolbox.</p>
+
+<hr />
+<ul class="pagination" style="text-align: center;">
+	
+		<li style="text-align:left;"><a href="https://apievangelist.com/2021/03/23/being-able-to-see-the-api-lifecycle/" class="button"><< Prev</a></li>
+	
+		<li style="width: 75%"><span></span></li>
+	
+		<li style="text-align:right;"><a href="https://apievangelist.com/2021/03/25/setting-a-baseline-api-lifecycle-definition/" class="button">Next >></a></li>
+	
+</ul>
+
+              <footer>
+	<hr>
+	<div class="features">
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="60%" style="padding: 15px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</footer>
+
+
+            </div>
+          </div>
+
+          <div id="sidebar">
+            <div class="inner">
+
+              <nav id="menu">
+  <header class="major">
+    <h2>Menu</h2>
+  </header>
+  <ul>
+    <li><a href="/">Home Page</a></li>
+    <li><a href="/blog/">The Blog</a></li>
+    <li><a href="https://101.apievangelist.com/">API 101</a></li>
+    <li><a href="http://history.apievangelist.com">History of APIs</a></li>
+    <li><a href="https://women-in-tech.apievangelist.com/">Women in Technology</a></li>    
+  </ul>
+</nav>
+
+              <section>
+	<div class="mini-posts">
+		<header>
+			<h2 style="text-align: center;"><i>API Evangelist Sponsors</i></h2>
+		</header>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.postman.com" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/partners/postman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://tyk.io/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/tyk/tyk-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.openapis.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/openapi.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://www.asyncapi.com/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/asyncapi/asyncapi-horiozontal.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://json-schema.org/" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/specifications/json-schema.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+		<article>
+			<div class="content">
+				<p align="center"><a href="https://github.com/postmanlabs/newman" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/postman/newman-logo.png" width="75%" style="padding: 5px; border: 1px solid #000;" /></a></p>
+			</div>
+		</article>
+	</div>
+</section>
+
+
+            </div>
+          </div>
+
+      </div>
+
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1119465-51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1119465-51');
+</script>
+
+
+</body>
+</html>
