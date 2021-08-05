@@ -1,0 +1,971 @@
+---
+published: true
+layout: post
+title: 'Enabling the API Lifecycle with the Postman Platform'
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/copper-circuit-train-nyc-125th.jpg
+tags:
+ - Lifecycle
+ - OpenAPI
+---
+<p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;"></p>
+
+<p><a href="https://apievangelist.com/2021/08/03/an-openapi-lifecycle-extension/"></a>I have been working to define the lifecycle of an OpenAPI defined API, and working establish a way to talk about, but also describe in a machine readable way the lifecycle of an API</a>. One of the reasons I joined Postman was to be able to get more hands on with much of my work on defining the API lifecycle. I wanted to stop just talking about it, and actually move to demonstrating it, and the Postman platform provides a great way to think through this, and to help me with this exercise I created this crude composition from the application to help me think through the lifecycle for each API.</p>
+<p><img src="/images/openapi-lifecycle-1.jpg" width="100%"></p>
+<p><img src="/images/openapi-lifecycle-2.jpg" width="100%"></p>
+<p>Postman capabilities for iterating upon an OpenAPI, but this visual snippets from across the application provide me with a range of capabilities that I can use to define the overall API lifecycle. These elements of the Postman API platform provide me with a range of ways to define the API lifecycle, but also provides me with the ability see what exists in the cracks or needs pulling out via the interface. Ultimately I am looking to nail down what a range of API definitions could be for the API lifecycle, and what a machine readable definition might be for helping us define this API lifecycle as part of an OpenAPI-defined API lifecycle. To help me leverage these Postman capabilities to do this, I extracted this key.</p>
+
+<ol>
+<li><strong>Import</strong> - Importing an OpenAPI definition into a workspace.</li>
+<li><strong>Overview</strong> - An overview for each individual OpenAPI.</li>
+<li><strong>Editor</strong> - Editing an OpenAPI definition in API builder.</li>
+<li><strong>Versioning</strong> - Applying semantic versioning to an OpenAPI.</li>
+<li><strong>Change Log</strong> - Providing a change log for the OpenAPI.</li>
+<li><strong>Activity</strong> - Provide list of activity involving the OpenAPI.</li>
+<li><strong>Reporting</strong> - Offering reporting on API and the lifecycle.</li>
+<li><strong>Documentation</strong> - Publishing documentation to support an API.
+    <ol>
+        <li><strong>Reference</strong> - Providing complete reference documentation for entire API.</li>
+        <li><strong>Starter</strong> - Providing starter documentation for new users to onboard.</li>
+        <li><strong>Workflow</strong> - Providing workflow documentation for business use cases.</li>
+    </ol>
+</li>
+<li><strong>Mocking</strong> - Publishing a mock server for an API using it’s OpenAPI.</li>
+<li><strong>Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.
+    <ol>
+        <li><strong>Contract</strong> - Providing contract tests derived from OpenAPI.</li>
+        <li><strong>Performance</strong> - Providing performance tests derived from OpenAPI.</li>
+        <li><strong>Security</strong> - Providing performance tests derived from OpenAPI.</li>
+        <li><strong>Other</strong> - Providing other types tests derived from OpenAPI.</li>
+    </ol>
+</li>
+<li><strong>Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+<li><strong>Watching</strong> - Watching an OpenAPI to be notified of changes.</li>
+<li><strong>Sharing</strong> - Sharing an OpenAPI to another workspace.</li>
+<li><strong>Comments</strong> - Commenting on an OpenAPI or part of an OpenAPI.</li>
+<li><strong>RBAC</strong> - Applying role based authentication controls to an OpenAPI.</li>
+<li><strong>Notifications </strong> - Receiving notifications of changes to an OpenAPI.</li>
+<li><strong>Code Generation</strong> - Generating code in a variety of programming languages.</li>
+<li><strong>Environments</strong> - Providing environments for working with each API.</li>
+<li><strong>Github Sync</strong> - Syncing the OpenAPI to and from a Github repository.</li>
+<li><strong>Gateway Sync</strong> - Syncing the OpenAPI to AWS API Gateway (others too).</li>
+<li><strong>Private Network</strong> - Publishing the OpenAPI to the public API network.</li>
+<li><strong>Public Network</strong> - Publishing the OpenAPI to the private API network.</li>
+<li><strong>Search</strong> - Making an API discoverable as part of search.</li>
+</ol>
+<p>I have already identified a few capabilities that are missing through some preliminary work, but this provides me with a good way to root my API lifecycle work in our API platform which is used by 15M developers. The next part of my API lifecycle extension work is to iterate through all of the API lifecycle(s) people shared with me as part of my "what is your API lifecycle?" tweetstorm and story. Pushing the Postman platform, and our definition of what the API lifecycle is or isn't helps me harden some of these definitions, while making sure my extension can actually support what is happening. With that in mind, here are range of API lifecycle definitions where I have played bingo with using the Postman platform.</p>
+<h3>Lifecycle One</h3>
+<ul>
+    <li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+<ul>
+    <li><strong>10</strong> - Testing</strong> - Providing the contract, performance, security, and other testing.</li>
+</ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+<ul>
+    <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+    <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+    <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+    <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+</ul>
+</li>
+<li><strong>Manage
+<ul>
+    <li><strong>Plan</strong> - Need some sort of plan management reference and capability.</li>
+    <li><strong>Keys / Token</strong> - Obtaining and renewing keys and tokens as part of access.</li>
+</ul>
+</li>
+<li><strong>SDKs</strong> - Generating code for use by consumers of an API.
+<ul>
+    <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+</ul>
+</li>
+<li><strong>Secure</strong> - Locking down the surface area of an API and the access to resources.
+<ul>
+    <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+</ul>
+</li>
+<li><strong>Performance</strong> - Testing the performance of each individual API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Monitor</strong> - Monitoring a variety of aspects of an APIs operation and lifecycle.
+<ul>
+    <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+</ul>
+</li>
+<li><strong>Evangelize</strong> - Getting the word out about an API to consumers.
+<ul>
+    <li><strong>21</strong> - Private Network</strong> - Making available by publishing or consuming an API within a private network.</li>
+    <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+    <li><strong>22</strong> - Public Network</strong> - </strong> - Making available by publishing or consuming an API within a private network.</li>  
+</ul>
+</li>
+</ul>
+<h3>Lifecycle Two</h3>
+<ul>
+<li><strong>Explore</strong> - I'd consider this just another word for discovery.
+    <ul>
+        <li><strong>23</strong> - Search</strong> - Jumping on the search and discovering if an API already exists.</li>
+        <li><strong>21</strong> - Private Network</strong> - Publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Publishing or consuming an API within a private network.</li>   
+        <li><strong>7</strong> - Reporting</strong> - Learning about new APIs through their development and usage via reporting.</li>     
+        <li><strong>Workspace</strong> - I am adding this, it wasn't explicity called out on the list, and sometimes it isn't just the API you are looking for it is the workspace around it.</li>
+        <li><strong>19</strong> - Github Sync</strong> - Adding this because repos play a critical role in the API discovery conversation.</li>
+    </ul>
+</li>
+</li>
+<li><strong>Select</strong> - This is an interesting one to think about.
+    <ul>
+        <li><strong>Fork</strong> - Need to add a reference for forking into next iteration.</li>
+        <li><strong>13</strong> - Sharing</strong> - Sharing an OpenAPI to another workspace.</li>
+    </ul>
+</li>
+<li><strong>Model</strong> - Modeling the objects being passed as part of requests and responses.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Using the editor to model within the JSON SChema in the OpenAPI.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the models.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes to models occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes to models.</li>        
+    </ul>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Describe</strong> - Not sure how to handle this one beyond editor, examples, and documentation.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Sketch</strong> - This one is very interesting, and pushes our concept of how this works.
+    <ul>
+        <li><strong>Visual Design</strong> - Having a visual user interface for sketching out APIs.</li>
+    </ul>
+</li>
+<li><strong>Prototype
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Rapidly designing APIs that work.</li>
+        <li><strong>Examples</strong> - Being able to rapidly delivery examples with sample data.</li>
+    </ul>
+</li>
+<li><strong>Build
+    <ul>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to AWS API Gateway (others too).</li>
+        <li><strong>19</strong> - Github Sync</strong> - Syncing the OpenAPI to and from a Github repository.</li>
+        <li><strong>CI/CD</strong> - Need to add our CI/CD to the next ieration.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Secure</strong> - Locking down the surface area of an API and the access to resources.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Freeze</strong> - Interesting to think about how this could be done.
+    <ul>
+        <li><strong>Will explore the various aspects of what is needed to freeze.</li>
+    </ul>
+</li>
+<li><strong>Redirect</strong> - This seems like a simple gateway or management layer need.
+    <ul>
+        <li><strong>Will explore how to handle the redirecting of APIs.</li>
+    </ul>
+</li>
+<li><strong>Deprecate</strong> - Shutting down an API for good and ceasing operation.
+    <ul>
+        <li><strong>Need more work to describe what is involved with deprecation.</li>
+    </ul>
+</li>
+<li><strong>Donate</strong> - Interesting concept focusing on where a deprecated API goes -- heaven? hell?
+    <ul>
+        <li><strong>Need more work to describe what is involved with donation.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Three</h3>
+<ul>
+<li><strong>Develop</strong> - Not entirely clear on what the difference between develop and deploy?
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Regret</strong> - I really like this stop along the API lifecycle.
+    <ul>
+        <li><strong>Alcohol</strong> - You need to drink.</li>
+        <li><strong>Memory</strong> - Maybe we can erase memory.</li>
+        <li><strong>Pain</strong> - You will just have to suffer.</li>
+        <li><strong>Therapy</strong> - Can API therapist be a new role?</li>
+    </ul>
+</li>
+<li><strong>Forget</strong> - For some this will be hard, but for others really easy.
+    <ul>
+        <li><strong>Alcohol</strong> - You need to drink.</li>
+        <li><strong>Memory</strong> - Maybe we can erase memory.</li>
+        <li><strong>Pain</strong> - You will just have to suffer.</li>
+        <li><strong>Therapy</strong> - Can API therapist be a new role?</li>
+    </ul>
+</li>
+<li><strong>Sunset</strong> - Consider this another word for deprecation.
+    <ul>
+        <li><strong>Need more work to describe what is involved with deprecation.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Four</h3>
+<ul>
+<li><strong>Discovery</strong> - Learning about, finding, and having your APIs be found.
+    <ul>
+        <li><strong>23</strong> - Search</strong> - Jumping on the search and discovering if an API already exists.</li>
+        <li><strong>21</strong> - Private Network</strong> - Publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Publishing or consuming an API within a private network.</li>   
+        <li><strong>7</strong> - Reporting</strong> - Learning about new APIs through their development and usage via reporting.</li>     
+        <li><strong>Workspace</strong> - I am adding this, it wasn't explicity called out on the list, and sometimes it isn't just the API you are looking for it is the workspace around it.</li>
+        <li><strong>19</strong> - Github Sync</strong> - Adding this because repos play a critical role in the API discovery conversation.</li>
+    </ul>
+</li>
+<li><strong>Define</strong> - You can start with a documentation collection and evolve to be full blown OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Enhance</strong> - This really is a reflection and iteration upon the design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Implement</strong> - Going to put this in same bucket as develop and deploy.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Iterate</strong> - This is just the continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Deprecate</strong> - Shutting down an API for good and ceasing operation.
+    <ul>
+        <li><strong>Need more work to describe what is involved with deprecation.</li>
+    </ul>
+</li>
+<li><strong>Delete</strong> - Do we ever really delete? Maybe we should be archiving?
+    <ul>
+        <li><strong>Workspace</strong> - Archive or delete the entire workspace with all assets.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Five</h3>
+<ul>
+<li><strong>Understand</strong> - Wow, this is a pretty tall order with some discovery, but other learning.
+    <ul>
+        <li><strong>23</strong> - Search</strong> - Jumping on the search and discovering if an API already exists.</li>
+        <li><strong>21</strong> - Private Network</strong> - Publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Publishing or consuming an API within a private network.</li>   
+        <li><strong>7</strong> - Reporting</strong> - Learning about new APIs through their development and usage via reporting.</li>     
+        <li><strong>Workspace</strong> - I am adding this, it wasn't explicity called out on the list, and sometimes it isn't just the API you are looking for it is the workspace around it.</li>
+        <li><strong>19</strong> - Github Sync</strong> - Adding this because repos play a critical role in the API discovery conversation.</li>
+        <li><strong>Knowledge Center</strong> - Send folks over to, or continue piping in knowledge from the knowledge center.</li>    
+        <li><strong>Blueprints</strong> - Create more blueprint workspaces, APIs, and collections for people to learn from.</li>    
+    </ul>
+</li>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Review</strong> - This is interesting to consider, what types of gates, reviews, and milestones are there?
+    <ul>
+        <li><strong>Need more consideration of how to impose a review process for an API.</li>
+    </ul>
+</li>
+<li><strong>Develop</strong> - Not entirely clear on what the difference between develop and deploy?
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Secure</strong> - Locking down the surface area of an API and the access to resources.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Flows</strong> - Ok, now we are getting interesting with flows being part of the lifecycle.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Maintain</strong> - This is really about just stay aware of an APIs operations and consumption.
+    <ul>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+        <li><strong>12</strong> - Watching</strong> - Understanding scope of who is watching.</li>
+        <li><strong>7</strong> - Reporting</strong> - Offering reporting on API and the lifecycle.</li>
+    </ul>
+</li>
+<li><strong>Support</strong> - This gets into interesting territory for the API lifecycle.
+    <ul>
+        <li><strong>5</strong> - Change Log</strong> - Providing a change log for the OpenAPI.</li>
+        <li><strong>6</strong> - Activity</strong> - Provide list of activity involving the OpenAPI.</li>
+        <li><strong>7</strong> - Reporting</strong> - Offering reporting on API and the lifecycle.</li>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+        <li><strong>14</strong> - Comments</strong> - Commenting on an OpenAPI or part of an OpenAPI.</li>
+        <li><strong>16</strong> - Notifications </strong> - Receiving notifications of changes to an OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Evolve</strong> - Considering this a continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+</li>
+<li><strong>Retire</strong> - An interesting stage before deprecation of an API.
+    <ul>
+        <li><strong>Need more work to describe what is involved with retirement.</li>
+    </ul>
+</li>
+<li><strong>Deprecate</strong> - Shutting down an API for good and ceasing operation.
+    <ul>
+        <li><strong>Need more work to describe what is involved with deprecation.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Six</h3>
+<ul>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Challenge</strong> - I like this, and definitely should be part of the API lifecycle.
+    <ul>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Develop</strong> - Not entirely clear on what the difference between develop and deploy?
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Fix</strong> - Interesting look at what is needed to keep APIs working.
+    <ul>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Seven</h3>
+<ul>
+<li><strong>Discover</strong> - Learning about, finding, and having your APIs be found.
+    <ul>
+        <li><strong>23</strong> - Search</strong> - Jumping on the search and discovering if an API already exists.</li>
+        <li><strong>21</strong> - Private Network</strong> - Publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Publishing or consuming an API within a private network.</li>   
+        <li><strong>7</strong> - Reporting</strong> - Learning about new APIs through their development and usage via reporting.</li>     
+        <li><strong>Workspace</strong> - I am adding this, it wasn't explicity called out on the list, and sometimes it isn't just the API you are looking for it is the workspace around it.</li>
+        <li><strong>19</strong> - Github Sync</strong> - Adding this because repos play a critical role in the API discovery conversation.</li>
+    </ul>
+</li>
+<li><strong>Define</strong> - You can start with a documentation collection and evolve to be full blown OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Develop</strong> - Not entirely clear on what the difference between develop and deploy?
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Communicate</strong> - I like this one, because it helps bring the humans to the lifecycle.
+    <ul>
+        <li><strong>12</strong> - Watching</strong> - Watching an OpenAPI to be notified of changes.</li>
+        <li><strong>14</strong> - Comments</strong> - Commenting on an OpenAPI or part of an OpenAPI.</li>
+        <li><strong>16</strong> - Notifications </strong> - Receiving notifications of changes to an OpenAPI.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Deprecate</strong> - Shutting down an API for good and ceasing operation.
+    <ul>
+        <li><strong>Need more work to describe what is involved with deprecation.</li>
+    </ul>
+</li>
+<li><strong>Delete</strong> - Do we ever really delete? Maybe we should be archiving?
+    <ul>
+        <li><strong>Workspace</strong> - Archive or delete the entire workspace with all assets.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Eight</h3>
+<ul>
+<li><strong>Strategy</strong> - I like where this is going, and is the reason behind this work.
+    <ul>
+        <li><strong>More to come on this one as I continue this work.</li>
+    </ul>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Development</strong> - Not entirely clear on what the difference between develop and deploy?
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Virtualization</strong> - Going to call this an extension of the mocking bucket.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Secure</strong> - Locking down the surface area of an API and the access to resources.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Monitor</strong> - Monitoring a variety of aspects of an APIs operation and lifecycle.
+    <ul>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Promotion</strong> - Going to put this in the same bucket as evangelism.
+    <ul>
+        <li><strong>21</strong> - Private Network</strong> - Making available by publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Making available by publishing or consuming an API within a private network.</li>  
+    </ul>
+    </li>
+<li><strong>Discovery</strong> - Learning about, finding, and having your APIs be found.
+    <ul>
+        <li><strong>23</strong> - Search</strong> - Jumping on the search and discovering if an API already exists.</li>
+        <li><strong>21</strong> - Private Network</strong> - Publishing or consuming an API within a private network.</li>
+        <li><strong>Partner Network</strong> - Not a Postman capability yet, but something coming very soon.</li>
+        <li><strong>22</strong> - Public Network</strong> - </strong> - Publishing or consuming an API within a private network.</li>   
+        <li><strong>7</strong> - Reporting</strong> - Learning about new APIs through their development and usage via reporting.</li>     
+        <li><strong>Workspace</strong> - I am adding this, it wasn't explicity called out on the list, and sometimes it isn't just the API you are looking for it is the workspace around it.</li>
+        <li><strong>19</strong> - Github Sync</strong> - Adding this because repos play a critical role in the API discovery conversation.</li>
+    </ul>
+</li>
+<li><strong>Manage
+    <ul>
+        <li><strong>Plan</strong> - Need some sort of plan management reference and capability.</li>
+        <li><strong>Keys / Token</strong> - Obtaining and renewing keys and tokens as part of access.</li>
+    </ul>
+    </li>
+<li><strong>Change</strong> - Going to put this in the same bucket as design.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Version</strong> - This is the first mention of versioning in anyone's lifecycle. ;-)
+    <ul>
+        <li><strong>4</strong> - Versioning</strong> - Applying semantic versioning to an OpenAPI.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Nine</h3>
+<ul>
+    <li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+        <ul>
+            <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+            <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+            <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+            <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+            <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+            <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+        </ul>
+    </li>
+<li><strong>Feedback
+    <ul>
+        <li><strong>12</strong> - Watching</strong> - Watching an OpenAPI to be notified of changes.</li>
+        <li><strong>14</strong> - Comments</strong> - Commenting on an OpenAPI or part of an OpenAPI.</li>
+        <li><strong>16</strong> - Notifications </strong> - Receiving notifications of changes to an OpenAPI.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+        <li><strong>Forks</strong> - Need to have forking and pull requests as part of this.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>User Research</strong> - Ok, an entirely new way at looking at the lifecycle.
+    <ul>
+        <li><strong>Need more "research" to flesh this one out.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Pipeline
+    <ul>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+        <li><strong>18</strong> - Environments</strong> - Providing environments for working with each API.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Ten</h3>
+<ul>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Write</strong> - Just another word for developing and API, since design was separate.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Refactor</strong> - Just a continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Refactor</strong> - Just a continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Refactor</strong> - Just a continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Eleven</h3>
+<ul>
+<li><strong>Align</strong> - Ooooooh. This one is cool. How do you do this? 
+    <ul>
+        <li><strong>Teams</strong> - Bringing teams together?</li>
+        <li><strong>Training</strong> - Providing training to folks?</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>        
+    </ul>
+</li>
+<li><strong>Define</strong> - You can start with a documentation collection and evolve to be full blown OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+    </ul>
+</li>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Deliver</strong> - Same bucket as development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Manage
+    <ul>
+        <li><strong>Plan</strong> - Need some sort of plan management reference and capability.</li>
+        <li><strong>Keys / Token</strong> - Obtaining and renewing keys and tokens as part of access.</li>
+    </ul>
+    </li>
+<h3>Lifecycle Twelve</h3>
+<ul>
+<li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Mock</strong> - Mocking the interface and data for an API being delivered.
+    <ul>
+        <li><strong>9</strong> - Mocking</strong> - Firing up mock server for an OpenAPI.</li>
+        <li><strong>Examples</strong> - I will add more references to examples in my next iteration.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Requirements</strong> - I'd say starting with docs and then doing API-first covers this.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Publishing documentation to support an API.</li>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>        
+    </ul>
+</li>
+<li><strong>Rewrite</strong> - Continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Additions</strong> - Continuation of the API design process.
+    <ul>
+        <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+        <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+        <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+        <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+        <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+        <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Break</strong> - I like this one, guessing you can do with monitors and tests.
+    <ul>
+        <li><strong>bingo</li>
+    </ul>
+</li>
+<li><strong>Fix
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Hair Loss</strong> - I am beginning to worry more about this one.
+    <ul>
+        <li><strong>Goal is to reduce this by better defining the API lifecycle.</li>
+    </ul>
+</li>
+<li><strong>Document</strong> - Providing human readable documentation for an API.
+    <ul>
+        <li><strong>8</strong> - Documentation</strong> - Definitely have documentation covered.</li>
+    </ul>
+</li>
+</ul>
+<h3>Lifecycle Thirteen</h3>
+<ul>
+    <li><strong>Design</strong> - Iterating upn the surface area of each API using OpenAPI.
+        <ul>
+            <li><strong>3</strong> - Editor</strong> - Editing an OpenAPI using the API builder.</li>
+            <li><strong>Examples</strong> - Really need some examples I can work from.</li>
+            <li><strong>Linting</strong> - Linting of OpenAPI, JSON Schema, but also for governance.</li>
+            <li><strong>14</strong> - Comments</strong> - Having a conversation about the design.</li>
+            <li><strong>12</strong> - Watching</strong> - Watching to see any changes occur.</li>
+            <li><strong>16</strong> - Notifications</strong> - Receiving notifications about changes.</li>
+        </ul>
+    </li>
+</li>
+<li><strong>Test</strong> - Ensuring there are tests present for each API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Deploy</strong> - Bringing an API to life in any stage of development.
+    <ul>
+        <li><strong>19</strong> - Github Sync</strong> - Codegen, pipeline, and other elements could reside here.</li>
+        <li><strong>CD/CD</strong> - I don't have the CI/CD integrations listed here, will add in next iteration.</li>
+        <li><strong>20</strong> - Gateway Sync</strong> - Syncing the OpenAPI to various stages using AWS API gateway.</li>
+        <li><strong>17</strong> - Code Generation</strong> - Generating code in a variety of programming languages.</li>
+    </ul>
+</li>
+<li><strong>Secure</strong> - Locking down the surface area of an API and the access to resources.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Performance</strong> - Testing the performance of each individual API.
+    <ul>
+        <li><strong>10</strong> - Testing</strong> - Producing a set of tests for an API using it’s OpenAPI.</li>
+    </ul>
+</li>
+<li><strong>Monitor</strong> - Monitoring a variety of aspects of an APIs operation and lifecycle.
+    <ul>
+        <li><strong>11</strong> - Monitoring</strong> - Monitoring an API using it’s OpenAPI.</li>
+    </ul>
+    </li>
+</ul>
+<p>Whewww!! That was a lot of thinking about the API lifecycle, using these thirteen separate definitions of what an API lifecycle can be. It is an interesting exercise because of the different words we use, and how precise or broad we can be with how we describe the API lifecycle. I find it also interesting that the lifecycle continues so few mentions of versioning and maturity. However, that is why I am doing this exercise. The next step of this is to take what I've learned and go back to my API lifecycle extension and see what else I need to add in to accommodate all of these definitions of what an API lifecycle is. It was an interesting exercise because it pushed me to think about how the Postman API platform enables the API lifecycle, grounding and providing a hands-on way to make the API lifecycle more tangible for me, something that the API lifecycle extension further grounds for me.</p>
+<p>This exercise really shows how important the API design portion of this process is, and it is how you set APIs in motion, but also how you iterate upon them. It also shows me how important observability is to not only the reliability of APIs, but also the overall API lifecycle. It also reinforced for me the role that the feedback loop plays in the API lifecycle. Taking all of this and then hammering on my OpenAPI API lifecycle extension is going to really interesting now. At first I was just going to have all of the technical building blocks of the API lifecycle along with maturity and change management, but now I see the important of the design process, observability, and feedback loop is to all of this. Once I get one more draft of the API lifecycle extension the next challenge will be getting folks understanding what the hell I am talking about so I can start putting more scaffolding in place to demonstrate the value of this type of definition for helping guide our APIs forward throughout their lives.</p>
