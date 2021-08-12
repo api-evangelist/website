@@ -13,7 +13,7 @@ title: API Evangelist
 		<p>This isn't meant to be a blog in the traditional sense of the word, and you should think of it as Kin Lane's personal notebook that he is fine with others reading. Once you spend time reading my work you will better understand that this is my souning board, helping me work through my ideas, and I am not doing this for page views, audience size, or other metric. However, after over ten years of doing this I tend to have a regular group of folks who are tuning in and providing commentary via Twitter, GitHub, and other channels.</p>
 		
 		<hr>
-
+		{% assign display_count = 0 %}
 		{% for post in site.posts limit:7 %}
 		  {% if post.title != null %}
 
@@ -23,9 +23,8 @@ title: API Evangelist
 				{% assign summary = 1 %}
 			{% endif %}
 		  {% endfor %}
-		  {% assign display_count = 0 %}
+		  
 		  {% if summary == 1 %}
-		  display_count: {{ display_count }}<br>
 		  	{% if display_count == 0 %}
 			
 				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
