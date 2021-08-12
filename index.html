@@ -15,26 +15,29 @@ title: API Evangelist
 		<hr>
 		{% assign display_count = 0 %}
 		{% for post in site.posts limit:7 %}
+
 		  {% if post.title != null %}
 
-		  {% assign summary = 0 %}
-		  {% for tag in post.tags %}
-			{% if tag == 'API Specification Update' %}
-				{% assign summary = 1 %}
-			{% endif %}
-		  {% endfor %}
-		  
-		  {% if summary == 1 %}
-		  	{% if display_count == 0 %}
+			{% assign summary = 0 %}
+			{% for tag in post.tags %}
+				{% if tag == 'API Specification Update' %}
+					{% assign summary = 1 %}
+				{% endif %}
+			{% endfor %}
 			
-				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-				<p><em>{{ post.date | date_to_string }}</em></p>
-				<p>{{ post.content }}</p>
+			{% if summary == 1 %}
+			display_count: {{ display_count }}<br>
+				{% if display_count == 0 %}
+				
+					<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+					<p><em>{{ post.date | date_to_string }}</em></p>
+					<p>{{ post.content }}</p>
 
-				{% assign display_count = display_count + 1 %}
+					{% assign display_count = display_count + 1 %}
 
+				{% endif %}
 			{% endif %}
-			{% endif %}
+
 		  {% endif %}
 		{% endfor %}
 	</div>
