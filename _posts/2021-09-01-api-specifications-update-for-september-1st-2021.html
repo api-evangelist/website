@@ -1,0 +1,110 @@
+---
+published: true
+layout: post
+title: 'API Specifications Update for September 1st, 2021'
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/citizenship-shipping-docs-cranes.jpg
+tags:
+    - API Specification Update
+---
+<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;"></p>
+
+<p>The evolution of <a href="https://www.openapis.org/">OpenAPI</a>, <a href="https://www.asyncapi.com/">AsyncAPI</a>, and <a href="https://json-schema.org/">JSON Schema</a> is important to what I do at Postman, but also to the wider API space. I find it helpful to understand what is happening across each of the API specification communities, and I wanted to also find a way to share what I am seeing with everyone else. Each week I spend time to create a single digest of what is happening, without having to do all the work I am doing each week. While I am sure there is much more going on that I am not tuned into, here is what I see as the  snapshot of what I see happening across the API specifications.</p>
+
+<h1>Recent Meetings</h1>
+<ul>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2680" target="_blank" style="color: #000;">Open Community (TDC) Meeting, Thursday 26 August 2021 · Issue #2680</a> - The weekly OAI TDC meeting to move forward the spec.</li>
+<li><a href="https://github.com/json-schema-org/community/discussions/34" target="_blank" style="color: #000;">JSON Schema Office Hours · Discussion #34</a> - The weekly office hours for the JSON Schema specification.</li>
+<li><a href="https://github.com/api-specification-toolbox/toolbox/issues/138" target="_blank" style="color: #000;">API Specification Office Hours · Issue #138</a> - The weekly office hours across all of the API specifications.</li>
+<li><a href="https://www.youtube.com/watch?v=QmBV-eiLgSM" target="_blank" style="color: #000;">AsyncAPI SIG Meeting for August 31, 2021</a> - The regular AsyncAPI SIG meeting to move forward the specification.</li>
+</ul>
+<h1>Upcoming Meetings</h1>
+<ul>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2680" target="_blank" style="color: #000;">Open Community (TDC) Meeting, Thursday 26 August 2021</a> - The upcoming weekly TDC meeting.</li>
+<li><a href="https://github.com/json-schema-org/community/discussions/34" target="_blank" style="color: #000;">JSON Schema Public Office Hours</a> - The weekly public office hours for JSON Schema.</li>
+<li><a href="https://calendar.google.com/calendar/u/0/r?cid=dGJyYmZxNGRlNWJjbmd0OG9rdmV2NGxzdGtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ" target="_blank" style="color: #000;">AsyncAPI SIG Meeting</a> - The regular occurring AsyncAPI SIG meeting.</li>
+<li><a href="https://github.com/api-specification-toolbox/toolbox/issues/138" target="_blank" style="color: #000;">API Specification Office Hours · Issue #138</a> - The weekly office hours across all of the API specifications.</li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2687" target="_blank" style="color: #000;">Open Community (TDC) Meeting, Thursday 02 September 2021</a> - The weekly OAI TDC meeting to move forward the spec.</li>
+</ul>
+<h1>Interesting Issues</h1>
+<ul>
+<li><a href="https://github.com/asyncapi/spec/issues/614" target="_blank" style="color: #000;">Proposal to be able to name channel item object · Issue #614 · asyncapi/spec</a> - I'm trying to generate websocket code from AsyncAPI docs. I don't know if this is the case for other protocols too, but for websocket subscribe and publish is performed on the same connection. Currently only Operations (publish and subscribe) are nameable using operationId. For sockets it makes no sense to open 2 separate connection, one for publishing one for subscribing.</li>
+<li><a href="https://github.com/asyncapi/spec/issues/612" target="_blank" style="color: #000;">Channel Item Object `$ref` field resolution rules · Issue #612 · asyncapi/spec</a> - Allows for an external definition of this channel item. The referenced structure MUST be in the format of a Channel Item Object. If there are conflicts between the referenced definition and this Channel Item's definition, the behavior is undefined.</li>
+<li><a href="https://github.com/json-schema-org/json-schema-spec/issues/1120" target="_blank" style="color: #000;">JSON Hyper-Schema Needs Schema Version Parity · Issue #1120 · json-schema-org/json-schema-spec</a> - In release 2020-12, JSON Schema released new draft schemas without updating Hyper-Schema. As a result, Hyper-Schema's most recent drafts are associated with 2019-09. Given the differences between 2019-09 and 2020-12, as well as differences in implementations, the lack of schema parity for Hyper-Schema discourages its adoption. I propose that even without feature changes to Hyper-Schema, its meta-schemas and related materials should continue to be updated and released as part of the JSON Schema cohort of specifications.</li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2691" target="_blank" style="color: #000;">Support for unevaluatedProperties in OAS 3.1+? · Issue #2691</a> - The latest (draft 2020-12) version of JSON Schema supports the unevaluatedProperties vocabulary (see here). This is quite a useful feature, and facilitates stricter validation while composing properties from multiple sub-schemas (using e.g. allOf) than would otherwise possible.</li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2689" target="_blank" style="color: #000;">OpenAPI 3.1 examples not validating through AJV using OpenAPI 3.1 spec · Issue #2689</a> - There is a lot of JavaScript tooling that uses AJV to validate OpenAPI specs. None of it seems to support 3.1, which is really unfortunate. I was trying to remedy the situation, but failed miserably.</li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/issues/2685" target="_blank" style="color: #000;">OpenAPI bundling proposal · Issue #2685</a> - I was wondering if there is metaplan to formalize bundling of OAS definitions as well. Ben Hutton and Mike Ralphson did a great job of formalizing JSON Schema 2020-12 in their article and set guidelines how to bundle JSON Schemas when present in OAS definitions. That's a great start, but we have other specification objects that can be bundled within OAS spec.</li>
+<li><a href="https://github.com/json-schema-org/json-schema-spec/issues/1121" target="_blank" style="color: #000;">Specify what happens when relative json pointer is `0` · Issue #1121</a> - Unless I'm missing something, we don't actualy specify what happens when a Relative JSON Pointer is 0 in the Relative JSON Pointer specification.</li>
+</ul>
+<h1>Interesting Discussions</h1>
+<ul>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/discussions/2676" target="_blank" style="color: #000;">Why OpenAPI 3.1.0 does not allow schema references in Parameter & Media Type objects? · Discussion #2676 · OAI/OpenAPI-Specification</a> - It feels very strange for me that Parameter Object (schema field) and Media Type Object (schema field) do not allow Reference Object to be passed.</li>
+<li><a href="https://github.com/json-schema-org/community/discussions/39" target="_blank" style="color: #000;">The website should redirect to HTTPS · Discussion #39 · json-schema-org/community</a> - Not sure if this is intentional behavior (for backwards-compatibility purposes perhaps?), but every page of the json-schema.org website can be accessed over plain HTTP. The website doesn't transfer sensitive information, but it is a considered a good practice to redirect HTTP to HTTPS given that HTTPS is already supported.</li>
+<li><a href="https://github.com/asyncapi/community/discussions/58" target="_blank" style="color: #000;">AsyncAPI Hack & Conf 2021 - Sponsor Tiers · Discussion #58</a> - Discussion around the sponsorship for AsyncAPI Hack and Conference.</li>
+<li><a href="https://github.com/asyncapi/community/discussions/55" target="_blank" style="color: #000;">AsyncAPI specification structure visualizer · Discussion #55</a> - A conversation around a visualizer for AsyncAPI.</li>
+<li><a href="https://github.com/asyncapi/community/discussions/56" target="_blank" style="color: #000;">AsyncAPI Hack & Conf 2021 - Budget · Discussion #56</a> - Discussions about the budget for ASyncAPI Hack & Conference.</li>
+</ul>
+<h1>Interesting Releases</h1>
+<ul>
+<li><a href="https://github.com/asyncapi/asyncapi-react/releases/tag/v1.0.0-next.18" target="_blank" style="color: #000;">Release v1.0.0-next.18 · asyncapi/asyncapi-react</a> - render binding in capsule instead of drop down </li>
+<li><a href="https://github.com/asyncapi/dotnet-nats-template/releases/tag/v0.2.0" target="_blank" style="color: #000;">Release v0.2.0 · asyncapi/dotnet-nats-template</a> - client and channel generation</li>
+<li><a href="https://github.com/asyncapi/modelina/releases/tag/v0.26.0" target="_blank" style="color: #000;">Release v0.26.0 · asyncapi/modelina</a> - example function for TS class renderer</li>
+<li><a href="https://github.com/asyncapi/modelina/releases/tag/v0.27.0" target="_blank" style="color: #000;">Release v0.27.0 · asyncapi/modelina</a> - pass options to processors.</li>
+<li><a href="https://github.com/asyncapi/cli/releases/tag/v0.5.0" target="_blank" style="color: #000;">Release v0.5.0 · asyncapi/cli</a> - add support for version -v alias.</li>
+<li><a href="https://github.com/asyncapi/cupid/releases/tag/v0.6.0" target="_blank" style="color: #000;">Release v0.6.0 · asyncapi/cupid</a> - change package name and update readme.</li>
+</ul>
+<h1>Interesting Blog Posts</h1>
+<ul>
+<li><a href="https://www.openapis.org/blog/2021/08/23/json-schema-bundling-finally-formalised" target="_blank" style="color: #000;">JSON Schema bundling finally formalised - OpenAPI Initiative</a> - I’ve been known to say “If you haven’t rewritten your OpenAPI bundling implementation recently, then you don’t support OpenAPI 3.1”. This observation may be true, but perhaps some more detail would be helpful? When implementing support for OAS 3.1 and JSON Schema draft 2020-12 in oas-kit, reading the sections of the JSON Schema spec on bundling compound documents, I still wasn’t totally clear on what was expected of compliant tooling. Thankfully, Ben Hutton is here to set the record straight with a worked example. – Mike Ralphson, OAI TSC</li>
+<li><a href="https://www.openapis.org/blog/2021/08/24/the-state-of-api-development-and-the-upcoming-asc-2021-a-closeup-with-mandy-whaley-azure-dev-tools-microsoft" target="_blank" style="color: #000;">The State of API Development and the Upcoming ASC 2021 – A closeup with Mandy Whaley, Azure Dev Tools, Microsoft - OpenAPI Initiative</a> - To find out more about ASC 2021, we talked with Mandy Whaley, Partner Director of Product, Azure Developer Tools at Microsoft. Whaley is a life-long software developer who has worked in development teams of all sizes and types. </li>
+<li><a href="https://www.asyncapi.com/blog/events2021" target="_blank" style="color: #000;">AsyncAPI Hackathon and Conference - Get Yourself Ready | AsyncAPI Initiative for event-driven APIs</a> - AsyncAPI Community organizes two important events in the second half of 2021: Hackathon in October Online conference on November 16-1*. We do not have the website ready yet. We do not have the call for proposals opened yet. Don't worry though, all logistics are in progress.</li>
+</ul>
+<h1>Interesting News</h1>
+<ul>
+<li><a href="https://www.infoworld.com/article/3629409/get-started-with-fastapi.html" target="_blank" style="color: #000;">Get started with FastAPI | InfoWorld</a> - Take advantage of the FastAPI web framework and Python to quickly create snappy, OpenAPI-compliant web APIs — and full websites, too.</li>
+<li><a href="https://nordicapis.com/api-specifications-calm-chaos-of-digital-transformation-part-1/" target="_blank" style="color: #000;">API Specifications Calm Chaos of Digital Transformation (Part 1)</a> - </li>
+<li><a href="https://redoc.ly/blog/updates-2021-08/" target="_blank" style="color: #000;">Redocly August 2021 Updates</a> - VSCode</li>
+<li><a href="https://blog.chrislewis.me.uk/?post=2021-08-25-Better-JSON-Schema-Analysis-with-json-schema-report" target="_blank" style="color: #000;">try { work(); } finally { code(); }</a> - </li>
+</ul>
+
+<h3>Interesting Tweets</h3>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">kubeshop/kusk (0.1.1): Kusk makes your OpenAPI definition the source of truth for API resources in your cluster <a href="https://t.co/iOppuZ0ayg">https://t.co/iOppuZ0ayg</a></p>&mdash; Built with Go (@RealGophersShip) <a href="https://twitter.com/RealGophersShip/status/1432981512706793473?ref_src=twsrc%5Etfw">September 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Loved participating on this panel. <a href="https://twitter.com/hashtag/OpenAPI?src=hash&amp;ref_src=twsrc%5Etfw">#OpenAPI</a> is the future of <a href="https://twitter.com/hashtag/restauranttechnology?src=hash&amp;ref_src=twsrc%5Etfw">#restauranttechnology</a> <a href="https://twitter.com/hashtag/restaurants?src=hash&amp;ref_src=twsrc%5Etfw">#restaurants</a> <a href="https://twitter.com/hashtag/restaurantindustry?src=hash&amp;ref_src=twsrc%5Etfw">#restaurantindustry</a>. Thank you so much to <a href="https://twitter.com/michaelwolf?ref_src=twsrc%5Etfw">@michaelwolf</a> and <a href="https://twitter.com/TheSpoonTech?ref_src=twsrc%5Etfw">@TheSpoonTech</a> for having us! <a href="https://t.co/FhKEXFBbJx">https://t.co/FhKEXFBbJx</a></p>&mdash; Restaurant Technology Network (@RestTechNet) <a href="https://twitter.com/RestTechNet/status/1432830642329432068?ref_src=twsrc%5Etfw">August 31, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">In August, we received $2,255 from 8 backers and we spent $2,496. Our current balance is $21,521.<br><br>Thank you! 🙏<a href="https://t.co/msi6LURKcP">https://t.co/msi6LURKcP</a></p>&mdash; AsyncAPI Initiative (@AsyncAPISpec) <a href="https://twitter.com/AsyncAPISpec/status/1432856424091164676?ref_src=twsrc%5Etfw">September 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Learn about the process of sending Json schema formatted topics from an HDInsight managed Kafka standalone server to a MySQL DB! <a href="https://twitter.com/hashtag/Azure?src=hash&amp;ref_src=twsrc%5Etfw">#Azure</a> <a href="https://t.co/CUZOkorFTd">https://t.co/CUZOkorFTd</a> <a href="https://t.co/cn6sDcfVqO">pic.twitter.com/cn6sDcfVqO</a></p>&mdash; Tech Community (@MSTCommunity) <a href="https://twitter.com/MSTCommunity/status/1433157720459382787?ref_src=twsrc%5Etfw">September 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">New month, new <a href="https://twitter.com/OpenPolicyAgent?ref_src=twsrc%5Etfw">@OpenPolicyAgent</a> release! v0.32.0 features (experimental) disk-based storage, new trigger system for plugins, improved JSON schema support, http.send for UNIX domain sockets, plus many improvements to docs, performance, and much more! <a href="https://t.co/RKsgC2dZtg">https://t.co/RKsgC2dZtg</a></p>&mdash; Anders Eknert (@anderseknert) <a href="https://twitter.com/anderseknert/status/1432967050251669507?ref_src=twsrc%5Etfw">September 1, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">📦 node-red-contrib-json-multi-schema (1.3.1)<br><br>Generic JSON data pipeline tools, with dynamic transformation (using JSONata rules), resolving JSON Schema (using JSONata rules), and then validation (using JSON Schema). For Node-RED and for command-li…<a href="https://t.co/8SRiUxBjsN">https://t.co/8SRiUxBjsN</a></p>&mdash; Node-RED Nodes (@red_nodes) <a href="https://twitter.com/red_nodes/status/1432843684412903424?ref_src=twsrc%5Etfw">August 31, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">quicktype: Generate types and converters from JSON, Schema, and GraphQL<br>⭐️ 6919<a href="https://twitter.com/hashtag/rustlang?src=hash&amp;ref_src=twsrc%5Etfw">#rustlang</a><a href="https://t.co/385i6XLNfW">https://t.co/385i6XLNfW</a></p>&mdash; Awesome Rust Repositories (@RustRepos) <a href="https://twitter.com/RustRepos/status/1430913014027497473?ref_src=twsrc%5Etfw">August 26, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3>Interesting Videos</h3>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eJewFUR-OaM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QmBV-eiLgSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W-Wh4i5sfXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0zDv1VAscdg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rwlHJkgaRdw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CH6t1gshXpo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Zk0G4XGGJec" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<h3>Interesting People</h3>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Documenting the REST endpoints is important and, as a developer, you have to do it! <br>How can we document our REST endpoints without spending so much time?<br>We can use <a href="https://twitter.com/MicroProfileIO?ref_src=twsrc%5Etfw">@MicroProfileIO</a> OpenAPI.<br>🧵Thread</p>&mdash; Giuseppe Scaramuzzino (@GiuseScara) <a href="https://twitter.com/GiuseScara/status/1431330357006176257?ref_src=twsrc%5Etfw">August 27, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">✨I&#39;ve joined <a href="https://twitter.com/getpostman?ref_src=twsrc%5Etfw">@getpostman</a> to focus on the <a href="https://twitter.com/hashtag/OpenSource?src=hash&amp;ref_src=twsrc%5Etfw">#OpenSource</a> (OSS) side of the Postman spaceship.✨<br><br>I was hired directly by the partner OSS maintainer team that owns the <a href="https://twitter.com/AsyncAPISpec?ref_src=twsrc%5Etfw">@AsyncAPISpec</a> initiative, which moved under the <a href="https://twitter.com/linuxfoundation?ref_src=twsrc%5Etfw">@LinuxFoundation</a>. <a href="https://t.co/Uv3OvmJxKr">pic.twitter.com/Uv3OvmJxKr</a></p>&mdash; Alejandra🍒🍓🍎 y Canela🐕‍🦺 (@QuetzalliAle) <a href="https://twitter.com/QuetzalliAle/status/1432357981400670210?ref_src=twsrc%5Etfw">August 30, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">I’m very grateful to the JSON schema generator at <a href="https://t.co/890FE70FVi">https://t.co/890FE70FVi</a> for easing my way into defining our own schema. <a href="https://t.co/1IpEWxXJZi">pic.twitter.com/1IpEWxXJZi</a></p>&mdash; Jan-Piet Mens (@jpmens) <a href="https://twitter.com/jpmens/status/1431920344735047681?ref_src=twsrc%5Etfw">August 29, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<h3>Conclusion</h3>
+<p>If there is anything missing from my summary of what is going on in the world of API specifications, please let me know! As part of this process I am working to get folks behind the meetings, discussions, and other goings on to be more public about what they are doing so I have a URL to share. I am also working on updating the home page of <a href="https://api.specificationtoolbox.com/">the API Specification Toolbox</a> to showcase how you can learn, implement, and contribute to each of the specifications—-once I have up, I will link to more from this regularly summary. My goal is to provide a single place everyone can go to get involved within the communities for each of the API specifications, but also stay up to speed on what is going on each week.</p>
