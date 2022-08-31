@@ -15,7 +15,12 @@ title: API Evangelist
 		{% for post in site.posts | limit: 10 %}
 		<div align="left" style="width:325px; height:250px; overflow:hidden; float: left; padding: 12px;"><a href="{{ post.url }}"><img src="{{ post.image }}" alt="API Evangelist" width="325" align="left" /></a></div>
 		  <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-		  <p><em>{{ post.date | date_to_string }}</em></p>
+		  <p>
+		  	<em>
+		  		{{ post.date | date_to_string }}{% if post.author %}, by {{post.author.name | escape}}{% endif %}
+		  	</em>
+		  	
+		  </p>
 		  <p>{{ post.content | strip_html | truncatewords: 325 }}[<a href="{{ post.url }}">Read More</a>]</p>
 		  <p><hr /></p>
 		{% endfor %}

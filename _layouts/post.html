@@ -3,6 +3,26 @@ layout: default
 ---
 <h2>{{ page.title }}</h2>
 <p><span class="post-date">{{ page.date | date_to_string }}</span></p>
+
+<p>
+	{% if page.author %}
+		{% assign author = page.author %}
+	{% else %}
+		{% assign author = site.author %}
+	{% endif %}
+	<i>by {{ author.name | escape }}{% if author.affiliation %}, {{ author.affiliation | escape }} {% endif %}</i>
+	{% if author.twitter %}
+		<a href="https://twitter.com/{{author.twitter}}" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a>
+	{% endif %}
+	{% if author.linkedin %}
+		<a href="https://linkedin.com/{{author.linkedin}}" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a>
+	{% endif %}
+	{% if author.github %}
+		<a href="https://github.com/{{author.github}}" class="icon fa-github" target="_blank"><span class="label">Github</span></a>
+	{% endif %}
+</p>
+
+
 {{ content }}
 <hr />
 <ul class="pagination" style="text-align: center;">
