@@ -1,0 +1,21 @@
+---
+published: true
+layout: post
+title: Working With General Transit Feed Specification(GTFS) Realtime Data
+date: 2018-01-11T09:00:00.000Z
+tags:
+  - API Evangelist
+  - Transit
+  - Real Time
+  - City Government
+image: 'https://s3.amazonaws.com/kinlane-productions/subway/subway-moving.gif'
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/subway/subway-moving.gif" align="right" width="40%" style="padding: 15px;" /></p>I've been diving into the world of transit data, and learning more about [GTFS and GTFS Realtime](https://developers.google.com/transit/), two of the leading specifications for providing access to static and real time transit data. I've been able to take the static GTFS data and quickly render as APIs, using the zipped up CSV files provided. Next on my list I wanted to be able to work with GTFS Realtime data, as this is where the data is that changes much more often, and ultimately is more valuable in applications and to consumers.
+
+Google has developed a nice suite of GTFS Realtime bindings in a variety of programming languages, including [.NET](https://github.com/google/gtfs-realtime-bindings/blob/master/dotnet/README.md), [Java](https://github.com/google/gtfs-realtime-bindings/blob/master/java/README.md), [JavaScript / Node.js](https://github.com/google/gtfs-realtime-bindings/blob/master/nodejs/README.md), [PHP](https://github.com/google/gtfs-realtime-bindings-php), [Python](https://github.com/google/gtfs-realtime-bindings/blob/master/python/README.md), [Ruby](https://github.com/google/gtfs-realtime-bindings/blob/master/ruby/README.md), and [Golang](https://github.com/google/gtfs-realtime-bindings/blob/master/golang/README.md). I went with the PHP bindings, which interestingly enough is the only one in its own Github repository. I'm using it because I still feel that PHP has the best opportunity for adoption within municipal organizations--something that is beginning to change, but still holds true in my experience.
+
+The GTFS-realtime data is encoded and decoded using Protocol Buffers, which provides a compact binary representation designed for fast and efficient processing of the data. Even with the usage of Protocol Buffers, which is also used by gRPC via HTTP/2, all of the GFTS Realtime data feeds I am consuming are being delivered via regular HTTP/1.1. I'm doing all this work to be able to make GTFS Realtime feeds more accessible for use by [Streamdata.io](http://apis.how/streamdata), as the Protocol Buffers isn't something the service currently supports. To make the data accessible for delivery via Server-Sent Events (SSE), and for partial updates to be delivered via JSON Patch, I need the Protocol Buffer format to be reduced to a simpler JSON format--which will be my next weeks worth of work on this project.
+
+I was able to pretty quickly bind to the MTA subway GTFS Realtime feed here in NYC using the PHP bindings, and get at up to date "vehicle" and "alerts" via the transit authorities feeds. I've just dumped the data to the screen in no particular format, but was able to prove that I am able to connect to any GTFS feed, and easily convert to something I can translate into any format I desire. I'm opting to go with [the Service Interface for Real Time Information (SIRI)](http://user47094.vs.easily.co.uk/siri/overview.htm), which is more verbose than GTFS, but allows for availability in a JSON format. Now I just need to get more acquainted with the SIRI standard, and understands how it maps to the GTFS format.
+
+I'm looking to have a solid approach to proxying an GTFS, and GTFS Realtime feed, and deploying as a SIRI compliant API that returns to JSON in coming weeks, so that I can quickly proxy using Streamata.io and deliver updates in true real time. Where transit vehicles are located at any particular moment, and details about alerts coming out of each transit authority are the most relevant, and real time aspect of transit operations. While the GTFS Realtime format is real time in name, it really isn't in how its delivered. You still have to poll the feeds for changes, which is a burden on both the client and server, making Server-Sent Events, and JSON Patch a much more desirable, and cost effective way to get the job done. 

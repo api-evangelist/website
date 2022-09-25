@@ -1,0 +1,22 @@
+---
+published: true
+layout: post
+title: 'I Am A Professional In My Industry, Where Should I Begin With APIs?'
+date: 2017-09-22T12:00:00.000Z
+tags:
+  - API Evangelist
+  - 101
+  - Training
+  - Lessons
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/methuselah-mountain.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/methuselah-mountain.jpg" align="right" width="40%" style="padding: 15px;" /></p>A regularly question I get from business folks out in the space, is regarding where they should start with APIs. My world is usually broke into two areas: 1) Providing APIs, and 2) Consuming APIs. I'd say that these business folk I keep coming across could easily span both of these areas, making it significantly more complicated to help them understand where they should be getting started with APIs. With the API landscape being so wide, and APIs becoming so ubiquitous across many industries, helping someone onboard to the concept can get pretty complex and confusing pretty quick.
+
+I always try to prime the pump with [my API 101 material](http://101.apievangelist.com/), and encourage folks to learn about [the history of APIs](http://history.apievangelist.com/). I find that before you begin getting bombarded with the technical details of APIs it helps to get the lay of the land, and understand what is going on at the highest level, developing a better understanding of how we got here. Before you get working with any single API, you should try to understand why it has begun to be such a big part of everything we know of online today, and via our mobile phones. Most people don't realize that they are using APIs everyday, as part of their regular business activity, and common things they do in their personal lives--things like buy products from Amazon, and sharing updates with friends on Facebook.
+
+Next, I recommend looking at the software you use each day in your work. If you are an architect, look a the CAD software you are using. If you are in healthcare, look at the administrative systems you use, and the devices you put to work. If you are retail, look at the point of sale (POS), and payment systems you use. All of these companies have APIs in one form or another. They might not all be public APIs like Facebook, Twitter, and Google, but they have APIs that might make a lot more sense to you in your world. You should be learning about the companies behind this software, searching their websites, knowledge-bases, and other systems for APIs, and understanding what they do, and how you can possibly put them to use in your world, and help you do what you do better.
+
+Take a look at your smart phone. All those icons for the applications you use have APIs behind them. Mobile phones are why APIs have become such a big thing. It is how information is sent and received by mobile applications. If you want to learn about APIs, you should start by learning in the context of the applications, services, and tooling you are already depending on and putting to use. A great example of this for business users can be found with the spreadsheet. Both Google and Microsoft have APIs, allowing you to get data into, and out of a spreadsheet. I often feel like the spreadsheet API is one of the most important, and underrated APIs out there, and spreadsheets are one of the most important API clients out there as well, but often gets overlooked by developers who don't love the spreadsheet as much as business users. 
+
+As a professional in any industry, I recommend starting here. The chances you will discover and learn about APIs in a more meaningful and impactful way is greater, than if you just take some learn to code, or other technical approach. I'm going to begin building this into my API lessons and training work I've kicked off recently, and see if I can develop more material that is less API provider vs API consumer, and more about helping folks in specific industries, or who might be using specific software, platforms, services, and tools. Regardless, if you are looking to jumpstart your own API learning I recommend just looking around you, I think you'd be surprised how many APIs there are behind the solutions you are already putting to use.

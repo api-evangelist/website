@@ -1,0 +1,22 @@
+---
+published: true
+layout: post
+title: HTTP Status Codes And The Politics Of APIs
+date: 2017-08-18T09:00:00.000Z
+tags:
+  - API Evangelist
+  - Design
+  - Politics of APIs
+  - Business of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg" align="right" width="40%" style="padding: 15px;" /></p>The more I learn about the world of APIs, the more I understand how technology, business, and politics are all woven together into one often immovable monolith. Many things in the world of APIs seem purely like a technical thing, but in reality they are wrapped in, and wielded intentionally and unintentionally as part of larger business, and sometimes a personal agenda. An example of this can be found with the presence, or lack of presence with HTTP status codes, which the default status is usually 200 OK, 404 not found, or 500 internal error.
+
+While these seem like very granular technical details of whether or not an HTML, XML, CSV, or JSON document is returned or not as part of a single web request, there usage often dictates what is happening behind the firewall, and often times more importantly, what is not happening. I find people's awareness that HTTP status codes exist (or not) a significant sign of their view of the wider web world. If they are aware they exist they most likely have some experience engaging with other experienced partners using the web. If they don't, they most likely live a pretty isolated existence--even if they do have a web presence.
+
+Beyond just knowing that HTTP status codes exist, understanding the importance of, and the nuance surrounding each individual one demonstrates you are used to engaging with external actors at scale, leveraging web technology. I have to put out there that I DO NOT have an intimate knowledge of all HTTP status codes, because I have not exercised them as part of large scale projects, but it is something I do grasp the scope and importance of from the projects I have worked on. This is not a boolean thing, you knowing HTTP status codes or not. This is the result of many journeys, with many partners, across many different types of digital resources. You can tell how many journeys someone has been on, based on how they view, and wield HTTP status codes.
+
+I encounter folks in my journeys who are dismissive of my focus on HTTP status codes, but I find most of these folks to be purposely vague in the signals they regularly send, and are used to keeping things complex, inconsistent, or just never very well defined so that they can keep things suiting their changing desire and needs. This is something that works well internally, and within a small group of trusted partners, but it rarely is conducive to doing business at scale on the web. Some companies thrive in chaos, because they have the upper hand. They have defined the chaos, and benefit from being in the know of how the chaos works, and invest heavily in keeping a gap between themselves, and those who are not in the know. Forcing external entities to always be on their toes when it comes to understanding what is going on, unable to truly ever know if things are indeed 200 OK, or most likely just a 500 internal server error.
+
+In this situation I always think of my friend Darrel Miller ([@darrel_miller](https://twitter.com/darrel_miller)) who as an API architect can recite every single HTTP status code, and a usage scenario because of his vast knowledge of APIs and web standards. However, a side effect of this reality is that if you ask Darrel almost any question, you will get a real honest, direct, and usually very precise answer. Some folks might look at this as Darrel not having filters, or often possessing too many opinions, but I'm a big fan of his approach. With Darrel, you rarely ever unclear about his motivations, feelings, and experience with any topic. I find this world much easier to navigate than the vague, unclear, often purposely obfuscated responses I get from some companies, organizations, institutions, and government agencies I work with. When doing business at scale on the web it always helps to provide clear signals that have a shared meaning, and being precise and upfront with what is going on behind the scenes, not hiding behind the black, white, and grey nature of just 200, 404, and 500.

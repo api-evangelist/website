@@ -1,0 +1,16 @@
+---
+published: true
+layout: post
+title: API Rants vs. API Research
+date: 2017-08-28T12:00:00.000Z
+tags:
+  - API Evangelist
+  - Politics of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg" align="right" width="40%" style="padding: 15px" /></p>I know many of you read my blog for the valuable nuggets of information extracted from my regular research into the world of APIs. I spend a great deal of time sifting through very boring, mundane, and sometimes valuable API related goings on. I have managed to muster the energy each week for the last seven years to sift through thousands of feeds, Tweets, and Github repositories looking for nuggets of API wisdom, best practices, and sometimes bad practices, to share here on the blog. Some weeks I find this an easy task, something I really enjoy the process, but most weeks it is a chore--some weeks I don't give a shit at all. This is one of those weeks. Well, last week was too, but instead of NO blog posts, this week I'm going to shift things up so that I can get on track.
+
+I have had series of folks piss in my Cheerios lately, regarding the free and unpaid work that I do, and as a result, I find myself without any writing mojo for the second week in a row, and not caring about sifting through all your API startup blah blah blah. 1/3 is about being rude and bro assholes, 1/3 of it is that APIs are boring and y'all have no imagination, and 1/3 of it is I'm a mentally ill asshole. The result of all of this is that you get a week full of API rants, instead of API research. Sooooooo, if this side of my personality turns you off, I recommend you tuning out API Evangelist for at least a week, until I feel better, and find the energy to do what it is that I do. There will still be plenty of substance in my posts, and things will still be VERY API related, and something that you can apply in your regular work, I will just be taking off all filters, and it will be written directly from my brain instead of my API research.
+
+I work really hard doing what I do. I work seven days a week, with no regular paycheck or institutional support. I do make a decent living from partners who step up to support me (and pay their bills), but it is a hustle to keep doing what I do. It always grinds on me when folks with good jobs attack me like I have some sort of agenda in their game, or the no name bros come out of the wood work to question my credibility when they know nothing about me. I spend a lot of time filtering out what I'm really thinking, sticking to the facts, helping make my nuggets of API research wisdom more digestible, but this week ain't one of them, so hold on. Once I feel better, I will go back to normal, and make sure I point out the good that is going on in the space, but in the current mode y'all ain't worth it, and I'm going to unload and rant for the next 30 or 40 posts. Normally I'd keep this kind of stuff just on kinlane.com, but since it will all be API focused, I'm going to give you the uncensored version here on apievangelist.com. Enjoy!

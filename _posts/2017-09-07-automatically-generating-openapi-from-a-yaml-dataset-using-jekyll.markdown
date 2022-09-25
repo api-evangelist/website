@@ -1,0 +1,19 @@
+---
+published: true
+layout: post
+title: Automatically Generating OpenAPI From A YAML Dataset Using Jekyll
+date: 2017-09-07T16:00:00.000Z
+tags:
+  - API Evangelist
+  - Definitions
+  - Jekyll
+  - Documentation
+image: 'https://s3.amazonaws.com/kinlane-productions/openapi/openapi-dynamic.png'
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/openapi-dynamic.png" align="right" width="35%" style="padding: 15px;" /></p>I was brainstorming with Shelby Switzer ([@switzerly](https://twitter.com/switzerly)) yesterday around potential projects for upcoming events we are attending, looking for interesting ideas we can push forward, and one of the ideas we settled in on, was automatically generating OpenAPIs from any open data set. We aren't just looking for some code to do this, we are looking for a forkable, reusable way of doing this that anyone could potentially put to work making open data more accessible. It's an interesting idea that I think could have legs, and compliment some of the existing projects I'm tackling, and would help folks make their open data more usable.
+
+To develop a proof of concept I took one of my existing projects for [publishing an API integration page within the developer portal of API providers](http://api.integration.tool.apievangelist.com/), and replaced the hand crafted OpenAPI with a dynamic one. [The project is driven from a single YAML data file](https://github.com/api-evangelist-tools/api-integration/blob/master/_data/integrations.yaml), which I manage and publish using Google Sheets, and already had a static API and OpenAPI documentation, making it a perfect proof of concept. As I said, the OpenAPI is currently static YAML, so I got to work making it dynamically driven from the YAML data store. The integrations.yaml data store has eight fields, which I hd published as four separate API paths, depending on which category each entry is in. I was able to assemble the OpenAPI using a handful of variables already in the config.yaml for the project, but the rest I was able to generate by mounting the integrations.yaml, dynamically identifying the fields and the field types, and then generating the API paths, and schema definitions needed in the OpenAPI.
+
+It's totally hacky at the moment, and just a proof of concept, but it works. I'm using [the dynamically generated OpenAPI](https://github.com/api-evangelist-tools/api-integration/blob/master/apis/openapi.yaml) to drive [the Swagger UI documentation](http://api.integration.tool.apievangelist.com/documentation/) on the project. I'm not sure why I hadn't thought of this before, but this is why I spend time hanging with smart folks like Shelby, who ask good questions, and are curious about pushing forward concepts like this. Liquid, the language used by Jekyll to deliver HTML in Github driven project like this is very limiting, providing some serious constraints when it comes to delivering tools like this. As I get stronger in my knowledge of it, and push the boundaries of what it can do, I'm able to do some pretty interesting things on top of YAML and JSON data stored on Github, within Jekyll sites like this. It can be pretty hacky, and would make many programmers cringe, but I like it.
+
+While the idea needs a lot more work, it provides an interesting seed for how OpenAPI can be generated from a single (or multiple) open data file in CSV, JSON, or YAML--which Jekyll speaks natively. The possibilities to commit open data files into a Github repo and have OpenAPI, schema, documentation, and even UI elements automatically generated is pretty huge. This approach to making open data accessible holds a significant amount of potential when it comes to making the open data more discoverable, accessible, forkable, and reusable--which all open data should be by default. I will keep pushing the idea forward, and see where Shelby takes it, and report back here when I have anything more to share.  

@@ -1,0 +1,26 @@
+---
+published: true
+layout: post
+title: That Point Where API Session Management Become API Surveillance
+date: 2017-09-21T15:00:00.000Z
+tags:
+  - API Evangelist
+  - Logging
+  - Security
+  - Surveillance
+  - Management
+  - Authentication
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/border-traffic.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/border-traffic.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I was talking to my friends TC2027 Computer and Information Security class at Tec de Monterrey via a Google hangout today](https://www.youtube.com/watch?v=i7YUymQkZ_8&feature=youtu.be), and one of the questions I got was around managing API sessions using JWT, which was spawned from a [story about security JWT](https://blog.websecurify.com/2017/02/hacking-json-web-tokens.html). A student was curious about managing session across API consumption, while addressing securing concerns, making sure tokens aren't abused, and there isn't API consumption from 3rd parties who shouldn't have access going unnoticed. 
+
+I feel like there are two important, and often competing interests occurring here. We want to secure our API resources, making sure data isn't leaked, and prevent breaches. We want to make sure we know who is accessing resources, and develop a heightened awareness regarding who is accessing what, and how they are putting them to use. However, the more we march down the road of managing session, logging, analyzing, tracking, and securing our APIs, we are also simultaneously ramping up the surveillance of our platforms, and the web, mobile, network, and device clients who are putting our resources to use. Sure, we want to secure things, but we also want to think about the opportunity for abuse, as we are working to manage abuse on our platforms.
+
+To answer the question around how to track sessions across API operations I recommended thinking about that identification layer, which includes JWT and OAuth, depending on the situation. After that you should be looking other dimensions for identifying session like IP address, timestamps, user agent, and any other identifying characteristics. An app or user token is much more about identification, than it ever provides actual security, and to truly identify a valid session you should have more than one dimension beyond that key to acknowledge valid sessions, as well as just session in general. Identifying what healthy sessions look like, as well as unhealthy, or unique sessions that might be out of the realm of normal operations. 
+
+To accomplish all of this, I recommend implementing a modern API management solution, but also pulling in logging from all other layers including DNS, web server, database, and any other system in the stack. To be able to truly identify healthy and unhealthy sessions you need visibility, and synchronicity across all logging layers of the API stack. Does the API management logs reflect DNS, and web server, etc. This is where access tiers, rate limits, and overall consumption awareness  really comes in, and having the right tools to lock things down, freeze keys and tokens, as well as being able to identify what healthy API consumption looks like, providing a blueprint for what API sessions should, or shouldn't be occurring.
+
+At this point in the conversation I also like to point out that we should be stopping and considering at what point all of this API authentication, security, logging, analysis, and reporting and session management becomes surveillance. Are we seeking API security because it is what we need, or just because it is what we do. I know we are defensive about our resources, and we should be going the distance to keep data private and secure, but at some point by collecting more data, and establishing more logging streams, we actually begin to work against ourselves. I'm not saying it isn't worth it in some cases, I am just saying that we should be questioning our own motivations, and the potential for introducing more abuse, as we police, surveil, and secure our APIs from abuse.
+
+As technologists, we aren't always the best at stepping back from our work, and making sure we aren't introducing new problems alongside our solutions. This is why I have my [API surveillance research](http://surveillance.apievangelist.com/), alongside my API [authentication](http://authentication.apievangelist.com/), [security](http://security.apievangelist.com/), [logging](http://logging.apievangelist.com/), and other management research. We tend to get excited about, and hyper focused on the tech for tech's sake. The irony of this situation is that we can also introduce exploitation and abuse around our practices for addressing exploitation and abuse around our APIs. Let's definitely keep having conversations around how we authenticate, secure, and log to make sure things are locked down, but let's also make sure we are having sensible discussions around how we are surveilling our API consumers, and end users along the way.

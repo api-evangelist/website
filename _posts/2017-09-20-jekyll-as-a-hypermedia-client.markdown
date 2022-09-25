@@ -1,0 +1,23 @@
+---
+published: true
+layout: post
+title: Using Jekyll As A Hypermedia Client
+date: 2017-09-20T15:00:00.000Z
+tags:
+  - API Evangelist
+  - Hypermedia
+  - Jekyll
+  - Clients
+  - Static
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/subway/hypermedia-siren-subway-stop.png
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/subway/hypermedia-siren-subway-stop.png" align="right" width="35%" style="padding: 15px;" /></p>I am picking up some of my past work, so that I can move forward in a new way. A while ago, I began working on [my subway map API](http://subway.map.apievangelist.com/) to help me articulate aspects of the API lifecycle, and provide a "vehicle" for helping folks explore some often complex API concepts, in a way that would incrementally introduce them to new ideas. I used the subway map as an analogy because it has been historically used to help folks understand complex systems, and help them navigate it, even if they don't fully understand everything about it. [I gave a talk at @APIStrat in Austin, TX on this subject](https://apievangelist.com/2015/11/29/the-api-lifecycle-my-talk-from-defrag-and-apistrat/), but something I haven't moved forward in over a year.
+
+My new approach to using the subway map model is still using hypermedia (Siren), but I'm not wanting a single API to control the data for every client. I'm looking to develop a static, federated approach to delivering subway map experience. I want to be able to quickly publish a common map, but then be able evolve them independently, designed for specific implementations and use cases. Since I'm so Jekyll and Github centered in how I deliver projects, I'm looking for a way to do this in a static way, that can be forked. So, I got to work on publishing Siren YAML to Github, and seeing if it is possible to use Liquid and HTML as the client. Again, I want this to be static. All this could easily be building this in JavaScript, but I want things static and forkable.
+
+[For my proof of concept I published 15 "stops" along the request "line" for my API design "area"](http://jekyll.hypermedia.client.apievangelist.com/design/requests/). I don't have the visual elements present for this functionality, as I just wanted to prove that I could use Liquid and HTML for a hypermedia client, using Siren YAML published to Github. I was forced to add a layout: property to my Siren schema, which is probably heresy to couple to the client in this way, but it is something I'm willing to take a hit for. Everything else is pure Siren. While there is still a lot more work to be done, I was able to expand the boundaries of how I use hypermedia and Jekyll, in a single proof of concept--telling me the idea is worth moving forward with.
+
+To make things work I published a set of Siren hypermedia YAML documents (I know Kevin, I'm making you cringe, but bear with me) to [a Jekyll collection called _design](https://github.com/api-evangelist-tools/jekyll-hypermedia-client/tree/master/_design). Then I have [three Jekyll client templates in the _layouts folder, called area, lines, and stops](https://github.com/api-evangelist-tools/jekyll-hypermedia-client/tree/master/_layouts). My client isn't that sophisticated for this proof of concept, but I am able to easily work with the entities, properties, and links in Liquid effectively. I'm just wanting to show that I can take my YAML to the next level, and expand my link relations beyond just next and previous that is often associated with Jekyll _posts, opening up [the entire IANA link relations catalog of options](https://www.iana.org/assignments/link-relations/link-relations.xhtml), plus anything custom I will need (ie. area, line, stop). It doesn't look like much, but it provides a pretty compelling example of using Jekyll and Github to deliver complex content that will be changing regularly in a static way.
+
+[The viewable side of my hypermedia Jekyll subway map API client doesn't look that attractive yet](http://jekyll.hypermedia.client.apievangelist.com/design/requests/), but it provides the basic next/previous functionality, as well links back to the area, or line of coverage. This is just the first two types of experience I'm looking to provide as people explore. I will be introducing transfers, help, and other supporting link relations between the content being made available. Eventually the home page of these projects will be a subway map with accompanying key, and then you choose the area, explore lines, and get off on any stop you desire. It's just a start, but I feel my Jekyll hypermedia client proof of concept is a success, and I'll get to work on publishing more content, and adding the visual elements that make it truly a subway map experience.

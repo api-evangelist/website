@@ -1,0 +1,18 @@
+---
+published: true
+layout: post
+title: Will APIs Still Be Relevant?
+date: 2017-12-06T12:00:00.000Z
+tags:
+  - API Evangelist
+  - Politics of APIs
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/32_119_800_500_0_max_0_-1_-1.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/32_119_800_500_0_max_0_-1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I named my blog, company, as well assumed my own title as "API Evangelist" in 2010. Every year since making that decision I've questioned it, and wonder if the concept and acronym will fade away. First of all, I have to admit its a bullshit concept in the first place. Its an acronym. It's a pretty wide umbrella that allows us (me) to assemble a wide variety of technological concepts underneath. However, I made an investment in it, I was going to continue. I found some meaning that I was able to articulate to others, that would make an impact on businesses, organizations, institutions, and government agencies. It works. I am going to run with it, and in 2017, I'm renewing that perspective, and keeping it as my brand, title, and the central message I'm peddling in the tech sector.
+
+This all contributes to a significant under tow on my reality, pushing me to question reality on a regular basis. However, I'd say the strongest current I struggle with in this area is when it comes to endless waves of trends that crash on the shore. Maybe API is irrelevant because of microservices? Wait, maybe it is because of GraphQL? Sure, it will become irrelevant because of Kafka? Web APIs can't do everything, and it something that will surely render them the wrong choice, just around the corner. There is truth in all of these statements. However, these statements are also just the nature of the game. Web APIs played these same cards when it came onto the scene. REST replaced SOAP, and JSON replaced XML. It is how the technology game is played. 
+
+The frontline of this sector will always be developing and evangelizing new tools. It is how it disrupts, and builds new markets. I'm complicit in this. However, the mainstream world won't ever move as fast as the frontline. No matter how much we want it to. Change just doesn't happen that quick at scale. I'm confident that my definition of APIs, using the web to make data, content, and algorithms available in a machine readable way isn't going anywhere soon. I'm confident that the acronym API has enough mindshare, that it can occasionally rise above the trends. Although, the trends actually help refine, and further define the concept, even if they go by other names. It all moves forward at a glacial pace, even though often times it feels like everything always moving so fast--it does this by design.
+
+After seven years of doing this, not a lot has changed. We are still doing web APIs. Most of the time pretty poorly. We are doing them smaller. Occasionally folks are doing them real time, as they have a lot going on. There are more of them, and more people doing them. Not much else is really that revolutionary. It just feels like everything is moving fast, changing at a break neck pace, and there are always new technologies threatening to make APIs irrelevant. If you are in the business of selling new things you believe things are. If you are in the business of buying new technology, you believe things are moving real fast. However, if you are just in the business of understanding what is happening, and getting business done, you see that things aren't really moving that fast, and APIs will be relevant for some time to come.

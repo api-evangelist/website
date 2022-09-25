@@ -1,0 +1,25 @@
+---
+published: true
+layout: post
+title: The Conversational Interface Appetite For Data Via APIs
+date: 2017-12-01T13:00:00.000Z
+tags:
+  - API Evangelist
+  - Bots
+  - Voice
+  - Conversational Interface
+image: >-
+  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg
+---
+<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px" /></p>
+_This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
+
+I spend a lot of time studying what is going on around bots on Twitter, Facebook, and Slack, as well as voice enablement like we see with Alexa, Google, and Siri. I lump these all under a research category called conversational interfaces. Conversational interfaces represent the next generation of API clients, with AWS Alexa being the most sophisticated example at how it will all work(eventually). While there are some interesting examples of conversational interfaces in action, for the most part they are still pretty simple, silly, and not providing much value. I'd say that any of the bots or voice implementations I've come across which are useful, are also pretty corporate, demonstrating the amount of resources you need to invest when crafting conversational interfaces.
+
+From my vantage point I'm seeing three main areas slowing the growth of true usability of conversational interfaces, 1) desire, and people not wanting or caring to engage, 2) availability of data via APIs in format that is usable, and 3) the performance of APIs that do have relevant data, and their ability to deliver it as an answer to a question in reasonable amount of time. You can put me squarely into the first category of not really wanting to use conversational interfaces, but I do understand that there are people who are into doing it, which gets me somewhat involved when it comes to thinking about the 2nd, and 3rd challenge. APIs are what delivers answers in conversational interfaces, and since APIs are my jam, I'm tuning in.
+
+One of the biggest challenges the conversational interface space will face in coming years is having the access to the answers or data they need to function as expected. It's not that the data isn't out there, it is that it isn't available in accessible, usable API interfaces that developers can quickly wire up via platforms like Slack and Alexa. There is a wealth of sports data out there, but to make it available via bots and voice platforms you have to be able to get at via APIs. There is a wealth of movie data out there, but you have to be able to get at it via simple APIs. I can go on and on about the types of data we need, and even point out where you can find it, the problem is that it isn't available via a simple web API so that a developer can quickly build a conversational interface on top of it.
+
+This is why you'll find me doing more research into data, and database to API implementations, partnering with folks like [SlashDB](https://www.slashdb.com/), who help make deploying web APIs from databases dead simple. We need more APIs, not thousands more, but millions more. We need the APIs to be simple, and authentication standardized, so that developers can quickly get their hands on what they need to develop valuable conversational interfaces. We don't need API providers publishing APIs trying to be the next Twilio or SendGrid. We need API providers making ALL their valuable data available via APIs, and removing the friction for conversational interface developers to find what they need, so they can wire up the answers demanded by bots, voice, and other applications. If you want your valuable data available in conversational interfaces you need to be exposing it via web APIs.
+
+Personally, I do not get excited by bot or voice enabled applications. I enjoy automation, but I'm more of a fan of the intimacy between my brain, my fingers, and the keyboard. However, like most of the tech space I understand that conversational interfaces will keep evolving, and want to contribute where I can to make them more usable. Another aspect of why I am getting on board with conversational interfaces, as with all the other API driven applications, is when it comes to surveillance and privacy. I want to play a role in helping define the backend layers of conversational interfaces, make them usable, valuable, while also protecting the privacy, security, and data ownership of individuals who are putting them to work. This is why you'll find me chiming in more on the subject, not because I'm pro-conversational interface, it is because they are happening, and I want to make sure it works as well as possible for everyone involved.
