@@ -1,16 +1,0 @@
----
-published: true
-layout: post
-title: 'Opportunities in the Financial API Space'
-image: http://kinlane-productions2.s3.amazonaws.com/forrester-research-logo.png
----
-
-According to <a href="http://forrester.com/">Forrester Research</a>, the <a href="http://forrester.com/rb/Research/us_mobile_banking_forecast,_2010_to_2015/q/id/57446/t/2">U.S. mobile banking market has experienced rapid growth in the past three years</a>, more than doubling from 5% of online adults in 2007 to 12% in Q2 2010.
-<a href="http://forrester.com/"><img style="padding: 15px;" src="https://kinlane-productions2.s3.amazonaws.com/forrester-research-logo.png" alt="" width="275" align="right" /></a>
-By 2015, Forrester predicts that one in five US adults will be using mobile banking. Forrester attributes this to the adoption of smart phones.<p>
-I would say we are in the biggest growth period for financial and payment APIs since <a class="zem_slink" title="PayPal" rel="homepage" href="https://paypal.com">PayPal</a> launched its API in 2004.<p>
-With this kind of growth in mobile banking, you can easily predict the need for high quality, secure, financial and payment related APIs.<p>
-We will see a lot more growth, innovation and competition in the financial API space in next 4 years.
-
-
-
