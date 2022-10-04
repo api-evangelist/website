@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: "API Transit Basics: SDKs\t"
+title: "API Transit Basics: SDKs"
 date: 2018-01-12T11:00:00.000Z
 tags:
   - API Evangelist
