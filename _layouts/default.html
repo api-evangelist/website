@@ -1,31 +1,32 @@
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-  {% include head.html %}
-  <body>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-			<div id="wrapper">
-					<div id="main">
-						<div class="inner">
+    {% include head.html %}
 
-              {% include header.html %}
-    	        {{ content }}
-              {% include footer.html %}
+    <body>
 
-            </div>
-          </div>
+    {% if page.hero %}
+        {% include hero.html %}
+    {% else %}
+        {% include navbar.html %}
+    {% endif %}
 
-          <div id="sidebar">
-            <div class="inner">
+    {{ content }}
 
-              {% include sidebar_nav.html %}
-              {% include sidebar_partners.html %}
+    {% include offcanvas-docs.html %}
 
-            </div>
-          </div>
+    {% include offcanvas.html %}
 
-      </div>
+    {% if page.layout != 'doc' %}
+        {% include footer.html %}
+    {% endif %}
 
-{% include footer_scripts.html %}
+    {% if page.layout == 'doc' %}
+        {% include hook-pre-closing-body-doc.html %}
+    {% endif %}
 
-</body>
+    {% include hook-pre-closing-body.html %}
+
+    </body>
+
 </html>

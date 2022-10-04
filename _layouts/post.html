@@ -1,43 +1,38 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}</h2>
-<p><span class="post-date">{{ page.date | date_to_string }}</span></p>
 
-<p>
-	{% if page.author %}
-		{% assign author = page.author %}
-	{% else %}
-		{% assign author = site.author %}
-	{% endif %}
-	<i>by {{ author.name | escape }}{% if author.affiliation %}, {{ author.affiliation | escape }} {% endif %}</i>
-	{% if author.twitter %}
-		<a href="https://twitter.com/{{author.twitter}}" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a>
-	{% endif %}
-	{% if author.linkedin %}
-		<a href="https://linkedin.com/{{author.linkedin}}" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a>
-	{% endif %}
-	{% if author.github %}
-		<a href="https://github.com/{{author.github}}" class="icon fa-github" target="_blank"><span class="label">Github</span></a>
-	{% endif %}
-	{% if author.email %}
-		<a href="mailto:{{author.email}}" class="icon fa-envelope"><span class="label">Email</span></a>
-	{% endif %}
-</p>
+<div class="uk-section">
+    <div class="uk-container uk-container-xsmall">
+        <article class="uk-article">
 
+            <h1 class="uk-article-title">{{ page.title | escape }}</h1>
 
-{{ content }}
-<hr />
-<ul class="pagination" style="text-align: center;">
-	{% if page.previous %}
-		<li style="text-align:left;"><a href="{{ site.production_url }}{{ page.previous.url }}" class="button"><< Prev</a></li>
-	{% else %}
-		<li style="text-align:left;"><a href="{{ site.production_url }}{{ page.previous.url }}" class="button disabled"><< Prev</a></li>
-	{% endif %}
-		<li style="width: 75%"><span></span></li>
-	{% if page.next %}
-		<li style="text-align:right;"><a href="{{ site.production_url }}{{ page.next.url }}" class="button">Next >></a></li>
-	{% else %}
-		<li style="text-align:right;"><a href="{{ site.production_url }}{{ page.next.url }}" class="button disabled">Next >></a></li>
-	{% endif %}
-</ul>
+            <div class="uk-article-meta uk-margin-top uk-margin-medium-bottom uk-flex uk-flex-middle">
+                {% include post-meta.html %}
+            </div>
+
+            <div class="article-content link-primary">
+                <center><img src="{{ page.image }}" width="90%" align="center" style="padding: 5px;"></center>
+                {{ content }}
+                {% if site.share.post %}
+                    {% include share.html %}
+                {% endif %}
+            </div>
+
+            <hr class="uk-margin-medium">
+
+            {% include paginate-post.html %}
+            
+        </article>
+
+        <script>
+            // Table of contents scroll to
+            UIkit.scroll('#markdown-toc a', {
+                duration: 400,
+                offset: 120
+            });
+        </script>
+
+    </div>
+</div>

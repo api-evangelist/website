@@ -1,47 +1,119 @@
-title:        API Evangelist
-description:  A network of research sites dedicated to the technology, business, and politics of APIs.
-url:          https://apievangelist.com
-raw_url: http://apievangelist.com/apis/
+title:              API Evangelist
+description:        Making sense of the technology, business, and politics of APIs that is impact all stages of our physical and digital worlds.
+lang:               en
 
-version:      1.1.1
+# Site subpath, e.g. /blog
+baseurl:            ""
 
-author:
-  name:        'Kin Lane'
-  email:       'info@apievangelist.com'
-  affiliation: 'API Evangelist'
-  github:      'api-evangelist'
-  linkedin:    'company/api-evangelist'
-  twitter:     'apievangelist'
-
+# Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
 permalink: /:categories/:year/:month/:day/:title/
-exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 
-paginate: 100
-paginate_path: "/blog/page:num"
+# Site base hostname & protocol, e.g. http://example.com
+url:                ""
 
-categories_path : /categories.html
-tags_path : /tags.html
+# Site logo # e.g. logo.png, upload logo image file to /uploads/ folder
+logo:               https://kinlane-productions2.s3.amazonaws.com/api-evangelist-logos/api-evangelist-logo-butterfly.png
 
-production_url : https://apievangelist.com
+navbar:
+    sticky:         true
+    search:         true
+  
+# Default author settings
+author:
+    name:           Kin Lane
+    title:          Chief Evangelist
+    avatar:         https://kinlane-productions2.s3.amazonaws.com/kin-lane/kin-lane-cartoon-questioning.png
 
-image : https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-red-seal.png
-imagesecure : https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-red-seal.png
+# Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
+authors:
+    kin:
+      name:         Kin Lane
+      title:        Chief Evangelist 
+      avatar:       https://kinlane-productions2.s3.amazonaws.com/kin-lane/kin-lane-cartoon-questioning.png
+    pascal:
+      name:         Pascal Heus
+      title:        Lead Data  
+      avatar:       https://res.cloudinary.com/postman/image/upload/t_user_profile_300/v1615306165/user/ywbewk7zn4bbrprzkjga.png
 
-github_user: kinlane
-github_repo: api-evangelist
+# Social icons displayed in footer
+social:
+    email:
+    website:
+    facebook:       https://www.facebook.com/people/API-Evangelist/100037190996914/
+    flickr:
+    dribbble:
+    github:         https://github.com/api-evangelist
+    googleplus:
+    instagram:     
+    linkedin:       https://www.linkedin.com/in/kinlane/
+    pinterest:
+    twitter:        https://twitter.com/apievangelist
+    vimeo:          
+    youtube:        https://www.youtube.com/c/postman
 
-# spreadsheet store
-contactinfo_spreadsheet_key: 1bNUVKpKl1-9k_5YNt0ix4eFKTP4t2L5DhnAtCqMAf4o
-project_spreadsheet_key: 1LtOUKwV80ybYXJ1nyoQJXiAEcCfc0AoborRkYSbiLE4
-service_spreadsheet_key: 1m0vghHqpTV_2zdK9dCZjioH337BdxFVCZZgOi0_e3zg
-product_spreadsheet_key: 1K5GTYo3McA4WNYcvv_WPRKxp5Q8emkyKlaXKATGhQFM
-partner_spreadsheet_key: 1V6zSIZPjtIWWjvipAGiA4pl5xDN4ATumfNl_UQwQakg
-tool_spreadsheet_key: 1Lk0zQMV36Xn17d6-2s2CihprafXiYnwrAL6I9OBxhEs
+# Share button
+share:
+    post:           true # Display share buttons on a post page
+    doc:            true # Display share buttons on a doc page
+    twitter:        username # Enable by adding Twitter handle 
+    facebook:       true # Enable by setting true (Facebook handle not required)
 
-# Footer
-footer_title: API Evangelist
-footer_link: http://apievangelist.com
-footer_image_source: https://s3.amazonaws.com/kinlane-productions/footer/empowered-by-you-banner.png
-footer_image_width: 60
+# Default footer image settings
+footer:
+    copyright:      API Evangelist
 
-twitter_username: apievangelist
+# Disqus comments shortname, requires Disqus account https://disqus.com/
+disqus:
+    shortname:      # 1234
+
+# Google analytics code, get your code here https://www.google.com/analytics/
+google_analytics: UA-1119465-51
+
+# Number of posts displayed on blog page
+paginate:           25
+
+# Blog path
+paginate_path:      "/blog/:num/"
+
+# Path to post content assets directory i.e post images, pdfs etc
+uploads:            /uploads/
+
+# Build settings
+markdown:           kramdown
+highlighter:        rouge
+
+gems:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-gist
+  - jekyll-avatar
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+
+sass:
+  style:            compressed
+
+collections:
+  docs:
+    output:         true
+  faqs:
+    output:         false
+  changelogs:
+    output:         false
+
+# Defaults
+defaults:
+  # _posts
+  - scope:
+      path:         ""
+      type:         posts
+    values:
+      layout:       post
+  # _docs
+  - scope:
+      path:         ""
+      type:         docs
+    values:
+      layout:       doc
