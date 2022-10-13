@@ -1,0 +1,20 @@
+---
+published: true
+layout: post
+title: 'Influencing People Indirectly Over Time to Obtain the API Change You Seek'
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/birth-of-a-nation-satellite-dish-pointing-upwards.jpg
+author:
+  name: kin
+tags:
+- Writing
+- Change
+- Storytelling
+- Influencing
+---
+I have learned a lot about influencing the way people think about APIs. I am not always successful in influencing people the way I desire, but I have had a significant amount of success in shaping the way people do APIs across a number of industries, government agencies, and enterprise organizations. One of the more influential tactics I have in my toolbox involves rarely directly telling people to do things, and opting to indirectly shape how people think through telling stories and planting seeds over time across an increasingly number of relevant channels they are tuned into. You see, most people prefer believing that something was their own idea. You can see an example of this in the fact that many folks believe they are “self-taught”, when in reality, none of us are self-taught, and we all depend on learning, borrowing, and often stealing from other people’s work and making it our own.
+
+Indirectly influencing the way people think is what makes regular blogging, video storytelling, and social amplification so important. Rarely have I ever told something directly to someone and then see them follow my advice and change their behavior. Behavioral shifts usually come from incremental exposure to my ideas, reinforcing specific concepts in different ways through different types of stories. While some people who have tuned into API Evangelist or my work as Chief Evangelist at Postman, most do not directly listen to what I recommend or agree with my views, but are nudged incrementally over time, eventually evolving to a state that reflects my view of the landscape. This is why I work so hard to be so prolific in my storytelling via Zoom, the Postman blog, and historically here on API Evangelist—-over time I influence the way people think.
+
+I talk with a lot of people who are frustrated with being unable to change they way their leadership or other teams see things when it comes to APIs. Unsuccessful attempts at directly telling people do things tends to leave people frustrated, where if they invested more time in understanding how their target audience gets their information and targeted these channels, you’d see different results. This is one of my (our) biggest challenges. Understanding how people get their information. However, once I learn how they obtain their knowledge I get to work trying to have a presence in the stream of consciousness that flows via these channels. I’ve done good with blogging, speaking, and a handful of social media channels over the years. But I have had to adjust a little, expanding to podcasting and Zoom engagement instead of conferences, but I always work hard to find the right tone and cadence to influence my target audience over time.
+
+My approach to influencing takes more time and energy than many direct channels. But I feel that my approach is much more sustainable and scalable when it comes to shifting how people see the world of APIs and engage within their own ecosystems on via their own platforms. This API game is a long game. I am looking to play the 25 year game. I am about 10 years into this journey and have laid the foundation I will need to keep influencing how we do APIs across a variety of industries. The next 15 years I am looking to maintain the same pace I’ve enjoyed over the last decade, but expand my audience and increase my reach. Along the way I am hoping to share my storytelling tacts with others to help other evangelists and advocates be success in making the API change they want to see. Realizing that direct one-on-one or one to small group is necessary, but won’t always produce the results we need. To get the results you need you will have to learn to whisper and influence people over time, and be comfortable with most people not attributing their ideas and behavioral change to you. It is just how this games work.
