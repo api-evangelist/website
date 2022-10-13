@@ -8,6 +8,7 @@ tags:
 - Postman
 - Visibility
 - Engagement
+- Featured
 ---
 One of the most powerful capabilities of the Postman platform is the concept of a workspace. Like many powerful concepts, it is also very misunderstood, not seen, and wildly underutilized as part of API operations. I am doing a lot of work to change this, and as I do this work I am doing what I used to always do, and ideated about it here on the blog. I am spending time considering all of the moving parts of workspaces to provide more structure guidance regarding how enterprise organizations can be taking advantage of API workspaces to ground their operations. 
 

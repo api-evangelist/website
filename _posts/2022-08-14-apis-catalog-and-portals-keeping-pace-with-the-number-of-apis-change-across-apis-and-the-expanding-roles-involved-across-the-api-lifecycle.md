@@ -8,7 +8,6 @@ tags:
 - Catalogs
 - Roles
 - Documentation
-- Featured
 ---
 I have been hearing about the challenges with keeping API portals, catalogs, directories, networks, hubs, marketplaces, and other similar constructs with the needed metadata, and adequately providing an up to date snapshot of enterprise API resources and capabilities for the last decade. It is a conversation that is growing louder due to the number of APIs in operation, and the number of enterprise organizations trying to get a handle on their sprawling API landscape. There are several realities converging on this very visible layer of our increasingly critical dimension of our API operations—the “portal”. Let me try to walk through each of these layers of this API onion to help me make sense of it, and help me better articulate how we can begin peeling back the layers and moving forward without too many tears.
 

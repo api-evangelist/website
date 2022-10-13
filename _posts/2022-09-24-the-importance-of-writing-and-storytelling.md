@@ -8,7 +8,6 @@ author:
 tags:
 - Writing
 - Storytelling
-- Featured
 ---
 I do not write on API Evangelist as much as I used to. I still write a lot, but posts tends to stay in my notebook or get published to the Postman blog. I miss writing every day. Writing is important for me. Not just to convey concepts to other people who read my writing, but to help me organize my thoughts. Writing makes me more coherent. Writing helps me practice what I want to say. Writing helps me find the signal for the noise, which in a digital world is everything. Writing is how I find my way out of the dark and into the light with any idea. Writing is how I make sense of what is going on around me in this seemingly endless pace of technological velocity we accept as part of our online world. Without writing it is easy for me stop being curious. Stop being thoughtful. Without writing I get stuck in a sort of Groundhog Day of digital blah blah blah, and organizing my thoughts into short memos, messages, and blog posts for others to read helps me reclaim what matters to me each day, but then also allows me to move forward into the future with more knowledge, wisdom, and experience that I can tap into whenever I need. 
 
