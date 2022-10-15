@@ -1,7 +1,8 @@
 ---
-title: Change
+title: Collections
 subtitle: Cras at dolor eget urna varius faucibus tempus in elit. Cras a dui imperdiet, tempus metus quis, pharetra turpis.
-tags: [features]
+tags:
+- Collections
 author: kin
 ---
 

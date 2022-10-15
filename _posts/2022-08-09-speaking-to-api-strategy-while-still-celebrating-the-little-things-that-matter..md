@@ -18,4 +18,3 @@ As an API strategist, analysts, pundits, and know-it-all, we get so caught up in
 I enjoy these regular reminders. I am steeped in API strategy, lifecycle, and governance for months now, and I needed this grounding. I will be doing more work to identify and celebrate the little things that matter to folks on the ground floor who aren’t thinking about or incentivized to care about strategy. Teams are just looking to get through their day. I want to not just do a better job at noticing what these little things are, but also do a better job of connecting them to the overall strategy. I feel like this is where I will find the best stories, tying my storytelling to the realities on ground floor to the strategy on the upper floors of our operations, while perpetually looking for the alignment between business and development, but also with external consumers.
 
 
-

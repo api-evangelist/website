@@ -13,7 +13,6 @@ The world of API governance can be pretty overwhelming when it comes to trying t
 ### Information
 The place to start with governance is to make sure we have the essential information for an API present, establishing the base of meta data that is needed to describe what an API does, being able to contact whoever is behind the API, and standardizing the licensing and terms of service being applied.
 
-
 - [**Title**](https://rules.linting.org/#info-title) - Every API should have a title that properly describes what it does.
 - [**Title Max Length**](https://rules.linting.org/#info-title-max-length) - The title of the API should be as concise as possible.
 - [**Title Word Check**](https://rules.linting.org/#info-title-word-check) - There are some words we do not want to see in the title.
@@ -33,12 +32,10 @@ The place to start with governance is to make sure we have the essential informa
 - [**License URL MIT**](https://rules.linting.org/#info-license-url-mit) - The license for APIs should all be MIT.
 - [**Terms of Service**](https://rules.linting.org/#info-terms-of-servce) - Every API should have a terms of service applied to OpenAPI.
 
-
 These API governance rules provide a nice base for any team to start with when it comes to seeding your design governance rulesets and guidelines.  You aren’t even beginning to touch on the technical details of each API here, but there is a huge opportunity to enhance the discovery, onboarding, and evolution of APIs by standardizing the information available.
 
 ### Versioning
 After getting a hand on the information for each API it makes sense to lay the baseline for how versioning should be applied across APIs. Providing clear guidelines and automated rules that can be applied to streamline how change management is handled across teams in a consistent way across all of the APIs being developed.
-
 
 - [**Version**](https://rules.linting.org/#info-version) - Every API should have a version property assigned in OpenAPI.
 - [**Version Semantic**](https://rules.linting.org/#version-semantic) - All APIs should be versioned using a semantic approach.
@@ -47,12 +44,10 @@ After getting a hand on the information for each API it makes sense to lay the b
 - [**Version Query Parameter**](https://rules.linting.org/) - The version should be applied in a query parameter.
 - [**Version Header**](https://rules.linting.org/) - The version should be applied in the header for an API.
 
-
 This area of governance is a pretty critical aspect of potentially stabilizing API Operations, getting all teams on a level playing field when it comes to managing change, but more importantly communicating it out with other teams and API consumers. This is an area that should be present in the first draft of any API design guidelines.
 
 ### Paths
 API paths are probably the most difficult aspect of defining rules for API governance, and where most of the dogma and friction in the design process lies. I’ve fleshed out a handful of rules that can help stabilize a few of the most common areas, and this area of API governance will take the most amount of work to flesh out.
-
 
 - [**Trailing Slash Yes**](https://rules.linting.org/#paths-trailing-slash) - You can enforce that every API path has a trailing slash.
 - [**Trailing Slash No**](https://rules.linting.org/#paths-trailing-slash-none) - You can enforce that every API does not have a trailing slash.
@@ -60,12 +55,10 @@ API paths are probably the most difficult aspect of defining rules for API gover
 - [**No Dashes**](https://rules.linting.org/#paths-dashes) - Enforcing that there are no dashes in your API paths.
 - [**Lowercase Hyphens**](https://rules.linting.org/#paths-lowercase-hyphens) - Making sure all API path segments are lowercase and hyphenated.
 
-
 I will spend a lot more time looking through the design guides of top API Providers trying to find what some of the most common rules applied to the path. However, even with this needed work, there are plenty of ways we can also keep building out more governance that shape API paths across teams.
 
 ### Operations 
 The operation layer is the next area ripe for standardization that will have a rippling effect across operations. The individual summary, description, tags, and operation id for each API across hundreds or thousands of APIs provides a massive opportunity for applying governance, and getting teams providing what is needed to coherently describe what each individual API path delivers.
-
 
 - [**Summary**](https://rules.linting.org/#operations-summary) - Requiring that every API operation have a summary applied for documentation.
 - [**Summary Max Length**](https://rules.linting.org/#operations-summary-max-length) - Making sure that your API summaries are not too long.
@@ -80,12 +73,10 @@ The operation layer is the next area ripe for standardization that will have a r
 - [**Tags**](https://rules.linting.org/#operations-tags) - Making sure that every operation has a tag object present to better organize APIs.
 - [**Tags One Of**](https://rules.linting.org/#operations-tags-one-of) - Requiring that there is at least one tag present for each of your API operations.
 
-
 I have looked at thousands of APIs, and the summary, description, and tags represents where the most friction lies when it comes to discovering APIs, understanding what they actually do, and then onboarding and putting each operation to work. If you can standardize how API developers define their operations you are going to streamline so many things downstream, most notably the generate of SDKs and code snippets when your operation ids are all consistent.
 
 ### Parameters
 Next, moving to the parameters defined for each operation, it really helps reduce friction in how APIs are produced and consumed when you have a few standardized approaches to the naming, formatting, and education resources provided with parameters. It doesn’t take much to provide a baseline of rules to apply to all query and path parameters, but is something that can reduce so much friction downstream.
-
 
 - [**Name**](https://rules.linting.org/#parameters-name) - Setting the baseline that all parameters should have a name.
 - [**Name Camel Case**](https://rules.linting.org/#parameters-name-camel-case) - Enforcing that parameters names are always camel case.
@@ -106,7 +97,6 @@ If you just stick with one approach to casing, and make sure that each parameter
 ### Request Bodies
 Another dimension of API design governance that is easy to tackle is making sure request bodies are properly applied across the different HTTP methods, and that they common HTTP patterns. Depending on your approach to using parameters or bodies you will have different needs here, but regardless, there are some minimum viable rules that should be in place when it comes to the bodies of your API request.
 
-
 - [**GET**](https://rules.linting.org/#request-bodies-get-oas3) - Making sure that there is no request body present for GET.
 - [**POST**](https://rules.linting.org/#request-bodies-post-oas3) - Making sure that all POST requests have a request body.
 - [**POST Media Type**](https://rules.linting.org/#request-bodies-post-media-type-oas3) - Requiring POST bodies to have media type.
@@ -116,12 +106,10 @@ Another dimension of API design governance that is easy to tackle is making sure
 - [**PATCH Media Type**](https://rules.linting.org/#request-bodies-patch-media-type-oas3) - Requiring PATCH bodies to have media type.
 - [**DELETE**](https://rules.linting.org/#request-bodies-delete-oas3) - Making sure that there is no request body present for DELETE.
 
-
 There is a lot more you can do here to make sure there are examples, schema, and other areas, but this provides another baseline for API request bodies that should be considered default as part of API guidance. Not all API designers and developers will have the basics of how HTTP and REST works, and these types of rules really help make it easy to do the right thing when you are designing, developing, or building your API.
 
 ### Responses
 Moving from the request to the response, there are a handful of rules that should be in place to stabilize the way responses are returned. For RESTful APIs there are some pretty common patterns in place that often get overlooked if you aren’t familiar with common practices, and I pulled together a handful of rules that help define a simple base for handling responses in similar ways across all APIs.
-
 
 - [**GET 200 Status Code**](https://rules.linting.org/#response-get-200-status-code) - All GET requests should have a 200 status code.
 - [**GET 200 JSON Body**](https://rules.linting.org/#response-get-200-media-type) - All GET requests 200 responses should have JSON body.
@@ -136,12 +124,10 @@ Moving from the request to the response, there are a handful of rules that shoul
 - [**DELETE 204 No Body**](https://rules.linting.org/#response-delete-204-no-body) - All DELETE  requests should have no body returned as part of responses.
 - [**DELETE 500 Status Code**](https://rules.linting.org/#response-delete-500-status-code) - All DELETE  requests should have a 500 status code response.
 
-
 Even if you understand these details, it is really easy to be inconsistent in how you actually apply these across many different APIs. These API design governance rules applied across your API responses really can assist teams in stabilizing API responses which have huge downstream effects on SDKs, integrations, and effectively developing tests that work across all of your APIs.
 
 ### Schema
 The schema used across the request and responses for APIs provides a rich area to lay down some base design guidelines, standardizing how teams define schema and the properties they contain, which helps be consistent in the design of your APIs, but also will be something that allows for the validation and automated testing of API requests and responses. There are a handful of API design rules that can be applied to schema at design, develop, or build time.
-
 
 - [**Name**](https://rules.linting.org/#schema-names) - All schema have to have a valid name applied to the object.
 - [**Name Camel Case**](https://rules.linting.org/#schema-names-camel-case) - Enforcing that all schema names are camel case.
@@ -166,11 +152,9 @@ The schema used across the request and responses for APIs provides a rich area t
 - [**Properties Description Word Check**](https://rules.linting.org/#schema-properties-descripton-word-check) - Filtering out some words on schema descriptions.
 - [**Type**](https://rules.linting.org/#schema-properties-type) - Making sure that all of your schema properties have a type defined.
 
-
 Like everything else here, there are many other ways in which you can establish API design guidance for your schema, but this begins to set the baseline for how your schemas should be defined, laying the foundation for your team to begin defining other ways in which schema should be crafted. Like operations and properties if you begin applying just these rules across all of your APIs across all of your teams, you will have reduced so much friction across the API lifecycle.
 
 ### Making Sure the Basics Are Covered
 At this point I guarantee that anyone reading this is already thinking about what is missing from this list. This is how API people think. But it is more important to have API governance in motion than it is to have API governance be comprehensive. Like APIs, you need to start with version 1.0 of your API governance rules, then begin iterating until you find the optimal set of rules for applying at design, develop, and build time. Even once you define the set of rules you want to get started with you have to begin the lengthy journey of getting teams to comply, working with them to apply when they are designing their APIs, but also during the development and sustainment of existing APIs, or even putting in the CI/CD pipeline for future changes to APIs. It is easy for us technologists to get all caught up in the details, and never get off the finish line, or do the hard work of actually getting these API design governance guidelines out to teams for use—start small and iterate.
-
 
 Next I am going to work on some base API design guides that apply these rules. It is tough to establish a single base guidelines because there are some important design choices present here. Whether or not you choose snake, pascal, or camel case for your parameters and properties will change things up significantly, so I prefer to have them more as a buffet of rules that are grouped in logical ways—then organizations can choose what matter to them. I will also be working on some next level API design rules like helping migrate teams towards the better using the components object in OpenAPI, more standardized design rules that can be applied to the API paths, and other known REST constraints that can be articulated as listing rules. I am also spending time going through many of the API design guidelines for top API Providers and seeing what else I can define as simple rules, but also start building a catalog of more advanced rules. I am pretty confident that the discovery, applying, and evolving of API design rules is going to be one of the most important areas we can invest in right now. I just want to make sure that the waves of enterprise organizations beginning their API governance journeys don’t get overwhelmed and have somewhere they can get started without a massive cognitive load or investment.
