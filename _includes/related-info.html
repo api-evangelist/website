@@ -1,18 +1,18 @@
 <div class="uk-margin-large-top">
-    <h3>{{ site.data.translation[site.lang].related_docs | default: "Related Docs" }}</h3>
+    <h3>{{ site.data.translation[site.lang].related_infos | default: "Related infos" }}</h3>
 
     {% assign maxRelated = 4 %}
     {% assign minCommonTags =  1 %}
     {% assign maxRelatedCounter = 0 %}
 
     <ul class="uk-list link-secondary">
-    {% for doc in site.docs %}
+    {% for info in site.infos %}
 
     {% assign sameTagCount = 0 %}
     {% assign commonTags = '' %}
 
-    {% for tag in doc.tags %}
-        {% if doc.url != page.url %}
+    {% for tag in info.tags %}
+        {% if info.url != page.url %}
             {% if page.tags contains tag %}
                 {% assign sameTagCount = sameTagCount | plus: 1 %}
             {% endif %}
@@ -20,7 +20,7 @@
     {% endfor %}
 
     {% if sameTagCount >= minCommonTags %}
-        <li><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+        <li><a href="{{ site.baseurl }}{{ info.url }}">{{ info.title }}</a></li>
         {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
         {% if maxRelatedCounter >= maxRelated %}
             {% break %}

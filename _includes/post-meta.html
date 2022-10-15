@@ -1,5 +1,5 @@
 {% if page.author %}
-  {% assign author = site.authors[page.author] %}
+  {% assign author = site.authors[page.author.name] %}
 {% else %}
   {% assign author = site.author %}
 {% endif %}
@@ -15,7 +15,24 @@
 
 <div>
   {% if author.name %}
-    {{ site.data.translation[site.lang].written_by | default: "Written by" }} <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ author.name }}</span></span><br>
+    {{ site.data.translation[site.lang].written_by | default: "Written by" }} 
+    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <span itemprop="name">
+        {{ author.name }} {% if author.affiliation %}, {{ author.affiliation | escape }} {% endif %}
+        {% if author.twitter %}
+          <a href="https://twitter.com/{{author.twitter}}" class="icon fa-twitter" target="_blank"><span class="label">Twitter</span></a>
+        {% endif %}
+        {% if author.linkedin %}
+          <a href="https://linkedin.com/{{author.linkedin}}" class="icon fa-linkedin" target="_blank"><span class="label">LinkedIn</span></a>
+        {% endif %}
+        {% if author.github %}
+          <a href="https://github.com/{{author.github}}" class="icon fa-github" target="_blank"><span class="label">Github</span></a>
+        {% endif %}
+        {% if author.email %}
+          <a href="mailto:{{author.email}}" class="icon fa-envelope"><span class="label">Email</span></a>
+        {% endif %}      
+      </span>
+    </span><br>
   {% endif %}
   <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
     {% assign date_format = site.date_format | default: "%b %-d, %Y" %}

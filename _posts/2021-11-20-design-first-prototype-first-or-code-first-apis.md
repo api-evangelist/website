@@ -7,6 +7,7 @@ tags:
 - Design
 - Prototype
 - Code
+- API-First
 ---
 I strongly believe in a design-first approach to delivering new APIs, and future iterations of existing APIs. Having an OpenAPI artifact to guide discussions, services, and tooling saves you time, money, and frustration across the API lifecycle. This isn’t opinion, this is fact. However, I also have grown to be very pragmatic in how I approach the API lifecycle, and fully grasp that adopting API-first effectively across teams isn’t something that all enterprise organizations will have the time, skills, and other resources to make happen. Resulting in me supporting design-first, prototype-first, and code-first approaches to delivering APIs.
 

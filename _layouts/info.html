@@ -8,13 +8,13 @@ layout: default
 
             <div class="sidebar-fixed-width uk-visible@m">
                 <div class="sidebar-docs uk-position-fixed uk-margin-top">
-                    {% for section in site.data.navigation_docs %}
+                    {% for section in site.data.navigation_info %}
                     <h5>{{ section.title }}</h5>
                     <ul class="uk-nav uk-nav-default doc-nav">
-                    {% for doc in section.docs %}
-                      {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
-                      {% assign p = site.docs | where:"url", doc_url | first %}
-                      <li class="{% if doc_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                    {% for info in section.info %}
+                      {% assign info_url = info | prepend:"/info/" | append:"/" %}
+                      {% assign p = site.info | where:"url", info_url | first %}
+                      <li class="{% if info_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
                     {% endfor %}
                     </ul>
                     {% endfor %}
@@ -35,22 +35,17 @@ layout: default
 
                     <div class="article-content link-primary">
                         {{ content }}
-                        {% if site.share.doc %}
+                        {% if site.share.info %}
                             {% include share.html %}
                         {% endif %}
                     </div>
 
-                    {% include hook-post-content-doc.html %}
-
                     <hr class="uk-margin-medium">
 
-                    {% include paginate-doc.html %}
+                    {% include paginate-info.html %}
 
-                    {% include related-docs.html %}
+                    {% include related-info.html %}
 
-                    {% if site.disqus.shortname %}
-                        {% include disqus_comments.html %}
-                    {% endif %}
                 </article>
 
                 <script>
