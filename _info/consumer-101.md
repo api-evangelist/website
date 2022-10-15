@@ -4,6 +4,7 @@ subtitle: When it comes to using APIs this is wher eyou can begin.
 tags: [features]
 author: kin
 ---
+
 APIs came in to existence to satisfy a demand for access to valuable content, data and resources, and the more APis that are developed, the more the appetite for API consumption has grown. APIs enable website, web and mobile applications to build applications, using resources that were completely out of reach in even the recent past. Some API resources, like a simple city look-up by postal code, might be simple enough that a developer could recreate, but other resources such as global satellite imagery is something the average developer does not have the resources, or the time to create—the more API resources available, the cooler the apps we build, and the more we hunger for valuable API resources grows.
 
 ### Starts with a Need

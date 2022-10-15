@@ -7,6 +7,7 @@ tags:
 author: kin
 ---
 ![](https://s3.amazonaws.com/kinlane-productions2/tag-clouds/tag-cloud-history-padding-header.png)
+
 History is everything. Understanding where we have come from is critical to knowing where we are going. While pushing forward with the latest technology, it is always healthy to pause and take a look at that past--so let's take a look at the history of APIs.
 
 "The concept of an API pre-dates even the advent of personal computing, let alone the Web, by a very long time! The principal of a well documented set of publicly addressable "entry points" that allow an application to interact with another system has been an essential part of software development since the earliest days of utility data processing. However, the advent of distributed systems, and then the web itself, has seen the importance and utility of these same basic concepts increase dramatically." - Martin Bartlett
