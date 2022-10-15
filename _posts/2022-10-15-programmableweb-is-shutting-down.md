@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Considering the Next Generation of API Gateways and Management'
+title: 'ProgrammableWeb is Shutting Down'
 image: https://kinlane-productions2.s3.amazonaws.com/programmable-web-then-now.png
 author:
  name: kin
