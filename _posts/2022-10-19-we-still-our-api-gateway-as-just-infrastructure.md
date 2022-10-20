@@ -11,6 +11,7 @@ tags:
 - Programmatic
 - Cloud
 - Regions
+- Infrastructure
 ---
 I have been thinking deep thoughts about API gateway and management offerings for the last couple of weeks. I am refreshing my memory of what has happened over the last decade with each wave of API management providers, the recent wave of smaller footprint next generation API gateway providers, but developing more awareness regarding what new players are delivering at the gateway layer. I am really working to see all the moving parts, but really step back and think about what has changed, and begin to make some bets on what the future holds. One of the jagged edges of our perception of API gateways I am chewing on right now is the fact that many of us still see the gateway as just another piece of infrastructure rather than the programmatic commodity baked into the fabric of the cloud and increasingly across the enterprise.
  
