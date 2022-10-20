@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'We Still See Our Your Gateway as Just Infrastructure'
+title: 'We Still See Our API Gateway as Just Infrastructure'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-butterfly-purple-flower.jpg
 author:
  name: kin
