@@ -16,17 +16,17 @@ tags:
 - Visualizer
 ---
 
-Every couple of years I get motivated to take a fresh look at what is happening with APIs across the federal government. Since I worked for the Obama administration I have had a passion for understanding the state of, but also being an advocate for APIs in government. While there are plenty of things that frustrate me when it comes to government APIs, I also find that I am left pretty hopeful about what is happening across each of the federal agencies. Using the digital registry API I pulled a list of federal agencies, produced a cheat sheet for searching Google across a handful of terms, and got to work understanding where things are right now. I rated these agencies on a scale from 1-3, with three being a commitment to APIs evident, and 3 being no APis are found.
+Every couple of years I get motivated to take a fresh look at what is happening with APIs across the federal government. Since I worked for the Obama administration I have had a passion for understanding the state of, but also being an advocate for APIs in government. While there are plenty of things that frustrate me when it comes to government APIs, I also find that I am left pretty hopeful about what is happening across each of the federal agencies. Using the digital registry API I pulled a list of federal agencies, produced a cheat sheet for searching Google across a handful of terms, and got to work understanding where things are right now. I rated these agencies on a scale from 1-3, with three being a commitment to APIs evident, and 3 being no APIs are found.
  
 - **Access Board** (3) - This is a very difficult one to search for due to the name. I see talk of doing APIs, but nothing really substantial.
     - [Research](https://www.access-board.gov/research/)
 - **Administration for Children and Families (ACF)** (2) - APIs clearly aren’t a priority, but there is one, as well as a tone of amazing research that needs to be available.
     - [Unaccompanied Children Reporting API](https://github.com/cloud-gov/hhs-acf-uc-api)
     - [ACF Data & Research](https://www.acf.hhs.gov/acf-data-research)
-- **Administration for Community Living**** (2) - APIs clearly aren’t a priority, but there is one, as well as a tone of amazing research that needs to be available.
+- **Administration for Community Living** (2) - APIs clearly aren’t a priority, but there is one, as well as a tone of amazing research that needs to be available.
     - [The Eldercare Locator Database API](https://eldercare.acl.gov/Public/Site_Utilities/API_Reg/API_Registration.aspx)
     - [ACL Data & Research](https://acl.gov/aging-and-disability-in-america/data-and-research)
-- **Administrative Office of the U.S. Courts**** (2) - Pacer clearly is a priority, but lots of statistics, analysis, and other things that should be machine readable.
+- **Administrative Office of the U.S. Courts** (2) - Pacer clearly is a priority, but lots of statistics, analysis, and other things that should be machine readable.
     - [Pacer](https://pacer.uscourts.gov/file-case/developer-resources)
     - [Statistics & Reports](https://www.uscourts.gov/statistics-reports)
     - [Analysis & Reports](https://www.uscourts.gov/statistics-reports/analysis-reports)
@@ -90,7 +90,7 @@ Every couple of years I get motivated to take a fresh look at what is happening 
 - **Centers for Medicare and Medicaid Services (CMS)** (1) - Proper set of APIs and data portal to make valuable data and information available.
     - [Developer](https://developer.cms.gov/)
     - [Data](https://data.cms.gov/)
-- **Commission on Civil Rights (USCCR) ** (3) - Some data showing, but no APIs to make things accessible.
+- **Commission on Civil Rights (USCCR)** (3) - Some data showing, but no APIs to make things accessible.
     - [Data Inventory Program](https://www.usccr.gov/reports/data-inventory-program)
 - **Commodity Futures Trading Commission (CFTC)** (3) - Lots of good data, no APIs to be found of any kind.
     - [Reports](https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm)
@@ -112,9 +112,9 @@ API-Information)
 - **Courts of Appeals, District Courts, and other Judicial Services** (3) - No APIs or data to be had.
 - **Defense Commissary Agency (DeCA)** (3) - No APIs or data to be had.
 - **Defense Finance and Accounting Service (DFAS)** (3) - No APIs or data to be had.
-- **Defense Human Resources Activity (DHRA)- **3No APIs or data to be had.
-- **Defense Information Systems Agency (DISA)- **3No APIs or data to be had.
-- **Defense Security Service (DSS)- **3No APIs or data to be had.
+- **Defense Human Resources Activity (DHRA)** (3) - No APIs or data to be had.
+- **Defense Information Systems Agency (DISA)** (3) - No APIs or data to be had.
+- **Defense Security Service (DSS)** (3) - No APIs or data to be had.
 - **Department of Agriculture (USDA)** (3) - The USDA gets it and has many APIs and data available for use programmatically.
     - [Data APIs](https://www.ers.usda.gov/developer/data-apis/)
     - [FoodData Central API](https://fdc.nal.usda.gov/api-guide.html)
@@ -347,7 +347,7 @@ API-Information)
 - **Peace Corps** (2) - They have some APIs and open data, but not any dedicated resources.
     - [Peace Corps Countries & Regions REST API](https://github.com/peacecorps/peace-corps-countries-api)
     - [Open Government](https://www.peacecorps.gov/about/open-government/reports/)
-- **Pension Benefit Guaranty Corporation (PBGC).** (2) - No APIs, but some data resources are available.
+- **Pension Benefit Guaranty Corporation (PBGC)** (2) - No APIs, but some data resources are available.
     - [Data Books](https://www.pbgc.gov/prac/data-books)
 - **Pipeline and Hazardous Materials Safety Administration (PHMSA)** (2) - They have some statistics, but no APIs are available.
     - [Data and Statistics](https://www.phmsa.dot.gov/data-and-statistics/pipeline/data-and-statistics-overview)
