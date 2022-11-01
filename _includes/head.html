@@ -20,6 +20,12 @@
   {% if jekyll.environment == 'production' and site.google_analytics %}
     {% include google-analytics.html %}
   {% endif %}
+  
+  {% if page.image %}
+     {% assign social_image = page.image | absolute_url %}
+  {% else %}
+     {% assign social_image = site.image | absolute_url %}
+  {% endif %}  
 
   <meta property="og:url" content="{{ page.source }}">
   <meta property="og:type" content="website">
