@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Data good practices: If it ain''t computable, it''s a string....'
+title: 'Data good practices: If it ain''t computable, it''s a string...'
 image: /images/posts/2022-10-29-numeric-vs-string-data-types.jpg
 author:
   name: pascal

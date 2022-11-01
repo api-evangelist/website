@@ -11,9 +11,9 @@ tags:
 - Metadata
 - Featured
 ---
-Identifiers are used everywhere to be able to unambiguously reference resources. Examples, amongst many, include a passport number, a domain name, a book ISBN, a database record key, a UUID, a network card MAC address, a shortened URL, a string hash, a vehicle identification number, a digital object identifier, and the lkes. They play a fundamental role in the API, data, and metadata spaces.
+Identifiers are used everywhere to be able to unambiguously reference resources. Examples, amongst many, include a passport number, a domain name, a book ISBN, a database record key, a UUID, a network card MAC address, a shortened URL, a string hash, a vehicle identification number, a digital object identifier, and the likes. They play a fundamental role in the API, data, and metadata spaces.
 
-When maintaining identiffers, whether handcrafted or code generated, or creating tools, database, and APIs, there are many aspects and facets that we need to consider. Here is a summary of the ones I can think of. 
+When maintaining identifers, whether handcrafted or code generated, or creating tools, database, and APIs, there are many aspects and facets that we need to consider. Here is a summary of the ones I can think of. 
 
 - <i>Format</i>: an identifier should always be expressed as a string (even if its a numeric value). We never perform mathematical operations on identifiers.
 - <i>Character Set</i>: Technically an identifier can use any character, but most systems and standards have restrictions. In my experience, to ensure an identifier works in most situations, only use alphanumeric characters, numbers, and underscore, and never start with a number.

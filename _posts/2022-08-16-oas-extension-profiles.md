@@ -9,7 +9,6 @@ tags:
 - API
 - Extensions
 - Metadata
-- Featured
 ---
 The use of [extensions](https://spec.openapis.org/oas/v3.1.0#specification-extensions) in Open API Specification (OAS) has been supported since version 2.x based on a minimalistic approach whereby anyone can define a property starting with `x-` (e.g. `x-myextension`) which can hold any information. This feature was carried over as is to version 3.x. Extensions can be used for various purposes, typically to add functionality, particular use cases, or address shortcoming of the specification.
 
