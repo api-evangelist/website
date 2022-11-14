@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Where Does Mastadon Fit In With My Overall API Circus Stack?'
+title: 'Where Does Mastodon Fit In With My Overall API Circus Stack?'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/copper-circuit-clowns_35893926114_o.jpg
 author:
  name: kinlane
