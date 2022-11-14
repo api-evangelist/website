@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'Helping Teams Stay Focused on APIs While Also Being Able To See the Whole Enterprise'
-image: https://kinlane-productions2.s3.amazonaws.com/enterprise/enterprise-white-1.jp
+image: https://kinlane-productions2.s3.amazonaws.com/enterprise/enterprise-white-1.jpg
 author:
  name: kinlane
 tags:
