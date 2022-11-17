@@ -70,7 +70,7 @@ All of my web and project sites run on Github. I use Postman and AWS to deliver 
 ### Seeing the Big Picture
 Now that I have my digital resources and capabilities loaded up in my head I can begin contemplating where Mastodon fits in. After reading more about the platform, digesting a handful of useful guides from people I know and follow about migrating from Twitter to Mastodon, and looking through the Mastodon API, I am confident that there is a place for Mastadon in my stack. Now the real question is, will it rise to the occasion and become part of my daily routine, and will it become the backbone of my storytelling operations. Only time will tell. There are just too many other things to consider before I can predict the stickiness and seamlessness of Mastodon and the “Fediverse”.
 
-### Th State of Twitter
+### The State of Twitter
 I don’t have much confidence that Twitter will be able to drive itself out of the ditch that Elon Musk has driven it into. I kind of feel like this is intentional. IDK. Elon Musk is such a toxic individual, and the people he has emboldened are just going to make Twitter an even more unbearable place. I support everyone in leaving Twitter, but ultimately I am not sold on the fact that Mastodon is the answer to what ails us, and that the same negative network effects will emerge there. I have also invested a lot in Twitter over the years and it won’t be easy for me to walk away. I still believe it is the most important API out there. Whether that continues to be true—check in with me in a couple of weeks or months.
 
 ### The State of the Fediverse

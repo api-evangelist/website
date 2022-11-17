@@ -12,7 +12,6 @@ tags:
 - Knowledge Inference
 - Machine Learning
 - AI
-- Featured
 ---
 
 <p>
