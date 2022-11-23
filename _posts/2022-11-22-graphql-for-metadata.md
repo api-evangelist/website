@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'GraphQL for metadata'
+title: 'GraphQL for Metadata Standards'
 image: /images/posts/2022-11-22-graphql-for-metadata.jpg
 author:
   name: pascal
