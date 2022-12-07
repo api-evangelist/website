@@ -14,11 +14,11 @@ I am working on some new approaches to telling more consistent visual stories ac
 
 For this story, I am looking to establish a Spectral rule that I can apply at design, develop, as well as build time. I want to automate checking that every API operational that goes out the door is secured with an API key—something I am enforcing using my CI/CD.
 
-![Test for API Keys](https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-2.png)
+<a href="https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-2.png" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-2.png" width="100%" alt="Test for API Keys"></a>
 
 I am using platform rules linting and collection testing to look at the OpenAPI contract at design, but also development, and enforced rules at build time. This is a great start, but I am also looking to test for the API key when making a series of test calls to the API, but also lint the gateway for proper configuration using the gateway API. This approach gives me three dimensions I can test and automate looking at how tall my APIs are properly secured using keys.
 
-![Test for API Keys](https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-3.png)
+<a href="https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-3.png" target="_blank"><img src="https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-3.png" width="100%" alt="Test for API Keys"></a>
 
 This approach pushes my API testing beyond just the instance of an API. I can test all operations to see if they require keys or not. But I can also “test” the surface area of the API for the same design patterns I am looking for. I can add another dimension as well. I can “test” the gateway to see if the API has been configured to require a key. This gives me a repeatable blueprint I can apply here to my API key scenario, but also beyond, approach API testing in 3D.
 
