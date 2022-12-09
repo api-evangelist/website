@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'How Can I Test That My API Requires and API Key'
+title: 'How Can I Test That My API Requires an API Key'
 image: https://kinlane-productions2.s3.amazonaws.com/test-for-api-keys-1.png
 author:
  name: kinlane
