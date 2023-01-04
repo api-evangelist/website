@@ -17,11 +17,11 @@ I frustratingly see APIs everywhere in a world where most do not even know what 
 
 The Beurs van Hendrick de Keyser, the first stock exchange, was completed in 1611. The building was approximately sixty meters long and over 35 meters wide possessing forty-two numbered columns surrounded the center square without a roof that served as the trading floor. Merchants now had a well-known location to be found on any given day. The exchange was equipped with a clock tower to help guide the deals that these merchants made into specific hours of each day during the business week, ensuring that business was brought out of the coffee houses and into the market, which then set the tone for the pace of business that was increasingly spreading around the globe.
 
-![Hendrik De Keyser Stock Exxchange](https://kinlane-productions2.s3.amazonaws.com/HdK-Notarishuis-groot.jpeg)
+![Hendrik De Keyser Stock Exxchange](https://kinlane-productions2.s3.amazonaws.com/hendrik-de-keyser-stock-exchange-2.jpeg)
 
 This first stock exchange in Amsterdam was the convergence of a couple things. It wasn’t the first market or exchange, but the first place where more complex financial products defined as stocks were bought and sold at scale. It wasn’t the first clock tower, but the first time that markets were being aligned with time at this scale, setting the pace of business we still experience today. By 1668, the clock tower was moved “center stage” at the Beurs van Hendrick de Keyser, showing how important time would play in this game.
 
-![Hendrik De Keyser Stock Exxchange](https://kinlane-productions2.s3.amazonaws.com/hendrik-de-keyser-stock-exchange-2.jpeg)
+![Hendrik De Keyser Stock Exxchange](https://kinlane-productions2.s3.amazonaws.com/HdK-Notarishuis-groot.jpeg)
 
 We have been conditioned for the last 400+ years through the humming of markets and clocks ticking forward in unison, keeping us all in line each business day. As I think back to these gears perpetually spinning and marching forward, building, expanding around the globe over the last 400 hundred years I am left with the same feeling I have when I think about the API economy each day. When I think about global markets, complex financial products, and their relationship to time I am left hearing both the “Time” and “Money” tracks from the Pink Floyd Dark Side of the Moon album in my head. And when I think about all of this reduced to trillions of digital transaction daily using APIs I am left with a much faster pace and overwhelming electronic version of this familiar tune. 
 
