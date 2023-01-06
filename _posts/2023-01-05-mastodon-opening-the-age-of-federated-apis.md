@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'Mastodon Opening the Age of Federated APIs'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-skinner-san-francisco-wharf-clock.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/aws-s3-square-christianity-under-construction-copper-circuit-square.jpg
 author:
  name: kinlane
 tags:
