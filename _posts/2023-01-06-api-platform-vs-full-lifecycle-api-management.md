@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Mastodon Opening the Age of Federated APIs'
+title: 'API Platform vs Full Lifecycle API Management'
 image: https://kinlane-productions2.s3.amazonaws.com/platform-diagram.png
 author:
  name: kinlane
