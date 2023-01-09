@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'Looking Through a Federated Lens Across Mastodon, FHIR, and PSD2/3'
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-docs-cranes-waterfront.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/america-immigration_dumping-ground-golden-gate-night.jpeg
 author:
  name: kinlane
 tags:
