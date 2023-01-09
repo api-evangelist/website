@@ -11,7 +11,6 @@ tags:
 - APIs
 - GraphQL
 - Postgres
-- Featured
 ---
 
 I know little about [GraphQL](https://graphql.org/), but based on what I've seen so far, it is a very promising technology for providing access to data and delivering over open APIs. Unlike other API specifications whose focus is on services, GraphQL is data centric and essentially provides a standard way to query datasets and deliver schema documentation in machine actionable formats. So I'm very hyped about this but need to understand the current state of affairs and how far this can go.

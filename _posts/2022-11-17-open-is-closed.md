@@ -7,7 +7,6 @@ author:
   name: pascal
 tags:
 - domains
-- Featured
 ---
 
 The other day I was looking for a domain name to host APIs and related services for various R&D projects I'm involved in. When that's the case, I usually stick to the classic .com and .org top level domains, but though it would be good for a change to explore some of the most exotic ones that are now available.
