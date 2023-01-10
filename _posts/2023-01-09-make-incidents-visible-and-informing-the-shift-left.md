@@ -10,7 +10,7 @@ tags:
 - Breaches
 - Outages
 - Shift Left
-=- Culture
+- Culture
 ---
 I am always looking for ways to help teams fight the good fight when it comes to cultural change across API operations. The technology of APIs takes a lot of work, but it never requires as much work as the business and people side of API operations. Gathering stories from across the conversation I am having, sharing them here on the blog, and via the Postman blog is how I look to scale my advice and guidance for shifting enterprise behavior. Today I wanted to aggregate a handful of stories about outages and breaches, and explore what we can do to contribute to behavioral change across teams and amongst leadership after any type of API incident.
 
