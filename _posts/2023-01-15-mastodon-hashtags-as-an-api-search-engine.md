@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-title: 'Postman Interceptor But for Product Managers'
-image: https://kinlane-productions2.s3.amazonaws.com/postman-interceptor-add-on-screenshot.png
+title: 'Mastodon #HashTags as an API Search Engine'
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/yellow-journalism-nyc-skyline-from-ferry.jpg
 author:
  name: kinlane
 tags:
