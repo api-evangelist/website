@@ -13,7 +13,6 @@ tags:
 - Safety
 - Search
 - Discovery
-
 ---
 I am fascinated with cultivating the hashtags that come through my Mastodon instances. I have two domains setup. [Kin Lane](https://mastodon.kinlane.com/web/@kin) and [API Evangelist](https://mastodon.apievangelist.com/web/@api). My personal one is more photos, libraries, travel, outdoors, where my professional one is APIs, data, platforms, and protocols. Once you start following, following, posting, and engaging with other instances, your hashtag trends begin to evolve and you end up with a pretty robust list of topics that people associate with their posts. 
 

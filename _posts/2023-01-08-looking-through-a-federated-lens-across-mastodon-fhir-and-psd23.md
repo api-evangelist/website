@@ -11,6 +11,7 @@ tags:
 - Federated
 - FHIR
 - PSD2
+- Featured
 ---
 I am immersed in the federated Mastodon universe the last month, and I’ve been immersed in the federated universes of [FHIR](https://www.hl7.org/fhir/overview.html), [PSD2/PSD3](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32015L2366), and [UK Open Banking](https://www.openbanking.org.uk/) for a number of years. It is unlikely that anyone involved in the Mastodon universe right now would consider what is happening could be related to the financial and healthcare sectors, but those in the financial and healthcare space would also not see the expansion of the Mastodon universe as having anything to do with their worlds. Mastodon is about social networking, but PSD2 is about banking, and FHIR about healthcare, while all three are about defining one dimension of our personal and professional lives that is being shaped by open source federated APIs.
 
