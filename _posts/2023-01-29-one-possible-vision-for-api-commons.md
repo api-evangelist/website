@@ -568,7 +568,7 @@ openapi-v3-info-description:
   then:
     field: description
     function: truthy
-``
+```
 
 Or whether or not the OpenAPI has contact information:
 
