@@ -10,7 +10,7 @@ tags:
   - Evangelism
   - Communication
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/109_214_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/109_214_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p><i>This is a write-up for research I conducted with my partner Skylight Digital. The team conducted a series of interviews with leading public and private sector API platforms regarding how they approached developer outreach, and then I wrote it up as a formal report, which the Skylight Digital team then edited and polished. We are looking to provide as much information as possible regarding how the VA, and other federal agencies should consider crafting their API outreach efforts.</i>
 

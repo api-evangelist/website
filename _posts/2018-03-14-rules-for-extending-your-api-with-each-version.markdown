@@ -9,7 +9,7 @@ tags:
   - Versioning
   - Reliability
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm spending time learning from the API design guides of other leading API providers, absorbing their healthy practices, and assimilating them into my own consulting and storytelling. One API design guide I am learning a lot from is out of [the Adidas Group](https://adidas-group.gitbooks.io/api-guidelines/), which contains a wealth of wisdom regarding not just the design of your API, but also the deployment and evolution of the API resources we are publishing.
 

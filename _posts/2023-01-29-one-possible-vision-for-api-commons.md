@@ -49,7 +49,7 @@ Alongside API Commons we launched [APIs.json](http://apisjson.org/) to help API 
 {
   "name": "Example API",
   "description": "This is an example APIs.json file, demonstrating what is possible with the API discovery specification.",
-  "image": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+  "image": "https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
   "tags": [
     "Application Programming Interface",
     "API"
@@ -62,7 +62,7 @@ Alongside API Commons we launched [APIs.json](http://apisjson.org/) to help API 
     {
       "name": "Example API",
       "description": "This provides details about a specific API, telling what is possible.",
-      "image": "https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
+      "image": "https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg",
       "humanURL": "http://example.com",
       "baseURL": "http://api.example.com",
       "tags": [
@@ -124,7 +124,6 @@ I have long used the APIs.json format to index my APIs. There are still many com
 
 ## APIs.json Property Types
 I was obsessive about APIs.json being flexible and opinionated in the first version of the specification. There were just two properties: type and URL. These are meant to describe properties of an API, its OpenAPI, documentation, pricing page, or terms of service. These can be human readable properties as well as machine-readable properties of an API. APIs.json wasn’t intended to compete with Swagger, OpenAPI, AsyncAPI, Postman Collections, JSON Schema, or other specifications—-it was designed to index them as a single definition for an API. Here are the current sets of properties for the current and next proposed versions:
-
 - 0.14 - Swagger, RAML, Blueprint, WADL, WSDL, TermsOfService, InterfaceLicense, StatusPage, Pricing, Forums, and AlertsTwitterHandle
 - 0.15 - Swagger, OpenAPI, JSONSchema, PostmanCollection, AsyncAPI, RAML, Blueprint, WADL, WSDL, Documentation, Authentication, Signup, Login, TermsOfService, InterfaceLicense, PrivacyPolicy, Security, SDKs, StatusPage, Pricing, Rate Limits, Blog, BlogFeed, Forums, Support, ChangeLog, RoadMap, Contact, ErrorCodes, GitHubOrg, GitHubRepo, Twitter, AlertsTwitterHandle
 
@@ -647,7 +646,6 @@ It is schema all the way down. JSON Schema has a JSON Schema. OpenAPI and AsyncA
 I really am not good at all the governance part of defining specifications. It isn’t my strength. But I respect the need for it and those who are good at it. I think it is something that is essential to the growth of specifications big and small, and after playing this game for a while, helping put OpenAPI, AsyncAPI, and JSON Schema into the Linux Foundation, I have learned a lot about what I don’t know, and what works and doesn’t work when it comes to moving a specification forward. [I’ve spent a lot of time studying the components of these API specifications](https://blog.postman.com/managing-next-generation-of-api-specifications/), and some of the tools they enable, immersed in m investment in OpenAPI, AsyncAPI, JSON Schema, and Postman Collections, but also trying to align with the GraphQL, GRPC, and other communities. Adding to the mix, I’d like to put APIs.json and API Commons into some sort of governance, but honestly I am not sold that the Linux Foundation would be where they should be, but there is no other better alternative that truly gets APis.
 
 I envision the governance for the API Commons to be defined by the API Commons, providing the scaffolding and conveyor belts for defining and governing itself, beginning with a handful of digital resources potentially needed to manage standards, specifications, and schema.
-
 * Stakeholders - A resource for managing everyone who is involved with moving a spec forward.
 * Change - The details of all changes made to each spec, with everything you need to know.
 * Messages - The messages sent by all stakeholders when it comes to moving a spec forward.

@@ -8,7 +8,7 @@ tags:
   - Github
   - Orchestration
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/114_69_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/114_69_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm regularly fascinated with API development teams I work with expressing their concern with working with many Github repositories. With all of the complexity I watch teams embrace when it comes to frameworks, scaffolding, continuous integration, deployment, and orchestration solutions, I'm lost on why many Github repositories suddenly become such a challenge. A Github organization is a folder, and a Github repository is a folder, that you can check out locally, on your server, or work with via an API, or Git. It is a distributed file store, that you can orchestrate with programmatically, and can be as logical or illogical as you design it to be.
 

@@ -6,7 +6,7 @@ date: 2019-06-10T09:00:00.000Z
 tags:
   - API Evangelist
 image: >-
-  https://kinlane-productions.s3.amazonaws.com/api-evangelist-site/open-nen.jpg
+  https://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/open-nen.jpg
 ---
 <p><img src="{{ page.image }}" width="25%" align="right" style="padding: 15px;" /></p>
 <p>After six months of silence I've decided to fire API Evangelist back up again. I finally reached a place where I feel like I can separate out the things that caused me to step back in the first place. Mostly, I have a paycheck now, some health insurance, and I don't have to pretend I give a shit about APIs, startups, venture capital, and the enterprise. I'm being paid well to do an API job. I can pay my rent. I can go to the doctor when my health takes a hit. My basic needs are met.</p>

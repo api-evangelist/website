@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Plans
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_plans_pricing_tiers.png
+  http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/api_plans_pricing_tiers.png
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/api_plans_pricing_tiers.png" align="right" width="45%" style="padding: 15px;" /></p>[I started developing a machine readable format for describing the API plans and pricing for leading API providers a few years back](http://plans.apievangelist.com/). Eventually I'd like to see the format live alongside OpenAPI, Postman, and other machine readable API specifications within a single APIs.json index. I am looking to adequately describe the plans and pricing for APIs, which are often just as important as the technical details, in the same way we've describe the technical surface area of an API using OpenAPI for some years now. People love to tell me that I will never be able to do it, which only makes me want to do it more.
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/api_plans_pricing_tiers.png" align="right" width="45%" style="padding: 15px;" /></p>[I started developing a machine readable format for describing the API plans and pricing for leading API providers a few years back](http://plans.apievangelist.com/). Eventually I'd like to see the format live alongside OpenAPI, Postman, and other machine readable API specifications within a single APIs.json index. I am looking to adequately describe the plans and pricing for APIs, which are often just as important as the technical details, in the same way we've describe the technical surface area of an API using OpenAPI for some years now. People love to tell me that I will never be able to do it, which only makes me want to do it more.
 
 I'm revisiting my work as part of work I'm doing on a clients project, which I'm also using to push forward my API portal and management toolbox. The project I'm working on has two API plans:
 

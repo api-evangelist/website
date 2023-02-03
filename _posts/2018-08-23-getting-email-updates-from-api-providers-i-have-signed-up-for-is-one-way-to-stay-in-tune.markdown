@@ -11,7 +11,7 @@ tags:
   - Communications
   - Support
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_158_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/68_158_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I do not like email. I do not have a good relationship with my inbox. However, it is one of those ubiquitous tools I have to use, and understand the value it can bring to my world. The goal is to not let my inbox control me too much, as my it is is often a task list that other people think they can control. With all that said, I'm finding renewed value in email newsletters, on several fronts. While I'd prefer to get updates via Atom, I'm warming up to receiving updates from API providers, and API service providers in my inbox.
 

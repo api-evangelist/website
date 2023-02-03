@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Portals
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/66_189_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/66_189_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been working a couple organizations who are struggling with providing information within their API developer portal intended for API publishers, pushing their API portal beyond just being for their API consumers. Some of the folks I've been working with haven't thought about their API developer portals being for both API publishers and consumers, and asked me to weigh in on the pros and cons of doing this. Helping them understand how they can continue their journey towards not just being an API platform, but also an API marketplace.
 

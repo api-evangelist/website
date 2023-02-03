@@ -15,7 +15,7 @@ tags:
   - Logging
   - Rate Limiting
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_1_-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_1_-5.jpg
 ---
 p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>When I talk to government agencies, non-profit organizations, or organizations doing internal APIs I regularly receive pushback about the information I share regarding API management, service composition, rate limiting, access tiers, and the other essential ingredients of the business of APIs. People tell me they aren't selling access to their APIs, they don't need to be measuring APIs like publicly available commercial APIs do. They don't need a free, pro, and other tiers of access, and they won't be invoicing their consumers like the majority of APIs I showcase from the API universe.
 

@@ -9,7 +9,7 @@ tags:
   - Event Architecture
   - Streaming
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_140_800_500_0_max_0_-5_-5.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am shifting my long running API operations from a PHP / EC2 based implementation to a more efficient Node.js / Lambda based solution, and I promised James Higginbotham ([@launchany](https://twitter.com/launchany)) that I'd share a breakdown of my process with him a month or so back. I'm running 100+, to bursts of 1000+ long running API requests for a variety of purposes, and it helps me to tell the narrative behind my code, introducing some coherence into the why and how of what I'm doing, while also sharing with others along the way. [I had covered my earlier process a little bit in a story a few months ago](http://apievangelist.com/2018/01/19/developing-a-microservice-to-orchestrate-long-running-background-server-sent-events/), but as I was migrating the process, I wanted to further flesh out, and make sure I wasn't mad.
 

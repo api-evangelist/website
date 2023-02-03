@@ -11,7 +11,7 @@ tags:
   - Governance
   - Evangelism
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>The clothing marketplace Zalando has an interesting approach to classifying their APIs based upon who is consuming them. It isn't just about APIs being published publicly, or privately, they actually have standardized their definition, and have established an OpenAPI vendor extension, so that the definition is machine readable and available via their OpenAPI.
 

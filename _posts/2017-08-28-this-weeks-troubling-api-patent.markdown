@@ -9,9 +9,9 @@ tags:
   - SDK
   - Definitions
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Daimler_Reitwagen_color_drawing_1885%20%20DE%20patent%2036423%20-%20Basic%20original%20patent%20first%20motorcycle%20in%20the%20world.jpg
+  http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Daimler_Reitwagen_color_drawing_1885%20%20DE%20patent%2036423%20-%20Basic%20original%20patent%20first%20motorcycle%20in%20the%20world.jpg
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/blog/Daimler_Reitwagen_color_drawing_1885%20%20DE%20patent%2036423%20-%20Basic%20original%20patent%20first%20motorcycle%20in%20the%20world.jpg" align="right" width="40%" style="padding: 15px;" /></p>I found myself looped into another API patent situation. I'm going to write this up as I would any other patent story, then I will go deeper because of my deeper personal connection to this one, but I wanted to make sure I called this patent what it is, and what ALL API patents are--a bad idea. Today's patent is for [an automatch process and system for software development kit for application programming interface](http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&s1=20170102925.PGNR.):
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/blog/Daimler_Reitwagen_color_drawing_1885%20%20DE%20patent%2036423%20-%20Basic%20original%20patent%20first%20motorcycle%20in%20the%20world.jpg" align="right" width="40%" style="padding: 15px;" /></p>I found myself looped into another API patent situation. I'm going to write this up as I would any other patent story, then I will go deeper because of my deeper personal connection to this one, but I wanted to make sure I called this patent what it is, and what ALL API patents are--a bad idea. Today's patent is for [an automatch process and system for software development kit for application programming interface](http://appft1.uspto.gov/netacgi/nph-Parser?Sect1=PTO1&Sect2=HITOFF&d=PG01&p=1&u=/netahtml/PTO/srchnum.html&r=1&f=G&l=50&s1=20170102925.PGNR.):
 
 > Title: Automatch process and system for software development kit for application programming interface<br /><br />
 Patent# : US 20170102925 A1<br /><br />

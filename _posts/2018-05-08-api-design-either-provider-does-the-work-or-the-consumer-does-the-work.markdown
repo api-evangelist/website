@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Design
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/109_201_800_500_0_max_0_1_-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/109_201_800_500_0_max_0_1_-5.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm always fascinated by the API design debate, and how many entrenched positions there are when it comes to the right way of doing it. Personally, I don't see any right way of doing it, I just see many different ways to put the responsibility on the provider or the consumer shoulders, or sharing the load between them. I spend a lot of time profiling APIs, crafting OpenAPI definitions that try to capture 100% of the surface area of an API. Something that is pretty difficult to do when you aren't the provider, and you are just working from existing static documentation. It is just hard to find every parameter and potential value, exhaustively detailing what is possible when you use an API.
 

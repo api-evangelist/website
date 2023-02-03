@@ -7,13 +7,13 @@ tags:
   - API Evangelist
   - Conferences
   - Events
-image: https://kinlane-productions.s3.amazonaws.com/api-conferences/the-postman-users-conference-2019.png
+image: https://kinlane-productions2.s3.amazonaws.com/api-conferences/the-postman-users-conference-2019.png
 ---
 As we approach the fall it is time to begin thinking about the conference season, and what the most relevant API conferences are. I haven’t been doing any events this year, but staying in tune with the conference circuit has always been important to my work. Who knows, maybe I will be spend some more time investing in API related events after taking a break for six month. When it comes to API events and conferences, here is what I am tracking on.
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-city-conference-seattle-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-city-conference-seattle-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>API City Conference</strong><br>
 Seattle, WA United States<br>
 September 5, 2019
@@ -24,7 +24,7 @@ URL: <a href="https://2019.apicity.io/">https://2019.apicity.io/</a>
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/the-postman-users-conference-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/the-postman-users-conference-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>The Postman User Conference</strong><br>
 San Francisco, CA United States<br>
 September 11-12, 2019<br>
@@ -35,7 +35,7 @@ URL: <a href="https://www.getpostman.com/post-con-2019/">https://www.getpostman.
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-days-barcelona-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-days-barcelona-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>API Days: APIs for Consumer Applications</strong><br>
 Barcelona, Spain<br>
 September 12-13, 2019<br>
@@ -46,7 +46,7 @@ URL: <a href="https://www.apidays.co/barcelona">https://www.apidays.co/barcelona
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-days-melbourne-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-days-melbourne-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>API Days: Connection, Automation, Intelligence</strong><br>
 Melbourne, Australia<br>
 September 19-20, 2019<br>
@@ -57,7 +57,7 @@ URL: <a href="https://www.apidays.co/melbourne">https://www.apidays.co/melbourne
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-city-conference-seattle-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-city-conference-seattle-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>RESTFest</strong><br>
 Greenville, SC United States<br>
 September 25-28, 2019<br>
@@ -68,7 +68,7 @@ URL: <a href="https://www.restfest.org/">https://www.restfest.org/</a>
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-specifications-conference.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-specifications-conference.png" align="left" width="200" style="padding: 15px;">
 <strong>API Specifications Conference (ASC)</strong><br>
 Vancouver, British Columbia, Canada<br>
 October 15 - 17, 2019<br>
@@ -79,7 +79,7 @@ URL: <a href="https://events.linuxfoundation.org/events/asc-2019/program/">https
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-days-london-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-days-london-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>API Days: Banking APIs and PSD2</strong><br>
 London, England<br>
 November 13-14, 2019<br>
@@ -90,7 +90,7 @@ URL: <a href="https://www.apidays.co/london">https://www.apidays.co/london</a>
 
 <hr>
 
-<img src="https://kinlane-productions.s3.amazonaws.com/api-conferences/api-days-paris-2019.png" align="left" width="200" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/api-conferences/api-days-paris-2019.png" align="left" width="200" style="padding: 15px;">
 <strong>API Days: From Legacy to Agile, From Product to Ecosystems</strong><br>
 Paris, France<br>
 December 10-11, 2019<br>

@@ -8,7 +8,7 @@ tags:
   - GraphQL
   - Design
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/16_38_600_500_0_max_1_0_-2.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/16_38_600_500_0_max_1_0_-2.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>One of the arguments I hear for why API providers should be employing GraphQL is that they should just get out of developers way, and let them build their own queries so that they can just get exactly the data that they want. As an application developer we know what we want from your API, do not have us make many different calls, to multiple endpoints--just give us one API and let us ask for exactly what we need. It is an eloquent, logical argument when you operate and live within a "known bubble", and you know exactly what you want. Now, ask yourself, will every API consumer know what they want? Maybe in some scenarios, every API consumer will know what they want, but in most situations, developers will not have a clue what they want, need, or what an API does.
 

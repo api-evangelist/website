@@ -8,9 +8,9 @@ tags:
   - Business of APIs
   - Politics of APIs
   - Evangelism
-image: 'https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png'
+image: 'https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png'
 ---
-<p><img src="https://kinlane-productions.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" align="right" width="40%" style="padding: 15px;" /></p>  
+<p><img src="https://kinlane-productions2.s3.amazonaws.com/api-evangelist/api-evangelist-logo-400.png" align="right" width="40%" style="padding: 15px;" /></p>  
   
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 

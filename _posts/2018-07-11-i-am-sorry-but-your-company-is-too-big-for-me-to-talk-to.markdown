@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Politics of APIs
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/104_198_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/104_198_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>It is funny work with companies, organizations, institutions, and government agencies of all shapes and sizes, and learn all the weird practices they have, and the strange belief systems they've established. One day I will be talking to a 3 person startup, the next day I'll be talking with a large bank, and after that I'll be working with a group at a massive government agency. I have to be mindful of my time, make sure I'm meeting my mission, having an impact, as well as paying my bills, but for the most part I don't have any entrenched rules about who I will talk to, or who I will share my knowledge with.
 

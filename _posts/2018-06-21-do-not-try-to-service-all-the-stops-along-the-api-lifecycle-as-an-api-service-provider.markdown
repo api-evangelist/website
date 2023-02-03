@@ -12,7 +12,7 @@ tags:
   - Plugins
   - Connectors
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/66_189_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/66_189_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>One thing I see a lot from API service providers who are selling their services to the API sector, is that once they find success servicing one stop along the API lifecycle, they often want to service other additional stops. I don't have a problem with API service providers delivering across multiple stops along the API lifecycle, however I do caution of trying to expand across too many stops, and potentially doing any of them poorly, rather than partnering with other more specialized API service providers to help you focus on what you do best.
 

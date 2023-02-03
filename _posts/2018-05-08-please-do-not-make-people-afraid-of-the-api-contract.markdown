@@ -10,7 +10,7 @@ tags:
   - Definitions
   - Politics of APIs
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_98_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/64_98_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I was in a conference session about an API design tool today, and someone asked if you could get at the OpenAPI definition behind the solution. They said yes, but quickly also said that the definition is boring and that you don't want to be in there, you want to be in the interface. I get that service providers want you to focus on their interface, but we shouldn't be burying, or abstracting away the API contract for APIs, we should always be educating people about it, an bringing it front and center in any service, tooling, or conversation.
 

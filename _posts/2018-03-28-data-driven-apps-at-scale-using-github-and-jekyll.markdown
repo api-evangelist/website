@@ -10,7 +10,7 @@ tags:
   - Discovery
   - Definitions
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/43_113_800_500_0_max_0_-5_-5.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've pushed my Github driven, Jekyll fueled, application delivery process to a new levels the last couple of weeks. I've been investing more cycles into [my API Stack work](http://theapistack.com/), as I build out an [API Gallery for Streamdata.io](http://api.gallery.streamdata.io/). All of my work as the API Evangelist has long lived as independent Github repositories, with a JSON or YAML core that drives the static Jekyll UI for my websites, applications, and API developer portals. Designed to be independent, data and API driven micro-solutions to some related aspect of my API research. I'm just turning up the volume on what already exists.
 

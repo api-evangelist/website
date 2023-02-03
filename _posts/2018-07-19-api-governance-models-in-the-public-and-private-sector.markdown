@@ -10,7 +10,7 @@ tags:
   - Federal Government
   - Enterprise
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_113_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/68_113_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>This is a report for the Department of Veterans Affairs microconsulting project, "[Governance Models in Public and Private Sector](https://github.com/department-of-veterans-affairs/VA-Micropurchase-Repo/issues/18)". Providing an overview of API governance to help the VA, "understand, with the intention to adopt, best practices from the private and public sector, specifically for prioritizing APIs to build, standards to which to build APIs, and making the APIs usable by external consumers." Pulling together several years of research conducted by industry analyst API Evangelist, as well as phone interviews with API practitioners from large enterprise organizations who are implementing API governance on the ground across the public and private sector, conducted by Skylight Digital.
 
@@ -174,7 +174,7 @@ The API journey is always full of challenges, and these areas of friction should
 Challenges are a fact of life in the delivery of software, and evolving complex systems using APIs. Identifying challenges should be a natural part of targeting resources for delivery as APIs. Challenges can increase fiction when delivering service, and should be carefully evaluated before tackling the development of any new services. It is easy to identify the potential of new APIs, but it takes a more seasoned eye to understand potential challenges.
 
 New ideas for APIs will become numerous once you begin looking. Based upon existing resources, applications, and the feedback of internal groups, partners, and the public. Along with all of the possibilities that come along, a standardized, pragmatic approach to understanding the potential, value, as well as challenges with each potential idea should be part of the equation.
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/71_113_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/71_113_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
 ## Defining Data Models & Standards
 To help realize and deliver upon governance at scale it will take heavy investment in standardizing data models, and incorporating existing patterns and standards throughout the API delivery lifecycle. Many enterprise API development groups are streamlining and standardization the delivery of APIs through the adoption and development of standards across operations, which is something that is also contributing to adoption, integration and removing friction for application developers. 
 
@@ -325,7 +325,7 @@ The next aspect of presenting production APIs to consumers involves communicatio
 - **Showcase** - A published listing of applications and developers, showcasing the work being done by API consumers, highlighting the value a platform brings to the table.
 
 Maintaining a steady stream of communication around what is happening with an API platform is a clear signal coming from the strongest enterprise API platforms out there. You see regular communication around what is happening, and what is being worked on, with teams reach out to each other, and sharing healthy practices, challenges, and showcasing what is being done with their API resources.
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/45_113_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/45_113_800_500_0_max_0_-1_-1.jpg" width="45%" align="right" style="padding: 15px;" /></p>
 ## Realizing API Governance
 Everything covered so far in this document feeds into what should be considered as part of the overall governance of an API platform, but focuses on the actual delivery of APIs. This is the section where we look at what is needed specifically for governance, and what teams are doing to invest in the governance of APIs across their teams, projects, and the lifecycle of their operations. There are a number of areas we identified that were relevant for groups who are actively realizing governance across their operations.
 

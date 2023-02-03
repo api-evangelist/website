@@ -12,7 +12,7 @@ tags:
   - Testing
   - Monitoring
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/28_68_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/28_68_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm fascinated by the dominating power of programming languages. There are many ideological forces at play in the technology sector, but the dogma that exists within each programming language community continues to amaze me. The potential absence of programming language dogma within the world of APIs is one of the reasons I feel it has been successful, but alas, other forms of dogma tends to creep in around specific API approaches and philosophies, making API evangelism and adoption always a challenge.
 

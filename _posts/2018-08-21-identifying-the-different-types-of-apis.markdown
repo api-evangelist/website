@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Discovery
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>APIs come in many shapes and sizes. Even when APIs may share a common resource, the likelihood that they are similar in functional, will be slim. Even after eight years of studying APIs, I still struggle with understanding the differences, and putting APIs into common buckets. Think of the differences between two image APIs like Flickr and Instagram, but then also think about the difference between Twitter and Twilio--the differences are many, and a challenge to articulate.
 

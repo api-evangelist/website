@@ -9,9 +9,9 @@ tags:
   - Red Hat
   - 3Scale
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg
+  http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am joining my friend Steve Willmott in DC this week to talk about federal government APIs](http://redhatapievents.com/dc). We will  be gathering at Tysons' Biergarten between 1:30 and 5:00 PM this Thursday to talk APIs. Both Steve and I will be speaking individually, with some QA, and a happy hour afterwards as an opportunity for more discussion.
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/steve_and_i_apistrat_2016.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am joining my friend Steve Willmott in DC this week to talk about federal government APIs](http://redhatapievents.com/dc). We will  be gathering at Tysons' Biergarten between 1:30 and 5:00 PM this Thursday to talk APIs. Both Steve and I will be speaking individually, with some QA, and a happy hour afterwards as an opportunity for more discussion.
 
 I am looking forward for the opportunity to hanging with my friend Steve, as the last time we've hung out and spoke together was APIStrat in Boston, but at APIStat we are always running a conference, and not actually focused on our views of the APIs space. So, I am eager to learn more detail about what 3Scale is up to as part of the Red Hat machine, and specifically some of the containerization, microservices, and virtualization discussions they are leading lately.
 

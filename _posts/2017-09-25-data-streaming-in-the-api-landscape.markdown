@@ -10,9 +10,9 @@ tags:
   - Webhooks
   - Messaging
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/goldsilverfalls/creativity/file-00_00_40_84.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/goldsilverfalls/creativity/file-00_00_40_84.jpg
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/goldsilverfalls/creativity/file-00_00_40_84.jpg" align="right" width="40%" style="padding: 15px;" /></p>I was taking a fresh look at [my real time API research](http://realtime.apievangelist.com/) as part of some data streaming, and event sourcing conversations I was having last week. My research areas are never perfect, but I'd say that real time is still the best umbrella to think about some of the shifts we are seeing on the landscape recently. They are nothing new, but there has been renewed energy, new and interesting conversation going on, as well as some growing trends that I cannot ignore. To support my research, I took a day this week to dive in, have a conversation with my buddy Alex over at the [TheNewStack.io](https://thenewstack.io/), and the new CEO of WSO2 Tyler Jewell around what is happening.
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/algorotoscope/goldsilverfalls/creativity/file-00_00_40_84.jpg" align="right" width="40%" style="padding: 15px;" /></p>I was taking a fresh look at [my real time API research](http://realtime.apievangelist.com/) as part of some data streaming, and event sourcing conversations I was having last week. My research areas are never perfect, but I'd say that real time is still the best umbrella to think about some of the shifts we are seeing on the landscape recently. They are nothing new, but there has been renewed energy, new and interesting conversation going on, as well as some growing trends that I cannot ignore. To support my research, I took a day this week to dive in, have a conversation with my buddy Alex over at the [TheNewStack.io](https://thenewstack.io/), and the new CEO of WSO2 Tyler Jewell around what is happening.
 
 The way I approach my research is to always step back and look at what is happening already in the space, and I wanted to take another look at some of the real time API service providers I was already keeping eye on in the space:
 

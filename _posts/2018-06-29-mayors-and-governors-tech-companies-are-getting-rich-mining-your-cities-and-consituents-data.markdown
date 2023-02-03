@@ -13,7 +13,7 @@ tags:
   - County Government
   - Federal Government
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_99_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/64_99_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>It has been a fascinating and eye opening experience sitting at the intersection of tech startups and the web, mobile, and device applications they've built over the last decade. In 2010 I was captivated by the power of APIs to deliver resources to developers, and end-users. In 2018, I'm captivated by the power of APIs to mine end-users like they are just a resource, with the assistance of the developer class. A dominant white male class of people who are more than willing to look the other way when exploitation occurs, and make for the perfect "tools" to be exploited by the wealthy investor class.
 

@@ -11,7 +11,7 @@ tags:
   - Politics of APIs
   - Evangelism
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I work with a lot of folks who work in large enterprise organizations, institutions, and government agencies who are moving the API conversation forward within their groups. I'm all too familiar with what it takes to move forward the API conversation within large, well established enterprise organizations. However, I am the first to admit that while I have a deep understanding of what it involves, I do not have the fortitude to actually lead an effort for the sustained amount of time it takes to actually make change. I just do not have the patience and the personality for it, and I'm eternally grateful for those that do.
 

@@ -12,7 +12,7 @@ tags:
   - Monetization
   - Plans
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/16_33_800_500_0_max_0_1_1-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/16_33_800_500_0_max_0_1_1-5.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I've written about how the startup community has driven the value exchange that occurs at the API management layer down a two lane road with API monetizatin and plans](http://apievangelist.com/2018/04/27/venture-capital-obfuscating-the-opportunities-for-value-exchange-at-the-api-management-level/). To generate the value that investors have been looking for, we have ended up with a free, pro, enterprise approach to measuring value exchanged with API integration, when in reality there is so much more going on here. Something that really becomes evident when you begin evaluating the API conversations going on across government at all levels.
 

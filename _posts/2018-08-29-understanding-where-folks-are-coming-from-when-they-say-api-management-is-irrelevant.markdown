@@ -10,7 +10,7 @@ tags:
   - Management
   - Investment
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am always fascinated when I get push back from people about API management, the authentication, service composition, logging, analysis, and billing layer on the world of APIs. I seem to be find more people who are skeptical that it is even necessary anymore, and that it is a relic of the past. When I first started coming across the people making these claims earlier this year I was confused, but as I've pondered on the subject more, I'm convinced their position is more about the world of venture capital, and investment in APIs, that it is about APIs.
 

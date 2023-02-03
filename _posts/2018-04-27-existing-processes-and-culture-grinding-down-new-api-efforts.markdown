@@ -8,7 +8,7 @@ tags:
   - Politics of APIs
   - Culture
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_176_800_500_0_max_0_-1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/64_176_800_500_0_max_0_-1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm always amazed what large organizations can achieve. They definitely have more resources, more momentum, and do way more than any single individual can achieve. However, as an individual actor I'm always also amazed at how large organization culture seems to always work to defend itself from change, and actively work to grind down API efforts I'm involved in. Even before I walk in the front door there are processes in place that work to ensure any effective API strategy gets ground down so that it won't be as effective.
 

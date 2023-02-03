@@ -8,7 +8,7 @@ tags:
 - Discovery
 ---
 
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/company/logos/uspto.png" align="right" width="25%" style="padding: 15px;" /></p>Here is another patent in my series of API related patents. I'd file this in the category as the other similar one from IBM--[Patent US 8954988: Automated Assessment of Terms of Service in an API Marketplace](http://apievangelist.com/2017/06/08/patent-automated-assessment-of-terms-of-service-in-an-api-marketplace/). It is a good idea. I just don't feel it is a good patent idea. 
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/company/logos/uspto.png" align="right" width="25%" style="padding: 15px;" /></p>Here is another patent in my series of API related patents. I'd file this in the category as the other similar one from IBM--[Patent US 8954988: Automated Assessment of Terms of Service in an API Marketplace](http://apievangelist.com/2017/06/08/patent-automated-assessment-of-terms-of-service-in-an-api-marketplace/). It is a good idea. I just don't feel it is a good patent idea. 
 
 > Title: API matchmaking using feature models
 > Number: 09454409

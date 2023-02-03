@@ -10,7 +10,7 @@ tags:
   - Evangelism
   - Management
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/32_39_600_400_0_avg_1_1_1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/32_39_600_400_0_avg_1_1_1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I feel like I'm regularly having to advocate for my existence, and the existence of developers who are like me, within the sales and marketing funnel for many APIs. I sign up for a lot of APIs, and have the pleasure of enjoy a wide variety of on-boarding processes for APIs. Many APIs I have no problem signing up, on-boarding, and beginning to make calls, while others I have to just my existence within their API sales and marketing funnel. Don't get me wrong, I'm not saying that I shouldn't be expected to justify my existence, it is just that many API providers are setup to immediately discourage, create friction for, and dismiss my class of API integrator--that doesn't fit neatly into the shiny big money integration you have defined at the bottom of your funnel.
 

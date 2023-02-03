@@ -10,7 +10,7 @@ tags:
   - Politics of APIs
   - Ethics
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/76_16_800_500_0_max_0_1_1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/76_16_800_500_0_max_0_1_1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>When I started doing API Evangelist in 2010 I was still very, very, very naive about why people were doing APIs. While I do not always expect everyone doing APIs to be ethical and sensible with the reasons behind doing APIs, I have been regularly surprised at how many different views there are out there regarding why we should be doing APIs in the first place. The lesson for me is to never assume that someone is doing APIs for the same reasons I am doing APIs, because rarely that will ever be the case--hopefully minimizing the chances I'll get continue to be surprised down the road.
 

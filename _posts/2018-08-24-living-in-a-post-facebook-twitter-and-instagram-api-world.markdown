@@ -8,7 +8,7 @@ tags:
   - Business of APIs
   - Politics of APIs
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>While Facebook, Twitter, and Instagram will always have a place in [my history of APIs](https://history.apievangelist.com/), I feel like we are entering a post Facebook, Twitter, and Instagram API world. All three platforms are going through serious evolutions, which includes tightening down the controls on API access, and shuttering of many APIs. These platforms are tightening things down for a variety of reasons, which are more about their business goals, than it is about the community. I'm not saying these APIs will go away entirely, but the era where where these API platforms ruled is coming to a close.
 

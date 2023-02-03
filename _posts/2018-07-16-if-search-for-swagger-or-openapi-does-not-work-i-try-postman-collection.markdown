@@ -10,7 +10,7 @@ tags:
   - Definitions
   - Discovery
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/80_86_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/80_86_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>While profiling any company, a couple of the Google searches I will execute right away are for "[Company Name] Swagger" and "[Company Name] OpenAPI", hoping that a provide is progressive enough to have published an OpenAPI definition--saving me hours of work understanding what their API does. I've added a third search to my toolbox, if these other two searches do not yield results, searching for "[Company Name] Postman", revealing whether or not a company has published a Postman Collection for their API--another sign of a progressive, outward thinking API provider in my book.
 

@@ -11,7 +11,7 @@ tags:
   - Politics of APIs
   - Investment
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_128_800_500_0_max_0_-1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/64_128_800_500_0_max_0_-1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I have a lot of conversations with folks down in the trenches about API security, and what they are doing to be proactive when it comes to keeping their API infrastructure secure. The will and the desire amongst folks I talk to regarding API security is present. They want to do what it takes to truly understand what is needed to keep their APIs secure, but many have their hands tied because lack of resources to actually do what is needed. Every API team I know is short-handed, and doing the best they can with what they have available to them. A lack of investment in API security isn't always intentional, it ends up just begin a reality of the priorities on the ground within the organizations they work in.
 

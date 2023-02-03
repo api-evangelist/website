@@ -9,7 +9,7 @@ tags:
   - Training
   - Politics of APIs
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/64_181_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/64_181_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>People love to hate in the API space. Ok, I guess its not exclusive to the API space, but it is a significant aspect of the community. I receive a regular amount of people hating on my work, for no reason at all. I also see people doing it to others in the API space on a regular basis. It always makes me sad to see, and have always worked to try to be as nice as I can to counteract the male negativity and competitive tone that often exists. While I feel bad for the people on the receiving end of all of this, I often times feel bad for the people on the giving end of things, as they are often not the most informed and up to speed folks, who seem to enjoy opening their mouth before they understand what is happening.
 

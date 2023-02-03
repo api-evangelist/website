@@ -8,7 +8,7 @@ date: 2018-11-16T09:00:00.000Z
 tags:
   - API Evangelist
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/109_201_800_500_0_max_0_-5_-5.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/109_201_800_500_0_max_0_-5_-5.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>All of my API workshops are machine readable, driven from a central YAML file that provides all the content and relevant links I need to deliver what I need during a single, or multi-day API strategy workshop. One of the common elements of my workshops are links out to relevant resource, providing access to services, tools, and other insight that supports whatever I'm covering in my workshop. There are two parts to this equation, 1) me knowing to link to something, and 2) being able to link to something that exists.
 

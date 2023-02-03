@@ -9,7 +9,7 @@ tags:
   - Federal Government
   - Definitions
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/109_214_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/109_214_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm continuing my work to help <a href="https://developer.va.gov/">the Department of Veterans Affairs (VA) move forward their API strategy</a>. One area I'm happy to help the federal agency with, is just being available to answer  questions, which I also find make for great stories here on the blog--helping other federal agencies also learn along the way. One question I got from the agency recently, is regarding how the teams should be documenting their APIs, taking into consideration that many of them are supporting legacy services like SOAP.
 

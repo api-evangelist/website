@@ -9,7 +9,7 @@ tags:
   - Deployment
   - Politics of APIs
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/16_38_600_500_0_max_1_0_-2.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/16_38_600_500_0_max_1_0_-2.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>It has been almost a year and half since I first wrote [my post questioning that GraphQL folks didn't want to do the hard work of API design](http://apievangelist.com/2016/08/30/graphql-seems-like-we-do-not-want-to-do-the-hard-work-of-api-design/), which I also [clarified that I was keeping my mind open regarding the approach](http://apievangelist.com/2016/09/02/i-am-keeping-my-mind-open-and-looking-forward-to-learning-more-about-graphql/) to delivering APIs. I've covered several GraphQL implementations since then, as well as my post [on waiting the GraphQL assault out](http://apievangelist.com/2017/09/05/just-waiting-the-graphql-assault-out/)-to which I received a stupid amount of, "dude you just don't get it!", and "why you gotta be so mean?" responses.
 

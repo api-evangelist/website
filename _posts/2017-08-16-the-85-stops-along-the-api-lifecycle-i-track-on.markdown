@@ -94,7 +94,7 @@ Here are the 85 stops along the API lifecycle landscape from my vantage point as
       <td valign="middle" align="left"><a href="http://portal.apievangelist.com" target="_blank">Portal</a></td>
    </tr>
    <tr>
-      <td valign="middle" align="right" width="10%"><a href="http://getting-started.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="50" style="padding: 5px;" align="center" /></a></td>
+      <td valign="middle" align="right" width="10%"><a href="http://getting-started.apievangelist.com" target="_blank"><img src="http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-running.png" width="50" style="padding: 5px;" align="center" /></a></td>
       <td valign="middle" align="left"><a href="http://getting-started.apievangelist.com" target="_blank">Getting Started</a></td>
    </tr>
    <tr>
@@ -102,7 +102,7 @@ Here are the 85 stops along the API lifecycle landscape from my vantage point as
       <td valign="middle" align="left"><a href="http://documentation.apievangelist.com" target="_blank">Documentation</a></td>
    </tr>
    <tr>
-      <td valign="middle" align="right" width="10%"><a href="http://frequently-asked-questions.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="50" style="padding: 5px;" align="center" /></a></td>
+      <td valign="middle" align="right" width="10%"><a href="http://frequently-asked-questions.apievangelist.com" target="_blank"><img src="http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-question-mark.png" width="50" style="padding: 5px;" align="center" /></a></td>
       <td valign="middle" align="left"><a href="http://frequently-asked-questions.apievangelist.com" target="_blank">Frequently Asked Questions</a></td>
    </tr>
    <tr>
@@ -122,7 +122,7 @@ Here are the 85 stops along the API lifecycle landscape from my vantage point as
       <td valign="middle" align="left"><a href="http://issues.apievangelist.com" target="_blank">Issues</a></td>
    </tr>
    <tr>
-      <td valign="middle" align="right" width="10%"><a href="http://change-log.apievangelist.com" target="_blank"><img src="http://kinlane-productions.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="50" style="padding: 5px;" align="center" /></a></td>
+      <td valign="middle" align="right" width="10%"><a href="http://change-log.apievangelist.com" target="_blank"><img src="http://kinlane-productions2.s3.amazonaws.com/api-evangelist-site/building-blocks/bw-recycling.jpg" width="50" style="padding: 5px;" align="center" /></a></td>
       <td valign="middle" align="left"><a href="http://change-log.apievangelist.com" target="_blank">Change Log</a></td>
    </tr>
    <tr>

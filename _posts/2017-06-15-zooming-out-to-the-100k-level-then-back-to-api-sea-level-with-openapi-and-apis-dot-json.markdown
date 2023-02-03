@@ -6,10 +6,10 @@ tags:
 - API Evangelist
 - HSDA
 - HSDS
-image: http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/drone_control_sunset.png
+image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/drone_control_sunset.png
 ---
 
-<p><img src="http://kinlane-productions.s3.amazonaws.com/api_evangelist_site/blog/drone_control_sunset.png" align="right" width="40%" style="padding: 15px;" /></p>I'm wrestling with the different levels of conversations I'm having around [my human services API work](https://openreferral.github.io/api-specification/definition/). Some of my audience are more technical and are pushing for discussion at the granular level, while other parts of my audience are more about the business of things at the 100K. I appreciate these types of projects, but when there are many different conversations going on at many different levels, it is a lot of work to wrestle things into something coherent that everyone involved will appreciate.
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/drone_control_sunset.png" align="right" width="40%" style="padding: 15px;" /></p>I'm wrestling with the different levels of conversations I'm having around [my human services API work](https://openreferral.github.io/api-specification/definition/). Some of my audience are more technical and are pushing for discussion at the granular level, while other parts of my audience are more about the business of things at the 100K. I appreciate these types of projects, but when there are many different conversations going on at many different levels, it is a lot of work to wrestle things into something coherent that everyone involved will appreciate.
 
 One day I'm thinking about which individual fields are required, then next I will considering how multiple human services API integrators will be syndicating and sharing information between clusters of human service API implementations. While I'm relying on Github, and Slack to facilitate conversations that going on, I am ultimately relying on [OpenAPI](https://www.openapis.org/) and [APIs.json](http://apisjson.org) to help me hammer out the contract that will speak to the developers at the granular level but can also communicate the business and political terms of the API contract.  It will describe which fields are required as well as describe the webhooks I need to define how to syndicate and share between implementations.
 

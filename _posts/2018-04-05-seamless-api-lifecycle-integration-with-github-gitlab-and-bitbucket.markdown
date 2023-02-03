@@ -9,7 +9,7 @@ tags:
   - Github
   - Orchestration
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/68_161_800_500_0_max_0_1_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>_This is a story, in a series of stories that I’m doing as part of the version 3.0 release of the [Stoplight.io platform](https://next.stoplight.io/). Stoplight.io is one the few API service providers I’m excited about what when it comes to what they are delivering in the API space, so I jumped at the opportunity to do some paid work for them. As I do, I’m working to make these stories about the solutions the provide, and refrain from focusing on just their product, hopefully maintaining my independent stance as the API Evangelist, and keeping some of the credibility I’ve established over the years._
 

@@ -10,9 +10,9 @@ tags:
   - Real Time
   - Directory
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_174_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/68_174_800_500_0_max_0_-5_-1.jpg
 ---
-<p><img src="http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/68_174_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>As I prepare to launch the Streamdata.io API Gallery, I am doing a handful of presentations to partners. As part of this process I am looking to distill down the objectives behind the gallery, and the opportunity it delivers to just a handful of talking points I can include in a single slide deck. Of course, as the API Evangelist, the way I do this is by crafting a story here on the blog. To help me frame the conversation, and get to the core of what I needed to present, I wanted to just ask a couple questions, so that I can answer them in my presentation.
+<p><img src="http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/68_174_800_500_0_max_0_-5_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>As I prepare to launch the Streamdata.io API Gallery, I am doing a handful of presentations to partners. As part of this process I am looking to distill down the objectives behind the gallery, and the opportunity it delivers to just a handful of talking points I can include in a single slide deck. Of course, as the API Evangelist, the way I do this is by crafting a story here on the blog. To help me frame the conversation, and get to the core of what I needed to present, I wanted to just ask a couple questions, so that I can answer them in my presentation.
 
 **What is the Streamdata.io API Gallery?**
 It is a machine readable, continuously deployed collection of OpenAPI definitions, indexed used APIs.json, with a user friendly user interface which allows for the browsing, searching, and filtering of individual APIs that deliver value within specific industries and topical areas.

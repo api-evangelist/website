@@ -10,7 +10,7 @@ tags:
   - Provenance
   - Observability
 image: >-
-  http://kinlane-productions.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
+  http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/23_19_800_500_0_max_0_-5_-1.jpg
 ---
 <p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I am publishing a new API for locations](http://locations.apievangelist.com/#Updates). I am tired of needing some of the same location based resources across projects, and not having a simple, standardized API I can depend on. So I got to work finding the most accurate and complete data set I could find of cities, regions, and countries. I settled on using the complete, and easy to use [countries-regions-cities](https://github.com/prograhammer/countries-regions-cities) project by [David Graham](https://github.com/prograhammer)--providing a straightforward SQL script I can use as the seed for my locations API database.
 
