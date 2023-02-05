@@ -13,83 +13,81 @@ tags:
 ---
 I am pissed about Twitter shutting down free access to their API. It genuinely breaks my heart. I’ve seen many people who do not quite grok how I feel, so as I do with any topic, I am looking to do some storytelling around the subject. After diving in for a day, I can tell this isn’t going to be something I can make sense of in a single post, and predict there will be several essays required, and honestly, I am feeling like I want to get into book mode on this subject. Seriously, I am not exaggerating when it comes to my belief that Twitter is the most important API-—or it was. After looking through the [almost 3000 blog posts from the Twitter blog](https://gist.github.com/kinlane/34d77cf4f6749c19f3259b696cb597e6), I feel like I need to work through my thoughts on this important subject.
 
-# Twitter API
+## Twitter API
 Twitter began as a simple web-based alternative to sending SMS messages. You could create an account, build your network of friends and followers, and post a message (tweet)--not much more. Then in September 2006 they launched an API, and almost everything else we know of Twitter today was built by the API ecosystem. If you were there during the years from 2007 through 2015 you likely see Twitter very differently from those who are simply using the platform today. We all built Twitter. We believed in Twitter. We believed in the user and developer community. Jack, Ev, and Biz tapped into this energy and used it to deliver the platform we know today. Twitter evolved through these early years through hackathons and ongoing development cycles by the community, something you can see Twitter cheering on via the Twitter blog in the early years. 
 
-# Blogosphere
+## Blogosphere
 One of the things that drove Twitter’s growth was the synergy it shared with the blogosphere that was expanding during the early years of this century. Tweeting was originally called microblogging, a term that has faded away over the years. You could tell longer stories on your blog, and you could tell much shorter stories on Twitter. Then using the API, you could integrate your Tweets into your blog using the embeddable solutions developed on top of the Twitter API. Along the way developers delivered integrations with other leading blogging platforms like WordPress and received coverage and was showcased in leading tech blogs like TechCrunch and Mashable. This whole age represented a more literate evolution of the web and social media, and Twitter rapidly became the tool of libraries, academics, and new and existing media outlets—-helping grow the platform into the heartbeat of the world it became between 2010 and 2020.
 
 ![Twitter Wordpress](https://kinlane-productions2.s3.amazonaws.com/twitter-api/twitter-wordpress.png)
 
-# Platforms
+## Platforms
 Another thing that helped build the foundation of Twitter was the integration with other platforms that were growing, expanding, and defining our online world over the last fifteen years. The Twitter API ecosystem put in serious amounts of work to connect the Twitter platform with Facebook, Myspace, Salesforce, WordPress, Apple, and many other places where people are hanging out. Having Twitter on the operating systems, web dashboards, and the other places we frequent daily helped bake the platform into our lives. This integration leverages the success of other platforms while also building Twitter into the global platform that it has become. 
 
-# Media
+## Media
 While the API developer ecosystem is responsible for building out the platform, it was the relationship that Twitter cultivated early on with media, television, and Hollywood that gave Twitter the momentum in the early days and has continued to make it the destination it has become over the years. Twitter just wouldn’t have gotten the attention it needed to grow without the New York Times, PBS, media, and news outlets. Then it was the cozy relationship between Twitter and media that has continued to make the social network the heartbeat of the world. This may not seem like a vote for the importance of the API, but when you begin to consider that the widgets and share buttons that have become ubiquitous across news sites are API-driven, you begin to see how we are all taking for granted the role that the Twitter API plays in how we get our news and information.
 
 ![Twitter Media](https://kinlane-productions2.s3.amazonaws.com/twitter-api/new-york-times.png)
 
-# Internationalization
+## Internationalization
 It is interesting to read through early blog posts where Twitter was crowdsourcing the translation and localization of the platform. Like every other aspect of the platform Twitter leaned on its ecosystem to build out the global reach the platform has today. Passionate users and developers in every country around the world didn’t just contribute to using the platform, they built it, localized it, and expanded it around the globe. We all spread Twitter into the town squares of our cities, doing the work Twitter needed to become the global nervous system it is today. Without this passionate base of international users, the platform wouldn’t be the center of power that Elon Musk sees Twitter as.
 
-# Politics
+## Politics
 After the media, but also overlapping with it, is the role that politics has played in the growth of Twitter. As you look through the blog posts from the early days you see Barack Obama’s entire presidency completely defined by Twitter. You see the platform, media, but also visualizations, and other applications delivered using the API shaping politics between 2008 until today. Twitter didn’t just define Obama’s presidency; it came to define the Trump administration too. While politics would define Twitter and Twitter defining politics it was the power driven through the Twitter API that would make everything seem so loud and intense, as bots automated rage and misinformation that has come to define Twitter today. As the role of politics expanded via the platform you begin to see Twitter reconciling with bots, misinformation, and even money in politics, but it has become something that Twitter hasn’t ever fully gotten a handle on.
 
 ![Twitter Politics](https://kinlane-productions2.s3.amazonaws.com/twitter-api/tracking-candidates-on-twitter.png)
 
-# Democracy
+## Democracy
 Overlapping with the politics portion, but expanding much wider and deeper around the globe, the role Twitter has played in spreading but simultaneously suffocating democracy is worth adding onto this list. The applications and API integrations have helped automate for good and bad how people are building consensus around the world, voicing how they feel about those in power, and actively using the platform to push back and protest. Sadly, the platform is also used to censor, track, and harm democratic movements around the world. Because of its clear stance to be a public space and the town hall for the world, Twitter has positioned itself intentionally as a voice for democracy.
 
-# Disaster
+## Disaster
 Another significant area I have personally worked on, and you see regularly across blog posts from Twitter, is the role the platform plays in disaster recovery. Twitter has showcased usage of the platform for hurricanes and forest fires, and if you use the platform, you have seen it used for much more. I worked on API automation and integrations during Hurricane Sandy and have shared the standards and approaches we used with others during other incidents. With mobile phone networks often taking a hit during disasters, having an Internet-based approach to messaging, with people standing by to monitor and help is ideal, and Twitter has filled in this gap nicely over the years.
 
 ![Twitter Disasters](https://kinlane-productions2.s3.amazonaws.com/twitter-api/hurrican-sandy.png)
 
-# Monetization
+## Monetization
 You can see Twitter begin to struggle with monetization of the platform beginning in 2009 and 2010, with the momentum picking up around advertising ever since. The Twitter Advertising API plays a central role in this, but also the continued locking down of the public API and how you can use it to build applications reflects this evolution in monetization. I have long called for and written about constructive ways in which Twitter could monetize its platform, and with version 2.0 of their API they began to do so. Sadly, it was a little too late to play catch-up, and something that is far beyond the mental capacity of its current leader, who just doesn’t see the nuance of balancing free and paid approaches to operating a platform.
 
-# Abuse
+## Abuse
 GamerGate was the beginning of the downfall of Twitter. It came right after their mandate for developers, showing they weren’t willing to partner with the ecosystem to address abuse, and the lack of discussion around abuse on their blog until well into 2016 and 2017 shows it was an afterthought. There were a lot of women power users of Twitter who had made the platform what it was, and when Twitter failed to see the link between abuse, monetization, and the API ecosystem, it spawned platforms like Mastodon, and pushed many users to switch or just abandon Twitter altogether. I personally know several high-profile women who never came back, and this phase became the proving ground for Trump, Musk, and everything else wrong with Twitter and the world today.
 
 ![Twitter Abuse](https://kinlane-productions2.s3.amazonaws.com/twitter-api/abuse.png)
 
-# Transparency
+## Transparency
 When it comes to transparency Twitter has put on a good performance with its very public transparency reports. While I will be diving deeper into every area you see listed here, I will be deeply considering the intent, politics, and theater behind how Twitter does its transparency. Like abuse, transparency or a lack of overlap with the platforms struggle for monetization, and while Twitter leaned on the API ecosystem to build the platform, the content, and the global reach, it neglected considering how it might help when it comes to transparency. Twitter just saw the API ecosystem as valuable up until the platform reached critical mass, missing out on an opportunity to crowd-source who bad actors were and how government and law enforcement were using the platform.
 
-# Misinformation
+## Misinformation
 Reflecting the dark side of how the Twitter API helped turn the platform into the information nervous system of the globe, it was used to automate the publishing of misinformation during elections, disasters, and throughout our days. Like abuse, and following the lead of other platforms like Facebook, Twitter didn’t quite see misinformation as the problem that it was. Twitter published some blog posts about what they were doing, and made investments in this area, but they failed to see their own API ecosystem as an ally in this fight. With a more sensible approach to managing their API, Twitter could have taken a strong lead on curbing misinformation on the platform, but instead it has become the cesspool it is today.
 
 ![Twitter Misinformation](https://kinlane-productions2.s3.amazonaws.com/twitter-api/misinformation.png)
 
-# Data
+## Data
 As you skim Twitter blog posts from 2006 until now, around 2010 you begin to see the value of Twitter data revealing itself in their storytelling. Then around 2015 you begin to see them actively investing in monetization around its data with Gnip and eventually v2 of the Twitter API. As the platform grew, the value of the data made available via the free public API increased, and if you wanted to do any serious research or analysis on what was happening on Twitter you had to have the proper funding. Again, Twitter struggled to balance the free and paid aspects of its presence when it came to its data and focused on who would pay for data, and not how researchers and the ecosystem could help strengthen their operations.
 
-# Research
+## Research
 Like most other areas, Twitter leadership was a little late to the game when it came to realizing the importance of research access to the platform via the API to help contribute to the health and stability of its platform. Twitter let the Library of Congress attempt to document what was happening, an effort that ultimately failed. Twitter has also recently made a big investment in making the platform more accessible to journalists and university researchers, something that has stopped with the current leadership. Twitter is incredibly important when it comes to understanding our world, making sense of Covid, environmental challenges, and almost any other topic you can think of—-but sadly, the API access doesn’t ever truly reflect this.
 
 ![Twitter Research](https://kinlane-productions2.s3.amazonaws.com/twitter-api/research.png)
 
-# Other 
+## Other 
 There are other areas I will likely be diving into as part of this work, but what I listed above represent the top areas I feel that make twitter the most important API. But areas like sports, Hollywood celebrities, security, privacy, reliability, and the relationship with mobile devices early on also capture my attention and contribute to this conversation. This post represents just a single pass over the 3000 blog posts on the Twitter blog, and what these stories triggered and aggregated for me. This post is just the beginning. I’ll be taking all the great Tweets from my followers on Twitter, LinkedIn, and Mastodon, further research into stories from other publications about Twitter, as well as my own experience to continue making sense of this very important API.
 
-# User Ecosystem Built
+## User Ecosystem Built
 Twitter was built by its users. Like other leading social platforms, it lives and breathes on user-generated content. Twitter’s power users are what gave the platform reach. Its deep relationship with the growing blogosphere and with mainstream media made it what it is-—this was enabled using the API. However, key features and concepts were developed within the user ecosystem, giving us the hashtag, retweet, and other things we now take for granted. While relying on your user ecosystem to help lead change in your platform is not common to Twitter, because of the public nature and simple API, this took on entirely new scale and scope when it came to Twitter, and the ways that it influenced our lives.
 
-# API Ecosystem Built
+## API Ecosystem Built
 Twitter content was generated via the applications and integrations the Twitter API powered. This is why you have a public API ecosystem. But with Twitter this was done at a scale that you just don’t see anywhere else, something that is reflected in the acquisitions made over the years by the company. 70% of Twitter was built and acquired in the ecosystem, and once leadership felt it had what it needed it began shutting this down as reflected in the infamous 2012 post that sent shockwaves throughout the API developer community. We all came out for the barn raising and feel pretty let down that we aren’t still invited over for the barn dances all these years later. It’s cool, we helped build all of this, but it really sucks for every wave of startup to come along now, that now we’ll be much more reluctant to lend a hand in raising the next generation of barns.
 
-# Public Commons
+## Public Commons
 The user and API ecosystem-built nature of Twitter was unique. You see aspects of it on YouTube, Facebook, and other platforms who relied on their API to reach critical mass, but it was Twitter's positioning as the public commons that really made it the most important API for me. It was much more public than Facebook. It was much more public in a literary and media way, well beyond YouTube and Instagram. LinkedIn and Facebook were your professional and personal private network of friends. Twitter was where you went out to the town square on a Friday to drink, party, and even protest. The Twitter API was where you went to make sense of any slice of the public commons around the globe, using this free and valuable resource to put your finger on the pulse of what was happening.
 
-![Twitter Ecosystem](https://kinlane-productions2.s3.amazonaws.com/twitter-api/twitter-ecosystem.png)
-
-# API Simplicity
+## API Simplicity
 Twitter's API wasn’t the best designed, but it was simple and useful. You could onboard with the API without really knowing what you were doing. The Twitter API was relevant to almost everyone, whether you were a developer or not. This simplicity fed the buttons, badges, widgets, share buttons, and endless number of applications and integrations that fed into all the areas listed above. This is what gave Twitter such mass appeal. I think the social platform itself was meant for a more literary audience (journalists, professors, writers, bloggers), but you could also do video, audio, and other richer forms of media. Twitter was the catch-all utility messaging API that was simple and easy for anyone to use. The responses I have received in response to me writing this story are filled with people who were introduced to APIs and building on top of APIs using the Twitter API.
 
-# API Learning
+## API Learning
 The Twitter API has been my go-to API to teach others about APIs since 2010. I know many others who also follow this approach. It wasn’t just where you went to learn about the Twitter API. It was where you went to learn about APIs. The Twitter API was the hello world of APIs. It is what you used in your hackathon project. It is what professors used in their classrooms. It is what data scientists used to tell their visual stories. Whatever topic you were interested in, I could change one property in my API query and return relevant results for you from the API. The Twitter API is how I lit up a generation of developers when it came to the API possibilities. I would be sadder about the loss of this if I didn’t have the Mastodon API. I see many of the same literate folks moving to Mastodon, so I am hopeful the learning will continue. Ultimately I think the world of APIs will be hurt by the demise of the Twitter API.
 
-# The Most Important API
+## The Most Important API
 Twitter was the most important API. Up until the end of 2022 I was ready to fight for this, but I am fully captivated by the power of the Fediverse now. While I don’t think all the mainstream people will move to Mastodon, I am tired of rebuilding on someone else’s platform. I want my next round of work to occur on my platform. The people’s platform. I am not worried about reaching the same scale and scope that Twitter, Facebook and others have. I am just looking for my people. I am looking for a simple API to understand what is happening in the world and my neighborhood and turn people onto APIs. I think Mastodon can eventually do this. However, we have a lot of buildings ahead of us. I have the time and energy for one more round of this, if I don’t get screwed out of it once again through an acquisition or some asshole stepping into a leadership role. 
 
 I guess if you weren’t there in the early days you didn’t see all of this energy. You didn’t see all the work occurring. You didn’t hang with people in the hackathons and eat pizza and drink beer. I guess you didn’t see the thousands of unpaid hours that went into what Twitter became. I hacked for free on a number of other APIs, and there wasn’t one that I felt part of as much as Twitter. I am going to take all the responses I’ve received from others, the stories I have written over the years, all of the Twitter blog posts, and stories from the media and the blogosphere and tell this story in much more detail. I don’t think we should give into Elon Musk and his vision for Twitter, and I will keep fighting back and maintaining my presence. What he is doing feels like what rich people have done to news, radio, television, cable, public broadcasting, and any other channel that has emerged as a true voice for the people, but this time it is happening out in the open instead of behind closed doors. I am definitely on team Fediverse, but I am not going to give up my Twitter accounts without stirring some shit.
