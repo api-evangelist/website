@@ -35,6 +35,7 @@ If I didn’t know better, I’d think there was a conspiracy to keep all of us 
  - **Layered Architecture** - There doesn't seem to be a clear and layered architecture for the different standards that compose the ecosystem, and not an XKCD cartoon where you just create a new standard, but develop a layered architecture from what already exists.
  - **Use Cases** - There aren’t any obvious use cases that connect the technical work being done to the solutioning of concrete real-world problems, connecting the dots that will matter to business stakeholders, elevating standards to the level necessary.
  
+
 While there are undoubtedly other areas of deficiency when it comes to the forward motion of API standards, I agree with my API standards therapist that these are some of the top areas that make all of this feel off. While I am sure there is some fuckery occurring because of bad actors in all of this, I feel like most of this is just due to a lack of communication, listening, and understanding what already exists. I regularly encounter well-meaning standards and open-source folks doing battle in these areas, when they actually agree on what they are trying to do for the overall API community.
  
 ## Operating on Different Planes
