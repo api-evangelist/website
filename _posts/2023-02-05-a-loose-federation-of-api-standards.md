@@ -20,11 +20,11 @@ It is too difficult for insiders even to keep up with best practices in this spa
  
 ## No Shared Understanding of the Value of Standardization
 We all pay a lot of lip service to standardization and interoperability, but if I’ve learned anything after 12 years steeped in the world of APIs, it is mostly an illusion and theater. Honestly, I struggle with being able to tell if someone is just talking about the importance of standards because they are lying, or they actually don’t understand what it all means. This is one of the things that caught my attention early on when it comes to the passion, dogma, and even venom that is present when we talk about APIs, standards, protocols, and the common ways in which we deliver our technology. My API standards therapist focuses in on three separate dimensions of this dilemma:
- 
  - **Decision-makers** don't grok the business value of standards. Some are even concerned by the potential for negative impact on what they (mistakenly) believe are competitive advantages.
  - **Developers** aren't incentivized to adopt standards, suffer from Not-Invented-Here syndrome, and probably consider that standards folks are sitting in their ivory towers disconnected from the reality of day-to-day software development (they might be onto something about that later point).
  - **Standards folks** tend to focus on the technical aspects of the work they're doing at the expense of broader benefits. For example, by putting consistency between APIs over common practices.
  
+
 If I didn’t know better, I’d think there was a conspiracy to keep all of us divided and working against each other, but I understand it is more of an Occam's razor situation. I can point to actual evidence of big tech companies actively dividing and conquering, but it really isn’t some grand conspiracy-—it is just selfishness, greed, and hubris on all our parts. We all right and wrong in the same motion. There are many contributing factors to this lack of shared understanding and forward motion.
  
  - **Proprietary Standards** - Many big companies and even small ones feel that their way of doing things is the right way and thus by default “the” standard, and everyone should just fall in line, and some players have the weight to throw around and dominance in a market to make this so.
