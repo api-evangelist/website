@@ -8,7 +8,6 @@ author:
 tags:
 - rust
 - programming
-- Featured
 ---
 
 I was recently reading [this article](https://medium.com/@SergiAlfonso/why-python-is-not-the-programming-language-of-the-future-193ae73f9e0d) about *"Why Python is not the programming language of the future"*. I'm not sure whether this will happen, but the author makes some very interesting points. One that I'm particularly sensitive about is performance. I grew up as a C/C++ developer (and other languages like Pascal, Assembly, COBOL, Prolog, LISP, or even APL). These were fun times but you had to seriously think about memory management and code efficiency, as we didn't have today's luxury of ridiculously fast processors and gargantuan memory space. 

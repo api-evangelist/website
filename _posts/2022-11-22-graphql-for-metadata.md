@@ -13,7 +13,6 @@ tags:
 - ddi
 - gofair
 - standards
-- Featured
 ---
 
 GraphQL is designed to handle numerous data use cases and and is particularly we suited to adjust to potentially changing data structures and content. But there are situations where the challenge is quite the opposite: we want to be able to expose harmonized and stable schemas and querying mechanisms across disparate data sources or even metadata standards. While I'm still learning about GraphQL, I believe the specification also has the potential to meet such requirements.

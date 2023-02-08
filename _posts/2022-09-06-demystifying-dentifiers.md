@@ -9,7 +9,6 @@ tags:
 - API
 - Extensions
 - Metadata
-- Featured
 ---
 Identifiers are used everywhere to be able to unambiguously reference resources. Examples, amongst many, include a passport number, a domain name, a book ISBN, a database record key, a UUID, a network card MAC address, a shortened URL, a string hash, a vehicle identification number, a digital object identifier, and the likes. They play a fundamental role in the API, data, and metadata spaces.
 
