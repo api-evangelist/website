@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Learning About Railroad Regulation in the Empire Express'
+title: How I Use Postman for Algorotoscope — API-First, No UI Needed'
 image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-postman-collection-visualizer.png
 author:
 name: kinlane
