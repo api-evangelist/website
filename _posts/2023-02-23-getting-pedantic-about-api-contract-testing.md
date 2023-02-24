@@ -49,8 +49,8 @@ This gets us an OpenAPI artifact which we can then use to generate our test coll
 
 Honestly, if I am being completely pedantic here, it really isn't contract testing until the JSON Schema is complete with not just object properties, but also validation, min, max, and other JSON Schema properties that are used to validate the structure and shape of the object. 
 
-Taking it even further, it really isn't a contract until it is actually negotiated between producer and consumer and they have agreed upon the structure, shape, and access of our digital resources and capabilities. 
+Taking it even further, it really isn't a contract until it is actually negotiated between producer and consumer and they have agreed upon the structure, shape, and access of our digital resources and capabilities. I'd also add, a mocked representation of the agreed upon contract with tests available--which can be run anywhere.
 
-We haven't even begun to talk about change. I was going to add in, and then I decided to leave this until the next piece and just focus on the contract testing and not breaking the contract with changes.
+We haven't even begun to talk about change. I was going to add it in, and then I decided to leave this until the next piece and just focus on the contract testing and not breaking the contract with changes.
 
 Putting an API into production does not create a contract. Testing an API in production isn't contract testing. The only way to establish a contract is to establish an agreed upon contract as OpenAPI, include JSON Schema for the structure and shape of requests and responses, and use that artifact agreed upon between producer and consumer as part of manual, scheduled, or automated testing. 
