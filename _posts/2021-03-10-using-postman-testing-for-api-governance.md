@@ -3,6 +3,9 @@ published: true
 layout: post
 title: 'Using Postman Testing for API Governance'
 image: https://kinlane-productions2.s3.amazonaws.com/using-postman-testing-for-api-governance.png
+tags:
+    - Testing
+    - Governance
 ---
 I have been evolving my approach to API governance with Postman since I started working there 1.5 years ago, but recently I am finding more time to invest in how I am “testing” the surface area of an API using it’s OpenAPI, and [rolling I tall up in a public workspace I am simply calling governance](https://www.postman.com/api-evangelist/workspace/governance/overview). It is a slightly different approach then what you see with other JSON Schema centered approaches, which is something I am evolving side by side, but for this workspace of API governance collections I was going for a more free form, scripted based approach, where I may or may not use a JSON Schema to validate. To help me prepare for my upcoming conversations I wanted to record a walkthrough of my API governance workspace as it stands today.
 

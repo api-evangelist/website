@@ -7,8 +7,6 @@ tags:
  - Lifecycle
  - OpenAPI
 ---
-
-
 Ok, I’ve gotten my recent immersion in thinking about the API lifecycle to a place where I think I want to put it to work on an actual API. [I spent some on a draft OpenAPI extension to help guide my API lifecycle](https://apievangelist.com/2021/08/03/an-openapi-lifecycle-extension/). Then I went through [thirteen separate API lifecycle definitions that were shared with me](https://apievangelist.com/2021/03/11/what-is-your-api-lifecycle/) in an earlier blog post and [connected each stop along each API lifecycle to some element of the Postman API platform](https://apievangelist.com/2021/08/05/enabling-an-openapi-lifecycle/). This resulted in me further fleshing out my OpenAPI API lifecycle extension to a point that I feel it is wroth to use when guiding, demonstrating, managing, and governing one of my APIs. I don’t expect anyone to implement the full version of this, but I am hoping it is flexible enough that it can accommodate many different versions of the API lifecycle. This is why I tested it against those thirteen API lifecycle, because I wanted to see how it would hold up in theory to many different people’s versions. Here are some simple, basic, intermediate, and complete examples of what I am thinking this extension could be applied.
 
 ### Simple API Lifecycle

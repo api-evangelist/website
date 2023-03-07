@@ -3,6 +3,9 @@ published: true
 layout: post
 title: 'Evolving API Deployment to Be More Defined and Observable Using APIs'
 image: https://kinlane-productions2.s3.amazonaws.com/evolving-api-deployment-to-be-more-defined-and-observable-using-apis.png
+tags:
+    - Observability
+    - Deployment
 ---
 I love it when someone realizes that APIs have APIs during one of my talks or reading of of my stories. I find that people are so heads down in their daily jobs they don’t have much time to sit back and contemplate the bigger picture, which is something that might lead them to see APIs behind their API infrastructure, but also consider how it fits into the overall API lifecycle. Since 2014 I have been on a journey to produce a machine readable artifact from every stop along the API lifecycle, and the “API deployment” is one of the stops I’ve been very keen to lock down with a set of API-driven deployment blueprints that would help define, standardize, automate, and allow us to measure the deployment of our APIs. I am looking to turn [APIs.json](http://apisjson.org/) / [APIs.yaml](http://apisyaml.org/) into a machine readable blueprint for API operations, and to be able to do that I need the API deployment process to be more defined and observable—something I am going to do with APIs.
 

@@ -3,6 +3,8 @@ published: true
 layout: post
 title: 'What is Your API Lifecycle?'
 image: https://kinlane-productions2.s3.amazonaws.com/api-lifecycle-tag-cloud.png
+tags:
+    - Lifecycle
 ---
 I like asking questions on Twitter then leaving and coming back to see the great answers people leave. Sometimes I get crickets, but depending on how I phrase the question, and how people interpret my question, I might get a stream of interesting views of the world of APIs. I recently asked a simple question. What is your API lifecycle? This is one of the ubiquitous phrases that we use in the API space that has no concrete definition and means many different things to many different people. I was sitting on a call listening to a conversation, and figured I'd tweet and ask folks what their perspective was.
 
