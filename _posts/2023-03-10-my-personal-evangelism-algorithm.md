@@ -30,10 +30,10 @@ While evaluating the success of my evangelism I take into considering the views,
 You can get as detailed oriented or as loose as you want about this as you like. You can switch up topics and channels, and you can do without using workspaces, but I feel like it adds a meaningful depth to it when it comes to developers. You can also add in-person meetups and conferences into the channel mix and use workspaces as a powerful way to measure engagement with in-person engagement. There is a lot of flexibility in this algorithm, but I like that it provides a structured way for me to approach my work, allowing me to measure my impact without getting too caught up in funnels, metrics, and other distractions.
  
 An example of this in action can be found with [Joyce Lin’s](https://www.linkedin.com/in/joyce-lin/) work, my Director of Developer relations, with her Lost in Space production, which I think is an amazingly creative look at how this algorithm works:
- 
 - [Blog](https://blog.postman.com/lost-in-space-puzzle-hunt-for-api-enthusiasts/)
 - [Video](https://www.youtube.com/watch?v=izbtF66EO1U)
 - [Forum](https://community.postman.com/t/puzzle-challenge-lost-in-space/29597)
 - [Workspace](https://www.postman.com/postman/workspace/lost-in-space/overview)
  
+
 Joyce is a master at this stuff, and I highly recommend tuning into what she does from time to time. She is also pioneering and rocking the TikTok channel, pushing this algorithm into new channel territory. The diversity of this approach is what keeps me interested and hustling each day as an evangelist.
