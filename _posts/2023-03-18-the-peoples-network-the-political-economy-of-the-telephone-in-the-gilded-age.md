@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'https://kinlane-productions2.s3.amazonaws.com/peoples-network/IMG_4484.jpeg'
+title: "The People’s Network - The Political Economy of the Telephone in the Gilded Age"
 image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/amusement-park-amusement-park-2-copper-circuit.jpg
 author:
     name: kinlane
