@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Testing
   - Bias
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-DSC-0084-dali-three.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-DSC-0084-dali-three.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I see a lot of happy path bias when it comes to the development of APIs, but specifically when it comes to crafting testing to ensure APIs are delivering as expected. Happy path is a term used in testing to describe the desired outputs a developer and product owner is looking for. Making the not so happy path being about testing for outcomes that a developer and product owner is not wanting to occur. When it comes to API development most developers and product owners are only interested in the happy path, and will almost always cut corners, minimize the investment in, or completely lack an imagination when it comes to less than happy path API testing.
 
 There are many reasons why someone will have a bias towards the happy path when developing an API. Every API provider is invested in achieving the happy path for delivering, providing, and consuming an API. This is what generates revenue. However, in this quest for revenue, we often become our own worst enemy. Shining a spotlight on the happy path, while being completely oblivious to what the not so happy paths will look like for end users. Why do we do this?

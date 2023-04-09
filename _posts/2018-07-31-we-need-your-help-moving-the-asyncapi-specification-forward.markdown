@@ -11,9 +11,9 @@ tags:
   - Real Time
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-define-your-message-driven-apis.png
+  https://s3.amazonaws.com/kinlane-productions2/asyncapi/asyncapi-define-your-message-driven-apis.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We need your help moving [the AsyncAPI specification](https://www.asyncapi.com/) forward. Ok, first, [what is the AsyncAPI specification](https://github.com/asyncapi/asyncapi)? "The AsyncAPI Specification is a project used to describe and document Asynchronous APIs. The AsyncAPI Specification defines a set of files required to describe such an API. These files can then be used to create utilities, such as documentation, integration and/or testing tools." AsyncAPI is a sister specification [to OpenAPI](https://www.openapis.org/), but instead of describing the request and response HTTP API landscape, AsyncAPI is describing the message, topic, event, and streaming API landscape across the HTTP and TCP landscape. It is how we are going to continue to ensure there is machine readable descriptions of this portion of the API landscape, for use in tooling and services.
+<p></p>We need your help moving [the AsyncAPI specification](https://www.asyncapi.com/) forward. Ok, first, [what is the AsyncAPI specification](https://github.com/asyncapi/asyncapi)? "The AsyncAPI Specification is a project used to describe and document Asynchronous APIs. The AsyncAPI Specification defines a set of files required to describe such an API. These files can then be used to create utilities, such as documentation, integration and/or testing tools." AsyncAPI is a sister specification [to OpenAPI](https://www.openapis.org/), but instead of describing the request and response HTTP API landscape, AsyncAPI is describing the message, topic, event, and streaming API landscape across the HTTP and TCP landscape. It is how we are going to continue to ensure there is machine readable descriptions of this portion of the API landscape, for use in tooling and services.
 
 My friend Fran Mendez (@fmvilas) is the creator and maintainer of the specification, and he is doing way too much of the work on this important specification and he needs our help. Here is Fran's request for our help to contribute:
 
@@ -60,7 +60,7 @@ You have a blog and write about the technology you use? Writing about success st
 **7. Podcasts/Videos**
 You have a Youtube channel or your own podcast? Talk about AsyncAPI. Tutorials, interviews, informal chats, discussions, panels, etc. I'll be happy to help with any material you need or finding the right person for your interview.
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-example-streetlight.png" width="45%" align="right" style="padding: 15px;" /></p>I'm going to take the liberty and add an 8th option, because I'm so straightforward when it comes to this game, and I know where Fran needs help.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/asyncapi/asyncapi-example-streetlight.png" width="45%" align="right" style="padding: 15px;" /></p>I'm going to take the liberty and add an 8th option, because I'm so straightforward when it comes to this game, and I know where Fran needs help.
 
 **8. Money $$$$**
 AsyncAPI needs investment to help push forward, allowing Fran to carve out time, work on tooling, and pay for travel expenses when it comes to attending events and getting the word out about what it does. There is no legal entity setup for AsyncAPI, but I'm sure with the right partner(s) behind it, we can make something happen. Step up.

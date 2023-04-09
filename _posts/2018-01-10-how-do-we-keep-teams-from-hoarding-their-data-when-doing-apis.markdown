@@ -8,9 +8,9 @@ tags:
   - Data
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/castle-on-hill-edinburgh_copper_circuit.JPG
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/castle-on-hill-edinburgh_copper_circuit.JPG
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/castle-on-hill-edinburgh_copper_circuit.JPG" align="right" width="45%" style="padding: 15px;" /></p>I was talking with the IRS about their internal API strategy before Christmas, reviewing the teams current proposal before they pitched in across teams. One of the topics that came up, which I thought was interesting, was about how to prevent some teams from taking up a defensive stances around their resources when you are trying to level the playing field across groups using APIs and microservices. They had expressed concern that some groups just didn't see APIs as a benefit, and in some cases perceived them as a threat to their current position within the agency.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/castle-on-hill-edinburgh_copper_circuit.JPG" align="right" width="45%" style="padding: 15px;" /></p>I was talking with the IRS about their internal API strategy before Christmas, reviewing the teams current proposal before they pitched in across teams. One of the topics that came up, which I thought was interesting, was about how to prevent some teams from taking up a defensive stances around their resources when you are trying to level the playing field across groups using APIs and microservices. They had expressed concern that some groups just didn't see APIs as a benefit, and in some cases perceived them as a threat to their current position within the agency.
 
 This is something I see at almost EVERY SINGLE organization I work with. Most technical groups who have established control over some valuable data, content, or other digital resource, have entrenched themselves, and become resistant to change. Often times these teams have a financial incentive to remain entrenched, and see API efforts as a threat to their budget and long term viability. This type of politics within large companies, organizations, institutions, and government agencies is the biggest threat to change than technology ever is.
 

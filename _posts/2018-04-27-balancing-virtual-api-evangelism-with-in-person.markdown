@@ -9,9 +9,9 @@ tags:
   - Events
   - Travel
   - Speaking
-image: 'https://s3.amazonaws.com/kinlane-productions/IMG_6067.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/IMG_6067.jpg'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I haven't published any stories this week on API Evangelist. I've been on the road in Lyon and Paris, France. Giving talks, and conducting workshops about my API lifecycle and governance work. Often times when I go on the road I try to pre-populate the blog with stories, but I've been so busy lately with travel and projects that I just didn't have the time. Resulting in the blog not resembling its usual stream of API rants and stories. While this bothers me, I understand the balance between virtual API evangelism and the need to be present in-person from time to time.
+<p></p>I haven't published any stories this week on API Evangelist. I've been on the road in Lyon and Paris, France. Giving talks, and conducting workshops about my API lifecycle and governance work. Often times when I go on the road I try to pre-populate the blog with stories, but I've been so busy lately with travel and projects that I just didn't have the time. Resulting in the blog not resembling its usual stream of API rants and stories. While this bothers me, I understand the balance between virtual API evangelism and the need to be present in-person from time to time.
 
 While I feel like I can reach more people virtually, I feel like at least 30% of the time I should be present in-person. It helps re-enforce what I know, and allows me to evolve my work, and learn knew things by exercising my API knowledge on the ground in the trenches within existing organizations, and at conferences, Meetups, and workshops. While exhausting, and often costly, in-person gatherings help build relationships, allowing me to establish deeper connections with people. Helping my work penetrate the thick bubbles that exist around us in our personal and professional lives. I'm always exhausted after traveling and shaking so many hands, but ultimately it is worth it if I do it in a thoughtful and logical way.
 

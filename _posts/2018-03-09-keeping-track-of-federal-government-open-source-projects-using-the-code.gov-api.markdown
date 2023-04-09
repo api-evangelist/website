@@ -12,9 +12,9 @@ tags:
   - Github
   - Blueprint
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/federal-government/code-gov/code-gov-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/federal-government/code-gov/code-gov-screenshot.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>Open source software is increasingly driving the federal government, [despite the wishes of companies like Oracle](https://fcw.com/articles/2017/10/04/oracle-rips-18f-usds.aspx). I've been watching an interesting project grow within the federal government to help quantify open source across the federal government called Code.gov, which "leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people." Something I think we can all get behind, when it comes to the collision of technology and government we are seeing play out.
+<p></p>Open source software is increasingly driving the federal government, [despite the wishes of companies like Oracle](https://fcw.com/articles/2017/10/04/oracle-rips-18f-usds.aspx). I've been watching an interesting project grow within the federal government to help quantify open source across the federal government called Code.gov, which "leverages the power of code sharing and collaboration to help the US Government cut down on duplicative software development and save millions of taxpayer dollars for the American people." Something I think we can all get behind, when it comes to the collision of technology and government we are seeing play out.
 
 Code.gov allows you to [browse open source projects by government agency](https://code.gov/#/explore-code), see the details for the project, visit the repository, and contact the project owners. The project even has [a help wanted section where you can roll up your sleeves and actually contribute to specific projects](https://code.gov/#/help-wanted), and help agencies push forward their project. You can follow up on what is happening using [the Code.gov roadmap](https://code.gov/#/roadmap), and stay in tune with whats next for the very important project. However, the aspect I'm most interested in, is the evolution of the Code.gov API.
 

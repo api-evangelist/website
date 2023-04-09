@@ -10,9 +10,9 @@ tags:
   - Trainings
   - Evangelism
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/workshops/43043431_10156747264069813_2487933138479611904_n.jpg
+  https://s3.amazonaws.com/kinlane-productions2/workshops/43043431_10156747264069813_2487933138479611904_n.jpg
 ---
-<p><a href="http://locations.api.lifecycle.workshop.apievangelist.com/"><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></a></p>I've been doing more <a href="http://locations.api.lifecycle.workshop.apievangelist.com/">workshops on the API lifecycle within enterprise groups lately</a>. Allowing me to refine my materials on the ground within enterprise groups, further flesh out the building blocks I recommend to API groups to help them craft their own API strategy. One area of the API lifecycle I find more groups working on these days, centers around a design-first approach to the API lifecycle.
+<p><a href="http://locations.api.lifecycle.workshop.apievangelist.com/"></a></p>I've been doing more <a href="http://locations.api.lifecycle.workshop.apievangelist.com/">workshops on the API lifecycle within enterprise groups lately</a>. Allowing me to refine my materials on the ground within enterprise groups, further flesh out the building blocks I recommend to API groups to help them craft their own API strategy. One area of the API lifecycle I find more groups working on these days, centers around a design-first approach to the API lifecycle.
 
 While not many groups I work with achieved a design-first approach doing APIs, almost all of them I talk to express interest in making this a reality at least within some groups, or projects. The appeal of being able to define, design, mock, and iterate upon an API contract before code gets written is very appealing to enterprise API groups, and I'm looking to help them think through this part of their API lifecycle, and work towards making API design first a reality at their organization.
 

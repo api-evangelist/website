@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Discovery
   - Github
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-stacks.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-stacks.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I just finished a narrative around my API Stack profiling](http://apievangelist.com/2018/04/02/my-api-stack-profiling-process/), telling the entire story around the profiling of APIs for inclusion in the stack. To help encourage folks to get involved, I wanted to help distill down the process into a single checklist that could be implemented by anyone.
+<p></p>[I just finished a narrative around my API Stack profiling](http://apievangelist.com/2018/04/02/my-api-stack-profiling-process/), telling the entire story around the profiling of APIs for inclusion in the stack. To help encourage folks to get involved, I wanted to help distill down the process into a single checklist that could be implemented by anyone.
 
 **The Github Base**
 Everything begins as a Github repository, and it can existing in any user or organization. Once ready, I can fork and publish as part of the API stack, or sync with an existing repository project.

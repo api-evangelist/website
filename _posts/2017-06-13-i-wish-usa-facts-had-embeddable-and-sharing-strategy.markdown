@@ -6,10 +6,10 @@ tags:
 - Federal Government
 - API Evangelist
 - Data
-image: https://s3.amazonaws.com/kinlane-productions/usa-facts/usa-facts-federal-business-spending.png
+image: https://s3.amazonaws.com/kinlane-productions2/usa-facts/usa-facts-federal-business-spending.png
 ---
 
-<p><a href="https://usafacts.org/"><img src="https://s3.amazonaws.com/kinlane-productions/usa-facts/usa-facts-federal-business-spending.png" align="right" width="40%" style="padding: 15px;" /></a></p>I love what the folks over at [USAFacts](https://usafacts.org/) have done with their effort to educate everyone regarding how the US works (or doesn't). I commend Steve Ballmer for the money he's put into the project and the obviously huge amount of work they have put into making some pretty complex things understandable. However, I just have one critique: I wish they had an API, accompanied with a more sophisticated sharing and embeddable approach to publishing the wealth of valuable information contained within the site.
+<p><a href="https://usafacts.org/"><img src="https://s3.amazonaws.com/kinlane-productions2/usa-facts/usa-facts-federal-business-spending.png" align="right" width="40%" style="padding: 15px;" /></a></p>I love what the folks over at [USAFacts](https://usafacts.org/) have done with their effort to educate everyone regarding how the US works (or doesn't). I commend Steve Ballmer for the money he's put into the project and the obviously huge amount of work they have put into making some pretty complex things understandable. However, I just have one critique: I wish they had an API, accompanied with a more sophisticated sharing and embeddable approach to publishing the wealth of valuable information contained within the site.
 
 You can share links to specific sections of USAFacts, but it is just a generic image with a link to each area of the site. The site is exactly what we need in a Trump era, and is full of valuable factoids about how things work, but we need more eye candy for sharing, and the ability to share more granular level details about what is contained within the project. Journalists should be able to craft stories around finance and population via a graph, chart, or other detail that links back to the site. In the current state, you have to be pretty motivated and truly care about this stuff to visit the site and get involved--this represents a pretty light portion of the US population (maybe we could get a chart ;-).
 

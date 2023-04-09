@@ -10,9 +10,9 @@ tags:
   - Clients
   - Testing
   - Monitoring
-image: 'https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/postman/the-postman-api.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/postman/the-postman-api.png" align="right" width="45%" style="padding: 15px;" /></p>You hear me say it all the time--if you are selling services and tooling to the API sector, you should have an API. In support of this way of thinking I like to highlight the API service providers I work with who follow this philosophy, and today's example is from (Postman](https://getpostman.com). If you aren't familiar with Postman, I recommend getting acquainted. It is an indispensable tool for integrating, consuming, and collaborating around the APIs you depend on, and are developing. Postman is essential to working with APIs in 2018, no matter whether you are developing them, or integrating with 3rd party APIs.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/postman/the-postman-api.png" align="right" width="45%" style="padding: 15px;" /></p>You hear me say it all the time--if you are selling services and tooling to the API sector, you should have an API. In support of this way of thinking I like to highlight the API service providers I work with who follow this philosophy, and today's example is from (Postman](https://getpostman.com). If you aren't familiar with Postman, I recommend getting acquainted. It is an indispensable tool for integrating, consuming, and collaborating around the APIs you depend on, and are developing. Postman is essential to working with APIs in 2018, no matter whether you are developing them, or integrating with 3rd party APIs.
 
 Further amplifying the usefulness of Postman as a client tool, [the Postman API](https://docs.api.getpostman.com) reflects the heart of what Postman does as not just a client, but a complete life cycle tool. The Postman API provides five separate APIs, allowing you orchestration your API integration, consumption, and collaboration environment.
 

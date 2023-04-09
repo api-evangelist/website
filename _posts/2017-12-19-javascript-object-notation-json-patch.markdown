@@ -9,9 +9,9 @@ tags:
   - Design
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/rfc/6902/javascript-object-notation-json-patch.png
+  https://s3.amazonaws.com/kinlane-productions2/rfc/6902/javascript-object-notation-json-patch.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/rfc/6902/javascript-object-notation-json-patch.png" align="right" width="45%" style="padding: 15px;" /></p>I'm continuing my studying into what [my new partner in crime Streamdata.io does](http://streamdata.io), and part of this research is understanding the details of their technology stack. Today's work involves understanding their usage of [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902). When you [proxy any existing web API using Streamdata.io](http://streamdata.io), the first thing you get back is a complete JSON representation of the response, but then with each change you just get back a JSON Patch response with only the details of what has changed. JSON Patch is used for expressing a sequence of operations to apply to a any JSON object or document and you'll find used with the HTTP PATCH method.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/rfc/6902/javascript-object-notation-json-patch.png" align="right" width="45%" style="padding: 15px;" /></p>I'm continuing my studying into what [my new partner in crime Streamdata.io does](http://streamdata.io), and part of this research is understanding the details of their technology stack. Today's work involves understanding their usage of [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902). When you [proxy any existing web API using Streamdata.io](http://streamdata.io), the first thing you get back is a complete JSON representation of the response, but then with each change you just get back a JSON Patch response with only the details of what has changed. JSON Patch is used for expressing a sequence of operations to apply to a any JSON object or document and you'll find used with the HTTP PATCH method.
 
 The introduction for [JSON Patch from RFC [RFC4627]](https://tools.ietf.org/html/rfc6902) describes it this way:
 

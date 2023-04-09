@@ -9,9 +9,9 @@ tags:
   - Deployment
   - Database
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/amazon/aws-dynamodb-lambda-api-gateway.png
+  https://s3.amazonaws.com/kinlane-productions2/amazon/aws-dynamodb-lambda-api-gateway.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/aws-dynamodb-lambda-api-gateway.png" align="right" width="45%" /></p>I've setup a few Lambda scripts from time to time, but haven't had any dedicated project time to push forward API serverless concepts. Over the weekend I had a chance to deploy a couple of APIs using AWS DynamoDB, Lambda, and API Gateway, lighting up some of the serverless API possibilities in my brain. Like most areas of the tech sector, I think the term is dumb, and there is too much hype, but I think underneath there is some interesting possibilities, at least enough to keep me playing around with things.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/amazon/aws-dynamodb-lambda-api-gateway.png" align="right" width="45%" /></p>I've setup a few Lambda scripts from time to time, but haven't had any dedicated project time to push forward API serverless concepts. Over the weekend I had a chance to deploy a couple of APIs using AWS DynamoDB, Lambda, and API Gateway, lighting up some of the serverless API possibilities in my brain. Like most areas of the tech sector, I think the term is dumb, and there is too much hype, but I think underneath there is some interesting possibilities, at least enough to keep me playing around with things.
 
 Right now my primary API setup is Amazon Aurora (MysQL) backend, with API deployed on EC2, using Slim API framework in PHP. It is clean, simple, and gets the job done. I use 3Scale, or Github for the API management layer. This new approach simplifies some things for me, but definitely goes further down the AWS rabbit hole with the adoption of API Gateway and Lamdba, but also introduces some interesting enough benefits, that has me considering for use on some specific projects.
 

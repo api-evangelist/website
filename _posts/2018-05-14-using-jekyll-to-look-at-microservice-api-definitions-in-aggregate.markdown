@@ -11,9 +11,9 @@ tags:
   - Github
   - Jekyll
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/kin-mountain_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/kin-mountain_dali_three.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been evaluating microservices at scale, using their OpenAPI definitions to provide API design guidance to each team using Github. [I just finished a round of work where I took 20 microservices](http://apievangelist.com/2018/05/14/looking-at-20-microservices-in-concert/), and evaluated each OpenAPI definition individually, and made design suggestions via an updated OpenAPI definition that I submitted as a Github issue. I was going to submit as a pull request, but I really want the API design guidance to be a suggestions, as well as a learning experience, so I didn't want them to feel like they had to merge all my suggestions.
+<p></p>I've been evaluating microservices at scale, using their OpenAPI definitions to provide API design guidance to each team using Github. [I just finished a round of work where I took 20 microservices](http://apievangelist.com/2018/05/14/looking-at-20-microservices-in-concert/), and evaluated each OpenAPI definition individually, and made design suggestions via an updated OpenAPI definition that I submitted as a Github issue. I was going to submit as a pull request, but I really want the API design guidance to be a suggestions, as well as a learning experience, so I didn't want them to feel like they had to merge all my suggestions.
 
 After going through all 20 OpenAPI definitions, I took all of them and dumped them into a single local repository where I was running Jekyll via localhost. Then using Liquid I created a handful of web pages for looking at the APIs across all microservices in a single page--publishing two separate reports:
 

@@ -9,7 +9,7 @@ tags:
 image: >-
   http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/97_193_800_500_0_max_0_-5_-1.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>APIs come in many shapes and sizes. Even when APIs may share a common resource, the likelihood that they are similar in functional, will be slim. Even after eight years of studying APIs, I still struggle with understanding the differences, and putting APIs into common buckets. Think of the differences between two image APIs like Flickr and Instagram, but then also think about the difference between Twitter and Twilio--the differences are many, and a challenge to articulate.
+<p></p>APIs come in many shapes and sizes. Even when APIs may share a common resource, the likelihood that they are similar in functional, will be slim. Even after eight years of studying APIs, I still struggle with understanding the differences, and putting APIs into common buckets. Think of the differences between two image APIs like Flickr and Instagram, but then also think about the difference between Twitter and Twilio--the differences are many, and a challenge to articulate.
 
 I'm pushing forward [my API Stack](http://theapistack.com/), and [API Gallery work](http://api.gallery.streamdata.io/), and I'm needing to better organize APIs into meaningful groups that I can add to the search functionality for each of API discovery services. To help me establish a handful of new buckets, I'm thinking more critically about the different types of API functionality I'm coming across, establishing seven new buckets:
 

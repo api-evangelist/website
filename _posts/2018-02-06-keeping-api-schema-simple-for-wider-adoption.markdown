@@ -9,9 +9,9 @@ tags:
   - Schema
   - Design
   - CSV
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csv.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-csv.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-csv.png" align="right" width="45%" style="padding: 15px;" /></p>One aspect of [my talk at APIDays Paris this last week](http://apievangelist.com/2018/02/03/api-is-not-just-rest/), included a slide about considering to allow API consumers to negotiate CSV responses from our API. Something that would probably NEVER occur to most API providers, and probably would make many even laugh at me. I'm used to it, and don't care. While not something that every API provider should be considering, depending on the data you are serving up, and who your target API consumer ares, it is something that might make sense. Allowing for the negotiation of CSV responses represents lowering the bar for API consumption, and widening the audience who can put our APIs to work.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-csv.png" align="right" width="45%" style="padding: 15px;" /></p>One aspect of [my talk at APIDays Paris this last week](http://apievangelist.com/2018/02/03/api-is-not-just-rest/), included a slide about considering to allow API consumers to negotiate CSV responses from our API. Something that would probably NEVER occur to most API providers, and probably would make many even laugh at me. I'm used to it, and don't care. While not something that every API provider should be considering, depending on the data you are serving up, and who your target API consumer ares, it is something that might make sense. Allowing for the negotiation of CSV responses represents lowering the bar for API consumption, and widening the audience who can put our APIs to work.
 
 I was doing more work around public data recently, and was introduced to an interesting look at some lessons from developing open data standards. I'm doing a deep dive into municipal data lately as part of my partnership with [Streamdata.io](http://apis.how/streamdata), and I found [the lessons they published interesting](http://www.opennorth.ca/2017/12/21/from-development-to-adoption-lessons-from-three-open-standards.html), and something that reflects my stance on API content negotiation.
 

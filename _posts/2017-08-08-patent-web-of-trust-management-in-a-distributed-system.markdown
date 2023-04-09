@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Patents
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/gypsy-eyes_blue_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/gypsy-eyes_blue_circuit.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/gypsy-eyes_blue_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>I found a couple more API patents in my notebook that I wanted to get published. I try to take time regularly to publish the strangest API related patents I can find. Today's patent is out of Amazon, which I find to be a fascinating outlet for patent storytelling. It isn't squarely in the realm of APIs like some of my others, but I think tells a fascinating story by itself, showing how the web and the concept of a patent are colliding.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/gypsy-eyes_blue_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>I found a couple more API patents in my notebook that I wanted to get published. I try to take time regularly to publish the strangest API related patents I can find. Today's patent is out of Amazon, which I find to be a fascinating outlet for patent storytelling. It isn't squarely in the realm of APIs like some of my others, but I think tells a fascinating story by itself, showing how the web and the concept of a patent are colliding.
 
 Title - [Web of trust management in a distributed system](http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/search-bool.html&r=1&f=G&l=50&d=PALL&RefSrch=yes&Query=PN/9397835)<br />
 Number - 9397835<br />

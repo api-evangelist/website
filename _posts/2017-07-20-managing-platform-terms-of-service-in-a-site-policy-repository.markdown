@@ -9,9 +9,9 @@ tags:
   - Service Level Agreements
   - Privacy Policy
   - Github
-image: 'https://s3.amazonaws.com/kinlane-productions/github/github-site-policy.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/github/github-site-policy.png'
 ---
-<p><a href="https://github.com/blog/2393-open-sourcing-our-site-policies-and-new-changes-to-our-terms-of-service"><img src="https://s3.amazonaws.com/kinlane-productions/github/github-site-policy.png" align="right" width="40%" style="padding: 15px;" /></a></p>[Github is releasing an update to their platform Terms of Service and Corporate Terms of Service](https://github.com/blog/2393-open-sourcing-our-site-policies-and-new-changes-to-our-terms-of-service). Guess what platform their are using to manage the evolution, and release of their terms of service? Github of course! They are soliciting feedback, along with clarifications and improvements to their terms of service, with an emphasis on helping making things more readable! #nice
+<p><a href="https://github.com/blog/2393-open-sourcing-our-site-policies-and-new-changes-to-our-terms-of-service"><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-site-policy.png" align="right" width="40%" style="padding: 15px;" /></a></p>[Github is releasing an update to their platform Terms of Service and Corporate Terms of Service](https://github.com/blog/2393-open-sourcing-our-site-policies-and-new-changes-to-our-terms-of-service). Guess what platform their are using to manage the evolution, and release of their terms of service? Github of course! They are soliciting feedback, along with clarifications and improvements to their terms of service, with an emphasis on helping making things more readable! #nice
 
 Github has provided a deadline for everyone to submit comments by the end of the month, then they'll spend about a week going through the comments before making any changes. It provides a pretty useful way for any platform to manage their terms of service in a way that gives the community a voice, and provides some observability into the process for everyone else who might not feel confident enough to chime in on the process. This can go a long way towards building trust with the community, even if they don't directly participate in the process.
 

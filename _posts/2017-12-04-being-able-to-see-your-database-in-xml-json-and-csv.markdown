@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Data
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-content-negotiation.png
+  https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-content-negotiation.png
 ---
-<p><a href="https://www.slashdb.com/documentation/api-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-content-negotiation.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p><a href="https://www.slashdb.com/documentation/api-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-content-negotiation.png" align="right" width="45%" style="padding: 15px;" /></a></p>
 _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
 I remember making the migration from XML to JSON. It was hard for me to understand that difference between the formats, and that you accomplish pretty much the same things in JSON that you could in XML. I've been seeing similarities in my migration to YAML from JSON. The parallels in each of these formats isn't 100%, but this story is more about our perception of data formats, than it is about the technical details. CSV has long been a tool in my toolbox, but it was until this recent migration from JSON to YAML that I really started seeing the importance of CSV when it comes to helping onboard business users with the API possibilities.

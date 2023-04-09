@@ -10,7 +10,7 @@ tags:
   - Privacy
 image: ''
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/76_135_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I was integrating with [the Clearbit API](https://dashboard.clearbit.com/docs#api-reference), doing some enrichment of the API providers I track on, and I found their API stack pretty interesting. I'm just using the enrichment API, which allows me to pass it a URL, and it gives me back a bunch of intelligence on the organization behind. I've added a bookmarklet to my browser, which allows me to push it, and the enriched data goes directly into my CRM system. Delivering what it the title says it does--enrichment.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/76_135_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I was integrating with [the Clearbit API](https://dashboard.clearbit.com/docs#api-reference), doing some enrichment of the API providers I track on, and I found their API stack pretty interesting. I'm just using the enrichment API, which allows me to pass it a URL, and it gives me back a bunch of intelligence on the organization behind. I've added a bookmarklet to my browser, which allows me to push it, and the enriched data goes directly into my CRM system. Delivering what it the title says it does--enrichment.
 
 Next up, I'm going to be using the Clearbit Discovery API to find some potentially new companies who are doing APIs in specific industries. As I head over the to the docs for the API, I notice the other three APIs, and I feel like they reflect the five stages of transition to the data intelligence dark side.
 

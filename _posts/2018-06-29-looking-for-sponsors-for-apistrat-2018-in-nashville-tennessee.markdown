@@ -9,9 +9,9 @@ tags:
   - API Events
   - Sponsors
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/apistrat/apistrat-conference-sponsorship-prospectus.png
+  https://s3.amazonaws.com/kinlane-productions2/apistrat/apistrat-conference-sponsorship-prospectus.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are building up to [the 9th edition of API Strategy & Practice (APIStrat) happening in Nashville, Tennessee this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). As part of the build up we are looking for sponsors to help make the event happen, bringing the API community together once again to share stories from the trenches, and discuss healthy practices that are allowing companies, organizations, institutions, and government agencies make an impact when it comes to their API operations.
+<p></p>We are building up to [the 9th edition of API Strategy & Practice (APIStrat) happening in Nashville, Tennessee this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). As part of the build up we are looking for sponsors to help make the event happen, bringing the API community together once again to share stories from the trenches, and discuss healthy practices that are allowing companies, organizations, institutions, and government agencies make an impact when it comes to their API operations.
 
 [The 2017 edition of APIStrat in Portland, OR](http://events17.linuxfoundation.org/events/apistrat) was a huge success, and help complete the transition of APIStrat to be part of the OpenAPI Initiative (OAI). After seven editions, and four years of operation exclusively by 3Scale and API Evangelist, the event has matured and will continue growing under the guidance of the OAI, and the community that has evolved around the OpenAPI specification. Presenting an opportunity for other API providers, and API service providers to get involved by [joining as an OAI member](https://www.openapis.org/membership/join) and / or [sponsoring APIStrat](https://events.linuxfoundation.org/events/apistrat-2018/sponsor/), and joining the conversation that has been going on in the community since early 2013.
 

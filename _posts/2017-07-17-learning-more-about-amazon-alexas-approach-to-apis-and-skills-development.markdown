@@ -10,9 +10,9 @@ tags:
   - Management
   - Review
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png
+  https://s3.amazonaws.com/kinlane-productions2/amazon/alexa/avs_getting_started_1.png
 ---
-<p><a href="https://developer.amazon.com/alexa"><img src="https://s3.amazonaws.com/kinlane-productions/amazon/alexa/avs_getting_started_1.png" align="right" width="40%" style="padding 15px" /></a></p>I have had [Amazon Alexa](https://developer.amazon.com/alexa) in my cross hairs for some time now. I regularly digest stories about what Amazon is up to with Alexa, but haven't had the time to think deeply about voice enablement, and their approach to developing what they call "skills". I'm not 100% convinced voice enablement is the future of human compute interfaces, but I do see the role they can play in some situations, for some people. Plus, all the actions involved with Alexa and it's ecosystem are all driven using APIs, which will almost always make me perk up, and pay a little more attention--I have a serious problem.
+<p><a href="https://developer.amazon.com/alexa"><img src="https://s3.amazonaws.com/kinlane-productions2/amazon/alexa/avs_getting_started_1.png" align="right" width="40%" style="padding 15px" /></a></p>I have had [Amazon Alexa](https://developer.amazon.com/alexa) in my cross hairs for some time now. I regularly digest stories about what Amazon is up to with Alexa, but haven't had the time to think deeply about voice enablement, and their approach to developing what they call "skills". I'm not 100% convinced voice enablement is the future of human compute interfaces, but I do see the role they can play in some situations, for some people. Plus, all the actions involved with Alexa and it's ecosystem are all driven using APIs, which will almost always make me perk up, and pay a little more attention--I have a serious problem.
 
 The Amazon Alexa platform centers around two specific areas of development:
 

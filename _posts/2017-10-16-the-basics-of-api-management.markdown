@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Management
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg" align="right" width="40%" style="padding: 15px;" /></p>I am developing a basic API management strategy for one of my client's API. With each area of their API strategy I am taking what I've learned monitoring the API sector, but pausing for a moment to think about again, and then applying to their operations. Over the years I have separated out many aspects of API management, distilling it down to a core set of elements that reflect the evolution of API management as its evolved into a digital commodity. It helps me to think through these aspects of API operations in general, but also applying to a specific API I am working on, helping me further refine my API strategy advice.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/42_16_600_400_0_max_1_1_1-5.jpg" align="right" width="40%" style="padding: 15px;" /></p>I am developing a basic API management strategy for one of my client's API. With each area of their API strategy I am taking what I've learned monitoring the API sector, but pausing for a moment to think about again, and then applying to their operations. Over the years I have separated out many aspects of API management, distilling it down to a core set of elements that reflect the evolution of API management as its evolved into a digital commodity. It helps me to think through these aspects of API operations in general, but also applying to a specific API I am working on, helping me further refine my API strategy advice.
 
 API management is the oldest area of my research. It has spawned every other area of the lifecycle I track on, but also is the most mature aspect of the API economy. This project I am working on gives me an opportunity to think about what is API management, and what should be spun off into separate areas of concern. I am looking to distill API management down to:
 

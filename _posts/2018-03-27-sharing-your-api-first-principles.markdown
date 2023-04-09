@@ -8,9 +8,9 @@ tags:
   - Design
   - Guides
   - Communications
-image: 'https://s3.amazonaws.com/kinlane-productions/zalando/zalando-screenshot.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/zalando/zalando-screenshot.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been publishing regular posts from the API design guides of API providers I've been studying. API providers who publish their API design guides tends to be further along in their API journey. These API providers tend to have more experience and insight, and are often worth studying further, and learning from. [I've bee getting a wealth of valuable information from the German fashion and technology company Zalando, who has shared some pretty valuable API first principles](https://zalando.github.io/restful-api-guidelines/).
+<p></p>I've been publishing regular posts from the API design guides of API providers I've been studying. API providers who publish their API design guides tends to be further along in their API journey. These API providers tend to have more experience and insight, and are often worth studying further, and learning from. [I've bee getting a wealth of valuable information from the German fashion and technology company Zalando, who has shared some pretty valuable API first principles](https://zalando.github.io/restful-api-guidelines/).
 
 In a nutshell Zalando's API First principles focuses on two areas:
 

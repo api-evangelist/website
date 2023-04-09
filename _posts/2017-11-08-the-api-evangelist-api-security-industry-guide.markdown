@@ -7,11 +7,11 @@ tags:
   - API Evangelist
   - Security
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/guides/security/api-evangelist-api-security-industry-guide-screenshot-2017-11-08.png
+  https://s3.amazonaws.com/kinlane-productions2/guides/security/api-evangelist-api-security-industry-guide-screenshot-2017-11-08.png
 ---
 _This edition of my API security industry guide has been underwritten by [ElasticBeam](http://apis.how/elasticbeam), who provides next generation API security, leveraging machine learning, and behavorial analysis that works with the existing web and API management solutions you already have in place across your API operations._
 
-<p><a href="https://gum.co/UOBZd"><img src="https://s3.amazonaws.com/kinlane-productions/guides/security/api-evangelist-api-security-industry-guide-screenshot-2017-11-08.png" align="right" width="40%" style="padding: 15px;"></a></p>
+<p><a href="https://gum.co/UOBZd"><img src="https://s3.amazonaws.com/kinlane-productions2/guides/security/api-evangelist-api-security-industry-guide-screenshot-2017-11-08.png" align="right" width="40%" style="padding: 15px;"></a></p>
 
 I have been working on this resulting guide from [my API security research](http://security.apievangelist.com/) for over a year now. Thanks to [ElasticBeam](http://apis.how/elasticbeam) I've finally gotten it out the door. As with all my industry guides, it is a work in progress, and something that will never be finished. I'll keep taking what I've learned, and publishing in as a PDF every couple months, and receive the edits, and feedback from my readers and the wider community, then publish again. I'm feeling like I'm finally finding my groove again with these guides, and there is no better time to be back on game, especially when it comes to API security.
 

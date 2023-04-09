@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Business of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/machine-road_copper_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/machine-road_copper_circuit.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I spend a lot of time helping enterprise organizations discover their APIs. All of the organizations I talk to have trouble knowing where all of their APIs are--even the most organized of them. Development and IT groups have just been moving too fast over the last decade to know where all of their web services, and APIs are. Resulting in large organizations not fully understanding what all of their capabilities are, even if it is something they actively operate, and may drive existing web or mobile applications.
+<p></p>I spend a lot of time helping enterprise organizations discover their APIs. All of the organizations I talk to have trouble knowing where all of their APIs are--even the most organized of them. Development and IT groups have just been moving too fast over the last decade to know where all of their web services, and APIs are. Resulting in large organizations not fully understanding what all of their capabilities are, even if it is something they actively operate, and may drive existing web or mobile applications.
 
 Each individual API within the enterprise represents a single capability. The ability to accomplish a specific enterprise tasks that is valuable to the business. While each individual engineer might be aware of the capabilities present on their team, without group wide, and comprehensive API discovery across an organization, the extent of the enterprise capabilities is rarely known. If architects, business leadership, and any other stakeholder can't browse, list, search, and quickly get access to all of the APIs that exist, the knowledge of the enterprise capabilities will not be able to be quantified or articulated as part of regular business operations.
 

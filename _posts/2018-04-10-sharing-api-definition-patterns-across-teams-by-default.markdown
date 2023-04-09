@@ -9,9 +9,9 @@ tags:
   - Collaboration
   - Teams
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_smoking_cigarette.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/carryload_smoking_cigarette.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>_This is a story, in a series I’m doing as part of the version 3.0 release of [the Stoplight.io platform](https://next.stoplight.io/). Stoplight.io is one the few API service providers I’m excited about what when it comes to what they are delivering in the API space, so I jumped at the opportunity to do some paid work for them. As I do, I’m working to make these stories about the solutions the provide, and refrain from focusing on just their product, hopefully maintaining my independent stance as the API Evangelist, and keeping some of the credibility I’ve established._
+<p></p>_This is a story, in a series I’m doing as part of the version 3.0 release of [the Stoplight.io platform](https://next.stoplight.io/). Stoplight.io is one the few API service providers I’m excited about what when it comes to what they are delivering in the API space, so I jumped at the opportunity to do some paid work for them. As I do, I’m working to make these stories about the solutions the provide, and refrain from focusing on just their product, hopefully maintaining my independent stance as the API Evangelist, and keeping some of the credibility I’ve established._
 
 One of the things I’m seeing emerge from the API providers who are further along in their API journey, is a more shared experience when it comes to not just the API design process, but in action throughout the API lifecycle. You can see this reality playing out with the API definitions, and the move from Swagger 2.0 to the OpenAPI 3.0, where there is a more modular approach to defining an API, encouraging reuse of common patterns across API paths within a single definition, as well as across many different API definitions. Expanding on how API definitions can move an API through the lifecycle, and beginning to apply that across projects and teams, and moving APIs through lifecycle much more quickly, and consistently.
 

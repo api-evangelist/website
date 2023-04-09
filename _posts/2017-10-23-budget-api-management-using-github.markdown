@@ -8,9 +8,9 @@ tags:
   - Management
   - Github
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/github/github-oauth-api-management.png
+  https://s3.amazonaws.com/kinlane-productions2/github/github-oauth-api-management.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-oauth-api-management.png" align="right" width="40%" style="padding: 15px;" /></p>I am always looking for the cheapest, easiest ways to get things done in the world of APIs. As a small business owner I'm always on the hunt for hacks to get done what I need, and hopefully make things easier for my users, while keeping things free, or at least minimally priced for my business. When it comes to my simplest of APIs, where I'm not looking to fully manage, but I do want anyone using them to authenticate, and pass in API keys, so that I can track on their use. In some cases I'm going to bill against this usage, but for the most part I just want to secure, and quantify their consumption.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-oauth-api-management.png" align="right" width="40%" style="padding: 15px;" /></p>I am always looking for the cheapest, easiest ways to get things done in the world of APIs. As a small business owner I'm always on the hunt for hacks to get done what I need, and hopefully make things easier for my users, while keeping things free, or at least minimally priced for my business. When it comes to my simplest of APIs, where I'm not looking to fully manage, but I do want anyone using them to authenticate, and pass in API keys, so that I can track on their use. In some cases I'm going to bill against this usage, but for the most part I just want to secure, and quantify their consumption.
 
 The quickest and dirtiest way I will enable authentication for any API is using Github. First thing you do is create a Github OAuth application, which is available under settings for your Github user or organization. Then I add a JavaScript icon and login link, and then paste a PHP script at another location, where it will be handling the login. All you have to do is update the URLs in both scripts, and when someone clicks on icon, they'll be authenticated and then dropped back on the original page with username, and valid OAuth token--which then at this point you have a validated user, and valid token.
 

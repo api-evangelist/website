@@ -5,10 +5,10 @@ tags:
 - Plans
 - Monetization
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/imageoptim/imageoptim-api-pricing.png
+image: https://s3.amazonaws.com/kinlane-productions2/imageoptim/imageoptim-api-pricing.png
 ---
 
-<p><a href="https://imageoptim.com/api/pricing"><img src="https://s3.amazonaws.com/kinlane-productions/imageoptim/imageoptim-api-pricing.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I've already written about how I just don't like class pricing tiers for API consumption](http://apievangelist.com/2017/05/09/pricing-tiers-works-for-saas-but-not-really-for-apis/), but I want to keep beating this drum until service providers hear what I'm singing. I think pricing tiers worked well to onboard the world with SaaS but for an API-driven world we a lot more flexibility and scalability when it comes to t
+<p><a href="https://imageoptim.com/api/pricing"><img src="https://s3.amazonaws.com/kinlane-productions2/imageoptim/imageoptim-api-pricing.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I've already written about how I just don't like class pricing tiers for API consumption](http://apievangelist.com/2017/05/09/pricing-tiers-works-for-saas-but-not-really-for-apis/), but I want to keep beating this drum until service providers hear what I'm singing. I think pricing tiers worked well to onboard the world with SaaS but for an API-driven world we a lot more flexibility and scalability when it comes to t
 he business model.
 
 As a small business I just can't take another monthly payment, without some deep consideration, and bank account consultation. I'm looking at [the ImageOptim API](https://imageoptim.com/api/pricing), which is already a desktop tool I use, but the opportunity to automate my image optimization is very appealing. However, their entry level pricing tier is $9 a month for $1,000.00 calls. I might be able to add another monthly fee, but it damn well better be generating some value, or directly bringing in some new revenue.

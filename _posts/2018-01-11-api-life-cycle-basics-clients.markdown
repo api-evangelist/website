@@ -6,9 +6,9 @@ date: 2018-01-11T15:00:00.000Z
 tags:
   - API Evangelist
   - Clients
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-client.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-client.png" align="right" width="30%" style="padding: 15px;" /></p>I broke this area of my research into a separate stops a couple years back, as I saw several new types of service providers emerging to provide a new type of web-based API client. These new tools allowed you to consume, collaborate, and put APIs to use without writing any code. I knew that this shift was going to be significant, even though it hasn't played out as I expected, with most of the providers disappearing, or being acquired, and leaving just a handful of solutions that we see today.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-client.png" align="right" width="30%" style="padding: 15px;" /></p>I broke this area of my research into a separate stops a couple years back, as I saw several new types of service providers emerging to provide a new type of web-based API client. These new tools allowed you to consume, collaborate, and put APIs to use without writing any code. I knew that this shift was going to be significant, even though it hasn't played out as I expected, with most of the providers disappearing, or being acquired, and leaving just a handful of solutions that we see today.
 
 These new web API clients allow for authentication, and the ability to quickly copy and paste API urls, or the importing of API definitions to begin making requests, and seeing responses for targeted aPIs. These clients were born out of earlier API explorers and interactive API documentation, but have matured into standalone services that are doing interesting things to how we consume APIs. Here are the three web API clients I recommend you consider as part of your API life cycle.
 

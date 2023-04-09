@@ -8,12 +8,12 @@ tags:
   - Hypermedia
   - Design
   - Definitions
-image: 'https://s3.amazonaws.com/kinlane-productions/tv-maze/tvm_api.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/tv-maze/tvm_api.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>One of the layers of the API universe where I come across an increased number Hypermedia APIs is in the movie, television, and entertainment space. Where having a more flowing API experience makes a lot of sense, and the extra investment in link relations will pay off. One example of this I recently came across was over at TVMaze, [who has a pretty robust hypermedia API](https://www.tvmaze.com/api), where they opted for using HAL as their media type.
+<p></p>One of the layers of the API universe where I come across an increased number Hypermedia APIs is in the movie, television, and entertainment space. Where having a more flowing API experience makes a lot of sense, and the extra investment in link relations will pay off. One example of this I recently came across was over at TVMaze, [who has a pretty robust hypermedia API](https://www.tvmaze.com/api), where they opted for using HAL as their media type.
 
 Like any good hypermedia should, TVMaze begins with its root URL: http://api.tvmaze.com, and provides a robust set of endpoints from there:
-<p><img src="https://s3.amazonaws.com/kinlane-productions/tv-maze/tvmaze-ha.png" width="40%" align="right" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/tv-maze/tvmaze-ha.png" width="40%" align="right" /></p>
 ## Search
 - <a href="http://www.tvmaze.com/api#show-search">Show Search</a>
 - <a href="http://www.tvmaze.com/api#show-single-search">Show single search</a>

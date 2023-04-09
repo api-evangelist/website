@@ -13,9 +13,9 @@ tags:
   - Orchestratioin
   - Labor
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/containership_dark_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/containership_dark_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/containership_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>A topic that keeps coming up in discussions with my partner in crime Audrey Watters (@audreywatters) about our podcast is around the future of labor in an API world. I have not written anything about this, which means I'm still in early stages of any research into this area, but it has come up in conversation, and reflected regularly in my monitoring of the API space, I need to begin working through my ideas in this area. A process that helps me better see what is coming down the API pipes, and fill the gaps in what I do not know.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/containership_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>A topic that keeps coming up in discussions with my partner in crime Audrey Watters (@audreywatters) about our podcast is around the future of labor in an API world. I have not written anything about this, which means I'm still in early stages of any research into this area, but it has come up in conversation, and reflected regularly in my monitoring of the API space, I need to begin working through my ideas in this area. A process that helps me better see what is coming down the API pipes, and fill the gaps in what I do not know.
 
 Audrey has long joked about my API world using a simple phrase: "reducing everything to a transaction". She says it mostly in jest, but other times I feel like she wields it as the Cassandra she channels. I actually bring up the phrase more than she does, because it is something I regularly find myself working in the service of as the API Evangelist. By taking a pro API stance I am actively working to reduce legacy business, institutional, and government processes down and breaking them down into a variety of individual tasks, or if you see things through a commercial lens, transactions.
 

@@ -11,9 +11,9 @@ tags:
   - Plans
   - Cloud
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/4882162452_fa3126b38d_b_aqua.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/4882162452_fa3126b38d_b_aqua.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am trying to develop a base base API pricing formula for determining what my hard costs are for each API I'm publishing using Amazon RDS, EC2, and AWS API Gateway. I also have some APIs I am deploying using Amazon RDS, Lambda, and AWS API Gateway, but for now I want to get a default base for determining what operating my APIs will cost me, so I can mark up and reliably generate profit on top of the APIs I'm making available to my partners. AWS has all the data for me to figure out my hard costs, I just need a formula that helps me accurately determine what my AWS bill will be per API.
+<p></p>I am trying to develop a base base API pricing formula for determining what my hard costs are for each API I'm publishing using Amazon RDS, EC2, and AWS API Gateway. I also have some APIs I am deploying using Amazon RDS, Lambda, and AWS API Gateway, but for now I want to get a default base for determining what operating my APIs will cost me, so I can mark up and reliably generate profit on top of the APIs I'm making available to my partners. AWS has all the data for me to figure out my hard costs, I just need a formula that helps me accurately determine what my AWS bill will be per API.
 
 Math isn't one of my strengths, so I'm going to have to break this down, and simmer on things for a while, before I will be able to come up with some sort of working formula. Here are my hard costs for what my AWS resources will cost me, for three APIs I have running currently in this stack:
 

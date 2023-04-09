@@ -10,9 +10,9 @@ tags:
   - Plans
   - Monetization
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/cargo-ship-on-sea_copper_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 I'm helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I'm looking to distill things down to the essential components needed to get the job done. [I spent some time thinking through the developer account basics](http://apievangelist.com/2017/10/20/api-developer-account-basics/), and now I want to break down the aspects of API consumption and usage around these APIs and developer accounts. I want to to think about the moving parts of how we measure, quantify, communicate, and invoice as part of the API management process.
 
 **Having A Plan**

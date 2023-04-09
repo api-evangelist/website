@@ -8,9 +8,9 @@ tags:
   - Discovery
   - Storytelling
   - Communication
-image: 'https://s3.amazonaws.com/kinlane-productions/photos/man-on-moon-flag.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/photos/man-on-moon-flag.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/photos/man-on-moon-flag.jpg" align="right" width="45%" style="padding: 15px;" /></p>I do a lot of thinking about [API discovery](http://discovery.apievangelist.com), and how I can help people find the APIs they need. As part of this thinking I'm always curious why API discovery hasn't evolved much in the last decade. You know, no Google for APIs. No magical AI, ML, AR, VR, or Blockchain for distributed API mining. As I'm thinking, I ask myself, _"how is it that the API Evangelist finds most of his APIs?"_ Well, word of mouth. Storytelling. People talking about the APIs they are using to solve a real world business problem.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/photos/man-on-moon-flag.jpg" align="right" width="45%" style="padding: 15px;" /></p>I do a lot of thinking about [API discovery](http://discovery.apievangelist.com), and how I can help people find the APIs they need. As part of this thinking I'm always curious why API discovery hasn't evolved much in the last decade. You know, no Google for APIs. No magical AI, ML, AR, VR, or Blockchain for distributed API mining. As I'm thinking, I ask myself, _"how is it that the API Evangelist finds most of his APIs?"_ Well, word of mouth. Storytelling. People talking about the APIs they are using to solve a real world business problem.
 
 That is it! API storytelling is API discovery. If people aren't talking about your API, it is unlikely it will be found. Sure people still need to be able to Google for solutions, but really that is just Googling, not API discovery. [It is likely they are just looking for a company that does what they need, and the API is a given](http://apievangelist.com/2017/12/20/api-discovery-will-be-about-finding-companies-who-do-what-yu-need-and-api-is-assumed/). We really aren't going to discover new APIs. I don't know many people who spend time looking for new APIs (except me, and I have a problem). People are going to discover new APIs by hearing about what other people are using, through storytelling on the web and in person.
 

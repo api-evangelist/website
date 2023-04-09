@@ -8,9 +8,9 @@ tags:
   - Discovery
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/apis-json/apis-json-home-page-2018.png
+  https://s3.amazonaws.com/kinlane-productions2/apis-json/apis-json-home-page-2018.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I know many folks in the API sector don't know about [APIs.json](http://apisjson.org/format.html), and if they do they often think it is yet another API definition format, competing wit OpenAPI, Postman Collections, and others. So, I want to take a moment to share the vision again, and maybe convert one or two more folks to the possibilities around having a machine readable format for the entire operations. This is where APIs.json elevates the conversation, is it isn't just about defining an API, it is about defining API operations, looking to make things more discoverable, and executable by default.
+<p></p>I know many folks in the API sector don't know about [APIs.json](http://apisjson.org/format.html), and if they do they often think it is yet another API definition format, competing wit OpenAPI, Postman Collections, and others. So, I want to take a moment to share the vision again, and maybe convert one or two more folks to the possibilities around having a machine readable format for the entire operations. This is where APIs.json elevates the conversation, is it isn't just about defining an API, it is about defining API operations, looking to make things more discoverable, and executable by default.
 
 [APIs.json](http://apisjson.org/format.html) is a JSON format, as the name implies, but admittedly a bad name, as I've already started created APIs.yaml editions, which defines the entire API operations, not just any single API. It starts with the basics of the API providers, with: name, description, image, tags, created, and modified. Then it has a collection for defining one or many actual APIs. Repeating the need for a name, description, image, and tags, but this time for each API--admittedly this might be redundant in many cases. Each API also has a humanURL and baseURL for each API, providing two key links that developers will need. After that, we start getting to the meat of APIs.json, with the properties collection.
 

@@ -7,10 +7,10 @@ tags:
 - Machine Learning
 - Monetization
 - Plans
-image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-marketplace.png
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-marketplace.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-marketplace.png" align="right" width="35" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-marketplace.png" align="right" width="35" /></p>
 I was having a discussion with an investor today about the potential of algorithmic-centered API marketplaces. I'm not talking about API marketplaces like Mashape, I'm more talking about ML API marketplaces like Algorithmia. This conversation spans multiple areas of my API lifecycle research, so I wanted to explore my thoughts on the subject some more.
 
 I really do not get excited about API marketplaces when you think just about API discovery--how do I find an API? We need solutions in this area, but I feel good implementations will immediately move from useful to commodity, with companies like Amazon already pushing this towards a reality.

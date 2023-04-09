@@ -10,9 +10,9 @@ tags:
   - Politics of APIs
   - Federal Government
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/45_78_800_500_0_max_0_1_-5.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/45_78_800_500_0_max_0_1_-5.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/45_78_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>I was talking with the Internal Revenue Service (IRS) about their internal API strategy the week before Christmas, sharing my thoughts on the strategy that they were pitching internally when it comes to the next phase of their API journey. One topic that kept coming up is the firm line of separate between public and private APIs, which you kind of get at an organization like the IRS. It isn't really the type of organization you want to be vague about this line, making sure everyone understands where an API should be consumed, and where it should not be consumed.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/45_78_800_500_0_max_0_1_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>I was talking with the Internal Revenue Service (IRS) about their internal API strategy the week before Christmas, sharing my thoughts on the strategy that they were pitching internally when it comes to the next phase of their API journey. One topic that kept coming up is the firm line of separate between public and private APIs, which you kind of get at an organization like the IRS. It isn't really the type of organization you want to be vague about this line, making sure everyone understands where an API should be consumed, and where it should not be consumed.
 
 Even with that reality, I still made the suggestion that they should be treating ALL APIs like they are public. I clarified by saying you shouldn't be getting rid of the hard line dictating whether or not an API is internal or external, but if you treat them all like they are public, and act like they are all under threat, you will be better off for it. This peaked their interest, was something they did not expect to hear from me, and was something they would be adding to their recommendations for the next version of their API strategy.
 

@@ -6,9 +6,9 @@ date: 2017-11-06T13:00:00.000Z
 tags:
   - API Evangelist
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway/aws-rds-lambda-api-gateway.jpg
+  https://s3.amazonaws.com/kinlane-productions2/amazon/api-gateway/aws-rds-lambda-api-gateway.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway/aws-rds-lambda-api-gateway.jpg" align="right" width="45%" style="padding: 15px;" /></p>[I wrote about a simple API with AWS DynamoDB, Lambda, and API Gateway last week](http://apievangelist.com/2017/10/23/a-simple-api-with-aws-dynamodb-lambda-and-api-gateway/). I like this approach because of the simple nature of AWS DynamoDB. One benefit of going this route is that you can even bypass Lambda, as the AWS API Gateway can work directly with AWS DynamoDB API. I'm just playing around with different configurations and pushing forward my understanding of what is possible, and this week I switched out the database in this with AWS RDS, which opens up the ability to use MySQL or Postgres as the backend for any API.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/amazon/api-gateway/aws-rds-lambda-api-gateway.jpg" align="right" width="45%" style="padding: 15px;" /></p>[I wrote about a simple API with AWS DynamoDB, Lambda, and API Gateway last week](http://apievangelist.com/2017/10/23/a-simple-api-with-aws-dynamodb-lambda-and-api-gateway/). I like this approach because of the simple nature of AWS DynamoDB. One benefit of going this route is that you can even bypass Lambda, as the AWS API Gateway can work directly with AWS DynamoDB API. I'm just playing around with different configurations and pushing forward my understanding of what is possible, and this week I switched out the database in this with AWS RDS, which opens up the ability to use MySQL or Postgres as the backend for any API.
 
 For this example, I'm using a simple items database, which you can build with this SQL script after you fire up an RDS instance (I'm using MySQL):
 
@@ -40,7 +40,7 @@ Now that I have the business logic setup in AWS Lambda for reading, and writing 
 
 This gives me the skeleton framework for my API, with the paths and methods I need to accomplish the basics of reading and writing data. Now, I just need to wire up each API method to its accompanying Lambda function, something API Gateway makes easy.
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway/aws-api-gateway-lambda.png" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/amazon/api-gateway/aws-api-gateway-lambda.png" /></p>
 
 Now I have an API for my basic backend. There is one thing you have to do to make each method work properly with the Lambda function. You have to setup a body mapping to the item_id when passed in the path for the PUT, GET, and DELETE functions. If you don't the item_id won't be passed on to the Lambda function--it took me a while to get this one. There are other things you have to do, like setting up a usage plan, turning on API key access for each API, and setting up custom domain if you want, but hopefully this simple gets the point across. I will work on other parts in future posts. Hopefully it provides a basic example of an API using RDS, Lambda, and API Gateway, which is something I have wanted to have in my toolbox for some time.
 

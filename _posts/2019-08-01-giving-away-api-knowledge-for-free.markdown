@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Monetization
   - Consulting
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/gears-4882162452-fa3126b38d-b-wols.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/gears-4882162452-fa3126b38d-b-wols.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I’m in the business of providing access to the API knowledge accumulated over the last decade. Despite what many people claim, I do not know everything about APIs, but after a decade I have picked up a few things along the way. Historically, I have really enjoyed sharing my knowledge with people, but I’m increasingly becoming weary of sharing to openly because of the nature of how business gets conducted online. Specifically, that there are endless waves of folks who want to tap what I know without giving anything in return, who work at companies who enjoy a lot of resources. I know people have read the startup handbook, which tells them to reach out to people who know and get their view, but when everyone does this, and doesn’t give anything in return, it is, well...I guess business as usual? Right? ;-(
 
 Taking a sampling from the usual week in my inbox, I’ll get a handful of requests reflecting these personas:

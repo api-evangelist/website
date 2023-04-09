@@ -10,9 +10,9 @@ tags:
   - API Events
   - Federal Government
   - Lifecycle
-image: 'https://s3.amazonaws.com/kinlane-productions/talks/devnation-federal.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/talks/devnation-federal.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm kicking off a busy week of travel and [talks this week in DC with a discussion about delivering microservices at federal agencies at DevNation Federal on Tuesday, June 5th, 2018](https://devnationfederal.org/). I was invited by [Red Hat](https://www.redhat.com/en) to come speak about the work I'm doing as API Evangelist across federal agencies. You can find me in the afternoon lineup, sharing my stories title "The Tech, Business, and Politics of APIs In Federal Government". Focusing on information gathered as part of my research, workshops, and consulting across the public and private sector.
+<p></p>I'm kicking off a busy week of travel and [talks this week in DC with a discussion about delivering microservices at federal agencies at DevNation Federal on Tuesday, June 5th, 2018](https://devnationfederal.org/). I was invited by [Red Hat](https://www.redhat.com/en) to come speak about the work I'm doing as API Evangelist across federal agencies. You can find me in the afternoon lineup, sharing my stories title "The Tech, Business, and Politics of APIs In Federal Government". Focusing on information gathered as part of my research, workshops, and consulting across the public and private sector.
 
 My talk reflects my work to motivate federal agencies to do APIs over the last five years, and help pollinate the ideas and practices I gather from across the private sector, and understand which ones will work in the public sphere. Not everything about doing APIs at startups and in the enterprise translates perfectly to delivering APIs in the federal government, but there are many practices that will help agencies better serve the people. My goal is to open up discussion with government employees and contractors, to help figure out what works and what doesn't--sharing stories along the way.
 

@@ -10,9 +10,9 @@ tags:
   - Static
   - Clients
 image: >-
-  ttps://s3.amazonaws.com/kinlane-productions/holmes-county/holmes-county-listing.png
+  ttps://s3.amazonaws.com/kinlane-productions2/holmes-county/holmes-county-listing.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/holmes-county/holmes-county-listing.png" align="right" width="40%" style="padding: 15px;" /></p>I am working with a client to develop a simple user interface on top of a Human Services Data API (HSDA) I launched for them. They want a basic website for searching, browsing, and navigating the organizations, locations, and services available in their API. A part of this work is helping them understand how modular and configurable their web site is, with each page, or portion of a page being a simple API call. It is taking a while for them to fully understand what they have, and the potential of evolving a web application in this way, but I feel like they are beginning to understand, and are taking the reigns a little more when it comes to dictate what they want within this new world.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/holmes-county/holmes-county-listing.png" align="right" width="40%" style="padding: 15px;" /></p>I am working with a client to develop a simple user interface on top of a Human Services Data API (HSDA) I launched for them. They want a basic website for searching, browsing, and navigating the organizations, locations, and services available in their API. A part of this work is helping them understand how modular and configurable their web site is, with each page, or portion of a page being a simple API call. It is taking a while for them to fully understand what they have, and the potential of evolving a web application in this way, but I feel like they are beginning to understand, and are taking the reigns a little more when it comes to dictate what they want within this new world.
 
 When I first published a basic listing of human services they were disappointed. They had envisioned a map of the listings, allowing users to navigate in a more visual way. I got to work helping them see the basic API call(s) behind the listing, and how we could use the JSON response in any way we wanted. I am looking to provide three main ways in which I can put the API data to work in a variety of web applications:
 

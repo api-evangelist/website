@@ -8,9 +8,9 @@ tags:
   - Search
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-new-68-158-800-500-0-max-0-1--1.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-new-68-158-800-500-0-max-0-1--1.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I was conducting an accounting of my API design toolbox, and realized it hasn’t changed much lately. It is still a very manual suite of tooling, and sometimes services, that help me craft my APIs. There are some areas I am actively investing in when it comes to API design, but honestly there really isn’t that much new out there to use. To help me remember how we got here, I wanted to take a quick walk through the history of API design, and check in on what is currently available when it comes to investing in your API design process.
 
 API design has historically meant REST. Many folks still see it this way. While there has been plenty of books and articles on API design for over a decade, I attribute the birth of API design to Jakub and Z at Apiary (https://apiary.io). I believe they first cracked open the seed of API design, and the concept API design first. Which is one of the reasons I was so distraught when Oracle bought them. But we won’t go there. The scars run deep, and where has it got us? Hmm? Hmm?? Anyways, they set into motion an API design renaissance which has brought us a lot of interesting thinking on API design, a handful of tooling and services, some expansion on what API design means, but ultimately not a significant amount of movement overall.

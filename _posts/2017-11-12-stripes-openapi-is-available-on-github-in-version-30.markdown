@@ -11,7 +11,7 @@ tags:
   - Orchestration
 image: ''
 ---
-<p><a href="https://github.com/stripe/openapi"><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripes-openapi-specification-on-github.png" align="right" width="45%" style="padding: 15px;" /></a></p>I can't write about every API provider who publishes their OpenAPI to Github, there are just too many. But, I can write about the rockstar API providers who do though, and showcase what they are doing, so I can help influence the API providers who have not started publishing their OpenAPIs in this way. If you are looking for a solid example of a leading API provider publishing their OpenAPI to Github, [I recommend taking a look at the payment provider Stripe](https://github.com/stripe/openapi).
+<p><a href="https://github.com/stripe/openapi"><img src="https://s3.amazonaws.com/kinlane-productions2/stripe/stripes-openapi-specification-on-github.png" align="right" width="45%" style="padding: 15px;" /></a></p>I can't write about every API provider who publishes their OpenAPI to Github, there are just too many. But, I can write about the rockstar API providers who do though, and showcase what they are doing, so I can help influence the API providers who have not started publishing their OpenAPIs in this way. If you are looking for a solid example of a leading API provider publishing their OpenAPI to Github, [I recommend taking a look at the payment provider Stripe](https://github.com/stripe/openapi).
 
 [Their repository contains OpenAPI specifications for Stripe's API](https://github.com/stripe/openapi), with multiple files available in the in the openapi/ directory:
 

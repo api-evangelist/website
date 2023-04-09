@@ -9,9 +9,9 @@ tags:
   - Politics of APIs
   - Business of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist/runscope/runscope-200-ok.jpeg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg" align="right" width="40%" style="padding: 15px;" /></p>The more I learn about the world of APIs, the more I understand how technology, business, and politics are all woven together into one often immovable monolith. Many things in the world of APIs seem purely like a technical thing, but in reality they are wrapped in, and wielded intentionally and unintentionally as part of larger business, and sometimes a personal agenda. An example of this can be found with the presence, or lack of presence with HTTP status codes, which the default status is usually 200 OK, 404 not found, or 500 internal error.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/runscope/runscope-200-ok.jpeg" align="right" width="40%" style="padding: 15px;" /></p>The more I learn about the world of APIs, the more I understand how technology, business, and politics are all woven together into one often immovable monolith. Many things in the world of APIs seem purely like a technical thing, but in reality they are wrapped in, and wielded intentionally and unintentionally as part of larger business, and sometimes a personal agenda. An example of this can be found with the presence, or lack of presence with HTTP status codes, which the default status is usually 200 OK, 404 not found, or 500 internal error.
 
 While these seem like very granular technical details of whether or not an HTML, XML, CSV, or JSON document is returned or not as part of a single web request, there usage often dictates what is happening behind the firewall, and often times more importantly, what is not happening. I find people's awareness that HTTP status codes exist (or not) a significant sign of their view of the wider web world. If they are aware they exist they most likely have some experience engaging with other experienced partners using the web. If they don't, they most likely live a pretty isolated existence--even if they do have a web presence.
 

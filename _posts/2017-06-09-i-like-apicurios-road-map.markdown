@@ -6,7 +6,7 @@ tags:
 - API Evangelist
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/apicurio/apicurio-road-map.png" align="right" width="40%" style="padding: 15px" /></p>I have been learning more about Apicurio, [which is the open source API design editor I have been waiting for](http://apievangelist.com/2017/05/30/apicurio-is-the-open-source-api-editor-i-was-looking-for/). There are a number of things I'm interested in when it comes to Apicurio, but [one side element that caught my attention was their road map](http://www.apicur.io/roadmap/).
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/apicurio/apicurio-road-map.png" align="right" width="40%" style="padding: 15px" /></p>I have been learning more about Apicurio, [which is the open source API design editor I have been waiting for](http://apievangelist.com/2017/05/30/apicurio-is-the-open-source-api-editor-i-was-looking-for/). There are a number of things I'm interested in when it comes to Apicurio, but [one side element that caught my attention was their road map](http://www.apicur.io/roadmap/).
 
 I am a big fan of encouraging folks to share their roadmap. It is an important part of helping establish a shared future between API provider and API consumer. Apicurio is an API tool, without any APIs (yet), but the roadmap purpose remains the same. I like how Apicurio shares their tech preview, beta, and 1.x plan, in a coherent and organized way--you do not have to be a developer to understand what they are planning.
 

@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Security
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/elastic-beam/elasticbeam-security.png
+  https://s3.amazonaws.com/kinlane-productions2/elastic-beam/elasticbeam-security.png
 ---
-<p><a href="https://www.elasticbeam.com/"><img src="https://s3.amazonaws.com/kinlane-productions/elastic-beam/elasticbeam-security.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm getting some investment from [ElasticBeam](https://www.elasticbeam.com/) to turn up the volume on my [API security research](http://security.apievangelist.com/), so I will be telling more stories on the subject, and publishing an industry guide, as well as a white paper in coming weeks. I want my API security to become a first class area of my API research, along side definitions, design, deployment, management, monitoring, testing, and performance.
+<p><a href="https://www.elasticbeam.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/elastic-beam/elasticbeam-security.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm getting some investment from [ElasticBeam](https://www.elasticbeam.com/) to turn up the volume on my [API security research](http://security.apievangelist.com/), so I will be telling more stories on the subject, and publishing an industry guide, as well as a white paper in coming weeks. I want my API security to become a first class area of my API research, along side definitions, design, deployment, management, monitoring, testing, and performance.
 
 [Much of my API security research is built on top of OWASP's hard work](https://www.owasp.org/index.php/OWASP_API_Security_Project), but honestly I haven't gotten very far along in it. I've managed to curated a handful of companies who I've come across in my research, but haven't had time to dive in deeper, or fully process all the news I've curated there. It takes time to stay in tune with what companies are up to, and I'm thankful for ElasticBeam's investment to help me pay the bills while I'm heads down doing this work.
 

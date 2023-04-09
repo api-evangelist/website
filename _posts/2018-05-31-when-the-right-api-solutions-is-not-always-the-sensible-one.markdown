@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Design
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/art-museum_light_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/art-museum_light_dali.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I conducted an API workshop at [Genscape](https://www.genscape.com/) in Boston yesterday. I thoroughly enjoyed the conversation with the technical folks there, and found their pragmatic, yet educated views on APIs refreshing. I spent the day going through the usual stops along the API lifecycle, but found some of our breakout conversations during the API design section to be what has stuck with me on my train ride back to New York. Specifically the discussions around versioning, content negotiation and the overall design of paths, parameters, and potentially providing query language layers on top of APIs.
+<p></p>I conducted an API workshop at [Genscape](https://www.genscape.com/) in Boston yesterday. I thoroughly enjoyed the conversation with the technical folks there, and found their pragmatic, yet educated views on APIs refreshing. I spent the day going through the usual stops along the API lifecycle, but found some of our breakout conversations during the API design section to be what has stuck with me on my train ride back to New York. Specifically the discussions around versioning, content negotiation and the overall design of paths, parameters, and potentially providing query language layers on top of APIs.
 
 After going through much of my textbook API design patterns for paths, and parameters, then working my through content negotiation and headers, we kept finding ourselves talking about what their clients were capable of. Bringing the API design discussion back around to why REST is still dominate in my opinion--simplicity, and lowering the bar for consumers. Time after time we found ourselves talking about their target consumers, the spreadsheet wielding data analyst, and how the bar needed to be kept low to make sure their needs were being met. Sure, we can quickly get academic and theoretical with the design practices, but if they fall on deaf ears, and API consumers do not adopt and use the API-driven tools, does it matter?
 

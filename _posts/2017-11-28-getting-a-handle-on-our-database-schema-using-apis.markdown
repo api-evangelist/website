@@ -8,9 +8,9 @@ tags:
   - Database
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-cloud1_internet_numbers.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/server-cloud1_internet_numbers.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-cloud1_internet_numbers.jpg" align="right" width="45%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/server-cloud1_internet_numbers.jpg" align="right" width="45%" style="padding: 15px;" /></p>
 _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
 When I take money from my partners, I am always looking for characteristics in their products and services that allow me to write honest stories about the solutions they provide. I can't do this for all API companies that approach me, but the ones that are doing useful things, make it pretty easy for me. [SlashDB](https://www.slashdb.com/) helps me out on this front because they aren't the shiny new startup doing APIs--they are the real world business helping other companies, organizations, institutions, and government agencies get a handle on their databases using APIs. One huge benefit of this process in my opinion is how it helps us get a handle on the schema we use, by letting a little light in on the process.

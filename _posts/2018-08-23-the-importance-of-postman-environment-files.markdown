@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Clients
   - Authentication
-image: 'https://s3.amazonaws.com/kinlane-productions/postman/postman-environments.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/postman/postman-environments.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm a big fan of [Postman](https://www.getpostman.com/), and the power of their development environment, as well as their Postman Collection format. I think their approach to not just integrating with APIs, but also enabling the development and delivery of APIs has shifted the conversation around APIs in the last couple of years--not too many API service providers accomplish this in my experience. There are several dimensions to what Postman does that I think are pushing the API conversation forward, but one that has been capturing my attention lately [are Postman Environment Files](https://www.getpostman.com/docs/v6/postman/environments_and_globals/manage_environments).
+<p></p>I'm a big fan of [Postman](https://www.getpostman.com/), and the power of their development environment, as well as their Postman Collection format. I think their approach to not just integrating with APIs, but also enabling the development and delivery of APIs has shifted the conversation around APIs in the last couple of years--not too many API service providers accomplish this in my experience. There are several dimensions to what Postman does that I think are pushing the API conversation forward, but one that has been capturing my attention lately [are Postman Environment Files](https://www.getpostman.com/docs/v6/postman/environments_and_globals/manage_environments).
 
 Using Postman, you can manage many different environments used for working with APIs, and if you are a pro or enterprise customer, you can export a file that represents an environment, making each of these API definitions more portable and collaborative. Managing the variety of environments for the hundreds of APIs I use is one of the biggest pain points I have. Postman has significantly helped me get a handle on the tokens and keys I use across the internal, as well as partner and public APIs that I depend on each day to operate API Evangelist.
 

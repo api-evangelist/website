@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Containers
   - Documentation
-image: 'https://s3.amazonaws.com/kinlane-productions/docker/docker-engine-openapi-download.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/docker/docker-engine-openapi-download.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/docker/docker-engine-openapi-download.png" align="right" width="45%" style="padding: 15px;" /></p>I am a big fan API providers taking ownership of their OpenAPI definition, which enables API consumers to download a complete OpenAPI then import into any client tooling like Postman, using it to generate client SDKs, and getting up to speed regarding the surface area of an API. This is why I like to showcase API providers I come across who do this well, and occasionally shame API providers who don't do it, and demonstrate to their consumers that they don't really understand what OpenAPI definitions are all about.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/docker/docker-engine-openapi-download.png" align="right" width="45%" style="padding: 15px;" /></p>I am a big fan API providers taking ownership of their OpenAPI definition, which enables API consumers to download a complete OpenAPI then import into any client tooling like Postman, using it to generate client SDKs, and getting up to speed regarding the surface area of an API. This is why I like to showcase API providers I come across who do this well, and occasionally shame API providers who don't do it, and demonstrate to their consumers that they don't really understand what OpenAPI definitions are all about.
 
 This week I am showcasing an API provider who does it well. I was on the hunt for an OpenAPI of the Docker Engine API, for use in a project I am consulting on, and was please to find that [they have a button to download the OpenAPI for each version of the Docker Engine API right at the top of the page](https://docs.docker.com/engine/api/v1.35/#). Making it dead simple for me, as an API consumer, to get up and running with the Docker API in my tooling. OpenAPI is about much more than just the API documentation, and something that should be a first class companion to ALL API documentation for EVERY API provider out there--whether or not you are a devout OpenAPI (fka Swgger) believer.
 

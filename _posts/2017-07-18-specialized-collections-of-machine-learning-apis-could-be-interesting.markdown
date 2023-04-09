@@ -9,9 +9,9 @@ tags:
   - Marketplaces
   - Machine Learning
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorithmia/algorithmia-enterprise.png
+  https://s3.amazonaws.com/kinlane-productions2/algorithmia/algorithmia-enterprise.png
 ---
-<p><a href="https://algorithmia.com/enterprise"><img src="https://s3.amazonaws.com/kinlane-productions/algorithmia/algorithmia-enterprise.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was learning more [about CODEX, from Algorithmia, their enterprise platform for deploying machine learning API collections on premise or in the cloud](https://algorithmia.com/enterprise). Algorithmia is taking the platform in which their algorithmic marketplace is deployed on and making it so you can deploy it anywhere. I feel like this is where the algorithmic-centered API deployment is heading, potentially creating some very interesting, and hopefully specialized collections of machine learning APIs.
+<p><a href="https://algorithmia.com/enterprise"><img src="https://s3.amazonaws.com/kinlane-productions2/algorithmia/algorithmia-enterprise.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was learning more [about CODEX, from Algorithmia, their enterprise platform for deploying machine learning API collections on premise or in the cloud](https://algorithmia.com/enterprise). Algorithmia is taking the platform in which their algorithmic marketplace is deployed on and making it so you can deploy it anywhere. I feel like this is where the algorithmic-centered API deployment is heading, potentially creating some very interesting, and hopefully specialized collections of machine learning APIs.
 
 I talked about how the economics of what Algorithmia is doing interests me. I see the potential when it comes to supporting machine learning APIs that service an image or video processing pipeline--something I've enjoyed thinking about with my drone prototype. Drone is just one example of how specialized collections of machine learning APIs could become pretty valuable when they are deployed exactly where they are needed, either on-premise or in any of the top cloud platforms.
 

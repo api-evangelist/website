@@ -10,9 +10,9 @@ tags:
   - Storytelling
   - Writing
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/training/gargoyle_light_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/training/gargoyle_light_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/training/gargoyle_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>You ever wake up some days, and find yourself not caring about APIs, or much else in the realm of technology? No? Well, I do. Regularly. I find myself in this headspace on this fine Monday morning, and without a weeks worth of stories scheduled, it is a very bad place to be as the API Evangelist. Part of this problem is me--I am a pain in my ass. However, a another portion of it is just about staying motivated, engaged, and producing compelling (ha) content on a regular basis for the blog, and other projects I'm working on.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/training/gargoyle_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>You ever wake up some days, and find yourself not caring about APIs, or much else in the realm of technology? No? Well, I do. Regularly. I find myself in this headspace on this fine Monday morning, and without a weeks worth of stories scheduled, it is a very bad place to be as the API Evangelist. Part of this problem is me--I am a pain in my ass. However, a another portion of it is just about staying motivated, engaged, and producing compelling (ha) content on a regular basis for the blog, and other projects I'm working on.
 
 There are almost a hundred stories in my notebook and all of them seem really, really dumb to me this morning. I can't seem to muster up the energy to take any of them and turn into even a three paragraph API blah blah blah story. It's just words right? I should be able to do it. I churn out meaningless API words all the time, non-stop for the last seven years! I should be able to do it today. What is wrong with you man? C'mon, you should be able to just turn it on, and the words will flow. Not today. Like many days before I am going to need to trick myself into turning on the faucet.
 

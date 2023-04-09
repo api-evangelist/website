@@ -11,9 +11,9 @@ tags:
   - APIStrat
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/events/apistrat-2018/erik-wilde.jpg
+  https://s3.amazonaws.com/kinlane-productions2/events/apistrat-2018/erik-wilde.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are getting closer to [the 9th edition of APIStrat happening in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). [The schedule for the conference is up](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), along with [the first lineup of keynote speakers](https://events.linuxfoundation.org/events/apistrat-2018/program/keynote_speakers/), and my drumbeat of stories about the event continues here on the blog. Next up in our session lineup is _"[May Contain Nuts: The Case for API Labeling](http://sched.co/FTQM)"_ by Erik Wilde (@dret), API Academy (@apiacademy) on September 25th.
+<p></p>We are getting closer to [the 9th edition of APIStrat happening in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). [The schedule for the conference is up](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), along with [the first lineup of keynote speakers](https://events.linuxfoundation.org/events/apistrat-2018/program/keynote_speakers/), and my drumbeat of stories about the event continues here on the blog. Next up in our session lineup is _"[May Contain Nuts: The Case for API Labeling](http://sched.co/FTQM)"_ by Erik Wilde (@dret), API Academy (@apiacademy) on September 25th.
 
 I'll let Erik's bio set the stage for what he'll be talking about at APIStrat:
 

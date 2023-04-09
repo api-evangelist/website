@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/castle-wall-circuits.JPG
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/castle-wall-circuits.JPG
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/castle-wall-circuits.JPG" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/castle-wall-circuits.JPG" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 The biggest challenge for big companies doing APIs is always about people and culture. Change is hard. Decoupling things at large companies is difficult. While APIs can operate at scale, they excel when they do one thing well, and aren't burdened with the scope, and complexity of much of the software systems we see already operating within large companies. These large systems take large teams of people to operate, and shifting this culture, and displacing these people isn't going to happen easily. People are naturally skeptical of new approaches, and get very defensive when it comes to their data, content, and other digital assets, as it can be seen as a threat to their livelihood--opening up and sharing these resources outside their sphere of influence.

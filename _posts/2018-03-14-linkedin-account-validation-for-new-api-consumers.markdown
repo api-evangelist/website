@@ -10,9 +10,9 @@ tags:
   - Management
   - Authentication
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/dawex/requiring-linkedin-validation.png
+  https://s3.amazonaws.com/kinlane-productions2/dawex/requiring-linkedin-validation.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I was on-boarding with [the data marketplace Dawex](https://www.dawex.com/en/) the other day, and I thought their on-boarding process was interesting. It is pretty rigid, requiring users to validate themselves in multiple ways, but it provides some interesting approaches to knowing more about who your API developers are. Dawex has the basic level email and phone number validation, but they have added a 3rd dimension, validating who you are using your LinkedIn profile.
+<p></p>I was on-boarding with [the data marketplace Dawex](https://www.dawex.com/en/) the other day, and I thought their on-boarding process was interesting. It is pretty rigid, requiring users to validate themselves in multiple ways, but it provides some interesting approaches to knowing more about who your API developers are. Dawex has the basic level email and phone number validation, but they have added a 3rd dimension, validating who you are using your LinkedIn profile.
 
 After signing up, I was required to validate my email account--pretty standard stuff. Then I was asked to enter a code sent to my cell phone via SMS--not as common, but increasingly a way that platforms are using to verify you. Then I was asked to OAuth and connect my LinkedIn account to my Dawex profile. I've seen sign up and login using LinkedIn, but never using it as a 3rd type of validating who you are, and that you are truly a legitimate business user. I haven't been verified yet, it says it will take up to 72 hour is what the notification at the top of my dashboard says, but it caught my attention.
 

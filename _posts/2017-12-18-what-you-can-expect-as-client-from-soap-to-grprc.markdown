@@ -9,9 +9,9 @@ tags:
   - Protocols
   - Deployment
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/57_64_800_500_0_max_0_-5_-5.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/57_64_800_500_0_max_0_-5_-5.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/57_64_800_500_0_max_0_-5_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm working hard on what I consider to be my definition of a robust API deployment toolbox, and was enjoying the 100K perspective. As I explore, I wanted to share some of my thoughts about by you might expect to receive as a client in each of these scenarios.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/57_64_800_500_0_max_0_-5_-5.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm working hard on what I consider to be my definition of a robust API deployment toolbox, and was enjoying the 100K perspective. As I explore, I wanted to share some of my thoughts about by you might expect to receive as a client in each of these scenarios.
 
 - **SOAP**: You get what the vendor says we can send to you in very structured way.
 - **REST**: Is this what you want? Let us know if it wasn't via StackOverflow.

@@ -3,10 +3,10 @@ layout: post
 title: 'A Trusted Github Authentication Layer For API Management'
 source: http://apievangelist.com/2016/09/20/a-trusted-github-authentication-layer-for-api-management/
 domain: apievangelist.com
-image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github.png
 atomdate: 2016-09-20T17:00:00-07:00
 ---
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.png" alt="" width="40%" align="right" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github.png" alt="" width="40%" align="right" /></p>
 <p>I am reworking the management layer for my APIs. For the last couple of years, I had aspirations of running my APIs with a retail layer generating revenue for API Evangelist--something which required a more comprehensive API management layer. In 2016, I'm not really interested in generating revenue from the APIs I operate, I'm just looking to put them to work in my own business, and if others want access I'm happy to open things up and broker some volume deals.</p>
 <p>To accomplish this I really do not need heavy security or service composition for my APIs, I'm just needed to limit who has access so they aren't just 100% public, and identify those who are using, and how much they are actually consuming. To facilitate this I am just going to use Github as a trusted layer for authentication. Using an OAuth proxy, I'll let my own applications authenticate using their respective Github user, and identify themselves using a Github OAuth token when making calls to each API.&nbsp;</p>
 <p>Each application I have operating on top of my APIs have its own Github account. Once they do the OAuth dance with my proxy, my system will then have a Github token identifying who they are. I won't need to validate the token is still good with each call, something I'll verify each hour or day, and cache locally to improve API performance. Anytime an unidentified token comes through, I'll just make a call to Github, and get the Github users associated, and check them against a trusted list of Github users who I have approved for accessing my APIs.</p>

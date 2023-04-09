@@ -6,9 +6,9 @@ date: 2017-08-16T12:00:00.000Z
 tags:
   - API Evangelist
   - Webhooks
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-asterisk.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-asterisk.png'
 ---
-<p><a href="http://webhooks.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-asterisk.png" align="right" width="30%" style="padding: 15px;" /></a></p>I have been studying the approach of a variety of webhook implementations in preparation for an API consulting project I'm working on. Even though I'm very familiar with how webhooks works, and confident in my ability to design and develop a solution, I'm ALWAYS looking to understand what leading API providers are up to, and how I can improve my knowledge and awareness.
+<p><a href="http://webhooks.apievangelist.com"><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-asterisk.png" align="right" width="30%" style="padding: 15px;" /></a></p>I have been studying the approach of a variety of webhook implementations in preparation for an API consulting project I'm working on. Even though I'm very familiar with how webhooks works, and confident in my ability to design and develop a solution, I'm ALWAYS looking to understand what leading API providers are up to, and how I can improve my knowledge and awareness.
 
 With his round of research, Github has provided me with several webhook nuggets for my API storytelling notebook. One of their web features I though was the notion of a wildcard webhook event:
 

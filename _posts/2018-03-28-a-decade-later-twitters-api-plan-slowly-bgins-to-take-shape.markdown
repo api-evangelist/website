@@ -10,13 +10,13 @@ tags:
   - Plans
   - Social
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/twitter/twitter-bird-blue-on-white.png
+  https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-bird-blue-on-white.png
 ---
 <p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;" /></p>It's been a long, long road for Twitter when it comes to realizing the importance of having a plan when it comes to their API management strategy. Aside from monetizing the firehose through former parter, and now acquired solution Gnip, Twitter has never had any sort of plan when it came to providing access tiers for their API. I try to revisit the Twitter developer portal a couple times a year, but I'm going to have to increase the number of visits as there seems to be more rapid shifts towards getting control over their API management layer in recent months.
 
 The [API plan matrix that has emerged as part of Twitter's pricing page](https://developer.twitter.com/en/pricing) provides a view of the unfolding plan for the social media platform.
 
-<p align="center"><a href="https://developer.twitter.com/en/pricing"><img src="https://s3.amazonaws.com/kinlane-productions/twitter/twitter-pricing-plan.png" width="100%" /></a></p>
+<p align="center"><a href="https://developer.twitter.com/en/pricing"><img src="https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-pricing-plan.png" width="100%" /></a></p>
 
 The Twitter API plan doesn't show the entire scope, as it doesn't cover the streaming layer of the API, but it does provide an important first step towards bringing coherence to how developers can access the API, and pay for premium levels of access. This conversation isn't just about Twitter making money or Twitter charging for access to our data, this is about Twitter taking control over who has access to our data, and the platform. It is up to Twitter whether or not they focus on revenue, or the needs of end-users, something that we will only realize as their API plan continues to unfold.
 

@@ -8,9 +8,9 @@ tags:
   - Search
   - Discovery
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algolia/hacker-news-algolia-search-api.png
+  https://s3.amazonaws.com/kinlane-productions2/algolia/hacker-news-algolia-search-api.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I was working on [a serverless app for Streamdata.io that takes posts to Hacker News and streams them into an Amazon S3 data lake](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:879370021840:applications~StreamData-IO-Hacker-News-New), and I came across the [Algolia powered Hacker News search API](https://hn.algolia.com/api). After being somewhat frustrated with the simplicity of the official Hacker News API, I was pleased to find [the search kindly provided by Algolia](https://hn.algolia.com/api).
+<p></p>I was working on [a serverless app for Streamdata.io that takes posts to Hacker News and streams them into an Amazon S3 data lake](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-1:879370021840:applications~StreamData-IO-Hacker-News-New), and I came across the [Algolia powered Hacker News search API](https://hn.algolia.com/api). After being somewhat frustrated with the simplicity of the official Hacker News API, I was pleased to find [the search kindly provided by Algolia](https://hn.algolia.com/api).
 
 There is no search API available for the core Hacker News API, and the design leaves a lot to be desired, so the simplicity of Algolia's API solution was refreshing. There is a lot of data flowing into Hacker News on a regular day, so providing a search API is pretty critical. Additionally,  Algolia's ability to deliver such a simple, usable, yet powerful API on top of a relevant data source like Hacker News demonstrates the utility of what Algolia offers as a search solution--something I wanted to take a moment to point out here on the blog.
 

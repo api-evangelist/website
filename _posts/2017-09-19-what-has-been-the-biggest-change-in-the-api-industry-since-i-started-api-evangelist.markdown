@@ -9,9 +9,9 @@ tags:
   - API Evangelist
   - Business of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beach-rocks-currents_internet_numbers.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/beach-rocks-currents_internet_numbers.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beach-rocks-currents_internet_numbers.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/beach-rocks-currents_internet_numbers.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 The biggest change in the industry since I started doing API Evangelist in 2010 is who is doing APIs. In 2010 it was 95% startups doing APIs, with a handful of enterprise, and small businesses doing them. I'd say over the last couple years the biggest change is that this had spread beyond the startup community and is something we see across companies, organizations, institutions, and government agencies of all shapes and sizes. Granted, there are a variety when it comes to the level they are doing them, and the quality, but APIs are something that has been moving mainstream over the last seven years, and becoming more commonplace in many different industries.

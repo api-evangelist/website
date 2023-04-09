@@ -8,7 +8,7 @@ tags:
   - API Events
   - Talks
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/talks/postcon/moving-towards-a-modern-api-lifecycle-postcon.png
+  https://s3.amazonaws.com/kinlane-productions2/talks/postcon/moving-towards-a-modern-api-lifecycle-postcon.png
 ---
 I gave a talk early in in June at POST/CON 2018 in San Francisco. The conference was a great mix of discussions reflecting the Postman community. [You can find all the talks on Google](https://www.youtube.com/playlist?list=PLM-7VG-sgbtCv6yx5Af3pGikTYIE3CAdu), including mine about moving towards a modern AP lifecycle.
 

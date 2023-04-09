@@ -8,10 +8,10 @@ tags:
 - Hospitality
 - Artificial Intelligence
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/industry/industry-work-group.png
+image: https://s3.amazonaws.com/kinlane-productions2/industry/industry-work-group.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/industry/industry-work-group.png" align="right" width="40%" style="padding: 15px;" /></p>Along with the growth of industry level API events for machine learning, healthcare, and beyond, I'm starting to see the emergence of more API specific working groups, something I've been asking for, for some time now. The API universe is expanding and we will need API specialists with domain expertise to help push forward the conversations in leading industries like healthcare, banking, education, transportation, and beyond.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/industry/industry-work-group.png" align="right" width="40%" style="padding: 15px;" /></p>Along with the growth of industry level API events for machine learning, healthcare, and beyond, I'm starting to see the emergence of more API specific working groups, something I've been asking for, for some time now. The API universe is expanding and we will need API specialists with domain expertise to help push forward the conversations in leading industries like healthcare, banking, education, transportation, and beyond.
 
 I've been keeping an eye out for any movement within industries beyond [FHIR](https://www.hl7.org/fhir/overview.html) and [PSD2](https://ec.europa.eu/info/business-economy-euro/banking-and-finance/consumer-finance-and-payments/payment-services_en), and now I"m adding three more efforts to my list:
 

@@ -9,9 +9,9 @@ tags:
   - Management
   - Cloud
   - Gateway
-image: 'https://s3.amazonaws.com/kinlane-productions/aws/aws-api-gateway-icon.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/aws/aws-api-gateway-icon.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/aws/aws-api-gateway-icon.png" align="right" width="45%" style="padding: 15px;" /></p>I was providing an overview of Kong, AWS API Gateway, and other solutions for a team I'm advising a couple weeks back. I was just looking to distill down some of the key features, and provide an overview to a large, distributed team. This work lends itself well to publishing here on the blog, so [I published an overview of Kong yesterday](http://apievangelist.com/2018/02/13/summary-of-kong-as-an-api-management-solution/), and today I wanted to publish the summary of the AWS API Gateway. The API gateway solution from AWS has some overlap with what Kong delivers, but I consider it to be more of an API deployment, as well as an API management gateway.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/aws/aws-api-gateway-icon.png" align="right" width="45%" style="padding: 15px;" /></p>I was providing an overview of Kong, AWS API Gateway, and other solutions for a team I'm advising a couple weeks back. I was just looking to distill down some of the key features, and provide an overview to a large, distributed team. This work lends itself well to publishing here on the blog, so [I published an overview of Kong yesterday](http://apievangelist.com/2018/02/13/summary-of-kong-as-an-api-management-solution/), and today I wanted to publish the summary of the AWS API Gateway. The API gateway solution from AWS has some overlap with what Kong delivers, but I consider it to be more of an API deployment, as well as an API management gateway.
 
 The [AWS API Gateway brings API](https://aws.amazon.com/api-gateway/) deployment front and center, allowing you to define and deploy APIs that are wired up to your backend (AWS) infrastructure:
 

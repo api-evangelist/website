@@ -10,9 +10,9 @@ tags:
   - Politics of APIs
   - Federal Government
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/raven-fence.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/raven-fence.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/raven-fence.jpg" align="right" width="40%" style="padding: 15px;" /></p>As I work my way through almost one hundred federal government API developer portals, almost 500 APIs, and 133 Github accounts for federal agencies the chilling effect of the change of leadership in this country becomes clear. You can tell the momentum across hundreds of federal agency built up over the last five years is still moving, but the silence across blogs, Twitter accounts, change logs, and Github repos shows that the pace of acceleration is in jeopardy.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/raven-fence.jpg" align="right" width="40%" style="padding: 15px;" /></p>As I work my way through almost one hundred federal government API developer portals, almost 500 APIs, and 133 Github accounts for federal agencies the chilling effect of the change of leadership in this country becomes clear. You can tell the momentum across hundreds of federal agency built up over the last five years is still moving, but the silence across blogs, Twitter accounts, change logs, and Github repos shows that the pace of acceleration is in jeopardy.
 
 When you are browsing agency developer portals you come across phrases like this, "As part of the [Open Government Initiative](https://www.whitehouse.gov/sites/default/files/omb/egov/digital-government/digital-government.html), the BusinessUSA codebase is available on the BusinessUSA GitHub Open Source Repository." With the link to the Open Government Initiative leading to a a page on the White House website that has been removed--[something you can easily find on the Obama archives](https://obamawhitehouse.archives.gov/open/documents/open-government-directive). I am coming across numerous examples like this of how the change in leadership has created a vacuum when it comes to API and open data leadership, at a time when we should be doubling down on sharing of data, content, and putting algorithms to work across the federal government.
 

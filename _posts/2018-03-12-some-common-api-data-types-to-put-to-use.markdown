@@ -9,9 +9,9 @@ tags:
   - Standards
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/carryload_dali_three.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm continuing my exploration of the API design guidance published by leading API providers. This time, I am taking a look at the API design guide publish by Adidas, [specifically the portion of it addressing what some of the common API types should be](https://adidas-group.gitbooks.io/api-guidelines/content/application/common-data-types.html). Providing some API design essentials, that all of us API providers should be baking into our APIs by default.
+<p></p>I'm continuing my exploration of the API design guidance published by leading API providers. This time, I am taking a look at the API design guide publish by Adidas, [specifically the portion of it addressing what some of the common API types should be](https://adidas-group.gitbooks.io/api-guidelines/content/application/common-data-types.html). Providing some API design essentials, that all of us API providers should be baking into our APIs by default.
 
 Here is the short list of [default standards Adidas](https://adidas-group.gitbooks.io/api-guidelines/) is supporting across their API operations:
 

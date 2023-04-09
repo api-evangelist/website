@@ -12,9 +12,9 @@ tags:
   - Business of APIs
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/adam-smith_blue_circuit_5.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/adam-smith_blue_circuit_5.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>One of the most important lessons I've learned in the last eight years, is that when people are insistent about things being open, in both accessibility, and cost, it is often more about things remaining open for them to freely (license-free) to extract value from it, that it is ever about any shared or reciprocal value being generated. I've fought many a battle on the front lines of "open", leaving me pretty skeptical when anyone is advocating for open, and forcing me to be even critical of my own positions as the API Evangelist, and the bullshit I peddle.
+<p></p>One of the most important lessons I've learned in the last eight years, is that when people are insistent about things being open, in both accessibility, and cost, it is often more about things remaining open for them to freely (license-free) to extract value from it, that it is ever about any shared or reciprocal value being generated. I've fought many a battle on the front lines of "open", leaving me pretty skeptical when anyone is advocating for open, and forcing me to be even critical of my own positions as the API Evangelist, and the bullshit I peddle.
 
 In my opinion, ANYONE wielding the term open should be scrutinized for insights into their motivations--me included. I've spend eight years operating on the front line of both the open data, and the open API movements, and unless you are coming at it from the position of a government entity, or from a social justice frame of mind, you are probably wanting open so that you can extract value from whatever is being opened. With many different shades of intent  existing when it comes to actually contributing any value back, and supporting the ecosystem around whatever is actually being opened.
 

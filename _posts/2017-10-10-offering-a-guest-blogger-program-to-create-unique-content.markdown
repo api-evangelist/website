@@ -8,9 +8,9 @@ tags:
   - Communications
   - Management
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/runscope/runscope-featured-guest-series.png
+  https://s3.amazonaws.com/kinlane-productions2/runscope/runscope-featured-guest-series.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/runscope/runscope-featured-guest-series.png" align="right" width="40%" style="padding: 15p;" /></p>Creating regular content for your blog is essential to maintaining a presence. If you don't publish regularly, and refresh your content, you will find your SEO, and wider presence quickly becoming irrelevant. I understand that unlike me, many of you have jobs, and responsibilities when it comes to operating your APIs, and carving out the time to craft regular blog posts can be difficult. To help you in your storytelling journey I am always looking for other stories to help alleviate your pain, while helping keep your blog active, and ensure folks will continue stumbling across your API, or API service, while Google, or on social media.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/runscope/runscope-featured-guest-series.png" align="right" width="40%" style="padding: 15p;" /></p>Creating regular content for your blog is essential to maintaining a presence. If you don't publish regularly, and refresh your content, you will find your SEO, and wider presence quickly becoming irrelevant. I understand that unlike me, many of you have jobs, and responsibilities when it comes to operating your APIs, and carving out the time to craft regular blog posts can be difficult. To help you in your storytelling journey I am always looking for other stories to help alleviate your pain, while helping keep your blog active, and ensure folks will continue stumbling across your API, or API service, while Google, or on social media.
 
 Another interesting example of how to keep your blog fresh came from my partners over at Runscope, [who conducted a featured guest blog post series](https://blog.runscope.com/writing-for-runscope), where they were paying API community leaders to help "create an incredible resource of blog posts about APIs, microservices, DevOps, and QA." Which has produced a handful of interesting posts:
 

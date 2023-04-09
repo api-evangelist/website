@@ -8,9 +8,9 @@ tags:
   - Design
   - Protocols
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-graphql.png
+  https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-graphql.png
 ---
-<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-graphql.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-graphql.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 _This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure._
 
 GraphQL is a query language designed by Facebook to build client applications using a flexible syntax and provide a system for describing the data requirements and interactions required by each application. GraphQL began as a Facebook project that soon began powering all their mobile applications. By 2015, became a formal specification. GraphQL provides a query language for your APIs that allows users to describe how they would like their API requests be fulfilled. The approach shifts the API design process to be more about request flexibility requiring API providers to design all API paths ahead of time. It opts for an augmented query language over investing in static schema that requires specific API paths.

@@ -9,9 +9,9 @@ tags:
   - Database
   - Real Time
   - Deployment
-image: 'https://s3.amazonaws.com/kinlane-productions/apache/apache-logo.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/apache/apache-logo.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/apache/apache-logo.png" align="right" width="30%" style="padding: 15px;" /></p>I'm spending time investing in [my data](http://data.apievangelist.com), as well as [my database API research](http://database.apievangelist.com). I'll have guides, with accompanying stories coming out over the next couple weeks, but I want to take a moment to publish some of the raw research that I think paints an interesting picture about where things are headed.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/apache/apache-logo.png" align="right" width="30%" style="padding: 15px;" /></p>I'm spending time investing in [my data](http://data.apievangelist.com), as well as [my database API research](http://database.apievangelist.com). I'll have guides, with accompanying stories coming out over the next couple weeks, but I want to take a moment to publish some of the raw research that I think paints an interesting picture about where things are headed.
 
 When studying what is going on with data and APIs you can't do any search without stumbling across an Apache project doing something or other with data. [I found 37 separate projects at Apache that were data related](https://projects.apache.org/projects.html?category), and wanted to publish as a single list I could learn from.
 

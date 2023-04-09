@@ -8,9 +8,9 @@ tags:
   - Authentication
   - Politics of APIs
   - On-boarding
-image: 'https://s3.amazonaws.com/kinlane-productions/social-login.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/social-login.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I received an email from my CRON job API ([EasyCRON](https://www.easycron.com/)) provider this morning about discontinuing the usage of social logins to their service with Gmail, Facebook, etc. Something that I think is a sign of things to come in response to the recent (and continued) bad behavior by many of the leading technology platforms. EasyCRON gave the following response for removing social logins from their service:
+<p></p>I received an email from my CRON job API ([EasyCRON](https://www.easycron.com/)) provider this morning about discontinuing the usage of social logins to their service with Gmail, Facebook, etc. Something that I think is a sign of things to come in response to the recent (and continued) bad behavior by many of the leading technology platforms. EasyCRON gave the following response for removing social logins from their service:
 
 > In order to: 1) prevent any confusion that could be caused by using third party platform's authentication API, 2) decouple from those data greedy platforms, 3) and keep our system simple, we decide to stop using third party platform's authentication API on EasyCron.
 

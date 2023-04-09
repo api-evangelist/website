@@ -8,9 +8,9 @@ tags:
   - Storage
   - Compute
   - DNS
-image: 'https://s3.amazonaws.com/kinlane-productions/periodic-elements.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/periodic-elements.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/periodic-elements.png" align="right" width="40%" style="padding: 15px;" /></p>In 2017 there seems to be an API for just about everything. You can make products available via an API, messing, images, videos, and any of the digital bits that make up our lives. I still get excited by some new APIs, but APIs have to have real usage, and deliver real value before I'll get too worked up about them. I'm regularly looking down the [list of my digital bits](http://apievangelist.com/2017/01/09/the-api-driven-marketplace-that-is-my-digital-self/) thinking about which are the most important to me, which ones I'll keep around, and the services I'll adopt to help me define and manage these bits.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/periodic-elements.png" align="right" width="40%" style="padding: 15px;" /></p>In 2017 there seems to be an API for just about everything. You can make products available via an API, messing, images, videos, and any of the digital bits that make up our lives. I still get excited by some new APIs, but APIs have to have real usage, and deliver real value before I'll get too worked up about them. I'm regularly looking down the [list of my digital bits](http://apievangelist.com/2017/01/09/the-api-driven-marketplace-that-is-my-digital-self/) thinking about which are the most important to me, which ones I'll keep around, and the services I'll adopt to help me define and manage these bits.
 
 This process has got me thinking really deeply about what I'd consider to be the three most important types of APIs in my life:
 

@@ -10,9 +10,9 @@ tags:
   - Bots
   - Federal Government
   - Regulations
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-api.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-api.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-api.png" align="right" width="25%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-api.png" align="right" width="25%" style="padding: 15px;" /></p>
 
 I'm looking into how to make [API security](http://security.apievangelist.com) more transparent and observable lately, and looking for examples of companies, institutions, organizations, politicians, and the government are calling for observability into wherever APIs are impacting our world. Today's example comes out of [POLITICO's Morning Cybersecurity email newsletter](http://www.politico.com/tipsheets/morning-cybersecurity), which has become an amazing source of daily information for me, regarding transparency around the take down of bot networks.
 

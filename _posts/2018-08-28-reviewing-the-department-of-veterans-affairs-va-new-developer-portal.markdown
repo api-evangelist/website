@@ -10,9 +10,9 @@ tags:
   - Portal
   - Review
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/federal-government/va/va-developer-portal.png
+  https://s3.amazonaws.com/kinlane-productions2/federal-government/va/va-developer-portal.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I wanted to take a moment and review t[he Department Of Veterans Affairs (VA) new developer portal](https://developer.va.gov/). Spending some time considering at how far they've come, what they published so far, and brainstorm on what the future might hold. Let me open by saying that I am working directly and indirectly with the VA on a variety of paid projects, but I'm not being paid to write about their API effort--that is something I've done since I worked there in 2013. I will craft a disclosure to this effect that I put at the bottom of each story I write about the VA, but I wanted to put out there in general, as I work through my thoughts on what is happening over at the VA.
+<p></p>I wanted to take a moment and review t[he Department Of Veterans Affairs (VA) new developer portal](https://developer.va.gov/). Spending some time considering at how far they've come, what they published so far, and brainstorm on what the future might hold. Let me open by saying that I am working directly and indirectly with the VA on a variety of paid projects, but I'm not being paid to write about their API effort--that is something I've done since I worked there in 2013. I will craft a disclosure to this effect that I put at the bottom of each story I write about the VA, but I wanted to put out there in general, as I work through my thoughts on what is happening over at the VA.
 
 **The VA Has Come A Long Way**<br />
 I wanted to open up this review with a nod towards how far the VA has come. There have been other publicly available APIs at the VA, as well as a variety of open data efforts, but the VA is clearly going all in on APIs with this wave. The temperature at VA in 2013 when it came to APIs was lukewarm at best. With the activity I'm seeing at the moment, I can tell that the temperature of the water has gone way up. Sure, the agency still has a long way to go, but from what I can tell, the leadership is committed to the agencies API journey--something I have not seen before.

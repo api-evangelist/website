@@ -4,10 +4,10 @@ date: 2017-05-17 12:00:00 Z
 tags:
 - Batch
 - Design
-image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bulk-requests.png
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bulk-requests.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bulk-requests.png" align="right" width="35%" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bulk-requests.png" align="right" width="35%" /></p>
 
 A recent addition to my API research is the concept of making batch API requests. I was reminded of this during [a webinar I did with Cloud Elements when they cited batch API requests as an area needing improvement in their State of API Integration report](http://resources.cloud-elements.com/presentations-2/the-state-of-api-integration-webinar-slides). I had also recently come across several batch APIs while profiling the Google API stack, so I already had the topic in my notebook, but Cloud Element pushed me to add the topic to my research.
 

@@ -8,9 +8,9 @@ tags:
   - Management
   - Authentication
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I'm looking to distill things down to the essential components needed to get the job done. The first element you need to manage API access is the ability for API consumers to be able to sign up for an account, that will be used to identify, measure usage, and engage with each API consumer.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/cargo-ship-on-sea_blue_circuit.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm helping some clients think through their approach to API management. These projects have different needs, as well as different resources available to them, so I'm looking to distill things down to the essential components needed to get the job done. The first element you need to manage API access is the ability for API consumers to be able to sign up for an account, that will be used to identify, measure usage, and engage with each API consumer.
 
 **Starts With An Account**
 While each company may have more details associated with each account, each account will have these basics:

@@ -10,12 +10,12 @@ tags:
   - Deployment
   - Design
   - Documentation
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-downtheline-dali-three.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-downtheline-dali-three.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 One of the toughest parts about teaching people about APIs is that there are many different views of what the API life cycle can be depending on who you are, and what your intentions are. As an advocate or evangelist for a single API you are speaking externally to the API consumption life cycle, but internally you are focused on the API delivery life cycle. As an API Evangelist for many APIs, targeting providers, consumers, and anyone else who comes along, I find it a constant challenge to properly speak to my intended audience. One problematic part of my storytelling I regularly see emerge is that I speak of a single API life cycle, where in reality there are many overlapping life cycles. So, to help me think through all of this I wanted to explore what these overlapping tracks might be—coming up with four distinct iterations of overlapping API building blocks.
 
-## The API Delivery Life Cycle 
+## The API Delivery Life Cycle
 The most common way we refer to the API life cycle is from the perspective of the API provider, where it is all about delivering an API. Referencing the stops along the life cycle that are most relevant to someone who is  delivering a new API, or might be moving an API forward as part of the evolution of an existing resource. From my vantage point, I consider these to be the most common stops along the API delivery life cycle.
 
 - **Definitions** - Defining what an API does, crafting the JSON schema, OpenAPI, AsyncAPI, and other machine readable definitions of what is potentially being delivered, initializing the contract that will guide an API through the life cycle.
@@ -31,7 +31,7 @@ The most common way we refer to the API life cycle is from the perspective of th
 I can quickly add on another 10-20 stops along the API delivery life cycle, but I want to highlight the core building blocks of delivering an API, not exhaustively document every possible building block. These are the primary steps any API provider will need to master before they can begin competently delivering API resources for consumption internally, or externally to partners and the general public. Providing a basic checklist that can be use to flesh out the details needed before an API can be called production-ready, then begin it’s life as the back-end for web, mobile, device, and network applications.
 
 ## API Consumption Life Cycle
-<img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/subway-subway-internet-numbers.jpg" width="45%" align="right" style="padding: 15px;" />
+<img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/subway-subway-internet-numbers.jpg" width="45%" align="right" style="padding: 15px;" />
 Next, I wanted to explore the flip side of the API life cycle, and the view from the position of the API consumer. This is the second most common way I talk about the API life cycle, but I find that I often get things mixed up between provider and consumer, and I know from experience that I do not always ensure that things are made clear. To help me put myself into the shoes of API consumers, I wanted to explore what some of the stops along the API life cycle from purely a consumption standpoint—here are a few that I’m thinking about today.
 
 - **Discovery** - Before you can consume an API you have to be able to find it, and be able to get what need to get up and running.
@@ -63,8 +63,8 @@ We aren’t done with APIs once they are delivered and being consumed. There are
 
 Abandoned APIs that do not have anyone in the drive seat are the most common type of API I come across. It is pretty easy to tell when an API provider has moved on, and just left the API up and running. In other cases, teams are just under resourced, and do not have the bandwidth available to invest in the API maintenance portion of the API life cycle. We all get excited about the design and delivery of a new API, but few of us like doing the mundane aspects of API management—this is why you should invest in a good API management solution, because nobody should be reinventing the wheel in this area.
 
-## API Governance Life Cycle 
-<img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-supreme-court-judgement.jpg" width="45%" align="right" style="padding: 15px;" />
+## API Governance Life Cycle
+<img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-supreme-court-judgement.jpg" width="45%" align="right" style="padding: 15px;" />
 Lastly, and one of the most under-developed portions of the API life cycle, is the governance and oversight of things. This is the portion of the API life cycle where you go beyond the tactical day to day stuff and work to establish a strategy for how you deliver, consume, and maintain APIs. Getting formal about how we do what we do, and make sure all stakeholders, especially consumers have a good grasp on API policy, and how things get done. Here are some of the building blocks I consider at the API governance stops along the API life cycle.
 
 - **Definition** - Which definitions are used? Where are the OpenAPI, schema, and other relevant patterns.

@@ -9,9 +9,9 @@ tags:
   - Meetups
   - Workshops
   - Evangelism
-image: 'https://s3.amazonaws.com/kinlane-productions/grpc/grpc-logo.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/grpc/grpc-logo.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/grpc/grpc-logo.png" align="right" width="40%" style="padding: 15px;" /></p>[I wrote about Tyk's API surgery meetups last week](http://apievangelist.com/2017/09/29/tyk-is-conducting-api-surgery-meetups/), and adding a new approach to our API event and workshop toolbox, and next I wanted to highlight [the gRPC Meetup Kit](https://github.com/grpc-ecosystem/meetup-kit), a resource for creating your own gRPC event. gRPC is an approach out of Google for designing, delivering, and operating high performance APIs. If you look at the latest wave of APIs out of Google you'll see they are all REST and/or gRPC. Most of them are dual speed, providing both REST and gRPC. gRPC is an open source initiative, but very much a Google led effort that we've seen picking up momentum in 2017.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/grpc/grpc-logo.png" align="right" width="40%" style="padding: 15px;" /></p>[I wrote about Tyk's API surgery meetups last week](http://apievangelist.com/2017/09/29/tyk-is-conducting-api-surgery-meetups/), and adding a new approach to our API event and workshop toolbox, and next I wanted to highlight [the gRPC Meetup Kit](https://github.com/grpc-ecosystem/meetup-kit), a resource for creating your own gRPC event. gRPC is an approach out of Google for designing, delivering, and operating high performance APIs. If you look at the latest wave of APIs out of Google you'll see they are all REST and/or gRPC. Most of them are dual speed, providing both REST and gRPC. gRPC is an open source initiative, but very much a Google led effort that we've seen picking up momentum in 2017.
 
 While I am keeping an eye on gRPC itself, this particular story is about the concept of providing a Meetup kit for your API related service or tooling, providing an "In a Box" solution that anyone can use to hold a Meetup. The gRPC team provides three groups of resources:
 

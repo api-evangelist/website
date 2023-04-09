@@ -5,10 +5,10 @@ tags:
 - Database
 - Deployment
 - Design
-image: https://s3.amazonaws.com/kinlane-productions/google/spanner/google-spanner.png
+image: https://s3.amazonaws.com/kinlane-productions2/google/spanner/google-spanner.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/google/spanner/google-spanner.png" align="right" width="25%" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/google/spanner/google-spanner.png" align="right" width="25%" /></p>
 
 I saw the news that [Google's Spanner Database](https://cloud.google.com/spanner/) is ready for prime time, and I wanted to connect it with a note I took at the Google Analyst Summit a few months back--that gRPC is the heart of the database solution. I'm not intimate with the Spanner architecture, approach, or codebase yet, but the API focus, both gRPC core, and REST APIs for a database platform are very interesting.
 

@@ -6,9 +6,9 @@ date: 2018-01-03T15:00:00.000Z
 tags:
   - API Evangelist
   - Database
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-database-new.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-database-new.png" align="right" width="25%" style="padding: 15px" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-database-new.png" align="right" width="25%" style="padding: 15px" /></p>
 
 _This is a series of stories I'm doing as part of [my API Transit work](http://basics.apievangelist.com/), trying to map out a simple journey that some of my clients can take to rethink some of the basics of their API strategy. I'm using a subway map visual, and experience to help map out the journey, which I'm calling [API transit](http://basics.apievangelist.com/)--leveraging the verb form of transit, to describe what every API should go through._
 

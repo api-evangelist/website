@@ -8,9 +8,9 @@ tags:
   - Deployment
   - Cloud
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-database-deployment.png
+  https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-database-deployment.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-database-deployment.png" align="right" width="45%" style="padding: 15px;" /></p>_This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-database-deployment.png" align="right" width="45%" style="padding: 15px;" /></p>_This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
 I spun out a separate research area for [API deployment](http://deployment.apievangelist.com), from my core [API management research](http://deployment.apievangelist.com) back in 2012 when companies were regularly asking me which of the API management providers they should be using to publish new APIs. At the time, none of them would help you actually publish your APIs, and there just wasn't enough conversations going on around the subject. When I give talks which include my section on API deployment, some people still scratch their heads thinking there really isn't that many options on the table--they deploy APIs wherever they've been deploying their APIs. However, in a cloud-driven world, the opportunities for how and where we can deploy our APIs are increasing, and the savvy teams are getting more versatile in how they get things done.
 

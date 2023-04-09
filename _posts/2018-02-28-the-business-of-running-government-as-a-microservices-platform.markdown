@@ -14,9 +14,9 @@ tags:
   - Plans
   - Microservices
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/capital-battle_blue_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/capital-battle_blue_circuit.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>
+<p></p>
 I recently <a href="http://apievangelist.com/2018/02/24/department-of-veterans-affairs-lighthouse-platform-rfi-round-two/">wrote a response to a recent Department of Veterans Affairs RFI which contained a section about the business of operating government as a microservices platform</a>.I know that many folks wouldn't make it that far in the 10K word response, so I wanted to break it out into its own post. I feel pretty strongly about the potential of decoupling how we deliver technology across government, but for this to be successful we are also going to have to decouple the business and politics of it all as well. This post reflects <a href="http://public.data.api.management.apievangelist.com/">my current research and thinking about the business of APIs in government, and is part of some ongoing work I am doing around API management, public data, and how we begin to think differently about how government engages with the public in a digital age</a>.
 
 There are many interpretations of what is a microservice, but for the purposes of this post, it is a simple set of APIs that meet one precise set of government services. The API definition, database, back-end code, management layer, documentation, support and all other essential elements are self-contained, and usually stored in a single Github, or Bitbucket repository, when delivering microservices. Each microservice possesses its own technical, business, and political contract, outline how the service will be delivered, managed, supported, communicated, and versioned. These contracts can be realized individually, or grouped together as a larger, aggregate contract that can be submitted, while still allowing each individual service within that contract to operate independently.

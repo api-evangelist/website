@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Evangelism
   - Communication
-image: 'https://s3.amazonaws.com/kinlane-productions/IMG_7598.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/IMG_7598.jpg'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>Travel is an important part of what I do. It is essential to striking up new relationships, and reenforcing old ones. It is important for me to get out of my bubble, expose myself to different perspectives, and see the world in different ways. I am extremely grateful for the ability to travel around the US, and the world the way that I do. I am also extremely aware of the impact that travel has on me being the API Evangelist--the positive, the negative, and the general shift in my tone in storytelling after roaming the world.
+<p></p>Travel is an important part of what I do. It is essential to striking up new relationships, and reenforcing old ones. It is important for me to get out of my bubble, expose myself to different perspectives, and see the world in different ways. I am extremely grateful for the ability to travel around the US, and the world the way that I do. I am also extremely aware of the impact that travel has on me being the API Evangelist--the positive, the negative, and the general shift in my tone in storytelling after roaming the world.
 
 One of the most negative impact that traveling has on my world is on my ability to complete blog posts. If you follow my work, when I'm in the right frame of mind, I can produce 5-10 blog posts across the domains I write for, on a daily basis. The words just do not flow in the same way when I am on the road. I'm not in a storyteller frame of mind. At least in the written form. When I travel, I am existing in a more physical and verbal sense as the API Evangelist, something that doesn't always get translated into words on my blog(s). This is something that is ok for short periods of time, but after extended periods of time on the road, it is something that will begin to take a toll on my overall digital presence.
 

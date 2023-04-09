@@ -13,9 +13,9 @@ tags:
   - Transit
   - Transportation
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/transit/washington-metropolitan-area-transit-authority-api.pn
+  https://s3.amazonaws.com/kinlane-productions2/transit/washington-metropolitan-area-transit-authority-api.pn
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/washington-metropolitan-area-transit-authority-api.png" align="right" width="45%" style="padding: 15px;" /></p>Even before I engaged with Streamdata.io on our current partnership, I was working with them to quantity the value they bring to the table with their service. As I was working on my story regarding [the roubling terms of service changes From Washington Metropolitan Area Transit Authority (WMATA) data APIs](http://apievangelist.com/2017/11/30/licensing-over-dc-transit-data/), the Streamdata.io team was running a cost savings analysis on the WMATA APIs. This is where they take their web API, and see what they could save if they used Streamdata.io, and turned it into a streaming API.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/transit/washington-metropolitan-area-transit-authority-api.png" align="right" width="45%" style="padding: 15px;" /></p>Even before I engaged with Streamdata.io on our current partnership, I was working with them to quantity the value they bring to the table with their service. As I was working on my story regarding [the roubling terms of service changes From Washington Metropolitan Area Transit Authority (WMATA) data APIs](http://apievangelist.com/2017/11/30/licensing-over-dc-transit-data/), the Streamdata.io team was running a cost savings analysis on the WMATA APIs. This is where they take their web API, and see what they could save if they used Streamdata.io, and turned it into a streaming API.
 
 The Streamdata.io team took [the WMATA Real-Time Bus PredictionsAPI](https://developer.wmata.com/docs/services/5476365e031f590f38092508/operations/5476365e031f5909e4fe331e), and assessed the efficiency gains for WMATA when it comes to their most demanding API consumers. Here are the bandwidth and CPU savings:
 

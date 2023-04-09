@@ -8,9 +8,9 @@ tags:
   - Mobile
   - Design
   - Politics of APIs
-image: 'https://s3.amazonaws.com/kinlane-productions/photos/space-suit.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/photos/space-suit.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/photos/space-suit.jpg" align="right" width="40%" style="padding: 15px;" /></p>When I started API Evangelist in 2010, API usage in mobile phones was the biggest factor contributing to me quitting my job, and becoming a independent voice for all APIs. I was being asked to deliver APIs to drive mobile applications on the iPhone, and while helping run technology for Google I/O I saw an increased need for resources to be delivered to this emerging platform. I knew that APIs were going to play an essential role in ensuring data, content, and algorithms could be put to use in mobile applications.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/photos/space-suit.jpg" align="right" width="40%" style="padding: 15px;" /></p>When I started API Evangelist in 2010, API usage in mobile phones was the biggest factor contributing to me quitting my job, and becoming a independent voice for all APIs. I was being asked to deliver APIs to drive mobile applications on the iPhone, and while helping run technology for Google I/O I saw an increased need for resources to be delivered to this emerging platform. I knew that APIs were going to play an essential role in ensuring data, content, and algorithms could be put to use in mobile applications.
 
 Even with the importance of mobile, it wasn't the only reason I knew that APIs were going to be important, which is something that still resonates today. In 2007, I saw the growing importance of social media APIs, and how messaging, images, and video were being made more distributed using APIs. Then in 2008, I saw that I could deliver global infrastructure using web APIs, demonstrating that web APIs weren't a toy, and that you could operate a real business using web APIs. Then the whole mobile thing was just the tipping point, which demonstrated that the web was maturing beyond just websites, and it would be how we'd be doing business for some time to come.
 

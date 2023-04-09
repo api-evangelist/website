@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Versioning
   - Reliability
-image: 'https://s3.amazonaws.com/kinlane-productions/stripe/stripe-api-versioning.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/stripe/stripe-api-versioning.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripe-api-versioning.png" align="right" width="40%" style="padding: 15px;" /></p>We all (well most of us) strive to deliver as stable of an API presence as we possibly can. It is something that is easier said than done. It is something that takes caring, as well as the right resources, experience, team, management, and budget to do APIs just right. It is something the API idols our there make look easy, when they really have invested a lot of time and energy into developing a agile, yet scalable approach to ensuring APIs stay up and running. Something that you might able to achieve with a single API, but can easily be lost between each API version, as we steer the ship forward.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/stripe/stripe-api-versioning.png" align="right" width="40%" style="padding: 15px;" /></p>We all (well most of us) strive to deliver as stable of an API presence as we possibly can. It is something that is easier said than done. It is something that takes caring, as well as the right resources, experience, team, management, and budget to do APIs just right. It is something the API idols our there make look easy, when they really have invested a lot of time and energy into developing a agile, yet scalable approach to ensuring APIs stay up and running. Something that you might able to achieve with a single API, but can easily be lost between each API version, as we steer the ship forward.
 
 I spend a lot of time at the developer portals of these leading API providers looking for interesting insight into how they are operating, and I though [Stripe's vision around versioning their API is worth highlighting](https://stripe.com/blog/api-versioning). Specifically their quote about treating your API like they are real life physical infrastructure.
 

@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Standards
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-cloud1_feed_people.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/server-cloud1_feed_people.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've had a few API groups contact me lately regarding the challenges they are facing when it comes to supporting organizational, or industry-wide API definitions and schema. They were eager to support common definitions and schema that have been standardized, but were getting frustrated by not being able to do everything they wanted, and having to live within the constraints introduced by the standardized definitions. Which is something that doesn't get much discussion by those of use who are advocating for standardization of APIs and schema.
+<p></p>I've had a few API groups contact me lately regarding the challenges they are facing when it comes to supporting organizational, or industry-wide API definitions and schema. They were eager to support common definitions and schema that have been standardized, but were getting frustrated by not being able to do everything they wanted, and having to live within the constraints introduced by the standardized definitions. Which is something that doesn't get much discussion by those of use who are advocating for standardization of APIs and schema.
 
 **Web APIs Come With Their Own Constraints**<br />
 We all want more developers to use our APIs. However, with more usage, comes more responsibility. Also, to get more usage our APIs need to speak to a wider audience, something that common API definitions and schema will help with. This is why web APIs are working, because they speak to a wider audience, however with this architectural decision we are making some tradeoffs, and accepting some constraints in how we do our APIs. This is why REST is just one tool in our toolbox, so we can use the right tool, establish the right set of constraints, to allow our APIs to be successful. The wider our API toolbox, the wider the number options we will have available when it comes to how we design our APIs, and what schema we can employ

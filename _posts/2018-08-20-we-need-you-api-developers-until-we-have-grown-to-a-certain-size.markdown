@@ -8,9 +8,9 @@ tags:
   - Politics of APIs
   - Management
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/castle-on-hill-edinburgh_feed_people.JPG
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/castle-on-hill-edinburgh_feed_people.JPG
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm watching several fronts along the API landscape evolve right now, with large API providers shifting, shutting down, and changing how they do business with their APIs--now that they don't need their ecosystem of developers as much. It is easy to point the finger at Facebook, Twitter, Google, and the other giants, but it really is a wider systemic, business of APIs illness that will continue to negatively impact the API universe. While this behavior is very prominent with the leading API providers right now, it is something we'll see various waves of it's influence on the tone of the entire API sector further on down the road.
+<p></p>I'm watching several fronts along the API landscape evolve right now, with large API providers shifting, shutting down, and changing how they do business with their APIs--now that they don't need their ecosystem of developers as much. It is easy to point the finger at Facebook, Twitter, Google, and the other giants, but it really is a wider systemic, business of APIs illness that will continue to negatively impact the API universe. While this behavior is very prominent with the leading API providers right now, it is something we'll see various waves of it's influence on the tone of the entire API sector further on down the road.
 
 How API providers treat their consumers vary from industry to industry, and is different depending on the types of resources being made available. However, the issue of API providers treating their developers differently when they are just getting started versus once they grow to a certain size, is something that will continue to plague all areas of the API space. Companies change as they mature, and their priorities will no doubt evolve, but almost all will feel compelled to exploit developers early on so that they can grow their numbers--taking advantage of the goodwill and curiosity of the developer personality.
 

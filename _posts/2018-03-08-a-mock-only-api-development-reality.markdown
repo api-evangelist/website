@@ -12,9 +12,9 @@ tags:
   - Deployment
   - Lifecycle
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/gears_smoking_cigarette.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/gears_smoking_cigarette.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>Imagine if we didn't actually write code when we developed our APIs initially. What if the bar for putting an API into production was so high, that many APIs never actually made it to that level. I spend a lot of time mocking and prototyping APIs, but I don't have a strict maturity model determining when I actually bring an API to life using code. I'd love it if I never actually write code for many of my API prototypes and just mocked them, and iterated upon the mocks instead of thinking they needed actually have a database backend, and code or gateway front-end.
+<p></p>Imagine if we didn't actually write code when we developed our APIs initially. What if the bar for putting an API into production was so high, that many APIs never actually made it to that level. I spend a lot of time mocking and prototyping APIs, but I don't have a strict maturity model determining when I actually bring an API to life using code. I'd love it if I never actually write code for many of my API prototypes and just mocked them, and iterated upon the mocks instead of thinking they needed actually have a database backend, and code or gateway front-end.
 
 What if I only executed these stops along the API lifecycle, instead of actually writing any code:
 

@@ -5,10 +5,10 @@ tags:
 - Monitoring
 - Security
 - Politics of APIs
-image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-hold.png
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-hold.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-hold.png" align="right" width="30%" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-hold.png" align="right" width="30%" /></p>
 I was just messing around with a friend online about monitoring of our monitoring tools, where I said that I have a monitor setup to monitor whether or not I care about monitoring. I was half joking, but in reality, giving a shit is actually a pretty critical component of monitoring when you think about it. Nobody monitors something they don't care about. While monitoring in the world of APIsn might mean a variety of things, I'm guessing that caring about those resources is a piece of every single monitoring configuration.
 
 This has come up before in conversation with my friend [Dave O'Neill of APIMetrics](http://apimetrics.io/), where he tells stories of developers signing up for their service, running the reports they need to satisfy management or customers, then they turn off the service. I think this type of behavior exists at all levels, with many reasons why someone truly doesn't care about a service actually performing as promised, and doing what it takes to rise to the occasion--resulting in the instability, and unreliability that APIs that gets touted in the tech blogosphere.

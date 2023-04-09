@@ -13,9 +13,9 @@ tags:
   - Social
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/capital-battle_internet_numbers.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/capital-battle_internet_numbers.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I was enjoying the REST API Notes newsletter from my friend Matthew Reinbold ([@libel_vox](https://twitter.com/libel_vox)) today, and wanted to share my thoughts on his mention of my work while it was top of my mind. I always enjoy what Matt has to say, and regularly encourage him writing on his blog, and keep publishing his extremely thoughtful newsletter. It is important for the API sector to have many thoughtful, intelligent voices breaking down what is going on. I recommend [subscribing to REST API Notes](https://tinyletter.com/RESTAPINotes/) if you haven't, you won't regret it.
+<p></p>I was enjoying the REST API Notes newsletter from my friend Matthew Reinbold ([@libel_vox](https://twitter.com/libel_vox)) today, and wanted to share my thoughts on his mention of my work while it was top of my mind. I always enjoy what Matt has to say, and regularly encourage him writing on his blog, and keep publishing his extremely thoughtful newsletter. It is important for the API sector to have many thoughtful, intelligent voices breaking down what is going on. I recommend [subscribing to REST API Notes](https://tinyletter.com/RESTAPINotes/) if you haven't, you won't regret it.
 
 Anyways, Matt replied with the following about my Facebook response:
 

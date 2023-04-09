@@ -9,9 +9,9 @@ tags:
   - Agency
   - Security
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/vanick-digital/apistrat-2018-vanick-digital.png
+  https://s3.amazonaws.com/kinlane-productions2/vanick-digital/apistrat-2018-vanick-digital.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are kicking it into overdrive now that [the schedule is up for APIStrat in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/). From now until the event at the end of September you are going to hear me talk about all the amazing speakers we have, the companies they work for, and the interesting things they are all doing with APIs. One of the perks of being a speaker or a sponsor at APIStrat--you get coverage on API Evangelist, a become part of the buzz around [the 9th edition of the API Strategy & Practice Conference (APIStrat)](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), now operated by the [OpenAPI Initiative (OAI)](https://www.openapis.org/) and [the Linux Foundation](https://www.linuxfoundation.org/).
+<p></p>We are kicking it into overdrive now that [the schedule is up for APIStrat in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/). From now until the event at the end of September you are going to hear me talk about all the amazing speakers we have, the companies they work for, and the interesting things they are all doing with APIs. One of the perks of being a speaker or a sponsor at APIStrat--you get coverage on API Evangelist, a become part of the buzz around [the 9th edition of the API Strategy & Practice Conference (APIStrat)](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), now operated by the [OpenAPI Initiative (OAI)](https://www.openapis.org/) and [the Linux Foundation](https://www.linuxfoundation.org/).
 
 Today's post is about my friends over at [the digital solutions and API management agency Vanick Digital](https://www.vanick.com/). With APIStrat coming to their backyard, and their ability to capture the attention of the APIStrat program committee, Vanick Digital has two separate talks this year:
 

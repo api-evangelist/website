@@ -7,10 +7,10 @@ tags:
 - HSDA
 - '211'
 - Road Map
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/freeway_atari_missle.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/freeway_atari_missle.jpg
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/freeway_atari_missle.jpg" align="right" width="40%" /></p>I am stepping back to today and thinking about a pretty long list of API design considerations for [the Human Services Data API (HSDA)](http://developer.open.referral.adopta.agency/documentation/), providing guidance for municipal 211 who are implementing an API. I'm making simple API design decisions from how I define query parameters all the way to hypermedia decisions for the version 2.0 of the HSDA API.
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/freeway_atari_missle.jpg" align="right" width="40%" /></p>I am stepping back to today and thinking about a pretty long list of API design considerations for [the Human Services Data API (HSDA)](http://developer.open.referral.adopta.agency/documentation/), providing guidance for municipal 211 who are implementing an API. I'm making simple API design decisions from how I define query parameters all the way to hypermedia decisions for the version 2.0 of the HSDA API.
 
 There are a ton of things I want to do with this API design. I really want folks involved with municipal 211 operations to be adopting it, helping ensure their operations are interoperable, and I can help incentivize developers to build some interesting applications. As I think through the laundry list of things I want, I keep coming back to my audience of practitioners, you know the people on the ground with 211 operations that I want to adopt an API way of doing things. 
 

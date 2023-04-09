@@ -9,9 +9,9 @@ tags:
   - Design
   - HTTP Status Codes
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist/runscope/runscope-200-ok.jpeg
 ---
-<a href="https://www.runscope.com/"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/runscope/runscope-200-ok.jpeg" alt="" align="right" width="40%" /></a>
+<a href="https://www.runscope.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/runscope/runscope-200-ok.jpeg" alt="" align="right" width="40%" /></a>
 It takes a lot of work provide a reliable API that people can depend on. Something your consumers can trust, and will provide them with consistent, stable, meaningful, and expected behavior. There are a lot of affordances built into the web, allowing us humans to get around, and make sense of the ocean of information on the web today. These affordances aren't always present with APIs, and we need to communicate with our consumers through the design of our API at every turn.
 
 One area I see IT and developer groups often overlook when it comes to API design and deployment are [HTTP Status Codes](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes). That standardized list of meaningful responses that come back with every web and API request:

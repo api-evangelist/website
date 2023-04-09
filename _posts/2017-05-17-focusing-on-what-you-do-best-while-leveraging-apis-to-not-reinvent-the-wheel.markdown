@@ -3,11 +3,11 @@ title: Focusing On What You Do Best While Leveraging APIs To Not Reinvent The Wh
 date: 2017-05-17 15:00:00 Z
 tags:
 - Analysis
-image: https://s3.amazonaws.com/kinlane-productions/keen_logo_dark.png
+image: https://s3.amazonaws.com/kinlane-productions2/keen_logo_dark.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/keen_logo_dark.png" align="right" width="40%" /></p>
-There are some pretty proven API solutions out there these days. I had to explain to someone a call the other day that in 2017 you shouldn't ever roll your own API signup, registration, rate limiting, reporting, logging, and other API management features--there are too many proven API management solutions on the market these days (cough, [3Scale](http://apis.how/ake3nxbapm), [Restlet](http://apis.how/5ytnitnakm), [DreamFactory](https://s3.amazonaws.com/kinlane-productions/partners/dreamfactory-logo.png), or [Tyk](http://apis.how/zflfesymzk))
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/keen_logo_dark.png" align="right" width="40%" /></p>
+There are some pretty proven API solutions out there these days. I had to explain to someone a call the other day that in 2017 you shouldn't ever roll your own API signup, registration, rate limiting, reporting, logging, and other API management features--there are too many proven API management solutions on the market these days (cough, [3Scale](http://apis.how/ake3nxbapm), [Restlet](http://apis.how/5ytnitnakm), [DreamFactory](https://s3.amazonaws.com/kinlane-productions2/partners/dreamfactory-logo.png), or [Tyk](http://apis.how/zflfesymzk))
 
 As a penny-pinching small business owner who is also a programmer, I am always struggling with the question of whether I should be buying or building. However, when it comes to some of the more proven, well-laid API sectors--I know better. One of these areas I will never develop my own tooling is when it comes to analytics. There are just too many quality analytics solutions available out there who are API-driven.
 

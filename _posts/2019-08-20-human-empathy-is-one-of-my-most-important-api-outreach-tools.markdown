@@ -7,9 +7,8 @@ tags:
   - API Evangelist
   - Communication
   - Evangelism
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/abe-lincoln-one-yellow-collage-file-00-00-00-00.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/abe-lincoln-one-yellow-collage-file-00-00-00-00.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 I am an empathic human being. It is one of my top strengths, as well as one of my top weaknesses. It is also one of the most important tools in my API toolbox. Being able to understand the API experience from the position of different people throughout the world of APIs is a cornerstone of the API Evangelist brand. Personally, I find APIs themselves to be empathy triggering, and something that has regularly forced me out of my silos, then allowing me t put myself in the shoes of my consumers. Something that when realized in a perpetual fashion can become a pretty powerful force for dialing in the services you offer, and establish, maintain, and strengthen connections with other people within the community.
 
 Being able to listen to people in the hallways of conferences, and within the meeting rooms across enterprise, institutions, and government agencies, then internalize, process, and position my writing from what I learn from people is how I have written on API Evangelist for the last nine years. I rarely am positioning my narrative my own vantage point, or that of a company. Most of the time I am channeling someone I’ve met along the way, speaking from their perspective, and analyzing the world of APIs as they would see it. While I wish that the world always resembled my view of the API landscape, from experience I know better, and that there are many diverse ways of seeing the value or damage APIs are responsible for.

@@ -9,9 +9,9 @@ tags:
   - 101
   - Mobile
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/apis-are-all-around-us.png
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/apis-are-all-around-us.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/apis-are-all-around-us.png" align="right" width="40%" style="padding: 15px;" /></p>When I talk to ordinary people about what I do as the API Evangelist, they tend to think APIs don't have much of anything to do with their world. APIs exist in a realm of startups, technology, and make believe that doesn't have much to do with their ordinary lives. When trying to make the connection with folks on airplanes, in the hotel lobby, and at the coffee shop, I always resort to the most common API-driven thing in all of our lives--the smart phone. Pulling out my iPhone is the quickest way I can go from zero to API understanding, with almost anyone.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/apis-are-all-around-us.png" align="right" width="40%" style="padding: 15px;" /></p>When I talk to ordinary people about what I do as the API Evangelist, they tend to think APIs don't have much of anything to do with their world. APIs exist in a realm of startups, technology, and make believe that doesn't have much to do with their ordinary lives. When trying to make the connection with folks on airplanes, in the hotel lobby, and at the coffee shop, I always resort to the most common API-driven thing in all of our lives--the smart phone. Pulling out my iPhone is the quickest way I can go from zero to API understanding, with almost anyone.
 
 When people ask what an API is, or how it has anything to do with them, I always pull out my iPhone, and say that all of the applications on the home page of your mobile phone use APIs to communicate. When you post something to your Facebook wall, you are using the Facebook API. When you publish an image to Instagram, you are using the Instagram API. When you check the balance on your bank account, you are using your banks API. APIs are everywhere. We are all using APIs. We are all impacted by good APIs, and bad APIs. Most of the time we just don't know it, and are completely unaware of what is going on behind the curtain that is our smart phones.
 

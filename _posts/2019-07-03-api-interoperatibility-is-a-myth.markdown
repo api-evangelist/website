@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Interoperability
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/san-francisco-city-bridge-sf-city-bridge-copper-circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/san-francisco-city-bridge-sf-city-bridge-copper-circuit.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 There are a number of concepts we cling to in the world of APIs. I’ve been guilting of inventing, popularizing, and spreading many myths in my almost decade as the API Evangelist. One of them that I’d like to debunk and be more realistic about is when it comes to API interoperability. When you are focused on just the technology of APIs, as well as maybe the low-level business of APIs, you are an API interoperability believer. Of course everyone wants API interoperability, and that all APIs should work seamlessly together. However, if you at all begin operating at the higher levels of the business of APIs, and spend any amount of time studying the politics of why and how we do APIs at scale, you will understand that API interoperability is a myth.
 
 This reality is one of the reasons us technologists who possess just a low-level understanding of how the business behind our tech operation, are such perfect tools for the higher level business thinkers, and people who successfully operate and manipulate at the higher levels of industries, or even at the policy level. We are willing to believe in API interoperability, and work to convince our peers that it is a thing, and we all work to expose, and open up the spigots across our companies, organizations, institutions, and government agencies. Standardized APIs and schema that play nicely with each other are valuable, but only within certain phases of a companies growth, or as part of a myth-information campaign to convince the markets that a company is a good corporate citizen. However, once a company achieves dominance, or the winds change around particular industry trends, most companies just want to ensure that all roads lead towards their profitability.

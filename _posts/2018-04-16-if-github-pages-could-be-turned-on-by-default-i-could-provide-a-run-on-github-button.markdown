@@ -8,9 +8,9 @@ tags:
   - Github
   - Github Pages
   - Applications
-image: 'https://s3.amazonaws.com/kinlane-productions/github/run-on-github-button.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/github/run-on-github-button.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>My world runs on Gitub. 100% of my public website projects run on Github Pages, and about 75% of my public web applications run on Gitub Pages. The remaining 25% of it all is my API infrastructure. However, I'm increasingly pushing my data and content APIs to run entirely on Github with Github Pages as frontend, and the Github repo as the backend, with the Github API as the transport. I'd rather be serving up static JSON and YAML from repositories, and building JavaScript web applications that run using Jekyll, than dynamic server-side web applications.
+<p></p>My world runs on Gitub. 100% of my public website projects run on Github Pages, and about 75% of my public web applications run on Gitub Pages. The remaining 25% of it all is my API infrastructure. However, I'm increasingly pushing my data and content APIs to run entirely on Github with Github Pages as frontend, and the Github repo as the backend, with the Github API as the transport. I'd rather be serving up static JSON and YAML from repositories, and building JavaScript web applications that run using Jekyll, than dynamic server-side web applications.
 
 It is pretty straightforward to engineer HTML, CSS, and JavaScript applications that run entirely on Github Pages, and leverage JSON and YAML stored in the underlying Github repo as the database backend, using the Github API as the API backend. Your Github OAuth token becomes your API key, and Github organization and user structure becomes the authentication and access management layer. These apps can run publicly, and when someone wants to write, as well as read data to the application, they just need to authenticate using Github--if they have permission, then they get access, and can write JSON or YAML data to the underlying repo via the API.
 

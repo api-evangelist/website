@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Definitions
   - Discovery
-image: 'https://s3.amazonaws.com/kinlane-productions/api-definitions-api-stack.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/api-definitions-api-stack.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm rebooting [my API Stack](http://theapistack.com/) work as part of my partnership with [Streamdata.io](http://streamdata.io). I'm spending a significant portion of my day profiling API providers, documenting what it is they bring to the table. Historically I've published the resulting APIs.json and OpenAPI definition(s) to a single Github repository driving theapistack.com. The primary folder was already getting too big, and since I'm looking at adding at least a thousand more API providers to the stack, I am going to need to shard things out a bit.
+<p></p>I'm rebooting [my API Stack](http://theapistack.com/) work as part of my partnership with [Streamdata.io](http://streamdata.io). I'm spending a significant portion of my day profiling API providers, documenting what it is they bring to the table. Historically I've published the resulting APIs.json and OpenAPI definition(s) to a single Github repository driving theapistack.com. The primary folder was already getting too big, and since I'm looking at adding at least a thousand more API providers to the stack, I am going to need to shard things out a bit.
 
 To help accommodate the increased scale, I'm breaking up the API Stack into two separate Github organizations. One for individual API providers called [api-stack-providers](https://github.com/api-stack-providers), and a second for individual topics called [api-stack-topics](https://github.com/api-stack-topics). I've began publishing individual repositories for each API provider that I am monitoring, establishing a self-contained, continuously deployable, and integratabtle set of definitions for each API. I'm needing each API provider to be independent from each other, and I'm even publishing individual API definitions for each API path, distilling things down to the smallest possible unit of compute possible.
 

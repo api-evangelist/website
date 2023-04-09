@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Schema
   - Vocabulary
-image: 'https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/schema-org/schema-org.png'
 ---
-<p><a href="http://schema.org/"><img src="https://s3.amazonaws.com/kinlane-productions/schema-org/schema-org.png" align="right" width="30%" style="padding: 15px;" /></a></p>I am preparing my Schema.org Github repo with a variety of data sources for use across my API tooling and other projects. I'm trying to get better at using a common vocabulary, and not reinventing the wheel each time I start a new project. Schema.org has the most robust vocabulary of shared schema available today--so I am using this existing work as the core of mine.
+<p><a href="http://schema.org/"><img src="https://s3.amazonaws.com/kinlane-productions2/schema-org/schema-org.png" align="right" width="30%" style="padding: 15px;" /></a></p>I am preparing my Schema.org Github repo with a variety of data sources for use across my API tooling and other projects. I'm trying to get better at using a common vocabulary, and not reinventing the wheel each time I start a new project. Schema.org has the most robust vocabulary of shared schema available today--so I am using this existing work as the core of mine.
 
 I am slicing and dicing the schema.org vocabulary into several formats that I can use in my OpenAPI-driven editors, and other tooling. [I took the JSON-LD representation for Schema.org](http://schema.org/docs/developers.html), and published it as a simpler JSON schema definition format that can be applied quickly to an OpenAPI. It isn't perfect, and you lose a lot of the semantics in the process, but I think it still provides an important base for API designers, architects, and developers to use across their OpenAPI.
 

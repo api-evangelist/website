@@ -5,8 +5,9 @@ title: API Definitions Are Important
 date: 2019-06-12T09:00:00.000Z
 tags:
   - API Evangelist
+  - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/christianity-christianity-under-construction-copper-circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/christianity-christianity-under-construction-copper-circuit.jpg
 ---
 <img src="{{ page.image }}" width="35%" align="right" style="padding: 15px;" />
 I found myself scrolling down the home page of API Evangelist and thinking about what topic(s) I thought were still the most relevant in my mind after not writing about APIs for the last six months. Hands down it is API definitions. These machine and human readable artifacts are the single most important thing for me when it comes to APIs I'm building, and putting to work for me.

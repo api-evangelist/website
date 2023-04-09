@@ -9,10 +9,10 @@ tags:
 - Definitions
 - Github
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/github/github-community-standards.png
+image: https://s3.amazonaws.com/kinlane-productions2/github/github-community-standards.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-community-standards.png" align="right" width="40%" style="padding: 15px;" /></p>[Github has released an interesting new feature to help users better manage some of the community elements of the repositories they use to manage code, definitions, data, and content across API operations](https://github.com/blog/2380-new-community-tools). For each repository, you now have a community profile tab, where you'll see a checklist showing how your project compares to Github recommended community standards.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-community-standards.png" align="right" width="40%" style="padding: 15px;" /></p>[Github has released an interesting new feature to help users better manage some of the community elements of the repositories they use to manage code, definitions, data, and content across API operations](https://github.com/blog/2380-new-community-tools). For each repository, you now have a community profile tab, where you'll see a checklist showing how your project compares to Github recommended community standards.
 
 If you are lacking one of these common elements, it gives you an option to quickly add one of the missing pieces. I still have some repositories where I don't properly have licensing dictated, even a handful without a README (I know). Almost none of my repositories have a code of conduct or contributing agreement. The new feature adds another task to my list of maintenance items I'll be tackling to help standardize the projects I manage on Github (which is everything I do).
 

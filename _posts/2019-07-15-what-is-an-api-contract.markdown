@@ -11,9 +11,9 @@ tags:
   - Service Level Agreement
   - SLA
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/adam-smith-adam-smith-purp-paper.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/adam-smith-adam-smith-purp-paper.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I am big on regularly interrogating what I mean when I use certain phrases. I’ve caught myself repeating and reusing many hollow, empty, and meaningless phrases over my decade as the API Evangelist. One of these phrases is, "an API contract". I use it a lot. I hear it a lot. What exactly do we mean by it? What is an API contract, and how is it different or similar to our beliefs and understanding around other types of contracts? Is it truth, or is just a way to convince people that what we are doing is just as legitimate as what came before? Maybe it is even more legitimate, like in a blockchain kind of way? It is an irreversible, unbreakable, digital contract think bro!
 
 If I was to break down what I mean when I say API contract, I’d start with being able to establish to a shared articulation of what an API does. We have an OpenAPI definition which describes the surface area of the request and response of each individual API method being offered. It is available in a machine and human readable format for both of us to agree upon. It is something that both API provider and API consumer can agree upon, and get to work developing and delivering, and then integrating and consuming. An API contract is a shared understanding of what the capabilities of a digital interface are, allowing for applications to be programmed on top of.

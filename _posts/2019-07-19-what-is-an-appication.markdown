@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Applications
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/lost-angeles-downtown-freeway-los-angeles-downtow-freeway-copper-circuit-2.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/lost-angeles-downtown-freeway-los-angeles-downtow-freeway-copper-circuit-2.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I have struggled asking this question in many discussions I’ve had around the world, at technology conferences, on consulting projects, and in the back rooms of dimly lit bars. What is an application? You get ten different answers if you ask this question to ten different people. I’d say the most common response is to reference the applications on a mobile device. These are the relevant. Most accessible. The most active and visible form of application in our modern life. Older programmers see them as desktop applications, where younger programmers see them as web applications, with varying grades of server applications in between. If you operate at the network layer, you’ve undoubtedly bastardized the term to mean several different things. Personally, I’ve always tried to avoid these obvious and tangible answers to this question, looking beyond the technology.
 
 My view of what an application is stems from a decade of studying the least visible, and least tangible aspect of an application, its programming interface. When talking to people about applications, the first question I ask folks is usually, “do you know what an API is”? If someone is API savvy I will move to asking, “when it comes to application programming interface (API), who or what is being programmed? Is it the platform? The application? Or, is it the end-user of the applications?” I’ve spent a decade thinking about this question, playing it over and over in my end, never quite being satisfied with what I find. Honestly, the more I scratch, the more concerned I get, and the more I’m unsure of exactly what an “application” is, and precisely who are what is actually being programmed. Let’s further this line of thinking by looking at the definitions of “application”:

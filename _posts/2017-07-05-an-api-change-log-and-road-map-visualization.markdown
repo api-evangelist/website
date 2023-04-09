@@ -10,9 +10,9 @@ tags:
   - Change Log
   - Analysis
   - Visualization
-image: 'https://s3.amazonaws.com/kinlane-productions/qlik/qlik-api-insights.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/qlik/qlik-api-insights.png'
 ---
-<p><a href="https://api-insights.qlik.com/#/overview-page"><img src="https://s3.amazonaws.com/kinlane-productions/qlik/qlik-api-insights.png" align="right" width="40%" style="padding: 15px;" /></a></p>I saw a blog post come across my feeds from the analysis and visualizaiton API provider Qlik, [about their Qlik Sense API Insights](https://branch-blog.qlik.com/qlik-sense-api-insights-3e84b61602bd). It is a pretty interesting approach to trying visualize the change log and road map for an API. I like it because it is an analysis and visualization API provider who has used their own platform to help visualize the evolution of their API.
+<p><a href="https://api-insights.qlik.com/#/overview-page"><img src="https://s3.amazonaws.com/kinlane-productions2/qlik/qlik-api-insights.png" align="right" width="40%" style="padding: 15px;" /></a></p>I saw a blog post come across my feeds from the analysis and visualizaiton API provider Qlik, [about their Qlik Sense API Insights](https://branch-blog.qlik.com/qlik-sense-api-insights-3e84b61602bd). It is a pretty interesting approach to trying visualize the change log and road map for an API. I like it because it is an analysis and visualization API provider who has used their own platform to help visualize the evolution of their API.
 
 I find the visualization for Qlik Sense API Insights to be a little busy, and not as interactive as I'd like to see it be, but I like where they are headed. It tries to capture a ton of data, showing the road map and changes across multiple versions of sixteen APIs, something that can't be easy to wrap your head around, let alone capture in a single visualization. I really like the direction they are going with this, even though it doesn't fully bring it home for me.
 

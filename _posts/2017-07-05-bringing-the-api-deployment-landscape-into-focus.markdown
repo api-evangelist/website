@@ -23,9 +23,9 @@ tags:
   - Marketplaces
   - Webhooks
   - Orchestration
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-deployment.png'
 ---
-<p><a href="http://deployment.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-api-deployment.png" align="right" width="30%" style="padding: 15px;" /></a></p>I am finally getting the time to invest more into the rest of my API industry guides, which involves deep dives into core areas of my research like API <a href="http://definitions.apievangelist.com/">definitions</a>, <a href="http://design.apievangelist.com/">design</a>, and now <a href="http://deployment.apievangelist.com/">deployment</a>. The outline for my API deployment research has begun to come into focus and looks like it will rival my API management research in size.
+<p><a href="http://deployment.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-api-deployment.png" align="right" width="30%" style="padding: 15px;" /></a></p>I am finally getting the time to invest more into the rest of my API industry guides, which involves deep dives into core areas of my research like API <a href="http://definitions.apievangelist.com/">definitions</a>, <a href="http://design.apievangelist.com/">design</a>, and now <a href="http://deployment.apievangelist.com/">deployment</a>. The outline for my API deployment research has begun to come into focus and looks like it will rival my API management research in size.
 
 With this release, I am looking to help onboard some of my less technical readers with API deployment. Not the technical details, but the big picture, so I wanted to start with some simple questions, to help prime the discussion around API development.
 

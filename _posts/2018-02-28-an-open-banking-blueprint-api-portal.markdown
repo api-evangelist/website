@@ -9,7 +9,7 @@ tags:
   - Banks
   - UK Baking
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-accounts-documentation-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/open-banking/open-banking-accounts-documentation-screenshot.png
 ---
 <p>I have been learning all about <a href="https://www.openbanking.org.uk/">the banking API efforts out of Open Banking in the UK lately</a>. They are evolving a set of read / write account and transaction API, as well as public data APIs for some of the common information 3rd party developers are looking to get their hands on. I'm intrigued with the traction the organization has gotten, and I want to be able to fully understand what they are developing, as well help contribute where I can.</p>
 <p>To help me understand the API specification, as well as hopefully contribute to the conversation, I am publishing <a href="http://open.banking.blueprint.apievangelist.com/">an blueprint API portal for the API</a>. It is a demo portal, running on Github, which uses the API Evangelist graphical look, but I am also publishing documentation for v1.1.1 of the account and payments API, as well as v2.1 of the public data APIs. I'm looking to publish the API specification like any bank would, but it won't actually be a live API--yet. I'd like to turn it into a mock API, with some virtualized data to demonstrate what is possible.</p>

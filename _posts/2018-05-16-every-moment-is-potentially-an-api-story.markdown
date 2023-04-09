@@ -8,9 +8,9 @@ tags:
   - Storytelling
   - Communication
   - Evangelism
-image: 'https://s3.amazonaws.com/kinlane-productions/skylight/skylight-home.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/skylight/skylight-home.png'
 ---
-<p><a href="https://skylight.digital/"><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></a></p>I was on a call for a federal government API platform project with my partner in crime Chris Cairns ([@cscairns](https://twitter.com/cscairns)) of [Skylight.Digital](https://skylight.digital/). We were back channeling in our Slack channel during the call, when he said, _"I always imagine you participating in these things, finding topics you haven't covered or emphasized from a certain angle, and then writing a blog post in real time."_ He was right, I had taken notes on a couple of new angles regarding the testing, monitoring, and understanding performance of APIs involved with federal government projects.
+<p><a href="https://skylight.digital/"></a></p>I was on a call for a federal government API platform project with my partner in crime Chris Cairns ([@cscairns](https://twitter.com/cscairns)) of [Skylight.Digital](https://skylight.digital/). We were back channeling in our Slack channel during the call, when he said, _"I always imagine you participating in these things, finding topics you haven't covered or emphasized from a certain angle, and then writing a blog post in real time."_ He was right, I had taken notes on a couple of new angles regarding the testing, monitoring, and understanding performance of APIs involved with federal government projects.
 
 The single conference call resulted in about seven potential stories in my notebook. I'm guessing that only four of them will actually end up being published. However, the conversation does a good job at highlighting my style for generating stories on the blog, which is something that allows me to publish 3-5 posts a day--keeping things as active as I possibly can, generating traffic, and bringing attention to my work. If you've ever worked closely with me, you know that I can turn anything into a story, even a story like this, about how I create stories. ;-)
 

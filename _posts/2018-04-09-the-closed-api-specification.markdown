@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Discovery
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fence_ww2_dresden.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/fence_ww2_dresden.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>You've heard of OpenAPI, right? It is the API specification for defining the surface area of your web API, and the schema you employ--making your public API more discoverable, and consumable in a variety of tools services. OpenAPI is the API definition for documenting your API when you are just getting started with your platform, and you are looking to maximize the availability and access of your platform API(s). After you've acquired all the users, content, investment, and other value, ClosedAPI is the format you will want to switch to, abandoning OpenAPI, for something a little more discreet.
+<p></p>You've heard of OpenAPI, right? It is the API specification for defining the surface area of your web API, and the schema you employ--making your public API more discoverable, and consumable in a variety of tools services. OpenAPI is the API definition for documenting your API when you are just getting started with your platform, and you are looking to maximize the availability and access of your platform API(s). After you've acquired all the users, content, investment, and other value, ClosedAPI is the format you will want to switch to, abandoning OpenAPI, for something a little more discreet.
 
 ### Collect As Much Data As You Possibly Can
 Early on you wanted to be defining the schema for your platform using OpenAPI, and even offering up a GraphQL layer, allowing your data model to rapidly scale, adding as may data points as you possible can. You really want to just ingest any data you can get your hands on the browser, mobile phones, and any other devices you come into contact with. You can just dump it all into big data lake, and sort it out later. Adding to your platform schema when possible, and continuing to establish new data points that can be used in advertising and targeting of your platform users.

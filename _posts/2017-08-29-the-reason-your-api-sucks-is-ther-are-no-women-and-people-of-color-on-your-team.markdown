@@ -9,9 +9,9 @@ tags:
   - API Evangelist
   - Diversity
   - Politics of APIs
-image: 'https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/kin-lane/kin-lane.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/kin-lane/kin-lane.jpg" align="right" width="35%" style="padding: 15px;" /></p>I know that many of you are insecure about your APIs. You aren't transparent with your numbers, and many aspects of your API operations. You are stressed out because you built it, and nobody came. You were able to artificially inflate your new user numbers, and API calls through paid campaigns, and bot activity, but nobody is using it, and you just can't figure out why. You are asking yourself why don't anyone see the value your API brings to the table? Why aren't you getting the traction you thought you would get when you first came up with the idea?
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/kin-lane/kin-lane.jpg" align="right" width="35%" style="padding: 15px;" /></p>I know that many of you are insecure about your APIs. You aren't transparent with your numbers, and many aspects of your API operations. You are stressed out because you built it, and nobody came. You were able to artificially inflate your new user numbers, and API calls through paid campaigns, and bot activity, but nobody is using it, and you just can't figure out why. You are asking yourself why don't anyone see the value your API brings to the table? Why aren't you getting the traction you thought you would get when you first came up with the idea?
 
 You aren't getting any traction with your API because it sucks. It was a bad idea. Nobody wants it. It sucks because it doesn't provide any value in a highly competitive space, and you naively thought that if you built it everyone would come. You probably have a number of people around you telling you that your idea is great, and the API will be a hit. You've probably had this most of your life, and are used to people telling you that your ideas are great. It is why you feel so uncomfortable around anyone that is critical, because you just aren't used to being told you that your ideas are dumb. It hurts your feelings.
 

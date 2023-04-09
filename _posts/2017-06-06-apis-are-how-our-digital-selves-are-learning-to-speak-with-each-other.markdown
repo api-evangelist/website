@@ -17,7 +17,7 @@ Every second on our laptops and mobile phone we are communicating with many diff
 
 Uber geeks like me spend their days trying to map out and understand these direct interactions, as well as the growing number of indirect interactions. For every direct communication, there are usually numerous other indirect communications with advertisers, platform providers, or maybe even law enforcement, researchers, or anyone else with access to the communication channels. We aren't just learning to directly communicate, we are also being conditioned to participate indirectly in conversations we can't see--unless you are tuned into the bigger picture of the API economy.
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/xmen/xavier-internet.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/xmen/xavier-internet.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 
 When we post that photo, companies are whispering about what is in the photo, where it was taken, and what meaning it has. When we share that news link of Facebook, companies have a discussion about the truthfulness and impact of the link, maybe the psychological profile behind the link and where we fit into their psychological profile database. In some scenarios, they are talking directly about us personally like we are sitting in the room, other times they are talking about us like we are just a number in a larger demographic pool.
 

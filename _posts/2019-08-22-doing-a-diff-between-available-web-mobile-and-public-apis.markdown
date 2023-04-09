@@ -10,9 +10,8 @@ tags:
   - Definitions
   - Clients
   - Mobile
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/stories-copper-servers.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-copper-servers.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 I spend a lot of time running web and mobile applications through a proxy to reverse engineer their APIs. I generally use Charles Proxy for routing my desktop, web, and mobile traffic through, which then automatically saves a JSON dump of sessions every five minutes, and syncs with Dropbox via my shared folders. From there I have a schedule service that will look in the shared Dropbox folder every hour, sift through the Charles Proxy JSON dump, and look for JSON, XML, CSV, and other common machine readable formats—which are then converted into OpenAPI definitions. Allowing me to reverse engineer desktop, web, and mobile applications as I use them, and map the API surface area for these targeted applications.
 
 Recently I started playing with doing the same thing as part of my use of Postman. You can use the <a href="https://learning.getpostman.com/docs/postman/sending_api_requests/capturing_http_requests/#using-the-postman-built-in-proxy">built-in proxy in the Postman native apps</a> or use the <a href="https://learning.getpostman.com/docs/postman/sending_api_requests/interceptor_extension">Interceptor extension for the Postman app</a>. Postman walks you through how to configure your laptop, mobile, and Postman application, and ultimately capture HTTP requests and save them to history or as a Postman Collection. Doing essentially the same thing I’m doing, but doing it with the Postman application, and leveraging collections instead of OpenAPI. I’d say there are pros and cons to both approaches, but Postman gives me the ability to manage environments, workspaces, and other essential concepts that would help take my API profiling work to the next level.

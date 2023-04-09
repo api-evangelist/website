@@ -10,9 +10,9 @@ tags:
   - Documentation
   - Issues
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/transit-feeds-api/transit-feeds-api-home-page.png
+  https://s3.amazonaws.com/kinlane-productions2/transit-feeds-api/transit-feeds-api-home-page.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit-feeds-api/transit-feeds-api-home-page.png" align="right" width="45%" style="padding:15px;" /></p>I look at a lot of APIs. When I land on the home page of an API portal, more often than not I am lost, confused, and unsure of what I need to do to get started. Us developers are very good at complexifying things, and making our APIs implementations as messy as our backends, and the API ideas in our heads. I suffer from this still, and I know what it takes to deliver a simple, useful API experience. It just takes time, resources, as well as knowledge to it properly, and simply. Oh, and caring. You have to care.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/transit-feeds-api/transit-feeds-api-home-page.png" align="right" width="45%" style="padding:15px;" /></p>I look at a lot of APIs. When I land on the home page of an API portal, more often than not I am lost, confused, and unsure of what I need to do to get started. Us developers are very good at complexifying things, and making our APIs implementations as messy as our backends, and the API ideas in our heads. I suffer from this still, and I know what it takes to deliver a simple, useful API experience. It just takes time, resources, as well as knowledge to it properly, and simply. Oh, and caring. You have to care.
 
 I am always on the hunt for good examples of simple API implementations that people can emulate, that aren't the API rockstars like Twilio and Stripe who have crazy amounts of resources at their disposal. One good example of a simple, useful, well presented API can be found with [the Transit Feeds API, which aggregates the feeds of many different transit providers around the world](http://transitfeeds.com/). When I land on the home page of Transit Feeds, I immediately know what is going on, and I go from home page to making my first API call in under 60 seconds--pretty impressive stuff, for a home grown API project.
 

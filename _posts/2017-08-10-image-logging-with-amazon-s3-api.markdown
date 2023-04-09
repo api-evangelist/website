@@ -9,9 +9,9 @@ tags:
   - Images
   - Analysis
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/freeway_atari_missle.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/freeway_atari_missle.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/freeway_atari_missle.jpg" align="right" width="40%" style="padding: 15px;" /></p>I have been slowly evolving my network of websites in 2017, overhauling the look of them, as well as how they function. I am investing cycles into pushing as much of my infrastructure towards being as static as possible, minimizing my usage of JavaScript wherever I can. I am still using a significant amount of JavaScript libraries across my sites for a variety of use cases, but whenever I can, I am looking to kill my JavaScript or backend dependencies, and reduce the opportunity for any tracking and surveillance.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/freeway_atari_missle.jpg" align="right" width="40%" style="padding: 15px;" /></p>I have been slowly evolving my network of websites in 2017, overhauling the look of them, as well as how they function. I am investing cycles into pushing as much of my infrastructure towards being as static as possible, minimizing my usage of JavaScript wherever I can. I am still using a significant amount of JavaScript libraries across my sites for a variety of use cases, but whenever I can, I am looking to kill my JavaScript or backend dependencies, and reduce the opportunity for any tracking and surveillance.
 
 While I still keep Google Analytics on my primary API Evangelist sites, as my revenue depends on it, whenever possible I keep personal projects without any JavaScript tracking mechanisms. Instead of JavaScript I am defaulting to image logging using Amazon S3. Most of my sites tend to have some sort of header image, which I store in a common public bucket on Amazon S3, all I have to do is turn on logging, and then get at logging details via the Amazon S3 API. Of course, images get cached within a user's browser, but the GET for my images still gives me a pretty good set of numbers to work with. I'm not concerned with too much detail, I just generally want to understand the scope of traffic a project is getting, and whether it is 5, 50, 500, 5,000, or 50,000 visitors.
 

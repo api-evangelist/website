@@ -6,10 +6,10 @@ tags:
 - Budgets
 - County Government
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/socrata/douglas-county-operating-budget-768x485.png
+image: https://s3.amazonaws.com/kinlane-productions2/socrata/douglas-county-operating-budget-768x485.png
 ---
 
-<p><a href="https://socrata.com/blog/douglas-county-open-budget-invites-public-explore-annual-budget/"><img src="https://s3.amazonaws.com/kinlane-productions/socrata/douglas-county-operating-budget-768x485.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="https://socrata.com/blog/douglas-county-open-budget-invites-public-explore-annual-budget/"><img src="https://s3.amazonaws.com/kinlane-productions2/socrata/douglas-county-operating-budget-768x485.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 As we find ourselves darker times when it comes to transparency within the federal government in the United States, I'm always on the hunt for any positive signs of transparency at the other levels of government. I can usually depend on my friends [over at Socrata](https://socrata.com) to help out, and [they came through this week with a story on Douglas County, Kansas publishing their budget online](https://socrata.com/blog/douglas-county-open-budget-invites-public-explore-annual-budget/).
 
 "This week, Douglas County, Kansas, home to 117,000 residents, launched an [Open Budget site](http://budget.douglascountyks.org/), which provides the public with access to one of the county’s most crucial documents: the annual operating budget." Jill Jolicoeur, Assistant to the County Administrator stated that "our goal is for Open Budget to replace the time-intensive process of developing and publishing the annual budget in a hard-copy format." Open data and APIs is one way for resource-strapped companies can open things up, allowing external groups help share the load when it comes to auditing, analysis, visualization, and many other areas county government could use some assistance.

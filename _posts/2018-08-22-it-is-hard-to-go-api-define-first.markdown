@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Design
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/69_120_800_500_0_max_0_1_-1.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/69_120_800_500_0_max_0_1_-1.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>Last year I started saying API define first, instead of API design first. In response to many of the conversations out there about designing, then mocking, and eventually deploying your APIs into a production environment. I agree that you should design and iterate before writing code, but I feel like we should be defining our APIs even before we get to the API design phase. Without the proper definitions on the table, our design phase is going to be a lot more deficient in standards, common patterns, goals, and objectives, making it important to invest some energy in defining what is happening first--then iterate on the API definitions throughout the API lifecycle, not just design.
+<p></p>Last year I started saying API define first, instead of API design first. In response to many of the conversations out there about designing, then mocking, and eventually deploying your APIs into a production environment. I agree that you should design and iterate before writing code, but I feel like we should be defining our APIs even before we get to the API design phase. Without the proper definitions on the table, our design phase is going to be a lot more deficient in standards, common patterns, goals, and objectives, making it important to invest some energy in defining what is happening first--then iterate on the API definitions throughout the API lifecycle, not just design.
 
 I prefer to have a handful of API definitions drafted, before I move onto to the API design phase:
 

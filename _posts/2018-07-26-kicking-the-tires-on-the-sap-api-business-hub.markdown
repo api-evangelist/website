@@ -6,9 +6,9 @@ date: 2018-07-26T09:00:00.000Z
 tags:
   - API Evangelist
   - Discovery
-image: 'https://s3.amazonaws.com/kinlane-productions/sap/sap-api-business-hub.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/sap/sap-api-business-hub.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/sap/sap-api-business-hub.png" align="right" width="45%" style="padding: 15px;" /></p>I told the folks over at SAP that I would take a look at their [API Business Hub](https://api.sap.com). It isn't paid work, just helping provide feedback on another addition to the [API discovery](http://discovery.apievangelist.com) front, something I'm pretty committed to helping push forward in any way that I can. They've pulled together a pretty clean, OpenAPI driven catalog of useful APIs for the enterprise, so I wanted to make sure I kick the tires and size it up alongside the other API discovery work I am doing.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/sap/sap-api-business-hub.png" align="right" width="45%" style="padding: 15px;" /></p>I told the folks over at SAP that I would take a look at their [API Business Hub](https://api.sap.com). It isn't paid work, just helping provide feedback on another addition to the [API discovery](http://discovery.apievangelist.com) front, something I'm pretty committed to helping push forward in any way that I can. They've pulled together a pretty clean, OpenAPI driven catalog of useful APIs for the enterprise, so I wanted to make sure I kick the tires and size it up alongside the other API discovery work I am doing.
 
 [The SAP API Business Hub is a pretty simple and clean catalog for searching and browsing applications, integrations, as well as APIs](https://api.sap.com/themes/APICONTEN)--I am going to focus in on the API section. Which at first glance looks to have about 70 separate APIs, but then you notice each of them are just umbrellas for each API platform, and some of them contain many different API endpoints. Some of the APIs are simple language translation and text extraction resources, while others provide robust access to the SAP S/4HANA Cloud, SAP Ariba, and other SAP systems. You see a lot of SAP focused solutions, but then [you also see a handful of partner solutions](https://api.sap.com/themes/PartnerContent) added via their platform partner program.
 

@@ -3,8 +3,12 @@ published: true
 layout: post
 title: 'Running and Organizing AWS Lambdas with Postman Collections'
 image: http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_04_20_at_9.16.29_am.png
+author:
+ name: kinlane
+tags:
+    - Collection
+    - Serverless
 ---
-<img src="http://kinlane-productions2.s3.amazonaws.com/api_evangelist_site/blog/screen_shot_2020_04_20_at_9.16.29_am.png" width="40%" align="right" style="padding: 15px;" /><p class="p1">I am auto-generating and manually producing a number of Postman collection lately. I am creating a Postman collection that autogenerates AWS Lambdas from an OpenAPI stored in the Postman API builder, as well as a handful of infrastructure AWS Lambdas that accomplish bigger picture items like creating a database in RDS, or zipping up AWS Lambda packages to deploy APIs. So, I have a lot more AWS Lambdas laying around that I am needing to organize and put to use. I find the first rule of AWS Lambda club is remembering you created the thing in the first place and remember to actually put the thing to use—when you have so many of them laying around, you need a way to make them more discoverable, browsable, and usable in your everyday lives, something Postman excels at.</p>
 <p class="p1">When it comes to deploying APIs with AWS infrastructure using a Postman collection, there were two things I couldn’t do purely with AWS APIs, which pushed me to create AWS Lambda functions that would get the job done. Demonstrating that I was going to be creating a growing number of Lambda functions that I was going to need to organize, retrieve, and execute regularly as part of my manual work, but also automated process, beginning with these two functions:</p>
 <ul class="ul1">
 <li class="li1"><strong><a href="https://documenter.postman.com/view/10394726/Szf6Z9Kn?version=latest#42702fb3-00c3-401e-b371-8da9892a5bf7">Create AWS RDS Aurora SQL Table</a></strong> - There is no way to create a table using the AWS RDS API, so I created an AWS Lambda function that would let me pass in the table name and fields using environment variables, mounting the database and creating the table I needed.</li>

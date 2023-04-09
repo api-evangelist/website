@@ -9,9 +9,9 @@ tags:
   - Healthcare
   - 101
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/propeller/air-asthma-api-text-phone-aa3.png
+  https://s3.amazonaws.com/kinlane-productions2/propeller/air-asthma-api-text-phone-aa3.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/propeller/air-asthma-api-text-phone-aa3.png" align="right" width="40%" style="padding: 15px;" /></p>You don't find me showcasing specific APIs often. I'm usually talking about an API because of their approach to the technology, business, or politics of how they do APIs. It just isn't my style to highlight APIs, unless I think they are interesting, and delivering value that is worth talking about, or possibly reflecting a meaningful trend that is going on. In this case it is a useful API that I think brings value, but also provides an example of an API I can showcase to non-developer folks as a meaningful example of an API.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/propeller/air-asthma-api-text-phone-aa3.png" align="right" width="40%" style="padding: 15px;" /></p>You don't find me showcasing specific APIs often. I'm usually talking about an API because of their approach to the technology, business, or politics of how they do APIs. It just isn't my style to highlight APIs, unless I think they are interesting, and delivering value that is worth talking about, or possibly reflecting a meaningful trend that is going on. In this case it is a useful API that I think brings value, but also provides an example of an API I can showcase to non-developer folks as a meaningful example of an API.
 
 The API I'm talking about today, is [the Air API](https://www.propellerhealth.com/air-by-propeller/), an asthma API from Propeller, which provides a set of free tools to help people understand current asthma conditions in their neighborhoods. The project is led by the Propeller data scientists and clinical researchers, looking to leverage Air API to help predict how asthma may be affected by local conditions, including a series of tools that share local asthma conditions, ranging from an email or text subscription, to an embeddable Air Widget for other websites.
 

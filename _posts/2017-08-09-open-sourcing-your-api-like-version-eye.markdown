@@ -11,9 +11,9 @@ tags:
   - Open Source
   - Deployment
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/versioneye/version-eye-containers.png
+  https://s3.amazonaws.com/kinlane-productions2/versioneye/version-eye-containers.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/versioneye/version-eye-containers.png" align="right" width="40%" style="padding: 15px;" /></p>I'm always on the hunt for healthy patterns that I would like to see API providers, and API service providers consider when crafting their own strategies. It's what I do as the API Evangelist. Find common patterns. Understand the good ones, and the bad ones. Tell stories about both, helping folks understand the possibilities, and what they should be thinking about as they plan their operations.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/versioneye/version-eye-containers.png" align="right" width="40%" style="padding: 15px;" /></p>I'm always on the hunt for healthy patterns that I would like to see API providers, and API service providers consider when crafting their own strategies. It's what I do as the API Evangelist. Find common patterns. Understand the good ones, and the bad ones. Tell stories about both, helping folks understand the possibilities, and what they should be thinking about as they plan their operations.
 
 One very useful API that notifies you about security vulnerabilities, license violations and out-dated dependencies in your Git repositories, [has a nice approach to delivering their API](https://www.versioneye.com/api/), as well as [the other components of their stack](https://github.com/versioneye). You can either use VersionEye in the cloud, or you can deploy on-premise:
 

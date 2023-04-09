@@ -11,9 +11,9 @@ tags:
   - Monitoring
   - Regulation
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/digital-bits-capital-dc-flag-side-view.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/digital-bits-capital-dc-flag-side-view.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/digital-bits-capital-dc-flag-side-view.jpg" align="right" width="40%" style="padding: 15px;" /></p>[Speaking to the House Energy and Commerce Committee, former Equifax CEO Richard Smith pointed the finger at a single developer who failed to patch the Apache Struts vulnerability](https://www.theverge.com/2017/10/3/16410806/equifax-ceo-blame-breach-patch-congress-testimony). Saying that protocol was followed, and a single developer was responsible, shifting the blame away from leadership. It sounds like a good answer, but when you operate in the space you understand that this was a systemic failure, and you shouldn't be relying on a single individual, or even a single piece of scanning software to verify the patch was applied. You really should have many layers in place to help prevent breaches like we saw with Equifax.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/digital-bits-capital-dc-flag-side-view.jpg" align="right" width="40%" style="padding: 15px;" /></p>[Speaking to the House Energy and Commerce Committee, former Equifax CEO Richard Smith pointed the finger at a single developer who failed to patch the Apache Struts vulnerability](https://www.theverge.com/2017/10/3/16410806/equifax-ceo-blame-breach-patch-congress-testimony). Saying that protocol was followed, and a single developer was responsible, shifting the blame away from leadership. It sounds like a good answer, but when you operate in the space you understand that this was a systemic failure, and you shouldn't be relying on a single individual, or even a single piece of scanning software to verify the patch was applied. You really should have many layers in place to help prevent breaches like we saw with Equifax.
 
 If I was interviewing the CEO, I'd have a few other questions for him, getting at some of the other systemic and process failures based upon his lack of leadership, and awareness:
 

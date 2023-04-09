@@ -7,10 +7,10 @@ tags:
 - Federal Government
 - Governance
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/gsa/gsa-prototype-api-portal.png
+image: https://s3.amazonaws.com/kinlane-productions2/gsa/gsa-prototype-api-portal.png
 ---
 
-<p><a href="https://gsa.github.io/prototype-city-pairs-api-documentation/api-docs/"><img src="https://s3.amazonaws.com/kinlane-productions/gsa/gsa-prototype-api-portal.png" align="right" width="40%" style="padding: 15px;" /></a></p>One way to help API developers understand API design is to provide them with a design guide, helping set a standard for how APIs should be designed across an organization or group. Another way to help developers follow best practices when it comes to API design is to provide them with a working example they can follow when developing their API(s). In my experience people learn API design best practices through following what they know--emulating what they see.
+<p><a href="https://gsa.github.io/prototype-city-pairs-api-documentation/api-docs/"><img src="https://s3.amazonaws.com/kinlane-productions2/gsa/gsa-prototype-api-portal.png" align="right" width="40%" style="padding: 15px;" /></a></p>One way to help API developers understand API design is to provide them with a design guide, helping set a standard for how APIs should be designed across an organization or group. Another way to help developers follow best practices when it comes to API design is to provide them with a working example they can follow when developing their API(s). In my experience people learn API design best practices through following what they know--emulating what they see.
 
 Hang on to that thought, cause now I'm going to blow your mind. Guess how API providers learn how to provide API design guide and working examples? By showcasing working examples of companies, institutions, and government agencies publishing API design guides, working APIs, and portal prototypes. So that other API providers can learn by example! BOOM! Mind blown. :-) An example of this can be found over at the General Service Administration (GSA), [with their API standards guide, API prototype, and forkable API portal and documentation](https://gsa.github.io/prototype-city-pairs-api-documentation/api-docs/)--complete with the essential API building blocks.
 

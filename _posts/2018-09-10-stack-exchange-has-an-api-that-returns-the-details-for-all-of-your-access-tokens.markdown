@@ -11,9 +11,9 @@ tags:
   - Environments
   - OAuth
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/stack-exchange/stack-exchange-access-tokens-api.png
+  https://s3.amazonaws.com/kinlane-productions2/stack-exchange/stack-exchange-access-tokens-api.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm a big fan of helpful authentication features, where API providers make it easier to manage our increasingly hellish environment, application, token, and other management duties of the average API integrator. To help me better manage my API apps, and the OAuth tokens I have in play, I am trying to document all the sensible approaches I come across while putting different APIs to work, and scouring the API landscape for stories.
+<p></p>I'm a big fan of helpful authentication features, where API providers make it easier to manage our increasingly hellish environment, application, token, and other management duties of the average API integrator. To help me better manage my API apps, and the OAuth tokens I have in play, I am trying to document all the sensible approaches I come across while putting different APIs to work, and scouring the API landscape for stories.
 
 One example of this in action is out of the Stack Exchange API, [where you can find an API endpoint for accessing the details of your OAuth tokens, and invalidate, and de-authorize them](https://api.stackexchange.com/docs/read-access-tokens). A pretty useful API endpoint when you are integrating with APIs, and find yourself having to manage many tokens across many APIs, apps, and users. Helping you check in on the overall health and activity of your tokens, revoking, renewing, and making sure they work when you need them the most.
 

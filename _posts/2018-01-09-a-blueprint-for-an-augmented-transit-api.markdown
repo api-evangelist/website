@@ -12,9 +12,9 @@ tags:
   - 911
   - City Government
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/metrohero/metro-hero-dashboard.png
+  https://s3.amazonaws.com/kinlane-productions2/metrohero/metro-hero-dashboard.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/metrohero/metro-hero-dashboard.png" align="right" width="45%" style="padding: 15px" /></p>I'm working through research on the world of [transit APIs](http://transit.apievangelist.com) as part of my partnership with [Streamdata.io](http://apis.how/streamdata). From what I've gathered so far, the world of transit data and APIs is quite a mess, and there is a pretty significant opportunity to improve upon what already exists. In the course of my research, I stumbled across [MetroHero](https://dcmetrohero.com/), which is an application and API provider that operates on top of the [Washington Metropolitan Area Transit Authority](https://wmata.com/) data and API feeds.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/metrohero/metro-hero-dashboard.png" align="right" width="45%" style="padding: 15px" /></p>I'm working through research on the world of [transit APIs](http://transit.apievangelist.com) as part of my partnership with [Streamdata.io](http://apis.how/streamdata). From what I've gathered so far, the world of transit data and APIs is quite a mess, and there is a pretty significant opportunity to improve upon what already exists. In the course of my research, I stumbled across [MetroHero](https://dcmetrohero.com/), which is an application and API provider that operates on top of the [Washington Metropolitan Area Transit Authority](https://wmata.com/) data and API feeds.
 
 I'm still working my way through their website, services, APIs, as well as talking with their team, but I'm fascinated with what they are doing, and wanted to think a little more about it before I talk with them this week. While their approach to improving upon WMATA applications is interesting, I think applying this way of thought to a government API is more interesting (surprise). [The MetroHero API is what I'd consider to be an augmented API](https://www.dcmetrohero.com/apis), operating on top of the WMATA API, and improving upon the data and services they make available about the Washington DC transit system.
 

@@ -10,9 +10,9 @@ tags:
   - Europe
   - Regulations
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/psd2/220px-European_Banking_Authority_(EBA)_logo.jpg
+  https://s3.amazonaws.com/kinlane-productions2/psd2/220px-European_Banking_Authority_(EBA)_logo.jpg
 ---
-<p><a href="http://www.eba.europa.eu/"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/european-banking-authority-eba.jpg" align="right" width="45%" style="padding: 15px;" /></a></p>As part of my continued effort to break down [the Payment Services Directive 2 (PSD2) in Europe](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en), and develop my awareness of how the regulations are intended, as well as the reality on the ground within the industry, I am working to map out all of the players involved. This post is about understanding the role of the European Banking Authority (EBA), and clearly understanding when and where they come into the conversation. 
+<p><a href="http://www.eba.europa.eu/"><img src="https://s3.amazonaws.com/kinlane-productions2/psd2/european-banking-authority-eba.jpg" align="right" width="45%" style="padding: 15px;" /></a></p>As part of my continued effort to break down [the Payment Services Directive 2 (PSD2) in Europe](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en), and develop my awareness of how the regulations are intended, as well as the reality on the ground within the industry, I am working to map out all of the players involved. This post is about understanding the role of the European Banking Authority (EBA), and clearly understanding when and where they come into the conversation. 
 
 First, what is the [European Banking Authority (EBA)](http://www.eba.europa.eu/)? They are the regulatory agency for the European Union, who is in charge of conducting stress tests on European banks and increasing transparency in the European financial system and identifying weaknesses in banks' capital structures. When it comes to PSD2, their role is to:
 

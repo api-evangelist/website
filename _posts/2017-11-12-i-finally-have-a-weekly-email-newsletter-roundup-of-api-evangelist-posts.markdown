@@ -9,9 +9,9 @@ tags:
   - Newsletter
   - Communication
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-evangelist-newsletter.png
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist/api-evangelist-newsletter.png
 ---
-<p><a href="http://apievangelist.com/#Newsletter"><img src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/api-evangelist-newsletter.png" align="right" width="35%" style="padding: 15px;" /></a></p>I've had people asking me for an email newsletter containing everything I've done over the week for quite a while now, and I finally got around to do doing it. I'm now using MailChimp to pull in the last 20 API Evangelist blog posts and send out as a digest each Monday morning. Providing a summary of everything I wrote for the previous week.
+<p><a href="http://apievangelist.com/#Newsletter"><img src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/api-evangelist-newsletter.png" align="right" width="35%" style="padding: 15px;" /></a></p>I've had people asking me for an email newsletter containing everything I've done over the week for quite a while now, and I finally got around to do doing it. I'm now using MailChimp to pull in the last 20 API Evangelist blog posts and send out as a digest each Monday morning. Providing a summary of everything I wrote for the previous week.
 
 I'm thankful for services like MailChimp which help me get up and running with things like a newsletter quickly. Then  can scale it over time, and even use their API if I want. Without service providers like this I'd never have things like a newsletter. Here is the email newsletter sign up form from MailChimp, and you can always find [on the bottom of the home page for API Evangelist](http://apievangelist.com/#Newsletter):
 

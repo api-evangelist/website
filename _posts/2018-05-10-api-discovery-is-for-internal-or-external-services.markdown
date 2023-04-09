@@ -8,9 +8,9 @@ tags:
   - Discovery
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/vancouver_light_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/vancouver_light_dali.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>The topic of API discovery has been picking up momentum in 2018. It is something I've worked on for years, but with the number of microservices emerging out there, it is something I'm seeing become a concern amongst providers. It is also something I'm seeing more potential vendor chatter, looking to provide more services and tooling to help alleviate API discovery pain. Even with all this movement, there is still a lot of education and discussion to occur on the subject to help bring people up to speed on what is API discovery.
+<p></p>The topic of API discovery has been picking up momentum in 2018. It is something I've worked on for years, but with the number of microservices emerging out there, it is something I'm seeing become a concern amongst providers. It is also something I'm seeing more potential vendor chatter, looking to provide more services and tooling to help alleviate API discovery pain. Even with all this movement, there is still a lot of education and discussion to occur on the subject to help bring people up to speed on what is API discovery.
 
 The most common view of what is API discovery, is when you need to find an API for developing an application. You have a need for a resource in your application, and you need to look across your internal and partner resources to find what you are looking for. Beyond that, you will need to search for publicly available API resources, using Google, Github, ProgrammableWeb, and other common ways to find popular APIs. This is definitely the most prominent perspective when it comes to API discovery, but it isn't the only dimension of this problem. There are several dimensions to this stop along the API lifecycle, that I'd like to flesh out further, so that I can better articulate across conversations I am having.
 

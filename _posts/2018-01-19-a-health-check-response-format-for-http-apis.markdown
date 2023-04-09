@@ -10,9 +10,9 @@ tags:
   - Standards
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/irakli/health-check-response-format-for-http-apis.png
+  https://s3.amazonaws.com/kinlane-productions2/irakli/health-check-response-format-for-http-apis.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/irakli/health-check-response-format-for-http-apis.png" align="right" width="45%" style="padding: 15px;" /></p>My friend Irakli Nadareishvili, [has published a new health check response format for HTTP APIs](https://inadarei.github.io/rfc-healthcheck/) that I wanted to make sure was documented as part of my research. The way I do this is write a blog post, forever sealing this work in time, and adding it to the public record that is my API Evangelist brain. Since I use my blog as a reference when writing white papers, guides, blueprints, policies, and other aspects of my work, I need as many references to usable standards like this.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/irakli/health-check-response-format-for-http-apis.png" align="right" width="45%" style="padding: 15px;" /></p>My friend Irakli Nadareishvili, [has published a new health check response format for HTTP APIs](https://inadarei.github.io/rfc-healthcheck/) that I wanted to make sure was documented as part of my research. The way I do this is write a blog post, forever sealing this work in time, and adding it to the public record that is my API Evangelist brain. Since I use my blog as a reference when writing white papers, guides, blueprints, policies, and other aspects of my work, I need as many references to usable standards like this.
 
 I am going to just share the introduction from Irakli's draft, as it says it all:
 

@@ -7,7 +7,7 @@ tags:
   - API Evangelist
   - Definitions
   - Documentation
-image: 'https://s3.amazonaws.com/kinlane-productions/postman/postman-icon.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/postman/postman-icon.png'
 ---
 <p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;" /></p>I'm fascinated with the unit of compute as defined by a microservice, OpenAPI definition, Postman Collection, or other way of quantifying an API-driven resource. Asking the question, "[how big or how small is an API?](http://apievangelist.com/2018/02/15/how-big-or-small-is-an-api/)", and [working to define the small unit of compute needed at runtime](http://apievangelist.com/2018/03/09/defining-the-smallest-unit-possible-for-use-at-api-runtime/). I do not feel there is a perfect answer to any of these questions, but it doesn't mean we shouldn't be asking the questions, and packaging up our API definitions in a more meaningful way.
 

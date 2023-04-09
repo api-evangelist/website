@@ -10,9 +10,9 @@ tags:
   - Sandboxes
   - Simulations
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/sportradar/sportradar-simulations.png
+  https://s3.amazonaws.com/kinlane-productions2/sportradar/sportradar-simulations.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm a big fan of API sandboxes, labs, and other virtualization environments. [API sandboxes should be default in heavily regulated industries like banking](https://streamdata.io/blog/sandbox-default-feature-banking-apis/). I also support the virtualization of schema and data used across API operations, [like I am doing at the Department of Veterans Affairs (VA), with synthetic healthcare data](http://apievangelist.com/2018/05/01/synthetic-healthcare-records-for-your-api-using-synthea/). I'm very interested in anything that moves forward the [API virtualization](http://virtualization.apievangelist.com/) conversation, so I found [the live sporting API simulations over at SportRadar](https://developer.sportradar.com/files/indexFootball.html#nfl-official-api-v2-simulations) very interesting.
+<p></p>I'm a big fan of API sandboxes, labs, and other virtualization environments. [API sandboxes should be default in heavily regulated industries like banking](https://streamdata.io/blog/sandbox-default-feature-banking-apis/). I also support the virtualization of schema and data used across API operations, [like I am doing at the Department of Veterans Affairs (VA), with synthetic healthcare data](http://apievangelist.com/2018/05/01/synthetic-healthcare-records-for-your-api-using-synthea/). I'm very interested in anything that moves forward the [API virtualization](http://virtualization.apievangelist.com/) conversation, so I found [the live sporting API simulations over at SportRadar](https://developer.sportradar.com/files/indexFootball.html#nfl-official-api-v2-simulations) very interesting.
 
 SportRadar's _"live simulations give you the opportunity to test your code against a simulation of live data before the preseason starts or any time! Our simulation system replays select completed games allowing you to view our API feeds as if they were happening live."_ Here are the details of their NFL Official API simulations that run every day:
 

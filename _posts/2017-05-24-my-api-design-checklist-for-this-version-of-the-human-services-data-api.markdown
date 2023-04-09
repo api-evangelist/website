@@ -5,10 +5,10 @@ tags:
 - Design
 - HSDS
 - HSDA
-image: https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design-checklist.png
+image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-design-checklist.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-design-checklist.png" align="right" width="25%" style="padding: 15px;" /></p>I am going through my [API design](http://design.apievangelist.com) checklist for the [Human Services Data API](https://openreferral.github.io/api-specification/) work I am doing. I'm trying to make sure I'm not forgetting anything before I propose a v1.1 OpenAPI draft, so I pulled together a simple checklist I wanted to share with other stakeholders, and hopefully also help keep me focused.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-design-checklist.png" align="right" width="25%" style="padding: 15px;" /></p>I am going through my [API design](http://design.apievangelist.com) checklist for the [Human Services Data API](https://openreferral.github.io/api-specification/) work I am doing. I'm trying to make sure I'm not forgetting anything before I propose a v1.1 OpenAPI draft, so I pulled together a simple checklist I wanted to share with other stakeholders, and hopefully also help keep me focused.
 
 First, to support my API design work I got to work on these areas for defining the HSDS schema and the HSDA definition:
 

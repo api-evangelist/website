@@ -10,9 +10,9 @@ tags:
   - Definitions
   - Standards
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/open-banking/open-banking-screenshot.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-screenshot.png" align="right" width="45%" style="padding: 15px;" /></p>I am profiling banks in the UK as part of an effort move forward my [API Stack](http://theapistack.com) work, and populate the [Streamdata.io API Gallery](https://streamdata.io/developers/api-gallery/). One significant advantage that banks in the UK have over other countries in the EU, and even in the US, is the help of [Open Banking](https://www.openbanking.org.uk). To help profile the organization, I'll just borrow from their website to define who they are and what they do.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/open-banking/open-banking-screenshot.png" align="right" width="45%" style="padding: 15px;" /></p>I am profiling banks in the UK as part of an effort move forward my [API Stack](http://theapistack.com) work, and populate the [Streamdata.io API Gallery](https://streamdata.io/developers/api-gallery/). One significant advantage that banks in the UK have over other countries in the EU, and even in the US, is the help of [Open Banking](https://www.openbanking.org.uk). To help profile the organization, I'll just borrow from their website to define who they are and what they do.
 
 _The Open Banking Implementation Entity was created by the UK’s Competition and Markets Authority to create software standards and industry guidelines that drive competition and innovation in UK retail banking._
 

@@ -9,9 +9,9 @@ tags:
   - Pricing
   - Plans
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-old-door-lock-copper-circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-old-door-lock-copper-circuit.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 APIs that I can’t pay for more access grinds my gears. I am looking at you GitHub, Twitter, Facebook, and a few others. I spend $250.00 to $1500.00 a month on my Amazon bill, depending on what I’m looking to get done. I know I’m not the target audience for all of these platforms, but I’m guessing there is a lot more money on the table than is being acknowledged. I’m guessing that the reason companies don’t cater to this, is that there are larger buckets of money involved in what they are chasing behind the scenes. Regardless, there isn’t enough money coming my way to keep my mouth shut, so I will keep bitching about this one alongside the inaccessible pricing tiers startups like to employ as well. I’m going to keep kvetching about API pricing until we are all plugged into the matrix—-unless the right PayPal payment lands in my account, then I’ll shut up. ;-)
 
 I know. I know. I’m not playing in all your reindeer startup games, and I don’t understand the masterful business strategy you’ve all crafted to get rich. I’m just trying to do something simple like publish data to GitHub, or do some basic research on an industry using Twitter. I know there are plenty of bad actors out there who want also access to your data, but it is all something that could be remedied with a little pay as you go pricing, applied to some base unit of cost applied to your resources. If I could pay for more Twitter and GitHub requests without having to be in the enterprise club, I’d be very appreciative. I know that Twitter has begun expanding into this area, but it is something that is priced out of my reach, and not the simple pay as you go pricing I prefer with AWS, Bing, and other APIs I happily spend money on.

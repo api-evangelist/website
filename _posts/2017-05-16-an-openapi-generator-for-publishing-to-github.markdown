@@ -9,7 +9,7 @@ tags:
 
 The folks behind the OpenAPI Spec driven, interactive API documentation ReDoc, have also [developed an OpenAPI generator that helps you manage your OpenAPI Spec deployment](https://github.com/Rebilly/generator-openapi-repo) using Yeoman. If you aren't familiar with Yeoman, it is modern scaffolding for web apps, which is all about helping you manage the quick and consistent deployment of APIs following existing best practices.
 
-<p><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/redoc/redoc-yeoman-generator-github.png" align="center" width="98%" /></p>
+<p><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/redoc/redoc-yeoman-generator-github.png" align="center" width="98%" /></p>
 
 ReDoc's Yeoman generator leverages all the benefits of pushing your OpenAPI Specs and API documentation on Github:
 
@@ -28,7 +28,7 @@ ReDoc's Yeoman generator helps to create a GitHub repo with the following featur
 * Swagger spec + ReDoc deployed to Github Pages
 * Live editing in your editor or swagger-editor
 
-<p><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions/api-evangelist/redoc/yeoman-generator-wizard-image.png" align="center" width="98%" /></p>
+<p><img style="padding: 5px;" src="https://s3.amazonaws.com/kinlane-productions2/api-evangelist/redoc/yeoman-generator-wizard-image.png" align="center" width="98%" /></p>
 
 [All the documentation for ReDoc's Yeoman generator is available on the Github repository](https://github.com/Rebilly/generator-openapi-repo). The Yeoman generator demonstrates how OpenAPI Spec operates as more than just a machine readable core to API documentation. It acts as a machine-readable core to all stops along the API life cycle defining how you design, deploy, manage, and document your APIs.
 

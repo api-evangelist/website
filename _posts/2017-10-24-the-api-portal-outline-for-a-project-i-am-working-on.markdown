@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Portal
   - Management
-image: 'https://s3.amazonaws.com/kinlane-productions/portal/api-portal-forkable.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/portal/api-portal-forkable.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/portal/api-portal-forkable.png" align="right" width="45%" style="padding: 15px;" /></p>I am working through a project for a client, helping them deliver a portal for their API. As I do with any of my recommendations with my clients, I take my existing API research, and refine it to help craft a strategy to meets their specific needs. Each time I do this it gives me a chance to rethink some of my recommendations I've already gathered, as well as learn from new types of projects. I've taken the building blocks from my [API portal](http://portal.apievangelist.com), as well as my [API management](http://portal.apievangelist.com) research, and have taken a crack at organizing them into an outline that I can use to guide my current project.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/portal/api-portal-forkable.png" align="right" width="45%" style="padding: 15px;" /></p>I am working through a project for a client, helping them deliver a portal for their API. As I do with any of my recommendations with my clients, I take my existing API research, and refine it to help craft a strategy to meets their specific needs. Each time I do this it gives me a chance to rethink some of my recommendations I've already gathered, as well as learn from new types of projects. I've taken the building blocks from my [API portal](http://portal.apievangelist.com), as well as my [API management](http://portal.apievangelist.com) research, and have taken a crack at organizing them into an outline that I can use to guide my current project.
 
 Here is a walk through of the outline I'm recommending as part of a basic API portal implementation, to support a simple public API:
 

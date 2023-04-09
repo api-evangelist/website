@@ -8,11 +8,11 @@ tags:
   - Marketplace
   - Database
   - Deployment
-image: https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png
+image: https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png
 ---
 _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png" align="right" width="45%" style="padding: 15px;"></p>As the cloud giants like AWS, Microsoft, and Google continue to assert their dominance of the digital world, one aspect of their operations I'm watching closely has to do with their marketplaces. Google's marketplaces are still very Android focused, but Amazon and Microsoft have shifted their recent editions of their marketplaces to be more cloud oriented, and accommodating a wide variety of applications, machine learning models, as well as APIs and API-focused services. While these marketplaces are still growing, and asserting their role in the digital economy, they are something I advise API providers, and service providers to be keeping a close eye on, and begin considering how they will want to operate within these environments.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/slashdb/slashdb-automatic-rest-api-for-databases-in-aws-marketplaces.png" align="right" width="45%" style="padding: 15px;"></p>As the cloud giants like AWS, Microsoft, and Google continue to assert their dominance of the digital world, one aspect of their operations I'm watching closely has to do with their marketplaces. Google's marketplaces are still very Android focused, but Amazon and Microsoft have shifted their recent editions of their marketplaces to be more cloud oriented, and accommodating a wide variety of applications, machine learning models, as well as APIs and API-focused services. While these marketplaces are still growing, and asserting their role in the digital economy, they are something I advise API providers, and service providers to be keeping a close eye on, and begin considering how they will want to operate within these environments.
 
 If you are an API service provider, and you are selling services to API providers anywhere along the API lifecycle, I recommend you follow the example of friends over at SlashDB, who have their database to API offerings in two of the leading marketplaces:
 

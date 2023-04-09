@@ -6,9 +6,9 @@ date: 2018-01-10T11:00:00.000Z
 tags:
   - API Evangelist
   - DNS
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dns.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-dns.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-dns.png" align="right" width="45%" style="padding: 15px;" /></p>DNS is one of those shadowy things that tends to be managed by a select few wizards, and the rest of an organization doesn't have much knowledge, awareness, or access at this level. APIs has shifted this reality for me, and is something I'm also seeing at organizations who are adopting a microservices, and devops approach to getting things done. DNS should be a first class citizen in the API toolbox, allowing for well planned deployments supporting a variety of services, but also allow for logging, orchestration, and most importantly security, at the frontline of our API operations.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-dns.png" align="right" width="45%" style="padding: 15px;" /></p>DNS is one of those shadowy things that tends to be managed by a select few wizards, and the rest of an organization doesn't have much knowledge, awareness, or access at this level. APIs has shifted this reality for me, and is something I'm also seeing at organizations who are adopting a microservices, and devops approach to getting things done. DNS should be a first class citizen in the API toolbox, allowing for well planned deployments supporting a variety of services, but also allow for logging, orchestration, and most importantly security, at the frontline of our API operations.
 
 There are some basics I wanted to introduce to my readers when it comes to DNS for their API operations, but I also wanted to shine a light on where the DNS space is headed because of APIs. Some DNS and cloud providers are taking things to the next level, and APIs are central to that. Like most other stops along the API life cycle DNS is not just about doing DNS for your APIs, it is also about doing APIs for your DNS.
 

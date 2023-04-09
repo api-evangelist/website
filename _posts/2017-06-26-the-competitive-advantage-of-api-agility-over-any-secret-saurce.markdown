@@ -6,10 +6,10 @@ tags:
 - Business of APIs
 - Politics of APIs
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/machine-road_blue_circuit_5_bw.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/machine-road_blue_circuit_5_bw.jpg
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algorotoscope/stories/machine-road_blue_circuit_5_bw.jpg" align="right" width="45%" style="padding: 15px" /></p>I was talking to a VC about one of my favorite API upstarts the other day, and one of the closing questions I received was if the API upstart had a secret sauce that made their position defensible. To which I responded, no...but they are API first, and API definition-driven in everything they do, so they will ultimately move faster than any competitor can.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algorotoscope/stories/machine-road_blue_circuit_5_bw.jpg" align="right" width="45%" style="padding: 15px" /></p>I was talking to a VC about one of my favorite API upstarts the other day, and one of the closing questions I received was if the API upstart had a secret sauce that made their position defensible. To which I responded, no...but they are API first, and API definition-driven in everything they do, so they will ultimately move faster than any competitor can.
 
 Agility is one of the classic things you hear people tell companies regarding why they should be doing APIs. The benefit is definitely overused and overstated in situations it shouldn't be, but when APIs are fully embraced, and done properly, the agility is real. I've seen companies be able to shift, pivot, and add new features in a fraction of the time of their competitors, allowing them to in new ways that nobody had intended just months before--APIs allow for the type of shape shifting you need to remain competitive in today's environment.
 

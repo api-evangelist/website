@@ -8,9 +8,9 @@ tags:
   - Data
   - Marketplaces
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/granaryfield_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/granaryfield_dali_three.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I spend time reviewing each wave of data API marketplaces as they emerge on the landscape every couple of years. There are a number of reasons why these data marketplaces exist, ranging from supporting government agencies, NGOs, or for commercial purposes. One of the most common elements of API-driven data marketplaces that frustrates me is when they don't do the hard work to expose the meta data around the databases, datasets, spreadsheets, and the raw data they are providing access to--making it very difficult to actually discover anything of interest.
+<p></p>I spend time reviewing each wave of data API marketplaces as they emerge on the landscape every couple of years. There are a number of reasons why these data marketplaces exist, ranging from supporting government agencies, NGOs, or for commercial purposes. One of the most common elements of API-driven data marketplaces that frustrates me is when they don't do the hard work to expose the meta data around the databases, datasets, spreadsheets, and the raw data they are providing access to--making it very difficult to actually discover anything of interest.
 
 You can see a couple examples of this with [mLab](https://docs.mlab.com/data-api/#list-databases), [World Health Organization](http://apps.who.int/gho/data/node.resources.api), [Data.World](https://apidocs.data.world/api), and others. While these platforms provide (sometimes) impressive ability to manage data stores, but they don't always do a good job exposing the meta data of their catalogs as part of the available APIs. Dynamically generating API endpoints, documentation, and other resources based upon the data that is being published to their platforms. Leaving developers to do the digging, and making the investment to understand what is available on a platform.
 

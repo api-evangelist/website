@@ -8,9 +8,9 @@ tags:
   - Patents
   - Security
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/soldier_computer_dark_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/soldier_computer_dark_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/soldier_computer_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>The main reason that I tend to rail against API specific patents is that much of what I see being locks up reflects the parts and pieces that are making the web work. [I see things like hypermedia, and other concepts that are inherently about sharing, collaboration, and reuse](http://apievangelist.com/2016/01/12/i-just-cannot-get-behind-api-patents-especially-when-they-apply-to-http-and-hypermedia/)--something that should never be patented. This concept applies to other patents I'm seeing, but rather than being about the web, it is about trust, and sharing of information. Things that shouldn't be locked up, and exist within realms where the concept of patents actually hurt the web and APIs.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/soldier_computer_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>The main reason that I tend to rail against API specific patents is that much of what I see being locks up reflects the parts and pieces that are making the web work. [I see things like hypermedia, and other concepts that are inherently about sharing, collaboration, and reuse](http://apievangelist.com/2016/01/12/i-just-cannot-get-behind-api-patents-especially-when-they-apply-to-http-and-hypermedia/)--something that should never be patented. This concept applies to other patents I'm seeing, but rather than being about the web, it is about trust, and sharing of information. Things that shouldn't be locked up, and exist within realms where the concept of patents actually hurt the web and APIs.
 
 Today's patent is out of Amazon, who are prolific patenters of web and API concepts. This one though is about [the sharing of security threat sharing](http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/search-bool.html&r=1&f=G&l=50&d=PALL&RefSrch=yes&Query=PN/9325732). Outlining something that should be commonplace on the web.
 

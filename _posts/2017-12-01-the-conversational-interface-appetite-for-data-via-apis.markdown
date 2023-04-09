@@ -9,9 +9,9 @@ tags:
   - Voice
   - Conversational Interface
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/16_77_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px" /></p>
 _This is a sponsored post by my friends over at [SlashDB](https://www.slashdb.com/). The topic is chosen by me, but the work is funded by SlasDB, making sure I keep doing what I do here at API Evangelist. Thank you [SlashDB](https://www.slashdb.com/) for your support, and helping me educate my readers about what is going on in the API space._
 
 I spend a lot of time studying what is going on around bots on Twitter, Facebook, and Slack, as well as voice enablement like we see with Alexa, Google, and Siri. I lump these all under a research category called conversational interfaces. Conversational interfaces represent the next generation of API clients, with AWS Alexa being the most sophisticated example at how it will all work(eventually). While there are some interesting examples of conversational interfaces in action, for the most part they are still pretty simple, silly, and not providing much value. I'd say that any of the bots or voice implementations I've come across which are useful, are also pretty corporate, demonstrating the amount of resources you need to invest when crafting conversational interfaces.

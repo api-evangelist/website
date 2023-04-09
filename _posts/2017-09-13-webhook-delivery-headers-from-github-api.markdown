@@ -9,9 +9,9 @@ tags:
   - Webhooks
   - Headers
   - Design
-image: 'https://s3.amazonaws.com/kinlane-productions/github/github-circle-icon.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/github/github-circle-icon.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-circle-icon.png" align="right" width="30%" style="padding: 15px;" /></p>I am continuing my learning about Webhooks, and [Github keeps my notebook full with interesting building blocks we can use when crafting our own webhook strategies](https://developer.github.com/webhooks/). I'm not using everything I'm learning from Github in my current strategy, but I like adding each of these building blocks to my [webhook research](http://webhooks.apievangelist.com/), so that I can use in future guides that I publish. Today's post overlaps two areas of my research into webhooks, and how headers are being used by a variety of API providers.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-circle-icon.png" align="right" width="30%" style="padding: 15px;" /></p>I am continuing my learning about Webhooks, and [Github keeps my notebook full with interesting building blocks we can use when crafting our own webhook strategies](https://developer.github.com/webhooks/). I'm not using everything I'm learning from Github in my current strategy, but I like adding each of these building blocks to my [webhook research](http://webhooks.apievangelist.com/), so that I can use in future guides that I publish. Today's post overlaps two areas of my research into webhooks, and how headers are being used by a variety of API providers.
 
 Github is using HTTP headers as part of the webhook response, providing the recipients of webhooks with more information about what is happening with each outgoing request. They are providing three custom headers along with each payload:
 

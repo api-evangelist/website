@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Documentation
   - Getting Started
-image: 'https://s3.amazonaws.com/kinlane-productions/captain_small.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/captain_small.jpg'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I read a lot of API documentation, and help review API portals for clients, and one of the most common rookie mistakes I see made, is people pointing out the obvious, and writing a bunch of fluffy, meaningless content that gets in the way of people actually using an API. When the obvious API industry stuff is combined with the assumed elements of what a company does, you end up with a meaningless set of obstacles that slow API integration down. Here is the most common thing I read when entering an API portal:
+<p></p>I read a lot of API documentation, and help review API portals for clients, and one of the most common rookie mistakes I see made, is people pointing out the obvious, and writing a bunch of fluffy, meaningless content that gets in the way of people actually using an API. When the obvious API industry stuff is combined with the assumed elements of what a company does, you end up with a meaningless set of obstacles that slow API integration down. Here is the most common thing I read when entering an API portal:
 
 _"This is an API for querying data from the [Company X] platform, to get access to JSON from our system which allows you to get data from our system into yours using the web. You will need to write code to make calls to our APIs documented here on the page below. Our API uses REST to accept request and provide responses in a JSON format."_
 

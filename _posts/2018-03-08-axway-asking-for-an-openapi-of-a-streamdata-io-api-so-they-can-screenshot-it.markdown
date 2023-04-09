@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Communication
   - Evangelism
-image: 'https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beachclouds_clean_view.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/beachclouds_clean_view.jpg'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are working closely with [Axway](https://www.axway.com/en) on a number of projects over here at [Streamdata.io](http://apis.how/streamdata). After we got out of a meeting with their team the other day we received an email from them asking if we had an OpenAPI definition for a demo Streamdata.io market data API. They were wanting to include it in some marketing materials, and needed a screenshot of it. To be able to generate the visual they desired, they needed an OpenAPI to make it tangible enough for capturing in a screenshot and presenting as part of a larger story.
+<p></p>We are working closely with [Axway](https://www.axway.com/en) on a number of projects over here at [Streamdata.io](http://apis.how/streamdata). After we got out of a meeting with their team the other day we received an email from them asking if we had an OpenAPI definition for a demo Streamdata.io market data API. They were wanting to include it in some marketing materials, and needed a screenshot of it. To be able to generate the visual they desired, they needed an OpenAPI to make it tangible enough for capturing in a screenshot and presenting as part of a larger story.
 
 This may sound like a pretty banal thing, but when you step back and realize the importance of OPenAPI when it comes to communication, and making something very abstract a tangible, visual thing, it becomes more significant. You can tell someone there is a market data API, but taking a screenshot of documentation generated via an OpenAPI which displays the market data paths, a couple of parameters like stocker ticker symbol and maybe date range, and then plug in some actual values like the ticker symbol for AAPL, and show the JSON response takes things to a new level. This is OpenAPI empowered storytelling, marketing and communications in my book. Elevating what OpenAPI brings to the table to new stops along the API life cycle.
 

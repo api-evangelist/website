@@ -10,9 +10,9 @@ tags:
   - Authentication
   - Management
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/elastic-search/elasticsearch-security-apis.png
+  https://s3.amazonaws.com/kinlane-productions2/elastic-search/elasticsearch-security-apis.png
 ---
-<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api.html"><img src="https://s3.amazonaws.com/kinlane-productions/elastic-search/elasticsearch-security-apis.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was looking [at the set of security APIs over at Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api.html) as I was diving into my API security research recently. I thought the areas they provide security APIs for the search platform was worth noting and including in not just my API security research, but also [search](http://search.apievangelist.com), deployment, and probably overlap with [my authentication research](http://authentication.apievangelist.com). 
+<p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api.html"><img src="https://s3.amazonaws.com/kinlane-productions2/elastic-search/elasticsearch-security-apis.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was looking [at the set of security APIs over at Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/security-api.html) as I was diving into my API security research recently. I thought the areas they provide security APIs for the search platform was worth noting and including in not just my API security research, but also [search](http://search.apievangelist.com), deployment, and probably overlap with [my authentication research](http://authentication.apievangelist.com). 
 
 - **Authenticate API** - The Authenticate API enables you to submit a request with a basic auth header to authenticate a user and retrieve information about the authenticated user.
 - **Clear Cache API** - The Clear Cache API evicts users from the user cache. You can completely clear the cache or evict specific users.

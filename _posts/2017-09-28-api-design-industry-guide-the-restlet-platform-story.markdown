@@ -8,9 +8,9 @@ tags:
   - Design
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-the-restlet-platform-story.png
+  https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-the-restlet-platform-story.png
 ---
-<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-the-restlet-platform-story.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="http://design.apievangelist.com/#Guide"><img src="https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-the-restlet-platform-story.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 _This post is from the latest copy of my API Evangelist API Design Industry Guide, which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure._
 
 Restlet began as an open source Java API framework over a decade ago and has evolved into an API studio, client, and cloud platform with an API design core. At the center of the API lifecycle management platform is its API designer which gives you a visual view of an API and an OpenAPI or RAML view, providing a machine readable accounting of each API’s contract.

@@ -5,10 +5,10 @@ tags:
 - Patents
 - Copyright
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/oracle-v-google/1991-Patent-Copyright-Overlap-Study.png
+image: https://s3.amazonaws.com/kinlane-productions2/oracle-v-google/1991-Patent-Copyright-Overlap-Study.png
 ---
 
-<p><a href="https://cdn.patentlyo.com/media/2017/05/1991-Patent-Copyright-Overlap-Study.pdf"><img src="https://s3.amazonaws.com/kinlane-productions/oracle-v-google/1991-Patent-Copyright-Overlap-Study.png" align="right" width="40%" style="padding: 15px;" /></a></p>I just read an interesting piece by Dennis Crouch over at on Patentlyo asking, "[Are Copyright and Patent Overlapping or Mutually Exclusive in Protecting Software Innovations?](https://patentlyo.com/patent/2017/05/overlapping-protecting-innovations.html)" The article is challenging the most recent decision in the ongoing Oracle v Google copyright case using a study on "The Patent-Copyright Laws Overlap Study", prepared at the behest of the House Subcommittee on Intellectual Property and the Administration of Justice in May of 1991.
+<p><a href="https://cdn.patentlyo.com/media/2017/05/1991-Patent-Copyright-Overlap-Study.pdf"><img src="https://s3.amazonaws.com/kinlane-productions2/oracle-v-google/1991-Patent-Copyright-Overlap-Study.png" align="right" width="40%" style="padding: 15px;" /></a></p>I just read an interesting piece by Dennis Crouch over at on Patentlyo asking, "[Are Copyright and Patent Overlapping or Mutually Exclusive in Protecting Software Innovations?](https://patentlyo.com/patent/2017/05/overlapping-protecting-innovations.html)" The article is challenging the most recent decision in the ongoing Oracle v Google copyright case using a study on "The Patent-Copyright Laws Overlap Study", prepared at the behest of the House Subcommittee on Intellectual Property and the Administration of Justice in May of 1991.
 
 Among the most significant of the Study’s software findings is that there is “no overlap in subject matter: copyright protects the authorship in a set of statements that bring about a certain result in the operation of a computer, and patents cover novel and nonobvious computer processes.” Letter from Ralph Oman and Harry F. Manbeck to the Hon. William J. Hughes, July 17, 1991 (transmitting the Study to the then Chair of the House Subcommittee).
 

@@ -8,9 +8,9 @@ tags:
   - Versioning
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/los-angeles-downtow-freeway_blue_circuit_5.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/los-angeles-downtow-freeway_blue_circuit_5.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>API versioning is almost always one of the top attended discussions at conferences I help organize, and one of the first questions I get in the QA sessions at workshops I conduct. People want to understand the "right way" to version, when it my experience there is rarely ever a "right way" to version your APIs. There are commonly held practices regarding sensible ways to version your APIs, as well as dominant patterns for how you version APIs, but there isn't any 100% solid answer to the question, despite what many folks might say.
+<p></p>API versioning is almost always one of the top attended discussions at conferences I help organize, and one of the first questions I get in the QA sessions at workshops I conduct. People want to understand the "right way" to version, when it my experience there is rarely ever a "right way" to version your APIs. There are commonly held practices regarding sensible ways to version your APIs, as well as dominant patterns for how you version APIs, but there isn't any 100% solid answer to the question, despite what many folks might say.
 
 In my experience, the most commonly held approach to properly versioning your APIs (if you are going to), is to put the major and minor version in your header and / or combine it with content-type negotiation via your header. However, even with this knowledge being widely held, the most dominant pattern for versioning your APIs is sticking it in the URL of your API. I know many API providers who put the version in the header, despite many on their team fully being aware that it is something that should be put in the header. So, why is this? Why do people still do it the "wrong way", even though then know how to do it the "right way"?
 

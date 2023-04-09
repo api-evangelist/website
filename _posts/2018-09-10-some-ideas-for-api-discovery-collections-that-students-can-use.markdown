@@ -9,9 +9,9 @@ tags:
   - Education
   - Training
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist/priorities/university-of-api.png
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist/priorities/university-of-api.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>This is a topic I've wanted to set in motion for some time now. I had a new university professor city my work again as part of one of their courses recently, something that floated this concept to the top of the pile again--API discovery collections meant for just for students. Helping k-12, community college, and university students quickly understand where to find the most relevant APIs to whatever they are working on. Providing human, but also machine readable collections that can help jumpstart their API education.
+<p></p>This is a topic I've wanted to set in motion for some time now. I had a new university professor city my work again as part of one of their courses recently, something that floated this concept to the top of the pile again--API discovery collections meant for just for students. Helping k-12, community college, and university students quickly understand where to find the most relevant APIs to whatever they are working on. Providing human, but also machine readable collections that can help jumpstart their API education.
 
 I use the API discovery format [APIs.json](http://apisjson.org) to profile individual, as well as collections of APIs. I'm going to kickstart a couple of project repos, helping me flesh out a handful of interesting collections that might help students better understand the world of APIs:
 

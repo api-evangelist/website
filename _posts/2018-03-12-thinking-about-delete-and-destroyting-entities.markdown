@@ -9,9 +9,9 @@ tags:
   - Status Codes
   - HTTP
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/deliveroo/deliveroo-new-visual-branding-logo.jpg
+  https://s3.amazonaws.com/kinlane-productions2/deliveroo/deliveroo-new-visual-branding-logo.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am pulling together some API design guidance for some projects I'm consulting on, so I'm spending time reviewing the API design guides the leading API providers who have published them publicly. Learning from what they are doing across their own companies, organizations, institutions, and government agencies when it comes to sensible API governance.
+<p></p>I am pulling together some API design guidance for some projects I'm consulting on, so I'm spending time reviewing the API design guides the leading API providers who have published them publicly. Learning from what they are doing across their own companies, organizations, institutions, and government agencies when it comes to sensible API governance.
 
 Today, I am learning from the British food delivery company, Deliveroo, and documenting [their guidance for which HTTP status codes should be returned for any API methods that use DELETE](https://deliveroo.engineering/guidelines/api-design/#external-facing):
 

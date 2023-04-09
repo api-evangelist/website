@@ -9,9 +9,9 @@ tags:
   - Discovery
   - Wholesale
   - Cloud
-image: 'https://s3.amazonaws.com/kinlane-productions/aws/aws-marketplace.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/aws/aws-marketplace.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/aws/aws-marketplace.png" align="right" width="40%" style="padding: 15px;" /></p>I'm keeping an eye on [the AWS Marketplace](https://aws.amazon.com/marketplace/), as well as what Azure and Google are up to, looking for growing signs of anything API. I'd have to say that, while Azure is in close second, that AWS is growing faster when it comes to the availability of APIs in their marketplace. What I find interesting about this growth is it isn't just about the cloud, it is about wholesale APIs, and as it grows it quickly becomes about API discovery as well.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/aws/aws-marketplace.png" align="right" width="40%" style="padding: 15px;" /></p>I'm keeping an eye on [the AWS Marketplace](https://aws.amazon.com/marketplace/), as well as what Azure and Google are up to, looking for growing signs of anything API. I'd have to say that, while Azure is in close second, that AWS is growing faster when it comes to the availability of APIs in their marketplace. What I find interesting about this growth is it isn't just about the cloud, it is about wholesale APIs, and as it grows it quickly becomes about API discovery as well.
 
 The API conversation on AWS Marketplace has for a while been dominated by API service providers, and specifically the API management providers who have pioneered the space:
 

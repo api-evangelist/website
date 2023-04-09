@@ -12,9 +12,9 @@ tags:
   - City government
   - State government    
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_copper_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/power-lines-empty-space_copper_circuit.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_copper_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>I'm rarely surprised by, but still often caught off guard by the subtle ways in which power asserts itself when faced with change the introduced by API projects. In my 30 years as a database professional I've seen numerous overt, covert, and subversive ways in which existing holders of power (data), but I often still get blindsided by the creative, and subtle ways in which folks defend what they already have, and work to keep things from changing.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/power-lines-empty-space_copper_circuit.jpg" align="right" width="40%" style="padding: 15px;" /></p>I'm rarely surprised by, but still often caught off guard by the subtle ways in which power asserts itself when faced with change the introduced by API projects. In my 30 years as a database professional I've seen numerous overt, covert, and subversive ways in which existing holders of power (data), but I often still get blindsided by the creative, and subtle ways in which folks defend what they already have, and work to keep things from changing.
 
 While doing unfunded work to define industry level API specifications, and help move forward the API conversation in multiple industries, I've been encountering two pockets of friction I want to understand better, so I can develop some sort of grease, that might make things smoother. There are two main pockets of practitioners in this setting, implementors (those you publish an API), and vendors (those who currently sell solutions to implementors). My role in any industry as the API Evangelist is to help ultimately define and showcase healthy, common API definitions, that can be reused across the API lifecycle--from design to deprecation.
 

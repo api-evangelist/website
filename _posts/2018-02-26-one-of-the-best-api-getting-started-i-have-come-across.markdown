@@ -8,9 +8,9 @@ tags:
   - Getting Started
   - On-boarding
   - Management
-image: 'https://s3.amazonaws.com/kinlane-productions/starling/starling-home-page.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/starling/starling-home-page.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/starling/starling-home-page.png" align="right" width="45%" style="padding: 15px;" /></p>I'm working my way through banking and Fintech companies in the UK, and I stumbled across the Starling banking API. I began doing my usual clicking around as I do with any API, looking at the documentation, the getting started, and other primary links. After landing on [the Starling getting started page](https://developer.starlingbank.com/get-started), I have to say that it is the single best example of a getting started page I have ever come across in my time as API Evangelist. It is robust, informative, well laid out, and has everything you need to well, get started.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/starling/starling-home-page.png" align="right" width="45%" style="padding: 15px;" /></p>I'm working my way through banking and Fintech companies in the UK, and I stumbled across the Starling banking API. I began doing my usual clicking around as I do with any API, looking at the documentation, the getting started, and other primary links. After landing on [the Starling getting started page](https://developer.starlingbank.com/get-started), I have to say that it is the single best example of a getting started page I have ever come across in my time as API Evangelist. It is robust, informative, well laid out, and has everything you need to well, get started.
 
 The Starling getting started page is broken up into six separate sections:
 

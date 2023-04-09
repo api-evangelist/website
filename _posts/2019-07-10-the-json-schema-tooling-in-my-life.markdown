@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Tools
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-DSC_0033.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-DSC_0033.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I am always pushing for more schema order in my life. I spend way too much time talking about APIs, when a significant portion of the API foundation is schema. I don’t have as many tools to help me make sense of my schema, and to improve them as definitions of meaningful objects. I don’t have the ability to properly manage and contain the growing number of schema objects that pop up in my world on a daily basis, and this is a problem. There is no reason I should be making schema objects available to other consumers if I do not have a full handle on what schema objects exist, let alone a full awareness of everything that has been defined when it comes to the role that each schema object plays in my operations.
 
 To help me better understand the landscape when it comes to JSON Schema tooling, I wanted to take a moment and inventory the tools I have bookmarked and regularly use as part of my daily work with JSON Schema:

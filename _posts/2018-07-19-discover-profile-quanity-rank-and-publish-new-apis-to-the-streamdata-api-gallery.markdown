@@ -9,9 +9,9 @@ tags:
   - API Evangelist
   - Discovery
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/art-museum/art-museum_blue_circuit_3.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/art-museum/art-museum_blue_circuit_3.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>About 60% of my work these days is building upon the last five years of my [API Stack research](http://theapistack.com/), with a focus on building out the [Streamdata.io API Gallery](http://api.gallery.streamdata.io/). We are fine tuning our approach for discovering new API-driven resources from across the landscape, while also profiling, quantifying, ranking, and publishing to the Streamdata.io API Gallery, The API Stack, and potentially other locations like the Postman Network, APIs.Guru, and other API discovery destinations I am working with. Helping us make sense of the increasingly noisy API landscape, while identifying the most valuable resources, and then profiling them to help reduce friction when it comes to potentially on-boarding and streaming data from each resource.
+<p></p>About 60% of my work these days is building upon the last five years of my [API Stack research](http://theapistack.com/), with a focus on building out the [Streamdata.io API Gallery](http://api.gallery.streamdata.io/). We are fine tuning our approach for discovering new API-driven resources from across the landscape, while also profiling, quantifying, ranking, and publishing to the Streamdata.io API Gallery, The API Stack, and potentially other locations like the Postman Network, APIs.Guru, and other API discovery destinations I am working with. Helping us make sense of the increasingly noisy API landscape, while identifying the most valuable resources, and then profiling them to help reduce friction when it comes to potentially on-boarding and streaming data from each resource.
 
 ### Discover New API-Driven Resources
 Finding new APIs isn't too difficult, you just have to Google for them. Finding new APIs in an automated way, with minimum human interaction becomes a little more difficult, but there are some proven ways to get the job done. There is no single place to go find new APIs, so I've refined a list of common place I use to discover new APIs:

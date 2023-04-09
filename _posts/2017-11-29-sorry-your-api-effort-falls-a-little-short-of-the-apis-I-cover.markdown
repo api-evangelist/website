@@ -9,9 +9,9 @@ tags:
   - Investment
   - Portal
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-judgement.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/supreme-court-judgement.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/supreme-court-judgement.jpg" align="right" width="45%" style="padding: 15px;" /></p>I get a lot of emails from companies asking me to look at their APIs. Too many for a one person operation like me to consider. I have to be picky about the APIs I'm taking a look at, and over time I've developed a set of criteria for determining how much energy I will invest in an API. Usually within about 2-3 minutes I can tell if it is an API I will be diving in deeper, or I will just be walking away and moving on with my work.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/supreme-court-judgement.jpg" align="right" width="45%" style="padding: 15px;" /></p>I get a lot of emails from companies asking me to look at their APIs. Too many for a one person operation like me to consider. I have to be picky about the APIs I'm taking a look at, and over time I've developed a set of criteria for determining how much energy I will invest in an API. Usually within about 2-3 minutes I can tell if it is an API I will be diving in deeper, or I will just be walking away and moving on with my work.
 
 The first thing that turns me off of an API is that it just isn't interesting. I'll land on the page and I can tell what it does, but it just doesn't interest me. It doesn't offer any value, or it is in a category that I'm just not eager to be thinking about and showcasing in my work. If an API doesn't deliver value, and stand out as being interesting beyond the hundreds of other APIs I see each week, I'm just not going to stop and take notice. Sorry, it might be to others--don't just take my opinion.
 

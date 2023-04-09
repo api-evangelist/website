@@ -6,10 +6,10 @@ tags:
 - Machine Learning
 - Algorithms
 - Video
-image: https://s3.amazonaws.com/kinlane-productions/algorithmia/algorithmia-cube2-png-1.png
+image: https://s3.amazonaws.com/kinlane-productions2/algorithmia/algorithmia-cube2-png-1.png
 ---
 
-<p><a href="http://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/"><img src="https://s3.amazonaws.com/kinlane-productions/algorithmia/algorithmia-cube2-png-1.png" align="right" width="40%" style="padding: 15px;" /></a></p>I got my regular email from Algorithmia this last week and I like where they are going with some of their machine learning APIs. They have been heavily investing in machine learning applied to video, allowing for the extraction of information from video, as well as applying interesting transformations to your videos.
+<p><a href="http://blog.algorithmia.com/deep-dive-into-parallelized-video-processing/"><img src="https://s3.amazonaws.com/kinlane-productions2/algorithmia/algorithmia-cube2-png-1.png" align="right" width="40%" style="padding: 15px;" /></a></p>I got my regular email from Algorithmia this last week and I like where they are going with some of their machine learning APIs. They have been heavily investing in machine learning applied to video, allowing for the extraction of information from video, as well as applying interesting transformations to your videos.
 
 Here are some of the video tools they have been working on:
 

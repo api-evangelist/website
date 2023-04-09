@@ -8,9 +8,9 @@ tags:
   - Banking
   - Financial
   - Definitions
-image: 'https://s3.amazonaws.com/kinlane-productions/openapi/openapi-blue-icons.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/openapi/openapi-blue-icons.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/openapi/openapi-blue-icons.png" align="right" width="40%" style="padding: 15px;" /></p>I've been looking through the ecosystems of banking API platforms trying to understand the technical, business, and political approach of banks when it comes to the API conversation. While [Capital One is definitely leading the conversation in the U.S.](http://apievangelist.com/2016/09/01/the-sustained-api-storytelling-assault-on-the-banking-industry/), I've also been looking to better understand what is happening around the PSD2 banking API conversation in the EU and UK.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/openapi/openapi-blue-icons.png" align="right" width="40%" style="padding: 15px;" /></p>I've been looking through the ecosystems of banking API platforms trying to understand the technical, business, and political approach of banks when it comes to the API conversation. While [Capital One is definitely leading the conversation in the U.S.](http://apievangelist.com/2016/09/01/the-sustained-api-storytelling-assault-on-the-banking-industry/), I've also been looking to better understand what is happening around the PSD2 banking API conversation in the EU and UK.
 
 I was pleased to find [OpenAPI present in the OpenBankProject PSD2 API Explorer](https://psd2-apiexplorer.openbankproject.com/?ignoredefcat=true&tags=#2_2_0-getCurrentFxRate), as well as leading [the specification standards conversation over at Open Banking in the UK](https://www.openbanking.org.uk/read-write-apis/). The existence of the OpenAPI allows analysts like me to quickly load up the OpenAPI in an API client like Postman or Restlet, and become more intimate with what paths, and definitions are available--developing my awareness of where banking API standards are headed.
 

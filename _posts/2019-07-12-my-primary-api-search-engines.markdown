@@ -8,9 +8,9 @@ tags:
   - Search
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-crypto-machine-bletchley-copper-circuit.png
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I am building out several prototypes for the moving parts of an API search engine I want to build, pushing my usage of APIs.json and OpenAPI, but also trying to improve how I define, store, index, and retrieve valuable data about thousands of APIs through a simple search interface. I’m breaking out the actual indexing and search into their own areas, with rating system being another separate dimension, but even before I get there I have to actually develop the primary engines for my search prototypes, feeding the indexes with fresh signals of where APIs exist across the online landscape. There isn’t an adequate search engine out there, so I’m determined to jumpstart the conversation with an API search engine of my own. Something that is different from what web search engines do, and tailored to the unique mess we’ve created within the API industry.
 
 My index of APIs.json and OpenAPI definitions, even with a slick search interface is just a catalog, directory, or static index of a small piece of the APIs that are out there. I see a true API search engine as three parts

@@ -11,9 +11,9 @@ tags:
   - Integration
   - Agencies
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/bridge-software/bridge-software-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/bridge-software/bridge-software-screenshot.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I have been intrigued by the people who reached out after [I published a story about my partner program](http://apievangelist.com/2018/04/09/creating-a-productive-api-industry-partner-program/). One of the companies that reached out was the API integration agency [Bridge Software](https://www.bridgesoftware.com/), who reflects the next generation of software development groups who are emerging to focus exclusively on API integration.
+<p></p>I have been intrigued by the people who reached out after [I published a story about my partner program](http://apievangelist.com/2018/04/09/creating-a-productive-api-industry-partner-program/). One of the companies that reached out was the API integration agency [Bridge Software](https://www.bridgesoftware.com/), who reflects the next generation of software development groups who are emerging to focus exclusively on API integration.
 
 I've had several calls with the Bridge Software team this week, discussing the possible ways in which we can work together. I'm regularly in need of software development resources that I can refer projects to, and I'm also interested in hearing more interesting stories about how businesses are integrating with APIs. Of course, Bridge Software is looking for more customers, which is something I can definitely help with. So we started brainstorming more about how they can regularly feed me stories that I can develop into posts for API Evangelist, and I can help send new business their way.
 

@@ -10,9 +10,9 @@ tags:
   - Github
   - Monitoring
   - Social
-image: 'https://s3.amazonaws.com/kinlane-productions/github/octocat-aggregate.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/github/octocat-aggregate.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/github/octocat-aggregate.png" align="right" width="45%" style="padding: 15px;" /></p>Github is the number one signal in my API world. The activity that occurs via Github is more important than anything I find across Twitter, Facebook, LinkedIn, and other social channels. Commits to repositories and the other social activity that occurs around coding projects is infinitely more valuable, and telling regarding what a company is up to, than the deliberate social media signals blasted out via other channels is. I'm always working to dial in my monitoring of Github using the Github API, but also via the RSS feeds that are present on the public side of the platform.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/github/octocat-aggregate.png" align="right" width="45%" style="padding: 15px;" /></p>Github is the number one signal in my API world. The activity that occurs via Github is more important than anything I find across Twitter, Facebook, LinkedIn, and other social channels. Commits to repositories and the other social activity that occurs around coding projects is infinitely more valuable, and telling regarding what a company is up to, than the deliberate social media signals blasted out via other channels is. I'm always working to dial in my monitoring of Github using the Github API, but also via the RSS feeds that are present on the public side of the platform.
 
 I feel RSS is often overlooked as an API data source, but I find that RSS is not only alive and well in 2018, it is something that is actively used on many platforms. The problem with RSS for me, is the XML isn't always conducive to working with in many of my JavaScript enabled applications, and I also tend to want to aggregate, filter, and translate RSS feeds into more meaningful JSON. To help me accomplish this for Github, I crafted a simple PHP RSS aggregator and converter script which I can run in a variety of situations. I published the basic script to Github as a Gist, for easy reference.
 

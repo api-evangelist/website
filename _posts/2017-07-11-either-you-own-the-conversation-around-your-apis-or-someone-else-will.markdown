@@ -9,9 +9,9 @@ tags:
   - Mobile
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/rogue/tinder-api-google-search.png
+  https://s3.amazonaws.com/kinlane-productions2/rogue/tinder-api-google-search.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/rogue/tinder-api-google-search.png" align="right" width="40%" style="padding: 15px;" /></p>I was looking at how many of the top mobile applications in the iTunes story actually had a public API presence, and was finding it very telling what came up in the Google search results for each company when I searched [company name] + API. It tells a lot about how a company sees the world, when they don't have a public API presence, but they have a very public mobile application that uses APIs.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/rogue/tinder-api-google-search.png" align="right" width="40%" style="padding: 15px;" /></p>I was looking at how many of the top mobile applications in the iTunes story actually had a public API presence, and was finding it very telling what came up in the Google search results for each company when I searched [company name] + API. It tells a lot about how a company sees the world, when they don't have a public API presence, but they have a very public mobile application that uses APIs.
 
 An example of this is with Tinder, where the top listings are all Github rogue API repositories, when you Google "Tinder API". Tinder doesn't own the conversation when it comes to their own APIs. While the Tinder APIs are public, and well documented, Tinder prefers acting like they are private--they aren't. Pinterest uses SSL pinning, but [there is even a good amount of information out there at how to get around that](https://ritcsec.wordpress.com/2016/12/11/bypassing-certificate-pinning-on-tinder/), making the mapping out and documenting of Tinder APIs a pretty doable thing.
 

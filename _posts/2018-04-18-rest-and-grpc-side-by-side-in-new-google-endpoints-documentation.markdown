@@ -9,9 +9,9 @@ tags:
   - Documentation
   - gRPC
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/google-cloud-platform/google-cloud-endpoints-portal-docs.png
+  https://s3.amazonaws.com/kinlane-productions2/google-cloud-platform/google-cloud-endpoints-portal-docs.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>Google has been really moving forward with their development, and storytelling around gRPC. Their high speed to approach to doing APIs that uses HTTP/2 as a transport, and protocol buffers (ProtoBuf) as its serialized message format. Even with all this motion forward they aren't leaving everyone doing basic web APIs behind, and are actively supporting both approaches across all new Google APIs, as well as in their services and tooling for deploying APIs in the Google Cloud--supporting two-speed APIs side by side, across their platform.
+<p></p>Google has been really moving forward with their development, and storytelling around gRPC. Their high speed to approach to doing APIs that uses HTTP/2 as a transport, and protocol buffers (ProtoBuf) as its serialized message format. Even with all this motion forward they aren't leaving everyone doing basic web APIs behind, and are actively supporting both approaches across all new Google APIs, as well as in their services and tooling for deploying APIs in the Google Cloud--supporting two-speed APIs side by side, across their platform.
 
 When you are using Google Cloud Endpoints to deploy and manage your APIs, you can choose to offer a more RESTful edition, as well as a more advanced gRPC edition. They've continued to support this approach across their service features, and tooling, by now also documenting your APIs. [As part of their rollout of a supporting API portal and documentation for your Google Cloud Endpoints, you can automatically document both flavors of your APIs](https://cloudplatform.googleblog.com/2018/03/now-you-can-automatically-document-your-API-with-Cloud-Endpoints.html). Making a strong case for considering to offer both types of APIs, depending on the types of use cases you are looking to solve, and the types of developers you are catering to.
 

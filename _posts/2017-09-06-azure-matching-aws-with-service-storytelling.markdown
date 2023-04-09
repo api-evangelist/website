@@ -10,9 +10,9 @@ tags:
   - Serverless
   - Cloud
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/azure/functions/azure-functions-thumbnail.png
+  https://s3.amazonaws.com/kinlane-productions2/azure/functions/azure-functions-thumbnail.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/azure/functions/azure-functions-thumbnail.png" align="right" style="padding: 25px;" /></p>I consume a huge amount of blog and Twitter feeds each week. I evaluate the stories published by major tech blogs, cloud providers, and individual API providers. In my work there is a significant amount of duplicity in stories, mostly because of press release regurgitation, but one area I watch closely is the volume of stories coming out of major cloud computing providers around specific topics that are relevant to APIs. One of these topics I'm watching closely is the new area of serverless, and what type of stories each providers are putting out there.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/azure/functions/azure-functions-thumbnail.png" align="right" style="padding: 25px;" /></p>I consume a huge amount of blog and Twitter feeds each week. I evaluate the stories published by major tech blogs, cloud providers, and individual API providers. In my work there is a significant amount of duplicity in stories, mostly because of press release regurgitation, but one area I watch closely is the volume of stories coming out of major cloud computing providers around specific topics that are relevant to APIs. One of these topics I'm watching closely is the new area of serverless, and what type of stories each providers are putting out there.
 
 Amazon has long held the front runner position because AWS Lambda was the first major cloud provider to do serverless, coining the term, and dominating the conversation with their brand of API evangelism. However, in the last couple months I have to say that Microsoft is matching AWS when it comes to the storytelling coming out of Azure in the area of serverless and function as a service (FaaS). Amazon definitely has an organic lead in the conversation, but when it comes to the shear volume, and regular drumbeat of serverless stories Microsoft is keeping pace. After watching several months of sustained storytelling, it looks like they could even pass up Amazon in the near future.
 

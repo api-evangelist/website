@@ -5,10 +5,10 @@ tags:
 - Federal Government
 - Monetization
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/gsa/gsa-api-strategy-diagram.pngg
+image: https://s3.amazonaws.com/kinlane-productions2/gsa/gsa-api-strategy-diagram.pngg
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/gsa/gsa-api-strategy-diagram.png" align="right" width="40%" style="padding: 15px;" /></p>[The General Services Administration(GSA) has an API strategy](https://tech.gsa.gov/assets/downloads/GSAAPIStrategy.pdf), which describes "GSA’s future direction for agency­wide API management including design, development, architecture, operations, and support, and security." Ok, let's pause there. I want to point out that this isn't just an API design guide. That is a portion of it, but it also touches on some of the most obvious (deployment), and the most critical aspects (security) of API operation--important stuff.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/gsa/gsa-api-strategy-diagram.png" align="right" width="40%" style="padding: 15px;" /></p>[The General Services Administration(GSA) has an API strategy](https://tech.gsa.gov/assets/downloads/GSAAPIStrategy.pdf), which describes "GSA’s future direction for agency­wide API management including design, development, architecture, operations, and support, and security." Ok, let's pause there. I want to point out that this isn't just an API design guide. That is a portion of it, but it also touches on some of the most obvious (deployment), and the most critical aspects (security) of API operation--important stuff.
 
 The objectives for the GSA crafting an API strategy are:
 

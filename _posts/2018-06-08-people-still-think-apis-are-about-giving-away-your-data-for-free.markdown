@@ -10,9 +10,9 @@ tags:
   - Public
   - Training
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/adam-smith_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/adam-smith_dali_three.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>After eight years of educating people about sensible API security and management, I'm always amazed at how many people I come across who still think public web APIs are about giving away access to your data, content, and algorithms for free. I regularly come across very smart people who say they'd be doing APIs, but they depend on revenue from selling their data and content, and wouldn't benefit from just putting it online for everyone to download for free.
+<p></p>After eight years of educating people about sensible API security and management, I'm always amazed at how many people I come across who still think public web APIs are about giving away access to your data, content, and algorithms for free. I regularly come across very smart people who say they'd be doing APIs, but they depend on revenue from selling their data and content, and wouldn't benefit from just putting it online for everyone to download for free.
 
 I wonder when we stopped thinking the web was not about giving everything away for free? It is something I'm going to have to investigate a little more. For me, it shows how much education we still have ahead of us when it comes to informing people about what APIs are, and how to properly manage them. Which is a problem, when many of the companies I'm talking to are most likely doing APIs to drive internal systems, and public mobile applications. They are either unaware of the APIs that already exist across their organization, or think that because they don't have a public developer portal showcasing their APIs, that they are much more private and secure than if they were openly offering them to partners and the public.
 

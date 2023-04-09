@@ -8,9 +8,9 @@ tags:
   - Ratings
   - Ranking
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-IMG_7559.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-IMG_7559.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 Last week I put some thoughts down about the basics of my API rating system. This week I want to go through each of those basics, and try to flesh out the details of how I would gather the actual data needed to rank API providers. This is a task I’ve been through with several different companies, only to be abandoned, and then operated on my own for about three years, only to abandon once I ran low on resources. I’m working to invest more cycles into actually defining my API rating in a transparent and organic way, then applying it in a way that allows me to continue evolving, while also using to make sense of the APIs I am rapidly indexing.
 
 First, I want to look at the API-centric elements I will be considering when looking at a company, organization, institution, government agency, or other entity, and trying to establish some sort of simple rating for how well they are doing APIs. I’ll be the first to admit that ratings systems are kind of bullshit, and are definitely biased and hold all kinds of opportunity for going, but I need something. I need a way to articulate in real time how good of an API citizen an API provider is. I need a way to rank the searches for the growing number of APIs in my API search index. I need a list of questions I an ask about an API in both a manual, or hopefully automated way:

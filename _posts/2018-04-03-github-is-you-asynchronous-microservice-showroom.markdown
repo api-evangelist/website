@@ -9,7 +9,7 @@ tags:
   - Definitions
   - Github
   - Microservices
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github.jpg'
 ---
 <p><img src="{{ page.image }}" width="30%" align="right" style="padding: 15px;" /></p>When you spend time looking at a lot of microservices, across many different organizations, you really begin to get a feel for the ones who have owners / stewards that are thinking about the bigger picture. When people are just focused on what the service does, and not actually how the service will be used, the Github repos tend to be cryptic, out of sync, and don't really tell a story about what is happening. Github is often just seen as a vehicle for the code to participate in a pipeline, and not about speaking to the rest of the humans and systems involved in the overall microservices concert that is occurring.
 

@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/36349140070_d5ec39cb34_z.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 A couple weeks back I spent the entire week ranting on API Evangelist, instead of my usual lineup of API stories. Normally these types of stories end up on KinLane.com, or my rants edition, and usually don't get tweeted out. I'm just venting. However on this particular week, I had enough people "piss in my cheerios", that I felt the space needed to hear my rants, instead of the usual "nice guy" tone I tend to take on here. Granted, I can be pretty outspoken and blunt in my storytelling, but I usually work very hard to keep a professional tone, and be as nice as I possibly can. There are plenty of assholes in the API space, and I really don't want to be one of them--even though it comes pretty naturally for me. ;-)

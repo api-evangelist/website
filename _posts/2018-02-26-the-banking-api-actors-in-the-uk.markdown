@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Banking
   - Ecosystem
-image: 'https://s3.amazonaws.com/kinlane-productions/shakespeare/shakespeare.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/shakespeare/shakespeare.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/shakespeare/shakespeare.jpg" align="right" width="45%" style="padding: 15px;" /></p>I've been profiling [the work of the Open Banking Implementation Entity when nit comes to banking API standards in the UK](https://www.openbanking.org.uk/). As part of my getting up to speed on the banking ecosystem in the UK, and Europe, I've been posting a series of small blog posts, outlining different aspects of how things work, and who the players are. While going through the Open Banking documentation, I came across a great list of the "actors" int he Open Banking API ecosystem, which taught me a lot about who is involved, and was worth reposting here as a list.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/shakespeare/shakespeare.jpg" align="right" width="45%" style="padding: 15px;" /></p>I've been profiling [the work of the Open Banking Implementation Entity when nit comes to banking API standards in the UK](https://www.openbanking.org.uk/). As part of my getting up to speed on the banking ecosystem in the UK, and Europe, I've been posting a series of small blog posts, outlining different aspects of how things work, and who the players are. While going through the Open Banking documentation, I came across a great list of the "actors" int he Open Banking API ecosystem, which taught me a lot about who is involved, and was worth reposting here as a list.
 
 The Open Banking eco-system consists of a number of actors, which may be a natural person or an entity:
 

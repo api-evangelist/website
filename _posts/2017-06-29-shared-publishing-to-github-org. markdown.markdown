@@ -11,9 +11,9 @@ tags:
   - Dashboard
   - Data
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-continous-integration-orchestration.png
+  https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github-continous-integration-orchestration.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-github-continous-integration-orchestration.png" align="right" width="30%" style="padding: 15px;" /></p>[Each one of the 80+ areas of my API Evangelist lifecycle research projects](http://apievangelist.com/api-lifecycle/) is a single Github repository that I publish JSON or YAML data stores containing the news, organizations, tools, APIs, and patents that I've aggregated as part of my research. The home page of each site is a set of UI elements that take the data store and renders it into something that makes the data consumable by a human. I reference each project my storytelling, and it acts as a workbench as I craft my guides, white papers, and API strategy work as a consultant.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github-continous-integration-orchestration.png" align="right" width="30%" style="padding: 15px;" /></p>[Each one of the 80+ areas of my API Evangelist lifecycle research projects](http://apievangelist.com/api-lifecycle/) is a single Github repository that I publish JSON or YAML data stores containing the news, organizations, tools, APIs, and patents that I've aggregated as part of my research. The home page of each site is a set of UI elements that take the data store and renders it into something that makes the data consumable by a human. I reference each project my storytelling, and it acts as a workbench as I craft my guides, white papers, and API strategy work as a consultant.
 
 The news I have curated is published as a news listing. Organizations and tools are published as a listing with icons, title, description, and links. Listings of my partners, banner logos, and other elements are driven from YAML and JSON files I update as part of my continuous integration with Google Spreadsheets, Feedly, Twitter, Facebook, LinkedIn, and other services I use to manage my operations. I have a variety of manual, and automated processes that are run each day, publishing, syndicated and moving the API Evangelist platform.
 

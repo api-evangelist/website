@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Training
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/facebook/facebook-blueprint-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/facebook/facebook-blueprint-screenshot.png
 ---
-<p><a href="https://www.facebook.com/blueprint"><img src="https://s3.amazonaws.com/kinlane-productions/facebook/facebook-blueprint-screenshot.png" align="right" width="40%" style="padding: 15px;" /></a></p>I am preparing a training section of my API Evangelist research, and part of the process involves learning about what other API providers and API service providers are up to in this area. On my list to look through is [Facebook Blueprint](https://www.facebook.com/blueprint), their training area for the platform. The courses present there aren't specifically for the Facebook API, and is targeting primarily business uses, but the approach translates to API focused training materials, and showcases what is a priority for Facebook when it comes to educating their platform consumers.
+<p><a href="https://www.facebook.com/blueprint"><img src="https://s3.amazonaws.com/kinlane-productions2/facebook/facebook-blueprint-screenshot.png" align="right" width="40%" style="padding: 15px;" /></a></p>I am preparing a training section of my API Evangelist research, and part of the process involves learning about what other API providers and API service providers are up to in this area. On my list to look through is [Facebook Blueprint](https://www.facebook.com/blueprint), their training area for the platform. The courses present there aren't specifically for the Facebook API, and is targeting primarily business uses, but the approach translates to API focused training materials, and showcases what is a priority for Facebook when it comes to educating their platform consumers.
 
 As part of my API training research I want to understand the building blocks employed by Facebook so that I can apply as part of my API Evangelist training efforts, and help other API providers and service providers apply as part of their operations as well. Here are a few of the API training building blocks I found present:
 

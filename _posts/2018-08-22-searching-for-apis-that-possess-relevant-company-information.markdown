@@ -9,9 +9,9 @@ tags:
   - Search
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/cityscape_copper_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/cityscape_copper_circuit.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm evolving [the search for the Streamdata.io API Gallery](http://api.gallery.streamdata.io/) I've been working on lately. I'm looking to move the basic keywords search that searches the API name and description, as well as the API path, summary, and description using a key word or phrase, to also be about searching parameters in a meaningful way. Each of the APIs in the Streamdata.io API have an OpenAPI definition. It is how I render each of the individual API paths using Jekyll and Github Pages. These parameters give me another dimension of data in which I can index, and use as a facet in my API gallery search.
+<p></p>I'm evolving [the search for the Streamdata.io API Gallery](http://api.gallery.streamdata.io/) I've been working on lately. I'm looking to move the basic keywords search that searches the API name and description, as well as the API path, summary, and description using a key word or phrase, to also be about searching parameters in a meaningful way. Each of the APIs in the Streamdata.io API have an OpenAPI definition. It is how I render each of the individual API paths using Jekyll and Github Pages. These parameters give me another dimension of data in which I can index, and use as a facet in my API gallery search.
 
 I am developing different sets of vocabulary to help me search against the parameters used across APIs, with one of them being focused on company related information. I'm trying to find APIs that provide the ability to add, update, and search against company related data, content, and execute algorithms that help make sense of company resources. There is no perfect way to search for API parameters that touch on company resources, but right now I'm looking for a handful of fields: _company, organization, business, enterprise, agency, ticker, corporate, and employer_. Returning APIs that have a parameter with any of those words in the path or summary, and weighting differently if it is in the description or tags for each API path.
 

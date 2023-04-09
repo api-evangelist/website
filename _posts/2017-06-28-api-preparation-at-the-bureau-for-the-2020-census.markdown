@@ -2,7 +2,7 @@
 published: true
 title: API Preparation At The Bureau For The 2020 Census
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/census/census-2020-mobile-preparation.png
+  https://s3.amazonaws.com/kinlane-productions2/census/census-2020-mobile-preparation.png
 date: 2017-06-28T11:00:00.000Z
 tags:
   - API Evangelist
@@ -10,7 +10,7 @@ tags:
   - Federal Government
   - Data
 ---
-<p><a href="https://data.census.gov/cedsci/landing"><img src="https://s3.amazonaws.com/kinlane-productions/census/census-2020-mobile-preparation.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was reading about what [the Census is doing to prepare for the 2020 census over at GCN](https://gcn.com/articles/2017/06/16/census-open-data.aspx). I've been [invested in what they are doing at Census for some time now](https://apievangelist.com/2013/08/22/delivering-value-for-developers-is-first-when-it-comes-to-the-census-bureau-apis/), so it makes me happy to see where they are headed with their preparation for the 2020 census. From what I've read, and what I've seen with their existing API efforts, they have really taken API to heart and are working to bake APIs into everything they do.
+<p><a href="https://data.census.gov/cedsci/landing"><img src="https://s3.amazonaws.com/kinlane-productions2/census/census-2020-mobile-preparation.png" align="right" width="40%" style="padding: 15px;" /></a></p>I was reading about what [the Census is doing to prepare for the 2020 census over at GCN](https://gcn.com/articles/2017/06/16/census-open-data.aspx). I've been [invested in what they are doing at Census for some time now](https://apievangelist.com/2013/08/22/delivering-value-for-developers-is-first-when-it-comes-to-the-census-bureau-apis/), so it makes me happy to see where they are headed with their preparation for the 2020 census. From what I've read, and what I've seen with their existing API efforts, they have really taken API to heart and are working to bake APIs into everything they do.
 
 According to GCN: Through the site’s application programming interface, users will be able to download and manipulate the data to serve their own purposes; ensuring that the API can drive all of data.census.gov's core functions means outside users will have more power as well. "The more that we make this API capable, then we can serve our customers better by providing them with ways to extend the API in their own platforms for their customer base" -- said Census Bureau Chief Data Officer Zach Whitman. Continuing to show that the folks at Census get APIs.
 

@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Evangelism
   - Communication
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/border-crossing-bordercrossing-dali-three.png
+  - Consumers
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/border-crossing-bordercrossing-dali-three.png
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 As API providers, it can be easy to find ourselves in a very distant position from the consumers of our APIs. In recent weeks I have been studying the impacts of behavioral approaches to putting technology to work, something that has led me to the work of Max Meyer, and <a href="https://www.amazon.com/Psychology-Other-One-1921-Friedrich-Meyer/dp/1112557342?SubscriptionId=AKIAILSHYYTFIVPWUY6Q&tag=duckduckgo-ffab-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=1112557342">his Psychology of the Other-One (1921)</a>. I haven’t read his book yet, but have finished other works citing his work on how to “properly” study how animals (including humans) behave. While the psychological impact of all of this interests me, I’m most interested in how this perspective has amplified and driven how we use technology, and specifically how APIs can be used to create or bridge the divide between us (API providers) and our (API consumers).
 
 While web and mobile technology is often portrayed as connecting and bringing people together, it also can be used to establish a separation between providers and consumers. We often get caught up in the scale and growth of delivering API infrastructure, and we forget that our API consumers are humans, and we can end up just seeing them as personas, humans, or just a demographic. Of course, as API providers, we can’t be expected to make a direct connection with every single consumer, but we also have to be wary of becoming so distant from their reality that we can’t make a connection with them at all. Leaving our products, services, and tooling something that doesn’t serve them in any way, and we fail to meet our own business objectives behind what we were building in the first place.

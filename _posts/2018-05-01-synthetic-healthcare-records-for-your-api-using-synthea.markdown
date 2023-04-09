@@ -9,9 +9,9 @@ tags:
   - Data
   - Sandbox
   - Federal Government
-image: 'https://s3.amazonaws.com/kinlane-productions/synthea/synthea-patient-data.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/synthea/synthea-patient-data.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I have been working on several fronts to help with API efforts at the Department of Veterans Affairs (VA) this year, and one of them is helping quantify the deployment of a lab API environment for the platform. The VA doesn't want it called it a sandbox, so they are calling it a lab, but the idea is to provide an environment where developers can work with APIs, see data just like they would in a live environment, but not actually have access to live patient data before they can prove their applications are reviewed and meet requirements.
+<p></p>I have been working on several fronts to help with API efforts at the Department of Veterans Affairs (VA) this year, and one of them is helping quantify the deployment of a lab API environment for the platform. The VA doesn't want it called it a sandbox, so they are calling it a lab, but the idea is to provide an environment where developers can work with APIs, see data just like they would in a live environment, but not actually have access to live patient data before they can prove their applications are reviewed and meet requirements.
 
 One of the projects being used to help deliver data within this environment is called [Synthea](https://synthetichealth.github.io/synthea/). Providing the virtualized data will be made available through VA labs API--here is the description of what they do from their website:
 

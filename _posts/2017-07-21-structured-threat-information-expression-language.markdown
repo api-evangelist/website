@@ -6,9 +6,9 @@ date: 2017-07-21T13:00:00.000Z
 tags:
   - API Evangelist
   - Security
-image: 'https://s3.amazonaws.com/kinlane-productions/stix/stix-logo.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/stix/stix-logo.png'
 ---
-<p><a href="https://oasis-open.github.io/cti-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions/stix/stix-logo.png" align="right" width="35%" style="padding: 15px;" /></a></p>
+<p><a href="https://oasis-open.github.io/cti-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions2/stix/stix-logo.png" align="right" width="35%" style="padding: 15px;" /></a></p>
 [I wrote about the opportunity around developing an aggregate threat information API](http://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/), and got some interest in both creating, as well as investing in some of the resulting products and services that would be derived from this security API work. As part of the feedback and interest on that post, I was pointed in the direction of the [Structured Threat Information Expression (STIX)](https://oasis-open.github.io/cti-documentation/), as one possible schema for definining and sharing the information I'm talking about. Here is a quick summary of STIX is from the website:
 
 > Structured Threat Information Expression (STIX™) is a language for describing cyber threat information in a standardized and structured manner to enable the exchange of cyber threat intelligence (CTI). STIX characterizes an extensive set of CTI to include indicators of adversary activity, as well as contextual information characterizing cyber adversary motivations, capabilities, and activities and best courses of action for defense and mitigation.

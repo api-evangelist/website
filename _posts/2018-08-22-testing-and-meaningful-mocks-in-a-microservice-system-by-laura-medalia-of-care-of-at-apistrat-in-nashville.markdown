@@ -13,9 +13,9 @@ tags:
   - Virtualization
   - Mocks
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/events/apistrat-2018/laura-medalia.jpg
+  https://s3.amazonaws.com/kinlane-productions2/events/apistrat-2018/laura-medalia.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>We are getting closer to [the 9th edition of APIStrat happening in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). [The schedule for the conference is up](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), along with [the first lineup of keynote speakers](https://events.linuxfoundation.org/events/apistrat-2018/program/keynote_speakers/), and my drumbeat of stories about the event continues here on the blog. Next up in our session lineup is _"Testing and Meaningful Mocks in a Microservice System"_  by Laura Medalia (@codergirl__) of Care/Of on September 25th.
+<p></p>We are getting closer to [the 9th edition of APIStrat happening in Nashville, TN this September 24th through 26th](https://events.linuxfoundation.org/events/apistrat-2018/). [The schedule for the conference is up](https://events.linuxfoundation.org/events/apistrat-2018/program/schedule/), along with [the first lineup of keynote speakers](https://events.linuxfoundation.org/events/apistrat-2018/program/keynote_speakers/), and my drumbeat of stories about the event continues here on the blog. Next up in our session lineup is _"Testing and Meaningful Mocks in a Microservice System"_  by Laura Medalia (@codergirl__) of Care/Of on September 25th.
 
 Here is Laura's abstract for the session:
 

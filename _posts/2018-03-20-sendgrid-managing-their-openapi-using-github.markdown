@@ -10,9 +10,9 @@ tags:
   - Support
   - Road Map
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/sendgrid/sendgrid-github-screenshot.png
+  https://s3.amazonaws.com/kinlane-productions2/sendgrid/sendgrid-github-screenshot.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>This is a post that has been in my API notebook for quite a while. I feel it is important to keep showcasing the growing number of API providers who are not just using OpenAPI, but also managing them on Github, so I had to make the time to talk about [the email API provider SendGrid managing their OpenAPI using Github](https://github.com/sendgrid/sendgrid-oai). Adding to the stack of top tier API providers managing their API definitions in this way.
+<p></p>This is a post that has been in my API notebook for quite a while. I feel it is important to keep showcasing the growing number of API providers who are not just using OpenAPI, but also managing them on Github, so I had to make the time to talk about [the email API provider SendGrid managing their OpenAPI using Github](https://github.com/sendgrid/sendgrid-oai). Adding to the stack of top tier API providers managing their API definitions in this way.
 
 SendGrid is managing announcements around their OpenAPI definition using Github, allowing developers to signup [for email notifications around releases and breaking changes](https://dx.sendgrid.com/newsletter/oai). You can use the Github repository to stay in tune with the API roadmap, and [contribute feature requests](https://github.com/sendgrid/sendgrid-oai/blob/master/CONTRIBUTING.md#feature-request), [submit bug reports](https://github.com/sendgrid/sendgrid-oai/blob/master/CONTRIBUTING.md#submit-a-bug-report), and even [submit a pull request with the changes](https://github.com/sendgrid/sendgrid-oai/blob/master/CONTRIBUTING.md#cla) you'd like to see. Going beyond just an API definition being about API documentation, and actually driving the API road map and feedback loop.
 

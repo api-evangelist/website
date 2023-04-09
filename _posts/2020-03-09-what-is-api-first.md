@@ -4,7 +4,7 @@ layout: post
 title: 'What Is API First?'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/braceros-domingo-ulloa-docks-water-front-ships-containers.jpg
 tags:
-- API-First
+    - API-First
 ---
 I really struggled with this piece on [API-first](https://www.postman.com/api-first/). It is one of those holistic API advice pieces I am very conflicted about. API-first feels like yet another marketing phrase or latest trend like microservices. So as I am writing down my thoughts over the last couple weeks on this, my bullshit-o-meter kept going off. Honestly it still is, but I still feel like there is enough value here that I can move forward with a story. As my co-worker Joyce rightfully pointed out in a meeting recently, API-first is one of those phrases we regularly throw out there without much assessment, agreement, or real definition of what it means. That is one reason it feels so wrong at times, because I feel like it is one of those feel good things we throw out there, but never really think too deeply about while doing, or after it fails and we’ve moved on to the next thing.
 

@@ -9,9 +9,9 @@ tags:
   - Machine Learning
   - Monetization
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/52_175_800_500_0_max_0_1_-1.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/52_175_800_500_0_max_0_1_-1.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/52_175_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm working through the different ways that transit authorities can generate more revenue from their data using APIs as part of my work with Streamdata.io. Making data streaming and truly more real time is the obvious goal of this research, but Streamdata.io is invested in transit authorities take more control over their data resources, and use APIs to generate revenue at a time when they need all the revenue they can possible get their hands on.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/52_175_800_500_0_max_0_1_-1.jpg" align="right" width="45%" style="padding: 15px;" /></p>I'm working through the different ways that transit authorities can generate more revenue from their data using APIs as part of my work with Streamdata.io. Making data streaming and truly more real time is the obvious goal of this research, but Streamdata.io is invested in transit authorities take more control over their data resources, and use APIs to generate revenue at a time when they need all the revenue they can possible get their hands on.
 
 One overlap in the projects I'm working on with Streamdata.io is where transit data intersects with machine learning, and artificial intelligence. I'm not sure what transit authorities are doing with their historical data, but I know that it isn't available via their APIs, and developer portals. I'm guessing they see historical data about schedules, vehicles, riderships, and other data points as a burden, and once they've generated the reports they need, don't do anything else with it. This historical data is a goldmine of information when it comes to training machine learning models, which could then in turn be better used to understand ridership, make predictions, understand maintenance, scheduling, and other aspects of transit operations--let alone commerce, real estate, and other demographic data.
 

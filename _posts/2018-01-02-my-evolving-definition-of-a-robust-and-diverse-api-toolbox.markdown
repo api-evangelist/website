@@ -11,11 +11,11 @@ tags:
   - gRPC
   - GraphQL
   - HTTP/2
-image: 'https://s3.amazonaws.com/kinlane-productions/api-toolbox/API+Toolbox.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/api-toolbox/API+Toolbox.png'
 ---
 It is always telling when folks assume I mean REST when I say API. While the web dominates my definition of API, and REST is definitely a leading architectural style, these assumptions always define the people who bring them to the table, more than they ever do me. I'm in the business of studying how people are applying programmatic interfaces using the web. To reflect my research I've been evolving a diagram of my toolbox that I've been publishing as part of workshops, presentations, and some talks I'm preparing for 2018. It reflects what I'm seeing as the evolving API toolbox that I'm seeing companies working with, and a diversity in which I'm encouraging others to think about more, as we choose to ignore the polarizing forces in the API sector.
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-toolbox/API+Toolbox.png" width="100%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-toolbox/API+Toolbox.png" width="100%" style="padding: 15px;" /></p>
 
 To set the tone for any API conversation I am participating in, I prefer to introduce the concept of the API toolbox including more tools than just REST, acknowledging that there are a growing number of tools in our API infrastructure toolbox which can be applied to different APIs, to solve a variety of problems and challenges we face. Also we need to be more honest about the fact that there are many legacy solutions still in use across large organizations, even as we consider adopting the latest in leading edge approaches to API deployment in newer projects.
 

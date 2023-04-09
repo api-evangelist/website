@@ -9,9 +9,9 @@ tags:
   - Industry
   - Standards
   - HDSA
-image: 'https://s3.amazonaws.com/kinlane-productions/definition-of-high-altitude.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/definition-of-high-altitude.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/definition-of-high-altitude.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am moving my Human Services Data API (HSDA) work](http://org.open.referral.adopta.agency/) forward and one of the top items on the list to consider as part of the move from version 1.1 to 1.2 is all around the scope of the API design portion of the standard. We are at a phase where the API design still very much reflects the Human Services Data Specification (HSDS)--basically a very CRUD (Create, Read, Update and Delete) API. With version 1.2 I need to begin considering the needs of API consumers a little more, looking to vendors and real world practitioners to help understand what the next version(s) of the API definition will/should contain.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/definition-of-high-altitude.jpg" align="right" width="40%" style="padding: 15px;" /></p>[I am moving my Human Services Data API (HSDA) work](http://org.open.referral.adopta.agency/) forward and one of the top items on the list to consider as part of the move from version 1.1 to 1.2 is all around the scope of the API design portion of the standard. We are at a phase where the API design still very much reflects the Human Services Data Specification (HSDS)--basically a very CRUD (Create, Read, Update and Delete) API. With version 1.2 I need to begin considering the needs of API consumers a little more, looking to vendors and real world practitioners to help understand what the next version(s) of the API definition will/should contain.
 
 The most prominent discussion in the move from version 1.1 to 1.2 centers around scope of API design at four distinct levels of this work, where we are looking to move forward a variety of API design concerns for a large group of API consumers:
 

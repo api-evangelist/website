@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Real Time
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-editor-sample.png
+  https://s3.amazonaws.com/kinlane-productions2/asyncapi/asyncapi-editor-sample.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/asyncapi/asyncapi-editor-sample.png" align="right" width="45%" style="padding: 15px;" /></p>I've been learning about a new API definition format called AsyncAPI that allows you to define message-driven APIs in a machine-readable format. It is protocol-agnostic, which means you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, and other real-time, and Internet of Things focused APIs. The specification format mirrors OpenAPI, making it pretty easy to get up to speed understanding what is going on.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/asyncapi/asyncapi-editor-sample.png" align="right" width="45%" style="padding: 15px;" /></p>I've been learning about a new API definition format called AsyncAPI that allows you to define message-driven APIs in a machine-readable format. It is protocol-agnostic, which means you can use it for APIs that work over MQTT, AMQP, WebSockets, STOMP, and other real-time, and Internet of Things focused APIs. The specification format mirrors OpenAPI, making it pretty easy to get up to speed understanding what is going on.
 
 There are two primary concepts at play with the AsyncAPI:
 

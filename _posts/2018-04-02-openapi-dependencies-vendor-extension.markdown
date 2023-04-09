@@ -11,7 +11,7 @@ tags:
 image: >-
   http://kinlane-productions2.s3.amazonaws.com/algorotoscope/builder/filtered/71_113_800_500_0_max_0_-1_-1.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm working on a healthcare related microservice project, and I'm looking for a way to help developers express their service dependencies within the OpenAPI or some other artifact. At this point I'm feeling like the OpenAPI is the place to articulate this, adding a vendor extension to the specification that can allow for the referencing of one or more other services any particular service is dependent on. Helping make service discovery more machine readable at discovery and runtime.
+<p></p>I'm working on a healthcare related microservice project, and I'm looking for a way to help developers express their service dependencies within the OpenAPI or some other artifact. At this point I'm feeling like the OpenAPI is the place to articulate this, adding a vendor extension to the specification that can allow for the referencing of one or more other services any particular service is dependent on. Helping make service discovery more machine readable at discovery and runtime.
 
 To help not reinvent the wheel, I am looking at [using the Schema.org Web API type including the extensions put forth by Mike Ralphson and team.](https://apievangelist.com/2018/03/02/thoughts-on-the-schema-org-webapi-type-extension/) I'd like the x-api-dependencies collection to adopt a standardized schema, that was flexible enough to reference different types of other services. I'd like to see the following elements be present for each dependency:
 

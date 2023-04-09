@@ -8,9 +8,9 @@ tags:
   - Definitions
   - Evangelism
   - Showcase
-image: 'https://s3.amazonaws.com/kinlane-productions/tony-tam.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/tony-tam.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/tony-tam.jpg" align="right" width="25%" style="padding: 15px;" /></p>Tony Tam, the creator of the OpenAPI specification, formerly known as Swagger, [has announced he will be exiting his role at OAI and SmartBear](https://www.linkedin.com/pulse/i-say-goodbye-swagger-smartbear-openapi-whats-next-tony-tam). Tony says the specification is in good hands with Ron Ratovsky ([@webron](https://twitter.com/webron)), Darrel Miller ([@darrel_miller](https://twitter.com/darrel_miller)), and others in the OAI. Tony doesn't give any hints about what he'll be up to, but will be walking away from his baby entirely.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/tony-tam.jpg" align="right" width="25%" style="padding: 15px;" /></p>Tony Tam, the creator of the OpenAPI specification, formerly known as Swagger, [has announced he will be exiting his role at OAI and SmartBear](https://www.linkedin.com/pulse/i-say-goodbye-swagger-smartbear-openapi-whats-next-tony-tam). Tony says the specification is in good hands with Ron Ratovsky ([@webron](https://twitter.com/webron)), Darrel Miller ([@darrel_miller](https://twitter.com/darrel_miller)), and others in the OAI. Tony doesn't give any hints about what he'll be up to, but will be walking away from his baby entirely.
 
 I have given Tony a hard time during the transition from Wordnik to SmartBear, and the creation of the OpenAPI, but I am a huge fan of what he has done, and super bummed to see him go--hoping he won't leave the API community completely. There are many building blocks that go into doing APIs and OpenAPI, or Swagger, is the most significant single building block that has emerged in the seven years I've been doing API Evangelist. Swagger has had a profound impact on the world of APIs, and OpenAPI will continue doing this in the future, if the right conditions are still present across the API landscape.
 

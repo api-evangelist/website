@@ -6,9 +6,9 @@ date: 2017-09-18T13:00:00.000Z
 tags:
   - API Evangelist
   - Evangelism
-image: 'http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png'
+image: 'http://s3.amazonaws.com/kinlane-productions2/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png'
 ---
-<p><img src="http://s3.amazonaws.com/kinlane-productions/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="http://s3.amazonaws.com/kinlane-productions2/api-evangelist/t-shirts/KL_InApiWeTrust-1000.png" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 You needed the API Evangelist because there was nobody paying attention to the big picture of the API space. Sure, there are many vendors who pay attention to the big picture, and there are analysts who are paid to pay attention to the bigger picture to help validate the vendors, but there is nobody independent. At least there wasn't in 2010 when I started. Now, there are a number of leading API experts and visionaries who work at different companies, and are able to maintain an independent view of the space, but in 2010 this did not exist. I'd like to think I helped make such a thing possible, but honestly it probably would have happened without me. 

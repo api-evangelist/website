@@ -10,9 +10,9 @@ tags:
   - Citations
   - Dependencies
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorithmia/machine-learning-citation.png
+  https://s3.amazonaws.com/kinlane-productions2/algorithmia/machine-learning-citation.png
 ---
-<p><a href="https://algorithmia.com/algorithms/bkyan/StyleThief"><img src="https://s3.amazonaws.com/kinlane-productions/algorithmia/machine-learning-citation.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I was playing around with the Style Thief, an image transfer API from Algorithmia](https://algorithmia.com/algorithms/bkyan/StyleThief), and I noticed the citation for the algorithm behind. The API is an adaptation of [Anish Athalye's Neural Style Transfer](https://github.com/anishathalye/neural-style/), and I thought the algorithmic citation of where the work was derived from was an interesting thing to take note of for my machine learning API research.
+<p><a href="https://algorithmia.com/algorithms/bkyan/StyleThief"><img src="https://s3.amazonaws.com/kinlane-productions2/algorithmia/machine-learning-citation.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I was playing around with the Style Thief, an image transfer API from Algorithmia](https://algorithmia.com/algorithms/bkyan/StyleThief), and I noticed the citation for the algorithm behind. The API is an adaptation of [Anish Athalye's Neural Style Transfer](https://github.com/anishathalye/neural-style/), and I thought the algorithmic citation of where the work was derived from was an interesting thing to take note of for my machine learning API research.
 
 I noticed on Algorithmia's page there was [a Bibtex citation](http://www.bibtex.org/), which referenced the author, and project Github repository:
 

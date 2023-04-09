@@ -4,7 +4,7 @@ layout: post
 title: 'API-First [Design || Code]'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/la_muse-alan-turing-side.jpg
 tags:
-- API-First
+    - API-First
 ---
 
 [I worked through my thoughts on what API first is](http://apievangelist.com/2020/03/09/what-is-api-first/), which I consider to be the outer layers of what is going on when we use this phrase. I wanted to focus on the technical and business rift that exists in this discussion first, now I want to dive into the more technical core of this phrase, and get to the heart of how developers are going to see this phrase. Depending on the type of developer you are, and your exposure to different aspects of the API industry or API operations within your organization you are going to make different assumptions about what API first is or isn’t. Some will feel it is more just about doing APIs before you build applications, while others are going to see it as being more about going API design first, before you ever write any code. Ultimately I want to establish a definition of API first that is inclusive, and not pushing people out, while also helping me ground how I use the phrase.

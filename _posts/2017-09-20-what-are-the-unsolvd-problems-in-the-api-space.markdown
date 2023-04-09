@@ -8,9 +8,9 @@ tags:
   - Politics of APIs
   - Business of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/sand-hand_dali_three.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_dali_three.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/sand-hand_dali_three.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 There are always endless numbers of fabricated unsolved problems in the API space. These are unsolved problems that are usually unsolved because they were just made up to get someone to buy a new service or product. They aren't real problems. Technology is good at being applied to make believe problems, vendor fabricated problems, and solving real problems created by the last couple of waves of technology. I'd say that biggest unsolved problem is how APIs can actually solve the legacy technical debt challenges large companies, institutions, and government agencies face. There is a lot of rhetoric regarding how APis can unwind all of this, but honestly there are few examples of it in practice. With many API efforts in 2017, bogged down in cultural friction, and a web (pun intended) of technical complexity.

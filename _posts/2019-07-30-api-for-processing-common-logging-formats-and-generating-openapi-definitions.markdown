@@ -8,9 +8,9 @@ tags:
   - Discovery
   - Logging
   - Search
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/abandonedbuildings_blue_circuit.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/abandonedbuildings_blue_circuit.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I’ve invested a lot of time in the last six months into various research, scripts, and tooling to help me with finding APIs within the enterprise. This work is not part my current role, but as a side project to help me get into the mindset of how to help the enterprise understand where their APIs are, and what APIs they are using. Almost every enterprise group I have consulted for has trouble keeping tabs on what APIs are being consumed across the enterprise, and I’m keen on helping understand what the best ways are to help them get their API houses in order.
 
 While there are many ways to trace out how APIs are being consumed across the enterprise, I want to start with some of the basics, or the low hanging when it came to API logging within the enterprise. I’m sure there are a lot of common logging locations to tackle, but my list began with some of the common cloud platforms in use for logging of operations to begin my work—focusing on the following three cloud logging solutions:

@@ -11,9 +11,9 @@ tags:
   - Open Source
   - Federal Government
   - Lifecycle
-image: 'https://s3.amazonaws.com/kinlane-productions/openapi/openapi-icons-gears.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/openapi/openapi-icons-gears.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been on five separate government reflated projects lately where finding modular OpenAPI-driven open source tooling has been a top priority. All of these projects are microservice-focused and OpenAPI-driven, and are investing significant amounts of time looking open source tools that will help with design governance, monitoring, testing, and security, and interact with the Jenkins pipeline. Helping government agencies find success as their API journey picks up speed, and the number of APIs grows exponentially.
+<p></p>I've been on five separate government reflated projects lately where finding modular OpenAPI-driven open source tooling has been a top priority. All of these projects are microservice-focused and OpenAPI-driven, and are investing significant amounts of time looking open source tools that will help with design governance, monitoring, testing, and security, and interact with the Jenkins pipeline. Helping government agencies find success as their API journey picks up speed, and the number of APIs grows exponentially.
 
 Selling to the federal government can be a long journey in itself. They can't always use the SaaS solutions many of us fire up to get the job done in our startup or enterprise lives. Increasingly government agencies are depending on open source solutions to help them move projects forward. Every agency I'm working with is using OpenAPI (Swagger) to drive their API lifecycle. While not all have gone design (define) first, they are using them as the contract for mocking, documentation, testing, monitoring, and security. The teams I'm working with are investing a lot of energy looking for, vetting, and testing out different open source modules on Github--with varying degrees of success.
 

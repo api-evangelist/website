@@ -9,9 +9,9 @@ tags:
   - Web
   - Social
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/twitter/twitter-websites-embeddable.png
+  https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-websites-embeddable.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/twitter/twitter-websites-embeddable.png" align="right" width="40%" style="padding: 15px;" /></p>Over the years I have regularly showcased Twitter as an example API driven embeddable tools like buttons, badges, and widgets. In 2017, after spending some time in the Twitter developer portal, it is good to see [Twitter still investing in their embeddable tools](https://dev.twitter.com/products/web). The landing page for the Twitter embeddables still provides the best example out there of the value of using APIs to drive data and content across a large number of remote web sites.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-websites-embeddable.png" align="right" width="40%" style="padding: 15px;" /></p>Over the years I have regularly showcased Twitter as an example API driven embeddable tools like buttons, badges, and widgets. In 2017, after spending some time in the Twitter developer portal, it is good to see [Twitter still investing in their embeddable tools](https://dev.twitter.com/products/web). The landing page for the Twitter embeddables still provides the best example out there of the value of using APIs to drive data and content across a large number of remote web sites.
 
 Twitter has distinct elements of their web embeddables:
 

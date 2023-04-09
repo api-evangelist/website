@@ -13,9 +13,9 @@ tags:
   - Transportation
   - Communication
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/transit/wmata-transit-terms-of-service.png
+  https://s3.amazonaws.com/kinlane-productions2/transit/wmata-transit-terms-of-service.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/transit/wmata-transit-terms-of-service.png" align="right" width="45%" style="padding: 15px;" /></p>[I was turned onto a developing problem within the Washington Metropolitan Area Transit Authority (WMATA) around a recent terms of service change made around the transit data API by Technically DC](https://technical.ly/dc/2017/11/22/developers-upset-wmatas-new-data-terms-use/). While the transit authority is saying the changes are business as usual and make sense for the platform, some of the developers, specifically one of the biggest API users [MetroHero](https://dcmetrohero.com/) says the changes are targeting them specifically.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/transit/wmata-transit-terms-of-service.png" align="right" width="45%" style="padding: 15px;" /></p>[I was turned onto a developing problem within the Washington Metropolitan Area Transit Authority (WMATA) around a recent terms of service change made around the transit data API by Technically DC](https://technical.ly/dc/2017/11/22/developers-upset-wmatas-new-data-terms-use/). While the transit authority is saying the changes are business as usual and make sense for the platform, some of the developers, specifically one of the biggest API users [MetroHero](https://dcmetrohero.com/) says the changes are targeting them specifically.
 
 MetroHero presented what they feel are the unreasonable changes to the WMATA API terms of service in a WMATA Board Meeting recently, focusing on four main areas:
 

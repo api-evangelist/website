@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Discovery
   - Browsers
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/nazi-invasion-dark-hallway.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/nazi-invasion-dark-hallway.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I have been playing with the new <a href="https://developer.mozilla.org/en-US/docs/Web/API/Reporting_API">browser reporting API</a> lately, and while it isn’t widely supported, it does work in Chrome, and soon Firefox. I won’t go into too much technical detail, but the API provides an interesting look at reporting on APIs usage in the browser. Offering a unique view into the shadows of what is happening behind the curtain in our browser when we are using common web applications each day. I have been proxying my web traffic for a long time to produce a snapshot at the domains who are operating beneath the covers, but it is interesting for browsers to begin baking in a look at the domains who are violating, generating errors, and other shenanigans.
 
 As I’m contemplating the API discovery universe I can’t help but think of the how “API innovation” is occurring within the browser.  When I say “API innovation”, I don’t mean the kind that got us all excited from 2005 through 2010, or the golden days from 2010 through 2015-—I am talking the exploitative kind. Serving advertisers, trackers, and other exploitative practices. Most people would scoff at me calling these things APIs, but they are using the web to deliver machine readable information, so they are APIs. I’ve been tracking on the APIs I use behind the scene in my browser using Charles Proxy for a while now, but I’m feeling I should formalize my analysis.

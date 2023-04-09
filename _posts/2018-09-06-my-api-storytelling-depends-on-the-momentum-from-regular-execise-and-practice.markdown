@@ -8,9 +8,9 @@ tags:
   - Communications
   - Evangelism
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/kin-lane/141-Post+Con+2018-Speakers.jpg
+  https://s3.amazonaws.com/kinlane-productions2/kin-lane/141-Post+Con+2018-Speakers.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've been falling short of my normal storytelling quotas recently. I like to have at least 3 posts on API Evangelist, and [two posts on Streamdata.io each day](https://streamdata.io/blog/). I have been letting it slip because it was summer, but I will be getting back to my regular levels as we head into the fall. Whenever I put more coal in the writing furnace, I'm  reminded of just how much momentum all of this takes, as well as the regular exercise and practice involved, allowing me to keep pace in the storytelling marathon across my blog(s).
+<p></p>I've been falling short of my normal storytelling quotas recently. I like to have at least 3 posts on API Evangelist, and [two posts on Streamdata.io each day](https://streamdata.io/blog/). I have been letting it slip because it was summer, but I will be getting back to my regular levels as we head into the fall. Whenever I put more coal in the writing furnace, I'm  reminded of just how much momentum all of this takes, as well as the regular exercise and practice involved, allowing me to keep pace in the storytelling marathon across my blog(s).
 
 The more stories I tell, the more stories I can tell. After eight years of doing this, I'm still surprised abut what it takes to pick things back up, and regain my normal levels of storytelling. If you make storytelling a default aspect of doing work each day, finding a way to narrate your regular work with it, it is possible to achieve high volumes of storytelling going out the door, generating search engine and social media traffic. Also, if you root your storytelling in the regular work you are already doing each day, the chances it will be meaningful enough for people to tune in only increases.
 

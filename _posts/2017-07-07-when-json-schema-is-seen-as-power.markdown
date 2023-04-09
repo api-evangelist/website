@@ -10,9 +10,9 @@ tags:
   - Definitions
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_sunday.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/power-lines-empty-space_sunday.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/power-lines-empty-space_sunday.jpg" align="right" width="40%" style="padding: 15px;" /></p>In a 30 year career as a database professional I've seen some extraordinary ways in which owning and controlling data is associated with power. Those who have the data leverage it against those who do not have it. Losing control means losing power, so people do whatever they can to stay in control, protecting the spreadsheets and databases at all costs. After 30 years of seeing this play out over and over again, I thought I'd seen it all, but sadly in an API era I'm just seeing new incarnations of data being wielded by those in power.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/power-lines-empty-space_sunday.jpg" align="right" width="40%" style="padding: 15px;" /></p>In a 30 year career as a database professional I've seen some extraordinary ways in which owning and controlling data is associated with power. Those who have the data leverage it against those who do not have it. Losing control means losing power, so people do whatever they can to stay in control, protecting the spreadsheets and databases at all costs. After 30 years of seeing this play out over and over again, I thought I'd seen it all, but sadly in an API era I'm just seeing new incarnations of data being wielded by those in power.
 
 I recently came across an example where a company was holding back a series of JSON schema for a variety of public datasets, and standards in use as part of some government systems. From what I can tell company had been brought in to handle the systems and open data work a few years back, and with each version of the software and schema they slowly began to maintain tighter control over the schema, while they were also being mandated to be more open with the data--shifting from being controlling over the data, to being controlling of the schema.
 

@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Schema
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/machine-road-machine-road-blue-circuit-3.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/machine-road-machine-road-blue-circuit-3.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I find myself looking at a number of my more complex API designs, and saying to myself, “this isn’t complicated because it is hard, it is complicated because I did not spend the time required to simplify it appropriately”. There are many factors contributing to this reality, but I find that more often than not it is because I’m over-engineering something, and I am caught up in the moment focusing on a purely computation approach, and not considering the wider human, business, and other less binary aspects of delivering APIs.
 
 While I am definitely my own worst enemy in many API deliver scenarios, I’d say there are a wide range of factors that are influencing how well, or poorly that I design my API resources, with just a handful of them being:

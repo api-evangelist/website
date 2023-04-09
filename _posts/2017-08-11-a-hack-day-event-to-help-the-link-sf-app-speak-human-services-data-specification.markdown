@@ -12,9 +12,9 @@ tags:
   - County Government
   - Hackathons
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/open-referral/optimizely/optimizely-hackathon.JPG
+  https://s3.amazonaws.com/kinlane-productions2/open-referral/optimizely/optimizely-hackathon.JPG
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/open-referral/optimizely/optimizely-hackathon.JPG" align="right" width="40%" style="padding: 15px;" /></p>I went up to San Francisco on Wednesday to participate in a social good hack day at [Optimizely](https://www.optimizely.com/). They held their event at their downtown offices, where 20+ employees showed up to hack on some social good projects. Open Referral and our partner [Benetech](https://www.benetech.org/) had suggested Human Services Data Specification (HSDS) as a possible project, which resulted in us being one of the hack projects for the event.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/open-referral/optimizely/optimizely-hackathon.JPG" align="right" width="40%" style="padding: 15px;" /></p>I went up to San Francisco on Wednesday to participate in a social good hack day at [Optimizely](https://www.optimizely.com/). They held their event at their downtown offices, where 20+ employees showed up to hack on some social good projects. Open Referral and our partner [Benetech](https://www.benetech.org/) had suggested Human Services Data Specification (HSDS) as a possible project, which resulted in us being one of the hack projects for the event.
 
 The Open Referral Human Services Data Specification (HSDS) team consisted of five Optimizely developers.
 

@@ -8,9 +8,9 @@ tags:
   - Bots
   - Conversational Interfaces
   - Investment
-image: 'https://s3.amazonaws.com/kinlane-productions/bots-satellites.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bots-satellites.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bots-satellites.jpg" align="right" width="40%" style="padding: 15px" /></p>I had a friend ask me for my thoughts on bots. It is a space I tend to rant about frequently, but isn't an area I'm moving forward [any meaningful research](http://bots.apievangelist.com/) in, but it does seem to keep coming up and refuses to ever go way. I think bots are a great example of yet another thing that us technologists get all worked up about and think is the future, but in reality, while there will only be a handful of viable use cases, and bots will cause more harm, than they ever will do any good, or fully enjoy a satisfactory mainstream adoption.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bots-satellites.jpg" align="right" width="40%" style="padding: 15px" /></p>I had a friend ask me for my thoughts on bots. It is a space I tend to rant about frequently, but isn't an area I'm moving forward [any meaningful research](http://bots.apievangelist.com/) in, but it does seem to keep coming up and refuses to ever go way. I think bots are a great example of yet another thing that us technologists get all worked up about and think is the future, but in reality, while there will only be a handful of viable use cases, and bots will cause more harm, than they ever will do any good, or fully enjoy a satisfactory mainstream adoption.
 
 First, bots aren't new. Second, bots are just automation. Sure, there will be some useful automation implementations, but more often than not, bots will wreak havoc and cause unnecessary noise. Conveniently though, no matter what happens, there will be money to be made deploying and defending against each wave of bot investment. Making bots is pretty representative of how technology is approached in today's online environment. Lot's of tech. Lot's of investment. Regular waves. Not a lot of good sense.
 

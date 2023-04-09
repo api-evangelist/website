@@ -8,9 +8,9 @@ tags:
   - Deployment
   - Spreadsheet
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/google-sheets/google-sheets-icon.jpg
+  https://s3.amazonaws.com/kinlane-productions2/google-sheets/google-sheets-icon.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/google-sheets/google-sheets-icon.jpg" align="right" width="30%" style="padding: 15px;" /></p>When you take any Google Sheet and choose to publish it to the web, you immediately get an API. Well, you get the HTML representation of the spreadsheet (shared with the web), and if you know the right way to ask, you also can get the JSON representation of the spreadsheet--which gives you an interface you can program against in any application.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/google-sheets/google-sheets-icon.jpg" align="right" width="30%" style="padding: 15px;" /></p>When you take any Google Sheet and choose to publish it to the web, you immediately get an API. Well, you get the HTML representation of the spreadsheet (shared with the web), and if you know the right way to ask, you also can get the JSON representation of the spreadsheet--which gives you an interface you can program against in any application.
 
 Articles I curate, the companies, institutions, organizations, government agencies, and everything else I track on lives in Google Sheets that are published to the web in this way. When you are viewing any Google Sheet in your browser you are viewing it using a URL like:
 

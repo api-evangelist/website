@@ -9,9 +9,9 @@ tags:
   - Documentation
   - Communication
   - Collaboration
-image: 'https://s3.amazonaws.com/kinlane-productions/openapi/OpenAPI_Pantone.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/openapi/OpenAPI_Pantone.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>APIs are hard to talk about across large groups of people, while ensuring everyone is on the page. APIs don't have much a visual side to them, providing a tangible reference for everyone to use by default. This is where OpenAPI comes in, helping us "see" an API, and establish a human and machine readable document that we can produce, pass around, and use as a reference to what an API does. OpenAPI makes me feel like I have a handle on what an API does, in a way that can actually have a conversation around with other people--without it, things are much fuzzier.
+<p></p>APIs are hard to talk about across large groups of people, while ensuring everyone is on the page. APIs don't have much a visual side to them, providing a tangible reference for everyone to use by default. This is where OpenAPI comes in, helping us "see" an API, and establish a human and machine readable document that we can produce, pass around, and use as a reference to what an API does. OpenAPI makes me feel like I have a handle on what an API does, in a way that can actually have a conversation around with other people--without it, things are much fuzzier.
 
 Many folks associate OpenAPI with documentation, code generation, or some other tooling or service that uses the specification--putting their emphasis on the tangible thing, over the definition. While working on projects, I spend a lot of time educating folks about what OpenAPI is, what it is not, and how it can facilitate communication across teams and API stakeholders. While this work can be time consuming, and a little frustrating sometimes, it is worth it. A little education, and OpenAPI adoption can go a long way to moving projects along, because (almost) everyone involved is able to be actively involved in moving API operations forward.
 

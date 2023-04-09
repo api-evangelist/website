@@ -8,9 +8,9 @@ tags:
   - Tools
   - Business of APIs
   - Investment
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/legal-statue-legalstatue-smoking-cigarette.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/legal-statue-legalstatue-smoking-cigarette.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I know you believe your tools are the best. I mean, from your vantage point, they are. I also know that when you are building a new API tool, your investors want you to position your tooling as the best. The one solution to rule them all. They want you to work hard to make your tools the best, but also make sure and demonize other tooling as being inferior, out of date, and something the dinosaurs use. I know this absolute belief in your tooling feels good and right, but you are actually creating friction for your users, and potentially failure or at least conflict within their teams. Absolutism, along with divide and conquer strategies for evangelizing API tooling works for great short term financial strategies, but doesn’t do much to help us on the ground actually developing, managing, and sustaining APIs.
 
 Ironically, there are many divers factors that contribute to why API tooling providers and their followers resort to absolutism when it comes to marketing and evangelizing their tools. Much of which has very little to do with the merits of the tools being discussed, and everything about those who are making the tools. I wanted to explore a few of them so they are available on the tip of my tongue while working within the enterprise.

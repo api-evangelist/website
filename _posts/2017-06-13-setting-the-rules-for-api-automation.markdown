@@ -7,10 +7,10 @@ tags:
 - Orchestration
 - Automation
 - iPaaS
-image: https://s3.amazonaws.com/kinlane-productions/twitter/twitter-automation-rules.png
+image: https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-automation-rules.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/twitter/twitter-automation-rules.png" align="right" width="40%" style="pading: 15px;" /></p>Twitter released some automation rules this spring, laying the ground rules when it comes to building bots using the Twitter API. Some of the rules overlap with their existing terms of service, but it provides an interesting evolution in how platform providers need to be providing some direction for API consumers in a bot-driven conversational landscape.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-automation-rules.png" align="right" width="40%" style="pading: 15px;" /></p>Twitter released some automation rules this spring, laying the ground rules when it comes to building bots using the Twitter API. Some of the rules overlap with their existing terms of service, but it provides an interesting evolution in how platform providers need to be providing some direction for API consumers in a bot-driven conversational landscape.
 
 They begin by laying the ground rules for automation using the Twitter API:
 

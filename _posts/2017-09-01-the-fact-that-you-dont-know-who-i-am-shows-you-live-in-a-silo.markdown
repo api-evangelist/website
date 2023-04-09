@@ -9,9 +9,9 @@ tags:
   - Communications
   - Evangelism
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/silo-road.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/silo-road.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/silo-road.jpg" align="right" width="30%" style="padding: 15px;" /></p>Don't who know who I am? I am the API Evangelist. Ok, I know this post is dripping with ego. However, it is the last post in my week of API rants, and I'm just pumped from writing all of these. These types of posts are so easy to write because I don't have to do any research, and real work, I just write, putting my mad skills at whitesplaining and mansplaining to work--tapping into my privilege. So I'm going to end the week with a bang, and fully channel the ego that has developed along with the persona that is API Evangelist.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/silo-road.jpg" align="right" width="30%" style="padding: 15px;" /></p>Don't who know who I am? I am the API Evangelist. Ok, I know this post is dripping with ego. However, it is the last post in my week of API rants, and I'm just pumped from writing all of these. These types of posts are so easy to write because I don't have to do any research, and real work, I just write, putting my mad skills at whitesplaining and mansplaining to work--tapping into my privilege. So I'm going to end the week with a bang, and fully channel the ego that has developed along with the persona that is API Evangelist.
 
 However, there is a touch of truth to this. If you are operating an API today, and you do not know who I am, I'm just going to put it out there--you live in a silo. I have published around 3,000 blog posts since 2010 on APIs. I'm publishing 3-5 posts a day, and have consistently done so for seven years. There are definitely some major gaps in that, but my SEO placement is pretty damn good. You type API or APIs, and I'm in the top 30 usually, with the occasional popping up on home page. The number thing I get from folks who message me is that they can't search for anything API without coming across one of my posts, so they want to talk to me. So why is it that you do not know who I am? I have some ideas on that.
 

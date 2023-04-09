@@ -4,7 +4,8 @@ layout: post
 title: 'Establishing an API-First Reference Implementation'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-christianity-under-construction-copper-circuit.jpg
 tags:
-- API-First
+    - API-First
+    - Reference
 ---
 I do a lot of API blah blah blah’ing about abstract technical concepts. Sometimes I am able to craft a coherent narratives around some complex technology goings on, but most of the time I am just practicing. Workshopping different concepts until I find one that will make an impact on the way folks see APIs. One of the challenges I face in my storytelling is that I operate too far into the abstract, and not making the rubber meet the road enough. Another challenger I face is going too far down the rabbit hole with a particular companies implementation, which usually turns down the volume significantly on my storytelling, because most companies, organizations, institutions, and government agencies aren’t equipped to be 100% transparent about what they are doing. After a decade of storytelling exploration I find that operating somewhere in between the abstract and the real world is the best place to be, resulting in me desiring a reference implementation that I could use as an anchor for my storytelling, helping keep me grounded when it comes to how I talk about APIs.
 

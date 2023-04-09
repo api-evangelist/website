@@ -8,9 +8,9 @@ tags:
   - Patents
   - Federal Government
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/uspto/uspto-pair-bulk-data-api.png
+  https://s3.amazonaws.com/kinlane-productions2/uspto/uspto-pair-bulk-data-api.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/uspto/uspto-pair-bulk-data-api.png" align="right" width="40%" style="padding: 15px;" /></p>I stumbled across [the Patent Application Information Retrieval Bulk Data API](https://pairbulkdata.uspto.gov/) from the US Patent Office the other day. It provides a much more usable approach to getting at patent information than what I am using at the moment. Right now I am downloading XML files and searching for the occurrence of a handful of keywords. If I want to make a change I have to fire up a new AWS instance, change the code, and reprocess the downloaded files. The Patent Application Information Retrieval Bulk Data API gives me a much more efficient interface to work with.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/uspto/uspto-pair-bulk-data-api.png" align="right" width="40%" style="padding: 15px;" /></p>I stumbled across [the Patent Application Information Retrieval Bulk Data API](https://pairbulkdata.uspto.gov/) from the US Patent Office the other day. It provides a much more usable approach to getting at patent information than what I am using at the moment. Right now I am downloading XML files and searching for the occurrence of a handful of keywords. If I want to make a change I have to fire up a new AWS instance, change the code, and reprocess the downloaded files. The Patent Application Information Retrieval Bulk Data API gives me a much more efficient interface to work with.
 
 The Patent Application Information Retrieval Bulk Data API contains the bibliographic, published document and patent term extension data tabs in Public PAIR from 1981 to present, with some additional data dating back to 1931. It has leveraged COTS semantics, maintains an open architecture, and the query syntax follows the standard Apache Solr search syntax, with API responses following the Solr formats. Providing for a much more powerful interface for querying patent data, which goes back further back in time then what I've been doing currently. I'm really interested in doing an API patent search for the 1990s, or maybe even earlier.
 

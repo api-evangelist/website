@@ -4,7 +4,7 @@ layout: post
 title: 'API-First [Business]'
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/long-factory-uncle-sam.jpg
 tags:
-- API-First
+    - API-First
 ---
 
 I am working my way through defining a more precise definition of what [API-first](https://www.postman.com/api-first/) means which I can use across my API storytelling and conversations. [I workshopped the widest definition possible of what API-First means to me yesterday](http://apievangelist.com/2020/03/09/what-is-api-first/), and be the end of the day [I posted another more precise definition of what API-First means to a more technical crowd which I dubbed API-First \[Design || Code\]](http://apievangelist.com/2020/03/09/apifirst-design--code/). Today, I’m once again thinking more about the business side of the conversation, and focusing on what I would like to eventually be a more precise definition of what API-First means to business stakeholders, which I am dubbing as API-First \[Business\].

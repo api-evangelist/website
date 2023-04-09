@@ -4,10 +4,10 @@ date: 2017-05-15 09:07:00 Z
 tags:
 - Ranking
 - Domains
-image: https://s3.amazonaws.com/kinlane-productions/whoapi/Domain-score-API-integration-in-WhoAPI.png
+image: https://s3.amazonaws.com/kinlane-productions2/whoapi/Domain-score-API-integration-in-WhoAPI.png
 ---
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/whoapi/Domain-score-API-integration-in-WhoAPI.png" align="right" width="40%" /></p>I saw that WhoAPI launched a [Domain Score API](https://whoapi.com/blog/3068/we-are-introducing-domain-score-api/) recently, helping put a value on whether or not you can trust a domain. The example they have in their blog post applies a domain score to the email addresses for any developer signing up for the Domain Score API--pretty useful stuff.
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/whoapi/Domain-score-API-integration-in-WhoAPI.png" align="right" width="40%" /></p>I saw that WhoAPI launched a [Domain Score API](https://whoapi.com/blog/3068/we-are-introducing-domain-score-api/) recently, helping put a value on whether or not you can trust a domain. The example they have in their blog post applies a domain score to the email addresses for any developer signing up for the Domain Score API--pretty useful stuff.
 
 I do not know anything about the algorithm behind the domain scoring API, or what data it pulls from, but I think the concept is definitely applicable in today's online environment. [I wrote about Best Buy requiring their developers to register with an email at their business domain](http://apievangelist.com/2016/03/30/best-buy-will-not-issue-api-keys-to-free-email-accounts-and-wants-to-get-to-know-your-company/), not some general email service, and this seems like another layer of security you could add to this process.
 

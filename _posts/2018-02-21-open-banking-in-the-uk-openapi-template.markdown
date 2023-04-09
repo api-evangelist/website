@@ -9,7 +9,7 @@ tags:
   - Banking
   - Standards
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/open-banking/open-banking-openapi.png
+  https://s3.amazonaws.com/kinlane-productions2/open-banking/open-banking-openapi.png
 ---
 After learning more about [what Open Banking is doing for APIs in the UK](https://www.openbanking.org.uk/), I realized that I needed an OpenAPI template for the industry specification. There are six distinct schema available as part of the project, and I wanted a complete OpenAPI to describe which paths were available, as well as the underlying response schema. I got work crafting one from the responses that were available within [the Open Banking documentation](https://www.openbanking.org.uk/open-data-apis/).
 

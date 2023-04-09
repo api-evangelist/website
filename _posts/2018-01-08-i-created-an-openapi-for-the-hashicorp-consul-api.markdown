@@ -10,9 +10,9 @@ tags:
   - Clients
   - Federal Government
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/hashicorp/hashicorp-consul-api-openapi-githbu.png
+  https://s3.amazonaws.com/kinlane-productions2/hashicorp/hashicorp-consul-api-openapi-githbu.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/hashicorp/hashicorp-consul-api-openapi-githbu.png" align="right" width="45%" style="padding: 15px;" /></p>I was needing an OpenAPI (fka Swagger) definition for [the Hashicorp Consul API,](https://www.consul.io/api/index.html) so that I could use in a federal government project I'm advising on. We are using the solution for the microservices discovery layer, and I wanted to be able to automate using the Consul API, publish documentation within our project Github, import into Postman across the team, as well as several other aspects of API operations. I'm working to assemble at least a first draft OpenAPI for the entire technology stack we've opted to use for this project.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/hashicorp/hashicorp-consul-api-openapi-githbu.png" align="right" width="45%" style="padding: 15px;" /></p>I was needing an OpenAPI (fka Swagger) definition for [the Hashicorp Consul API,](https://www.consul.io/api/index.html) so that I could use in a federal government project I'm advising on. We are using the solution for the microservices discovery layer, and I wanted to be able to automate using the Consul API, publish documentation within our project Github, import into Postman across the team, as well as several other aspects of API operations. I'm working to assemble at least a first draft OpenAPI for the entire technology stack we've opted to use for this project.
 
 First thing I did was Google, "Consul API OpenAPI", then "Consul API Swagger", which didn't yield any results. Then I Githubbed "Consul API Swagger", and came across a Github Issue where a user had asked for "[improved API documentation](https://github.com/hashicorp/consul/issues/555)". The resulting response from Hashicorp was, "we just finished a revamp of the API docs and we don't have plans to support Swagger at this time." Demonstrating they really don't understand what OpenAPI (fka Swagger) is, something I'll write about in future stories this week.
 

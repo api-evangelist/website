@@ -8,9 +8,9 @@ tags:
   - Deprecation
   - Communication
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/catacombs_blue_circuit_3.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>The API providers I talk to regularly are rarely proactive when it comes to addressing API deprecation. Most API providers aren't thinking about shutting down any service they deliver until they've actually encountered the need down the road. Many just begin their API journey, assuming their APIs will be a success, and they will have to support every version forever. However, once they encounter what it will take to support older versions, they begin to change their tune, something that often comes as an unexpected surprise to consumers.
+<p></p>The API providers I talk to regularly are rarely proactive when it comes to addressing API deprecation. Most API providers aren't thinking about shutting down any service they deliver until they've actually encountered the need down the road. Many just begin their API journey, assuming their APIs will be a success, and they will have to support every version forever. However, once they encounter what it will take to support older versions, they begin to change their tune, something that often comes as an unexpected surprise to consumers.
 
 Shutting down old APIs will never be easy, but the process can be made easier with a little proactive communication. One example of this practice in action can be found over at [the Internet of Things provider Evrythng, with their API deprecation page](https://developers.evrythng.com/docs/deprecation). Which provides a pretty simple layout for an API deprecation page, beyond just a title and description of what the future might hold.
 

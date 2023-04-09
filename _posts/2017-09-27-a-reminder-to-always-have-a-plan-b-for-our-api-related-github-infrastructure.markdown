@@ -9,9 +9,9 @@ tags:
   - Backups
   - Migration
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/github/github-api-evangelist-flagged.jpeg
+  https://s3.amazonaws.com/kinlane-productions2/github/github-api-evangelist-flagged.jpeg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/github/github-api-evangelist-flagged.jpeg" align="right" width="40%" style="padding: 15px;" /></p>I had a scare this last weekend regarding my Github infrastructure. My Github organization for API Evangelist was flagged as SPAM and taken down. The Github organization contains almost 100 repositories that I use across my platform. These repositories drive the public side of my research, but also contain YAML files that are used in automation across my entire platform, and network of websites. At about 12:00 PM on Saturday, everything came to a screeching halt, with all the data I depend on to make things go around becoming unavailable.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/github/github-api-evangelist-flagged.jpeg" align="right" width="40%" style="padding: 15px;" /></p>I had a scare this last weekend regarding my Github infrastructure. My Github organization for API Evangelist was flagged as SPAM and taken down. The Github organization contains almost 100 repositories that I use across my platform. These repositories drive the public side of my research, but also contain YAML files that are used in automation across my entire platform, and network of websites. At about 12:00 PM on Saturday, everything came to a screeching halt, with all the data I depend on to make things go around becoming unavailable.
 
 I have backups of all the data, and the website templates that produce the public side of API Evangelist. I also have a plan B in place for setting up a Jekyll instance that runs on Amazon EC2, but I hadn't ever actually ran any drills on plan B. After submitting a ticket to Github, I got to work firing up the AWS EC2 instance, and unloading and unpacking the almost 100 website backups for my API Evangelist research. After getting things setup, and as I was preparing to switch over the DNS, I got an email from Github saying:
 

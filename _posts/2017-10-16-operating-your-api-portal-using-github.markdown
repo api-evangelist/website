@@ -8,9 +8,9 @@ tags:
   - Portal
   - Github
   - Jekyll
-image: 'https://s3.amazonaws.com/kinlane-productions/jekyll/jekyllrb.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/jekyll/jekyllrb.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/jekyll/jekyllrb.png" align="right" width="40%" style="padding: 15px;" /></p>Operating on Github is natural for me, but I am regularly reminded what a foreign concept it is for some of the API providers I'm speaking with. Github is the cheapest, easiest way to launch a public or private developer portal for your API. With the introduction of [Github Pages](https://pages.github.com/), each Github repository is turned into a place to host any API related project. In my opinion, every API should begin with Github, providing a place to put your API definition, portal, and other elements of your API operations.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/jekyll/jekyllrb.png" align="right" width="40%" style="padding: 15px;" /></p>Operating on Github is natural for me, but I am regularly reminded what a foreign concept it is for some of the API providers I'm speaking with. Github is the cheapest, easiest way to launch a public or private developer portal for your API. With the introduction of [Github Pages](https://pages.github.com/), each Github repository is turned into a place to host any API related project. In my opinion, every API should begin with Github, providing a place to put your API definition, portal, and other elements of your API operations.
 
 If you are just getting going with understand how Github can be used to support your API operations, I wanted to provide a simple checklist of the concepts at play, that will lead you being able to publish your API portal to Github.
 

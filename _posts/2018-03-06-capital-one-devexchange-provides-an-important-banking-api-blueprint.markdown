@@ -8,9 +8,9 @@ tags:
   - Banking
   - Blueprint
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-banking-home-page.png
+  https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-banking-home-page.png
 ---
-<p><a href="https://developer.capitalone.com"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-banking-home-page.png" align="right" width="45%" style="padding: 15px;" /></a></p>When you take a look at the banking API landscape in the United States, there is one clear leader in the game--Capital One. Their [DevExchange](https://developer.capitalone.com/) program is miles ahead of every one of their competitors, giving them a significant head start when it comes to the banking API economy. Their approach to delivering APIs meets all of my minimum requirements for any successful API platform, and even exceeds it, providing what I'd consider to be a leading example blueprint that all banking API providers should be following.
+<p><a href="https://developer.capitalone.com"><img src="https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-banking-home-page.png" align="right" width="45%" style="padding: 15px;" /></a></p>When you take a look at the banking API landscape in the United States, there is one clear leader in the game--Capital One. Their [DevExchange](https://developer.capitalone.com/) program is miles ahead of every one of their competitors, giving them a significant head start when it comes to the banking API economy. Their approach to delivering APIs meets all of my minimum requirements for any successful API platform, and even exceeds it, providing what I'd consider to be a leading example blueprint that all banking API providers should be following.
 
 The Capital One DevExchange begins as any API operation should, with a dedicated portal located at developer.[domain]:
 
@@ -61,7 +61,7 @@ And details about merchants involved in transactions:
 This version of the API is available in a sandbox and production environments:
 
 - [Sandbox](https://developer.capitalone.com/platform-documentation/using-the-sandbox/)
-<p><a href="http://api.reimaginebanking.com/"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-hackathon-api.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p><a href="http://api.reimaginebanking.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-hackathon-api.png" align="right" width="45%" style="padding: 15px;" /></a></p>
 You can tell Capital One is moving cautiously with their public APIs, but they are definitely further along than other banks. Beyond what is publicly available in their sandbox and production environment they have another exploratory set of APIs coming from a project they call Nessie, [Capital One’s Hackathon API](http://api.reimaginebanking.com/) that gives you access to a multitude of real public-facing data, such as ATM and bank branch locations, complete with mock customer account data. This set of APIs was used as part of a hackathon put on by the bank, but are worth showcasing as an example of where the bank is headed with their API road map.
 
 By providing a pretty robust stack of API paths for working with accounts:
@@ -165,7 +165,7 @@ As well as not forgetting the required elements present from the legal departmen
 - [Privacy policy](https://www.capitalone.com/identity-protection/privacy/statement)
 - [Terms of service](https://developer.capitalone.com/single/terms-and-conditions/)
 
-<p><a href="https://developer.capitalone.com/open-source/"><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-open-source.png" align="right" width="45%" style="padding: 15px;" /></a></p>
+<p><a href="https://developer.capitalone.com/open-source/"><img src="https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-open-source.png" align="right" width="45%" style="padding: 15px;" /></a></p>
 Where the Capital One API program really begins to impress is with their usage of Github, and providing of open source solutions:
 
 - [Capital One Github](https://github.com/capitalone)

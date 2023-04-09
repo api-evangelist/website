@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Portals
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/window_clean_view.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/window_clean_view.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/window_clean_view.jpg" align="right" width="45%" style="padding: 15px;" /></p>I am working with a number of different groups who are using developer portals in some very different ways once they have moved beyond the concept that API developer portals are just for use in the public domain. With the introduction of the static site shift in the CMS landscape, and the introduction of Jekyll and Github Pages as part of the Github project workflow, the concept of the API developer portal is beginning to mean a lot of different things, depending on what the project objective is.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/window_clean_view.jpg" align="right" width="45%" style="padding: 15px;" /></p>I am working with a number of different groups who are using developer portals in some very different ways once they have moved beyond the concept that API developer portals are just for use in the public domain. With the introduction of the static site shift in the CMS landscape, and the introduction of Jekyll and Github Pages as part of the Github project workflow, the concept of the API developer portal is beginning to mean a lot of different things, depending on what the project objective is.
 
 An API portal is becoming something that can reflect a specific project, or group, and isn't something that always has a public URL. Here are just a few of the ways in which I'm seeing portals being wielded as part of API operations.
 

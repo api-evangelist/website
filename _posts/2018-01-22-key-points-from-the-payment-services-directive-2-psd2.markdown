@@ -8,9 +8,9 @@ tags:
   - Banking
   - PSD2
   - Regulations
-image: 'https://s3.amazonaws.com/kinlane-productions/psd2/psd2-eu.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/psd2/psd2-eu.png'
 ---
-<p><a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en"><img src="https://s3.amazonaws.com/kinlane-productions/psd2/psd2-eu.png" align="right" width="45%" style="padding: 15px;" /></a></p>I'm immersed in studying [the Payment Services Directive 2 (PSD2) in Europe](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en), which includes an API definition to help enable the interoperability they are looking to achieve as part of the regulation. I'm working to break down the directive into bit such chunks to help be digest, and understand exactly what it does. The PSD2 laws seeks to improve the existing EU rules for electronic payments (hence the 2), and takes into account emerging approaches to payment services, such as Internet and mobile payments, with APIs at the hear.
+<p><a href="https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en"><img src="https://s3.amazonaws.com/kinlane-productions2/psd2/psd2-eu.png" align="right" width="45%" style="padding: 15px;" /></a></p>I'm immersed in studying [the Payment Services Directive 2 (PSD2) in Europe](https://ec.europa.eu/info/law/payment-services-psd-2-directive-eu-2015-2366_en), which includes an API definition to help enable the interoperability they are looking to achieve as part of the regulation. I'm working to break down the directive into bit such chunks to help be digest, and understand exactly what it does. The PSD2 laws seeks to improve the existing EU rules for electronic payments (hence the 2), and takes into account emerging approaches to payment services, such as Internet and mobile payments, with APIs at the hear.
 
 The directive sets out rules concerning:
 

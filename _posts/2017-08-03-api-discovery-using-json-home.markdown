@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Links
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/json-home/json-home-widget-example.png
+  https://s3.amazonaws.com/kinlane-productions2/json-home/json-home-widget-example.png
 ---
-<p><a href="https://tools.ietf.org/html/draft-nottingham-json-home-06"><img src="https://s3.amazonaws.com/kinlane-productions/json-home/json-home-widget-example.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm have finally dedicated some time to learning more about [Home Documents for HTTP APIs, or simply JSON Home](https://tools.ietf.org/html/draft-nottingham-json-home-06). I see JSON Home as a nice way to bring together the technical components for an API, very similar to what I've been trying to accomplish with APIs.json. One of the biggest differences I see is that I'd say APIs.json was born out of the world of open data and APIs, where JSON Home is born of the web (which actually makes better sense).
+<p><a href="https://tools.ietf.org/html/draft-nottingham-json-home-06"><img src="https://s3.amazonaws.com/kinlane-productions2/json-home/json-home-widget-example.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm have finally dedicated some time to learning more about [Home Documents for HTTP APIs, or simply JSON Home](https://tools.ietf.org/html/draft-nottingham-json-home-06). I see JSON Home as a nice way to bring together the technical components for an API, very similar to what I've been trying to accomplish with APIs.json. One of the biggest differences I see is that I'd say APIs.json was born out of the world of open data and APIs, where JSON Home is born of the web (which actually makes better sense).
 
 I think the JSON Home description captures the specifications origins very well:
 

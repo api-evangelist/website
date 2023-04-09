@@ -8,9 +8,9 @@ tags:
   - Evangelism
   - Training
   - Communication
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-new-van-gogh-starry-night-container-bridge-2.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-new-van-gogh-starry-night-container-bridge-2.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 General evangelism around what APIs are, as well as more precise advocacy around specific APIs or groups of API resources takes a lot of work, and repetition. Even as a seasoned API evangelist I can never assume my audience will receive and understand what it is that I am evangelizing, and I regularly find myself having to reassess the impact (or lack of) that I’m making, retool, refresh, and repeat my messaging to get the coverage and saturation I’m looking for. After a decade of doing this, I cannot tell which is more difficult, internal or external public evangelism, but I do find that after almost 10 years, I’m still learning from each audience I engage with—-proving to me that no single evangelism strategy will ever reliably work, and I need a robust, constantly evolving toolbox if I am going to be successful.
 
 I have many different tools in my internal evangelism toolbox, but I find that the most important aspect of what I do is repetition. I never assume that my audience understand what I’m saying after a single session, or simply by reading one wiki page, blog post, or white paper. Quality internal evangelism requires regular delivery and enforcement, and an acknowledgement that my first engagements with teams will not have the impact I desire. When it comes to internal evangelism, I tend to encounter the following phases when engaging with internal teams:

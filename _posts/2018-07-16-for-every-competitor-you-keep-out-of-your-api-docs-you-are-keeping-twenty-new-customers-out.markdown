@@ -11,9 +11,9 @@ tags:
   - Portal
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories-new/old-door-lock_smoking_cigarette.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories-new/old-door-lock_smoking_cigarette.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>It is interesting for me to still regularly come across so many API providers who have a public API portals, but insist on keeping most of their documentation behind a login. Stating that they are concerned with competitors getting access to the design of their API and the underlying schema. Revealing some indefensible API business models, and general paranoia around doing business on the web. Something that usually is a sign for me of a business that is working really hard to maintain a competitive grip within an industry, without actually having to do the hard work of innovating and moving the conversation forward.
+<p></p>It is interesting for me to still regularly come across so many API providers who have a public API portals, but insist on keeping most of their documentation behind a login. Stating that they are concerned with competitors getting access to the design of their API and the underlying schema. Revealing some indefensible API business models, and general paranoia around doing business on the web. Something that usually is a sign for me of a business that is working really hard to maintain a competitive grip within an industry, without actually having to do the hard work of innovating and moving the conversation forward.
 
 Confident API providers know that you can put your API documentation out in the open, complete with schema, without giving away the farm. If your competition can take your API design, and underlying schema, and recreate your business--you should probably go back to the drawing board, and come up with a new business idea. Your API and schema definition is not your business. I've used this comparison may times--your API docs are like a restaurant menu. Can you imagine restaurants that kept them hidden until they were sure you are going to be a customer? If you think that your competition can read your menu and recreate all your dishes, then you won't be in business very long, because your dishes probably weren't that special to begin with.
 

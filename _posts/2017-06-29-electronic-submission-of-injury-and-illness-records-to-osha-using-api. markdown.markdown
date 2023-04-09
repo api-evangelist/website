@@ -8,9 +8,9 @@ tags:
   - Regulation
   - Federal Government
   - Forms
-image: 'https://s3.amazonaws.com/kinlane-productions/osha/osha-work-injury-form.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/osha/osha-work-injury-form.jpg'
 ---
-<p><a href="https://www.osha.gov/injuryreporting/"><img src="https://s3.amazonaws.com/kinlane-productions/osha/osha-work-injury-form.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="https://www.osha.gov/injuryreporting/"><img src="https://s3.amazonaws.com/kinlane-productions2/osha/osha-work-injury-form.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>
 [I recently learned that Occupational Safety and Health Administration (OSHA) has issued guidance regarding the electronic submission of injury and illness records via an API, from an announcement that they has postponed the availability of electronic submissions for another six months](https://www.osha.gov/injuryreporting/). Regardless of the delay, it is good to see them migrating towards an API-focused approach to allowing businesses to be compliant with safety regulations and reporting guidelines.
 
 Here are the details of the OSHA guidance, broken down into some interesting buckets of guidance:

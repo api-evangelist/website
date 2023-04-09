@@ -12,9 +12,9 @@ tags:
   - Design
   - HTTP/2
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/carryload_dali_three.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/carryload_dali_three.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm participating in a meeting today where one of the agenda items will be discussing the different ways in which the team can deal with increasingly large API responses. I don't feel there is a perfect response to this question, and the answer should depend on a variety of considerations, but I wanted to think through some of the possibilities, and make sure the answers were on the tip of my tongue. It helps to exercise these things regularly in my storytelling so when I need to recall them, they are just beneath the surface, ready to bring forward.
+<p></p>I'm participating in a meeting today where one of the agenda items will be discussing the different ways in which the team can deal with increasingly large API responses. I don't feel there is a perfect response to this question, and the answer should depend on a variety of considerations, but I wanted to think through some of the possibilities, and make sure the answers were on the tip of my tongue. It helps to exercise these things regularly in my storytelling so when I need to recall them, they are just beneath the surface, ready to bring forward.
 
 **Reduce Size Pagination**<br />
 I'd say the most common approach to send over large amounts of data is to break things down into smaller chunks, based upon rows being sent over, and paginate the responses. Sending over a default amount (ie. 10,25,100), and require consumers either ask for larger amount, as well as request each additional page of results in a separate API request. Providing consumers with a running count of how many pages, what the current page is, and the ability to paginate forward and backward through the pages with each request. It is common to send pagination parameters through the query parameters, but some providers prefer handle it through headers (ie. Github).

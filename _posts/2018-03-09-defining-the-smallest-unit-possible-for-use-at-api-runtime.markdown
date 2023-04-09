@@ -10,9 +10,9 @@ tags:
   - Executable
   - Runtime
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/peachtree/peachtree-email-validation.png
+  https://s3.amazonaws.com/kinlane-productions2/peachtree/peachtree-email-validation.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I'm thinking a lot about what is needed at API runtime lately](http://apievangelist.com/2018/02/28/what-we-need-to-be-machine-readable-at-api-run-time/). How we document and provide machine readable definitions for APIs, and how we provide authentication, pricing, and even terms of service to help reduce friction. As Mike Amundsen ([@mamund](https://twitter.com/mamund)) puts it, to enable "find and bind". This goes beyond simple API on-boarding, and getting started pages, and looks to make APIs executable within a single click, allowing us to put them to use as soon as we find them.
+<p></p>[I'm thinking a lot about what is needed at API runtime lately](http://apievangelist.com/2018/02/28/what-we-need-to-be-machine-readable-at-api-run-time/). How we document and provide machine readable definitions for APIs, and how we provide authentication, pricing, and even terms of service to help reduce friction. As Mike Amundsen ([@mamund](https://twitter.com/mamund)) puts it, to enable "find and bind". This goes beyond simple API on-boarding, and getting started pages, and looks to make APIs executable within a single click, allowing us to put them to use as soon as we find them.
 
 The most real world example of this in action can be found with [the Run in Postman button](https://www.getpostman.com/docs/v6/postman_for_publishers/run_button/creating_run_button), which won't always deal with the business and politics of APIs at runtime, but will deal with just about everything else. Allowing API providers to publish Run in Postman Buttons, defined using a Postman Collection, which include authentication environment details, that API consumers can use to quickly fire up an API in a single click. One characteristic I've come across that contributes to Postman Collections being truly executable is that they reflect the small unit possible for use at API runtime.
 

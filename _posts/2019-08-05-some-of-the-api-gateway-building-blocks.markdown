@@ -5,11 +5,11 @@ title: 'Some Of The API Gateway Building Blocks'
 date: 2019-08-05T09:00:00.000Z
 tags:
   - API Evangelist
-  - Gateway
+  - Gateways
   - Management
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/udnie-IMG_8312.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-IMG_8312.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 The inspiration for this post wasn't fully mine, I’m borrowing and building upon what Sukanya Santhanam (@SukanyaSanthan1) <a href="https://twitter.com/SukanyaSanthan1/status/1151424256300859392">tweeted out the other day</a>. It is a good idea, and something that should be open sourced and moved forward. I’ve been studying with API management since 2010, and using gateways for over 15 years. I’ve watched gateways evolve, and partnered regularly with API management and gateway providers (Shout out to Tyk). Modern API gateways aren’t your grandfather’s SOA tooling, they’ve definitely gone through several iterations. While I still prefer hand rolling and forging my APIs out back in my woodshed on an anvil, I find myself working with a lot of different API gateways lately.
 
 I’ve kept feeling like I needed to map out the layers of what I’d consider to be a modern API gateway, and begin providing links to the most relevant API gateways out there, and the most common building blocks for an API gateway. Now that you can find API gateways baked into the fabric of the cloud, it is time that we work to standardize the definition of what they can deliver. I’m not looking to change what already is. Actually, I’m looking to just document and build on what already is. As with every other stop along the API lifecycle I’m looking to just map out the common building blocks, and establish a blueprint going forward the might influence existing API gateway providers, as well as any newcomers.

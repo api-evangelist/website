@@ -8,9 +8,9 @@ tags:
   - iPaaS
   - Zapier
   - 101
-image: 'https://s3.amazonaws.com/kinlane-productions/zapier/zapier-icons.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/zapier/zapier-icons.png'
 ---
-<p><a href="ttps://zapier.com"><img src="https://s3.amazonaws.com/kinlane-productions/zapier/zapier-icons.png" align="right" width="40%" style="padding: 15px;" /></a></p>
+<p><a href="ttps://zapier.com"><img src="https://s3.amazonaws.com/kinlane-productions2/zapier/zapier-icons.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 I am spending time going through some of the most relevant APIs I know of online today, working to create some 101 training materials for average folks to take advantage of. I'm looking through these APIs: Twitter, Google Sheets, Github, Flickr, Instagram, Facebook, YouTube, Slack, Dropbox, Paypal, Weather Underground, Spotify, Google Maps, Reddit, Pinterest, NY Times, Twilio, Stripe, SendGrid, Algolia, Keen, Census, Yelp, Walgreens. I feel they are some of the most useful solutions in the average business person who is API curious.
 
 With these new lessons I'm trying to continue my work evangelizing APIs amongst the normals, helping them understand what APIs are, and what is possible when you put them to work. Once I introduce folks to each API I'm left with the challenge of how do I actually onboard them with each API when they aren't actually a programmer. The number one way I'm helping alleviate this problem is by including [Zapier](https://zapier.com) examples with each of my API lessons, helping folks understand that they can quickly get up and running with each API using the Zapier integration platform as a service (iPaaS). I will be including one or more Zapier examples along with each of my API 101 lessons, helping normal folk put what they've learned about APIs to use--hopefully making each lesson a little more sticky.

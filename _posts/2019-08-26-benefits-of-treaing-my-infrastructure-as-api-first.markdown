@@ -7,9 +7,8 @@ tags:
   - API Evangelist
   - Infrastructure
   - Business of APIs
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-square-23-160-800-500-0-max-0--5--1-square.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-square-23-160-800-500-0-max-0--5--1-square.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
 Most API providers I speak with see the value of consistently delivering API infrastructure to power desktop, web, mobile, device, and network applications. Less than 10% of these providers see the API infrastructure that powers their APIs, and ultimately their applications as APIs. Meaning, these providers do not view every stop along the API lifecycle as a set of APIs, ensuring that your API definitions, design, mocking, deployment, management, monitoring, testing, orchestration, security, and documentation all have APIs, and are able to be governed programmatically. Mostly it is because they are just getting started on their API journey and / or they just don’t have the bandwidth to be able to step back and look holistically at what they are trying to accomplish.
 
 In this truly API-first world, every architectural decision begins with a README in a Git repo, and the business, architectural, and development teams working together to hammer out a simple name, description, and list of capabilities for each individual architectural component. Once in agreement, then they can then get to work hammering out a contract for the schema, and the interfaces that are available for potential consumers. Once again, working between business, architecture, and development teams to come up with the simplest, most useful, and durable contract possible. One that will work for all stakeholders, and best represent the architectural capabilities of each component you will need to successfully operate each stop along your API life cycle.

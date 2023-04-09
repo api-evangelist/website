@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Discovery
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/contrafabulists/machine+learning.jpg
+  https://s3.amazonaws.com/kinlane-productions2/contrafabulists/machine+learning.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am profiling APIs as part of my partnership with [Streamdata.io](http://streamdata.io), and my continued [API Stack](http://theapistack.com) work. As part of my work, I am creating OpenAPI, Postman Collections, and APIs.json indexes for APIs in a variety of business sectors, and as I'm finishing up the profile for [ParallelDots machine learning APIs](https://docs.paralleldots.com/), I am struck (again) by the importance of tags within OpenAPI definitions when it comes to defining what any API does, and something that will have significant effects on the growing machine learning, and artificial intelligence space.
+<p></p>I am profiling APIs as part of my partnership with [Streamdata.io](http://streamdata.io), and my continued [API Stack](http://theapistack.com) work. As part of my work, I am creating OpenAPI, Postman Collections, and APIs.json indexes for APIs in a variety of business sectors, and as I'm finishing up the profile for [ParallelDots machine learning APIs](https://docs.paralleldots.com/), I am struck (again) by the importance of tags within OpenAPI definitions when it comes to defining what any API does, and something that will have significant effects on the growing machine learning, and artificial intelligence space.
 
 While profiling ParallelDots, I had to generate the OpenAPI definition from the Postman Collection they provide, which was void of any tags. I went through the handful of API paths, manually adding tags for each of the machine learning resources. I'm adding tags like sentiment, emotions, semantics, taxonomy, and classification, to each path. Trying to capture what resources were available, allowing for the discovery, filtering, and execution of each individual machine learning model being exposed using a simple web API. While the summary and description explain what each API does to developers, the tags are really the precise meaning in a machine readable context.
 

@@ -1,7 +1,7 @@
 ---
 published: true
 title: I Have Two APIs I Am Interested In And I Am Not A Developer--What Do I Do?
-image: 'https://s3.amazonaws.com/kinlane-productions/api-documentation-unistats.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/api-documentation-unistats.png'
 date: 2017-06-28T09:00:00.000Z
 tags:
   - 101
@@ -10,7 +10,7 @@ tags:
   - Spreadsheet
   - Universities
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/api-documentation-unistats.png" align="right" width="40%" style="padding: 15px;" /></p>My friend David Kernohan ([@dkernohan](https://twitter.com/dkernohan)) emailed me the other day asking me for some advice on where to get started working with some data APIs he had been introduced to. This is such a common question for me, and surprisingly seven years into API Evangelist they are questions I still do not have easy answers for. Partly because I spend the majority of my time writing about providing APIs, but also because API consumption is often times inconsistent, and just hard. 
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/api-documentation-unistats.png" align="right" width="40%" style="padding: 15px;" /></p>My friend David Kernohan ([@dkernohan](https://twitter.com/dkernohan)) emailed me the other day asking me for some advice on where to get started working with some data APIs he had been introduced to. This is such a common question for me, and surprisingly seven years into API Evangelist they are questions I still do not have easy answers for. Partly because I spend the majority of my time writing about providing APIs, but also because API consumption is often times inconsistent, and just hard. 
 
 David provided me with two sources of data he wanted to work, which I think help articulate the differences between APIs, that can make things hard to work with when you are just getting started with any API. Let's break down the two APIs he wants to work with:
 

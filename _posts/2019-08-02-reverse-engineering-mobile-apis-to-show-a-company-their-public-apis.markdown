@@ -8,9 +8,9 @@ tags:
   - Mobile
   - Discovery
   - Proxy
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-square-97-193-800-500-0-max-0-1--1-square.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-square-97-193-800-500-0-max-0-1--1-square.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 One story I tell a lot when talking to folks about APIs, is how you can reverse engineer a mobile phone to map out the APIs being used. As the narrative goes, many companies that I talk with claim they do not have any public APIs when first engage with them. Then I ask them, “Do you have any mobile applications?”. To which the answer is almost always, “Yes!”.  Having anticipated this regular conversation, if I am looking to engage with a company in the area of API consulting, I will have made the time to reverse engineer their application to produce a set of OpenAPI definitions that I can then share with them, showing that they indeed have public APIs.
 
 The process isn’t difficult, and I’ve written about this several times. To reverse engineer a mobile application, all you have to do is download the targeted application to your phone, configure your phone to use your laptop as a proxy, and be running Charles Proxy on your laptop. I’m not going to share a walkthrough of this, it is easy enough to Google and find the technical details of doing it, I’m more looking to just educate the average business person that this is possible. Once you have your mobile phone proxied through Charles, it will capture every call made home to the mother ship, logging the request and response structure of all APIs being used by the mobile application-—which uses public DNS for routing, making it a public API.

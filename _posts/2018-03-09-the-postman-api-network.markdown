@@ -6,9 +6,9 @@ date: 2018-03-09T09:00:00.000Z
 tags:
   - API Evangelist
   - Discovery
-image: 'https://s3.amazonaws.com/kinlane-productions/postman/postman-api-network.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/postman/postman-api-network.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[The Postman API Network](https://www.getpostman.com/api-network/) is one of the recent movements in the API discovery space I've been working to get around to covering. As Postman continues its expansion from being just an API client, to a full lifecycle API development solution, they've added a network for discovering existing APIs that you can begin using within Postman in a single click. Postman Collections make it ridiculously easy to get up and running with an API. So easy, I'm confounded why ALL APIs aren't publishing Postman Collections with Run in Postman Buttons published in their API docs.
+<p></p>[The Postman API Network](https://www.getpostman.com/api-network/) is one of the recent movements in the API discovery space I've been working to get around to covering. As Postman continues its expansion from being just an API client, to a full lifecycle API development solution, they've added a network for discovering existing APIs that you can begin using within Postman in a single click. Postman Collections make it ridiculously easy to get up and running with an API. So easy, I'm confounded why ALL APIs aren't publishing Postman Collections with Run in Postman Buttons published in their API docs.
 
 [The Postman API Network](https://www.getpostman.com/api-network/) provides a catalog of APIs in over ten categories, with links to each API's documentation. All of the APIs in the network have a Run in Postman button available as part of their documentation, which includes them in the Postman API Network. It is a pretty sensible approach to building a network of valuable APIs, who all have invested in there being a runtime-ready, machine readable Postman Collection for their APIs. One of the more interesting approaches I've seen introduced to help solve the API discovery problem in the eight years I've been doing API Evangelist.
 

@@ -8,9 +8,9 @@ tags:
   - Search
   - Diff
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/aws-s3-stories-death-valley-national-park-dali-three-just-road.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-death-valley-national-park-dali-three-just-road.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 I always find an API providers business model to be very telling about the company’s overall strategy when it comes to APIs. I’m currently navigating the difference between two big API providers, trying to balance my needs spread across very different approaches to offering up API resources. I’m working to evolve and refine my API search algorithms and I find myself having to do a significant amount of work due to the differences between GitHub and Microsoft Search. Ironically, they are both owned by the same company, but we all know their business models are seeking alignment as we speak, and I suspect my challenges with GitHub API is probably a result of this alignment.
 
 The challenges with integrating with GitHub and Microsoft APIs are pretty straightforward, and something I find myself battling regularly when integrating with many different APIs. My use of each platform is pretty simple. I am looking for APIs. The solutions are pretty simple, and robust. I can search for code using the GitHub Search API, and I can search for websites using the Bing Search API. Both produce different types of results, but what both produce is of value to me. The challenge comes in when I can pay for each API call with Bing, and I do not have that same option with GitHub. I am also noticing much tighter restriction on how many calls I can make to the GitHub APIs. With Bing I can burst, depending on how much money I want to spend, but with GitHub I have no relief value—I can only make X calls a minute, per IP, per user.

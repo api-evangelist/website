@@ -6,9 +6,9 @@ date: 2018-01-09T15:00:00.000Z
 tags:
   - API Evangelist
   - Logging
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-logging-2.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-logging-2.png" align="right" width="45%" style="padding: 15px;" /></p>Logging has always been in the background of other stops along the API lifecycle, most notably the API management layer. However increasingly I am recommending pulling logging out of API management, and making it a first-class citizen, ensuring that the logging of all systems across the API lifecycle are aggregated, and accessible, allowing them to be accessed alongside other resources. Almost every stop in this basics of an API life cycle series will have its own logging layer, providing an opportunity to better understand each stop, but also side by side as part of the bigger picture.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-logging-2.png" align="right" width="45%" style="padding: 15px;" /></p>Logging has always been in the background of other stops along the API lifecycle, most notably the API management layer. However increasingly I am recommending pulling logging out of API management, and making it a first-class citizen, ensuring that the logging of all systems across the API lifecycle are aggregated, and accessible, allowing them to be accessed alongside other resources. Almost every stop in this basics of an API life cycle series will have its own logging layer, providing an opportunity to better understand each stop, but also side by side as part of the bigger picture.
 
 There are some clear leaders when it comes to logging, searching, and analyzing large volumes of data generated across API operations. This is one area you should not be reinventing the wheel in, and you need to be leveraging the experience of the open source tooling providers, as well as the cloud providers who have emerged across the landscape. Here is a snapshot of a few providers who will help you make logging a first class citizen in your API life cycle.
 

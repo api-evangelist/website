@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Security
   - Definitions
-image: 'https://s3.amazonaws.com/kinlane-productions/taxii/taxii-logo.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/taxii/taxii-logo.png'
 ---
-<p><a href="https://oasis-open.github.io/cti-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions/taxii/taxii-logo.png" align="right" width="30%" style="padding: 15px;" /></a></p>I recently wrote about [the opportunity around developing an aggregate threat information API](http://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/), and got some interest in both creating, as well as investing in some of the resulting products and services that would be derived from this security API work. As part of the feedback and interest on that post, I was pointed in the direction of [the Trusted Automated Exchange of Intelligence Information (TAXII)](https://oasis-open.github.io/cti-documentation/), as one possible approach to defining a common set of API definitions and tooling for the exchange of threat intelligence.
+<p><a href="https://oasis-open.github.io/cti-documentation/"><img src="https://s3.amazonaws.com/kinlane-productions2/taxii/taxii-logo.png" align="right" width="30%" style="padding: 15px;" /></a></p>I recently wrote about [the opportunity around developing an aggregate threat information API](http://apievangelist.com/2017/07/10/opportunity-to-develop-a-threat-intelligence-apis-json/), and got some interest in both creating, as well as investing in some of the resulting products and services that would be derived from this security API work. As part of the feedback and interest on that post, I was pointed in the direction of [the Trusted Automated Exchange of Intelligence Information (TAXII)](https://oasis-open.github.io/cti-documentation/), as one possible approach to defining a common set of API definitions and tooling for the exchange of threat intelligence.
 
 The description of TAXII from the project website describes it well:
 

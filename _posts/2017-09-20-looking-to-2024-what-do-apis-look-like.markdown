@@ -8,9 +8,9 @@ tags:
   - Business of APIs
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/redes-fast-flux-623x425_blue_electricity.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/redes-fast-flux-623x425_blue_electricity.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/redes-fast-flux-623x425_blue_electricity.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/redes-fast-flux-623x425_blue_electricity.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 I'm not a big fan of predictions. It is a game that analysts and investors play to try and shape the world they want to see. I'm usually focused on shaping the world I want to see by understanding where we are, how we got here, and making incremental shifts in our behavior today. I tend to think that technology futurists are more about ignoring the past, and being in denial about today, than they are ever about what is happening in the future. However, with that said, let me share some thoughts about what I think the future will hold when it comes to doing APIs.

@@ -10,13 +10,13 @@ tags:
   - Design
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/federal-government/uspto/uspto-peds-api.png
+  https://s3.amazonaws.com/kinlane-productions2/federal-government/uspto/uspto-peds-api.png
 ---
 I am deploying a patent review API for a client, using data from [the Patent Examination Data System (PEDS)](https://ped.uspto.gov/peds/). You can download complete JSON or XML data from the United States Patent Office (USPTO), and they even have an API. So, why would I be launching yet another API? Well, because what they have is so cryptic, complex, and lacking in any schema or API design, there is value in me pushing the API conversation forward a bit by thinking deeply about how other people will potentially be using these resources--something the USPTO clearly hasn't done.
 
 The [USPTO PEDS API](https://ped.uspto.gov/api/swagger-ui.html) (that is more acronyms than you can shake a stick at) is a great example of how much database people, and developers take for granted as they operate within their little bubbles, without much concern for how the rest of the world views their work--take a look at the screenshot of thee USPTO PEDS API.
 
-<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions/federal-government/uspto/uspto-peds-api.png" align="center" width="90%" /></p>
+<p align="center"><img src="https://s3.amazonaws.com/kinlane-productions2/federal-government/uspto/uspto-peds-api.png" align="center" width="90%" /></p>
 
 There is only one telling sign on this page regarding what this API does--the email address for the contact, which has a uspto.gov address. Beyond that there is not a single sign of the resources available within this API, or the value they bring to the table. Even if you can extrapolate that this is a patent API, there is nothing to tell you that you can't actually get patent data from this, you can only get meta data about the patents, reviewers, inventors, and the activity around the patent. For me, the API reflects many of the challenges developers and database people face when it comes to thinking out of their box, and effectively communicating with external consumers--which is the whole reason we do web APIs.
 

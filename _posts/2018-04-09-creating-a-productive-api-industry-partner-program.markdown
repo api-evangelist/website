@@ -9,9 +9,9 @@ tags:
   - Lifecycle
   - Stack
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-red-seal.png
+  https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-red-seal.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I struggle with partner relationships. I've had a lot of partners operating API Evangelist over the years. Some good. Some not so good. And some amazing! You know who you are. It's tough to fund what I do as the API Evangelist. It's even harder to fund who I am as Kin Lane. I've revamped my approach to partnering several times now trying to find the right formula for me, my partners, and for my readers. As the partner requests pile up, and I fall short for some of my existing partners, while delivering as expected for others, it is time for me to take another crack at shaping my partner program.
+<p></p>I struggle with partner relationships. I've had a lot of partners operating API Evangelist over the years. Some good. Some not so good. And some amazing! You know who you are. It's tough to fund what I do as the API Evangelist. It's even harder to fund who I am as Kin Lane. I've revamped my approach to partnering several times now trying to find the right formula for me, my partners, and for my readers. As the partner requests pile up, and I fall short for some of my existing partners, while delivering as expected for others, it is time for me to take another crack at shaping my partner program.
 
 **A Strong Streamdata.io Partnership Base**<br />
 A cornerstone of my new approach to partnering is based upon my relationship with Streamdata.io. They are my primary partner, and supporter of API Evangelist. They have not just helped provide me with the financial base I need to live and operate API Evangelist, they are investing in, and helping grow my existing API lifecycle and [API Stack](http://theapistack.com) work. We are also working in concert to formalize my API lifecycle work into a growing consultancy, and pushing forward my API Stack research, syndicating it as the Streamdata.io API Gallery, and refining the my ranking system for both API providers, and API service providers. Without Streamdata.io this latest round of API Evangelist wouldn't be happening.

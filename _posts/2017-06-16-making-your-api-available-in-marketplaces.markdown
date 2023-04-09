@@ -7,10 +7,10 @@ tags:
 - Deployment
 - Documents
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/box/box-platform-cloud-content-management-apis-aws-marketplace.png
+image: https://s3.amazonaws.com/kinlane-productions2/box/box-platform-cloud-content-management-apis-aws-marketplace.png
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/box/box-platform-cloud-content-management-apis-aws-marketplace.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/box/box-platform-cloud-content-management-apis-aws-marketplace.png" align="right" width="40%" style="padding: 15px;" /></p>
 I've been watching the conversation around how APIs are discovered since 2010 and I ave been working to understand where things might be going beyond ProgrammableWeb, to the Mashape Marketplace, and even investing in my own [API discovery format APIs.json](http://apisjson.org). It is a layer of the API space that feels very bipolar to me, with highs and lows, and a lot of meh in the middle. I do not claim to have "the solution" when it comes to API discovery and prefer just watching what is happening, and contributing where I can.
 
 A number interesting signals for API deployment, as well as API discovery,  are coming out of Amazon Marketplace lately. I find myself keeping a closer eye on [the almost 350 API related solutions in the marketplace](https://aws.amazon.com/marketplace/search/results?searchTerms=API&page=1&ref_=nav_search_box), and today [I'm specifically taking notice of the Box API availability in the AWS Marketplace](https://aws.amazon.com/marketplace/pp/B06XY1XHGV/?ref=_ptnr_awsblg). I find this marketplace approach to not just API discovery via an API marketplace, but also API deployment very interesting. AWS isn't just a marketplace of APIs, where you find what you need and integrate directly with that provider. It is where you find your API(s) and then spin up an instance within your AWS infrastructure that facilitates that API integration--a significant shift.

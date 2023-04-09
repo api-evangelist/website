@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Business of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/amusement-park-2_light_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/amusement-park-2_light_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/amusement-park-2_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/amusement-park-2_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 The main API development in 2017 has been the continued shift towards mainstream API adoption. The concept has been moving outside of the tech sector for a couple years now, but in 2017 it is very clear that it's not just something startups are doing. This is having a profound shift in how we talk about APIs, and how we approach the API lifecycle. APIs have historically been something new and smaller companies are doing, but often will deliver at scale (AWS, SalesForce, eBay, etc.). The mainstream shift in the API sector brings a whole new set of challenges, and opportunities as existing companies, with existing technology in place, work to shift towards an API way of doing things.

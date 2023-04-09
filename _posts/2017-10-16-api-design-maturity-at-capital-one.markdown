@@ -8,9 +8,9 @@ tags:
   - Design
   - Governance
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-api-maturing-pyramid.png
+  https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-api-maturing-pyramid.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/capital-one/capital-one-api-maturing-pyramid.png" align="right" width="40%" style="padding: 15px;" /></p>API design is something that many have tried to quantify and measure, but very few ever establish any meaningful way of doing so properly in my experience. [I've been learning about the approach to API governance from the Capital One DevExchange team](https://matthewreinbold.com/2017/10/03/API-Governance-Blueprint/), and found their approach to defining API design maturity pretty interesting. I'm mostly interested in their approach because it speaks to actual business objectives, and aren't about the common technical aspects we see API design being quantified across the community each day.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/capital-one/capital-one-api-maturing-pyramid.png" align="right" width="40%" style="padding: 15px;" /></p>API design is something that many have tried to quantify and measure, but very few ever establish any meaningful way of doing so properly in my experience. [I've been learning about the approach to API governance from the Capital One DevExchange team](https://matthewreinbold.com/2017/10/03/API-Governance-Blueprint/), and found their approach to defining API design maturity pretty interesting. I'm mostly interested in their approach because it speaks to actual business objectives, and aren't about the common technical aspects we see API design being quantified across the community each day.
 
 Capital One breaks things down into five distinctive layers that offer value to any organization doing APIs. Starting at the bottom of their maturity period, here are the levels of maturity they are measuring things by:
 

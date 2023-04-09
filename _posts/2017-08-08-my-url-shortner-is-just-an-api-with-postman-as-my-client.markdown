@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Client
   - Links
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-url-square.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-url-square.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-url-square.png" align="right" width="25%" style="padding: 15px;" /></p>I have my own URL shortener for API Evangelist called apis.how. I use it to track the click through rates for some of my research projects, and partner sponsorships. I've had the URL shortener in operation for about two years now, and I still do not have any type of UI for it, relying 100% on Postman for adding, searching, and managing the URLs I am shortening, and tracking on.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-url-square.png" align="right" width="25%" style="padding: 15px;" /></p>I have my own URL shortener for API Evangelist called apis.how. I use it to track the click through rates for some of my research projects, and partner sponsorships. I've had the URL shortener in operation for about two years now, and I still do not have any type of UI for it, relying 100% on Postman for adding, searching, and managing the URLs I am shortening, and tracking on.
 
 My URL shortener just hasn't raised to a level of priority where I'll invest any time into an administrative interface, or dashboard for my URL shortener. I used Bitly and Google for a while, but I really just needed a simple shortening with basic counts, nothing more. When I bought the domain I launched a handful of API endpoints to support, allowing me to add, update, search, and remove URLs, as well as track the click throughs, and query how many clicks a link received for each mont. I can easily accomplish all of this through the Postman interface, making basic calls to my simple API--no over-engineering necessary.
 

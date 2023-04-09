@@ -11,9 +11,9 @@ tags:
   - Support
   - Disasters
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/google-maps/google-maps-hurricane-harvey.png
+  https://s3.amazonaws.com/kinlane-productions2/google-maps/google-maps-hurricane-harvey.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/google-maps/google-maps-hurricane-harvey.png" align="right" width="40%" style="padding: 15px;" /></p>This API operations consideration won't apply to every API, but for APIs that provide essential resources in a time of need, I wanted to highlight an API rate limit cry for help that came across my desk this weekend. [Our friend over at Pinboard alerted me](https://twitter.com/Pinboard/status/901658084002713600) to someone in Texas asking for some help in getting Google to increase the Google Maps API rate limits for an app they were depending on as Hurricane Harvey:
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/google-maps/google-maps-hurricane-harvey.png" align="right" width="40%" style="padding: 15px;" /></p>This API operations consideration won't apply to every API, but for APIs that provide essential resources in a time of need, I wanted to highlight an API rate limit cry for help that came across my desk this weekend. [Our friend over at Pinboard alerted me](https://twitter.com/Pinboard/status/901658084002713600) to someone in Texas asking for some help in getting Google to increase the Google Maps API rate limits for an app they were depending on as Hurricane Harvey:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Hey <a href="https://twitter.com/Google">@google</a> <a href="https://twitter.com/googlemaps">@googlemaps</a> <a href="https://twitter.com/GoogleMapsAPI">@googlemapsapi</a> can you please remove the limit on api access for <a href="https://twitter.com/ATXfloods">@atxfloods</a>? This is an emergency and we rely on it.</p>&mdash; Jen Savage (@savagejen) <a href="https://twitter.com/savagejen/status/901656342213033984">August 27, 2017</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

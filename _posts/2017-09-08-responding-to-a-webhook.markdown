@@ -6,9 +6,9 @@ date: 2017-09-08T11:00:00.000Z
 tags:
   - API Evangelist
   - Webhooks
-image: 'https://s3.amazonaws.com/kinlane-productions/stripe/stripe-using-webhooks.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/stripe/stripe-using-webhooks.png'
 ---
-<p><a href="https://stripe.com/docs/webhooks"><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripe-using-webhooks.png" align="right" width="40%" style="padding: 15px;" /></a></p>There are many details of doing APIs you don't think about until you either a) gain the experience from doing APIs, or b) learn from the API providers already in the space. When you are just getting going with your API efforts you pretty much have to rely on b), unless you have the resources to hire a team with existing API experience. Which many of my readers will not have the luxury to do, so they need as much helping learning from the pioneers who came first, wherever they can.
+<p><a href="https://stripe.com/docs/webhooks"><img src="https://s3.amazonaws.com/kinlane-productions2/stripe/stripe-using-webhooks.png" align="right" width="40%" style="padding: 15px;" /></a></p>There are many details of doing APIs you don't think about until you either a) gain the experience from doing APIs, or b) learn from the API providers already in the space. When you are just getting going with your API efforts you pretty much have to rely on b), unless you have the resources to hire a team with existing API experience. Which many of my readers will not have the luxury to do, so they need as much helping learning from the pioneers who came first, wherever they can.
 
 One of the API pioneers you should be learning from is the payment API provider Stripe. [I've been studying their approach to webhooks lately](https://stripe.com/docs/webhooks), and I've managed to extract a number of interesting nuggets I will be sharing in separate blog posts. Today's topic is responding to a webhook, which Stripe provides the following guidance:
 

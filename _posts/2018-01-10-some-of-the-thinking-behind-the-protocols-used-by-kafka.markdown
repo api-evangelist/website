@@ -9,9 +9,9 @@ tags:
   - Real Time
   - Messaging
   - Protocols
-image: 'https://s3.amazonaws.com/kinlane-productions/kafka/kafka-protocol-guide.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/kafka/kafka-protocol-guide.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/kafka/kafka-protocol-guide.png" align="right" width="45%" style="padding: 15px;" /></p>[I've been studying the overall Apache Stack a lot lately](http://apievangelist.com/2017/10/03/looking-at-the-37-apached-data-projects/), with an emphasis on [Kafka](https://kafka.apache.org/). I'm trying to understand what the future of APIs will hold, and where the leading edge of real time, event-driven architecture is at these days. I'm going through the protocol page for Kafka, learning about exactly how they move data around, and found their answers behind the decisions they've made along the way in deciding what protocols they chose to use were very interesting.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/kafka/kafka-protocol-guide.png" align="right" width="45%" style="padding: 15px;" /></p>[I've been studying the overall Apache Stack a lot lately](http://apievangelist.com/2017/10/03/looking-at-the-37-apached-data-projects/), with an emphasis on [Kafka](https://kafka.apache.org/). I'm trying to understand what the future of APIs will hold, and where the leading edge of real time, event-driven architecture is at these days. I'm going through the protocol page for Kafka, learning about exactly how they move data around, and found their answers behind the decisions they've made along the way in deciding what protocols they chose to use were very interesting.
 
 [All the way at the bottom of the Kafka protocol page you can find the following "Some Common Philosophical Questions"](https://kafka.apache.org/protocol), providing some interesting backstory on the decisions behind the very popular platform.
 

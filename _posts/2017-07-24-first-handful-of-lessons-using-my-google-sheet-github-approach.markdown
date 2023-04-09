@@ -10,9 +10,9 @@ tags:
   - Data
   - Jekyll
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/lessons/google-sheet-to-github.png
+  https://s3.amazonaws.com/kinlane-productions2/lessons/google-sheet-to-github.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/lessons/google-sheet-to-github.png" align="right" width="40%" style="padding: 15px;" /></p>With my recent shift to using Google Sheets as my data backend for my research, and my continued usage of Github as my data project publishing platform, I started pushing out some new API related lessons. I wanted to begin formalizing my schema and process for this new approach to delivering lessons with some simple topics, so I got to work taking my 101, and history of APIs work, and converting them into a multi-step lesson.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/lessons/google-sheet-to-github.png" align="right" width="40%" style="padding: 15px;" /></p>With my recent shift to using Google Sheets as my data backend for my research, and my continued usage of Github as my data project publishing platform, I started pushing out some new API related lessons. I wanted to begin formalizing my schema and process for this new approach to delivering lessons with some simple topics, so I got to work taking my 101, and history of APIs work, and converting them into a multi-step lesson.
 
 Some of my initial 101 API lessons are:
 

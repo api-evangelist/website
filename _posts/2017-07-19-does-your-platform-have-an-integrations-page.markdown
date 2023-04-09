@@ -8,9 +8,9 @@ tags:
   - iPaaS
   - Integration
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/airtable/airtable-integrations-page.png
+  https://s3.amazonaws.com/kinlane-productions2/airtable/airtable-integrations-page.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/airtable/airtable-integrations-page.png" align="right" width="40%" style="padding: 15px;" /></p>I'm continuing to come across more dedicated integration pages for the API platforms I'm test driving, and keeping an eye on. [This time it is out of spreadsheet and database hybrid AirTable, that allows you to easily deploy an API complete with a portal, with a pretty robust integrations page for their platform](https://airtable.com/integrations). Airtable's dedicated integrations page is made easier since they use Zapier, which helps them aggregate over 750+ APIs for possible integration.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/airtable/airtable-integrations-page.png" align="right" width="40%" style="padding: 15px;" /></p>I'm continuing to come across more dedicated integration pages for the API platforms I'm test driving, and keeping an eye on. [This time it is out of spreadsheet and database hybrid AirTable, that allows you to easily deploy an API complete with a portal, with a pretty robust integrations page for their platform](https://airtable.com/integrations). Airtable's dedicated integrations page is made easier since they use Zapier, which helps them aggregate over 750+ APIs for possible integration.
 
 Airtable is pretty slick all by itself, but once you start wiring it up to some of the other API driven platforms we depend on, [it becomes a pretty powerful tool for data aggregation, and then publishing as an API](https://apievangelist.com/2017/07/11/each-airtable-datastore-comes-with-complete-api-and-developer-portal/). I don't understand why a Zapier-driven API integrations page isn't default for every API platform out there. API consumption today isn't just about deploying web or mobile applications, it is about moving data and content around the web--making sure it is where we need it, when we need it.
 

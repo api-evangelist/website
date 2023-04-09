@@ -8,7 +8,7 @@ tags:
 - API Evangelist
 ---
 
-<p><a href="http://www.apicur.io/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/apicurio/apicurios-studio-methods.png" align="right" width="40%" /></a></p>
+<p><a href="http://www.apicur.io/"><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/apicurio/apicurios-studio-methods.png" align="right" width="40%" /></a></p>
 [I've been wanting someone to create an open source API editor for some time](http://apievangelist.com/2015/08/13/a-common-open-source-api-design-editor-is-needed-for-api-service-providers/), and now the folks over at Red Hat / 3Scale have delivered one [called Apicurio](http://www.apicur.io/). It is a web-based Angular2 app, for visually designing your APIs using OpenAPI, with a Github focus.
 
 [Apicurio is that blend of visual designer, and code view that I was hoping for, letting you manage all your paths, and definitions using OpenAPI via Github](http://www.apicur.io/). It doesn't have all [the bells and whistles I'd love to see in my perfect API design editor](http://apievangelist.com/2014/06/25/if-i-could-design-my-perfect-api-design-editor/), but they are just getting going, and I think it is an excellent start.
@@ -17,7 +17,7 @@ Using Apicurio you can start a new API, or begin with an existing API by importi
 
 After making changes you can save it to Github, helping center the API design and definition process around Github, which can then be applied to the center of any API lifecycle. I really like how the design tool is a visual interface but you can always get at the machine readable definition behind, and edit it directly if you prefer. I feel like it is an interface that both developers and non-developers can put to work while still keeping OpenAPI at the center.
 
-<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions/apicurio/apicurios-studio-definitions.png" align="right" width="40%" /></p>
+<p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/apicurio/apicurios-studio-definitions.png" align="right" width="40%" /></p>
 
 You can see where they are headed with APIcurio [by checking out the roadmap](http://www.apicur.io/roadmap/), as well as hints in the interface--like grayed out buttons for testing and documentation. I can see the tool turning into a full blown lifecycle management solutions, allowing you to design, deploy, manage, document, test, and many other useful areas along the API lifecycle. The OpenAPI definition and a Github repo core will all help set the stage for Apicurio delivering across the API lifecycle for developers.
 

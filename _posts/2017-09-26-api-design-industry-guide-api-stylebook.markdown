@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Design
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-api-stylebook.png
+  https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-api-stylebook.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/guides/definition/design/api-design-industry-guide-api-stylebook.png" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/guides/definition/design/api-design-industry-guide-api-stylebook.png" align="right" width="40%" style="padding: 15px;" /></p>
 _This post is from the latest copy of my [API Evangelist API Design Industry Guide](http://design.apievangelist.com/#Guide), which provides a high level look at the API design layer of the industry. Providing a quick look at the services, tools, and some of the common building blocks of API design. The guide is heavily rooted in REST and hypermedia, but is working to track on the expansion of the space beyond just these formats. My industry guides change regularly, and I try to publish the articles from them here on the blog to increase their reach and exposure._
 
 Arnaud Lauret (@arno_di_loreto), the API Handyman (@apihandyman), has been developing an API Stylebook that provides a collection of resources for API designers. It is a brilliant aggregation of thirteen API design guides from Atlassian, Cisco, Cloud Foundry, Google, Haufe, Heroku, Microsoft, PayPal, Red Hat, The White House, and Zalando. It highlights best practices used by leading API providers.

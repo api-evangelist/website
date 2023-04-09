@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Bots
   - Github
-image: 'https://s3.amazonaws.com/kinlane-productions/hashicorp/hashicorp-logo.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/hashicorp/hashicorp-logo.png'
 ---
-<p><a href="https://www.hashicorp.com"><img src="https://s3.amazonaws.com/kinlane-productions/hashicorp/hashicorp-logo.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm not a fan of the unfolding bot universe. I get it, you can do interesting things with them--the key word being interesting. Most of what I've seen done via Twitter, Facebook, and Slack Bots really isn't that interesting. Maybe it's that I'm old and boring, or maybe because people aren't doing interesting things. When you hear me complain about bots, just remember it isn't because I think the technology approach is dumb, it's because I think the implementations are dumb.
+<p><a href="https://www.hashicorp.com"><img src="https://s3.amazonaws.com/kinlane-productions2/hashicorp/hashicorp-logo.png" align="right" width="40%" style="padding: 15px;" /></a></p>I'm not a fan of the unfolding bot universe. I get it, you can do interesting things with them--the key word being interesting. Most of what I've seen done via Twitter, Facebook, and Slack Bots really isn't that interesting. Maybe it's that I'm old and boring, or maybe because people aren't doing interesting things. When you hear me complain about bots, just remember it isn't because I think the technology approach is dumb, it's because I think the implementations are dumb.
 
 After several dives into the world of bots, looking to understand how bots are using APIs, I've found some interesting Twitter bots, and an even smaller number of Slack bots I found to be useful--I have yet to find an interesting Facebook Bot. Honestly, I think it is the constaints of each platform that are incentivizing interesting things to be done, and also the not interesting, and even dangerous things to be done. So I find it interesting when the bot conversation moves to other platforms, bringing with it a new sets of constraints, like [I just saw with a new bot out of Hashicorp](https://www.hashicorp.com/blog/introducing-the-hashibot-github-bot/).
 

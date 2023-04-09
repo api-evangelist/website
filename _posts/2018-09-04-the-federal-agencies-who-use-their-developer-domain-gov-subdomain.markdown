@@ -9,9 +9,9 @@ tags:
   - DNS
   - Portals
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/federal-government/federal-goverment-portals.png
+  https://s3.amazonaws.com/kinlane-productions2/federal-government/federal-goverment-portals.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I was reviewing the new developer portal for the Department of Veterans Affairs (VA), and one of things I took notice of, was their use of the developer.va.gov subdomain. In my experience, the API efforts that invest in a dedicated subdomain, and specifically a developer dot subdomain, tend to more invested in what they are doing than efforts that publish to a subfolder, or subsection of their website. As I was writing this post, I had a question in arise in my mind, regarding how many other federal agencies use a dedicated subdomain for their developer programs--something I wanted to pick up later, and understand the landscape a little more.
+<p></p>I was reviewing the new developer portal for the Department of Veterans Affairs (VA), and one of things I took notice of, was their use of the developer.va.gov subdomain. In my experience, the API efforts that invest in a dedicated subdomain, and specifically a developer dot subdomain, tend to more invested in what they are doing than efforts that publish to a subfolder, or subsection of their website. As I was writing this post, I had a question in arise in my mind, regarding how many other federal agencies use a dedicated subdomain for their developer programs--something I wanted to pick up later, and understand the landscape a little more.
 
 I took a list of current federal agency domains from the GSA and wrote a little script to append developer. to each of the domains, and conduct an HTTP status code check to see whether or not these pages existed. Here are the dedicated developer areas I found for the US federal government:
 

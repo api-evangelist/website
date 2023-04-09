@@ -8,9 +8,9 @@ tags:
   - Real Time
   - Event-Driven
   - Twitter
-image: 'https://s3.amazonaws.com/kinlane-productions/twitter/twitter-automation.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/twitter/twitter-automation.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>My friend James Higginbotham ([@launchany](https://twitter.com/launchany?lang=en)) was sharing his frustration with being able to stay in tune with changes to a variety of APIs. Like me, James works to stay in tune with a variety of signals available via platforms like Twitter, Github, and other commonly used services. These platforms don't always properly signal when things are updated, changed, or advanced, making it difficult to understand the granular changes that occur like likes, votes, edits, and other common events that occur via highly active platforms.
+<p></p>My friend James Higginbotham ([@launchany](https://twitter.com/launchany?lang=en)) was sharing his frustration with being able to stay in tune with changes to a variety of APIs. Like me, James works to stay in tune with a variety of signals available via platforms like Twitter, Github, and other commonly used services. These platforms don't always properly signal when things are updated, changed, or advanced, making it difficult to understand the granular changes that occur like likes, votes, edits, and other common events that occur via highly active platforms.
 
 This challenge is why the evolution towards a more event-driven approach to operating an API platform is not just more efficient, it gives users what they need. Using event-driven architectural approaches like Webhooks, and real times streams. This is one of the reasons I'm interested in what [Streamdata.io](http://streamdata.io) does, beyond them helping support me financially, is that they allow me to focus on the event-driven shift that is occurring with many leading API providers, and needs to be brought to the attention of other platforms. Helping API providers be more efficient in what they are doing, while also meeting the needs of the most demanding customers like James and myself.
 

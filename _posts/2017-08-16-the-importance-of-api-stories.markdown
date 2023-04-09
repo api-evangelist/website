@@ -9,9 +9,9 @@ tags:
   - Support
   - Evangelism
   - Management
-image: 'https://s3.amazonaws.com/kinlane-productions/photos/ca-panel.jpg'
+image: 'https://s3.amazonaws.com/kinlane-productions2/photos/ca-panel.jpg'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/photos/ca-panel.jpg" align="right" width="40%" style="padding: 15px;" /></p>I am an API storyteller before am an API architect, designer, or evangelist. My number one job is to tell stories about the API space. I make sure there is always (almost) 3-5 stories a day published to API Evangelist about what I'm seeing as I conduct my research on the sector, and thoughts I'm having while consulting and working on API projects. I've been telling stories like this for seven years, which has proven to me how much stories matter in the world of technology, and the worlds that it is impacting--which is pretty much everything right now.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/photos/ca-panel.jpg" align="right" width="40%" style="padding: 15px;" /></p>I am an API storyteller before am an API architect, designer, or evangelist. My number one job is to tell stories about the API space. I make sure there is always (almost) 3-5 stories a day published to API Evangelist about what I'm seeing as I conduct my research on the sector, and thoughts I'm having while consulting and working on API projects. I've been telling stories like this for seven years, which has proven to me how much stories matter in the world of technology, and the worlds that it is impacting--which is pretty much everything right now.
 
 Occasionally I get folks who like to criticize what I do, making sure I know that stories don't matter. That nobody in the enterprise or startups care about stories. Results are what matter. Ohhhhh reeeaaaly. ;-) I hate to tell you, it is all stories. VC investment in startups is all about the story. The markets all operate on stories. Twitter. Facebook. LinkedIn. Medium. TechCrunch. It is all stories. The stories we tell ourselves. The stories we tell each other. The stories we believe. The stories we refuse to believe. It is all stories. Stories are important to everything.
 

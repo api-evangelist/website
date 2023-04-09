@@ -5,9 +5,9 @@ title: 'My API Lifecycle Checklist And Scorecard'
 date: 2018-07-12T09:00:00.000Z
 tags:
 - API Evangelist
-image: 'https://s3.amazonaws.com/kinlane-productions/api-evangelist-logos/api-evangelist-blue-seal.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/api-evangelist-logos/api-evangelist-blue-seal.png'
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am working on delivering a handful of new APIs, which I will be turning into products. I will be prototyping, developing, and operating them in production environments for myself, and for a handful of customers. To help guide my workflow, I've crafted this API lifecycle definition to help direct my efforts in an ongoing lifecycle approach.
+<p></p>I am working on delivering a handful of new APIs, which I will be turning into products. I will be prototyping, developing, and operating them in production environments for myself, and for a handful of customers. To help guide my workflow, I've crafted this API lifecycle definition to help direct my efforts in an ongoing lifecycle approach.
 
 **Define** - Define the problem and solution in a human and machine readable way.
 

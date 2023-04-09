@@ -9,9 +9,9 @@ tags:
   - Definitions
   - Discovery
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/13439120_10154285627219813_3054276594176638940_n_copper_circuit_2.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/13439120_10154285627219813_3054276594176638940_n_copper_circuit_2.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I'm generating OpenAPI definitions for a wide variety of APIs currently, and I'm regularly stumbling on the messiness of the API design practices being deployed. When you are exposed to a large number of different APIs it is easy to get frustrated, begin ranting, and bitching about how ignorant people are of healthy, sensible API practices. This is the easy route. Making sense of it all, finding the interesting signals and patterns, and extracting where the opportunity are takes a significant amount of effort (so does biting tongue).
+<p></p>I'm generating OpenAPI definitions for a wide variety of APIs currently, and I'm regularly stumbling on the messiness of the API design practices being deployed. When you are exposed to a large number of different APIs it is easy to get frustrated, begin ranting, and bitching about how ignorant people are of healthy, sensible API practices. This is the easy route. Making sense of it all, finding the interesting signals and patterns, and extracting where the opportunity are takes a significant amount of effort (so does biting tongue).
 
 After profiling almost 500 API providers, I have almost 25K separate API paths indexed using OpenAPI, and APIs.json. I've tagged each API path using its OpenAPI definition. Pulling words from the path name, and any summary and description provided within the API documentation. Doing my best to describe the value contained within each API resource. Then I started grouping by these tags, to see what it produced. Sometimes the API paths it lists makes total sense, but most of the time it makes no sense at all. Then, I started noticing interesting patterns in how people describe their resources. Grouping things like "favorites" across all types of APIs, revealing some pretty interesting perspectives, and honest views of the resources being exposed. 
 

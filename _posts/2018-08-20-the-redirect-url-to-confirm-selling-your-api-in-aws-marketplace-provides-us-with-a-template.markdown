@@ -11,9 +11,9 @@ tags:
   - Management
   - DNS
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/amazon/aws-marketplace-aws-saas-seller-integration-guide.png
+  https://s3.amazonaws.com/kinlane-productions2/amazon/aws-marketplace-aws-saas-seller-integration-guide.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am setting up different APIs using the AWS API Gateway and then publishing them to the AWS Marketplace, as part of [my work with Streamdata.io](http://streamdata.io). I'm getting a feel for what the process is all about, and how small I can distill an API product to be, as part of the AWS Marketplace process. My goal is to be able to quickly define APIs using OpenAPI, then publish them to AWS API Gateway, and leverage the gateway to help me manage the entire business of the service from signup to discovery.
+<p></p>I am setting up different APIs using the AWS API Gateway and then publishing them to the AWS Marketplace, as part of [my work with Streamdata.io](http://streamdata.io). I'm getting a feel for what the process is all about, and how small I can distill an API product to be, as part of the AWS Marketplace process. My goal is to be able to quickly define APIs using OpenAPI, then publish them to AWS API Gateway, and leverage the gateway to help me manage the entire business of the service from signup to discovery.
 
 As I was adding one of my first couple of APIs to the AWS Marketplace, and I found the instructions regarding the redirect URL for each API to be a good template. Each individual API service I'm offering will have its own subscription confirmation URL with the AWS API marketplace, with the relevant variables present I will need to scale the technical and business of delivering my APIs:
 

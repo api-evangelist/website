@@ -9,9 +9,9 @@ tags:
   - Management
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/docks_copper_circuit.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/docks_copper_circuit.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>There is lots of talk this week about regulating Facebook after the Cambridge Analytica story broke. Individuals, businesses, lawmakers, and even Facebook are talking about how we begin to better regulate not just Facebook, but the entire data industry. From my perspective, as the API Evangelist, the mechanisms are already in place, they just aren't being used to their fullest by providers, with no sufficient policy in place at the federal level to incentivize healthy behavior by API providers, data brokers, and 3rd party application developers.
+<p></p>There is lots of talk this week about regulating Facebook after the Cambridge Analytica story broke. Individuals, businesses, lawmakers, and even Facebook are talking about how we begin to better regulate not just Facebook, but the entire data industry. From my perspective, as the API Evangelist, the mechanisms are already in place, they just aren't being used to their fullest by providers, with no sufficient policy in place at the federal level to incentivize healthy behavior by API providers, data brokers, and 3rd party application developers.
 
 **API Management Is Already In Place**<br />
 Modern API platforms, Facebook included, leverage what is called an API management layer, to help manage the applications being developed on their platforms. Every developer who wants to access platform APIs has to sign up, submit the name and details of their application(s), and then receive an API key which they have to include with each call they make to a platform's API when requesting ANY data, content, or usage of an algorithm. This means that all the platforms should already be in tune with every application that is using their platform, unless they allow internal groups, and specific partners to bypass the API management layer.

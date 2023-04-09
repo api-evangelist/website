@@ -4,10 +4,10 @@ date: 2017-06-06 11:00:00 Z
 tags:
 - '101'
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-racks-clouds_dark_dali.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/server-racks-clouds_dark_dali.jpg
 ---
 
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/server-racks-clouds_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>I really dislike acronyms, so the irony surrounding me being the API Evangelist is always present for me. API isn't just about RESTful APIs to me. API is much more than just the technical, it is also the business and politics of our digital world--something that doesn't come across in three letters.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/server-racks-clouds_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>I really dislike acronyms, so the irony surrounding me being the API Evangelist is always present for me. API isn't just about RESTful APIs to me. API is much more than just the technical, it is also the business and politics of our digital world--something that doesn't come across in three letters.
 
 As part of my storytelling, I enjoy unpacking the complexity that acronyms are often used to shadow, hopefully making the world of technology a little less intimidating for folks. While space out at lunch the other day I unpacked API and wrote this:
 

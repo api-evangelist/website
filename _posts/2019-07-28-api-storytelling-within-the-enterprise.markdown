@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Storytelling
   - Communication
-image: https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/long-factory-uncle-sam.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/long-factory-uncle-sam.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 Storytelling is important. Storytelling within the enterprise is hard. Reaching folks on the open web is hard work to, but there is usually an audience that will eventually tune in, and over time you can develop and cultivate that audience. The tools you have at your disposal within the enterprise are much more prescribed and often times dictated--even controlled. I also find that they aren’t always as effective as they are made out to be, with the perception being one thing, and the reach, engagement, and noise being then much harder realities you face when trying to get a message out.
 
 Email might seem like a good idea, and is definitely a critical tool when reaching specific individuals or groups, but as a general company wide thing, it quickly becomes exponentially ineffective with each person you add on as CC. I’d say that you are better off creating a daily or weekly email newsletter if you are going to be sending across large groups of the enterprise rather than participating in the constant email barrage that occurs on a daily basis. Email is an effective tool when used properly, but I’d say I haven’t perfected the art of using email to reach my intended audience within the enterprise.

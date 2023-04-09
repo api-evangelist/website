@@ -9,9 +9,9 @@ tags:
   - API Evangelist
   - Evangelism
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/art-museum_dark_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/art-museum_dark_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/art-museum_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/art-museum_dark_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>
 _I am spending two days this week with the [Capital One DevExchange](https://developer.capitalone.com/) team outside of Washington DC, and they've provided me with a list of questions for one of our sessions, which they will be recording for internal use. To prepare, I wanted to work through my thoughts, and make sure each of these answers were on the tip of my tongue--here is one of those questions, along with my thoughts._
 
 When it comes to the most influential people and companies in the API space that I am keeping an eye on, it always starts with the API pioneers. This begins with SalesForce, eBay, and Amazon. Then it moves into the social realm with Twitter and Facebook. All of these providers are still moving and shaking the space when it comes to APIs, and operating viable API platforms that dominate in their sector. While I do not always agree with the direction these platforms are taking, they continue to provide a wealth of healthy, and bad practices we should all be considering as part of our own API operations, even if we aren't doing it at a similar scale.

@@ -8,7 +8,7 @@ tags:
   - Evangelism
   - Management
   - Sales
-image: 'https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/api-value-generation-funnel.png'
 ---
 I've had several folks asking me to articulate my vision of an API centric "sales" funnel, which technically is out of my wheelhouse in the sales and marketing area, but since I do have lots opinions on what a funnel should look like for an API platform, I thought I'd take a crack at it. To help articulate what is in my head I wanted to craft a narrative, as well as a visual to accompany how I like to imagine a value generation funnel for any API platform.
 
@@ -23,7 +23,7 @@ I am seeing things in ten separate layers right now, something I'll keep shiftin
   - **Participation** - Getting developers participating on regular basis.
 - **Layer Two**
 	- **Developers** - Getting developers signing up and creating accounts.
-	- **Applications** - Getting developers signing up and creating applications.<a href="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions/api-value-generation-funnel.png" align="right" width="75%" style="padding: 15px;" /></a>
+	- **Applications** - Getting developers signing up and creating applications.<a href="https://s3.amazonaws.com/kinlane-productions2/api-value-generation-funnel.png" target="_blank"><img src="https://s3.amazonaws.com/kinlane-productions2/api-value-generation-funnel.png" align="right" width="75%" style="padding: 15px;" /></a>
 - **Layer Three**
 	- **Sandbox Activity** - Developers being active within the sandbox environment.
 - **Layer Four**

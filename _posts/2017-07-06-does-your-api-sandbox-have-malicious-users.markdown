@@ -9,9 +9,9 @@ tags:
   - Virtualization
   - Reliability
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_light_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/sand-hand_light_dali.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/sand-hand_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>I have been going through [my API virtualization research](http://virtualization.apievangelist.com/), expanding the number of companies I'm paying attention to, and taking a look at industry specific sandboxes, mock APIs, and other approaches to virtualizing APIs, and the data and content they serve up. I'm playing around with some banking API sandboxes, getting familiar with PSD2, and learning about how banks are approaches their API virtualization--providing me with an example within a heavily regulated industry.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/sand-hand_light_dali.jpg" align="right" width="40%" style="padding: 15px;" /></p>I have been going through [my API virtualization research](http://virtualization.apievangelist.com/), expanding the number of companies I'm paying attention to, and taking a look at industry specific sandboxes, mock APIs, and other approaches to virtualizing APIs, and the data and content they serve up. I'm playing around with some banking API sandboxes, getting familiar with PSD2, and learning about how banks are approaches their API virtualization--providing me with an example within a heavily regulated industry.
 
 AS I'm looking through [Open Bank Project's PSD2 Sandbox](https://github.com/OpenBankProject/OBP-API/wiki/PSD2-Sandbox), and playing with [services that are targeting the banking industry with sandbox solution](https://www.sandboxbanking.com/developers.html), I find myself thinking about [Netflix's Chaos Monkey](https://github.com/Netflix/chaosmonkey), which is "a resiliency tool that helps applications tolerate random instance failures." Now I am wondering if there are any API sandboxes out there that have simulated threats built in, pushing developers to build more stable and secure applications with API resources.
 

@@ -10,9 +10,9 @@ tags:
   - GatewayResponse
   - Validation
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png
+  https://s3.amazonaws.com/kinlane-productions2/amazon/api-gateway-extensions-swagger.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/amazon/api-gateway-extensions-swagger.png" align="right" width="45%" style="padding: 15px;" /></p>
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/amazon/api-gateway-extensions-swagger.png" align="right" width="45%" style="padding: 15px;" /></p>
 I was doing some work on the AWS API Gateway, and as I was going through their API documentation I found some of [the OpenAPI vendor extensions they use as part of operations](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-swagger-extensions.html). These vendor extensions show up in the OpenAPI you export for any API, and reflect how AWS has extended the OpenAPI specification, making sure it does what they need it to do as part of AWS API Gateway operations.
 
 AWS has 20 separate OpenAPI vendor extensions as part of the OpenAPI specification for any API you manage using their gateway solution:

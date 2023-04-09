@@ -8,9 +8,9 @@ tags:
   - Discovery
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/api-stack/logos/the-api-stack-entities-snapshot.png
+  https://s3.amazonaws.com/kinlane-productions2/api-stack/logos/the-api-stack-entities-snapshot.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I am escalating conversations I'm having with folks regarding how I profile and understand APIs as part of my [API Stack](http://theapistack.com) work. It is something I've been evolving for 2-3 years, as I struggle with different ways to attack and provide solutions within the area of API discovery. I want to understand what APIs exist out there as part of my industry research, but along the way I want to also help others find the APIs they are looking for, while also helping API providers get their APIs found in the first place. All of this has lead me to establish a pretty robust process for profiling API providers, and document what they are doing.
+<p></p>I am escalating conversations I'm having with folks regarding how I profile and understand APIs as part of my [API Stack](http://theapistack.com) work. It is something I've been evolving for 2-3 years, as I struggle with different ways to attack and provide solutions within the area of API discovery. I want to understand what APIs exist out there as part of my industry research, but along the way I want to also help others find the APIs they are looking for, while also helping API providers get their APIs found in the first place. All of this has lead me to establish a pretty robust process for profiling API providers, and document what they are doing.
 
 As I shift my [API Stack](http://theapistack.com) work into 2nd gear, I need to further formalize this process, articulate to partners, and execute at scale. Here is my current snapshot of what is happening whenever I'm profiling an API and adding it to my API Stack organization, and hopefully moving it forward along this API discovery pipeline in a meaningful way. It is something I'm continuing to set into motion all by myself, but I am also looking to bring in other API service providers, API providers, and API consumers to help me realize this massive vision.
 

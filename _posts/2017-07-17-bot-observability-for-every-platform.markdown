@@ -8,9 +8,9 @@ tags:
   - Bots
   - Social
   - Observability
-image: 'https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-showcase.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-showcase.png'
 ---
-<p><a href="http://bots.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions/bw-icons/bw-bot-showcase.png" align="right" width="45%" style="padding: 15px" /></a></p>[I lightly keep an eye on the world of bots, as APIs are used to create them](http://bots.apievangelist.com/). In my work I see a lot of noise about bots usually in two main camps: 1) pro-bot - bots are the future, and 2) anti-bot - they are one of the biggest threats we face on the web. This is a magical marketing creating formula, which allows you to sell products to both sides of the equation, making money off of bot creation, as well as bot identification and defense--it is beautiful (if you live by disruption).
+<p><a href="http://bots.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-bot-showcase.png" align="right" width="45%" style="padding: 15px" /></a></p>[I lightly keep an eye on the world of bots, as APIs are used to create them](http://bots.apievangelist.com/). In my work I see a lot of noise about bots usually in two main camps: 1) pro-bot - bots are the future, and 2) anti-bot - they are one of the biggest threats we face on the web. This is a magical marketing creating formula, which allows you to sell products to both sides of the equation, making money off of bot creation, as well as bot identification and defense--it is beautiful (if you live by disruption).
 
 From my vantage point, I'm wondering why platforms do not provide more bot observability as a part of platform operations. There shouldn't be services that tell us which accounts are bots, the platform should tell us by default, which users are real and which are automated (you know you know). Platforms should embrace automation and providing services and tooling to assist in their operation, which includes actual definitions of what is acceptable, and what unacceptable bot behavior. Then actually policing this behavior, and being observable in your actions around bot management and enforcement.
 

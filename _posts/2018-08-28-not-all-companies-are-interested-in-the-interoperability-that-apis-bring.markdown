@@ -8,9 +8,9 @@ tags:
   - Interoperability
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/fence_dark_dali.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/fence_dark_dali.jpg
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>I've learned a lot in eight years of operating API Evangelist. One of the most important things I've learned to do is separate my personal belief and interest in technology from the realities of the business world. I've learned that not all businesses are ready for the change that doing APIs bring, and that many businesses really aren't interested in the interoperability, portability, and observability that APIs bring to the table. Despite what I may believe, APIs in the real world often have a very different outcome.
+<p></p>I've learned a lot in eight years of operating API Evangelist. One of the most important things I've learned to do is separate my personal belief and interest in technology from the realities of the business world. I've learned that not all businesses are ready for the change that doing APIs bring, and that many businesses really aren't interested in the interoperability, portability, and observability that APIs bring to the table. Despite what I may believe, APIs in the real world often have a very different outcome.
 
 I see the potential of having a public API developer portal where you publish all the digital resources your company offers. Providing self-service registration to access these digital resources at a fair, transparent, and pay for what you use pricing model. I get what this can do for companies when it comes to attracting developer talent to help deliver the applications that are needed for any platform to thrive. I've seen the benefits to the end-users of these applications when it comes to giving them control over their data, the ability to leverage 3rd party applications, while also better understanding, managing, and ultimately owning the digital resources they generate each day. I also regularly see how this all can be a serious threat to how some businesses operate, and work to reveal the illnesses that exist within many businesses, and the shady things the occur behind the firewall each day.
 

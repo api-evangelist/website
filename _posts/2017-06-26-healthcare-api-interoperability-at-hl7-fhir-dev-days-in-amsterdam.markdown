@@ -5,10 +5,10 @@ tags:
 - Healthcare
 - Definitions
 - API Evangelist
-image: https://s3.amazonaws.com/kinlane-productions/fhir/fhir-devdays-2017-amsterdam.png
+image: https://s3.amazonaws.com/kinlane-productions2/fhir/fhir-devdays-2017-amsterdam.png
 ---
 
-<p><a href="https://www.fhirdevdays.com/"><img src="https://s3.amazonaws.com/kinlane-productions/fhir/fhir-devdays-2017-amsterdam.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I wrote about a machine learning specific API event a couple weeks back](https://apievangelist.com/2017/06/07/a-conference-focused-on-machine-learning-apis/), and today I wanted to highlight the growth of conferences dedicated to [FHIR, or the Fast Healthcare Interoperability Resources](https://www.hl7.org/fhir/). FHIR is larger than just it's API, but it is one very important example of how APIs and open industry API specifications can help move forward the API conversation in large industries.
+<p><a href="https://www.fhirdevdays.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/fhir/fhir-devdays-2017-amsterdam.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I wrote about a machine learning specific API event a couple weeks back](https://apievangelist.com/2017/06/07/a-conference-focused-on-machine-learning-apis/), and today I wanted to highlight the growth of conferences dedicated to [FHIR, or the Fast Healthcare Interoperability Resources](https://www.hl7.org/fhir/). FHIR is larger than just it's API, but it is one very important example of how APIs and open industry API specifications can help move forward the API conversation in large industries.
 
 As part of my healthcare API research, I bookmarked [HL7 FHIR DEVDAYS 2017](https://www.fhirdevdays.com/), a conference dedicated to standardizing healthcare APIs, and increasing interoperability across the global healthcare system. I went through [the three-day schedule for the conference](https://www.fhirdevdays.com/schedule/), following speakers on Twitter, and learning more about what being presented when it came to healthcare interoperability--expanding my awareness of what is going on when it comes to connecting healthcare systems and pushing forward this important API definition.
 

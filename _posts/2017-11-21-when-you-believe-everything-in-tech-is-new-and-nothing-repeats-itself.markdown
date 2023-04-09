@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Politics of APIs
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beach-rocks-currents_blue_circuit_4.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/beach-rocks-currents_blue_circuit_4.jpg
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/algo-rotoscope/stories/beach-rocks-currents_blue_circuit_4.jpg" align="right" width="45%" style="padding: 15px;" /></p>I get regular waves of commenters and tweeters who like to point out the API patterns I'm covering in the API space, have all been done before. We tried discovery docs before they are called WSDL! That API discovery thing is called UDDI! RPC is nothing new! That isn't new. We tried that before, and it didn't work. I rarely ever engage with these folks, as this behavior is one pattern in behavior I actually do believe we SHOULDN't be repeating and showcasing.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/beach-rocks-currents_blue_circuit_4.jpg" align="right" width="45%" style="padding: 15px;" /></p>I get regular waves of commenters and tweeters who like to point out the API patterns I'm covering in the API space, have all been done before. We tried discovery docs before they are called WSDL! That API discovery thing is called UDDI! RPC is nothing new! That isn't new. We tried that before, and it didn't work. I rarely ever engage with these folks, as this behavior is one pattern in behavior I actually do believe we SHOULDN't be repeating and showcasing.
 
 I'm fascinated by the reasons someone would feel so strongly they need to respond. That something happened in the past, and because it didn't work we shouldn't try again today. That somehow the world of compute isn't built upon, and remixed upon previous ideas that worked, and many that didn't work until just the right conditions existed. This kind of behavior is really fascinating for me in the world of APIs where reuse, aggregation, facades, and so many patterns of reworking what already exists is core to the entire concept. Where do folks get such strange believes in the past, and what can and cannot be re-interpreted in the future?
 

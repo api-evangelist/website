@@ -11,9 +11,9 @@ tags:
   - Documentation
   - Machine Learning
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/contrafabulists/machine+learning.jpg
+  https://s3.amazonaws.com/kinlane-productions2/contrafabulists/machine+learning.jpg
 ---
-<p><a href="http://bryanmmathers.com/"><img src="https://s3.amazonaws.com/kinlane-productions/contrafabulists/machine+learning.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>I'm spending a significant amount of time learning about machine learning APIs lately. Some of what I'm reading is easy to follow, while most of it is not. A good deal of what I'm reading is technically complex, and more on the documentation side of the conversation. Other stuff I come across is difficult to read, not because it is technical, but because it is more algorithmic marketing magic, and doesn't really get at what is really going on (or not) under the hood.
+<p><a href="http://bryanmmathers.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/contrafabulists/machine+learning.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>I'm spending a significant amount of time learning about machine learning APIs lately. Some of what I'm reading is easy to follow, while most of it is not. A good deal of what I'm reading is technically complex, and more on the documentation side of the conversation. Other stuff I come across is difficult to read, not because it is technical, but because it is more algorithmic marketing magic, and doesn't really get at what is really going on (or not) under the hood.
 
 If you are in the business of writing marketing copy, documentation, or even the API design itself, please work extra hard to keep things simple and in plain language. I read so much hype, jargon, fluff, and meaningless content about artificial intelligence and machine learning each day, I take pleasure anytime I find simple, concise, and information descriptions of what ML APIs do. In an exploding world of machine learning hype your products will stand out if they are straight up, and avoid the BS, which will pretty quickly turn off the savvy folks to whatever you are peddling.
 

@@ -8,9 +8,9 @@ tags:
   - Design
   - Definitions
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/apicurio/apicurio-feedback-loop.png
+  https://s3.amazonaws.com/kinlane-productions2/apicurio/apicurio-feedback-loop.png
 ---
-<p><a href="http://www.apicur.io/"><img src="https://s3.amazonaws.com/kinlane-productions/apicurio/apicurio-feedback-loop.png" align="right" width="40%" style="padding: 15px;" /></a></p>I've been playing with [Apicurio](http://www.apicur.io/), the [open source API design editor I've been waiting for](https://apievangelist.com/2017/05/30/apicurio-is-the-open-source-api-editor-i-was-looking-for/), and saw a potential opportunity for design time collaboration, instruction, and feedback loop. When you are designing an API in Apicurio it gives you alerts based upon JSON schema validation of the underlying OpenAPI, providing a nice visual feedback loop--forcing you to complete your API definition until it properly validates.
+<p><a href="http://www.apicur.io/"><img src="https://s3.amazonaws.com/kinlane-productions2/apicurio/apicurio-feedback-loop.png" align="right" width="40%" style="padding: 15px;" /></a></p>I've been playing with [Apicurio](http://www.apicur.io/), the [open source API design editor I've been waiting for](https://apievangelist.com/2017/05/30/apicurio-is-the-open-source-api-editor-i-was-looking-for/), and saw a potential opportunity for design time collaboration, instruction, and feedback loop. When you are designing an API in Apicurio it gives you alerts based upon JSON schema validation of the underlying OpenAPI, providing a nice visual feedback loop--forcing you to complete your API definition until it properly validates.
 
 Visual alerts and feedback based upon JSON schema validation isn't really new or that interesting--you see it in the Swagger Editor, and many other JSON tooling. Where I see an opportunity is specifically when it comes to an open source visual API design editor like Apicurio, and when the JSON schema engine for the validation responses is opened up as part of the architecture. Allowing users to import and export JSON schema that goes beyond the default OpenAPI schema, which gets us to a minimum viable OpenAPI definition--while this is good, we can do better.
 

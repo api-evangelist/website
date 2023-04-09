@@ -7,9 +7,9 @@ tags:
   - API Evangelist
   - Road Map
   - Management
-image: 'https://s3.amazonaws.com/kinlane-productions/tyk/tyk-road-map.png'
+image: 'https://s3.amazonaws.com/kinlane-productions2/tyk/tyk-road-map.png'
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/tyk/tyk-road-map.png" align="right" width="40%" style="padding: 15px;" /></p>I consider a road map for any API to be an essential building block, whether it is a public API or not. You should be in the business of planning the next steps for your API in an organized way, and you should be sharing that with your API consumers so that they can stay up to speed on what is right around the corner. If you want to really go the extra mile I recommend following what Tyk is up to, with [their public road map using Trello](https://trello.com/b/59d5kAZ5/tyk-api-platform-roadmap).
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/tyk/tyk-road-map.png" align="right" width="40%" style="padding: 15px;" /></p>I consider a road map for any API to be an essential building block, whether it is a public API or not. You should be in the business of planning the next steps for your API in an organized way, and you should be sharing that with your API consumers so that they can stay up to speed on what is right around the corner. If you want to really go the extra mile I recommend following what Tyk is up to, with [their public road map using Trello](https://trello.com/b/59d5kAZ5/tyk-api-platform-roadmap).
 
 With the API management platform Tyk, you don't just see a listing of [their API road map](https://trello.com/b/59d5kAZ5/tyk-api-platform-roadmap), you see all the work and conversation behind the road ma using the visual collaboration platform Trello. Using their road map you can see proposed features, which is great to see if something you want has already been suggested, and you can get at a list of what the next minor releases will contain. Plus using the menu bar you can get at a history of the changes the Tyk team has made to the platform, going back for the entire history of the Trello board.
 

@@ -10,9 +10,9 @@ tags:
   - Github
   - Management
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/nexmo/nexmo-api-specifications.png
+  https://s3.amazonaws.com/kinlane-productions2/nexmo/nexmo-api-specifications.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>
+<p></p>
 I'm big on supporting API providers that publish their OpenAPI definitions to Github. It is important for the wider API community that ALL API definitions are machine readable, and available in a way that can be forked, and integrated into continuous integration pipelines. I'm not even talking about the benefits to the API providers when it comes to managing their own API lifecycle. I'm just focusing on the benefits to API consumers, and helping make on-boarding, integration, and keeping in sync with the road map as frictionless as possible.
 
 To help incentivize API providers doing this I'm committed to writing up stories for each API provider that publishes their OpenAPI, APIs.json, or Postman Collections to Github. Bonus points if you are doing it in an interesting way that further benefits your operations, as well as your community. Today's API provider to showcase is [the SMS, voice and phone verifications API provider Nexmo](https://www.nexmo.com), who tweeted [the Github repository at me, which contains their OpenAPI definition for their APIs](https://github.com/Nexmo/api-specification). As they say, it is a work in progress, but it provides a damn good start for a machine readable definition for their API(s), and I mean c'mon, aren't all of our APIs a working progress?

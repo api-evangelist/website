@@ -10,9 +10,9 @@ tags:
   - Github
   - Design
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/stripe/stripes-openapi-vendor-extension.png
+  https://s3.amazonaws.com/kinlane-productions2/stripe/stripes-openapi-vendor-extension.png
 ---
-<p><img src="https://s3.amazonaws.com/kinlane-productions/stripe/stripes-openapi-vendor-extension.png" align="right" width="45%" style="padding: 15px;" /></p>As part of my work on [my OpenAPI toolbox](http://openapi.toolbox.apievangelist.com/) I am keeping an eye out for how leading API providers are using OpenAPI. One layer of this part of my research is understanding how teams are extending the OpenAPI specification, while also encouraging other companies to understand that they can extend the specification in the first place. I'm always surprised how many people I come across that say they do not use the specification because it doesn't do everything they need. I alternatively feel like it is my responsibility to understand what the spec can do, and then bend it to do what I need it to using vendor extensions.
+<p><img src="https://s3.amazonaws.com/kinlane-productions2/stripe/stripes-openapi-vendor-extension.png" align="right" width="45%" style="padding: 15px;" /></p>As part of my work on [my OpenAPI toolbox](http://openapi.toolbox.apievangelist.com/) I am keeping an eye out for how leading API providers are using OpenAPI. One layer of this part of my research is understanding how teams are extending the OpenAPI specification, while also encouraging other companies to understand that they can extend the specification in the first place. I'm always surprised how many people I come across that say they do not use the specification because it doesn't do everything they need. I alternatively feel like it is my responsibility to understand what the spec can do, and then bend it to do what I need it to using vendor extensions.
 
 I have been studying how [payment provider Stripe has been crafting their OpenAPI](https://github.com/stripe/openapi) throughout the week, while also understanding how they are applying it across their platform operations. As part of their Github repository for managing the Stripe OpenAPI they share three vendor extensions they are using to evolve what is possible with OpenAPI:
 

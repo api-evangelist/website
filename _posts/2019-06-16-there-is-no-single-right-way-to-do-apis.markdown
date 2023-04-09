@@ -5,10 +5,12 @@ title: There Is No Single Right Way To Do APIs
 date: 2019-06-16T09:00:00.000Z
 tags:
   - API Evangelist
+  - Complexity
+  - Politics
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/algorotoscope-master/rockingchair-face-2-atari-asteroids.jpg
+  https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/rockingchair-face-2-atari-asteroids.jpg
 ---
-<img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" />
+
 My time working in the API sector has been filled with a lot of lessons. I researched hard, paid attention, and found a number of surprising realities emerge across the API landscape. The majority of surprises have been in the shadows caused by my computational belief scaffolding I've been erecting since the early 1980s. A world where there has to be absolutes, known knowns, things are black and white, or more appropriately 1 or 0. If I studied all APIs, I'd find some sort of formula for doing APIs that is superior to everyone else's approach to doing APIs. I was the API Evangelist man--I could nail down the one right way to do APIs. (Did I mention that I'm a white male autodidact?)
 
 I was wrong. There is no one right way to do APIs. Sure, there are many different processes, practices, and tools that can help you optimize your API operations, but despite popular belief, there is no single "right way" to do define, design, provide, or consume APIs. REST is not the one solution. Hypermedia is not the one solution. GraphQL is not the one solution. Publish / Subscribe is not the one solution. Event-driven is not the one solution. APIs in general are the the one solution. Anyone telling you there is one solution to doing APIs for all situations is selling you something. Understanding your needs, and what the pros and cons of different approaches are, is the only thing that will help you.

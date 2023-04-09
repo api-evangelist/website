@@ -14,9 +14,9 @@ tags:
   - Medicare
   - Medicaid
 image: >-
-  https://s3.amazonaws.com/kinlane-productions/federal-government/blue-button/blue-button-api-docs.png
+  https://s3.amazonaws.com/kinlane-productions2/federal-government/blue-button/blue-button-api-docs.png
 ---
-<p><img src="{{ page.image }}" width="45%" align="right" style="padding: 15px;" /></p>[I'm heading to Washington D.C. this Monday to speak on the API life cycle as part of the Blue Button 2.0 Developer Conference](https://bluebutton.cms.gov/bb2dc18/). We'll be coming together in the Eisenhower Executive Office Building, within the west wing complex of the White House, to better understand how we can, "bring together developers to learn and share insights on how we can leverage claims data to serve the Medicare population."
+<p></p>[I'm heading to Washington D.C. this Monday to speak on the API life cycle as part of the Blue Button 2.0 Developer Conference](https://bluebutton.cms.gov/bb2dc18/). We'll be coming together in the Eisenhower Executive Office Building, within the west wing complex of the White House, to better understand how we can, "bring together developers to learn and share insights on how we can leverage claims data to serve the Medicare population."
 
 The gathering will hear from CMS Administrator Seema Verma and other Administrator Leadership about Blue Button 2.0 and the MyHealthEData initiative, while also hosting a series of break sessions, which I'm part of:
 
