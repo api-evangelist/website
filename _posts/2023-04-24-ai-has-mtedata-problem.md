@@ -49,11 +49,11 @@ Transparency in AI is not a new topic of discussion, and I am certainly not the 
 
 This [recent article](https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/) published in The Washington Post for example illustrates this issue by examining the Google C4, a large-scale dataset used in language model training. This underscores the complexities associated with tracing the provenance of data used in AI models.
 
-Recognizing the need for improved transparency, the [Hugging Face](https://huggingface.co/) community has taken steps to address this issue through the use of [Model Cards](https://huggingface.co/docs/hub/model-cards). 
+Recognizing the need for improved transparency, the [Hugging Face](https://huggingface.co/) community has taken steps to address this issue through the use of [Model Cards](https://huggingface.co/docs/hub/model-cards) and [Dataset Cards](https://huggingface.co/docs/hub/datasets-cards). 
 
-Model Cards are standardized markdown/YAML documents that provide essential information about AI models, including their intended use, performance, and limitations. This initiative can serve as a valuable starting point and reflects the needs of the AI community.
+These Cards are standardized markdown/YAML documents that provide essential information about AI models, including their intended use, performance, and limitations. This initiative can serve as a valuable starting point and reflects the needs of the AI community.
 
-To strengthen this approach, it would be beneficial to integrate and align Model Cards with established standards and best practices, such as those mentioned in the previous section. 
+To strengthen this approach, it would be beneficial to integrate and align Model and Dataset Cards with established standards and best practices, such as those mentioned in the previous section. 
 
 The goal here being to develop a formal specification or standard for AI documentation that is backed by a robust data model. 
 
