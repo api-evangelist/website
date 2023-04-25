@@ -57,7 +57,7 @@ To strengthen this approach, it would be beneficial to integrate and align Model
 
 The goal here being to develop a formal specification or standard for AI documentation that is backed by a robust data model. 
 
-Additionally, the creation of tools are essential to doster the adoption and use of such specifications and the involvement of AI and data communities and  other stakeholders, are necessary for effective governance.
+Additionally, the creation of tools are essential to foster the adoption and use of such specifications and the involvement of AI and data communities and  other stakeholders, are necessary for effective governance.
 
 By elevating metadata management and transparency to a priority and adopting a collaborative approach towards the establishment of documentation standards and best practices, we can work towards a future where AI models are not only powerful but also transparent, accountable, and trustworthy.
 
