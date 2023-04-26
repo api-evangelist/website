@@ -1,13 +1,11 @@
 ---
 layout: post
 title: 'History of APIs  - Flickr API'
-source: http://apievangelist.com/2011/02/09/history-of-apis---flickr-api/
-domain: apievangelist.com
-image: 'https://kinlane-productions2.s3.amazonaws.com/one.png'
+image: 'https://kinlane-productions2.s3.amazonaws.com/api-evangelist/Flickr-Code-Screenshot.PNG'
 author:
  name: kinlane
 tags:
-    - None
+    - Images
 ---
 In February 2004 the popular photo sharing site [Flickr](http://www.flickr.com) launched. Six months later they launched their now [infamous API](http://www.flickr.com/services/api/), and six months after that, they were acquired by [Yahoo.](http://www.yahoo.com "Yahoo!")
 

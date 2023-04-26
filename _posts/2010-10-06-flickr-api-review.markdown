@@ -3,13 +3,12 @@ layout: post
 title: 'Flickr API Review'
 source: http://apievangelist.com/2010/10/06/flickr-api-review/
 domain: apievangelist.com
-image: 'https://kinlane-productions2.s3.amazonaws.com/one.png'
+image: 'https://kinlane-productions2.s3.amazonaws.com/flickr.jpg'
 author:
  name: kinlane
 tags:
     - Images
 ---
-
 The [Flickr](http://code.flickr.com) API for the online photo and video sharing service provides a way for new tools to be built and for Flickr content to be uploaded or shared. Flickr offers a solid API with very traditional building blocks:
 
 *   API Overview
