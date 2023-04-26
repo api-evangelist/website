@@ -6,8 +6,11 @@ tags:
 - Github
 - Design
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/open-referral/open-referral-github-repo-api-spec.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/open-referral/open-referral-github-repo-api-spec.png" align="right" width="40%" style="padding: 15px;"
  /></p>[I'm working on my API definition and design strategy for my human services API work](http://apievangelist.com/2017/05/24/my-api-design-checklist-for-this-version-of-the-human-services-data-api/), and as I was doing this [Box went all in on Opening](http://apievangelist.com/2017/05/22/box-goes-all-in-on-openapi/), adding to the number of API providers I track on who not just have an OpenAPI but they also use Github as the core management for their API definition.
 

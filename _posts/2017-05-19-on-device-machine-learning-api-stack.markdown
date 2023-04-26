@@ -6,8 +6,11 @@ tags:
 - Containers
 - Devices
 image: https://s3.amazonaws.com/kinlane-productions2/google/tensorflow/tensorflow-lite-images.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/google/tensorflow/tensorflow-lite-images.jpg" align="right" width="35%" /></p>
 I was reading about [Google's TensorFlowLite in Techcrunch](https://techcrunch.com/2017/05/17/googles-tensorflow-lite-brings-machine-learning-to-android-devices/?ncid=rss), and their mention of [Facebook's Caffe2Go](https://code.facebook.com/posts/196146247499076/delivering-real-time-ai-in-the-palm-of-your-hand/), and I was reminded of a conversation I was having with the Oxford Dictionaries API team a couple months ago. 
 

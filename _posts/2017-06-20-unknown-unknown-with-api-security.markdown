@@ -5,8 +5,11 @@ tags:
 - Security
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-security-unknown.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="http://security.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-security-unknown.png" align="right" width="25%" style="padding: 15px;" /></a></p>I am trying to wrap my head around the next steps in the evolution of [API security](http://security.apievangelist.com/). I am trying to help separate some of the layers of what we collectively call API security, into some specific building blocks I can reference in my storytelling. I'm ramping up my API security research as I onboard a new API service provider partner, and will have more resources to invest in the API security discussion.
 
 Let's start with the easy "Known Knowns":

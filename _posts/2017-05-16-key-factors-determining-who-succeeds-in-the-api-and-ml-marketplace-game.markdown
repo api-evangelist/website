@@ -8,8 +8,11 @@ tags:
 - Monetization
 - Plans
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-marketplace.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-marketplace.png" align="right" width="35" /></p>
 I was having a discussion with an investor today about the potential of algorithmic-centered API marketplaces. I'm not talking about API marketplaces like Mashape, I'm more talking about ML API marketplaces like Algorithmia. This conversation spans multiple areas of my API lifecycle research, so I wanted to explore my thoughts on the subject some more.
 

@@ -8,8 +8,11 @@ tags:
   - Discovery
   - Service Mesh
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/containership-containership-blue-circuit-5.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 Ironically one of the biggest challenges facing API discovery on the web, as well as within the enterprise, is that most conversations focus purely on the technical, rather than the human and often business implications of finding and putting APIs to work. The biggest movement in the realm of API discovery in the last couple years has been part of the service mesh evolution of API infrastructure, and how your gateways “discover” and understand the health of APIs or microservices that provide vital services to applications and other systems. Don’t get me wrong, this is super critical, but it is more about satisfying a technical need, which is also being fueled by an investment wave-—it won’t contribute to much to the overall API discovery and search conversation because of it’s limited view of the landscape.
 
 Runtime API discovery is critical, but there are so many other times we need API discovery to effectively operate the enterprise. Striving for technical precision at runtime is a great goal, but enabling all your groups, both technical and business to effectively find, understand, engage, and evolve with existing APIs should also be a priority. It can be exciting to focus on the latest technological trends, but doing the mundane profiling, documentation, and indexing of existing API infrastructure can have a much larger business impact. Defining the technical details of your API Infrastructure using OpenAPI, Postman, and other machine readable formats is just the beginning, ideally you are also working define the business side of things along the way.

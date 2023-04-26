@@ -7,8 +7,11 @@ tags:
 - County Government
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/socrata/douglas-county-operating-budget-768x485.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://socrata.com/blog/douglas-county-open-budget-invites-public-explore-annual-budget/"><img src="https://s3.amazonaws.com/kinlane-productions2/socrata/douglas-county-operating-budget-768x485.png" align="right" width="40%" style="padding: 15px;" /></a></p>
 As we find ourselves darker times when it comes to transparency within the federal government in the United States, I'm always on the hunt for any positive signs of transparency at the other levels of government. I can usually depend on my friends [over at Socrata](https://socrata.com) to help out, and [they came through this week with a story on Douglas County, Kansas publishing their budget online](https://socrata.com/blog/douglas-county-open-budget-invites-public-explore-annual-budget/).
 

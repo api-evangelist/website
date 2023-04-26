@@ -7,8 +7,11 @@ tags:
 - Github
 - Amazon S3
 image: https://s3.amazonaws.com/kinlane-productions2/siteleaf/siteleaf-logo.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/siteleaf/siteleaf-logo.png" align="right" width="15%" /></p>All of my websites have run 100% on Github for the last three years. The core of my API industry research is always in JSON or YAML, stored in individual project-based Github repositories. I leverage Jekyll for the page and other content collections (blogs, news, etc.). Since 2011 I've used my own homebrew CMS system, making it accommodate the switch to a more static presence on Github.
 
 Over the weekend I ditched my CMS and lit up a new CMS I came across called Siteleaf, which has all the core features I need: Github, Jekyll, Amazon S3, and API. This is how I manage a couple hundred API research sites, and the images, video, and other heavy objects I store using Amazon S3--these services and tools are critical to my business.

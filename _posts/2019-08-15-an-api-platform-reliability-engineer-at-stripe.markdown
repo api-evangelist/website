@@ -10,8 +10,11 @@ tags:
   - Monitoring
   - Testing
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-algo-microservices.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I find that the most interesting and telling API building blocks come out of the companies who are furthest along in their API journey, and have made the conscious effort to heavily invest in their platforms. I try to regularly visit API platforms who are doing the most interesting work on a regular basis, because I am almost always able to find some gem of an approach that I can showcase here on the blog.
 
 This weeks gem is from <a href="https://g.co/kgs/wra6JH">API rockstar Stripe, and their posting for a reliability engineer for their API platform</a>. Here is a summary from their job posting:

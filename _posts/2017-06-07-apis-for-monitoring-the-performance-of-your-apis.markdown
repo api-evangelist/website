@@ -6,8 +6,11 @@ tags:
 - Performance
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/runscope/1-dashboard-test-performance.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://blog.runscope.com/posts/monitoring-api-performance-new-api-metrics-endpoint"><img src="https://s3.amazonaws.com/kinlane-productions2/runscope/1-dashboard-test-performance.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I am a big fan of API providers who also have APIs](http://apievangelist.com/2015/12/15/easier-to-offer-ops-apis-to-your-devs-if-your-api-service-provider-has-apis/). It may sound silly to say, but you would be surprised how many companies are selling services to API providers and do not actually have an API themselves. So, anytime I find a good example of API service providers launching new APIs that help API providers be more successful, I'm all over it with a story.
 
 [Today's example is from my friends over at Runscope with their API Metrics API](https://www.runscope.com/docs/api/metrics) that lets you "retrieve your API tests performance metrics for each individual test, keep a pulse on your API's performance over time, and create custom internal or external dashboards with it". You can filter the request by using 3 different parameters:

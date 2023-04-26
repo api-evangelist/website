@@ -8,8 +8,11 @@ tags:
 - Definitions
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/open-service-broker-api/osbapi_logo_concept3_wtm.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://openservicebrokerapi.org/"><img src="https://s3.amazonaws.com/kinlane-productions2/open-service-broker-api/osbapi_logo_concept3_wtm.png" align="right" width="40%" style="padding: 20px;" /></a></p>Jerome Louvel [from Restlet](http://apis.how/5ytnitnakm) introduced me to [the Open Service Broker API](https://openservicebrokerapi.org/) the other day, a "project allows developers, ISVs, and SaaS vendors a single, simple, and elegant way to deliver services to applications running within cloud-native platforms such as Cloud Foundry, OpenShift, and Kubernetes. The project includes individuals from Fujitsu, Google, IBM, Pivotal, RedHat and SAP."
 
 Honestly, I only have so much cognitive capacity to understand everything I come across, so I pasted the link into my super secret Slack group for API super heroes to get additional opinions. My friend James Higginbotham ([@launchany](https://twitter.com/launchany)) quickly responded with, "if I understand correctly, this is a standard that would be equiv to Heroku's Add-On API? Or am I misunderstanding? The Open Service Broker API is a clean abstraction that allows ‘services’ to expose a catalog of capabilities, as well as the ability to create, use and delete those services. Sounds like add-on support to me, but I could be wrong[...]But seems very much like vendor-to-vendor. Will be interesting to track."

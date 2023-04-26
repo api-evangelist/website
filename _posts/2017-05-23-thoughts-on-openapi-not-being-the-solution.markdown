@@ -6,8 +6,11 @@ tags:
 - OpenAPI
 - Hypermedia
 image: http://kinlane-productions2.s3.amazonaws.com/algorotoscope/losangelescloudy/blue_circuit/file-00_00_35_50.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="http://kinlane.com/2017/01/03/finding-the-right-dystopian-filter-to-represent-the-world-unfolding-around-us/"><img src="http://kinlane-productions2.s3.amazonaws.com/algorotoscope/losangelescloudy/blue_circuit/file-00_00_35_50.jpg" align="right" width="35%" style="padding: 15px;" /></a></p>I get regular waves of folks who chime in anytime I push on one of the hot-button topics on my site like hypermedia and OpenAPI. I have a couple of messages in my inbox regarding some recent stories I've done about OpenAPI recently, and how it isn't sustainable, and we should be putting hypermedia practices to work. I'm still working on my responses, but I wanted to think through some of my thoughts here on the blog before I respond--I like to simmer on these things, releasing the emotional exhaust before I  respond.
 
 When it comes to the arguments from the hypermedia folks, the short answer is that I agree. I think many of the APIs I'm seeing designed using OpenAPI would benefit from some hypermedia patterns. However, there is such a big gap between where people are, and where we need to be for hypermedia to become the default, and getting people there is easier said than done. I view OpenAPI as a scaffolding or bridge to transport API designers, developers, and architects at scale from where we are, to where we need to be--at scale.

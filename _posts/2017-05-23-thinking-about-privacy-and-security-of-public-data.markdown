@@ -8,8 +8,11 @@ tags:
 - HSDS
 - HSDA
 image: https://s3.amazonaws.com/kinlane-productions2/kin-lane/kin-lane-api-days-berlin-respect-privacy.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/kin-lane/kin-lane-api-days-berlin-respect-privacy.jpg" align="right" width="35%" /></p>When I suggest modern approaches to API management be applied to public data I always get a few open data folks who push back saying that public data shouldn't be locked up, and needs to always be publicly available--as the open data gods intended. I get it, and I agree that public data should be easily accessible, but there are increasingly a number of unintended consequences that data stewards need to consider before they publish public data to the web in 2017.
 
 I'm going through this exercise with my recommendations and guidance for municipal 211 operators when it comes to implementing [Open Referral's Human Services Data API (HSDA)](http://developer.open.referral.adopta.agency/documentation/). The schema and API definition centers around the storage and access to organizations, locations, services, contacts, and other key data for human services offered in any city--things like mental health resources, suicide assistance, food banks, and other things we humans need on a day to day basis. 

@@ -6,8 +6,11 @@ tags:
 - GraphQL
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-tools-school.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-tools-school.png" alt="" width="40%" align="right" /></p>
 
 I've been reading and curating information on GraphQL as part of my regular research and monitoring of the API space for some time now. As part of this work, I wanted to take a moment and [revisit my earlier thoughts about GraphQL](http://apievangelist.com/2016/09/02/i-am-keeping-my-mind-open-and-looking-forward-to-learning-more-about-graphql/), and see where I currently stand. Honestly, not much has changed for me, to move me in one direction or another regarding the popular approach to providing API access to data and content resources.

@@ -5,8 +5,11 @@ tags:
 - Security
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/elastic-beam/infographic-products.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://www.elasticbeam.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/elastic-beam/elasticbeam-vertical.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>Security is the number one concern companies, organizations, institutions, and government agencies have when I'm talking with them about doing APIs. Strangely it is also one of the most deficient, and underinvested areas of API operations. Companies are just learning to design, deploy, and manage their APIs, and monitoring, testing, and security are still on the future road map for many API providers I know. 
 
 Security is one of the important areas I've been trying to find more time and resources to invest into my research, and I've been on the hunt for interesting providers to partner with when it comes to defining security as it applies to APIs. There are a number of web and infrastructure security companies out there, but there aren't enough that are only focused on just APIs. With the number of APIs increasing, we need more eyeballs on the problem, and even more services and tools to stay ahead of the curve. 

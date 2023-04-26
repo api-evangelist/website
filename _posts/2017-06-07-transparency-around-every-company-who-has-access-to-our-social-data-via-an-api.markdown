@@ -8,8 +8,11 @@ tags:
 - Social
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/university-of-cambridge/university-of-cambridge-api-transparency.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://applymagicsauce.com/business.html"><img src="https://s3.amazonaws.com/kinlane-productions2/university-of-cambridge/university-of-cambridge-api-transparency.png" align="right" width="40%" style="padding: 15px;" /></a></p>I believe that APIs can bring some important transparency to the web, mobile, and device applications that seem to be invading our life. I hesitate using the word transparency because it has been weaponized by Wikileaks and others in the current cyber(in)secure landscape, but for the purposes of this story, it will work. APIs by default do not mean transparency, but when done in the right way they can pull back the curtain a little on what is going on when a company, organization, institution, or agency behind is truly committed to transparency.
 
 [I've long had a portion of my research dedicated to studying intentional transparency efforts by API providers](http://transparency.apievangelist.com/), giving me a place to publish any organizations, links, and stories that I publish on the subject of API transparency. As part of my API research I was looking at some university API efforts the other day when I came across [the Apply Magic Sauce API](https://applymagicsauce.com), a personalisation engine that accurately predicts psychological traits from digital footprints of human behavior, [which had a pretty interesting section dedicated to the subject of transparency](https://applymagicsauce.com/business.html). Here is some background on their approach:

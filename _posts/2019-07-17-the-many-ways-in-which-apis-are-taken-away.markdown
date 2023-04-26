@@ -9,8 +9,11 @@ tags:
   - Reliability
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/catacombs-catacombs-copper-circuit.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 APIs are notorious for going away. There are so many APIs that disappear I really stopped tracking on it as a data point. I used keep track of APIs that were shuttered so that I could play a role in the waves of disgruntled pitchfork mobs rising up in their wake--it used to be a great way to build up your Hacker News points! But, after riding the wave a couple hundred waves of APIs shuttering, you begin to not really not give a shit anymore—-growing numb to it all. API deprecation grew so frequent, I wondered why anyone would make the claim that once you start an API you have to maintain it forever. Nope, you can shut down anytime. Clearly.
 
 In the real world, APIs going away is a fact of life, but rarely a boolean value, or black and white. There are many high profile API disappearances and uprising, but there are also numerous ways in which some API providers giveth, and then taketh away from API consumers.:

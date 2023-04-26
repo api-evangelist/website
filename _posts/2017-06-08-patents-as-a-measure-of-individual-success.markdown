@@ -5,8 +5,11 @@ tags:
 - Patents
 - Kin Lane
 image: https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/raven-fence.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/raven-fence.jpg" align="right" width="40%" style="padding: 15px;" /></p>I read a lot of patents as part of my work as the API Evangelist, and I tend to stalk and tune into the social media accounts of some of the authors. I have noticed that some of them work at large companies, and are counting each patent they file and are announcing each one like it is a badge of honor. I'm fascinated by this. Each company's approach to showcasing or downplaying their patent portfolio tells a lot about the company, something that I feel trickles down to each individual author.
 
 The theater of showcasing the number of patents is fascinating to me. I'm not saying it's a bad thing, just something I think is worthy of more discussion in the modern age. I don't showcase the number of patents I have filed because 1) I don't have any patents 2) I cannot afford to file any patents 3) I don't showcase my ideas, I showcase things I do and the stories I tell. Ok, maybe a patent is a story right? A story about what is possible, that you've paid a fee to file with the government, and convinced them that the story is true? I'm just trying to get at the thinking behind this theater production, and why some folks feel that it is a badge of honor.

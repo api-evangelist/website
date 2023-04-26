@@ -6,8 +6,11 @@ tags:
 - Universities
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/1958.0055_banner_crop.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://www.spencerart.ku.edu/collection/american"><img src="https://s3.amazonaws.com/kinlane-productions2/1958.0055_banner_crop.jpg" align="right" width="40%" style="padding: 15px;" /></a></p>I spend my days looking for interesting API stories to tell. Many days I work REAL hard to find anything truly interesting, as there is a lot of repetition and reuse in the API space, both for good and bad. So when I find stories that reflect what I see in my mind when I think API, I'm always very happy.
 
 [One of these stories is out of the University of Kansas](http://news.ku.edu/2017/05/25/computer-scientist-boost-interactivity-spencer-museum-art%E2%80%99s-history-and-holdings) where a fellow named James Miller has teamed up with museum staff as a faculty research fellow for the Integrated Arts Research Initiative (IARI) “to engage researchers across the sciences and humanities in hybrid projects,” said Joey Orr, the museum’s curator for research who coordinates fellowships for IARI.  “We’re using database-driven visualization to tell the stories of [the Spencer Museum of Art](https://www.spencerart.ku.edu/collection) — from its original founding gift to all the items they’ve obtained since then,”...“The term we like to use is ‘storytelling.’ We’re trying to take large amounts of data and tell stories that relate the history and current impact of the Spencer.”

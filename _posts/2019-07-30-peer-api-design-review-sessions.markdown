@@ -9,8 +9,11 @@ tags:
   - Reviews
   - Communication
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/abe-lincoln-one-smooth-ride-file-00-00-07-91.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 Public APIs have always benefitted from something that internal APIs do not always received—-feedback from other people. While the whole public API thing didn’t play out as I originally imagined, there is still a lot of benefit in letting other see, and provide open feedback on your API. It is painful for many developers to receive feedback on their API, and it is something that can be even more painful when it is done publicly. This is why so many of us shy away from establishing feedback loops around our APIs. It is hard work to properly design, develop, and then articulate our API vision to an external audience. It is something I understand well, but still suffer from when it comes to properly accessioning peer review and feedback on my API designs.
 
 I prefer opening up to peer reviews of my API designs while they are still just mocks. I’m less invested in them at this point, and it is easier to receive feedback on them. It is way less painful to engage in an ongoing discussion fo what an API should (and shouldn't) do early on, then it is to define the vision, deliver an API as code or within a gateway, and then have people comment on your baby that you have given birth to. It hurts to have people question your vision, and what you’ve put forth. Especially for us fragile white men who who aren’t often very good at accepting critical feedback, and want to just be left to our own devices. I’d much prefer just being a coder, but around 2008 through 2010 I saw the benefits to my own personal development when I opened up my work to my peers and let a little sunlight in. I am a better developer because of it.

@@ -6,8 +6,11 @@ tags:
 - Monetization
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/imageoptim/imageoptim-api-pricing.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://imageoptim.com/api/pricing"><img src="https://s3.amazonaws.com/kinlane-productions2/imageoptim/imageoptim-api-pricing.png" align="right" width="40%" style="padding: 15px;" /></a></p>[I've already written about how I just don't like class pricing tiers for API consumption](http://apievangelist.com/2017/05/09/pricing-tiers-works-for-saas-but-not-really-for-apis/), but I want to keep beating this drum until service providers hear what I'm singing. I think pricing tiers worked well to onboard the world with SaaS but for an API-driven world we a lot more flexibility and scalability when it comes to t
 he business model.
 

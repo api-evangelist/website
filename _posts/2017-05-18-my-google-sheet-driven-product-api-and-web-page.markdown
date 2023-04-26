@@ -8,8 +8,11 @@ tags:
 - Github
 - Jekyll
 image: http://apievangelist.com/images/product-square.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="http://apievangelist.com/images/product-square.png" align="right" width="35%" /></p>I am in the process of eliminating the MySQL backend behind much of my research, eliminating a business expense, as well as an unnecessary complexity in my architecture. There really is no reason for the data I use in my business to be in a database. Nothing I track on tends to go beyond 10K rows, with most of the tables actually being less than 100 rows--perfect for spreadsheets, and my new static approach to delivering APIs, and websites for my research.
 
 The time had come to update some of the products on my website, and I thought my product page was a perfect candidate for this approach, providing me with the following elements:

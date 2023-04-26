@@ -7,8 +7,11 @@ tags:
 - API Evangelist
 - OpenAPI
 image: https://s3.amazonaws.com/kinlane-productions2/cms/cms-quality-payment-program.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/cms/cms-quality-payment-program.png" align="right" width="40%" style="padding: 15px;" /></p>I am regularly using APIs to slice and dice large datasets to help make sense of what is contained within the database behind in a way that other folks can then develop visualizations, reporting, and other applications for use by folks who are closest to the problem we are trying to solve--this opportunity is one of the reasons I have been evangelizing APIs at all level of government over the last seven years.
 
 After many years of hard work in the federal government by [smart folks at 18F](https://18f.gsa.gov/), and at the agencies they serve, we are beginning to see some tools emerge that begin to help us make sense of the overwhelming amount of data that comes out of the government on a regular basis. You can see this in action with [the API for Quality Payment Program Measures, out of the Centers for Medicare & Medicaid Services (CMS)](https://qpp.cms.gov/api/)--helping make sense of how spending is working, or not working when it comes to healthcare.

@@ -7,8 +7,11 @@ tags:
 - Economy
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/kin-lane/api-evangelist-speaking.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/kin-lane/api-evangelist-speaking.jpg" align="right" width="40%" style="padding: 15px;" /></p>I was reading [what's behind the hold up of API adoption at credit unions](https://www.cujournal.com/news/whats-behind-the-hold-up-of-api-adoption-at-credit-unions) and I'm reminded (again) of the critical need for API evangelists in the space. I am not talking about advocates for a single API, but more evangelists that reflect my mission as the API Evangelist, but dialed in for specific industries.
 
 To set the stage for you, let me share why I started API Evangelist seven years ago. I began writing about the business, and eventually the politics of APIs because I saw the potential with APIs, but I also saw that things were not evolving as fast as they could because technologists were dominating the API conversation. We needed more discussion around the business of doing APIs, and many of the finer political details like security, terms of service, branding, and other concerns of the business leaders who actually controlled the purse strings that would move the space forward at the speed and scale everyone desired.

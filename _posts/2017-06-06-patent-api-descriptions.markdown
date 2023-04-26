@@ -6,8 +6,11 @@ tags:
 - Patents
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-definition.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-definition.png" align="right" width="25%" style="padding: 15px;" /></p>There are so many API patents out there, I'm going to have to start posting one a day just to keep up. Lucky for you I begin to get really depressed by all the API patents I lose interest in reading them and begin to work harder looking for positive examples of API in the world, but until then here is today's depressing as fuck API patent.
 
 Title: [API descriptions](http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/search-bool.html&r=1&f=G&l=50&d=PALL&RefSrch=yes&Query=PN/8997069)

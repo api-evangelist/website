@@ -5,8 +5,11 @@ tags:
 - Evangelism
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/stitch-data/the-evangelism-compendium.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://www.getrevue.co/profile/ashleyintexas"><img src="https://s3.amazonaws.com/kinlane-productions2/stitch-data/the-evangelism-compendium.png" align="right" width="40%" style="padding: 15px;" /></a></p>I am a big fan of companies who share their API journey publicly. The comment I hear from readers, as well as attendees of @APIStrat often, is that they want to hear more honest stories from API practitioners regarding every stop along the API lifecycle from defining to deprecation. I encourage API providers to actively share their stories publicly on their blog, and even semi-privately via email newsletters.
 
 Ash Hathaway ([@ash_hathaway](https://twitter.com/ash_hathaway)) over at [Stich Data](https://www.stitchdata.com/) asked me what I thought about her doing an evangelism email newsletter based on her experiences--to which I responded with, "hell yeah, it is a great idea!". So she has launched [The Evangelism Compendium, the successes and (mostly) failures of a developer evangelist email newsletter](https://www.getrevue.co/profile/ashleyintexas). She will be sharing her regular thoughts from the trenches, as she is evangelizing for [the data integration platform](https://www.stitchdata.com/).

@@ -6,8 +6,11 @@ tags:
 - API Evangelist
 - Politics of APIs
 image: https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/supreme-court-statues.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/algo-rotoscope/stories/supreme-court-statues.jpg" align="right" width="40%" style="padding: 15px;" /></p>Each story I publish about API patents will usually get a comment, Tweet, LinkedIn, or other comments letting me know that the owner of the patent is only doing it in a defensive pattern. I fully grasp that this is the predominant stance when it comes to defending a patent portfolio, but I prefer seeing six dimensions to this discussion--looking beyond this single position.
 
 When thinking about why a patent exists I see it in six dimensions:

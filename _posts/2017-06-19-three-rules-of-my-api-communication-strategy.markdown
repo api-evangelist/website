@@ -5,8 +5,11 @@ tags:
 - Communications
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/three-rules-for-a-communication-strategy.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="http://communications.apievangelist.com/"><img src="https://s3.amazonaws.com/kinlane-productions2/three-rules-for-a-communication-strategy.png" align="right" width="40%" style="padding: 15px;" /></a></p>Communicating effectively around API operations is the number one illness I see across the API space. Engineers are good at writing code and devopping their way to a usable API, but often fall short when it comes to telling the story of what the API does, and consistently beating this drum until people become familiar with what is going on.
 
 An effective API communication strategy is more art than it is science, and I'd like to share three of my rules when it comes to telling stories on the API Evangelist platform.

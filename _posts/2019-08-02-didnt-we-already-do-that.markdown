@@ -10,8 +10,11 @@ tags:
   - Legacy
   - Tools
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/amusement-park-amusement-park-2-satan-red.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 When you are in the API game you hear this phrase a lot, “didn’t we already do that?”. It is a common belief system that because something was already done, that it means it will not work ever again. When you are operate solely in a computational world, you tend to see things as 1s and 0s, and if something was tried and “didn’t work”, there is no resetting of that boolean switch for some reason. We excel at believing things are done, without ever unpacking why something failed, or how the context may have changed.
 
 One of the things I’m going to do over the next couple months is go through the entire SOA toolbox and take accounting of everything we threw away, and evaluate what the possible reasoning were behind it—-good and bad. I strongly believe that many folks who abandoned SOA, willingly or unwillingly, and especially the people who enjoy saying, “didn’t we already do that”, haven never spent time unpacking why we did, why it didn’t work, let alone whether or not it might work today. I think this paradigm reflects one of the fundamental illnesses we encounter in the tech sector-—we have a dysfunctional and distorted relationship with the past (this is by design).

@@ -7,8 +7,11 @@ tags:
 - API Evangelist
 - Embeddable
 image: https://s3.amazonaws.com/kinlane-productions2/auth0/auth0-extensions-screenshot-editor.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://auth0.com/blog/introducing-auth0-extend-the-new-way-to-extend-your-saas/"><img src="https://s3.amazonaws.com/kinlane-productions2/auth0/auth0-extensions-screenshot-editor.png" align="right" width="35%" style="padding: 15px;" /></a></p>[Auth0 has released a pretty interesting way to extend your web applications using what is an embeddable, serverless, webhooks environment](https://auth0.com/blog/introducing-auth0-extend-the-new-way-to-extend-your-saas/)--for lack of a better description.  It's a pretty interesting way to extend applications in a scrappy, hackable, scriptable, webhooky kind of way. The extensions are definitely not for non-developers, but provide a kind of scriptable view source that any brave user could use to get some interesting things done within an existing web application interface.
 
 Here are some of the selling features of Auth0 extensions:

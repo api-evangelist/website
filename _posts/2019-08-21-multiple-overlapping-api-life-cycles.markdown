@@ -11,8 +11,11 @@ tags:
   - Design
   - Documentation
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-downtheline-dali-three.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 One of the toughest parts about teaching people about APIs is that there are many different views of what the API life cycle can be depending on who you are, and what your intentions are. As an advocate or evangelist for a single API you are speaking externally to the API consumption life cycle, but internally you are focused on the API delivery life cycle. As an API Evangelist for many APIs, targeting providers, consumers, and anyone else who comes along, I find it a constant challenge to properly speak to my intended audience. One problematic part of my storytelling I regularly see emerge is that I speak of a single API life cycle, where in reality there are many overlapping life cycles. So, to help me think through all of this I wanted to explore what these overlapping tracks might be—coming up with four distinct iterations of overlapping API building blocks.
 
 ## The API Delivery Life Cycle

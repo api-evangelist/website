@@ -7,8 +7,11 @@ tags:
 - Transparency
 - Algorithms
 image: https://s3.amazonaws.com/kinlane-productions2/tensorflow/kites_detections_output.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/tensorflow/kites_detections_output.jpg" align="right" width="40%" style="padding: 15px;" /></p>I was taking a look a[t the Tensorflow Object Detection API](https://github.com/tensorflow/models/tree/master/object_detection), and while I am interested in the object detection, the usage of API is something I find more intriguing. It is yet another example of how diverse APIs can be. This is not a web API, but an API on top of a single dimension of [the machine learning platform TensorFlow](https://www.tensorflow.org/).
 
 "The TensorFlow Object Detection API is an open source framework built on top of TensorFlow that makes it easy to construct, train and deploy object detection models." It is just a specialized code base helping abstract away the complexity of one aspect of using TensorFlow, specifically for detecting objects in images. You could actually wrap this API with another web API and run on any server or within a single container as a proper object recognition API.

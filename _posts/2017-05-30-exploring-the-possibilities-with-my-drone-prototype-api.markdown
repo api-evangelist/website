@@ -6,8 +6,11 @@ tags:
 - Drones
 - Prototypes
 image: https://s3.amazonaws.com/drone-recovery/bolanlake21.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/drone-recovery/bolanlake21.jpg" align="right" width="40%" style="padding: 15px;" /></p>I enjoy playing with what is possible when it comes to APIs, without all the overhead of actually operating the APIs. I've been exploring the world of drones over the last year and it is something that has inevitably collided with my API research, leaving me intrigued by what is possible with drone APIs, as I learn what existing drone providers are doing when it comes to APIs. 
 
 Drones are the poster child for the Internet of Things. They collect video, take pictures, track location, and best of all--they fly!! Drones have APIs and consume APIs. You can deploy APIs in the cloud, on mobile devices and radio controllers, as well as on the drones themselves. Adding an entirely new dimension, you can also connect a variety of other IoT devices to the drones themselves, things like infrared and network detection, further pushing forward the possibilities.

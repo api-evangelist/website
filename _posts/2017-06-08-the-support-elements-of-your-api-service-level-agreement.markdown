@@ -8,8 +8,11 @@ tags:
 - Breaches
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/zendesk/keeping-your-word-the-support-sla.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://www.zendesk.com/blog/keeping-word-support-sla/"><img src="https://s3.amazonaws.com/kinlane-productions2/zendesk/keeping-your-word-the-support-sla.png" align="right" width="40%" style="padding: 15px;" /></a></p>Zendesk gave me some valuable building blocks to add to both my [API support](http://support.apievangelist.com/) and API service level agreement research, with [their support SLA](https://www.zendesk.com/blog/keeping-word-support-sla/). This is why I keep an eye on not just how API providers are handling their support, but also how leading support software as a service API providers are setting the bar for how we do support.
 
 The [Zendesk support SLA](https://www.zendesk.com/blog/keeping-word-support-sla/) provides us with some valuable information about setting a service level objective, developing support SLA workflow, dealing with a breach, and even some key performance indicators (KPIs) to help you measure success. I will be taking the bullet points from each area and adding to the overlap of my API support and service level research, and I'll even begin flushing out my API breach research with its first handful of building blocks regarding how to handle a really bad situation.

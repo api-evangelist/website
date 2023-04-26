@@ -8,8 +8,11 @@ tags:
   - Federal Government
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/federal-government/state-2017/bw-government.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 _This is my talk from Washington DC with Steve Willmott of [3Scale](https://www.3scale.net/) by [Red Hat](https://www.redhat.com) about [transforming enterprise IT with containers, APIs, and integration](http://redhatapievents.com/dc), where I assess the current state of APIs in the federal government, and the opportunity in the private sector when it comes to working with government data._
 
 **API Evangelist**

@@ -8,8 +8,11 @@ tags:
   - Security
   - Management
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/IMG_4038_blue_circuit.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 One of the biggest reasons we adopt new technology, and justify the development of new technology, is we do not want to do the heavy lifting when it comes to what we already have in place. A common illness when it comes to API security that I’ve been battling since 2015 is that you will have API security addressed once you adopted an API management solution. Your APIs require API keys, and thus they are secure. No further work necessary. The unwillingness or lack of knowledge regarding what is needed next, leaves a vacuum for new technology providers to come in and sell you the solution for what is next, when you should be doing more work to use the tools you already have.
 
 When it comes to API management, most vendors sold it as purely a security solution, and when companies implement it they become secure. Missing the entire point for why we do API management-—to develop an awareness of our API usage and consumption. Having keys for your APIs is not enough. You actually have to understand how those API consumers are putting API resources to work, otherwise your API security will always be deficient. Some of the fundamentals of API management you should be employing as part of your API security are:

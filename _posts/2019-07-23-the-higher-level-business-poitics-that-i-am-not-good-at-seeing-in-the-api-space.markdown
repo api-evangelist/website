@@ -9,8 +9,11 @@ tags:
   - Investment
   - Business of APIs
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/los-angeles-from-observatory-losangeles-from-observatory-purp-paper.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I have built successful startups. I’m good at the technology of delivering new solutions. I am decent at understanding and delivering much of business side of bringing new technological solutions to market. What I’m not good at is the higher level business politics that occur. These are the invisible forces behind businesses that I’m good at seeing, playing in, and almost always catch me off guard, too late, or just simply piss me off that they are going on behind the scenes. Unfortunately it is in this realm where most of the money is to be made doing APIs, resulting in me being written out of numerous successful API efforts, because I’m not up to speed on what is going on.
 
 Startups are great vehicles for higher level economic strategies. They are the playground of people with access to resources, and have economic visions that rarely jive with what is happening on the ground floors. Startup strategies count on a handful at the top understanding the vision, with most at the bottom levels not being able to see the vision, and small group of disposable stooges in the middle, ensuring that the top level vision is realized—at all costs. You can work full time at a startup, and even enjoy a higher level position, and still never see the political goings on that are actually motivating the investment in your startup. This is by design. The whole process depends on the lower levels working themselves to the bone, working on, marketing, and selling one vision, while there are actually many other things going on above, usually with a whole other set of numbers.

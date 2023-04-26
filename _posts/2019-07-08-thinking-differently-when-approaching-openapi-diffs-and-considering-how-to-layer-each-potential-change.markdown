@@ -9,8 +9,11 @@ tags:
   - OpenAPI
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-server-cloud1-feed-people.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I have a lot of OpenAPI definitions, covering about 2,000 separate entities. For each entity, I often have multiple OpenAPIs, and I am finding more all the time. One significant challenge I have in all of this centers around establishing a master “truth” OpenAPI, or series of definitive OpenAPIs for each entity. I can never be sure that I have a complete definition of any given API, so I want to keep vacuuming up any OpenAPI, Swagger, Postman, or other artifact I can, and compare it with the "truth" copy" I have on indexed. Perpetually layering the additions and changes I come across while scouring the Internet for signs of API life. This perpetual update of API definitions in my index isn’t easy, and any tool that I develop to assist me will be in need constant refinement and evolution to be able to make sense of the API fragments I’m finding across the web.
 
 There are many nuances of API design, as well as the nuances of how the OpenAPI specification is applied when quantifying the design of an API, making the process of doing a “diff” between two OpenAPI definitions very challenging. Rendering common “diff” tools baked into GitHub, and other solutions ineffective when it comes to understanding the differences between two API definitions that may represent a single API. These are some of the things I’m considering as I’m crafting my own OpenAPI “diff” tooling:

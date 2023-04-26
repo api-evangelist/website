@@ -4,8 +4,11 @@ date: 2017-05-17 15:00:00 Z
 tags:
 - Analysis
 image: https://s3.amazonaws.com/kinlane-productions2/keen_logo_dark.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/keen_logo_dark.png" align="right" width="40%" /></p>
 There are some pretty proven API solutions out there these days. I had to explain to someone a call the other day that in 2017 you shouldn't ever roll your own API signup, registration, rate limiting, reporting, logging, and other API management features--there are too many proven API management solutions on the market these days (cough, [3Scale](http://apis.how/ake3nxbapm), [Restlet](http://apis.how/5ytnitnakm), [DreamFactory](https://s3.amazonaws.com/kinlane-productions2/partners/dreamfactory-logo.png), or [Tyk](http://apis.how/zflfesymzk))
 

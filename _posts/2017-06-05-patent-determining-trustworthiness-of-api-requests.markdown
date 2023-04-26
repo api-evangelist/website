@@ -6,8 +6,11 @@ tags:
 - Patents
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-patent-algorithms.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-patent-algorithms.png" align="right" width="20%" style="padding: 20px;" /></p>I'm always fascinated by the patents that get filed related to APIs. Most just have an API that is part of the equation, but some of the patents are directly for an API process. It's no secret that I'm a patent skeptic. I'm not anti-patent, I just think the process is broken when it comes to the digital world, and specifically when it comes to APIs and interoperability. Here is one of those API patents that show just how broken things are:
 
 Title: [Determining trustworthiness of API requests based on source computer applications' responses to attack messages](http://patft.uspto.gov/netacgi/nph-Parser?Sect2=PTO1&Sect2=HITOFF&p=1&u=/netahtml/PTO/search-bool.html&r=1&f=G&l=50&d=PALL&RefSrch=yes&Query=PN/9462011)

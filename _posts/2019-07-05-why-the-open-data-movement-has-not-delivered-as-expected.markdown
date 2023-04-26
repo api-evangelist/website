@@ -9,8 +9,11 @@ tags:
   - Open Data
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/fast-lights-freeway-redes-fast-flux-623x425-internet-numbers.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I was having a discussion with my friends working on API policy in Europe about API discovery, and the topic of failed open data portals came up. Something that is a regular recurring undercurrent I have to navigate in the world of APIs. Open data is a subset of the API movement, and something I have first-hand experience in, building many open data portals, contributing to city, county, state, and federal open data efforts, and most notably riding the open data wave into the White House and working on open data efforts for the Obama administration.
 
 Today, there are plenty of open data portals. The growth in the number of portals hasn’t decreased, but I’d say the popularity, utility, and publicity around open data efforts has not lived up to the hype. Why is this? I think there are many dimensions to this discussion, and few clear answers when it comes to peeling back the layers of this onion, something that always makes me tear up.

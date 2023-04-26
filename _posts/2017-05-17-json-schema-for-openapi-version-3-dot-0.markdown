@@ -2,8 +2,11 @@
 title: JSON Schema For OpenAPI Version 3.0
 date: 2017-05-17 09:00:00 Z
 image: https://s3.amazonaws.com/kinlane-productions2/json/json-schema.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img style="padding: 15px;" src="https://s3.amazonaws.com/kinlane-productions2/json/json-schema.png" align="right" width="40%" /></p>
 We are inching closer to a final release of version 3.0 for the OpenAPI specification, with the official version currently set at 3.0.0-rc1. We are beginning to see tooling emerge, and services like [APIMATIC are already supporting version 3.0 when it comes to SDK generation](https://apimatic.io/), as well their [API Transformer conversion tool](https://apimatic.io/transformer). 
 

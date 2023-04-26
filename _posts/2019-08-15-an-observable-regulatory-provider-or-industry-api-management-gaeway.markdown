@@ -10,8 +10,11 @@ tags:
   - Observability
   - Regulations
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/35201856153_61bc075e4b-nazi-invasion.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I wrote a separate piece on an API gateway specification standard recently, merging several areas of my research and riffing on a recent tweet from Sukanya Santhanam (@SukanyaSanthan1). I had all these building blocks laying around as part of my research on API gateways, but also from the other areas of the API lifecycle that I track on. Her tweet happened to coincide with other thoughts I had simmering, so I wanted to jump on the opportunity to publish some posts, and see if I could slow jam a conversation in this area. Now, after I defined what I’d consider to be a core API gateway set of building blocks, I wanted to take another crack at refining my vision for how we make it more observable and something that could be used as a tech sector regulatory framework.
 
 Copying and pasting from my API gateway core specification, here is what my v1 draft vision for an API gateway might be:

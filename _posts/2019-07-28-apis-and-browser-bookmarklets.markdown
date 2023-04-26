@@ -9,8 +9,11 @@ tags:
   - Browsers
   - Bookmarklets
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/gears-4882162452-fa3126b38d-b-blue-circuit.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I have quite a few API driven bookmarklets I use to profile APIs. I recently quit using Google Chrome, so I needed to migrate all of them to Firefox. I saw this work as an opportunity to better define and organize them, as they had accumulated over the years without any sort of strategy. When I need some new functionality in my browser I would create a new API, and craft a bookmarklet that would accomplish whatever I needed. I wish I had more browser add-on development skills, something I regular try to invest in, but I find that bookmarklets are the next best thing when it comes to browser and API interactions.
 
 There are a number of tasks I am looking to accomplish when I’m browsing the web pages of an API provider. The first thing I want to do is record their domain, then retrieve as much intelligence about the company behind the domain in a single click of the bookmarklet. This was the first bookmarklet and API I developed. Since then, I’ve made numerous others to record the pricing page, parse the terms of service, OpenAPI, and other valuable API artifacts from across the landscape. Bookmarklets are a great way to provide just a little more context combined with a URL pointer, for harvesting, processing, and possibly some human review. Allowing me to augment, enrich, and automate how I consume information as I’m roaming around the web, researching specific topics, and do what I do.

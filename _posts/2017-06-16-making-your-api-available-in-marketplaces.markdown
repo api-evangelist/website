@@ -8,8 +8,11 @@ tags:
 - Documents
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/box/box-platform-cloud-content-management-apis-aws-marketplace.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/box/box-platform-cloud-content-management-apis-aws-marketplace.png" align="right" width="40%" style="padding: 15px;" /></p>
 I've been watching the conversation around how APIs are discovered since 2010 and I ave been working to understand where things might be going beyond ProgrammableWeb, to the Mashape Marketplace, and even investing in my own [API discovery format APIs.json](http://apisjson.org). It is a layer of the API space that feels very bipolar to me, with highs and lows, and a lot of meh in the middle. I do not claim to have "the solution" when it comes to API discovery and prefer just watching what is happening, and contributing where I can.
 

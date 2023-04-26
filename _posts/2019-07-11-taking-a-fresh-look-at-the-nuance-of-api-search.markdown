@@ -9,8 +9,11 @@ tags:
   - Definitions
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/stories-beach-rocks-currents-internet-numbers.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I have a mess of APIs.json and OpenAPI definitions I need to make sense of. Something that I could easily fire up an ElasticSearch instance, point at my API “data lake”, and begin defining facets and angles for making sense of what is in there. I’ve done this with other datasets, but I think this round I’m going to go a more manual route. Take my time to actually understand the nuance of API search over other types of search, take a fresh look at how I define and store API definitions, but also how I search across a large volume of data to find exactly the API I am looking for. I may end up going back to a more industrial grade solution in the end, but I am guessing I will at least learn a lot along the way.
 
 I am using API standards as the core of my API index—APIs.json and OpenAPI. I’m importing other formats like API Blueprint, Postman, RAML, HAR, and others, but the core of my index will be APIs.json and OpenAPI. This is where I feel solutions like ElasticSearch might overlook some of the semantics of each standard, and I may not immediately be able to dial-in on the preciseness of the APIs.json schema when it comes to searching API operations, and OpenAPI schema when it comes to searching the granular details of what each individual API method delivers. While this process may not get me to my end solution, I feel like it will allow me to more intimately understand each data point within my API index in a way that helps me dial-in exactly the type of search I envision.

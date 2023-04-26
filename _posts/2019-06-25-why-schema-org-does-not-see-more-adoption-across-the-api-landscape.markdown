@@ -10,8 +10,11 @@ tags:
   - Adoption
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/machine-road-machine-road-blue-circuit-3.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I’m a big fan of Schema.org. A while back I generated an OpenAPI 2.0 (fka Swagger) definition for each one and published to GitHub. I’m currently cleaning up the project, publishing them as OpenAPI 3.0 files, and relaunching the site around it. As I was doing this work, I found myself thinking more about why Schema.org isn’t the goto schema solution for all API providers. It is a challenge that is multi-layered like an onion, and probably just as stinky, and will no doubt leave you crying.
 
 First, I think tooling makes a big difference when it comes to why API providers haven’t adopted Schema.org by default across their APIs. If more API design and development tooling would allow for the creation of new APIs using Schema.org defined schema, I think you’d see a serious uptick in the standardization of APIs that use Schema.org. In my experience, I have found that people are mostly lazy, and aren’t overly concerned with doing APIs right, they are just looking to get them delivered to meet specifications. If we provide them with tooling that gets the API delivered to specifications, but also in a standardized, they are doing to do it.

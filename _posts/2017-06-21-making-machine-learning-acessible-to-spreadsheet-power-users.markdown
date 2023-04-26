@@ -4,8 +4,11 @@ date: 2017-06-21 09:00:00 Z
 tags:
 - Machine Learning
 image: https://s3.amazonaws.com/kinlane-productions2/algorithmia/AlgorithmiaSpreadsheets.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><a href="https://blog.algorithmia.com/google-sheets-algorithmia-machine-learning-spreadsheets/"><img src="https://s3.amazonaws.com/kinlane-productions2/algorithmia/AlgorithmiaSpreadsheets.png" align="right" width="40%" style="padding: 15px;" /></a></p>My friends [over at Algorithmia](https://algorithmia.com) are up to some good things--[making their algorithms available within a spreadsheet](http://blog.algorithmia.com/google-sheets-algorithmia-machine-learning-spreadsheets/). Algorithmia has created a set of open source scripts and walkthrough to help you inject the algorithms from their marketplace into your Google Spreadsheets.
 
 They have seven useful algorithms to inject into spreadsheets:

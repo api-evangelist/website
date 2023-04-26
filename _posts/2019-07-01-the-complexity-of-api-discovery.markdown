@@ -8,8 +8,11 @@ tags:
  - Discovery
 image: >-
   https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/aws-s3-stories-containership-copper-circuit.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I can't get API discovery out of my mind. Partly because I am investing significant cycles in this area at work, but it is also something have been thinking about for so long, that it is difficult to move on. It remains one of the most complex, challenging, and un-addressed aspects of the way the web is working (or not working) online today. I feel pretty strongly that there hasn't been investment in the area of API discovery because most technology companies providing and consuming APIs prefer things be un-discoverable, for a variety of conscious and un-conscious reasons behind these belief systems. 
 
 ### What API Discovery Means? Depends On Who You Are...

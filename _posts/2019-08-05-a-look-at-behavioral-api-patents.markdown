@@ -8,8 +8,11 @@ tags:
   - Behavorial
   - Patents
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/udnie-DSC_0035-2.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I have been studying uses of behavioral technology lately. Riffing off my partner in crimes work on the subject, but putting my own spin on it, and adding APIs (of course) into the mix. Applying on of my classic techniques, I figured I'd start with a patent search for "behavioral application programming interfaces". I find patents to be a "wonderful" source of inspiration and understanding when it comes to what is going on with technology. Here are the top results for my patent search, with title, abstract, and a link to understand more about each patent.
 
 <p><a href="http://patft.uspto.gov/netacgi/nph-Parser?Sect1=PTO2&amp;Sect2=HITOFF&amp;u=%2Fnetahtml%2FPTO%2Fsearch-adv.htm&amp;r=1&amp;f=G&amp;l=50&amp;d=PTXT&amp;p=1&amp;S1=(((behavioral+AND+application)+AND+programming)+AND+interface)&amp;OS=behavioral+AND+application+AND+programming+AND+interface&amp;RS=(((behavioral+AND+application)+AND+programming)+AND+interface)">User-defined coverage of media-player devices on online social networks</a><br>

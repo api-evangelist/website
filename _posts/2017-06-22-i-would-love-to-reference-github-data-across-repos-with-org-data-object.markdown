@@ -5,8 +5,11 @@ tags:
 - Github
 - API Evangelist
 image: https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github-icon.png
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 <p><img src="https://s3.amazonaws.com/kinlane-productions2/bw-icons/bw-github-icon.png" align="right" width="30%" style="padding: 15px;" /></p>I am a big fan of Jekyll and Github when it comes to managing data-driven projects. All of my research runs on Github, and I use Jekyll to serve up YAML and JSON representations of my research for a variety of purposes. I store all data that supports my research in the _data folder for each research project's repository. From there I will create HTML, Atom, and JSON representations for use in my API Evangelist storytelling.
 
 When I am referencing any YAML data store I have in the _data folder I just use site.data.[object] to reference it. From there I can loop through collections, filter and show fields and other elements on the page using Liquid syntax. I love having all the data at my fingertips, but I'm thinking about the next step of data management at scale, as I work to build more data-driven repositories, housed within Github organizations, I want to be able to reach outside of each repo, into other repos stored within a single organization.

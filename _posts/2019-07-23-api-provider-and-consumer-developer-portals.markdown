@@ -7,8 +7,11 @@ tags:
   - API Evangelist
   - Portals
 image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/server-cloud-server-racks-clouds-copper-circuit.jpg
+author:
+ name: kinlane
+tags:
+    - None
 ---
-
 I’ve been studying API developer portals for almost a decade. I’ve visited the landing pages, portals, websites, and other incarnations from thousands of API providers. I have an intimate understanding of what is needed for API providers to attract, support, and empower API consumers. One area I’m deficient in, and I also think it reflects a wider deficiency in the API space, is regarding how to you make an API portal service both API providers and API consumers. Providing a single portal within the enterprise where everyone can come and understand how to deliver or consume an API.
 
 There are plenty of examples out there now when it comes to publishing an API portal for your consumers, but only a few that show you how to publish an API. I’d say the most common example are API marketplaces that allow both API consumers and providers to coexist, but this model isn’t exactly what you want within the enterprise. One thing the model lacks is the on-boarding of new developers when it comes to actually developing an API. Suffering from many of the same same symptoms API management service providers have historically suffered from—-not providing true assistance when it comes to delivering a quality API.
