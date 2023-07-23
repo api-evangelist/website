@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'What is Next for API Evangelist'
-image: https://algorithmic.rotoscope.work/images/collections/oakland-california/oakland-california-fox-oakland-out-front.jpg
+image: https://algorithmic.rotoscope.work/images/collections/copper-circuit/christianity.jpg
 author:
     name: kinlane
 tags:
