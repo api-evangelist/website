@@ -12,6 +12,7 @@ tags:
 - Politics
 - Investment
 ---
+
 I have long considered Twitter to be one of the most important APIs to there. With its former status as the town square for the world, the Twitter API provided an unprecedented view into how our world works. Similarly the Reddit API provides the same unprecedented view into the “home page” for the web, revealing how the online, and even offline world works. The recent shifts towards monetization of the Twitter and Reddit API is a common strategy from the Silicon Valley API playbook, but it is also a sign of what is to come when it comes to building platforms, accessing information online, and how the Internet works.
 
 First, opening up a public API, minimizing the restrictions early on to attract users and establish a network effect, then tightening down controls and monetizing your API, is a pretty standard approach from the venture backed startup API playbook. What sucks, is that startups aren’t honest about it with their communities, and view the value generated during this time as purely the result of smart platform leadership, and not the result large amounts of unpaid labor by a community. I’ve seen this cycle play out over and over in the API realm, and one of the reasons I’ve become very jaded regarding the potential of API, or rather how the business and politics can diminish the technological potential of APIs. 
