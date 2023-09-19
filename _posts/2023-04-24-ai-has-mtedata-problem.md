@@ -8,7 +8,6 @@ author:
 tags:
 - ai
 - metadata
-- Featured
 ---
 
 Artificial intelligence (AI) has become a captivating and transformative field, capturing the imagination of individuals and industries alike. As I immerse myself in the world of AI, I feel, as many, awed by its potential to revolutionize the way we live and work. 

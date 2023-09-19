@@ -10,7 +10,6 @@ tags:
 - metadata
 - ddi
 - fair
-- Featured
 ---
 
 This is a short story about metadata (I have to assume at this point you can read). About why a data file or dataset on its own is inadequate for analysis or research, and therefore insufficient to draw conclusive evidence or make informed decisions. Why you should never publish data or make it available through an API without its documentation. And, being mindful that computer applications are the immediate data consumers, emphasize the importance of machine actionable metadata. Here is an example, amongst many, I like to use to illustrate these issues.

@@ -8,6 +8,7 @@ name: kinlane
 tags:
 - Testing
 - Contracts
+- Featured
 ---
 I am immersed in very detailed and pedantic discussions lately about API contract testing lately. Like many phrases in the world of APIs, the phrase contract testing gets thrown around a lot, without much understanding of what it means. I use it so often, and hear it so often, in so many different scenarios I lose track of what it means. Thankfully Kevin Swiber (<a href="https://twitter.com/kevinswiber">@kevinswiber</a>) is on my team and regularly gets all pedantic about it on calls, with their head coming really close to exploding, reminding me of where I stand on this subject. Kevin is right, and here is where my head is at on the subject.
 

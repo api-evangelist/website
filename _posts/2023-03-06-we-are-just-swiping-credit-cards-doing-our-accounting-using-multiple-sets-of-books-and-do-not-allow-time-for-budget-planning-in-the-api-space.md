@@ -12,6 +12,7 @@ tags:
     - Quality
     - Design-First
     - Code-First
+    - Featured
 ---
 I heard a phrase this past week that when it comes to APIs—that we are all just swiping the credit card and then working to do accounting after the fact. So much truth. I would augment that state with the reality that we aren’t ever spending anytime budget planning. It is implied, but I think it is important to bring it front and center and balance out our belief we can accomplish everything we need with accounting after the fact. While I am no planner when it comes to my own APIs or my finances, I do generally have a loose plan for what I am looking to accomplish. Plus, I am just an individual, not a large enterprise with employees, investors, and other stakeholders. 
  

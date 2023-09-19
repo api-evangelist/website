@@ -11,6 +11,7 @@ tags:
 - Business
 - Politics
 - Investment
+- Featured
 ---
 
 I have long considered Twitter to be one of the most important APIs to there. With its former status as the town square for the world, the Twitter API provided an unprecedented view into how our world works. Similarly the Reddit API provides the same unprecedented view into the “home page” for the web, revealing how the online, and even offline world works. The recent shifts towards monetization of the Twitter and Reddit API is a common strategy from the Silicon Valley API playbook, but it is also a sign of what is to come when it comes to building platforms, accessing information online, and how the Internet works.

@@ -6,7 +6,6 @@ image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/bf-ski
 tags:
 - Portals
 - Documentation
-- Featured
 ---
 I learned a new phrase a couple of months ago, and it is a phrase I have been hearing more and more amongst the conversations I am having on [my Breaking Changes podcast](https://www.postman.com/events/breaking-changes/), and with Postman customers as part of my regular engagements. The phrase is “Zombie API Portals”. Referring to an internal or external API portal that isn’t up to date and you really can’t tell if there is anyone home. We’ve all been at an API portal where nothing has time stamps, the documentation is static, and even when you ask a question or email them, you learn that indeed, there is nobody home. I really like the phrase Zombie Portal because as an API storyteller it is a phrase that captures your attention and evokes a shared pain we all face in a very pop culture way that also leaves you smiling. For me, this is API storytelling gold, and helps me do some heavy lifting to both get people’s attention, but also convey an important concept along the way.
 

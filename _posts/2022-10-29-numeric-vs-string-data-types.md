@@ -8,7 +8,6 @@ author:
 tags:
 - Data
 - Metadata
-- Featured
 ---
 
 Choosing the right data type for a dataset variable, database fields, data model element, or API property can make a huge difference in terms of usability and quality. A mistake that I have commonly seen made over the many years of working with data is the use of numeric variables for things that are not computable. The most typical case is with categorical variables codes, but other examples includes identifiers, accounts numbers, postal codes, and the likes. If something looks like a number, we have a human tendency to assume it should be stored as a number. This is often not necessary and unfortunately can have significant side effects or loss of information. 

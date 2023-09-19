@@ -12,6 +12,7 @@ tags:
     - Workspaces
     - Collections
     - Metrics
+    - Featured    
 ---
 I was sharing my personal algorithm for how I approach evangelism. It isn’t very complex but is something I have evolved over the last decade plus and kept interesting through switching up the topics I focus on and which channels I use to engage with my audience. While there is a lot of nuances to how I personally approach as the API Evangelist or Chief Evangelist, it goes something like this.
  

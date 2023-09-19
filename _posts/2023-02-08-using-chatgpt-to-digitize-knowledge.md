@@ -10,7 +10,6 @@ tags:
 - metadata
 - ddi
 - fair
-- Featured
 ---
 
 Human knowledge has naturally for centuries been captured in human friendly formats such as books, intended to be consumed by, you guessed it, humans. But our world has changed dramatically and we now live in a space   where this needs to be shared with computers. Machine driven processing, learning, or intelligence requires access to human knowledge in digital formats. We have more or less completed the transition from paper into formats such a PDF, Word, Excel, HTML, but these are unstructured and not easily consumable or understandable by software. We need to take this one step further and transition into machine friendly JSON, XML, or RDF formats, whose structured can be well described by standard specifications, schemas, and models. This is often perceived as a monumental task, but can AIs such a ChatGTP help?

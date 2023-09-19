@@ -10,6 +10,7 @@ tags:
 - Product
 - Platform
 - Enterprise
+- Featured
 ---
 As folks turn their attention to artificial intelligence, productivity, and other distractions emerging across our technology dominated worlds, I am taking a moment to assess the areas that I feel confident are the most important API layers to be focusing on when it comes to the enterprise. Depending on your role within the enterprise, at a startup, within venture capital, or other performer in this Broadway musical we call the tech sector, you will see things differently. Even though I work at a well-funded startup, I am always working hard to understand what is happening across all layers of enterprise organizations, and this post is my regular reminder of where I will be focused in 2023. 
 

@@ -11,6 +11,7 @@ tags:
     - Open
     - Competition
     - Ecosystems
+    - Featured
 ---
 One of the things I love and hate about the API universe is that if you live by APIs, you will often times die by APIs, unless you can perpetually dial in just the right balance across how much value you generate, keep for yourself, or make accessible to others. I’ve fictionally written about how APIs are just the Sentinels from the Matrix, in that they first began as construction bots helping humanity, and then once the Matrix took control of humanity, their roles changed. Of course, this is fiction, but in reality (not the simulation) APIs can be both assistive, value creating resources for both producers and consumers, but their polarities can also be reversed, rapidly turning them into invasive value extracting sentries. 
 

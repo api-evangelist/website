@@ -9,6 +9,7 @@ tags:
 - Reboot
 - Burnout
 - Overview
+- Featured
 ---
 After flipping the page on yet another chapter in my career and beginning a new chapter focused on the application programming interface (APIs), I am left once again with the burning question — what do I do with API Evangelist? To help answer this question I will need to refresh my memory on why I did API Evangelist in the first place, what it ultimately has become, and exploring what value it might still bring to the table. I love to lean on the fact that API Evangelist first and foremost is about me (isn’t everything), but the fact of the matter is that none of it is possible without exploring ideas with other smart people in the space, and in 2023 I could care less about page views, social media, growing and audience or getting more attention. However, I can’t ignore that API Evangelist is why I have a career and can pay my bills—something I suck at reconciling on a regular basis. 
 
