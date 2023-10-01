@@ -14,7 +14,7 @@ hero:
 
 {% include cta.html title="What is API-First?" button_text="Learn More About API-First" button_url="https://www.postman.com/api-first/" subtitle="API-first development is a development model in which applications are conceptualized and built by composing internal or external services delivered through APIs. An API-first company is an organization that has adopted the API-first development model." %}
 
-{% include faqs.html multiple="true" title="Frequently asked questions" category="presale" subtitle="Some of the questions that we hear regularly." %}
+{% include faqs.html multiple="true" title="Frequently asked questions" category="101" subtitle="Some of the questions we here around here." %}
 
 {% include cta.html title="Didn't find an answer?" button_text="Contact" button_url="/contact/" subtitle="Feel free to reach out if you have any questions or thoughts." %}
 
