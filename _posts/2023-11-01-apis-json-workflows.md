@@ -56,7 +56,7 @@ maintainers:
   email: info@apievangelist.com
 ```
 
-The challenge here, which is something being solved in different ways by different providers, centers around how you daisy chain each of these calls together, mapping JSON properties from each response with the input parameters for the following response. I feel like this isn’t how you would want to tackle this problem in a variety of situations.  I feel like there should just be a central data property for APIs.json that I can reference when each step in the workflow occurs.
+The challenge here, which is something being solved in different ways by different providers, centers around how you daisy chain each of these calls together, mapping JSON properties from each response with the input parameters for the following response. I feel like this isn’t how you would want to tackle this problem in a variety of situations.  I feel like there should just be a central data "store" property for APIs.json that I can reference when each step in the workflow occurs.
 
 ```
 name: Workflow API
