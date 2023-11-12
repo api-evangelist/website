@@ -68,7 +68,7 @@ This is where I am getting my inspiration for what the future may hold, but I wa
 ## Honorable API Gateway Mentions
 The remaining gateways I looked at size up with others when it comes to many of the core features, but I am also considering the overall mindshare as well as market share. For me, the story is what matters the most, and the features you offer are second, but I want to make sure I listed all of the providers I looked at. 
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Akana, Ambassador Emissary-Ingress, Apinizer, APISIX, App42, IBM API Connect, Nevatech, Oracle, Sensedia, SnapLogic, Spring Cloud, Tibco, WSO2, 3Scale, API Umbrella, Boomi, Broadcom Layer7, Fiorano</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Akana, Ambassador Emissary-Ingress, Apinizer, APISIX, App42, IBM API Connect, Nevatech, Oracle, Sensedia, SnapLogic, Spring Cloud, Tibco, WSO2, 3Scale, API Umbrella, Boomi, Broadcom Layer7, Fiorano</span></center>
 
 I considered bumping up Spring Cloud into my stack due to the ubiquitous nature of Java, and it is sad to put some solutions I’ve worked with in the past here, but ultimately I don’t see anything too innovative here, or at least innovation that isn’t seeing much adoption—maybe my mind will change over time, but for now, I don’t have time to look to closely here.
 
@@ -78,35 +78,35 @@ Across the almost forty API gateways I spent time aggregating all of the feature
 ### Security
 This is the top thing I think business leadership thinks an API gateway does, keeping our digital resources safe at scale, using a mix of policies that help secure the enterprise internally and externally across applications and integrations–providing a pretty standardized spectrum of security policies.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Auth0, AWS Cognito, Access, Access Control Lists (ACL), Audit Logs, Auth Z, Auth N, Auth0, Authentication Providers, Automatic HTTPS, AWS Cognito, AWS IAM, Basic Authentication, Certificate Signing Request (CSR), Certificates, Cross-Origin Resource Sharing (CORS), JWT, Keys, Mutual TLS, OAuth 1.0, OAuth 2.0, Roles</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Auth0, AWS Cognito, Access, Access Control Lists (ACL), Audit Logs, Auth Z, Auth N, Auth0, Authentication Providers, Automatic HTTPS, AWS Cognito, AWS IAM, Basic Authentication, Certificate Signing Request (CSR), Certificates, Cross-Origin Resource Sharing (CORS), JWT, Keys, Mutual TLS, OAuth 1.0, OAuth 2.0, Roles</span></center>
 
 This is an area you see Open Policy Agent (OPA) emerge as a way of defining policy, which I think will have to occur across all of these areas. We are going to need to standardize and harden the security at the API gateway layer across protocols, as well as the increasingly sprawling enterprise API landscape.
 
 ### Traffic
 This is the second area people tend to respond when I ask them what an API gateway does for the enterprise, with most of these areas satisfying the technical needs across teams. I’d say that this area tends to provide the most business value, but provides engineering teams with the knobs and levers they need to dial everything in at scale.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Circuit Breaker, Clusters, Compression, Conditional Routing, Content-Based Routing, DNS, Dynamic Routing, Edge, Egress Controller, Failover, Forwarders, Global Rate Limiting, Header-based routing, Health Checks, Ingress Controller, Load Balancer Routing, Paths, Per-User Rate Limiting, Plans, Post Processing, Pre Processing, Proxy, Quota Reset, Quotas, Rate Limits, Regions, Request Size Limiting, Request Validation, Response Types, Reverse Proxy, Routes, Service Mesh, Session Persistence, Telemetry, Throttling, Timeouts, Tracing</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Circuit Breaker, Clusters, Compression, Conditional Routing, Content-Based Routing, DNS, Dynamic Routing, Edge, Egress Controller, Failover, Forwarders, Global Rate Limiting, Header-based routing, Health Checks, Ingress Controller, Load Balancer Routing, Paths, Per-User Rate Limiting, Plans, Post Processing, Pre Processing, Proxy, Quota Reset, Quotas, Rate Limits, Regions, Request Size Limiting, Request Validation, Response Types, Reverse Proxy, Routes, Service Mesh, Session Persistence, Telemetry, Throttling, Timeouts, Tracing</span></center>
 
 The API gateway is the freeway interchange of the digital landscape. Managing traffic consistently at scale will continue to be one of the top challenges for enterprise organizations as they continue to add applications, integrations, and need automation to get business done. This area will keep the API gateway a power center when it comes to translating digital into business value for some time to come.
 
 ### Mediation
 Next, organizations are needing to mediate the flow of information inside and outside the firewall using the API gateway, without getting in the way of business. Mediation capabilities have the potential to make API gateways a bottleneck, but also make it the value generation center when done well in a consistent manner across all APIs, employing a policy-driven approach to mediating API traffic.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Audit Logs, Caching, Context Persistence, Cross-Origin Resource Sharing (CORS), Custom Exception Handling, Custom Request Filters, Custom Resource Definitions (CRDs), Custom Resources, Declarative Policy Engine, Edge Policy Console, gZip, Hot-Update, Ingress Controller, JSON Validation, Message Inspection, Monetization Limits, Redaction, Regex Filters, Request Size Limit, Request Termination, Request Validation, Response Status Codes, Response Templates, Retries, SOAP Validation</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Audit Logs, Caching, Context Persistence, Cross-Origin Resource Sharing (CORS), Custom Exception Handling, Custom Request Filters, Custom Resource Definitions (CRDs), Custom Resources, Declarative Policy Engine, Edge Policy Console, gZip, Hot-Update, Ingress Controller, JSON Validation, Message Inspection, Monetization Limits, Redaction, Regex Filters, Request Size Limit, Request Termination, Request Validation, Response Status Codes, Response Templates, Retries, SOAP Validation</span></center>
 
 As the need to govern and regulate API traffic grows inside and outside the enterprise, mediation is going to play a huge role in ensuring government and enterprises are able to maintain control over what is happening. The API gateway will continue to expand its power when it comes to the increased scrutiny of platforms, AI, and other digital aspects of how business gets done.
 
 ### Transformation
 Transforming all or part or part of an API message is common practice. At a minimum, shifting the headers is essential, but transforming the structure and content is also a common occurrence. I don’t think that the enterprise will be able to “digitally transform” as fast as they need to keep pace, but I think that API gateways will help incrementally transform us at scale.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">GraphQL to REST, REST to GraphQL, Mapping Templates, JSON to CSV, CSV to JSON, Request Transformation, Response Transformation, SOAP to REST, XML to JSON, XSL Transformations</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">GraphQL to REST, REST to GraphQL, Mapping Templates, JSON to CSV, CSV to JSON, Request Transformation, Response Transformation, SOAP to REST, XML to JSON, XSL Transformations</span></center>
 
 I could see a gateway that specializes in just transforming API payloads to and from common formats, not just XML, JSON, CSV, and YAML, but other platforms, industry standards, and other needs. Understanding the technical and business details of transformation at the API gateway level is  something I predict will continue to grow as a way to manage the chaos and sprawl.
 
 ### Virtualization
 I am fascinated why the mocking of APIs isn’t more of a default  mode of gateways. It seems like API gateways should support design-first out of the gate and make it easy to virtualize based upon an API contract or on traffic. I did find evidence of it across many of the gateways I looked at, but it isn’t a core part of the API lifecycle as I would have hoped.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Static Mocking, Dynamic Mocking Data Virtualization</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Static Mocking, Dynamic Mocking Data Virtualization</span></center>
 
 I really wish that someone would do a gateway that focused exclusively on streamlining the development of new APIs, and mocking would provide an important element of this. I think if we are going to get more developers to see the benefits of design-first, we are going to have to make it as easy as possible, and generate rich  mocked experiences all along the way.
 
@@ -119,7 +119,7 @@ You shouldn’t be able to introduce breaking changes via an API gateway. I just
 ### Code Execution
 I am not a fan of gateways doing too much, they should do the core things well, and maybe specialize in one or two areas, but I am a fan of the ability to extend the gateway with custom code, scripts, and automation. I think that without the right guard rails custom code can become a liability, but when done well, it is definitely an asset.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Go, Java, JavaScript, Lua, Martian DSL, Node.js, Python,TypeScript, WASM</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Go, Java, JavaScript, Lua, Martian DSL, Node.js, Python,TypeScript, WASM</span></center>
 
 I think NGINX owes its inclusion here due to its versatility, in which its customizability plays a role. I’d say I am most interested in WASM at this layer. Think of the possibilities when it gets fully backed into not just the API gateway, but a future where the API gateway is at the edge like what CloudFlare and Zuplo are doing.
 
@@ -128,35 +128,35 @@ I feel like security, traffic, mediation, transformation, virtualization, change
 ## The Platform API Gateway Capabilities
 Next up are all of the capabilities that have been historically bundled with API gateways to sell the last decades worth of API management and Full API Lifecycle Management (FLAPIM) solutions, and are now apparently being “unbundled”. While they were confusingly bundled historically, once the commoditization of core capabilities began happening this list of capabilities began being spun off as startups, and stand-alone open-source solutions catering to API producers looking to manage their operations.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Accounts, Activity, Alerts, Analytics, Application Performance Management (APM), Applications, Automation, Catalogs, Dashboards, Design, Developers, Discovery, DNS, Documentation, Domains, Environments, Extensions, Gateways, Governance, Licensing, Logging, Mocking, Models, Monetization, Monitoring, Networking, Observability, Performance, Policies, Portals, Products, Projects, Reports, Repositories, Roles, SDKs, Search, Serverless, Specifications, Standards, Teams, Templates, Testing, Threat Protection, Tracing, Workspaces</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Accounts, Activity, Alerts, Analytics, Application Performance Management (APM), Applications, Automation, Catalogs, Dashboards, Design, Developers, Discovery, DNS, Documentation, Domains, Environments, Extensions, Gateways, Governance, Licensing, Logging, Mocking, Models, Monetization, Monitoring, Networking, Observability, Performance, Policies, Portals, Products, Projects, Reports, Repositories, Roles, SDKs, Search, Serverless, Specifications, Standards, Teams, Templates, Testing, Threat Protection, Tracing, Workspaces</span></center>
 
 These capabilities exist within varying orbits of the gateway but aren’t critical to be in the run time, despite what many legacy API gateways will sell you. While they are bundled by API management providers, they can just as easily be done as add-ons, sidecars, plugins, or external API-driven platform capabilities. Each of these areas should have its own orbit and relationship with the API runtime, and should be adjacent or separate from the API gateway, but stitched together as part of a coherent API lifecycle.
 
 ## Employing API Contracts
 One of the most defining characteristics of next-generation or at least progressive gateways is the way that they have adopted API contracts. The API service providers who are not very far along in their own API journey are using OpenAPI to simply publish documentation or power other platform capabilities. While other service providers have seen the power of API contracts as a configuration for the runtime, but also policy generation and enforcement in real time.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">OpenAPI, AsyncAPI, JSON Schema, Protocol Buffers, Avro, Thrift, Spectral, Open Policy Agent (OPA), Extensions</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">OpenAPI, AsyncAPI, JSON Schema, Protocol Buffers, Avro, Thrift, Spectral, Open Policy Agent (OPA), Extensions</span></center>
 
 For me this layer is separate from any specific platform capability as well as the programmability of the gateway. API contracts are more about providing a declarative interface for each API, covering not just the design of the API, but also all of the policies and configuration of the gateway, shaping both upstream and downstream behavior.  Contracts are how we are going to map, iterate, and evolve the sprawling API landscape at scale across the enterprise, and the industries they operate in.
 
 ## The Upstream Protocols
 When you use AWS, Azure, or Google cloud API gateways you end up with a wealth of backend services at your disposal, but commercial and open-source vendors tend to focus on these protocols to wire up the backend of their gateways to their operations. 
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">AMQP, AWS Lambda, Database, ERP, FTP, GraphQL, gRPC, HTTP 1.1, HTTP Long-Polling, HTTP/2, HTTP/3, IMAP, JMS, Kafka, MQTT, NATS, POP3, RabbitMQ, Server-Sent Events (SSE), SMTP, SOAP, TCP, UDP, WebSockets</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">AMQP, AWS Lambda, Database, ERP, FTP, GraphQL, gRPC, HTTP 1.1, HTTP Long-Polling, HTTP/2, HTTP/3, IMAP, JMS, Kafka, MQTT, NATS, POP3, RabbitMQ, Server-Sent Events (SSE), SMTP, SOAP, TCP, UDP, WebSockets</span></center>
 
 These protocols represent the ways that enterprises are wiring up their internal systems to move digital resources around and execute the capabilities needed to do business. W/hile there are many other integrations and connections to upstream resources, this reflects the baseline of what is in use today.
 
 ## The Downstream Protocols
 API gateways provide a number of common protocols for downstream API consumers to engage with enterprise digital resources and capabilities made available internally, with partners, and the public. While HTTP is definitely leading the conversation in implementations, the modern enterprise API landscape is increasingly multi-protocol.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">AMQP, GraphQL, gRPC, HTTP 1.1, HTTP Long-Polling, JMS, Kafka, MQTT, NATS, RabbitMQ, Server-Sent Events (SSE), SOAP, TCP, UDP, WebSockets, HTTP/2, HTTP/3</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">AMQP, GraphQL, gRPC, HTTP 1.1, HTTP Long-Polling, JMS, Kafka, MQTT, NATS, RabbitMQ, Server-Sent Events (SSE), SOAP, TCP, UDP, WebSockets, HTTP/2, HTTP/3</span></center>
 
 This is an area I predict a lot of investment by enterprise API platform teams and API service providers in coming years. We will see a load-balancing of internal and external APIs across these protocols, but the standardizing of policies across each of the protocols will become one of the most critical areas we will need to see investment.
 
 ## API Gateway Extensibility
 Overlapping with the execution of code at the API gateway level, but with a focus on specific service instead of just code execution. I think that API gateways directly reaching out to existing cloud services as a capability, baking in an existing open-source solution, or going full plugin and add-on goes well beyond just code execution.
 
-<span style="font-size: 18px; font-weight: bold; font-style: italic; text-align: center;">Add-Ons, Application Dynamics, Auth0, AWS Kinesis, AWS Lambda, Azure Event Hubs, CI/CD, Consul, Database, Datadog, Dynatrace, Etcd, Grafana, HTTP Callout, Istio, LinkerD, Plugins, Prometheus, Serverless, Service Mesh, Side-Car, WASM</span>
+<center><span style="font-size: 14px; font-weight: bold; font-style: italic; text-align: center;">Add-Ons, Application Dynamics, Auth0, AWS Kinesis, AWS Lambda, Azure Event Hubs, CI/CD, Consul, Database, Datadog, Dynatrace, Etcd, Grafana, HTTP Callout, Istio, LinkerD, Plugins, Prometheus, Serverless, Service Mesh, Side-Car, WASM</span></center>
 
 Some of these I should be grouping as part of platform capabilities above, but I think extensibility will need more consideration about how I group things versus how the API gateway providers I reviewed are grouping things. I am more about grouping things based upon the common view for the enterprise perspective, and not just the API service provider.
 
