@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'Where Is This API Gateway Thing Going?'
-image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/norman-rockwell-ruby-bridges-bright-light-bulb.jpg
+image: https://s3.amazonaws.com/kinlane-productions2/algorotoscope-master/america-immigration_dumping-ground-gatew-into-field.jpg
 author:
     name: kinlane
 tags:
