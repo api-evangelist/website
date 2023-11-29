@@ -8,4 +8,6 @@ This blog is my note pad. It is where I write down my thoughts as I am reading, 
 
 I spend almost a decade working on storytelling here. In the next decade I am looking to get more hands-on with what I've learned and help businesses across many different industries be more successful with their API operations. With a website refresh in the beginning of Octoer 2022 I am looking to invest more time and energy into this blog, organizing what I have here, but working across the industry to help evolve and expand the knowledge available here on API Evangelist.
 
+Opinions are my own, and not that of my employer!
+
 ![API Evangelist](https://kinlane-productions2.s3.amazonaws.com/api-evangelist-many-photos.png)
