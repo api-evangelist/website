@@ -15,7 +15,7 @@ Steve Willmott came to me asking what we should do with the [APIs.io](https://ap
 APIs.json is a specification format for defining your API operations, allowing you to maintain a machine-readable index of your public or private API landscape. The specification was created in 2014, and is something we have moved forward incrementally over the years, but have recently found more energy for lately as the API landscape continues to expand.
 
 -  **Specification** ([Website](https://apisjson.org/)) - The current JSON or YAML format you can put into any well-known location.
--  **Builder** ([Website](https://apisjson.org/%5D(http://builder.apisyaml.org/))) - A form for building APIs.json files quickly using a simple single page application.
+-  **Builder** ([Website](http://builder.apisyaml.org/)) - A form for building APIs.json files quickly using a simple single page application.
 -  **Artisanal** ([Repo](https://github.com/apis-json/artisanal)) - A growing number of hand-crafted artisanal APIs.json for top API providers today.
 
 This work on the APIs.json specification is important. Code tends to be ephemeral in my experience, and the specifications are what matter over any specific open-source or code implementation that may come or go over the years, however tooling are also essential for the adoption of the specification, so we can’t just stop there.
