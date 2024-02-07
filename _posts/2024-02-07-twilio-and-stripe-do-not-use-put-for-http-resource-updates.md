@@ -18,7 +18,6 @@ There are many dimensions of this conversation, but one of the many fundamental 
 ## Stripe
 <p><a href="https://stripe.com/docs/api/charges/update"><img src="https://kinlane-productions2.s3.amazonaws.com/stripe-post-update.png" width="100%" style="padding; 15px;"></a></p>
 
-￼
 ## Twilio
 <p><a href="https://www.twilio.com/docs/iam/api/account"><img src="https://kinlane-productions2.s3.amazonaws.com/twilio-post-update.png" width="100%" style="padding; 15px;"></a></p>
 ￼
