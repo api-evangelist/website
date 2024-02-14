@@ -2,14 +2,15 @@
 published: true
 layout: post
 title: 'OpenAI Injects Code Samples Into Their OpenAPI Using An Extension'
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/america-under-socialism-highway-line.jpeg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/yellow-journalism-arrow-in-ground.jpeg
 author:
     name: kinlane
 tags:
-- Visibility
-- Tangible
-- Print
-- Art
+- Extensions
+- Code Samples
+- Code
+- Examples
+- OpenAPI
 ---
 As I was profiling the [OpenAI API](https://github.com/apis-json/artisanal/blob/main/apis/openai/apis.yml) I noticed they had vendor extensions. This is a common thing I come across while profiling APIs, so I always make sure I spend some time evaluating the approach so that I can better understand why API producers feel the need to extend the spec. Twilio and Stripe both utilize extensions that help track maturity, PII, and other details of API operations that aren’t commonly expressed as OpenAPI. I harvested the OAS extensions from the OpenAI OpenAPI (I love using those two words together), and set them aside for documents here in my API Evangelist notebook.
 
