@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Adding Search Metadata, Ratings, and More With APIs.json'
+title: 'Adding Search Metadata, Ratings, and More With APIs.json Overlays'
 image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/every-sunday-morning-new-and-old-building.jpeg
 author:
     name: kinlane
@@ -12,7 +12,7 @@ tags:
 - APIs.json
 - Overlays
 ---
-I am working my way through [profiling many of the top APIs from Twilio and Stripe to AWS and Azure](https://github.com/apis-json/artisanal). If you’ve spent any time in these developer ecosystems you know there are a lot of APIs, and a lot of different moving parts to consider. My approach to profiling each API requires an [APIs.json for each provider indexing each API](https://apisjson.org/), but also an OpenAPI describing the surface area of each API. Ideally API producers provide each of these, but in their absence I do the work to properly index their operations and produce a complete (enough) OpenAPI definition. However, I don’t want to do the work forever, so I do the initial APIs.json and OpenAPI profiling as API.json representative, using a new property we are calling overlays.
+I am working my way through [profiling many of the top APIs from Twilio and Stripe to AWS and Azure](https://github.com/apis-json/artisanal). If you’ve spent any time in these developer ecosystems you know there are a lot of APIs, and a lot of different moving parts to consider. My approach to profiling each API requires an [APIs.json for each provider indexing each API](https://apisjson.org/), but also an OpenAPI describing the surface area of each API. Ideally API producers provide each of these, but in their absence I do the work to properly index their operations and produce a complete (enough) OpenAPI definition. However, I don’t want to do the work forever, so I do the initial APIs.json and OpenAPI profiling as API.json representative, using a new property [in 0.17](https://apisjson.org/2024/02/24/a-proposal-for-apis-json-version-017/) we are calling overlays.
 
 My profiling of [Stripe](https://github.com/apis-json/artisanal/blob/main/apis/stripe/apis.yml), [Twilio](https://github.com/apis-json/artisanal/blob/main/apis/twilio/apis.yml), and [Adyen](https://github.com/apis-json/artisanal/tree/main/apis/adyen/apis.yml) shows my approach to profiling APIs in layers. I am creating the APIs.json as a representative of APIs.json, since these three providers do not have an APIs.json. I am fortunate that each of these providers have an OpenAPI, which I simply index and cache the OpenAPI for each individual API and provider. Eventually, the APIs.json and OpenAPI will be maintained by the API producer and not myself as an APIs.json representative. I then store these machine-readable artifacts on Github and begin to overlay the changes I need made, and augment with additional information I will need for publishing to APIs.io that the API producers are not currently providing.
 
