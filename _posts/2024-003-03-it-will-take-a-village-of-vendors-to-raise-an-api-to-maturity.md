@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'It Will Take a Village of Vendors To Raise an API to Maturity'
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/every-sunday-morning-new-and-old-building.jpeg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/john-wayne-the-searchers-skyscraper-construction-crane-2.jpeg
 author:
     name: kinlane
 tags:
