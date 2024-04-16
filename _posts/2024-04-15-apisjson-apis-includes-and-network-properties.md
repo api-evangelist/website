@@ -111,7 +111,6 @@ I tend to profile API providers using a single APIs.json, leveraging the apis pr
 We haven’t officially added this property to the APIs.json specification, but I’ll craft up a proposal to add with version .18 of the specification. I needed this network property to further “network” the different search nodes I was deploying as part of sharding my APIs.json profiling work. I needed a way to articulate the network of APIs I am managing, helping me power my search engine across the growing number of Apis I was profiling.
 
 ```
----
 specificationVersion: '0.18'
 aid: explore
 name: APIs.io
