@@ -32,7 +32,7 @@ I added a search box with a button and wired it up to the Bing web search API to
 
 <img src="https://kinlane-productions2.s3.amazonaws.com/apis-json-builder-5.png" width="100%" style="padding: 15px;">
 
-Honestly, the Bing Search results leave quite a bit to be desired which is why I have a Google link next to the button, and I’ll probably wire up another search API, but my plan B right now is to just parse URLs from the documentation page.
+Honestly, the Bing Search results leave quite a bit to be desired which is why I have a Google link next to the button, and I’ll probably wire up another search API, but my plan B right now is to just "harvest" URLs from the documentation page.
 
 <img src="https://kinlane-productions2.s3.amazonaws.com/apis-json-builder-6.png" width="100%" style="padding: 15px;">
 
