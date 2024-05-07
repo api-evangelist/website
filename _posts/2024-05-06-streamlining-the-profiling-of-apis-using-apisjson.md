@@ -1,8 +1,8 @@
 ---
 published: true
 layout: post
-title: 'Streamlining the Profiling of APIs Using APIs.jsons'
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/john-wayne-the-searchers-nyc-people-marketplace.jpeg
+title: 'Streamlining My Profiling of APIs'
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/yellow-journalism-freeway-interchange-fence.jpeg
 author:
     name: kinlane
 tags:
