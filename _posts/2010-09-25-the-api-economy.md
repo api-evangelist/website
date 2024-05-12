@@ -7,7 +7,8 @@ image: 'https://s3.amazonaws.com/kinlane-productions2/api-evangelist/api-tag-clo
 author:
  name: kinlane
 tags:
-    - None
+    - Economy
+    - Business
 ---
 Application Programming Interfaces (API) are a driving the Internet and our economy. They drive our online experience:
 
@@ -23,4 +24,4 @@ In 2010 businesses are now faced with the growing importance of their API.
 
 If you don't already have an API developed in-house you need to talk with [Mashery](http://www.mashery.com/) or [3Scale](http://www.3scale.net/).
 
-If you have an API, but need to take it to the next level. You need an [API Evangelist](http://www.apievangelist.com/definition-api-evangelist.php).
+If you have an API, but need to take it to the next level. You need an [API Evangelist](http://www.apievangelist.com).
