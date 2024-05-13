@@ -9,7 +9,6 @@ author:
 tags:
     - Audience
 ---
-
 Salesforce is gearing up for the [upcoming release of their REST API](http://blog.sforce.com/sforce/2010/10/rest-api-programmableweb-and-curl.html) on October 26, with a [REST API Developer Preview Webinar](https://www.developerforce.com/events/rest_developer_preview/registration.php?d=70130000000FV4U). ![](http://www.developerforce.com/assets/developerforcesite/developerforce_home/images/developerforce_logo.png)
 
 The release of the a RESTful API for the [developerforce platform](http://developer.force.com/) is a major sign of upcoming growth for the cloud computing platform.
