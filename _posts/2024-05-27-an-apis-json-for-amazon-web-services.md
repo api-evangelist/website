@@ -2,7 +2,7 @@
 published: true
 layout: post
 title: 'An APIs.json for Amazon Web Services'
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-docks-water-front-ships-containers.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-seatlle-shipping-mountain.jpg
 author:
     name: kinlane
 tags:
