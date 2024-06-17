@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'Bump.sh Support APIs.json With Their API Documentation Hubs'
+title: 'Bump.sh Supports APIs.json With Their API Documentation Hubs'
 tags:
   - Documentation
   - Discovery
