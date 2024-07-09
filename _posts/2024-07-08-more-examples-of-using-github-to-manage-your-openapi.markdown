@@ -12,7 +12,7 @@ I have found thirteen more solid <a href="https://apievangelist.com/2024/03/31/u
 You can find all of the <a href="https://github.com/kinlane/api-evangelist/blob/gh-pages/_data/github-openapi-providers.yml">API providers who are using GitHub via a YAML file</a>, or here via this post.
 
 <ul>
-{% for provider in site.github-openapi-providers %}
+{% for provider in site.data.github-openapi-providers %}
   <li><strong>{{ provider.name }}</strong> ({{ provider.grade }}) - <a href="{{ provider.url }}">{{ provider.url }}</a></li>
 {% endfor %}
 </ul>
@@ -20,7 +20,7 @@ You can find all of the <a href="https://github.com/kinlane/api-evangelist/blob/
 As I add each provider to the list I also have created <a href="https://github.com/kinlane/api-evangelist/blob/gh-pages/_data/github-openapi-properties.yml">a separate YAML file for the properties I find supporting each GitHub repository</a>, providing a pretty interesting checklist to consider.
 
 <ul>
-{% for property in site.github-openapi-properties %}
+{% for property in site.data.github-openapi-properties %}
   <li><strong>{{ property.name }}</strong> - {{ property.description }}</li>
 {% endfor %}
 </ul>
