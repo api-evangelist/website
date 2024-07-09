@@ -2,7 +2,6 @@
 published: true
 layout: post
 title: 'More Examples of using GitHub to Manage Your OpenAPI'
-date: 2024-07-08T12:00:00.000Z
 tags:
   - GitHub
   - OpenAPI
