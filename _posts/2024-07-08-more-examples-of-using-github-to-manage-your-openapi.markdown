@@ -5,7 +5,7 @@ title: 'More Examples of using GitHub to Manage Your OpenAPI'
 tags:
   - GitHub
   - OpenAPI
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/yellow-journalism-japanese-man-sitting.jpeg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/citizenship-old-tools.jpeg
 ---
 I have found thirteen more solid <a href="https://apievangelist.com/2024/03/31/using-github-to-manage-your-openapis/">examples of API providers using GitHub to manage their OpenAPI and related artifacts</a>. I am regularly finding these as I am profiling APIs, and rather than just write a blog post each time I figured I'd store as YAML, and keep adding them in batches every couple of weeks.
 
