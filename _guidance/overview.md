@@ -6,13 +6,13 @@ tags:
 author: kin
 visibility: public
 technology: >-
-    This is the technology piece.
+    This guidance is published as YAML available in the repository powering API Evangelist, and will only pull when you, or team members have access to the repository--which is enabled anytime a new API contract is initiated. This guidance will then be available via any contract and review, to help drive more awareness around the maintenance of API contracts.
 business: >-
-    This is the business piece.
+    API guidance has been the top thing slowing down enterprise organizations, leaving teams without the knowledge they need to consistently deliver high quality APIs. This guidance is designed for both technical and non-technical users, providing the on-demand knowledge your teams need while supporting your partners and customers using APIs.
 politics: >-
-    This is the politics piece.
+    Without proper guidance, the teams who are producing APIs will struggle with common aspects of API operations. Without consistent guidance across teams, APIs produced across the enterprise will all be different, slowing the overall business velocity. On-demand API guidance is how you can educate individual teams, while also establishing alignment across teams.
 governance: >-
-    This is the governance piece.
+    All API guidance is linked within the description of the rules applied across API operations. This API guidance is accessible as a whole via this left hand navigation, with free public content, as well as private customer content, but more importantly is is one click away while reviewing, validating, and certifying each individual API contract that is active via API Evangelist today.
 ---
 This is the official repository of API Evangelist guidance, providing free and paid guidance that can be applied across enterprise API operations. This website runs 100% on GitHub using GitHub pages, making most of the content available publicly, however every piece of guidance possesses additional information that only customers with active API contracts will see.
 
