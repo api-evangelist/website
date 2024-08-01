@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="uk-section">
+    <div class="uk-container">
+        <div class="uk-grid-large" data-uk-grid>
+
+            <div class="sidebar-fixed-width uk-visible@m">
+                <div class="sidebar-docs uk-position-fixed uk-margin-top">
+                    {% for section in site.data.navigation_guidance %}
+                    <h5>{{ section.title }}</h5>
+                    <ul class="uk-nav uk-nav-default doc-nav">
+                    {% for guidance in section.guidance %}
+                      {% assign guidance_url = guidance | prepend:"/guidance/" | append:"/" %}
+                      {% assign p = site.guidance | where:"url", guidance_url | first %}
+                      <li class="{% if guidance_url == page.url %}uk-active{% endif %}"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+                    {% endfor %}
+                    </ul>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="uk-width-1-1 uk-width-expand@m">
+
+                <article class="uk-article">
+
+                    <h1 class="uk-article-title">{{ page.title | escape }}</h1>
+                    <div class="article-content link-primary">
+                        {{ content }}
+                        {% if site.share.guidance %}
+                            {% include share.html %}
+                        {% endif %}
+                    </div>
+                    <hr class="uk-margin-medium">
+                    {% include related-guidance.html %}
+                </article>
+
+                <script>
+                    // Table of contents scroll to
+                    UIkit.scroll('#markdown-toc a', {
+                        duration: 400,
+                        offset: 120
+                    });
+                </script>
+
+            </div>
+
+    </div>
+</div>
