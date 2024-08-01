@@ -1,0 +1,42 @@
+<div>
+    <h3>{{ site.data.translation[site.lang].related_infos | default: "Related" }}</h3>
+
+    {% assign maxRelated = 10 %}
+    {% assign minCommonTags =  1 %}
+    {% assign maxRelatedCounter = 0 %}
+
+    <ul class="uk-list link-secondary">
+        
+        {% for post in site.posts %}
+
+            {% assign sameTagCount = 0 %}
+            {% assign commonTags = '' %}
+
+            {% for tag in post.tags %}
+                {% if post.url != page.url %}
+
+                    {% for ptag in page.tags %}
+                        {% if ptag == tag %}
+                            {% assign sameTagCount = sameTagCount | plus: 1 %}
+                        {% endif %}
+                    {% endfor %}    
+
+                {% endif %}
+            {% endfor %}
+
+            {% if sameTagCount >= minCommonTags %}
+                <li>&#8594;&nbsp; <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+                {% assign maxRelatedCounter = maxRelatedCounter | plus: 1 %}
+                {% if maxRelatedCounter >= maxRelated %}
+                    {% break %}
+                {% endif %}
+            {% endif %}
+
+        {% endfor %}
+
+        {% if maxRelatedCounter == 0 %}
+            <li>&#8594;&nbsp; No Related Stories</li>
+        {% endif %}
+
+    </ul>
+</div>
