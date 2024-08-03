@@ -1,5 +1,5 @@
 ---
-title: APIs.json Images
+title: Name
 subtitle: Secondary
 tags:
 - Tag
