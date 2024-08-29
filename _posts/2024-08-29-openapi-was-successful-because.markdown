@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'OpenAPI Was Successful Because'
+title: 'OpenAPI Was Successful Because...'
 tags:
   - OpenAPI
   - Specifications
