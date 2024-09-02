@@ -1,0 +1,65 @@
+<script>
+  function showDetails(id){
+    if(document.getElementById(id).style.display == ''){
+      document.getElementById(id).style.display = 'none';
+    }
+    else{
+      document.getElementById(id).style.display = '';
+    }
+  }
+</script>
+{% assign counter = 1 %}
+<p id="contract-policy-header">{{ properties.header }}</p>
+<div class="container">
+{% for entry in properties.policies %}
+  {% assign found = 0 %}  
+  {% for each_policy in policies %}   
+    {% if entry == each_policy.slug %}   
+      {% assign policy = each_policy %}  
+      {% assign found = 1 %}   
+    {% endif %}
+  {% endfor %}  
+  {% if found == 0 %}   
+    NO: {{ entry }}<br>
+  {% endif %}     
+  <div class="row" id="policy-{{ policy.slug }}-row" style="margin-bottom: 15px;">
+    <div class="col-1" style="text-align:center;border: 1px solid #FFF;">
+      <img src="{{ policy.image }}" width="50">
+    </div>  
+    <div class="col-2" style="text-align:left;border: 1px solid #FFF;">
+      <strong>{{ policy.name }}</strong>
+    </div>
+    <div class="col-6" style="text-align:left;border: 1px solid #FFF;">{{ policy.description }}</div>
+    <div class="col-1" style="text-align:center;border: 1px solid #FFF;"><a href="#" onclick="showDetails('{{  policy.name | slugify }}-{{ counter }}'); return false;"><button type="button" class="btn btn-dark">Details</button></a></div>
+    <div class="col-2" style="text-align:center;border: 1px solid #FFF;">
+      <input type="radio" class="btn-check" value="YES" name="Contract Policy-{{ policy.name }}" id="{{ policy.slug }}-success-outlined-{{ counter }}" autocomplete="off" value="YES">
+      <label class="btn btn-outline-success" for="{{ policy.slug }}-success-outlined-{{ counter }}">YES</label>
+      <input type="radio" class="btn-check" value="NO" name="Contract Policy-{{ policy.name }}" id="{{ policy.slug }}-danger-outlined-{{ counter }}" autocomplete="off" value="NO">
+      <label class="btn btn-outline-danger" for="{{ policy.slug }}-danger-outlined-{{ counter }}">NO</label>
+    </div>          
+  </div>
+  <div id="{{ policy.slug }}-{{ counter }}" style="border: 1px solid #FFF; display: none; padding: 0px; margin: 10px 0px 15px 0px;">
+    {% assign any_policies = 0 %}  
+    {% for sub_policy in policy.policies %}
+    {% for sub_policies in policies %} 
+        {% if sub_policy == sub_policies.slug %}
+            <div class="row">               
+              <div class="col-3" style="text-align:right;border: 1px solid #FFF;"><strong>{{ sub_policies.name }}:</strong></div>
+              <div class="col-6" style="text-align:left;border: 1px solid #FFF;">{{ sub_policies.description }}</div>
+              <div class="col-1" style="border: 1px solid #FFF;"></div>    
+              <div class="col-2" style="border: 1px solid #FFF;"></div>    
+            </div>  
+            {% assign any_policies = 1 %}                 
+        {% endif %}
+      {% endfor %}     
+    {% endfor %}  
+    {% if sub_policy == sub_policies.slug %}  
+    <div class="row">               
+      <div class="col-12" style="text-align:center;border: 1px solid #FFF;"><strong>No Details</strong></div>   
+    </div>     
+    {% endif %} 
+  </div>  
+  {% assign counter = counter | plus: 1 %}             
+{% endfor %}
+</div>
+<p id="contract-policy-footer">{{ properties.footer }}</p>

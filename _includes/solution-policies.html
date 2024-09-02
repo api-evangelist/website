@@ -1,0 +1,23 @@
+{% assign counter = 0 %}
+<p>Turning on each of these areas you feel pain will light up different policies below that will help provide solutions to each areas.</p>
+<div class="container">
+{% for solution in solutions %}        
+  <div class="row" style="margin-bottom: 15px;">
+    <div class="col-1" style="text-align:center;">
+      <img src="{{ solution.image }}" width="50">
+    </div>  
+    <div class="col-2" style="text-align:left; padding-top: 10px; font-size: 18px; font-weight; bold;">
+      <strong>{{ solution.name }}</strong>
+    </div>
+    <div class="col-7" style="text-align:left; padding: 10px;">{{ solution.description }}</div>
+    <div class="col-2" style="text-align:left; padding: 10px;">
+      <input type="radio" onclick="IdentifyPain();" value="YES" class="btn-check" name="Solution-{{ solution.name }}" id="{{ solution.name | slugify }}-success-outlined-{{ counter }}" autocomplete="off">
+      <label class="btn btn-outline-success" for="{{ solution.name | slugify }}-success-outlined-{{ counter }}">YES</label>
+      <input type="radio" onclick="IdentifyPain();" value="NO" class="btn-check" name="Solution-{{ solution.name }}" id="{{ solution.name | slugify }}-danger-outlined-{{ counter }}" autocomplete="off" checked>
+      <label class="btn btn-outline-danger" for="{{ solution.name | slugify }}-danger-outlined-{{ counter }}">NO</label>
+    </div>
+  </div>    
+  {% assign counter = counter | plus: 1 %}   
+{% endfor %}        
+</div>
+<p>You can craft your contract based upon where you are feeling the most pain, investing in the areas that matter the most to operations.</p>

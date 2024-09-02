@@ -1,0 +1,229 @@
+---
+layout: page
+title: API Contracts
+---
+<p>I manage the API contracts that drive your <a href="https://apievangelist.com">digital supply chain</a>, <a href="https://apievangelist.com">factory floor</a>, and <a href="https://apievangelist.com">distribution channels</a>, helping you achieve your business goals with greater velocity and consistency--API contracts are the human and machine readable artifacts that shape the business and technology of your enterprise operations in a digital age.</p>
+<form action="https://formspree.io/f/mjkbplbp" method="POST">
+<div class="container" style="margin-bottom: 25px;">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<div class="col" align="center" style="border-right: 1px #000 solid;">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;">Raw Materials</div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/raw-materials.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;">Suppliers</div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/suppliers.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;">Factories</div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/factories.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;">Distribution</div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/distribution.png" height="75"></div>
+			</div>
+		</div>	
+		<div class="col" align="center" style="border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;">Retail</div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/retail.png" height="75"></div>
+			</div>
+		</div>		      	  
+	</div>
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<div class="col">
+			<ul style="margin: 0px; padding: 0px 0px 0px 50px;">
+				<li>Internal APIs</li>									
+			</ul>			
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<ul style="margin: 0px; padding: 0px 0px 0px 15px;">
+				<li>3rd-Party Cloud APIs</li>
+				<li>3rd-Party On-Premise APIs</li>									
+			</ul>				
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">				
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Source Control</li>
+				<li>Pipelines</li>
+				<li>Gateways</li>										
+			</ul>												
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Portals</li>
+				<li>Repositories</li>											
+			</ul>					
+		</div>	
+		<div class="col" style="border-left: 1px #000 solid;">
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Desktop Applications</li>
+				<li>Web Applications</li>
+				<li>Mobile Applications</li>
+				<li>Artificial Intelligence</li>												
+			</ul>
+		</div>					      	  
+	</div>	
+</div>
+<p>There are numerous perspectives that you should be considering when it comes to optimizing API operations--you can use the following select boxes to adjust your API contract to match your perspective of why APIs matter, and how API contracts can help guide and govern what matters most to you and your business today.</p>
+<div class="container">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<script>
+			function changePerspective(s){
+
+				var role = document.getElementById("role").value;
+				var momentum = document.getElementById("momentum").value;
+				var relationship = document.getElementById("relationship").value;
+				var perspective = document.getElementById("perspective").value;
+				var location = document.getElementById("location").value;
+				
+				var template_url = 'https://raw.githubusercontent.com/api-evangelist/website/gh-pages/_data/templates/' + role + '-' + momentum + '-' + relationship + '-' + perspective + '-' + location + '-contract-properties.yml'
+				var user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+				const options = {
+					method: 'GET',
+					headers: {
+						"user-agent": user_agent             
+					}
+				};  
+				fetch(template_url,options)
+				.then(function(response) {
+					if (!response.ok) {
+						console.log('Error with Status Code: ' + response.status);
+					}
+					response.text().then(function(raw) {   
+						//console.log(raw);
+						const template = jsyaml.load(raw);  
+
+						document.getElementById("contract-policy-header").innerHTML = template.header;
+						document.getElementById("contract-policy-footer").innerHTML = template.footer;
+
+						const divs = document.querySelectorAll('div');
+						// Turn off
+						Array.from(divs).forEach((div) => {	
+							if (div.id.includes('policy-')) {						
+								document.getElementById(div.id).style.display = 'none';
+							}
+						});			
+						// Turn on				
+						Array.from(divs).forEach((div) => {							
+							if (div.id.includes('policy-')) {
+								for (let i = 0; i < template.policies.length; i++) {
+									if ('policy-' + template.policies[i] + '-row' == div.id) {
+										document.getElementById('policy-' + template.policies[i] + '-row').style.display = '';
+									}
+								}
+							}
+						});							
+
+					});
+					})
+					.catch(function(err) {
+						console.log('Error: ' + err);
+				});
+
+			}
+		</script>
+		<div class="col">
+			<select class="form-select" id="role" onchange="changePerspective(); return false;">
+				<option value="technical">Technical Stakeholder</option>
+				<option value="business">Business Stakeholder</option>				
+				<option value="executive">Executive Leader</option>
+			</select>
+		</div>
+		<div class="col">
+			<select class="form-select" id="momentum" onchange="changePerspective(); return false;">
+				<option value="further-along">Further Along in Journey</option>				
+				<option value="picking-up">Picking Up Momentum</option>
+				<option value="getting-started">Just Getting Started</option>
+			</select>
+		</div>		
+		<div class="col">
+			<select class="form-select" id="relationship" onchange="changePerspective(); return false;">
+				<option value="producer">Producing</option>
+				<option value="consumer">Consuming</option>
+				<option value="end-user">End-User</option>
+			</select>
+		</div>				
+		<div class="col">
+			<select class="form-select" id="perspective" onchange="changePerspective(); return false;">
+				<option value="3rd-party">3rd-Party</option>
+				<option value="1st-party">1st-Party</option>
+				<option value="internal">Internal</option>
+			</select>
+		</div>
+		<div class="col">
+			<select class="form-select" id="location" onchange="changePerspective(); return false;">
+				<option value="cloud">Cloud</option>
+				<option value="on-premise">On-Premise</option>
+				<option value="open-source">Open-Source</option>
+				<option value="inner-source">Inner-Source</option>
+			</select>
+		</div>		
+		<div class="col" style="font-size: 22px; font-weight: bold; text-align: center;">APIs</div>			
+	</div>
+</div>
+<br>
+{% assign policies = site.data.policies %}
+{% assign first = 0 %}
+{% assign properties = site.data['contract-policies'] %}
+<div class="container" id="contract-policies">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<h3>Contract Policies</h3>
+		{% include contract-policies.html %}
+	</div>
+</div>
+
+<br>
+<div class="container" id="contract-services">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+
+		<h2>Contract Support</h2>
+		{% assign properties = site.data['contract-support'] %}
+		{% include contract-support.html %}
+
+	</div>
+</div>
+<br>
+<div class="container" id="contract-services">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+
+		<h2>Contract Services</h2>
+		{% assign contract_services = site.data['contract-services'] %}
+		{% include contract-services.html %}
+
+	</div>
+</div>	
+<br>
+<div class="container" id="3rd-party-cloud-producer">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+
+		<h2>Initiate Contract</h2>
+		<p>As an API producer we welcome you to initiate a contract for your APIs. If you are unsure of where to start, begin with a single contract and we can advise you from there. If you have question, go ahead an initiate, and we can answer your questions as we progress.</p>
+
+		{% include initiate-contract.html %}
+
+		<p>This form will send an email directly to Kin Lane, with all of the information you've provided, and you should hear back within a day about how we can help you manage your API contract(s) across your public and private APIs.</p>
+
+	</div>
+</div>	
+
+<p>APIs are powering your business today, and we want to make sure you have the contracts in place that keep your business moving into the future.</p>
+</form>

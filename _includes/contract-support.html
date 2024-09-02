@@ -1,0 +1,29 @@
+{% assign policies = site.data.policies %}
+{% assign counter = 1 %}
+<p>{{ properties.header }}</p>
+<div class="container">
+{% for entry in properties.policies %}
+  {% for policy in policies %}   
+    {% if policy.slug == entry  %}   
+      {% assign policy = policy %}   
+    {% endif %}  
+    {% endfor %}  
+      <div class="row" style="margin-bottom: 15px;">
+        <div class="col-1" style="text-align:center;">
+          <img src="{{ policy.image }}" width="50">
+        </div>  
+        <div class="col-2" style="text-align:left; padding-top: 10px; font-size: 18px; font-weight; bold;">
+          <strong>{{ policy.name }}</strong>
+        </div>
+        <div class="col-7" style="text-align:left;">{{ policy.description }}</div>
+        <div class="col-2" style="text-align:center;border: 1px solid #FFF;">
+          <input type="radio" class="btn-check" value="YES" name="Contract Support - {{ policy.name }}" id="{{ policy.name | slugify }}-success-outlined-{{ counter }}" autocomplete="off" checked>
+          <label class="btn btn-outline-success" for="{{ policy.name | slugify }}-success-outlined-{{ counter }}">YES</label>
+          <input type="radio" class="btn-check" value="NO" name="Contract Support - {{ policy.name }}" id="{{ policy.name | slugify }}-danger-outlined-{{ counter }}" autocomplete="off">
+          <label class="btn btn-outline-danger" for="{{ policy.name | slugify }}-danger-outlined-{{ counter }}">NO</label>
+        </div>         
+      </div>
+      {% assign counter = counter | plus: 1 %} 
+{% endfor %}
+</div>
+<p>{{ properties.footer }}</p>

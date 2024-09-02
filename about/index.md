@@ -2,10 +2,27 @@
 layout: page
 title: About API Evangelist
 ---
-My name is Kin Lane, and I created the API Evangelist blog and persona to provide me with a lens for looking at how technology is impacting the world around us. In 2010, I began studying the business of APIs, trying to understand how new waves of startups like Twilio, Stripe, and others were building API-centric businesses. Many years later I am still studying APIs, but my view of the API landscape has significantly changed over the years as I better understand the technology, business, but also the politics of APIs.
+My name is Kin Lane, and I created the API Evangelist blog and persona to provide me with a lens for looking at how technology is impacting the world around us. In 2010, I began studying the business of APIs, trying to understand how new waves of startups like Twilio, Stripe, SendGrid and others were building API-centric businesses. Many years later I am still studying APIs, but my view of the API landscape has significantly changed over the years as I better understand the technology, business, but also the politics of APIs.
 
-This blog is my note pad. It is where I write down my thoughts as I am reading, researching, and having conversation with people across different industries. This blog is how I learn about what is happening with APIs in motion. This blog has no editor, so ocasionally you will find spelling or grammar mistakes. Feel free to share if you come across, or simply overlook as you make your way around. After almost 12 years, I am finding more energy to write here and organize the information I have published here, making things more discoverable and accessible. 
+My API journey has spanned almost 15 years, exposing me to a wealth of lessons across the following experiences:
 
-I spend almost a decade working on storytelling here. In the next decade I am looking to get more hands-on with what I've learned and help businesses across many different industries be more successful with their API operations. I am looking to invest more time and energy into this blog, organizing what I have here, but working across the industry to help evolve and expand the knowledge available here on API Evangelist.
+- 2010 - API Evangelist for Mimeo Print Company in New York City, NY
+- 2011 - API Evangelist for CityGrid in West Hollywood, CA
+- 2011 - Author for ProgrammableWeb
+- 2013 - Presidential Innovation Fellow in Washington D.C.
+- 2013 through 2017 - Produced the API Strategy & Practice Conference
+- 2015 - Received Knight Foundation Grant for Open Government Data
+- 2017 - Worked with GSA on API Strategy
+- 2017 - Worked with FDIC on API STrategy
+- 2017 - Worked with European Commission on API Strategy
+- 2017 - Worked with the Department of Veterans AFfairs on API Strategy
+- 2018 - Worked with Health & Human Services on Blue Button API
+- 2019 - Worked with F5 Networks as an API Architect
+- 2020 - Worked with the UK Government on API Strategy
+- 2019 through 2023 - Chief Evangelist at Postman
+- 2020 - Worked with United Nations on Open Data
+- 2024 - Built an API Governance program for Bloomberg
+
+Throughout this journey I have written over 4K posts here on API Evangelist, produced 125 episodes of my Breaking Changes podcast, and engaged in many discussions and working sessions with enterprise organizations regarding their API operations, lifecycle, and governance. The next part of my journey is all about taking what I've learned and evolve a suite of services that help enterprises get a handle on their APIs.
 
 ![API Evangelist](https://kinlane-productions2.s3.amazonaws.com/api-evangelist-many-photos.png)

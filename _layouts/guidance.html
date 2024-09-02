@@ -26,10 +26,85 @@ layout: default
                 <article class="uk-article">
 
                     <h1 class="uk-article-title">{{ page.title | escape }}</h1>
+                    <!-- FREE CONTENT-->
                     <div class="article-content link-primary">
                         {{ content }}
                     </div>
-                    <hr class="uk-margin-medium">
+                    <!-- FREE CONTENT-->
+
+                    <!-- CUSTOMER CONTENT-->
+                    {% assign base_url = page.url | replace_first: "/","" %}
+                    {% assign guidance_url = "https://api.github.com/repos/kinlane/api-evangelist/contents/_" | append: base_url | append: ".md"  %}
+                    {% assign guidance_url = guidance_url | replace: "/.md",".md" %}
+                    <div class="article-content link-primary" id="customer">HERE</div>
+                    <script>
+                        // If there is a valid token, it will load premium content.
+                        var access_token = Cookies.get('access_token');                        
+                        if(access_token){
+
+                            var pull_url = '{{ guidance_url }}?ref=gh-pages';
+                
+                            const options = {
+                                method: 'GET',
+                                headers: {
+                                    "Accept": "application/vnd.github+json",
+                                    "Authorization": 'Bearer ' + access_token,
+                                    "X-GitHub-Api-Version": "2022-11-28"
+                                }
+                            };
+                            console.log(options);  
+
+                            fetch(pull_url,options)
+                            .then(function(response) {
+                                if (!response.ok) {
+                                    console.log('Error with Status Code: ' + response.status);
+                                }
+                                response.text().then(function(raw) {   
+
+                                    var yaml_response = jsyaml.load(raw);
+                                    var yaml = atob(yaml_response.content);
+                                    yaml_array = yaml.split("---");
+                                    yaml = yaml_array[1];
+                                    console.log(yaml);
+                                    var guidance = jsyaml.load(yaml);
+                                    console.log(guidance);
+
+                                    var tech_html = '';
+                                    if(guidance.technology && guidance.technology != ''){                                   
+                                        var technology = guidance.technology;
+                                        var tech_html = '<h3>Technology</h3>';
+                                        tech_html += '<p>' + technology + '</p>';
+                                        }
+                                    var business_html = '';
+                                    if(guidance.business && guidance.business != ''){                                   
+                                        var business = guidance.business;
+                                        business_html += '<h3>Business</h3>';
+                                        business_html += '<p>' + business + '</p>';
+                                        }
+                                    var politics_html = '';
+                                    if(guidance.politics && guidance.politics != ''){                                   
+                                        var politics = guidance.politics;
+                                        politics_html = '<h3>Politics</h3>';
+                                        politics_html += '<p>' + politics + '</p>';
+                                        }                                    
+
+                                    var governance_html = '';
+                                    if(guidance.governance && guidance.governance != ''){
+                                        var governance = guidance.governance;
+                                        governance_html += '<h3>Governance</h3>';
+                                        governance_html += '<p>' + governance + '</p>';
+                                        }
+
+                                    document.getElementById("customer").innerHTML = tech_html + business_html + politics_html + governance_html;
+
+                                });
+                                })
+                                .catch(function(err) {
+                                    console.log('Error: ' + err);
+                            });
+                        }
+                    </script> 
+                    <!-- CUSTOMER CONTENT-->
                     {% include related-guidance.html %}
                 </article>
 
