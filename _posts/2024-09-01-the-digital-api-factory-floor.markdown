@@ -1,0 +1,100 @@
+---
+published: true
+layout: post
+title: 'The Digital API Factory Floor'
+tags:
+  - Factory Floor
+  - Business
+  - Gateways
+  - Source Control
+  - Pipelines
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/citizenship-factory-road.jpg
+---
+I have used a lot of different analogies over my fifteen years as the API Evangelist, but moving forward you will hear me stick with the API factory floor to describe what we do with source control, pipelines, and gateways. I think we technologists like to jump around in our analogies, and I think it will be helpful if we stick with a familiar one during this time where we do the work to align business and engineering interests across the API lifecycle. The APIs we consume are clearly our supply chain, but our factory floor represents the APIs we produce, bringing our source control, CI/CD pipelines, and API gateways into focus beyond just IT, and getting business stakeholders involved to help align the delivery of digital resources and capabilities with business objectives.
+
+Source control like GitHub, GitLab, and BitBucket. Provides the independent and autonomous workspaces where business, engineer, and platform teams can work to define, design, and develop APIs in a consistent and repeatable manner. While each API may be different, source control provides a standardized way to organize and collaborate around the blueprints and other artifacts teams are using to craft their API solutions, allowing for collaboration and collective contribution towards the business and technical contracts for an API, but also the documentation, mock servers, and even resulting code for deploying an API in any stage of operation. Source control are the virtual workspaces that make up your factory floor allowing you to scale up or down the amount of space you need to deliver the resources and capabilities needed across your business operations.
+
+CI/CD pipelines, natively as part of your source control, or augmented with additional infrastructure provides the conveyor belts of your digital API factory floor. CI/CD works in concert with your source control workspaces, but provides automated and repeatable pipelines that run checks and validations, assemble and build, and if all the checks pass, distribute your APIs into development, alpha, beta, or production stages of your API lifecycle. CI/CD pipelines are what makes that factor floor move, delivering the latest products and features your customers need. Pipelines define, assemble, automate, and govern your APIs as they are prepared for delivery to your wholesale and retail consumers, shaping the performance and velocity of your enterprise operations. Without a clear pipeline strategy as part of API governance, every API will be bespoke and custom, limiting what you will be able to accomplish as an enterprise. 
+
+API gateways are how our APIs move from the factory floor to distribution to wholesale and retail consumers via HTTP APIs and Webhooks. Existing consumers are able to access products and features immediately with new consumers visiting wholesale or retail distribution centers. API gateways are the factory doors, trains, trucks, rails, and highway all rolled up into a modern digital delivery system. Your API gateways are how you protect and deliver your digital intellectual property, ensuring your trusted partners and customers have access to the products and features they have purchased, and your competitors and unwanted vendors or even criminals are locked out. API gateways provide a Just-in-Time manufacturing solution that produces the products you need in the moment, enables the transaction, and collects the money from consumers, moving your raw digital resources and capabilities from your warehouses through your factory floor, and generating sales in a real-time self-service global orchestration of your business operations.
+
+Today’s factory floor is a combined orchestration between your source control, CI/CD pipelines, and API gateway capabilities. You might have a single factory floor that everyone across the enterprise is allocated workspace, a pipeline, and gateway access, or you might have many factories based upon geographic regions or related to where your raw digital resources, suppliers, or labor is located. Whether your factory floor looks like one of those industrial era red-brick buildings or one of those high tech factory floors you see at Amazon will depend on the investment of your enterprise. The quality, performance, and velocity of your API factory floor will depend on the quality of the business and technical API contracts in place that guide teams producing APIs towards what digital resources and capabilities they should be applying, and how they should turn those into repeatable products and features your customers are demanding. API contracts govern the relationship between your producer teams and consumers, but also are the configuration for workspaces, conveyor belts, warehouse doors, and distribution channels you need to deliver products to your customers in real-time.
+<br>
+<div class="container" style="margin-bottom: 25px;">
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<div class="col" align="center" style="border-right: 1px #000 solid;">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;"><a href="https://apievangelist.com/2024/09/01/the-digital-api-supply-chain/">Raw Materials</a></div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/raw-materials.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;"><a href="https://apievangelist.com/2024/09/01/the-digital-api-supply-chain/">Suppliers</a></div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/suppliers.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;"><a href="https://apievangelist.com/2024/09/01/the-digital-api-factory-floor/">Factories</a></div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/factories.png" height="75"></div>
+			</div>
+		</div>
+		<div class="col" align="center" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;"><a href="https://apievangelist.com/2024/09/01/the-digital-api-distribution-channels/">Distribution</a></div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/distribution.png" height="75"></div>
+			</div>
+		</div>	
+		<div class="col" align="center" style="border-left: 1px #000 solid;"">
+			<div class="row">
+				<div class="col" style="font-size: 24px; font-weight: bold; text-decoration: underline;"><a href="https://apievangelist.com/2024/09/01/the-digital-api-distribution-channels/">Retail</a></div>
+			</div>
+			<div class="row">
+				<div class="col"><img src="/images/retail.png" height="75"></div>
+			</div>
+		</div>		      	  
+	</div>
+	<div class="row" style="border: 2px solid #000; padding: 10px 10px 15px 10px; border-radius: 25px;">
+		<div class="col">
+			<ul style="margin: 0px; padding: 0px 0px 0px 50px;">
+				<li>Internal APIs</li>									
+			</ul>			
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<ul style="margin: 0px; padding: 0px 0px 0px 15px;">
+				<li>3rd-Party Cloud APIs</li>
+				<li>3rd-Party On-Premise APIs</li>									
+			</ul>				
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">				
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Source Control</li>
+				<li>Pipelines</li>
+				<li>Gateways</li>										
+			</ul>												
+		</div>
+		<div class="col" style="border-right: 1px #000 solid; border-left: 1px #000 solid;"">
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Portals</li>
+				<li>Repositories</li>											
+			</ul>					
+		</div>	
+		<div class="col" style="border-left: 1px #000 solid;">
+			<ul style="margin: 0px; padding: 0px 0px 0px 30px;">
+				<li>Desktop Applications</li>
+				<li>Web Applications</li>
+				<li>Mobile Applications</li>
+				<li>Artificial Intelligence</li>												
+			</ul>
+		</div>					      	  
+	</div>	
+</div>
