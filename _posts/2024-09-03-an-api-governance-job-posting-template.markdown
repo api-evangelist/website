@@ -19,7 +19,8 @@ Here is my current template for anyone looking to post a job opening for someone
 - x years demonstrated technical background
 - Awareness and passion for latest API technology
 - Have a passion for leading and evangelizing
-- You are a effective communicator with peopleHave an attention to detail across your work
+- You are a effective communicator with people
+- Have an attention to detail across your work
 - Enjoying making sense of complex systems
 - Good at simplifying and abstracting complexity
 - Have an endless well of enthusiasm for APIs
