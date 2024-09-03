@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'API Contracts Defining Next Phase of API Evangelist'
+title: 'API Contracts Defining the Next Phase of API Evangelist'
 tags:
  - Contracts
  - Services
