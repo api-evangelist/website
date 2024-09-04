@@ -10,7 +10,7 @@ tags:
   - Invoicing
 image: https://i.ytimg.com/vi/DqO0Ez3FXSU/hqdefault.jpg
 ---
-I came across a [post on LinkedIn from Alex Asimov, the CTO of Monite, sharing their strategy for versioning their API](https://www.linkedin.com/feed/update/urn:li:activity:7234906102880964608/). I knew that I wanted to get [Stanislav Zmiev, the Tech Lead of Platform Engineering at Monite](https://www.linkedin.com/in/zmievsa/), and the person behind their API versioning on the show. Versioning is an important and hot topic, and Stanislav delivered with a very wise, pragmatic, and fortunate for all of us, an open-source solution to managing change across our APIs.
+I came across a [post on LinkedIn from Alex Akimov, the CTO of Monite, sharing their strategy for versioning their API](https://www.linkedin.com/feed/update/urn:li:activity:7234906102880964608/). I knew that I wanted to get [Stanislav Zmiev, the Tech Lead of Platform Engineering at Monite](https://www.linkedin.com/in/zmievsa/), and the person behind their API versioning on the show. Versioning is an important and hot topic, and Stanislav delivered with a very wise, pragmatic, and fortunate for all of us, an open-source solution to managing change across our APIs.
 
 Stanislav knows his stuff when it comes to versioning, and it shows in their [open-source implementation called Cadwyn](https://docs.cadwyn.dev/), which as they say, is a “Production-ready community-driven modern Stripe-like API versioning in FastAPI”. Stanislav shared both the business and technical reasons behind when you want to version or not version, and provides us all with a very pragmatic view of API versioning, which is often a heated and confusing topic. Well, I’ll let you listen for yourself...
 
