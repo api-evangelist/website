@@ -8,7 +8,7 @@ image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-ski
 ---
 Getting teams producing APIs to care about APIs is an equally daunting task of getting business leadership to care about and invest in APIs. This post overlaps heavily with my thoughts on what actually matters to API leadership, as these apply to leadership as well, but is primarily focused on the middle and lower levels of the enterprise. I would love for everyone to care about doing APIs well, but in my experience, the people who truly care about APIs will always be less than 5% of the people you talk to who work within the enterprise delivering APIs. Everyone else will have a wide mix of perspective, opinions, and levels of awareness that you will have to navigate if you expect to move the API conversation forward at scale within an enterprise.
 
-Similar to my storytelling directly at business leadership, I want to be pragmatic about what teams who are producing APIs want from their work. I do not want to keep fantasizing that everyone loves their job and is super eager to learn more about APIs—those people exist, but here are the reasons I am thinking about how I can connect the API dots for incentivizing teams who are building APIs.
+Similar to my storytelling directly at business leadership, I want to be pragmatic about what teams who are producing APIs want from their work. I do not want to keep fantasizing that everyone loves their job and is super eager to learn more about APIs—those people exist, but here are the reasons I am thinking about how I can connect the API dots for the incentivization of teams who are building APIs.
 
 - Getting a Job
 - Keeping a Job
