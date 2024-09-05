@@ -4,7 +4,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
   <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-  
   <link rel="shortcut icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
 	<link rel="icon" type="image/x-icon" href="https://apievangelist.com/favicon.ico">
 
@@ -18,6 +17,8 @@
     {% include search-js.html %}
   {% endif %}
   
+  {% include hook-head.html %}
+  
   {% if page.image %}
      {% assign social_image = page.image | absolute_url %}
   {% else %}
@@ -30,6 +31,18 @@
   <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:image"  content="{{ social_image }}">
+
+  <meta name="twitter:url" content="{{ page.source }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% if page.title %}{{ page.title | escape }} by The {{ site.title }}{% else %}{{ site.title | escape }}{% endif %}">
+  <meta name="twitter:site" content="{{ site.title }}">
+  <meta name="twitter:description" content="{% if page.description %}{{ page.description | escape }}{% else %}{{ site.description }}{% endif %}">
+
+  {% if site.twitter_username %}
+    <meta name="twitter:creator" content="@{{ site.twitter_username }}">
+  {% endif %}
+  
+  <meta name="twitter:image" content="{{ social_image }}">
 
   <script src="/assets/js/jquery-latest.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/assets/js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
