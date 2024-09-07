@@ -58,30 +58,6 @@
                     <a class="uk-navbar-item uk-logo" href="{{ "/" | relative_url }}">{% if site.logo %}<img src="{{ site.logo }}" alt="{{ site.title | escape }}">{% else %}{{ site.title | escape }}{% endif %}</a>
                 </div>
                 <div class="uk-navbar-right">
-                    {% if site.navbar.search %}
-                        {% unless page.hero%}
-                            <div>
-                                <a id="search-navbar-toggle" class="uk-navbar-toggle" uk-search-icon href="#"></a>
-                                <div class="uk-drop uk-background-default uk-border-rounded" uk-drop="mode: click; pos: left-center; offset: 0">
-                                    <form class="uk-search uk-search-navbar uk-width-1-1" onsubmit="return false;">
-                                        <input id="search-navbar" class="uk-search-input" type="search" placeholder="{{ site.data.translation[site.lang].search_placeholder | default: "Search for answers" }}" autofocus autocomplete="off">
-                                    </form>
-                                    <ul id="search-navbar-results" class="uk-position-absolute uk-width-1-1 uk-list"></ul>
-                                </div>
-                            </div>
-                            <script>
-                            SimpleJekyllSearch({
-                                searchInput: document.getElementById('search-navbar'),
-                                resultsContainer: document.getElementById('search-navbar-results'),
-                                noResultsText: '<li class="no-results">{{ site.data.translation[site.lang].search_no_results | default: "No results found" }}</li>',
-                                searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
-                                json: "{{ '/search.json' | relative_url }}"
-                            });
-                            searchResults("search-navbar");
-                            </script>
-                        {% endunless %}
-                    {% endif %}
-
                     <ul class="uk-navbar-nav uk-visible@m">
                         {% for link in site.data.navigation_header.right %}
                             {% if link.url contains 'http' %}
