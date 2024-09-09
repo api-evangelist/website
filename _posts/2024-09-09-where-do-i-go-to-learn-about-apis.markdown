@@ -7,7 +7,7 @@ tags:
 - Discovery
 - Newsletters
 - Podcasts
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/birth-of-a-nation-old-small-town-buildings.jpeg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-nyc-public-library.jpeg
 ---
 It is the top question I get--where do I go to learn about APIs? I've long had a list of the blogs, directories, podcasts, and other resources for learning about APIs--the trick is to keep it up to date and always properly reflect what is truly happening. I've reworked my previous work on this subject while at Postman as a YAML powered blog post that I will dynamically update on a regular basis.
 
