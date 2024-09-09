@@ -1,0 +1,19 @@
+
+<center>
+<table width="100%">
+{% for api in index.apis %}
+{% assign website_url = "none" %}
+{% for property in api.properties %}
+    {% if property.type == 'x-website' %}{% assign website_url = property.url %}{% endif %}
+{% endfor %}
+{% assign tag_match = 0 %}
+{% for tag in api.tags %}{% if tag == show_tag %}{% assign tag_match = 1 %}{% endif %}{% endfor %}
+{% if tag_match == 1 %}
+    <tr>
+        <td width="25%" align="center"><a href="{{ website_url }}"><img src="{{ api.image }}" width="250" align="center" style="padding: 15px; width: 250px;"></a></td>
+        <td width="75%" align="left"><a href="{{ website_url }}"><strong>{{ api.name }}</strong></a> - {{ api.description }}</td>
+    </tr>
+{% endif %}
+{% endfor %}
+</table>
+</center>
