@@ -1,14 +1,14 @@
 ---
 published: true
 layout: post
-title: 'Progressing Through the Spectrum of API Governance Rules Work'
+title: 'A Spectrum of API Governance Rules Work'
 tags:
   - Spectral
   - Rules
   - Governance
   - Linting
   - JSON Schema
-image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-skyscraper-construction-crane-2.jpeg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/yellow-journalism-construction-zone-claw.jpg
 ---
 Creating Spectral rules to lint OpenAPI definitions is equal parts art and science. When you take any of the default rules or copy and paste some rules from the style guides of popular API producers you quickly end up hitting walls in how you can apply your rules. You can do a lot with the default functions that Spectral provides but it is tempting to go from default function to custom function without properly doing the work to understand the OpenAPI you are applying the rule to, as well as the shape of the “problem” you are linting for in the first place--here is the spectrum as I see it for crafting rules.
 
