@@ -7,7 +7,7 @@ tags:
   - Landscape
   - Services
   - Repeats
-image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-repeats/iti-is-monday-green-circuit-docks.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-repeats/iti-is-monday-green-circuit-docks-2.jpg
 ---
 It is Monday morning, and you are ready to get to work. Do you know where all the digital resources and capabilities you need are from across the enterprise, as well as the ones outside the enterprise that exist behind all of the applications your business uses? Can you search for your API resources, and try them out? Can you easily integrate and automate with these APIs across the different on-premise or cloud applications you use each day? Having an accurate inventory of your internal, external, and 3rd-party APIs will undoubtedly shape how successful you are in your work this week, no matter what business sector you operate in.
 
