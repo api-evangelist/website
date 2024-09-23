@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'It Is Monday Morning, Do You Know Where All Your APIs Are?'
+title: 'It Is Monday Morning, Do You Know Where All Of Your APIs Are?'
 tags:
   - Discovery
   - Landscape
