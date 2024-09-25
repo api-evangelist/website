@@ -1,0 +1,15 @@
+---
+published: true
+layout: post
+title: 'The API Review for the APIs.io Search API'
+tags:
+  - Governance
+  - Reviews
+  - APIs.io
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/bf-skinner-alan-turing-side.jpg
+---
+I have been working for the last couple of weeks on [an API review service that I would like to offer to enterprises](https://apievangelist.com/services/). The API review service is based upon the API profiling work I have been doing on my [APIs.io search engine](https://apis.io/), so what better place to start when applying my API review—-[the APIs.io Search API](https://github.com/api-search/search-api). I won’t go into one of the usual API blah blah essays about what I’ve done here, and I will let the review speak for itself. It is verbose. It is a lot. But, it is the higher water mark as I see it. You don’t have to do it all, but it is what I am doing for APIs.io, and it gives me a full buffet of well-defined and structured artifacts that can be applied in different ways to govern not just APIs, but also API operations.
+
+The [review being applied to the APIs.io search API](https://github.com/api-search/search-api) is defined by [27 strategy areas](https://github.com/api-search/strategy), [173 policies](https://github.com/api-search/policies), [91 operational rules](https://github.com/api-search/rules/blob/main/operational-rules.yml), and [325 API rules](https://github.com/api-search/rules/blob/main/api-rules.yml). With the strategy layer meant to report to leadership, the policy layer aligning with the product, and the rules are where things get automated. The APIs.io Search API review is augmented with [80 areas of guidance](https://github.com/api-search/rules/blob/main/api-rules.yml) that are linked with each policy and rule, to help provide an overview, but also examples, videos, and other resources to help guide teams forward. The review is meant to be an API review, but also a checklist, guide, and feedback loop that is designed to go to where an API is, as long as it is defined using APIs.json. 
+
+You can see all the rules I run as part of the collective review on the [business contract (OpenAPI)](https://api-evangelist-tools.github.io/apis-io-search-api-operational-validator/), [technical contract (OpenAPI)](https://api-evangelist-tools.github.io/apis-io-search-api-api-validator/), and other artifacts I am using to define things like use cases and teams.  The same review can be run with any other set of policies and rules, and with or without a strategy. Next, I will run it on all the other APIs.io APIs, as well as my own API Evangelist APIs. I am also going to give some dedicated time to APIs.io over the next couple of weeks. I will come full circle with my API profiling process shaping my API review process, and now my API review process shaping my API profiling process. This is the virtuous cycle that I am looking to pick up speed on as a flywheel between [APIs.io](https://apis.io/), [APIs.json](https://apisjson.org/), [API Commons](https://apicommons.org/), and [API Evangelist](https://apievangelist.com/).
