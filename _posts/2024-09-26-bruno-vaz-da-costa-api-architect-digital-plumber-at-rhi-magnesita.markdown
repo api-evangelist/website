@@ -6,7 +6,7 @@ tags:
   - Refractory
   - Mainstream
   - Standards
-image: https://i.ytimg.com/vi/PJklPxKmypE/hqdefault.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-conversations/api-evangelist-conversations.jpg
 ---
 [Bruno Vaz da Costa, API Architect (digital plumber) at RHI Magnesita came by to share what APIs means to his enterprise operating in the refractory industry](https://conversations.apievangelist.com/sessions/2024-09-26-bruno-vaz-da-costa-api-architect-digital-plumber-at-rhi-magnesita.html), what their biggest challenges are, and thoughts around how they can standardize around APIs. This type of conversation reflects where I want to go with these API conversations, getting out of the API echo chamber and talking with folks doing the good work to standardize and govern APIs in these mainstream industries.
 
