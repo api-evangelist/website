@@ -1,7 +1,7 @@
 ---
 published: true
 layout: post
-title: 'API Evangelist Conversation with Subramanian Krishnan, Architect with Citrix'
+title: 'API Evangelist Conversation with Subramanian Krishnan, Architect and API Integration at Cloud Software Group within Citrix'
 tags:
   - Cloud Computing
   - Cost Management
