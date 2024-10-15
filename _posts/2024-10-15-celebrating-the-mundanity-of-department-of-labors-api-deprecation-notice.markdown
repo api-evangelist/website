@@ -39,7 +39,11 @@ During these sessions, we will cover how to:
 
 Please circulate this invitation within your organization. 
 
-We look forward to seeing you there…
+We look forward to seeing you there,
+
+Office of Data Governance
+U.S. Department of Labor
+odg@dol.gov
 ```
 
 I love any communication around API change, especially taking the opportunity to onboard your consumers with the latest. The DOL is sensibly moving forward with the deprecation of their two oldest major versions, shuttering V1 and V2, keeping V3, but focusing all the attention on V4. They reiterate what it takes to onboard with their API and get support and provide feedback, but they also provide two days of an API orientation session [tomorrow](https://usdol.webex.com/weblink/register/r2c67a3ea325721254d20802b7ab615a4) and [Thursday](https://usdol.webex.com/weblink/register/r10f067245fe52e48bcc82e752f31af83). Providing everything you are going to need to onboard fresh as well as make the migration to V4 of the Department of Labor API.
