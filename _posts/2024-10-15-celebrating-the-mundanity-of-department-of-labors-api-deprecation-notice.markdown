@@ -26,8 +26,8 @@ We have made our data easier to find, access, understand, and use for DOL and it
 
 Click here to register:
 
-- [Session I, Wednesday, October 16th @ 12pm – 1pm EST](https://usdol.webex.com/weblink/register/r2c67a3ea325721254d20802b7ab615a4)
-- [Session II, Thursday, October 17th @ 2:30pm – 3:30pm EST](https://usdol.webex.com/weblink/register/r10f067245fe52e48bcc82e752f31af83)
+- Session I, Wednesday, October 16th @ 12pm – 1pm EST - https://usdol.webex.com/weblink/register/r2c67a3ea325721254d20802b7ab615a4
+- Session II, Thursday, October 17th @ 2:30pm – 3:30pm EST - https://usdol.webex.com/weblink/register/r10f067245fe52e48bcc82e752f31af83
 
 During these sessions, we will cover how to: 
 
@@ -42,6 +42,6 @@ Please circulate this invitation within your organization.
 We look forward to seeing you there…
 ```
 
-I love any communication around API change, especially taking the opportunity to onboard your consumers with the latest. The DOL is sensibly moving forward with the deprecation of their two oldest major versions, shuttering V1 and V2, keeping V3, but focusing all the attention on V4. They reiterate what it takes to onboard with their API and get support and provide feedback, but they also provide two days of an API orientation session tomorrow and Thursday. Providing everything you are going to need to onboard fresh as well as make the migration to V4 of the Department of Labor API.
+I love any communication around API change, especially taking the opportunity to onboard your consumers with the latest. The DOL is sensibly moving forward with the deprecation of their two oldest major versions, shuttering V1 and V2, keeping V3, but focusing all the attention on V4. They reiterate what it takes to onboard with their API and get support and provide feedback, but they also provide two days of an API orientation session [tomorrow](https://usdol.webex.com/weblink/register/r2c67a3ea325721254d20802b7ab615a4) and [Thursday](https://usdol.webex.com/weblink/register/r10f067245fe52e48bcc82e752f31af83). Providing everything you are going to need to onboard fresh as well as make the migration to V4 of the Department of Labor API.
 
 While mundane and not something the API sector often showcases, I would hold this email up as a fine example of how to communicate around change management. Us technologists love to talk about API versioning until the cows come home, but it is low-tech emails and orientation sessions like this that help move the API conversation forward in meaningful ways. This is the API economy I can get behind because of how the DOL manages communication around API deprecation, but also it is an API that has such a large real-world impact. It is API work like this I will continue to profile and showcase here on the blog and help put more tools in your API toolbox when it comes to things you can do to reduce complexity and friction across your API operations and keep things moving forward.
