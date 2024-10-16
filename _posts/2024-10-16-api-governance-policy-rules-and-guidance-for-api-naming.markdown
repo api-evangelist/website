@@ -177,13 +177,16 @@ policies: >-
   There are policies in place to ensure each API has a name, that the names are of a proper casing and length, with additional policies in the works to help address consistency of vocabulary.
 people: >-
   Names of APIs should reflect the needs of an API consumer, speaking to what they are looking for in a digital resource or capability, rather than what the needs are of those who produced the API.
-```
-
+---
 The name of each API should be simple, intuitive, and speak to what is possible with an API, not the technology behind the API. Naming is hard, so take a moment to consider what some one wasn't involved in producing the API will think when they read the name. Is it something you could say to someone and it will make sense?
 
 The name of your API should speak to the business use cases it covers, and is what will show up in your API catalog, directory, and search results. Think about how you can align the naming of your APIs across domain, line of business, or team, as part of a wider API product strategy. 
 
 The name of an API should be a collaborative effort between product and engineering stakeholders, with the consumers of the API in mind. The name of an API is likely not to change, so take the time to consider what the right name is as part of the design stage along with other naming, paths, and tagging.
+are of those who produced the API.
+```
+
+### OpenAPI Info Title
 
 ```
 title: OpenAPI Info Title
@@ -204,11 +207,11 @@ policies: >-
   There are policies in place to ensure each API has a name, that the names are of a proper casing and length, with additional policies in the works to help address consistency of vocabulary.
 people: >-
   Names of APIs should reflect the needs of an API consumer, speaking to what they are looking for in a digital resource or capability, rather than what the needs are of those who produced the API.
-```
-
+---
 The name of your API matters. Hopefully at this point you have crafted a name for your API that reflects your business goals, and you are just copying and pasting the name here in your OpenAPI definition. Maybe you omitted the acronym API from the name in your APIs.json API name, but you will be adding it here, but there shouldn't be too much difference between the business and technical names for your APIs if you want to establish alignment between the two.
 
 Naming is hard, but by the time you are firing up an OpenAPI, you should have done the work to define the business of your API and what matters to your API consumers, and this part of your technical contract should be easy. At this point, consistency is what matters the most. Simplicity, and the overall shape of the metadata for your API as part of your APIs.json business contract should set the tone for what you communicate as the name of your in the title of your OpenAPI that may or may not be portable and distributed across the API landscape.
+```
 
 ## Business and Technical
 This work on API governance policies, rules, and guidance reflects my strong belief that the future of APIs and API governance will need alignment with business stakeholders. Policies are how I align the technical aspect of governance with the business goals of product and leadership, and guidance are how I will helping guide teams forward in their work.
