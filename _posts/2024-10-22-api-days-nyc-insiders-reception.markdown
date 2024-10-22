@@ -19,7 +19,7 @@ My view of API governance is more akin to a combination of governing a country a
 ### The API Landscape
 I am interested in governing the entirety of our HTTP APIs, which means I am governing the design and consistency of APIs, but just as important, I am also governing the teams, operations, and API lifecycle around them. API governance begins with mapping the HTTP API landscape as it exists, defining APIs as OpenAPI to help understand the technical details, and API operations as APIs.json to help understand the business details. The modern API landscape map is created and iterated upon in real-time using common open source and machine-readable API specifications that live in source control, and are automated using APIs, webhooks, and CI/CD pipelines.
 
-<img src="https://kinlane-productions2.s3.amazonaws.com/apidays-insiders-new-york-1.png" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/apidays-insiders-new-york-2.png" style="padding: 15px;">
 
 ### Policies, Rules, & Lifecycle
 Once I have even the beginning of an API landscape map I get to work defining a base set of API governance rules that provide a baseline of API patterns and anti-patterns that exist across the known API landscape. These rules will help automate the governance of the technical details like casing of schema properties, and HTTP status codes used for responses, but also the business details like documentation, SDKs, and rate limits. These rules are then organized using a machine-readable set of policies that speak to real world business outcomes, and are organized in a consecutive series of development stages according to a common agreed upon API lifecycle. 
@@ -33,7 +33,7 @@ My API governance approach is heavily focused on mapping the API landscape then 
 ### Developer Experience
 Let’s talk more about why we are doing all of this–API governance is how we are going to standardize and stabilize the developer experience, making production and consumption of APIs easier, faster, and much more frictionless. API specifications are how you generate code, configure gateways, publish documentation, deliver SDKs in a variety of programming languages, test, and secure your APIs across the enterprise. The experience of producing and consuming APIs across the enterprise will shape how successful any modernization of operations will be, and dictate how well an enterprise is able to keep up and compete in new areas like artificial intelligence.
 
-<img src="https://kinlane-productions2.s3.amazonaws.com/apidays-insiders-new-york-1.png" style="padding: 15px;">
+<img src="https://kinlane-productions2.s3.amazonaws.com/apidays-insiders-new-york-3.png" style="padding: 15px;">
 
 ### Policy-Driven Governance
 Like APIs, your API governance must be ever-evolving to keep up with the pace of change. Modular API rules aligned with API policies that perpetually align with shifts in the business landscape, and applied as part of well-known and common API lifecycle is how you continue to adapt. A policy-driven approach to governing APIs that is supported with Just-in-Time API Guidance for teams is how you automate your digital supply chain, factory floor, and distribution channels in a way that is configurable by teams along the way, while being standardized and aligned with business operations perpetually over time.
