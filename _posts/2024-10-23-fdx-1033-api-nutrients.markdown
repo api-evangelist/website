@@ -1,0 +1,23 @@
+---
+published: true
+layout: post
+title: 'FDX, 1033, and API Nutrients'
+tags:
+  - FDX
+  - 1033
+  - OpenAPI
+image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-conversations/api-evangelist-conversations.jpg
+---
+I read all of [the 1033 when first released](https://files.consumerfinance.gov/f/documents/cfpb_personal-financial-data-rights-final-rule_2024-10.pdf), something I will do again. I have requested access to FDX while running Open Technologies at Postman and reviewed the OpenAPI. However, as I work my way through [CFPB’s announcement yesterday](https://www.consumerfinance.gov/about-us/newsroom/cfpb-finalizes-personal-financial-data-rights-rule-to-boost-competition-protect-privacy-and-give-families-more-choice-in-financial-services/) and try to see through all the fluff available out there and understand what is next--and I just don’t see the required API nutrients to set the right tone for meaningful API regulation. Granted I have only spent an hour wading through things, but I am hyper familiar with the storytelling around API regulation in finance, healthcare, and beyond, there are missing elements that speak to the motivations of those who are involved.
+I think [Dave O’Neill’s LinkedIn summary gets at the good and bad of what is happening with 1033](https://www.linkedin.com/posts/davidon_the-consumer-financial-protection-bureau-activity-7254592546369110016-3wKc?utm_source=share&utm_medium=member_desktop), and my hot take will be from a much wider and high level assessment of why this regulation will stumble out of the gate (which is the desire of many), based upon what I know about APIs and API standardization.
+
+- **Access** - Google the phrase "FDX OpenAPI", and you can’t get your hands on the OpenAPI — you have to request access. This isn’t how modern API standards work, sorry. If you are operating an API on the open web, the surface area of the API is open. There is no secret sauce here, please put the OpenAPI for FDX on a GitHub repository out in the open FDX.
+- **Developer Interfaces** - While reading the original 1033 rule I kept stumbling over the use of developer interfaces instead of API. Sorry, we’ve been using API for 25 years to describe JSON HTTP interfaces, and these are not just for developers, and whoever is resisting using common language here is isolating this as only developer territory—-perpetuating and widening an existing divide.
+- **Hot Takes** - There are soooooooooooo many hot takes to wade through from service providers that it is near impossible to ever find anything meaningful, but I guess this is what AI will fix. Right.
+- **Demonstrating** - There are next to no examples of FDX or wider 1033 in motion out there, and this is something that has been in the works for a while, so there should be more examples of this in action for people to emulate—something I’ll track on quarter by quarter.
+
+Now, with this said. I have to highlight that Mastercard has done everything I am complaining about. [Out in the open you have access to the FDX API demonstrating the potential](https://developer.mastercard.com/fdx-dev-hub/documentation/api-reference/) (with a link to OpenAPI). So, my complaint is why isn’t there more of this. I am perfectly capable of reading through the policy blah blah blah from CFPB, and I get why it is necessary in these circles. I am perfectly capable at sifting through the API service provider and analyst blah blah blah at the top of Google, and get why people think it is necessary in these circle. However, when I only find one hard example of a standard after an hour of looking—-something ain’t right. Sure, I can sign up for Plaid and others to see more, but I am talking openly on the web for open standards.
+
+<img src="https://kinlane-productions2.s3.us-east-1.amazonaws.com/fdx-access.png" style="padding: 15px">
+
+Anyways, that is my “hot take” on FDX, 1033, and what just came out of CFPB. I’ll be reading all y’alls hot takes. I’ll be scouring the web for real world examples. And I’ll be working on my own 1033 / FDX blueprint using the only evidence I have — Mastercard. Kudos to their team. I am 100% focused on the specs and demonstrating what is possible. I’ll wrap Mastercards good work with an APIs.json, and work to fill in what 1033 is asking when it comes to portals, documentation, authentication, monitoring, and other business considerations. I’ll be adding whatever I come up with to the API Commons and try to provide reusable components that anyone can use when working with financial data in the United States. I’ll also come up for air every once in a while and write about the progress I am seeing when it comes to meaningful compliance of the 1033 rule. 
