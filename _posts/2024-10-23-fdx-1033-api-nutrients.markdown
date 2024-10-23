@@ -6,7 +6,7 @@ tags:
   - FDX
   - 1033
   - OpenAPI
-image: https://kinlane-productions2.s3.amazonaws.com/api-evangelist-conversations/api-evangelist-conversations.jpg
+image: https://kinlane-productions2.s3.amazonaws.com/algorotoscope-master/john-wayne-the-searchers-san-francisco-fence.jpeg
 ---
 I read all of [the 1033 when first released](https://files.consumerfinance.gov/f/documents/cfpb_personal-financial-data-rights-final-rule_2024-10.pdf), something I will do again. I have requested access to FDX while running Open Technologies at Postman and reviewed the OpenAPI. However, as I work my way through [CFPB’s announcement yesterday](https://www.consumerfinance.gov/about-us/newsroom/cfpb-finalizes-personal-financial-data-rights-rule-to-boost-competition-protect-privacy-and-give-families-more-choice-in-financial-services/) and try to see through all the fluff available out there and understand what is next--and I just don’t see the required API nutrients to set the right tone for meaningful API regulation. Granted I have only spent an hour wading through things, but I am hyper familiar with the storytelling around API regulation in finance, healthcare, and beyond, there are missing elements that speak to the motivations of those who are involved.
 I think [Dave O’Neill’s LinkedIn summary gets at the good and bad of what is happening with 1033](https://www.linkedin.com/posts/davidon_the-consumer-financial-protection-bureau-activity-7254592546369110016-3wKc?utm_source=share&utm_medium=member_desktop), and my hot take will be from a much wider and high level assessment of why this regulation will stumble out of the gate (which is the desire of many), based upon what I know about APIs and API standardization.
